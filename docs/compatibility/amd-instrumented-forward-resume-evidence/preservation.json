@@ -1,0 +1,32 @@
+{
+  "single_authorized_attempt": true,
+  "no_retry": true,
+  "inventory_comparison": {
+    "inventory": {
+      "byte_identical": true,
+      "before_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+      "after_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475"
+    },
+    "venv-metadata": {
+      "byte_identical": true,
+      "before_sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+      "after_sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7"
+    },
+    "model-cache-metadata": {
+      "byte_identical": true,
+      "before_sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+      "after_sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe"
+    }
+  },
+  "historical_files_and_AMD_source": {
+    "historical_files": true,
+    "amd_source_head": true,
+    "amd_source_status": true,
+    "amd_modified_files": true
+  },
+  "historical_files_checked": 996,
+  "historical_local_refs_unchanged": true,
+  "historical_remote_refs_unchanged": true,
+  "historical_cache_artifacts_executed_or_modified": false,
+  "new_runtime_caches_confined_to_owned_scratch": true
+}

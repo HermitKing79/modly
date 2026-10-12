@@ -1,0 +1,306 @@
+{
+  "classification": "PASS",
+  "harness_commit": "4f51dfdced5c2da37289c45f1e0b2cc48c0503a4",
+  "exact_load_root_forward_transfer_counts_verified": true,
+  "independent_output_sha256": "6a37c05abc213094b5a7e788f34539e2893c67450e1f9714ab22f12df8dd7afe",
+  "forward_seconds_including_synchronization": 25.375,
+  "last_confirmed_worker_event": {
+    "event": "stage",
+    "name": "complete",
+    "origin": "worker",
+    "seq": 85,
+    "elapsed_seconds": 32.71899999999914,
+    "monotonic_seconds": 12437.812,
+    "timestamp_utc": "2026-10-12T21:08:47.114587+00:00",
+    "phase": "release",
+    "forward_calls": 1,
+    "root_decoder_calls": 1
+  },
+  "synchronization_return": {
+    "event": "return",
+    "name": "synchronize:after-forward",
+    "origin": "worker",
+    "seq": 80,
+    "elapsed_seconds": 32.625,
+    "monotonic_seconds": 12437.718,
+    "timestamp_utc": "2026-10-12T21:08:47.020623+00:00",
+    "duration_seconds": 0.0,
+    "completion": "host-return-only"
+  },
+  "host_operation_returns_are_not_per_operation_GPU_completion": true,
+  "worker_trace_events": 85,
+  "all_trace_events": 99,
+  "operator_aten_markers": 0,
+  "CPU_samples": 14,
+  "observed_process_names": [
+    "python.exe"
+  ],
+  "CPU_seconds_by_pid": {
+    "20448": {
+      "first": 0.0,
+      "last": 0.0
+    },
+    "24916": {
+      "first": 3.125,
+      "last": 22.125
+    }
+  },
+  "separate_compiler_child_observed": false,
+  "periodic_windows_samples": 6,
+  "max_observer_interval_seconds": 5.015999999999622,
+  "scratch_files": 526,
+  "new_COMGR_entries": 512,
+  "miopen_records": [
+    {
+      "id": 1,
+      "name": "naive_conv.cpp.obj",
+      "arguments": " -DMIOPEN_USE_FP16=0 -DMIOPEN_USE_FP16x4=0 -DMIOPEN_USE_FP16x8=0 -DMIOPEN_USE_FP32=1 -DMIOPEN_USE_INT8=0 -DMIOPEN_USE_BFP16=0 -DMIOPEN_USE_INT32=0 -DMIOPEN_USE_RNE_BFLOAT16=1 -DMIOPEN_FP8_IEEE_EXPONENT_BIAS=0 -DMIOPEN_FP8_CLIPPING=1 -mcpu=gfx1201",
+      "recorded_hash": "e2b850e92f1ef9d19a81f0751913d529",
+      "bytes": 604592,
+      "decoded_sha256": "411111ab6bf349f3e745cb39ff778013c92d21c126646616da4b1887e8c32519",
+      "elf": {
+        "class": 64,
+        "little_endian": true,
+        "machine": 224,
+        "flags": "0x4e"
+      }
+    },
+    {
+      "id": 2,
+      "name": "MIOpenIm3d2Col.cpp.obj",
+      "arguments": " -DMIOPEN_USE_FP16=0 -DMIOPEN_USE_FP16x4=0 -DMIOPEN_USE_FP16x8=0 -DMIOPEN_USE_FP32=1 -DMIOPEN_USE_INT8=0 -DMIOPEN_USE_BFP16=0 -DMIOPEN_USE_INT32=0 -DMIOPEN_USE_RNE_BFLOAT16=1 -DMIOPEN_FP8_IEEE_EXPONENT_BIAS=0 -DMIOPEN_FP8_CLIPPING=1 -mcpu=gfx1201",
+      "recorded_hash": "6647df2d5593b2364a833baf4b52655a",
+      "bytes": 8920,
+      "decoded_sha256": "d6cef12ac1c5e3e24840e18989bd86a050a11a40b201b2c4c9772d2a27f95a8a",
+      "elf": {
+        "class": 64,
+        "little_endian": true,
+        "machine": 224,
+        "flags": "0x4e"
+      }
+    },
+    {
+      "id": 3,
+      "name": "naive_conv.cpp.obj",
+      "arguments": " -DMIOPEN_USE_FP16=1 -DMIOPEN_USE_FP16x4=0 -DMIOPEN_USE_FP16x8=0 -DMIOPEN_USE_FP32=0 -DMIOPEN_USE_INT8=0 -DMIOPEN_USE_BFP16=0 -DMIOPEN_USE_INT32=0 -DMIOPEN_USE_RNE_BFLOAT16=1 -DMIOPEN_FP8_IEEE_EXPONENT_BIAS=0 -DMIOPEN_FP8_CLIPPING=1 -mcpu=gfx1201",
+      "recorded_hash": "e2b850e92f1ef9d19a81f0751913d529",
+      "bytes": 604592,
+      "decoded_sha256": "411111ab6bf349f3e745cb39ff778013c92d21c126646616da4b1887e8c32519",
+      "elf": {
+        "class": 64,
+        "little_endian": true,
+        "machine": 224,
+        "flags": "0x4e"
+      }
+    },
+    {
+      "id": 4,
+      "name": "MIOpenIm3d2Col.cpp.obj",
+      "arguments": " -DMIOPEN_USE_FP16=1 -DMIOPEN_USE_FP16x4=0 -DMIOPEN_USE_FP16x8=0 -DMIOPEN_USE_FP32=0 -DMIOPEN_USE_INT8=0 -DMIOPEN_USE_BFP16=0 -DMIOPEN_USE_INT32=0 -DMIOPEN_USE_RNE_BFLOAT16=1 -DMIOPEN_FP8_IEEE_EXPONENT_BIAS=0 -DMIOPEN_FP8_CLIPPING=1 -mcpu=gfx1201",
+      "recorded_hash": "4073481a2b29b62feb4b85ac6d3295b0",
+      "bytes": 8920,
+      "decoded_sha256": "c17ec2394d2ca1633e243b61c3f4b7abffec8908a2364932c42c190362258207",
+      "elf": {
+        "class": 64,
+        "little_endian": true,
+        "machine": 224,
+        "flags": "0x4e"
+      }
+    }
+  ],
+  "longest_host_operations": [
+    {
+      "name": "module:<root>",
+      "entry": {
+        "event": "enter",
+        "name": "module:<root>",
+        "origin": "worker",
+        "seq": 13,
+        "elapsed_seconds": 7.25,
+        "monotonic_seconds": 12412.343,
+        "timestamp_utc": "2026-10-12T21:08:21.656086+00:00",
+        "input": {
+          "shape": [
+            1,
+            8,
+            1,
+            1,
+            1
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0",
+          "stride": [
+            8,
+            1,
+            1,
+            1,
+            1
+          ],
+          "layout": "torch.strided",
+          "contiguous": true,
+          "requires_grad": false
+        },
+        "forward_calls": 1,
+        "root_decoder_calls": 1
+      },
+      "return": {
+        "event": "return",
+        "name": "module:<root>",
+        "origin": "worker",
+        "seq": 78,
+        "elapsed_seconds": 32.625,
+        "monotonic_seconds": 12437.718,
+        "timestamp_utc": "2026-10-12T21:08:47.020623+00:00",
+        "duration_seconds": 25.375,
+        "completion": "host-return-only"
+      },
+      "new_COMGR_mtimes_in_interval": 511
+    },
+    {
+      "name": "module:input_layer",
+      "entry": {
+        "event": "enter",
+        "name": "module:input_layer",
+        "origin": "worker",
+        "seq": 14,
+        "elapsed_seconds": 7.25,
+        "monotonic_seconds": 12412.343,
+        "timestamp_utc": "2026-10-12T21:08:21.656086+00:00",
+        "input": {
+          "shape": [
+            1,
+            8,
+            1,
+            1,
+            1
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0",
+          "stride": [
+            8,
+            1,
+            1,
+            1,
+            1
+          ],
+          "layout": "torch.strided",
+          "contiguous": true,
+          "requires_grad": false
+        },
+        "forward_calls": 1,
+        "root_decoder_calls": 1
+      },
+      "return": {
+        "event": "return",
+        "name": "module:input_layer",
+        "origin": "worker",
+        "seq": 15,
+        "elapsed_seconds": 26.59399999999914,
+        "monotonic_seconds": 12431.687,
+        "timestamp_utc": "2026-10-12T21:08:40.993743+00:00",
+        "duration_seconds": 19.34399999999914,
+        "completion": "host-return-only"
+      },
+      "new_COMGR_mtimes_in_interval": 507
+    },
+    {
+      "name": "module:middle_block.0",
+      "entry": {
+        "event": "enter",
+        "name": "module:middle_block.0",
+        "origin": "worker",
+        "seq": 17,
+        "elapsed_seconds": 26.609999999998763,
+        "monotonic_seconds": 12431.703,
+        "timestamp_utc": "2026-10-12T21:08:41.018659+00:00",
+        "input": {
+          "shape": [
+            1,
+            512,
+            1,
+            1,
+            1
+          ],
+          "dtype": "torch.float16",
+          "device": "cuda:0",
+          "stride": [
+            512,
+            1,
+            1,
+            1,
+            1
+          ],
+          "layout": "torch.strided",
+          "contiguous": true,
+          "requires_grad": false
+        },
+        "forward_calls": 1,
+        "root_decoder_calls": 1
+      },
+      "return": {
+        "event": "return",
+        "name": "module:middle_block.0",
+        "origin": "worker",
+        "seq": 22,
+        "elapsed_seconds": 32.51599999999962,
+        "monotonic_seconds": 12437.609,
+        "timestamp_utc": "2026-10-12T21:08:46.910932+00:00",
+        "duration_seconds": 5.906000000000859,
+        "completion": "host-return-only"
+      },
+      "new_COMGR_mtimes_in_interval": 4
+    },
+    {
+      "name": "module:middle_block",
+      "entry": {
+        "event": "enter",
+        "name": "module:middle_block",
+        "origin": "worker",
+        "seq": 16,
+        "elapsed_seconds": 26.609999999998763,
+        "monotonic_seconds": 12431.703,
+        "timestamp_utc": "2026-10-12T21:08:41.017655+00:00",
+        "input": {
+          "shape": [
+            1,
+            512,
+            1,
+            1,
+            1
+          ],
+          "dtype": "torch.float16",
+          "device": "cuda:0",
+          "stride": [
+            512,
+            1,
+            1,
+            1,
+            1
+          ],
+          "layout": "torch.strided",
+          "contiguous": true,
+          "requires_grad": false
+        },
+        "forward_calls": 1,
+        "root_decoder_calls": 1
+      },
+      "return": {
+        "event": "return",
+        "name": "module:middle_block",
+        "origin": "worker",
+        "seq": 29,
+        "elapsed_seconds": 32.51599999999962,
+        "monotonic_seconds": 12437.609,
+        "timestamp_utc": "2026-10-12T21:08:46.912461+00:00",
+        "duration_seconds": 5.906000000000859,
+        "completion": "host-return-only"
+      },
+      "new_COMGR_mtimes_in_interval": 4
+    }
+  ],
+  "native_computation_failure": false,
+  "guard_error": false,
+  "timeout": false,
+  "warm_up_or_retry": false,
+  "AI_imported_by_analysis": false
+}
