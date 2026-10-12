@@ -1,0 +1,62 @@
+[
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_instrumented_forward.py"
+    ],
+    "exit": 1,
+    "timeout": false,
+    "stdout": "{\"classification\": \"PARTIAL\", \"observer_healthy\": false, \"checkpoint_unchanged\": true}\r\n",
+    "stderr": ".......FFF......\r\n======================================================================\r\nFAIL: test_job_cleanup_timeout_never_claims_owned_tree_exit (__main__.OwnershipTests.test_job_cleanup_timeout_never_claims_owned_tree_exit)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_instrumented_forward.py\", line 190, in setUp\r\n    def setUp(self):self.assertIsNotNone(ownership)\r\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: unexpectedly None\r\n\r\n======================================================================\r\nFAIL: test_ownership_assignment_failure_is_fail_closed (__main__.OwnershipTests.test_ownership_assignment_failure_is_fail_closed)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_instrumented_forward.py\", line 190, in setUp\r\n    def setUp(self):self.assertIsNotNone(ownership)\r\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: unexpectedly None\r\n\r\n======================================================================\r\nFAIL: test_real_cpu_job_contains_child_after_parent_exit_and_reaps_it (__main__.OwnershipTests.test_real_cpu_job_contains_child_after_parent_exit_and_reaps_it)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_instrumented_forward.py\", line 190, in setUp\r\n    def setUp(self):self.assertIsNotNone(ownership)\r\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: unexpectedly None\r\n\r\n----------------------------------------------------------------------\r\nRan 16 tests in 0.330s\r\n\r\nFAILED (failures=3)\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_forward_diagnostics.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.695s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_forward.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\r\n{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\r\n{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\r\n{\"classification\": \"PARTIAL\", \"observer_healthy\": false, \"checkpoint_unchanged\": true}\r\n",
+    "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.080s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_transfer.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.167s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_contract.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".........\r\n----------------------------------------------------------------------\r\nRan 9 tests in 0.001s\r\n\r\nOK\r\n"
+  }
+]

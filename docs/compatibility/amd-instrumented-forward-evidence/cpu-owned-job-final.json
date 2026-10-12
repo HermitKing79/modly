@@ -1,0 +1,62 @@
+[
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_instrumented_forward.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "{\"classification\": \"PARTIAL\", \"observer_healthy\": false, \"checkpoint_unchanged\": true}\r\n",
+    "stderr": ".................\r\n----------------------------------------------------------------------\r\nRan 17 tests in 2.264s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_forward_diagnostics.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.697s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_forward.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\r\n{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\r\n{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\r\n{\"classification\": \"PARTIAL\", \"observer_healthy\": false, \"checkpoint_unchanged\": true}\r\n",
+    "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.076s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_transfer.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.175s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_contract.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".........\r\n----------------------------------------------------------------------\r\nRan 9 tests in 0.001s\r\n\r\nOK\r\n"
+  }
+]

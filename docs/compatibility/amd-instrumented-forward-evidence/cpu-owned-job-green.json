@@ -1,0 +1,62 @@
+[
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_instrumented_forward.py"
+    ],
+    "exit": 1,
+    "timeout": false,
+    "stdout": "",
+    "stderr": "...............E\r\n======================================================================\r\nERROR: test_unhealthy_periodic_supervisor_gate_never_writes_gpu_permit (__main__.WindowsMonitorTests.test_unhealthy_periodic_supervisor_gate_never_writes_gpu_permit)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_instrumented_forward.py\", line 185, in test_unhealthy_periodic_supervisor_gate_never_writes_gpu_permit\r\n    self.assertEqual(proof.supervise(evidence/'run','published'),1);cleanup.assert_called_once()\r\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_decoder_forward.py\", line 448, in supervise\r\n    save('results.json',result)\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_decoder_forward.py\", line 312, in save\r\n    json.dump(value,stream,indent=2);stream.flush();os.fsync(stream.fileno())\r\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\__init__.py\", line 179, in dump\r\n    for chunk in iterable:\r\n                 ^^^^^^^^\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 432, in _iterencode\r\n    yield from _iterencode_dict(o, _current_indent_level)\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 406, in _iterencode_dict\r\n    yield from chunks\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 406, in _iterencode_dict\r\n    yield from chunks\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 439, in _iterencode\r\n    o = _default(o)\r\n        ^^^^^^^^^^^\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 180, in default\r\n    raise TypeError(f'Object of type {o.__class__.__name__} '\r\nTypeError: Object of type MagicMock is not JSON serializable\r\n\r\n----------------------------------------------------------------------\r\nRan 16 tests in 2.274s\r\n\r\nFAILED (errors=1)\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_forward_diagnostics.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.703s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_forward.py"
+    ],
+    "exit": 1,
+    "timeout": false,
+    "stdout": "{\"classification\": \"PARTIAL\", \"observer_healthy\": false, \"checkpoint_unchanged\": true}\r\n",
+    "stderr": ".E.....E.....\r\n======================================================================\r\nERROR: test_cpu_gate_deadline_expiry_never_authorizes_gpu_and_reaps_worker (__main__.ForwardContractTests.test_cpu_gate_deadline_expiry_never_authorizes_gpu_and_reaps_worker)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_forward.py\", line 183, in test_cpu_gate_deadline_expiry_never_authorizes_gpu_and_reaps_worker\r\n    self.assertEqual(proof.supervise(evidence/'run','published'),1)\r\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_decoder_forward.py\", line 448, in supervise\r\n    save('results.json',result)\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_decoder_forward.py\", line 312, in save\r\n    json.dump(value,stream,indent=2);stream.flush();os.fsync(stream.fileno())\r\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\__init__.py\", line 179, in dump\r\n    for chunk in iterable:\r\n                 ^^^^^^^^\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 432, in _iterencode\r\n    yield from _iterencode_dict(o, _current_indent_level)\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 406, in _iterencode_dict\r\n    yield from chunks\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 406, in _iterencode_dict\r\n    yield from chunks\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 439, in _iterencode\r\n    o = _default(o)\r\n        ^^^^^^^^^^^\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 180, in default\r\n    raise TypeError(f'Object of type {o.__class__.__name__} '\r\nTypeError: Object of type MagicMock is not JSON serializable\r\n\r\n======================================================================\r\nERROR: test_parent_protocol_error_unconditionally_reaps_owned_worker (__main__.ForwardContractTests.test_parent_protocol_error_unconditionally_reaps_owned_worker)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_forward.py\", line 135, in test_parent_protocol_error_unconditionally_reaps_owned_worker\r\n    self.assertEqual(proof.supervise(evidence/'run','published'),1)\r\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_decoder_forward.py\", line 448, in supervise\r\n    save('results.json',result)\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_decoder_forward.py\", line 312, in save\r\n    json.dump(value,stream,indent=2);stream.flush();os.fsync(stream.fileno())\r\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\__init__.py\", line 179, in dump\r\n    for chunk in iterable:\r\n                 ^^^^^^^^\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 432, in _iterencode\r\n    yield from _iterencode_dict(o, _current_indent_level)\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 406, in _iterencode_dict\r\n    yield from chunks\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 406, in _iterencode_dict\r\n    yield from chunks\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 439, in _iterencode\r\n    o = _default(o)\r\n        ^^^^^^^^^^^\r\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\encoder.py\", line 180, in default\r\n    raise TypeError(f'Object of type {o.__class__.__name__} '\r\nTypeError: Object of type MagicMock is not JSON serializable\r\n\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.052s\r\n\r\nFAILED (errors=2)\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_transfer.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.168s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_contract.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".........\r\n----------------------------------------------------------------------\r\nRan 9 tests in 0.001s\r\n\r\nOK\r\n"
+  }
+]

@@ -22,20 +22,47 @@ import amd_sparse_decoder_loading as previous
 import amd_decoder_contract as loading_contract
 import amd_decoder_forward_contract as contract
 import amd_forward_diagnostics as diagnostics
+import amd_forward_cache_reuse as cache_reuse
+from amd_forward_windows_monitor import WindowsMonitor
+from amd_forward_owned_job import OwnedJob
 from services.amd_offline_guard import block_external_actions
 from services.amd_observer import windows_observation, healthy_observation
 
 SOURCE,VENV,PREFIX=previous.SOURCE,previous.VENV,previous.PREFIX
-EVIDENCE=ROOT/'docs/compatibility/amd-sparse-decoder-forward-correction-evidence'
+EVIDENCE=ROOT/'docs/compatibility/amd-instrumented-forward-evidence'
 EVENT='FORWARD_EVENT='
 RESULT='FORWARD_RESULT='
 OLD=ROOT/'docs/compatibility/amd-sparse-decoder-loading-evidence/run/results.json'
 COMMITTED_FILES=[
     'scripts/compatibility/'+name+'.py' for name in ('amd_sparse_decoder_forward','amd_decoder_forward_contract',
-    'amd_sparse_decoder_loading','amd_decoder_contract','amd_bounded_gpu_proof','amd_native_import_preflight','amd_model_metadata','amd_forward_diagnostics')
+    'amd_sparse_decoder_loading','amd_decoder_contract','amd_bounded_gpu_proof','amd_native_import_preflight','amd_model_metadata','amd_forward_diagnostics',
+    'amd_forward_cache_reuse','amd_forward_windows_monitor','amd_forward_owned_job')
 ] + ['api/services/'+name+'.py' for name in ('amd_runtime','amd_model_metadata','amd_offline_guard','amd_observer')] + [
     'experimental/extensions/trellis2-amd/strict_loader.py',
-    OLD.relative_to(ROOT).as_posix(),previous.ARCHIVED.relative_to(ROOT).as_posix()]
+    OLD.relative_to(ROOT).as_posix(),previous.ARCHIVED.relative_to(ROOT).as_posix(),
+    'docs/compatibility/amd-instrumented-forward-evidence/cache-plan.json']
+
+CPU_SECONDS=45;GPU_SECONDS=120;OVERALL_SECONDS=180
+
+
+def prepare_private_cache(scratch):
+    plan=json.loads((EVIDENCE/'cache-plan.json').read_text())
+    baseline=ROOT/'docs/compatibility/amd-forward-timeout-investigation-evidence/inventory-before.json'
+    if cache_reuse.attest_runtime(cache_reuse.SITE,json.loads(baseline.read_text()))!=plan['runtime_libraries']:
+        raise RuntimeError('Runtime library attestation changed after preparation')
+    cache_reuse.verify_copies(EVIDENCE/'prepared-cache',plan['selected'])
+    # Fresh scratch already exists; copy into a temporary sibling, then move only
+    # its two owned cache subdirectories into the empty owned scratch tree.
+    staging=scratch.parent/'cache-staging'
+    cache_reuse.copy_entries(EVIDENCE/'prepared-cache',staging,plan['selected'])
+    for name in ('amd_comgr_cache_dir','miopen_custom_cache_dir'):
+        source=(staging/name).resolve();target=(scratch/name).resolve()
+        source.relative_to(EVIDENCE.resolve());target.relative_to(EVIDENCE.resolve())
+        source.rename(target)
+    staging.rmdir()
+    cache_reuse.verify_copies(scratch,plan['selected'])
+    return {'selected_files':len(plan['selected']),'plan_sha256':cache_reuse.digest(EVIDENCE/'cache-plan.json'),
+            'runtime_libraries':plan['runtime_libraries'],'private_copy_hashes_verified':True}
 
 
 def verify_committed_files(commit):
@@ -76,6 +103,9 @@ def worker(scratch):
         print('FORWARD_STAGE='+name,flush=True)
         trace.emit('stage',name,phase=phase,forward_calls=permit.calls,root_decoder_calls=root_calls)
     try:
+        stage('waiting-for-owned-job')
+        if sys.stdin.readline().strip()!='OWNED_JOB_ATTACHED':
+            raise RuntimeError('Worker requires parent-owned job containment before preparation')
         scratch=scratch.resolve();scratch.relative_to(EVIDENCE)
         env=previous.gpu_proof.scratch_environment(scratch)
         env['WORKSPACE_DIR']=str(scratch)
@@ -286,6 +316,7 @@ def supervise(output,harness_commit):
     record={'status':'NOT ATTEMPTED','stage':'before-launch'};process={'returncode':None,'timed_out':False}
     healthy=False;preserved=False;verified=None;child=None
     stdout=[];stderr=[];messages=queue.Queue();reader=err_reader=None;journal=monitor=None
+    windows_monitor=windows_journal=owned_job=None
     try:
         save('committed-harness.json',{'commit':head,'verified_file_sha256':committed_hashes})
         source_identity();verified=previous.identity();contract.fixture(verified['config']);save('checkpoint-before.json',verified)
@@ -293,11 +324,18 @@ def supervise(output,harness_commit):
         if not healthy_observation(before):raise RuntimeError('Unhealthy Windows observer before launch')
         healthy=True
         scratch=output/'scratch';scratch.mkdir()
+        save('private-cache.json',prepare_private_cache(scratch))
         journal=diagnostics.Journal(output/'trace.jsonl')
+        windows_journal=diagnostics.Journal(output/'windows-periodic.jsonl')
         command=[str(VENV/'Scripts/python.exe'),'-B','-I',str(Path(__file__).resolve()),'--worker','--output',str(scratch)]
         env={**os.environ,**previous.gpu_proof.scratch_environment(scratch)}
+        owned_job=OwnedJob()
+        began=time.monotonic();deadline=began+CPU_SECONDS
         child=subprocess.Popen(command,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,env=env)
         process.update(pid=child.pid,command=command,harness_commit=head)
+        owned_job.attach(child)
+        process['job_attached_before_preparation']=True
+        child.stdin.write(b'OWNED_JOB_ATTACHED\n');child.stdin.flush()
         def read_stdout():
             # Append+fsync each line so the last completed/started stage survives power loss.
             with (output/'worker.stdout.txt').open('xb') as stream:
@@ -310,12 +348,12 @@ def supervise(output,harness_commit):
                 for line in iter(child.stderr.readline,b''):
                     stream.write(line);stream.flush();os.fsync(stream.fileno());stderr.append(line)
         reader=threading.Thread(target=read_stdout,daemon=True);err_reader=threading.Thread(target=read_stderr,daemon=True)
-        reader.start();err_reader.start();began=time.monotonic();deadline=began+45;authorized=False;final_seen=False
+        reader.start();err_reader.start();authorized=False;final_seen=False
         while True:
             remaining=deadline-time.monotonic()
             if remaining<=0:raise TimeoutError('Decoder forward stage deadline exceeded')
-            if authorized:monitor.require_healthy()
-            try:line=messages.get(timeout=min(remaining,2.) if authorized else remaining)
+            if authorized:monitor.require_healthy();windows_monitor.require_healthy()
+            try:line=messages.get(timeout=min(remaining,.5) if authorized else remaining)
             except queue.Empty:
                 if authorized:continue
                 raise TimeoutError('CPU gate deadline exceeded')
@@ -342,19 +380,31 @@ def supervise(output,harness_commit):
                 if remaining<=0:raise TimeoutError('CPU gate deadline expired before monitor startup')
                 monitor=diagnostics.ActivityMonitor(child.pid,messages.put)
                 monitor.start(timeout=min(2.,remaining))
+                remaining=deadline-time.monotonic()
+                if remaining<=0:raise TimeoutError('CPU gate deadline expired before periodic Windows startup')
+                windows_monitor=WindowsMonitor(since,windows_journal.consume)
+                windows_monitor.start(timeout=min(5.,remaining))
+                monitor.require_healthy();windows_monitor.require_healthy()
                 if time.monotonic()>=deadline:raise TimeoutError('CPU gate deadline expired before GPU authorization')
                 child.stdin.write(b'EXECUTE_ONE_DECODER_FORWARD\n');child.stdin.flush();child.stdin.close()
-                authorized=True;deadline=min(began+90,time.monotonic()+30)
+                authorized=True;deadline=min(began+OVERALL_SECONDS,time.monotonic()+GPU_SECONDS)
                 process['gpu_authorized']=True
             if line.startswith(RESULT):
                 if final_seen:raise RuntimeError('Duplicate final result')
                 final_seen=True;record=json.loads(line[len(RESULT):])
-        child.wait(timeout=max(.1,min(5,began+90-time.monotonic())))
+        if time.monotonic()>=deadline:raise TimeoutError('Worker-exit stage deadline exceeded')
+        child.wait(timeout=min(5,deadline-time.monotonic(),began+OVERALL_SECONDS-time.monotonic()))
         process.update(returncode=child.returncode,elapsed_seconds=time.monotonic()-began,gpu_authorized=authorized,
-                       stage_timeouts_seconds={'cpu':45,'forward_release':30,'overall':90})
+                       stage_timeouts_seconds={'cpu':CPU_SECONDS,'forward_release':GPU_SECONDS,'overall':OVERALL_SECONDS})
     except BaseException as exc:
         process.update(error=repr(exc),timed_out=isinstance(exc,(TimeoutError,queue.Empty,subprocess.TimeoutExpired)))
     finally:
+        if owned_job is not None:
+            try:process['job_cleanup']=owned_job.finish()
+            except BaseException as exc:
+                process['job_cleanup_error']=repr(exc);process['cleanup_unverified']=True
+                try:owned_job.close()
+                except BaseException as close_error:process['job_close_error']=repr(close_error)
         if child is not None:
             previous.reap_owned_child(child,process)
             if not child.stdin.closed:
@@ -363,12 +413,20 @@ def supervise(output,harness_commit):
         if monitor is not None:
             process['cpu_observer_stopped']=monitor.close()
             process['cpu_observer_error']=monitor.error
+        if windows_monitor is not None:
+            process['windows_periodic_stopped']=windows_monitor.close()
+            process['windows_periodic_error']=windows_monitor.error
+            process['windows_periodic_samples']=windows_monitor.samples
+            healthy=healthy and not windows_monitor.error and process['windows_periodic_stopped']
         for thread in (reader,err_reader):
             if thread is not None:thread.join(timeout=5)
         process['output_readers_completed']=all(thread is None or not thread.is_alive() for thread in (reader,err_reader))
         if journal is not None:
             process['diagnostic_journal_stopped']=journal.close()
             process['diagnostic_journal_error']=journal.error
+        if windows_journal is not None:
+            process['windows_journal_stopped']=windows_journal.close()
+            process['windows_journal_error']=windows_journal.error
         if record['status']=='NOT ATTEMPTED' and process.get('last_stage'):
             record={'status':'INCOMPLETE','stage':process['last_stage'],'last_worker_trace':process.get('last_worker_trace')}
         try:
@@ -382,6 +440,11 @@ def supervise(output,harness_commit):
         and process['output_readers_completed'] and 'error' not in process and not process.get('cleanup_unverified',False))
     process_ok=process_ok and process.get('cpu_observer_stopped') is True and not process.get('cpu_observer_error')
     process_ok=process_ok and process.get('diagnostic_journal_stopped') is True and not process.get('diagnostic_journal_error')
+    process_ok=process_ok and process.get('windows_periodic_stopped') is True and not process.get('windows_periodic_error')
+    process_ok=process_ok and process.get('windows_journal_stopped') is True and not process.get('windows_journal_error')
+    process_ok=process_ok and process.get('job_attached_before_preparation') is True \
+        and process.get('job_cleanup',{}).get('owned_tree_exit_verified') is True \
+        and not process.get('job_cleanup',{}).get('forced_job_cleanup') and not process.get('job_cleanup_error')
     result={'classification':contract.classify(record,process_ok,healthy,preserved),'observer_healthy':healthy,
             'checkpoint_unchanged':preserved,'worker':record,'process':process}
     save('results.json',result)

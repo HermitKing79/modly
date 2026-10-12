@@ -1,0 +1,62 @@
+[
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_instrumented_forward.py"
+    ],
+    "exit": 1,
+    "timeout": false,
+    "stdout": "",
+    "stderr": "..F........\r\n======================================================================\r\nFAIL: test_native_record_and_library_content_must_both_match_historical_packages (__main__.CacheTests.test_native_record_and_library_content_must_both_match_historical_packages)\r\n----------------------------------------------------------------------\r\nRuntimeError: Native library differs from unchanged package RECORD\r\n\r\nDuring handling of the above exception, another exception occurred:\r\n\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_instrumented_forward.py\", line 94, in test_native_record_and_library_content_must_both_match_historical_packages\r\n    with self.assertRaisesRegex(RuntimeError,'RECORD changed'):cache.attest_runtime(site,old)\r\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: \"RECORD changed\" does not match \"Native library differs from unchanged package RECORD\"\r\n\r\n----------------------------------------------------------------------\r\nRan 11 tests in 0.235s\r\n\r\nFAILED (failures=1)\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_forward_diagnostics.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.130s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_forward.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\r\n{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\r\n{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\r\n{\"classification\": \"PARTIAL\", \"observer_healthy\": false, \"checkpoint_unchanged\": true}\r\n",
+    "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.075s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_transfer.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 0.171s\r\n\r\nOK\r\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_decoder_contract.py"
+    ],
+    "exit": 0,
+    "timeout": false,
+    "stdout": "",
+    "stderr": ".........\r\n----------------------------------------------------------------------\r\nRan 9 tests in 0.001s\r\n\r\nOK\r\n"
+  }
+]

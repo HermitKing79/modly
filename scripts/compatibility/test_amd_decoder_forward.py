@@ -22,6 +22,10 @@ CONFIG = {'name':'SparseStructureDecoder','args':{'out_channels':1,'latent_chann
           'num_res_blocks_middle':2,'channels':[512,128,32],'use_fp16':True}}
 
 
+def fake_owned_job():
+    return SimpleNamespace(attach=lambda child:None,finish=lambda:{'owned_tree_exit_verified':True,'forced_job_cleanup':False},close=lambda:None)
+
+
 class ForwardContractTests(unittest.TestCase):
     def test_minimal_architecture_valid_fixture_and_upsampling(self):
         fixture = contract.fixture(CONFIG)
@@ -128,7 +132,9 @@ class ForwardContractTests(unittest.TestCase):
                  patch.object(proof.subprocess,'run',return_value=SimpleNamespace(stdout=b'published')), \
                  patch.object(proof,'windows_observation',return_value={}), \
                  patch.object(proof,'healthy_observation',return_value=True), \
+                 patch.object(proof,'prepare_private_cache',return_value={}), \
                  patch.object(proof.subprocess,'Popen',return_value=child), \
+                 patch.object(proof,'OwnedJob',side_effect=fake_owned_job), \
                  patch.object(proof.previous,'reap_owned_child',side_effect=reap) as cleanup:
                 self.assertEqual(proof.supervise(evidence/'run','published'),1)
                 cleanup.assert_called_once()
@@ -171,14 +177,16 @@ class ForwardContractTests(unittest.TestCase):
                      patch.object(proof.subprocess,'run',return_value=SimpleNamespace(stdout=b'published')), \
                      patch.object(proof,'windows_observation',side_effect=observe), \
                      patch.object(proof,'healthy_observation',return_value=True), \
+                     patch.object(proof,'prepare_private_cache',return_value={}), \
                      patch.object(proof.loading_contract,'authorize_placement'), \
                      patch.object(proof.subprocess,'Popen',return_value=child), \
+                     patch.object(proof,'OwnedJob',side_effect=fake_owned_job), \
                      patch.object(proof.diagnostics,'ActivityMonitor',Monitor), \
                      patch.object(proof.time,'monotonic',side_effect=lambda:now[0]), \
                      patch.object(proof.previous,'reap_owned_child',side_effect=reap) as cleanup:
                     self.assertEqual(proof.supervise(evidence/'run','published'),1)
                     cleanup.assert_called_once()
-                self.assertEqual(written,[])
+                self.assertEqual(written,[b'OWNED_JOB_ATTACHED\n'])
                 self.assertEqual(started,[] if expiry=='observer' else [.5])
                 result=__import__('json').loads((evidence/'run/results.json').read_text())
                 self.assertTrue(result['process']['timed_out'])

@@ -1,5 +1,6 @@
 """Host-only diagnostics. Never imports torch, executes artifacts or changes budgets."""
 import json
+import datetime
 import math
 import os
 from pathlib import Path
@@ -17,8 +18,10 @@ class Trace:
     def emit(self,event,name,**details):
         if self.seq>=self.limit:raise RuntimeError('Diagnostic event bound exceeded')
         self.seq+=1
+        now=self.clock()
         row={'event':event,'name':name,'origin':self.origin,'seq':self.seq,
-             'elapsed_seconds':self.clock()-self.start,**details}
+             'elapsed_seconds':now-self.start,'monotonic_seconds':now,
+             'timestamp_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),**details}
         self.send(MARKER+json.dumps(row,allow_nan=False))
 
     def call(self,name,call,**details):
@@ -106,7 +109,7 @@ class ProcessActivity:
         for process in owned:
             try:
                 identity=(process.pid,process.create_time());times=process.cpu_times();cpu=times.user+times.system
-                rows.append({'pid':process.pid,'created_seconds':identity[1],'name':process.name(),
+                rows.append({'pid':process.pid,'created_seconds':identity[1],'name':process.name(),'executable':process.exe(),
                              'cpu_seconds':cpu,'cpu_delta_seconds':cpu-self.previous.get(identity,cpu)})
                 self.previous[identity]=cpu
             except self.module.NoSuchProcess:vanished.append(process.pid)

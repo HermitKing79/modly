@@ -104,6 +104,7 @@ class DiagnosticTests(unittest.TestCase):
             def cpu_times(self):return type('Times',(),{'user':self.cpu,'system':.5})()
             def children(self,recursive=True):return [descendant]
             def name(self):return 'compiler.exe'
+            def exe(self):return 'owned/compiler.exe'
         root=Process(10);descendant=Process(11)
         module=type('Module',(),{'__version__':'7.2.2','__file__':__file__,'NoSuchProcess':ProcessLookupError,'Process':lambda pid:root})
         observer=diagnostics.ProcessActivity(10,module=module)

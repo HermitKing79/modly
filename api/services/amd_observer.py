@@ -13,7 +13,8 @@ def _capture(command, timeout):
     except subprocess.TimeoutExpired as exc:
         return {"returncode": None, "timed_out": True, "error": str(exc)}
 
-def windows_observation(since):
+def windows_observation(since,timeout=10):
+    if not 0<timeout<=10:raise ValueError('Observer timeout must be bounded within ten seconds')
     since = datetime.datetime.fromisoformat(since).isoformat()
     # Passive WMI and System-event log queries; no GPU workload or repair.
     script = (
@@ -37,7 +38,7 @@ def windows_observation(since):
         "$result | ConvertTo-Json -Depth 6 -Compress")
     executable = Path(os.environ.get("SystemRoot", "C:/Windows")) / "System32/WindowsPowerShell/v1.0/powershell.exe"
     capture = _capture([str(executable), "-NoProfile", "-NonInteractive",
-                                   "-Command", script], 10)
+                                   "-Command", script], timeout)
     if capture["returncode"] == 0:
         try:
             capture["observation"] = json.loads(capture["stdout"])
