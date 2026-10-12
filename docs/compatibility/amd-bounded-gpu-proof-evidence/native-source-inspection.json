@@ -1,0 +1,87 @@
+{
+  "repository": "dmonkman/CuMesh-ROCm",
+  "inspected_commit": "e28fe419201ce134deeccf0947bb97b8228f2e82",
+  "files": [
+    {
+      "path": "src/connectivity.hip",
+      "git_blob_sha": "839fe639ed1aaaa768bcd6b3f55a4ff93558d5a9",
+      "url": "https://github.com/dmonkman/CuMesh-ROCm/blob/e28fe419201ce134deeccf0947bb97b8228f2e82/src/connectivity.hip"
+    },
+    {
+      "path": "src/cumesh.hip",
+      "git_blob_sha": "29c09735d4d7970818c7952a23ae0a5f64a727e0",
+      "url": "https://github.com/dmonkman/CuMesh-ROCm/blob/e28fe419201ce134deeccf0947bb97b8228f2e82/src/cumesh.hip"
+    },
+    {
+      "path": "src/ext_hip.cpp",
+      "git_blob_sha": "e4a8a13be947722cb9f6fad67e21e6f7e7c70f76",
+      "url": "https://github.com/dmonkman/CuMesh-ROCm/blob/e28fe419201ce134deeccf0947bb97b8228f2e82/src/ext_hip.cpp"
+    },
+    {
+      "path": "src/io.hip",
+      "git_blob_sha": "b76b5e5748964a8e8a8054c61fcd4db16aa84d5d",
+      "url": "https://github.com/dmonkman/CuMesh-ROCm/blob/e28fe419201ce134deeccf0947bb97b8228f2e82/src/io.hip"
+    }
+  ],
+  "python_wrapper_git_blob_sha": "0948f469e5612ae1fe0ff4f3b8f805b681b13531",
+  "compiled_source_commit": "Not embedded in installed wheel metadata; source review is reference evidence, binary identity is pinned by local SHA-256",
+  "boundary_function_lines": "src/connectivity.hip:837-883",
+  "prerequisites": [
+    "float32 vertices [3,3]",
+    "int32 faces [1,3]",
+    "contiguous same HIP device",
+    "get_edges",
+    "get_boundary_info",
+    "get_vertex_edge_adjacency",
+    "get_vertex_boundary_adjacency",
+    "get_manifold_boundary_adjacency"
+  ],
+  "target": "get_boundary_connected_components once",
+  "result_read": "read_boundary_connected_components -> component count and int32 boundary-edge IDs",
+  "fixture": {
+    "vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "faces": [
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "expected_component_count": 1,
+    "expected_ids": [
+      0,
+      0,
+      0
+    ],
+    "expected_unordered_boundary_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  }
+}

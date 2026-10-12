@@ -1,0 +1,19 @@
+{
+  "returncode": 0,
+  "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"event_error\":\"The \\u0027Get-WinEvent\\u0027 command was found in the module \\u0027Microsoft.PowerShell.Diagnostics\\u0027, but the module could not be loaded. For more information, run \\u0027Import-Module Microsoft.PowerShell.Diagnostics\\u0027.\"}\r\n",
+  "stderr": "",
+  "timed_out": false,
+  "elapsed_seconds": 0.938,
+  "observation": {
+    "controllers": [
+      {
+        "Name": "AMD Radeon RX 9070 XT",
+        "DriverVersion": "32.0.31041.1004",
+        "DriverDate": "/Date(1786924800000)/",
+        "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+        "Status": "OK"
+      }
+    ],
+    "event_error": "The 'Get-WinEvent' command was found in the module 'Microsoft.PowerShell.Diagnostics', but the module could not be loaded. For more information, run 'Import-Module Microsoft.PowerShell.Diagnostics'."
+  }
+}

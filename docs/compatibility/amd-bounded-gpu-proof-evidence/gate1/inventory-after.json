@@ -1,0 +1,2766 @@
+{
+  "modly": {
+    "pyvenv_cfg": "home = C:\\Users\\wattz\\AppData\\Local\\Programs\\Modly\\resources\\python-embed\ninclude-system-site-packages = false\nversion = 3.11.9\nexecutable = C:\\Users\\wattz\\Documents\\Modly\\dependencies\\venv\\Scripts\\python.exe\ncommand = C:\\Users\\wattz\\Documents\\Modly\\dependencies\\venv\\Scripts\\python.exe -m venv C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\n",
+    "packages": {
+      "accelerate": {
+        "version": "1.15.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (78.1.1)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "cumesh": {
+        "version": "0.0.1+cu126torch2.11",
+        "wheel": "Wheel-Version: 1.0\nGenerator: bdist_wheel (0.46.3)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "flex-gemm": {
+        "version": "1.0.0+cu126torch2.11",
+        "wheel": "Wheel-Version: 1.0\nGenerator: bdist_wheel (0.46.3)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "gguf": {
+        "version": "0.19.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: poetry-core 2.4.0\nRoot-Is-Purelib: true\nTag: py3-none-any\n"
+      },
+      "numpy": {
+        "version": "2.4.4",
+        "wheel": "Wheel-Version: 1.0\nGenerator: meson\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64"
+      },
+      "nvdiffrast": {
+        "version": "0.4.0+cu126torch2.11",
+        "wheel": "Wheel-Version: 1.0\nGenerator: bdist_wheel (0.46.3)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "o-voxel": {
+        "version": "0.0.1+cu126torch2.11",
+        "wheel": "Wheel-Version: 1.0\nGenerator: bdist_wheel (0.46.3)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "pillow": {
+        "version": "12.2.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.1)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "rocm": {
+        "version": "7.14.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (81.0.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "safetensors": {
+        "version": "0.8.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: maturin (1.13.3)\nRoot-Is-Purelib: false\nTag: cp310-abi3-win_amd64\n"
+      },
+      "sdnq": {
+        "version": "0.2.8",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "torch": {
+        "version": "2.11.0+rocm7.14.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (79.0.1)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "torchvision": {
+        "version": "0.26.0+rocm7.14.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (79.0.1)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "transformers": {
+        "version": "5.2.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "triton-windows": {
+        "version": "3.6.0.post26",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.1)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      }
+    },
+    "binaries": [
+      {
+        "path": "cumesh\\_C.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "cudart64_12.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "VCRUNTIME140_1.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll"
+        ],
+        "sha256": "5b38e7ab66e212281adba4ad71d864d5121017e0a2e7408d8bb24e0a41284587"
+      },
+      {
+        "path": "cumesh\\_cubvh.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "cudart64_12.dll",
+          "c10_cuda.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "VCRUNTIME140_1.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll"
+        ],
+        "sha256": "747437a22ee109c85f29bdb50a8821770d662987a65e469b3cfa1acb75d8379c"
+      },
+      {
+        "path": "cumesh\\_cumesh_xatlas.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140_1.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-utility-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll"
+        ],
+        "sha256": "eb1084194f26df7c4090ea8d05b815eb48c6260fb9edc6ba7143caee970094e0"
+      },
+      {
+        "path": "flex_gemm\\kernels\\cuda.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "cudart64_12.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140_1.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll"
+        ],
+        "sha256": "cd727c7c4df6eaca6997bc2b50d6a3096752b8c14a2b889b0a057ec6a0fe162e"
+      },
+      {
+        "path": "o_voxel\\_C.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "cudart64_12.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140_1.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-time-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll"
+        ],
+        "sha256": "9c80daaf9ec5240bc43c83587d570b69f2ed9f9c7d4d873ff5ecb1f1ab8ad02f"
+      },
+      {
+        "path": "_nvdiffrast_c.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "cudart64_12.dll",
+          "c10_cuda.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140_1.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll"
+        ],
+        "sha256": "cf3cb83479ad064e7127b2f77264b94e54a5956fae2358c16a57631fe440b7da"
+      }
+    ],
+    "all_distributions": [
+      {
+        "name": "accelerate",
+        "version": "1.15.0",
+        "metadata_sha256": "64e744885238d853870093f1d4526eb93ac6ae8a5420a2b3f864fe5d16189d37",
+        "record_sha256": "47418cd33991020e07f065ec49ca9f5d1d6e264870506e056c2806160e388a40"
+      },
+      {
+        "name": "amd-torch-device-gfx12-0",
+        "version": "2.11.0+rocm7.14.0",
+        "metadata_sha256": "2af94992b8dcdda1aefdc16c5a27e728af96a84cd20c398b58a55ca03e9c4391",
+        "record_sha256": "1ad524e4c8e2464ade87229a46392d2d7029e332fa8d41fdf6e5e18c0f5dc0d2"
+      },
+      {
+        "name": "amd-torch-device-gfx1201",
+        "version": "2.11.0+rocm7.14.0",
+        "metadata_sha256": "40aafa539dd63bc16be39e03661828de72b261ec18ea65626bae81ea69c92e77",
+        "record_sha256": "0750e54fab5426bdb4d85e22422d762b90da90322a62a26e7219f80dd685972a"
+      },
+      {
+        "name": "amd-torchvision-device-gfx1201",
+        "version": "0.26.0+rocm7.14.0",
+        "metadata_sha256": "b3c439bc323f031fd24a3fb521d83786b26021438e66bc964b1a8419ba2ff5bb",
+        "record_sha256": "d8334e23197ceb6dc4e53bf99ce510c24d1f85e189a99a91d6c38fc82502240c"
+      },
+      {
+        "name": "annotated-doc",
+        "version": "0.0.5",
+        "metadata_sha256": "8c24d70c5d9153d22123353a906042fd7603df2d15c2196290b0f8a962558c46",
+        "record_sha256": "c23cefbbe660c4100d26a7cbcaa1fcef9941fc23d4a51395eb8e19be3bd3543d"
+      },
+      {
+        "name": "annotated-types",
+        "version": "0.8.0",
+        "metadata_sha256": "614985b278f601b8ef863f82783b991cc3ada4b89f592eb71c7c48c5f2ef2298",
+        "record_sha256": "8aca43183e620f57ed3b240da554dedf6cf840e43aa2789f63cff7a8396561bb"
+      },
+      {
+        "name": "anyio",
+        "version": "4.15.1",
+        "metadata_sha256": "043aecb571af7189e8a6c528f5d8e32545f1b2cdfaaf761d51e6d5b67ea3ca81",
+        "record_sha256": "bf283795dfdd8f15d592bc15c7788515eeb095df665dc0edd24eb9eac074be96"
+      },
+      {
+        "name": "asttokens",
+        "version": "3.0.2",
+        "metadata_sha256": "8b3567b29654e6e9a60ab50fde2c317899152790acadaab7868a708bf931c3d3",
+        "record_sha256": "f2c065795b7a790b3d9efa4749bc78898ac85a7ede01ae0f99f42d3b54dc34d0"
+      },
+      {
+        "name": "attrs",
+        "version": "26.1.0",
+        "metadata_sha256": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc",
+        "record_sha256": "bd56b0a44556594a01dc2fae804b1cefe21d37943ba7e2f622dde22c0709def2"
+      },
+      {
+        "name": "blinker",
+        "version": "1.9.0",
+        "metadata_sha256": "b8846233cc238db1e40ad6c2c93bdcb54dfb200664d2411ee64c4095dd5dbf30",
+        "record_sha256": "f43390a8ebd4434c5056d5d87872364a824f354f1fd1117507bcc5fa59cc49b5"
+      },
+      {
+        "name": "certifi",
+        "version": "2026.7.22",
+        "metadata_sha256": "ef5af1638fbb23676ac3c5777dfcfc2cd9c348fe4172ed5ba3d277655b248090",
+        "record_sha256": "fdbf883b39f922b31def6bd3a2a49927d0ef77702487b0047bc1498f777bcb18"
+      },
+      {
+        "name": "charset-normalizer",
+        "version": "3.5.2",
+        "metadata_sha256": "89ce6362bb7be88558f4be99a98f5d1b4da93d19cd0323e5ee0bac05cf883dfb",
+        "record_sha256": "43d78e9b27000230c3bdc9fbd294df0629aab8e56d825cdbd5fb0c05cbb3217c"
+      },
+      {
+        "name": "click",
+        "version": "8.5.0",
+        "metadata_sha256": "e87bce0bd194de70dfb8e708e0a6b0483009f25611804eaf87bfeb63e6c20501",
+        "record_sha256": "ac19a8b841223b6ed0635bf398577fc1432942333212975d2a36d3886850aaa5"
+      },
+      {
+        "name": "colorama",
+        "version": "0.4.6",
+        "metadata_sha256": "7baed29eb50c3b29bdb33ff84e3177bf1bc05784f7685ecdcaa4471c7dd810cc",
+        "record_sha256": "2ae3762039c35c23e4829bab30f8e768eced773ecac67d026223caabfbd493f4"
+      },
+      {
+        "name": "comm",
+        "version": "0.2.3",
+        "metadata_sha256": "e475291f8fdedbecbbfd788a2c5de9c912424d23574aba7b9fc51985d7158878",
+        "record_sha256": "857135f6f98fff9aaba8d2e9e7d460e34c4137ed5d40a08e2765594bef4c0833"
+      },
+      {
+        "name": "ConfigArgParse",
+        "version": "1.8.0",
+        "metadata_sha256": "07ed01032dc649e34968fb8a23f9b4b07cdc910dbbdda7b1b2d155e3c3060b94",
+        "record_sha256": "856ccb4602cdb090b3a60f562edfb29a75ad1179d3e3fc1504806ef7e98869dc"
+      },
+      {
+        "name": "cumesh",
+        "version": "0.0.1+cu126torch2.11",
+        "metadata_sha256": "b515aa745ff83f2d67c9baa4f98fdf6c9b86dc24e4ac44f5ccb3dc76f18e60d4",
+        "record_sha256": "1bf215a6c8c1b4f5f7fa7e98c9985a1c296b055653633a5d1eff25dd7538c1d1"
+      },
+      {
+        "name": "dash",
+        "version": "4.4.1",
+        "metadata_sha256": "eca7a6c3f2be7cab292f5e42208bb88c4dcf35deeea6a5c1c027e78650b4d576",
+        "record_sha256": "c8a8e1f9dce0fc2cc3c73e59a676d3ac8fb2d30dde00a081044041ff6732b17b"
+      },
+      {
+        "name": "diffusers",
+        "version": "0.41.0",
+        "metadata_sha256": "78da1dc27a88fb4cf9964b3f7fca18aa4b77ab035edbd7e2044cc5158dc2ebfd",
+        "record_sha256": "173f7af41f9fc913b9a610519695ba60645092820270ea2a338bad1a5387b605"
+      },
+      {
+        "name": "easydict",
+        "version": "1.13",
+        "metadata_sha256": "60fae9c1fdf48a3cc9001b20e83fa05488236559a740f87f1a0801da26da9416",
+        "record_sha256": "b15dc422d1003c34b64b372cf63e01e6b15c8ee489bfda85d6acca666d5c062a"
+      },
+      {
+        "name": "einops",
+        "version": "0.8.2",
+        "metadata_sha256": "0bd65db043688a44f4a29608c1cba521c932f7ff76f238bbd869441e15012653",
+        "record_sha256": "266166aa1b8e0b0ace69186867c6baf9b69d0322dfa01a2d4ec36ca7b3ae0912"
+      },
+      {
+        "name": "executing",
+        "version": "2.3.0",
+        "metadata_sha256": "d619489e8b06a0bcd934e4dae17fe86bd651b2aea0b3a4d2964221fd66c55db0",
+        "record_sha256": "c80a984ddf540344919d9aa49a1807faae7777efa758cd6d59ea9231f8ea92f9"
+      },
+      {
+        "name": "fastjsonschema",
+        "version": "2.22.2",
+        "metadata_sha256": "fb4512dbb43517f2c8cbca21b3052bf74b2113ba67df8eb7eb9b53d8349aebbb",
+        "record_sha256": "a1a4bffa8eb4fbddd24e90feb35eb5ce0286843c983395a4df8f3ebf9fc60676"
+      },
+      {
+        "name": "filelock",
+        "version": "3.29.1",
+        "metadata_sha256": "a77fc98e18651c6adc6b535bc687ed89e239694433b9860f0daccccd05817583",
+        "record_sha256": "8230b38b0a405da4c1909ed96d58d7908d1325a5b323c13fd8e2fb7a2c27e972"
+      },
+      {
+        "name": "Flask",
+        "version": "3.1.3",
+        "metadata_sha256": "aa6760ed6f545704474d70733e4a63a7f1481e376973edc896a13d02a7224c7c",
+        "record_sha256": "336e94bb158762a3587f17692ff4be770cb4e55d1e6e9fb3d0e04a723c3fcb36"
+      },
+      {
+        "name": "flatbuffers",
+        "version": "25.12.19",
+        "metadata_sha256": "9f38239f96faa21522a6aadab6912e1e560708bbe9c9f696a0679c9403fa089e",
+        "record_sha256": "b2bd0db32fcfb40b25715185face9a09cbd76c17dd0374e45ea426d9c5dd7555"
+      },
+      {
+        "name": "flex-gemm",
+        "version": "1.0.0+cu126torch2.11",
+        "metadata_sha256": "fd805215fd0009a109b1185e64c747bb51426b82ed86f63cd42926a5cc7b85a8",
+        "record_sha256": "deaf73a600c36b4b0026083465dc57cfb835ba058d16afaffc49b0517f5d645e"
+      },
+      {
+        "name": "fsspec",
+        "version": "2026.4.0",
+        "metadata_sha256": "8f49c4404b507182ac953dfd4551641df0bf36ccf67e08ac8a68cce323bf1d4c",
+        "record_sha256": "59acddc441a8f12b087ab984db8097edf7894ac9cf07836cf527e5e9d5e044bc"
+      },
+      {
+        "name": "gguf",
+        "version": "0.19.0",
+        "metadata_sha256": "c6ed6e4d4dbb4b46f32855b4189599c568d5617a012345aa9249b3acf7204a03",
+        "record_sha256": "696b942672ceb68825b4b5de4dfe0708ea9cd8949b700f6bb1fdc3b8c1dabd1e"
+      },
+      {
+        "name": "h11",
+        "version": "0.16.0",
+        "metadata_sha256": "28f326098ac09fcba79b8f180f96087c841fe2456215cb7b872a9c7d5cd19d64",
+        "record_sha256": "393c249c97166fed45d8a448190cc41603f56a08f76f1ee42db3a920a55468b1"
+      },
+      {
+        "name": "hf-xet",
+        "version": "1.7.0",
+        "metadata_sha256": "05975b1239f188bb418539f178ef68a693ea6824f20c30583a02eea94faf650a",
+        "record_sha256": "8d8686a73db5957aa8afd5910e6535dd6319991aa695176544eb809f4d58a24d"
+      },
+      {
+        "name": "httpcore",
+        "version": "1.0.9",
+        "metadata_sha256": "fe2d4fda6199128978779e0cf27f3c045c531863fcdd987eacc74f3a18d41c21",
+        "record_sha256": "f52dd9f37c958133cde008e0e648d6149daa1f90a755a2fe36081eecb743e6a7"
+      },
+      {
+        "name": "httpx",
+        "version": "0.28.1",
+        "metadata_sha256": "febb9b0f8f3e80d57c8199c304f35c4336e8581d1d18d7983c92766b82793b25",
+        "record_sha256": "e46cfc5b5d2f9eaa6a472de68eba918ba41847a3ae00b46e0a72e22c6d5aac20"
+      },
+      {
+        "name": "huggingface_hub",
+        "version": "1.33.0",
+        "metadata_sha256": "bee565776d66f486d224f74024b656a69ed42e2639d80b18811fca4365adc42e",
+        "record_sha256": "5e5f8a751870338ff5502affe007c404d0789453d9dd33a4b9752484006cebd0"
+      },
+      {
+        "name": "idna",
+        "version": "3.20",
+        "metadata_sha256": "dbd8c14c1e4ca1e0c9824a6dbc7cbbf78884f38eb52d91148cd3025f671e4b85",
+        "record_sha256": "6ce6e93d9a622d86fdc64e128cd69f7f1de748b9e1e8387f2ab579b409a4235c"
+      },
+      {
+        "name": "ImageIO",
+        "version": "2.38.1",
+        "metadata_sha256": "e9deed83256f2274789c723ac125d72a378f4edb633b91fca92a98972e6890e9",
+        "record_sha256": "a292896d0352e71ef3bd16aa517c26864c1a99a1b2c61c33bde022e36a175fd8"
+      },
+      {
+        "name": "importlib_metadata",
+        "version": "9.0.1",
+        "metadata_sha256": "1a90ba399de022d3528ad996c7a8593422207ccb13d27f062ad005f509e11500",
+        "record_sha256": "84da0a6ebd154edf3bcbfeda43368f8e152650566ab29525785c1cf7f242b969"
+      },
+      {
+        "name": "ipython",
+        "version": "9.17.1",
+        "metadata_sha256": "e78cb2a71fde4012b32de9b2db8d3c50ba618a1bb1975acc1bf107453365a1be",
+        "record_sha256": "46e8ca8d42a876402e4f0625a351eade280fc24c95e8f15ba687660a29250542"
+      },
+      {
+        "name": "ipython_pygments_lexers",
+        "version": "1.1.1",
+        "metadata_sha256": "6b38c0946bdbc4778f4e38e2298547cbd7d13aeba9979ec4e4a412eabfbdfadb",
+        "record_sha256": "c82cf6ad58287d4a50b59b6b5d138a3253a794868d84b1089b1ea87c5e3a1478"
+      },
+      {
+        "name": "ipywidgets",
+        "version": "8.1.9",
+        "metadata_sha256": "aea2814e0dd68918a6e4a38c37faf17981525636a8a8ef023f0481e93cb8b8a7",
+        "record_sha256": "a1a7cc3e6392e4d369c668ce9bbc588854b6a8706ac620e32e3adf209bbb63f4"
+      },
+      {
+        "name": "itsdangerous",
+        "version": "2.2.0",
+        "metadata_sha256": "d2b934fb56708a1b94e439f0255c0f5a8108e3258ec827b18a1dc9c991db9611",
+        "record_sha256": "f2ff166328e0acb3413f7e3d5517365237950a4c353655c18ea2a296c0f4d505"
+      },
+      {
+        "name": "janus",
+        "version": "2.0.0",
+        "metadata_sha256": "96db225db8fa38bfb90cb35d39e8a40b86b2046049e3055f9956ff304ba90b0d",
+        "record_sha256": "c87c5166d4c859b74e6e9771e66528f75481e3308f4a35557c95df7f9a2d12d6"
+      },
+      {
+        "name": "jedi",
+        "version": "0.20.0",
+        "metadata_sha256": "436bd0fb249b82dee15e85e2fb91d08d8e797481a16af48a725b8e4fb5340478",
+        "record_sha256": "60f281d9dd027d55da342ac60d59042890afc0e4bd5beb8e8b753822282fa149"
+      },
+      {
+        "name": "Jinja2",
+        "version": "3.1.6",
+        "metadata_sha256": "68c5548fb67c4132a13898d9b31ec50c6bea2abdd915d921f214355c3a6499c8",
+        "record_sha256": "91151bad4737abfc252611c853e57e3d14dc7e64151a2dd0949766ad33886c22"
+      },
+      {
+        "name": "jsonschema",
+        "version": "4.26.0",
+        "metadata_sha256": "05b189866ca98a96da3934bf6b83687ced3ff85325273b77e16b705f6d8b26d2",
+        "record_sha256": "69609c9f848971649a6332775a9e7f56b4537ec7f76ea966bd8f77537bfa204f"
+      },
+      {
+        "name": "jsonschema-specifications",
+        "version": "2025.9.1",
+        "metadata_sha256": "35abd41757f32b4ea24756920ded47b70173d77cbc052a5a6d3ab583b2e8d89d",
+        "record_sha256": "a9628ff8294efc8a627c0ca5d4d38500d8609ef893a73a554c164e12bd0c1243"
+      },
+      {
+        "name": "jupyter_core",
+        "version": "5.9.1",
+        "metadata_sha256": "68a656d7e2ebe45d40becf6032998192790d8a7536942f72167d79b8559e5ded",
+        "record_sha256": "1db6945b409c9b6d3c628424ae67506ff34d06c5c71c356b87a6515a60ecd33a"
+      },
+      {
+        "name": "jupyterlab_widgets",
+        "version": "3.0.17",
+        "metadata_sha256": "4afc9ec69f8ecf916f2620116b0906efccda8e29a2f1940bedd8632237fadcac",
+        "record_sha256": "3b065b7f0d024b91f1360b2e18e5cb5e54961262fd22af125f1de2bb03fdf565"
+      },
+      {
+        "name": "lazy-loader",
+        "version": "0.6",
+        "metadata_sha256": "9cd369edae6bf499af0c1acee15d0389361036907742690ac504f9b3b84d56b3",
+        "record_sha256": "b42a5f1cfc47020c85e39c545d873e4db9163aea493b3b6118993e092c2eaddd"
+      },
+      {
+        "name": "llvmlite",
+        "version": "0.50.0",
+        "metadata_sha256": "c99f2d570787fc9efce67467c65e91b0893971ac759543ca172ec454503b77c3",
+        "record_sha256": "28374eac2ac3111e5a36da177b63799868f68c90b5f77defde49e05afc0e2e45"
+      },
+      {
+        "name": "markdown-it-py",
+        "version": "4.2.0",
+        "metadata_sha256": "72c36ff516755443b1ecb61e17b2567a990230b49a504b0eb0c42d5f82448a9c",
+        "record_sha256": "8f49a90075e5691a50bd032bd07651b868ba272f0140b1a6437774d7d0edd3c1"
+      },
+      {
+        "name": "MarkupSafe",
+        "version": "3.0.3",
+        "metadata_sha256": "12b4cc61a7fa288cf7667ee3f213786d9619db57fb33ff6f934afbcb5c12ec81",
+        "record_sha256": "f33381aa18a072ad47196b969cf47c80353d881974940731aa22703afa9a6e88"
+      },
+      {
+        "name": "matplotlib-inline",
+        "version": "0.2.2",
+        "metadata_sha256": "fedb3d587ec2d3fa4b0a81fd5353df697d2534c8ee714dbf050009afc60bcab7",
+        "record_sha256": "6e8ae6543f5867325f6eecb99be1482464311d8dad3e6d0d4210b74112eb9452"
+      },
+      {
+        "name": "mdurl",
+        "version": "0.1.2",
+        "metadata_sha256": "b53b29d48f499367053fda3c81e7ce27d2558380ebbf83e66023b02eb7ddd25d",
+        "record_sha256": "bda7c4854c66cd4daedddb5347837eb7b362119e7714b45263576d5924221c71"
+      },
+      {
+        "name": "meshlib",
+        "version": "3.1.4.297",
+        "metadata_sha256": "027966467a20499b3b5c3c7926161c880da0cff14f51c1d4c19ede5286eae58b",
+        "record_sha256": "86a4e98f01b78d54ee00809bbcf1c6688b2b449aa6c5ec2d4bdec9fe6ee68c78"
+      },
+      {
+        "name": "meshlib-core",
+        "version": "3.1.4.297",
+        "metadata_sha256": "20a4c66c188c00fa926822a08780363780910bc7525658100e8428f84c66c733",
+        "record_sha256": "e9db7e81d4ad36cf3ac61bc57886284d029111995236dcdfc45ed0dc45028b51"
+      },
+      {
+        "name": "mpmath",
+        "version": "1.3.0",
+        "metadata_sha256": "44b66ea444b9c0d19ae94815d356bf047ae6b680c19268b5c265687cd6a81406",
+        "record_sha256": "8052e4c7314cdcbc6c50183c546a342e58a1a9e4589d1354d31a4ef3a705c395"
+      },
+      {
+        "name": "msvc_runtime",
+        "version": "14.44.35112",
+        "metadata_sha256": "da84eaadfc3ee50bc9fd3eaf35bc34698fa2295cc843df559689c94cc98b117d",
+        "record_sha256": "804dc47bf5bc77cebcec053cc5bd3e356c917f9edb144dc41f3ab3e6f1edb314"
+      },
+      {
+        "name": "narwhals",
+        "version": "2.27.1",
+        "metadata_sha256": "5962ef236f36fe34aff21a837a0698386dcb1f0de54462aa18b73698e6ef1a4f",
+        "record_sha256": "22a17cc07eec117ef4a42517724d16754c9ddd1e2c2b80691e5cae52ca29dbe5"
+      },
+      {
+        "name": "nbformat",
+        "version": "5.11.1",
+        "metadata_sha256": "6a25a2f961025655ed80a66f794ac6b8ded4e4ea4c0600ad1801876c0bec6c74",
+        "record_sha256": "64442cf09104795c4d1c02d1b617652e570c8a303c517051c425c42f20d2f145"
+      },
+      {
+        "name": "nest-asyncio",
+        "version": "1.6.0",
+        "metadata_sha256": "7f7b98f9e1a28a9597d70df9158175a22d05446ce4b328908d920e7293d35bd2",
+        "record_sha256": "7c20af806240c2845cb43d5927cca6359cde6709a27fbeac0fab788fe2c98ab4"
+      },
+      {
+        "name": "networkx",
+        "version": "3.6.1",
+        "metadata_sha256": "aca5d94a97d1f70f301d033addb635f6e66be8973a00aba4127637eed2ef316a",
+        "record_sha256": "49f886bed4a792d468907152977bc6f3ce2f2cca84732c927f3df057be2f5657"
+      },
+      {
+        "name": "numba",
+        "version": "0.68.0",
+        "metadata_sha256": "b3bbd7c095b9d0b410d778176e2824ea5be21e982e63e8d4fc7c8fdb82f98df7",
+        "record_sha256": "2706edf04d698a2b74cf5860204a820144685eba4003fac6ad1c4fa4be278236"
+      },
+      {
+        "name": "numpy",
+        "version": "2.4.4",
+        "metadata_sha256": "8f9e04338ffa930868a2d157ce44f6e4cb7ac524b968fb13d04187a6ac575282",
+        "record_sha256": "4e9893b296cd59cc7758f3d702d4b10a35071658b2e532307314cf625bdc6eb2"
+      },
+      {
+        "name": "nvdiffrast",
+        "version": "0.4.0+cu126torch2.11",
+        "metadata_sha256": "c1ead1799a6fb82d2e5d0f520ecc91bab00f718745171e1141db566352c22894",
+        "record_sha256": "e001c6c2e9a0b3c4edbbf156701c0f0c39f47b586a3bb08f5ce73674c373cdc8"
+      },
+      {
+        "name": "o-voxel",
+        "version": "0.0.1+cu126torch2.11",
+        "metadata_sha256": "65948a43dfcd283a3d56a630a45287f9532abfeca54bee8bc984785423e0cb7c",
+        "record_sha256": "dff9c29b8015038ab08c31bd67de2301acb4e3bef108b7130ecef454434649cf"
+      },
+      {
+        "name": "onnxruntime",
+        "version": "1.31.0",
+        "metadata_sha256": "49d642d98f88dc138508e87888dea36d54ea9a3cd2865ed0a97ce599a9d39428",
+        "record_sha256": "1846248de36505b5a42d9806dfc895a2cbd01925d8728c8feddf37e887694e4b"
+      },
+      {
+        "name": "open3d",
+        "version": "0.20.0",
+        "metadata_sha256": "e88c32afeca1c4707cef38c4f94aa2fe91d09b9ac448a190be3d076e489a5901",
+        "record_sha256": "2728708a39f05e22e1a0e5750e3c26ad42ffca3ae594e13b53d0707f7488a40e"
+      },
+      {
+        "name": "opencv-python-headless",
+        "version": "5.0.0.93",
+        "metadata_sha256": "f8e9104b4dce58f708d4cc7af95ebd8a5d65a3e36209d42386eb61065ae50e1a",
+        "record_sha256": "ea5197205a89ba1e4122959755bc285b68a28af2eafe59720349eca579e5bc61"
+      },
+      {
+        "name": "packaging",
+        "version": "26.3",
+        "metadata_sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763",
+        "record_sha256": "194236f63fa503ef6bc832807d7f1a28f6b8c645a208880d557244ef4941adbc"
+      },
+      {
+        "name": "parso",
+        "version": "0.8.7",
+        "metadata_sha256": "2fd8c9f8209218163a6c086ba8075d177122430645fea770cc02c53cd426119d",
+        "record_sha256": "b0fcbdb670c12ab012442a4e69ce94291a5a796e085f70813f581dbbc67d4002"
+      },
+      {
+        "name": "pillow",
+        "version": "12.2.0",
+        "metadata_sha256": "f921b97ad0d1c94e6e0fe84ac579c998f2c285a8b35f7f934d3fa0c2657e65ab",
+        "record_sha256": "8c794dadaf1c4221e959b9892be733479b756fb331f3203288b128d5360f899a"
+      },
+      {
+        "name": "pip",
+        "version": "24.0",
+        "metadata_sha256": "90d11f277fd5868da679ee257c97656dde511c8aac7d025231407e6ce90839e2",
+        "record_sha256": "314c740af8b87eedbf4ba84d9041edf02028c04afd394ca47e51198d37391543"
+      },
+      {
+        "name": "platformdirs",
+        "version": "4.13.0",
+        "metadata_sha256": "b41f474d5fb53a7de4a4a79c08f13c3a8cc675fe2c5522be8ce1b063e695dc7d",
+        "record_sha256": "84800f796c3549ff38b18834ca6d0355b15996dc43370c79ac97bab5e172fbc0"
+      },
+      {
+        "name": "plotly",
+        "version": "7.1.0",
+        "metadata_sha256": "06b5359b97e92b0cf267237e7ec1b51fe531b6744d83810f2fb543e743687e1e",
+        "record_sha256": "b37517416871db85d2525f1bf71da34afcdd9e931efbecb5d78c858b4d93dde4"
+      },
+      {
+        "name": "plyfile",
+        "version": "1.1.5",
+        "metadata_sha256": "778f0616fc9f65fcadd4bbadca1248e8aaa597a37181a6b4ac932225f44dede8",
+        "record_sha256": "7d1cd292e84727af57d3b0cf1729106f61f406a8350dad3d78a0b2deadbcaf27"
+      },
+      {
+        "name": "pooch",
+        "version": "1.9.0",
+        "metadata_sha256": "7a67b1fba8575748276b1abee0db0d0c7d673d1f4f8f404699e949f1359da962",
+        "record_sha256": "f5ff5debc733aa81c56ab2709ecd5dac460cf573452a8c65a01b0c4ce2218910"
+      },
+      {
+        "name": "prompt_toolkit",
+        "version": "3.0.53",
+        "metadata_sha256": "d04994e4401b88abf884ca54fb3b85e50a8b4fb1fde1ed7eb3ece9d8bf5459a9",
+        "record_sha256": "7ed142430e0c5a0634a803f43eee73ee3e358a0436864a12b451a92db43d0227"
+      },
+      {
+        "name": "protobuf",
+        "version": "7.36.2",
+        "metadata_sha256": "445916389cc3a87d5f815d763192372a17a221339d474cb661523157bf07d61c",
+        "record_sha256": "e379d5857879273c36c745c7b4e498f4cd05432fd38bf58d3826d9d5f631a61e"
+      },
+      {
+        "name": "psutil",
+        "version": "7.2.2",
+        "metadata_sha256": "525f8ba78523cf7bc3759d62a105e7c57fd679ea702402b9449fb0746aa0217f",
+        "record_sha256": "7fc69096b054386a3f11e3b8223a4cdfeecfcfc32bfe2d028b80a2a87ac40383"
+      },
+      {
+        "name": "pure_eval",
+        "version": "0.2.4",
+        "metadata_sha256": "4fe70f69411b9963d7275084210743afa819c2350899a29150bc43b1abf105d0",
+        "record_sha256": "81c5863ca8865002311979698447a04fcbd22b9c14b830501ebb81f9162cfe5a"
+      },
+      {
+        "name": "pydantic",
+        "version": "2.14.1",
+        "metadata_sha256": "4d4c8e8d5e6a27d5208f0d7949f25628e6747133034969d4d1399b1ad5394036",
+        "record_sha256": "2421bcb0567acb3884930f542445cbee775f89ac5c3e314cf0b7551053932219"
+      },
+      {
+        "name": "pydantic_core",
+        "version": "2.50.1",
+        "metadata_sha256": "ae6817764b603fa2300cd31b9566ecc33476df46163c4150fffc353121a166f2",
+        "record_sha256": "1593687bc39fa97d2a4065869a51d85bd7f3eea1e94532a099305bfb5d0400a7"
+      },
+      {
+        "name": "Pygments",
+        "version": "2.21.0",
+        "metadata_sha256": "1dde075570136774c706bf0009183a793fe0ee262e4a5590cc6eff8453eedd43",
+        "record_sha256": "89f1a85e488473302304dd643077f86fe8a5b1774bc161372f077e8c64eb6549"
+      },
+      {
+        "name": "PyMatting",
+        "version": "1.1.16",
+        "metadata_sha256": "c35ef02286b98f2bb6e5b00b95271bfc3a1c480875c2281f11787eaaa8a864b3",
+        "record_sha256": "276e453f30eb6670f49ed39e493fff20b3ce060ba09522d5aee9493c6107b630"
+      },
+      {
+        "name": "pymeshlab",
+        "version": "2025.7.post1",
+        "metadata_sha256": "2db2f73664b1bc0e0b5afe0f386b864545ff2e543f1f0f50a294abcc6e828b4a",
+        "record_sha256": "7009c53748014caa3d8e71a69077a6a6fcf2017edc387ec76ec854298c9964b8"
+      },
+      {
+        "name": "PyYAML",
+        "version": "6.0.3",
+        "metadata_sha256": "03c3b415ed38d09faedc49360e930769b40c58f68585e6de00e2e4916a858d34",
+        "record_sha256": "aed619f37ca8c92e55fb193f9dcbd50f5a15c71624017d0158ea6b6dc5976c17"
+      },
+      {
+        "name": "rectpack",
+        "version": "0.2.2",
+        "metadata_sha256": "228e0f9efd1d7595e05848a347c86e0f85c0ad03323c54f93d7602b5ff8cad55",
+        "record_sha256": "305fc772266447616f31347c59f216a1051df56e972ab7c954c7b724f243a32f"
+      },
+      {
+        "name": "referencing",
+        "version": "0.37.0",
+        "metadata_sha256": "c93b00e6ab1524fd60848376604c189a114374776475c25a31d57be47b29de6a",
+        "record_sha256": "dec74300561a47a0d28ec39371da5c952d4b0bb713aa6529694b6a6b52ec4060"
+      },
+      {
+        "name": "regex",
+        "version": "2026.9.29",
+        "metadata_sha256": "33859377dbf8dd38ee3de73fd97faebf4a63d50576e3cc1a9dfe44df08b0936a",
+        "record_sha256": "049053a7bd92a4a296449ec2e169b45f24bd5b237f34d35f1031c99e06819be6"
+      },
+      {
+        "name": "rembg",
+        "version": "2.0.85",
+        "metadata_sha256": "aec879a8361b6ff0abd48ec8ec3eccaca12dbf72738b6ce07dc84fc8fb5b26c1",
+        "record_sha256": "3f94c28a50cff3ca322720f7a5523386f57af17b78d254a3a17dfb4b5ddea071"
+      },
+      {
+        "name": "requests",
+        "version": "2.34.2",
+        "metadata_sha256": "8c384ba3e979480faae2859d3c5e6c1276dd2c3616e322e124d52c8cfc556f27",
+        "record_sha256": "db19a1ae1c3cad7a8e819b08b1cc61eed5827e75d0f43c91d91f914cd5e4b71a"
+      },
+      {
+        "name": "retrying",
+        "version": "1.4.2",
+        "metadata_sha256": "3818733f785dc97c92d784c2fe373d35fdab817fafb6b8a44ec49ff32d65b44b",
+        "record_sha256": "acfbcd77ba8f30f3f9f559c1a14ee0df7e9ec603a4fc8cab122efa199c99c1ec"
+      },
+      {
+        "name": "rich",
+        "version": "15.0.0",
+        "metadata_sha256": "fad34fc603fac4481bf81f8dd629492fc302c0ec31909c86644751512afb2e3b",
+        "record_sha256": "d1538647fc6920348d34b1fc523e8a9a5cd957b2d1cc3d3627528bf4af3eefb6"
+      },
+      {
+        "name": "rocm",
+        "version": "7.14.0",
+        "metadata_sha256": "8f64fa348757beb45f490a53f91f14fd3f5f1a5ba1f1965571cc3601b31aac5c",
+        "record_sha256": "764b168414230c0718afef845652933faf3bd2924944f39cae8bfed1246554e4"
+      },
+      {
+        "name": "rocm-bootstrap",
+        "version": "0.1.0",
+        "metadata_sha256": "f8769927fc2c2c50f00b2b943aa8527cfead319c409657825e188eb86b25afc6",
+        "record_sha256": "d68f017abb37ff60dfd5eb343a71a20613482cdb27cfd3b08f79a2d9d738b50c"
+      },
+      {
+        "name": "rocm-sdk-core",
+        "version": "7.14.0",
+        "metadata_sha256": "e7e5bfbe3d9ae6f7086fb748198d0e7a6dc38bb7a2ee4fc4e95f875423722d32",
+        "record_sha256": "c65a42883d0a4e2af38bf59f0683ea4009731f3f618d31e642d1bf4b4e355acd"
+      },
+      {
+        "name": "rocm-sdk-device-gfx1201",
+        "version": "7.14.0",
+        "metadata_sha256": "78bdc419fa1794538462c6b8dd4276a1d3643ed6bbddb76ebea52edefca95fa7",
+        "record_sha256": "f72070746ecdacf7cf04757422a87839f7b9cc13dce1edf636e188b257db64a0"
+      },
+      {
+        "name": "rocm-sdk-libraries",
+        "version": "7.14.0",
+        "metadata_sha256": "529b1856ac90797c4351843e919574f7fb333c7024b7c3abe5d9c2837a1dae77",
+        "record_sha256": "5f0ec84d17aa7c45edebddb0bf65a6729e153793aeb53e577a82c94e34b4a146"
+      },
+      {
+        "name": "rpds-py",
+        "version": "2026.9.1",
+        "metadata_sha256": "5d72dca2e387c8d2b4180b68ee87c15b64751e059100a6db58891ec9995445c3",
+        "record_sha256": "19351bda54e01f682c7a8d092c6a8f9a7c2aa8a00ca6a00d36b517acc3517462"
+      },
+      {
+        "name": "safetensors",
+        "version": "0.8.0",
+        "metadata_sha256": "645be7b8d55e91534f991d144dc9e279581ea8dbea1a8c5b0be14e529d01e345",
+        "record_sha256": "92d150610632418cad3a83129b67543b197deecd84af05684026f71be112f67d"
+      },
+      {
+        "name": "scikit-image",
+        "version": "0.26.0",
+        "metadata_sha256": "cf5dcb3e5b9a815b4327c02225afcd85edd56b90fbbddde5be944352a5986571",
+        "record_sha256": "054119d31c1d60bb1f26a17598fcad28d74d1e0f9ce85ce7343b2fcc825cc094"
+      },
+      {
+        "name": "scipy",
+        "version": "1.17.1",
+        "metadata_sha256": "3a61ac02d145c9ca53f53d3f6f58d09017727a317731d0af02909730d4403e32",
+        "record_sha256": "59cab1facb0cf128951251dff266ae5011305f34fa3328f01f613dfeb4bf928c"
+      },
+      {
+        "name": "sdnq",
+        "version": "0.2.8",
+        "metadata_sha256": "104eb3e9f75c017c29115a39d555f57ed5dc382c78b2f3c365c77dca8baa832c",
+        "record_sha256": "ae9cba965760acc4d73f211483cf520f1946c49bee6c180db8233f4e56111461"
+      },
+      {
+        "name": "setuptools",
+        "version": "65.5.0",
+        "metadata_sha256": "80c7a3b78ea0dff1f57855ee795e7d33842a0827aa1ef4ee17ec97172a80c892",
+        "record_sha256": "7cb487a46647dde6c36180af0bb59ca831ef95aed8da35e8f9cf68ae0d1c2d39"
+      },
+      {
+        "name": "shellingham",
+        "version": "1.5.4",
+        "metadata_sha256": "183d80220a37493262795739dd357cc5bb3f49bd390cc9198d5180e5451a07fa",
+        "record_sha256": "0fd5b8afec6a840c24e416a7e20396d8a0607ef08cad0c14488d3993388167a2"
+      },
+      {
+        "name": "stack-data",
+        "version": "0.6.3",
+        "metadata_sha256": "f28a66f2adde54e7031355e09a166e437bc0d023a31c10c973ac494288ca4c6f",
+        "record_sha256": "9d52616ad2f745f7e5df4f854103e7dd69c55cebe8a2861d48059ef1b2a969b2"
+      },
+      {
+        "name": "sympy",
+        "version": "1.14.0",
+        "metadata_sha256": "b756c2fbfd5be05ac5bdb0ebca61f55618f30f633ed92d88a5687429313a7595",
+        "record_sha256": "197cf0a687865a4a54fbfbcd3fae90de1fa64cfa871b6dd4218f565cdf6167cd"
+      },
+      {
+        "name": "tifffile",
+        "version": "2026.3.3",
+        "metadata_sha256": "3327e3ef73bddd1d3ca51c2bf58f1b5044715fb642058538beaa84ddafa516fa",
+        "record_sha256": "b13896d15a97ba106342d4b216a84b44bbf341c524db96c35c4bba46e7b1fea5"
+      },
+      {
+        "name": "tokenizers",
+        "version": "0.22.2",
+        "metadata_sha256": "15a5ddaf489f592b77e0a934c0eeb46b51130a94064ca129232afdb0a3868efc",
+        "record_sha256": "b83af6099bdb8d35ac3bb8282e60a2b4af05f51de5a974949cc377af898863d5"
+      },
+      {
+        "name": "torch",
+        "version": "2.11.0+rocm7.14.0",
+        "metadata_sha256": "8209b470ee37258fbf35930fef65d4f0e4658a88abd2bc785d9424b6fd582b9a",
+        "record_sha256": "eb4cb55c2d35b6c97f6df047d7072d071b6de5f88e87c2d21af47a62cabe7c40"
+      },
+      {
+        "name": "torchvision",
+        "version": "0.26.0+rocm7.14.0",
+        "metadata_sha256": "3e839411f00ee0f07a86d594a91d68663e410a5149d01b6998d7f7e74988c68b",
+        "record_sha256": "c305369c76d79210d1391f3c4fbbdbd321a25afdebe7797898a62ffe09b5b994"
+      },
+      {
+        "name": "tqdm",
+        "version": "4.70.1",
+        "metadata_sha256": "a5da70b966afea3a759716041bad7187f2ece02c22348cf9e7c0a512bbf15f57",
+        "record_sha256": "71700f133200915107ce835173d498c7cc66de0b000bea279cf5f1ce4ae2a7a8"
+      },
+      {
+        "name": "traitlets",
+        "version": "5.16.1",
+        "metadata_sha256": "e42b503240c058625ffb30c390818d72933117840cb25060614cb24f0be9e587",
+        "record_sha256": "5f60746bd43c84b88498fb44723e995fb3a01528b2744c33101a7c0a666380df"
+      },
+      {
+        "name": "transformers",
+        "version": "5.2.0",
+        "metadata_sha256": "4340d0f550bf77d6595e4efafe066cd88306307577701df8e558ad620551c65f",
+        "record_sha256": "dcb058f0caf6397611678932da6834acc2093f2aba7b5bacf53bd48a99d88d2d"
+      },
+      {
+        "name": "trimesh",
+        "version": "5.1.1",
+        "metadata_sha256": "83ff5dabdef64a3ee82e560f419c06c7d5d40704e3cefe1807ea136db79b01b7",
+        "record_sha256": "f6258803c3fed1cd708edb8964f9d992c8d3a616603de5fd58afa4e5d8abb306"
+      },
+      {
+        "name": "triton-windows",
+        "version": "3.6.0.post26",
+        "metadata_sha256": "c07b839c3813053b9d92aac14629d7dc9445cf6f169bcdcac1b2cb1452a2aed0",
+        "record_sha256": "1f9da587558c3a13a679c8ad0cab20923118f06abefe0b3f1d9c53a59c382b2e"
+      },
+      {
+        "name": "typer",
+        "version": "0.27.3",
+        "metadata_sha256": "fc2cbb86c4fd175326b63427e9a3fa13e79364d7333a945414d9c6ac80c0f0e4",
+        "record_sha256": "e48946bf67610140b83a08bf5ae265f60005f497e8fb43e7b4f1326d6e5e8005"
+      },
+      {
+        "name": "typer-slim",
+        "version": "0.24.0",
+        "metadata_sha256": "d81899ba7b49ef949ddbb85ef6c3b0807d40853d869a2c87d7ab43c26a9f1f9b",
+        "record_sha256": "beaa31821eb194cf687f78082a55b053a5002667ac1bf8e90ff3e1b14596341d"
+      },
+      {
+        "name": "typing-inspection",
+        "version": "0.4.4",
+        "metadata_sha256": "bad3d9e6342ef6750cf5128ec942327b8bebdce0b6e4d6f67cb15b27ae5118da",
+        "record_sha256": "408b0b1d9c5165808960f48c419d34dcf1a57990eb7f8ea9be214ae716301752"
+      },
+      {
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "metadata_sha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46",
+        "record_sha256": "bef8a87e9866f1a161c8eb7a1b1c1af3a2d81b6cecf39368228972c0078d1988"
+      },
+      {
+        "name": "urllib3",
+        "version": "2.8.0",
+        "metadata_sha256": "10898c620e8007c030e07fa5622b68358a43010025dfbd78a1cb797699de2bb4",
+        "record_sha256": "28ce41074d096573a52eb30834461c497fb5b817e58cda0a4eea661969a84360"
+      },
+      {
+        "name": "wcwidth",
+        "version": "0.9.2",
+        "metadata_sha256": "cce73426c72bcd655c08f6229262e5868bf69c1e9e10130119b275ebd200e2b8",
+        "record_sha256": "28d422063aadc0a2795c3f1a9129e7805fef7305d9be7ce45d84e26832c09da9"
+      },
+      {
+        "name": "Werkzeug",
+        "version": "3.1.9",
+        "metadata_sha256": "9f04352e946ecb0883fbf379994c1cacf6720a124acdd7fd59029a889f4eebba",
+        "record_sha256": "e24fe26dc73bc4399cafe62df859d8be6d2104ea43f0ba14255fb446b5f832cf"
+      },
+      {
+        "name": "widgetsnbextension",
+        "version": "4.0.16",
+        "metadata_sha256": "d8a9a76b9ad68a2a105fe37e05c6e2258e37c33175f73cec4d7b1cb62008b894",
+        "record_sha256": "32980bf1d15a51aef03a2094c052f4acd8374032d502ce95ad873eba7d4a1bd8"
+      },
+      {
+        "name": "zipp",
+        "version": "4.1.1",
+        "metadata_sha256": "3080f93de17d4bd784cd33afc0933db91c28cbec1cb444e1ffdfec5c7e0f5d90",
+        "record_sha256": "380a5926e17f9cf7fd8977ac80ab2b9eb4d8facfc9183f6f37567014d181eb6a"
+      },
+      {
+        "name": "zstandard",
+        "version": "0.25.0",
+        "metadata_sha256": "03d37736b26b9ae48451dd17026d93dffbd252fb708c1a2a9ae1be0c0966de92",
+        "record_sha256": "9fa8c6a1642f71652f01cdbf95c6a7d6f6816bfa388cbe5a893469ffb8dcd805"
+      }
+    ]
+  },
+  "amd": {
+    "pyvenv_cfg": "home = C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\ninclude-system-site-packages = false\nversion = 3.12.10\nexecutable = C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\ncommand = C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m venv D:\\AI\\Trellis2AMD\\venv\n",
+    "packages": {
+      "cumesh": {
+        "version": "1.0+rocm10.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "flex-gemm": {
+        "version": "1.0.0+rocm10.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "numpy": {
+        "version": "2.5.3",
+        "wheel": "Wheel-Version: 1.0\nGenerator: meson\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64"
+      },
+      "nvdiffrast": {
+        "version": "0.4.0+rocm10.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "o-voxel": {
+        "version": "0.0.1+rocm.10.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "pillow": {
+        "version": "12.3.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.1)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "rocm": {
+        "version": "10.0.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (81.0.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "safetensors": {
+        "version": "0.8.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: maturin (1.13.3)\nRoot-Is-Purelib: false\nTag: cp310-abi3-win_amd64\n"
+      },
+      "torch": {
+        "version": "2.13.0+rocm10.0.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (81.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "torchvision": {
+        "version": "0.28.0+rocm10.0.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (81.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "transformers": {
+        "version": "4.56.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: bdist_wheel (0.45.1)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "triton-windows": {
+        "version": "3.8.0.post29",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "utils3d": {
+        "version": "0.0.2",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      }
+    },
+    "binaries": [
+      {
+        "path": "cumesh\\_C.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "amdhip64_7.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-convert-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll"
+        ],
+        "sha256": "32526ca0976822800b2320ee3cc12db5ef3fc8fb4641d721dabca8714e5b71ac"
+      },
+      {
+        "path": "cumesh\\_cubvh.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "amdhip64_7.dll",
+          "c10_hip.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-convert-l1-1-0.dll"
+        ],
+        "sha256": "70a886bb952bb48cf56fc46b3744840e33b07820991620c6eae350a154676ff0"
+      },
+      {
+        "path": "cumesh\\_xatlas.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-utility-l1-1-0.dll"
+        ],
+        "sha256": "66da37345044e2161f7811f2d9ff67750f8fb3c203c16bc5abdfd6e739111e00"
+      },
+      {
+        "path": "flex_gemm\\kernels\\cuda.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "amdhip64_7.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll"
+        ],
+        "sha256": "18b203fca47a482f8b53d7bdfb765b26036cae9628087ecfde17e75742007064"
+      },
+      {
+        "path": "o_voxel\\_C.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "amdhip64_7.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-time-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll"
+        ],
+        "sha256": "4900ba16cb2d24c816e968fb54c74218f119e12ad942a81f8d318215802bf953"
+      },
+      {
+        "path": "_nvdiffrast_c.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10_hip.dll",
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "amdhip64_7.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll"
+        ],
+        "sha256": "87abc0f0bd44423feeb4f7e3f0b3e103c57caf9069dbf7952af72b6b0d8a4391"
+      }
+    ],
+    "all_distributions": [
+      {
+        "name": "absl-py",
+        "version": "2.5.0",
+        "metadata_sha256": "24eb8b2dbab3053ea20e46ae02ddb3b9157b5be7e7a38ad931fd0c596f517015",
+        "record_sha256": "6e5cf854d60e2ce39efbb445f6cb69aced0f6a3f0cba9b5fbbb19898010c1e2f"
+      },
+      {
+        "name": "aiofiles",
+        "version": "24.1.0",
+        "metadata_sha256": "0af509c76d57725808d4ba7906dff803225eb11620d31092c787b12595666920",
+        "record_sha256": "0e119efaab8c9d882e24c1b4778270896017fbdba47bf419d15b572166e58977"
+      },
+      {
+        "name": "aiohappyeyeballs",
+        "version": "2.7.1",
+        "metadata_sha256": "e68d1bf48aec9dcc2767343dedec25e12860085cba180e10bc3d3bdd031602ba",
+        "record_sha256": "070db8fb424fe179cb1c2c417ab0c748cfdab6bff173dc7b491822c11bc2eb01"
+      },
+      {
+        "name": "aiohttp",
+        "version": "3.14.4",
+        "metadata_sha256": "6bc7e563128bafdaca180d9b1a94f8ec864219d54692096442a4a73893599a3f",
+        "record_sha256": "cb2823099bd9e86e45eee35facf26b34d84701db37364567ddd6d0efb145c7b9"
+      },
+      {
+        "name": "aiohttp_socks",
+        "version": "0.12.0",
+        "metadata_sha256": "2f78ac5586bd2cde4a9924f4f45cebd5b894b0547fe6697d8d0dc3568d7ffda6",
+        "record_sha256": "31f06f33ab4fcca3a0b393b16aba379b968687e76e3ae79de56cb993a95ac21a"
+      },
+      {
+        "name": "aiosignal",
+        "version": "1.4.0",
+        "metadata_sha256": "09247ef1da8bc696728d47130e702e4307f6f7d101d6c485bff9f3a71ce7008d",
+        "record_sha256": "609e54b94afb3ddb6c260ee79899e98aab339b7d1c39c42a9deae2ec2d5278cc"
+      },
+      {
+        "name": "alembic",
+        "version": "1.20.0",
+        "metadata_sha256": "bd32c118c43955c106bfa4255b2fb5ac9db410b0f7255a4cafb14b9e221ff41c",
+        "record_sha256": "c9900b60969ca015c62a5110af120b7a8d2af23c9be70d208c2d7471bf9d6cd1"
+      },
+      {
+        "name": "amd-torch-device-gfx12-0",
+        "version": "2.13.0+rocm10.0.0",
+        "metadata_sha256": "1d2bcd22291455661b7e6bee022a541e28cece391285bec6b10455d33a89129e",
+        "record_sha256": "69a5f3b125b79e0f3ff9bdf81aad6ddd8ef408ad0b826aaf635012ff52b3a3bf"
+      },
+      {
+        "name": "amd-torch-device-gfx1201",
+        "version": "2.13.0+rocm10.0.0",
+        "metadata_sha256": "e164efbb16d86f32265639371cd4af7442d272e070eeda1a9d94ac59a6ed2f9f",
+        "record_sha256": "18faac95c746fae07540a4780033f70d9ad8ebad25f9991ddf6dc718d9875dc3"
+      },
+      {
+        "name": "amd-torchvision-device-gfx1201",
+        "version": "0.28.0+rocm10.0.0",
+        "metadata_sha256": "825962530dcb5b4c3ea3742ad8379cef47f366e73f5f49468f84a69f098c0dd5",
+        "record_sha256": "3a8a13149eeca130a3e71800c097fbfe8685169e9af940c7ad96f181ea8b2424"
+      },
+      {
+        "name": "annotated-doc",
+        "version": "0.0.5",
+        "metadata_sha256": "8c24d70c5d9153d22123353a906042fd7603df2d15c2196290b0f8a962558c46",
+        "record_sha256": "4c32bb7e383a555fec6162c7c7f905d366f688e6e228295c32b822c3d669d769"
+      },
+      {
+        "name": "annotated-types",
+        "version": "0.8.0",
+        "metadata_sha256": "614985b278f601b8ef863f82783b991cc3ada4b89f592eb71c7c48c5f2ef2298",
+        "record_sha256": "3999aa3e7cd1afa1ae67b55bf5b04bbc3ca55fdd6c7dcfe571b1aad05da849af"
+      },
+      {
+        "name": "anyio",
+        "version": "4.15.1",
+        "metadata_sha256": "043aecb571af7189e8a6c528f5d8e32545f1b2cdfaaf761d51e6d5b67ea3ca81",
+        "record_sha256": "335fdf50255512ac058cbf13ebc9d66aecd2667ba9629de9e11bef95910eb3f9"
+      },
+      {
+        "name": "arrow",
+        "version": "1.4.0",
+        "metadata_sha256": "36407a40cd6a7f3147f8c8ab802d516fb4c152d7e2aabab52718ff3407a1706d",
+        "record_sha256": "b0bcae4592a7e42fd9075f4defb876053ee92ad89e9dcda3f67bd4d7a0476924"
+      },
+      {
+        "name": "asttokens",
+        "version": "3.0.2",
+        "metadata_sha256": "8b3567b29654e6e9a60ab50fde2c317899152790acadaab7868a708bf931c3d3",
+        "record_sha256": "d395ba84806dfcc499e98e87aafe35bf82d8791d83ee12f284c3732c8c011700"
+      },
+      {
+        "name": "attrs",
+        "version": "26.1.0",
+        "metadata_sha256": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc",
+        "record_sha256": "4208eb11c81019fa747017a7751a6f589246758b623f2030841c2c522688c49b"
+      },
+      {
+        "name": "aule-attention",
+        "version": "0.5.0",
+        "metadata_sha256": "78fe0f9d6ccfbc9876f68f2165b7cb838c1e5e5e9d5db3f803399a290257db2c",
+        "record_sha256": "84adae2c557b298dd5864e84f65c6a87fe5a2e71104d04e855acec062a0175ab"
+      },
+      {
+        "name": "av",
+        "version": "19.0.1",
+        "metadata_sha256": "5964cb0b9d0e59f4b4f06962f06e93d73a6c2f6af3d066e2a753ecf28423f760",
+        "record_sha256": "90e4c0a27ef19886512dc6bd3ea4537e951129e7dbc2140be8ea6b65545ab6c7"
+      },
+      {
+        "name": "backoff",
+        "version": "2.2.1",
+        "metadata_sha256": "5a07df92ccbe75c0c9e066a8a97ca373c5f1ac4d03433dc56d6c26ac3aa8fba5",
+        "record_sha256": "f5b68ab58365926688e12f4bd711a6b36b66888235ef81815d2b2cd4aa85832e"
+      },
+      {
+        "name": "binaryornot",
+        "version": "0.6.0",
+        "metadata_sha256": "8887d4227a6c530f061dcde877cb5bd0562bfdb229a7f6f74b1eb6d1b0dde9f5",
+        "record_sha256": "b247a06fb9d1bbb48d6e7dca38116576c2404044e794310c420e2d28e0e6a3fb"
+      },
+      {
+        "name": "blake3",
+        "version": "1.0.10",
+        "metadata_sha256": "a34fa61140876fb6fe96982b08c6c165a1551f2dffbdf8f11fb6b94a7199d546",
+        "record_sha256": "166bb78e41be21b7f2a2c3219be1a31a97ddca34c28c79edd2dec35c36c5808e"
+      },
+      {
+        "name": "blinker",
+        "version": "1.9.0",
+        "metadata_sha256": "b8846233cc238db1e40ad6c2c93bdcb54dfb200664d2411ee64c4095dd5dbf30",
+        "record_sha256": "32ee92e73cb6f3edbbbf55c092734fe9080f4817cbf5565ce606f81a94bae09f"
+      },
+      {
+        "name": "brotli",
+        "version": "1.2.0",
+        "metadata_sha256": "f9d12d5184b5090b146b2e5f0d62931521b2b1435ea466433a239bb7c41fc962",
+        "record_sha256": "4709696cbffe8035e16971fd8fd06938af8b3d13c992eeac5ecb37f042e05ad1"
+      },
+      {
+        "name": "certifi",
+        "version": "2026.7.22",
+        "metadata_sha256": "ef5af1638fbb23676ac3c5777dfcfc2cd9c348fe4172ed5ba3d277655b248090",
+        "record_sha256": "e6c48519c08f2bbe98bb8ccb9c3aa9a157fd41de210173fe047e77b8e8d35421"
+      },
+      {
+        "name": "cffi",
+        "version": "2.1.1",
+        "metadata_sha256": "558bafb9093a8e790175d9ecff9688382981d744877dad86fd6770db0f4dc918",
+        "record_sha256": "46afaf08d0273c76b877cebd57a7c50d2efd06ce438c67442f7771e02ad2beae"
+      },
+      {
+        "name": "chardet",
+        "version": "7.6.0",
+        "metadata_sha256": "2c8577bdf827dd08a9ab4f5279bce3b0a06dad9445bf9b567a85ba9ae429e9a9",
+        "record_sha256": "b25dc3d734eb35a45d56880f76e61879d8e205805495d3e14c600b6c596f961c"
+      },
+      {
+        "name": "charset-normalizer",
+        "version": "3.5.2",
+        "metadata_sha256": "89ce6362bb7be88558f4be99a98f5d1b4da93d19cd0323e5ee0bac05cf883dfb",
+        "record_sha256": "da00dc27e8ae41f3d91bad71d21f5393ef28ff5944681db81f8879453fd848f5"
+      },
+      {
+        "name": "click",
+        "version": "8.5.0",
+        "metadata_sha256": "e87bce0bd194de70dfb8e708e0a6b0483009f25611804eaf87bfeb63e6c20501",
+        "record_sha256": "4a523c0c5110a56f01ccedcea0dd40973a227083ead89333427baf414cb21c95"
+      },
+      {
+        "name": "colorama",
+        "version": "0.4.6",
+        "metadata_sha256": "7baed29eb50c3b29bdb33ff84e3177bf1bc05784f7685ecdcaa4471c7dd810cc",
+        "record_sha256": "2de1747809a165c7c54a2fd115a569a061e6eedf56d5c6db3fe0dc8a2985562f"
+      },
+      {
+        "name": "comfy-aimdo",
+        "version": "0.4.13",
+        "metadata_sha256": "b6a9cd13297af8bd696e125117a4a53c5cde6a734fffd44dcf76065f525c82b0",
+        "record_sha256": "0a3cd33231637bb73263574d0e0a6f21a1c2a337f16d86cc99c12602ac5d77c8"
+      },
+      {
+        "name": "comfy-angle",
+        "version": "0.1.1",
+        "metadata_sha256": "67845606f331ed0a9cb2befa3277f02a127835003a98abe5941b29513f28ac57",
+        "record_sha256": "72a9cf4b68a5401c9de3adab88a265b95f071b4b5a4db84c098618993cd4747e"
+      },
+      {
+        "name": "comfy-cli",
+        "version": "1.22.0",
+        "metadata_sha256": "5e7d313e31ea46418b6eeac8230b9ebbcce6452005a68e1501289a2eefe9be46",
+        "record_sha256": "b05b88e139dc47de711a0e912585d6fc8cbb6dedcdba511fdd43a9e81de3d9cf"
+      },
+      {
+        "name": "comfy-kitchen",
+        "version": "0.2.31",
+        "metadata_sha256": "2a0e4d6003f1c59d4e41be4554c1bbac846f7ac0eaab7454e4c41c39ebe967f4",
+        "record_sha256": "43b87476c3c0ce396d961351782f6e73b0ddf8537317908b0db6ce0b96c56aab"
+      },
+      {
+        "name": "comfyui-embedded-docs",
+        "version": "0.5.10",
+        "metadata_sha256": "b6d4b2d9ad24530587e3de5ab050ae10141e9fe01aeada8ea47a26869b8763db",
+        "record_sha256": "922b5160c1664fd3c476c59e99cca3c3bb971b2ce0c0e90ebbf0df0dfcc056a8"
+      },
+      {
+        "name": "comfyui-manager",
+        "version": "4.3",
+        "metadata_sha256": "3f0358ee482f3dc7eb675817ee56a47e9ea1bda5a0095d33a26604e51af2c896",
+        "record_sha256": "ccd98e2e7df45c2d1e5b540ac67085ce6f00db6ea055dea3587f75b8ae81c943"
+      },
+      {
+        "name": "comfyui-workflow-templates-core",
+        "version": "0.3.320",
+        "metadata_sha256": "547bb73b9bf8571f4c300b3691d6fa2acff8af4e5636ade9914b63bf17593d58",
+        "record_sha256": "29e02d88e7de7a5895b69745a6d6fc531f3e2fbaff66f249fa399f433e72c11e"
+      },
+      {
+        "name": "comfyui-workflow-templates-json",
+        "version": "0.1.55",
+        "metadata_sha256": "2c6c5122b79650a1c3e3f70a14c618d37d644ae77bddfb326a681574608273bc",
+        "record_sha256": "93cbe9926b15ae18183cf458061c67a14c43fe74af9b9d70d4e39022894b0d8b"
+      },
+      {
+        "name": "comfyui-workflow-templates-media-api",
+        "version": "0.3.84",
+        "metadata_sha256": "dd0d06a73bcbc7a8f5dffbe09d96aa9cce396624ff38f1856ca194bd437b89e9",
+        "record_sha256": "9a13fa223ab82a53d94207327ed972eaf278125fd43740e049beddf55214d7a7"
+      },
+      {
+        "name": "comfyui-workflow-templates-media-assets-01",
+        "version": "0.1.33",
+        "metadata_sha256": "96dcb89c8f5b11ec447f4da24392e43dea7c1035932d9303647bc47ae1a73b59",
+        "record_sha256": "7c9fb47c50ebdaf4a7fadc7b3e8107357224fbb8e9b9e05fe606443c8b51a021"
+      },
+      {
+        "name": "comfyui-workflow-templates-media-assets-02",
+        "version": "0.1.9",
+        "metadata_sha256": "e3d34088e968be20613c4cb86586cadb30bcf20a33f63655e8e2cfd5e3f41595",
+        "record_sha256": "9c658f118e4b55081215bdba917dff4e9199fe33a722e4866e0db10e22fb3e72"
+      },
+      {
+        "name": "comfyui-workflow-templates-media-image",
+        "version": "0.3.160",
+        "metadata_sha256": "042daef6e310900e50194b49c4f7beb15a6ca6f418e86f7bb71aff4ab9fd6bd1",
+        "record_sha256": "6f6ed304d9555648b0ce66f15f9aa9770ba7b8d3d697ff46bcbcacbb23ef6020"
+      },
+      {
+        "name": "comfyui-workflow-templates-media-other",
+        "version": "0.3.229",
+        "metadata_sha256": "348fb4677ae8a3058b3c14a4de943aa5a5cce59f2ac02824b64cdc34619ba2c3",
+        "record_sha256": "b184c2cb2093c8c2f03159c0444aecb66f0d1ebefca0e35841f58b5835fb0001"
+      },
+      {
+        "name": "comfyui-workflow-templates-media-video",
+        "version": "0.3.101",
+        "metadata_sha256": "5e3bf503651b6f85834318d845faf6eeba8ac6413fdc3f6f0a44a85c77fb78f9",
+        "record_sha256": "fc736405bdc7bdc96a96f2238c1f6f92d430c10168f9ad47ed50cf67a8dc9c37"
+      },
+      {
+        "name": "comfyui_frontend_package",
+        "version": "1.49.6",
+        "metadata_sha256": "0611451e2e37b0c761e47795400dd2b6eed2663111f89043c4d6ee37328dd2bc",
+        "record_sha256": "e04afdced2c67ac41666c336c12c20867a497246c1ab044f8eea8292be9ace48"
+      },
+      {
+        "name": "comfyui_workflow_templates",
+        "version": "0.11.46",
+        "metadata_sha256": "0e46403754c0a27c1d876dfc1b49bced006ff2471ec96dfcd457223d8343ec79",
+        "record_sha256": "330001687c8039a2a4ea6e389852151affc1c9239899f2302d7daf2e4ab0acfa"
+      },
+      {
+        "name": "comm",
+        "version": "0.2.3",
+        "metadata_sha256": "e475291f8fdedbecbbfd788a2c5de9c912424d23574aba7b9fc51985d7158878",
+        "record_sha256": "d07ab2bf89c689f1805d8b19ac891c57aab5bd6c46160854355ecd207965f69e"
+      },
+      {
+        "name": "ConfigArgParse",
+        "version": "1.8.0",
+        "metadata_sha256": "07ed01032dc649e34968fb8a23f9b4b07cdc910dbbdda7b1b2d155e3c3060b94",
+        "record_sha256": "3cb739615f8640687917b0252b8a0031981713a577f5210f39e7bae2879e4668"
+      },
+      {
+        "name": "cookiecutter",
+        "version": "2.7.1",
+        "metadata_sha256": "059204c23e73a11c50dbf083f5a74ea53b4c936d1f19d5288b0ce4e00f23979b",
+        "record_sha256": "edd72ffa7a8d9b9e586b911b49bad998fbfe5207bd120784adcabd68e58d2acc"
+      },
+      {
+        "name": "cryptography",
+        "version": "50.0.2",
+        "metadata_sha256": "047cfc71226409de4318b360aef15c63a2adf609731e3dcf7fe932f14ea042ee",
+        "record_sha256": "54a44f8a4d781deaa27a6205cdba2023daf989d3d46d71fd72dbe3733b54acb7"
+      },
+      {
+        "name": "cumesh",
+        "version": "1.0+rocm10.0",
+        "metadata_sha256": "447aed5e4d2421903474e8cb013fc7c96b324a9113e1f9ed84209a9e062ad6d0",
+        "record_sha256": "754ce41c1dd768fe3962e25c9f7e2fb954a8bb29cd86f133f8ca827458bfee68"
+      },
+      {
+        "name": "dash",
+        "version": "4.4.1",
+        "metadata_sha256": "eca7a6c3f2be7cab292f5e42208bb88c4dcf35deeea6a5c1c027e78650b4d576",
+        "record_sha256": "81e21b45d050f6648700d8f5d4d19edf4c9234b367f934d286a5c337bada4b06"
+      },
+      {
+        "name": "distro",
+        "version": "1.9.0",
+        "metadata_sha256": "31632ab2de5591131091b3397bdcdf797718579d85a75186f06839dd0c09e81d",
+        "record_sha256": "f30b32c18e2bd515a354f8375beef32e7879f4ae5bd55d871e6322654300648a"
+      },
+      {
+        "name": "easydict",
+        "version": "1.13",
+        "metadata_sha256": "60fae9c1fdf48a3cc9001b20e83fa05488236559a740f87f1a0801da26da9416",
+        "record_sha256": "582b70f6216b5efa093eb9b908426f87ab039bf9abd8e54781c5ab2f2125474a"
+      },
+      {
+        "name": "einops",
+        "version": "0.8.2",
+        "metadata_sha256": "0bd65db043688a44f4a29608c1cba521c932f7ff76f238bbd869441e15012653",
+        "record_sha256": "64cec0cb20bf7297a0bc3189087eda2055f7a366e9369f8caece7799585726cf"
+      },
+      {
+        "name": "executing",
+        "version": "2.2.1",
+        "metadata_sha256": "d7586d1ae225bee126c4237eb0c4d7699a8580b81eb558cc500c263d29a633ff",
+        "record_sha256": "abc971aacd6d322462b85da1a914a64c310a497b8955292d5df36a4da8487e9c"
+      },
+      {
+        "name": "fastapi",
+        "version": "0.142.2",
+        "metadata_sha256": "53eadf5c5f121b353144e43767758d2b1ffd0bd48c942c65b82a92f487db380c",
+        "record_sha256": "474bccfe17499c0eb507729b40e2296adba82d4d7078cf2378c50be1fa53c1de"
+      },
+      {
+        "name": "fastjsonschema",
+        "version": "2.22.2",
+        "metadata_sha256": "fb4512dbb43517f2c8cbca21b3052bf74b2113ba67df8eb7eb9b53d8349aebbb",
+        "record_sha256": "8a3093a0ce7142baceb41255232b5b20708438c48bebd89f3b58eee95c0de8e1"
+      },
+      {
+        "name": "ffmpy",
+        "version": "1.0.0",
+        "metadata_sha256": "b76baeef5742e6dfdd6f4eccc99cf01b13f776f8a2dc21f65010b665b5e6f6c6",
+        "record_sha256": "e4a275590637a9c4250b31ddfd722cecba217d579346a729fba3d51ad3df4bed"
+      },
+      {
+        "name": "filelock",
+        "version": "4.0.8",
+        "metadata_sha256": "fdd12fea01910c3b990222b55e3793570fed040cf732aeeeda5381bf2aba98e8",
+        "record_sha256": "f9e356a6c868b0bc9527e31a4b5359e42bbdd044da864dc5351f63fff3e59961"
+      },
+      {
+        "name": "Flask",
+        "version": "3.1.3",
+        "metadata_sha256": "aa6760ed6f545704474d70733e4a63a7f1481e376973edc896a13d02a7224c7c",
+        "record_sha256": "78988005a4669c623fd2eca3010c468616e1a928cdb097081e67b440c2366cda"
+      },
+      {
+        "name": "flatbuffers",
+        "version": "25.12.19",
+        "metadata_sha256": "9f38239f96faa21522a6aadab6912e1e560708bbe9c9f696a0679c9403fa089e",
+        "record_sha256": "66b31243cab415a9c8c38b3c7b1bfc67bf76a696e8887b2ce5171451fab4c708"
+      },
+      {
+        "name": "flex_gemm",
+        "version": "1.0.0+rocm10.0",
+        "metadata_sha256": "176a18388d32c91b1fc94bc2b17b86577ee5c25ed4f2ea64f8105190c4fed49f",
+        "record_sha256": "d1d30af779e773f8b94ef9e460013bb959f93dbbf2d6394ded965476d1a12c89"
+      },
+      {
+        "name": "frozenlist",
+        "version": "1.8.0",
+        "metadata_sha256": "946c22dc9f7e2c76f2d698f00a4306dbe49a820e2b3f1a0e22fe5286cbec35f1",
+        "record_sha256": "9d21086cbad4fa4663bf55b513c533c804a45f577adb9733d91d9f39d110b1bc"
+      },
+      {
+        "name": "fsspec",
+        "version": "2026.9.0",
+        "metadata_sha256": "68f5a262767510638e9b1933b1493f2baadc9616fe1e696f62aedd59c8c0a37c",
+        "record_sha256": "bb5b9da352a9f77e761fec5d02f2feec1d2ae55c5b8737d3250bbc201957ffe3"
+      },
+      {
+        "name": "gitdb",
+        "version": "4.0.12",
+        "metadata_sha256": "9670d2dc866039d6b7c91f52cd81c7f224cd7467f7685c7c29e6c4691d1bf3d9",
+        "record_sha256": "16ff64ec6dd994952f2d5d1a8a2e7b4561caae1ab23d886fc2bdc61c10a6eba1"
+      },
+      {
+        "name": "GitPython",
+        "version": "3.2.0",
+        "metadata_sha256": "5dd8b3a06a6134b7e37343470028f6456c418133096c419314234e482f527baf",
+        "record_sha256": "26a1cdbd94643c900b712c13bf66f6b5cfc6389dcda96d3d8322ea1f5791c70a"
+      },
+      {
+        "name": "glcontext",
+        "version": "3.0.0",
+        "metadata_sha256": "917b89305d945ae75b21ea20588b0fce56f7c4b06ee7d51ed3407efac22add59",
+        "record_sha256": "c840e376a777acab38390cb203dfa72f71490657d318de60082918453be4ea82"
+      },
+      {
+        "name": "gradio",
+        "version": "6.0.1",
+        "metadata_sha256": "a4f17e600553bfa37df48002d8e6a8d3c3e496e6e642d7537e5718b1573522a2",
+        "record_sha256": "dbaa7e6a1357535c4c3a79d7f4f06c2d6cad61fa370faec58bfd6c118748e1c4"
+      },
+      {
+        "name": "gradio_client",
+        "version": "2.0.0",
+        "metadata_sha256": "ba04ab6b3b437389b0d7da8a439f9b82cef5bb48774e652716a7ad0a3575da3b",
+        "record_sha256": "43c6b597ffc88820cbfc1b531dbdf7f72a92344cb0cbb9d58ddda981f234b948"
+      },
+      {
+        "name": "groovy",
+        "version": "0.1.2",
+        "metadata_sha256": "4e9483c0c0f3c969f94e12c4484521260387742132520c23d7c8d19e20a99534",
+        "record_sha256": "b0b78775948684288bf5fcb7c5d73cf6c40debf66ecfb8fa4c60835eae22de04"
+      },
+      {
+        "name": "grpcio",
+        "version": "1.84.0",
+        "metadata_sha256": "ac85e3d2b9220d642241116c6dd46bdc7e76d43393124a91dfff90f9aaa36529",
+        "record_sha256": "7e9b4234b3e6471626067aa98b96882da47b4694c4a464ce705c3d8143bc600d"
+      },
+      {
+        "name": "h11",
+        "version": "0.16.0",
+        "metadata_sha256": "28f326098ac09fcba79b8f180f96087c841fe2456215cb7b872a9c7d5cd19d64",
+        "record_sha256": "3a11572d1a11c198b9ab7cc31a1fb685997c7596b566e5074983161f0f0cfec9"
+      },
+      {
+        "name": "h2",
+        "version": "4.4.1",
+        "metadata_sha256": "b17f68f6127946c3b748ea5728a9b172589ede2b9cebfa353dd5f05263096c7f",
+        "record_sha256": "58261556c3f690336eae09390d9adb55f939b0296f660fd749180165f523e890"
+      },
+      {
+        "name": "hf-xet",
+        "version": "1.6.0",
+        "metadata_sha256": "becdd6ec73b515dc38c59501956134eb0b903bfed33ffcd99b252361acd926e9",
+        "record_sha256": "1e73c1d5c68a7982ffe4c38d329ef88181499f7c41fec2bcfc87de0a2be18c70"
+      },
+      {
+        "name": "hpack",
+        "version": "4.2.0",
+        "metadata_sha256": "d2408cbb7b7d2f4bd041a96a850300da45e1bf79b1a380148a5fc29dcd55255f",
+        "record_sha256": "cb386162d318432ca91eeb5bd0429eb21b829b40d8b1228971de8dd2c696c9a2"
+      },
+      {
+        "name": "httpcore",
+        "version": "1.0.9",
+        "metadata_sha256": "fe2d4fda6199128978779e0cf27f3c045c531863fcdd987eacc74f3a18d41c21",
+        "record_sha256": "491f4b59545289189a7adb8ad6e318069ac16e2d254dd8b66b0a6ebd5f2a262a"
+      },
+      {
+        "name": "httpcore2",
+        "version": "2.13.1",
+        "metadata_sha256": "37a0ea0674e98b7c3a1f99c17d9bb5457de27a0f93c8b6560c9d17d525139abb",
+        "record_sha256": "0bac2d4a4f7b9be43acdff022df94f03ea327be549fc5786a0d630138e432b3d"
+      },
+      {
+        "name": "httpx",
+        "version": "0.28.1",
+        "metadata_sha256": "febb9b0f8f3e80d57c8199c304f35c4336e8581d1d18d7983c92766b82793b25",
+        "record_sha256": "078bb46c55bd9562c8a008751be19f1e9b176dd10c9f0231f2d88cc22a603ecd"
+      },
+      {
+        "name": "httpx2",
+        "version": "2.13.1",
+        "metadata_sha256": "b75b03a003b5593e000907cf7239fcc3f688b8f17db4ecff883d11221ea988fc",
+        "record_sha256": "5f7dbde6d400636162dee533800ac16b67641c43a6c93e97394478d3dab013c1"
+      },
+      {
+        "name": "huggingface_hub",
+        "version": "0.36.2",
+        "metadata_sha256": "4dc2b0a3fb27bcba8b091f98bccff4b94369d269c9768aeaecd0b99d970665d9",
+        "record_sha256": "a83c5277aa06af1e06b2c233984d9e25f093fe2179793cb00415ae7116c3ec75"
+      },
+      {
+        "name": "hyperframe",
+        "version": "6.1.0",
+        "metadata_sha256": "a29f5792b9459b47658804988520009156ef8c2dea66022c2969a145065bad69",
+        "record_sha256": "95c13eeb1aa6988a8d03cf089c13de6b7e662a93a93ab2130ad09d21eeca6649"
+      },
+      {
+        "name": "idna",
+        "version": "3.20",
+        "metadata_sha256": "dbd8c14c1e4ca1e0c9824a6dbc7cbbf78884f38eb52d91148cd3025f671e4b85",
+        "record_sha256": "0421e3d1a7ac82573b3a07fc7f996180b7dd62a0061e0d4cbf1341b4e1e28484"
+      },
+      {
+        "name": "ImageIO",
+        "version": "2.38.0",
+        "metadata_sha256": "c6c48046e1f02bdb44ee5a39b4702651bd27125977e227ef52cae60e7f20daab",
+        "record_sha256": "5ab63fe78ae98f0150014dad511d0eb0a1b4cccfc98ddcdac63838769624bd99"
+      },
+      {
+        "name": "imageio-ffmpeg",
+        "version": "0.6.0",
+        "metadata_sha256": "c9697b379419a64049d99e2248c4cba963e03b5cad1dc65e10a887d1da7651ee",
+        "record_sha256": "9e1d66d0866662d20c0a7d5fe233371546eb9f88d9e8d4b2d8f568fd22df6e84"
+      },
+      {
+        "name": "importlib_metadata",
+        "version": "9.0.1",
+        "metadata_sha256": "1a90ba399de022d3528ad996c7a8593422207ccb13d27f062ad005f509e11500",
+        "record_sha256": "e4507d01c38f91f090e4cd6739457b9c0240497a8b5102857cd44fbfcbe53a26"
+      },
+      {
+        "name": "ipython",
+        "version": "9.17.1",
+        "metadata_sha256": "e78cb2a71fde4012b32de9b2db8d3c50ba618a1bb1975acc1bf107453365a1be",
+        "record_sha256": "e20e7487df461d9fb5803a3feb1fcdd1659f5d0e9c85ea9a760c27b09ae312e9"
+      },
+      {
+        "name": "ipython_pygments_lexers",
+        "version": "1.1.1",
+        "metadata_sha256": "6b38c0946bdbc4778f4e38e2298547cbd7d13aeba9979ec4e4a412eabfbdfadb",
+        "record_sha256": "95588dd7891057e337eb81c9b9f562f54ed62c707202ece903e0d587b9a3aff2"
+      },
+      {
+        "name": "ipywidgets",
+        "version": "8.1.9",
+        "metadata_sha256": "aea2814e0dd68918a6e4a38c37faf17981525636a8a8ef023f0481e93cb8b8a7",
+        "record_sha256": "af5bf83e179e5fcba45dfc3f26372c333570c9f0e7ee73966751115949702d74"
+      },
+      {
+        "name": "itsdangerous",
+        "version": "2.2.0",
+        "metadata_sha256": "d2b934fb56708a1b94e439f0255c0f5a8108e3258ec827b18a1dc9c991db9611",
+        "record_sha256": "682baa74c4a45f36a8f3da58204b657711c2d3a23886616f51549c72adbf0f66"
+      },
+      {
+        "name": "janus",
+        "version": "2.0.0",
+        "metadata_sha256": "96db225db8fa38bfb90cb35d39e8a40b86b2046049e3055f9956ff304ba90b0d",
+        "record_sha256": "96bd3b87ba33cad02d34e51788e5ac3729d239ff5403d9452ae91cda93c12172"
+      },
+      {
+        "name": "jedi",
+        "version": "0.20.0",
+        "metadata_sha256": "436bd0fb249b82dee15e85e2fb91d08d8e797481a16af48a725b8e4fb5340478",
+        "record_sha256": "a8c628090b25376e7707300487dcf2bb25424e2a9889ad6bfb52249e89ffcb01"
+      },
+      {
+        "name": "Jinja2",
+        "version": "3.1.6",
+        "metadata_sha256": "68c5548fb67c4132a13898d9b31ec50c6bea2abdd915d921f214355c3a6499c8",
+        "record_sha256": "0c53d32a3ab7315c84d8278414af16134b29f7ec30fe3d41d90331430a31e525"
+      },
+      {
+        "name": "jsonschema",
+        "version": "4.26.0",
+        "metadata_sha256": "05b189866ca98a96da3934bf6b83687ced3ff85325273b77e16b705f6d8b26d2",
+        "record_sha256": "7eacde07256a3f66e7257305a4dc10e1e71734b70bb2508da69b5eb704c1f21a"
+      },
+      {
+        "name": "jsonschema-specifications",
+        "version": "2025.9.1",
+        "metadata_sha256": "35abd41757f32b4ea24756920ded47b70173d77cbc052a5a6d3ab583b2e8d89d",
+        "record_sha256": "3ef7039c92772d51f01308c51abdb1455c6627ca4a97cbe7d3c13432de0e9571"
+      },
+      {
+        "name": "jupyter_core",
+        "version": "5.9.1",
+        "metadata_sha256": "68a656d7e2ebe45d40becf6032998192790d8a7536942f72167d79b8559e5ded",
+        "record_sha256": "60bfc5cbdb36a9c3834d0b02f3355797940da8d96144715b8110a066118b9515"
+      },
+      {
+        "name": "jupyterlab_widgets",
+        "version": "3.0.17",
+        "metadata_sha256": "4afc9ec69f8ecf916f2620116b0906efccda8e29a2f1940bedd8632237fadcac",
+        "record_sha256": "6edf7322b572d7dfbe1a26dcbf8fa9186f2073f56326cfb37b89ac982dbf5a45"
+      },
+      {
+        "name": "kornia",
+        "version": "0.8.3",
+        "metadata_sha256": "deea8b6770901889451553e04da09ecd7956f0b6172c01ff62298af7c88d3063",
+        "record_sha256": "20f27e1295c4ebeafc95610971dfada750ffaa381213070687d55f4787cac7e7"
+      },
+      {
+        "name": "kornia_rs",
+        "version": "0.2.0",
+        "metadata_sha256": "73598e35c87932c8a5cde3d7de1c06214a9c4fa6be7d919f1b76b14fac968d93",
+        "record_sha256": "6a5734e6f6a8bf14076534412cea8a7b6e2aa4cdd8f18589fbb7825f7b6e2f73"
+      },
+      {
+        "name": "lazy-loader",
+        "version": "0.6",
+        "metadata_sha256": "9cd369edae6bf499af0c1acee15d0389361036907742690ac504f9b3b84d56b3",
+        "record_sha256": "97949cd619c05f779977ee9d985bb541e69b4fe4a1e5460b3eebf1de0f57512f"
+      },
+      {
+        "name": "llvmlite",
+        "version": "0.50.0",
+        "metadata_sha256": "8f1269fc707c42d99b010322f95da3fc46a9ad3c542080fa0bc6d9deab6a9c05",
+        "record_sha256": "d60a9be631f040da8f6f4b6cd711309ca7e41ac3de0c2ebffe418d607ead5abe"
+      },
+      {
+        "name": "lpips",
+        "version": "0.1.4",
+        "metadata_sha256": "cbd4a3730b2c9390741cdbad69661a87cabdc2796f1efc530bc46b738745b9b5",
+        "record_sha256": "5bc42c0e03e880c909e1529322b1d704987a37fd2feae271faf03c6069027333"
+      },
+      {
+        "name": "Mako",
+        "version": "1.4.3",
+        "metadata_sha256": "39ea65f21e706265428ea6f2925520f419a10f0113a59318192ed38175d8838b",
+        "record_sha256": "fe48d4ad9b99210b1132c3c4a9af145596d161017f1efcd6aa25c30af4ef6496"
+      },
+      {
+        "name": "Markdown",
+        "version": "3.11",
+        "metadata_sha256": "84a4d674fdc3fc155d45301db416b52c4268e9d6def1a06e186c25472fbbbcb8",
+        "record_sha256": "0199c4ad24698a008e75bd121560ded256e8b5ac80879a867e6683c7eb8494a9"
+      },
+      {
+        "name": "markdown-it-py",
+        "version": "4.2.0",
+        "metadata_sha256": "72c36ff516755443b1ecb61e17b2567a990230b49a504b0eb0c42d5f82448a9c",
+        "record_sha256": "cc58a1d2a556cc59bba68f45193248404cde6c59f3971d35fd9e5dd3364e02ca"
+      },
+      {
+        "name": "MarkupSafe",
+        "version": "3.0.3",
+        "metadata_sha256": "12b4cc61a7fa288cf7667ee3f213786d9619db57fb33ff6f934afbcb5c12ec81",
+        "record_sha256": "602537cb13322b8f5ca66a2fb581b578beccd7193fe949733af07da4a8da6be0"
+      },
+      {
+        "name": "matplotlib-inline",
+        "version": "0.2.2",
+        "metadata_sha256": "fedb3d587ec2d3fa4b0a81fd5353df697d2534c8ee714dbf050009afc60bcab7",
+        "record_sha256": "68abefc60c139dd211f3c055474bc25b09ff10435e61f7b33923fef474ab5262"
+      },
+      {
+        "name": "matrix-nio",
+        "version": "0.26.0",
+        "metadata_sha256": "135b72e59dd60e6e87a34244185eb97a68231e09869999c6447582a713eae184",
+        "record_sha256": "76364a14137ce430b7b5c26aeab7eea198488024a3f8de9249075360f95485b8"
+      },
+      {
+        "name": "mdurl",
+        "version": "0.1.2",
+        "metadata_sha256": "b53b29d48f499367053fda3c81e7ce27d2558380ebbf83e66023b02eb7ddd25d",
+        "record_sha256": "30ed86327ce3c11338d0d614f4113a45c6599e9ae3d429ba5aec0623af3310d1"
+      },
+      {
+        "name": "meshlib",
+        "version": "3.1.4.297",
+        "metadata_sha256": "027966467a20499b3b5c3c7926161c880da0cff14f51c1d4c19ede5286eae58b",
+        "record_sha256": "86a4e98f01b78d54ee00809bbcf1c6688b2b449aa6c5ec2d4bdec9fe6ee68c78"
+      },
+      {
+        "name": "meshlib-core",
+        "version": "3.1.4.297",
+        "metadata_sha256": "20a4c66c188c00fa926822a08780363780910bc7525658100e8428f84c66c733",
+        "record_sha256": "076e0ff4eaa53330ca0a2dbdb2eeda7d6ade484e0494832357e42aa0f0308238"
+      },
+      {
+        "name": "mixpanel",
+        "version": "4.11.1",
+        "metadata_sha256": "3c76761c6ca0bcf2e420309c46790b699578950e3e4ef354f40c19327a136663",
+        "record_sha256": "cfc629dfb8723ab16c7520ddf37ed5c7cb7ae6432d05dbee049bbf30162166f0"
+      },
+      {
+        "name": "moderngl",
+        "version": "5.12.0",
+        "metadata_sha256": "059e3a0c0657e5b77a8de3afd4421294870865f6296c2428182d74b8c8431e2a",
+        "record_sha256": "fc47816d6057c60e4369b8fb00c2960efdf2867dab4aeaeaef58e6137320ea8f"
+      },
+      {
+        "name": "mpmath",
+        "version": "1.3.0",
+        "metadata_sha256": "44b66ea444b9c0d19ae94815d356bf047ae6b680c19268b5c265687cd6a81406",
+        "record_sha256": "6e0dc4362026a41beb2ad7081ec8f6fc9be0c48d9ce65784733aedc223c60100"
+      },
+      {
+        "name": "msvc_runtime",
+        "version": "14.44.35112",
+        "metadata_sha256": "da84eaadfc3ee50bc9fd3eaf35bc34698fa2295cc843df559689c94cc98b117d",
+        "record_sha256": "111f4cc080f903c6d9e1f9d80cdcecc1f47b22967fcf2fee022394c7e3939162"
+      },
+      {
+        "name": "multidict",
+        "version": "6.9.1",
+        "metadata_sha256": "b52756a8e05f6cf5e429cb0133ea395f252aee4a30b748506dd354a5ad2d4af2",
+        "record_sha256": "940a3c78b030a6c58ad720e711b04c23ce77d6f51fbbf19df1dda10ed349ec84"
+      },
+      {
+        "name": "narwhals",
+        "version": "2.26.0",
+        "metadata_sha256": "7e09d821259f98ca6ce639ddf38d5314fca112911dc3ba58d8546381ac1b2861",
+        "record_sha256": "c464a81b8b8f8bcccc4fc594e5b9132dbc599036ac11c8f26317f07f0b6fc0cf"
+      },
+      {
+        "name": "nbformat",
+        "version": "5.11.1",
+        "metadata_sha256": "6a25a2f961025655ed80a66f794ac6b8ded4e4ea4c0600ad1801876c0bec6c74",
+        "record_sha256": "0f11ea0588a8a0c7d8925d3d97281f70b9d795b25b17659a467a8be5793beb70"
+      },
+      {
+        "name": "nest-asyncio",
+        "version": "1.6.0",
+        "metadata_sha256": "7f7b98f9e1a28a9597d70df9158175a22d05446ce4b328908d920e7293d35bd2",
+        "record_sha256": "2f18ea667075e656153c6d3999e1c7906c07e413f7e05d6c2d9419700262f5bd"
+      },
+      {
+        "name": "networkx",
+        "version": "3.7",
+        "metadata_sha256": "ffcf42a343af6ffc54ff9cc4c09cf9638cd73b131370f395abd11b630186c90c",
+        "record_sha256": "e54e66f1d38e010cdfce7a1944631c39bbf71124f25385362eda5765aa0ea527"
+      },
+      {
+        "name": "nh3",
+        "version": "0.3.7",
+        "metadata_sha256": "a26f711be87c09e5cf75678bc8ec704ddeb21bc4bcaf470c504c73bc29d032c0",
+        "record_sha256": "9df76c88191fe033cdc8eaa0c7eec2d2f0d0faf413284a3446786a904d4563d0"
+      },
+      {
+        "name": "ninja",
+        "version": "1.13.2",
+        "metadata_sha256": "9628f3ee4355eb4805e7afdb4b01e20129fb76dfb76e6f8c4ce86150842d611c",
+        "record_sha256": "079228203d99e7d1703511557f8e8d0b02744fde6de67332be661ed5fa59fa60"
+      },
+      {
+        "name": "numba",
+        "version": "0.68.0",
+        "metadata_sha256": "b3bbd7c095b9d0b410d778176e2824ea5be21e982e63e8d4fc7c8fdb82f98df7",
+        "record_sha256": "0098edf3df4809468971d2d0a5071c0803608d6edf02717188025c7834963b77"
+      },
+      {
+        "name": "numpy",
+        "version": "2.5.3",
+        "metadata_sha256": "451a9b8028000588e66b0b415587b6aef0bbc51a96d8e8a0cba0dc23acf64f99",
+        "record_sha256": "ce2ee62a7299b1650be283c335eb5684df4583e93a9d34d2a533680bfb3f0c93"
+      },
+      {
+        "name": "nvdiffrast",
+        "version": "0.4.0+rocm10.0",
+        "metadata_sha256": "a770532bcd12c0dffa79a6a0ce602bb0b095c8ca149b75c6f0e5ada7fbf725a8",
+        "record_sha256": "15d5c94e4caa45069f1ee8832f1c0ce1bf3eee0cd777bcd55676c92a07f77078"
+      },
+      {
+        "name": "o_voxel",
+        "version": "0.0.1+rocm.10.0",
+        "metadata_sha256": "cab63feb2f32eac44050eeed00cda73908821371670fd50c69296f0d7e007ecc",
+        "record_sha256": "bff9c1abda6b8e03674cb2d432e56afe0d6925ee51445b90b0c14537b7cd00e5"
+      },
+      {
+        "name": "onnxruntime",
+        "version": "1.30.0",
+        "metadata_sha256": "d765dd8bb488de145bedf618dd8d81e04fd7e35343778c9f58a652d5c28ad0ec",
+        "record_sha256": "e3106a610246bf8eba15bc67a52f12c1b42dc8575d88947326e7d27c2957cc75"
+      },
+      {
+        "name": "open3d",
+        "version": "0.20.0",
+        "metadata_sha256": "e88c32afeca1c4707cef38c4f94aa2fe91d09b9ac448a190be3d076e489a5901",
+        "record_sha256": "21564b791605b01d088a1cdb89997d504dbba00c98d3c759e3724420ad005b2b"
+      },
+      {
+        "name": "opencv-python",
+        "version": "5.0.0.93",
+        "metadata_sha256": "20749df4e7500c53075dee344cd02f63d4df0dce93526e49e7e1c90fbc094e3e",
+        "record_sha256": "0d1c6e6bd7eb7f6acfcaac2f97c004b247a9cfa668a6c807e2f0a59a2f958e3a"
+      },
+      {
+        "name": "opencv-python-headless",
+        "version": "5.0.0.93",
+        "metadata_sha256": "f8e9104b4dce58f708d4cc7af95ebd8a5d65a3e36209d42386eb61065ae50e1a",
+        "record_sha256": "2c96f8844b2e923f68bb41f728977692fbe37896a2c7890414395b54721b61f2"
+      },
+      {
+        "name": "opentelemetry-api",
+        "version": "1.45.0",
+        "metadata_sha256": "a05106d3a686244448191983a1d38701270190bab7687298f981135e387ba234",
+        "record_sha256": "a997e7c7debe935c8a0bce5225c36e8e6c76e4dd645ff80cbd04de0c92e07653"
+      },
+      {
+        "name": "orjson",
+        "version": "3.12.0",
+        "metadata_sha256": "3a04b81906c2ac8f535b0a4fb8371eea786718fbca08a75ff13f6c734f43b778",
+        "record_sha256": "3d5619106e6bf1b97042ec1637a346da52af9d910dd9d9418353d1295900392f"
+      },
+      {
+        "name": "packaging",
+        "version": "26.3",
+        "metadata_sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763",
+        "record_sha256": "8c69191044e577ab83c6b2990bc6fd7cfb441e6027ef5bb9e1c49c1dce2cedce"
+      },
+      {
+        "name": "pandas",
+        "version": "2.3.3",
+        "metadata_sha256": "243674e606b51e70e5858596c7bfc9b58875d531d56577927c0a9944693f6c2f",
+        "record_sha256": "3a6cc427d93160d2e7b844491d372a140975f3cf593a176fac836b84dd959a26"
+      },
+      {
+        "name": "parso",
+        "version": "0.8.7",
+        "metadata_sha256": "2fd8c9f8209218163a6c086ba8075d177122430645fea770cc02c53cd426119d",
+        "record_sha256": "b6531f9a91e92be47baa924fddd9501a66ee03496a7d48e10922c7d8fdf54e30"
+      },
+      {
+        "name": "pathspec",
+        "version": "1.1.1",
+        "metadata_sha256": "68de3f158b6592f086e78754c962092f32a761944ab66a660c0d62ad79c4b69b",
+        "record_sha256": "36dc75449af6644e84e6f59798c7171e0fdc7a6e408e8a585445afcbf4d17199"
+      },
+      {
+        "name": "pillow",
+        "version": "12.3.0",
+        "metadata_sha256": "8fc07146cab33ef7582361dab6eac596d340b03ec648f18217da7894f73838c8",
+        "record_sha256": "2d1b65f3a3d78967bd86b76ab565d1bcbe0811dd6e3d1b350880f90b96f0b634"
+      },
+      {
+        "name": "pip",
+        "version": "26.2.1",
+        "metadata_sha256": "3a561005822841f2c45f442f6c7a7505172c8c376c9fe274d876c8ac912968cb",
+        "record_sha256": "cedaa06581c990d25e5eb43d4628bc71d73bd763750b6d0db834081c49f4e331"
+      },
+      {
+        "name": "platformdirs",
+        "version": "4.12.3",
+        "metadata_sha256": "5b28a4e5ed5d077a5972c38ab5e5b25e10c378f6829676636c343187709d5be5",
+        "record_sha256": "aea9523d89ed9a052b3a6561566e4ed2b97eb396af7bbb742d42335f966d812e"
+      },
+      {
+        "name": "plotly",
+        "version": "7.1.0",
+        "metadata_sha256": "06b5359b97e92b0cf267237e7ec1b51fe531b6744d83810f2fb543e743687e1e",
+        "record_sha256": "2455a255b0b4a2791469171089a4e1ac0fcd2f40dbc15383e9fc95991aa8018e"
+      },
+      {
+        "name": "plyfile",
+        "version": "1.1.5",
+        "metadata_sha256": "778f0616fc9f65fcadd4bbadca1248e8aaa597a37181a6b4ac932225f44dede8",
+        "record_sha256": "08347caa31cac7ed46951c85e9d03d15832270c2d53dcaefbddb7ff88a00f63f"
+      },
+      {
+        "name": "pooch",
+        "version": "1.9.0",
+        "metadata_sha256": "7a67b1fba8575748276b1abee0db0d0c7d673d1f4f8f404699e949f1359da962",
+        "record_sha256": "a2fd652db77c810ae7f2778951a0aa4d4548909f13570fd06955f04a04cd1e80"
+      },
+      {
+        "name": "posthog",
+        "version": "7.63.0",
+        "metadata_sha256": "52365206a294def752915fc3f27b80920851898031a505a53bf1b8ed8aaa7a2a",
+        "record_sha256": "8657fff6f5d1ad074f9a8bb185c7e0f0d56e6cfa0ad3670628096517b8fee05d"
+      },
+      {
+        "name": "prompt_toolkit",
+        "version": "3.0.53",
+        "metadata_sha256": "d04994e4401b88abf884ca54fb3b85e50a8b4fb1fde1ed7eb3ece9d8bf5459a9",
+        "record_sha256": "76f176916ce575f4f29e0d20dca20649f74671a85240182d9f1224c21fbf24a4"
+      },
+      {
+        "name": "propcache",
+        "version": "0.5.4",
+        "metadata_sha256": "6ed3bac0ad43050ceaf8bd09878ba3d673c94c4da0d4498f903f86c36cc6fb57",
+        "record_sha256": "b5bde56d8bc169208db432522a8cf8e595c8f3aaf880e9841dd4fa2554289bdc"
+      },
+      {
+        "name": "protobuf",
+        "version": "7.36.2",
+        "metadata_sha256": "445916389cc3a87d5f815d763192372a17a221339d474cb661523157bf07d61c",
+        "record_sha256": "e953f78b5b546e32d100eddc480b24e60460fa61d624c9d00e05c1c7883ca4fe"
+      },
+      {
+        "name": "psutil",
+        "version": "7.2.2",
+        "metadata_sha256": "525f8ba78523cf7bc3759d62a105e7c57fd679ea702402b9449fb0746aa0217f",
+        "record_sha256": "fcc85ae3e1bfd692fb2692122ece1edbc6e6cd0c2bf2f8539e6c6242d7960d68"
+      },
+      {
+        "name": "pure_eval",
+        "version": "0.2.4",
+        "metadata_sha256": "4fe70f69411b9963d7275084210743afa819c2350899a29150bc43b1abf105d0",
+        "record_sha256": "164ca5639f0fb03452a286305dde2e0d83ab32a127b407c065f69d78b8beb6f3"
+      },
+      {
+        "name": "pycparser",
+        "version": "3.0",
+        "metadata_sha256": "f547a60b0ab54cc2f242213d1f87960ad80df7dd5dfeb98d17a444d48bfb6b93",
+        "record_sha256": "9d11e0aaa5bbd94ac91d34b9e836c66d782fa3f0eaebf473040c979a9ae68b99"
+      },
+      {
+        "name": "pycryptodome",
+        "version": "3.24.0",
+        "metadata_sha256": "91adf4293e18d619611e1dbcf94e9850cb7f5fca99fcdb7b2285246749f4ecf5",
+        "record_sha256": "897ef9112684788f57ba3472dc0a1edfa3b0674217398accd7615b8f0c3bf8be"
+      },
+      {
+        "name": "pydantic",
+        "version": "2.12.4",
+        "metadata_sha256": "9fea0467ea0f8bd08b0faff4eada5d2952007fa1e3be9b01ea868e60ea3cf254",
+        "record_sha256": "3451866eeb68dda80429bf61f0514c6215ab14d2b598489f6f448bba3572e3e6"
+      },
+      {
+        "name": "pydantic-settings",
+        "version": "2.15.0",
+        "metadata_sha256": "5ac12e408df62f1d4c7643146d9df04ace749f1fe5cf28b3b794be0b2834ca6d",
+        "record_sha256": "c875a905c0f4c169f4758c814f8b7897449943cd03c11e0bae38040462a296a5"
+      },
+      {
+        "name": "pydantic_core",
+        "version": "2.41.5",
+        "metadata_sha256": "09f83baa3202ec3da98a284a56afdf1ba69976e4af7172488887e5b2b20591a9",
+        "record_sha256": "6f3e11ada869f6939f604ed1c51fd41e3e0176eea2cae0aa03052d8aec12bbfc"
+      },
+      {
+        "name": "pydub",
+        "version": "0.25.1",
+        "metadata_sha256": "7f433cfd956d6e2628508f5e8d721e274dc9a3d03935b8bed15d5b56ab398989",
+        "record_sha256": "c68bb36af0d166a947990e7b3e01bc89d59e247713845015d78db4908ef0f887"
+      },
+      {
+        "name": "pyfqmr",
+        "version": "0.5.0",
+        "metadata_sha256": "a4a4f28dba9ec77bdf6d6f7740cbb18648c26a84892659c30495a05003fd0f5b",
+        "record_sha256": "9e2cd6287826a5937fce6148cc62f8f91f4f3f3ec10865a5ceaca45c26068969"
+      },
+      {
+        "name": "PyGithub",
+        "version": "2.10.0",
+        "metadata_sha256": "ae96ddbfe5f54e43f7e396f7a3245d862f31d6e7830e3d4fa6faeb390cccf1a4",
+        "record_sha256": "ab07ebda598e8dfe1b8ed9ccc52e47dca99f96615d4e8d22b93b74632f9d2591"
+      },
+      {
+        "name": "Pygments",
+        "version": "2.21.0",
+        "metadata_sha256": "1dde075570136774c706bf0009183a793fe0ee262e4a5590cc6eff8453eedd43",
+        "record_sha256": "95f3d32c17ad7159154d6cb36dbffd6e455b8451408763228d207aad53125ef7"
+      },
+      {
+        "name": "PyJWT",
+        "version": "2.15.1",
+        "metadata_sha256": "1ea0c9f139b8c928276b3628af165955f6f764491448a6ad8f103cdcbb382da3",
+        "record_sha256": "a1a96b9a162ba230c2c810586ad01864e65201f90c4e153f938d1bd829030eee"
+      },
+      {
+        "name": "PyMatting",
+        "version": "1.1.16",
+        "metadata_sha256": "c35ef02286b98f2bb6e5b00b95271bfc3a1c480875c2281f11787eaaa8a864b3",
+        "record_sha256": "933831e760dd2be468050e4ab7ac56e89d32f35e693a6962114ae379ca8da28c"
+      },
+      {
+        "name": "pymeshlab",
+        "version": "2025.7.post1",
+        "metadata_sha256": "2db2f73664b1bc0e0b5afe0f386b864545ff2e543f1f0f50a294abcc6e828b4a",
+        "record_sha256": "adedd92de1bddc6f552091b22415dda27be6cc4b4902dbafd8d55298c8d13eb7"
+      },
+      {
+        "name": "PyNaCl",
+        "version": "1.6.2",
+        "metadata_sha256": "143914f93191bef3bff7ba953dea6a38fb05f7f9e38e2a2e6ae31bd14ba81709",
+        "record_sha256": "22cee3f54f05a8775ab819a72766ce2fe8ed4045c2c79a89bc552d120f1c1deb"
+      },
+      {
+        "name": "PyOpenGL",
+        "version": "3.1.10",
+        "metadata_sha256": "d31bac2f803d3d353d37999423520dc7c208530e6d1cc452169b100aa900ea14",
+        "record_sha256": "cce122fb067df019e92490a67f9a7c764cd25f30e46e47d8ae13f37ad2e5a616"
+      },
+      {
+        "name": "python-dateutil",
+        "version": "2.9.0.post0",
+        "metadata_sha256": "a9d436da322be808332f98d88325998e87cb693a678a9969feb4cfad729a6e93",
+        "record_sha256": "3a5a516e7d1224330a241cfe307142e35faa14b3738c62cac931c71b4ba8dd9d"
+      },
+      {
+        "name": "python-dotenv",
+        "version": "1.2.4",
+        "metadata_sha256": "87cfee6042412d48df1100ea7822684988c3f2b79de7a250f4717f4df3026d6f",
+        "record_sha256": "bfbc131335114f8f995ce80b51a3195cafc9ac33fe7e4020b19f6e2d5c286a29"
+      },
+      {
+        "name": "python-multipart",
+        "version": "0.0.32",
+        "metadata_sha256": "e9d399d7dea5eddf0e4d24b5c24687a82e7e50bf2c2b30f8f8a06a64d887dd86",
+        "record_sha256": "22c3f1a58aa70968d7907fa9197346de90ab94254168ad46e1d20e80d777db59"
+      },
+      {
+        "name": "python-slugify",
+        "version": "9.1.2",
+        "metadata_sha256": "88a61c22c7e9d265efd4db089a40c719ebd609914dfb41f69245e2b72b652b0f",
+        "record_sha256": "c5c5db0d64b28ae00e876cbf5f631a496c5afbc4c99d4672ecd2ecc2206049ed"
+      },
+      {
+        "name": "python-socks",
+        "version": "3.1.1",
+        "metadata_sha256": "6c72ba43039d5a745408e072829e8c5bcf03f1b4cfd8c797e6b0262bb85a4c8e",
+        "record_sha256": "fbf16de785230f40e9d5c97875ea60779a3ff6e47ebaf3c2a48079fa2ef04fdc"
+      },
+      {
+        "name": "pytz",
+        "version": "2026.5",
+        "metadata_sha256": "4d20d16f6004b1d7f9b01a96f4d3eb462c0c2a8413d9aa878effe50a21535929",
+        "record_sha256": "f979ce1352a1dac65b696dd52c6faca460989937f6f136128c90e65dde5b907e"
+      },
+      {
+        "name": "PyYAML",
+        "version": "6.0.3",
+        "metadata_sha256": "03c3b415ed38d09faedc49360e930769b40c58f68585e6de00e2e4916a858d34",
+        "record_sha256": "c55b91c92f924915927c027b1ffc40d102325d0ad29b4c89f0534ac977024f56"
+      },
+      {
+        "name": "questionary",
+        "version": "2.1.1",
+        "metadata_sha256": "059db52845098a29c62ee19a27391f8ece7f9b1e677030b2cab3c2c470d0c2b6",
+        "record_sha256": "4b06676089b728a65f54c9af0381299c7befc763a0fa0c07f80c22cd4caadb28"
+      },
+      {
+        "name": "referencing",
+        "version": "0.37.0",
+        "metadata_sha256": "c93b00e6ab1524fd60848376604c189a114374776475c25a31d57be47b29de6a",
+        "record_sha256": "e478b36e3ce8788da1a3470a1ce2a260efc50cf21bbabbc398f0ff8368a84553"
+      },
+      {
+        "name": "regex",
+        "version": "2026.9.29",
+        "metadata_sha256": "33859377dbf8dd38ee3de73fd97faebf4a63d50576e3cc1a9dfe44df08b0936a",
+        "record_sha256": "d50437a52084f9de48cea6b189d49761f2be416a1a7d0bbe4eaad947e9dcf4ce"
+      },
+      {
+        "name": "rembg",
+        "version": "2.0.85",
+        "metadata_sha256": "aec879a8361b6ff0abd48ec8ec3eccaca12dbf72738b6ce07dc84fc8fb5b26c1",
+        "record_sha256": "d553fe9a5d8449da3f984dfd873544f3db6f6ece80bf9da45030ea04f0f83c70"
+      },
+      {
+        "name": "requests",
+        "version": "2.34.2",
+        "metadata_sha256": "8c384ba3e979480faae2859d3c5e6c1276dd2c3616e322e124d52c8cfc556f27",
+        "record_sha256": "7bba0196a873a09fd85f983bc50ee47c430a4edd6e7ba3cbc8a0cce21c3cd215"
+      },
+      {
+        "name": "retrying",
+        "version": "1.4.2",
+        "metadata_sha256": "3818733f785dc97c92d784c2fe373d35fdab817fafb6b8a44ec49ff32d65b44b",
+        "record_sha256": "e71db8900e128d13657415ea6906b3c19014344bd43f95c92b74592ed86b2e61"
+      },
+      {
+        "name": "rich",
+        "version": "15.0.0",
+        "metadata_sha256": "fad34fc603fac4481bf81f8dd629492fc302c0ec31909c86644751512afb2e3b",
+        "record_sha256": "8b4eaa9e8c0fc2707346d5b1f88ca2e9c080515635728cdb02faed124339ef08"
+      },
+      {
+        "name": "rocm",
+        "version": "10.0.0",
+        "metadata_sha256": "89555eac6515ccd0d838957d091af2f6d89aa1e551762d8dcaaec41729efc141",
+        "record_sha256": "1145bfd4d7b65c4e7dd5ab36f4bb64bcaa360a70fc57e3a317972808894f039a"
+      },
+      {
+        "name": "rocm-bootstrap",
+        "version": "0.3.0",
+        "metadata_sha256": "23b73387415c051978042165514d88e3a358ebac46c1d83beacf033296d5de00",
+        "record_sha256": "5befeacb4abaedf87fbe4657f489b4be46bf0c7d11b5887540d8baf786c85c20"
+      },
+      {
+        "name": "rocm-sdk-core",
+        "version": "10.0.0",
+        "metadata_sha256": "691757cdde68e4e5e76452d4bf8556efd017a1fb898dd76be2e10c3b9a616e0c",
+        "record_sha256": "cc796a8cda9f014379499ff6bdb98f1686868cc5d620df2e49b1ee2ecc406406"
+      },
+      {
+        "name": "rocm-sdk-device-gfx1201",
+        "version": "10.0.0",
+        "metadata_sha256": "170df87eaa91c1d7940a5d0ab279c84fab1cc6ba356fdf4a569157348ef92ba9",
+        "record_sha256": "2cdaa4fac7dceafe95788f9572f7f5e0fe55cc48b6fb3a71c4a83a8adc76cf87"
+      },
+      {
+        "name": "rocm-sdk-libraries",
+        "version": "10.0.0",
+        "metadata_sha256": "754a53ec8b100aed06e47a28601aa5a3427adda5ec2839b806fe3100d104ec77",
+        "record_sha256": "e8837c3ca58bddae282a03714ab1248e6314fc6be1b1292dd1a0ea837988a074"
+      },
+      {
+        "name": "rpds-py",
+        "version": "2026.9.1",
+        "metadata_sha256": "5d72dca2e387c8d2b4180b68ee87c15b64751e059100a6db58891ec9995445c3",
+        "record_sha256": "4c3634cedbcc8abdec13d7d0b372009af953351d5a52f603b6ce3a99cb96a30c"
+      },
+      {
+        "name": "ruff",
+        "version": "0.16.10",
+        "metadata_sha256": "2f914c8907d59fc48255be1689e1edca6679a52962fa321fb6ddea08b4a25046",
+        "record_sha256": "4f1758de967517f903fab17646d6ced5789eb53d054358bee7b05484adb51906"
+      },
+      {
+        "name": "safehttpx",
+        "version": "0.1.7",
+        "metadata_sha256": "5be3880c8660a8d390e6ed5c22360612f338d05cb25020e2f6ca1218a7e4f449",
+        "record_sha256": "8cc3c93acf9a1e4181a831cd048baf445e9def83d2e2529854ddd973e0e68d3a"
+      },
+      {
+        "name": "safetensors",
+        "version": "0.8.0",
+        "metadata_sha256": "645be7b8d55e91534f991d144dc9e279581ea8dbea1a8c5b0be14e529d01e345",
+        "record_sha256": "70546da2d572cbe73b36c91b30f6d3cf484362208e8b6a8323476364dbf2cea8"
+      },
+      {
+        "name": "scikit-image",
+        "version": "0.26.0",
+        "metadata_sha256": "cf5dcb3e5b9a815b4327c02225afcd85edd56b90fbbddde5be944352a5986571",
+        "record_sha256": "1ef1101fce097d781555948601bf35092ce45f239efca705582fb1fe0100d8c8"
+      },
+      {
+        "name": "scipy",
+        "version": "1.18.1",
+        "metadata_sha256": "c8313d18ca0168ff291fe0a3b50532f3a18b14547695e9aa7ca1c1ce6eca92dc",
+        "record_sha256": "f6714c5e83015220181b06792538f239db16a85ca4c0d8ca5c7ccef0daf03e69"
+      },
+      {
+        "name": "semantic-version",
+        "version": "2.10.0",
+        "metadata_sha256": "7414d469a569046b6a246bfb1f105aab1b7abfdc32a95253f15432ea30159aa6",
+        "record_sha256": "171ca9c070653d31853bcb65788a6c3301de5139bdad25eccc59db2f742f4172"
+      },
+      {
+        "name": "semver",
+        "version": "3.0.4",
+        "metadata_sha256": "02cc6339a4fa2d7c48a76e05d8c4e1a14b54fbca432a83fd911756a3238cb934",
+        "record_sha256": "eb909fa1e96b9346096a6d51b184e4311cf236c0fd485d77b244b86618ae51f5"
+      },
+      {
+        "name": "sentencepiece",
+        "version": "0.2.2",
+        "metadata_sha256": "bb49c79797fff1b8f3048efd4849d86dce4adbe26f7f3f0a5b37239a59d88ee8",
+        "record_sha256": "ac77d96c48a93dff3ace4ca192a81d42f8afc0cd662eb75c94d3714b156dabc1"
+      },
+      {
+        "name": "setuptools",
+        "version": "84.0.0",
+        "metadata_sha256": "3ef2975718dd31cabdd5829455e9b868ca14dbf79ed8fed2de0af4e87347006e",
+        "record_sha256": "ce455ba55b3a1804f5aa39412c71d5fe4eb4947b5c19e871ddda9cab8ac7731e"
+      },
+      {
+        "name": "shellingham",
+        "version": "1.5.4",
+        "metadata_sha256": "183d80220a37493262795739dd357cc5bb3f49bd390cc9198d5180e5451a07fa",
+        "record_sha256": "f03dcc965e66344413e6f9b77babdd57d8a61b8fce9c6c729f87203e30618e2d"
+      },
+      {
+        "name": "simpleeval",
+        "version": "1.0.8",
+        "metadata_sha256": "e0c99dbbaeadd08c1f847896ff4fb78f54b7cb38f456e329551b08209cae588d",
+        "record_sha256": "8708a5886a4071110269e1867b0618e078b86c7ef468724c47db910b0052511d"
+      },
+      {
+        "name": "six",
+        "version": "1.17.0",
+        "metadata_sha256": "562042078c2752549f6d8a7c86dbc5dd708088a7be6d80672ec7b07100b72468",
+        "record_sha256": "bca2421b394ae3f68e3d1e382607bf181b14f891ad1626aeedb9fc98f9525f4e"
+      },
+      {
+        "name": "smmap",
+        "version": "5.0.3",
+        "metadata_sha256": "761d62d78dbca38efb80f17b95a5aef5224d8288aedf980ca99c453db95047b9",
+        "record_sha256": "2c046ec0ee0fa4de15f3db2f09dcfd8469fa9eaff5684e763e491ce4b7d30407"
+      },
+      {
+        "name": "spandrel",
+        "version": "0.4.2",
+        "metadata_sha256": "6706bbfde6ae90fb90a0c48d3cb7130d30e6ef8a0df7da24468de24c9d4b457e",
+        "record_sha256": "87df20b2957627ce16261a18b7cfb450a25582c666aefe019556a4637eb3520a"
+      },
+      {
+        "name": "SQLAlchemy",
+        "version": "2.1.3",
+        "metadata_sha256": "455fb25aedae04317f4d4aae4594cd940daf97876f3c7b023f7bcd5f9a34ddbe",
+        "record_sha256": "955650b3f075ef2e52421bdb882059175fa936d2b9282e04637181e943550fa1"
+      },
+      {
+        "name": "stack-data",
+        "version": "0.6.3",
+        "metadata_sha256": "f28a66f2adde54e7031355e09a166e437bc0d023a31c10c973ac494288ca4c6f",
+        "record_sha256": "6952fe223e41a32bf89d6969f1fa9a13e15757bfe31a0c0790b138f4de015e5c"
+      },
+      {
+        "name": "starlette",
+        "version": "0.52.1",
+        "metadata_sha256": "c0ddc5837cca966a170fdeefb924a0dbd08f1cb1f310da1046a39faaeed0c535",
+        "record_sha256": "d716d2190c444def3cddf573c32556b7f86632de0d53bd4c7b1aeaee0c9c38c2"
+      },
+      {
+        "name": "sympy",
+        "version": "1.14.0",
+        "metadata_sha256": "b756c2fbfd5be05ac5bdb0ebca61f55618f30f633ed92d88a5687429313a7595",
+        "record_sha256": "a8f3b55dc5ad86b8164ac81ccd3d6c6214236185239a1b1e1f55237d26ce640d"
+      },
+      {
+        "name": "tensorboard",
+        "version": "2.21.0",
+        "metadata_sha256": "819632abede8687d314bc65aeb4ac89512873ce31eb97e57c2c11f51ace59d23",
+        "record_sha256": "071257a82277f556085acee270ffb8a06ddd62fe3735a16a25365185db541bee"
+      },
+      {
+        "name": "tensorboard-data-server",
+        "version": "0.7.2",
+        "metadata_sha256": "6b38aea33eeccd55a2644d9b7eb6c61d574a496188f4ac498e68e6230b1b9096",
+        "record_sha256": "8915ec1adc13d7e7d1ccd6e402a3014b0f1c3cb04b2e397535415e9fbb8caa8e"
+      },
+      {
+        "name": "text-unidecode",
+        "version": "1.3",
+        "metadata_sha256": "07d8fed65e3ec8df4fe5ef26a41ad70aa010b11527038233cb2d211bb272ae7e",
+        "record_sha256": "dcb6fd638889d606f53b75c4b556b87d2a99a44fff102729e84304c1c77c28ef"
+      },
+      {
+        "name": "tifffile",
+        "version": "2026.9.20",
+        "metadata_sha256": "437fc330bfa10d9f68742352f5a8eee9207b7796f0ea7a28223f4eff1d598d7d",
+        "record_sha256": "0b0f5ebd2d4408ecd89a2cec6bdd2f8013d7d0e88160b6a95783340ab379fe89"
+      },
+      {
+        "name": "timm",
+        "version": "1.0.30",
+        "metadata_sha256": "385c77b58e59de4193487c5056e92ac0f3c8422df103880f5a5e521afef1b815",
+        "record_sha256": "b804261853a151cdac9591f82d986f4a5e401cda318a7ed176ebad2484f2cd02"
+      },
+      {
+        "name": "tokenizers",
+        "version": "0.22.2",
+        "metadata_sha256": "15a5ddaf489f592b77e0a934c0eeb46b51130a94064ca129232afdb0a3868efc",
+        "record_sha256": "59cb1b72c40c376eb48ba3d2be7aed522b257bb1ab0d451c0e2dffad0a587d89"
+      },
+      {
+        "name": "toml",
+        "version": "0.10.2",
+        "metadata_sha256": "9ff624b29bc48a177f4172c8659e74595485cf7ad9fe4ee340ff8e535594a566",
+        "record_sha256": "d69bc4c343ce8fef1373b2debe459e63924efe72cd820ae5df1a90df70cab93b"
+      },
+      {
+        "name": "tomlkit",
+        "version": "0.13.3",
+        "metadata_sha256": "72fd2d084576e1e827120719fcbe28a4dc6c48a807e843ea8d0e9e455e610779",
+        "record_sha256": "eb9b963f23e6e2c68b25f333f2a4ce03e3dd8a39502c782edee3b542ae341fd2"
+      },
+      {
+        "name": "torch",
+        "version": "2.13.0+rocm10.0.0",
+        "metadata_sha256": "894fe91414af90ce35ff3f9867eb38ec7dd22fcbcd0bb93e8058250d7a9139ae",
+        "record_sha256": "590bf589a0ee5a329c8d18e78eacb5e5f9d084087f786b7e7c1b01d3715c858e"
+      },
+      {
+        "name": "torchaudio",
+        "version": "2.11.0.2+rocm10.0.0",
+        "metadata_sha256": "9f4c76b1dc2f32e495df3512441b2c25bf8590a22e6d169e5d48ca8a397f53c9",
+        "record_sha256": "52c572d7b370822616eb138430f93955ed254d6b3c1c840da8e992afc0427c8d"
+      },
+      {
+        "name": "torchsde",
+        "version": "0.2.6",
+        "metadata_sha256": "07c6420d208308af6ca8c02d36d6143c8966d49c521f58f320f93a1e0e7a7b8d",
+        "record_sha256": "bcdb8c1a2a6dd23658970a469a4d3ddd149c5b795c7349042495f50279452a9f"
+      },
+      {
+        "name": "torchvision",
+        "version": "0.28.0+rocm10.0.0",
+        "metadata_sha256": "5904b07b89061f15d92c51c3910971cec01903260320b1ec86b1c750f7a8f4d0",
+        "record_sha256": "c1fc9d0d9238f7f2102598bfb38deff5339f4c07c6bd3ef327d86c2e9cb19a95"
+      },
+      {
+        "name": "tqdm",
+        "version": "4.70.1",
+        "metadata_sha256": "a5da70b966afea3a759716041bad7187f2ece02c22348cf9e7c0a512bbf15f57",
+        "record_sha256": "e63cff1ffba791ec77e180bd837a01e45e15ee1d4bbe0befc05d6bf19331495b"
+      },
+      {
+        "name": "traitlets",
+        "version": "5.16.1",
+        "metadata_sha256": "e42b503240c058625ffb30c390818d72933117840cb25060614cb24f0be9e587",
+        "record_sha256": "d4d05ffd01bab71d54f0759eab218e9acb8a98570da7c07f4ada01c5193d3b82"
+      },
+      {
+        "name": "trampoline",
+        "version": "0.1.2",
+        "metadata_sha256": "50538036430f2de46e94fa5aed3d8b1c4c5876483b9e5576accd558053972865",
+        "record_sha256": "2206996d2771c27d4558d99675f19685080ba16b55ae9a04b056f6ed22a666d1"
+      },
+      {
+        "name": "transformers",
+        "version": "4.56.0",
+        "metadata_sha256": "81d85d509cd04706119272a9ec2912a64d798989b797dfc98eb85d715e81ec43",
+        "record_sha256": "cdba4c2ec5f889cd99f5b5d5ec9f4c2f9b186e36d8bae42348458f7fcc7e4f33"
+      },
+      {
+        "name": "trimesh",
+        "version": "5.1.1",
+        "metadata_sha256": "83ff5dabdef64a3ee82e560f419c06c7d5d40704e3cefe1807ea136db79b01b7",
+        "record_sha256": "3545e2bc153c572ae225355d32987aa70faae11f2bf526a9bcd1082e384868aa"
+      },
+      {
+        "name": "triton-windows",
+        "version": "3.8.0.post29",
+        "metadata_sha256": "7a9331f19e00e21c8c7563e8e9fdcf33f66513b61219f91f90696a2fdb59ba81",
+        "record_sha256": "499860643946427d993bd0391739f11990ed86950e0a800347b9418370e4e136"
+      },
+      {
+        "name": "truststore",
+        "version": "0.10.4",
+        "metadata_sha256": "509a7b67bff99f2d04f57251b5bdb761bd9429467e1cebc453b7f96be4108f5b",
+        "record_sha256": "1ef218c9277fd68f84ca739594d4d696c6b17a34bb8725b0e4811c2fdb090523"
+      },
+      {
+        "name": "typer",
+        "version": "0.27.2",
+        "metadata_sha256": "d1b73586e27d662dc32af374a4f073d167706e0b2e5fa025c0a507ba0eeb4ccb",
+        "record_sha256": "4405412b1579d69bacd089f551edcc71c5b40ecf49960c7427d57b08eaa57f68"
+      },
+      {
+        "name": "typing-inspection",
+        "version": "0.4.4",
+        "metadata_sha256": "bad3d9e6342ef6750cf5128ec942327b8bebdce0b6e4d6f67cb15b27ae5118da",
+        "record_sha256": "06f60204c0b7d67df21f09681e2db4781ef463cad5fb7dfc7a749b232a0ec8ae"
+      },
+      {
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "metadata_sha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46",
+        "record_sha256": "a346a921aa5be35b34ced3258614183d152887b954caaae5de2a94be72d5f2ec"
+      },
+      {
+        "name": "tzdata",
+        "version": "2026.5",
+        "metadata_sha256": "e0780e8b6dc8882ce87e871a9d4589d59cb05a0c2d64f58b1ba62cde1ee91f6a",
+        "record_sha256": "32949026dd1854aa3657d3ca1f33cd6f9a87cfacf06744fd36065b52f70f215e"
+      },
+      {
+        "name": "unpaddedbase64",
+        "version": "2.1.0",
+        "metadata_sha256": "100e11db93afd37208b7b5cfe63d28e61f14de713dc978ee77434f3167912eae",
+        "record_sha256": "d860ba45a901bb165f782ff39f74dd34fdde9f0d5e13a40ec5eee50529eb935a"
+      },
+      {
+        "name": "urllib3",
+        "version": "2.8.0",
+        "metadata_sha256": "10898c620e8007c030e07fa5622b68358a43010025dfbd78a1cb797699de2bb4",
+        "record_sha256": "d1095c0d4222e159c7ceb2f8767d012e68bc1c4c0025518760aeec47e91326e2"
+      },
+      {
+        "name": "utils3d",
+        "version": "0.0.2",
+        "metadata_sha256": "154889d6115993d9a5c43bbb5b4009890f91e268de467fae881630c150711267",
+        "record_sha256": "b1eb21a57178191af8a87e9bc5db5af3e90dda335853a06587947a629a7318b9"
+      },
+      {
+        "name": "uv",
+        "version": "0.12.23",
+        "metadata_sha256": "f4ecefe3b65d6b8f49bbb28206f8f1a54d950141da76402ef1f3e128adcecf2c",
+        "record_sha256": "e65b6667732a06855e95510d9b9094a3da29293cd848ed300b3e83543d10c8ef"
+      },
+      {
+        "name": "uvicorn",
+        "version": "0.54.0",
+        "metadata_sha256": "9399e5ddda3d26e842d6fb5420c38b0857aac568d53badbdc224b3a21339efa8",
+        "record_sha256": "91374bd14c0ed4c848f733a503105a714c64191458940faf87bab14bdf542f63"
+      },
+      {
+        "name": "wcwidth",
+        "version": "0.9.2",
+        "metadata_sha256": "cce73426c72bcd655c08f6229262e5868bf69c1e9e10130119b275ebd200e2b8",
+        "record_sha256": "0fabea9c913b94cdfa65ff103b896a09c759492b2d755ee6f2897a79b5923cbb"
+      },
+      {
+        "name": "websocket-client",
+        "version": "1.9.2",
+        "metadata_sha256": "4a97c326e009bd602e900d0059912bc57c56b5fa1129f6198d10533b6e89450c",
+        "record_sha256": "36808c6f27a5083d7e4da31c10dfdfb91e04ea7ba1d765234eee6e86cbcc596d"
+      },
+      {
+        "name": "Werkzeug",
+        "version": "3.1.9",
+        "metadata_sha256": "9f04352e946ecb0883fbf379994c1cacf6720a124acdd7fd59029a889f4eebba",
+        "record_sha256": "b5f70d1cf8dd4b1355acfd8c7c51be0739057e2ee1f866e03213a907a4ec5bf3"
+      },
+      {
+        "name": "wheel",
+        "version": "0.48.0",
+        "metadata_sha256": "e702fede719fefbb8accad64c01c78efe8d7efea27a7dcef3423f83ffaadfc48",
+        "record_sha256": "12ffd073f7ba46d54d4e7eded218a1e6c5261ab101691ad251974ebdc6bf0497"
+      },
+      {
+        "name": "widgetsnbextension",
+        "version": "4.0.16",
+        "metadata_sha256": "d8a9a76b9ad68a2a105fe37e05c6e2258e37c33175f73cec4d7b1cb62008b894",
+        "record_sha256": "d9f0328ba3387e40c303ff56fec0b21e5806365c8c53a723dc022c1d4218a489"
+      },
+      {
+        "name": "yarl",
+        "version": "1.25.1",
+        "metadata_sha256": "fd6baa258a11c4d7e7008272a69180d4d34aa04a6a5afda36ac5e55aa0aa4f41",
+        "record_sha256": "e5e0caf75f3d8b3058c907949a28ce1f8b4c7f550c0dc9cc8613a764721ade7e"
+      },
+      {
+        "name": "zipp",
+        "version": "4.1.1",
+        "metadata_sha256": "3080f93de17d4bd784cd33afc0933db91c28cbec1cb444e1ffdfec5c7e0f5d90",
+        "record_sha256": "b2e87d90d74054a407b22cdc66b88688f6981f2660df7875db54c04ecafa568b"
+      },
+      {
+        "name": "zstandard",
+        "version": "0.25.0",
+        "metadata_sha256": "03d37736b26b9ae48451dd17026d93dffbd252fb708c1a2a9ae1be0c0966de92",
+        "record_sha256": "fab5ba17c1a0ad1d250ccc4703ebb293aad0ab0ead642d4230f488cab7ec4ef2"
+      }
+    ]
+  },
+  "source_sha256": {
+    "..\\gguf-source\\generator.py": "4f4790202ede5bc4eeed202d1f442d94c6ad8e309c44ef15ebefed76c2580031",
+    "..\\gguf-source\\setup.py": "5c3e575617bd1774a1f22b1e45cea25b3c1e34ba727a1266aa7262cb098cce98",
+    "..\\gguf-source\\manifest.json": "9a68634641cd7ef33300fade595ec509d2ef83b00a7bd1a736f35dddbf8a0527",
+    "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\trellis2_gguf\\utils\\gguf_utils.py": "8b2aaabfd8daf0a9d1f19060b2b1d35fb2272fc9fd99d012a2fece6905990bc1",
+    "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\trellis2_gguf\\models\\__init__.py": "1d13f16a287dccdf2ea22ade1436df651927dd4602a24e9a936005d6fff3f0e6",
+    "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\trellis2_gguf\\pipelines\\trellis2_image_to_3d.py": "9be0e4ec4634cf394ea2b13eb5d373eb8372d236fd84c123072f2ffd0fd0df70",
+    "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\trellis2_gguf\\modules\\sparse\\config.py": "6a9cb44608829cb2c11591685282959928c6081c5bc659687aa8395765c5f91b",
+    "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\trellis2_gguf\\modules\\sparse\\attention\\full_attn.py": "3aa90c52afe73af36a1947b4373b96e2505c5a2bff46f4e9b6bdbf1aefef9238",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\nodes.py": "d310c97f3f7ff187cd581ed01ea3dbd6217fddb8ad9d59b12bd7c485f93821be",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\__init__.py": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_image_to_3d.py": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\config.py": "525ed9a516bc9576712cce9896a52a0ec9667ba7dc4aa13f24ee6a83353cb722",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\attention\\full_attn.py": "045aabe973d405cb16f8a1a71c5b4d8f76988c99b4e333c29bbc12d51d0cf4b1"
+  },
+  "preflight_source_sha256": {
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\nodes.py.before-profiler-fix": "585d81c545cce5ca71fee1cb17f47e65b13c7f98b13a6053e1c1699079d7012f",
+    "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe": "95ba504bd187d810fba48cf25f094629d1e17dc67e384706ffb2621f2b869e4c",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\rocm_sdk\\__main__.py": "da3cf689993144403ebd20543c26d2aae20b0298acb81f590df9e78997c9fbf2",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\rocm_sdk\\_devel.py": "608314f7e710bc44e93e3f8b5c729b5072656d15b463ff98123b826d347f1af6",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\rocm_sdk\\_dist_info.py": "de0065098100898af4ffc558f0d54190d89923840bc074c4c194673d0915206d",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\rocm_sdk\\__init__.py": "ed87e36cc153b7811133fb934ff1f018114c394f32a56aa040663ef66c147c3d",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\driver.py": "048f3915c6942e64c7c84eb47c62f265ad10e6be4584940fe0530f5a630b23f5"
+  },
+  "venv_file_metadata": {
+    "amd": {
+      "entries": 94687,
+      "tree_sha256": "d94c786df5201cebe538212d9da041328a87f7c79bb7fce20c5d6db25355f3db",
+      "fields": "relative path, size, mtime_ns, mode; files and directories; no followed links"
+    },
+    "modly": {
+      "entries": 61313,
+      "tree_sha256": "7ac3cc27afa4e2a31973e9e7e7cf575316cb8e4829b64860cf4cc60775b2370f",
+      "fields": "relative path, size, mtime_ns, mode; files and directories; no followed links"
+    }
+  },
+  "inspected_package_sources": {
+    "torch\\cuda\\__init__.py": "90032a87aa93805b69260345c868c3266ccdb76c94182e26fe096ecc0150bdae",
+    "cumesh\\__init__.py": "b0391f73f6db9fa214e4a7bf689a9b33879d773c1d273c1f2ef6fdd32bb5b4df",
+    "cumesh\\bvh.py": "2a6116850dbccb52da11c1585a3196f0f81f48df94f4fd761e30701582552551",
+    "cumesh\\cumesh.py": "eabb42a0e1e4a06e994103fa21ff22c07cf9b467b4110e7445971a3aad31dac9",
+    "cumesh\\remeshing.py": "b38a22123c381c99afff23613d188475b26af24bec04a6774100f66be76b029d",
+    "cumesh\\xatlas.py": "19ca10dd0880ce8999f46e9db40146bc3c863ac641189309ec9f5f015ad58083",
+    "flex_gemm\\__init__.py": "423979e1c23c050fc23de42d287e4827b44f33e052f53e0335e53630611cf0b6",
+    "flex_gemm\\kernels\\__init__.py": "153b8e121dd237be9b5a06434c0f2d262765d259566f0c4acb12fc610ac292b4",
+    "flex_gemm\\kernels\\triton\\__init__.py": "2e8d43c01a4dcc8c1522ced8adbd861d46b2a1252ac27b6c589f317c5d0a0f86",
+    "flex_gemm\\kernels\\triton\\grid_sample\\__init__.py": "ab98fd80162bb47f954ed30a84b90c8a7669c3440ef1e0e342cfc7760aff4b68",
+    "flex_gemm\\kernels\\triton\\grid_sample\\config.py": "7b32f060144b619577db418c193bbd4ad701d358b70aa2a3e6d73fed83193424",
+    "flex_gemm\\kernels\\triton\\grid_sample\\indice_weighed_sum_bwd.py": "209f3d976f4c9a8c5fe6dec17d194b2a6a282699a2783789e84c7eac1647f616",
+    "flex_gemm\\kernels\\triton\\grid_sample\\indice_weighed_sum_fwd.py": "5fa745060d0469a6adf74da84ec6dae35413407c15b1dfbf8627d36ac4cc0fc3",
+    "flex_gemm\\kernels\\triton\\spconv\\__init__.py": "e4a9d027379a15467fe5684cc7c0dbdc0c1d06561ac38c6ffb319006623d5720",
+    "flex_gemm\\kernels\\triton\\spconv\\config.py": "e29b0d56b3bc7114751c2a2f06657d6dbf35cd0d8c3a6bcfbcc7c60842fd3c50",
+    "flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_bwd_implicit_gemm.py": "8e87ec1dc4b27e5ea0e6eb4470230ee95e989150079f0ab66274b6b4add4ce80",
+    "flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_bwd_implicit_gemm_splitk.py": "aa959e913e34bd6f1d1d05e84100ea4c91a5f1b6353c4d5ad4b97d091cebe1b1",
+    "flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_bwd_masked_implicit_gemm.py": "a58013a6698d589d1881a3b9730616d3ecd9d54c842c1aa997d678703cc69df7",
+    "flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_bwd_masked_implicit_gemm_splitk.py": "3816270d1b461ec0f901463a70a99e4245e5e60c2098f3a61e1e7c054e52ae2b",
+    "flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_fwd_implicit_gemm.py": "8fb4ee65d24bf53ccc976720ec80d30c39969d658bed4b766c968a766851a30c",
+    "flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_fwd_implicit_gemm_splitk.py": "a4719d551f69f911500530ed1e8f178f9a8120e4486f5259ca00f22707151695",
+    "flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_fwd_masked_implicit_gemm.py": "3b81212e4ae3ebd37a20981f53bbf660db87ba4a8cb68ad9772cf31b983e8ae6",
+    "flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk.py": "21d5efc8f59f312c62fa45241fc13a9e446cd4c13f11e360cf92216d151301bb",
+    "flex_gemm\\kernels\\triton\\utils.py": "9b463d9bd888cd36f05bbd52f231b7019e8f263c7801b6594682e3925cb43ad2",
+    "flex_gemm\\ops\\__init__.py": "ad664ba95e73377aa524c63b6052d3331d23d1896015def4e174a6c0ee96a8dd",
+    "flex_gemm\\ops\\grid_sample\\__init__.py": "f4453020ded7dd939c2482882c11921fe9a6f770bfd30cf338d02b62a3a69d32",
+    "flex_gemm\\ops\\grid_sample\\grid_sample.py": "b88c464b225aed7d9dd518ca0455e28bd48e31885a754928a875a8cc60eca4b9",
+    "flex_gemm\\ops\\grid_sample\\grid_sample_torch.py": "49aac937ab470c2dfd12b30e957ed1ca0bd2ef47764f8ce2eb68d577371c689f",
+    "flex_gemm\\ops\\serialize.py": "31c3f3a30cd55733f7bf2e39d2a442ad65b7c977b9db044b7217e595779b1062",
+    "flex_gemm\\ops\\spconv\\__init__.py": "355ec87a663f161bc0fe0e1417ab60d041bbb710e1aee4b885e40fd9f0cc1a3d",
+    "flex_gemm\\ops\\spconv\\submanifold_conv3d.py": "51ac1ac963e46228e7d0f928c6237af5e0677705278ebef73bffdb7b43e69aab",
+    "flex_gemm\\ops\\utils.py": "7c837640b3fa53c07549a2a2723fe9902651ffe12de7d8af5b036600b83e743d",
+    "flex_gemm\\utils\\__init__.py": "639734260e608a56a4ed6ba0389b8fb623c12f47dc986243ff7875465a94682a",
+    "flex_gemm\\utils\\autotuner.py": "0a8db435e607593f4775d5eeca26e671eaaecc6ec7e15f767ab96bf264d30714",
+    "o_voxel\\__init__.py": "8b3c2240f3c6bcb098213f89179505933a03d6d1fa7f25483b1b515c48d6c24d",
+    "o_voxel\\convert\\__init__.py": "61c0074bc5bb1f76b28131782c57eb8f6f6cbba7cdc9286b7a009c84a284829c",
+    "o_voxel\\convert\\flexible_dual_grid.py": "2538315098531d5306e2cb5bf84942335e114c23fd1192dbd1920800c1c9b7a2",
+    "o_voxel\\convert\\volumetic_attr.py": "f82338becaef9e048a2e2ad2d0b937c7fc85163dfddad9bae4dd152307c028f4",
+    "o_voxel\\io\\__init__.py": "b34d6ad9823741aefa11b52f00352b62a0d674ae98c5b92c6f2f5cdbb15a4c17",
+    "o_voxel\\io\\npz.py": "45efef0cb21c06e1351b56cadb4ab4f1d9a9aded57ed2f34e667a423c582d3ac",
+    "o_voxel\\io\\ply.py": "1b4bfdc8ff5741734dda3950a30dc012bb28a080167010812c332cb3198d5c09",
+    "o_voxel\\io\\vxz.py": "3b2342fa277d92bd765a96e1dc2a70e488b2369a432fd21d805915d414be1308",
+    "o_voxel\\postprocess.py": "35b62242503944cb16c25b7a1c8730b632b2f55d7a1f3b0b6dd2051779908e4b",
+    "o_voxel\\rasterize.py": "c25f59566e5a0e465042b197f6ec8d6df59372c89cec034509f282e841542b90",
+    "o_voxel\\serialize.py": "cac6320f11217f9015d915f19f75ac5e8974dc6de987b5688395486e35453862",
+    "triton\\__init__.py": "74a6cf22b4c837d5d9bbdb5a42e11c6a6af847a4095810f5a58df7f2b3b1e06a",
+    "triton\\_filecheck.py": "73fec306ca77e3e56b2f02f3b567c6f6e4d88fe50725c2dd9e0d5d6c2ed2fcc8",
+    "triton\\_internal_testing.py": "f3383d890ff99d61a592354ef90aea86310f45014688d38a1aad081ff358ee32",
+    "triton\\_utils.py": "8712b84835ee407e852605acf697395e3b79c91025f1d0ef58b0c678578938dd",
+    "triton\\backends\\__init__.py": "c8bd4497720e736a2f8a7c01667a802d4945083a4aee77d3ac4bfe4305c47a89",
+    "triton\\backends\\amd\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "triton\\backends\\amd\\compiler.py": "50dceba3abd768308bb59ff5e7b85a0d8c47e5ff9fa27558051cd6903eff7da3",
+    "triton\\backends\\amd\\driver.py": "048f3915c6942e64c7c84eb47c62f265ad10e6be4584940fe0530f5a630b23f5",
+    "triton\\backends\\compiler.py": "c5d3403b88b5bb728f8ac78c55163198e418430f126c842892c68cb4b6baaa78",
+    "triton\\backends\\driver.py": "3aaa775f592533d06c13c99c23bd117430b1e7c732c2ae64c571d84d01ad2c39",
+    "triton\\backends\\nvidia\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "triton\\backends\\nvidia\\compiler.py": "2ec70107bf28eabe082b9c635c41d72594685c3e3d3393404f7646bb279b4c41",
+    "triton\\backends\\nvidia\\driver.py": "b92acc8c1b06ddfc71d31fa70ff0218d54b241fdf77e289ba5599a7e894df686",
+    "triton\\compiler\\__init__.py": "8fdb1148718a88db840a2764f2bb2ccb8cb97f9c51f67ebe0a5072ec0d61632f",
+    "triton\\compiler\\code_generator.py": "e7b75e513fb868674fd2adc660c6527e4ad9e74f01120d8e2b1ad243329a0c92",
+    "triton\\compiler\\compiler.py": "58517d38115dbf1caa714742bd904b3ffb8299face140a9237a9334db895f4c5",
+    "triton\\compiler\\errors.py": "23d635e690d670bf61798e1259674b78c0ed5ba222ab6a455f329f27a758fc2d",
+    "triton\\compiler\\make_launcher.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "triton\\errors.py": "f167e7b9128b1b9efc9a063a701037102aee54c7fd50b10a14d811709e888563",
+    "triton\\experimental\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "triton\\experimental\\gluon\\__init__.py": "d7b607f028fed01715550c5e5ef708b0bd71881ccda220fb7390248ec29ca904",
+    "triton\\experimental\\gluon\\_compiler.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "triton\\experimental\\gluon\\_runtime.py": "739a9c208c3c73ff5d4ec2d38a4051c20140e4f149c442a05cc37010443d5684",
+    "triton\\experimental\\gluon\\amd\\__init__.py": "1a3a03e49144cc56c699ea5baa137da80a46d3fd2c0fe00f5f03ad6ac7668465",
+    "triton\\experimental\\gluon\\amd\\cdna5.py": "8263ed0626344417eaffb846cef8ae49351fcb45b18bec42505787c614bfabc9",
+    "triton\\experimental\\gluon\\amd\\gfx1250.py": "5cd3d97904091dee22b8903da1da9ca2e753c6f58f30335a279578e25760daac",
+    "triton\\experimental\\gluon\\language\\__init__.py": "3b739f71ec6c2edcd2c50fa67e62d0b6b1ba8723814b15aa29912a0a3cb4325b",
+    "triton\\experimental\\gluon\\language\\_core.py": "ccaf99f8717cc72384a6bdcb63c3f5b1e378be678904f686b3b955f7a411cdd3",
+    "triton\\experimental\\gluon\\language\\_layouts.py": "817880af6cd4814150a7312b5fc5484da75c1e876013a95afdc2e045a3d225bb",
+    "triton\\experimental\\gluon\\language\\_math.py": "30df45bedf056904e9c445022a1c3cdc819b930043d9685da7af3a6afe2fbf4e",
+    "triton\\experimental\\gluon\\language\\_semantic.py": "4e6cb392c0a272c3e206973761e583af42facc2e0e7da22fdcf03f4442dc951f",
+    "triton\\experimental\\gluon\\language\\_standard.py": "dfbf12dde86b80805fca12070f8bf3c9a11ffb738804d51130782d420e0ea2ef",
+    "triton\\experimental\\gluon\\language\\amd\\__init__.py": "6bf68ca2fd785c7c50cdbe177a985442fa63f56bf0caa3e8c80b01fa5c88ec41",
+    "triton\\experimental\\gluon\\language\\amd\\_layouts.py": "1928b74b227a8ec322941cecc502f40c0ffaaf541555cb4f735753a9335c7a22",
+    "triton\\experimental\\gluon\\language\\amd\\_ops.py": "67f980ccc592a1a7d02e06026f5a9ba4400e4eea3235036135a2deceeb928c09",
+    "triton\\experimental\\gluon\\language\\amd\\cdna3\\__init__.py": "1b3ab7a3d2459f18746af8d5b1ba01d0605e0e9f2020e1bd19225e861b1b4b93",
+    "triton\\experimental\\gluon\\language\\amd\\cdna4\\__init__.py": "02f7340c462ae17fcd1e687ac18a6b376f162413dd599d5752debd61b02cceb6",
+    "triton\\experimental\\gluon\\language\\amd\\cdna4\\async_copy.py": "4b758e2a46855f90ab3d6ba59bc0695a2b129051d0c16ef2f7a935baf5545e42",
+    "triton\\experimental\\gluon\\language\\amd\\cdna5\\__init__.py": "93ed4ce039fe2598ec0d3dda79ea77c8491e1072c04ed24469ff694ed5401498",
+    "triton\\experimental\\gluon\\language\\amd\\gfx1250\\__init__.py": "50c1532782953762e09c64f59ae1d0dcccf72439f7b11380e2b571a270303789",
+    "triton\\experimental\\gluon\\language\\amd\\gfx1250\\_layouts.py": "53595d5e3fdd913e6122dbfc2fc2b231ad20b31628c6e4cbe4532c608b01d404",
+    "triton\\experimental\\gluon\\language\\amd\\gfx1250\\async_copy.py": "ce99d03173428bc5e742c953b4a34818fca8d43de0642987d256e838f4f2e27e",
+    "triton\\experimental\\gluon\\language\\amd\\gfx1250\\cluster.py": "59ce4d219d79203ab665fca4710897867ff14fb7cbe8000389c6e4af36d2d43d",
+    "triton\\experimental\\gluon\\language\\amd\\gfx1250\\mbarrier.py": "0b5a2b66ac0e37706dee23c4464f581b28e0f2decaf3711927e8000d85ba381e",
+    "triton\\experimental\\gluon\\language\\amd\\gfx1250\\tdm.py": "a653c842e45899d7f8677d634f0c166432b457df1fb7268bf8298dc89376fca1",
+    "triton\\experimental\\gluon\\language\\amd\\rdna3\\__init__.py": "27d6be3f0ed8f3aa9ec00be36a1846d545374031cac0e31595265e5b44a26885",
+    "triton\\experimental\\gluon\\language\\amd\\rdna4\\__init__.py": "b39ffb3d0621d26d5864df4d3ebfde0d872422bfa3acf0e86ec565dc353d8c93",
+    "triton\\experimental\\gluon\\language\\amd\\slice.py": "10c9207e341050e2deca280e8c7c415cb9bd1794fab4c2820fb74e451193f2b5",
+    "triton\\experimental\\gluon\\language\\amd\\warp_pipeline.py": "6b7e5a31d700c300dd639d49f0c27bd7f7a6ed2872b21339a5513fd255c62f63",
+    "triton\\experimental\\gluon\\language\\extra\\__init__.py": "15a0eabca45bf0cf0ae3b0b761c7b27c5dd98996b22c2f3164ddb8f23365c5e4",
+    "triton\\experimental\\gluon\\language\\nvidia\\__init__.py": "6a23abb58c07017ec8dd22fa063bfcfe3dda8e656c0ae731d5e061c6d21f0b93",
+    "triton\\experimental\\gluon\\language\\nvidia\\ampere\\__init__.py": "4d9b5bf15e328cdfde7bb47904f4dba7b431edf3de61c68906097a10f947d1e5",
+    "triton\\experimental\\gluon\\language\\nvidia\\ampere\\async_copy.py": "86e23dfd1231d2709e93a126c91349254440a930ef2196c6d5e3fcefc7e8f623",
+    "triton\\experimental\\gluon\\language\\nvidia\\ampere\\mbarrier.py": "2f1c498bb9a83a6c5aed25ca1ae51a1ca3d7e0f9fcc324198d39600ee2a5522a",
+    "triton\\experimental\\gluon\\language\\nvidia\\blackwell\\__init__.py": "7658521ff732a71d2e17c37ed7b11ba3505b134513450204d2a8bac824225218",
+    "triton\\experimental\\gluon\\language\\nvidia\\blackwell\\clc.py": "a63c3e71a085db51173c0395b44b94c2bf4e10f6a1588e2912c32d8d95999286",
+    "triton\\experimental\\gluon\\language\\nvidia\\blackwell\\tma.py": "3d69de73508aba184bd9e8f7d96a8c032c56c1257d91b78989b26fa559b74525",
+    "triton\\experimental\\gluon\\language\\nvidia\\hopper\\__init__.py": "c427a1f7fa5277d701d6cced0dc05ac3af4e5a32f9dc2675699fa254023a99dc",
+    "triton\\experimental\\gluon\\language\\nvidia\\hopper\\cluster.py": "a8910cfc166252e5223d1aea797f2c05b896a4262493791d03e79b23704ba657",
+    "triton\\experimental\\gluon\\language\\nvidia\\hopper\\mbarrier.py": "a49f1cdd34ac51ccfcd5b31d56bdc4673d1d42f713fbe25e4823ce8f2e0eefaf",
+    "triton\\experimental\\gluon\\language\\nvidia\\hopper\\tma.py": "936e6ef9f111f3656e518c3cb4a6d854a44a77ec3166cc7dce6a115e9d5b1fe7",
+    "triton\\experimental\\gluon\\language\\nvidia\\rubin\\__init__.py": "0710458377c9c1336d831215922df3ab70064f656bc9b11b3221af8d08753a06",
+    "triton\\experimental\\gluon\\language\\nvidia\\rubin\\mbarrier.py": "194c698912e6e6b27046993229271fb396ccda9c6c6c61ad623c0f92f3ac1fdd",
+    "triton\\experimental\\gluon\\nvidia\\__init__.py": "2125c1e1157b45c08bb14f8985c445780dbd802043564f1c4f03b68fdf62bcb7",
+    "triton\\experimental\\gluon\\nvidia\\blackwell.py": "725970954084e7f60a5aac9241993bc2dec589eaf3df8e44e55c33b7135118cb",
+    "triton\\experimental\\gluon\\nvidia\\hopper.py": "b843d1e89c42dfe4561defe49b7d65ede5cc425e250649e5e4430509a0466aa8",
+    "triton\\experimental\\gsan\\__init__.py": "5377c86fda9dedd0028f45d2157675ac44b74cb22e3c013b209f0d66f9596f06",
+    "triton\\experimental\\gsan\\_allocator.py": "d6cba5e878bb73f4692c3ae1e29f2a1c58c8695ebfb2e6849c3a30abafb7971c",
+    "triton\\experimental\\gsan\\_stream_sync.py": "09a729ad5159503016cd59d79b0be1fdbf2f3f53a85792c3b08be48e3a397159",
+    "triton\\experimental\\gsan\\_testing.py": "fb670f8f27755769a50a25e71e996395874bfe0fabca84b9414d297eb59478fe",
+    "triton\\experimental\\gsan\\_testing_utils.py": "cf52e2c6e172bf3f1ccf1be5ce61bda4139d2873ead5031f64d59220fc50c78a",
+    "triton\\experimental\\gsan\\_utils.py": "bdfd1f78a121c3ab74edd72619c17cccfaa8949f2b6091f66cfa15c51cac744c",
+    "triton\\experimental\\gsan\\symmetric_memory.py": "b38ebd029eb3361e5a7d7e8d0a73b637dc03910ce1456fdf4efdc92b24979f62",
+    "triton\\knobs.py": "7468fb1fb4740bb9237c57216b04499400825f62a6177da4214153900feda824",
+    "triton\\language\\__init__.py": "db2c88a5ae26a73b1d496abdf6aec391f320cab4fbd3318d6b937696681168d4",
+    "triton\\language\\core.py": "b4966729f21f0db6f20fa4cb9b2b5402c5735e1424ffba05dbd8f480dedee790",
+    "triton\\language\\extra\\__init__.py": "5d15c5bebef8d7aa51b21fd187e5faa95eba4a213254355bc69e0648013599f7",
+    "triton\\language\\extra\\cuda\\__init__.py": "30106ed84518c6ca7aca08e2c0ee188755f512cc0cb2d7da8914cc48c1ad6dcc",
+    "triton\\language\\extra\\cuda\\gdc.py": "adb54e71d0ffc3bdac437fbc97929769fbbe4ebd03e6361c6357f2a24f7c5954",
+    "triton\\language\\extra\\cuda\\libdevice.py": "27b2a5d1e8db008bacefe6019f63922bbd65926de90bb1b527ee597477d2f365",
+    "triton\\language\\extra\\cuda\\utils.py": "a610dc5c215589aab7a784e1c07acef3e16d53ef00f08de793899964956f4e2a",
+    "triton\\language\\extra\\hip\\__init__.py": "ebad24d351bb79b3068a60627c74372a07cb8cc9532ce106773402ad2515a2b4",
+    "triton\\language\\extra\\hip\\libdevice.py": "0731cda9ecbdd902acab13604efda0f9dbeaf411bc42bdddff8454b69a62f54b",
+    "triton\\language\\extra\\hip\\utils.py": "2c66ab6523cc7dcd8bdc3e68b8f8844657d7bd4fd0492774c9819b046b8f7674",
+    "triton\\language\\extra\\libdevice.py": "f60c2bb2d8eebe1c191f4b8b819844414dd1bce243645635a094f9f92665a58e",
+    "triton\\language\\math.py": "08abee21ce6230a873ed0831f70f9570b7ce39969dbf9b2f28ae1a1992ee1cc7",
+    "triton\\language\\random.py": "1a7ae2a0c3de32df60ffc18f21a20f8dcf8bf3bc8cb018bb269b540533868829",
+    "triton\\language\\semantic.py": "0d99c1f30bdb86bd718c98bf026ced2a84a878f79630fa9b3fe099ce46e86ebd",
+    "triton\\language\\standard.py": "113296c74fb8b8dcf67a1b82f71926842eb66d0c77fe2c4f8d0f315715a38fd4",
+    "triton\\language\\target_info.py": "18ba36f0d8827d4807c631a2b92f9615eb56c8aa7f914964a0bb6f2ba69f344d",
+    "triton\\runtime\\__init__.py": "98a2f972a2010d4c3658ef343510a1e2cd46f0a61aaa0339f534c06d390f3e34",
+    "triton\\runtime\\_allocation.py": "6581b8b5e4057cd8eb25cac3bf3fd0338e200a5aee2f849626be158f68030d6c",
+    "triton\\runtime\\_async_compile.py": "5421e692e62c00bd9329a22b2e126d36d643d7b6cd8ec53c8835fdc35c99a73c",
+    "triton\\runtime\\autotuner.py": "c92a6a0442b70e953aea5bb2e5e560d272a1e7203f0366ca69e3a6842beb50c0",
+    "triton\\runtime\\build.py": "c1ca812b73639e7d73be714e2053527c32dd6f5c98c5c31b52e2cd4ff124571e",
+    "triton\\runtime\\cache.py": "f1bf883f951104e43b4e3f31346e604ae38eb497836e1163ae4201bf4ac73c81",
+    "triton\\runtime\\driver.py": "0d4f468d25be09512fbac439b208677db4326b4c19ccdd7b30222661a2d644d7",
+    "triton\\runtime\\errors.py": "a0cd07a271270659cec7c7bc5d989da005506763e0fd8ac0d4d9885c04317fa8",
+    "triton\\runtime\\interpreter.py": "a17550ad6c58a2d903b64cc2eb8b89aeedc02f3b3f263b0a5a7bab43ef3d2435",
+    "triton\\runtime\\jit.py": "38b8151fcceec1a0210a696775b7c64d7fac5e9b69eee2dda7e93c1e2a377509",
+    "triton\\testing.py": "2f17c644a9e649d2baaa9178b37e1ded589af4ea194cc7832f9c89b18f6e6550",
+    "triton\\tools\\__init__.py": "375f0c889f1bc4d6b539dab7623612005b40577e55b3847cedcd8ef10c026a63",
+    "triton\\tools\\build_extern.py": "8c2afeda1bb79cb1812098421944358c0cb32edb6e8218e488f184c111632d1d",
+    "triton\\tools\\compile.py": "08da1d9abb4e9ddb486437abcffdc80e320adc325e577d89c7e73799d4fe39bf",
+    "triton\\tools\\disasm.py": "2b4e150946e18861e23f346d1089df90fcdc466906963f3ad0b6039cf61be23c",
+    "triton\\tools\\gsan.py": "bace2b940b7a3d4fc3b9bfef1ba41ff662df794dd560d7d086645c89c42c247c",
+    "triton\\tools\\link.py": "aee3312bf71ebb498ee2ecc2691f90ea5f45ec9f7198e775283d44c7df0e3cb3",
+    "triton\\tools\\mxfp.py": "61076906b1a439534eb672de4633027951475a44b052e6c6796b08b488cef135",
+    "triton\\tools\\ragged_tma.py": "016290a61d70f1a5977917df229b6b945837da769c14a23cb2a43eb7161a0b71",
+    "triton\\tools\\tensor_descriptor.py": "0b8ba39cab5fbbbade55b4db479291032fdc9cb5e16b5b4a61e0a7b9c10060dc",
+    "triton\\tools\\triton_to_gluon_translator\\__init__.py": "ab44128d058bc2859fc4608edfb13ec27a4a14bf9316ee3470759a51a8b02481",
+    "triton\\tools\\triton_to_gluon_translator\\amd_helpers.py": "bc9ff52b776e1efd32a6b06182c597c75d72aebcf02537a61e8701ee06cae51b",
+    "triton\\tools\\triton_to_gluon_translator\\blackwell_helpers.py": "f8f0ba8c73d7faf1471f43515c7c49379844420a2195c6a9d56249c20bd2423c",
+    "triton\\tools\\triton_to_gluon_translator\\common_helpers.py": "a3c7451f336038519444224c3398e8e354f15080ff9e2c99020a1ee3a6876f3d",
+    "triton\\tools\\triton_to_gluon_translator\\hopper_helpers.py": "a2f1df7a71da5c01178ac7963854228c3f3964e74b82c9f0effc0dde14e3a2d2",
+    "triton\\tools\\triton_to_gluon_translator\\inline_helpers.py": "dff48b5e8baefdf35945cbf993ab72714455385c86a2f5a996058bc270b96ea3",
+    "triton\\tools\\triton_to_gluon_translator\\nvidia_helpers.py": "408cd6d138eb4eab9697f5184e9733bdc6bde08cbb3e8e5f0e11fe0e306b72da",
+    "triton\\tools\\triton_to_gluon_translator\\ordered_set.py": "eb180f6a1bf84b30e18047a7f1b63a19af1b2329c8379e5e5bd4a5d189bc408a",
+    "triton\\tools\\triton_to_gluon_translator\\scoped_dict.py": "3b8939ffc435348e7d86c58e323f8b4212844be365012f03e53515630db33288",
+    "triton\\tools\\triton_to_gluon_translator\\slice_kernel.py": "2fdffd0f6d858e0d12a34e546f08b6cb7ec9dac6fc3fbed209d9318bb6972ddd",
+    "triton\\tools\\triton_to_gluon_translator\\stable_toposort.py": "1a9dfdc29600417d090e9f012a8b301f7b7918d9f620710c0ca67d61e834df6c",
+    "triton\\tools\\triton_to_gluon_translator\\target.py": "80074ce4f0988f7b16c461a1cb45954711a79f7716221fc38ac9a8d581b1d929",
+    "triton\\tools\\triton_to_gluon_translator\\translator.py": "2b332e7c2d7d7824d299961722a23aba52b0faef85b9b67663c076b4a939fc43",
+    "triton\\windows_utils.py": "d29933bab78601c262aed5d8f789eeada804d5bb07e8d035cddaed9589fac59f"
+  }
+}
