@@ -1,0 +1,148 @@
+{
+  "inventories_equal": true,
+  "inventory_before_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+  "inventory_after_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+  "archives": {
+    "venv-metadata": {
+      "before_sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+      "after_sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+      "bytes_equal": true,
+      "structurally_equal": true
+    },
+    "model-cache-metadata": {
+      "before_sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+      "after_sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+      "bytes_equal": true,
+      "structurally_equal": true
+    }
+  },
+  "venv_file_metadata": {
+    "amd": {
+      "entries": 94687,
+      "tree_sha256": "a2fdd34e6b310e3d4684250850cadfad1801536000e49e6557a0523107733527",
+      "fields": "relative path, file size (directory allocation size normalized to null), mtime_ns, mode; no followed links"
+    },
+    "modly": {
+      "entries": 61313,
+      "tree_sha256": "bcae506c520e1dca7693e700684ae225aceb16b4ed8de50e2cf023c5ec52c38e",
+      "fields": "relative path, file size (directory allocation size normalized to null), mtime_ns, mode; no followed links"
+    }
+  },
+  "model_cache_metadata": {
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\models": {
+      "entries": 137,
+      "normalized_sha256": "cdf578c002c976663dc4f1928659b41c37e3201fc9e38bd99cb1177ade2aef5a"
+    },
+    "C:\\Users\\wattz\\Documents\\Modly\\models": {
+      "entries": 332,
+      "normalized_sha256": "c006a9ba0f35d6507532fb5aaa5ebe2adaf4c5a1a9529a0b7764017245df588a"
+    },
+    "C:\\Users\\wattz\\.cache\\huggingface\\hub": {
+      "entries": 16,
+      "normalized_sha256": "ccf9d0b41241eaca54a379d704d74974f9be98dc2aad15ccc6faf8c0318099b7"
+    },
+    "C:\\Users\\wattz\\.cache\\torch\\hub": {
+      "entries": 4,
+      "normalized_sha256": "825dc568504836fe5b5d2f58c3cda9c6f3f491b160c89cf2686075025b65c0dc"
+    }
+  },
+  "selected_source_hashes_equal": true,
+  "preflight_source_hashes_equal": true,
+  "selected_package_source_hashes_equal": true,
+  "checkpoint_identity_equal": true,
+  "checkpoint_sha256": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a",
+  "imported_source_after": {
+    "trellis2": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\__init__.py",
+      "sha256": "b953c8a82e54705708a115dd0e53b7ca5ccf45b71517463a5e9b8e0de318ee43",
+      "unchanged": true
+    },
+    "trellis2.models": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\__init__.py",
+      "sha256": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683",
+      "unchanged": true
+    },
+    "trellis2.models.sparse_structure_vae": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sparse_structure_vae.py",
+      "sha256": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857",
+      "unchanged": true
+    },
+    "trellis2.modules.norm": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\norm.py",
+      "sha256": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00",
+      "unchanged": true
+    },
+    "trellis2.modules.sparse": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\__init__.py",
+      "sha256": "7bb5f88b769568fc59fd07d208d44c58d2a3a7e22609da6dcb8de573fe1138e7",
+      "unchanged": true
+    },
+    "trellis2.modules.sparse.basic": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\basic.py",
+      "sha256": "e867e429b9c2fe154000725596b626273fb567025b9c232f3cc79140f00605b7",
+      "unchanged": true
+    },
+    "trellis2.modules.sparse.config": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\config.py",
+      "sha256": "525ed9a516bc9576712cce9896a52a0ec9667ba7dc4aa13f24ee6a83353cb722",
+      "unchanged": true
+    },
+    "trellis2.modules.sparse.conv": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\__init__.py",
+      "sha256": "da50648b5c8975ab8eb9574df2582d5c0dc03ddc102d301052003ef65af399e2",
+      "unchanged": true
+    },
+    "trellis2.modules.sparse.conv.config": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\config.py",
+      "sha256": "ed6505a70dcc94785ce6d8f2e9d40dff3a0edc39e5d2bceea60128f9ed48332b",
+      "unchanged": true
+    },
+    "trellis2.modules.sparse.conv.conv": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\conv.py",
+      "sha256": "a1e9f62fdf70f5443967a81b4ca99c0c863d20b063b44ffe264b0fd68bf3e5e3",
+      "unchanged": true
+    },
+    "trellis2.modules.sparse.linear": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\linear.py",
+      "sha256": "05cb619ff9cceb27674fc7bbb5aa2bcba93d1bf328d1f3340bb98c0f1240b413",
+      "unchanged": true
+    },
+    "trellis2.modules.spatial": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\spatial.py",
+      "sha256": "4a029d5077bb0a5412ee5eceb8de21d3b4c8920a8f53d477441c3c3219a0da3c",
+      "unchanged": true
+    },
+    "trellis2.modules.utils": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\utils.py",
+      "sha256": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e",
+      "unchanged": true
+    },
+    "trellis2.pipelines": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\__init__.py",
+      "sha256": "88946215d43bc6e8c095b40dc3de9ea76bb4fb4d175d0228829ec865bb790ba9",
+      "unchanged": true
+    },
+    "trellis2.renderers": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\renderers\\__init__.py",
+      "sha256": "53d28a650ef53022270d4a6e9e4a8f66714b1cf8edef0b1d7303e1eb8290a576",
+      "unchanged": true
+    },
+    "trellis2.representations": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\representations\\__init__.py",
+      "sha256": "861585d0d741e2cb592cef0d252ccc08fe414356fb44f7e84a79185eed841d28",
+      "unchanged": true
+    },
+    "trellis2.utils": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    }
+  },
+  "amd_source_git_head": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+  "amd_source_git_status_before_and_after": [
+    " M nodes.py",
+    "?? nodes.py.before-profiler-fix"
+  ],
+  "scope": "Package metadata, selected native/source content hashes, full venv/model/cache path-size-mtime-mode inventories; full selected checkpoint SHA. Directory allocation sizes normalized in inventory summaries, raw archives also identical.",
+  "preservation_pass": true
+}

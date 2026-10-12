@@ -1,0 +1,42 @@
+{
+  "files": [
+    {
+      "path": "run\\scratch\\amd_comgr_cache_dir\\llvmcache-119b3ca7cb57d323909c252937d064bffed2cadc52290d754549bd53df328c74",
+      "bytes": 5480,
+      "sha256": "992616c18dee539a8f80a6a87c7c60e10086a44c2f4ee9c0c90ca0ad68e611fe",
+      "initial_bytes_hex": "58150000000000007f454c46020101400300000000000000"
+    },
+    {
+      "path": "run\\scratch\\amd_comgr_cache_dir\\llvmcache-168187fcb5258dd388a6526b04a903493d9ab1a5bb9279de3193d26955a9f535",
+      "bytes": 44992,
+      "sha256": "29c2f816896f1539da7a1a94a34f1630cab4349c627d5b582055baaca3b81bb6",
+      "initial_bytes_hex": "b0af0000000000007f454c46020101400300000000000000"
+    },
+    {
+      "path": "run\\scratch\\amd_comgr_cache_dir\\llvmcache-66d5662292b32811aa0fc17ae37efae4cb23a81faff56472dc4690ab21466c6b",
+      "bytes": 51576,
+      "sha256": "9c766189ed72a3b0661c44daf86fb87c43beb0db309bb5c315242c00b6b4f735",
+      "initial_bytes_hex": "68c90000000000004243c0de3514000005000000620c3024"
+    },
+    {
+      "path": "run\\scratch\\amd_comgr_cache_dir\\llvmcache-d4339204523ee4827b5dfa2c3cef6ad2aa822bc338234e82d2b0710077770ccd",
+      "bytes": 42536,
+      "sha256": "da3d59648d5023c34173323bde985035779d32b94e69a7b222c93eac545f0df0",
+      "initial_bytes_hex": "18a60000000000007f454c46020101400300000000000000"
+    },
+    {
+      "path": "run\\scratch\\amd_comgr_cache_dir\\llvmcache-f727c4443315fcad13d30775afe8c3c14e03fe9524be4c2a25f1abe3304c1b05",
+      "bytes": 4128,
+      "sha256": "307c1d1058f0e1cf1ea370b002fd632962cbb74057507c96594d8d9ba3efbb91",
+      "initial_bytes_hex": "10100000000000007f454c46020101400300000000000000"
+    },
+    {
+      "path": "run\\scratch\\amd_comgr_cache_dir\\llvmcache.timestamp",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "initial_bytes_hex": ""
+    }
+  ],
+  "total_bytes": 148712,
+  "note": "Six artifacts appeared in the configured AMD COMGR cache directory. Four payloads have ELF prefixes and one LLVM bitcode prefix; no installed library was replaced/rebuilt. Native runtime cache creation is observed, so no claim of zero internal native compilation/kernel activity is made. Binary artifacts are preserved locally and excluded from Git."
+}

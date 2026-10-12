@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "scripts/compatibility/test_amd_decoder_contract.py"
+  ],
+  "returncode": 0,
+  "timeout_seconds": 15,
+  "timed_out": false,
+  "elapsed_seconds": 0.5619999999998981,
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "scope": "nine pure validation/classification and fake-child cleanup tests; no torch/model/GPU calls",
+  "parent_torch_imported": false,
+  "scope_basis": "Test source and helpers inspected: no torch/model/GPU calls; the parent records its own import state, not a child import counter."
+}
