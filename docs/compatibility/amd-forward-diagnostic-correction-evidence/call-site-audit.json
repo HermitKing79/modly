@@ -1,0 +1,164 @@
+{
+  "scope": "All production Trace.emit/Trace.call sites; no AI runtime imported",
+  "sites": [
+    {
+      "file": "scripts/compatibility/amd_forward_diagnostics.py",
+      "line": 83,
+      "expression": "self.emit('enter', name, **details)",
+      "metadata_keyword_names": [
+        null
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_forward_diagnostics.py",
+      "line": 86,
+      "expression": "self.emit('error', name, duration_seconds=self.clock() - began, error_type=type(exc).__name__, error=str(exc)[:2048])",
+      "metadata_keyword_names": [
+        "duration_seconds",
+        "error_type",
+        "error"
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_forward_diagnostics.py",
+      "line": 88,
+      "expression": "self.emit('return', name, duration_seconds=self.clock() - began, completion='host-return-only')",
+      "metadata_keyword_names": [
+        "duration_seconds",
+        "completion"
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_forward_diagnostics.py",
+      "line": 182,
+      "expression": "trace.emit('process', 'owned-tree', **activity.sample())",
+      "metadata_keyword_names": [
+        null
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_forward_windows_monitor.py",
+      "line": 26,
+      "expression": "trace.emit('state', 'windows-observer', healthy=good, query_seconds=duration, capture=capture)",
+      "metadata_keyword_names": [
+        "healthy",
+        "query_seconds",
+        "capture"
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_decoder_forward.py",
+      "line": 104,
+      "expression": "trace.emit('stage', name, phase=phase, forward_calls=permit.calls, root_decoder_calls=root_calls)",
+      "metadata_keyword_names": [
+        "phase",
+        "forward_calls",
+        "root_decoder_calls"
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_decoder_forward.py",
+      "line": 139,
+      "expression": "trace.emit('state', 'runtime', **record['runtime'])",
+      "metadata_keyword_names": [
+        null
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_decoder_forward.py",
+      "line": 156,
+      "expression": "trace.call('module:' + (name or '<root>'), lambda: original_call(instance, *args, **kwargs), input=detail, forward_calls=permit.calls, root_decoder_calls=root_calls)",
+      "metadata_keyword_names": [
+        "input",
+        "forward_calls",
+        "root_decoder_calls"
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_decoder_forward.py",
+      "line": 178,
+      "expression": "trace.call('aten:' + str(func), lambda: func(*args, **kwargs), input=tensor_description(args[0]) if args else {})",
+      "metadata_keyword_names": [
+        "input"
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_decoder_forward.py",
+      "line": 225,
+      "expression": "trace.emit('state', 'gpu', gpu=record['gpu'])",
+      "metadata_keyword_names": [
+        "gpu"
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_decoder_forward.py",
+      "line": 228,
+      "expression": "trace.emit('memory', 'before-placement', **record['before_placement'])",
+      "metadata_keyword_names": [
+        null
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_decoder_forward.py",
+      "line": 247,
+      "expression": "trace.emit('memory', 'before-forward', **record['before_forward'])",
+      "metadata_keyword_names": [
+        null
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_decoder_forward.py",
+      "line": 252,
+      "expression": "trace.call('synchronize:after-forward', lambda: torch.cuda.synchronize(0))",
+      "metadata_keyword_names": []
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_decoder_forward.py",
+      "line": 255,
+      "expression": "trace.emit('memory', 'after-forward', **record['after_forward'])",
+      "metadata_keyword_names": [
+        null
+      ]
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_decoder_forward.py",
+      "line": 282,
+      "expression": "trace.emit('memory', 'release', **record['release'])",
+      "metadata_keyword_names": [
+        null
+      ]
+    }
+  ],
+  "metadata_contract": {
+    "reserved_top_level": [
+      "event",
+      "name",
+      "origin",
+      "seq",
+      "elapsed_seconds",
+      "monotonic_seconds",
+      "timestamp_utc",
+      "self",
+      "call"
+    ],
+    "additional_call_reserved": [
+      "duration_seconds",
+      "completion",
+      "error_type",
+      "error"
+    ],
+    "nested_keys_allowed": true,
+    "producer_notes": {
+      "runtime": "python/executable/torch/torch_path/hip/cuda. TorchVersion(str) preserves text; no reserved keys.",
+      "gpu": "name/architecture/total_bytes exclusively nested under gpu.",
+      "memory": "Seven integer counters; release adds collection booleans and nested CPU memory. No reserved keys.",
+      "module_convolution": "Nested input shape/dtype/device/stride/layout/contiguous/requires_grad plus forward/root counts.",
+      "process": "processes with nested name/executable/CPU fields, vanished IDs, version/path, optional root_exited.",
+      "windows": "healthy/query_seconds/capture; controller/event payload nested.",
+      "Trace.call": "details validated before enter/wrapped operation; managed return/error fields never supplied by arbitrary details."
+    }
+  },
+  "gpu_attempts": 0,
+  "real_model_loads": 0,
+  "remaining_predictable_pre_forward_logging_failure": null
+}

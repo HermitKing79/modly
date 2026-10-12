@@ -1,0 +1,362 @@
+[
+  {
+    "module": "test_amd_diagnostic_payloads",
+    "exit": 0,
+    "timeout": false,
+    "stderr": "",
+    "tests": 8,
+    "passed": true,
+    "log": "test_actual_diagnostic_call_sites_replay_lifecycle_and_shutdown (test_amd_diagnostic_payloads.PayloadTests.test_actual_diagnostic_call_sites_replay_lifecycle_and_shutdown)\nMutation of a production payload fails here, not only in a copied call. ... ok\ntest_call_rejects_reserved_metadata_before_wrapped_operation (test_amd_diagnostic_payloads.PayloadTests.test_call_rejects_reserved_metadata_before_wrapped_operation) ... ok\ntest_complete_saved_gpu_metadata_survives_actual_worker_call_and_journal (test_amd_diagnostic_payloads.PayloadTests.test_complete_saved_gpu_metadata_survives_actual_worker_call_and_journal) ... ok\ntest_cpu_replay_has_not_imported_any_ai_runtime (test_amd_diagnostic_payloads.PayloadTests.test_cpu_replay_has_not_imported_any_ai_runtime) ... ok\ntest_journal_rejects_duplicate_fields_overflow_and_malformed_clock_identity (test_amd_diagnostic_payloads.PayloadTests.test_journal_rejects_duplicate_fields_overflow_and_malformed_clock_identity) ... ok\ntest_malformed_metadata_never_emits_or_spends_trace_budget (test_amd_diagnostic_payloads.PayloadTests.test_malformed_metadata_never_emits_or_spends_trace_budget) ... ok\ntest_reserved_names_remain_valid_inside_nested_metadata (test_amd_diagnostic_payloads.PayloadTests.test_reserved_names_remain_valid_inside_nested_metadata) ... ok\ntest_reserved_record_and_argument_keys_fail_before_send_or_sequence_change (test_amd_diagnostic_payloads.PayloadTests.test_reserved_record_and_argument_keys_fail_before_send_or_sequence_change) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.046s\n\nOK\n",
+    "ai_imports": [],
+    "replay": [
+      {
+        "event": "state",
+        "name": "runtime",
+        "origin": "worker",
+        "seq": 1,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.840960+00:00",
+        "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+        "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+        "torch": "2.13.0+rocm10.0.0",
+        "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+        "hip": "7.15.26333",
+        "cuda": null
+      },
+      {
+        "event": "state",
+        "name": "gpu",
+        "origin": "worker",
+        "seq": 2,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.840960+00:00",
+        "gpu": {
+          "name": "AMD Radeon RX 9070 XT",
+          "architecture": "gfx1201",
+          "total_bytes": 17095983104
+        }
+      },
+      {
+        "event": "memory",
+        "name": "before-placement",
+        "origin": "worker",
+        "seq": 3,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.842491+00:00",
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0,
+        "available_bytes": 16000000000,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 1095983104
+      },
+      {
+        "event": "memory",
+        "name": "before-forward",
+        "origin": "worker",
+        "seq": 4,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.842491+00:00",
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0,
+        "available_bytes": 16000000000,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 1095983104
+      },
+      {
+        "event": "stage",
+        "name": "single-forward",
+        "origin": "worker",
+        "seq": 5,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.842491+00:00",
+        "phase": "forward",
+        "forward_calls": 1,
+        "root_decoder_calls": 1
+      },
+      {
+        "event": "enter",
+        "name": "module:single-forward",
+        "origin": "worker",
+        "seq": 6,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.842491+00:00",
+        "input": {
+          "shape": [
+            1,
+            8,
+            1,
+            1,
+            1
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0",
+          "stride": [
+            8,
+            1,
+            1,
+            1,
+            1
+          ],
+          "layout": "torch.strided",
+          "contiguous": true,
+          "requires_grad": false
+        },
+        "forward_calls": 1,
+        "root_decoder_calls": 1
+      },
+      {
+        "event": "return",
+        "name": "module:single-forward",
+        "origin": "worker",
+        "seq": 7,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.844018+00:00",
+        "duration_seconds": 0.0,
+        "completion": "host-return-only"
+      },
+      {
+        "event": "enter",
+        "name": "aten:<function PayloadTests.test_actual_diagnostic_call_sites_replay_lifecycle_and_shutdown.<locals>.convolution at 0x000002857F468CC0>",
+        "origin": "worker",
+        "seq": 8,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.844018+00:00",
+        "input": {
+          "shape": [
+            1,
+            8,
+            1,
+            1,
+            1
+          ],
+          "dtype": "torch.float32",
+          "device": "cuda:0",
+          "stride": [
+            8,
+            1,
+            1,
+            1,
+            1
+          ],
+          "layout": "torch.strided",
+          "contiguous": true,
+          "requires_grad": false
+        }
+      },
+      {
+        "event": "return",
+        "name": "aten:<function PayloadTests.test_actual_diagnostic_call_sites_replay_lifecycle_and_shutdown.<locals>.convolution at 0x000002857F468CC0>",
+        "origin": "worker",
+        "seq": 9,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.844018+00:00",
+        "duration_seconds": 0.0,
+        "completion": "host-return-only"
+      },
+      {
+        "event": "enter",
+        "name": "synchronize:after-forward",
+        "origin": "worker",
+        "seq": 10,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.845544+00:00"
+      },
+      {
+        "event": "return",
+        "name": "synchronize:after-forward",
+        "origin": "worker",
+        "seq": 11,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.845544+00:00",
+        "duration_seconds": 0.0,
+        "completion": "host-return-only"
+      },
+      {
+        "event": "memory",
+        "name": "after-forward",
+        "origin": "worker",
+        "seq": 12,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.531,
+        "timestamp_utc": "2026-10-12T20:34:08.845544+00:00",
+        "allocated_bytes": 256,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0,
+        "available_bytes": 16000000000,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 1095983104
+      },
+      {
+        "event": "process",
+        "name": "owned-tree",
+        "origin": "supervisor",
+        "seq": 1,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.546,
+        "timestamp_utc": "2026-10-12T20:34:08.848596+00:00",
+        "processes": [
+          {
+            "pid": 448,
+            "created_seconds": 1791835992.6011884,
+            "name": "python.exe",
+            "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+            "cpu_seconds": 3.6875,
+            "cpu_delta_seconds": 0.0
+          },
+          {
+            "pid": 18660,
+            "created_seconds": 1791835992.5889907,
+            "name": "python.exe",
+            "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+            "cpu_seconds": 0.0,
+            "cpu_delta_seconds": 0.0
+          }
+        ],
+        "vanished_pids": [],
+        "psutil_version": "7.2.2",
+        "psutil_path": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\psutil\\__init__.py"
+      },
+      {
+        "event": "state",
+        "name": "windows-observer",
+        "origin": "supervisor",
+        "seq": 1,
+        "elapsed_seconds": 0.0,
+        "monotonic_seconds": 10359.546,
+        "timestamp_utc": "2026-10-12T20:34:08.850783+00:00",
+        "healthy": true,
+        "query_seconds": 0.1,
+        "capture": {
+          "returncode": 0,
+          "timed_out": false,
+          "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":10016,\"RecordId\":11492,\"ProviderName\":\"Microsoft-Windows-DistributedCOM\",\"TimeCreated\":\"\\/Date(1791835529878)\\/\"},\"version\":\"5.1.26100.9444\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+          "stderr": "",
+          "observation": {
+            "controllers": [
+              {
+                "Name": "AMD Radeon RX 9070 XT",
+                "DriverVersion": "32.0.31041.1004",
+                "DriverDate": "/Date(1786924800000)/",
+                "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+                "Status": "OK"
+              }
+            ],
+            "events": [],
+            "observer": {
+              "edition": "Desktop",
+              "system_log_probe": {
+                "Id": 10016,
+                "RecordId": 11492,
+                "ProviderName": "Microsoft-Windows-DistributedCOM",
+                "TimeCreated": "/Date(1791835529878)/"
+              },
+              "version": "5.1.26100.9444",
+              "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+            }
+          }
+        }
+      },
+      {
+        "event": "memory",
+        "name": "release",
+        "origin": "worker",
+        "seq": 13,
+        "elapsed_seconds": 0.014999999999417923,
+        "monotonic_seconds": 10359.546,
+        "timestamp_utc": "2026-10-12T20:34:08.851294+00:00",
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0,
+        "available_bytes": 16000000000,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 1095983104,
+        "model_collected": true,
+        "input_collected": true,
+        "output_collected": true,
+        "cpu_memory": {
+          "working_set_bytes": 642920448,
+          "private_commit_bytes": 1085849600,
+          "peak_working_set_bytes": 790429696,
+          "peak_commit_bytes": 1233739776
+        }
+      },
+      {
+        "event": "stage",
+        "name": "complete",
+        "origin": "worker",
+        "seq": 14,
+        "elapsed_seconds": 0.014999999999417923,
+        "monotonic_seconds": 10359.546,
+        "timestamp_utc": "2026-10-12T20:34:08.851873+00:00",
+        "phase": "release",
+        "forward_calls": 1,
+        "root_decoder_calls": 1
+      },
+      {
+        "event": "stage",
+        "name": "worker-terminated",
+        "origin": "worker",
+        "seq": 15,
+        "elapsed_seconds": 0.014999999999417923,
+        "monotonic_seconds": 10359.546,
+        "timestamp_utc": "2026-10-12T20:34:08.852382+00:00",
+        "returncode": 0,
+        "owned_tree_exit_verified": true
+      }
+    ],
+    "diagnostic_stdout": ""
+  },
+  {
+    "module": "test_amd_forward_diagnostics",
+    "exit": 0,
+    "timeout": false,
+    "stderr": "",
+    "tests": 13,
+    "passed": true,
+    "log": "test_activity_monitor_startup_failure_and_stalled_queries_are_bounded (test_amd_forward_diagnostics.DiagnosticTests.test_activity_monitor_startup_failure_and_stalled_queries_are_bounded) ... ok\ntest_activity_tracks_owned_descendants_and_rejects_pid_reuse (test_amd_forward_diagnostics.DiagnosticTests.test_activity_tracks_owned_descendants_and_rejects_pid_reuse) ... ok\ntest_cache_audit_output_cannot_touch_historical_artifacts (test_amd_forward_diagnostics.DiagnosticTests.test_cache_audit_output_cannot_touch_historical_artifacts) ... ok\ntest_entry_is_emitted_before_call_and_return_does_not_retain_output (test_amd_forward_diagnostics.DiagnosticTests.test_entry_is_emitted_before_call_and_return_does_not_retain_output) ... ok\ntest_failure_emits_error_and_never_retries (test_amd_forward_diagnostics.DiagnosticTests.test_failure_emits_error_and_never_retries) ... ok\ntest_invalid_or_nonfinite_and_unbounded_records_fail_closed (test_amd_forward_diagnostics.DiagnosticTests.test_invalid_or_nonfinite_and_unbounded_records_fail_closed) ... ok\ntest_journal_is_exclusive_and_each_record_is_durable_before_return (test_amd_forward_diagnostics.DiagnosticTests.test_journal_is_exclusive_and_each_record_is_durable_before_return) ... ok\ntest_key_modules_and_clock_freshness_do_not_expand_computation (test_amd_forward_diagnostics.DiagnosticTests.test_key_modules_and_clock_freshness_do_not_expand_computation) ... ok\ntest_live_owned_cpu_process_is_sampled_and_exits_without_gpu_imports (test_amd_forward_diagnostics.DiagnosticTests.test_live_owned_cpu_process_is_sampled_and_exits_without_gpu_imports) ... ok\ntest_monitor_failure_is_reported_without_claiming_activity (test_amd_forward_diagnostics.DiagnosticTests.test_monitor_failure_is_reported_without_claiming_activity) ... ok\ntest_root_exit_between_identity_and_tree_query_is_normal (test_amd_forward_diagnostics.DiagnosticTests.test_root_exit_between_identity_and_tree_query_is_normal) ... ok\ntest_stalled_journal_write_cannot_block_supervisor_deadline (test_amd_forward_diagnostics.DiagnosticTests.test_stalled_journal_write_cannot_block_supervisor_deadline) ... ok\ntest_writer_error_is_fail_closed_and_acknowledged (test_amd_forward_diagnostics.DiagnosticTests.test_writer_error_is_fail_closed_and_acknowledged) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.717s\n\nOK\n",
+    "ai_imports": [],
+    "replay": [],
+    "diagnostic_stdout": ""
+  },
+  {
+    "module": "test_amd_decoder_forward",
+    "exit": 0,
+    "timeout": false,
+    "stderr": "",
+    "tests": 13,
+    "passed": true,
+    "log": "test_configuration_changes_require_new_inspection (test_amd_decoder_forward.ForwardContractTests.test_configuration_changes_require_new_inspection) ... ok\ntest_cpu_gate_deadline_expiry_never_authorizes_gpu_and_reaps_worker (test_amd_decoder_forward.ForwardContractTests.test_cpu_gate_deadline_expiry_never_authorizes_gpu_and_reaps_worker) ... ok\ntest_cpu_statistics_have_no_gpu_dependency (test_amd_decoder_forward.ForwardContractTests.test_cpu_statistics_have_no_gpu_dependency) ... ok\ntest_executed_harness_must_match_tracked_published_bytes (test_amd_decoder_forward.ForwardContractTests.test_executed_harness_must_match_tracked_published_bytes) ... ok\ntest_forward_permit_is_single_use_even_after_exception (test_amd_decoder_forward.ForwardContractTests.test_forward_permit_is_single_use_even_after_exception) ... ok\ntest_minimal_architecture_valid_fixture_and_upsampling (test_amd_decoder_forward.ForwardContractTests.test_minimal_architecture_valid_fixture_and_upsampling) ... ok\ntest_output_shape_dtype_device_and_finiteness_are_required (test_amd_decoder_forward.ForwardContractTests.test_output_shape_dtype_device_and_finiteness_are_required) ... ok\ntest_parent_protocol_error_unconditionally_reaps_owned_worker (test_amd_decoder_forward.ForwardContractTests.test_parent_protocol_error_unconditionally_reaps_owned_worker) ... ok\ntest_pass_requires_single_complete_forward_clean_release_and_all_gates (test_amd_decoder_forward.ForwardContractTests.test_pass_requires_single_complete_forward_clean_release_and_all_gates) ... ok\ntest_success_label_does_not_override_invalid_output (test_amd_decoder_forward.ForwardContractTests.test_success_label_does_not_override_invalid_output) ... ok\ntest_transfer_guard_has_no_compute_allowance (test_amd_decoder_forward.ForwardContractTests.test_transfer_guard_has_no_compute_allowance) ... ok\ntest_unhealthy_observer_prevents_launch_and_existing_attempt_cannot_repeat (test_amd_decoder_forward.ForwardContractTests.test_unhealthy_observer_prevents_launch_and_existing_attempt_cannot_repeat) ... ok\ntest_verified_lazy_pipeline_package_is_allowed_but_pipeline_classes_and_mesh_modules_are_not (test_amd_decoder_forward.ForwardContractTests.test_verified_lazy_pipeline_package_is_allowed_but_pipeline_classes_and_mesh_modules_are_not) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.077s\n\nOK\n",
+    "ai_imports": [],
+    "replay": [],
+    "diagnostic_stdout": "{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\n{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\n{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\n{\"classification\": \"PARTIAL\", \"observer_healthy\": false, \"checkpoint_unchanged\": true}"
+  },
+  {
+    "module": "test_amd_instrumented_forward",
+    "exit": 0,
+    "timeout": false,
+    "stderr": "",
+    "tests": 17,
+    "passed": true,
+    "log": "test_changed_native_attestation_is_rejected_before_copy (test_amd_instrumented_forward.CacheTests.test_changed_native_attestation_is_rejected_before_copy) ... ok\ntest_complete_direct_elf_is_eligible_but_never_executed (test_amd_instrumented_forward.CacheTests.test_complete_direct_elf_is_eligible_but_never_executed) ... ok\ntest_database_compression_target_and_schema_fail_closed (test_amd_instrumented_forward.CacheTests.test_database_compression_target_and_schema_fail_closed) ... ok\ntest_native_record_and_library_content_must_both_match_historical_packages (test_amd_instrumented_forward.CacheTests.test_native_record_and_library_content_must_both_match_historical_packages) ... ok\ntest_private_copies_are_exclusive_identical_and_do_not_modify_source (test_amd_instrumented_forward.CacheTests.test_private_copies_are_exclusive_identical_and_do_not_modify_source) ... ok\ntest_uncertain_framing_bitcode_empty_and_incomplete_entries_are_excluded (test_amd_instrumented_forward.CacheTests.test_uncertain_framing_bitcode_empty_and_incomplete_entries_are_excluded) ... ok\ntest_unsafe_paths_unselected_entries_and_extra_files_fail_closed (test_amd_instrumented_forward.CacheTests.test_unsafe_paths_unselected_entries_and_extra_files_fail_closed) ... ok\ntest_wrong_architecture_and_incomplete_elf_are_excluded (test_amd_instrumented_forward.CacheTests.test_wrong_architecture_and_incomplete_elf_are_excluded) ... ok\ntest_job_cleanup_timeout_never_claims_owned_tree_exit (test_amd_instrumented_forward.OwnershipTests.test_job_cleanup_timeout_never_claims_owned_tree_exit) ... ok\ntest_ownership_assignment_failure_is_fail_closed (test_amd_instrumented_forward.OwnershipTests.test_ownership_assignment_failure_is_fail_closed) ... ok\ntest_real_cpu_job_contains_child_after_parent_exit_and_reaps_it (test_amd_instrumented_forward.OwnershipTests.test_real_cpu_job_contains_child_after_parent_exit_and_reaps_it) ... ok\ntest_fixed_rate_checks_do_not_exceed_ten_seconds_or_allow_longer_queries (test_amd_instrumented_forward.WindowsMonitorTests.test_fixed_rate_checks_do_not_exceed_ten_seconds_or_allow_longer_queries) ... ok\ntest_healthy_capture_is_durable_before_ready_and_contains_elapsed_time (test_amd_instrumented_forward.WindowsMonitorTests.test_healthy_capture_is_durable_before_ready_and_contains_elapsed_time) ... ok\ntest_periodic_service_timeout_is_passed_to_owned_powershell_capture (test_amd_instrumented_forward.WindowsMonitorTests.test_periodic_service_timeout_is_passed_to_owned_powershell_capture) ... ok\ntest_stalled_query_and_stale_observation_fail_closed_without_blocking_parent (test_amd_instrumented_forward.WindowsMonitorTests.test_stalled_query_and_stale_observation_fail_closed_without_blocking_parent) ... ok\ntest_unhealthy_capture_or_durability_failure_blocks_authorization (test_amd_instrumented_forward.WindowsMonitorTests.test_unhealthy_capture_or_durability_failure_blocks_authorization) ... ok\ntest_unhealthy_periodic_supervisor_gate_never_writes_gpu_permit (test_amd_instrumented_forward.WindowsMonitorTests.test_unhealthy_periodic_supervisor_gate_never_writes_gpu_permit) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.410s\n\nOK\n",
+    "ai_imports": [],
+    "replay": [],
+    "diagnostic_stdout": "{\"classification\": \"PARTIAL\", \"observer_healthy\": false, \"checkpoint_unchanged\": true}"
+  }
+]

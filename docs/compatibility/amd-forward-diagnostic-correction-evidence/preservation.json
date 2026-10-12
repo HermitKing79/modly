@@ -1,0 +1,32 @@
+{
+  "scope": "CPU-only diagnostic logging correction",
+  "gpu_attempts": 0,
+  "real_model_loads": 0,
+  "AI_imports_in_test_processes": [],
+  "inventory_comparison": {
+    "inventory": {
+      "before_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+      "after_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+      "byte_identical": true
+    },
+    "venv-metadata": {
+      "before_sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+      "after_sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+      "byte_identical": true
+    },
+    "model-cache-metadata": {
+      "before_sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+      "after_sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+      "byte_identical": true
+    }
+  },
+  "historical_files_and_amd_source": {
+    "historical_files": true,
+    "amd_source_head": true,
+    "amd_source_status": true,
+    "amd_modified_files": true
+  },
+  "historical_local_refs_unchanged": true,
+  "historical_remote_refs_unchanged": true,
+  "historical_files_checked": 685
+}

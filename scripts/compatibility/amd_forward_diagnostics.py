@@ -9,22 +9,77 @@ import threading
 import time
 
 MARKER='FORWARD_TRACE='
+RESERVED_FIELDS=frozenset(('event','name','origin','seq','elapsed_seconds',
+                          'monotonic_seconds','timestamp_utc','self','call'))
+CALL_FIELDS=frozenset(('duration_seconds','completion','error_type','error'))
+
+
+def validate_json(value,depth=0):
+    """Reject lossy JSON coercions, nonfinite numbers and unbounded nesting."""
+    if depth>16:raise ValueError('Diagnostic metadata nesting exceeds bound')
+    # PyTorch's version identity is TorchVersion(str); JSON preserves it as text.
+    if value is None or isinstance(value,str) or type(value) in (bool,int):return
+    if type(value) is float and math.isfinite(value):return
+    if type(value) is list:
+        for item in value:validate_json(item,depth+1)
+        return
+    if type(value) is dict:
+        for key,item in value.items():
+            if type(key) is not str:raise ValueError('Diagnostic metadata keys must be strings')
+            validate_json(item,depth+1)
+        return
+    raise ValueError('Diagnostic metadata must contain finite JSON values')
+
+
+def validate_details(details,reserved=RESERVED_FIELDS):
+    conflict=reserved.intersection(details)
+    if conflict:raise ValueError('Reserved diagnostic metadata fields: '+', '.join(sorted(conflict)))
+    validate_json(details)
+
+
+def validate_record(row):
+    validate_json(row)
+    if (type(row) is not dict or row.get('event') not in ('enter','return','error','stage','memory','state','process')
+            or type(row.get('name')) is not str or not 0<len(row['name'])<=256
+            or type(row.get('seq')) is not int or not 0<row['seq']<=512
+            or row.get('origin') not in ('worker','supervisor')
+            or any(type(row.get(key)) not in (float,int) or row[key]<0
+                   for key in ('elapsed_seconds','monotonic_seconds'))):
+        raise ValueError('Invalid or unbounded diagnostic record')
+    try:
+        stamp=datetime.datetime.fromisoformat(row['timestamp_utc'])
+        if stamp.utcoffset()!=datetime.timedelta(0):raise ValueError('UTC required')
+    except (KeyError,ValueError,TypeError) as exc:
+        raise ValueError('Invalid diagnostic UTC timestamp') from exc
+
+
+def unique_fields(pairs):
+    row={}
+    for key,value in pairs:
+        if key in row:raise ValueError('Duplicate diagnostic JSON field: '+key)
+        row[key]=value
+    return row
 
 
 class Trace:
     def __init__(self,send,clock=time.monotonic,limit=512,origin='worker'):
         self.send=send;self.clock=clock;self.start=clock();self.seq=0;self.limit=limit;self.origin=origin
 
-    def emit(self,event,name,**details):
+    def emit(self,event,name,/,**details):
+        validate_details(details)
         if self.seq>=self.limit:raise RuntimeError('Diagnostic event bound exceeded')
-        self.seq+=1
         now=self.clock()
-        row={'event':event,'name':name,'origin':self.origin,'seq':self.seq,
+        row={'event':event,'name':name,'origin':self.origin,'seq':self.seq+1,
              'elapsed_seconds':now-self.start,'monotonic_seconds':now,
              'timestamp_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),**details}
-        self.send(MARKER+json.dumps(row,allow_nan=False))
+        validate_record(row)
+        line=MARKER+json.dumps(row,allow_nan=False)
+        if len(line)>16384:raise ValueError('Diagnostic line exceeds bound')
+        self.seq+=1
+        self.send(line)
 
-    def call(self,name,call,**details):
+    def call(self,name,call,/,**details):
+        validate_details(details,RESERVED_FIELDS|CALL_FIELDS)
         began=self.clock();self.emit('enter',name,**details)
         try:result=call()
         except BaseException as exc:
@@ -59,13 +114,9 @@ class Journal:
         if not 0<timeout<=1.:raise ValueError('Journal acknowledgment bound must be within one second')
         if not line.startswith(MARKER) or len(line)>16384:raise ValueError('Invalid diagnostic line')
         def invalid(value):raise ValueError('Nonfinite diagnostic value')
-        row=json.loads(line[len(MARKER):],parse_constant=invalid)
-        if (not isinstance(row,dict) or row.get('event') not in ('enter','return','error','stage','memory','state','process')
-                or not isinstance(row.get('name'),str) or not 0<len(row['name'])<=256
-                or type(row.get('seq')) is not int or not 0<row['seq']<=512
-                or type(row.get('elapsed_seconds')) not in (float,int) or not math.isfinite(row['elapsed_seconds'])
-                or row.get('origin') not in ('worker','supervisor') or self.rows>=1024):
-            raise ValueError('Invalid or unbounded diagnostic record')
+        row=json.loads(line[len(MARKER):],parse_constant=invalid,object_pairs_hook=unique_fields)
+        validate_record(row)
+        if self.rows>=1024:raise ValueError('Unbounded diagnostic record count')
         ack=threading.Event()
         self.pending.put_nowait((json.dumps(row,allow_nan=False)+'\n',ack))
         if not ack.wait(timeout):

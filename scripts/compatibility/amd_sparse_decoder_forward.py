@@ -222,7 +222,7 @@ def worker(scratch):
             if 'RX 9070 XT' not in properties.name or properties.gcnArchName.split(':')[0]!='gfx1201':
                 raise RuntimeError('Unexpected AMD GPU')
             record['gpu']={'name':properties.name,'architecture':properties.gcnArchName,'total_bytes':properties.total_memory}
-            trace.emit('state','gpu',**record['gpu'])
+            trace.emit('state','gpu',gpu=record['gpu'])
             torch.cuda.reset_peak_memory_stats(0)
             record['before_placement']=previous.gpu_memory(torch)
             trace.emit('memory','before-placement',**record['before_placement'])
