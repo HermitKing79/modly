@@ -21,6 +21,7 @@ sys.path[:0]=[str(ROOT/'api'),str(Path(__file__).parent),str(ROOT/'experimental/
 import amd_sparse_decoder_loading as previous
 import amd_decoder_contract as loading_contract
 import amd_decoder_forward_contract as contract
+import amd_forward_diagnostics as diagnostics
 from services.amd_offline_guard import block_external_actions
 from services.amd_observer import windows_observation, healthy_observation
 
@@ -31,7 +32,7 @@ RESULT='FORWARD_RESULT='
 OLD=ROOT/'docs/compatibility/amd-sparse-decoder-loading-evidence/run/results.json'
 COMMITTED_FILES=[
     'scripts/compatibility/'+name+'.py' for name in ('amd_sparse_decoder_forward','amd_decoder_forward_contract',
-    'amd_sparse_decoder_loading','amd_decoder_contract','amd_bounded_gpu_proof','amd_native_import_preflight','amd_model_metadata')
+    'amd_sparse_decoder_loading','amd_decoder_contract','amd_bounded_gpu_proof','amd_native_import_preflight','amd_model_metadata','amd_forward_diagnostics')
 ] + ['api/services/'+name+'.py' for name in ('amd_runtime','amd_model_metadata','amd_offline_guard','amd_observer')] + [
     'experimental/extensions/trellis2-amd/strict_loader.py',
     OLD.relative_to(ROOT).as_posix(),previous.ARCHIVED.relative_to(ROOT).as_posix()]
@@ -68,10 +69,12 @@ def worker(scratch):
     component=model=latent=output=cpu_output=cpu_input=torch=None
     permit=contract.SingleForward()
     transfers=contract.TensorTransfers()
-    phase='cpu'; allowed_modules=set();root_id=None;root_calls=0
+    phase='cpu'; allowed_modules=set();module_names={};root_id=None;root_calls=0
+    trace=diagnostics.Trace(lambda line:print(line,flush=True))
     def stage(name):
         record['stage']=name
         print('FORWARD_STAGE='+name,flush=True)
+        trace.emit('stage',name,phase=phase,forward_calls=permit.calls,root_decoder_calls=root_calls)
     try:
         scratch=scratch.resolve();scratch.relative_to(EVIDENCE)
         env=previous.gpu_proof.scratch_environment(scratch)
@@ -103,6 +106,7 @@ def worker(scratch):
             raise RuntimeError('Unexpected AMD runtime or pre-existing GPU context')
         record['runtime']={'python':sys.version,'executable':sys.executable,'torch':torch.__version__,
                            'torch_path':torch.__file__,'hip':torch.version.hip,'cuda':torch.version.cuda}
+        trace.emit('state','runtime',**record['runtime'])
         torch.set_num_threads(1)
         original_init=torch.cuda._lazy_init
         def forbidden(*args,**kwargs):raise RuntimeError('Unapproved model loading, initialization or compilation')
@@ -116,6 +120,11 @@ def worker(scratch):
             if id(instance)==root_id:
                 root_calls+=1
                 if root_calls!=1:raise RuntimeError('Duplicate decoder invocation')
+            name=module_names[id(instance)]
+            if diagnostics.key_module(name,type(instance).__name__):
+                detail=tensor_description(args[0]) if args and isinstance(args[0],torch.Tensor) else {}
+                return trace.call('module:'+(name or '<root>'),lambda:original_call(instance,*args,**kwargs),
+                                  input=detail,forward_calls=permit.calls,root_decoder_calls=root_calls)
             return original_call(instance,*args,**kwargs)
         torch.nn.Module.__call__=module_call
         from torch.utils._python_dispatch import TorchDispatchMode
@@ -135,6 +144,9 @@ def worker(scratch):
                 elif (has_gpu(args) or has_gpu(kwargs)) and (phase=='cpu' or
                         (phase!='forward' and (phase not in ('placement','release') or not contract.placement_operation(str(func))))):
                     raise RuntimeError('Unapproved GPU operation outside forward: '+str(func))
+                if phase=='forward' and str(func) in ('aten.convolution.default','aten._convolution.default','aten.miopen_convolution.default'):
+                    return trace.call('aten:'+str(func),lambda:func(*args,**kwargs),
+                                      input=tensor_description(args[0]) if args else {})
                 return func(*args,**kwargs)
         def tensor_description(tensor):
             return {'shape':list(tensor.shape),'dtype':str(tensor.dtype),'device':str(tensor.device),
@@ -180,8 +192,10 @@ def worker(scratch):
             if 'RX 9070 XT' not in properties.name or properties.gcnArchName.split(':')[0]!='gfx1201':
                 raise RuntimeError('Unexpected AMD GPU')
             record['gpu']={'name':properties.name,'architecture':properties.gcnArchName,'total_bytes':properties.total_memory}
+            trace.emit('state','gpu',**record['gpu'])
             torch.cuda.reset_peak_memory_stats(0)
             record['before_placement']=previous.gpu_memory(torch)
+            trace.emit('memory','before-placement',**record['before_placement'])
             if record['before_placement']['allocated_bytes'] or record['before_placement']['reserved_bytes'] or record['before_placement']['available_bytes']<verified['tensor_data_bytes']+512*1024**2:
                 raise RuntimeError('Baseline allocation or insufficient VRAM')
             torch.backends.cudnn.benchmark=False;torch.backends.cudnn.deterministic=True
@@ -200,12 +214,15 @@ def worker(scratch):
                 if tensor_description(latent)!={**tensor_description(cpu_input),'device':'cuda:0'}:
                     raise RuntimeError('Input copy changed shape, dtype or layout')
                 record['before_forward']=previous.gpu_memory(torch)
-                allowed_modules={id(item) for item in model.modules()};root_id=id(model)
+                trace.emit('memory','before-forward',**record['before_forward'])
+                module_names={id(item):name for name,item in model.named_modules()}
+                allowed_modules=set(module_names);root_id=id(model)
                 stage('single-forward');phase='forward';began=time.monotonic()
                 output=permit.invoke(lambda:model(latent))
-                phase='placement';torch.cuda.synchronize(0)
+                phase='placement';trace.call('synchronize:after-forward',lambda:torch.cuda.synchronize(0))
                 elapsed=time.monotonic()-began
                 record['after_forward']=previous.gpu_memory(torch)
+                trace.emit('memory','after-forward',**record['after_forward'])
                 stage('output-copy-validation')
                 phase='output-transfer'
                 transfers.begin('output',output,tensor_description(output),phase)
@@ -232,6 +249,7 @@ def worker(scratch):
             record['release']={**previous.gpu_memory(torch),'model_collected':model_ref() is None,
                               'input_collected':input_ref() is None,'output_collected':output_ref() is None,
                               'cpu_memory':previous.process_memory()}
+            trace.emit('memory','release',**record['release'])
             loading_contract.validate_release(record['release'])
             if record['release']['input_collected'] is not True or record['release']['output_collected'] is not True:
                 raise RuntimeError('Forward cleanup contract failed')
@@ -267,7 +285,7 @@ def supervise(output,harness_commit):
     since=datetime.datetime.now(datetime.timezone.utc).isoformat()
     record={'status':'NOT ATTEMPTED','stage':'before-launch'};process={'returncode':None,'timed_out':False}
     healthy=False;preserved=False;verified=None;child=None
-    stdout=[];stderr=[];messages=queue.Queue();reader=err_reader=None
+    stdout=[];stderr=[];messages=queue.Queue();reader=err_reader=None;journal=monitor=None
     try:
         save('committed-harness.json',{'commit':head,'verified_file_sha256':committed_hashes})
         source_identity();verified=previous.identity();contract.fixture(verified['config']);save('checkpoint-before.json',verified)
@@ -275,6 +293,7 @@ def supervise(output,harness_commit):
         if not healthy_observation(before):raise RuntimeError('Unhealthy Windows observer before launch')
         healthy=True
         scratch=output/'scratch';scratch.mkdir()
+        journal=diagnostics.Journal(output/'trace.jsonl')
         command=[str(VENV/'Scripts/python.exe'),'-B','-I',str(Path(__file__).resolve()),'--worker','--output',str(scratch)]
         env={**os.environ,**previous.gpu_proof.scratch_environment(scratch)}
         child=subprocess.Popen(command,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,env=env)
@@ -295,8 +314,20 @@ def supervise(output,harness_commit):
         while True:
             remaining=deadline-time.monotonic()
             if remaining<=0:raise TimeoutError('Decoder forward stage deadline exceeded')
-            line=messages.get(timeout=remaining)
+            if authorized:monitor.require_healthy()
+            try:line=messages.get(timeout=min(remaining,2.) if authorized else remaining)
+            except queue.Empty:
+                if authorized:continue
+                raise TimeoutError('CPU gate deadline exceeded')
             if line is None:break
+            if line.startswith(diagnostics.MARKER):
+                remaining=deadline-time.monotonic()
+                if remaining<=0:raise TimeoutError('Deadline expired before durable diagnostic write')
+                row=journal.consume(line,timeout=min(1.,remaining))
+                if row['origin']=='worker':
+                    process['last_worker_trace']=row
+                    if row['event']=='memory':process.setdefault('gpu_memory_samples',{})[row['name']]=row
+                else:process['last_cpu_activity']=row
             if line.startswith('FORWARD_STAGE='):process['last_stage']=line.split('=',1)[1]
             if line.startswith(EVENT):
                 event=json.loads(line[len(EVENT):])
@@ -307,8 +338,14 @@ def supervise(output,harness_commit):
                 if not healthy_observation(observer):
                     healthy=False
                     raise RuntimeError('Unhealthy observer at CPU gate')
+                remaining=deadline-time.monotonic()
+                if remaining<=0:raise TimeoutError('CPU gate deadline expired before monitor startup')
+                monitor=diagnostics.ActivityMonitor(child.pid,messages.put)
+                monitor.start(timeout=min(2.,remaining))
+                if time.monotonic()>=deadline:raise TimeoutError('CPU gate deadline expired before GPU authorization')
                 child.stdin.write(b'EXECUTE_ONE_DECODER_FORWARD\n');child.stdin.flush();child.stdin.close()
                 authorized=True;deadline=min(began+90,time.monotonic()+30)
+                process['gpu_authorized']=True
             if line.startswith(RESULT):
                 if final_seen:raise RuntimeError('Duplicate final result')
                 final_seen=True;record=json.loads(line[len(RESULT):])
@@ -323,9 +360,17 @@ def supervise(output,harness_commit):
             if not child.stdin.closed:
                 try:child.stdin.close()
                 except OSError:pass
+        if monitor is not None:
+            process['cpu_observer_stopped']=monitor.close()
+            process['cpu_observer_error']=monitor.error
         for thread in (reader,err_reader):
             if thread is not None:thread.join(timeout=5)
         process['output_readers_completed']=all(thread is None or not thread.is_alive() for thread in (reader,err_reader))
+        if journal is not None:
+            process['diagnostic_journal_stopped']=journal.close()
+            process['diagnostic_journal_error']=journal.error
+        if record['status']=='NOT ATTEMPTED' and process.get('last_stage'):
+            record={'status':'INCOMPLETE','stage':process['last_stage'],'last_worker_trace':process.get('last_worker_trace')}
         try:
             after=windows_observation(since);save('windows-after-exit.json',after)
             healthy=healthy and healthy_observation(after)
@@ -335,6 +380,8 @@ def supervise(output,harness_commit):
     process_ok=(process['returncode']==0 and not process['timed_out'] and not process.get('forced_cleanup',False)
         and process.get('worker_exit_verified') is True and process.get('gpu_authorized') is True
         and process['output_readers_completed'] and 'error' not in process and not process.get('cleanup_unverified',False))
+    process_ok=process_ok and process.get('cpu_observer_stopped') is True and not process.get('cpu_observer_error')
+    process_ok=process_ok and process.get('diagnostic_journal_stopped') is True and not process.get('diagnostic_journal_error')
     result={'classification':contract.classify(record,process_ok,healthy,preserved),'observer_healthy':healthy,
             'checkpoint_unchanged':preserved,'worker':record,'process':process}
     save('results.json',result)

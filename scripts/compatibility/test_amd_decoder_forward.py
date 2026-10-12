@@ -146,5 +146,42 @@ class ForwardContractTests(unittest.TestCase):
                  patch.object(proof.subprocess,'run',side_effect=proof.subprocess.CalledProcessError(128,'git show')):
                 with self.assertRaisesRegex(RuntimeError,'absent'):proof.verify_committed_files('a'*40)
 
+    def test_cpu_gate_deadline_expiry_never_authorizes_gpu_and_reaps_worker(self):
+        for expiry in ('observer','monitor'):
+            now=[0.];observations=[];written=[];started=[]
+            class Input(io.BytesIO):
+                def write(self,value):written.append(value);return super().write(value)
+            event=proof.EVENT+'{"event":"cpu-ready","gate_one":{},"checkpoint_sha256":"verified"}\n'
+            child=SimpleNamespace(pid=123,stdin=Input(),stdout=io.BytesIO(event.encode()),stderr=io.BytesIO())
+            def observe(since):
+                observations.append(1)
+                if len(observations)==2:now[0]=46. if expiry=='observer' else 44.5
+                return {}
+            class Monitor:
+                error=None
+                def __init__(self,*args):pass
+                def start(self,timeout):started.append(timeout);now[0]=46.
+                def close(self):return True
+            def reap(owned,process):process.update(returncode=-1,worker_exit_verified=True,forced_cleanup=True)
+            with tempfile.TemporaryDirectory(dir=proof.ROOT.parent) as tmp:
+                evidence=Path(tmp)
+                with patch.object(proof,'EVIDENCE',evidence),patch.object(proof,'source_identity',return_value={}), \
+                     patch.object(proof,'verify_committed_files',return_value={}), \
+                     patch.object(proof.previous,'identity',return_value={'config':CONFIG,'checkpoint_sha256':'verified'}), \
+                     patch.object(proof.subprocess,'run',return_value=SimpleNamespace(stdout=b'published')), \
+                     patch.object(proof,'windows_observation',side_effect=observe), \
+                     patch.object(proof,'healthy_observation',return_value=True), \
+                     patch.object(proof.loading_contract,'authorize_placement'), \
+                     patch.object(proof.subprocess,'Popen',return_value=child), \
+                     patch.object(proof.diagnostics,'ActivityMonitor',Monitor), \
+                     patch.object(proof.time,'monotonic',side_effect=lambda:now[0]), \
+                     patch.object(proof.previous,'reap_owned_child',side_effect=reap) as cleanup:
+                    self.assertEqual(proof.supervise(evidence/'run','published'),1)
+                    cleanup.assert_called_once()
+                self.assertEqual(written,[])
+                self.assertEqual(started,[] if expiry=='observer' else [.5])
+                result=__import__('json').loads((evidence/'run/results.json').read_text())
+                self.assertTrue(result['process']['timed_out'])
+
 
 if __name__ == '__main__': unittest.main()
