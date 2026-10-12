@@ -1,0 +1,16 @@
+{
+  "base": "e2842ffc0e443840066aa839cc1cfb98c16969d3",
+  "unchanged_safety_and_diagnostics_sha256": {
+    "scripts/compatibility/amd_forward_diagnostics.py": "468b325ed0f69f738b8d48173340f838b3e461bb2a72b4f994946dbe43fba4a9",
+    "scripts/compatibility/amd_forward_windows_monitor.py": "d7c7596bff6962ab0df695b03588316495dba5f8e7992866f70d9578f1ce6c90",
+    "scripts/compatibility/amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64",
+    "scripts/compatibility/amd_decoder_forward_contract.py": "66e61b489dc3be2bce4544868a1dd232f6388606d32ddda85be7570bde800745",
+    "scripts/compatibility/amd_decoder_contract.py": "20d9def94b5965131346f25383a72cb0d8ddc4435a2d2f8c7ebec5d2eff9279a",
+    "experimental/extensions/trellis2-amd/strict_loader.py": "0a4b2aab6fb34a034be1725d4514d71f17c59376151b549ab631ebc8b5c8fc79",
+    "api/services/amd_observer.py": "b403b1e00627d4101e7c75d6759079d1ea81748ab3350faea29e7eab9add4f88",
+    "api/services/amd_offline_guard.py": "d874b8cbd0b873a8811c06fc61f28d3c6e36188371c4ab8a0fdc805ee83d6d00"
+  },
+  "focused_CPU_tests": 52,
+  "AI_imports": [],
+  "GPU_attempts_before_publication": 0
+}

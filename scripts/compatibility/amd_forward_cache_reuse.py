@@ -12,7 +12,7 @@ import sqlite3
 import struct
 
 ROOT=Path(__file__).resolve().parents[2]
-EVIDENCE=ROOT/'docs/compatibility/amd-instrumented-forward-evidence'
+EVIDENCE=ROOT/'docs/compatibility/amd-instrumented-forward-resume-evidence'
 HISTORY=ROOT/'docs/compatibility/amd-sparse-decoder-forward-correction-evidence'
 SITE=Path('D:/AI/Trellis2AMD/venv/Lib/site-packages')
 DATABASE='miopen_custom_cache_dir/3.6.0.8d1ae90e/gfx1201_32.ukdb'

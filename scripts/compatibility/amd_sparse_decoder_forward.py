@@ -29,7 +29,7 @@ from services.amd_offline_guard import block_external_actions
 from services.amd_observer import windows_observation, healthy_observation
 
 SOURCE,VENV,PREFIX=previous.SOURCE,previous.VENV,previous.PREFIX
-EVIDENCE=ROOT/'docs/compatibility/amd-instrumented-forward-evidence'
+EVIDENCE=ROOT/'docs/compatibility/amd-instrumented-forward-resume-evidence'
 EVENT='FORWARD_EVENT='
 RESULT='FORWARD_RESULT='
 OLD=ROOT/'docs/compatibility/amd-sparse-decoder-loading-evidence/run/results.json'
@@ -40,7 +40,7 @@ COMMITTED_FILES=[
 ] + ['api/services/'+name+'.py' for name in ('amd_runtime','amd_model_metadata','amd_offline_guard','amd_observer')] + [
     'experimental/extensions/trellis2-amd/strict_loader.py',
     OLD.relative_to(ROOT).as_posix(),previous.ARCHIVED.relative_to(ROOT).as_posix(),
-    'docs/compatibility/amd-instrumented-forward-evidence/cache-plan.json']
+    'docs/compatibility/amd-instrumented-forward-resume-evidence/cache-plan.json']
 
 CPU_SECONDS=45;GPU_SECONDS=120;OVERALL_SECONDS=180
 
