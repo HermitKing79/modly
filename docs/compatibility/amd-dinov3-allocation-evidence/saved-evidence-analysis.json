@@ -1,0 +1,69 @@
+{
+  "classification": "PARTIAL",
+  "conditioning_verified": true,
+  "single_load_and_forward": true,
+  "feature_cpu_readback": {
+    "verified": true,
+    "shape": [
+      1,
+      1029,
+      1024
+    ],
+    "dtype": "F32",
+    "tensor_bytes": 4214784,
+    "file_bytes": 4215800,
+    "file_sha256": "3f444d42191df07415a8877a3d8d3706cf1b129bedbbb2dfcc0221d5571be56a",
+    "output_sha256": "d94e87d27429936956616a7a1c09a1fd5e0e27337b5716486c271881497dc7ca",
+    "provenance": {
+      "dtype": "F32",
+      "config_sha256": "135ecd23e34a70b6fbed8b083fdecb319b7e3a54e3d849258bbe4ddcf1783bb5",
+      "runtime": "Python 3.12.10; PyTorch 2.13.0+rocm10.0.0; HIP 7.15.26333",
+      "harness_commit": "827bd6d00c549a28c435b4602b8f4bdc6a2eb8a5",
+      "format": "modly-amd-conditioning-v1",
+      "alpha_only": "true",
+      "component": "DINOv3ViTModel",
+      "conditioning_width": "1024",
+      "input_pixel_sha256": "2fa864e19134bc817000a267eaae667fc6326119e5e6402b1eec9f0131c6de42",
+      "input_png_sha256": "9abc7b8f89e5b001e863fc3ef2fbd6813b2e83f63c0a6b0a45203c2ef1edfd8d",
+      "extractor_source_sha256": "a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f",
+      "checkpoint_sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+      "output_sha256": "d94e87d27429936956616a7a1c09a1fd5e0e27337b5716486c271881497dc7ca",
+      "pipeline_source_sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+      "resolution": "512",
+      "shape": "[1,1029,1024]"
+    },
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-dinov3-allocation-evidence\\run\\scratch\\conditioning.safetensors"
+  },
+  "header_bytes": 1008,
+  "recomputed_statistics": {
+    "minimum": -29.339824676513672,
+    "maximum": 24.270864486694336,
+    "mean_float64": -1.7256201758322816e-09,
+    "stddev_float64": 0.9999999858634024,
+    "count": 1053696,
+    "all_finite": true
+  },
+  "snapshot_reconciled": true,
+  "active_allocated_bytes": 79691776,
+  "active_blocks": 1,
+  "observed_surviving_python_owners": 0,
+  "observed_tensor_records": 2288,
+  "workspace_settings": {
+    "blas_workspace_bytes": 33554432,
+    "blaslt_workspace_bytes": 79691776
+  },
+  "native_cpp_stacks_supported": false,
+  "workspace_ownership_proved": false,
+  "worker_exit_verified": true,
+  "windows_samples": 7,
+  "maximum_windows_gap_seconds": 5.047000000002299,
+  "inventory_unchanged": true,
+  "metadata_byte_identical": true,
+  "historical_files": 2141,
+  "historical_files_unchanged": true,
+  "historical_branches_unchanged": true,
+  "amd_source_unchanged": true,
+  "main": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "scratch_files_preserved": 526,
+  "ai_imports": []
+}

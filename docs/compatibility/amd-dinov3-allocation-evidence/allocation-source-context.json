@@ -1,0 +1,35 @@
+{
+  "read_only": true,
+  "sources": [
+    {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_inductor\\cudagraph_trees.py",
+      "sha256": "440f88b0b9a97dea494578c399eb12d7724b8abd70fc0a90c19479ea50e7dec5",
+      "start_line": 165,
+      "end_line": 181,
+      "source": "\n\ndef clear_cublass_cache() -> None:\n    \"\"\"\n    Cublas keeps a persistent workspace allocation for running matmuls. This poses a problem for\n    doing warmup within a CUDAGraph private pool because we do not want persistent allocations from\n    one one run to the next. When we begin a new run of a cudagraphs path (generation), all tensors\n    from the previous generation are freed. This frees them the memory pool, but not elsewhere.\n    A tensor in the cublas workspace would continue to be in use the workspace but would also get allocated\n    in the next run. The memory would be in use in two places.\n\n    To solve this, we clear cublas caches before and after warming up or recording. If a workspace is required\n    it will be allocated to the cudagraph private pool and accounted for in the allocator for the duration of the\n    program. There is no overhead to this on replay since cudagraphs removes allocation overhead.\n    \"\"\"\n    torch._C._cuda_clearCublasWorkspaces()\n"
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\backends\\cuda\\__init__.py",
+      "sha256": "53e230d7ce11c7e74df49ba5fd0e7ad9a8c836b3379f1a988eae1059b742fb19",
+      "start_line": 336,
+      "end_line": 371,
+      "source": "def cublas_workspace_size(size: None | int = None) -> int:\n    r\"\"\"Query or set the cuBLAS workspace size in bytes.\n\n    When called with no arguments, returns the current workspace size.\n    When called with a size argument, sets the workspace size and returns the new value.\n    Setting the workspace size will take precedence over the CUBLAS_WORKSPACE_CONFIG environment variable.\n    Changes take effect lazily: only handles used after the change get new workspaces.\n\n    Args:\n        size (int, optional): workspace size in bytes. Must be non-negative.\n\n    Returns:\n        int: the current (or newly set) workspace size in bytes.\n    \"\"\"\n    if size is not None:\n        torch._C._cuda_setCublasWorkspaceSize(size)\n    return torch._C._cuda_getCublasWorkspaceSize()\n\n\ndef cublaslt_workspace_size(size: None | int = None) -> int:\n    r\"\"\"Query or set the cuBLASLt workspace size in bytes.\n\n    When called with no arguments, returns the current workspace size.\n    When called with a size argument, sets the workspace size and returns the new value.\n    Setting the workspace size will take precedence over the CUBLASLT_WORKSPACE_SIZE environment variable.\n    Changes take effect lazily: only handles used after the change get new workspaces.\n\n    Args:\n        size (int, optional): workspace size in bytes. Must be non-negative.\n\n    Returns:\n        int: the current (or newly set) workspace size in bytes.\n    \"\"\"\n    if size is not None:\n        torch._C._cuda_setCublasLtWorkspaceSize(size)\n    return torch._C._cuda_getCublasLtWorkspaceSize()"
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\include\\ATen\\cuda\\CUDAContextLight.h",
+      "sha256": "3366440e5e1094286cb88a53626cbdc70c4f76720b3aabc130be4ee0b8171f81",
+      "start_line": 86,
+      "end_line": 102,
+      "source": "TORCH_CUDA_CPP_API cusparseHandle_t getCurrentCUDASparseHandle();\nTORCH_CUDA_CPP_API cublasHandle_t getCurrentCUDABlasHandle(bool setup = true);\nTORCH_CUDA_CPP_API cublasLtHandle_t getCurrentCUDABlasLtHandle();\n\nTORCH_CUDA_CPP_API void clearCublasWorkspaces();\nTORCH_CUDA_CPP_API void clearCublasWorkspacesForStream(cudaStream_t stream);\nstruct WorkspaceMapWithMutex {\n  std::map<std::tuple<void*, void*>, std::pair<at::DataPtr, size_t>> map;\n  std::shared_mutex mutex;\n};\n\nTORCH_CUDA_CPP_API WorkspaceMapWithMutex& cublas_handle_stream_to_workspace();\nTORCH_CUDA_CPP_API WorkspaceMapWithMutex& cublaslt_handle_stream_to_workspace();\nTORCH_CUDA_CPP_API size_t getChosenWorkspaceSize();\nTORCH_CUDA_CPP_API size_t getCUDABlasLtWorkspaceSize();\nTORCH_CUDA_CPP_API void* getCUDABlasLtWorkspace();\nTORCH_CUDA_CPP_API void setChosenWorkspaceSize(size_t size);"
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\transformers\\models\\dinov3_vit\\modeling_dinov3_vit.py",
+      "sha256": "00652d90ff8c7ae32b047ebe2acd2271f97e03f768cf570ac051045a4e0d5cf5",
+      "start_line": 282,
+      "end_line": 292,
+      "source": "    ) -> tuple[torch.Tensor, Optional[torch.Tensor]]:\n        \"\"\"Input shape: Batch x Time x Channel\"\"\"\n\n        batch_size, patches, _ = hidden_states.size()\n\n        query_states = self.q_proj(hidden_states)\n        key_states = self.k_proj(hidden_states)\n        value_states = self.v_proj(hidden_states)\n\n        query_states = query_states.view(batch_size, patches, self.num_heads, self.head_dim).transpose(1, 2)\n        key_states = key_states.view(batch_size, patches, self.num_heads, self.head_dim).transpose(1, 2)"
+    }
+  ],
+  "native_implementation_source_present": false,
+  "workspace_clearing_executed": false
+}
