@@ -57,13 +57,14 @@ def verify_preflight():
     return current
 
 
-def worker(scratch):
+def worker(scratch,*,allocation_evidence=None):
     record={'status':'FAIL','stage':'startup','sdk_discovery':[],'calls':{},'load_calls':0}
     component=model=feature=pipeline=output=cpu_output=cond=processed=image=torch=None
     phase='cpu';allowed_modules={};placement_sources=set();input_source=None
     normalizing=False;constant_copy=None;normalization_copies={'mean':0,'std':0}
     permit=contract.SingleConditioning();transfers={'input':0,'output':0};cache=None
     operation_counts={}
+    allocation_observer=None
     trace=diagnostics.Trace(lambda line:print(line,flush=True))
     def stage(name):
         record['stage']=name;print('FORWARD_STAGE='+name,flush=True);trace.emit('stage',name)
@@ -73,7 +74,9 @@ def worker(scratch):
         if record['calls'][name]!=1:raise RuntimeError('Duplicate DINO operation: '+name)
     try:
         if sys.stdin.readline().strip()!='OWNED_JOB_ATTACHED':raise RuntimeError('Owned job must contain worker before preparation')
-        scratch=scratch.resolve();scratch.relative_to(local.EVIDENCE.resolve())
+        evidence=local.EVIDENCE if allocation_evidence is None else allocation_evidence
+        scratch=scratch.resolve();scratch.relative_to(evidence.resolve())
+        feature_path=scratch/'conditioning.safetensors'
         env=loading.gpu_proof.scratch_environment(scratch)
         for key in loading.gpu_proof.CACHE_KEYS:
             if key!='FLEX_GEMM_AUTOTUNE_CACHE_PATH':Path(env[key]).mkdir(parents=True,exist_ok=True)
@@ -87,7 +90,8 @@ def worker(scratch):
                 raise RuntimeError('Only the inspected standalone DINO extractor may import')
             if event=='open' and isinstance(args[0],(str,bytes)):
                 path=Path(os.fsdecode(args[0]))
-                if path.suffix.lower() in ('.safetensors','.pt','.pth','.bin','.ckpt','.gguf') and path.resolve()!=checkpoint:
+                feature_access=(allocation_observer is not None and phase=='feature-save' and path.resolve()==feature_path)
+                if path.suffix.lower() in ('.safetensors','.pt','.pth','.bin','.ckpt','.gguf') and path.resolve()!=checkpoint and not feature_access:
                     raise RuntimeError('Only the audited DINO checkpoint may be read')
         sys.addaudithook(audit)
         verified=verify_preflight();stage('runtime-import')
@@ -159,9 +163,14 @@ def worker(scratch):
                     if len(operation_counts)>128:raise RuntimeError('Unexpected conditioning operation diversity')
                 floating=[v for v in tree_leaves((args,kwargs)) if isinstance(v,torch.Tensor) and v.device.type=='cuda' and v.is_floating_point()]
                 if any(v.dtype!=torch.float32 for v in floating) or kwargs.get('dtype') in (torch.float16,torch.bfloat16,torch.float64):return forbidden()
+                if allocation_observer is not None:
+                    allocation_observer.observe([v for v in tree_leaves((args,kwargs)) if isinstance(v,torch.Tensor)],str(func)+':argument')
                 if phase=='conditioning' and str(func) in ('aten.convolution.default','aten._convolution.default','aten._scaled_dot_product_flash_attention.default','aten._scaled_dot_product_attention_math.default','aten._scaled_dot_product_efficient_attention.default'):
-                    return trace.call('aten:'+str(func),lambda:func(*args,**kwargs),input=describe(args[0]) if args else {})
-                return func(*args,**kwargs)
+                    result=trace.call('aten:'+str(func),lambda:func(*args,**kwargs),input=describe(args[0]) if args else {})
+                else:result=func(*args,**kwargs)
+                if allocation_observer is not None:
+                    allocation_observer.observe([v for v in tree_leaves(result) if isinstance(v,torch.Tensor)],str(func)+':return')
+                return result
         with BoundedDispatch():
             import transformers,huggingface_hub,safetensors.torch
             transformers.PreTrainedModel.from_pretrained=classmethod(forbidden)
@@ -206,6 +215,11 @@ def worker(scratch):
             trace.emit('memory','before-placement',**record['before_placement'])
             if record['before_placement']['allocated_bytes'] or record['before_placement']['reserved_bytes'] or record['before_placement']['available_bytes']<verified['tensor_data_bytes']+2*1024**3:
                 raise RuntimeError('Unexpected baseline allocation or insufficient VRAM margin')
+            if allocation_evidence is not None:
+                from amd_dinov3_allocation import AllocationDiagnostics
+                if torch.cuda.device_count()!=1:raise RuntimeError('Allocator diagnostics require exactly one visible GPU')
+                allocation_observer=AllocationDiagnostics(scratch)
+                trace.call('allocator:enable-history',lambda:allocation_observer.begin(torch))
             torch.backends.cudnn.benchmark=False
             placement_sources={id(v) for v in list(model.parameters())+list(model.buffers())}
             stage('DINO-placement');began=time.monotonic();model.to(device='cuda:0');torch.cuda.synchronize(0)
@@ -214,6 +228,8 @@ def worker(scratch):
             if record['placed_buffers']!={'rope_embeddings.inv_freq':{'shape':[16],'dtype':'F32','device':'cuda:0','is_meta':False}}:
                 raise RuntimeError('DINO nonpersistent-buffer placement mismatch')
             record['placement_seconds']=time.monotonic()-began
+            if allocation_observer is not None:
+                allocation_observer.observe(list(model.parameters())+list(model.buffers()),'DINO:placed-state')
             allowed_modules={id(v):name for name,v in model.named_modules()}
             allowed_modules.update({id(v):'normalize' for v in feature.transform.transforms})
             original_cuda=torch.Tensor.cuda
@@ -273,6 +289,22 @@ def worker(scratch):
                     'sha256':hashlib.sha256(values.tobytes()).hexdigest(),'requires_grad':output.requires_grad,
                     'is_inference_tensor':output.is_inference(),'grad_enabled':torch.is_grad_enabled()}
                 contract.validate_output(record['output']);contract.validate_counts(record['calls']);values=None
+                if allocation_observer is not None:
+                    stage('feature-checkpoint');phase='feature-save'
+                    from amd_feature_checkpoint import write
+                    published=json.loads((evidence/'run/committed-harness.json').read_text())['commit']
+                    pins=local.verify_sources()
+                    provenance=dict(component='DINOv3ViTModel',checkpoint_sha256=verified['checkpoint_sha256'],
+                        config_sha256=verified['config_sha256'],input_pixel_sha256=record['input']['pixel_sha256'],
+                        input_png_sha256=record['input']['png_sha256'],harness_commit=published,
+                        extractor_source_sha256=pins[str(local.SOURCE/'trellis2/modules/image_feature_extractor.py')],
+                        pipeline_source_sha256=pins[str(local.SOURCE/'trellis2/pipelines/trellis2_image_to_3d.py')],
+                        runtime='Python 3.12.10; PyTorch '+str(torch.__version__)+'; HIP '+str(torch.version.hip))
+                    record['feature_checkpoint']=trace.call('feature-checkpoint:write-verify',lambda:write(feature_path,scratch,cpu_output.numpy(),provenance))
+                    if record['feature_checkpoint']['output_sha256']!=record['output']['sha256']:
+                        raise RuntimeError('Feature checkpoint differs from validated output')
+                    trace.emit('state','feature-checkpoint',checkpoint=record['feature_checkpoint'])
+                    phase='placement'
             if permit.calls!=1 or transfers!={'input':1,'output':1} or normalization_copies!={'mean':1,'std':1}:
                 raise RuntimeError('Execution/transfer counts invalid')
             stage('release');phase='release'
@@ -286,7 +318,14 @@ def worker(scratch):
             record['release']={**loading.gpu_memory(torch),'model_collected':refs[0]() is None,
                 'output_collected':refs[1]() is None,'rope_cache_entries_before':before_clear,'rope_cache_entries_after':cache.cache_info().currsize,
                 'cpu_memory':loading.process_memory()}
-            trace.emit('memory','release',**record['release']);strict_contract.validate_release(record['release'])
+            trace.emit('memory','release',**record['release'])
+            if allocation_observer is not None:
+                stage('allocator-snapshot')
+                record['allocation_diagnosis']=trace.call('allocator:snapshot-release',lambda:allocation_observer.capture(
+                    torch,record['release']['allocated_bytes'],record['release']['reserved_bytes']))
+                trace.emit('state','allocator-release',diagnosis={key:value for key,value in record['allocation_diagnosis'].items() if key!='summary'},
+                           allocation_totals={key:value for key,value in record['allocation_diagnosis']['summary'].items() if key not in ('active_blocks','interpretation')})
+            strict_contract.validate_release(record['release'])
             if not record['release']['output_collected'] or record['release']['rope_cache_entries_after']:raise RuntimeError('Incomplete DINO cleanup')
             stage('complete');record['status']='PASS'
     except BaseException as exc:record.update(error_type=type(exc).__name__,error=str(exc),traceback=traceback.format_exc())

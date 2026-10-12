@@ -1,0 +1,39 @@
+{
+  "sources": {
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\cuda\\memory.py": "223386afe1711b47c0e093aaa2dd7f79666de959867c917638b9d9d7790f952e",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_C\\__init__.pyi": "350f5bd0424d00070b0b18e9c1590f3e9086eb25ed8493cf90d4c33aaabb0d00",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\include\\c10\\cuda\\CUDACachingAllocator.h": "aa7021f8488a66a598c221a80573cef18f56f59a9a88ad629370143fd5d0f24e",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\safetensors\\torch.py": "81f477f2ab5e05e99308fc55ed26028eb2bf36334404e9c5558e4730184483f0",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\safetensors\\_safetensors_rust.pyd": "80a2b3f7658854ade855c5fb6192ee38fe2c7fbfd38d1c7c1f4d2c44f67125e4",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\version.py": "fe8b454dc43bd9346a83138b48bb9b4a2b7e1a22cc2207f8b257ffd867a87f65",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\safetensors\\numpy.py": "8753057d84a821703f94b90b9b7d10a28ec29218ef62085b21b4d79892da9269",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_inductor\\cudagraph_trees.py": "440f88b0b9a97dea494578c399eb12d7724b8abd70fc0a90c19479ea50e7dec5",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\backends\\cuda\\__init__.py": "53e230d7ce11c7e74df49ba5fd0e7ad9a8c836b3379f1a988eae1059b742fb19",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\include\\ATen\\cuda\\CUDAContextLight.h": "3366440e5e1094286cb88a53626cbdc70c4f76720b3aabc130be4ee0b8171f81"
+  },
+  "history": {
+    "enabled": "all",
+    "context": "state",
+    "stacks": "all",
+    "max_entries": 512,
+    "clear_history": true,
+    "compile_context": false,
+    "global_record_annotations": false
+  },
+  "snapshot": {
+    "call_kwargs": {
+      "augment_with_fx_traces": false
+    },
+    "installed_native_argument": null,
+    "required_visible_devices": 1,
+    "required_current_device": 0
+  },
+  "bounds": {
+    "segments": 4096,
+    "blocks": 16384,
+    "trace_entries_per_device": 512,
+    "frames_per_allocation": 256,
+    "serialized_bytes": 16777216,
+    "observed_tensors": 8192
+  }
+}

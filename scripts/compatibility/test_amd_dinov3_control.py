@@ -50,6 +50,7 @@ class ControlTests(unittest.TestCase):
                 strict_contract=proof.strict_contract,describe=describe,forbidden=forbidden,
                 tree_leaves=leaves,TorchDispatchMode=object,trace=diagnostics.Trace(lambda v:None),
                 operation_counts={},
+                allocation_observer=None,
                 torch=SimpleNamespace(Tensor=Tensor,device=Device,float32='torch.float32',float16='torch.float16',
                     bfloat16='torch.bfloat16',float64='torch.float64'))
         function('gpu',ns)
