@@ -1,0 +1,4332 @@
+{
+  "classification": "PASS",
+  "observer_healthy": true,
+  "checkpoint_unchanged": true,
+  "worker": {
+    "status": "PASS",
+    "stage": "complete",
+    "sdk_discovery": [
+      {
+        "command": [
+          "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+          "path",
+          "--root"
+        ],
+        "timeout_seconds": 5.0,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "ERROR: Could not load the `rocm[devel]` package, which is required to access runtime tools and development files. Please install it with your package manager (pip, uv, etc)\r\nERROR: rocm_sdk_devel module for the ROCm SDK development package is not installed. This can typically be obtained by installing `rocm[devel]` from your package manager\r\n",
+        "elapsed_seconds": 2.657
+      }
+    ],
+    "calls": {
+      "extractor": 1,
+      "features": 1,
+      "embeddings": 1,
+      "rope_embeddings": 1,
+      "layer.0": 1,
+      "layer.1": 1,
+      "layer.2": 1,
+      "layer.3": 1,
+      "layer.4": 1,
+      "layer.5": 1,
+      "layer.6": 1,
+      "layer.7": 1,
+      "layer.8": 1,
+      "layer.9": 1,
+      "layer.10": 1,
+      "layer.11": 1,
+      "layer.12": 1,
+      "layer.13": 1,
+      "layer.14": 1,
+      "layer.15": 1,
+      "layer.16": 1,
+      "layer.17": 1,
+      "layer.18": 1,
+      "layer.19": 1,
+      "layer.20": 1,
+      "layer.21": 1,
+      "layer.22": 1,
+      "layer.23": 1
+    },
+    "load_calls": 1,
+    "sdk_verification": {
+      "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+      "executable_sha256": "95ba504bd187d810fba48cf25f094629d1e17dc67e384706ffb2621f2b869e4c",
+      "source_sha256": {
+        "rocm_sdk/__main__.py": "da3cf689993144403ebd20543c26d2aae20b0298acb81f590df9e78997c9fbf2",
+        "rocm_sdk/_devel.py": "608314f7e710bc44e93e3f8b5c729b5072656d15b463ff98123b826d347f1af6",
+        "rocm_sdk/_dist_info.py": "de0065098100898af4ffc558f0d54190d89923840bc074c4c194673d0915206d",
+        "rocm_sdk/__init__.py": "ed87e36cc153b7811133fb934ff1f018114c394f32a56aa040663ef66c147c3d",
+        "triton/backends/amd/driver.py": "048f3915c6942e64c7c84eb47c62f265ad10e6be4584940fe0530f5a630b23f5"
+      },
+      "developer_package_present": false,
+      "safe_branch": "ModuleNotFoundError before expansion/link reconciliation"
+    },
+    "runtime": {
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "torch": "2.13.0+rocm10.0.0",
+      "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+      "hip": "7.15.26333",
+      "cuda": null,
+      "dependencies": {
+        "transformers": "4.56.0",
+        "torchvision": "0.28.0+rocm10.0.0",
+        "safetensors": "0.8.0",
+        "numpy": "2.5.3",
+        "pillow": "12.3.0"
+      }
+    },
+    "workspace_binding": {
+      "verified": true,
+      "binding": "_cuda_clearCublasWorkspaces",
+      "module": "torch._C",
+      "extension_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_C.cp312-win_amd64.pyd",
+      "gpu_initialized": false,
+      "native_call_executed": false,
+      "binary_review_sha256": "e27920546e1081c0070ce3350a199a98b74ca9f33317dd588d159685febae04a"
+    },
+    "attention_backend": "sdpa",
+    "cpu_load": {
+      "status": "PASS",
+      "elapsed_seconds": 2.422000000002299,
+      "strict": true,
+      "assign": true,
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "gpu_initialized": false,
+      "parameter_bytes": 1212518400,
+      "tensors": {
+        "embeddings.cls_token": {
+          "shape": [
+            1,
+            1,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "embeddings.mask_token": {
+          "shape": [
+            1,
+            1,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "embeddings.register_tokens": {
+          "shape": [
+            1,
+            4,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "embeddings.patch_embeddings.weight": {
+          "shape": [
+            1024,
+            3,
+            16,
+            16
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "embeddings.patch_embeddings.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.0.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.1.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.2.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.3.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.4.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.5.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.6.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.7.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.8.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.9.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.10.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.11.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.12.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.13.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.14.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.15.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.16.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.17.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.18.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.19.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.20.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.21.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.22.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.norm1.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.norm1.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.attention.k_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.attention.v_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.attention.v_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.attention.q_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.attention.q_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.attention.o_proj.weight": {
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.attention.o_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.layer_scale1.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.norm2.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.norm2.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.mlp.up_proj.weight": {
+          "shape": [
+            4096,
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.mlp.up_proj.bias": {
+          "shape": [
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.mlp.down_proj.weight": {
+          "shape": [
+            1024,
+            4096
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.mlp.down_proj.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "layer.23.layer_scale2.lambda1": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "norm.weight": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "norm.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        }
+      },
+      "memory_before": {
+        "working_set_bytes": 560205824,
+        "private_commit_bytes": 1483870208,
+        "peak_working_set_bytes": 560205824,
+        "peak_commit_bytes": 1483870208
+      },
+      "memory_after": {
+        "working_set_bytes": 1789632512,
+        "private_commit_bytes": 3578855424,
+        "peak_working_set_bytes": 3001970688,
+        "peak_commit_bytes": 4793798656
+      },
+      "loader_diagnostics": {
+        "weights_loaded": true,
+        "device": "cpu",
+        "strict": true,
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "entries": 415,
+        "payload_sha256": {
+          "embeddings.cls_token": "0079d29f4ae6aa97cda99611a0cb890eef847fac4877940eb6930277118a7254",
+          "embeddings.mask_token": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "embeddings.register_tokens": "d6d961cd430e217ee48b81b1b0bf44560801ea502f634b32b3c17e7f72e01c7a",
+          "embeddings.patch_embeddings.weight": "ce6713297defe2507b1374abcd80f4fe9a2b8920ee1ec79d0747e66602f6d095",
+          "embeddings.patch_embeddings.bias": "f36152e2b935c508a35a9326c219096e2c0fd03adc4862f0f6600b002851d7a2",
+          "layer.0.norm1.weight": "0ba576ae4da018f848e010074221b54af26eff32fd0964e8893f5405c308a630",
+          "layer.0.norm1.bias": "12ec12578f1900e8e7d01d234aba07c823eb2dee752c11aa6e6f209340cc1e9b",
+          "layer.0.attention.k_proj.weight": "08e53380ac5a34ff229bfcbf76c3e59d623bc04af0458daccca14e1b1397901e",
+          "layer.0.attention.v_proj.weight": "5a454f4ea9545e0101e4f00261ae41904dcbd3e8a3792b8007123c0d2e1cc2fa",
+          "layer.0.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.0.attention.q_proj.weight": "d07e6aa933ca1d1c41405cd35bd1769e884aaa0e5f601e9a82f3d472b9e2fc1f",
+          "layer.0.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.0.attention.o_proj.weight": "8947b6a2affe3720b4566703e69efa88253b1f09d90a34cf4f6451ae373cf6dd",
+          "layer.0.attention.o_proj.bias": "db8a0cf00695b0c5f5c8e7cc2c44fc0b63e296bca03d1e05da61d4da592a1498",
+          "layer.0.layer_scale1.lambda1": "87073876d72289ee632e4d0eef1c0b270a80564f9473b8c18d7d5bf224980864",
+          "layer.0.norm2.weight": "c5bb4040936aa1e6ee10b96a2323b40cc754ecccf5f491dfe6b0afd3d81f5ebb",
+          "layer.0.norm2.bias": "72b6b8c9660a8cd6e0c8ad3d8d376d19d17b86f6acc9e861b672f58cb7e59fe7",
+          "layer.0.mlp.up_proj.weight": "c6b565c0b7aef1e90c9e9ace3c658339d1bb0f4a4e609ba1d4843a1885a14ba4",
+          "layer.0.mlp.up_proj.bias": "e8e3db39a9b4badd9e99fe7e19cd77a3cfe1a1f8135f2197378fe0ce260ecfb9",
+          "layer.0.mlp.down_proj.weight": "616bd0e99c45d2d1e20bcdcfd1dd9248eac09e84e33ec38659c8c01a6d007794",
+          "layer.0.mlp.down_proj.bias": "21bb137b97b3ebc1ccaf33b6445291ac11545eb8e98248cd4058deb324ebe5f2",
+          "layer.0.layer_scale2.lambda1": "d355a9eb42220e2729f8181847911e4d21eaafb74eaebd628e691d84960ea323",
+          "layer.1.norm1.weight": "ec46ad36fb9452d763ff13df1d7a4f193a0b6217a96b710ca3af03640c0414fc",
+          "layer.1.norm1.bias": "d1f2a1657f2b98270a7b1fbfe677583c664cb58bbefc4a40dc4f343f0004fb2c",
+          "layer.1.attention.k_proj.weight": "5194a9fea5b5f1af5b9fb0821007f0fc36db6ebfebf2b10d5ce5edcff3ad175a",
+          "layer.1.attention.v_proj.weight": "8ce0de23cac3bb6836b598b2f7be79ae692586f5fa6a8cdf54bf187da4d81f4a",
+          "layer.1.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.1.attention.q_proj.weight": "32baeb016d408ac36fd4a221735351f56eb7edd910beca1bfad477a901e002ff",
+          "layer.1.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.1.attention.o_proj.weight": "1af61cf14cc37076c65d0a9053b88912a5cc5395d5f660b52faa9a06e509fe94",
+          "layer.1.attention.o_proj.bias": "3686a42d41b510197acef9c1fcaf05b1441d133a2eb0c43da171cec53aa512cc",
+          "layer.1.layer_scale1.lambda1": "9fafb570c45072746b63be31862491d40f9303bd83e35c13ed1bb8360b720112",
+          "layer.1.norm2.weight": "38c08ab46295a519be0e29e80b399a389c58c5fddf1d2e532572e3fdb1a91332",
+          "layer.1.norm2.bias": "556ff049a0cc1f2209ae5e79261115117ddf7ae5ca0fe132849bc5563bbc241c",
+          "layer.1.mlp.up_proj.weight": "169e40d325a267fb7025b3d42e76a6866e78cb7622551b95b4150323fe39d33d",
+          "layer.1.mlp.up_proj.bias": "d1701b229c7d4ea5c65ffb7fe84a479f4fbcf603a22b7ecff698bfb92667dbda",
+          "layer.1.mlp.down_proj.weight": "5605b0df51d74f422c410d2ca06eef3699dd8066495065315d41be2b3658b7d1",
+          "layer.1.mlp.down_proj.bias": "bf2009865ba121ec36ff4467610582bde28ccd22c8fb64246954f2d62c158d9e",
+          "layer.1.layer_scale2.lambda1": "17dc1023a7119745fd4b5b27d9a74164424eecdc9eeffb4cc1fe78a187fe9bea",
+          "layer.2.norm1.weight": "57f0d22054535ddc6876f7506358c2b28995f794ac07aed5e371216576b68bb1",
+          "layer.2.norm1.bias": "892dc85d9a64423edc32c42228110bd0d6801a34aef6aa81000916c556e134b1",
+          "layer.2.attention.k_proj.weight": "ec0b4e401f5b50a9aab081362be1ea942acaf08b44ab9cd3d500b80b850db43c",
+          "layer.2.attention.v_proj.weight": "8448ba603ecb5bb1ed21e59bb966fefc10d2ec70122cdbbd9f2df120ec1eeacc",
+          "layer.2.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.2.attention.q_proj.weight": "b0977599fb3b80f11eee77e78445234f712564dbbe3f86deb837697d725a6cf1",
+          "layer.2.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.2.attention.o_proj.weight": "81c20a5ebfb2252e202d8b511adca8eadc355dc035ba18651d81c8cf55d97100",
+          "layer.2.attention.o_proj.bias": "e52c3be9a830450f9df178d341b5775e0c0c72183bb7e8ea20454c116f74ef5a",
+          "layer.2.layer_scale1.lambda1": "080b03d95ec0e41d2735eaa72451eee384f4a073f475052464613d19adcdb0ad",
+          "layer.2.norm2.weight": "c9def219f5359fd999974716fe87df2405f1c18e20f0cdab2adb69d4cf892bd8",
+          "layer.2.norm2.bias": "3db9968db01be0d95035ee95ff4543ee0ec3b342bbf8a8ae2422509f91e5b9cb",
+          "layer.2.mlp.up_proj.weight": "18fcbb6d8fa769c077faa7eae711c1f59075c80268312e0eb533fc31b1ccd6f0",
+          "layer.2.mlp.up_proj.bias": "a9ac672c2f05995a81c1e8fc0654407fc307f692f6c351a57f65e70ea75794da",
+          "layer.2.mlp.down_proj.weight": "d21675d09f28bf2ccdf5e6250b682c491d2ddd1ecdd75fe33f5f9c5bdbf9ed04",
+          "layer.2.mlp.down_proj.bias": "e957948bb9cd5f875a63c419282ba8cdeecaf2d4d022dc3dd8dcbb3be710a989",
+          "layer.2.layer_scale2.lambda1": "7e731a993090f02cc1abc878993e85b7c3473ee947ee07c2320d5f1a037da6ac",
+          "layer.3.norm1.weight": "f8b3d75fcc6d12d078d1e92eebe41ee89dbb0dbb5562932857b1c9d67fb0daa7",
+          "layer.3.norm1.bias": "ac0865e400fbdc9115a44c467ab0fa10be00af8653fcdebaadc7692b8bc6d4e5",
+          "layer.3.attention.k_proj.weight": "260633e7e391a9ef9568c298605357fe133242598c84bc680b7cfc74f4ef9c91",
+          "layer.3.attention.v_proj.weight": "b7bf44841f64554efc335ac70434cd9c1d03d036b83b46c7b91aac3a46798cdc",
+          "layer.3.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.3.attention.q_proj.weight": "2a3a3aeb95c107efba7a637f4078238f53540c75530c79c2cb7078a3fc68d878",
+          "layer.3.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.3.attention.o_proj.weight": "63ad34a8fc15ff98d84aaf5736d410d8b8a17b7d06b849d10bfae4ec3d7d97e7",
+          "layer.3.attention.o_proj.bias": "ed9c90dde2dc1a3a8d2f0095b191b0bfbf9defd7466ab689a32ed524294eff68",
+          "layer.3.layer_scale1.lambda1": "fe129db94e7a39ea48fdc2e5fad1f74e247e4c59bffb0a64fcdf8e2dde1a80f8",
+          "layer.3.norm2.weight": "668e65b024b1a453b557b10ac305d249710f87fbc1eb5d67ff999a67d39d86a0",
+          "layer.3.norm2.bias": "beb4c8b9f85e90f9ca3e437d0108459f2e125a0219cd199c6cefbde35582c393",
+          "layer.3.mlp.up_proj.weight": "84ad766a6feb1d69e13b6a0b0ad5691287661f41494a5be7e42c981cb6d8af5a",
+          "layer.3.mlp.up_proj.bias": "757fb42f692b40a48bcdc0072324dfbd808ebc8438b0b779ca06f7ddccb682c1",
+          "layer.3.mlp.down_proj.weight": "fc7a3180e7ca4f083bec800d8fe8762d6a8161ead158e94055a564893ea0725a",
+          "layer.3.mlp.down_proj.bias": "0d05225dad8906fb4d47b05408e88bb91ef7fcea8c597bf67face48e13c21a60",
+          "layer.3.layer_scale2.lambda1": "c66868697b00cf7f8ecdfd740f47a8a728e364ced1811039d17fcea5386a3b95",
+          "layer.4.norm1.weight": "b34a207eb3810cbb353301dbce9295ec88a9f438e197dbf458e6c61e474337e0",
+          "layer.4.norm1.bias": "2afd8cc9f5f54c82415f97853ec1b69820ab712b00b35c8e0aafbfea0836e8bd",
+          "layer.4.attention.k_proj.weight": "e8efae45f021f4be3ba46bfe83224e7984aaae3948c8d61da93384acde59bdfb",
+          "layer.4.attention.v_proj.weight": "32acc2bd9373c828982bb9cfbe07ba4b2a0808d1195a0c73927b30a3fef34322",
+          "layer.4.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.4.attention.q_proj.weight": "99b4172f417523bb6087490a909b74287b478d2e09cd51a3640bce0b8099cf16",
+          "layer.4.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.4.attention.o_proj.weight": "8b633535e74801eda2d99fe6a4aeba4dd058c862ae81a6643e1e2d6b78d0975d",
+          "layer.4.attention.o_proj.bias": "520849043b5caeac406c3bd0ac28395a31fbad79e8ccfebd41e4e68f52a35410",
+          "layer.4.layer_scale1.lambda1": "2fd49d868c144ef0eca6353829c9bce631bce5aad9d7336ad7ff184427d2b3af",
+          "layer.4.norm2.weight": "a43da8e90eaa4476f6e37501739252496a9f9fd2be0b0898accfdf52bf147142",
+          "layer.4.norm2.bias": "d92ee8d80ce7a2e5b66171c5c1b9b8947cf76db4a6b2a5aaab2868096e74eaa8",
+          "layer.4.mlp.up_proj.weight": "565a5aef2512d1a4ec40dfc99b11d3b16e2d0826adabd9c146b8d12e7b0b466d",
+          "layer.4.mlp.up_proj.bias": "cc1222be9fe12f457fbe988b034f338041edad9b584023b51e53d71142a9b91c",
+          "layer.4.mlp.down_proj.weight": "c94a01cf725d9585adcc3f4eb23850c63158a644b77ae65f4d9b1c78f6ed969f",
+          "layer.4.mlp.down_proj.bias": "825189ed7691694e595460052c031c572e6f50295d5f4fa65bcfa429d1535b8b",
+          "layer.4.layer_scale2.lambda1": "b1770122714e7c6756bed6f48cfa9d06d9675ebdf9869e70aca6bfee1c3846d8",
+          "layer.5.norm1.weight": "02b95ee73d43c052fcf13e5cf59d80c448830037fbeef5c1f74b0d87a1db7e39",
+          "layer.5.norm1.bias": "e3664ba68cdd6e718552fdd04bcf566ac5df48c377d8aaaaf8d533c419b4111b",
+          "layer.5.attention.k_proj.weight": "ebca32a1d38616a3063398b5344b2d106b9eb947566eae601e6595b664a2a1f4",
+          "layer.5.attention.v_proj.weight": "cb916e17370c65f67644f0f73dec9867f75ab96e6b4aadd6bef7490363b43ec0",
+          "layer.5.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.5.attention.q_proj.weight": "2331572687ad810375a859b82584283f8b4360c97595878e4100f6695177d735",
+          "layer.5.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.5.attention.o_proj.weight": "d673883f21f769b85f223dea469608c4c34f83ac60e4df6680ea754749afdd85",
+          "layer.5.attention.o_proj.bias": "740a892ebf05f1c67d969ad6b35a4f980802a4d5f42754f58492cce68d68f4aa",
+          "layer.5.layer_scale1.lambda1": "a432e0b360916d8a71b34cd168362f4076d30c2a4734f5721cfbaa8ddb463bd8",
+          "layer.5.norm2.weight": "cad36b8704ed5471119d7255277fefa72e8dde76a99005b1f3e9435aa7bc568b",
+          "layer.5.norm2.bias": "3daa096125206451ad55e89a9d9c45923d4e7abddff6f7908022587370772b21",
+          "layer.5.mlp.up_proj.weight": "01621fd463bc3ce8feea877498d7ffd33d9d2d1eb38181ae7e384b18c6407e12",
+          "layer.5.mlp.up_proj.bias": "a2bf991d7f7052c32e8de34b11e5c03a2d2c002290bc5ccf0caeb749e8dd14e3",
+          "layer.5.mlp.down_proj.weight": "a9369fee57c8065fc342d7be2112e4df3c465770e542b50ffb306a8a3b344fd1",
+          "layer.5.mlp.down_proj.bias": "d6df74a433368a64e2b48d9e046ff9dbba1e48cd7198fb60ebdd01ce56f9bc6a",
+          "layer.5.layer_scale2.lambda1": "a850977b4ecb7361723db8439eea99a0eb9bb9f19c8e45628d7bd2696ddfe8a2",
+          "layer.6.norm1.weight": "2ac4fd021dbaa352cfa0110f040fbbd97f30f25bf7fd172a3a26cdc61a477049",
+          "layer.6.norm1.bias": "160d04d91ac362b2f9be77a4549beb21737adc55c1486a542d0f27c000c9fc43",
+          "layer.6.attention.k_proj.weight": "8cd38fd847e9065b451d43cc79ea95da60fb1b5d42392570d5e0742beac9ac27",
+          "layer.6.attention.v_proj.weight": "d9710f2a2fdf1fbe2848ea3cef02d6c427c91c3bcb53c6818e39afc946cb27ce",
+          "layer.6.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.6.attention.q_proj.weight": "6865ad4642bbcb8a932a8e9006810a942bad2e0d2582d86ca5cebbae02f02746",
+          "layer.6.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.6.attention.o_proj.weight": "cf425d99113dd57a0683018d25f1a44a72114bcb6426afaac3d60bd933337032",
+          "layer.6.attention.o_proj.bias": "f2edce2bfe08a87e79ff50da08d572ec3f3bb7f1a5722ca8cd3e2389fa6406bb",
+          "layer.6.layer_scale1.lambda1": "92de0030359cec881b3ab48308abb58c5a6744f3b88c2c64692081571d491e4a",
+          "layer.6.norm2.weight": "c99196af3813bd6f45b748a76813ef640d733b610786f39f264c87ed58c9ba10",
+          "layer.6.norm2.bias": "e2f694c4fa636d8f0fbfcd18fca9f78c93b8a4cd373a60f52f583125acaf3368",
+          "layer.6.mlp.up_proj.weight": "bf1b169c87a775d82b663a9381a8db1cd2395d4262b2c8a2468671259b288cd7",
+          "layer.6.mlp.up_proj.bias": "4443a91f652b7a7b3c1046fda80c5b2849ca6a5bf0afab8712c8352c531a1cd0",
+          "layer.6.mlp.down_proj.weight": "ae383182e481371e5f836efa91a283ab97ed63ae66c28d7336ae4dc83811a63b",
+          "layer.6.mlp.down_proj.bias": "b7ab687b9bef9cac6493552531d6da9372050df30f6ee9e19a762852ef3a6cac",
+          "layer.6.layer_scale2.lambda1": "07d925b15c4072a21b8b92fbe74446d7844d4a624a30794d1936e08142626302",
+          "layer.7.norm1.weight": "95aa62d124b2a0866dabb5356b9c547b61630f1a114ca07fe5a9255663cc8625",
+          "layer.7.norm1.bias": "efb4a95239633c4ac98a80e264d4cb84c7e8d004c3e3db5544545cbed410ad5b",
+          "layer.7.attention.k_proj.weight": "ccf3746608eccbdc7c3c282ab9e01d3bc9031aaab2401022558a26fe524e7fd0",
+          "layer.7.attention.v_proj.weight": "464d6cc9a7ddb7ac15833ace2c361dd27e5c8347db0e3fecffbeb8cc0ea674a0",
+          "layer.7.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.7.attention.q_proj.weight": "59d5af6fec8f2a8c635f8f38e20b796f9a26d9a7029ff1280b95c78660b76141",
+          "layer.7.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.7.attention.o_proj.weight": "aa29bd1be8fbd7650d634ae1d1b86b9fc133245bc13f44bab3d04c6d949db7eb",
+          "layer.7.attention.o_proj.bias": "10200d0a6992486deb0be34cbc948db19e8f02680598c0f9d48346f538d46ccd",
+          "layer.7.layer_scale1.lambda1": "5ee5dd0d58b8acdbbbde706e797dff7fa9f320d9336d42a3e9f03150c793cf2b",
+          "layer.7.norm2.weight": "856d1fa649b041e3d8df09682c249d2e7b6aa19cc1d0d0481332eb7369dd0d85",
+          "layer.7.norm2.bias": "a68d717b305633163140dbd5666ede3c656f2f81a7471e1e06cdf82f2252352a",
+          "layer.7.mlp.up_proj.weight": "a176545c0b3f5dd8b406487a3c8a727704d35018797d75224400855b86acc664",
+          "layer.7.mlp.up_proj.bias": "97c1d66d0931e7bb888823a968d180e6c3a621808cab828061c6b61ca107981b",
+          "layer.7.mlp.down_proj.weight": "b72d97b987308a347260ee846c45d4e4bd398ee3078cbe48bca10465a8b698d2",
+          "layer.7.mlp.down_proj.bias": "430c6148320c5079f83686c8bdd6c13dc2493fbce6ce4b81766396720c2a82ee",
+          "layer.7.layer_scale2.lambda1": "f1979d39aad976f30430cd231a0f5b7203010dea16cb3b25eb2bf18f50e49436",
+          "layer.8.norm1.weight": "6dd7591ba77cfd09e0d0a9e05d490a5baa3f388007ac4510944e652a67be53fb",
+          "layer.8.norm1.bias": "4edb7274e297dfa67d42d75da7c4eec1c9379fb3d1e6a67a92e1cfbebb1565d6",
+          "layer.8.attention.k_proj.weight": "596f3425f024cbc92a8dc6efc6430ada695e2ea1b0a0d7e689b99b8df29eaf4d",
+          "layer.8.attention.v_proj.weight": "aabf7d38596b5f0eeefef30ba765c60219762e9f5fb3bc0bba0651b081f6743f",
+          "layer.8.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.8.attention.q_proj.weight": "b92840f9d44fb8315b17cbe40342ae76d6d604a9c455302a2b0ef239be0c59e6",
+          "layer.8.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.8.attention.o_proj.weight": "7272a6ca9b8018cd8d9832d668295e28e574039634b1b644d3c3014f219f6092",
+          "layer.8.attention.o_proj.bias": "af260a3cfe7d56eee075e803a8f4f2ebee7e60ef5182d9b4697fe5a63122fffe",
+          "layer.8.layer_scale1.lambda1": "cc7980a445a7eaaa94ff7c934d5dfef785030c7ddb20faf211f22dbb04afe2d9",
+          "layer.8.norm2.weight": "136a232f510469120c81e5b79100f99c451eaba08aaec36a04028a5649739997",
+          "layer.8.norm2.bias": "89f8f081d39eaa619c256819352635388bbb59bba4d5ab617b642fb872882981",
+          "layer.8.mlp.up_proj.weight": "5a5f409a9c8de7c0336636ebd747c4aff379e36ce784ca4f6ad19198e8ee4b9d",
+          "layer.8.mlp.up_proj.bias": "a178425cf5722e841efd93f015217a8cdbd71109eb09e957117018670167d7db",
+          "layer.8.mlp.down_proj.weight": "ea32b1f595bc1ad6ee15a83cd786e0abcbd71736c8c3ff5fa8f72abbcdba44a4",
+          "layer.8.mlp.down_proj.bias": "9138d8c95bbac5e0db521154ab5e0c7fe87bdb39b7ae03344bce438ba5ff35bc",
+          "layer.8.layer_scale2.lambda1": "acbf8c7264d44a0d7c4b47f09c440a8354bd3239550fddfb5f942c267ce7b3b3",
+          "layer.9.norm1.weight": "309f2cbf96310e1541d58bc9e9f413599713fd4129a862b5c543f48555f24689",
+          "layer.9.norm1.bias": "6ce8a3528ea10534247dad1829fc9c644f9cb12349a74fbac37b48f580a7c758",
+          "layer.9.attention.k_proj.weight": "4c8bc15b358ffb2afb8d76e119c3f16d19d9f63a63d6c6d75ff6508008b3d25e",
+          "layer.9.attention.v_proj.weight": "6aa85be20d7ebbfda1644fd89e42e0f8c70ed651a738f275d296d91a5de9145f",
+          "layer.9.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.9.attention.q_proj.weight": "3dd861f5290c48d6ab69fe1ccaeb554ee3bf25015c4e88ee667b0e78240a2123",
+          "layer.9.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.9.attention.o_proj.weight": "2ddc83fe5626efa0f64da5ef72b57418d52b65760f5beb5a9cabf62bb5d66e31",
+          "layer.9.attention.o_proj.bias": "a33f0478f762d16a8e9cf124ce4a8885910308d8f34fa55806b73e9154ca8ff2",
+          "layer.9.layer_scale1.lambda1": "cad61ed9d4763d17b75a4277cde190007f42d4cde09dee78e33b3c5050f4bdd5",
+          "layer.9.norm2.weight": "dce3c9bee29e0e08e6e72046341e268744dcc7b980e0af177a58d21286455152",
+          "layer.9.norm2.bias": "7397d457bbf45a36f7f9b8299b35274baddf5ac93418148e4c17df8e156dd2be",
+          "layer.9.mlp.up_proj.weight": "5003c2dd601adeef9d61f67a2c53af518bafaebf32187c95f0f12cadd1f1e5c7",
+          "layer.9.mlp.up_proj.bias": "0b7ca4293995c3553c63f0e644909959f74f489b2093a2f95bc5ae7145e09ec4",
+          "layer.9.mlp.down_proj.weight": "ec7bfa24e528566d27bba705a29e9ad018ed3c4cb0b639d0623f1c0a390f39ff",
+          "layer.9.mlp.down_proj.bias": "75b86cbfff2f2d512e8910f728aa2307d45197a984714347c2b8cbfd58245a05",
+          "layer.9.layer_scale2.lambda1": "a3f18528ef0705fea67fe71bec92286243e6a3789aa14b1ce8ce83c5e7a483b1",
+          "layer.10.norm1.weight": "8fd4dfa70a53785857c3e24e296d6d566e87a149424ce95c7791541a6e7ae0f5",
+          "layer.10.norm1.bias": "0828875fac9afa49f7a039a51d266361d16c5663c165ba83e0b8cb8ef55c089a",
+          "layer.10.attention.k_proj.weight": "605abd32cc835ee6d7d4dcdcdc1afe9f04f3942050a619af42ce4a0cdface24e",
+          "layer.10.attention.v_proj.weight": "919e8d31ad7d752e562fc324726d1de87fcfcdd391e6eb5bb19dbae9cdece502",
+          "layer.10.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.10.attention.q_proj.weight": "0e2f52c0fbfe2c7042a99ba354c55e875f8a03b82801d41a053cecee71148e61",
+          "layer.10.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.10.attention.o_proj.weight": "f6dda553778010333ddc264e917a67a6edb4578a6037be286a24602b8684a84b",
+          "layer.10.attention.o_proj.bias": "d6208ce36683da3dcd72d572305602b1a9ac634fa7d087cf93829c9c423cfa3b",
+          "layer.10.layer_scale1.lambda1": "afd2d6d9af2be7ef45c10eb2461d2adc2b6b33ea1a506f2d1f582b74fc95a27b",
+          "layer.10.norm2.weight": "c4c59a5125ac50c14b6f7870c1bebb0ee88856480fbdb3437dbaf504837f2b88",
+          "layer.10.norm2.bias": "b72bb6dc725e47a68e46b68d80b89f121abdbce6d0145592729041d740c91139",
+          "layer.10.mlp.up_proj.weight": "d462e125e57d5a22ec1a551e894674317edfa5b38f44d9427e09b28574275bbc",
+          "layer.10.mlp.up_proj.bias": "9b4d9fde9ec47e98052737be6cb208c8d2d9ae3df4c809abebee2fde6fadb1e3",
+          "layer.10.mlp.down_proj.weight": "d7df4c4ac2bc23016034c9369f705d584067e33659666c0ea52c5b077fdb6c7b",
+          "layer.10.mlp.down_proj.bias": "97dc8590cabfffeb9b911eae0b9f117a12f9d67bef7df50ebbdd1467dc375ec6",
+          "layer.10.layer_scale2.lambda1": "d9153688a70868c1256bcd4855fea5f096e06277456a0a9b7007af9f56725a8a",
+          "layer.11.norm1.weight": "0d2277567fe7706c7ec16dcad250fcf02dd061d8c9e1221e4e659d301c8ea65c",
+          "layer.11.norm1.bias": "672feb1aa34c9d0d7220d8e43b35bfb28c87dc9e6cb9c29d48752b00d3fad2cd",
+          "layer.11.attention.k_proj.weight": "b63c376cb4c2e647f85e35b14203db340cbba98992b82a7d6528271a6ee86266",
+          "layer.11.attention.v_proj.weight": "170125597c1c122af7683006155ca6a051726e2344b077eb956346ac18b60a53",
+          "layer.11.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.11.attention.q_proj.weight": "5abb486b60573bf0e2afb7bf9872a4ad08906284d4e3f666237dcd74268b4e6b",
+          "layer.11.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.11.attention.o_proj.weight": "93b867adf98a3627498713c8ef3b8875c3ff21ea4f145af186331991ecd928b2",
+          "layer.11.attention.o_proj.bias": "6fdfe0c336f23f617264139253bc2def0b48f182439e5ba8ff7d42e587902983",
+          "layer.11.layer_scale1.lambda1": "4d3da4bea5757d15c6df778df1c0166ef80441a684b58e0a00fd102bc9c386e2",
+          "layer.11.norm2.weight": "108ce2c25016e74d5698772e65e11f8ea2bd381a6735b267e37f5f8eb8e3ed1f",
+          "layer.11.norm2.bias": "5f10d985dc21fe1cb3ef39dd6e3389408e99cc365de6f278fcae68eca35bb7fc",
+          "layer.11.mlp.up_proj.weight": "618ee3bacf958dcd629777b26c17e73ea42d76d3db5fea4c496618781d15ffb8",
+          "layer.11.mlp.up_proj.bias": "e5606a74300c54221308e0bdb237e1483a5d35bffe235e1f3e809c951e22a1e1",
+          "layer.11.mlp.down_proj.weight": "d08577a829e2d3d640ecb8d77ae9cf9dcc1f16985caff40a8dc240ee971163a6",
+          "layer.11.mlp.down_proj.bias": "ba6d8e84ebfbc5d56004b1858dac5e08043de759860f11daa349ff75327fa881",
+          "layer.11.layer_scale2.lambda1": "c8dca24a2eaaf3bd95fa15d64478964121223a5ef1338f5ccf6c570b9622b1b2",
+          "layer.12.norm1.weight": "2d798c0a827cf40bafcf28fbdcd452806e18f27182440f482439d8e86831bbe3",
+          "layer.12.norm1.bias": "c722afb8d44d18e115eea9c61aa7ff3cbfb29699cfa998aceba1e652ed659a05",
+          "layer.12.attention.k_proj.weight": "898bb89a1ed353a4fef73defc8b50bfde5f8bbf7b724e5659bcf2139e05fc4d6",
+          "layer.12.attention.v_proj.weight": "1d0a1f27b2d2703299e7a193c4f97f2cbd548926c76a607dd8b546e5b00c877a",
+          "layer.12.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.12.attention.q_proj.weight": "a7ac0a772954db64e203d53cab9568dee2b688ccfe66cd8808348d98ccc4fbdb",
+          "layer.12.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.12.attention.o_proj.weight": "5f5a0235d4e5a605cd7d55cb7e055e83bb2639c3302565b5a9fb5ae2267819b5",
+          "layer.12.attention.o_proj.bias": "825d4284b2a8b7d0c497f3db42b3987912f72eef614e314ae6f9c33df751fc20",
+          "layer.12.layer_scale1.lambda1": "1747c281c7cd136c7bd8659cb8c9e3b84d3dfac6284ea05eb339dc403a167099",
+          "layer.12.norm2.weight": "c670aa3983bd2f50e3cb55ffcc68ba1dd0a96cf17016c5de7ac957fd2092062a",
+          "layer.12.norm2.bias": "e07aede508d73f2f89fb0ec91e2c252e1a1e25b60613b0a302907cd65a55b0b5",
+          "layer.12.mlp.up_proj.weight": "b59f12118860b6775c6c47f5312685f20db0190a53647a604c861312832093e1",
+          "layer.12.mlp.up_proj.bias": "d9244e8b854ce41bce2ce5a6e36233fe9a4e9208370f00337e07298d1b772fe3",
+          "layer.12.mlp.down_proj.weight": "4cf35119392140f6fbb97979d098103facbaea541cc4ad97997dcbb3f80862aa",
+          "layer.12.mlp.down_proj.bias": "fff53a0432bec033199ad3b1dd14360490291e13500ed171602f8574ed188057",
+          "layer.12.layer_scale2.lambda1": "e2f5fda28c7c1d3f08869ddad26044f1dd40311a2b33d457f54ad3df0e28b617",
+          "layer.13.norm1.weight": "a36f14ddac884b9680a93c9723dc56b6339f414650964945aa35cf53edf2efdd",
+          "layer.13.norm1.bias": "f3348fa29ebea41b34ae065f7d7f59a3795eda0024d7c9662e24f4b81131170d",
+          "layer.13.attention.k_proj.weight": "730a54b26c8276576bb6eedda1d021ae2ea67bc9f001a98d42926efeb0fbfb8b",
+          "layer.13.attention.v_proj.weight": "45cbd212e3b6778e23d364a2bd7424eddb8644f870f3c24b83b41856b6665ae3",
+          "layer.13.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.13.attention.q_proj.weight": "a0c3516616866b4ed35e2cc3ebb4fb771fd47ae5c93acbadc3fd5d58fcbc8cff",
+          "layer.13.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.13.attention.o_proj.weight": "1b1a1e5db2eb1fd330232f3e6981115e702f2708c576bc3f6a9010de9be65d80",
+          "layer.13.attention.o_proj.bias": "5f56937c23bb096e015c71ae18f45a79293aff0a4c6aac2e1c7e309feff5620f",
+          "layer.13.layer_scale1.lambda1": "ea2345f0bb7bca049e27dd0f558feb3ddc4727bed12bc8b618a0fe2675587d8b",
+          "layer.13.norm2.weight": "e310afe94a633cf4575ee74d3c3239d8c919d6d19f6aca01efbef2e2d7a5d03b",
+          "layer.13.norm2.bias": "a056fabdff6dff48eded408788f89bd99f1a59ef9106946203a486315605acf3",
+          "layer.13.mlp.up_proj.weight": "c2b8e10dd35e86ee1e687c649dc63b66b00c323166697a434774c1f193071228",
+          "layer.13.mlp.up_proj.bias": "c05d0051aa561908d2a77186fd0465018938e5a99ff13a3470db1437a2974442",
+          "layer.13.mlp.down_proj.weight": "9d9c31a332092d96e8723f9fe164a87041c7a85dfbee1e2419c4f426b244d032",
+          "layer.13.mlp.down_proj.bias": "608ea97ad9284fdbc0ebf867e4672b35b019a6e844d8323d2b74762eab53af8f",
+          "layer.13.layer_scale2.lambda1": "ef378db5aa82f96286d7c6e8a993cfd9236241260cefea77db80882ea1ebb7e3",
+          "layer.14.norm1.weight": "b1a530c739fa597743fccc16df645c75a8c49d6ace5f3af8a5628cdb37f38aef",
+          "layer.14.norm1.bias": "cfe4ffa1b32cf0bceddac7ca63cbd32987d24f8b1fde46199d4095525684791b",
+          "layer.14.attention.k_proj.weight": "6c03637d270db2a0af25830bcf6b2224ce01a20916c139e44c4e3bacc428f745",
+          "layer.14.attention.v_proj.weight": "f3036922ef05375e696c78bbfb1aa74c2184cde471b7cfa2616feba373672aaa",
+          "layer.14.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.14.attention.q_proj.weight": "5d42842733ffd8ba464246e36a9e27c2d8767f9311a60c7f0739130dd197e130",
+          "layer.14.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.14.attention.o_proj.weight": "7453068a2639b9a9186e7fd86db150d14a94856b380c3a1d071757e99a066ea2",
+          "layer.14.attention.o_proj.bias": "44f4728b72439cdd2dcd99a1a4f00a83f5da2ce2a64737ffa97e260aa65489a3",
+          "layer.14.layer_scale1.lambda1": "dfc72c364a6d722b2d2ffceeaca9caf01386ab8ad7e732d43a884e93726723a6",
+          "layer.14.norm2.weight": "fafa6485795a36b3faabd857f9d37464d89c2d838806ee37fb6e8e477ccf2a6d",
+          "layer.14.norm2.bias": "c377b3803335ad5f73e3073fb8777ccfb08e3e0485f68e14a6597d6fa652f1f1",
+          "layer.14.mlp.up_proj.weight": "7def1699c842332c3f66e87a1463f6c3ba8dba7dbf4aca43194580758e278702",
+          "layer.14.mlp.up_proj.bias": "eaca626751206ab4d26bda1fe6a877b6a770766be668e87d577a5113ddbe1be4",
+          "layer.14.mlp.down_proj.weight": "ee9e7ec2abe019d02169bba1fab196e4e403dcf6517034fb5efe152218ff7400",
+          "layer.14.mlp.down_proj.bias": "a8e348ded56b8d68e45f13e0b8629c6e23ebadef10ee98c66d075674b973ca21",
+          "layer.14.layer_scale2.lambda1": "ad00c12d60867437daadd1a12197515fda28ad175cc8192e331097d9f4fbfbc2",
+          "layer.15.norm1.weight": "366a76013f7577071df09126f917ac6a583be508098180ae9bce3fb94e360393",
+          "layer.15.norm1.bias": "0f15350f6f3d2cfc0ca5cb6c5b9b1e264ad9049cbb671b52699ff1c3cf15bbd8",
+          "layer.15.attention.k_proj.weight": "89241f6efaf9bbee798fb4b9aa729e56e4fa3e886e81b2b0a3e60595ca69b56d",
+          "layer.15.attention.v_proj.weight": "b29720edaddc4f0f187fd22326eeee304629ab01b132db9fcd91a43076399eb7",
+          "layer.15.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.15.attention.q_proj.weight": "f49f17531879216abe09c26ef57a86da84f0795c0d990944bcc46e82a6557ff0",
+          "layer.15.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.15.attention.o_proj.weight": "e70e1db6d1a84cbcda6e073ebd9f75ce06d8877a8dd3e154963e6732173155be",
+          "layer.15.attention.o_proj.bias": "a5246cb8fda4f6650e496878f6d1bf5b6df4cec482b5c60298d7a9bdfdffde1d",
+          "layer.15.layer_scale1.lambda1": "959e0a406326ddd187e5d741142c56c660198b01ce51bc31aa887007f4a00603",
+          "layer.15.norm2.weight": "b70707999254a25146d275d7ebf0b73de1d1be69ebdbed5c937c6169efbf2a01",
+          "layer.15.norm2.bias": "589e6ea7790175455db463c076aa0a230724fa1a64a89c75b35e74c0e2963d5b",
+          "layer.15.mlp.up_proj.weight": "f39b5dc00418b30b65c6af119a2dcdf77d8162088fce0dc38f0d3e17e9815b90",
+          "layer.15.mlp.up_proj.bias": "462711e4155e811e30eb012ceb1d14704082bb9d1d779a03e5125bdcc2c3da27",
+          "layer.15.mlp.down_proj.weight": "7d37881ce5d247fca01208d043c17c386561760c974eb5349aecaaf47fdbae78",
+          "layer.15.mlp.down_proj.bias": "646ad82eb197917e235d6fdb36f95c549e7920fd56a014cadf467d6cf3e77eae",
+          "layer.15.layer_scale2.lambda1": "ba1c51f58be0ba06a5b0b44d0eb3e3fe9aca65cd7cfe9a78bcd29cb0ecc2cdf8",
+          "layer.16.norm1.weight": "e2050d5a67c3a9f0e7869396bdf0f2906adb0d8e7f1b0908a3dafec92262e52d",
+          "layer.16.norm1.bias": "e8479546174b346f54d60229c2e1324124ef453bebef2d12af3d69db74f0c4c2",
+          "layer.16.attention.k_proj.weight": "14caea5a1717443b18c68f4b2776f2061a9b12e8fbd2376615c705dcee49f40a",
+          "layer.16.attention.v_proj.weight": "9da41aa0e82a62eddf96194cf3fc62735b3475107ee227ca466feb4ec5ebb373",
+          "layer.16.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.16.attention.q_proj.weight": "1c884b1900d9f3d6bbc6b5bcf3ec51fd52691442780d57a59e2a2107f0131f0a",
+          "layer.16.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.16.attention.o_proj.weight": "f4d817ae5c9b1d7c3ab1a93de51b48b86fa6e67a72442dc0af8e0e84b6393348",
+          "layer.16.attention.o_proj.bias": "bcd2c712c3d6e39a9d9cb5f50f281f1d59c35a5044f4333b6d2651cdc32beda2",
+          "layer.16.layer_scale1.lambda1": "4f2fd55d26b4c5bcddd3ed765b2984786039ecffceb45bc816b9f6d2f4e1cbbf",
+          "layer.16.norm2.weight": "9faba04cfb487f9807dff43b79f46edfb3b1c37cdd70f5794aaa57774a8fe253",
+          "layer.16.norm2.bias": "73b5623be5faca81f8bfafc21247be193d34196bf7917ee57eda0922ecdbd241",
+          "layer.16.mlp.up_proj.weight": "94575cedfbd5707a247e38ca61b22a3e6344a318ab1a6610e82407be7e1a5887",
+          "layer.16.mlp.up_proj.bias": "477d4e1231b1ecd3297dcb1c6322e731cdc6f554ae671aa9874789dd2db4e1f1",
+          "layer.16.mlp.down_proj.weight": "621d3928eba83a52cb7dbbf234aa2226ba8b61a92e6813e526ececacc4ff6db0",
+          "layer.16.mlp.down_proj.bias": "063be197f0530577e1b5ef5e1980e5901fdb925973de2cee9961c486d1a857d0",
+          "layer.16.layer_scale2.lambda1": "9e3f69a7e671770b4ba5ef2ee9d1cf5aac659a3df7b661e5cb22fc5c7bf648d3",
+          "layer.17.norm1.weight": "2596adf8d0e78f109714c37b5b81d9c422e1c17c9a61bc83f698da6f2324a08c",
+          "layer.17.norm1.bias": "9b5a7e624cc9b0705da2f89d08cceb6805d1b514b1008476bf854f340d6e0040",
+          "layer.17.attention.k_proj.weight": "26065ae793a869b79934c1550088cbae89b88c92e24f8351db2c150412cd9d5c",
+          "layer.17.attention.v_proj.weight": "51cc8af45a506ddbbbaf21f4a73e2893ce8a43a6b0060e3ff54acf0a1dbca401",
+          "layer.17.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.17.attention.q_proj.weight": "ba8643c60d581c5d56bce49d8bd1d79a0355ad8c2437e37cc190ecec0485eefd",
+          "layer.17.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.17.attention.o_proj.weight": "49ffbaaa671370b85df19fd21c0384bd2194f34ee70e84f3579c40edb7c61ae3",
+          "layer.17.attention.o_proj.bias": "f0558d37667f9982126bee4dda6ee44825ad25eb697e5ef80a40719a425f05aa",
+          "layer.17.layer_scale1.lambda1": "928eaed138208e4f4c2d773b1c14d2966a7e4a4c8d34b0b62a0a42eb37f63985",
+          "layer.17.norm2.weight": "06810d20db03425e12eef4e496ac3834f8aaacf64614444f8ba78d9252f091ed",
+          "layer.17.norm2.bias": "47a06bdde0c8d5c7378b1bf75e617d75088051fdf9e68836aeaf49d39846d443",
+          "layer.17.mlp.up_proj.weight": "c5f645c965decd9b70c36d49c3fb35e4be0cb9ee8a8a105be9592d186e3259ba",
+          "layer.17.mlp.up_proj.bias": "a63dee288bffc142ced19a4c841907b4b873bbd4b345df459633782da1abbadd",
+          "layer.17.mlp.down_proj.weight": "d3f19ba1e0718c01228c460d9bf66ab26378edfa8d91f7668939602ee7de49ca",
+          "layer.17.mlp.down_proj.bias": "1a8fc5be8b7775e03dd8190edecb8cd59d3ae4c853eb560718b9067b959fdb13",
+          "layer.17.layer_scale2.lambda1": "e00fdf0dac98035ba25e962c967f563e6126c5268a07795edbbffe9dec235e8e",
+          "layer.18.norm1.weight": "0e103c01709f7a176c769a2ecce5030dbb392b618d348e96ea15deffecd48dbf",
+          "layer.18.norm1.bias": "b85307b2d5c15e31bfe4dc6c134c9237b380832031077b991bcc549af58f2b5a",
+          "layer.18.attention.k_proj.weight": "93c4ebeac45b632f9ae6d8637934443853d66a848f5b5c63765c9d91997ddd44",
+          "layer.18.attention.v_proj.weight": "f8891ea5ce61ffb57d97981f86bc68d2ff9b145839446ae9045552a62f55ed72",
+          "layer.18.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.18.attention.q_proj.weight": "91c37000e95226e3bc4985a795a62bc531e35beeeb00b2576e992fd1a1705af8",
+          "layer.18.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.18.attention.o_proj.weight": "3b2703c0350a292580b2a531d2a5bdb0a301a26a2dddb2297888c6d093582df9",
+          "layer.18.attention.o_proj.bias": "a126040218b34273bdab7c1dd9f799345ace43ccd1836a11dcd186b3d13e0961",
+          "layer.18.layer_scale1.lambda1": "d66f348c9783f9faa9e5d0c9b6e6a47f1fc2f51c8a5034c8e5c04a0bed7f3813",
+          "layer.18.norm2.weight": "44339dd4e8114fc0cb6fa8786e70330a2666f8cc4fc6517e02be4c7a3a5cd310",
+          "layer.18.norm2.bias": "f9e80c84f553feb24881fd718ceeaab3a6dd1cdf3fccc11378af526aef7f4679",
+          "layer.18.mlp.up_proj.weight": "6771ad456ebbc968cc92924757e0c7fc4c76f5a28c70dd8089b18749d82b0d15",
+          "layer.18.mlp.up_proj.bias": "29fac5e6a90f510aa0ea7b9e6d8aaec287b646a87a7e3b02426eeed77a1f9a50",
+          "layer.18.mlp.down_proj.weight": "cdda47ee8c87aa843282379239dedb85438a2f4212d635eec5aabeae4bbb3835",
+          "layer.18.mlp.down_proj.bias": "f605befe41a1cc2d206bcca1eea85e7aaa3a32f1a2e9205e71d8edad4b21b345",
+          "layer.18.layer_scale2.lambda1": "c7c97ccf733ae7ecb6c4157381ae04078cd4b3587d5dadd12aa21039d0bff10f",
+          "layer.19.norm1.weight": "b11f5b66bcc825a77a7b2e391bda0592ff19c7babbe42acd2ccc7789d0c8dff6",
+          "layer.19.norm1.bias": "e17d0f7107a06c6e6536cafaa6dab8399a422e27a64214f485b7798135ad5d3f",
+          "layer.19.attention.k_proj.weight": "cffb4c7059bba60279ab688e507e302c4b24fc69d84d2130e00bd8fa16a1379d",
+          "layer.19.attention.v_proj.weight": "c1f58200e024b291e666828913e6fd702114c631341f523977dbbc80c87f5423",
+          "layer.19.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.19.attention.q_proj.weight": "a16891027ee455ebb95c797822e3dc44b1ece9f1e80705e3a33265cb3e22232f",
+          "layer.19.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.19.attention.o_proj.weight": "c8b49ebc24834f1f58b1aab25c779b4403d99f916aab1ab7b2d80011c91987a7",
+          "layer.19.attention.o_proj.bias": "9232dc18e85a5518f11dcc031e3dd286177cc9cdba519c93848adf947a8710b2",
+          "layer.19.layer_scale1.lambda1": "0430466131e5ef49d4d7d6894169977e18e928452f93aaac84d60a714b2a2008",
+          "layer.19.norm2.weight": "7dac17924cb1cb4072e538c3be2f1975e1dd068408b63831d88512720665c854",
+          "layer.19.norm2.bias": "f5e2b26ccf1eb1f5f5c4026d14f5760be7f8072f4e7528cbe6782257cc38991b",
+          "layer.19.mlp.up_proj.weight": "13901e59ca0dd581014dc045c947b6335bc8072c725265486dab06366298d7b0",
+          "layer.19.mlp.up_proj.bias": "36d9fa08fb38f1a4e720c001c1bf9d63dda8dbd6e7d167167e709ae47641041d",
+          "layer.19.mlp.down_proj.weight": "fd28e1cbcceb6617ff05a79e25f834b5ab748fc15017baf94a18a84d07b8cc9a",
+          "layer.19.mlp.down_proj.bias": "d0797f9358823b0c1540255ee35897ed6d68deab6a7b43016208c90bf20e9e89",
+          "layer.19.layer_scale2.lambda1": "e7495b4d7241e0bb47798910b29806f68ce335c2dd701d87859346c6a31dbaa9",
+          "layer.20.norm1.weight": "d1ec6b54805b9c9b67bcaf5cf6eb71dbb4d7047d6902704b751b9cb2a0acf2fb",
+          "layer.20.norm1.bias": "b6f54cc241b9f3b6e987f97cac0b1b0adf54c1dae1cb51c0f423d47e3f5a1837",
+          "layer.20.attention.k_proj.weight": "1a5f83f7457f1ab7dbd65f1b100ac10f9f07db0823e629560426b159aa7f252b",
+          "layer.20.attention.v_proj.weight": "8121643d0dcb3542191fb0586616f102b9ac2a727cf1c2e20afb3ae188734d00",
+          "layer.20.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.20.attention.q_proj.weight": "14424bce5da09eb286caf485f4c9cfc4644fe1fb8936c93410c7ae8f53396cb7",
+          "layer.20.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.20.attention.o_proj.weight": "a80ff1218e41d32c465fcb0def71dfd20793f95dca905be627ad0c1c8c52b198",
+          "layer.20.attention.o_proj.bias": "471e4351282b3ea9a06e518c223bd33bbaa612ac83983226028748a67974db6f",
+          "layer.20.layer_scale1.lambda1": "70672b58c67d124f85376a8538531ba390b40c200564873fa7a4f7daad998748",
+          "layer.20.norm2.weight": "55be18c076f5e1903f86468688fc34850ecd6e9c47113fb2bea1b59ff4fe9975",
+          "layer.20.norm2.bias": "9fa875fb21a0d19b2ce27c0b404db2bd1cebeafe08b0e5a88c735a52a6d5f463",
+          "layer.20.mlp.up_proj.weight": "763945bbe29c8a8d7bc0cf8cbbab22d481300daad9ee8c85dd351e32f6ff31c9",
+          "layer.20.mlp.up_proj.bias": "72fe799c93c79bd148f0fa9c22aed53d7883874142995fcd75b13788b9220795",
+          "layer.20.mlp.down_proj.weight": "4a1cbb92e43b087e12027b4f974f80ecf6e940136a20c3c9671dcf988d72abef",
+          "layer.20.mlp.down_proj.bias": "ef80b6dfa210bf74c4031f43cfc16718f8614524c0d12dc1af89184eb8eb9ff0",
+          "layer.20.layer_scale2.lambda1": "a0d46882b57f2a8c7d40130a1db18e97a140b6da0f07de99be567d65ff6f9dd2",
+          "layer.21.norm1.weight": "17a8d56ca54480acbbd908fe2506eae6c644a30114083997bafd2f358cc9fdb8",
+          "layer.21.norm1.bias": "1f59ceb8732ca8b99b7784a950287be42f3bf49a25cdc793ce1504e971ff353d",
+          "layer.21.attention.k_proj.weight": "5e07491fae56aa08c2fdf401fe68efc14c6b446bdd715eda547afff4c48c7da5",
+          "layer.21.attention.v_proj.weight": "f5c1afb9fc4057aaeee6015af4c6a62f4e56458e57c22c1f7a5c6198ba9b47f7",
+          "layer.21.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.21.attention.q_proj.weight": "d9a1b23c722d224e8fdbf00977640b0feb422367d8f3cee33a5f9637ab0d1345",
+          "layer.21.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.21.attention.o_proj.weight": "6d954fb79db3f0ca483cb34a4b00247b5bdb41d1ed28e4f136d8a63e4abb093d",
+          "layer.21.attention.o_proj.bias": "1d2e927e5621ca6512d8a4f5563295aa4592bdbde3477031b075780650ee3c02",
+          "layer.21.layer_scale1.lambda1": "32eebea5e1de3f5fdc21c4169f069d955b9780bc713483deb8c938447d3324a5",
+          "layer.21.norm2.weight": "d1fe8ba17c5709bd7f5edf36748509ba8daa6ddb9ad55d6b4eb935c5fa79e177",
+          "layer.21.norm2.bias": "218e65cf91314f45413cd79f39c5eaff76b72aa230eae6f5ac4d290debbde39b",
+          "layer.21.mlp.up_proj.weight": "2930669c215de12415dcf27f6eac20951d7d10f6b299a046b9a3e5f0121e4581",
+          "layer.21.mlp.up_proj.bias": "7fdb0fd5f061ba60ff29d1fa3d34311bba6d793c8fc2e59012411a094b1ab20b",
+          "layer.21.mlp.down_proj.weight": "556262f7cef69b8cfb3da12ba22ce3968f4a233bc996d63043857602fddef276",
+          "layer.21.mlp.down_proj.bias": "0181b620729c706f2cd08a4c2f372c9eb57083d159ff6ce777481d6bd5e31ce9",
+          "layer.21.layer_scale2.lambda1": "815ac443846aac7b880595dd2451927834f07127464c13a4d7fd1d3dd3b6c1bf",
+          "layer.22.norm1.weight": "80bb2301cf5ec64035bf9dd52b6e7d517085f993b4b1026af116e3d5d3e24312",
+          "layer.22.norm1.bias": "176225f53fba8b7fdf852febcaf6f6af536f4d24e0bb65098cecc1f6c2ecbb9b",
+          "layer.22.attention.k_proj.weight": "0d3b573dadaa385de302623483eeeb603b5f770ed1756a77133c0d279ac32721",
+          "layer.22.attention.v_proj.weight": "f86fa6c9ca38c87075f75df3e14a01b942dd2b0b0a2b10e85b075620ed9a9044",
+          "layer.22.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.22.attention.q_proj.weight": "9a424173875509594af0cb589f0161c16dfdce5840045a314dfbc94c5e1076e8",
+          "layer.22.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.22.attention.o_proj.weight": "9c7606b2124c89bed718de715128e01053a88d8dfad8540e2ea1779f37fe7175",
+          "layer.22.attention.o_proj.bias": "3ede6512f0eceac483362b59ec285b0ce3448c5a6cedbd3c034cb02f9bd33c27",
+          "layer.22.layer_scale1.lambda1": "30308672e37ab6ab0f72c50dc466c61015426e686c3f37f204dd439ae2485fc5",
+          "layer.22.norm2.weight": "50bb8e18d7d9e58be647acc1cec863768133f5fa02bc332303bc3674aa3061e3",
+          "layer.22.norm2.bias": "b2c749c13de784efa0a1708338c662733881680c0d17294661ccdf80de3ca175",
+          "layer.22.mlp.up_proj.weight": "22bf228e050707944cb5afa555af894a17eeee791a9a12951039c0637408566f",
+          "layer.22.mlp.up_proj.bias": "caa19aa81f360b5456715f1b426b93467934e67ced12dcce51b34f810a0ebb84",
+          "layer.22.mlp.down_proj.weight": "a4e7780d0ff7f07610fc8da3909b6f892cdd077102775c2539e0ce38920d8fe3",
+          "layer.22.mlp.down_proj.bias": "5363b04e076bf4a1936b80f1cda6ed296a9f641c7fa7ea87316831203e506c6b",
+          "layer.22.layer_scale2.lambda1": "84214c54c7e85c63be35111bef458f919a82c2f6ea869b082c9a683410ecd908",
+          "layer.23.norm1.weight": "cb9971bc838b1300c20886eb2d6feb63361ee565f60a62789c5903442d5d9ebe",
+          "layer.23.norm1.bias": "ad0b724a6a4a5a3dc9d799dde7fd79a9df47831f5c24c522c660ba28bd055402",
+          "layer.23.attention.k_proj.weight": "58689e336e4bdef935155b93ee8485ea334dd304e748b2d4c09488ceaf2e84c9",
+          "layer.23.attention.v_proj.weight": "299d8cfb3fac2041d9115bec0746975bff9318e540c41d223fc8f8d9edb0755d",
+          "layer.23.attention.v_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.23.attention.q_proj.weight": "2274ed08c85d2cad3f1d5d823f11fffb17d9211cd78a903dfac52ac52fbfd5a1",
+          "layer.23.attention.q_proj.bias": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "layer.23.attention.o_proj.weight": "dd18ab8c96fb83bf0d8c745b8c8a934f17d236e13c3f53f102d90e97c5a0f8ce",
+          "layer.23.attention.o_proj.bias": "304751111f27b17505038c65349b2239715071b3502ab0beeaa4cdef0c0bc8af",
+          "layer.23.layer_scale1.lambda1": "593186f39c034f11e7da135c375742a34ae2e9b38c3c68306b4b2242af942c2b",
+          "layer.23.norm2.weight": "3a3c836ee0942490a6dd211abf6aefb668f3469086dfdcbd34a02b5c0170f299",
+          "layer.23.norm2.bias": "7d4a820d82492f6bc061ea6bb772936ed0a87bdfd30936ac1ffcfe5a81bdd0e1",
+          "layer.23.mlp.up_proj.weight": "fb912d1c60a799c074215dac5fe47091cddb987bfa72957c71dbb5067694b4c3",
+          "layer.23.mlp.up_proj.bias": "bd69dbe87d2e88bb269112421fd94d1f56bd1283d171e18bdf21a2825dcbc74c",
+          "layer.23.mlp.down_proj.weight": "03a7f37e6ce897bf5042b4e67828cdaaf93edeae8b4980665bdac752778dfdbb",
+          "layer.23.mlp.down_proj.bias": "d2d7f5e86ceb7c2d1386d0a378f99b4183db0878883efd328e6a3607c90b071f",
+          "layer.23.layer_scale2.lambda1": "faea570c3cbffaef3e868cdfef761dc31d19ab5f789112b5287a69fda6f0fc22",
+          "norm.weight": "d5a43009a73ff0d16df0062799659aeae39fdb9da3dbd59fa4d5d18e3323cfff",
+          "norm.bias": "b7aaa06e5c3c93ab6b60d38340e7d34f59e012613cc7b8e63a06ac4833ebbdc8"
+        }
+      }
+    },
+    "input": {
+      "mode": "RGBA",
+      "size": [
+        64,
+        64
+      ],
+      "pixel_sha256": "2fa864e19134bc817000a267eaae667fc6326119e5e6402b1eec9f0131c6de42",
+      "png_sha256": "9abc7b8f89e5b001e863fc3ef2fbd6813b2e83f63c0a6b0a45203c2ef1edfd8d",
+      "crop_mode": "RGB",
+      "crop_size": [
+        46,
+        46
+      ],
+      "resolution": 512,
+      "alpha_only": true,
+      "rmbg_model": null
+    },
+    "gpu": {
+      "name": "AMD Radeon RX 9070 XT",
+      "architecture": "gfx1201",
+      "total_bytes": 17095983104
+    },
+    "before_placement": {
+      "allocated_bytes": 0,
+      "reserved_bytes": 0,
+      "peak_allocated_bytes": 0,
+      "peak_reserved_bytes": 0,
+      "available_bytes": 16937582592,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 158400512
+    },
+    "placed_buffers": {
+      "rope_embeddings.inv_freq": {
+        "shape": [
+          16
+        ],
+        "dtype": "F32",
+        "device": "cuda:0",
+        "is_meta": false
+      }
+    },
+    "placement_seconds": 0.2969999999986612,
+    "before_conditioning": {
+      "allocated_bytes": 1213567488,
+      "reserved_bytes": 1226833920,
+      "peak_allocated_bytes": 1213567488,
+      "peak_reserved_bytes": 1226833920,
+      "available_bytes": 15699476480,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 1396506624
+    },
+    "conditioning_seconds": 26.59400000000096,
+    "after_conditioning": {
+      "allocated_bytes": 1297482240,
+      "reserved_bytes": 1371537408,
+      "peak_allocated_bytes": 1343300096,
+      "peak_reserved_bytes": 1371537408,
+      "available_bytes": 15408168960,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 1687814144
+    },
+    "output": {
+      "shape": [
+        1,
+        1029,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "cuda:0",
+      "conditioning_width": 1024,
+      "count": 1053696,
+      "all_finite": true,
+      "minimum": -29.339820861816406,
+      "maximum": 24.270864486694336,
+      "mean": -1.7305041843940216e-09,
+      "stddev": 1.0,
+      "representative_values": [
+        -0.016369057819247246,
+        -0.44077593088150024,
+        -4.079120635986328,
+        0.9079930186271667,
+        -1.3176568746566772,
+        -0.9593661427497864,
+        -0.7254416942596436,
+        -0.26488974690437317
+      ],
+      "sha256": "6b5fb8ca155c1b472895e61cd148ad9132c71a982c4244a558edb7715b4f19d1",
+      "requires_grad": false,
+      "is_inference_tensor": true,
+      "grad_enabled": false
+    },
+    "workspace_clear_calls": 1,
+    "release": {
+      "allocated_bytes": 0,
+      "reserved_bytes": 0,
+      "peak_allocated_bytes": 1343300096,
+      "peak_reserved_bytes": 1371537408,
+      "available_bytes": 16775512064,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 320471040,
+      "model_collected": true,
+      "output_collected": true,
+      "rope_cache_entries_before": 1,
+      "rope_cache_entries_after": 0,
+      "cpu_memory": {
+        "working_set_bytes": 2678444032,
+        "private_commit_bytes": 3909963776,
+        "peak_working_set_bytes": 3001970688,
+        "peak_commit_bytes": 4793798656
+      }
+    },
+    "allocation_diagnosis": {
+      "history_disabled": true,
+      "snapshot_captured": false,
+      "observed_tensor_records": 2288,
+      "observed_python_owner_count": 0
+    },
+    "conditioning_calls": 1,
+    "transfer_calls": {
+      "input": 1,
+      "output": 1
+    },
+    "normalization_copies": {
+      "mean": 1,
+      "std": 1
+    },
+    "gpu_operation_counts": {
+      "aten._to_copy.default": 3,
+      "aten.clone.default": 1,
+      "aten.eq.Scalar": 1,
+      "aten.any.default": 1,
+      "aten.is_nonzero.default": 1,
+      "aten.view.default": 74,
+      "aten.sub_.Tensor": 1,
+      "aten.div_.Tensor": 1,
+      "aten.to.dtype": 4,
+      "aten.conv2d.default": 1,
+      "aten.flatten.using_ints": 3,
+      "aten.transpose.int": 97,
+      "aten.expand.default": 2,
+      "aten.cat.default": 97,
+      "aten.arange.start": 2,
+      "aten.div.Tensor": 2,
+      "aten.meshgrid.indexing": 1,
+      "aten.stack.default": 1,
+      "aten.mul.Tensor": 147,
+      "aten.sub.Tensor": 1,
+      "aten.unsqueeze.default": 3,
+      "aten.tile.default": 1,
+      "aten.cos.default": 1,
+      "aten.sin.default": 1,
+      "aten.layer_norm.default": 49,
+      "aten.linear.default": 144,
+      "aten.split_with_sizes.default": 48,
+      "aten.slice.Tensor": 96,
+      "aten.neg.default": 48,
+      "aten.add.Tensor": 96,
+      "aten.scaled_dot_product_attention.default": 24,
+      "aten.reshape.default": 24,
+      "aten.gelu.default": 24
+    }
+  },
+  "process": {
+    "returncode": 0,
+    "timed_out": false,
+    "pid": 29396,
+    "command": [
+      "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_blaslt_teardown.py",
+      "--worker",
+      "--output",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-blaslt-teardown-evidence\\run\\scratch"
+    ],
+    "harness_commit": "bb9421207171ac591a66f43ef8d09f8a9bda25c4",
+    "job_attached_before_preparation": true,
+    "last_stage": "complete",
+    "last_worker_trace": {
+      "event": "stage",
+      "name": "complete",
+      "origin": "worker",
+      "seq": 83,
+      "elapsed_seconds": 41.21900000000096,
+      "monotonic_seconds": 21943.484,
+      "timestamp_utc": "2026-10-12T23:47:12.793359+00:00"
+    },
+    "gpu_authorized": true,
+    "last_cpu_activity": {
+      "event": "process",
+      "name": "owned-tree",
+      "origin": "supervisor",
+      "seq": 15,
+      "elapsed_seconds": 28.17199999999866,
+      "monotonic_seconds": 21942.89,
+      "timestamp_utc": "2026-10-12T23:47:12.206038+00:00",
+      "processes": [
+        {
+          "pid": 17780,
+          "created_seconds": 1791848790.5744884,
+          "name": "python.exe",
+          "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "cpu_seconds": 28.078125,
+          "cpu_delta_seconds": 1.9375
+        },
+        {
+          "pid": 29396,
+          "created_seconds": 1791848790.5638618,
+          "name": "python.exe",
+          "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+          "cpu_seconds": 0.0,
+          "cpu_delta_seconds": 0.0
+        }
+      ],
+      "vanished_pids": [],
+      "psutil_version": "7.2.2",
+      "psutil_path": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\psutil\\__init__.py"
+    },
+    "gpu_memory_samples": {
+      "before-placement": {
+        "event": "memory",
+        "name": "before-placement",
+        "origin": "worker",
+        "seq": 7,
+        "elapsed_seconds": 14.203000000001339,
+        "monotonic_seconds": 21916.468,
+        "timestamp_utc": "2026-10-12T23:46:45.779707+00:00",
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0,
+        "available_bytes": 16937582592,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 158400512
+      },
+      "before-conditioning": {
+        "event": "memory",
+        "name": "before-conditioning",
+        "origin": "worker",
+        "seq": 11,
+        "elapsed_seconds": 14.515999999999622,
+        "monotonic_seconds": 21916.781,
+        "timestamp_utc": "2026-10-12T23:46:46.089931+00:00",
+        "allocated_bytes": 1213567488,
+        "reserved_bytes": 1226833920,
+        "peak_allocated_bytes": 1213567488,
+        "peak_reserved_bytes": 1226833920,
+        "available_bytes": 15699476480,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 1396506624
+      },
+      "after-conditioning": {
+        "event": "memory",
+        "name": "after-conditioning",
+        "origin": "worker",
+        "seq": 73,
+        "elapsed_seconds": 41.11000000000058,
+        "monotonic_seconds": 21943.375,
+        "timestamp_utc": "2026-10-12T23:47:12.685899+00:00",
+        "allocated_bytes": 1297482240,
+        "reserved_bytes": 1371537408,
+        "peak_allocated_bytes": 1343300096,
+        "peak_reserved_bytes": 1371537408,
+        "available_bytes": 15408168960,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 1687814144
+      },
+      "release": {
+        "event": "memory",
+        "name": "release",
+        "origin": "worker",
+        "seq": 79,
+        "elapsed_seconds": 41.21900000000096,
+        "monotonic_seconds": 21943.484,
+        "timestamp_utc": "2026-10-12T23:47:12.793359+00:00",
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 1343300096,
+        "peak_reserved_bytes": 1371537408,
+        "available_bytes": 16775512064,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 320471040,
+        "model_collected": true,
+        "output_collected": true,
+        "rope_cache_entries_before": 1,
+        "rope_cache_entries_after": 0,
+        "cpu_memory": {
+          "working_set_bytes": 2678444032,
+          "private_commit_bytes": 3909963776,
+          "peak_working_set_bytes": 3001970688,
+          "peak_commit_bytes": 4793798656
+        }
+      }
+    },
+    "elapsed_seconds": 43.09300000000076,
+    "stage_timeouts_seconds": {
+      "cpu": 120,
+      "forward_release": 180,
+      "overall": 360
+    },
+    "job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "worker_exit_verified": true,
+    "cpu_observer_stopped": true,
+    "cpu_observer_error": null,
+    "windows_periodic_stopped": true,
+    "windows_periodic_error": null,
+    "windows_periodic_samples": 6,
+    "output_readers_completed": true,
+    "diagnostic_journal_stopped": true,
+    "diagnostic_journal_error": null,
+    "windows_journal_stopped": true,
+    "windows_journal_error": null
+  }
+}

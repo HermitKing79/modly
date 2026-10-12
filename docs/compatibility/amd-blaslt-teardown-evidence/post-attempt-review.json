@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-12T23:50:55.241987+00:00",
+  "review_status": "PASS",
+  "review_scope": "Independent saved-evidence-only post-attempt review; no test suites, Torch import, GPU/native operation or weight access.",
+  "harness_commit": "bb9421207171ac591a66f43ef8d09f8a9bda25c4",
+  "executed_code_matches_final_pre_attempt_review": {
+    "scripts/compatibility/amd_blaslt_teardown.py": "ac8456c29291f5ee0bc567086b152f7013f502996179e408577f5806ca3310dd",
+    "scripts/compatibility/amd_dinov3_conditioning.py": "86019bea04abcd6611f2109a083f846acbe5ce822a375433959636aa3c150aa0",
+    "scripts/compatibility/amd_dinov3_allocation.py": "8b7eb5edd95d5f97aafafe64f86c0f1dc5cdb7e315075f2321a42532c5b3eda4"
+  },
+  "evidence_identities": {
+    "results.json": {
+      "size_bytes": 142299,
+      "sha256": "cffb923c3d0854149a293a020b8f3024917671d866463040e543d91ef4ddd197"
+    },
+    "trace.jsonl": {
+      "size_bytes": 34714,
+      "sha256": "f0d85e6c44ef0c42a0299e0f34414006a16f339bf62d6ce7f6866b5fa3dde4a3"
+    },
+    "windows-periodic.jsonl": {
+      "size_bytes": 9905,
+      "sha256": "dc1816e21c1537757743a624eaa4784c7e837f206c92c6671c49bc8be470e28c"
+    },
+    "windows-before.json": {
+      "size_bytes": 1566,
+      "sha256": "efc2ce5f924a206efcadb4d78f6f8c98b6a0754f13d43c24a82834859fdcf3d5"
+    },
+    "windows-cpu-gate.json": {
+      "size_bytes": 1566,
+      "sha256": "efc2ce5f924a206efcadb4d78f6f8c98b6a0754f13d43c24a82834859fdcf3d5"
+    },
+    "windows-after-exit.json": {
+      "size_bytes": 1566,
+      "sha256": "efc2ce5f924a206efcadb4d78f6f8c98b6a0754f13d43c24a82834859fdcf3d5"
+    },
+    "worker.stderr.txt": {
+      "size_bytes": 160,
+      "sha256": "5673a41a15e54043f5a71879179f6fba38b0bbacc6f87ce7fa4f32932e6f9394"
+    },
+    "committed-harness.json": {
+      "size_bytes": 4273,
+      "sha256": "480bd5c3b5e456ef8499661aeb20ab6369ae4f2db2e3aeee79868606a567da27"
+    },
+    "checkpoint-before.json": {
+      "size_bytes": 80167,
+      "sha256": "a64c0bd87ffa7b519574a28eba121865a2a051535b755bfb41a73f4055977187"
+    },
+    "checkpoint-after.json": {
+      "size_bytes": 80167,
+      "sha256": "a64c0bd87ffa7b519574a28eba121865a2a051535b755bfb41a73f4055977187"
+    }
+  },
+  "verified_execution": {
+    "strict_checkpoint_load_calls": 1,
+    "strict_persistent_state_entries": 415,
+    "strict": true,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "conditioning_calls": 1,
+    "extractor_calls": 1,
+    "features_calls": 1,
+    "layers_completed": 24,
+    "workspace_clear_calls": 1,
+    "input_transfers": 1,
+    "output_transfers": 1,
+    "normalization_copies": {
+      "mean": 1,
+      "std": 1
+    }
+  },
+  "output_contract": {
+    "shape": [
+      1,
+      1029,
+      1024
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "conditioning_width": 1024,
+    "count": 1053696,
+    "all_finite": true,
+    "minimum": -29.339820861816406,
+    "maximum": 24.270864486694336,
+    "mean": -1.7305041843940216e-09,
+    "stddev": 1.0,
+    "representative_values": [
+      -0.016369057819247246,
+      -0.44077593088150024,
+      -4.079120635986328,
+      0.9079930186271667,
+      -1.3176568746566772,
+      -0.9593661427497864,
+      -0.7254416942596436,
+      -0.26488974690437317
+    ],
+    "sha256": "6b5fb8ca155c1b472895e61cd148ad9132c71a982c4244a558edb7715b4f19d1",
+    "requires_grad": false,
+    "is_inference_tensor": true,
+    "grad_enabled": false
+  },
+  "clear_trace": [
+    {
+      "event": "enter",
+      "name": "blas:clear-workspaces",
+      "origin": "worker",
+      "seq": 77,
+      "elapsed_seconds": 41.21900000000096,
+      "monotonic_seconds": 21943.484,
+      "timestamp_utc": "2026-10-12T23:47:12.793359+00:00"
+    },
+    {
+      "event": "return",
+      "name": "blas:clear-workspaces",
+      "origin": "worker",
+      "seq": 78,
+      "elapsed_seconds": 41.21900000000096,
+      "monotonic_seconds": 21943.484,
+      "timestamp_utc": "2026-10-12T23:47:12.793359+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    }
+  ],
+  "release_measurement": {
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 1343300096,
+    "peak_reserved_bytes": 1371537408,
+    "available_bytes": 16775512064,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 320471040,
+    "model_collected": true,
+    "output_collected": true,
+    "rope_cache_entries_before": 1,
+    "rope_cache_entries_after": 0,
+    "cpu_memory": {
+      "working_set_bytes": 2678444032,
+      "private_commit_bytes": 3909963776,
+      "peak_working_set_bytes": 3001970688,
+      "peak_commit_bytes": 4793798656
+    }
+  },
+  "history_shutdown_trace": [
+    {
+      "event": "enter",
+      "name": "allocator:disable-history",
+      "origin": "worker",
+      "seq": 80,
+      "elapsed_seconds": 41.21900000000096,
+      "monotonic_seconds": 21943.484,
+      "timestamp_utc": "2026-10-12T23:47:12.793359+00:00"
+    },
+    {
+      "event": "return",
+      "name": "allocator:disable-history",
+      "origin": "worker",
+      "seq": 81,
+      "elapsed_seconds": 41.21900000000096,
+      "monotonic_seconds": 21943.484,
+      "timestamp_utc": "2026-10-12T23:47:12.793359+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    }
+  ],
+  "allocation_diagnosis": {
+    "history_disabled": true,
+    "snapshot_captured": false,
+    "observed_tensor_records": 2288,
+    "observed_python_owner_count": 0
+  },
+  "allocator_snapshot_generated": false,
+  "feature_checkpoint_writer_invoked": false,
+  "new_feature_checkpoint_generated": false,
+  "trace_validation": {
+    "worker_records": 83,
+    "supervisor_records": 15,
+    "worker_sequence_contiguous": true,
+    "error_records": 0,
+    "release_measurement_after_clear_return": true
+  },
+  "windows_monitor": {
+    "periodic_samples": 6,
+    "all_saved_samples_healthy": true,
+    "maximum_periodic_gap_seconds": 5.03099999999904,
+    "other_checks": [
+      {
+        "file": "windows-before.json",
+        "healthy_saved_observation": true,
+        "event_count": 0
+      },
+      {
+        "file": "windows-cpu-gate.json",
+        "healthy_saved_observation": true,
+        "event_count": 0
+      },
+      {
+        "file": "windows-after-exit.json",
+        "healthy_saved_observation": true,
+        "event_count": 0
+      }
+    ],
+    "periodic_error": null
+  },
+  "owned_worker_exit": {
+    "returncode": 0,
+    "worker_exit_verified": true,
+    "job_attached_before_preparation": true,
+    "job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "output_readers_completed": true,
+    "observer_and_journal_errors_absent": true,
+    "timed_out": false
+  },
+  "timing_seconds": {
+    "conditioning": 26.59400000000096,
+    "placement": 0.2969999999986612,
+    "supervised_total": 43.09300000000076
+  },
+  "deadlines_seconds": {
+    "cpu": 120,
+    "forward_release": 180,
+    "overall": 360
+  },
+  "stderr_assessment": {
+    "text": "[W1013 00:46:45.000000000 unwind.cpp:11] Warning: record_context_cpp is not supported on this platform (requires linux x86_64 or aarch64) (function operator())\n",
+    "finding": "Only the existing unsupported C++ allocator-stack-capture warning is present; no native crash or guard-failure traceback is recorded."
+  },
+  "checkpoint_saved_before_after_metadata_byte_identical": true,
+  "claim_scope": {
+    "supported": "The reviewed synchronized single-call workspace cleanup restored strict zero allocated/reserved acceptance for this one genuine DINO conditioning pass on the approved fixture and installed AMD build.",
+    "hypothesis": "This result supports the retained native BLAS workspace explanation; the earlier block exactly matching the BLASLt workspace size supports the BLASLt hypothesis.",
+    "not_proved": [
+      "Which of the two cleared maps held the prior allocation.",
+      "Native ownership of the previous 76 MiB block, because the clear covers both maps and no native owner identifier was observed.",
+      "All device or process memory becoming zero.",
+      "Other models, fixtures, runtimes, repeated inference or production cleanup behavior."
+    ],
+    "allocator_zero_scope": "PyTorch allocator allocated/reserved counters measured in the live worker after the reviewed post-clear empty_cache and synchronization path.",
+    "remaining_sampled_global_device_used_bytes": 320471040,
+    "cpu_working_set_bytes_at_release": 2678444032,
+    "trace_completion_scope": "The clear return trace is labeled host-return-only; completed post-clear synchronization and release measurement follow in the exact reviewed executed code.",
+    "pre_forward_binding_field_scope": "workspace_binding.native_call_executed:false describes pre-forward validation; the separate clear count and enter/return trace record the actual one native cleanup call."
+  },
+  "reviewer_side_effects": {
+    "gpu_initialized": false,
+    "torch_imported": false,
+    "native_clear_executed": false,
+    "test_suites_run": false,
+    "real_weights_accessed": false,
+    "only_new_post_attempt_review_artifact_written": true
+  },
+  "blocking_findings": []
+}

@@ -1,0 +1,91 @@
+{
+  "classification": "PASS",
+  "strict_loads": 1,
+  "conditioning_calls": 1,
+  "workspace_clear_calls": 1,
+  "clear_trace_events": [
+    "enter",
+    "return"
+  ],
+  "output": {
+    "shape": [
+      1,
+      1029,
+      1024
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "conditioning_width": 1024,
+    "count": 1053696,
+    "all_finite": true,
+    "minimum": -29.339820861816406,
+    "maximum": 24.270864486694336,
+    "mean": -1.7305041843940216e-09,
+    "stddev": 1.0,
+    "representative_values": [
+      -0.016369057819247246,
+      -0.44077593088150024,
+      -4.079120635986328,
+      0.9079930186271667,
+      -1.3176568746566772,
+      -0.9593661427497864,
+      -0.7254416942596436,
+      -0.26488974690437317
+    ],
+    "sha256": "6b5fb8ca155c1b472895e61cd148ad9132c71a982c4244a558edb7715b4f19d1",
+    "requires_grad": false,
+    "is_inference_tensor": true,
+    "grad_enabled": false
+  },
+  "release": {
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 1343300096,
+    "peak_reserved_bytes": 1371537408,
+    "available_bytes": 16775512064,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 320471040,
+    "model_collected": true,
+    "output_collected": true,
+    "rope_cache_entries_before": 1,
+    "rope_cache_entries_after": 0,
+    "cpu_memory": {
+      "working_set_bytes": 2678444032,
+      "private_commit_bytes": 3909963776,
+      "peak_working_set_bytes": 3001970688,
+      "peak_commit_bytes": 4793798656
+    }
+  },
+  "allocation_diagnosis": {
+    "history_disabled": true,
+    "snapshot_captured": false,
+    "observed_tensor_records": 2288,
+    "observed_python_owner_count": 0
+  },
+  "snapshot_captured": false,
+  "new_feature_checkpoint_written": false,
+  "saved_feature_preserved_sha256": "3f444d42191df07415a8877a3d8d3706cf1b129bedbbb2dfcc0221d5571be56a",
+  "worker_returncode": 0,
+  "owned_tree_exit_verified": true,
+  "windows_samples": 6,
+  "maximum_windows_gap_seconds": 5.03099999999904,
+  "inventories_unchanged": true,
+  "compressed_metadata_byte_identical": {
+    "venv-metadata": false,
+    "model-cache-metadata": true
+  },
+  "raw_metadata_difference_counts": {
+    "venv-metadata": 3668,
+    "model-cache-metadata": 0
+  },
+  "all_file_metadata_unchanged": true,
+  "directory_size_only_differences_reconciled": true,
+  "historical_files_preserved": 2718,
+  "historical_branches_preserved": true,
+  "amd_source_preserved": true,
+  "main": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "scratch_file_count": 524,
+  "scratch_bytes": 670346148,
+  "post_exit_vram_measured": false,
+  "ai_imports": []
+}
