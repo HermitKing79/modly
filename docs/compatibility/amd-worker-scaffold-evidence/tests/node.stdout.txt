@@ -1,0 +1,829 @@
+
+> modly@0.4.3 test:node
+> node --test --experimental-strip-types --experimental-loader ./scripts/node-ts-extensionless-loader.mjs src/shared/types/assetLibrary.test.ts src/areas/generate/assetLibraryProjection.test.ts src/areas/generate/assetLibraryService.test.ts src/areas/generate/assetLibraryUi.test.ts src/areas/generate/orcaSlicerLink.test.ts electron/main/artifact-registry-service.test.ts electron/main/extension-path-guard.test.ts electron/preload/artifact-registry-preload.test.ts && node --test electron/main/*.test.mjs src/**/*.test.mjs
+
+(node:25328) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./")); register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:25328) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/wattz/Documents/ChatGPT/modly/proof/electron/main/artifact-registry-service.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\wattz\Documents\ChatGPT\modly\proof\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ normalizes only workspace-relative paths under allowed Workflows and Exports roots (5.148ms)
+✔ classifies supported assets by capability instead of extension category (1.2569ms)
+✔ lists Workflows and Exports assets while skipping hidden, cache, and internal files (11.0589ms)
+✔ registers a generated scene directory through its canonical manifest artifact (5.0966ms)
+✔ reads and opens only safe GLB/GLTF workspace assets (5.7195ms)
+✔ Electron read/open boundary rejects Windows absolute and UNC workspace paths (3.6855ms)
+✔ Electron read/open boundary rejects Windows absolute and UNC sourceWorkspacePath values (4.7531ms)
+✔ enriches sidecars with safe source, manifest, artifact, version, and provenance metadata (6.4375ms)
+✔ fails closed for unsafe, self, missing, and mismatched sourceWorkspacePath opens (9.7118ms)
+✔ IPC read and open handlers forward sourceWorkspacePath without trusting malformed payloads (0.386ms)
+✔ registers workspace library IPC handlers with structured results (0.1753ms)
+(node:6744) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./")); register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6744) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/wattz/Documents/ChatGPT/modly/proof/electron/main/extension-path-guard.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\wattz\Documents\ChatGPT\modly\proof\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ assertSafeExtensionId accepts conservative extension ids (6.856ms)
+✔ assertSafeExtensionId rejects empty, traversal and absolute ids (1.1582ms)
+✔ assertSafeExtensionId rejects uppercase and unsupported characters (1.9987ms)
+✔ resolveExtensionPathWithinRoot confines paths to root (0.6137ms)
+✔ resolvePathWithinRoot rejects canonical escapes (0.6108ms)
+✔ resolvePathWithinRoot rejects leaves that resolve to the root itself (0.5577ms)
+✔ parseExtensionBackupName extracts ids with dashes and rejects foreign names (1.1449ms)
+✔ buildExtensionBackupPath stays within root and rejects unsafe ids (0.5728ms)
+✔ buildExtensionStagingPath stays within root and rejects unsafe ids (0.5356ms)
+(node:17512) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./")); register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:17512) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/wattz/Documents/ChatGPT/modly/proof/electron/preload/artifact-registry-preload.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\wattz\Documents\ChatGPT\modly\proof\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ preload exposes scoped workspace library list/read/open methods (1.9478ms)
+✔ preload resolves dropped file paths through Electron webUtils (0.3587ms)
+(node:22096) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./")); register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:22096) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/wattz/Documents/ChatGPT/modly/proof/src/areas/generate/assetLibraryProjection.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\wattz\Documents\ChatGPT\modly\proof\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ projects entries with deduped warnings and workspace URL open target (1.4293ms)
+✔ projects sidecars with safe GLB source links as linked-source open targets (0.2627ms)
+✔ degrades unsafe source and manifest paths and unsupported formats to unavailable targets (0.2122ms)
+✔ marks unsafe or non-openable entries unavailable without throwing (0.1384ms)
+✔ filters by name, path, capability, scope, and groups by scope then capability (0.3672ms)
+(node:22296) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./")); register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:22296) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/wattz/Documents/ChatGPT/modly/proof/src/areas/generate/assetLibraryService.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\wattz\Documents\ChatGPT\modly\proof\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ renderer service validates requests before IPC and projects structured errors (0.903ms)
+✔ renderer service validates sourceWorkspacePath before read and open IPC calls (0.2238ms)
+✔ renderer service delegates safe IPC calls and normalizes returned entries (0.8466ms)
+(node:10084) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./")); register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10084) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/wattz/Documents/ChatGPT/modly/proof/src/areas/generate/assetLibraryUi.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\wattz\Documents\ChatGPT\modly\proof\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ organizes visible library assets by scope and capability with collapsible section keys (1.9075ms)
+✔ searches workspace assets by name path capability scope source and manifest while supporting name/date sorting (8.5736ms)
+✔ opens only safe glb and gltf entries through existing Generate job and history state (0.5133ms)
+✔ builds linked-source open requests and import jobs for safe sidecars (0.188ms)
+(node:12680) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./")); register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12680) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/wattz/Documents/ChatGPT/modly/proof/src/areas/generate/orcaSlicerLink.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\wattz\Documents\ChatGPT\modly\proof\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ builds an orcaslicer://open deeplink whose file= is a percent-encoded, query-less URL ending in model.stl (1.2704ms)
+✔ token round-trips a workspace path through url-safe base64 (matches the API decode) (0.1671ms)
+✔ strips a trailing slash from the api origin (0.1765ms)
+✔ canOpenInOrcaSlicer accepts sliceable workspace meshes and rejects splats and empty (0.5571ms)
+✔ canOpenInOrcaSlicer accepts an imported mesh served from outside the workspace (0.1144ms)
+✔ deeplink for an imported mesh tokenises the decoded absolute path (0.141ms)
+✔ buildOrcaSlicerDeepLink refuses an output it cannot slice (0.1959ms)
+✔ SLICER_FORMAT is a format OrcaSlicer can import (0.088ms)
+(node:12192) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./")); register("./scripts/node-ts-extensionless-loader.mjs", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ declares capability-first asset taxonomy without extension categories (1.1455ms)
+✔ AssetLibraryEntry keeps capability, source scope, provenance, warnings, and openability explicit (0.1319ms)
+✔ structured results preserve renderer-visible error codes and read previews (0.1199ms)
+✔ AssetLibraryEntry carries library-owned source, manifest, artifact, version, and provenance metadata (0.1234ms)
+✔ read and open requests can carry a sourceWorkspacePath for linked-source opens (0.1315ms)
+(node:12192) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/wattz/Documents/ChatGPT/modly/proof/src/shared/types/assetLibrary.test.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\wattz\Documents\ChatGPT\modly\proof\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ℹ tests 47
+ℹ suites 0
+ℹ pass 47
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1240.6273
+(node:7952) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/wattz/Documents/ChatGPT/modly/proof/electron/main/bounded-file-reader.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\wattz\Documents\ChatGPT\modly\proof\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ the authoritative readFileBase64 IPC delegates to the bounded reader (1.9164ms)
+✔ oversized scene manifests are rejected before their bytes are read (0.5352ms)
+✔ scene manifests at the bound are read and encoded (0.2535ms)
+✔ a manifest that grows after stat is rejected before base64 transfer (0.2778ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\copy-runtime.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\copy-runtime.test.mjs (1993.1215ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\extension-install-recovery.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\extension-install-recovery.test.mjs (1985.4729ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\extension-install-utils.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\extension-install-utils.test.mjs (1984.3972ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\gpu-detect.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\gpu-detect.test.mjs (1987.3897ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\model-download-plan.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\model-download-plan.test.mjs (1985.2344ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\model-download-preload.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\model-download-preload.test.mjs (1985.2558ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\model-sources.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\model-sources.test.mjs (1986.3742ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\model-weight-ipc.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\model-weight-ipc.test.mjs (1990.0401ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\process-runner-worker-exit.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\process-runner-worker-exit.test.mjs (1989.745ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\process-runner.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\process-runner.test.mjs (1990.3851ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\settings-store.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\settings-store.test.mjs (1990.8039ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\electron\main\setup-launcher.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ electron\main\setup-launcher.test.mjs (1992.3446ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\areas\models\utils.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\areas\models\utils.test.mjs (2143.1961ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\areas\workflows\mockExtensions.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\areas\workflows\mockExtensions.test.mjs (2136.8443ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\areas\workflows\nodeBehaviors.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\areas\workflows\nodeBehaviors.test.mjs (2130.2893ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\areas\workflows\preflight.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\areas\workflows\preflight.test.mjs (1996.4899ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\areas\workflows\slotInputs.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\areas\workflows\slotInputs.test.mjs (1853.8586ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\areas\workflows\workflowSceneRun.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\areas\workflows\workflowSceneRun.test.mjs (1709.264ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\areas\workflows\workflowSceneSource.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\areas\workflows\workflowSceneSource.test.mjs (1569.3459ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\shared\components\ui\agentGrade.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\shared\components\ui\agentGrade.test.mjs (1428.0093ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\shared\components\ui\vramFit.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\shared\components\ui\vramFit.test.mjs (1284.4497ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\shared\hooks\useApi.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\shared\hooks\useApi.test.mjs (1141.7055ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\shared\stores\extensionsStore.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\shared\stores\extensionsStore.test.mjs (1000.3594ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'jsdom' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\react-test-env.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\shared\stores\llmModelsStore.react.test.mjs (859.3943ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\shared\stores\llmModelsStore.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\shared\stores\llmModelsStore.test.mjs (717.115ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\shared\stores\workflowsStore.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\shared\stores\workflowsStore.test.mjs (575.3089ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\shared\utils\format.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\shared\utils\format.test.mjs (428.3683ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\shared\utils\paramPicker.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\shared\utils\paramPicker.test.mjs (419.8264ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'esbuild' imported from C:\Users\wattz\Documents\ChatGPT\modly\proof\src\shared\utils\weightVariants.test.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:992:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+    at #resolve (node:internal/modules/esm/loader:683:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.19.0
+✖ src\shared\utils\weightVariants.test.mjs (284.3724ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 4
+ℹ fail 29
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4376.9011
+
+✖ failing tests:
+
+test at electron\main\copy-runtime.test.mjs:1:1
+✖ electron\main\copy-runtime.test.mjs (1993.1215ms)
+  'test failed'
+
+test at electron\main\extension-install-recovery.test.mjs:1:1
+✖ electron\main\extension-install-recovery.test.mjs (1985.4729ms)
+  'test failed'
+
+test at electron\main\extension-install-utils.test.mjs:1:1
+✖ electron\main\extension-install-utils.test.mjs (1984.3972ms)
+  'test failed'
+
+test at electron\main\gpu-detect.test.mjs:1:1
+✖ electron\main\gpu-detect.test.mjs (1987.3897ms)
+  'test failed'
+
+test at electron\main\model-download-plan.test.mjs:1:1
+✖ electron\main\model-download-plan.test.mjs (1985.2344ms)
+  'test failed'
+
+test at electron\main\model-download-preload.test.mjs:1:1
+✖ electron\main\model-download-preload.test.mjs (1985.2558ms)
+  'test failed'
+
+test at electron\main\model-sources.test.mjs:1:1
+✖ electron\main\model-sources.test.mjs (1986.3742ms)
+  'test failed'
+
+test at electron\main\model-weight-ipc.test.mjs:1:1
+✖ electron\main\model-weight-ipc.test.mjs (1990.0401ms)
+  'test failed'
+
+test at electron\main\process-runner-worker-exit.test.mjs:1:1
+✖ electron\main\process-runner-worker-exit.test.mjs (1989.745ms)
+  'test failed'
+
+test at electron\main\process-runner.test.mjs:1:1
+✖ electron\main\process-runner.test.mjs (1990.3851ms)
+  'test failed'
+
+test at electron\main\settings-store.test.mjs:1:1
+✖ electron\main\settings-store.test.mjs (1990.8039ms)
+  'test failed'
+
+test at electron\main\setup-launcher.test.mjs:1:1
+✖ electron\main\setup-launcher.test.mjs (1992.3446ms)
+  'test failed'
+
+test at src\areas\models\utils.test.mjs:1:1
+✖ src\areas\models\utils.test.mjs (2143.1961ms)
+  'test failed'
+
+test at src\areas\workflows\mockExtensions.test.mjs:1:1
+✖ src\areas\workflows\mockExtensions.test.mjs (2136.8443ms)
+  'test failed'
+
+test at src\areas\workflows\nodeBehaviors.test.mjs:1:1
+✖ src\areas\workflows\nodeBehaviors.test.mjs (2130.2893ms)
+  'test failed'
+
+test at src\areas\workflows\preflight.test.mjs:1:1
+✖ src\areas\workflows\preflight.test.mjs (1996.4899ms)
+  'test failed'
+
+test at src\areas\workflows\slotInputs.test.mjs:1:1
+✖ src\areas\workflows\slotInputs.test.mjs (1853.8586ms)
+  'test failed'
+
+test at src\areas\workflows\workflowSceneRun.test.mjs:1:1
+✖ src\areas\workflows\workflowSceneRun.test.mjs (1709.264ms)
+  'test failed'
+
+test at src\areas\workflows\workflowSceneSource.test.mjs:1:1
+✖ src\areas\workflows\workflowSceneSource.test.mjs (1569.3459ms)
+  'test failed'
+
+test at src\shared\components\ui\agentGrade.test.mjs:1:1
+✖ src\shared\components\ui\agentGrade.test.mjs (1428.0093ms)
+  'test failed'
+
+test at src\shared\components\ui\vramFit.test.mjs:1:1
+✖ src\shared\components\ui\vramFit.test.mjs (1284.4497ms)
+  'test failed'
+
+test at src\shared\hooks\useApi.test.mjs:1:1
+✖ src\shared\hooks\useApi.test.mjs (1141.7055ms)
+  'test failed'
+
+test at src\shared\stores\extensionsStore.test.mjs:1:1
+✖ src\shared\stores\extensionsStore.test.mjs (1000.3594ms)
+  'test failed'
+
+test at src\shared\stores\llmModelsStore.react.test.mjs:1:1
+✖ src\shared\stores\llmModelsStore.react.test.mjs (859.3943ms)
+  'test failed'
+
+test at src\shared\stores\llmModelsStore.test.mjs:1:1
+✖ src\shared\stores\llmModelsStore.test.mjs (717.115ms)
+  'test failed'
+
+test at src\shared\stores\workflowsStore.test.mjs:1:1
+✖ src\shared\stores\workflowsStore.test.mjs (575.3089ms)
+  'test failed'
+
+test at src\shared\utils\format.test.mjs:1:1
+✖ src\shared\utils\format.test.mjs (428.3683ms)
+  'test failed'
+
+test at src\shared\utils\paramPicker.test.mjs:1:1
+✖ src\shared\utils\paramPicker.test.mjs (419.8264ms)
+  'test failed'
+
+test at src\shared\utils\weightVariants.test.mjs:1:1
+✖ src\shared\utils\weightVariants.test.mjs (284.3724ms)
+  'test failed'

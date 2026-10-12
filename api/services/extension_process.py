@@ -16,11 +16,14 @@ import re
 import subprocess
 import sys
 import threading
+import time
 import uuid
 from pathlib import Path
 from typing import Callable, Optional
+from services import amd_runtime
 
 _RUNNER_PATH = Path(__file__).parent.parent / "runner.py"
+AMD_SEND_TIMEOUT = 5.0
 _MISSING_MODULE_RE = re.compile(r"No module named ['\"]([^'\"]+)['\"]")
 _AUTO_REPAIR_PACKAGE_MAP = {
     "PIL": "Pillow",
@@ -34,6 +37,12 @@ def _venv_python(ext_dir: Path) -> Path:
     return ext_dir / "venv" / "bin" / "python"
 
 
+def _worker_python(ext_dir: Path, manifest: dict) -> Path:
+    if amd_runtime.is_amd(manifest):
+        return Path(amd_runtime.runtime_config(manifest)["python"])
+    return _venv_python(ext_dir)
+
+
 class ExtensionProcess:
     """
     Wraps an extension subprocess. Presents the same interface as a
@@ -43,6 +52,9 @@ class ExtensionProcess:
     def __init__(self, ext_dir: Path, manifest: dict) -> None:
         self.ext_dir       = ext_dir
         self.manifest      = manifest
+        self._amd = amd_runtime.is_amd(manifest)
+        self._amd_config = None
+        self.runtime_identity = None
         self.model_dir     = None   # set by registry after init
         self.outputs_dir   = None   # set by registry after init
         self.shared_model_dirs: dict[str, Path] = {}
@@ -107,10 +119,48 @@ class ExtensionProcess:
                 env["SSL_CERT_FILE"] = certifi.where()
             except ImportError:
                 pass
+        if self._amd:
+            config = self._amd_config or amd_runtime.runtime_config(self.manifest)
+            scratch = WORKSPACE_DIR / ".amd-scaffold-cache"
+            scratch.mkdir(parents=True, exist_ok=True)
+            for key in ("PYTHONPATH", "PYTHONHOME", "PYTORCH_ENABLE_MPS_FALLBACK"):
+                env.pop(key, None)
+            env.update({"MODLY_AMD_CONFIG_JSON": json.dumps(config),
+                        "HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1",
+                        "HF_HUB_DISABLE_TELEMETRY": "1", "PYTHONDONTWRITEBYTECODE": "1"})
+            for key in ("TMP", "TEMP", "TMPDIR", "HF_HOME", "TORCH_HOME", "TRITON_CACHE_DIR"):
+                env[key] = str(scratch)
         return env
+
+    def _launch(self, python: Path) -> None:
+        """One experimental lifetime; no pip repair or restart attempts."""
+        run_queue = queue.Queue()
+        self._queue = run_queue
+        self._proc = subprocess.Popen(
+            [str(python), "-B", "-I", str(_RUNNER_PATH)],
+            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+            text=True, encoding="utf-8", errors="replace", bufsize=1, env=self._build_env(),
+        )
+        threading.Thread(target=self._read_loop, args=(self._proc, run_queue), daemon=True).start()
+        threading.Thread(target=self._stderr_loop, args=(self._proc,), daemon=True).start()
 
     def _start(self) -> None:
         """Launch the subprocess and wait for the 'ready' signal."""
+        if self._amd:
+            self._amd_config = amd_runtime.runtime_config(self.manifest)
+            self.runtime_identity = None
+            try:
+                self._launch(Path(self._amd_config["python"]))
+                msg = self._recv(timeout=30.0)
+                if msg.get("type") != "ready":
+                    raise RuntimeError(f"AMD startup preflight failed: {msg}")
+                amd_runtime.verify_identity(msg.get("runtime_identity"), self.manifest, self._amd_config)
+                self.runtime_identity = msg["runtime_identity"]
+                self._params_schema = msg.get("params_schema", self._params_schema)
+                return
+            except Exception:
+                self.stop()
+                raise
         python = _venv_python(self.ext_dir)
         if not python.exists():
             raise RuntimeError(
@@ -252,9 +302,31 @@ class ExtensionProcess:
                 buf.append(ch)
 
     def _send(self, msg: dict) -> None:
+        if self._amd:
+            errors = []
+            proc = self._proc
+            def write():
+                try:
+                    self._write_message(msg, proc)
+                except Exception as exc:
+                    errors.append(exc)
+            sender = threading.Thread(target=write, daemon=True)
+            sender.start()
+            sender.join(timeout=AMD_SEND_TIMEOUT)
+            if sender.is_alive():
+                self.stop()
+                sender.join(timeout=1.0)
+                raise TimeoutError("AMD IPC write exceeded 5s; worker stopped")
+            if errors:
+                self.stop()
+                raise RuntimeError("AMD IPC write failed; worker stopped") from errors[0]
+            return
+        self._write_message(msg, self._proc)
+
+    def _write_message(self, msg: dict, proc) -> None:
         with self._lock:
-            self._proc.stdin.write(json.dumps(msg) + "\n")
-            self._proc.stdin.flush()
+            proc.stdin.write(json.dumps(msg) + "\n")
+            proc.stdin.flush()
 
     def _recv(self, timeout: float | None = 120.0) -> dict:
         try:
@@ -274,6 +346,13 @@ class ExtensionProcess:
     # ------------------------------------------------------------------ #
 
     def is_downloaded(self) -> bool:
+        if self._amd:
+            try:
+                config = amd_runtime.runtime_config(self.manifest)
+                amd_runtime.validate_models(config["models"], self.manifest.get("node_id"))
+                return True
+            except (ValueError, OSError, TypeError):
+                return False
         if self.download_check:
             return (self.model_dir / self.download_check).exists()
         return self.model_dir.exists() and any(self.model_dir.iterdir())
@@ -285,7 +364,12 @@ class ExtensionProcess:
         self._ensure_started()
         self._send({"action": "load"})
 
-        msg = self._recv(timeout=None)  # model load can be arbitrarily slow
+        try:
+            msg = self._recv(timeout=10.0 if self._amd else None)
+        except Exception:
+            if self._amd:
+                self.stop()
+            raise
         if msg.get('type') in ['loaded', 'ready']:
             self._loaded = True
         elif msg.get("type") == "error":
@@ -330,7 +414,11 @@ class ExtensionProcess:
         CANCEL_GRACE_SECONDS = 3.0
 
         cancel_sent_at: Optional[float] = None
+        deadline = time.monotonic() + 30.0 if self._amd else None
         while True:
+            if deadline is not None and time.monotonic() >= deadline:
+                self.stop()
+                raise TimeoutError("AMD mock response exceeded 30s; worker stopped")
             # Check for cancellation
             if cancel_event and cancel_event.is_set():
                 if cancel_sent_at is None:
@@ -339,11 +427,12 @@ class ExtensionProcess:
                         self._send({"action": "cancel", "id": req_id})
                     except Exception:
                         pass
-                    import time
                     cancel_sent_at = time.monotonic()
                 else:
-                    import time
                     if time.monotonic() - cancel_sent_at >= CANCEL_GRACE_SECONDS:
+                        if self._amd:
+                            self.stop()
+                            raise GenerationCancelled()
                         # Grace period expired — the subprocess is not
                         # responding (almost certainly stuck in native code).
                         # Hard-kill it and drop our state so the next
@@ -434,6 +523,18 @@ class ExtensionProcess:
 
     def params_schema(self) -> list:
         return self._params_schema
+
+    def shutdown(self) -> None:
+        """Bounded cooperative exit for the mock scaffold, then verified reap."""
+        if not self._amd:
+            self.stop()
+            return
+        try:
+            if self._proc and self._proc.poll() is None:
+                self._send({"action": "shutdown"})
+                self._proc.wait(timeout=5.0)
+        finally:
+            self.stop()
 
     def stop(self) -> None:
         """Hard-stop the subprocess.

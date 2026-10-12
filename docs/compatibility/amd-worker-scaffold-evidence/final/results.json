@@ -1,0 +1,437 @@
+{
+  "classification": "PASS",
+  "host_exit": 0,
+  "supervision": {
+    "timeout": false,
+    "tree_cleanup_verified": true,
+    "cleanup": null,
+    "exit": 0
+  },
+  "inventory_unchanged": true,
+  "ipc": {
+    "host_python": "3.11.9 (main, Jul 25 2024, 21:53:06) [MSC v.1929 64 bit (AMD64)]",
+    "host_executable": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Scripts\\python.exe",
+    "checkpoint_fixture_only": true,
+    "routes": [
+      {
+        "node": "generate",
+        "identity": {
+          "contract": "amd-offline-scaffold-v1",
+          "model_id": "trellis2-amd/generate",
+          "python": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+          "python_version": "3.12.10",
+          "prefix": "D:\\AI\\Trellis2AMD\\venv",
+          "torch": "2.13.0+rocm10.0.0",
+          "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+          "hip": "7.15.26333",
+          "cuda": null,
+          "packages": {
+            "torch": "2.13.0+rocm10.0.0",
+            "rocm": "10.0.0",
+            "cumesh": "1.0+rocm10.0",
+            "flex-gemm": "1.0.0+rocm10.0",
+            "nvdiffrast": "0.4.0+rocm10.0",
+            "o-voxel": "0.0.1+rocm.10.0",
+            "triton-windows": "3.8.0.post29",
+            "safetensors": "0.8.0",
+            "numpy": "2.5.3",
+            "Pillow": "12.3.0"
+          },
+          "native_binaries": [
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_C.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "amdhip64_7.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-environment-l1-1-0.dll",
+                "api-ms-win-crt-convert-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll"
+              ],
+              "sha256": "32526ca0976822800b2320ee3cc12db5ef3fc8fb4641d721dabca8714e5b71ac",
+              "cpu_uv_utility": false
+            },
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_cubvh.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "amdhip64_7.dll",
+                "c10_hip.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll",
+                "api-ms-win-crt-stdio-l1-1-0.dll",
+                "api-ms-win-crt-environment-l1-1-0.dll",
+                "api-ms-win-crt-convert-l1-1-0.dll"
+              ],
+              "sha256": "70a886bb952bb48cf56fc46b3744840e33b07820991620c6eae350a154676ff0",
+              "cpu_uv_utility": false
+            },
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_xatlas.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll",
+                "api-ms-win-crt-stdio-l1-1-0.dll",
+                "api-ms-win-crt-utility-l1-1-0.dll"
+              ],
+              "sha256": "66da37345044e2161f7811f2d9ff67750f8fb3c203c16bc5abdfd6e739111e00",
+              "cpu_uv_utility": true
+            },
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\cuda.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "amdhip64_7.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll"
+              ],
+              "sha256": "18b203fca47a482f8b53d7bdfb765b26036cae9628087ecfde17e75742007064",
+              "cpu_uv_utility": false
+            },
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\o_voxel\\_C.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "amdhip64_7.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-time-l1-1-0.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll"
+              ],
+              "sha256": "4900ba16cb2d24c816e968fb54c74218f119e12ad942a81f8d318215802bf953",
+              "cpu_uv_utility": false
+            },
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_nvdiffrast_c.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10_hip.dll",
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "amdhip64_7.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-stdio-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll"
+              ],
+              "sha256": "87abc0f0bd44423feeb4f7e3f0b3e103c57caf9069dbf7952af72b6b0d8a4391",
+              "cpu_uv_utility": false
+            }
+          ],
+          "native_wrapper_sha256": {
+            "cumesh/__init__.py": "b0391f73f6db9fa214e4a7bf689a9b33879d773c1d273c1f2ef6fdd32bb5b4df",
+            "flex_gemm/__init__.py": "423979e1c23c050fc23de42d287e4827b44f33e052f53e0335e53630611cf0b6",
+            "o_voxel/__init__.py": "8b3c2240f3c6bcb098213f89179505933a03d6d1fa7f25483b1b515c48d6c24d",
+            "nvdiffrast/torch/__init__.py": "aa852764186be37eb5d82c327411cb2b2164bf685e8ada8cf470f8d94f8b1545",
+            "triton/__init__.py": "74a6cf22b4c837d5d9bbdb5a42e11c6a6af847a4095810f5a58df7f2b3b1e06a"
+          },
+          "source": {
+            "root": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD",
+            "commit": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+            "files": {
+              "trellis2/models/__init__.py": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683",
+              "trellis2/pipelines/trellis2_image_to_3d.py": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+              "trellis2/pipelines/trellis2_texturing.py": "14a6f8ee2bca120f76e0112f2733cd250764637709ff642fd6846ae97c63b1e6"
+            },
+            "upstream_imported": false
+          },
+          "format": "safetensors",
+          "mock_only": true,
+          "gpu_initialized": false,
+          "weights_loaded": false
+        },
+        "receipt": {
+          "schema": "modly.amd.mock-receipt.v1",
+          "model_id": "trellis2-amd/generate",
+          "route": "generate",
+          "mock": true,
+          "asset_generated": false,
+          "weights_loaded": false,
+          "gpu_initialized": false,
+          "image_sha256": "1b7fae3c5d5451430b6020a516bc965baa168918c4e019411e5b4b811ce67696",
+          "input_mesh": null,
+          "offline_checkpoints": [
+            {
+              "prefix": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\scaffold-scratch\\ipc-final\\fixture-checkpoint",
+              "config": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\scaffold-scratch\\ipc-final\\fixture-checkpoint.json",
+              "weights": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\scaffold-scratch\\ipc-final\\fixture-checkpoint.safetensors",
+              "class": "scaffold_fixture_only",
+              "header_only": true
+            }
+          ]
+        },
+        "progress": [
+          [
+            50,
+            "AMD mock IPC; no geometry or textures generated"
+          ]
+        ],
+        "rejected_inference": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\runner.py\", line 282, in main\n    output_path = gen.generate(model_input, params, progress_cb, cancel_evt)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\generator.py\", line 70, in generate\n    raise ValueError(\"AMD scaffold requires mock=true; inference is not implemented\")\nValueError: AMD scaffold requires mock=true; inference is not implemented\n",
+        "same_process_recovery": true,
+        "unload_reload": true,
+        "cooperative_shutdown_reaped": true
+      },
+      {
+        "node": "refine",
+        "identity": {
+          "contract": "amd-offline-scaffold-v1",
+          "model_id": "trellis2-amd/refine",
+          "python": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+          "python_version": "3.12.10",
+          "prefix": "D:\\AI\\Trellis2AMD\\venv",
+          "torch": "2.13.0+rocm10.0.0",
+          "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+          "hip": "7.15.26333",
+          "cuda": null,
+          "packages": {
+            "torch": "2.13.0+rocm10.0.0",
+            "rocm": "10.0.0",
+            "cumesh": "1.0+rocm10.0",
+            "flex-gemm": "1.0.0+rocm10.0",
+            "nvdiffrast": "0.4.0+rocm10.0",
+            "o-voxel": "0.0.1+rocm.10.0",
+            "triton-windows": "3.8.0.post29",
+            "safetensors": "0.8.0",
+            "numpy": "2.5.3",
+            "Pillow": "12.3.0"
+          },
+          "native_binaries": [
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_C.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "amdhip64_7.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-environment-l1-1-0.dll",
+                "api-ms-win-crt-convert-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll"
+              ],
+              "sha256": "32526ca0976822800b2320ee3cc12db5ef3fc8fb4641d721dabca8714e5b71ac",
+              "cpu_uv_utility": false
+            },
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_cubvh.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "amdhip64_7.dll",
+                "c10_hip.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll",
+                "api-ms-win-crt-stdio-l1-1-0.dll",
+                "api-ms-win-crt-environment-l1-1-0.dll",
+                "api-ms-win-crt-convert-l1-1-0.dll"
+              ],
+              "sha256": "70a886bb952bb48cf56fc46b3744840e33b07820991620c6eae350a154676ff0",
+              "cpu_uv_utility": false
+            },
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_xatlas.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll",
+                "api-ms-win-crt-stdio-l1-1-0.dll",
+                "api-ms-win-crt-utility-l1-1-0.dll"
+              ],
+              "sha256": "66da37345044e2161f7811f2d9ff67750f8fb3c203c16bc5abdfd6e739111e00",
+              "cpu_uv_utility": true
+            },
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\cuda.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "amdhip64_7.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll"
+              ],
+              "sha256": "18b203fca47a482f8b53d7bdfb765b26036cae9628087ecfde17e75742007064",
+              "cpu_uv_utility": false
+            },
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\o_voxel\\_C.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "amdhip64_7.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-time-l1-1-0.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll"
+              ],
+              "sha256": "4900ba16cb2d24c816e968fb54c74218f119e12ad942a81f8d318215802bf953",
+              "cpu_uv_utility": false
+            },
+            {
+              "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_nvdiffrast_c.cp312-win_amd64.pyd",
+              "dlls": [
+                "c10_hip.dll",
+                "c10.dll",
+                "torch_cpu.dll",
+                "torch_python.dll",
+                "amdhip64_7.dll",
+                "msvcp140.dll",
+                "python312.dll",
+                "kernel32.dll",
+                "vcruntime140.dll",
+                "api-ms-win-crt-heap-l1-1-0.dll",
+                "api-ms-win-crt-string-l1-1-0.dll",
+                "api-ms-win-crt-runtime-l1-1-0.dll",
+                "api-ms-win-crt-stdio-l1-1-0.dll",
+                "api-ms-win-crt-math-l1-1-0.dll"
+              ],
+              "sha256": "87abc0f0bd44423feeb4f7e3f0b3e103c57caf9069dbf7952af72b6b0d8a4391",
+              "cpu_uv_utility": false
+            }
+          ],
+          "native_wrapper_sha256": {
+            "cumesh/__init__.py": "b0391f73f6db9fa214e4a7bf689a9b33879d773c1d273c1f2ef6fdd32bb5b4df",
+            "flex_gemm/__init__.py": "423979e1c23c050fc23de42d287e4827b44f33e052f53e0335e53630611cf0b6",
+            "o_voxel/__init__.py": "8b3c2240f3c6bcb098213f89179505933a03d6d1fa7f25483b1b515c48d6c24d",
+            "nvdiffrast/torch/__init__.py": "aa852764186be37eb5d82c327411cb2b2164bf685e8ada8cf470f8d94f8b1545",
+            "triton/__init__.py": "74a6cf22b4c837d5d9bbdb5a42e11c6a6af847a4095810f5a58df7f2b3b1e06a"
+          },
+          "source": {
+            "root": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD",
+            "commit": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+            "files": {
+              "trellis2/models/__init__.py": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683",
+              "trellis2/pipelines/trellis2_image_to_3d.py": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+              "trellis2/pipelines/trellis2_texturing.py": "14a6f8ee2bca120f76e0112f2733cd250764637709ff642fd6846ae97c63b1e6"
+            },
+            "upstream_imported": false
+          },
+          "format": "safetensors",
+          "mock_only": true,
+          "gpu_initialized": false,
+          "weights_loaded": false
+        },
+        "receipt": {
+          "schema": "modly.amd.mock-receipt.v1",
+          "model_id": "trellis2-amd/refine",
+          "route": "refine",
+          "mock": true,
+          "asset_generated": false,
+          "weights_loaded": false,
+          "gpu_initialized": false,
+          "image_sha256": "1b7fae3c5d5451430b6020a516bc965baa168918c4e019411e5b4b811ce67696",
+          "input_mesh": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\scaffold-scratch\\ipc-final\\outputs\\input-fixture.glb",
+          "offline_checkpoints": [
+            {
+              "prefix": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\scaffold-scratch\\ipc-final\\fixture-checkpoint",
+              "config": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\scaffold-scratch\\ipc-final\\fixture-checkpoint.json",
+              "weights": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\scaffold-scratch\\ipc-final\\fixture-checkpoint.safetensors",
+              "class": "scaffold_fixture_only",
+              "header_only": true
+            }
+          ]
+        },
+        "progress": [
+          [
+            50,
+            "AMD mock IPC; no geometry or textures generated"
+          ]
+        ],
+        "rejected_inference": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\runner.py\", line 282, in main\n    output_path = gen.generate(model_input, params, progress_cb, cancel_evt)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\generator.py\", line 70, in generate\n    raise ValueError(\"AMD scaffold requires mock=true; inference is not implemented\")\nValueError: AMD scaffold requires mock=true; inference is not implemented\n",
+        "same_process_recovery": true,
+        "unload_reload": true,
+        "cooperative_shutdown_reaped": true
+      }
+    ],
+    "negative_tests": [
+      {
+        "case": "missing-checkpoint",
+        "rejected": true,
+        "diagnostic": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\services\\amd_runtime.py\", line 95, in validate_models\n    config = absolute_file(value + \".json\", \"checkpoint JSON\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\services\\amd_runtime.py\", line 59, in absolute_file\n    path = local_path(value, label).resolve(strict=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pathlib.py\", line 1240, in resolve\n    s = self._flavour.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 727, in realpath\nFileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\\\Users\\\\wattz\\\\Documents\\\\ChatGPT\\\\modly\\\\scaffold-scratch\\\\ipc-final\\\\fixture-checkpoint-missing.json'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\runner.py\", line 248, in main\n    gen.load()\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\generator.py\", line 59, in load\n    self._checkpoints = amd_runtime.validate_models(self._config[\"models\"], self.MODEL_NODE_ID)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\services\\amd_runtime.py\", line 110, in validate_models\n    raise ValueError(f\"Offline safetensors pair unavailable or invalid at {prefix}: {exc}\") from exc\nValueError: Offline safetensors pair unavailable or invalid at C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\scaffold-scratch\\ipc-final\\fixture-checkpoint-missing: [WinError 2] The system cannot find the file specified: 'C:\\\\Users\\\\wattz\\\\Documents\\\\ChatGPT\\\\modly\\\\scaffold-scratch\\\\ipc-final\\\\fixture-checkpoint-missing.json'\n"
+      },
+      {
+        "case": "incompatible-runtime",
+        "rejected": true,
+        "diagnostic": "AMD startup preflight failed: {'type': 'error', 'message': 'AMD runtime preflight failed', 'traceback': 'Traceback (most recent call last):\\n  File \"C:\\\\Users\\\\wattz\\\\Documents\\\\ChatGPT\\\\modly\\\\proof\\\\api\\\\runner.py\", line 221, in main\\n    ready[\"runtime_identity\"] = GenClass.worker_identity(model_id)\\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"C:\\\\Users\\\\wattz\\\\Documents\\\\ChatGPT\\\\modly\\\\proof\\\\experimental\\\\extensions\\\\trellis2-amd\\\\generator.py\", line 53, in worker_identity\\n    cls._identity, cls._tensor_guard = amd_runtime.worker_preflight(cls._config, model_id)\\n                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"C:\\\\Users\\\\wattz\\\\Documents\\\\ChatGPT\\\\modly\\\\proof\\\\api\\\\services\\\\amd_runtime.py\", line 187, in worker_preflight\\n    raise ValueError(f\"AMD dependency {name}: expected {expected}, found {dist.version}; no repair\")\\nValueError: AMD dependency torch: expected 2.13.0+rocm10.0.0, found 2.12.0+rocm7.14.0; no repair\\n'}"
+      }
+    ],
+    "hard_stop_restart": true
+  }
+}

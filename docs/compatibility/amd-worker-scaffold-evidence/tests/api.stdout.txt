@@ -1,0 +1,134 @@
+[Registry] MODELS_DIR     = C:\Users\wattz\Documents\ChatGPT\modly\scaffold-scratch\suite-tmp\models
+[Registry] WORKSPACE_DIR  = C:\Users\wattz\Documents\ChatGPT\modly\scaffold-scratch\suite-tmp\outputs
+[Registry] EXTENSIONS_DIR = (not set)
+[Registry] Loaded subprocess node: trellis2-amd/generate
+[Registry] Loaded subprocess node: trellis2-amd/refine
+[Registry] ERROR: Failed to instantiate generator 'trellis2-amd/generate': MODLY_AMD_RUNTIME_CONFIG must be an explicit absolute local path
+[Registry] ERROR: Failed to instantiate generator 'trellis2-amd/refine': MODLY_AMD_RUNTIME_CONFIG must be an explicit absolute local path
+[Registry] WARNING: No extensions found.
+[Registry] WARNING: No extensions found.
+[Registry] Reloading extensions...
+[Registry] Loaded node: pixal3d/generate (TestGenerator)
+[Registry] ERROR: Extension folder 'zzz-duplicate' declares mismatched manifest id 'pixal3d'. Folder and manifest IDs must match.
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'pixal3d/generate'.
+[Registry] Active model  : pixal3d/generate
+[Registry] All models    : ['pixal3d/generate']
+[Registry] Reload complete.
+[Registry] Reloading extensions...
+[Registry] ERROR: Extension 'pending-destination' has an incomplete installation or interrupted runtime registration. Restart Modly to recover it, or click 'Repair' on the Models page.
+[Registry] WARNING: No extensions found.
+[Registry] Reload complete.
+[Registry] Reloading extensions...
+[Registry] ERROR: Extension 'pending-path' has an incomplete installation or interrupted runtime registration. Restart Modly to recover it, or click 'Repair' on the Models page.
+[Registry] WARNING: No extensions found.
+[Registry] Reload complete.
+[Registry] Loaded node: multi-source/generate (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'multi-source/generate'.
+[Registry] Active model  : multi-source/generate
+[Registry] All models    : ['multi-source/generate']
+[Registry] ERROR: Failed to discover extension 'class-failure': module 'extensions.class-failure.generator' has no attribute 'TestGenerator'
+[Registry] ERROR: Failed to discover extension 'import-failure': intentional discovery failure
+[Registry] ERROR: Extension 'invalid-manifest' has an invalid manifest.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+[Registry] ERROR: Extension 'missing-generator' is missing generator.py.
+[Registry] ERROR: Extension 'missing-manifest' is missing manifest.json.
+[Registry] ERROR: Extension 'non-object-manifest' has an invalid manifest.json: expected an object.
+[Registry] WARNING: No extensions found.
+[Registry] Reloading extensions...
+[Registry] ERROR: Extension 'pending-hardlink' has an incomplete installation or interrupted runtime registration. Restart Modly to recover it, or click 'Repair' on the Models page.
+[Registry] WARNING: No extensions found.
+[Registry] Reload complete.
+[Registry] ERROR: Extension 'interrupted' has an incomplete installation or interrupted runtime registration. Restart Modly to recover it, or click 'Repair' on the Models page.
+[Registry] WARNING: No extensions found.
+[Registry] Loaded node: collision-a/generate (TestGenerator)
+[Registry] Loaded node: collision-b/generate (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'collision-a/generate'.
+[Registry] Active model  : collision-a/generate
+[Registry] All models    : ['collision-a/generate', 'collision-b/generate']
+[Registry] Loaded node: legacy-imports/generate (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'legacy-imports/generate'.
+[Registry] Active model  : legacy-imports/generate
+[Registry] All models    : ['legacy-imports/generate']
+[Registry] Reloading extensions...
+[Registry] WARNING: No extensions found.
+[Registry] Reload complete.
+[Registry] ERROR: Extension 'pending-registration' has an incomplete installation or interrupted runtime registration. Restart Modly to recover it, or click 'Repair' on the Models page.
+[Registry] WARNING: No extensions found.
+[Registry] Loaded node: live-before-repair/generate (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'live-before-repair/generate'.
+[Registry] Active model  : live-before-repair/generate
+[Registry] All models    : ['live-before-repair/generate']
+[Registry] Skipping 'process-only': type 'process' is not handled by this registry
+[Registry] WARNING: No extensions found.
+[Registry] Reloading extensions...
+[Registry] ERROR: Extension 'pending-public' has an incomplete installation or interrupted runtime registration. Restart Modly to recover it, or click 'Repair' on the Models page.
+[Registry] WARNING: No extensions found.
+[Registry] Reload complete.
+[Registry] Reloading extensions...
+[Registry] ERROR: Extension 'pending-public' has an incomplete installation or interrupted runtime registration. Restart Modly to recover it, or click 'Repair' on the Models page.
+[Registry] WARNING: No extensions found.
+[Registry] Reload complete.
+[Registry] Loaded node: reload-helper/generate (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'reload-helper/generate'.
+[Registry] Active model  : reload-helper/generate
+[Registry] All models    : ['reload-helper/generate']
+[Registry] Reloading extensions...
+[Registry] Loaded node: reload-helper/generate (TestGenerator)
+[Registry] Active model  : reload-helper/generate
+[Registry] All models    : ['reload-helper/generate']
+[Registry] Reload complete.
+[Registry] Loaded node: host-owned-path/generate (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'host-owned-path/generate'.
+[Registry] Active model  : host-owned-path/generate
+[Registry] All models    : ['host-owned-path/generate']
+[Registry] Reloading extensions...
+[Registry] WARNING: No extensions found.
+[Registry] Reload complete.
+[Registry] Reloading extensions...
+[Registry] WARNING: No extensions found.
+[Registry] Reload complete.
+[Registry] Loaded node: capture-io/generate (TestGenerator)
+[Registry] Loaded node: scene-io/generate (TestGenerator)
+[Registry] Loaded node: video-io/generate (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'capture-io/generate'.
+[Registry] Active model  : capture-io/generate
+[Registry] All models    : ['capture-io/generate', 'scene-io/generate', 'video-io/generate']
+[Registry] Loaded node: images-scene/generate (TestGenerator)
+[Registry] ERROR: Failed to discover extension 'scene-array': model node "generate" must declare scene as its single input field
+[Registry] ERROR: Failed to discover extension 'scene-mixed': model node "generate" must declare scene as its single input field
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'images-scene/generate'.
+[Registry] Active model  : images-scene/generate
+[Registry] All models    : ['images-scene/generate']
+[Registry] Loaded node: quantized/generate (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'quantized/generate'.
+[Registry] Active model  : quantized/generate
+[Registry] All models    : ['quantized/generate']
+[Registry] Node 'needs-setup/fast' needs setup (venv missing)
+[Registry] Node 'needs-setup/quality' needs setup (venv missing)
+[Registry] ERROR: Failed to instantiate generator 'needs-setup/fast': venv not found — extension needs setup. Click 'Repair' on the Models page to run setup.py.
+[Registry] ERROR: Failed to instantiate generator 'needs-setup/quality': venv not found — extension needs setup. Click 'Repair' on the Models page to run setup.py.
+[Registry] WARNING: No extensions found.
+[Registry] Loaded node: shared-model/generate (TestGenerator)
+[Registry] Loaded node: shared-model/adapter (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'shared-model/generate'.
+[Registry] Active model  : shared-model/generate
+[Registry] All models    : ['shared-model/generate', 'shared-model/adapter']
+[Registry] Reloading extensions...
+[Registry] Loaded node: pending-update/generate (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'pending-update/generate'.
+[Registry] Active model  : pending-update/generate
+[Registry] All models    : ['pending-update/generate']
+[Registry] Reload complete.
+[Registry] Reloading extensions...
+[Registry] ERROR: Extension 'pending-update' has an incomplete installation or interrupted runtime registration. Restart Modly to recover it, or click 'Repair' on the Models page.
+[Registry] WARNING: No extensions found.
+[Registry] Reload complete.
+[Registry] Reloading extensions...
+[Registry] Loaded node: pending-short/generate (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'pending-short/generate'.
+[Registry] Active model  : pending-short/generate
+[Registry] All models    : ['pending-short/generate']
+[Registry] Reload complete.
+[Registry] Reloading extensions...
+[Registry] ERROR: Extension 'pending-token' has an incomplete installation or interrupted runtime registration. Restart Modly to recover it, or click 'Repair' on the Models page.
+[Registry] WARNING: No extensions found.
+[Registry] Reload complete.

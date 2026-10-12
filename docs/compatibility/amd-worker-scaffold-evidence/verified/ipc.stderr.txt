@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_worker_scaffold_proof.py", line 106, in ipc_proof
+    worker.load()
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\api\services\extension_process.py", line 341, in load
+    self._ensure_started()
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\api\services\extension_process.py", line 319, in _ensure_started
+    self._start()
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\api\services\extension_process.py", line 155, in _start
+    raise RuntimeError(f"AMD startup preflight failed: {msg}")
+RuntimeError: AMD startup preflight failed: {'type': 'error', 'message': 'AMD runtime preflight failed', 'traceback': 'Traceback (most recent call last):\n  File "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\runner.py", line 221, in main\n    ready["runtime_identity"] = GenClass.worker_identity(model_id)\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\generator.py", line 53, in worker_identity\n    cls._identity, cls._tensor_guard = amd_runtime.worker_preflight(cls._config, model_id)\n                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\services\\amd_runtime.py", line 162, in worker_preflight\n    raise ValueError(f"AMD dependency {name}: expected {expected}, found {dist.version}; no repair")\nValueError: AMD dependency torch: expected 2.13.0+rocm10.0.0, found 2.12.0+rocm7.14.0; no repair\n'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_worker_scaffold_proof.py", line 142, in main
+    result = ipc_proof(args)
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_worker_scaffold_proof.py", line 109, in ipc_proof
+    assert expected in diagnostic, diagnostic
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AMD startup preflight failed: {'type': 'error', 'message': 'AMD runtime preflight failed', 'traceback': 'Traceback (most recent call last):\n  File "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\runner.py", line 221, in main\n    ready["runtime_identity"] = GenClass.worker_identity(model_id)\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\generator.py", line 53, in worker_identity\n    cls._identity, cls._tensor_guard = amd_runtime.worker_preflight(cls._config, model_id)\n                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\services\\amd_runtime.py", line 162, in worker_preflight\n    raise ValueError(f"AMD dependency {name}: expected {expected}, found {dist.version}; no repair")\nValueError: AMD dependency torch: expected 2.13.0+rocm10.0.0, found 2.12.0+rocm7.14.0; no repair\n'}

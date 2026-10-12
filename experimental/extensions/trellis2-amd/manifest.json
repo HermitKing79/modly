@@ -1,0 +1,14 @@
+{
+  "id": "trellis2-amd",
+  "name": "Experimental TRELLIS.2 AMD mock scaffold",
+  "type": "model",
+  "generator_class": "AMDScaffold",
+  "experimental": true,
+  "runtime_contract": "amd-offline-scaffold-v1",
+  "nodes": [
+    {"id": "generate", "name": "AMD Generate Mesh (mock only)", "input": "image", "output": "mesh",
+     "params_schema": [{"id": "mock", "label": "Mock receipt only", "type": "boolean", "default": true}]},
+    {"id": "refine", "name": "AMD Texture / Refine Mesh (mock only)", "inputs": ["image", "mesh"], "output": "mesh",
+     "params_schema": [{"id": "mock", "label": "Mock receipt only", "type": "boolean", "default": true}]}
+  ]
+}

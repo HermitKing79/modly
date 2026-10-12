@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_worker_scaffold_proof.py", line 142, in main
+    result = ipc_proof(args)
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_worker_scaffold_proof.py", line 59, in ipc_proof
+    worker.load()
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\api\services\extension_process.py", line 341, in load
+    self._ensure_started()
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\api\services\extension_process.py", line 319, in _ensure_started
+    self._start()
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\api\services\extension_process.py", line 155, in _start
+    raise RuntimeError(f"AMD startup preflight failed: {msg}")
+RuntimeError: AMD startup preflight failed: {'type': 'error', 'message': 'AMD runtime preflight failed', 'traceback': 'Traceback (most recent call last):\n  File "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\runner.py", line 221, in main\n    ready["runtime_identity"] = GenClass.worker_identity(model_id)\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\generator.py", line 53, in worker_identity\n    cls._identity, cls._tensor_guard = amd_runtime.worker_preflight(cls._config, model_id)\n                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\services\\amd_runtime.py", line 170, in worker_preflight\n    binaries.append(pe_imports(path))\n                    ^^^^^^^^^^^^^^^^\n  File "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\services\\amd_runtime.py", line 118, in pe_imports\n    raise ValueError(f"Native binary lacks verified HIP provenance or imports CUDA: {path}: {dlls}")\nValueError: Native binary lacks verified HIP provenance or imports CUDA: D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_xatlas.cp312-win_amd64.pyd: [\'c10.dll\', \'torch_cpu.dll\', \'torch_python.dll\', \'msvcp140.dll\', \'python312.dll\', \'kernel32.dll\', \'vcruntime140.dll\', \'api-ms-win-crt-heap-l1-1-0.dll\', \'api-ms-win-crt-string-l1-1-0.dll\', \'api-ms-win-crt-runtime-l1-1-0.dll\', \'api-ms-win-crt-math-l1-1-0.dll\', \'api-ms-win-crt-stdio-l1-1-0.dll\', \'api-ms-win-crt-utility-l1-1-0.dll\']\n'}

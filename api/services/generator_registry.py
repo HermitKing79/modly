@@ -24,7 +24,8 @@ from types import ModuleType
 from typing import Dict, Iterator, List, Optional, Set, Tuple
 
 from services.generators.base import BaseGenerator
-from services.extension_process import ExtensionProcess, _venv_python
+from services.extension_process import ExtensionProcess, _venv_python, _worker_python
+from services import amd_runtime
 from services.model_sources import (
     missing_weight_variant,
     model_sources_are_downloaded,
@@ -441,6 +442,9 @@ def _discover_extensions(
             continue
 
         try:
+            experimental_amd = amd_runtime.is_amd(manifest)
+            if experimental_amd and os.environ.get("MODLY_ENABLE_EXPERIMENTAL_AMD") != "1":
+                continue
             # Process extensions run via Electron's process runner, not this
             # registry — skip them even when their entry file is generator.py.
             if manifest.get("type", "model") != "model":
@@ -577,7 +581,7 @@ def _discover_extensions(
             has_build_vendor = (ext_dir / "build_vendor.py").exists()
             vendor_built     = (ext_dir / "vendor").exists()
             needs_setup      = (has_setup and not has_venv) or (has_build_vendor and not vendor_built)
-            subprocess_mode  = has_venv or needs_setup
+            subprocess_mode  = experimental_amd or has_venv or needs_setup
 
             cls_or_None = None
             legacy_context = None
@@ -630,7 +634,7 @@ def _discover_extensions(
                     full_id = f"{ext_id}/{node['id']}"
                     result[full_id] = (cls_or_None, node_manifest, ext_dir, legacy_context)
                     if subprocess_mode:
-                        if has_venv:
+                        if has_venv or experimental_amd:
                             print(f"[Registry] Loaded subprocess node: {full_id}")
                         else:
                             print(f"[Registry] Node '{full_id}' needs setup (venv missing)")
@@ -640,7 +644,7 @@ def _discover_extensions(
                 # No nodes defined — register by ext_id as fallback
                 result[ext_id] = (cls_or_None, manifest, ext_dir, legacy_context)
                 if subprocess_mode:
-                    if has_venv:
+                    if has_venv or experimental_amd:
                         print(f"[Registry] Loaded subprocess extension: {ext_id}")
                     else:
                         print(f"[Registry] Extension '{ext_id}' needs setup (venv missing)")
@@ -693,7 +697,7 @@ class GeneratorRegistry:
             try:
                 if cls is None:
                     # Subprocess mode: venv must exist
-                    if not _venv_python(ext_dir).is_file():
+                    if not _worker_python(ext_dir, manifest).is_file():
                         raise RuntimeError(
                             "venv not found — extension needs setup. "
                             "Click 'Repair' on the Models page to run setup.py."

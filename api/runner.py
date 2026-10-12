@@ -214,7 +214,16 @@ def main() -> None:
     # can serve it without needing to query the subprocess later.
     # We try to get it from the generator class (may be a classmethod),
     # falling back to the selected node, then to the top-level manifest.
-    send({"type": "ready", "params_schema": _resolve_ready_schema(GenClass, node, manifest)})
+    ready = {"type": "ready", "params_schema": _resolve_ready_schema(GenClass, node, manifest)}
+    from services import amd_runtime
+    if amd_runtime.is_amd(manifest):
+        try:
+            ready["runtime_identity"] = GenClass.worker_identity(model_id)
+        except Exception:
+            send({"type": "error", "message": "AMD runtime preflight failed",
+                  "traceback": traceback.format_exc()})
+            return
+    send(ready)
 
     # Use MODEL_DIR env var (set by ExtensionProcess) when available so the
     # generator uses the exact same path that is_downloaded() checks against.
