@@ -1,0 +1,52 @@
+{
+  "sources": {
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\image_feature_extractor.py": "a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_image_to_3d.py": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\transformers\\models\\dinov3_vit\\modeling_dinov3_vit.py": "00652d90ff8c7ae32b047ebe2acd2271f97e03f768cf570ac051045a4e0d5cf5",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\transformers\\models\\dinov3_vit\\configuration_dinov3_vit.py": "1ac7cb889e2314e8cadf9b0bed43d42cfb05dce6d730f719be4380c8a10a8a46",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\transformers\\pytorch_utils.py": "73058fd3079c538eb9bcecb269604f43480cd6871f302d2bf790cad14b0b5df7",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torchvision\\transforms\\transforms.py": "c4878e6da0f30ba4d71723a00e6711e93fd545c150be89232f57323d219b057d",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torchvision\\transforms\\_functional_tensor.py": "33550a36cd122ba2ee9d3bb7debac34de7806308a0d2b03523a2c943da86bb46"
+  },
+  "checkpoint_sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+  "configuration": {
+    "architectures": [
+      "DINOv3ViTModel"
+    ],
+    "attention_dropout": 0.0,
+    "drop_path_rate": 0.0,
+    "hidden_act": "gelu",
+    "hidden_size": 1024,
+    "image_size": 224,
+    "initializer_range": 0.02,
+    "intermediate_size": 4096,
+    "key_bias": false,
+    "layer_norm_eps": 1e-05,
+    "layerscale_value": 1.0,
+    "mlp_bias": true,
+    "model_type": "dinov3_vit",
+    "num_attention_heads": 16,
+    "num_channels": 3,
+    "num_hidden_layers": 24,
+    "num_register_tokens": 4,
+    "patch_size": 16,
+    "pos_embed_jitter": null,
+    "pos_embed_rescale": 2.0,
+    "pos_embed_shift": null,
+    "proj_bias": true,
+    "query_bias": true,
+    "rope_theta": 100.0,
+    "torch_dtype": "float32",
+    "transformers_version": "4.56.0.dev0",
+    "use_gated_mlp": false,
+    "value_bias": true
+  },
+  "tensor_count": 415,
+  "parameter_count": 303129600,
+  "parameter_bytes": 1212518400,
+  "expected_output": [
+    1,
+    1029,
+    1024
+  ]
+}

@@ -1,0 +1,3543 @@
+{
+  "returncode": 0,
+  "elapsed_seconds": 23.436999999999898,
+  "timed_out": false,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "worker_exit_verified": true,
+  "worker": {
+    "status": "PASS",
+    "weights_loaded": false,
+    "gpu_initialized": false,
+    "sdk_discovery": [
+      {
+        "command": [
+          "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+          "path",
+          "--root"
+        ],
+        "timeout_seconds": 5.0,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "ERROR: Could not load the `rocm[devel]` package, which is required to access runtime tools and development files. Please install it with your package manager (pip, uv, etc)\r\nERROR: rocm_sdk_devel module for the ROCm SDK development package is not installed. This can typically be obtained by installing `rocm[devel]` from your package manager\r\n",
+        "elapsed_seconds": 2.375
+      }
+    ],
+    "state": {
+      "embeddings.cls_token": {
+        "shape": [
+          1,
+          1,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "embeddings.mask_token": {
+        "shape": [
+          1,
+          1,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "embeddings.register_tokens": {
+        "shape": [
+          1,
+          4,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "embeddings.patch_embeddings.weight": {
+        "shape": [
+          1024,
+          3,
+          16,
+          16
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "embeddings.patch_embeddings.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.0.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.1.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.2.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.3.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.4.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.5.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.6.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.7.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.8.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.9.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.10.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.11.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.12.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.13.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.14.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.15.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.16.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.17.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.18.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.19.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.20.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.21.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.22.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.attention.k_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.attention.v_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.attention.v_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.attention.q_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.attention.q_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.attention.o_proj.weight": {
+        "shape": [
+          1024,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.attention.o_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.layer_scale1.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.norm2.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.norm2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.mlp.up_proj.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.mlp.up_proj.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.mlp.down_proj.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.mlp.down_proj.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "layer.23.layer_scale2.lambda1": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "norm.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "norm.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      }
+    },
+    "buffers": {
+      "rope_embeddings.inv_freq": {
+        "shape": [
+          16
+        ],
+        "dtype": "F32",
+        "device": "cpu",
+        "is_meta": false
+      }
+    },
+    "strict_header_match": true,
+    "checkpoint_sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+    "preprocessing": {
+      "input_mode": "RGBA",
+      "input_size": [
+        64,
+        64
+      ],
+      "output_mode": "RGB",
+      "output_size": [
+        46,
+        46
+      ]
+    },
+    "model_class": "transformers.models.dinov3_vit.modeling_dinov3_vit.DINOv3ViTModel",
+    "attention_backend": "sdpa",
+    "extractor_class": "DinoV3FeatureExtractor",
+    "expected_output": [
+      1,
+      1029,
+      1024
+    ],
+    "cache_policy": {
+      "maxsize": 32,
+      "entries": 0
+    }
+  }
+}

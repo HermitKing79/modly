@@ -65,11 +65,11 @@ def prepare_private_cache(scratch):
             'runtime_libraries':plan['runtime_libraries'],'private_copy_hashes_verified':True}
 
 
-def verify_committed_files(commit):
+def verify_committed_files(commit,files=None):
     if len(commit)!=40 or any(char not in '0123456789abcdef' for char in commit):
         raise ValueError('Supply the exact published harness commit SHA')
     hashes={}
-    for name in COMMITTED_FILES:
+    for name in COMMITTED_FILES if files is None else files:
         try:
             committed=subprocess.run(['git','show',commit+':'+name],cwd=ROOT,capture_output=True,check=True,timeout=5).stdout
         except subprocess.CalledProcessError as exc:
@@ -299,14 +299,29 @@ def worker(scratch):
     return 0 if record['status']=='PASS' else 1
 
 
-def supervise(output,harness_commit):
+def supervise(output,harness_commit,*,profile=None):
+    # A second single-model proof reuses the same ownership, journals, observer,
+    # deadlines and cleanup path. The original decoder default is unchanged.
+    evidence=EVIDENCE if profile is None else profile.evidence
+    cpu_seconds=CPU_SECONDS if profile is None else profile.cpu_seconds
+    gpu_seconds=GPU_SECONDS if profile is None else profile.gpu_seconds
+    overall_seconds=OVERALL_SECONDS if profile is None else profile.overall_seconds
+    identity=previous.identity if profile is None else profile.identity
+    inspect_source=source_identity if profile is None else profile.source_identity
+    validate_config=contract.fixture if profile is None else profile.validate_config
+    classify=contract.classify if profile is None else profile.classify
+    cache=prepare_private_cache if profile is None else profile.prepare_private_cache
+    worker_script=Path(__file__).resolve() if profile is None else profile.worker_script
+    authorize=b'EXECUTE_ONE_DECODER_FORWARD\n' if profile is None else profile.authorize
+    if profile is not None and (cpu_seconds,gpu_seconds,overall_seconds)!=(120,180,360):
+        raise ValueError('DINO conditioning deadlines must be exactly 120/180/360 seconds')
     output=output.resolve()
-    if output!=EVIDENCE/'run':raise ValueError('Use the single canonical evidence run directory')
+    if output!=evidence/'run':raise ValueError('Use the single canonical evidence run directory')
     head=subprocess.run(['git','rev-parse','HEAD'],cwd=ROOT,capture_output=True,check=True,timeout=5).stdout.decode().strip()
     if head!=harness_commit:raise RuntimeError('Run only the exact committed/published harness')
-    committed_hashes=verify_committed_files(harness_commit)
+    committed_hashes=verify_committed_files(harness_commit) if profile is None else verify_committed_files(harness_commit,profile.committed_files)
     output.mkdir(parents=True,exist_ok=False)
-    with (EVIDENCE/'attempt-started.json').open('x',encoding='utf-8') as stream:
+    with (evidence/'attempt-started.json').open('x',encoding='utf-8') as stream:
         json.dump({'harness_commit':head,'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'maximum_forwards':1},stream)
         stream.flush();os.fsync(stream.fileno())
     def save(name,value):
@@ -319,18 +334,18 @@ def supervise(output,harness_commit):
     windows_monitor=windows_journal=owned_job=None
     try:
         save('committed-harness.json',{'commit':head,'verified_file_sha256':committed_hashes})
-        source_identity();verified=previous.identity();contract.fixture(verified['config']);save('checkpoint-before.json',verified)
+        inspect_source();verified=identity();validate_config(verified['config']);save('checkpoint-before.json',verified)
         before=windows_observation(since);save('windows-before.json',before)
         if not healthy_observation(before):raise RuntimeError('Unhealthy Windows observer before launch')
         healthy=True
         scratch=output/'scratch';scratch.mkdir()
-        save('private-cache.json',prepare_private_cache(scratch))
+        save('private-cache.json',cache(scratch))
         journal=diagnostics.Journal(output/'trace.jsonl')
         windows_journal=diagnostics.Journal(output/'windows-periodic.jsonl')
-        command=[str(VENV/'Scripts/python.exe'),'-B','-I',str(Path(__file__).resolve()),'--worker','--output',str(scratch)]
+        command=[str(VENV/'Scripts/python.exe'),'-B','-I',str(worker_script),'--worker','--output',str(scratch)]
         env={**os.environ,**previous.gpu_proof.scratch_environment(scratch)}
         owned_job=OwnedJob()
-        began=time.monotonic();deadline=began+CPU_SECONDS
+        began=time.monotonic();deadline=began+cpu_seconds
         child=subprocess.Popen(command,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,env=env)
         process.update(pid=child.pid,command=command,harness_commit=head)
         owned_job.attach(child)
@@ -386,16 +401,16 @@ def supervise(output,harness_commit):
                 windows_monitor.start(timeout=min(5.,remaining))
                 monitor.require_healthy();windows_monitor.require_healthy()
                 if time.monotonic()>=deadline:raise TimeoutError('CPU gate deadline expired before GPU authorization')
-                child.stdin.write(b'EXECUTE_ONE_DECODER_FORWARD\n');child.stdin.flush();child.stdin.close()
-                authorized=True;deadline=min(began+OVERALL_SECONDS,time.monotonic()+GPU_SECONDS)
+                child.stdin.write(authorize);child.stdin.flush();child.stdin.close()
+                authorized=True;deadline=min(began+overall_seconds,time.monotonic()+gpu_seconds)
                 process['gpu_authorized']=True
             if line.startswith(RESULT):
                 if final_seen:raise RuntimeError('Duplicate final result')
                 final_seen=True;record=json.loads(line[len(RESULT):])
         if time.monotonic()>=deadline:raise TimeoutError('Worker-exit stage deadline exceeded')
-        child.wait(timeout=min(5,deadline-time.monotonic(),began+OVERALL_SECONDS-time.monotonic()))
+        child.wait(timeout=min(5,deadline-time.monotonic(),began+overall_seconds-time.monotonic()))
         process.update(returncode=child.returncode,elapsed_seconds=time.monotonic()-began,gpu_authorized=authorized,
-                       stage_timeouts_seconds={'cpu':CPU_SECONDS,'forward_release':GPU_SECONDS,'overall':OVERALL_SECONDS})
+                       stage_timeouts_seconds={'cpu':cpu_seconds,'forward_release':gpu_seconds,'overall':overall_seconds})
     except BaseException as exc:
         process.update(error=repr(exc),timed_out=isinstance(exc,(TimeoutError,queue.Empty,subprocess.TimeoutExpired)))
     finally:
@@ -432,7 +447,7 @@ def supervise(output,harness_commit):
         try:
             after=windows_observation(since);save('windows-after-exit.json',after)
             healthy=healthy and healthy_observation(after)
-            after_identity=previous.identity();save('checkpoint-after.json',after_identity);preserved=verified==after_identity
+            after_identity=identity();save('checkpoint-after.json',after_identity);preserved=verified==after_identity
         except BaseException as exc:
             process['postcheck_error']=repr(exc);healthy=False
     process_ok=(process['returncode']==0 and not process['timed_out'] and not process.get('forced_cleanup',False)
@@ -445,7 +460,7 @@ def supervise(output,harness_commit):
     process_ok=process_ok and process.get('job_attached_before_preparation') is True \
         and process.get('job_cleanup',{}).get('owned_tree_exit_verified') is True \
         and not process.get('job_cleanup',{}).get('forced_job_cleanup') and not process.get('job_cleanup_error')
-    result={'classification':contract.classify(record,process_ok,healthy,preserved),'observer_healthy':healthy,
+    result={'classification':classify(record,process_ok,healthy,preserved),'observer_healthy':healthy,
             'checkpoint_unchanged':preserved,'worker':record,'process':process}
     save('results.json',result)
     print(json.dumps({key:value for key,value in result.items() if key not in ('worker','process')}))
