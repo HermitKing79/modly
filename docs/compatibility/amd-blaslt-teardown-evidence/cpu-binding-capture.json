@@ -1,0 +1,6 @@
+{
+  "returncode": 1,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-blaslt-teardown-evidence\\binding-smoke.py\", line 14, in <module>\n    sdk=[];block_external_actions(teardown.previous.local.VENV/'Scripts/rocm-sdk.exe',sdk,scratch)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\services\\amd_offline_guard.py\", line 59, in block_external_actions\n    scratch.relative_to(Path(os.environ[\"WORKSPACE_DIR\"]).resolve())\n                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"<frozen os>\", line 714, in __getitem__\nKeyError: 'WORKSPACE_DIR'\n"
+}

@@ -1,0 +1,24 @@
+{
+  "verified": true,
+  "binding": "_cuda_clearCublasWorkspaces",
+  "module": "torch._C",
+  "extension_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_C.cp312-win_amd64.pyd",
+  "gpu_initialized": false,
+  "native_call_executed": false,
+  "binary_review_sha256": "e27920546e1081c0070ce3350a199a98b74ca9f33317dd588d159685febae04a",
+  "runtime": "2.13.0+rocm10.0.0",
+  "hip": "7.15.26333",
+  "cuda": null,
+  "loaded_native_modules": {
+    "torch_python.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\torch_python.dll",
+      "sha256": "f710dc3a3ebb7863fe987d717242c329f66acc73d81578d545e1e99a9bf98171"
+    },
+    "torch_hip.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\torch_hip.dll",
+      "sha256": "28ea13f7de8a0480081d44fc27ac693419ec29a96782afccc4b212e472600119"
+    }
+  },
+  "sdk_discovery": [],
+  "weights_loaded": false
+}

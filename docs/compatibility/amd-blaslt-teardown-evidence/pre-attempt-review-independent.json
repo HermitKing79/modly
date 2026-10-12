@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-12T23:43:02.640761+00:00",
+  "base_commit": "62409edb5545857012116cb64fc2335acd938f54",
+  "branch": "codex/amd-blaslt-workspace-teardown",
+  "review_status": "CODE_PASS_WITH_EXPLICIT_LAUNCH_PREREQUISITE",
+  "blocking_code_findings": [],
+  "review_scope": [
+    "scripts/compatibility/amd_blaslt_teardown.py",
+    "scripts/compatibility/amd_dinov3_conditioning.py",
+    "scripts/compatibility/amd_dinov3_allocation.py",
+    "scripts/compatibility/test_amd_blaslt_teardown.py",
+    "docs/compatibility/amd-blaslt-teardown-evidence/binding-contract.json",
+    "docs/compatibility/amd-blaslt-teardown-evidence/cpu-binding.json",
+    "docs/compatibility/amd-blaslt-teardown-evidence/binding-smoke.py"
+  ],
+  "reviewed_raw_file_sha256": {
+    "scripts/compatibility/amd_blaslt_teardown.py": "ac8456c29291f5ee0bc567086b152f7013f502996179e408577f5806ca3310dd",
+    "scripts/compatibility/amd_dinov3_conditioning.py": "86019bea04abcd6611f2109a083f846acbe5ce822a375433959636aa3c150aa0",
+    "scripts/compatibility/amd_dinov3_allocation.py": "8b7eb5edd95d5f97aafafe64f86c0f1dc5cdb7e315075f2321a42532c5b3eda4",
+    "scripts/compatibility/test_amd_blaslt_teardown.py": "390a549e6410572152a2713085bb214024c7455441aefbcdf1a1edb621a41ac1",
+    "docs/compatibility/amd-blaslt-teardown-evidence/binding-contract.json": "a2664fd511e77d171e70892607b0eaf65045703977f07dd6673797aa1710b2cf",
+    "docs/compatibility/amd-blaslt-teardown-evidence/cpu-binding.json": "7454b4ef8ac37f2d57e5a0b7006e866f08624cfd719307496c595cdd19c12922",
+    "docs/compatibility/amd-blaslt-teardown-evidence/binding-smoke.py": "a499f563ecfd5f645553b4b72cb68e751f11e4df2261e1ffc50c489f223a579e"
+  },
+  "static_binding_review": "binary-review.json",
+  "static_binding_verified": true,
+  "source_pins_independently_verified": 14,
+  "saved_cpu_binding_provenance_verified": true,
+  "checks": [
+    "Runtime native builtin/module/name, extension path, binary/source pins and metadata are verified before CPU model load and GPU authorization.",
+    "Actual worker clears the native workspaces once after existing known model/output references, genuine RoPE cache, original_features and GC are released, followed by completed synchronize(0).",
+    "Native call precedes empty_cache and second synchronize(0); call failure and sync failure stop without retry or GPU recovery.",
+    "Residual allocated or reserved bytes trigger the existing bounded, reconciled snapshot and unchanged strict zero release rejection.",
+    "Zero counters use bounded explicit history shutdown; no snapshot is generated on that success path.",
+    "New workspace mode bypasses the feature checkpoint writer and retains previous saved conditioning features.",
+    "Original worker default mode leaves private cleanup unused.",
+    "Existing one-conditioning permit, float32 finite output shape, single input/output transfer, CPU120/GPU180/overall360, observer, owned Job, native/offline guard and production mock boundary are inherited unchanged."
+  ],
+  "independent_cpu_replays": [
+    {
+      "capture": "cpu-teardown-independent-review.json",
+      "tests": 9,
+      "passed": 9,
+      "exit": 0,
+      "ai_imports": [],
+      "scope": "Actual-worker AST teardown, failures, default mode, bounded history, native replacement rejection, strict classifier"
+    },
+    {
+      "capture": "cpu-allocation-independent-review.json",
+      "tests": 11,
+      "passed": 8,
+      "errors": 3,
+      "exit": 1,
+      "ai_imports": [],
+      "errors_scope": "Existing checkpoint fixtures fail at Path.resolve(strict=True) for their TemporaryDirectory under ROOT.parent with WinError5 before checkpoint writing",
+      "candidate_regression_established": false,
+      "initial_failure_capture_preserved": true
+    }
+  ],
+  "parent_cpu_evidence_inspected": {
+    "allocation_capture": "cpu-allocation-candidate.json",
+    "allocation_tests": 11,
+    "allocation_passed": true,
+    "focused_capture": "cpu-focused-candidate.json",
+    "focused_tests": 65,
+    "focused_passed": true
+  },
+  "launch_prerequisite": {
+    "required": "Explicit launcher must supply WORKSPACE_DIR pointing to the resolved proof repository root, and child scratch must lie beneath it, before invoking the canonical supervisor.",
+    "reason": "Current review shell has no WORKSPACE_DIR. scratch_environment omits it; the inherited worker calls block_external_actions, whose scratch check accesses os.environ[WORKSPACE_DIR] before Torch import.",
+    "recorded_confirmation": "cpu-binding-capture.json contains the same KeyError at amd_offline_guard.py:59.",
+    "consequence_if_missing": "Direct launch from the review shell can consume the exclusive attempt-started marker and then fail before forward.",
+    "resolution_options": [
+      "Set WORKSPACE_DIR explicitly in the eventual launch process environment and record the command.",
+      "Add a narrowly scoped supervisor preflight rejecting absent or incompatible WORKSPACE_DIR before attempt marker creation."
+    ],
+    "code_changed_by_reviewer": false
+  },
+  "limitations": [
+    "No inference, real model loading, GPU initialization, native clearing or second CPU Torch import was performed by this reviewer.",
+    "Static/routing evidence establishes map coverage, not native ownership of the prior 76 MiB block or successful future release.",
+    "The independent allocation replay is not wholly green; three existing checkpoint fixtures hit sandbox temporary-path errors. Parent captured all11 green; the feature writer is bypassed in the reviewed new mode."
+  ],
+  "reviewer_writes_only": [
+    "cpu-teardown-independent-review.json",
+    "cpu-allocation-independent-review.json",
+    "pre-attempt-review-independent.json"
+  ],
+  "native_execution_authorized_by_this_review": false
+}

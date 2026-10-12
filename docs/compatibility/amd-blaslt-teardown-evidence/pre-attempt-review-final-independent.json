@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-12T23:44:18.734545+00:00",
+  "base_commit": "62409edb5545857012116cb64fc2335acd938f54",
+  "branch": "codex/amd-blaslt-workspace-teardown",
+  "review_status": "PASS",
+  "review_gate_satisfied": true,
+  "blocking_code_findings": [],
+  "remaining_review_blockers": [],
+  "supersedes": "pre-attempt-review-independent.json",
+  "review_scope": [
+    "scripts/compatibility/amd_blaslt_teardown.py",
+    "scripts/compatibility/amd_dinov3_conditioning.py",
+    "scripts/compatibility/amd_dinov3_allocation.py",
+    "scripts/compatibility/test_amd_blaslt_teardown.py",
+    "docs/compatibility/amd-blaslt-teardown-evidence/binding-contract.json",
+    "docs/compatibility/amd-blaslt-teardown-evidence/cpu-binding.json",
+    "docs/compatibility/amd-blaslt-teardown-evidence/binding-smoke.py",
+    "docs/compatibility/amd-blaslt-teardown-evidence/preparation.md"
+  ],
+  "reviewed_raw_file_sha256": {
+    "scripts/compatibility/amd_blaslt_teardown.py": "ac8456c29291f5ee0bc567086b152f7013f502996179e408577f5806ca3310dd",
+    "scripts/compatibility/amd_dinov3_conditioning.py": "86019bea04abcd6611f2109a083f846acbe5ce822a375433959636aa3c150aa0",
+    "scripts/compatibility/amd_dinov3_allocation.py": "8b7eb5edd95d5f97aafafe64f86c0f1dc5cdb7e315075f2321a42532c5b3eda4",
+    "scripts/compatibility/test_amd_blaslt_teardown.py": "390a549e6410572152a2713085bb214024c7455441aefbcdf1a1edb621a41ac1",
+    "docs/compatibility/amd-blaslt-teardown-evidence/binding-contract.json": "a2664fd511e77d171e70892607b0eaf65045703977f07dd6673797aa1710b2cf",
+    "docs/compatibility/amd-blaslt-teardown-evidence/cpu-binding.json": "7454b4ef8ac37f2d57e5a0b7006e866f08624cfd719307496c595cdd19c12922",
+    "docs/compatibility/amd-blaslt-teardown-evidence/binding-smoke.py": "a499f563ecfd5f645553b4b72cb68e751f11e4df2261e1ffc50c489f223a579e",
+    "docs/compatibility/amd-blaslt-teardown-evidence/preparation.md": "18569c6712a69cf8adf91233690e0c26c475a08791f52d0241dea52389263d73"
+  },
+  "checks": [
+    "Runtime native builtin/module/name, extension path, binary/source pins and metadata are verified before CPU model load and GPU authorization.",
+    "Actual worker clears the native workspaces once after existing known model/output references, genuine RoPE cache, original_features and GC are released, followed by completed synchronize(0).",
+    "Native call precedes empty_cache and second synchronize(0); call failure and sync failure stop without retry or GPU recovery.",
+    "Residual allocated or reserved bytes trigger the existing bounded, reconciled snapshot and unchanged strict zero release rejection.",
+    "Zero counters use bounded explicit history shutdown; no snapshot is generated on that success path.",
+    "New workspace mode bypasses the feature checkpoint writer and retains previous saved conditioning features.",
+    "Original worker default mode leaves private cleanup unused.",
+    "Existing one-conditioning permit, float32 finite output shape, single input/output transfer, CPU120/GPU180/overall360, observer, owned Job, native/offline guard and production mock boundary are inherited unchanged.",
+    "New verify_workspace rejects absent or differently resolved WORKSPACE_DIR at CLI startup before binding checks, preflight and supervisor attempt marker creation.",
+    "Updated10-test suite independently passes with AI imports blocked, including missing/wrong workspace rejection and correct workspace acceptance.",
+    "Preparation records the exact WORKSPACE_DIR proof path before its planned CLI launch."
+  ],
+  "resolved_finding": {
+    "previous": "Inherited missing WORKSPACE_DIR could consume the exclusive attempt before pre-forward guard failure.",
+    "resolution": "verify_workspace runs before verify_binding_evidence and supervisor invocation in both supervisor and worker CLI entries; preparation supplies explicit WORKSPACE_DIR.",
+    "new_test": "test_workspace_guard_rejects_before_attempt_can_be_consumed",
+    "red_capture": "cpu-workspace-red.json",
+    "independent_green_capture": "cpu-teardown-independent-final.json"
+  },
+  "static_binding_verified": true,
+  "source_pins_independently_verified": 14,
+  "saved_cpu_binding_provenance_verified": true,
+  "independent_cpu_replays": [
+    {
+      "capture": "cpu-teardown-independent-final.json",
+      "tests": 10,
+      "passed": 10,
+      "errors": 0,
+      "exit": 0,
+      "ai_imports": []
+    },
+    {
+      "capture": "cpu-allocation-independent-review.json",
+      "tests": 11,
+      "passed": 8,
+      "errors": 3,
+      "exit": 1,
+      "ai_imports": [],
+      "errors_scope": "Three existing checkpoint fixtures fail at Path.resolve(strict=True) for TemporaryDirectory under ROOT.parent with WinError5, before checkpoint writing.",
+      "candidate_regression_established": false,
+      "failure_capture_preserved": true
+    },
+    {
+      "capture": "cpu-teardown-independent-review.json",
+      "tests": 9,
+      "passed": 9,
+      "exit": 0,
+      "ai_imports": [],
+      "superseded_by_expanded_10_test_replay": true
+    }
+  ],
+  "parent_cpu_evidence_inspected": {
+    "allocation_capture": "cpu-allocation-candidate.json",
+    "allocation_tests": 11,
+    "allocation_passed": true,
+    "focused_capture": "cpu-focused-candidate.json",
+    "focused_tests": 65,
+    "focused_passed": true
+  },
+  "verification_commands": [
+    [
+      "C:/Users/wattz/AppData/Local/Programs/Python/Python312/python.exe",
+      "-I",
+      "-B",
+      "docs/compatibility/amd-blaslt-teardown-evidence/cpu-teardown-verification.py",
+      "cpu-teardown-independent-final.json"
+    ],
+    [
+      "C:/Users/wattz/AppData/Local/Programs/Python/Python312/python.exe",
+      "-I",
+      "-B",
+      "docs/compatibility/amd-blaslt-teardown-evidence/cpu-allocation-verification.py",
+      "cpu-allocation-independent-review.json"
+    ]
+  ],
+  "conditions_before_execution": [
+    "Exact reviewed harness commit must be published and working files verified against it.",
+    "WORKSPACE_DIR must resolve to the proof repository, as enforced by the new CPU startup check.",
+    "Existing healthy Windows observation, Job containment and authorization gates remain required.",
+    "Only the separately authorized one-pass attempt may run; no retry or progression to another model."
+  ],
+  "limitations": [
+    "No inference, real model loading, GPU initialization, native clearing or second CPU Torch import was performed by this reviewer.",
+    "Static/routing evidence establishes map coverage, not native ownership of the prior 76 MiB block or successful future release.",
+    "The independent allocation replay is not wholly green; three existing checkpoint fixtures hit sandbox temporary-path errors. Parent captured all11 green; the feature writer is bypassed in the reviewed new mode."
+  ],
+  "reviewer_gpu_initialized": false,
+  "reviewer_torch_imported": false,
+  "reviewer_native_clear_executed": false,
+  "reviewer_real_model_or_weights_loaded": false,
+  "implementation_edited_by_reviewer": false,
+  "final_capture_identity": {
+    "filename": "cpu-teardown-independent-final.json",
+    "sha256": "a3702c3a02d12946ec1dd37b2563d32559ed95d6da5cd180fbaed5e3fd5c862c"
+  },
+  "previous_conditional_review_preserved": true,
+  "scope_outcome": "The final candidate satisfies binding suitability and narrow harness review. Future cleanup effectiveness and native ownership remain an empirical result of the single authorized attempt."
+}

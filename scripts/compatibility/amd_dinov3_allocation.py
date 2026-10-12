@@ -94,6 +94,13 @@ class AllocationDiagnostics:
         self.begun=True;torch.cuda.memory._record_memory_history(**HISTORY)
     def observe(self,values,label):
         for tensor in values:self.owners.track(tensor,label)
+    def disable_history(self,torch):
+        if not self.begun or self.captured:raise RuntimeError('History shutdown permit absent/consumed')
+        self.begun=False
+        owners=self.owners.living()
+        torch.cuda.memory._record_memory_history(enabled=None,context=None,stacks='all',max_entries=512)
+        return dict(history_disabled=True,snapshot_captured=False,observed_tensor_records=len(self.owners.entries),
+                    observed_python_owner_count=len(owners))
     def capture(self,torch,allocated,reserved):
         if not self.begun or self.captured:raise RuntimeError('Allocator snapshot permit absent/consumed')
         self.captured=True

@@ -57,7 +57,7 @@ def verify_preflight():
     return current
 
 
-def worker(scratch,*,allocation_evidence=None):
+def worker(scratch,*,allocation_evidence=None,workspace_teardown=False):
     record={'status':'FAIL','stage':'startup','sdk_discovery':[],'calls':{},'load_calls':0}
     component=model=feature=pipeline=output=cpu_output=cond=processed=image=torch=None
     phase='cpu';allowed_modules={};placement_sources=set();input_source=None
@@ -73,6 +73,8 @@ def worker(scratch,*,allocation_evidence=None):
         record['calls'][name]=record['calls'].get(name,0)+1
         if record['calls'][name]!=1:raise RuntimeError('Duplicate DINO operation: '+name)
     try:
+        if type(workspace_teardown) is not bool or workspace_teardown and allocation_evidence is None:
+            raise RuntimeError('Workspace teardown requires the explicit exclusive evidence profile')
         if sys.stdin.readline().strip()!='OWNED_JOB_ATTACHED':raise RuntimeError('Owned job must contain worker before preparation')
         evidence=local.EVIDENCE if allocation_evidence is None else allocation_evidence
         scratch=scratch.resolve();scratch.relative_to(evidence.resolve())
@@ -107,6 +109,9 @@ def worker(scratch,*,allocation_evidence=None):
         if record['runtime']['dependencies']['transformers']!='4.56.0' or record['runtime']['dependencies']['torchvision']!='0.28.0+rocm10.0.0':
             raise RuntimeError('Conditioning dependency identity changed')
         trace.emit('state','runtime',runtime=record['runtime'])
+        if workspace_teardown:
+            from amd_blaslt_teardown import verify_runtime_binding
+            record['workspace_binding']=verify_runtime_binding(torch)
         torch.set_num_threads(1)
         original_init=torch.cuda._lazy_init
         def forbidden(*a,**k):raise RuntimeError('Unapproved initialization/loading/compilation/model call')
@@ -289,7 +294,7 @@ def worker(scratch,*,allocation_evidence=None):
                     'sha256':hashlib.sha256(values.tobytes()).hexdigest(),'requires_grad':output.requires_grad,
                     'is_inference_tensor':output.is_inference(),'grad_enabled':torch.is_grad_enabled()}
                 contract.validate_output(record['output']);contract.validate_counts(record['calls']);values=None
-                if allocation_observer is not None:
+                if allocation_observer is not None and not workspace_teardown:
                     stage('feature-checkpoint');phase='feature-save'
                     from amd_feature_checkpoint import write
                     published=json.loads((evidence/'run/committed-harness.json').read_text())['commit']
@@ -314,17 +319,24 @@ def worker(scratch,*,allocation_evidence=None):
             cache.cache_clear()
             component.unload();feature.model=None;pipeline.image_cond_model=None
             component=model=feature=pipeline=output=cpu_output=cond=processed=image=input_source=None
-            original_features=None;gc.collect();torch.cuda.synchronize(0);torch.cuda.empty_cache();torch.cuda.synchronize(0)
+            original_features=None;gc.collect();torch.cuda.synchronize(0)
+            if workspace_teardown:
+                stage('BLAS-workspace-release');record['workspace_clear_calls']=1
+                trace.call('blas:clear-workspaces',torch._C._cuda_clearCublasWorkspaces)
+            torch.cuda.empty_cache();torch.cuda.synchronize(0)
             record['release']={**loading.gpu_memory(torch),'model_collected':refs[0]() is None,
                 'output_collected':refs[1]() is None,'rope_cache_entries_before':before_clear,'rope_cache_entries_after':cache.cache_info().currsize,
                 'cpu_memory':loading.process_memory()}
             trace.emit('memory','release',**record['release'])
             if allocation_observer is not None:
-                stage('allocator-snapshot')
-                record['allocation_diagnosis']=trace.call('allocator:snapshot-release',lambda:allocation_observer.capture(
-                    torch,record['release']['allocated_bytes'],record['release']['reserved_bytes']))
+                if workspace_teardown and not record['release']['allocated_bytes'] and not record['release']['reserved_bytes']:
+                    record['allocation_diagnosis']=trace.call('allocator:disable-history',lambda:allocation_observer.disable_history(torch))
+                else:
+                    stage('allocator-snapshot')
+                    record['allocation_diagnosis']=trace.call('allocator:snapshot-release',lambda:allocation_observer.capture(
+                        torch,record['release']['allocated_bytes'],record['release']['reserved_bytes']))
                 trace.emit('state','allocator-release',diagnosis={key:value for key,value in record['allocation_diagnosis'].items() if key!='summary'},
-                           allocation_totals={key:value for key,value in record['allocation_diagnosis']['summary'].items() if key not in ('active_blocks','interpretation')})
+                           allocation_totals={key:value for key,value in record['allocation_diagnosis'].get('summary',{}).items() if key not in ('active_blocks','interpretation')})
             strict_contract.validate_release(record['release'])
             if not record['release']['output_collected'] or record['release']['rope_cache_entries_after']:raise RuntimeError('Incomplete DINO cleanup')
             stage('complete');record['status']='PASS'

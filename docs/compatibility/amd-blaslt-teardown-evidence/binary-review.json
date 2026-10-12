@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-12T23:34:42.204922+00:00",
+  "review_type": "Independent static read-only installed-PE binding/map-coverage review",
+  "verified_static_binding": true,
+  "review_scope": "_cuda_clearCublasWorkspaces routing, BLAS and BLASLt workspace-map clearing, locks and DataPtr destruction",
+  "gpu_initialized": false,
+  "torch_imported": false,
+  "dlls_loaded": false,
+  "native_cleanup_invoked": false,
+  "source_or_environment_changed": false,
+  "weights_read": false,
+  "binary_identities": [
+    {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\torch_hip.dll",
+      "size_bytes": 70977024,
+      "sha256": "28ea13f7de8a0480081d44fc27ac693419ec29a96782afccc4b212e472600119"
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\torch_python.dll",
+      "size_bytes": 26755584,
+      "sha256": "f710dc3a3ebb7863fe987d717242c329f66acc73d81578d545e1e99a9bf98171"
+    }
+  ],
+  "tool_identities": [
+    {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\lib\\llvm\\bin\\llvm-objdump.exe",
+      "size_bytes": 25513472,
+      "sha256": "00dddb251144c7cbef84c27b782c50f159ccbe9f1924c3e691ae691405c06d8b"
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\lib\\llvm\\bin\\llvm-readobj.exe",
+      "size_bytes": 7945728,
+      "sha256": "afe634cb2f36b995a6719ba338d977a37832195b230b2136f9e3ba6d95fbccd7"
+    },
+    {
+      "path": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "size_bytes": 104952,
+      "sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a"
+    }
+  ],
+  "version_metadata": {
+    "file_identity": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\version.py",
+      "size_bytes": 332,
+      "sha256": "fe8b454dc43bd9346a83138b48bb9b4a2b7e1a22cc2207f8b257ffd867a87f65"
+    },
+    "version": "2.13.0+rocm10.0.0",
+    "git_version": "6596a0dea537c1c78520c73cc6678214781a9d06",
+    "hip": "7.15.26333",
+    "rocm": "10.0.0",
+    "binary_equivalence_inferred_from_metadata": false
+  },
+  "upstream_reference": [
+    {
+      "url": "https://github.com/pytorch/pytorch/blob/v2.13.0/aten/src/ATen/cuda/CublasHandlePool.cpp",
+      "source_lines_1_based": [
+        122,
+        132
+      ],
+      "finding": "Two exclusive-lock scopes clear the distinct BLAS and BLASLt maps"
+    },
+    {
+      "url": "https://github.com/pytorch/pytorch/blob/v2.13.0/torch/csrc/cuda/Module.cpp",
+      "source_lines_1_based": [
+        1538,
+        1544
+      ],
+      "finding": "Python wrapper calls at::cuda::clearCublasWorkspaces directly"
+    }
+  ],
+  "installed_header_reference": {
+    "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\include\\ATen\\cuda\\CUDAContextLight.h",
+    "source_lines_1_based": [
+      90,
+      98
+    ],
+    "declared_map_value": "std::pair<at::DataPtr, size_t>",
+    "distinct_getter_declarations": true
+  },
+  "preferred_image_base": "0x180000000",
+  "python_method": {
+    "table_start_rva": "0x181ddf0",
+    "table_getter_rva": "0xcee3d0",
+    "entry_rva": "0x181dfb0",
+    "entry_raw_offset": "0x181c5b0",
+    "name_rva": "0x1181c70",
+    "name": "_cuda_clearCublasWorkspaces",
+    "callback_rva": "0xced4c0",
+    "flags": 4,
+    "flags_interpretation": "METH_NOARGS",
+    "doc_pointer": 0,
+    "entry_bytes": "701c188101000000c0d4ce800100000004000000000000000000000000000000"
+  },
+  "routing": {
+    "callback_call_instruction_rva": "0xced4dd",
+    "callback_import_iat_rva": "0x1292b48",
+    "import_dll": "torch_hip.dll",
+    "import_symbol": "?clearCublasWorkspaces@cuda@at@@YAXXZ",
+    "native_export_rva": "0x5ca10"
+  },
+  "native_maps": [
+    {
+      "kind": "BLAS",
+      "getter_rva": "0x5c7d0",
+      "instance_pointer_slot_rva": "0x41dde90",
+      "getter_call_rva": "0x5ca17",
+      "lock_call_rva": "0x5ca26",
+      "tree_erase_call_rva": "0x5ca38",
+      "sentinel_reset_rva": "0x5ca3d",
+      "size_zero_rva": "0x5ca48",
+      "unlock_call_rva": "0x5ca53"
+    },
+    {
+      "kind": "BLASLt",
+      "getter_rva": "0x5c8f0",
+      "instance_pointer_slot_rva": "0x41ddea0",
+      "getter_call_rva": "0x5ca58",
+      "lock_call_rva": "0x5ca67",
+      "tree_erase_call_rva": "0x5ca79",
+      "sentinel_reset_rva": "0x5ca7e",
+      "size_zero_rva": "0x5ca89",
+      "unlock_tail_jump_rva": "0x5ca9b"
+    }
+  ],
+  "lock_routing": {
+    "acquire_stub_rva": "0x297d114",
+    "acquire_import_iat_rva": "0x3bf6078",
+    "acquire_symbol": "KERNEL32.dll!AcquireSRWLockExclusive",
+    "release_stub_rva": "0x297d124",
+    "release_import_iat_rva": "0x3bf60d0",
+    "release_symbol": "KERNEL32.dll!ReleaseSRWLockExclusive"
+  },
+  "deleter": {
+    "tree_erase_rva": "0x62840",
+    "recursive_right_child_call_rva": "0x6287a",
+    "left_child_iteration": true,
+    "node_data_ptr_offset": "0x30",
+    "destructor_address_load_rva": "0x6285b",
+    "destructor_call_rva": "0x62886",
+    "destructor_import_iat_rva": "0x3bf54e8",
+    "destructor_import_dll": "c10.dll",
+    "destructor_import_symbol": "??1DataPtr@c10@@QEAA@XZ",
+    "node_delete_call_rva": "0x62891",
+    "node_size_bytes": 88
+  },
+  "normal_native_path": {
+    "clears_both_maps": true,
+    "destroys_map_values": true,
+    "creates_blas_handles": false,
+    "queries_gpu_devices": false,
+    "changes_workspace_size_override": false,
+    "scope": "both process-wide workspace maps"
+  },
+  "safety_conditions": [
+    "Run only after complete GPU synchronization.",
+    "Use the exclusive worker with no concurrent BLAS work.",
+    "Keep the existing strict zero active/allocated/reserved acceptance test and owned-worker exit checks."
+  ],
+  "limits": [
+    "Static map coverage and Python routing do not prove the native owner of the previously retained 76 MiB allocation.",
+    "Successful future release and driver behavior remain unmeasured; no cleanup or inference was executed during this review.",
+    "Version/git metadata do not authenticate these DLLs against an upstream source checkout.",
+    "Map entries are cleared process-wide; this is not a per-model or per-stream clear."
+  ],
+  "blockers": [],
+  "commands": [
+    [
+      "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\lib\\llvm\\bin\\llvm-objdump.exe",
+      "--disassemble",
+      "--start-address=0x18005c7d0",
+      "--stop-address=0x18005caa0",
+      "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\torch_hip.dll"
+    ],
+    [
+      "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\lib\\llvm\\bin\\llvm-objdump.exe",
+      "--disassemble",
+      "--start-address=0x180062840",
+      "--stop-address=0x1800628b0",
+      "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\torch_hip.dll"
+    ],
+    [
+      "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\lib\\llvm\\bin\\llvm-objdump.exe",
+      "--disassemble",
+      "--start-address=0x18297d114",
+      "--stop-address=0x18297d12c",
+      "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\torch_hip.dll"
+    ],
+    [
+      "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\lib\\llvm\\bin\\llvm-objdump.exe",
+      "--disassemble",
+      "--start-address=0x180ced4c0",
+      "--stop-address=0x180ced504",
+      "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\torch_python.dll"
+    ],
+    [
+      "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\lib\\llvm\\bin\\llvm-objdump.exe",
+      "--disassemble",
+      "--start-address=0x180cee3d0",
+      "--stop-address=0x180cee3d8",
+      "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\torch_python.dll"
+    ]
+  ],
+  "selected_imports": [
+    {
+      "file": "torch_hip.dll",
+      "dll": "KERNEL32.dll",
+      "symbol": "AcquireSRWLockExclusive",
+      "iat_rva": 62873720
+    },
+    {
+      "file": "torch_hip.dll",
+      "dll": "KERNEL32.dll",
+      "symbol": "ReleaseSRWLockExclusive",
+      "iat_rva": 62873808
+    },
+    {
+      "file": "torch_hip.dll",
+      "dll": "c10.dll",
+      "symbol": "??1DataPtr@c10@@QEAA@XZ",
+      "iat_rva": 62870760
+    },
+    {
+      "file": "torch_python.dll",
+      "dll": "torch_hip.dll",
+      "symbol": "?clearCublasWorkspaces@cuda@at@@YAXXZ",
+      "iat_rva": 19475272
+    }
+  ],
+  "verified_instruction_bytes": [
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5ca17",
+      "target_rva": "0x5c7d0",
+      "bytes": "e8b4fdffff"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5ca58",
+      "target_rva": "0x5c8f0",
+      "bytes": "e893feffff"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5ca38",
+      "target_rva": "0x62840",
+      "bytes": "e8035e0000"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5ca79",
+      "target_rva": "0x62840",
+      "bytes": "e8c25d0000"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5ca26",
+      "target_rva": "0x297d114",
+      "bytes": "e8e9069202"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5ca67",
+      "target_rva": "0x297d114",
+      "bytes": "e8a8069202"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5ca53",
+      "target_rva": "0x297d124",
+      "bytes": "e8cc069202"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5ca9b",
+      "target_rva": "0x297d124",
+      "bytes": "e984069202"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x297d114",
+      "target_rva": "0x3bf6078",
+      "bytes": "48ff255d8f2701"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x297d124",
+      "target_rva": "0x3bf60d0",
+      "bytes": "48ff25a58f2701"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x6285b",
+      "target_rva": "0x3bf54e8",
+      "bytes": "4c8b35862cb903"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5c803",
+      "target_rva": "0x41dde90",
+      "bytes": "488b0586161804"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5c923",
+      "target_rva": "0x41ddea0",
+      "bytes": "488b0576151804"
+    },
+    {
+      "file": "torch_python.dll",
+      "instruction_rva": "0xced4dd",
+      "target_rva": "0x1292b48",
+      "bytes": "ff1565565a00"
+    },
+    {
+      "file": "torch_python.dll",
+      "instruction_rva": "0xcee3d0",
+      "target_rva": "0x181ddf0",
+      "bytes": "488d0519fab200"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5ca3d",
+      "bytes": "48895b0848891b48895b1048c7460800000000"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x5ca7e",
+      "bytes": "48895b0848891b48895b1048c7460800000000"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x62882",
+      "bytes": "488d4b30"
+    },
+    {
+      "file": "torch_hip.dll",
+      "instruction_rva": "0x62886",
+      "bytes": "41ffd6"
+    }
+  ],
+  "raw_evidence": {
+    "filename": "binary-review-evidence.txt",
+    "size_bytes": 26826,
+    "sha256": "c11f093dc75d1b9207b83cd93ad96010e8a2e3074f0e6e192fa91fc99e63e379"
+  },
+  "parser_execution": {
+    "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "arguments": [
+      "-I",
+      "-B",
+      "-"
+    ],
+    "packages": "Python standard library only"
+  },
+  "evidence_write_policy": "Exclusive creation of these two new review artifacts only; all input files read-only."
+}

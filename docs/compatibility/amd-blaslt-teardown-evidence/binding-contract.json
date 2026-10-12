@@ -1,0 +1,35 @@
+{
+  "verified_static_binding": true,
+  "binary_review_sha256": "e27920546e1081c0070ce3350a199a98b74ca9f33317dd588d159685febae04a",
+  "sources": {
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\cuda\\memory.py": "223386afe1711b47c0e093aaa2dd7f79666de959867c917638b9d9d7790f952e",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_C\\__init__.pyi": "350f5bd0424d00070b0b18e9c1590f3e9086eb25ed8493cf90d4c33aaabb0d00",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\include\\c10\\cuda\\CUDACachingAllocator.h": "aa7021f8488a66a598c221a80573cef18f56f59a9a88ad629370143fd5d0f24e",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\safetensors\\torch.py": "81f477f2ab5e05e99308fc55ed26028eb2bf36334404e9c5558e4730184483f0",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\safetensors\\_safetensors_rust.pyd": "80a2b3f7658854ade855c5fb6192ee38fe2c7fbfd38d1c7c1f4d2c44f67125e4",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\version.py": "fe8b454dc43bd9346a83138b48bb9b4a2b7e1a22cc2207f8b257ffd867a87f65",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\safetensors\\numpy.py": "8753057d84a821703f94b90b9b7d10a28ec29218ef62085b21b4d79892da9269",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_inductor\\cudagraph_trees.py": "440f88b0b9a97dea494578c399eb12d7724b8abd70fc0a90c19479ea50e7dec5",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\backends\\cuda\\__init__.py": "53e230d7ce11c7e74df49ba5fd0e7ad9a8c836b3379f1a988eae1059b742fb19",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\include\\ATen\\cuda\\CUDAContextLight.h": "3366440e5e1094286cb88a53626cbdc70c4f76720b3aabc130be4ee0b8171f81",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\torch_hip.dll": "28ea13f7de8a0480081d44fc27ac693419ec29a96782afccc4b212e472600119",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\torch_python.dll": "f710dc3a3ebb7863fe987d717242c329f66acc73d81578d545e1e99a9bf98171",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_C.cp312-win_amd64.pyd": "185881e4c0330ed6d743284870ffa1ab0ee350e8943b4028dc37d1ea810fae9c",
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\lib\\c10.dll": "20a6f3d65ebacdb22772ca546a946fbca05ba6f779a0ec501eed30ee255c939d"
+  },
+  "call_contract": {
+    "arguments": 0,
+    "maximum_calls": 1,
+    "phase": "release",
+    "preconditions": [
+      "exclusive owned DINO worker",
+      "all known model/output/cache references released",
+      "completed GPU synchronization"
+    ],
+    "clears": [
+      "BLAS map",
+      "BLASLt map"
+    ],
+    "workspace_sizes_changed": false
+  }
+}

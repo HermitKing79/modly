@@ -1,0 +1,6 @@
+{
+  "returncode": 1,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-blaslt-teardown-evidence\\binding-smoke.py\", line 38, in <module>\n    with (evidence/'cpu-binding.json').open('x',encoding='utf-8') as stream:json.dump(record,stream,indent=2)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\services\\amd_offline_guard.py\", line 130, in audit\n    raise RuntimeError(\"Native import proof forbids file writes: \" + str(args[0]))\nRuntimeError: Native import proof forbids file writes: C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-blaslt-teardown-evidence\\cpu-binding.json\n"
+}
