@@ -1,0 +1,29 @@
+{
+  "python": "3.12.10",
+  "torch": "2.13.0+rocm10.0.0",
+  "gguf_source": "staged existing pure Python gguf 0.19.0",
+  "strategy": "GGMLOpsFallback",
+  "gpu_initialized": false,
+  "synthetic_cpu_blocks": [
+    {
+      "qtype": "Q8_0",
+      "elements": 32,
+      "reference_match": "PASS"
+    },
+    {
+      "qtype": "Q4_K",
+      "elements": 256,
+      "reference_match": "PASS"
+    },
+    {
+      "qtype": "Q5_K",
+      "elements": 256,
+      "reference_match": "PASS"
+    },
+    {
+      "qtype": "Q6_K",
+      "elements": 256,
+      "reference_match": "PASS"
+    }
+  ]
+}

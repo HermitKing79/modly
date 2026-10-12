@@ -1,0 +1,26 @@
+[Registry] MODELS_DIR     = C:\Users\wattz\Documents\ChatGPT\modly\amd-ipc-proof-wuxzs51d\models
+[Registry] WORKSPACE_DIR  = C:\Users\wattz\Documents\ChatGPT\modly\amd-ipc-proof-wuxzs51d\outputs
+[Registry] EXTENSIONS_DIR = C:\Users\wattz\Documents\ChatGPT\modly\amd-ipc-proof-wuxzs51d
+[ExtensionProcess] amd-proof/generate subprocess started (pid 13704)
+[ExtensionProcess] amd-proof/refine subprocess started (pid 11600)
+[ExtensionProcess] trellis2/generate subprocess started (pid 27032)
+{
+  "host_python": "3.11.9",
+  "child_executable_layout": "venv/Scripts/python.exe",
+  "pip_installed": false,
+  "results": [
+    {
+      "node": "generate",
+      "child_python": "3.12.10",
+      "transport": "PASS",
+      "mock_output_suffix": ".json"
+    },
+    {
+      "node": "refine",
+      "child_python": "3.12.10",
+      "transport": "PASS",
+      "mock_output_suffix": ".json"
+    }
+  ],
+  "official_generator_ready": "PASS (ready only; no dependencies or weights loaded)"
+}

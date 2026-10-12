@@ -1,0 +1,386 @@
+{
+  "modly": {
+    "pyvenv_cfg": "home = C:\\Users\\wattz\\AppData\\Local\\Programs\\Modly\\resources\\python-embed\ninclude-system-site-packages = false\nversion = 3.11.9\nexecutable = C:\\Users\\wattz\\Documents\\Modly\\dependencies\\venv\\Scripts\\python.exe\ncommand = C:\\Users\\wattz\\Documents\\Modly\\dependencies\\venv\\Scripts\\python.exe -m venv C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\n",
+    "packages": {
+      "accelerate": {
+        "version": "1.15.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (78.1.1)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "cumesh": {
+        "version": "0.0.1+cu126torch2.11",
+        "wheel": "Wheel-Version: 1.0\nGenerator: bdist_wheel (0.46.3)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "flex-gemm": {
+        "version": "1.0.0+cu126torch2.11",
+        "wheel": "Wheel-Version: 1.0\nGenerator: bdist_wheel (0.46.3)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "gguf": {
+        "version": "0.19.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: poetry-core 2.4.0\nRoot-Is-Purelib: true\nTag: py3-none-any\n"
+      },
+      "numpy": {
+        "version": "2.4.4",
+        "wheel": "Wheel-Version: 1.0\nGenerator: meson\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64"
+      },
+      "nvdiffrast": {
+        "version": "0.4.0+cu126torch2.11",
+        "wheel": "Wheel-Version: 1.0\nGenerator: bdist_wheel (0.46.3)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "o-voxel": {
+        "version": "0.0.1+cu126torch2.11",
+        "wheel": "Wheel-Version: 1.0\nGenerator: bdist_wheel (0.46.3)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "pillow": {
+        "version": "12.2.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.1)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "rocm": {
+        "version": "7.14.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (81.0.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "safetensors": {
+        "version": "0.8.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: maturin (1.13.3)\nRoot-Is-Purelib: false\nTag: cp310-abi3-win_amd64\n"
+      },
+      "sdnq": {
+        "version": "0.2.8",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "torch": {
+        "version": "2.11.0+rocm7.14.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (79.0.1)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "torchvision": {
+        "version": "0.26.0+rocm7.14.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (79.0.1)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      },
+      "transformers": {
+        "version": "5.2.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "triton-windows": {
+        "version": "3.6.0.post26",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.1)\nRoot-Is-Purelib: false\nTag: cp311-cp311-win_amd64\n\n"
+      }
+    },
+    "binaries": [
+      {
+        "path": "cumesh\\_C.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "cudart64_12.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "VCRUNTIME140_1.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll"
+        ]
+      },
+      {
+        "path": "cumesh\\_cubvh.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "cudart64_12.dll",
+          "c10_cuda.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "VCRUNTIME140_1.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll"
+        ]
+      },
+      {
+        "path": "cumesh\\_cumesh_xatlas.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140_1.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-utility-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll"
+        ]
+      },
+      {
+        "path": "flex_gemm\\kernels\\cuda.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "cudart64_12.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140_1.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll"
+        ]
+      },
+      {
+        "path": "o_voxel\\_C.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "cudart64_12.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140_1.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-time-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll"
+        ]
+      },
+      {
+        "path": "_nvdiffrast_c.cp311-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "cudart64_12.dll",
+          "c10_cuda.dll",
+          "MSVCP140.dll",
+          "python311.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140_1.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll"
+        ]
+      }
+    ]
+  },
+  "amd": {
+    "pyvenv_cfg": "home = C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\ninclude-system-site-packages = false\nversion = 3.12.10\nexecutable = C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\ncommand = C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m venv D:\\AI\\Trellis2AMD\\venv\n",
+    "packages": {
+      "cumesh": {
+        "version": "1.0+rocm10.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "flex-gemm": {
+        "version": "1.0.0+rocm10.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "numpy": {
+        "version": "2.5.3",
+        "wheel": "Wheel-Version: 1.0\nGenerator: meson\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64"
+      },
+      "nvdiffrast": {
+        "version": "0.4.0+rocm10.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "o-voxel": {
+        "version": "0.0.1+rocm.10.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "pillow": {
+        "version": "12.3.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.1)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "rocm": {
+        "version": "10.0.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (81.0.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "safetensors": {
+        "version": "0.8.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: maturin (1.13.3)\nRoot-Is-Purelib: false\nTag: cp310-abi3-win_amd64\n"
+      },
+      "torch": {
+        "version": "2.13.0+rocm10.0.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (81.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "torchvision": {
+        "version": "0.28.0+rocm10.0.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (81.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "transformers": {
+        "version": "4.56.0",
+        "wheel": "Wheel-Version: 1.0\nGenerator: bdist_wheel (0.45.1)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      },
+      "triton-windows": {
+        "version": "3.8.0.post29",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-win_amd64\n\n"
+      },
+      "utils3d": {
+        "version": "0.0.2",
+        "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n"
+      }
+    },
+    "binaries": [
+      {
+        "path": "cumesh\\_C.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "amdhip64_7.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-convert-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll"
+        ]
+      },
+      {
+        "path": "cumesh\\_cubvh.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "amdhip64_7.dll",
+          "c10_hip.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-convert-l1-1-0.dll"
+        ]
+      },
+      {
+        "path": "cumesh\\_xatlas.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-utility-l1-1-0.dll"
+        ]
+      },
+      {
+        "path": "flex_gemm\\kernels\\cuda.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "amdhip64_7.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll"
+        ]
+      },
+      {
+        "path": "o_voxel\\_C.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "amdhip64_7.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-time-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll"
+        ]
+      },
+      {
+        "path": "_nvdiffrast_c.cp312-win_amd64.pyd",
+        "machine": "0x8664",
+        "direct_import_dlls": [
+          "c10_hip.dll",
+          "c10.dll",
+          "torch_cpu.dll",
+          "torch_python.dll",
+          "amdhip64_7.dll",
+          "MSVCP140.dll",
+          "python312.dll",
+          "KERNEL32.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll"
+        ]
+      }
+    ]
+  },
+  "source_sha256": {
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\gguf-source\\generator.py": "4f4790202ede5bc4eeed202d1f442d94c6ad8e309c44ef15ebefed76c2580031",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\gguf-source\\setup.py": "5c3e575617bd1774a1f22b1e45cea25b3c1e34ba727a1266aa7262cb098cce98",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\gguf-source\\manifest.json": "9a68634641cd7ef33300fade595ec509d2ef83b00a7bd1a736f35dddbf8a0527",
+    "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\trellis2_gguf\\utils\\gguf_utils.py": "8b2aaabfd8daf0a9d1f19060b2b1d35fb2272fc9fd99d012a2fece6905990bc1",
+    "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\trellis2_gguf\\models\\__init__.py": "1d13f16a287dccdf2ea22ade1436df651927dd4602a24e9a936005d6fff3f0e6",
+    "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\trellis2_gguf\\pipelines\\trellis2_image_to_3d.py": "9be0e4ec4634cf394ea2b13eb5d373eb8372d236fd84c123072f2ffd0fd0df70",
+    "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\trellis2_gguf\\modules\\sparse\\config.py": "6a9cb44608829cb2c11591685282959928c6081c5bc659687aa8395765c5f91b",
+    "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\trellis2_gguf\\modules\\sparse\\attention\\full_attn.py": "3aa90c52afe73af36a1947b4373b96e2505c5a2bff46f4e9b6bdbf1aefef9238",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\nodes.py": "d310c97f3f7ff187cd581ed01ea3dbd6217fddb8ad9d59b12bd7c485f93821be",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\__init__.py": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_image_to_3d.py": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\config.py": "525ed9a516bc9576712cce9896a52a0ec9667ba7dc4aa13f24ee6a83353cb722",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\attention\\full_attn.py": "045aabe973d405cb16f8a1a71c5b4d8f76988c99b4e333c29bbc12d51d0cf4b1"
+  }
+}

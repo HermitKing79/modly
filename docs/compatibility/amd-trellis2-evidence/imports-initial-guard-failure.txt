@@ -1,0 +1,48 @@
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_trellis2_audit.py", line 161, in <module>
+    main()
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_trellis2_audit.py", line 156, in main
+    result = inventory(args) if args.mode == "inventory" else imports() if args.mode == "imports" else gguf_cpu(args)
+                                                              ^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_trellis2_audit.py", line 96, in imports
+    import torch
+  File "D:\AI\Trellis2AMD\venv\Lib\site-packages\torch\__init__.py", line 163, in <module>
+    _rocm_init.initialize()
+  File "D:\AI\Trellis2AMD\venv\Lib\site-packages\torch\_rocm_init.py", line 4, in initialize
+    rocm_sdk.initialize_process(
+  File "D:\AI\Trellis2AMD\venv\Lib\site-packages\rocm_sdk\__init__.py", line 145, in initialize_process
+    preload_libraries(*preload_shortnames, rtld_global=rtld_global)
+  File "D:\AI\Trellis2AMD\venv\Lib\site-packages\rocm_sdk\__init__.py", line 111, in preload_libraries
+    paths = find_libraries(shortname)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\Trellis2AMD\venv\Lib\site-packages\rocm_sdk\__init__.py", line 34, in find_libraries
+    is_windows = platform.system() == "Windows"
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\platform.py", line 987, in system
+    return uname().system
+           ^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\platform.py", line 922, in uname
+    release, version, csd, ptype = win32_ver()
+                                   ^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\platform.py", line 450, in win32_ver
+    version, csd, ptype, is_client = _win32_ver(version, csd, ptype)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\platform.py", line 414, in _win32_ver
+    version = _syscmd_ver()[2]
+              ^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\platform.py", line 283, in _syscmd_ver
+    info = subprocess.check_output(cmd,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1534, in _execute_child
+    sys.audit("subprocess.Popen", executable, args, cwd, env)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_trellis2_audit.py", line 86, in audit
+    raise RuntimeError("Proof forbids external process/network action: " + event)
+RuntimeError: Proof forbids external process/network action: subprocess.Popen
