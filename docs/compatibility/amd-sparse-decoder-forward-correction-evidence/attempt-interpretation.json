@@ -1,0 +1,47 @@
+{
+  "classification": "PARTIAL",
+  "harness_commit": "1bfb7ba3091dd314a03a138f479f301ee7243548",
+  "failure_boundary": "30-second authorized GPU-stage deadline; last durable stage single-forward",
+  "supervisor_error": "Empty()",
+  "process_exit": 1,
+  "forced_tree_cleanup": true,
+  "worker_exit_verified": true,
+  "observer_healthy": true,
+  "guard_exception_captured": false,
+  "native_exception_captured": false,
+  "stderr_bytes": 0,
+  "cpu_gate": {
+    "strict": true,
+    "entries": 74,
+    "checkpoint_load_seconds": 1.3280000000004293,
+    "gpu_initialized": false,
+    "memory_before": {
+      "working_set_bytes": 419655680,
+      "private_commit_bytes": 846364672,
+      "peak_working_set_bytes": 419655680,
+      "peak_commit_bytes": 846364672
+    },
+    "memory_after": {
+      "working_set_bytes": 640729088,
+      "private_commit_bytes": 1083887616,
+      "peak_working_set_bytes": 788234240,
+      "peak_commit_bytes": 1231777792
+    }
+  },
+  "stages": [
+    "decoder-import",
+    "strict-CPU-load",
+    "waiting-for-observer",
+    "GPU-metadata",
+    "decoder-placement",
+    "input-transfer",
+    "single-forward"
+  ],
+  "control_flow_inference": "Reaching single-forward requires model placement, input copy, synchronize and input metadata checks to have completed",
+  "root_forward_call_count": null,
+  "output": null,
+  "gpu_memory_measurements": null,
+  "worker_release_measurements": null,
+  "missing_final_result": "Raw results.json retains its default NOT ATTEMPTED worker placeholder when no final message arrives; durable stages and CPU gate establish that an attempt occurred",
+  "retry_performed": false
+}

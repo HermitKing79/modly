@@ -1,0 +1,36 @@
+{
+  "classification": "PARTIAL",
+  "observer_healthy": true,
+  "checkpoint_unchanged": true,
+  "worker": {
+    "status": "NOT ATTEMPTED",
+    "stage": "before-launch"
+  },
+  "process": {
+    "returncode": 1,
+    "timed_out": true,
+    "pid": 3232,
+    "command": [
+      "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_decoder_forward.py",
+      "--worker",
+      "--output",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-decoder-forward-correction-evidence\\run\\scratch"
+    ],
+    "harness_commit": "1bfb7ba3091dd314a03a138f479f301ee7243548",
+    "last_stage": "single-forward",
+    "error": "Empty()",
+    "forced_cleanup": true,
+    "tree_cleanup": {
+      "returncode": 0,
+      "stdout": "SUCCESS: The process with PID 2896 (child process of PID 3232) has been terminated.\r\nSUCCESS: The process with PID 3232 (child process of PID 11688) has been terminated.\r\n",
+      "stderr": "",
+      "timed_out": false,
+      "elapsed_seconds": 0.234
+    },
+    "worker_exit_verified": true,
+    "output_readers_completed": true
+  }
+}
