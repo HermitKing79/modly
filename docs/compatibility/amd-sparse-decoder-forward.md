@@ -1,14 +1,20 @@
 # One minimal real AMD sparse-decoder forward
 
-**Pre-attempt publication: GPU execution NOT ATTEMPTED.** This snapshot publishes
-the bounded harness, CPU tests and preservation evidence before the single
-approved real run. Final classification/results will be added after that attempt.
+**PARTIAL — 12 October 2026.** The single approved attempt stopped at the
+synthetic input transfer because the harness rejected `aten.to.dtype_layout`.
+Strict CPU loading and decoder placement succeeded, but **zero decoder forwards
+executed**. This is a test-guard boundary, not evidence of an AMD forward failure.
+The consumed attempt was not retried and the guard was not relaxed after failure.
 
 Branch `codex/amd-sparse-decoder-forward` starts at
 `74f63c844e94da5b4a0742e5fe7ada9355ba3c13`. The
 [geometry-loader report](amd-offline-alpha-geometry-loader.md) and
 [sparse-decoder loading proof](amd-sparse-decoder-loading-proof.md) were read first.
 Application workers and production mock behavior are unchanged.
+The reviewed harness was committed and verified on GitHub at
+[`550a7ae00d2f9a306f2e7c0661b6767ef94c5614`](https://github.com/HermitKing79/modly/commit/550a7ae00d2f9a306f2e7c0661b6767ef94c5614)
+before any real GPU attempt; the supervisor verified 14 executed local dependency
+files against that commit. Final evidence is published in a subsequent commit.
 
 ## Inspected operation
 
@@ -76,11 +82,62 @@ Before inventories preserve both installed environments, model/cache metadata,
 selected native/source hashes and existing AMD source edits. Main and all previous
 branches remain unchanged. No installation, download or native rebuild occurred.
 
-## Pending single attempt
+## Exact single-attempt result
 
-After verifying this harness commit on GitHub, run the existing AMD Python worker
-once through the supervisor. Record strict loading, placement, one synchronized
-forward, output/statistics, VRAM, weak-reference release, worker exit and Windows
-observations. Stop on any error, timeout, reset or native crash without retry.
-Even a PASS will establish only this decoder operation on this tiny synthetic
-latent, not image conditioning, full geometry generation, textures or CuMesh 719.
+[Complete result](amd-sparse-decoder-forward-evidence/run/results.json), durable
+stdout/stderr and the three Windows observer captures preserve the diagnostic.
+Runtime was Python 3.12.10, PyTorch 2.13.0+rocm10.0.0, HIP 7.15.26333, CUDA null,
+from the existing AMD venv. GPU identity was RX 9070 XT / gfx1201.
+
+| Operation | Actual result |
+|---|---|
+| Strict CPU checkpoint load | Once, 1.797s, all 74 tensors and payload hashes matched, no missing/unexpected entries; GPU uninitialized |
+| CPU memory after load | 611.14 MiB working set, 1,033.67 MiB private commit; peaks 751.82 / 1,174.71 MiB |
+| GPU baseline | 0 allocated / 0 reserved, 16,152.94 MiB available before placement |
+| Decoder placement | Completed in 0.203s; synchronized and all tensor GPU schemas validated |
+| Synthetic input transfer | Rejected before execution: `Unapproved GPU operation outside forward: aten.to.dtype_layout` |
+| Root/permit forward counts | Both 0; no warm-up or decoder forward |
+| Output / finite statistics | Absent; no output tensor was produced |
+| Forward/after-placement/after-release VRAM | Not recorded after the rejected copy; no zero-allocation cleanup claim |
+| Worker | Exit 1, 8.438s; reaped, output readers finished, no timeout or forced cleanup |
+| Observers | All three healthy, controller OK, driver 32.0.31041.1004, no queried reset/error events |
+
+The error occurred at `latent = cpu_input.to('cuda:0')` within inference mode.
+The transfer whitelist reused from the earlier placement proof permits
+`aten._to_copy`, copies/allocation bookkeeping and detach/alias operations; this
+input-copy dispatch used the additional `aten.to.dtype_layout` overload. The
+guard raised before calling the operation and before consuming the forward
+permit. The stage label remains `decoder-placement`; the traceback pinpoints
+the subsequent input transfer. No native crash, error 719, reset or unsupported
+decoder math was observed. CPU tests did not cover this actual GPU dispatch path.
+
+On the error path, owned references were dropped and the worker exited. No
+further model computation or explicit GPU memory query was issued to prove allocator or global VRAM
+recovery after failure; process termination is verified, measured tensor-release
+acceptance remains unfulfilled. A PASS is therefore explicitly rejected.
+
+SDK discovery ran once, returned the previously known missing-devel error in
+1.656s, and was handled during import. No package repair occurred. Six native
+runtime cache artifacts / 148,712 bytes appeared only in workspace scratch
+([inventory](amd-sparse-decoder-forward-evidence/scratch-side-effects.json)); they
+remain local and ignored. This is not a claim of zero internal driver/cache
+activity. No installed GPU library was rebuilt and no GLB was exported.
+
+## Preservation and next step
+
+[Before/after preservation](amd-sparse-decoder-forward-evidence/preservation.json)
+verifies byte-identical environment/dependency records and raw compressed file/
+model/cache metadata, selected native/source hashes and all previous branch heads. Checkpoint
+before/after records are identical. The existing `M nodes.py` and untracked
+`nodes.py.before-profiler-fix` remain intact. Both installed environments, model
+weights and production mock routes were preserved. No installations, downloads,
+source edits or additional checkpoints occurred.
+
+The next prerequisite is to inspect and narrowly admit the exact input-copy
+overload, with transfer-only CPU regression coverage and another pre-published
+harness. A **fresh single-forward attempt requires separate approval**. No retry
+or speculative guard change was made in this milestone. After that forward
+passes, the shortest image-to-geometry path is offline alpha/DINO conditioning
+followed by the local 512 sparse-flow/decoder stages, each under separately
+approved model-load/execution scopes. Real generation, texturing and CuMesh 719
+remain unresolved. Stop here.

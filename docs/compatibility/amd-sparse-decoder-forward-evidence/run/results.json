@@ -1,0 +1,1831 @@
+{
+  "classification": "PARTIAL",
+  "observer_healthy": true,
+  "checkpoint_unchanged": true,
+  "worker": {
+    "status": "FAIL",
+    "stage": "decoder-placement",
+    "forward_calls": 0,
+    "sdk_discovery": [
+      {
+        "command": [
+          "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+          "path",
+          "--root"
+        ],
+        "timeout_seconds": 5.0,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "ERROR: Could not load the `rocm[devel]` package, which is required to access runtime tools and development files. Please install it with your package manager (pip, uv, etc)\r\nERROR: rocm_sdk_devel module for the ROCm SDK development package is not installed. This can typically be obtained by installing `rocm[devel]` from your package manager\r\n",
+        "elapsed_seconds": 1.656
+      }
+    ],
+    "sdk_verification": {
+      "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+      "executable_sha256": "95ba504bd187d810fba48cf25f094629d1e17dc67e384706ffb2621f2b869e4c",
+      "source_sha256": {
+        "rocm_sdk/__main__.py": "da3cf689993144403ebd20543c26d2aae20b0298acb81f590df9e78997c9fbf2",
+        "rocm_sdk/_devel.py": "608314f7e710bc44e93e3f8b5c729b5072656d15b463ff98123b826d347f1af6",
+        "rocm_sdk/_dist_info.py": "de0065098100898af4ffc558f0d54190d89923840bc074c4c194673d0915206d",
+        "rocm_sdk/__init__.py": "ed87e36cc153b7811133fb934ff1f018114c394f32a56aa040663ef66c147c3d",
+        "triton/backends/amd/driver.py": "048f3915c6942e64c7c84eb47c62f265ad10e6be4584940fe0530f5a630b23f5"
+      },
+      "developer_package_present": false,
+      "safe_branch": "ModuleNotFoundError before expansion/link reconciliation"
+    },
+    "verified_support_source": {
+      "trellis2": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\__init__.py",
+        "sha256": "b953c8a82e54705708a115dd0e53b7ca5ccf45b71517463a5e9b8e0de318ee43"
+      },
+      "trellis2.models": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\__init__.py",
+        "sha256": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683"
+      },
+      "trellis2.models.sparse_structure_vae": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sparse_structure_vae.py",
+        "sha256": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857"
+      },
+      "trellis2.modules.norm": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\norm.py",
+        "sha256": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00"
+      },
+      "trellis2.modules.sparse": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\__init__.py",
+        "sha256": "7bb5f88b769568fc59fd07d208d44c58d2a3a7e22609da6dcb8de573fe1138e7"
+      },
+      "trellis2.modules.sparse.basic": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\basic.py",
+        "sha256": "e867e429b9c2fe154000725596b626273fb567025b9c232f3cc79140f00605b7"
+      },
+      "trellis2.modules.sparse.config": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\config.py",
+        "sha256": "525ed9a516bc9576712cce9896a52a0ec9667ba7dc4aa13f24ee6a83353cb722"
+      },
+      "trellis2.modules.sparse.conv": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\__init__.py",
+        "sha256": "da50648b5c8975ab8eb9574df2582d5c0dc03ddc102d301052003ef65af399e2"
+      },
+      "trellis2.modules.sparse.conv.config": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\config.py",
+        "sha256": "ed6505a70dcc94785ce6d8f2e9d40dff3a0edc39e5d2bceea60128f9ed48332b"
+      },
+      "trellis2.modules.sparse.conv.conv": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\conv.py",
+        "sha256": "a1e9f62fdf70f5443967a81b4ca99c0c863d20b063b44ffe264b0fd68bf3e5e3"
+      },
+      "trellis2.modules.sparse.linear": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\linear.py",
+        "sha256": "05cb619ff9cceb27674fc7bbb5aa2bcba93d1bf328d1f3340bb98c0f1240b413"
+      },
+      "trellis2.modules.spatial": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\spatial.py",
+        "sha256": "4a029d5077bb0a5412ee5eceb8de21d3b4c8920a8f53d477441c3c3219a0da3c"
+      },
+      "trellis2.modules.utils": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\utils.py",
+        "sha256": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e"
+      },
+      "trellis2.pipelines": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\__init__.py",
+        "sha256": "88946215d43bc6e8c095b40dc3de9ea76bb4fb4d175d0228829ec865bb790ba9"
+      },
+      "trellis2.renderers": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\renderers\\__init__.py",
+        "sha256": "53d28a650ef53022270d4a6e9e4a8f66714b1cf8edef0b1d7303e1eb8290a576"
+      },
+      "trellis2.representations": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\representations\\__init__.py",
+        "sha256": "861585d0d741e2cb592cef0d252ccc08fe414356fb44f7e84a79185eed841d28"
+      },
+      "trellis2.utils": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "checkpoint_identity": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS-image-large\\ckpts\\ss_dec_conv3d_16l8_fp16.safetensors",
+      "file_bytes": 147591972,
+      "mtime_ns": 1791274804653166600,
+      "header_bytes": 6552,
+      "bytes_read": 6560,
+      "tensor_data_bytes": 147585412,
+      "header_sha256": "fb31e5d5ff5d51b91bdab639fa919853e9aaaaf06e4a4e69a918af2799c64b94",
+      "tensor_count": 74,
+      "parameter_count": 73671201,
+      "dtypes": {
+        "F32": 38,
+        "F16": 36
+      },
+      "metadata_only_fixture": false,
+      "metadata": {},
+      "tensors": {
+        "blocks.0.norm1.bias": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            0,
+            2048
+          ]
+        },
+        "blocks.0.norm1.weight": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            2048,
+            4096
+          ]
+        },
+        "blocks.0.norm2.bias": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            4096,
+            6144
+          ]
+        },
+        "blocks.0.norm2.weight": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            6144,
+            8192
+          ]
+        },
+        "blocks.1.norm1.bias": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            8192,
+            10240
+          ]
+        },
+        "blocks.1.norm1.weight": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            10240,
+            12288
+          ]
+        },
+        "blocks.1.norm2.bias": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            12288,
+            14336
+          ]
+        },
+        "blocks.1.norm2.weight": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            14336,
+            16384
+          ]
+        },
+        "blocks.3.norm1.bias": {
+          "dtype": "F32",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            16384,
+            16896
+          ]
+        },
+        "blocks.3.norm1.weight": {
+          "dtype": "F32",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            16896,
+            17408
+          ]
+        },
+        "blocks.3.norm2.bias": {
+          "dtype": "F32",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            17408,
+            17920
+          ]
+        },
+        "blocks.3.norm2.weight": {
+          "dtype": "F32",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            17920,
+            18432
+          ]
+        },
+        "blocks.4.norm1.bias": {
+          "dtype": "F32",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            18432,
+            18944
+          ]
+        },
+        "blocks.4.norm1.weight": {
+          "dtype": "F32",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            18944,
+            19456
+          ]
+        },
+        "blocks.4.norm2.bias": {
+          "dtype": "F32",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            19456,
+            19968
+          ]
+        },
+        "blocks.4.norm2.weight": {
+          "dtype": "F32",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            19968,
+            20480
+          ]
+        },
+        "blocks.6.norm1.bias": {
+          "dtype": "F32",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            20480,
+            20608
+          ]
+        },
+        "blocks.6.norm1.weight": {
+          "dtype": "F32",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            20608,
+            20736
+          ]
+        },
+        "blocks.6.norm2.bias": {
+          "dtype": "F32",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            20736,
+            20864
+          ]
+        },
+        "blocks.6.norm2.weight": {
+          "dtype": "F32",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            20864,
+            20992
+          ]
+        },
+        "blocks.7.norm1.bias": {
+          "dtype": "F32",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            20992,
+            21120
+          ]
+        },
+        "blocks.7.norm1.weight": {
+          "dtype": "F32",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            21120,
+            21248
+          ]
+        },
+        "blocks.7.norm2.bias": {
+          "dtype": "F32",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            21248,
+            21376
+          ]
+        },
+        "blocks.7.norm2.weight": {
+          "dtype": "F32",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            21376,
+            21504
+          ]
+        },
+        "input_layer.bias": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            21504,
+            23552
+          ]
+        },
+        "input_layer.weight": {
+          "dtype": "F32",
+          "shape": [
+            512,
+            8,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            23552,
+            465920
+          ]
+        },
+        "middle_block.0.norm1.bias": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            465920,
+            467968
+          ]
+        },
+        "middle_block.0.norm1.weight": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            467968,
+            470016
+          ]
+        },
+        "middle_block.0.norm2.bias": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            470016,
+            472064
+          ]
+        },
+        "middle_block.0.norm2.weight": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            472064,
+            474112
+          ]
+        },
+        "middle_block.1.norm1.bias": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            474112,
+            476160
+          ]
+        },
+        "middle_block.1.norm1.weight": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            476160,
+            478208
+          ]
+        },
+        "middle_block.1.norm2.bias": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            478208,
+            480256
+          ]
+        },
+        "middle_block.1.norm2.weight": {
+          "dtype": "F32",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            480256,
+            482304
+          ]
+        },
+        "out_layer.0.bias": {
+          "dtype": "F32",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            482304,
+            482432
+          ]
+        },
+        "out_layer.0.weight": {
+          "dtype": "F32",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            482432,
+            482560
+          ]
+        },
+        "out_layer.2.bias": {
+          "dtype": "F32",
+          "shape": [
+            1
+          ],
+          "data_offsets": [
+            482560,
+            482564
+          ]
+        },
+        "out_layer.2.weight": {
+          "dtype": "F32",
+          "shape": [
+            1,
+            32,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            482564,
+            486020
+          ]
+        },
+        "blocks.0.conv1.bias": {
+          "dtype": "F16",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            486020,
+            487044
+          ]
+        },
+        "blocks.0.conv1.weight": {
+          "dtype": "F16",
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            487044,
+            14642820
+          ]
+        },
+        "blocks.0.conv2.bias": {
+          "dtype": "F16",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            14642820,
+            14643844
+          ]
+        },
+        "blocks.0.conv2.weight": {
+          "dtype": "F16",
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            14643844,
+            28799620
+          ]
+        },
+        "blocks.1.conv1.bias": {
+          "dtype": "F16",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            28799620,
+            28800644
+          ]
+        },
+        "blocks.1.conv1.weight": {
+          "dtype": "F16",
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            28800644,
+            42956420
+          ]
+        },
+        "blocks.1.conv2.bias": {
+          "dtype": "F16",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            42956420,
+            42957444
+          ]
+        },
+        "blocks.1.conv2.weight": {
+          "dtype": "F16",
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            42957444,
+            57113220
+          ]
+        },
+        "blocks.2.conv.bias": {
+          "dtype": "F16",
+          "shape": [
+            1024
+          ],
+          "data_offsets": [
+            57113220,
+            57115268
+          ]
+        },
+        "blocks.2.conv.weight": {
+          "dtype": "F16",
+          "shape": [
+            1024,
+            512,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            57115268,
+            85426820
+          ]
+        },
+        "blocks.3.conv1.bias": {
+          "dtype": "F16",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            85426820,
+            85427076
+          ]
+        },
+        "blocks.3.conv1.weight": {
+          "dtype": "F16",
+          "shape": [
+            128,
+            128,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            85427076,
+            86311812
+          ]
+        },
+        "blocks.3.conv2.bias": {
+          "dtype": "F16",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            86311812,
+            86312068
+          ]
+        },
+        "blocks.3.conv2.weight": {
+          "dtype": "F16",
+          "shape": [
+            128,
+            128,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            86312068,
+            87196804
+          ]
+        },
+        "blocks.4.conv1.bias": {
+          "dtype": "F16",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            87196804,
+            87197060
+          ]
+        },
+        "blocks.4.conv1.weight": {
+          "dtype": "F16",
+          "shape": [
+            128,
+            128,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            87197060,
+            88081796
+          ]
+        },
+        "blocks.4.conv2.bias": {
+          "dtype": "F16",
+          "shape": [
+            128
+          ],
+          "data_offsets": [
+            88081796,
+            88082052
+          ]
+        },
+        "blocks.4.conv2.weight": {
+          "dtype": "F16",
+          "shape": [
+            128,
+            128,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            88082052,
+            88966788
+          ]
+        },
+        "blocks.5.conv.bias": {
+          "dtype": "F16",
+          "shape": [
+            256
+          ],
+          "data_offsets": [
+            88966788,
+            88967300
+          ]
+        },
+        "blocks.5.conv.weight": {
+          "dtype": "F16",
+          "shape": [
+            256,
+            128,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            88967300,
+            90736772
+          ]
+        },
+        "blocks.6.conv1.bias": {
+          "dtype": "F16",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            90736772,
+            90736836
+          ]
+        },
+        "blocks.6.conv1.weight": {
+          "dtype": "F16",
+          "shape": [
+            32,
+            32,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            90736836,
+            90792132
+          ]
+        },
+        "blocks.6.conv2.bias": {
+          "dtype": "F16",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            90792132,
+            90792196
+          ]
+        },
+        "blocks.6.conv2.weight": {
+          "dtype": "F16",
+          "shape": [
+            32,
+            32,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            90792196,
+            90847492
+          ]
+        },
+        "blocks.7.conv1.bias": {
+          "dtype": "F16",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            90847492,
+            90847556
+          ]
+        },
+        "blocks.7.conv1.weight": {
+          "dtype": "F16",
+          "shape": [
+            32,
+            32,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            90847556,
+            90902852
+          ]
+        },
+        "blocks.7.conv2.bias": {
+          "dtype": "F16",
+          "shape": [
+            32
+          ],
+          "data_offsets": [
+            90902852,
+            90902916
+          ]
+        },
+        "blocks.7.conv2.weight": {
+          "dtype": "F16",
+          "shape": [
+            32,
+            32,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            90902916,
+            90958212
+          ]
+        },
+        "middle_block.0.conv1.bias": {
+          "dtype": "F16",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            90958212,
+            90959236
+          ]
+        },
+        "middle_block.0.conv1.weight": {
+          "dtype": "F16",
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            90959236,
+            105115012
+          ]
+        },
+        "middle_block.0.conv2.bias": {
+          "dtype": "F16",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            105115012,
+            105116036
+          ]
+        },
+        "middle_block.0.conv2.weight": {
+          "dtype": "F16",
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            105116036,
+            119271812
+          ]
+        },
+        "middle_block.1.conv1.bias": {
+          "dtype": "F16",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            119271812,
+            119272836
+          ]
+        },
+        "middle_block.1.conv1.weight": {
+          "dtype": "F16",
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            119272836,
+            133428612
+          ]
+        },
+        "middle_block.1.conv2.bias": {
+          "dtype": "F16",
+          "shape": [
+            512
+          ],
+          "data_offsets": [
+            133428612,
+            133429636
+          ]
+        },
+        "middle_block.1.conv2.weight": {
+          "dtype": "F16",
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "data_offsets": [
+            133429636,
+            147585412
+          ]
+        }
+      },
+      "config": {
+        "name": "SparseStructureDecoder",
+        "args": {
+          "out_channels": 1,
+          "latent_channels": 8,
+          "num_res_blocks": 2,
+          "num_res_blocks_middle": 2,
+          "channels": [
+            512,
+            128,
+            32
+          ],
+          "use_fp16": true
+        }
+      },
+      "source_module": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sparse_structure_vae.py",
+      "source_module_sha256": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857",
+      "checkpoint_sha256": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a",
+      "config_sha256": "646781293f1cda74720de85d1cef50a957fb4aebd9a4bd014e454e32f2330ac5"
+    },
+    "fixture": {
+      "input_shape": [
+        1,
+        8,
+        1,
+        1,
+        1
+      ],
+      "output_shape": [
+        1,
+        1,
+        4,
+        4,
+        4
+      ],
+      "input_dtype": "torch.float32",
+      "output_dtype": "torch.float32",
+      "values": [
+        -0.875,
+        -0.625,
+        -0.375,
+        -0.125,
+        0.125,
+        0.375,
+        0.625,
+        0.875
+      ]
+    },
+    "runtime": {
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "torch": "2.13.0+rocm10.0.0",
+      "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+      "hip": "7.15.26333",
+      "cuda": null
+    },
+    "load_calls": 1,
+    "cpu_load": {
+      "status": "PASS",
+      "elapsed_seconds": 1.7970000000000255,
+      "strict": true,
+      "assign": true,
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "gpu_initialized": false,
+      "parameter_bytes": 147585412,
+      "tensors": {
+        "input_layer.weight": {
+          "shape": [
+            512,
+            8,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "input_layer.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.0.norm1.weight": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.0.norm1.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.0.norm2.weight": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.0.norm2.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.0.conv1.weight": {
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.0.conv1.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.0.conv2.weight": {
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.0.conv2.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.1.norm1.weight": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.1.norm1.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.1.norm2.weight": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.1.norm2.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.1.conv1.weight": {
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.1.conv1.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.1.conv2.weight": {
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "middle_block.1.conv2.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.0.norm1.weight": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.0.norm1.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.0.norm2.weight": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.0.norm2.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.0.conv1.weight": {
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.0.conv1.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.0.conv2.weight": {
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.0.conv2.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.1.norm1.weight": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.1.norm1.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.1.norm2.weight": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.1.norm2.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.1.conv1.weight": {
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.1.conv1.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.1.conv2.weight": {
+          "shape": [
+            512,
+            512,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.1.conv2.bias": {
+          "shape": [
+            512
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.2.conv.weight": {
+          "shape": [
+            1024,
+            512,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.2.conv.bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.3.norm1.weight": {
+          "shape": [
+            128
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.3.norm1.bias": {
+          "shape": [
+            128
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.3.norm2.weight": {
+          "shape": [
+            128
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.3.norm2.bias": {
+          "shape": [
+            128
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.3.conv1.weight": {
+          "shape": [
+            128,
+            128,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.3.conv1.bias": {
+          "shape": [
+            128
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.3.conv2.weight": {
+          "shape": [
+            128,
+            128,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.3.conv2.bias": {
+          "shape": [
+            128
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.4.norm1.weight": {
+          "shape": [
+            128
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.4.norm1.bias": {
+          "shape": [
+            128
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.4.norm2.weight": {
+          "shape": [
+            128
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.4.norm2.bias": {
+          "shape": [
+            128
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.4.conv1.weight": {
+          "shape": [
+            128,
+            128,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.4.conv1.bias": {
+          "shape": [
+            128
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.4.conv2.weight": {
+          "shape": [
+            128,
+            128,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.4.conv2.bias": {
+          "shape": [
+            128
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.5.conv.weight": {
+          "shape": [
+            256,
+            128,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.5.conv.bias": {
+          "shape": [
+            256
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.6.norm1.weight": {
+          "shape": [
+            32
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.6.norm1.bias": {
+          "shape": [
+            32
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.6.norm2.weight": {
+          "shape": [
+            32
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.6.norm2.bias": {
+          "shape": [
+            32
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.6.conv1.weight": {
+          "shape": [
+            32,
+            32,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.6.conv1.bias": {
+          "shape": [
+            32
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.6.conv2.weight": {
+          "shape": [
+            32,
+            32,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.6.conv2.bias": {
+          "shape": [
+            32
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.7.norm1.weight": {
+          "shape": [
+            32
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.7.norm1.bias": {
+          "shape": [
+            32
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.7.norm2.weight": {
+          "shape": [
+            32
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.7.norm2.bias": {
+          "shape": [
+            32
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.7.conv1.weight": {
+          "shape": [
+            32,
+            32,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.7.conv1.bias": {
+          "shape": [
+            32
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.7.conv2.weight": {
+          "shape": [
+            32,
+            32,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "blocks.7.conv2.bias": {
+          "shape": [
+            32
+          ],
+          "dtype": "F16",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "out_layer.0.weight": {
+          "shape": [
+            32
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "out_layer.0.bias": {
+          "shape": [
+            32
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "out_layer.2.weight": {
+          "shape": [
+            1,
+            32,
+            3,
+            3,
+            3
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        },
+        "out_layer.2.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "F32",
+          "device": "cpu",
+          "is_meta": false
+        }
+      },
+      "memory_before": {
+        "working_set_bytes": 418983936,
+        "private_commit_bytes": 845455360,
+        "peak_working_set_bytes": 418983936,
+        "peak_commit_bytes": 845455360
+      },
+      "memory_after": {
+        "working_set_bytes": 640831488,
+        "private_commit_bytes": 1083879424,
+        "peak_working_set_bytes": 788336640,
+        "peak_commit_bytes": 1231769600
+      },
+      "loader_diagnostics": {
+        "weights_loaded": true,
+        "device": "cpu",
+        "strict": true,
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "entries": 74,
+        "payload_sha256": {
+          "input_layer.weight": "32cbedd0c28eea2a68df9bf8a8ad383538fb2476c180dbaa7928a1ce0db54154",
+          "input_layer.bias": "6386179124c6a4b848a5b3d887f54685a79a4fb5d2d60c2b40d754b7856b017c",
+          "middle_block.0.norm1.weight": "e2518f458fe2764d607c4fff7afb0b04e8a275c1b8f6b39df36fab703b8835db",
+          "middle_block.0.norm1.bias": "0e59aed64f29c775a8f08ce59139988f7169370e39b66e5cc0117530005a1801",
+          "middle_block.0.norm2.weight": "2ae8c233552a8366de396aa47cf74ad6ed1c7220461a828eb6b0aaee4515f99b",
+          "middle_block.0.norm2.bias": "4d4f9b02c39b3e4b2fc55bb76297e7a7a7d31a636081907415ac232fa871eefe",
+          "middle_block.0.conv1.weight": "eab4c7f78d966e0bdad03cee76cabe92c6c067048a8f212e94fcffd179fcf868",
+          "middle_block.0.conv1.bias": "b97d385084a081b654d3c537a9f4fe63810a96013b31f6a562604e2dbee97270",
+          "middle_block.0.conv2.weight": "3dc7f2a365e8d57fb63d8482d5bb1029f1028c31eb88b358167978d1a93d7291",
+          "middle_block.0.conv2.bias": "002ae303cf523d906f44b71de0a505c17eb69f81ca3cb6e8d64fec6fcb73b4b9",
+          "middle_block.1.norm1.weight": "290f22b505d5915d10e89591ea742c5ac2981405e751786dc7f27d7f35427bc2",
+          "middle_block.1.norm1.bias": "d96c075e7406d265892f9a7c56c596c4247c074871fb18f7b0d702dddb8fcb1a",
+          "middle_block.1.norm2.weight": "27a0153b15ceeb90fb73bc4f710ce4d605aa8d29dcce2ea653c7cd27f0e2a1b5",
+          "middle_block.1.norm2.bias": "99a664d411d6f4834d45d2666b0fc1d75e99032ab450f384a37bcc25b8a611f5",
+          "middle_block.1.conv1.weight": "9f4707cbc0808830d29fb0be1a1027ecf82b129ea6213218f89064826075e52c",
+          "middle_block.1.conv1.bias": "7f021ba5f3fdad3ccbc94f4667bc4d2d69286d939e303d54251ada38f35d2886",
+          "middle_block.1.conv2.weight": "d121b2797f88618c829eaaef72a7656f38ef6f6f1e383ab1f92f66066ebef654",
+          "middle_block.1.conv2.bias": "784f68feb2eec075ee634e3690e3e4c098e086a764d39dd420dc36bf5b304969",
+          "blocks.0.norm1.weight": "3d8afca8ebb9774352c886acf1f73b3b9a0862ba6d27b7324ed77d7ff6313cb8",
+          "blocks.0.norm1.bias": "c5056ca2b1dbaad54c6c5ed669126a5526481b27d84acce04dba231644f2993c",
+          "blocks.0.norm2.weight": "0e2d55fcf8cbbc44a1fdbce8cb1e2c43afd1fc82aa0975dd9434a0d3ee2890a3",
+          "blocks.0.norm2.bias": "eb5889310f5ad5fef19e5b5746dd2703b5abe15f2e70ebfa9fc7c956cd7758dc",
+          "blocks.0.conv1.weight": "0275200569dbce2c877fb98b48669bca2ea4f74dbc954f495feddfecd661f741",
+          "blocks.0.conv1.bias": "76a9695b138a01601f824ab1b4b5ae825888f01dcaaaae18c522efc3769b6b81",
+          "blocks.0.conv2.weight": "792dd179c0b3edd5a206f15da8a40083658a86cc230794746ea9baab02fbe404",
+          "blocks.0.conv2.bias": "37454ed7b327d6dc1ae1a87ae652b2c70fed426556b514c958f0c17eeb675fa8",
+          "blocks.1.norm1.weight": "25b6c5ead7ca2bc41b3d50fd9e1ac081c356b0937d70c6fe9661e85f4ca9024b",
+          "blocks.1.norm1.bias": "0b4b1ffb800fd6f55b2b4bfd08af42fb2b849e3caffa1159bfdfd03a867c1102",
+          "blocks.1.norm2.weight": "90da7cf3f31dd2e3a2f3a22a780578ceb78dba5a99591cba23b8b50177bfdb28",
+          "blocks.1.norm2.bias": "b51f969dece81b3fd5a5e19b4c015453beeda67484eeb5c78266889eb3c984ec",
+          "blocks.1.conv1.weight": "66c3685ef3fe9d12f0c97f72fb192ddcd2fd7c11a1170968d9539fd7ff0b7130",
+          "blocks.1.conv1.bias": "405154b7c3a85f2a1c3120f35b53189700fe758d5e9cf436793c2379f70c921c",
+          "blocks.1.conv2.weight": "4ec11991258d59dc144efe2a73fb48dce40a4b959b8f584e58f116fc55b1d812",
+          "blocks.1.conv2.bias": "a9a1251ba4b8fce33512e38e945b1dbbaaa6b775cecf60476585622a4ae54565",
+          "blocks.2.conv.weight": "b935bd0d7859821fca462fd6cdeb2e0107390063f75696f9a97fb4a663f3efe3",
+          "blocks.2.conv.bias": "1ace95ecf0b3ae60888322ee47f2726fc902536cee01e41e0383bf032f2a38ca",
+          "blocks.3.norm1.weight": "54740c33384c75084977e0241cc184b4746344f139b0c8dbce8e59c7ceae5aa1",
+          "blocks.3.norm1.bias": "57fad717552e3a6bf13b9d1f5a061f17db2a4f3bb2fa893d1ddcb8e0110eac7d",
+          "blocks.3.norm2.weight": "b8e5ecb3d22ab0fa261510196d38fff6b76fade8ee91064df88220ae335147b4",
+          "blocks.3.norm2.bias": "9495399e518b8d9ae97d19dc36e0e1bc7bcbcdcca87f7df31087fc3c7293743f",
+          "blocks.3.conv1.weight": "2f631994670d4c4ab309bd36f1cddd8241c60196648ad6dbda8cc701a3a2921e",
+          "blocks.3.conv1.bias": "f23ac24028e4d026affbc263fca3995e05cda76f50dc96e7b16baf1d0cbac4be",
+          "blocks.3.conv2.weight": "b1a702d28daa1f9c87e9540504df0abcebb7fad0dedc3c955518e24512e89d37",
+          "blocks.3.conv2.bias": "43853e8edbedfbfb641285412b22143d5e4a8aeaa27d891773c1c5205c668001",
+          "blocks.4.norm1.weight": "09742d4df871065075d841dc8cbbcb57aa5092502ca98b9bfd80363ff69c20ae",
+          "blocks.4.norm1.bias": "b9409593dc91498e38cdd8d3821fa2233c306aa81eafe87c88e127fc29c1708d",
+          "blocks.4.norm2.weight": "e1f1fbf17484d7e94a7bef3d5c71e77ddf32ab6d1abfd83a3cda99ce5baa1156",
+          "blocks.4.norm2.bias": "16f3a18e00d518dea6125c62003eec4dfe4f2ce6aca0107cfc2aa597fcfbd35a",
+          "blocks.4.conv1.weight": "aff30d75c1bcfa2584c296a17dcf037dd5166ee1c2e5683172e195b360c95e10",
+          "blocks.4.conv1.bias": "a3937982baf1f3b48707e8e2cbf7dab3a1547f3f711f3c86d0a20a120c6e3788",
+          "blocks.4.conv2.weight": "6f7ce334e5be12bf9a5cd62b5b0bf12985ae21cc7b2af1ca2fe1a4cdf412cc90",
+          "blocks.4.conv2.bias": "5dbfda0fc8ed46cfddc121eab9ed1594ea2b0f3cdb58e65216ed626ca4b5302f",
+          "blocks.5.conv.weight": "c7c85ce86f33a3038480f469c263cf16a93e56e397a9f1ddc0ba347261ff50d4",
+          "blocks.5.conv.bias": "3bc19b146099e702ec40ef633519d4c8ed9d4cc66118eefc07c83fc90e917ce1",
+          "blocks.6.norm1.weight": "af866a904d0ddebd28ae2b6d8b3f6a14d622ca26ba29e53e73fe743372f16df1",
+          "blocks.6.norm1.bias": "dca275123e1b671f5fa99942426ee206456157fdda414c657a6f23d0429cc402",
+          "blocks.6.norm2.weight": "6309b03fdca8b28c8f8678dabb044245ec0d51f755e50dfcdc1b3872bf6e4fc3",
+          "blocks.6.norm2.bias": "0093e6f3db64171fbaf2d17ff3de68f42a0434584221c0b6831391d30879259d",
+          "blocks.6.conv1.weight": "8da8354d1dc714fe610cc16b8c0e4875f700760a83e0d23faabf2bad9ba7861a",
+          "blocks.6.conv1.bias": "cda92d27272c3d5158ac7a21a7395e604f54451e66aa15ea80813c8e722181e3",
+          "blocks.6.conv2.weight": "63856717e732682c0cf23d31946c1c6204c1d16ffb28046f1d2f1e456a18f2b5",
+          "blocks.6.conv2.bias": "017b26b362c95604b2dd6a32b67d6b4458682d6260a1c81225df3d8e3572a111",
+          "blocks.7.norm1.weight": "c7eb31e1c173eaab70550db4f36ee7da628a32814b393a759ca5239e822222ba",
+          "blocks.7.norm1.bias": "f0afd26ef95fa48a5a23b393c4aabf8df8580f5bd0505f628411066c8d1dbc4c",
+          "blocks.7.norm2.weight": "4852f7808a651710addc169f2342b4610795296001e87ead158603fe61402d44",
+          "blocks.7.norm2.bias": "cf699817def035c92872866b6199921d43d711e4ba50868bb4da4b64fc61ff6d",
+          "blocks.7.conv1.weight": "c32c6d6776b8f82f8310ea02b619e7bc85730ed5b2da878224d99939180dcb77",
+          "blocks.7.conv1.bias": "b65667c995ca6bf0522c6a2c8edc38aa0c5587e169a9c897f4f0ea9967090d94",
+          "blocks.7.conv2.weight": "2c8d3768f4af00b36e9bad674ebc1a801aea60bf6fecc927eddaa7388dbc79ee",
+          "blocks.7.conv2.bias": "d42b2f39ddd18a63c7bf548a84e0cae8fdb15b3449cd099156b177d0fe32cb7b",
+          "out_layer.0.weight": "caa40f00a0ae9e85a182102351fb58e90bbc1d6559038a9d2f78920ede092fa5",
+          "out_layer.0.bias": "0b64f2bacfeffcd8e5c39bd995ed8e8a3a33c3245ae840fc8066f549e6d0ac3c",
+          "out_layer.2.weight": "ae13310dac058824cdce67b734aef906d938e9b3614dc818e9938c68c4665364",
+          "out_layer.2.bias": "77b67d5003d8a6d0cb3a50fc3d7aea7758c9b12c927ca6148266bbd5a898c6f2"
+        }
+      }
+    },
+    "gpu": {
+      "name": "AMD Radeon RX 9070 XT",
+      "architecture": "gfx1201",
+      "total_bytes": 17095983104
+    },
+    "before_placement": {
+      "allocated_bytes": 0,
+      "reserved_bytes": 0,
+      "peak_allocated_bytes": 0,
+      "peak_reserved_bytes": 0,
+      "available_bytes": 16937582592,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 158400512
+    },
+    "determinism": {
+      "algorithms": true,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true
+    },
+    "placement_seconds": 0.20299999999997453,
+    "error_type": "RuntimeError",
+    "error": "Unapproved GPU operation outside forward: aten.to.dtype_layout",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_decoder_forward.py\", line 187, in worker\n    latent=cpu_input.to('cuda:0');torch.cuda.synchronize(0)\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_compile.py\", line 54, in inner\n    return disable_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1446, in _fn\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_decoder_forward.py\", line 132, in __torch_dispatch__\n    raise RuntimeError('Unapproved GPU operation outside forward: '+str(func))\nRuntimeError: Unapproved GPU operation outside forward: aten.to.dtype_layout\n",
+    "root_decoder_calls": 0
+  },
+  "process": {
+    "returncode": 1,
+    "timed_out": false,
+    "pid": 7748,
+    "command": [
+      "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_decoder_forward.py",
+      "--worker",
+      "--output",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-decoder-forward-evidence\\run\\scratch"
+    ],
+    "harness_commit": "550a7ae00d2f9a306f2e7c0661b6767ef94c5614",
+    "last_stage": "decoder-placement",
+    "elapsed_seconds": 8.438000000000102,
+    "gpu_authorized": true,
+    "stage_timeouts_seconds": {
+      "cpu": 45,
+      "forward_release": 30,
+      "overall": 90
+    },
+    "worker_exit_verified": true,
+    "output_readers_completed": true
+  }
+}

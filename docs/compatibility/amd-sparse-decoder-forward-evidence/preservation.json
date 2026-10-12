@@ -1,0 +1,66 @@
+{
+  "comparisons": {
+    "inventory": {
+      "byte_equal": true,
+      "structurally_equal": true,
+      "before_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+      "after_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475"
+    },
+    "venv-metadata": {
+      "byte_equal": true,
+      "structurally_equal": true,
+      "before_sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+      "after_sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+      "normalized_equal": true
+    },
+    "model-cache-metadata": {
+      "byte_equal": true,
+      "structurally_equal": true,
+      "before_sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+      "after_sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+      "normalized_equal": true
+    }
+  },
+  "previous_branch_heads_preserved": {
+    "refs/heads/codex/amd-alpha-headless-import": "4ce67676d9a0cd4e9dc12f63cbc4763e639d4101",
+    "refs/heads/codex/amd-bounded-gpu-proof": "521d3d29e06fdde2e324e7d1bce7e03ef10dfaa8",
+    "refs/heads/codex/amd-native-import-preflight": "be8a90379c08f5fd21c941bcb9092da6b7cd69fa",
+    "refs/heads/codex/amd-offline-alpha-geometry-loader": "74f63c844e94da5b4a0742e5fe7ada9355ba3c13",
+    "refs/heads/codex/amd-offline-model-audit": "d0f3426f85509e9705cec7852beef13b31fb2e70",
+    "refs/heads/codex/amd-sparse-decoder-loading-proof": "f518deae75bb4626d17d29812b995d4488d90edf",
+    "refs/heads/codex/amd-trellis2-bounded-proof": "874a843e240d6c96b6149f7908c1734472ec0dcc",
+    "refs/heads/codex/amd-worker-scaffold": "7c2c9634db52c7e78bfa90be16ed6bf969dc2dbe",
+    "refs/heads/main": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea"
+  },
+  "git_state": {
+    "amd_source": [
+      " M nodes.py",
+      "?? nodes.py.before-profiler-fix"
+    ],
+    "remote_refs": [
+      "4ce67676d9a0cd4e9dc12f63cbc4763e639d4101\trefs/heads/codex/amd-alpha-headless-import",
+      "521d3d29e06fdde2e324e7d1bce7e03ef10dfaa8\trefs/heads/codex/amd-bounded-gpu-proof",
+      "be8a90379c08f5fd21c941bcb9092da6b7cd69fa\trefs/heads/codex/amd-native-import-preflight",
+      "74f63c844e94da5b4a0742e5fe7ada9355ba3c13\trefs/heads/codex/amd-offline-alpha-geometry-loader",
+      "d0f3426f85509e9705cec7852beef13b31fb2e70\trefs/heads/codex/amd-offline-model-audit",
+      "550a7ae00d2f9a306f2e7c0661b6767ef94c5614\trefs/heads/codex/amd-sparse-decoder-forward",
+      "f518deae75bb4626d17d29812b995d4488d90edf\trefs/heads/codex/amd-sparse-decoder-loading-proof",
+      "874a843e240d6c96b6149f7908c1734472ec0dcc\trefs/heads/codex/amd-trellis2-bounded-proof",
+      "7c2c9634db52c7e78bfa90be16ed6bf969dc2dbe\trefs/heads/codex/amd-worker-scaffold",
+      "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea\trefs/heads/main"
+    ],
+    "local_refs": [
+      "refs/heads/codex/amd-alpha-headless-import 4ce67676d9a0cd4e9dc12f63cbc4763e639d4101",
+      "refs/heads/codex/amd-bounded-gpu-proof 521d3d29e06fdde2e324e7d1bce7e03ef10dfaa8",
+      "refs/heads/codex/amd-native-import-preflight be8a90379c08f5fd21c941bcb9092da6b7cd69fa",
+      "refs/heads/codex/amd-offline-alpha-geometry-loader 74f63c844e94da5b4a0742e5fe7ada9355ba3c13",
+      "refs/heads/codex/amd-offline-model-audit d0f3426f85509e9705cec7852beef13b31fb2e70",
+      "refs/heads/codex/amd-sparse-decoder-forward 550a7ae00d2f9a306f2e7c0661b6767ef94c5614",
+      "refs/heads/codex/amd-sparse-decoder-loading-proof f518deae75bb4626d17d29812b995d4488d90edf",
+      "refs/heads/codex/amd-trellis2-bounded-proof 874a843e240d6c96b6149f7908c1734472ec0dcc",
+      "refs/heads/codex/amd-worker-scaffold 7c2c9634db52c7e78bfa90be16ed6bf969dc2dbe",
+      "refs/heads/main f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea"
+    ]
+  },
+  "meaningful_preservation_passed": true
+}

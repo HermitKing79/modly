@@ -23,17 +23,17 @@
 
 Files: amd_decoder_forward_contract.py, amd_sparse_decoder_forward.py, test_amd_decoder_forward.py; docs/evidence.
 
-- [ ] Add pure CPU tests for exact architecture/fixture, strict gate authorization, single-call consumption, valid output/stats, cleanup and fail-closed classification; observe RED.
-- [ ] Implement contract and worker. Reuse StrictLocalComponent; forbid additional model opens/imports, remote factories, arbitrary subprocesses, network, writes outside scratch and GPU work before authorization.
-- [ ] Permit only placement operations outside the one forward scope; allow only the actual decoder's module tree during inference. Block Torch/Triton compilation and pickle/other checkpoint loads.
-- [ ] Add bounded supervisor with durable stage logs, healthy before/gate/after observers, strict result validation and unconditional reaping.
-- [ ] Run targeted CPU-only tests; review exact safety boundaries; commit/push and verify remote commit before attempt.
+- [x] Add pure CPU tests for exact architecture/fixture, strict gate authorization, single-call consumption, valid output/stats, cleanup and fail-closed classification; observe RED.
+- [x] Implement contract and worker. Reuse StrictLocalComponent; forbid additional model opens/imports, remote factories, arbitrary subprocesses, network, writes outside scratch and GPU work before authorization.
+- [x] Permit only placement operations outside the one forward scope; allow only the actual decoder's module tree during inference. Block Torch/Triton compilation and pickle/other checkpoint loads.
+- [x] Add bounded supervisor with durable stage logs, healthy before/gate/after observers, strict result validation and unconditional reaping.
+- [x] Run targeted CPU-only tests; review exact safety boundaries; commit/push and verify remote commit before attempt.
 
 ## Task 2: One approved attempt and final publication
 
-- [ ] Capture passive environment/source/model preservation and checkpoint/source hashes.
-- [ ] After healthy observer, launch one existing AMD Python worker; strict-load CPU checkpoint, authorize AMD, forward once, synchronize, validate output, release and exit.
-- [ ] Capture errors/process status even on failure; no retry. Compare inventories with directory allocation-size normalization only.
+- [x] Capture passive environment/source/model preservation and checkpoint/source hashes.
+- [x] After healthy observer, make the single approved attempt. Strict CPU load and AMD placement succeeded; the input transfer guard rejected aten.to.dtype_layout before forward. No retry.
+- [x] Capture errors/process status even on failure; no retry. Compare inventories with directory allocation-size normalization only.
 - [ ] Publish concise PASS/PARTIAL/FAIL report/results, verify remote refs and prior branch preservation; stop.
 
 ## Review focus
@@ -43,3 +43,12 @@ Files: amd_decoder_forward_contract.py, amd_sparse_decoder_forward.py, test_amd_
 - All exception/timeout branches terminate and reap, preserving last durable stage.
 - A valid tensor alone cannot pass if count, cleanup, exit, observer or preservation fails.
 - Imported local decoder support files must match the previous successful proof hashes.
+
+## Outcome ledger
+
+Harness was published before the attempt at 550a7ae00d2f9a306f2e7c0661b6767ef94c5614.
+26 focused CPU tests passed; read-only review fixes preceded execution. Attempt
+marker is consumed. Worker exited 1 and was reaped after 8.438s, observers healthy,
+zero forward invocations. All before/after preservation pairs are byte-identical.
+PARTIAL is the final evidence classification; no copy-guard relaxation or model
+execution retry is authorized. Results publication is verified at delivery.
