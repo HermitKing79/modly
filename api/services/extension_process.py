@@ -8,6 +8,7 @@ Interface is intentionally compatible with direct BaseGenerator usage
 so GeneratorRegistry can treat both transparently.
 """
 import base64
+import datetime
 import json
 import os
 import platform
@@ -24,6 +25,7 @@ from services import amd_runtime
 
 _RUNNER_PATH = Path(__file__).parent.parent / "runner.py"
 AMD_SEND_TIMEOUT = 5.0
+AMD_PREPARATION_TIMEOUT = 30.0
 _MISSING_MODULE_RE = re.compile(r"No module named ['\"]([^'\"]+)['\"]")
 _AUTO_REPAIR_PACKAGE_MAP = {
     "PIL": "Pillow",
@@ -130,6 +132,14 @@ class ExtensionProcess:
                         "HF_HUB_DISABLE_TELEMETRY": "1", "PYTHONDONTWRITEBYTECODE": "1"})
             for key in ("TMP", "TEMP", "TMPDIR", "HF_HOME", "TORCH_HOME", "TRITON_CACHE_DIR"):
                 env[key] = str(scratch)
+            if config.get("mode") == amd_runtime.PREPARATION_MODE:
+                for key in ("HOME", "USERPROFILE", "APPDATA", "LOCALAPPDATA", "XDG_CACHE_HOME",
+                            "AMD_COMGR_CACHE_DIR", "MIOPEN_USER_DB_PATH", "MIOPEN_CUSTOM_CACHE_DIR"):
+                    path = scratch / key.lower()
+                    path.mkdir(parents=True, exist_ok=True)
+                    env[key] = str(path)
+                env.update(HIP_VISIBLE_DEVICES="0", ROCR_VISIBLE_DEVICES="0", CUDA_VISIBLE_DEVICES="0",
+                           FLEX_GEMM_USE_AUTOTUNE_CACHE="0", FLEX_GEMM_AUTOSAVE_AUTOTUNE_CACHE="0")
         return env
 
     def _launch(self, python: Path) -> None:
@@ -349,6 +359,10 @@ class ExtensionProcess:
         if self._amd:
             try:
                 config = amd_runtime.runtime_config(self.manifest)
+                if config.get("mode") == amd_runtime.PREPARATION_MODE:
+                    from services.amd_geometry_assets import validate_geometry_assets
+                    validate_geometry_assets(config["geometry"], Path(config["source_root"]))
+                    return self.manifest.get("node_id") == "generate"
                 amd_runtime.validate_models(config["models"], self.manifest.get("node_id"))
                 return True
             except (ValueError, OSError, TypeError):
@@ -397,6 +411,76 @@ class ExtensionProcess:
             {"image_b64": base64.b64encode(image_bytes).decode()},
             params, progress_cb, cancel_event,
         )
+
+    def prepare_geometry(self, image_bytes, params=None, cancel_event=None):
+        """Explicit alpha-only configuration preparation; returns diagnostics, no asset."""
+        from services import amd_observer
+        from services.generators.base import GenerationCancelled
+        if not self._amd or self.manifest.get("node_id") != "generate":
+            raise ValueError("Geometry preparation requires the experimental AMD Generate worker")
+        config = self._amd_config or amd_runtime.runtime_config(self.manifest)
+        if config.get("mode") != amd_runtime.PREPARATION_MODE:
+            raise ValueError("Select the explicit geometry-preparation-alpha-only runtime mode")
+        params = {"image_mode": "alpha-only"} if params is None else params
+        if params != {"image_mode": "alpha-only"} or not isinstance(image_bytes, bytes) or not image_bytes:
+            raise ValueError("Preparation requires image bytes and explicit image_mode=alpha-only")
+        if cancel_event and cancel_event.is_set():
+            self.stop()
+            raise GenerationCancelled()
+        if not self.is_loaded():
+            self.load()
+        since = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        request = str(uuid.uuid4())
+        message = None
+        before = after = None
+        try:
+            before = amd_observer.windows_observation(since)
+            if not amd_observer.healthy_observation(before):
+                raise RuntimeError("AMD preparation observer is unhealthy before import")
+            if cancel_event and cancel_event.is_set():
+                raise GenerationCancelled()
+            self._send({"action": "prepare_geometry", "id": request, "model_id": self.MODEL_ID,
+                        "image_b64": base64.b64encode(image_bytes).decode(), "params": params})
+            deadline = time.monotonic() + AMD_PREPARATION_TIMEOUT
+            while message is None:
+                if cancel_event and cancel_event.is_set():
+                    raise GenerationCancelled()
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise TimeoutError("AMD preparation exceeded 30s; worker stopped")
+                try:
+                    candidate = self._recv(timeout=min(0.2, remaining))
+                except TimeoutError:
+                    continue
+                if candidate.get("id") == request and candidate.get("type") in ("prepared", "error"):
+                    message = candidate
+            after = amd_observer.windows_observation(since)
+            self.last_preparation_monitor = {"before": before, "after": after}
+            if not amd_observer.healthy_observation(after):
+                raise RuntimeError("AMD preparation observer is unhealthy after import")
+            if message["type"] == "prepared":
+                diagnostic = message.get("diagnostics")
+                expected = {"schema": "modly.amd.geometry-preparation.v1", "mode": "alpha-only",
+                            "weights_loaded": False, "asset_generated": False, "glb_generated": False,
+                            "ready_for_inference": False, "pipeline_prepared": True}
+                if not isinstance(diagnostic, dict) or any(key not in diagnostic or diagnostic[key] != value for key, value in expected.items()):
+                    raise RuntimeError("Invalid AMD preparation diagnostics; no inference/asset claims allowed")
+                return diagnostic
+        except BaseException:
+            self.stop()
+            if before is not None and after is None and amd_observer.healthy_observation(before):
+                try:
+                    after = amd_observer.windows_observation(since)
+                except Exception as observer_error:
+                    after = {"observer_error": str(observer_error)}
+            self.last_preparation_monitor = {"before": before, "after": after}
+            raise
+        # A logical input/configuration error is recoverable in the healthy worker.
+        if message.get("recoverable") is not True:
+            self.stop()
+        else:
+            self._loaded = bool(message.get("loaded", False))
+        raise RuntimeError(message.get("traceback") or message.get("message", "Geometry preparation rejected"))
 
     def _receive_generation(
         self,

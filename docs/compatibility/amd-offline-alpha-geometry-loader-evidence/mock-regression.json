@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-I",
+    "-c",
+    "import sys,unittest;sys.path.insert(0,'api');r=unittest.TextTestRunner(verbosity=1).run(unittest.defaultTestLoader.discover('api/tests',pattern='test_amd_scaffold.py'));raise SystemExit(not r.wasSuccessful())"
+  ],
+  "exit": 0,
+  "timeout": false,
+  "stdout": "[Registry] MODELS_DIR     = C:\\Users\\wattz\\.modly\\models\r\n[Registry] WORKSPACE_DIR  = C:\\Users\\wattz\\.modly\\workspace\r\n[Registry] EXTENSIONS_DIR = (not set)\r\n[Registry] Loaded subprocess node: trellis2-amd/generate\r\n[Registry] Loaded subprocess node: trellis2-amd/refine\r\n[Registry] ERROR: Failed to instantiate generator 'trellis2-amd/generate': MODLY_AMD_RUNTIME_CONFIG must be an explicit absolute local path\r\n[Registry] ERROR: Failed to instantiate generator 'trellis2-amd/refine': MODLY_AMD_RUNTIME_CONFIG must be an explicit absolute local path\r\n[Registry] WARNING: No extensions found.\r\n[Registry] WARNING: No extensions found.\r\n",
+  "stderr": ".............\r\n----------------------------------------------------------------------\r\nRan 13 tests in 1.091s\r\n\r\nOK\r\n"
+}

@@ -1,0 +1,63 @@
+{
+  "comparisons": {
+    "inventory": {
+      "byte_equal": true,
+      "structurally_equal": true,
+      "before_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+      "after_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475"
+    },
+    "venv-metadata": {
+      "byte_equal": true,
+      "structurally_equal": true,
+      "before_sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+      "after_sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7"
+    },
+    "model-cache-metadata": {
+      "byte_equal": true,
+      "structurally_equal": true,
+      "before_sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+      "after_sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe"
+    }
+  },
+  "git_state": [
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof",
+      "result": " M api/runner.py\n M api/services/amd_runtime.py\n M api/services/extension_process.py\n M experimental/extensions/trellis2-amd/generator.py\n M scripts/compatibility/amd_model_metadata.py\n?? api/services/amd_geometry_assets.py\n?? api/services/amd_model_metadata.py\n?? api/services/amd_observer.py\n?? api/services/amd_offline_guard.py\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/inventory-after.json\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/inventory-before.json\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/ipc/results.json\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/ipc/scratch/application-ipc.json\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/ipc/scratch/runtime.json\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/ipc/stderr.txt\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/ipc/stdout.txt\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/mock-regression.json\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/model-cache-metadata-after.json.gz\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/model-cache-metadata-before.json.gz\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/regression-initial.json\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/targeted-tests.json\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/venv-metadata-after.json.gz\n?? docs/compatibility/amd-offline-alpha-geometry-loader-evidence/venv-metadata-before.json.gz\n?? docs/superpowers/plans/2026-10-12-amd-offline-alpha-geometry-loader.md\n?? experimental/extensions/trellis2-amd/geometry_preparation.py\n?? experimental/extensions/trellis2-amd/model_assets.py\n?? experimental/extensions/trellis2-amd/preparation_guards.py\n?? experimental/extensions/trellis2-amd/strict_loader.py\n?? scripts/compatibility/amd_geometry_loader_ipc.py\n?? scripts/compatibility/test_amd_geometry_assets.py\n?? scripts/compatibility/test_amd_geometry_ipc.py\n?? scripts/compatibility/test_amd_strict_loader.py\n"
+    },
+    {
+      "command": [
+        "git",
+        "branch",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof",
+      "result": "  codex/amd-alpha-headless-import         4ce6767 Prove real AMD headless imports and explicit alpha-only input boundary\n  codex/amd-bounded-gpu-proof             521d3d2 test: prove bounded AMD GPU initialization and CuMesh boundary\n  codex/amd-native-import-preflight       be8a903 test: bound AMD native imports and SDK discovery preflight\n* codex/amd-offline-alpha-geometry-loader f518dea Prove offline sparse decoder CPU load and AMD placement release\n  codex/amd-offline-model-audit           d0f3426 Audit offline AMD TRELLIS assets and record headless import blocker\n  codex/amd-sparse-decoder-loading-proof  f518dea Prove offline sparse decoder CPU load and AMD placement release\n  codex/amd-trellis2-bounded-proof        874a843 docs: record bounded AMD TRELLIS.2 compatibility proof\n  codex/amd-worker-scaffold               7c2c963 Add opt-in offline AMD worker scaffold and bounded IPC proof\n  main                                    f11a4d2 Merge pull request #367 from lightningpixel/release/v0.4.3\n"
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof",
+      "result": "origin\thttps://github.com/HermitKing79/modly.git (fetch)\norigin\thttps://github.com/HermitKing79/modly.git (push)\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD",
+      "result": " M nodes.py\n?? nodes.py.before-profiler-fix\n"
+    }
+  ],
+  "all_equal": true
+}

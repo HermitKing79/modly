@@ -1,0 +1,461 @@
+{
+  "timeout": false,
+  "tree_cleanup_verified": true,
+  "cleanup": null,
+  "exit": 0,
+  "command": [
+    "C:/Users/wattz/Documents/Modly/extensions/trellis2/venv/Scripts/python.exe",
+    "-B",
+    "-I",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_geometry_loader_ipc.py",
+    "--child",
+    "--output",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-offline-alpha-geometry-loader-evidence\\ipc\\scratch"
+  ],
+  "timeout_seconds": 90,
+  "classification": "PASS",
+  "application": {
+    "host_python": "3.11.9 (main, Jul 25 2024, 21:53:06) [MSC v.1929 64 bit (AMD64)]",
+    "host_executable": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Scripts\\python.exe",
+    "runtime_config": {
+      "python": "D:/AI/Trellis2AMD/venv/Scripts/python.exe",
+      "source_root": "D:/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD",
+      "mode": "geometry-preparation-alpha-only",
+      "geometry": {
+        "models_root": "D:/AI/Trellis2AMD/ComfyUI/models",
+        "pipeline_dir": "D:/AI/Trellis2AMD/ComfyUI/models/microsoft/TRELLIS.2-4B",
+        "dino_dir": "D:/AI/Trellis2AMD/ComfyUI/models/facebook/dinov3-vitl16-pretrain-lvd1689m"
+      }
+    },
+    "worker_identity": {
+      "contract": "amd-offline-scaffold-v1",
+      "model_id": "trellis2-amd/generate",
+      "python": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "python_version": "3.12.10",
+      "prefix": "D:\\AI\\Trellis2AMD\\venv",
+      "torch": "2.13.0+rocm10.0.0",
+      "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+      "hip": "7.15.26333",
+      "cuda": null,
+      "packages": {
+        "torch": "2.13.0+rocm10.0.0",
+        "rocm": "10.0.0",
+        "cumesh": "1.0+rocm10.0",
+        "flex-gemm": "1.0.0+rocm10.0",
+        "nvdiffrast": "0.4.0+rocm10.0",
+        "o-voxel": "0.0.1+rocm.10.0",
+        "triton-windows": "3.8.0.post29",
+        "safetensors": "0.8.0",
+        "numpy": "2.5.3",
+        "Pillow": "12.3.0"
+      },
+      "native_binaries": [
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_C.cp312-win_amd64.pyd",
+          "dlls": [
+            "c10.dll",
+            "torch_cpu.dll",
+            "torch_python.dll",
+            "amdhip64_7.dll",
+            "msvcp140.dll",
+            "python312.dll",
+            "kernel32.dll",
+            "vcruntime140.dll",
+            "api-ms-win-crt-heap-l1-1-0.dll",
+            "api-ms-win-crt-string-l1-1-0.dll",
+            "api-ms-win-crt-runtime-l1-1-0.dll",
+            "api-ms-win-crt-environment-l1-1-0.dll",
+            "api-ms-win-crt-convert-l1-1-0.dll",
+            "api-ms-win-crt-math-l1-1-0.dll"
+          ],
+          "sha256": "32526ca0976822800b2320ee3cc12db5ef3fc8fb4641d721dabca8714e5b71ac",
+          "cpu_uv_utility": false
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_cubvh.cp312-win_amd64.pyd",
+          "dlls": [
+            "c10.dll",
+            "torch_cpu.dll",
+            "torch_python.dll",
+            "amdhip64_7.dll",
+            "c10_hip.dll",
+            "msvcp140.dll",
+            "python312.dll",
+            "kernel32.dll",
+            "vcruntime140.dll",
+            "api-ms-win-crt-heap-l1-1-0.dll",
+            "api-ms-win-crt-string-l1-1-0.dll",
+            "api-ms-win-crt-runtime-l1-1-0.dll",
+            "api-ms-win-crt-math-l1-1-0.dll",
+            "api-ms-win-crt-stdio-l1-1-0.dll",
+            "api-ms-win-crt-environment-l1-1-0.dll",
+            "api-ms-win-crt-convert-l1-1-0.dll"
+          ],
+          "sha256": "70a886bb952bb48cf56fc46b3744840e33b07820991620c6eae350a154676ff0",
+          "cpu_uv_utility": false
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_xatlas.cp312-win_amd64.pyd",
+          "dlls": [
+            "c10.dll",
+            "torch_cpu.dll",
+            "torch_python.dll",
+            "msvcp140.dll",
+            "python312.dll",
+            "kernel32.dll",
+            "vcruntime140.dll",
+            "api-ms-win-crt-heap-l1-1-0.dll",
+            "api-ms-win-crt-string-l1-1-0.dll",
+            "api-ms-win-crt-runtime-l1-1-0.dll",
+            "api-ms-win-crt-math-l1-1-0.dll",
+            "api-ms-win-crt-stdio-l1-1-0.dll",
+            "api-ms-win-crt-utility-l1-1-0.dll"
+          ],
+          "sha256": "66da37345044e2161f7811f2d9ff67750f8fb3c203c16bc5abdfd6e739111e00",
+          "cpu_uv_utility": true
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\cuda.cp312-win_amd64.pyd",
+          "dlls": [
+            "c10.dll",
+            "torch_cpu.dll",
+            "torch_python.dll",
+            "amdhip64_7.dll",
+            "msvcp140.dll",
+            "python312.dll",
+            "kernel32.dll",
+            "vcruntime140.dll",
+            "api-ms-win-crt-heap-l1-1-0.dll",
+            "api-ms-win-crt-string-l1-1-0.dll",
+            "api-ms-win-crt-runtime-l1-1-0.dll",
+            "api-ms-win-crt-math-l1-1-0.dll"
+          ],
+          "sha256": "18b203fca47a482f8b53d7bdfb765b26036cae9628087ecfde17e75742007064",
+          "cpu_uv_utility": false
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\o_voxel\\_C.cp312-win_amd64.pyd",
+          "dlls": [
+            "c10.dll",
+            "torch_cpu.dll",
+            "torch_python.dll",
+            "amdhip64_7.dll",
+            "msvcp140.dll",
+            "python312.dll",
+            "kernel32.dll",
+            "vcruntime140.dll",
+            "api-ms-win-crt-time-l1-1-0.dll",
+            "api-ms-win-crt-heap-l1-1-0.dll",
+            "api-ms-win-crt-string-l1-1-0.dll",
+            "api-ms-win-crt-runtime-l1-1-0.dll",
+            "api-ms-win-crt-math-l1-1-0.dll"
+          ],
+          "sha256": "4900ba16cb2d24c816e968fb54c74218f119e12ad942a81f8d318215802bf953",
+          "cpu_uv_utility": false
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_nvdiffrast_c.cp312-win_amd64.pyd",
+          "dlls": [
+            "c10_hip.dll",
+            "c10.dll",
+            "torch_cpu.dll",
+            "torch_python.dll",
+            "amdhip64_7.dll",
+            "msvcp140.dll",
+            "python312.dll",
+            "kernel32.dll",
+            "vcruntime140.dll",
+            "api-ms-win-crt-heap-l1-1-0.dll",
+            "api-ms-win-crt-string-l1-1-0.dll",
+            "api-ms-win-crt-runtime-l1-1-0.dll",
+            "api-ms-win-crt-stdio-l1-1-0.dll",
+            "api-ms-win-crt-math-l1-1-0.dll"
+          ],
+          "sha256": "87abc0f0bd44423feeb4f7e3f0b3e103c57caf9069dbf7952af72b6b0d8a4391",
+          "cpu_uv_utility": false
+        }
+      ],
+      "native_wrapper_sha256": {
+        "cumesh/__init__.py": "b0391f73f6db9fa214e4a7bf689a9b33879d773c1d273c1f2ef6fdd32bb5b4df",
+        "flex_gemm/__init__.py": "423979e1c23c050fc23de42d287e4827b44f33e052f53e0335e53630611cf0b6",
+        "o_voxel/__init__.py": "8b3c2240f3c6bcb098213f89179505933a03d6d1fa7f25483b1b515c48d6c24d",
+        "nvdiffrast/torch/__init__.py": "aa852764186be37eb5d82c327411cb2b2164bf685e8ada8cf470f8d94f8b1545",
+        "triton/__init__.py": "74a6cf22b4c837d5d9bbdb5a42e11c6a6af847a4095810f5a58df7f2b3b1e06a"
+      },
+      "source": {
+        "root": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD",
+        "commit": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+        "files": {
+          "trellis2/models/__init__.py": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683",
+          "trellis2/pipelines/trellis2_image_to_3d.py": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+          "trellis2/pipelines/trellis2_texturing.py": "14a6f8ee2bca120f76e0112f2733cd250764637709ff642fd6846ae97c63b1e6"
+        },
+        "upstream_imported": false
+      },
+      "format": "safetensors",
+      "mock_only": false,
+      "preparation_only": true,
+      "runtime_mode": "geometry-preparation-alpha-only",
+      "gpu_initialized": false,
+      "weights_loaded": false,
+      "sdk_verification": {
+        "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+        "executable_sha256": "95ba504bd187d810fba48cf25f094629d1e17dc67e384706ffb2621f2b869e4c",
+        "source_sha256": {
+          "rocm_sdk/__main__.py": "da3cf689993144403ebd20543c26d2aae20b0298acb81f590df9e78997c9fbf2",
+          "rocm_sdk/_devel.py": "608314f7e710bc44e93e3f8b5c729b5072656d15b463ff98123b826d347f1af6",
+          "rocm_sdk/_dist_info.py": "de0065098100898af4ffc558f0d54190d89923840bc074c4c194673d0915206d",
+          "rocm_sdk/__init__.py": "ed87e36cc153b7811133fb934ff1f018114c394f32a56aa040663ef66c147c3d",
+          "triton/backends/amd/driver.py": "048f3915c6942e64c7c84eb47c62f265ad10e6be4584940fe0530f5a630b23f5"
+        },
+        "developer_package_present": false,
+        "safe_branch": "ModuleNotFoundError before expansion/link reconciliation"
+      }
+    },
+    "opaque_rejection": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\generator.py\", line 97, in prepare_geometry\n    image, _ = decode_alpha_image(image_bytes)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\alpha_input.py\", line 60, in decode_alpha_image\n    return result, validate_alpha_image(result)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\alpha_input.py\", line 34, in validate_alpha_image\n    bbox = _mask(image)\n           ^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\alpha_input.py\", line 24, in _mask\n    raise ValueError(\"alpha-only requires fully transparent background pixels\")\nValueError: alpha-only requires fully transparent background pixels\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\runner.py\", line 261, in main\n    diagnostics = gen.prepare_geometry(decode_model_input(msg), msg[\"params\"])\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\generator.py\", line 101, in prepare_geometry\n    raise amd_runtime.PreparationValidationError(str(exc)) from exc\nservices.amd_runtime.PreparationValidationError: alpha-only requires fully transparent background pixels\n",
+    "prepared": {
+      "schema": "modly.amd.geometry-preparation.v1",
+      "mode": "alpha-only",
+      "pipeline_prepared": true,
+      "weights_loaded": false,
+      "asset_generated": false,
+      "glb_generated": false,
+      "ready_for_inference": false,
+      "pipeline": {
+        "class": "Trellis2ImageTo3DPipeline",
+        "module": "trellis2.pipelines.trellis2_image_to_3d",
+        "source": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_image_to_3d.py",
+        "factory_reused": true,
+        "configuration": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\pipeline.json",
+        "configuration_sha256": "222c359ab1ed9bc6735a640a34f95d47f8681b9bc4aaa101bfb80274676253c6",
+        "checkpoint_map": {
+          "sparse_structure_decoder": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS-image-large\\ckpts\\ss_dec_conv3d_16l8_fp16",
+          "sparse_structure_flow_model": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_flow_img_dit_1_3B_64_bf16",
+          "shape_slat_decoder": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_dec_next_dc_f16c32_fp16",
+          "shape_slat_flow_model_512": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_512_bf16",
+          "shape_slat_flow_model_1024": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_1024_bf16",
+          "tex_slat_decoder": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_dec_next_dc_f16c32_fp16",
+          "tex_slat_flow_model_512": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_512_bf16",
+          "tex_slat_flow_model_1024": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_1024_bf16"
+        },
+        "model_slots": {
+          "sparse_structure_decoder": null,
+          "sparse_structure_flow_model": null,
+          "shape_slat_decoder": null,
+          "shape_slat_flow_model_512": null,
+          "shape_slat_flow_model_1024": null,
+          "tex_slat_decoder": null,
+          "tex_slat_flow_model_512": null,
+          "tex_slat_flow_model_1024": null,
+          "shape_slat_encoder": null
+        },
+        "image_cond_model": null,
+        "rembg_model": null,
+        "dino_directory": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\facebook\\dinov3-vitl16-pretrain-lvd1689m",
+        "device": "cpu"
+      },
+      "components": {
+        "sparse_structure_decoder": {
+          "configuration": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS-image-large\\ckpts\\ss_dec_conv3d_16l8_fp16.json",
+          "weights": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS-image-large\\ckpts\\ss_dec_conv3d_16l8_fp16.safetensors",
+          "state": "unloaded",
+          "tensor_count": 74,
+          "payload_bytes": 147585412,
+          "header_sha256": "fb31e5d5ff5d51b91bdab639fa919853e9aaaaf06e4a4e69a918af2799c64b94",
+          "architecture_schema": "verified on subsequent strict load"
+        },
+        "sparse_structure_flow_model": {
+          "configuration": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_flow_img_dit_1_3B_64_bf16.json",
+          "weights": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_flow_img_dit_1_3B_64_bf16.safetensors",
+          "state": "unloaded",
+          "tensor_count": 640,
+          "payload_bytes": 2584359952,
+          "header_sha256": "512d8dd48a9219d0f30b3435019ba797abbff6d67e421bc9adf7f8435d99f692",
+          "architecture_schema": "verified on subsequent strict load"
+        },
+        "shape_slat_decoder": {
+          "configuration": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_dec_next_dc_f16c32_fp16.json",
+          "weights": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_dec_next_dc_f16c32_fp16.safetensors",
+          "state": "unloaded",
+          "tensor_count": 292,
+          "payload_bytes": 948462926,
+          "header_sha256": "80dc6403ca284a2361109cde3190bc1b5ea5d30936e8f80625cbbc0827062c83",
+          "architecture_schema": "verified on subsequent strict load"
+        },
+        "shape_slat_flow_model_512": {
+          "configuration": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_512_bf16.json",
+          "weights": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_512_bf16.safetensors",
+          "state": "unloaded",
+          "tensor_count": 640,
+          "payload_bytes": 2584507456,
+          "header_sha256": "fad66ccd0594d4a82e7346c14249b7c6556f5854143e2f9139f82d664ca92438",
+          "architecture_schema": "verified on subsequent strict load"
+        },
+        "shape_slat_flow_model_1024": {
+          "configuration": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_1024_bf16.json",
+          "weights": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_1024_bf16.safetensors",
+          "state": "unloaded",
+          "tensor_count": 640,
+          "payload_bytes": 2584507456,
+          "header_sha256": "fad66ccd0594d4a82e7346c14249b7c6556f5854143e2f9139f82d664ca92438",
+          "architecture_schema": "verified on subsequent strict load"
+        },
+        "dino_backbone": {
+          "configuration": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\facebook\\dinov3-vitl16-pretrain-lvd1689m\\config.json",
+          "weights": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\facebook\\dinov3-vitl16-pretrain-lvd1689m\\model.safetensors",
+          "state": "unloaded",
+          "tensor_count": 415,
+          "payload_bytes": 1212518400,
+          "header_sha256": "3495b172735ff88c94b28a3257614f51764abfd7879b1498ec71abf855f259d3",
+          "architecture_schema": "verified on subsequent strict load"
+        }
+      },
+      "lazy_load_contract": "strict CPU state dictionary, parameters and persistent buffers; no remote factory",
+      "real_load_enabled_in_preparation_worker": false,
+      "alpha_input": {
+        "mode": "alpha-only",
+        "size": [
+          12,
+          10
+        ],
+        "foreground_bbox": [
+          2,
+          2,
+          9,
+          7
+        ],
+        "resized_foreground_bbox": [
+          2,
+          2,
+          9,
+          7
+        ],
+        "rembg_required": false
+      },
+      "conditioning_image": {
+        "mode": "RGB",
+        "size": [
+          6,
+          6
+        ],
+        "sha256": "1bec627282b5099ef0c335b6a9151f1c257c163d814661b44bd22de662232e3c",
+        "dino_executed": false
+      },
+      "gpu": {
+        "initialized": true,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "name": "AMD Radeon RX 9070 XT",
+        "architecture": "gfx1201"
+      },
+      "torchvision_version_queries": [
+        -1,
+        -1
+      ],
+      "stateless_activation_objects": [
+        "transformers.activations.GELUActivation",
+        "transformers.activations.NewGELUActivation",
+        "transformers.activations.GELUActivation",
+        "transformers.activations.FastGELUActivation",
+        "transformers.activations.QuickGELUActivation",
+        "torch.nn.modules.activation.SiLU",
+        "transformers.activations.MishActivation",
+        "transformers.activations.LinearActivation"
+      ],
+      "tensor_payload_bytes_read": 0,
+      "sdk_discovery": [
+        {
+          "command": [
+            "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+            "path",
+            "--root"
+          ],
+          "timeout_seconds": 5.0,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "ERROR: Could not load the `rocm[devel]` package, which is required to access runtime tools and development files. Please install it with your package manager (pip, uv, etc)\r\nERROR: rocm_sdk_devel module for the ROCm SDK development package is not installed. This can typically be obtained by installing `rocm[devel]` from your package manager\r\n",
+          "elapsed_seconds": 1.531
+        }
+      ]
+    },
+    "monitor": {
+      "before": {
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":158,\"RecordId\":11255,\"ProviderName\":\"Microsoft-Windows-Time-Service\",\"TimeCreated\":\"\\/Date(1791824088696)\\/\"},\"version\":\"5.1.26100.9444\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 158,
+              "RecordId": 11255,
+              "ProviderName": "Microsoft-Windows-Time-Service",
+              "TimeCreated": "/Date(1791824088696)/"
+            },
+            "version": "5.1.26100.9444",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      },
+      "after": {
+        "returncode": 0,
+        "timed_out": false,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":158,\"RecordId\":11255,\"ProviderName\":\"Microsoft-Windows-Time-Service\",\"TimeCreated\":\"\\/Date(1791824088696)\\/\"},\"version\":\"5.1.26100.9444\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 158,
+              "RecordId": 11255,
+              "ProviderName": "Microsoft-Windows-Time-Service",
+              "TimeCreated": "/Date(1791824088696)/"
+            },
+            "version": "5.1.26100.9444",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    "same_process_recovery": true,
+    "generation_rejection": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\runner.py\", line 304, in main\n    output_path = gen.generate(model_input, params, progress_cb, cancel_evt)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\generator.py\", line 123, in generate\n    raise ValueError(\"Preparation mode returns diagnostics through prepare_geometry; generation is disabled\")\nValueError: Preparation mode returns diagnostics through prepare_geometry; generation is disabled\n",
+    "unload_reload_same_worker": true,
+    "cooperative_shutdown": {
+      "pid": 10452,
+      "exit": 0,
+      "reaped": true
+    },
+    "cancelled_worker": {
+      "pid": 464,
+      "exit": 1,
+      "reaped": true,
+      "preparation_not_started": true
+    },
+    "output_files": [],
+    "real_checkpoint_loads": 0,
+    "glb_files_generated": 0,
+    "host_torch_imported": false,
+    "classification": "PASS"
+  }
+}

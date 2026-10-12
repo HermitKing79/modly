@@ -45,27 +45,82 @@ class AMDScaffold(BaseGenerator):
     _identity = None
     _config = None
     _tensor_guard = None
+    _discovery = None
+    _preparation_guards = None
+    _pipeline_class = None
 
     @classmethod
     def worker_identity(cls, model_id):
         cls._config = json.loads(os.environ["MODLY_AMD_CONFIG_JSON"])
-        offline_guard(Path(os.environ["WORKSPACE_DIR"]))
+        if cls._config.get("mode") == amd_runtime.PREPARATION_MODE:
+            from services.amd_offline_guard import block_external_actions
+            cls._discovery = []
+            sdk = Path(cls._config["python"]).parent / "rocm-sdk.exe"
+            verification = block_external_actions(sdk_executable=sdk, discovery_records=cls._discovery,
+                                                 scratch_dir=Path(os.environ["WORKSPACE_DIR"]))
+            os.environ.update(HIP_VISIBLE_DEVICES="0", ROCR_VISIBLE_DEVICES="0", CUDA_VISIBLE_DEVICES="0")
+        else:
+            offline_guard(Path(os.environ["WORKSPACE_DIR"]))
         cls._identity, cls._tensor_guard = amd_runtime.worker_preflight(cls._config, model_id)
+        if cls._config.get("mode") == amd_runtime.PREPARATION_MODE:
+            cls._identity["sdk_verification"] = verification
         return cls._identity
 
     def load(self):
         if self._identity is None or self._config is None:
             raise ValueError("Verified AMD worker identity required before mock readiness")
+        if self._config.get("mode") == amd_runtime.PREPARATION_MODE:
+            if self.MODEL_NODE_ID != "generate":
+                raise ValueError("Alpha-only geometry preparation does not implement texturing/refine")
+            self._model = "geometry-configuration-only; weights-unloaded"
+            return
         self._checkpoints = amd_runtime.validate_models(self._config["models"], self.MODEL_NODE_ID)
         self._model = "mock-readiness-only"
 
     def unload(self):
+        if getattr(self, "_preparation", None) is not None:
+            self._preparation.close()
+            self._preparation = None
         self._model = None
+
+    def prepare_geometry(self, image_bytes, params):
+        if (self._config.get("mode") != amd_runtime.PREPARATION_MODE or self.MODEL_NODE_ID != "generate"
+                or params != {"image_mode": "alpha-only"} or not self.is_loaded()):
+            raise ValueError("Explicit loaded AMD alpha-only preparation worker required")
+        if getattr(self, "_preparation", None) is not None:
+            self._preparation.close()
+            self._preparation = None
+        # Reject masks before real imports or factory calls.
+        from alpha_input import decode_alpha_image
+        from model_assets import validate_geometry_assets
+        try:
+            image, _ = decode_alpha_image(image_bytes)
+            image.close()
+            validate_geometry_assets(self._config["geometry"], self._config["source_root"])
+        except (ValueError, OSError) as exc:
+            raise amd_runtime.PreparationValidationError(str(exc)) from exc
+        if type(self)._preparation_guards is None:
+            from preparation_guards import PreparationGuards
+            type(self)._preparation_guards = PreparationGuards(self._config["source_root"])
+        from geometry_preparation import GeometryPreparation
+        session = GeometryPreparation(self._config["geometry"], self._config["source_root"],
+                                      self._preparation_guards, self._pipeline_class)
+        try:
+            diagnostics = session.prepare(image_bytes)
+            type(self)._pipeline_class = session.pipeline_class
+            self._preparation = session
+            diagnostics["sdk_discovery"] = self._discovery
+            return diagnostics
+        except BaseException:
+            session.close()
+            raise
 
     def _auto_download(self):
         raise RuntimeError("AMD scaffold is offline; model downloads are disabled")
 
     def generate(self, image_bytes, params, progress_cb=None, cancel_event=None):
+        if (self._config or {}).get("mode") == amd_runtime.PREPARATION_MODE:
+            raise ValueError("Preparation mode returns diagnostics through prepare_geometry; generation is disabled")
         if not isinstance(params, dict) or params.get("mock") is not True:
             raise ValueError("AMD scaffold requires mock=true; inference is not implemented")
         if set(params) - {"mock", "existing_mesh_path", "image_mode"}:

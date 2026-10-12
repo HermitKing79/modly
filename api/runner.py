@@ -248,6 +248,28 @@ def main() -> None:
                 gen.load()
                 send({"type": "loaded"})
 
+            # ---- experimental AMD configuration preparation -----------
+            elif action == "prepare_geometry":
+                try:
+                    validate_requested_model(msg, manifest, node)
+                    if not amd_runtime.is_amd(manifest) or node.get("id") != "generate":
+                        raise ValueError("Preparation is restricted to the experimental AMD Generate node")
+                    if not isinstance(msg.get("params"), dict) or msg["params"] != {"image_mode": "alpha-only"}:
+                        raise ValueError("Preparation requires explicit image_mode=alpha-only")
+                    if not _generator_is_loaded(gen):
+                        raise ValueError("Load the preparation worker before requesting geometry configuration")
+                    diagnostics = gen.prepare_geometry(decode_model_input(msg), msg["params"])
+                    send({"type": "prepared", "id": rid, "diagnostics": diagnostics})
+                except Exception as exc:
+                    recoverable = isinstance(exc, amd_runtime.PreparationValidationError)
+                    if not recoverable:
+                        gen.unload()
+                    send({"type": "error", "id": rid, "message": str(exc),
+                          "traceback": traceback.format_exc(), "loaded": _generator_is_loaded(gen),
+                          "recoverable": recoverable})
+                    if not recoverable:
+                        return
+
             # ---- generate --------------------------------------------
             elif action == "generate":
                 validate_requested_model(msg, manifest, node)

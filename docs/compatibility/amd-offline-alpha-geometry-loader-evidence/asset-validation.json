@@ -1,0 +1,55 @@
+{
+  "models": {
+    "sparse_structure_decoder": {
+      "name": "SparseStructureDecoder",
+      "source": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sparse_structure_vae.py",
+      "source_sha256": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857",
+      "header_sha256": "fb31e5d5ff5d51b91bdab639fa919853e9aaaaf06e4a4e69a918af2799c64b94"
+    },
+    "sparse_structure_flow_model": {
+      "name": "SparseStructureFlowModel",
+      "source": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sparse_structure_flow.py",
+      "source_sha256": "858d9b076cc71f6955bb292ea394d620ce6f6f53cebb53bff2116a8c5cec026e",
+      "header_sha256": "512d8dd48a9219d0f30b3435019ba797abbff6d67e421bc9adf7f8435d99f692"
+    },
+    "shape_slat_decoder": {
+      "name": "FlexiDualGridVaeDecoder",
+      "source": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sc_vaes\\fdg_vae.py",
+      "source_sha256": "1d267cdca119eb619674dc87bfccd8c5a1d90288739e2b8e08e6f497ac14ce9c",
+      "header_sha256": "80dc6403ca284a2361109cde3190bc1b5ea5d30936e8f80625cbbc0827062c83"
+    },
+    "shape_slat_flow_model_512": {
+      "name": "SLatFlowModel",
+      "source": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\structured_latent_flow.py",
+      "source_sha256": "3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c",
+      "header_sha256": "fad66ccd0594d4a82e7346c14249b7c6556f5854143e2f9139f82d664ca92438"
+    },
+    "shape_slat_flow_model_1024": {
+      "name": "SLatFlowModel",
+      "source": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\structured_latent_flow.py",
+      "source_sha256": "3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c",
+      "header_sha256": "fad66ccd0594d4a82e7346c14249b7c6556f5854143e2f9139f82d664ca92438"
+    },
+    "tex_slat_decoder": {
+      "name": "SparseUnetVaeDecoder",
+      "source": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sc_vaes\\sparse_unet_vae.py",
+      "source_sha256": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+      "header_sha256": "ad3ed458569d937eace6ac42d9b6aa83853d654ebd0847791bbf19e2e31ab02b"
+    },
+    "tex_slat_flow_model_512": {
+      "name": "SLatFlowModel",
+      "source": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\structured_latent_flow.py",
+      "source_sha256": "3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c",
+      "header_sha256": "2374eaaa837c1ad0081a8032586a4d7a2ba2a1ae8c512837f41ea300e24dac66"
+    },
+    "tex_slat_flow_model_1024": {
+      "name": "SLatFlowModel",
+      "source": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\structured_latent_flow.py",
+      "source_sha256": "3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c",
+      "header_sha256": "2374eaaa837c1ad0081a8032586a4d7a2ba2a1ae8c512837f41ea300e24dac66"
+    }
+  },
+  "torch_imported": false,
+  "weights_loaded": false,
+  "tensor_payload_bytes_read": 0
+}

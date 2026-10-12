@@ -1,0 +1,67 @@
+{
+  "saved_ipc_assertions": true,
+  "saved_test_counts": [
+    {
+      "test": "test_amd_geometry_assets.py",
+      "count": 8
+    },
+    {
+      "test": "test_amd_geometry_ipc.py",
+      "count": 9
+    },
+    {
+      "test": "test_amd_alpha_input.py",
+      "count": 9
+    },
+    {
+      "test": "test_amd_headless_interfaces.py",
+      "count": 5
+    },
+    {
+      "test": "test_amd_model_metadata.py",
+      "count": 7
+    },
+    {
+      "test": "test_amd_scaffold_supervisor.py",
+      "count": 2
+    },
+    {
+      "test": "test_amd_decoder_contract.py",
+      "count": 9
+    },
+    {
+      "test": "test_amd_strict_loader.py",
+      "count": 5
+    },
+    {
+      "test": "api/tests/test_amd_scaffold.py",
+      "count": 13
+    }
+  ],
+  "total_tests": 67,
+  "inventory_saved_pair_equal": true,
+  "venv-metadata_saved_pair_equal": true,
+  "model-cache-metadata_saved_pair_equal": true,
+  "source_sha256": {
+    "api/runner.py": "5822eb588d0fed61ce05a2d1ac847c1f801464df6bf09be9531f453742a978f5",
+    "api/services/amd_geometry_assets.py": "55decd0c0ec9ea24ff914677039db5bd3e98606f18e9d695abca8f0d026aa669",
+    "api/services/amd_model_metadata.py": "ca7b9f01ea09cb1820208e22f9bb5605bf8cf67159ea0dead9be7036eaf2ab96",
+    "api/services/amd_observer.py": "a859393692f6083cebe41ba9914d4c7136134facac0b84f10d8f78cccf7e6c93",
+    "api/services/amd_offline_guard.py": "d874b8cbd0b873a8811c06fc61f28d3c6e36188371c4ab8a0fdc805ee83d6d00",
+    "api/services/amd_runtime.py": "16499c8c8b5ef3f133ee872bade91a4332f4195d757da662022511c5049bf756",
+    "api/services/extension_process.py": "336fba49283d041dce46c1f664f8912612b8fabbd5ddc5c7614dafcfaa989b28",
+    "experimental/extensions/trellis2-amd/alpha_input.py": "9349d5381273c3d750ba18627b5f2579db23ffbf547dccaa1006c254ac76ba70",
+    "experimental/extensions/trellis2-amd/generator.py": "bb458f0a752f047a550fdb1bc4a3bf5c2b0e2b8f1ad011aca024ff0c41dff71a",
+    "experimental/extensions/trellis2-amd/geometry_preparation.py": "1d2f6d9ba55201b85a8a5340a4352af3c1440ec5eda4c09c75a5d9a50c5fb40d",
+    "experimental/extensions/trellis2-amd/headless.py": "fbdbd36874975d87a4012bd8591339311fef062cd5522fa496735b9626d7a554",
+    "experimental/extensions/trellis2-amd/model_assets.py": "0651a3215e17335046a987c7a2ef2212b5e2187f886e7052bc9dbc35066c6f6e",
+    "experimental/extensions/trellis2-amd/preparation_guards.py": "acd18955caf7548d81236249422274426cf73efb994a8643fe8d37a514ec66c6",
+    "experimental/extensions/trellis2-amd/strict_loader.py": "0a4b2aab6fb34a034be1725d4514d71f17c59376151b549ab631ebc8b5c8fc79",
+    "scripts/compatibility/amd_geometry_loader_ipc.py": "02abd296d5f81558a4db3ea7942dc3af65ac955753152de4f45fe5f9c8c9923c",
+    "scripts/compatibility/test_amd_geometry_assets.py": "d1a9856ed3bb2e8161cb3d427c478a3a9599875a7aee74aa8a9d850e90c76e15",
+    "scripts/compatibility/test_amd_geometry_ipc.py": "ee4c737fb3baace12020cc9901e623e3f7f077c8389549be6b41e48f8c91649f",
+    "scripts/compatibility/test_amd_strict_loader.py": "9035e07d62e34b0af99524bae474af92cea5b5b0288c0b270e820f9be394e76b",
+    "scripts/compatibility/amd_model_metadata.py": "4e618330bcb784371f57f751097db67299a307d40ad763c46b49f4f7d5f3b775"
+  },
+  "syntax_files": 19
+}

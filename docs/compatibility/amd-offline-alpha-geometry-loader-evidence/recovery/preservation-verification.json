@@ -1,0 +1,90 @@
+{
+  "comparisons": {
+    "inventory": {
+      "byte_equal": true,
+      "structurally_equal": true,
+      "current_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475"
+    },
+    "venv-metadata": {
+      "byte_equal": false,
+      "structurally_equal": false,
+      "current_sha256": "3e57b35911706549a4ec4761ef2c8a16945ff6d98b530cd65ff7bb2bb71e91ee",
+      "trees": {
+        "amd": {
+          "entries": 94687,
+          "directory_size_deltas": 4368,
+          "file_metadata_changes": 0,
+          "normalized_equal": true
+        },
+        "modly": {
+          "entries": 61313,
+          "directory_size_deltas": 4085,
+          "file_metadata_changes": 0,
+          "normalized_equal": true
+        }
+      },
+      "normalized_equal": true
+    },
+    "model-cache-metadata": {
+      "byte_equal": false,
+      "structurally_equal": false,
+      "current_sha256": "64f6fb3aaaaaa243311168f203dc6238bd20bf3871d34e456977a014433d1997",
+      "trees": {
+        "C:\\Users\\wattz\\.cache\\huggingface\\hub": {
+          "entries": 16,
+          "directory_size_deltas": 1,
+          "file_metadata_changes": 0,
+          "normalized_equal": true
+        },
+        "C:\\Users\\wattz\\.cache\\torch\\hub": {
+          "entries": 4,
+          "directory_size_deltas": 1,
+          "file_metadata_changes": 0,
+          "normalized_equal": true
+        },
+        "C:\\Users\\wattz\\Documents\\Modly\\models": {
+          "entries": 332,
+          "directory_size_deltas": 41,
+          "file_metadata_changes": 0,
+          "normalized_equal": true
+        },
+        "D:\\AI\\Trellis2AMD\\ComfyUI\\models": {
+          "entries": 137,
+          "directory_size_deltas": 7,
+          "file_metadata_changes": 0,
+          "normalized_equal": true
+        }
+      },
+      "normalized_equal": true
+    }
+  },
+  "git_state": {
+    "amd_source": [
+      " M nodes.py",
+      "?? nodes.py.before-profiler-fix"
+    ],
+    "local_refs": [
+      "refs/heads/codex/amd-alpha-headless-import 4ce67676d9a0cd4e9dc12f63cbc4763e639d4101",
+      "refs/heads/codex/amd-bounded-gpu-proof 521d3d29e06fdde2e324e7d1bce7e03ef10dfaa8",
+      "refs/heads/codex/amd-native-import-preflight be8a90379c08f5fd21c941bcb9092da6b7cd69fa",
+      "refs/heads/codex/amd-offline-alpha-geometry-loader f518deae75bb4626d17d29812b995d4488d90edf",
+      "refs/heads/codex/amd-offline-model-audit d0f3426f85509e9705cec7852beef13b31fb2e70",
+      "refs/heads/codex/amd-sparse-decoder-loading-proof f518deae75bb4626d17d29812b995d4488d90edf",
+      "refs/heads/codex/amd-trellis2-bounded-proof 874a843e240d6c96b6149f7908c1734472ec0dcc",
+      "refs/heads/codex/amd-worker-scaffold 7c2c9634db52c7e78bfa90be16ed6bf969dc2dbe",
+      "refs/heads/main f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea"
+    ],
+    "remote_refs": [
+      "4ce67676d9a0cd4e9dc12f63cbc4763e639d4101\trefs/heads/codex/amd-alpha-headless-import",
+      "521d3d29e06fdde2e324e7d1bce7e03ef10dfaa8\trefs/heads/codex/amd-bounded-gpu-proof",
+      "be8a90379c08f5fd21c941bcb9092da6b7cd69fa\trefs/heads/codex/amd-native-import-preflight",
+      "d0f3426f85509e9705cec7852beef13b31fb2e70\trefs/heads/codex/amd-offline-model-audit",
+      "f518deae75bb4626d17d29812b995d4488d90edf\trefs/heads/codex/amd-sparse-decoder-loading-proof",
+      "874a843e240d6c96b6149f7908c1734472ec0dcc\trefs/heads/codex/amd-trellis2-bounded-proof",
+      "7c2c9634db52c7e78bfa90be16ed6bf969dc2dbe\trefs/heads/codex/amd-worker-scaffold",
+      "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea\trefs/heads/main"
+    ]
+  },
+  "meaningful_metadata_equal": true,
+  "interpretation": "Only directory st_size reporting differs. Paths, regular-file sizes, all mtimes/modes, normalized inventories and selected content hashes agree. Directory allocation sizes are not installed dependency/source bytes."
+}

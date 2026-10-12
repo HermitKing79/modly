@@ -12,6 +12,7 @@ import struct
 import sys
 
 CONTRACT = "amd-offline-scaffold-v1"
+PREPARATION_MODE = "geometry-preparation-alpha-only"
 SOURCE_COMMIT = "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5"
 VERSIONS = {"torch": "2.13.0+rocm10.0.0", "rocm": "10.0.0",
             "cumesh": "1.0+rocm10.0", "flex-gemm": "1.0.0+rocm10.0",
@@ -19,6 +20,10 @@ VERSIONS = {"torch": "2.13.0+rocm10.0.0", "rocm": "10.0.0",
             "triton-windows": "3.8.0.post29"}
 NATIVES = ("cumesh/_C", "cumesh/_cubvh", "cumesh/_xatlas",
            "flex_gemm/kernels/cuda", "o_voxel/_C", "_nvdiffrast_c")
+
+
+class PreparationValidationError(ValueError):
+    """A rejected input/configuration before real import; safe to correct in place."""
 
 
 def is_amd(manifest):
@@ -69,13 +74,20 @@ def runtime_config(manifest):
         raise ValueError("AMD scaffold requires opt-in MODLY_ENABLE_EXPERIMENTAL_AMD=1")
     path = absolute_file(os.environ.get("MODLY_AMD_RUNTIME_CONFIG"), "MODLY_AMD_RUNTIME_CONFIG")
     config = json.loads(path.read_text(encoding="utf-8"))
-    if not isinstance(config, dict) or set(config) != {"python", "source_root", "models"}:
-        raise ValueError("AMD config requires exactly python, source_root and models")
+    preparing = isinstance(config, dict) and config.get("mode") == PREPARATION_MODE
+    expected_keys = {"python", "source_root", "mode", "geometry"} if preparing else {"python", "source_root", "models"}
+    if not isinstance(config, dict) or set(config) != expected_keys:
+        raise ValueError("AMD config requires exactly " + ", ".join(sorted(expected_keys)))
     config["python"] = str(absolute_file(config["python"], "AMD Python"))
     source = local_path(config["source_root"], "AMD source_root")
     if not source.is_dir():
         raise ValueError("AMD source_root must be an existing absolute local directory")
     config["source_root"] = str(source.resolve())
+    if preparing:
+        if not isinstance(config["geometry"], dict) or set(config["geometry"]) != {"models_root", "pipeline_dir", "dino_dir"}:
+            raise ValueError("AMD geometry requires explicit models_root, pipeline_dir and dino_dir")
+        config["geometry"] = {key: str(local_path(value, key).resolve(strict=True)) for key, value in config["geometry"].items()}
+        return config
     if not isinstance(config["models"], dict) or set(config["models"]) != {"generate", "refine"}:
         raise ValueError("AMD models must explicitly declare generate and refine checkpoint lists")
     return config
@@ -215,28 +227,35 @@ def worker_preflight(config, model_id):
     # imports and GPU discovery are intentionally deferred to another milestone.
     def no_gpu(*args, **kwargs):
         raise RuntimeError("AMD scaffold forbids GPU initialization")
-    torch.cuda._lazy_init = no_gpu
+    preparing = config.get("mode") == PREPARATION_MODE
+    if not preparing:
+        torch.cuda._lazy_init = no_gpu
     from torch.utils._python_dispatch import TorchDispatchMode
     class NoTensors(TorchDispatchMode):
         def __torch_dispatch__(self, func, types, args=(), kwargs=None):
             raise RuntimeError("AMD scaffold forbids tensor operations")
-    mode = NoTensors()
-    mode.__enter__()
+    mode = None if preparing else NoTensors()
+    if mode is not None:
+        mode.__enter__()
     return {"contract": CONTRACT, "model_id": model_id, "python": str(Path(sys.executable).resolve()),
             "python_version": sys.version.split()[0], "prefix": sys.prefix,
             "torch": torch.__version__, "torch_path": torch.__file__, "hip": torch.version.hip,
             "cuda": torch.version.cuda, "packages": versions, "native_binaries": binaries,
             "native_wrapper_sha256": wrappers,
-            "source": source, "format": "safetensors", "mock_only": True,
+            "source": source, "format": "safetensors", "mock_only": not preparing,
+            "preparation_only": preparing, "runtime_mode": PREPARATION_MODE if preparing else "mock",
             "gpu_initialized": False, "weights_loaded": False}, mode
 
 
 def verify_identity(identity, manifest, config):
     if not isinstance(identity, dict):
         raise ValueError("AMD worker identity missing")
+    preparing = config.get("mode") == PREPARATION_MODE
     checks = {"contract": CONTRACT, "model_id": manifest["id"], "python": config["python"],
-              "torch": VERSIONS["torch"], "cuda": None, "mock_only": True,
+              "torch": VERSIONS["torch"], "cuda": None, "mock_only": not preparing,
               "gpu_initialized": False, "weights_loaded": False, "format": "safetensors"}
+    if preparing:
+        checks.update(preparation_only=True, runtime_mode=PREPARATION_MODE)
     if any(identity.get(k) != v or k not in identity for k, v in checks.items()) or \
             not identity.get("python_version", "").startswith("3.12.") or not identity.get("hip"):
         raise ValueError("AMD worker identity does not match the requested offline ROCm runtime/node")
