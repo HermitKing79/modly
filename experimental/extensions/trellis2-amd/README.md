@@ -36,6 +36,32 @@ reported; the user's modified `nodes.py` is neither imported nor changed.
 The adapter itself imports only stdlib and Modly's base contract. Upstream
 pipeline imports, ComfyUI shims, model factories and GPU discovery are deferred.
 
+The separate bounded [headless import proof](../../../docs/compatibility/amd-alpha-headless-import.md)
+imports the real AMD geometry and texturing classes through `headless.py`.
+It implements only local `folder_paths.models_dir` and callback-based
+`comfy.utils.ProgressBar`; existing ComfyUI modules cannot be replaced and
+unimplemented interfaces/previews fail explicitly. These imports can initialize
+GPU metadata and therefore run only in separately observed, disposable proof
+processes. Ordinary mock-worker startup retains its no-GPU-initialization guard.
+
+For explicitly pre-segmented input, mock parameters can include
+`"image_mode": "alpha-only"`. This requires a single-frame RGBA image with
+fully transparent background pixels and a nondegenerate foreground above alpha
+204, including after the upstream 1024-pixel resize. Opaque, empty, faint-only
+and degenerate masks fail; there is no conversion, segmentation or fallback.
+Inputs are limited to 32 MiB encoded, 4096 pixels per dimension and 16 Mi pixels.
+The receipt records validation only. The default `"image_mode": "rembg"`
+retains the prior mock route behavior; it does not load a background model.
+
+`alpha_input.preprocess_alpha_image()` validates the mask and delegates to the
+real pipeline's unchanged CPU crop/composite method with `rembg_model=None`.
+The proof uses empty constructor-created pipeline shells, never model factories.
+The upstream texturing `from_pretrained()` still constructs BiRefNet regardless
+of image alpha. A future alpha-only loader must explicitly omit that constructor
+and bind the verified local DINO model; that loader is not implemented here.
+Neither alpha validation nor passing headless imports establish model-loading
+or generation readiness. Mask quality still depends on the supplied cutout.
+
 Mock parameters must contain `"mock": true`. Refine additionally requires an
 absolute existing GLB path under the current worker output directory via
 `existing_mesh_path`; validation checks its container header, not its geometry.

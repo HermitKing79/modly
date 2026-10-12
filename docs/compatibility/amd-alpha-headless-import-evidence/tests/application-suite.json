@@ -1,0 +1,16 @@
+{
+  "timeout": true,
+  "tree_cleanup_verified": true,
+  "cleanup": {
+    "exit": 0,
+    "stdout": "SUCCESS: The process with PID 4020 (child process of PID 21216) has been terminated.\r\nSUCCESS: The process with PID 21216 (child process of PID 27040) has been terminated.\r\n",
+    "stderr": ""
+  },
+  "exit": 1,
+  "command": [
+    "C:\\Program Files\\nodejs\\node.EXE",
+    "scripts/run-pytests.mjs"
+  ],
+  "cwd": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof",
+  "timeout_seconds": 120
+}

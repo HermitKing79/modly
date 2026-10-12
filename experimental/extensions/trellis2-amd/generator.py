@@ -68,12 +68,17 @@ class AMDScaffold(BaseGenerator):
     def generate(self, image_bytes, params, progress_cb=None, cancel_event=None):
         if not isinstance(params, dict) or params.get("mock") is not True:
             raise ValueError("AMD scaffold requires mock=true; inference is not implemented")
-        if set(params) - {"mock", "existing_mesh_path"}:
+        if set(params) - {"mock", "existing_mesh_path", "image_mode"}:
             raise ValueError("Unknown AMD mock parameters; inference settings are prohibited")
         if not self.is_loaded():
             raise ValueError("AMD mock readiness has not been loaded")
         if not isinstance(image_bytes, bytes) or not image_bytes:
             raise ValueError("Mock route requires nonempty image bytes")
+        from alpha_input import validate_mode, decode_alpha_image
+        image_mode = validate_mode(params.get("image_mode", "rembg"))
+        alpha_input = None
+        if image_mode == "alpha-only":
+            _, alpha_input = decode_alpha_image(image_bytes)
         mesh = None
         if self.MODEL_NODE_ID == "refine":
             mesh = amd_runtime.absolute_file(params.get("existing_mesh_path"), "Texture input GLB")
@@ -92,6 +97,7 @@ class AMDScaffold(BaseGenerator):
                    "route": self.MODEL_NODE_ID, "mock": True, "asset_generated": False,
                    "weights_loaded": False, "gpu_initialized": False,
                    "image_sha256": hashlib.sha256(image_bytes).hexdigest(),
+                   "image_mode": image_mode, "alpha_input": alpha_input,
                    "input_mesh": str(mesh) if mesh else None,
                    "offline_checkpoints": self._checkpoints}
         output = self.outputs_dir / f"amd-{self.MODEL_NODE_ID}-mock-{uuid.uuid4().hex}.json"

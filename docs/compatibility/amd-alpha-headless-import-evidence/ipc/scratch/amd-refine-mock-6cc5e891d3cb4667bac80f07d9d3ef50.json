@@ -1,0 +1,41 @@
+{
+  "schema": "modly.amd.mock-receipt.v1",
+  "model_id": "trellis2-amd/refine",
+  "route": "refine",
+  "mock": true,
+  "asset_generated": false,
+  "weights_loaded": false,
+  "gpu_initialized": false,
+  "image_sha256": "c486eab77966cc9cad7abcaca5315a78ec1e72bcb5ff35f092c0d6e493d611bd",
+  "image_mode": "alpha-only",
+  "alpha_input": {
+    "mode": "alpha-only",
+    "size": [
+      12,
+      10
+    ],
+    "foreground_bbox": [
+      2,
+      2,
+      9,
+      7
+    ],
+    "resized_foreground_bbox": [
+      2,
+      2,
+      9,
+      7
+    ],
+    "rembg_required": false
+  },
+  "input_mesh": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-alpha-headless-import-evidence\\ipc\\scratch\\mesh-container-fixture.glb",
+  "offline_checkpoints": [
+    {
+      "prefix": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-alpha-headless-import-evidence\\ipc\\scratch\\metadata-only-fixture",
+      "config": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-alpha-headless-import-evidence\\ipc\\scratch\\metadata-only-fixture.json",
+      "weights": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-alpha-headless-import-evidence\\ipc\\scratch\\metadata-only-fixture.safetensors",
+      "class": "fixture",
+      "header_only": true
+    }
+  ]
+}

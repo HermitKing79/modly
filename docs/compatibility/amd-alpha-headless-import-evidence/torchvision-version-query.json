@@ -1,0 +1,13 @@
+{
+  "content": "#include \"vision.h\"\n\n#include <torch/library.h>\n\n#ifdef WITH_CUDA\n#include <cuda.h>\n#endif\n#ifdef WITH_HIP\n#include <hip/hip_runtime.h>\n#endif\n\n// If we are in a Windows environment, we need to define\n// initialization functions for the _custom_ops extension.\n#if !defined(MOBILE) && defined(_WIN32)\nvoid* PyInit__C(void) {\n  return nullptr;\n}\n#endif // !defined(MOBILE) && defined(_WIN32)\n\nnamespace vision {\nint64_t cuda_version() {\n#ifdef WITH_CUDA\n  // looks like 12060, 12080, etc.\n  return CUDA_VERSION;\n#else\n  return -1;\n#endif\n}\n\nTORCH_LIBRARY_FRAGMENT(torchvision, m) {\n  m.def(\"_cuda_version\", &cuda_version);\n}\n} // namespace vision\n",
+  "title": "vision.cpp",
+  "modified_date": "2026-01-27T18:45:11Z",
+  "url": "https://github.com/pytorch/vision/blob/8fb87713a24951e639c494b0f2a8a81b5f8e33a6/torchvision/csrc/vision.cpp",
+  "display_url": "https://github.com/pytorch/vision/blob/8fb87713a24951e639c494b0f2a8a81b5f8e33a6/torchvision/csrc/vision.cpp",
+  "display_title": "vision.cpp",
+  "structuredContent": {
+    "title": "vision.cpp",
+    "content": "#include \"vision.h\"\n\n#include <torch/library.h>\n\n#ifdef WITH_CUDA\n#include <cuda.h>\n#endif\n#ifdef WITH_HIP\n#include <hip/hip_runtime.h>\n#endif\n\n// If we are in a Windows environment, we need to define\n// initialization functions for the _custom_ops extension.\n#if !defined(MOBILE) && defined(_WIN32)\nvoid* PyInit__C(void) {\n  return nullptr;\n}\n#endif // !defined(MOBILE) && defined(_WIN32)\n\nnamespace vision {\nint64_t cuda_version() {\n#ifdef WITH_CUDA\n  // looks like 12060, 12080, etc.\n  return CUDA_VERSION;\n#else\n  return -1;\n#endif\n}\n\nTORCH_LIBRARY_FRAGMENT(torchvision, m) {\n  m.def(\"_cuda_version\", &cuda_version);\n}\n} // namespace vision\n",
+    "display_url": "https://github.com/pytorch/vision/blob/8fb87713a24951e639c494b0f2a8a81b5f8e33a6/torchvision/csrc/vision.cpp"
+  }
+}

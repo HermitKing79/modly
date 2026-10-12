@@ -17,7 +17,11 @@ def main():
     output = root / "docs/compatibility/amd-offline-model-audit-evidence"
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("phase", choices=["before", "after"])
-    phase = parser.parse_args().phase
+    parser.add_argument("--output", type=Path, default=output)
+    options = parser.parse_args()
+    phase = options.phase
+    output = options.output.resolve()
+    output.relative_to(root)
     spec = importlib.util.spec_from_file_location("existing_snapshot", root / "scripts/compatibility/amd_bounded_gpu_proof.py")
     proof = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(proof)
