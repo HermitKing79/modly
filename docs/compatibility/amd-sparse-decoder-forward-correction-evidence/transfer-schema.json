@@ -1,0 +1,64 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "torch": "2.13.0+rocm10.0.0",
+  "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+  "hip": "7.15.26333",
+  "cuda": null,
+  "schemas": {
+    "to.dtype_layout": "aten::to.dtype_layout(Tensor(a) self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, bool non_blocking=False, bool copy=False, MemoryFormat? memory_format=None) -> Tensor(a)",
+    "_to_copy.default": "aten::_to_copy(Tensor self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, bool non_blocking=False, MemoryFormat? memory_format=None) -> Tensor"
+  },
+  "original_input": {
+    "error": "CPU probe prohibits GPU initialization",
+    "dispatch": []
+  },
+  "explicit_input_cpu_surrogate": {
+    "dispatch": [
+      {
+        "op": "aten._to_copy.default",
+        "kwargs": {
+          "device": "cpu"
+        },
+        "source_device": "cpu"
+      }
+    ],
+    "shape": [
+      1,
+      8,
+      1,
+      1,
+      1
+    ],
+    "dtype": "torch.float32",
+    "equal": true,
+    "distinct": true
+  },
+  "explicit_output_cpu_surrogate": {
+    "dispatch": [
+      {
+        "op": "aten._to_copy.default",
+        "kwargs": {
+          "device": "cpu"
+        },
+        "source_device": "cpu"
+      }
+    ],
+    "shape": [
+      1,
+      1,
+      4,
+      4,
+      4
+    ],
+    "dtype": "torch.float32",
+    "equal": true,
+    "distinct": true
+  },
+  "gpu_initialized": false,
+  "model_loads": 0,
+  "gpu_dispatches": 0,
+  "schema_source": {
+    "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torchgen\\packaged\\ATen\\native\\native_functions.yaml",
+    "sha256": "0cea8c7cc87f74166a8f085db479452149bc32391cc073c66ce7275e5be11023"
+  }
+}

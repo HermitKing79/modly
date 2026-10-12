@@ -68,6 +68,7 @@ class ForwardContractTests(unittest.TestCase):
 
     def good_record(self):
         return {'status':'PASS','stage':'complete','forward_calls':1,'root_decoder_calls':1,'load_calls':1,
+                'transfer_calls':{'input':1,'output':1},
                 'fixture':contract.fixture(CONFIG),'cpu_load':{'status':'PASS'},
                 'forward':{'status':'PASS','output':self.output(),'grad_enabled':False,'output_is_inference_tensor':True},
                 'release':{'allocated_bytes':0,'reserved_bytes':0,'model_collected':True,'input_collected':True,'output_collected':True}}

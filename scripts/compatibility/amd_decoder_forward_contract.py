@@ -23,6 +23,43 @@ class SingleForward:
         return call()
 
 
+class TensorTransfers:
+    """Exact single-use input/output copies; never an operator-wide allowance."""
+    def __init__(self):
+        self.counts = {'input': 0, 'output': 0}
+        self.active = None
+
+    def begin(self, direction, source, description, phase):
+        if direction not in self.counts or self.active is not None or self.counts[direction]:
+            raise RuntimeError('Invalid, overlapping or consumed tensor transfer permit')
+        if direction == 'output' and self.counts['input'] != 1:
+            raise RuntimeError('Output copy requires the completed input transfer')
+        stride = description.get('stride')
+        if not isinstance(stride,list) or len(stride)!=5 or any(type(value) is not int or value<0 for value in stride):
+            raise RuntimeError('Invalid transfer stride metadata')
+        expected = {'shape': [1,8,1,1,1] if direction == 'input' else [1,1,4,4,4],
+                    'stride': [8,1,1,1,1] if direction == 'input' else list(stride),
+                    'dtype': 'torch.float32', 'device': 'cpu' if direction == 'input' else 'cuda:0',
+                    'layout': 'torch.strided', 'contiguous': True, 'requires_grad': False}
+        if (phase != direction+'-transfer' or description != expected
+                or description.get('contiguous') is not True or description.get('requires_grad') is not False):
+            raise RuntimeError('Unexpected tensor metadata or transfer lifecycle phase')
+        self.active = (direction, source, expected)
+
+    def authorize(self, operation, args, kwargs, phase, description):
+        if self.active is None:
+            raise RuntimeError('Unarmed or repeated tensor transfer')
+        direction, source, expected = self.active
+        target = 'cuda:0' if direction == 'input' else 'cpu'
+        if (operation != 'aten._to_copy.default' or type(args) is not tuple or len(args) != 1
+                or args[0] is not source or phase != direction+'-transfer'
+                or description != expected or kwargs != {'device': target}):
+            raise RuntimeError('Unapproved tensor copy operation, source, arguments or phase')
+        # Consume before redispatch: even a native failure cannot enable a retry.
+        self.counts[direction] += 1
+        self.active = None
+
+
 def placement_operation(name):
     return gpu_operation_allowed(name)
 
@@ -57,6 +94,8 @@ def classify(record, process_ok, healthy, preserved):
         return 'PARTIAL'
     return 'PASS' if (record.get('status')=='PASS' and record.get('stage')=='complete'
                       and all(type(record.get(key)) is int and record[key]==1 for key in ('forward_calls','root_decoder_calls','load_calls'))
+                      and record.get('transfer_calls')=={'input':1,'output':1}
+                      and all(type(value) is int for value in record['transfer_calls'].values())
                       and record.get('fixture')==fixture(CONFIG)
                       and record.get('cpu_load',{}).get('status')=='PASS'
                       and record.get('forward',{}).get('status')=='PASS'

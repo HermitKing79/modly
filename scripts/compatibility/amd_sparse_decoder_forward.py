@@ -25,7 +25,7 @@ from services.amd_offline_guard import block_external_actions
 from services.amd_observer import windows_observation, healthy_observation
 
 SOURCE,VENV,PREFIX=previous.SOURCE,previous.VENV,previous.PREFIX
-EVIDENCE=ROOT/'docs/compatibility/amd-sparse-decoder-forward-evidence'
+EVIDENCE=ROOT/'docs/compatibility/amd-sparse-decoder-forward-correction-evidence'
 EVENT='FORWARD_EVENT='
 RESULT='FORWARD_RESULT='
 OLD=ROOT/'docs/compatibility/amd-sparse-decoder-loading-evidence/run/results.json'
@@ -67,6 +67,7 @@ def worker(scratch):
     record={'status':'FAIL','stage':'startup','forward_calls':0,'sdk_discovery':[]}
     component=model=latent=output=cpu_output=cpu_input=torch=None
     permit=contract.SingleForward()
+    transfers=contract.TensorTransfers()
     phase='cpu'; allowed_modules=set();root_id=None;root_calls=0
     def stage(name):
         record['stage']=name
@@ -127,10 +128,18 @@ def worker(scratch):
         class BoundedDispatch(TorchDispatchMode):
             def __torch_dispatch__(self,func,types,args=(),kwargs=None):
                 kwargs=kwargs or {}
-                if (has_gpu(args) or has_gpu(kwargs)) and (phase=='cpu' or
-                        (phase!='forward' and not contract.placement_operation(str(func)))):
+                if phase in ('input-transfer','output-transfer'):
+                    description=tensor_description(args[0]) if args and isinstance(args[0],torch.Tensor) else {}
+                    normalized={key:str(value) if isinstance(value,torch.device) else value for key,value in kwargs.items()}
+                    transfers.authorize(str(func),args,normalized,phase,description)
+                elif (has_gpu(args) or has_gpu(kwargs)) and (phase=='cpu' or
+                        (phase!='forward' and (phase not in ('placement','release') or not contract.placement_operation(str(func))))):
                     raise RuntimeError('Unapproved GPU operation outside forward: '+str(func))
                 return func(*args,**kwargs)
+        def tensor_description(tensor):
+            return {'shape':list(tensor.shape),'dtype':str(tensor.dtype),'device':str(tensor.device),
+                    'stride':list(tensor.stride()),
+                    'layout':str(tensor.layout),'contiguous':tensor.is_contiguous(),'requires_grad':tensor.requires_grad}
         with BoundedDispatch():
             stage('decoder-import')
             sys.path.insert(0,str(SOURCE))
@@ -184,7 +193,12 @@ def worker(scratch):
             record['placement_seconds']=time.monotonic()-began
             with torch.inference_mode():
                 cpu_input=torch.tensor(fixture['values'],dtype=torch.float32,device='cpu').reshape(fixture['input_shape'])
-                latent=cpu_input.to('cuda:0');torch.cuda.synchronize(0)
+                stage('input-transfer');phase='input-transfer'
+                transfers.begin('input',cpu_input,tensor_description(cpu_input),phase)
+                latent=torch.ops.aten._to_copy.default(cpu_input,device=torch.device('cuda:0'))
+                phase='placement';torch.cuda.synchronize(0)
+                if tensor_description(latent)!={**tensor_description(cpu_input),'device':'cuda:0'}:
+                    raise RuntimeError('Input copy changed shape, dtype or layout')
                 record['before_forward']=previous.gpu_memory(torch)
                 allowed_modules={id(item) for item in model.modules()};root_id=id(model)
                 stage('single-forward');phase='forward';began=time.monotonic()
@@ -193,7 +207,13 @@ def worker(scratch):
                 elapsed=time.monotonic()-began
                 record['after_forward']=previous.gpu_memory(torch)
                 stage('output-copy-validation')
-                cpu_output=output.cpu();torch.cuda.synchronize(0)
+                phase='output-transfer'
+                transfers.begin('output',output,tensor_description(output),phase)
+                cpu_output=torch.ops.aten._to_copy.default(output,device=torch.device('cpu'))
+                phase='placement';torch.cuda.synchronize(0)
+                expected_copy={**tensor_description(output),'device':'cpu'}
+                if tensor_description(cpu_output)!=expected_copy:
+                    raise RuntimeError('Output copy changed shape, dtype or layout')
                 description={'shape':list(output.shape),'dtype':str(output.dtype),'device':str(output.device),
                     'requires_grad':output.requires_grad,'inference_mode':torch.is_inference_mode_enabled(),
                     'values':cpu_output.reshape(-1).tolist()}
@@ -205,6 +225,7 @@ def worker(scratch):
             record['forward_calls']=permit.calls
             if root_calls!=1 or permit.calls!=1:raise RuntimeError('Forward count invariant failed')
             stage('release')
+            phase='release'
             model_ref,input_ref,output_ref=weakref.ref(model),weakref.ref(latent),weakref.ref(output)
             component.unload();component=None;model=latent=output=cpu_output=cpu_input=None
             gc.collect();torch.cuda.synchronize(0);torch.cuda.empty_cache();torch.cuda.synchronize(0)
@@ -219,6 +240,8 @@ def worker(scratch):
         record.update(error_type=type(exc).__name__,error=str(exc),traceback=traceback.format_exc())
     finally:
         record['forward_calls']=permit.calls;record['root_decoder_calls']=root_calls
+        record['transfer_calls']=transfers.counts.copy()
+        transfers.active=None
         # After any native error, do not issue another GPU operation. Process exit
         # and parent reaping own cleanup; no retry or attempted GPU repair.
         if component is not None:component.unload()
