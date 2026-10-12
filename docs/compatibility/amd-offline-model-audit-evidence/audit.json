@@ -1,0 +1,23 @@
+{
+  "timeout": false,
+  "tree_cleanup_verified": true,
+  "cleanup": null,
+  "exit": 1,
+  "command": [
+    "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-I",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_offline_model_audit.py",
+    "--source",
+    "D:/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD",
+    "--models",
+    "D:/AI/Trellis2AMD/ComfyUI/models",
+    "--amd-venv",
+    "D:/AI/Trellis2AMD/venv",
+    "--hf-cache",
+    "C:/Users/wattz/.cache/huggingface/hub",
+    "--output",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-offline-model-audit-evidence\\final-assets"
+  ],
+  "expected_exit": 1
+}

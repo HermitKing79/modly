@@ -1,0 +1,58 @@
+{
+  "roots": [
+    {
+      "root": "D:\\AI\\Trellis2AMD\\ComfyUI\\models",
+      "entries": 137,
+      "matching_paths": []
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "entries": 332,
+      "matching_paths": []
+    },
+    {
+      "root": "C:\\Users\\wattz\\.cache\\huggingface\\hub",
+      "entries": 16,
+      "matching_paths": []
+    },
+    {
+      "root": "C:\\Users\\wattz\\.cache\\torch\\hub",
+      "entries": 4,
+      "matching_paths": []
+    }
+  ],
+  "cache_environment": {
+    "HF_HOME": null,
+    "HF_HUB_CACHE": null,
+    "HUGGINGFACE_HUB_CACHE": null,
+    "TORCH_HOME": null,
+    "XDG_CACHE_HOME": null
+  },
+  "required_auxiliary": {
+    "repository_id": "briaai/RMBG-2.0",
+    "class": "BiRefNet",
+    "required_by": "Trellis2TexturingPipeline.from_pretrained -> BiRefNet.__init__",
+    "trust_remote_code": true,
+    "cache_search": [
+      {
+        "path": "C:\\Users\\wattz\\.cache\\huggingface\\hub\\models--briaai--RMBG-2.0",
+        "exists": false
+      }
+    ],
+    "candidates": [
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\briaai\\RMBG-2.0",
+        "exists": false,
+        "files_present": []
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\background_removal\\RMBG-2.0",
+        "exists": false,
+        "files_present": []
+      }
+    ],
+    "status": "MISSING",
+    "missing_requirement": "Local config.json, supported weight file or shard index with all shards, and every config.auto_map/custom-code dependency"
+  },
+  "missing_auxiliary": true
+}

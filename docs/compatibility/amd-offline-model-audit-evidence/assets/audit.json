@@ -1,0 +1,1169 @@
+{
+  "profile": "microsoft/TRELLIS.2-4B standard BF16/FP16; 512 and 1024",
+  "source": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD",
+  "models_root": "D:\\AI\\Trellis2AMD\\ComfyUI\\models",
+  "pipelines": {
+    "pipeline.json": {
+      "config": {
+        "name": "Trellis2ImageTo3DPipeline",
+        "args": {
+          "models": {
+            "sparse_structure_decoder": "microsoft/TRELLIS-image-large/ckpts/ss_dec_conv3d_16l8_fp16",
+            "sparse_structure_flow_model": "ckpts/ss_flow_img_dit_1_3B_64_bf16",
+            "shape_slat_decoder": "ckpts/shape_dec_next_dc_f16c32_fp16",
+            "shape_slat_flow_model_512": "ckpts/slat_flow_img2shape_dit_1_3B_512_bf16",
+            "shape_slat_flow_model_1024": "ckpts/slat_flow_img2shape_dit_1_3B_1024_bf16",
+            "tex_slat_decoder": "ckpts/tex_dec_next_dc_f16c32_fp16",
+            "tex_slat_flow_model_512": "ckpts/slat_flow_imgshape2tex_dit_1_3B_512_bf16",
+            "tex_slat_flow_model_1024": "ckpts/slat_flow_imgshape2tex_dit_1_3B_1024_bf16"
+          },
+          "sparse_structure_sampler": {
+            "name": "FlowEulerGuidanceIntervalSampler",
+            "args": {
+              "sigma_min": 1e-05
+            },
+            "params": {
+              "steps": 12,
+              "guidance_strength": 7.5,
+              "guidance_rescale": 0.7,
+              "guidance_interval": [
+                0.6,
+                1.0
+              ],
+              "rescale_t": 5.0
+            }
+          },
+          "shape_slat_sampler": {
+            "name": "FlowEulerGuidanceIntervalSampler",
+            "args": {
+              "sigma_min": 1e-05
+            },
+            "params": {
+              "steps": 12,
+              "guidance_strength": 7.5,
+              "guidance_rescale": 0.5,
+              "guidance_interval": [
+                0.6,
+                1.0
+              ],
+              "rescale_t": 3.0
+            }
+          },
+          "shape_slat_normalization": {
+            "mean": [
+              0.781296,
+              0.018091,
+              -0.495192,
+              -0.558457,
+              1.06053,
+              0.093252,
+              1.518149,
+              -0.933218,
+              -0.732996,
+              2.604095,
+              -0.118341,
+              -2.143904,
+              0.495076,
+              -2.179512,
+              -2.130751,
+              -0.996944,
+              0.261421,
+              -2.217463,
+              1.260067,
+              -0.150213,
+              3.790713,
+              1.481266,
+              -1.046058,
+              -1.523667,
+              -0.059621,
+              2.22078,
+              1.621212,
+              0.87723,
+              0.567247,
+              -3.175944,
+              -3.186688,
+              1.578665
+            ],
+            "std": [
+              5.972266,
+              4.706852,
+              5.44501,
+              5.209927,
+              5.32022,
+              4.547237,
+              5.020802,
+              5.444004,
+              5.226681,
+              5.683095,
+              4.831436,
+              5.286469,
+              5.652043,
+              5.367606,
+              5.525084,
+              4.730578,
+              4.805265,
+              5.124013,
+              5.530808,
+              5.619001,
+              5.10393,
+              5.41767,
+              5.269677,
+              5.547194,
+              5.634698,
+              5.235274,
+              6.110351,
+              5.511298,
+              6.237273,
+              4.879207,
+              5.347008,
+              5.405691
+            ]
+          },
+          "tex_slat_sampler": {
+            "name": "FlowEulerGuidanceIntervalSampler",
+            "args": {
+              "sigma_min": 1e-05
+            },
+            "params": {
+              "steps": 12,
+              "guidance_strength": 1.0,
+              "guidance_rescale": 0.0,
+              "guidance_interval": [
+                0.6,
+                0.9
+              ],
+              "rescale_t": 3.0
+            }
+          },
+          "tex_slat_normalization": {
+            "mean": [
+              3.501659,
+              2.212398,
+              2.226094,
+              0.251093,
+              -0.026248,
+              -0.687364,
+              0.439898,
+              -0.928075,
+              0.029398,
+              -0.339596,
+              -0.869527,
+              1.038479,
+              -0.972385,
+              0.126042,
+              -1.129303,
+              0.455149,
+              -1.209521,
+              2.069067,
+              0.544735,
+              2.569128,
+              -0.323407,
+              2.293,
+              -1.925608,
+              -1.217717,
+              1.213905,
+              0.971588,
+              -0.023631,
+              0.10675,
+              2.021786,
+              0.250524,
+              -0.662387,
+              -0.768862
+            ],
+            "std": [
+              2.665652,
+              2.743913,
+              2.765121,
+              2.595319,
+              3.037293,
+              2.291316,
+              2.144656,
+              2.911822,
+              2.969419,
+              2.501689,
+              2.154811,
+              3.163343,
+              2.621215,
+              2.381943,
+              3.186697,
+              3.021588,
+              2.295916,
+              3.234985,
+              3.233086,
+              2.26014,
+              2.874801,
+              2.810596,
+              3.29272,
+              2.674999,
+              2.680878,
+              2.372054,
+              2.451546,
+              2.353556,
+              2.995195,
+              2.379849,
+              2.786195,
+              2.77519
+            ]
+          },
+          "image_cond_model": {
+            "name": "DinoV3FeatureExtractor",
+            "args": {
+              "model_name": "facebook/dinov3-vitl16-pretrain-lvd1689m"
+            }
+          },
+          "rembg_model": {
+            "name": "BiRefNet",
+            "args": {
+              "model_name": "briaai/RMBG-2.0"
+            }
+          },
+          "default_pipeline_type": "1024_cascade"
+        }
+      },
+      "resolved_models": {
+        "sparse_structure_decoder": {
+          "declared": "microsoft/TRELLIS-image-large/ckpts/ss_dec_conv3d_16l8_fp16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS-image-large\\ckpts\\ss_dec_conv3d_16l8_fp16",
+          "decoder_override": true
+        },
+        "sparse_structure_flow_model": {
+          "declared": "ckpts/ss_flow_img_dit_1_3B_64_bf16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_flow_img_dit_1_3B_64_bf16",
+          "decoder_override": false
+        },
+        "shape_slat_decoder": {
+          "declared": "ckpts/shape_dec_next_dc_f16c32_fp16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_dec_next_dc_f16c32_fp16",
+          "decoder_override": false
+        },
+        "shape_slat_flow_model_512": {
+          "declared": "ckpts/slat_flow_img2shape_dit_1_3B_512_bf16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_512_bf16",
+          "decoder_override": false
+        },
+        "shape_slat_flow_model_1024": {
+          "declared": "ckpts/slat_flow_img2shape_dit_1_3B_1024_bf16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_1024_bf16",
+          "decoder_override": false
+        },
+        "tex_slat_decoder": {
+          "declared": "ckpts/tex_dec_next_dc_f16c32_fp16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_dec_next_dc_f16c32_fp16",
+          "decoder_override": false
+        },
+        "tex_slat_flow_model_512": {
+          "declared": "ckpts/slat_flow_imgshape2tex_dit_1_3B_512_bf16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_512_bf16",
+          "decoder_override": false
+        },
+        "tex_slat_flow_model_1024": {
+          "declared": "ckpts/slat_flow_imgshape2tex_dit_1_3B_1024_bf16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_1024_bf16",
+          "decoder_override": false
+        }
+      },
+      "sha256": "222c359ab1ed9bc6735a640a34f95d47f8681b9bc4aaa101bfb80274676253c6"
+    },
+    "texturing_pipeline.json": {
+      "config": {
+        "name": "Trellis2TexturingPipeline",
+        "args": {
+          "models": {
+            "shape_slat_encoder": "ckpts/shape_enc_next_dc_f16c32_fp16",
+            "tex_slat_decoder": "ckpts/tex_dec_next_dc_f16c32_fp16",
+            "tex_slat_flow_model_512": "ckpts/slat_flow_imgshape2tex_dit_1_3B_512_bf16",
+            "tex_slat_flow_model_1024": "ckpts/slat_flow_imgshape2tex_dit_1_3B_1024_bf16"
+          },
+          "shape_slat_normalization": {
+            "mean": [
+              0.781296,
+              0.018091,
+              -0.495192,
+              -0.558457,
+              1.06053,
+              0.093252,
+              1.518149,
+              -0.933218,
+              -0.732996,
+              2.604095,
+              -0.118341,
+              -2.143904,
+              0.495076,
+              -2.179512,
+              -2.130751,
+              -0.996944,
+              0.261421,
+              -2.217463,
+              1.260067,
+              -0.150213,
+              3.790713,
+              1.481266,
+              -1.046058,
+              -1.523667,
+              -0.059621,
+              2.22078,
+              1.621212,
+              0.87723,
+              0.567247,
+              -3.175944,
+              -3.186688,
+              1.578665
+            ],
+            "std": [
+              5.972266,
+              4.706852,
+              5.44501,
+              5.209927,
+              5.32022,
+              4.547237,
+              5.020802,
+              5.444004,
+              5.226681,
+              5.683095,
+              4.831436,
+              5.286469,
+              5.652043,
+              5.367606,
+              5.525084,
+              4.730578,
+              4.805265,
+              5.124013,
+              5.530808,
+              5.619001,
+              5.10393,
+              5.41767,
+              5.269677,
+              5.547194,
+              5.634698,
+              5.235274,
+              6.110351,
+              5.511298,
+              6.237273,
+              4.879207,
+              5.347008,
+              5.405691
+            ]
+          },
+          "tex_slat_sampler": {
+            "name": "FlowEulerGuidanceIntervalSampler",
+            "args": {
+              "sigma_min": 1e-05
+            },
+            "params": {
+              "steps": 12,
+              "guidance_strength": 1.0,
+              "guidance_rescale": 0.0,
+              "guidance_interval": [
+                0.6,
+                0.9
+              ],
+              "rescale_t": 3.0
+            }
+          },
+          "tex_slat_normalization": {
+            "mean": [
+              3.501659,
+              2.212398,
+              2.226094,
+              0.251093,
+              -0.026248,
+              -0.687364,
+              0.439898,
+              -0.928075,
+              0.029398,
+              -0.339596,
+              -0.869527,
+              1.038479,
+              -0.972385,
+              0.126042,
+              -1.129303,
+              0.455149,
+              -1.209521,
+              2.069067,
+              0.544735,
+              2.569128,
+              -0.323407,
+              2.293,
+              -1.925608,
+              -1.217717,
+              1.213905,
+              0.971588,
+              -0.023631,
+              0.10675,
+              2.021786,
+              0.250524,
+              -0.662387,
+              -0.768862
+            ],
+            "std": [
+              2.665652,
+              2.743913,
+              2.765121,
+              2.595319,
+              3.037293,
+              2.291316,
+              2.144656,
+              2.911822,
+              2.969419,
+              2.501689,
+              2.154811,
+              3.163343,
+              2.621215,
+              2.381943,
+              3.186697,
+              3.021588,
+              2.295916,
+              3.234985,
+              3.233086,
+              2.26014,
+              2.874801,
+              2.810596,
+              3.29272,
+              2.674999,
+              2.680878,
+              2.372054,
+              2.451546,
+              2.353556,
+              2.995195,
+              2.379849,
+              2.786195,
+              2.77519
+            ]
+          },
+          "image_cond_model": {
+            "name": "DinoV3FeatureExtractor",
+            "args": {
+              "model_name": "facebook/dinov3-vitl16-pretrain-lvd1689m"
+            }
+          },
+          "rembg_model": {
+            "name": "BiRefNet",
+            "args": {
+              "model_name": "briaai/RMBG-2.0"
+            }
+          }
+        }
+      },
+      "resolved_models": {
+        "shape_slat_encoder": {
+          "declared": "ckpts/shape_enc_next_dc_f16c32_fp16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_enc_next_dc_f16c32_fp16",
+          "decoder_override": false
+        },
+        "tex_slat_decoder": {
+          "declared": "ckpts/tex_dec_next_dc_f16c32_fp16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_dec_next_dc_f16c32_fp16",
+          "decoder_override": false
+        },
+        "tex_slat_flow_model_512": {
+          "declared": "ckpts/slat_flow_imgshape2tex_dit_1_3B_512_bf16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_512_bf16",
+          "decoder_override": false
+        },
+        "tex_slat_flow_model_1024": {
+          "declared": "ckpts/slat_flow_imgshape2tex_dit_1_3B_1024_bf16",
+          "resolved_prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_1024_bf16",
+          "decoder_override": false
+        }
+      },
+      "sha256": "64009974a391fe9c948b2943fd2846dc4526bc569c1d56dafb8f9e5c181fcac3"
+    }
+  },
+  "checkpoints": {
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS-image-large\\ckpts\\ss_dec_conv3d_16l8_fp16": {
+      "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS-image-large\\ckpts\\ss_dec_conv3d_16l8_fp16",
+      "status": "VERIFIED_METADATA",
+      "config": {
+        "name": "SparseStructureDecoder",
+        "args": {
+          "out_channels": 1,
+          "latent_channels": 8,
+          "num_res_blocks": 2,
+          "num_res_blocks_middle": 2,
+          "channels": [
+            512,
+            128,
+            32
+          ],
+          "use_fp16": true
+        }
+      },
+      "core_shape_checks": {},
+      "metadata_file": "ss_dec_conv3d_16l8_fp16.metadata.json",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS-image-large\\ckpts\\ss_dec_conv3d_16l8_fp16.safetensors",
+      "file_bytes": 147591972,
+      "mtime_ns": 1791274804653166600,
+      "header_bytes": 6552,
+      "bytes_read": 6560,
+      "tensor_data_bytes": 147585412,
+      "header_sha256": "fb31e5d5ff5d51b91bdab639fa919853e9aaaaf06e4a4e69a918af2799c64b94",
+      "tensor_count": 74,
+      "parameter_count": 73671201,
+      "dtypes": {
+        "F32": 38,
+        "F16": 36
+      },
+      "metadata_only_fixture": false
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_dec_next_dc_f16c32_fp16": {
+      "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_dec_next_dc_f16c32_fp16",
+      "status": "VERIFIED_METADATA",
+      "config": {
+        "name": "FlexiDualGridVaeDecoder",
+        "args": {
+          "resolution": 256,
+          "model_channels": [
+            1024,
+            512,
+            256,
+            128,
+            64
+          ],
+          "latent_channels": 32,
+          "num_blocks": [
+            4,
+            16,
+            8,
+            4,
+            0
+          ],
+          "block_type": [
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d"
+          ],
+          "up_block_type": [
+            "SparseResBlockC2S3d",
+            "SparseResBlockC2S3d",
+            "SparseResBlockC2S3d",
+            "SparseResBlockC2S3d"
+          ],
+          "block_args": [
+            {},
+            {},
+            {},
+            {},
+            {}
+          ],
+          "use_fp16": true
+        }
+      },
+      "core_shape_checks": {},
+      "metadata_file": "shape_dec_next_dc_f16c32_fp16.metadata.json",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_dec_next_dc_f16c32_fp16.safetensors",
+      "file_bytes": 948490494,
+      "mtime_ns": 1791274722716299500,
+      "header_bytes": 27560,
+      "bytes_read": 27568,
+      "tensor_data_bytes": 948462926,
+      "header_sha256": "80dc6403ca284a2361109cde3190bc1b5ea5d30936e8f80625cbbc0827062c83",
+      "tensor_count": 292,
+      "parameter_count": 474231463,
+      "dtypes": {
+        "F16": 292
+      },
+      "metadata_only_fixture": false
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_enc_next_dc_f16c32_fp16": {
+      "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_enc_next_dc_f16c32_fp16",
+      "status": "VERIFIED_METADATA",
+      "config": {
+        "name": "FlexiDualGridVaeEncoder",
+        "args": {
+          "model_channels": [
+            64,
+            128,
+            256,
+            512,
+            1024
+          ],
+          "latent_channels": 32,
+          "num_blocks": [
+            0,
+            4,
+            8,
+            16,
+            4
+          ],
+          "block_type": [
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d"
+          ],
+          "down_block_type": [
+            "SparseResBlockS2C3d",
+            "SparseResBlockS2C3d",
+            "SparseResBlockS2C3d",
+            "SparseResBlockS2C3d"
+          ],
+          "block_args": [
+            {},
+            {},
+            {},
+            {},
+            {}
+          ],
+          "use_fp16": true
+        }
+      },
+      "core_shape_checks": {},
+      "metadata_file": "shape_enc_next_dc_f16c32_fp16.metadata.json",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_enc_next_dc_f16c32_fp16.safetensors",
+      "file_bytes": 708797208,
+      "mtime_ns": 1791274692162498300,
+      "header_bytes": 26416,
+      "bytes_read": 26424,
+      "tensor_data_bytes": 708770784,
+      "header_sha256": "6736d6bb756ac87588138c928bdd6bb0ecaee46afd04e02ffdd664171a9fbf62",
+      "tensor_count": 284,
+      "parameter_count": 354385392,
+      "dtypes": {
+        "F16": 284
+      },
+      "metadata_only_fixture": false
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_1024_bf16": {
+      "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_1024_bf16",
+      "status": "VERIFIED_METADATA",
+      "config": {
+        "name": "SLatFlowModel",
+        "args": {
+          "resolution": 64,
+          "in_channels": 32,
+          "out_channels": 32,
+          "model_channels": 1536,
+          "cond_channels": 1024,
+          "num_blocks": 30,
+          "num_heads": 12,
+          "mlp_ratio": 5.3334,
+          "pe_mode": "rope",
+          "share_mod": true,
+          "initialization": "scaled",
+          "qk_rms_norm": true,
+          "qk_rms_norm_cross": true,
+          "dtype": "bfloat16"
+        }
+      },
+      "core_shape_checks": {
+        "input_layer.weight": [
+          1536,
+          32
+        ],
+        "out_layer.weight": [
+          32,
+          1536
+        ]
+      },
+      "metadata_file": "slat_flow_img2shape_dit_1_3B_1024_bf16.metadata.json",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_1024_bf16.safetensors",
+      "file_bytes": 2584574424,
+      "mtime_ns": 1791274796870326000,
+      "header_bytes": 66960,
+      "bytes_read": 66968,
+      "tensor_data_bytes": 2584507456,
+      "header_sha256": "fad66ccd0594d4a82e7346c14249b7c6556f5854143e2f9139f82d664ca92438",
+      "tensor_count": 640,
+      "parameter_count": 1292253728,
+      "dtypes": {
+        "BF16": 640
+      },
+      "metadata_only_fixture": false
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_512_bf16": {
+      "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_512_bf16",
+      "status": "VERIFIED_METADATA",
+      "config": {
+        "name": "SLatFlowModel",
+        "args": {
+          "resolution": 32,
+          "in_channels": 32,
+          "out_channels": 32,
+          "model_channels": 1536,
+          "cond_channels": 1024,
+          "num_blocks": 30,
+          "num_heads": 12,
+          "mlp_ratio": 5.3334,
+          "pe_mode": "rope",
+          "share_mod": true,
+          "initialization": "scaled",
+          "qk_rms_norm": true,
+          "qk_rms_norm_cross": true,
+          "dtype": "bfloat16"
+        }
+      },
+      "core_shape_checks": {
+        "input_layer.weight": [
+          1536,
+          32
+        ],
+        "out_layer.weight": [
+          32,
+          1536
+        ]
+      },
+      "metadata_file": "slat_flow_img2shape_dit_1_3B_512_bf16.metadata.json",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_img2shape_dit_1_3B_512_bf16.safetensors",
+      "file_bytes": 2584574424,
+      "mtime_ns": 1791274798872645700,
+      "header_bytes": 66960,
+      "bytes_read": 66968,
+      "tensor_data_bytes": 2584507456,
+      "header_sha256": "fad66ccd0594d4a82e7346c14249b7c6556f5854143e2f9139f82d664ca92438",
+      "tensor_count": 640,
+      "parameter_count": 1292253728,
+      "dtypes": {
+        "BF16": 640
+      },
+      "metadata_only_fixture": false
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_1024_bf16": {
+      "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_1024_bf16",
+      "status": "VERIFIED_METADATA",
+      "config": {
+        "name": "SLatFlowModel",
+        "args": {
+          "resolution": 64,
+          "in_channels": 64,
+          "out_channels": 32,
+          "model_channels": 1536,
+          "cond_channels": 1024,
+          "num_blocks": 30,
+          "num_heads": 12,
+          "mlp_ratio": 5.3334,
+          "pe_mode": "rope",
+          "share_mod": true,
+          "initialization": "scaled",
+          "qk_rms_norm": true,
+          "qk_rms_norm_cross": true,
+          "dtype": "bfloat16"
+        }
+      },
+      "core_shape_checks": {
+        "input_layer.weight": [
+          1536,
+          64
+        ],
+        "out_layer.weight": [
+          32,
+          1536
+        ]
+      },
+      "metadata_file": "slat_flow_imgshape2tex_dit_1_3B_1024_bf16.metadata.json",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_1024_bf16.safetensors",
+      "file_bytes": 2584672728,
+      "mtime_ns": 1791274799191667500,
+      "header_bytes": 66960,
+      "bytes_read": 66968,
+      "tensor_data_bytes": 2584605760,
+      "header_sha256": "2374eaaa837c1ad0081a8032586a4d7a2ba2a1ae8c512837f41ea300e24dac66",
+      "tensor_count": 640,
+      "parameter_count": 1292302880,
+      "dtypes": {
+        "BF16": 640
+      },
+      "metadata_only_fixture": false
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_512_bf16": {
+      "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_512_bf16",
+      "status": "VERIFIED_METADATA",
+      "config": {
+        "name": "SLatFlowModel",
+        "args": {
+          "resolution": 32,
+          "in_channels": 64,
+          "out_channels": 32,
+          "model_channels": 1536,
+          "cond_channels": 1024,
+          "num_blocks": 30,
+          "num_heads": 12,
+          "mlp_ratio": 5.3334,
+          "pe_mode": "rope",
+          "share_mod": true,
+          "initialization": "scaled",
+          "qk_rms_norm": true,
+          "qk_rms_norm_cross": true,
+          "dtype": "bfloat16"
+        }
+      },
+      "core_shape_checks": {
+        "input_layer.weight": [
+          1536,
+          64
+        ],
+        "out_layer.weight": [
+          32,
+          1536
+        ]
+      },
+      "metadata_file": "slat_flow_imgshape2tex_dit_1_3B_512_bf16.metadata.json",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_512_bf16.safetensors",
+      "file_bytes": 2584672728,
+      "mtime_ns": 1791274799154024700,
+      "header_bytes": 66960,
+      "bytes_read": 66968,
+      "tensor_data_bytes": 2584605760,
+      "header_sha256": "2374eaaa837c1ad0081a8032586a4d7a2ba2a1ae8c512837f41ea300e24dac66",
+      "tensor_count": 640,
+      "parameter_count": 1292302880,
+      "dtypes": {
+        "BF16": 640
+      },
+      "metadata_only_fixture": false
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_flow_img_dit_1_3B_64_bf16": {
+      "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_flow_img_dit_1_3B_64_bf16",
+      "status": "VERIFIED_METADATA",
+      "config": {
+        "name": "SparseStructureFlowModel",
+        "args": {
+          "resolution": 16,
+          "in_channels": 8,
+          "out_channels": 8,
+          "model_channels": 1536,
+          "cond_channels": 1024,
+          "num_blocks": 30,
+          "num_heads": 12,
+          "mlp_ratio": 5.3334,
+          "pe_mode": "rope",
+          "share_mod": true,
+          "initialization": "scaled",
+          "qk_rms_norm": true,
+          "qk_rms_norm_cross": true,
+          "dtype": "bfloat16"
+        }
+      },
+      "core_shape_checks": {
+        "input_layer.weight": [
+          1536,
+          8
+        ],
+        "out_layer.weight": [
+          8,
+          1536
+        ]
+      },
+      "metadata_file": "ss_flow_img_dit_1_3B_64_bf16.metadata.json",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_flow_img_dit_1_3B_64_bf16.safetensors",
+      "file_bytes": 2584426920,
+      "mtime_ns": 1791274799684720900,
+      "header_bytes": 66960,
+      "bytes_read": 66968,
+      "tensor_data_bytes": 2584359952,
+      "header_sha256": "512d8dd48a9219d0f30b3435019ba797abbff6d67e421bc9adf7f8435d99f692",
+      "tensor_count": 640,
+      "parameter_count": 1292179976,
+      "dtypes": {
+        "BF16": 640
+      },
+      "metadata_only_fixture": false
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_dec_next_dc_f16c32_fp16": {
+      "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_dec_next_dc_f16c32_fp16",
+      "status": "VERIFIED_METADATA",
+      "config": {
+        "name": "SparseUnetVaeDecoder",
+        "args": {
+          "out_channels": 6,
+          "model_channels": [
+            1024,
+            512,
+            256,
+            128,
+            64
+          ],
+          "latent_channels": 32,
+          "num_blocks": [
+            4,
+            16,
+            8,
+            4,
+            0
+          ],
+          "block_type": [
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d"
+          ],
+          "up_block_type": [
+            "SparseResBlockC2S3d",
+            "SparseResBlockC2S3d",
+            "SparseResBlockC2S3d",
+            "SparseResBlockC2S3d"
+          ],
+          "block_args": [
+            {},
+            {},
+            {},
+            {},
+            {}
+          ],
+          "pred_subdiv": false,
+          "use_fp16": true
+        }
+      },
+      "core_shape_checks": {},
+      "metadata_file": "tex_dec_next_dc_f16c32_fp16.metadata.json",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_dec_next_dc_f16c32_fp16.safetensors",
+      "file_bytes": 948458812,
+      "mtime_ns": 1791274770477513600,
+      "header_bytes": 26792,
+      "bytes_read": 26800,
+      "tensor_data_bytes": 948432012,
+      "header_sha256": "ad3ed458569d937eace6ac42d9b6aa83853d654ebd0847791bbf19e2e31ab02b",
+      "tensor_count": 284,
+      "parameter_count": 474216006,
+      "dtypes": {
+        "F16": 284
+      },
+      "metadata_only_fixture": false
+    }
+  },
+  "blockers": [
+    {
+      "repository_id": "briaai/RMBG-2.0",
+      "class": "BiRefNet",
+      "required_by": "Trellis2TexturingPipeline.from_pretrained -> BiRefNet.__init__",
+      "trust_remote_code": true,
+      "cache_search": [
+        {
+          "path": "C:\\Users\\wattz\\.cache\\huggingface\\hub\\models--briaai--RMBG-2.0",
+          "exists": false
+        }
+      ],
+      "candidates": [
+        {
+          "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\briaai\\RMBG-2.0",
+          "exists": false,
+          "files_present": []
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\background_removal\\RMBG-2.0",
+          "exists": false,
+          "files_present": []
+        }
+      ],
+      "status": "MISSING",
+      "missing_requirement": "Local config.json, supported weight file or shard index with all shards, and every config.auto_map/custom-code dependency"
+    }
+  ],
+  "optional": [
+    {
+      "profile": "ReconViaGen",
+      "selected": false,
+      "extra_checkpoints": [
+        {
+          "role": "sparse_structure_vggt_cond",
+          "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_vggt_cond",
+          "missing": [
+            "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_vggt_cond.json",
+            "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_vggt_cond.safetensors"
+          ]
+        },
+        {
+          "role": "slat_vggt_cond",
+          "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_vggt_cond",
+          "missing": [
+            "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_vggt_cond.json",
+            "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_vggt_cond.safetensors"
+          ]
+        },
+        {
+          "role": "sparse_structure_flow_vggt_model",
+          "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_flow_img_dit_L_16l8_fp16",
+          "missing": [
+            "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_flow_img_dit_L_16l8_fp16.json",
+            "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\ss_flow_img_dit_L_16l8_fp16.safetensors"
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "FP8",
+      "selected": false,
+      "expected_pipeline": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\visualbruno\\TRELLIS.2-4B-FP8\\pipeline_fp8.json"
+    },
+    {
+      "profile": "Pixal3D/MoGe",
+      "selected": false,
+      "model_roots": [
+        "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\TencentARC\\Pixal3D-T",
+        "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\Ruicheng\\moge-2-vitl\\model.pt"
+      ]
+    },
+    {
+      "profile": "unused texture encoder",
+      "selected": false,
+      "checkpoint": {
+        "prefix": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_enc_next_dc_f16c32_fp16",
+        "status": "VERIFIED_METADATA",
+        "config": {
+          "name": "SparseUnetVaeEncoder",
+          "args": {
+            "in_channels": 6,
+            "model_channels": [
+              64,
+              128,
+              256,
+              512,
+              1024
+            ],
+            "latent_channels": 32,
+            "num_blocks": [
+              0,
+              4,
+              8,
+              16,
+              4
+            ],
+            "block_type": [
+              "SparseConvNeXtBlock3d",
+              "SparseConvNeXtBlock3d",
+              "SparseConvNeXtBlock3d",
+              "SparseConvNeXtBlock3d",
+              "SparseConvNeXtBlock3d"
+            ],
+            "down_block_type": [
+              "SparseResBlockS2C3d",
+              "SparseResBlockS2C3d",
+              "SparseResBlockS2C3d",
+              "SparseResBlockS2C3d"
+            ],
+            "block_args": [
+              {},
+              {},
+              {},
+              {},
+              {}
+            ],
+            "use_fp16": true
+          }
+        },
+        "core_shape_checks": {},
+        "metadata_file": "tex_enc_next_dc_f16c32_fp16.metadata.json",
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_enc_next_dc_f16c32_fp16.safetensors",
+        "file_bytes": 708797208,
+        "mtime_ns": 1791274786724474600,
+        "header_bytes": 26416,
+        "bytes_read": 26424,
+        "tensor_data_bytes": 708770784,
+        "header_sha256": "6736d6bb756ac87588138c928bdd6bb0ecaee46afd04e02ffdd664171a9fbf62",
+        "tensor_count": 284,
+        "parameter_count": 354385392,
+        "dtypes": {
+          "F16": 284
+        },
+        "metadata_only_fixture": false
+      }
+    }
+  ],
+  "scope": "JSON and safetensors headers only; no tensor data read or model code executed",
+  "conditioning": {
+    "status": "VERIFIED_METADATA",
+    "local_path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\facebook\\dinov3-vitl16-pretrain-lvd1689m",
+    "patch_embedding_shape": [
+      1024,
+      3,
+      16,
+      16
+    ],
+    "metadata_file": "dinov3.metadata.json",
+    "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\facebook\\dinov3-vitl16-pretrain-lvd1689m\\model.safetensors",
+    "file_bytes": 1212559808,
+    "mtime_ns": 1791270820029279600,
+    "header_bytes": 41400,
+    "bytes_read": 41408,
+    "tensor_data_bytes": 1212518400,
+    "header_sha256": "3495b172735ff88c94b28a3257614f51764abfd7879b1498ec71abf855f259d3",
+    "tensor_count": 415,
+    "parameter_count": 303129600,
+    "dtypes": {
+      "F32": 415
+    },
+    "metadata_only_fixture": false
+  },
+  "background_removal": {
+    "repository_id": "briaai/RMBG-2.0",
+    "class": "BiRefNet",
+    "required_by": "Trellis2TexturingPipeline.from_pretrained -> BiRefNet.__init__",
+    "trust_remote_code": true,
+    "cache_search": [
+      {
+        "path": "C:\\Users\\wattz\\.cache\\huggingface\\hub\\models--briaai--RMBG-2.0",
+        "exists": false
+      }
+    ],
+    "candidates": [
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\briaai\\RMBG-2.0",
+        "exists": false,
+        "files_present": []
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\background_removal\\RMBG-2.0",
+        "exists": false,
+        "files_present": []
+      }
+    ],
+    "status": "MISSING",
+    "missing_requirement": "Local config.json, supported weight file or shard index with all shards, and every config.auto_map/custom-code dependency"
+  },
+  "offline_plan": {
+    "DinoV3FeatureExtractor.model_name": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\facebook\\dinov3-vitl16-pretrain-lvd1689m",
+    "sparse_structure_decoder": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS-image-large\\ckpts\\ss_dec_conv3d_16l8_fp16",
+    "BiRefNet.model_name": null,
+    "network_fallback_permitted": false,
+    "note": "Texturing config retains remote model IDs; do not call from_pretrained. No configs were rewritten."
+  },
+  "dependencies": {
+    "torch": "2.13.0+rocm10.0.0",
+    "torchvision": "0.28.0+rocm10.0.0",
+    "rocm": "10.0.0",
+    "transformers": "4.56.0",
+    "safetensors": "0.8.0",
+    "huggingface-hub": "0.36.2",
+    "numpy": "2.5.3",
+    "Pillow": "12.3.0",
+    "trimesh": "5.1.1",
+    "opencv-python": "5.0.0.93",
+    "scipy": "1.18.1",
+    "einops": "0.8.2",
+    "timm": "1.0.30",
+    "utils3d": "0.0.2",
+    "easydict": "1.13",
+    "cumesh": "1.0+rocm10.0",
+    "flex-gemm": "1.0.0+rocm10.0",
+    "o-voxel": "0.0.1+rocm.10.0",
+    "nvdiffrast": "0.4.0+rocm10.0",
+    "triton-windows": "3.8.0.post29"
+  },
+  "headless_requirements": {
+    "folder_paths": "D:\\AI\\Trellis2AMD\\ComfyUI\\folder_paths.py",
+    "comfy.utils.ProgressBar": "D:\\AI\\Trellis2AMD\\ComfyUI\\comfy\\utils.py",
+    "status": "Not implemented/imported; Gate 1 closed"
+  },
+  "source_sha256": {
+    "nodes.py": "d310c97f3f7ff187cd581ed01ea3dbd6217fddb8ad9d59b12bd7c485f93821be",
+    "nodes.py.before-profiler-fix": "585d81c545cce5ca71fee1cb17f47e65b13c7f98b13a6053e1c1699079d7012f",
+    "trellis2/pipelines/base.py": "1081dfc48e112d00653ae45f3ed2a3bbee3d82e3926e701c059978e519edd917",
+    "trellis2/models/__init__.py": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683",
+    "trellis2/models/structured_latent_flow.py": "3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c",
+    "trellis2/models/sparse_structure_flow.py": "858d9b076cc71f6955bb292ea394d620ce6f6f53cebb53bff2116a8c5cec026e",
+    "trellis2/pipelines/trellis2_image_to_3d.py": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+    "trellis2/pipelines/trellis2_texturing.py": "14a6f8ee2bca120f76e0112f2733cd250764637709ff642fd6846ae97c63b1e6",
+    "trellis2/pipelines/rembg/BiRefNet.py": "ef7f34ac7387af5e6bdc91707b7c6bc203851f8576e8a5e681124918b1db84a8",
+    "trellis2/modules/image_feature_extractor.py": "a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f"
+  },
+  "essential_assets_verified": false,
+  "classification": "PARTIAL",
+  "gate_two": "NOT ATTEMPTED: essential auxiliary asset not verified",
+  "torch_imported": false,
+  "gpu_initialization": "Not queried; no GPU packages imported",
+  "tensor_payloads_read": false,
+  "models_loaded": false
+}

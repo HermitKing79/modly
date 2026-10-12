@@ -1,0 +1,3127 @@
+{
+  "config": {
+    "name": "FlexiDualGridVaeEncoder",
+    "args": {
+      "model_channels": [
+        64,
+        128,
+        256,
+        512,
+        1024
+      ],
+      "latent_channels": 32,
+      "num_blocks": [
+        0,
+        4,
+        8,
+        16,
+        4
+      ],
+      "block_type": [
+        "SparseConvNeXtBlock3d",
+        "SparseConvNeXtBlock3d",
+        "SparseConvNeXtBlock3d",
+        "SparseConvNeXtBlock3d",
+        "SparseConvNeXtBlock3d"
+      ],
+      "down_block_type": [
+        "SparseResBlockS2C3d",
+        "SparseResBlockS2C3d",
+        "SparseResBlockS2C3d",
+        "SparseResBlockS2C3d"
+      ],
+      "block_args": [
+        {},
+        {},
+        {},
+        {},
+        {}
+      ],
+      "use_fp16": true
+    }
+  },
+  "source_module": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sc_vaes\\fdg_vae.py",
+  "core_shape_checks": {},
+  "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_enc_next_dc_f16c32_fp16.safetensors",
+  "file_bytes": 708797208,
+  "mtime_ns": 1791274692162498300,
+  "header_bytes": 26416,
+  "bytes_read": 26424,
+  "tensor_data_bytes": 708770784,
+  "header_sha256": "6736d6bb756ac87588138c928bdd6bb0ecaee46afd04e02ffdd664171a9fbf62",
+  "tensor_count": 284,
+  "parameter_count": 354385392,
+  "dtypes": {
+    "F16": 284
+  },
+  "metadata_only_fixture": false,
+  "metadata": {},
+  "tensors": {
+    "blocks.0.0.conv1.bias": {
+      "dtype": "F16",
+      "shape": [
+        16
+      ],
+      "data_offsets": [
+        0,
+        32
+      ]
+    },
+    "blocks.0.0.conv1.weight": {
+      "dtype": "F16",
+      "shape": [
+        16,
+        3,
+        3,
+        3,
+        64
+      ],
+      "data_offsets": [
+        32,
+        55328
+      ]
+    },
+    "blocks.0.0.conv2.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        55328,
+        55584
+      ]
+    },
+    "blocks.0.0.conv2.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        55584,
+        940320
+      ]
+    },
+    "blocks.0.0.norm1.bias": {
+      "dtype": "F16",
+      "shape": [
+        64
+      ],
+      "data_offsets": [
+        940320,
+        940448
+      ]
+    },
+    "blocks.0.0.norm1.weight": {
+      "dtype": "F16",
+      "shape": [
+        64
+      ],
+      "data_offsets": [
+        940448,
+        940576
+      ]
+    },
+    "blocks.1.0.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        940576,
+        940832
+      ]
+    },
+    "blocks.1.0.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        940832,
+        1825568
+      ]
+    },
+    "blocks.1.0.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        1825568,
+        1826592
+      ]
+    },
+    "blocks.1.0.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        128
+      ],
+      "data_offsets": [
+        1826592,
+        1957664
+      ]
+    },
+    "blocks.1.0.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        1957664,
+        1957920
+      ]
+    },
+    "blocks.1.0.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        512
+      ],
+      "data_offsets": [
+        1957920,
+        2088992
+      ]
+    },
+    "blocks.1.0.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        2088992,
+        2089248
+      ]
+    },
+    "blocks.1.0.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        2089248,
+        2089504
+      ]
+    },
+    "blocks.1.1.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        2089504,
+        2089760
+      ]
+    },
+    "blocks.1.1.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        2089760,
+        2974496
+      ]
+    },
+    "blocks.1.1.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        2974496,
+        2975520
+      ]
+    },
+    "blocks.1.1.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        128
+      ],
+      "data_offsets": [
+        2975520,
+        3106592
+      ]
+    },
+    "blocks.1.1.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        3106592,
+        3106848
+      ]
+    },
+    "blocks.1.1.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        512
+      ],
+      "data_offsets": [
+        3106848,
+        3237920
+      ]
+    },
+    "blocks.1.1.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        3237920,
+        3238176
+      ]
+    },
+    "blocks.1.1.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        3238176,
+        3238432
+      ]
+    },
+    "blocks.1.2.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        3238432,
+        3238688
+      ]
+    },
+    "blocks.1.2.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        3238688,
+        4123424
+      ]
+    },
+    "blocks.1.2.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        4123424,
+        4124448
+      ]
+    },
+    "blocks.1.2.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        128
+      ],
+      "data_offsets": [
+        4124448,
+        4255520
+      ]
+    },
+    "blocks.1.2.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        4255520,
+        4255776
+      ]
+    },
+    "blocks.1.2.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        512
+      ],
+      "data_offsets": [
+        4255776,
+        4386848
+      ]
+    },
+    "blocks.1.2.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        4386848,
+        4387104
+      ]
+    },
+    "blocks.1.2.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        4387104,
+        4387360
+      ]
+    },
+    "blocks.1.3.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        4387360,
+        4387616
+      ]
+    },
+    "blocks.1.3.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        4387616,
+        5272352
+      ]
+    },
+    "blocks.1.3.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        5272352,
+        5273376
+      ]
+    },
+    "blocks.1.3.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        128
+      ],
+      "data_offsets": [
+        5273376,
+        5404448
+      ]
+    },
+    "blocks.1.3.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        5404448,
+        5404704
+      ]
+    },
+    "blocks.1.3.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        512
+      ],
+      "data_offsets": [
+        5404704,
+        5535776
+      ]
+    },
+    "blocks.1.3.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        5535776,
+        5536032
+      ]
+    },
+    "blocks.1.3.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        5536032,
+        5536288
+      ]
+    },
+    "blocks.1.4.conv1.bias": {
+      "dtype": "F16",
+      "shape": [
+        32
+      ],
+      "data_offsets": [
+        5536288,
+        5536352
+      ]
+    },
+    "blocks.1.4.conv1.weight": {
+      "dtype": "F16",
+      "shape": [
+        32,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        5536352,
+        5757536
+      ]
+    },
+    "blocks.1.4.conv2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        5757536,
+        5758048
+      ]
+    },
+    "blocks.1.4.conv2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        5758048,
+        9296992
+      ]
+    },
+    "blocks.1.4.norm1.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        9296992,
+        9297248
+      ]
+    },
+    "blocks.1.4.norm1.weight": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        9297248,
+        9297504
+      ]
+    },
+    "blocks.2.0.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        9297504,
+        9298016
+      ]
+    },
+    "blocks.2.0.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        9298016,
+        12836960
+      ]
+    },
+    "blocks.2.0.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        12836960,
+        12839008
+      ]
+    },
+    "blocks.2.0.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        12839008,
+        13363296
+      ]
+    },
+    "blocks.2.0.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        13363296,
+        13363808
+      ]
+    },
+    "blocks.2.0.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        13363808,
+        13888096
+      ]
+    },
+    "blocks.2.0.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        13888096,
+        13888608
+      ]
+    },
+    "blocks.2.0.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        13888608,
+        13889120
+      ]
+    },
+    "blocks.2.1.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        13889120,
+        13889632
+      ]
+    },
+    "blocks.2.1.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        13889632,
+        17428576
+      ]
+    },
+    "blocks.2.1.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        17428576,
+        17430624
+      ]
+    },
+    "blocks.2.1.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        17430624,
+        17954912
+      ]
+    },
+    "blocks.2.1.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        17954912,
+        17955424
+      ]
+    },
+    "blocks.2.1.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        17955424,
+        18479712
+      ]
+    },
+    "blocks.2.1.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        18479712,
+        18480224
+      ]
+    },
+    "blocks.2.1.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        18480224,
+        18480736
+      ]
+    },
+    "blocks.2.2.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        18480736,
+        18481248
+      ]
+    },
+    "blocks.2.2.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        18481248,
+        22020192
+      ]
+    },
+    "blocks.2.2.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        22020192,
+        22022240
+      ]
+    },
+    "blocks.2.2.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        22022240,
+        22546528
+      ]
+    },
+    "blocks.2.2.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        22546528,
+        22547040
+      ]
+    },
+    "blocks.2.2.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        22547040,
+        23071328
+      ]
+    },
+    "blocks.2.2.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        23071328,
+        23071840
+      ]
+    },
+    "blocks.2.2.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        23071840,
+        23072352
+      ]
+    },
+    "blocks.2.3.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        23072352,
+        23072864
+      ]
+    },
+    "blocks.2.3.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        23072864,
+        26611808
+      ]
+    },
+    "blocks.2.3.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        26611808,
+        26613856
+      ]
+    },
+    "blocks.2.3.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        26613856,
+        27138144
+      ]
+    },
+    "blocks.2.3.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        27138144,
+        27138656
+      ]
+    },
+    "blocks.2.3.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        27138656,
+        27662944
+      ]
+    },
+    "blocks.2.3.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        27662944,
+        27663456
+      ]
+    },
+    "blocks.2.3.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        27663456,
+        27663968
+      ]
+    },
+    "blocks.2.4.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        27663968,
+        27664480
+      ]
+    },
+    "blocks.2.4.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        27664480,
+        31203424
+      ]
+    },
+    "blocks.2.4.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        31203424,
+        31205472
+      ]
+    },
+    "blocks.2.4.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        31205472,
+        31729760
+      ]
+    },
+    "blocks.2.4.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        31729760,
+        31730272
+      ]
+    },
+    "blocks.2.4.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        31730272,
+        32254560
+      ]
+    },
+    "blocks.2.4.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        32254560,
+        32255072
+      ]
+    },
+    "blocks.2.4.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        32255072,
+        32255584
+      ]
+    },
+    "blocks.2.5.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        32255584,
+        32256096
+      ]
+    },
+    "blocks.2.5.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        32256096,
+        35795040
+      ]
+    },
+    "blocks.2.5.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        35795040,
+        35797088
+      ]
+    },
+    "blocks.2.5.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        35797088,
+        36321376
+      ]
+    },
+    "blocks.2.5.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        36321376,
+        36321888
+      ]
+    },
+    "blocks.2.5.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        36321888,
+        36846176
+      ]
+    },
+    "blocks.2.5.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        36846176,
+        36846688
+      ]
+    },
+    "blocks.2.5.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        36846688,
+        36847200
+      ]
+    },
+    "blocks.2.6.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        36847200,
+        36847712
+      ]
+    },
+    "blocks.2.6.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        36847712,
+        40386656
+      ]
+    },
+    "blocks.2.6.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        40386656,
+        40388704
+      ]
+    },
+    "blocks.2.6.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        40388704,
+        40912992
+      ]
+    },
+    "blocks.2.6.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        40912992,
+        40913504
+      ]
+    },
+    "blocks.2.6.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        40913504,
+        41437792
+      ]
+    },
+    "blocks.2.6.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        41437792,
+        41438304
+      ]
+    },
+    "blocks.2.6.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        41438304,
+        41438816
+      ]
+    },
+    "blocks.2.7.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        41438816,
+        41439328
+      ]
+    },
+    "blocks.2.7.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        41439328,
+        44978272
+      ]
+    },
+    "blocks.2.7.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        44978272,
+        44980320
+      ]
+    },
+    "blocks.2.7.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        44980320,
+        45504608
+      ]
+    },
+    "blocks.2.7.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        45504608,
+        45505120
+      ]
+    },
+    "blocks.2.7.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        45505120,
+        46029408
+      ]
+    },
+    "blocks.2.7.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        46029408,
+        46029920
+      ]
+    },
+    "blocks.2.7.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        46029920,
+        46030432
+      ]
+    },
+    "blocks.2.8.conv1.bias": {
+      "dtype": "F16",
+      "shape": [
+        64
+      ],
+      "data_offsets": [
+        46030432,
+        46030560
+      ]
+    },
+    "blocks.2.8.conv1.weight": {
+      "dtype": "F16",
+      "shape": [
+        64,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        46030560,
+        46915296
+      ]
+    },
+    "blocks.2.8.conv2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        46915296,
+        46916320
+      ]
+    },
+    "blocks.2.8.conv2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        46916320,
+        61072096
+      ]
+    },
+    "blocks.2.8.norm1.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        61072096,
+        61072608
+      ]
+    },
+    "blocks.2.8.norm1.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        61072608,
+        61073120
+      ]
+    },
+    "blocks.3.0.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        61073120,
+        61074144
+      ]
+    },
+    "blocks.3.0.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        61074144,
+        75229920
+      ]
+    },
+    "blocks.3.0.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        75229920,
+        75234016
+      ]
+    },
+    "blocks.3.0.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        75234016,
+        77331168
+      ]
+    },
+    "blocks.3.0.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        77331168,
+        77332192
+      ]
+    },
+    "blocks.3.0.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        77332192,
+        79429344
+      ]
+    },
+    "blocks.3.0.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        79429344,
+        79430368
+      ]
+    },
+    "blocks.3.0.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        79430368,
+        79431392
+      ]
+    },
+    "blocks.3.1.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        79431392,
+        79432416
+      ]
+    },
+    "blocks.3.1.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        79432416,
+        93588192
+      ]
+    },
+    "blocks.3.1.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        93588192,
+        93592288
+      ]
+    },
+    "blocks.3.1.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        93592288,
+        95689440
+      ]
+    },
+    "blocks.3.1.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        95689440,
+        95690464
+      ]
+    },
+    "blocks.3.1.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        95690464,
+        97787616
+      ]
+    },
+    "blocks.3.1.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        97787616,
+        97788640
+      ]
+    },
+    "blocks.3.1.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        97788640,
+        97789664
+      ]
+    },
+    "blocks.3.10.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        97789664,
+        97790688
+      ]
+    },
+    "blocks.3.10.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        97790688,
+        111946464
+      ]
+    },
+    "blocks.3.10.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        111946464,
+        111950560
+      ]
+    },
+    "blocks.3.10.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        111950560,
+        114047712
+      ]
+    },
+    "blocks.3.10.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        114047712,
+        114048736
+      ]
+    },
+    "blocks.3.10.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        114048736,
+        116145888
+      ]
+    },
+    "blocks.3.10.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        116145888,
+        116146912
+      ]
+    },
+    "blocks.3.10.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        116146912,
+        116147936
+      ]
+    },
+    "blocks.3.11.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        116147936,
+        116148960
+      ]
+    },
+    "blocks.3.11.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        116148960,
+        130304736
+      ]
+    },
+    "blocks.3.11.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        130304736,
+        130308832
+      ]
+    },
+    "blocks.3.11.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        130308832,
+        132405984
+      ]
+    },
+    "blocks.3.11.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        132405984,
+        132407008
+      ]
+    },
+    "blocks.3.11.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        132407008,
+        134504160
+      ]
+    },
+    "blocks.3.11.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        134504160,
+        134505184
+      ]
+    },
+    "blocks.3.11.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        134505184,
+        134506208
+      ]
+    },
+    "blocks.3.12.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        134506208,
+        134507232
+      ]
+    },
+    "blocks.3.12.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        134507232,
+        148663008
+      ]
+    },
+    "blocks.3.12.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        148663008,
+        148667104
+      ]
+    },
+    "blocks.3.12.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        148667104,
+        150764256
+      ]
+    },
+    "blocks.3.12.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        150764256,
+        150765280
+      ]
+    },
+    "blocks.3.12.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        150765280,
+        152862432
+      ]
+    },
+    "blocks.3.12.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        152862432,
+        152863456
+      ]
+    },
+    "blocks.3.12.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        152863456,
+        152864480
+      ]
+    },
+    "blocks.3.13.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        152864480,
+        152865504
+      ]
+    },
+    "blocks.3.13.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        152865504,
+        167021280
+      ]
+    },
+    "blocks.3.13.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        167021280,
+        167025376
+      ]
+    },
+    "blocks.3.13.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        167025376,
+        169122528
+      ]
+    },
+    "blocks.3.13.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        169122528,
+        169123552
+      ]
+    },
+    "blocks.3.13.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        169123552,
+        171220704
+      ]
+    },
+    "blocks.3.13.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        171220704,
+        171221728
+      ]
+    },
+    "blocks.3.13.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        171221728,
+        171222752
+      ]
+    },
+    "blocks.3.14.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        171222752,
+        171223776
+      ]
+    },
+    "blocks.3.14.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        171223776,
+        185379552
+      ]
+    },
+    "blocks.3.14.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        185379552,
+        185383648
+      ]
+    },
+    "blocks.3.14.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        185383648,
+        187480800
+      ]
+    },
+    "blocks.3.14.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        187480800,
+        187481824
+      ]
+    },
+    "blocks.3.14.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        187481824,
+        189578976
+      ]
+    },
+    "blocks.3.14.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        189578976,
+        189580000
+      ]
+    },
+    "blocks.3.14.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        189580000,
+        189581024
+      ]
+    },
+    "blocks.3.15.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        189581024,
+        189582048
+      ]
+    },
+    "blocks.3.15.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        189582048,
+        203737824
+      ]
+    },
+    "blocks.3.15.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        203737824,
+        203741920
+      ]
+    },
+    "blocks.3.15.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        203741920,
+        205839072
+      ]
+    },
+    "blocks.3.15.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        205839072,
+        205840096
+      ]
+    },
+    "blocks.3.15.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        205840096,
+        207937248
+      ]
+    },
+    "blocks.3.15.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        207937248,
+        207938272
+      ]
+    },
+    "blocks.3.15.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        207938272,
+        207939296
+      ]
+    },
+    "blocks.3.16.conv1.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        207939296,
+        207939552
+      ]
+    },
+    "blocks.3.16.conv1.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        207939552,
+        211478496
+      ]
+    },
+    "blocks.3.16.conv2.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        211478496,
+        211480544
+      ]
+    },
+    "blocks.3.16.conv2.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        3,
+        3,
+        3,
+        1024
+      ],
+      "data_offsets": [
+        211480544,
+        268103648
+      ]
+    },
+    "blocks.3.16.norm1.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        268103648,
+        268104672
+      ]
+    },
+    "blocks.3.16.norm1.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        268104672,
+        268105696
+      ]
+    },
+    "blocks.3.2.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        268105696,
+        268106720
+      ]
+    },
+    "blocks.3.2.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        268106720,
+        282262496
+      ]
+    },
+    "blocks.3.2.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        282262496,
+        282266592
+      ]
+    },
+    "blocks.3.2.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        282266592,
+        284363744
+      ]
+    },
+    "blocks.3.2.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        284363744,
+        284364768
+      ]
+    },
+    "blocks.3.2.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        284364768,
+        286461920
+      ]
+    },
+    "blocks.3.2.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        286461920,
+        286462944
+      ]
+    },
+    "blocks.3.2.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        286462944,
+        286463968
+      ]
+    },
+    "blocks.3.3.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        286463968,
+        286464992
+      ]
+    },
+    "blocks.3.3.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        286464992,
+        300620768
+      ]
+    },
+    "blocks.3.3.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        300620768,
+        300624864
+      ]
+    },
+    "blocks.3.3.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        300624864,
+        302722016
+      ]
+    },
+    "blocks.3.3.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        302722016,
+        302723040
+      ]
+    },
+    "blocks.3.3.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        302723040,
+        304820192
+      ]
+    },
+    "blocks.3.3.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        304820192,
+        304821216
+      ]
+    },
+    "blocks.3.3.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        304821216,
+        304822240
+      ]
+    },
+    "blocks.3.4.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        304822240,
+        304823264
+      ]
+    },
+    "blocks.3.4.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        304823264,
+        318979040
+      ]
+    },
+    "blocks.3.4.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        318979040,
+        318983136
+      ]
+    },
+    "blocks.3.4.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        318983136,
+        321080288
+      ]
+    },
+    "blocks.3.4.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        321080288,
+        321081312
+      ]
+    },
+    "blocks.3.4.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        321081312,
+        323178464
+      ]
+    },
+    "blocks.3.4.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        323178464,
+        323179488
+      ]
+    },
+    "blocks.3.4.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        323179488,
+        323180512
+      ]
+    },
+    "blocks.3.5.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        323180512,
+        323181536
+      ]
+    },
+    "blocks.3.5.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        323181536,
+        337337312
+      ]
+    },
+    "blocks.3.5.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        337337312,
+        337341408
+      ]
+    },
+    "blocks.3.5.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        337341408,
+        339438560
+      ]
+    },
+    "blocks.3.5.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        339438560,
+        339439584
+      ]
+    },
+    "blocks.3.5.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        339439584,
+        341536736
+      ]
+    },
+    "blocks.3.5.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        341536736,
+        341537760
+      ]
+    },
+    "blocks.3.5.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        341537760,
+        341538784
+      ]
+    },
+    "blocks.3.6.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        341538784,
+        341539808
+      ]
+    },
+    "blocks.3.6.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        341539808,
+        355695584
+      ]
+    },
+    "blocks.3.6.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        355695584,
+        355699680
+      ]
+    },
+    "blocks.3.6.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        355699680,
+        357796832
+      ]
+    },
+    "blocks.3.6.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        357796832,
+        357797856
+      ]
+    },
+    "blocks.3.6.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        357797856,
+        359895008
+      ]
+    },
+    "blocks.3.6.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        359895008,
+        359896032
+      ]
+    },
+    "blocks.3.6.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        359896032,
+        359897056
+      ]
+    },
+    "blocks.3.7.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        359897056,
+        359898080
+      ]
+    },
+    "blocks.3.7.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        359898080,
+        374053856
+      ]
+    },
+    "blocks.3.7.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        374053856,
+        374057952
+      ]
+    },
+    "blocks.3.7.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        374057952,
+        376155104
+      ]
+    },
+    "blocks.3.7.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        376155104,
+        376156128
+      ]
+    },
+    "blocks.3.7.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        376156128,
+        378253280
+      ]
+    },
+    "blocks.3.7.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        378253280,
+        378254304
+      ]
+    },
+    "blocks.3.7.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        378254304,
+        378255328
+      ]
+    },
+    "blocks.3.8.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        378255328,
+        378256352
+      ]
+    },
+    "blocks.3.8.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        378256352,
+        392412128
+      ]
+    },
+    "blocks.3.8.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        392412128,
+        392416224
+      ]
+    },
+    "blocks.3.8.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        392416224,
+        394513376
+      ]
+    },
+    "blocks.3.8.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        394513376,
+        394514400
+      ]
+    },
+    "blocks.3.8.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        394514400,
+        396611552
+      ]
+    },
+    "blocks.3.8.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        396611552,
+        396612576
+      ]
+    },
+    "blocks.3.8.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        396612576,
+        396613600
+      ]
+    },
+    "blocks.3.9.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        396613600,
+        396614624
+      ]
+    },
+    "blocks.3.9.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        396614624,
+        410770400
+      ]
+    },
+    "blocks.3.9.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        410770400,
+        410774496
+      ]
+    },
+    "blocks.3.9.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        410774496,
+        412871648
+      ]
+    },
+    "blocks.3.9.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        412871648,
+        412872672
+      ]
+    },
+    "blocks.3.9.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        412872672,
+        414969824
+      ]
+    },
+    "blocks.3.9.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        414969824,
+        414970848
+      ]
+    },
+    "blocks.3.9.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        414970848,
+        414971872
+      ]
+    },
+    "blocks.4.0.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        414971872,
+        414973920
+      ]
+    },
+    "blocks.4.0.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        3,
+        3,
+        3,
+        1024
+      ],
+      "data_offsets": [
+        414973920,
+        471597024
+      ]
+    },
+    "blocks.4.0.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        4096
+      ],
+      "data_offsets": [
+        471597024,
+        471605216
+      ]
+    },
+    "blocks.4.0.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        4096,
+        1024
+      ],
+      "data_offsets": [
+        471605216,
+        479993824
+      ]
+    },
+    "blocks.4.0.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        479993824,
+        479995872
+      ]
+    },
+    "blocks.4.0.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        4096
+      ],
+      "data_offsets": [
+        479995872,
+        488384480
+      ]
+    },
+    "blocks.4.0.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        488384480,
+        488386528
+      ]
+    },
+    "blocks.4.0.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        488386528,
+        488388576
+      ]
+    },
+    "blocks.4.1.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        488388576,
+        488390624
+      ]
+    },
+    "blocks.4.1.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        3,
+        3,
+        3,
+        1024
+      ],
+      "data_offsets": [
+        488390624,
+        545013728
+      ]
+    },
+    "blocks.4.1.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        4096
+      ],
+      "data_offsets": [
+        545013728,
+        545021920
+      ]
+    },
+    "blocks.4.1.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        4096,
+        1024
+      ],
+      "data_offsets": [
+        545021920,
+        553410528
+      ]
+    },
+    "blocks.4.1.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        553410528,
+        553412576
+      ]
+    },
+    "blocks.4.1.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        4096
+      ],
+      "data_offsets": [
+        553412576,
+        561801184
+      ]
+    },
+    "blocks.4.1.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        561801184,
+        561803232
+      ]
+    },
+    "blocks.4.1.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        561803232,
+        561805280
+      ]
+    },
+    "blocks.4.2.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        561805280,
+        561807328
+      ]
+    },
+    "blocks.4.2.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        3,
+        3,
+        3,
+        1024
+      ],
+      "data_offsets": [
+        561807328,
+        618430432
+      ]
+    },
+    "blocks.4.2.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        4096
+      ],
+      "data_offsets": [
+        618430432,
+        618438624
+      ]
+    },
+    "blocks.4.2.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        4096,
+        1024
+      ],
+      "data_offsets": [
+        618438624,
+        626827232
+      ]
+    },
+    "blocks.4.2.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        626827232,
+        626829280
+      ]
+    },
+    "blocks.4.2.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        4096
+      ],
+      "data_offsets": [
+        626829280,
+        635217888
+      ]
+    },
+    "blocks.4.2.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        635217888,
+        635219936
+      ]
+    },
+    "blocks.4.2.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        635219936,
+        635221984
+      ]
+    },
+    "blocks.4.3.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        635221984,
+        635224032
+      ]
+    },
+    "blocks.4.3.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        3,
+        3,
+        3,
+        1024
+      ],
+      "data_offsets": [
+        635224032,
+        691847136
+      ]
+    },
+    "blocks.4.3.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        4096
+      ],
+      "data_offsets": [
+        691847136,
+        691855328
+      ]
+    },
+    "blocks.4.3.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        4096,
+        1024
+      ],
+      "data_offsets": [
+        691855328,
+        700243936
+      ]
+    },
+    "blocks.4.3.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        700243936,
+        700245984
+      ]
+    },
+    "blocks.4.3.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        4096
+      ],
+      "data_offsets": [
+        700245984,
+        708634592
+      ]
+    },
+    "blocks.4.3.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        708634592,
+        708636640
+      ]
+    },
+    "blocks.4.3.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        708636640,
+        708638688
+      ]
+    },
+    "input_layer.bias": {
+      "dtype": "F16",
+      "shape": [
+        64
+      ],
+      "data_offsets": [
+        708638688,
+        708638816
+      ]
+    },
+    "input_layer.weight": {
+      "dtype": "F16",
+      "shape": [
+        64,
+        6
+      ],
+      "data_offsets": [
+        708638816,
+        708639584
+      ]
+    },
+    "to_latent.bias": {
+      "dtype": "F16",
+      "shape": [
+        64
+      ],
+      "data_offsets": [
+        708639584,
+        708639712
+      ]
+    },
+    "to_latent.weight": {
+      "dtype": "F16",
+      "shape": [
+        64,
+        1024
+      ],
+      "data_offsets": [
+        708639712,
+        708770784
+      ]
+    }
+  }
+}
