@@ -3,11 +3,17 @@
 Date: 2026-10-12. Base: `9fe6ae24f683aecd14f1eb970fd76b9d5088f9db`.
 Branch: `codex/amd-instrumented-sparse-decoder-forward`.
 
+**Classification: PARTIAL.** The one authorized attempt stopped at GPU-state
+logging with a Python argument collision. Strict CPU loading and the GPU identity
+query succeeded, but **zero decoder forwards, placements or transfers occurred**.
+The earlier timeout/compilation hypothesis remains untested. No retry was made.
+
 ## Preparation published before execution
 
-No GPU/model attempt has yet occurred in this preparation snapshot. The user
-separately authorized exactly one new forward after CPU gates, independent
-review and publication. The [timeout investigation](amd-forward-timeout-investigation.md)
+The reviewed preparation was committed and verified on GitHub at
+[`6792284bea97f48fa97af7a5bf3bdb08aebca1cd`](https://github.com/HermitKing79/modly/commit/6792284bea97f48fa97af7a5bf3bdb08aebca1cd)
+before the separately authorized single attempt. The supervisor verified all
+19 executed dependencies against that commit. The [timeout investigation](amd-forward-timeout-investigation.md)
 and [two](amd-sparse-decoder-forward.md) [earlier attempts](amd-sparse-decoder-forward-guard-correction.md)
 remain unchanged. Production workers/mock routes are untouched.
 
@@ -90,5 +96,62 @@ passed in 1.984 seconds: RX 9070 XT status OK, unchanged driver
 `32.0.31041.1004`, valid System log, no matching reset/error events and no Torch
 import. Before inventories and historical/source/Git hashes are saved.
 
-Execution, final classification and preservation evidence will be appended only
-after the single authorized attempt. This snapshot does not claim GPU success.
+## Exact stopped result
+
+The [exclusive attempt](amd-instrumented-forward-evidence/attempt-started.json),
+[raw result](amd-instrumented-forward-evidence/run/results.json),
+[durable trace](amd-instrumented-forward-evidence/run/trace.jsonl) and
+[interpretation](amd-instrumented-forward-evidence/attempt-interpretation.json)
+show the following:
+
+| Operation | Actual evidence |
+| --- | --- |
+| Strict CPU loading | Once, 1.734s, all 74 entries / 147,585,412 payload bytes matched; no missing/unexpected keys; GPU uninitialized at CPU gate |
+| CPU memory after load | Working set 642,920,448 bytes; private commit 1,085,849,600 bytes |
+| Runtime | Python 3.12.10; Torch 2.13.0+rocm10.0.0; HIP 7.15.26333; CUDA null; intended AMD venv |
+| GPU identity query | Returned AMD Radeon RX 9070 XT, gfx1201, total 17,095,983,104 bytes |
+| Last durable operation | `GPU-metadata` stage; identity returned in final record before the logging exception |
+| Failure | `TypeError: Trace.emit() got multiple values for argument 'name'` |
+| Model placement / transfers / forwards | Placement never reached; input/output transfers 0; root and permit calls 0 |
+| Output / VRAM / measured release | Unavailable; no output or GPU tensor allocation/placement operation reached; no post-error GPU query |
+| Worker / containment | Exit 1, 9.562s; no timeout, forced cleanup or native crash; job active count 0 and owned-tree/root exit verified |
+| Observer | Before launch, CPU gate, periodic readiness and after exit healthy; same driver, controller OK, no matching reset/error events |
+
+The exception is at `trace.emit('state','gpu',**record['gpu'])`: the record
+contains `name`, colliding with the method's positional operation-name argument.
+A pure Python reproduction emits no event and matches the exact error without
+importing Torch. The 65 passing preflight tests did not cover that complete named
+GPU-state payload. This was a diagnostic coverage gap, **not a native computation
+failure**. The executed harness is preserved unchanged; no post-failure fix,
+second attempt or GPU operation was performed.
+
+[Independent stopped-result review](amd-instrumented-forward-evidence/post-attempt-review.md)
+confirmed the failed boundary, zero forwards, healthy monitoring, preservation
+and factual limits of the PARTIAL classification.
+
+Only the initial periodic Windows capture was needed: the GPU-authorized interval
+ended before the next five-second poll. All capture/writer threads stopped with
+no error. The sole CPU-process sample was taken before GPU metadata, showing the
+venv launcher and Python child, with 3.6875 CPU seconds in the latter and no
+compiler executable. There is no forward delay or coincident compilation to
+analyze. All nine private cache seed files remained byte-identical, with **zero
+new scratch files**; see the [inert manifest](amd-instrumented-forward-evidence/scratch-side-effects.json).
+Cache hits/functionality and the prior timeout cause are not established.
+
+## Preservation and next step
+
+[Preservation](amd-instrumented-forward-evidence/preservation.json) verifies
+byte-identical dependency inventory, both raw compressed virtual-environment
+and model/cache metadata, all historical evidence/caches/reports, historical
+local/remote branch heads and existing AMD source HEAD/`nodes.py`/backup hashes.
+Checkpoint before/after records are identical. Both installed environments and
+production mock behavior remain unchanged; no installation, rebuild or download
+occurred.
+
+The smallest justified next step is **CPU-only correction of the GPU diagnostic
+payload**, using a nested `gpu` field rather than unpacking it, plus a regression
+covering the complete real metadata dictionary and reserved diagnostic keys.
+Then obtain independent review and separate approval for a new exclusive
+single-forward attempt. No extra model operation is justified until the first
+decoder forward completes. The eventual DINO/flow conditioning and geometry
+path, texturing and earlier CuMesh 719 failure remain unproved. Work stops here.

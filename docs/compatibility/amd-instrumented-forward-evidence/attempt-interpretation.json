@@ -1,0 +1,33 @@
+{
+  "classification": "PARTIAL",
+  "harness_commit": "6792284bea97f48fa97af7a5bf3bdb08aebca1cd",
+  "failed_operation": "trace.emit('state','gpu',**record['gpu'])",
+  "python_only_reproduction": {
+    "error_type": "TypeError",
+    "error": "Trace.emit() got multiple values for argument 'name'",
+    "emitted_lines": 0
+  },
+  "native_computation_failure_demonstrated": false,
+  "timeout_cause_tested": false,
+  "placement_reached": false,
+  "forward_calls": 0,
+  "input_output_transfers": {
+    "input": 0,
+    "output": 0
+  },
+  "gpu_memory_measurements_available": false,
+  "allocator_release_measurements_available": false,
+  "observer_healthy": true,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "no_retry_or_postfailure_gpu_query": true,
+  "torch_imported_by_analysis": false,
+  "scratch_files": 9,
+  "new_files": 0,
+  "seed_files_byte_identical": true
+}

@@ -1,0 +1,35 @@
+{
+  "selected_files": 9,
+  "plan_sha256": "d9fd5c8324c99d335fe615e974016b9c0dc4baca77bf3e5f51929e2dd6c26ec2",
+  "runtime_libraries": {
+    "_rocm_sdk_core/bin/amd_comgr.dll": {
+      "sha256": "213db0bedaa07027ce136ba1797299a2b0cfa2c6bb33584ce3861be8be067937",
+      "bytes": 121750016,
+      "package": "rocm-sdk-core",
+      "version": "10.0.0",
+      "record_sha256": "cc796a8cda9f014379499ff6bdb98f1686868cc5d620df2e49b1ee2ecc406406"
+    },
+    "_rocm_sdk_core/bin/amdhip64_7.dll": {
+      "sha256": "546fb3d6e2d2194a9526fb94ec2fd3aa5b92a48a7595f04efece80162047ef69",
+      "bytes": 16555520,
+      "package": "rocm-sdk-core",
+      "version": "10.0.0",
+      "record_sha256": "cc796a8cda9f014379499ff6bdb98f1686868cc5d620df2e49b1ee2ecc406406"
+    },
+    "_rocm_sdk_core/bin/hiprtc0715.dll": {
+      "sha256": "19b67aa86ba371c49b2def5e5c863346e81c1b6d67caab125cf10a8c405e0043",
+      "bytes": 1296384,
+      "package": "rocm-sdk-core",
+      "version": "10.0.0",
+      "record_sha256": "cc796a8cda9f014379499ff6bdb98f1686868cc5d620df2e49b1ee2ecc406406"
+    },
+    "_rocm_sdk_libraries/bin/MIOpen.dll": {
+      "sha256": "114bbd178b2ba3bc32eeb3302edbbc17e0127599ba488726713858b72c61c9ae",
+      "bytes": 493655040,
+      "package": "rocm-sdk-libraries",
+      "version": "10.0.0",
+      "record_sha256": "e8837c3ca58bddae282a03714ab1248e6314fc6be1b1292dd1a0ea837988a074"
+    }
+  },
+  "private_copy_hashes_verified": true
+}
