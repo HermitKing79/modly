@@ -1,0 +1,44 @@
+test_cache_only_admission_rejects_misses_before_callback (test_amd_shape_cache_identity.CacheIdentityTests.test_cache_only_admission_rejects_misses_before_callback) ... ok
+test_first_dispatch_rejects_unverified_variants (test_amd_shape_cache_identity.CacheIdentityTests.test_first_dispatch_rejects_unverified_variants) ... FAIL
+test_helper_key_follows_installed_ordered_configuration (test_amd_shape_cache_identity.CacheIdentityTests.test_helper_key_follows_installed_ordered_configuration) ... ok
+test_kernel_first_dispatch_signature_uses_runtime_dimensions (test_amd_shape_cache_identity.CacheIdentityTests.test_kernel_first_dispatch_signature_uses_runtime_dimensions) ... ok
+test_convolution_source_widths_and_pre_subdivision_wide_output (test_amd_shape_decoder_admission.AdmissionTests.test_convolution_source_widths_and_pre_subdivision_wide_output) ... ok
+test_fixed_ceiling_and_initial_free_gate (test_amd_shape_decoder_admission.AdmissionTests.test_fixed_ceiling_and_initial_free_gate) ... ok
+test_four_original_stages_normal_expansion (test_amd_shape_decoder_admission.AdmissionTests.test_four_original_stages_normal_expansion) ... ok
+test_invalid_stage_shape_counts_and_overflow (test_amd_shape_decoder_admission.AdmissionTests.test_invalid_stage_shape_counts_and_overflow) ... ok
+test_malformed_metadata_cannot_reduce_admission (test_amd_shape_decoder_admission.AdmissionTests.test_malformed_metadata_cannot_reduce_admission) ... FAIL
+test_memory_rejects_before_allocation_and_artifact_bound (test_amd_shape_decoder_admission.AdmissionTests.test_memory_rejects_before_allocation_and_artifact_bound) ... ok
+test_retained_cache_and_projected_next_conv_counted (test_amd_shape_decoder_admission.AdmissionTests.test_retained_cache_and_projected_next_conv_counted) ... ERROR
+test_worst_case_expansion_rejected_before_callback (test_amd_shape_decoder_admission.AdmissionTests.test_worst_case_expansion_rejected_before_callback) ... ok
+
+======================================================================
+ERROR: test_retained_cache_and_projected_next_conv_counted (test_amd_shape_decoder_admission.AdmissionTests.test_retained_cache_and_projected_next_conv_counted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_shape_decoder_admission.py", line 34, in test_retained_cache_and_projected_next_conv_counted
+    self.assertEqual(a['geometry_generation_bytes'],0)
+                     ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'geometry_generation_bytes'
+
+======================================================================
+FAIL: test_first_dispatch_rejects_unverified_variants (test_amd_shape_cache_identity.CacheIdentityTests.test_first_dispatch_rejects_unverified_variants)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_shape_cache_identity.py", line 46, in test_first_dispatch_rejects_unverified_variants
+    with self.assertRaises(ValueError):contract.first_signature(splitk=splitk)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_malformed_metadata_cannot_reduce_admission (test_amd_shape_decoder_admission.AdmissionTests.test_malformed_metadata_cannot_reduce_admission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_shape_decoder_admission.py", line 41, in test_malformed_metadata_cannot_reduce_admission
+    with self.assertRaises(ValueError):guard.subdivision(self.memory(),stage=0,parent_tokens=3743,child_tokens=3743,input_channels=4096,cached=cached)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.002s
+
+FAILED (failures=2, errors=1)

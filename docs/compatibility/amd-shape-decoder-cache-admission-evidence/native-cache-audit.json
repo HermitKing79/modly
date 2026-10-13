@@ -1,0 +1,592 @@
+{
+  "classification": "UNKNOWN",
+  "gpu_initialized": false,
+  "weights_loaded": false,
+  "kernel_launches": 0,
+  "native_helper_loaded": false,
+  "cache_products_executed": false,
+  "compiled": false,
+  "source_files_verified": 97,
+  "native_files_verified": 39,
+  "complete_groups_verified": 46,
+  "cache_products_verified": 322,
+  "input_hashes_verified": {
+    "shape-latent-denormalized.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-denormalized.npy",
+      "sha256": "90eaf72030f303b209a4d02ae9adc7d4ecd39662344f35f0adc8120bc1e871b9",
+      "bytes": 479232
+    },
+    "shape-latent-coordinates.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-coordinates.npy",
+      "sha256": "949a9e6a2548abcad66354384502c06834d4d56ea3f2fa86b619c25926379ed4",
+      "bytes": 60016
+    },
+    "shape-latent-provenance.json": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-provenance.json",
+      "sha256": "4834412e700434f5645cd919dd0d75e9209b6b5d67cc7cb765e98b76890f9a81",
+      "bytes": 14918
+    }
+  },
+  "checkpoint_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+  "configuration_sha256": "5f1b856dffce79466fb18f5f0eefc08f08c673b24b3c05b20359c0b6d318a209",
+  "tuning": {
+    "path": "C:\\Users\\wattz\\.flex_gemm\\autotune_cache.json",
+    "sha256": "8d54115c6bf50fecc73f01fa08ffbb938a69f07a2eefa7c68279f8417738df5f",
+    "known_first_stage_keys": {
+      "(2^11, 1024, 1024, 27)": {
+        "SPLITK": 2
+      },
+      "(2^11, 1024, 4096, 27)": {
+        "SPLITK": 1
+      }
+    },
+    "current_source_compatibility_verified": false,
+    "later_dynamic_keys_complete": false
+  },
+  "first_kernel": {
+    "source_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk.py",
+    "source_sha256": "21d5efc8f59f312c62fa45241fc13a9e446cd4c13f11e360cf92216d151301bb",
+    "starting_line_number": 18,
+    "jit_source_key": "0bc56b85dfc8fcc49400a2fa3d1939e61d34bf5ce69fdb7d9615e6e53204f838",
+    "ast_source_key": "2df0f04c6f22c83183a89a3fab0a2a2141d571e3df6c47153a1eae5f908db293",
+    "backend_key": "GPUTarget(backend='hip', arch='gfx1201', warp_size=32)",
+    "options": {
+      "num_warps": 4,
+      "waves_per_eu": 3,
+      "num_stages": 2,
+      "num_ctas": 1,
+      "extern_libs": [
+        [
+          "ocml",
+          "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\lib\\ocml.bc"
+        ],
+        [
+          "ockl",
+          "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\lib\\ockl.bc"
+        ]
+      ],
+      "debug": false,
+      "sanitize_overflow": true,
+      "arch": "gfx1201",
+      "supported_fp8_dtypes": [
+        "fp8e4b8",
+        "fp8e4nv",
+        "fp8e5",
+        "fp8e5b16"
+      ],
+      "deprecated_fp8_dot_operand_dtypes": [],
+      "default_dot_input_precision": "ieee",
+      "allowed_dot_input_precisions": [
+        "ieee",
+        "bf16x3",
+        "bf16x6"
+      ],
+      "enable_fp_fusion": true,
+      "launch_cooperative_grid": false,
+      "matrix_instr_nonkdim": 0,
+      "kpack": 1,
+      "allow_flush_denorm": false,
+      "max_num_imprecise_acc_default": 0,
+      "backend_name": "hip",
+      "instrumentation_mode": "",
+      "schedule_hint": "",
+      "llvm_fn_attrs": [],
+      "warp_size": 32
+    },
+    "options_key": "7f86941f6c4400243dc47ccdbc1e8adc428cfa94571b7ac59ac3d1c7fbd2fd56",
+    "cache_environment": {},
+    "computed_hash": "d5de3d60ef4c1dfce927f5a59a91fdfa35c7de3400fb71acb214abe5dc4fbea5",
+    "computed_folder": "2XPD2YHPJQO7Z2JH6WSZVEP57I24PXRUAD5XDLFSCSV6LXCPX2SQ",
+    "expected_metadata": "C:\\Users\\wattz\\.triton\\cache\\2XPD2YHPJQO7Z2JH6WSZVEP57I24PXRUAD5XDLFSCSV6LXCPX2SQ\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.json",
+    "cache_hit": true,
+    "historical_hash": "d5de3d60ef4c1dfce927f5a59a91fdfa35c7de3400fb71acb214abe5dc4fbea5",
+    "matches_historical": true,
+    "signature": {
+      "input": "*fp16",
+      "weight": "*fp16",
+      "bias": "*fp16",
+      "neighbor": "*u32",
+      "sorted_idx": "*i64",
+      "output": "*fp32",
+      "N": "i32",
+      "LOGN": "i32",
+      "Ci": "i32",
+      "Co": "i32",
+      "V": "constexpr",
+      "B1": "constexpr",
+      "B2": "constexpr",
+      "BK": "constexpr",
+      "SPLITK": "constexpr",
+      "allow_ieee": "constexpr",
+      "valid_kernel": "*i32",
+      "valid_kernel_seg": "*i32"
+    },
+    "constants": {
+      "(10,)": 27,
+      "(11,)": 64,
+      "(12,)": 128,
+      "(13,)": 32,
+      "(14,)": 2,
+      "(15,)": true
+    },
+    "attrs": {
+      "(0,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(1,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(2,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(3,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(4,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(5,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(6,)": [],
+      "(7,)": [],
+      "(8,)": [
+        [
+          "tt.divisibility",
+          16
+        ]
+      ],
+      "(9,)": [
+        [
+          "tt.divisibility",
+          16
+        ]
+      ],
+      "(10,)": [],
+      "(11,)": [],
+      "(12,)": [],
+      "(13,)": [],
+      "(14,)": [],
+      "(15,)": [],
+      "(16,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(17,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ]
+    },
+    "limitation": "Original kernel source/location reconstructed for hashing only; actual installed binder cross-checked using metadata pointers. This is not kernel execution or a full runtime admission policy."
+  },
+  "helper": {
+    "library": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\bin\\amdhip64_7.dll",
+    "library_sha256": "546fb3d6e2d2194a9526fb94ec2fd3aa5b92a48a7595f04efece80162047ef69",
+    "platform": "AMD64,Windows,64bit,WindowsPE",
+    "config": {
+      "language": [
+        "c"
+      ],
+      "library_dirs": null,
+      "include_dirs": [
+        "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include"
+      ],
+      "libraries": null,
+      "ccflags": null
+    },
+    "computed_key": "ec3b3ff5d59bce32e9b2291138d74d09179f18ce05d4c5871e77fb22e214e509",
+    "computed_folder": "5Q5T75OVTPHDF2NSFEITRV2NBELZ6GGOAXKMLBY6O75SFYQU4UEQ",
+    "expected_path": "C:\\Users\\wattz\\.triton\\cache\\5Q5T75OVTPHDF2NSFEITRV2NBELZ6GGOAXKMLBY6O75SFYQU4UEQ\\hip_utils.cp312-win_amd64.pyd",
+    "cache_hit": true,
+    "cached_sha256": "676ff51e09cda672275546e3025caecf5f275bbf1ab2d2f0c17c3e101dc046f2",
+    "installed_formula_matches": true
+  },
+  "support_file_identity": {
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\bin\\amdhip64_7.dll": {
+      "bytes": 16555520,
+      "sha256": "546fb3d6e2d2194a9526fb94ec2fd3aa5b92a48a7595f04efece80162047ef69"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\_C\\libtriton.pyd": {
+      "bytes": 119854592,
+      "sha256": "53575dc2546d901ac940af628b67166cdc122b294e56c868bf675085d168ff2a"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\driver.c": {
+      "bytes": 44095,
+      "sha256": "8f3bad2351012420f3a4ea91a197969b421dd7e53abc11ac76f66aaf90e19f40"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\driver.py": {
+      "bytes": 19361,
+      "sha256": "048f3915c6942e64c7c84eb47c62f265ad10e6be4584940fe0530f5a630b23f5"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_channel_descriptor.h": {
+      "bytes": 11574,
+      "sha256": "bed3e191b56c5444d398db006f17bd66b030d31d2e7a1ca69b5e044d86b1287e"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_device_functions.h": {
+      "bytes": 31924,
+      "sha256": "4c49dd5f468aa2c8e8a3bd27570326d5fb90654be73d27a3572b5fe067e3167d"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_hip_atomic.h": {
+      "bytes": 29043,
+      "sha256": "6f3d55c6fda28ce63614e0cb43a70318a573f2b40078b6e0cef481e627685f0c"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_hip_common.h": {
+      "bytes": 1371,
+      "sha256": "b2731a9c4084dc96c297b618295dd5c9474b4ce7accd3f7352dd82b4d94b42d1"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_hip_gl_interop.h": {
+      "bytes": 3976,
+      "sha256": "566881ac455970f68f03423c6c947bd20600a6cfd892666b5b8ba1ed57944773"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_hip_runtime.h": {
+      "bytes": 14276,
+      "sha256": "e51a973fd5dd9e07300cb7c5a51fbd2059531abc33f67a45d7fe7cdef79552c8"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_hip_runtime_pt_api.h": {
+      "bytes": 10359,
+      "sha256": "be840fd08265680bcf8fc62c3c6293479e24c7cbf617b46b01a6c7ee536dd63c"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_hip_unsafe_atomics.h": {
+      "bytes": 25567,
+      "sha256": "b5eaaa01260176b641e9c8c25a0a8fc9527318dcd11cc4754e0bd1482ddedd97"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_hip_vector_types.h": {
+      "bytes": 56589,
+      "sha256": "94c4e61a28aa7bef37eb3c3bf93c68181361a64f796ed27b3ae38026d2a0750a"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_math_functions.h": {
+      "bytes": 3048,
+      "sha256": "58553025db2bf68b564bb8ea4071d3124126b60cde888c7b365560a2f4e7beff"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_surface_functions.h": {
+      "bytes": 18608,
+      "sha256": "f46860972886f789c31f40a24e6a0aedd8026c19df3ed8e4ea1dd0c98c3da3cc"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_warp_functions.h": {
+      "bytes": 22072,
+      "sha256": "a3c82e4b2205babb03d241f2f6ce7a8f489880047cf3b37460f52d007c29d75c"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\amd_warp_sync_functions.h": {
+      "bytes": 30172,
+      "sha256": "119571e114342f7ea237f25604e8c08ceca821b1200149964ef7ce5e3f8c4a21"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\device_library_decls.h": {
+      "bytes": 7396,
+      "sha256": "fc828035bf5b378e8c894e2db13f996375634f749142a2fde63833d729e4868e"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\hip_assert.h": {
+      "bytes": 4360,
+      "sha256": "199906029b4ad199320d738419dbb4d32b37a5a3619e7ab2e3c3942cbb15caaa"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\hip_fp16_math_fwd.h": {
+      "bytes": 4923,
+      "sha256": "e6ed59fc1599959e7d8d83af5db5ac82c3d63bd91018f1f48cd9622b9471b40a"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\hip_ldg.h": {
+      "bytes": 3652,
+      "sha256": "2801196fd1f8cf80c3ae46a5a0c39e5b36a18837c8d95e9cebcbd64f78dbe5f5"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\hip_prof_str.h": {
+      "bytes": 738681,
+      "sha256": "3f7b371e6289fc2194a010de87575b19c03a873822348c7e653c6bed67951029"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\hip_runtime_prof.h": {
+      "bytes": 2696,
+      "sha256": "f6ee65d05b5a60210a29260b79cda355c89ed5e772eb1c8272c9a537411bd95b"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\host_defines.h": {
+      "bytes": 10131,
+      "sha256": "c3a1f5d1dce7b303205e8ea32414c8be18ce3901b39e180dac79b947f84cbfb5"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\math_fwd.h": {
+      "bytes": 17219,
+      "sha256": "1a059224f23fa9619f779d283c8864f799598877648eba5691347b75dc29101e"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\ockl_image.h": {
+      "bytes": 14969,
+      "sha256": "cb313c619a66a56244b3e669380184b436039b7804a58d368595477294497f67"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\texture_fetch_functions.h": {
+      "bytes": 18998,
+      "sha256": "c0ead499d728f9eb4fa8ee5094a9543f4f92a45c14577c3f75fc6e3ec042a655"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\amd_detail\\texture_indirect_functions.h": {
+      "bytes": 23136,
+      "sha256": "256b3ee718feb9bc0eccd129e90248ee4b80b2a7f12ad864c11bce2974c7dea3"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\channel_descriptor.h": {
+      "bytes": 1774,
+      "sha256": "d6d585e084c20182969dda448a0179a70154c249982249da5bf7df8b824ef162"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\driver_types.h": {
+      "bytes": 31339,
+      "sha256": "d1f9df2221456c157e8dc0d8d154606276a74c32bed1ff1c74d849e1c713204f"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\hip_common.h": {
+      "bytes": 3430,
+      "sha256": "41e51ddfbaf16220dde027e9e0e23c3ba4f019e1b5182df848e23ff5baa06545"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\hip_deprecated.h": {
+      "bytes": 7758,
+      "sha256": "9334c9333f6e28a3c385b62b29d003d69ed798c3f3a6bf94ca4d6f3b7ed9b33d"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\hip_runtime.h": {
+      "bytes": 2869,
+      "sha256": "a7fbe286f7cdf9d1deced6fb6d663b48950315fc32caec96435bf78599c3bafa"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\hip_runtime_api.h": {
+      "bytes": 444378,
+      "sha256": "f0ed814c4f9cd8bcf8905f358acda397ffbcbb8395bb1a65973c5b547ec455c0"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\hip_texture_types.h": {
+      "bytes": 1237,
+      "sha256": "02192f8c6e1c0e37ff6452e0e52b124df0675c6eb5e0f04ad5754f6bb8ab65b9"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\hip_vector_types.h": {
+      "bytes": 1631,
+      "sha256": "c1585f3ee359e3036cab65ff7d65eb2e0582b7a4325ee86400614c3b92ba2041"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\hip_version.h": {
+      "bytes": 408,
+      "sha256": "f2f49e44ccd0509582566a32ff9cf1b104e45b3a5dfc2356208b8f52b7b6c3de"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\library_types.h": {
+      "bytes": 2433,
+      "sha256": "d9a86ad289e11419696f78917fb96879de2fa9963c27fbd2d41416a9ff327f11"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\linker_types.h": {
+      "bytes": 6691,
+      "sha256": "057aba5652e78984c2cf2a42cf4c96b9acb6b9c673ab135e93ba27965a627d7b"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\surface_types.h": {
+      "bytes": 1953,
+      "sha256": "e5eddc787fc90638713bc7341e22d2ee23011051962b50dc8c33900a2c6c9f15"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hip\\texture_types.h": {
+      "bytes": 6499,
+      "sha256": "f25c81c6f2ad63540551128dd692b6ca7811bc0c12d981a0ad20ce1fa1e04d2c"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hipblas-common\\hipblas-common.h": {
+      "bytes": 5450,
+      "sha256": "9d92c7d9662b7030c579fcfd6b4f29db280ff9869820ebb152239b1afc173d3b"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hsa\\amd_hsa_kernel_code.h": {
+      "bytes": 12754,
+      "sha256": "2f48b1fff5432fb96aa460d3c5ac0bccb2e8996adfa5ecdb508722f3911ff9d0"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hsa\\hsa.h": {
+      "bytes": 191461,
+      "sha256": "131f04f66cbfaeb44cbe2610be72f9acf3866617fae6fd6994a39fbe4f82044c"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hsa\\hsa_api_trace_version.h": {
+      "bytes": 3396,
+      "sha256": "9a82e669104fbf6c5bbaa8f9348b13d97b0e2fdae284d7345cfc85c5502dfa66"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hsa\\hsa_ext_amd.h": {
+      "bytes": 136290,
+      "sha256": "b15af4e0f20b05c60b8b219d15fd949c132c9d99bae96c48535e9b4ec69eacaa"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hsa\\hsa_ext_image.h": {
+      "bytes": 56383,
+      "sha256": "0c52e6bf76790b4d2967886b2a501995e0f08d78a053b23620174ab974b7b71c"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hsa\\hsa_ven_amd_loader.h": {
+      "bytes": 26146,
+      "sha256": "73a7313c0cc0a31eeee886c5cc491065f0ae465f8aaf7f56858dbfc36dd7d51e"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hsa\\hsa_ven_amd_pc_sampling.h": {
+      "bytes": 18767,
+      "sha256": "d6342f8bdeacf78f868ce1a4b66be9aa3551b1318036e80eb15e979a031f8af9"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\hsakmt\\hsakmttypes.h": {
+      "bytes": 69514,
+      "sha256": "5b7010d3143284efcff23e006e2da5bdf329a671496040f815448b4ca08d2f1a"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\agent.h": {
+      "bytes": 15336,
+      "sha256": "bee923482ebdb212aaf1ed3199b9473d316fa838275de5d87cca0b1ed4af9a34"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\buffer.h": {
+      "bytes": 3722,
+      "sha256": "830b35c5239c28c8249f02732eed0d35e9cd1d0566e3cc3d6be7fced551aa96f"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\buffer_tracing.h": {
+      "bytes": 975,
+      "sha256": "cada96740bc605460900c046e8702b9c171f0d33d9ea8b7ad61cf3c810c930ae"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\callback_tracing.h": {
+      "bytes": 2082,
+      "sha256": "ac78d86086d179b64de0b202ea183a8d0b644dfb29e9e1927bfab780315f6e91"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\defines.h": {
+      "bytes": 9657,
+      "sha256": "1deb94c73c0cd9de220c669c6a7369f34be78061836817a7bc81cb44f72149af"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\fwd.h": {
+      "bytes": 43135,
+      "sha256": "86b3bc9519196b3a39899e69f09034ee5231144f226397e4d6729c45887b5de2"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\hip\\api_args.h": {
+      "bytes": 70356,
+      "sha256": "a3f801dd8c48a5166306cf222a0e32767314ce0d3ed7d886153d1ed96aa32cb4"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\hip\\runtime_api_id.h": {
+      "bytes": 34160,
+      "sha256": "d6a14a1404f48a64ab78b81c56f2d9f77d4bf4c6b834d90a75443a34cec02c7b"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\internal_threading.h": {
+      "bytes": 6816,
+      "sha256": "bad48b0b9e5a984966727fab79c1e59c0c4e3dc1f3305ea541c50648c0d5c90e"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\marker\\api_args.h": {
+      "bytes": 3049,
+      "sha256": "386cffcb2f70f35fe9d0af86df9768ab65c6f166e762792a7c1fb134da56e00f"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\marker\\api_id.h": {
+      "bytes": 2958,
+      "sha256": "769ad7c2b549b1563b9fa215706c1d51a7d3a0b9cde9f8bda3c091a8dfd226a4"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\registration.h": {
+      "bytes": 11307,
+      "sha256": "d4d819c3809b6051e21efba3a3ba7f015b9d8238f0bc22ea0fa65a86c4b8292b"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk\\version.h": {
+      "bytes": 8556,
+      "sha256": "e22ed988dff678f0032a3126479af5fb2585a7670e0c58978612b25cd3e2a9bf"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk-roctx\\api_trace.h": {
+      "bytes": 3454,
+      "sha256": "acc51b151f09427abf44ec7ad2f3ec79a1c4ab118dba5795f615ff901957b6fa"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk-roctx\\defines.h": {
+      "bytes": 3535,
+      "sha256": "17a4157b6745fd79056092495f435d50024559cbed3adc3d6fd0b166dac6c8ac"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk-roctx\\types.h": {
+      "bytes": 1725,
+      "sha256": "b9550b0299a9dd7ce183cc6682535a4ab0b5f1b3b42b4bac331dc87792710a72"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\rocprofiler-sdk-roctx\\version.h": {
+      "bytes": 4200,
+      "sha256": "e10b7b040fae6dd2689e1e3660b955fb8588f0f7ca961e440a5a8b01a4a9a259"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\roctracer\\ext\\prof_protocol.h": {
+      "bytes": 3849,
+      "sha256": "e8501cbd50fe74d33bbae945b3607e693c70e71380586cba7af743e3251a79b0"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\roctracer\\roctracer.h": {
+      "bytes": 23849,
+      "sha256": "07cb07cf60cc369acfec4a8d5881b054b635290329c6685f572e14a11f1dcf36"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\roctracer\\roctracer_ext.h": {
+      "bytes": 2940,
+      "sha256": "bcb699f29780c52cb4730add11a94a9d402990ab297dad388b0d4caff65c8a8d"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\roctracer\\roctracer_hip.h": {
+      "bytes": 1432,
+      "sha256": "442cd8b8dc35bcb47bc4ae2b6f4e93b4cf53539e3a51828727cdc8307999126f"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\roctracer\\roctracer_roctx.h": {
+      "bytes": 2014,
+      "sha256": "8018c1939bdbd25dcf6c1490ed5f6216d68cfd1ce42032445b503f3d70628413"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\roctracer\\roctx.h": {
+      "bytes": 6717,
+      "sha256": "461257517461489e4b444ff5826ec4ebe6e310cadf70504b0cbb9fdd4c40221f"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include\\TDMCommon.h": {
+      "bytes": 2075,
+      "sha256": "70d943369cc105bec392ffdc9ed256899a7bd929770a18419ded5f19977c49b5"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\lib\\ockl.bc": {
+      "bytes": 252824,
+      "sha256": "6875e743c99d1123627ef94937b700d25ea0fe402773257c720250a1fc31c06d"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\lib\\ocml.bc": {
+      "bytes": 209620,
+      "sha256": "dbc064b5f4f61221ab552ec6d8f0dab41153fe9bd86fdcc63a8a97c9475a21c5"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\compiler\\compiler.py": {
+      "bytes": 21186,
+      "sha256": "58517d38115dbf1caa714742bd904b3ffb8299face140a9237a9334db895f4c5"
+    }
+  },
+  "helper_pe": {
+    "machine_hex": "0x8664",
+    "architecture": "AMD64",
+    "coff_timestamp": 1791274919,
+    "bytes": 183296,
+    "compiler_header_build_provenance_attested": false
+  },
+  "cache_key_limits": [
+    "HIPOptions hashes extern-library paths, not bitcode content; current bitcode hashes recorded, historical build-input hashes unavailable.",
+    "HIP helper key includes C source, platform and include/library directory strings, not compiler or header bytes. PE/hash/key checks do not prove helper loadability.",
+    "Only canonical first splitK2 dispatch was recomputed from actual installed binder/compiler key; later learned supports and unsplit dispatches are not attested."
+  ],
+  "missing_execution_gates": [
+    "No installed cache-only compiler/helper/custom-autotuner interception exists in this candidate.",
+    "No hooked decoder subdivision/sparse-convolution pre-allocation guards; planners remain synthetic contracts.",
+    "Sorting/cumsum internal workspace and whole-call neural liveness remain unbounded by a proved per-call estimate."
+  ],
+  "next_experiment": {
+    "cpu_only": true,
+    "operation": "Exercise one actual installed compile/cache entrypoint under a narrow fail-closed interception, with a deliberate key miss.",
+    "acceptance": "Reject before every native/compile/build/autotune callback; zero GPU initialization and native callback count. A verified-hit control must preserve exact key/provenance without accessing GPU handles.",
+    "excluded": "No weights, helper/kernel execution, GPU initialization, decoder forward or benchmark.",
+    "resource_limit": "One isolated owned CPU process,120s maximum; use existing Job and scratch policies, no infrastructure rebuild."
+  }
+}

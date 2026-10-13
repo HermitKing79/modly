@@ -1,0 +1,24 @@
+{
+  "reviewer": "/root/shape_cache_admission_review",
+  "mode": "Independent read-only CPU/source/evidence review; no GPU, weights or native execution",
+  "classification": "UNKNOWN",
+  "identity_result": "PASS for exact canonical first dispatch and HIP-helper key; not execution compatibility",
+  "reviewed_source_sha256": {
+    "scripts/compatibility/amd_shape_cache_identity.py": "b39dc4d435533b5984bb51e267b1f199395c8fb48446e15c8d12596e085266cf",
+    "scripts/compatibility/amd_shape_decoder_admission.py": "f4d68a73071e9ddd7fd8150107d4c71f8acbf891136ef52d60faf70e7512df73",
+    "scripts/compatibility/test_amd_shape_cache_identity.py": "b8f779493b0cb36155d49b907a998959d3f18192069e4824c09a7e0a4a542c77",
+    "scripts/compatibility/test_amd_shape_decoder_admission.py": "9f4184f35abd071bd80bd3484a495ce021646382530debcfad9d0d5d6702c5ed"
+  },
+  "confirmed": [
+    "Actual installed binder, signed int32 callback metadata and all empty attribute entries resolve the original reconstructed misses.",
+    "Probe5 exact final identity script matches recorded harness hash; no GPU/weights/helper/kernel/build activity.",
+    "13 focused CPU tests pass; review-driven RED evidence preserved.",
+    "Cached gather-index memory, second postprocess visible buffers, splitK reduction and strict bool/int metadata corrected.",
+    "Planners are prospective, not attached decoder hooks or allocator-cap enforcement.",
+    "Passive audit confirms97 sources,39 native/support files,46 groups and322 products, with current support hashes and historical compiler-input limitations.",
+    "Report explicitly limits first-hit identity PASS and overall UNKNOWN; no substantive safety/report defect found."
+  ],
+  "remaining_gap": "No actual installed compiler/helper/autotuner/native interception or proved whole-call workspace/liveness bound.",
+  "next_smallest_proof": "CPU-only deliberate cache miss at an actual installed entry point, with zero native callback count and verified-hit control; no GPU handles.",
+  "approval_scope": "CPU-only publication after preservation and remote-verification records exist; no GPU readiness or execution approval."
+}

@@ -1,0 +1,64 @@
+{
+  "classification": "UNKNOWN",
+  "notes": [
+    {
+      "directory": "cpu-probe",
+      "results_sha256": "5f414da913d37b234349312f01c057c0aa44fe52d046c9e23c48c36466fe7eec",
+      "returncode": 0,
+      "elapsed_seconds": 6.23399999999674,
+      "harness_sha256": "9f9e078f0beb147284b59e91e179a7a36ffe20ce54ff93cf167d535d30c17d9a",
+      "computed_key": "6b58ec2ec8f98930c7a67341b16c70815d4b65ffd1fecdcd8c5a5d8a447630e4",
+      "interpretation": "CPU probe exited cleanly, but reconstructed attrs omitted empty entries and callback pointers were unsigned; miss was not native incompatibility."
+    },
+    {
+      "directory": "cpu-probe-2",
+      "results_sha256": "edd6c59c69251ac4c83403664279236806075829511506b4a4c71e1ee9f7743b",
+      "returncode": 1,
+      "elapsed_seconds": 6.030999999988126,
+      "harness_sha256": null,
+      "computed_key": null,
+      "interpretation": "Installed production binder caught omitted empty attrs. CPU test contract failed; no native execution."
+    },
+    {
+      "directory": "cpu-probe-3",
+      "results_sha256": "09ecc114c69d5ae8c372100afa465995c6310d75643d0c8ee108e3c41aa425c6",
+      "returncode": 0,
+      "elapsed_seconds": 6.10899999999674,
+      "harness_sha256": "032e426b911119367316b8c9fbb4e1fcae4a6bded945df0010b093c861b2d998",
+      "computed_key": "b52fbffd934735107d9de25eb21432bb641f66f263bc9f8519b9ff9db858eab9",
+      "interpretation": "All attrs corrected, but callbacks still unsigned; miss was not native incompatibility."
+    },
+    {
+      "directory": "cpu-probe-4",
+      "results_sha256": "5d5fc53aea42210a8623d290e2688004a0049f6028c7be3aff2bee27c561c793",
+      "returncode": 0,
+      "elapsed_seconds": 6.125,
+      "harness_sha256": "3814a58d32e03cac4180891362901594f6d86b06f2a9dac143ac65e73a3a3e94",
+      "computed_key": "d5de3d60ef4c1dfce927f5a59a91fdfa35c7de3400fb71acb214abe5dc4fbea5",
+      "interpretation": "Actual int32 native callbacks and all attrs produce exact canonical first-dispatch/helper hits."
+    },
+    {
+      "directory": "cpu-probe-5",
+      "results_sha256": "a1e477f0e153e4a6e9c5c3ffb217a9c59baaa0cf95b0d1bf755c2b3f3890024f",
+      "returncode": 0,
+      "elapsed_seconds": 8.547000000005937,
+      "harness_sha256": "b39dc4d435533b5984bb51e267b1f199395c8fb48446e15c8d12596e085266cf",
+      "computed_key": "d5de3d60ef4c1dfce927f5a59a91fdfa35c7de3400fb71acb214abe5dc4fbea5",
+      "interpretation": "Final candidate, restricted to verified first SPLITK2 dispatch, independently reproduces actual binder/compiler/helper keys."
+    }
+  ],
+  "all_intermediate_evidence_preserved": true,
+  "prohibited_activity": {
+    "gpu_initialization": false,
+    "weights_loaded": false,
+    "kernel_or_helper_execution": false,
+    "compilation": false,
+    "autotuning": false
+  },
+  "correction_test_logs": [
+    "review-regression-red.log",
+    "allocation-review-red.log",
+    "final-candidate-tests.log"
+  ],
+  "code_scope": "Read-only identity probe and prospective synthetic admission planners only; no production native interception or GPU worker implemented."
+}

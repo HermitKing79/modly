@@ -1,0 +1,192 @@
+{
+  "returncode": 1,
+  "elapsed_seconds": 6.030999999988126,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "worker_exit_verified": true,
+  "worker": {
+    "status": "FAIL",
+    "gpu_initialized": false,
+    "weights_loaded": false,
+    "kernel_launches": 0,
+    "helper_loaded": false,
+    "compiled": false,
+    "sdk_discovery": [
+      {
+        "command": [
+          "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+          "path",
+          "--root"
+        ],
+        "timeout_seconds": 5.0,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "ERROR: Could not load the `rocm[devel]` package, which is required to access runtime tools and development files. Please install it with your package manager (pip, uv, etc)\r\nERROR: rocm_sdk_devel module for the ROCm SDK development package is not installed. This can typically be obtained by installing `rocm[devel]` from your package manager\r\n",
+        "elapsed_seconds": 2.703
+      }
+    ],
+    "helper": {
+      "library": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\bin\\amdhip64_7.dll",
+      "library_sha256": "546fb3d6e2d2194a9526fb94ec2fd3aa5b92a48a7595f04efece80162047ef69",
+      "platform": "AMD64,Windows,64bit,WindowsPE",
+      "config": {
+        "language": [
+          "c"
+        ],
+        "library_dirs": null,
+        "include_dirs": [
+          "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include"
+        ],
+        "libraries": null,
+        "ccflags": null
+      },
+      "computed_key": "ec3b3ff5d59bce32e9b2291138d74d09179f18ce05d4c5871e77fb22e214e509",
+      "computed_folder": "5Q5T75OVTPHDF2NSFEITRV2NBELZ6GGOAXKMLBY6O75SFYQU4UEQ",
+      "expected_path": "C:\\Users\\wattz\\.triton\\cache\\5Q5T75OVTPHDF2NSFEITRV2NBELZ6GGOAXKMLBY6O75SFYQU4UEQ\\hip_utils.cp312-win_amd64.pyd",
+      "cache_hit": true,
+      "cached_sha256": "676ff51e09cda672275546e3025caecf5f275bbf1ab2d2f0c17c3e101dc046f2",
+      "installed_formula_matches": true
+    },
+    "binder_crosscheck": {
+      "signature": {
+        "input": "*fp16",
+        "weight": "*fp16",
+        "bias": "*fp16",
+        "neighbor": "*u32",
+        "sorted_idx": "*i64",
+        "output": "*fp32",
+        "N": "i32",
+        "LOGN": "i32",
+        "Ci": "i32",
+        "Co": "i32",
+        "V": "constexpr",
+        "B1": "constexpr",
+        "B2": "constexpr",
+        "BK": "constexpr",
+        "SPLITK": "constexpr",
+        "allow_ieee": "constexpr",
+        "valid_kernel": "*u32",
+        "valid_kernel_seg": "*u32"
+      },
+      "constants": {
+        "(10,)": 27,
+        "(11,)": 64,
+        "(12,)": 128,
+        "(13,)": 32,
+        "(14,)": 2,
+        "(15,)": true
+      },
+      "attrs": {
+        "(0,)": [
+          [
+            "tt.divisibility",
+            16
+          ],
+          [
+            "tt.pointer_range",
+            32
+          ]
+        ],
+        "(1,)": [
+          [
+            "tt.divisibility",
+            16
+          ],
+          [
+            "tt.pointer_range",
+            32
+          ]
+        ],
+        "(2,)": [
+          [
+            "tt.divisibility",
+            16
+          ],
+          [
+            "tt.pointer_range",
+            32
+          ]
+        ],
+        "(3,)": [
+          [
+            "tt.divisibility",
+            16
+          ],
+          [
+            "tt.pointer_range",
+            32
+          ]
+        ],
+        "(4,)": [
+          [
+            "tt.divisibility",
+            16
+          ],
+          [
+            "tt.pointer_range",
+            32
+          ]
+        ],
+        "(5,)": [
+          [
+            "tt.divisibility",
+            16
+          ],
+          [
+            "tt.pointer_range",
+            32
+          ]
+        ],
+        "(6,)": [],
+        "(7,)": [],
+        "(8,)": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "(9,)": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "(10,)": [],
+        "(11,)": [],
+        "(12,)": [],
+        "(13,)": [],
+        "(14,)": [],
+        "(15,)": [],
+        "(16,)": [
+          [
+            "tt.divisibility",
+            16
+          ],
+          [
+            "tt.pointer_range",
+            32
+          ]
+        ],
+        "(17,)": [
+          [
+            "tt.divisibility",
+            16
+          ],
+          [
+            "tt.pointer_range",
+            32
+          ]
+        ]
+      },
+      "source": "Installed create_function_from_signature and JITFunction._pack_args; metadata pointers only, no storage/GPU"
+    },
+    "error": "ValueError('Actual installed binder differs from reconstructed signature')",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_shape_cache_identity.py\", line 133, in worker\n    if (packed_sig,packed_constants,packed_attrs)!=(signature,constants,attrs):raise ValueError('Actual installed binder differs from reconstructed signature')\n                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Actual installed binder differs from reconstructed signature\n"
+  },
+  "cpu_probe_passed": false
+}

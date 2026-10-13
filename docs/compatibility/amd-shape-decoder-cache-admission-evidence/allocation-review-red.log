@@ -1,0 +1,22 @@
+test_convolution_source_widths_and_pre_subdivision_wide_output (test_amd_shape_decoder_admission.AdmissionTests.test_convolution_source_widths_and_pre_subdivision_wide_output) ... ok
+test_fixed_ceiling_and_initial_free_gate (test_amd_shape_decoder_admission.AdmissionTests.test_fixed_ceiling_and_initial_free_gate) ... ok
+test_four_original_stages_normal_expansion (test_amd_shape_decoder_admission.AdmissionTests.test_four_original_stages_normal_expansion) ... ok
+test_invalid_stage_shape_counts_and_overflow (test_amd_shape_decoder_admission.AdmissionTests.test_invalid_stage_shape_counts_and_overflow) ... ok
+test_malformed_metadata_cannot_reduce_admission (test_amd_shape_decoder_admission.AdmissionTests.test_malformed_metadata_cannot_reduce_admission) ... ok
+test_memory_rejects_before_allocation_and_artifact_bound (test_amd_shape_decoder_admission.AdmissionTests.test_memory_rejects_before_allocation_and_artifact_bound) ... ok
+test_retained_cache_and_projected_next_conv_counted (test_amd_shape_decoder_admission.AdmissionTests.test_retained_cache_and_projected_next_conv_counted) ... ok
+test_visible_second_postprocess_and_split_reduction_are_counted (test_amd_shape_decoder_admission.AdmissionTests.test_visible_second_postprocess_and_split_reduction_are_counted) ... FAIL
+test_worst_case_expansion_rejected_before_callback (test_amd_shape_decoder_admission.AdmissionTests.test_worst_case_expansion_rejected_before_callback) ... ok
+
+======================================================================
+FAIL: test_visible_second_postprocess_and_split_reduction_are_counted (test_amd_shape_decoder_admission.AdmissionTests.test_visible_second_postprocess_and_split_reduction_are_counted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_shape_decoder_admission.py", line 57, in test_visible_second_postprocess_and_split_reduction_are_counted
+    self.assertEqual(p['native_neighbor_bytes'],680*n+112+120*((n+63)//64)+8)
+AssertionError: 2545352 != 2552440
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+FAILED (failures=1)
