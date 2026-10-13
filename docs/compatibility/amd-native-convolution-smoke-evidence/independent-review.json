@@ -1,0 +1,16 @@
+{
+  "reviewer": "/root/native_convolution_review",
+  "scope": "Complete narrow execution candidate and installed API/source contracts; read-only, no imports or execution",
+  "verdict": "No remaining concrete prelaunch blockers in corrected candidate",
+  "findings_corrected": ["Wrong FlexGEMM config import", "Weight view charged as a new allocation", "Trace.call API used with forwarded positional arguments"],
+  "focused_cpu_tests": 10,
+  "reviewed_sha256": {
+    "scripts/compatibility/amd_native_convolution_contract.py": "675b192f34d4e8ab4d141bd8d814ff456ee8e884905a4cf1c6f769d09183beb5",
+    "scripts/compatibility/amd_native_convolution_preflight.py": "e415c6a4d86eccbfb3944072b6d46a9710292a823d9cdd38de907e1eb7cc5944",
+    "scripts/compatibility/amd_native_convolution_policy.py": "3cb56c6b83aa394d98f30294a072cc881b9d8c20929366da64b93f99a02ad49b",
+    "scripts/compatibility/amd_native_convolution_smoke.py": "798e795bacc5b17358a12ca942dc33e42790c021621c5dd0b9cf017aae21daef",
+    "scripts/compatibility/test_amd_native_convolution.py": "e7b5ba3fb1c0cf687a50bcfe175c5bff5369911a67255b53f341928cd6ae59fd",
+    "scripts/compatibility/amd_sparse_decoder_forward.py": "880bc2a7bd56f2608195593ebd9fe1321fc86af28b3860acb10b8ede7a2b53ca"
+  },
+  "native_numerical_compatibility": "Not yet executed"
+}

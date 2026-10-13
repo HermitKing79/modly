@@ -318,6 +318,12 @@ def worker(scratch, occupancy=None):
     return 0 if record['status']=='PASS' else 1
 
 
+def profile_deadlines(kind):
+    if kind=='native-convolution':return (45,120,180)
+    if kind in ('sparse-flow','sparse-sampling','shape-slat','shape-sampling'):return (180,240,480)
+    return (120,180,360)
+
+
 def supervise(output,harness_commit,*,profile=None):
     # A second single-model proof reuses the same ownership, journals, observer,
     # deadlines and cleanup path. The original decoder default is unchanged.
@@ -333,10 +339,11 @@ def supervise(output,harness_commit,*,profile=None):
     worker_script=Path(__file__).resolve() if profile is None else profile.worker_script
     authorize=b'EXECUTE_ONE_DECODER_FORWARD\n' if profile is None else profile.authorize
     sparse_profile=getattr(profile,'kind',None) in ('sparse-flow','sparse-sampling','shape-slat','shape-sampling')
-    deadline_contract=(180,240,480) if sparse_profile else (120,180,360)
+    native_profile=getattr(profile,'kind',None)=='native-convolution'
+    deadline_contract=profile_deadlines(getattr(profile,'kind',None))
     if profile is not None and (cpu_seconds,gpu_seconds,overall_seconds)!=deadline_contract:
         raise ValueError('Profile deadlines differ from the explicit reviewed contract')
-    authorize_gate=profile.authorize_placement if sparse_profile else loading_contract.authorize_placement
+    authorize_gate=profile.authorize_placement if sparse_profile or native_profile else loading_contract.authorize_placement
     output=output.resolve()
     if output!=evidence/'run':raise ValueError('Use the single canonical evidence run directory')
     head=subprocess.run(['git','rev-parse','HEAD'],cwd=ROOT,capture_output=True,check=True,timeout=5).stdout.decode().strip()
@@ -360,7 +367,7 @@ def supervise(output,harness_commit,*,profile=None):
     windows_monitor=windows_journal=owned_job=None
     try:
         save('committed-harness.json',{'commit':head,'verified_file_sha256':committed_hashes})
-        inspect_source();verified=identity();validate_config(verified['config']);save('checkpoint-before.json',verified)
+        inspect_source();verified=identity();validate_config(verified['config']);save('native-contract-before.json' if native_profile else 'checkpoint-before.json',verified)
         before=windows_observation(since);save('windows-before.json',before)
         if not healthy_observation(before):raise RuntimeError('Unhealthy Windows observer before launch')
         healthy=True
@@ -411,7 +418,8 @@ def supervise(output,harness_commit,*,profile=None):
             if line.startswith(EVENT):
                 event=json.loads(line[len(EVENT):])
                 if authorized or event.get('event')!='cpu-ready':raise RuntimeError('Duplicate/invalid CPU gate')
-                authorize_gate(event.get('gate_one',{}),verified,verified['checkpoint_sha256'],event.get('checkpoint_sha256'))
+                if native_profile:authorize_gate(event.get('gate_one',{}),verified,event.get('native_contract_sha256'))
+                else:authorize_gate(event.get('gate_one',{}),verified,verified['checkpoint_sha256'],event.get('checkpoint_sha256'))
                 save('cpu-gate.json',event)
                 observer=windows_observation(since);save('windows-cpu-gate.json',observer)
                 if not healthy_observation(observer):
@@ -473,7 +481,7 @@ def supervise(output,harness_commit,*,profile=None):
         try:
             after=windows_observation(since);save('windows-after-exit.json',after)
             healthy=healthy and healthy_observation(after)
-            after_identity=identity();save('checkpoint-after.json',after_identity);preserved=verified==after_identity
+            after_identity=identity();save('native-contract-after.json' if native_profile else 'checkpoint-after.json',after_identity);preserved=verified==after_identity
         except BaseException as exc:
             process['postcheck_error']=repr(exc);healthy=False
     process_ok=(process['returncode']==0 and not process['timed_out'] and not process.get('forced_cleanup',False)
@@ -487,7 +495,7 @@ def supervise(output,harness_commit,*,profile=None):
         and process.get('job_cleanup',{}).get('owned_tree_exit_verified') is True \
         and not process.get('job_cleanup',{}).get('forced_job_cleanup') and not process.get('job_cleanup_error')
     result={'classification':classify(record,process_ok,healthy,preserved),'observer_healthy':healthy,
-            'checkpoint_unchanged':preserved,'worker':record,'process':process}
+            ('native_artifacts_unchanged' if native_profile else 'checkpoint_unchanged'):preserved,'worker':record,'process':process}
     save('results.json',result)
     print(json.dumps({key:value for key,value in result.items() if key not in ('worker','process')}))
     return 0 if result['classification']=='PASS' else 1

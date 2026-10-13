@@ -1,0 +1,18 @@
+E
+======================================================================
+ERROR: test_amd_native_convolution (unittest.loader._FailedTest.test_amd_native_convolution)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_amd_native_convolution
+Traceback (most recent call last):
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_native_convolution.py", line 7, in <module>
+    import amd_native_convolution_contract as c
+ModuleNotFoundError: No module named 'amd_native_convolution_contract'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
