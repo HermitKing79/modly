@@ -1,0 +1,39 @@
+{
+  "artifacts": {
+    "shape-flow-output.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-forward-evidence\\shape-flow-output.npy",
+      "file_bytes": 479232,
+      "sha256": "8929865823ae95c60897296b6e10b29eb89aed458505a3067d1a1f8a010d79da",
+      "payload_sha256": "7d4a04fe47b9ea5eea688caaf76308119b6f66934446bc9040030c1032cf0c8c",
+      "shape": [
+        3743,
+        32
+      ],
+      "dtype": "<f4",
+      "stdlib_independent_container_valid": true
+    },
+    "shape-flow-coordinates.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-forward-evidence\\shape-flow-coordinates.npy",
+      "file_bytes": 60016,
+      "sha256": "949a9e6a2548abcad66354384502c06834d4d56ea3f2fa86b619c25926379ed4",
+      "payload_sha256": "860095760acc7914d0378cadfa49ba4c6a368d5a65662061b8e1c4c792f0d7a5",
+      "shape": [
+        3743,
+        4
+      ],
+      "dtype": "<i4",
+      "stdlib_independent_container_valid": true
+    }
+  },
+  "forward_calls": 1,
+  "load_calls": 1,
+  "workspace_clear_calls": 1,
+  "all_finite": true,
+  "coordinates_exact": true,
+  "allocated_bytes_after": 0,
+  "reserved_bytes_after": 0,
+  "worker_exit": 0,
+  "owned_job_empty": true,
+  "windows_periodic_records": 2,
+  "torch_imported": false
+}

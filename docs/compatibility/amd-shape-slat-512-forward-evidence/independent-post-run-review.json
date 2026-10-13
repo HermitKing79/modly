@@ -1,0 +1,21 @@
+{
+  "reviewer": "independent shape_slat_review agent",
+  "verdict": "PASS; no discrepancies found",
+  "cpu_readers_only": true,
+  "gpu_initialized": false,
+  "runtime_imported": false,
+  "checkpoint_payload_read": false,
+  "verified": [
+    "one load/one forward;91 root/block/attention counts once",
+    "nine transfers once",
+    "finiteF32[3743,32];exactI32[3743,4];file/payloadhashes/statistics",
+    "3.922s synchronized;24.703s process",
+    "peaks2896867328/3072327680B;releasezerozero;ownedcollected",
+    "exit0;emptyJob;healthyWindows;no forcedcleanup",
+    "reviewed workerhash/publishedcommit bytes;39noncheckpointfiles;97sourcepins",
+    "actual640 strictentries/220reversible widenings",
+    "CPUgate/finalresult/294workertrace rows agree"
+  ],
+  "reviewed_harness_commit": "b4055367758c7ef3ba1dd79903bfe01a316ba8dd",
+  "reviewed_worker_sha256": "12bee4c7dccda60a21c7f08a85a2c16125a65c9d4a969deb5b27e7876336f99d"
+}

@@ -1,0 +1,46 @@
+{
+  "harness_commit": "b4055367758c7ef3ba1dd79903bfe01a316ba8dd",
+  "reviewed_worker_sha256": "12bee4c7dccda60a21c7f08a85a2c16125a65c9d4a969deb5b27e7876336f99d",
+  "committed_files_verified": 40,
+  "workspace_dir": "C:/Users/wattz/Documents/ChatGPT/modly/proof",
+  "workspace_verified": true,
+  "ram_available_bytes": 18600574976,
+  "ram_required_bytes": 11411771648,
+  "ram_admitted": true,
+  "checkpoint_sha256": "ec5e0917ef9b7e25ad51dffc7d19687a42019871f94239f2fa7f86264c55b70f",
+  "token_count": 3743,
+  "windows_observer": {
+    "returncode": 0,
+    "timed_out": false,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":158,\"RecordId\":11611,\"ProviderName\":\"Microsoft-Windows-Time-Service\",\"TimeCreated\":\"\\/Date(1791907982150)\\/\"},\"version\":\"5.1.26100.9444\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 158,
+          "RecordId": 11611,
+          "ProviderName": "Microsoft-Windows-Time-Service",
+          "TimeCreated": "/Date(1791907982150)/"
+        },
+        "version": "5.1.26100.9444",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "observer_healthy": true,
+  "torch_imported": false,
+  "weights_loaded": false,
+  "attempt_marker_absent": true,
+  "run_directory_absent": true
+}

@@ -1,0 +1,21 @@
+{
+  "pipeline_sha256": "222c359ab1ed9bc6735a640a34f95d47f8681b9bc4aaa101bfb80274676253c6",
+  "shape_sampler": {
+    "name": "FlowEulerGuidanceIntervalSampler",
+    "args": {
+      "sigma_min": 1e-05
+    },
+    "params": {
+      "steps": 12,
+      "guidance_strength": 7.5,
+      "guidance_rescale": 0.5,
+      "guidance_interval": [
+        0.6,
+        1.0
+      ],
+      "rescale_t": 3.0
+    }
+  },
+  "inspection_only": true,
+  "sampling_not_implemented_or_executed": true
+}
