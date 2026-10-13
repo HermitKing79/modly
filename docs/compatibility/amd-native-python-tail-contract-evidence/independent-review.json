@@ -1,0 +1,25 @@
+{
+  "reviewer": "/root/python_tail_source_review",
+  "approved_for": "Publication as NO-GO, persistence-only correction",
+  "method": "Read-only review; no imports/execution/edits",
+  "full_record_recoverable": false,
+  "dispatcher_permission_changes": false,
+  "reviewed_sha256": {
+    "scripts/compatibility/amd_native_python_tail_cpu.py": "f42410fd54d1577e2af255556daf5d56639f3998e2e20d5796a7d9509506f3b7",
+    "scripts/compatibility/amd_native_python_tail_support.py": "c33f57dcc403477fd0cbb7ffe68ed2ef23833e4e637c92040debdcc6cf90f289",
+    "scripts/compatibility/test_amd_native_tail_persistence.py": "3f0117d7f99786a9c9812fdd574e7c7c309739d8af03745fe5524ad3b64e5157",
+    "docs/compatibility/amd-native-python-tail-contract-evidence/cpu-probe/results.json": "6730fbaf28d5879cfd625c9c84d9dba2796987362524a356f5d2d68335f39605",
+    "docs/compatibility/amd-native-python-tail-contract-evidence/cpu-probe/stdout.txt": "f1cd5d864d0c5db93cb808283523033f85a270de095c079f65a92fca23e5327f",
+    "docs/compatibility/amd-native-python-tail-contract-evidence/focused-tests.log": "8f7a1ef4a3d2d0716cfefeb77349687a585c0a8e4f008a80947123e4c9b856d5",
+    "docs/compatibility/amd-native-python-tail-contract.md": "65fdc0202d937350e4711044a9585513540b58aff9d1e7ee21d02c0378cc1fd2"
+  },
+  "findings": [
+    "observe returned, but unpersisted local record was lost when worker exited.",
+    "One authorized capture consumed; no second observation.",
+    "Persistence fix uses exclusive owned-scratch write and bounded exclusive parent copy after verified clean exit.",
+    "15hosttests verify persistence and existingcontracts only, not runtime tail acceptance.",
+    "No native orGPU numerical compatibility established."
+  ],
+  "remaining_acceptance_gap": "Complete operator/tensor/storage observation record is unavailable.",
+  "final_report_review": "Current report approved as NO-GO;5836historicalfiles and byte-identical installed inventories; no priorharness checksumexceptions."
+}
