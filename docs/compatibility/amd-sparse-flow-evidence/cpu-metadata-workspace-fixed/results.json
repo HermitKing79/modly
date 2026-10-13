@@ -1,0 +1,22 @@
+{
+  "returncode": 1,
+  "elapsed_seconds": 5.375,
+  "timed_out": false,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "worker_exit_verified": true,
+  "worker": {
+    "status": "FAIL",
+    "weights_loaded": false,
+    "real_model_forward_calls": 0,
+    "gpu_initialized": false,
+    "sdk_discovery": [],
+    "error": "AttributeError(\"module 'trellis2.modules.attention.config' has no attribute 'ATTN'\")",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_flow_probe.py\", line 58, in worker\n    with torch.device('meta'):model=local.factory(expected['config'])\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_flow_local.py\", line 90, in factory\n    cls=import_class();model=cls(**config['args'])\n        ^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_flow_local.py\", line 70, in import_class\n    if config.ATTN!='sdpa':raise RuntimeError('Dense attention backend differs')\n       ^^^^^^^^^^^\nAttributeError: module 'trellis2.modules.attention.config' has no attribute 'ATTN'\n"
+  }
+}

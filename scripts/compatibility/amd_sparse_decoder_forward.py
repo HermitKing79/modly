@@ -313,8 +313,10 @@ def supervise(output,harness_commit,*,profile=None):
     cache=prepare_private_cache if profile is None else profile.prepare_private_cache
     worker_script=Path(__file__).resolve() if profile is None else profile.worker_script
     authorize=b'EXECUTE_ONE_DECODER_FORWARD\n' if profile is None else profile.authorize
-    if profile is not None and (cpu_seconds,gpu_seconds,overall_seconds)!=(120,180,360):
-        raise ValueError('DINO conditioning deadlines must be exactly 120/180/360 seconds')
+    deadline_contract=(180,240,480) if getattr(profile,'kind',None)=='sparse-flow' else (120,180,360)
+    if profile is not None and (cpu_seconds,gpu_seconds,overall_seconds)!=deadline_contract:
+        raise ValueError('Profile deadlines differ from the explicit reviewed contract')
+    authorize_gate=profile.authorize_placement if getattr(profile,'kind',None)=='sparse-flow' else loading_contract.authorize_placement
     output=output.resolve()
     if output!=evidence/'run':raise ValueError('Use the single canonical evidence run directory')
     head=subprocess.run(['git','rev-parse','HEAD'],cwd=ROOT,capture_output=True,check=True,timeout=5).stdout.decode().strip()
@@ -385,7 +387,7 @@ def supervise(output,harness_commit,*,profile=None):
             if line.startswith(EVENT):
                 event=json.loads(line[len(EVENT):])
                 if authorized or event.get('event')!='cpu-ready':raise RuntimeError('Duplicate/invalid CPU gate')
-                loading_contract.authorize_placement(event.get('gate_one',{}),verified,verified['checkpoint_sha256'],event.get('checkpoint_sha256'))
+                authorize_gate(event.get('gate_one',{}),verified,verified['checkpoint_sha256'],event.get('checkpoint_sha256'))
                 save('cpu-gate.json',event)
                 observer=windows_observation(since);save('windows-cpu-gate.json',observer)
                 if not healthy_observation(observer):

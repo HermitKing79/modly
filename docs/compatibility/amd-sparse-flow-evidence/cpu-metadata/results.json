@@ -1,0 +1,22 @@
+{
+  "returncode": 1,
+  "elapsed_seconds": 2.2339999999967404,
+  "timed_out": false,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "worker_exit_verified": true,
+  "worker": {
+    "status": "FAIL",
+    "weights_loaded": false,
+    "real_model_forward_calls": 0,
+    "gpu_initialized": false,
+    "sdk_discovery": [],
+    "error": "KeyError('WORKSPACE_DIR')",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_flow_probe.py\", line 26, in worker\n    block_external_actions(local.VENV/'Scripts/rocm-sdk.exe',record['sdk_discovery'],scratch);os.environ.update(env)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\api\\services\\amd_offline_guard.py\", line 59, in block_external_actions\n    scratch.relative_to(Path(os.environ[\"WORKSPACE_DIR\"]).resolve())\n                             ~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"<frozen os>\", line 714, in __getitem__\nKeyError: 'WORKSPACE_DIR'\n"
+  }
+}
