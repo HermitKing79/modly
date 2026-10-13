@@ -1,0 +1,144 @@
+{
+  "classification": "PASS",
+  "independent_validation": "stdlib header, raw F32 values, payload/file hashes and source provenance",
+  "original_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-structure-sampling-evidence\\run\\scratch\\sparse-structure-latent.safetensors",
+  "published_copy_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-structure-sampling-evidence\\sparse-structure-latent.safetensors",
+  "file_bytes": 134688,
+  "file_sha256": "8a4da87ae1bbc2d5e5186f300adf11597bf986cb58dfb24a564a2eec287b44f2",
+  "payload_bytes": 131072,
+  "payload_sha256": "68930e793a5ec752852db45ab9985ab012a0dd32b6e7234f2ebb1f3177d08e56",
+  "shape": [
+    1,
+    8,
+    16,
+    16,
+    16
+  ],
+  "dtype": "F32",
+  "all_finite": true,
+  "provenance": {
+    "component": "SparseStructureFlowModel",
+    "harness_commit": "98d1d29f750236580c7853091dfd949a077b531a",
+    "feature_file_sha256": "3f444d42191df07415a8877a3d8d3706cf1b129bedbbb2dfcc0221d5571be56a",
+    "sigma_min": "1e-05",
+    "runtime": "{\"cuda\": null, \"dependencies\": {\"numpy\": \"2.5.3\", \"safetensors\": \"0.8.0\"}, \"executable\": \"D:\\\\AI\\\\Trellis2AMD\\\\venv\\\\Scripts\\\\python.exe\", \"git_version\": \"6596a0dea537c1c78520c73cc6678214781a9d06\", \"hip\": \"7.15.26333\", \"python\": \"3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]\", \"torch\": \"2.13.0+rocm10.0.0\", \"torch_path\": \"D:\\\\AI\\\\Trellis2AMD\\\\venv\\\\Lib\\\\site-packages\\\\torch\\\\__init__.py\"}",
+    "model_config_sha256": "6cdfb636854f60ffcadd8c49244169cd449f34c5ccdb55b5ff7c04678f9c399e",
+    "seed": "20261013",
+    "feature_provenance": "{\"alpha_only\": \"true\", \"checkpoint_sha256\": \"dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179\", \"component\": \"DINOv3ViTModel\", \"conditioning_width\": \"1024\", \"config_sha256\": \"135ecd23e34a70b6fbed8b083fdecb319b7e3a54e3d849258bbe4ddcf1783bb5\", \"dtype\": \"F32\", \"extractor_source_sha256\": \"a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f\", \"format\": \"modly-amd-conditioning-v1\", \"harness_commit\": \"827bd6d00c549a28c435b4602b8f4bdc6a2eb8a5\", \"input_pixel_sha256\": \"2fa864e19134bc817000a267eaae667fc6326119e5e6402b1eec9f0131c6de42\", \"input_png_sha256\": \"9abc7b8f89e5b001e863fc3ef2fbd6813b2e83f63c0a6b0a45203c2ef1edfd8d\", \"output_sha256\": \"d94e87d27429936956616a7a1c09a1fd5e0e27337b5716486c271881497dc7ca\", \"pipeline_source_sha256\": \"faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b\", \"resolution\": \"512\", \"runtime\": \"Python 3.12.10; PyTorch 2.13.0+rocm10.0.0; HIP 7.15.26333\", \"shape\": \"[1,1029,1024]\"}",
+    "output_sha256": "68930e793a5ec752852db45ab9985ab012a0dd32b6e7234f2ebb1f3177d08e56",
+    "model_source_sha256": "858d9b076cc71f6955bb292ea394d620ce6f6f53cebb53bff2116a8c5cec026e",
+    "noise_sha256": "f76e94b25a4798a5da0e9de56667b5dda38e75bf12ccbc373521fbcd7af1a7b3",
+    "shape": "[1,8,16,16,16]",
+    "params": "{\"dino_lock\": 0.0, \"guidance_interval\": [0.6, 1.0], \"guidance_rescale\": 0.7, \"guidance_strength\": 7.5, \"rescale_t\": 5.0, \"steps\": 12}",
+    "model_checkpoint_sha256": "ca01377c485bec418076d38ee80166d32dc776d744f2553b835cba1e97a7abf6",
+    "sampler_sources": "{\"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\__init__.py\": \"81174e88221aea4b3d078846cba5c01f45d885ee2ae2240974ec28badc88a076\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\base.py\": \"10bc216dc255e64746e51d929fc66d88efa7e3763e48a52a4fae3722d1e01869\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\classifier_free_guidance_mixin.py\": \"ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\flow_euler.py\": \"03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\guidance_interval_mixin.py\": \"0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2\"}",
+    "format": "modly-amd-sparse-structure-latent-v1",
+    "dtype": "F32"
+  },
+  "completed_steps": 12,
+  "completed_forwards": 22,
+  "positive_forwards": 12,
+  "negative_forwards": 10,
+  "cpu_loading_seconds": 10.328000000001339,
+  "synchronized_sampling_seconds": 8.078000000001339,
+  "gpu_stage_seconds": 9.578000000001339,
+  "overall_worker_seconds": 28.75,
+  "peak_allocated_bytes": 2918161408,
+  "peak_reserved_bytes": 3038773248,
+  "release": {
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 2918161408,
+    "peak_reserved_bytes": 3038773248,
+    "available_bytes": 16807886848,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 288096256,
+    "model_collected": true,
+    "owned_tensors_collected": true,
+    "cpu_memory": {
+      "working_set_bytes": 1233666048,
+      "private_commit_bytes": 1758871552,
+      "peak_working_set_bytes": 5675831296,
+      "peak_commit_bytes": 6799106048
+    }
+  },
+  "process_exit_status": 0,
+  "owned_tree_exit_verified": true,
+  "forced_cleanup": false,
+  "windows_periodic_samples": 3,
+  "maximum_windows_gap_seconds": 5.0310000000026776,
+  "worker_trace_events": 90,
+  "process_activity_samples": 6,
+  "observed_child_processes": [
+    {
+      "pid": 4116,
+      "created_seconds": 1791890037.3121228,
+      "name": "python.exe",
+      "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "cpu_seconds": 15.125,
+      "cpu_delta_seconds": 0.0
+    },
+    {
+      "pid": 4116,
+      "created_seconds": 1791890037.3121228,
+      "name": "python.exe",
+      "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "cpu_seconds": 16.8125,
+      "cpu_delta_seconds": 1.6875
+    },
+    {
+      "pid": 4116,
+      "created_seconds": 1791890037.3121228,
+      "name": "python.exe",
+      "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "cpu_seconds": 18.828125,
+      "cpu_delta_seconds": 2.015625
+    },
+    {
+      "pid": 4116,
+      "created_seconds": 1791890037.3121228,
+      "name": "python.exe",
+      "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "cpu_seconds": 20.921875,
+      "cpu_delta_seconds": 2.09375
+    },
+    {
+      "pid": 4116,
+      "created_seconds": 1791890037.3121228,
+      "name": "python.exe",
+      "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "cpu_seconds": 23.28125,
+      "cpu_delta_seconds": 2.359375
+    },
+    {
+      "pid": 4116,
+      "created_seconds": 1791890037.3121228,
+      "name": "python.exe",
+      "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "cpu_seconds": 25.5,
+      "cpu_delta_seconds": 2.21875
+    }
+  ],
+  "first_step_seconds": 3.7810000000026776,
+  "remaining_step_seconds": [
+    0.4219999999986612,
+    0.43699999999807915,
+    0.4219999999986612,
+    0.43800000000192085,
+    0.4210000000020955,
+    0.4379999999946449,
+    0.4220000000059372,
+    0.43699999999807915,
+    0.43800000000192085,
+    0.20299999999406282,
+    0.2190000000045984
+  ],
+  "independent_statistics": {
+    "minimum": -3.0837833881378174,
+    "maximum": 2.3612661361694336,
+    "mean": 0.0069990595755164975,
+    "stddev": 0.15417715073896265
+  },
+  "torch_imported": false,
+  "additional_model_execution": false
+}
