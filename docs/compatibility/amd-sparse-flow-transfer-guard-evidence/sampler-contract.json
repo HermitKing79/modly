@@ -1,0 +1,243 @@
+{
+  "config_path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\pipeline.json",
+  "config_sha256": "222c359ab1ed9bc6735a640a34f95d47f8681b9bc4aaa101bfb80274676253c6",
+  "audited_config_match": true,
+  "sampler": {
+    "name": "FlowEulerGuidanceIntervalSampler",
+    "args": {
+      "sigma_min": 1e-05
+    },
+    "params": {
+      "steps": 12,
+      "guidance_strength": 7.5,
+      "guidance_rescale": 0.7,
+      "guidance_interval": [
+        0.6,
+        1.0
+      ],
+      "rescale_t": 5.0
+    }
+  },
+  "explicit_dino_lock": 0.0,
+  "steps": [
+    {
+      "step": 1,
+      "t": 1.0,
+      "t_exact": "1",
+      "model_t": 1000.0,
+      "next_t": 0.9821428571428571,
+      "forwards": 2,
+      "roles": [
+        "positive",
+        "zero-negative"
+      ]
+    },
+    {
+      "step": 2,
+      "t": 0.9821428571428571,
+      "t_exact": "55/56",
+      "model_t": 982.1428571428571,
+      "next_t": 0.9615384615384616,
+      "forwards": 2,
+      "roles": [
+        "positive",
+        "zero-negative"
+      ]
+    },
+    {
+      "step": 3,
+      "t": 0.9615384615384616,
+      "t_exact": "25/26",
+      "model_t": 961.5384615384615,
+      "next_t": 0.9375,
+      "forwards": 2,
+      "roles": [
+        "positive",
+        "zero-negative"
+      ]
+    },
+    {
+      "step": 4,
+      "t": 0.9375,
+      "t_exact": "15/16",
+      "model_t": 937.5,
+      "next_t": 0.9090909090909091,
+      "forwards": 2,
+      "roles": [
+        "positive",
+        "zero-negative"
+      ]
+    },
+    {
+      "step": 5,
+      "t": 0.9090909090909091,
+      "t_exact": "10/11",
+      "model_t": 909.0909090909091,
+      "next_t": 0.875,
+      "forwards": 2,
+      "roles": [
+        "positive",
+        "zero-negative"
+      ]
+    },
+    {
+      "step": 6,
+      "t": 0.875,
+      "t_exact": "7/8",
+      "model_t": 875.0,
+      "next_t": 0.8333333333333334,
+      "forwards": 2,
+      "roles": [
+        "positive",
+        "zero-negative"
+      ]
+    },
+    {
+      "step": 7,
+      "t": 0.8333333333333334,
+      "t_exact": "5/6",
+      "model_t": 833.3333333333334,
+      "next_t": 0.78125,
+      "forwards": 2,
+      "roles": [
+        "positive",
+        "zero-negative"
+      ]
+    },
+    {
+      "step": 8,
+      "t": 0.78125,
+      "t_exact": "25/32",
+      "model_t": 781.25,
+      "next_t": 0.7142857142857143,
+      "forwards": 2,
+      "roles": [
+        "positive",
+        "zero-negative"
+      ]
+    },
+    {
+      "step": 9,
+      "t": 0.7142857142857143,
+      "t_exact": "5/7",
+      "model_t": 714.2857142857143,
+      "next_t": 0.625,
+      "forwards": 2,
+      "roles": [
+        "positive",
+        "zero-negative"
+      ]
+    },
+    {
+      "step": 10,
+      "t": 0.625,
+      "t_exact": "5/8",
+      "model_t": 625.0,
+      "next_t": 0.5,
+      "forwards": 2,
+      "roles": [
+        "positive",
+        "zero-negative"
+      ]
+    },
+    {
+      "step": 11,
+      "t": 0.5,
+      "t_exact": "1/2",
+      "model_t": 500.0,
+      "next_t": 0.3125,
+      "forwards": 1,
+      "roles": [
+        "positive"
+      ]
+    },
+    {
+      "step": 12,
+      "t": 0.3125,
+      "t_exact": "5/16",
+      "model_t": 312.5,
+      "next_t": 0.0,
+      "forwards": 1,
+      "roles": [
+        "positive"
+      ]
+    }
+  ],
+  "total_forwards": 22,
+  "source_files": {
+    "pipelines/samplers/flow_euler.py": {
+      "sha256": "03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\flow_euler.py"
+    },
+    "pipelines/samplers/classifier_free_guidance_mixin.py": {
+      "sha256": "ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\classifier_free_guidance_mixin.py"
+    },
+    "pipelines/samplers/guidance_interval_mixin.py": {
+      "sha256": "0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\guidance_interval_mixin.py"
+    },
+    "pipelines/trellis2_image_to_3d.py": {
+      "sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_image_to_3d.py"
+    }
+  },
+  "source_excerpts": {
+    "pipelines/samplers/flow_euler.py:412": {
+      "name": "FlowEulerGuidanceIntervalSampler",
+      "line": 412,
+      "code": "class FlowEulerGuidanceIntervalSampler(DinoLockMixin, GuidanceIntervalSamplerMixin, ClassifierFreeGuidanceSamplerMixin, FlowEulerSampler):\n    \"\"\"Euler sampling with CFG, guidance interval, and optional DINO lock.\"\"\"\n    pass"
+    },
+    "pipelines/samplers/flow_euler.py:153": {
+      "name": "sample",
+      "line": 153,
+      "code": "def sample(\n        self,\n        model,\n        noise,\n        cond=None,\n        neg_cond=None,\n        steps: int = 50,\n        rescale_t: float = 1.0,\n        guidance_strength: float = 3.0,\n        guidance_interval: Tuple[float, float] = (0.0, 1.0),\n        verbose: bool = True,\n        tqdm_desc: str = \"Sampling\",\n        dino_lock: float = 0.0,\n        dino_substeps: int = 4,\n        dino_foundation_cap: float = 0.92,        \n        **kwargs\n    ):\n        # Strip keys that must not reach the model\n        kwargs.pop(\"rk4_cond_lock_strength\", None)\n        kwargs.pop(\"rk4_cond_lock_end_strength\", None)\n        kwargs.pop(\"debug_dino_alignment\", None)\n        kwargs.pop(\"debug_dino_interval\", None)\n\n        # Multiview path: cond/neg_cond not provided (per-view conds are in kwargs)\n        if cond is None:\n            return super().sample(model, noise,\n                                  steps=steps, rescale_t=rescale_t, verbose=verbose,\n                                  tqdm_desc=tqdm_desc,\n                                  guidance_strength=guidance_strength,\n                                  guidance_interval=guidance_interval,\n                                  **kwargs)\n\n        if dino_lock <= 0.0:\n            return super().sample(model, noise, cond, \n                                  steps = steps, \n                                  rescale_t = rescale_t, \n                                  verbose = verbose,\n                                  tqdm_desc=tqdm_desc,\n                                  neg_cond=neg_cond,\n                                  guidance_strength=guidance_strength,\n                                  guidance_interval=guidance_interval,\n                                  **kwargs)\n\n        # ----- DINO-locked sampling loop -----\n        if verbose:\n            print(f\"\\n{'='*72}\")\n            print(f\"  DINO Foundation  |  guardrail={dino_lock:.2f}  |  steps={steps}\")\n            print(f\"  Schedule: 0-40% DINO@0.92 (shape), 40-70% ramp\u00e2\u2020\u2019{dino_lock:.2f}, 70-100% guardrail\")\n            print(f\"  Mode: foundation-first + velocity EMA smoothing\")\n            if dino_substeps > 1:\n                print(f\"  Substeps: {dino_substeps}x during foundation phase\")\n            print(f\"{'='*72}\")\n\n        sample = noise\n        t_seq = np.linspace(1, 0, steps + 1)\n        t_seq = rescale_t * t_seq / (1 + (rescale_t - 1) * t_seq)\n        t_seq = t_seq.tolist()\n        t_pairs = [(t_seq[i], t_seq[i + 1]) for i in range(steps)]\n\n        merged_kwargs = dict(kwargs)\n        merged_kwargs[\"neg_cond\"] = neg_cond\n        merged_kwargs[\"guidance_strength\"] = guidance_strength\n        merged_kwargs[\"guidance_interval\"] = guidance_interval\n\n        all_stats = []\n        v_ema = None\n        ret = edict({\"samples\": None, \"pred_x_t\": [], \"pred_x_0\": []})\n        for i, (t, t_prev) in enumerate(tqdm(t_pairs, desc=tqdm_desc)):\n            s = self._compute_lock_strength(i, steps, dino_lock, dino_foundation_cap)\n            n_sub = dino_substeps if (s >= 0.9 and dino_substeps > 1) else 1\n            out = self._dino_lock_step(model, sample, t, t_prev, cond,\n                                        lock_strength=s,\n                                        step_idx=i, total_steps=steps,\n                                        substeps=n_sub,\n                                        v_ema=v_ema,\n                                        verbose=verbose,\n                                        **merged_kwargs)\n            sample = out.pred_x_prev\n            v_ema = out.v_ema\n            ret.pred_x_t.append(out.pred_x_prev)\n            ret.pred_x_0.append(out.pred_x_0)\n            all_stats.append(out.stats)\n\n        avg_cos = np.mean([s[\"cos_sim\"] for s in all_stats])\n        avg_drift = np.mean([s[\"drift\"] for s in all_stats])\n        avg_perp = np.mean([s[\"perp_ratio\"] for s in all_stats])\n        final_cos = all_stats[-1][\"cos_sim\"]\n        final_angle = all_stats[-1][\"angle_deg\"]\n        final_perp = all_stats[-1][\"perp_ratio\"]\n        \n        if verbose:\n            print(f\"\\n{'\u00e2\u201d\u20ac'*72}\")\n            print(f\"  DINO Foundation Summary\")\n            print(f\"  avg cos_sim={avg_cos:+.4f}  avg drift={avg_drift:.4f}  avg perp={avg_perp:.4f}\")\n            print(f\"  final cos_sim={final_cos:+.4f}  final angle={final_angle:.1f}\u00c2\u00b0  final perp={final_perp:.4f}\")\n            print(f\"{'\u00e2\u201d\u20ac'*72}\\n\")\n\n        ret.samples = sample\n        return ret"
+    },
+    "pipelines/samplers/flow_euler.py:287": {
+      "name": "_inference_model",
+      "line": 287,
+      "code": "def _inference_model(self, model, x_t, t, cond=None, **kwargs):\n        t = torch.tensor([1000 * t] * x_t.shape[0], device=x_t.device, dtype=torch.float32)\n        return model(x_t, t, cond, **kwargs)"
+    },
+    "pipelines/samplers/flow_euler.py:297": {
+      "name": "sample_once",
+      "line": 297,
+      "code": "def sample_once(\n        self,\n        model,\n        x_t,\n        t: float,\n        t_prev: float,\n        cond: Optional[Any] = None,\n        **kwargs\n    ):\n        \"\"\"\n        Sample x_{t-1} from the model using Euler method.\n        \n        Args:\n            model: The model to sample from.\n            x_t: The [N x C x ...] tensor of noisy inputs at time t.\n            t: The current timestep.\n            t_prev: The previous timestep.\n            cond: conditional information.\n            **kwargs: Additional arguments for model inference.\n\n        Returns:\n            a dict containing the following\n            - 'pred_x_prev': x_{t-1}.\n            - 'pred_x_0': a prediction of x_0.\n        \"\"\"\n        pred_x_0, pred_eps, pred_v = self._get_model_prediction(model, x_t, t, cond, **kwargs)\n        pred_x_prev = x_t - (t - t_prev) * pred_v\n        return edict({\"pred_x_prev\": pred_x_prev, \"pred_x_0\": pred_x_0})"
+    },
+    "pipelines/samplers/flow_euler.py:327": {
+      "name": "sample",
+      "line": 327,
+      "code": "def sample(\n        self,\n        model,\n        noise,\n        cond: Optional[Any] = None,\n        steps: int = 50,\n        rescale_t: float = 1.0,\n        verbose: bool = True,\n        tqdm_desc: str = \"Sampling\",\n        **kwargs\n    ):\n        \"\"\"\n        Generate samples from the model using Euler method.\n        \n        Args:\n            model: The model to sample from.\n            noise: The initial noise tensor.\n            cond: conditional information.\n            steps: The number of steps to sample.\n            rescale_t: The rescale factor for t.\n            verbose: If True, show a progress bar.\n            tqdm_desc: A customized tqdm desc.\n            **kwargs: Additional arguments for model_inference.\n\n        Returns:\n            a dict containing the following\n            - 'samples': the model samples.\n            - 'pred_x_t': a list of prediction of x_t.\n            - 'pred_x_0': a list of prediction of x_0.\n        \"\"\"\n        sample = noise\n        t_seq = np.linspace(1, 0, steps + 1)\n        t_seq = rescale_t * t_seq / (1 + (rescale_t - 1) * t_seq)\n        t_seq = t_seq.tolist()\n        t_pairs = list((t_seq[i], t_seq[i + 1]) for i in range(steps))\n        ret = edict({\"samples\": None, \"pred_x_t\": [], \"pred_x_0\": []})\n        for t, t_prev in tqdm(t_pairs, desc=tqdm_desc):\n            out = self.sample_once(model, sample, t, t_prev, cond, **kwargs)\n            sample = out.pred_x_prev\n            ret.pred_x_t.append(out.pred_x_prev)\n            ret.pred_x_0.append(out.pred_x_0)\n        ret.samples = sample\n        return ret"
+    },
+    "pipelines/samplers/flow_euler.py:377": {
+      "name": "sample",
+      "line": 377,
+      "code": "def sample(\n        self,\n        model,\n        noise,\n        cond,\n        neg_cond,\n        steps: int = 50,\n        rescale_t: float = 1.0,\n        guidance_strength: float = 3.0,\n        verbose: bool = True,\n        **kwargs\n    ):\n        \"\"\"\n        Generate samples from the model using Euler method.\n        \n        Args:\n            model: The model to sample from.\n            noise: The initial noise tensor.\n            cond: conditional information.\n            neg_cond: negative conditional information.\n            steps: The number of steps to sample.\n            rescale_t: The rescale factor for t.\n            guidance_strength: The strength of classifier-free guidance.\n            verbose: If True, show a progress bar.\n            **kwargs: Additional arguments for model_inference.\n\n        Returns:\n            a dict containing the following\n            - 'samples': the model samples.\n            - 'pred_x_t': a list of prediction of x_t.\n            - 'pred_x_0': a list of prediction of x_0.\n        \"\"\"\n        return super().sample(model, noise, cond, steps, rescale_t, verbose, neg_cond=neg_cond, guidance_strength=guidance_strength, **kwargs)"
+    },
+    "pipelines/samplers/classifier_free_guidance_mixin.py:9": {
+      "name": "_inference_model",
+      "line": 9,
+      "code": "def _inference_model(self, model, x_t, t, cond, neg_cond, guidance_strength, guidance_rescale=0.0, **kwargs):\n        if guidance_strength == 1:\n            return super()._inference_model(model, x_t, t, cond, **kwargs)\n        elif guidance_strength == 0:\n            return super()._inference_model(model, x_t, t, neg_cond, **kwargs)\n        else:\n            pred_pos = super()._inference_model(model, x_t, t, cond, **kwargs)\n            pred_neg = super()._inference_model(model, x_t, t, neg_cond, **kwargs)\n            pred = guidance_strength * pred_pos + (1 - guidance_strength) * pred_neg\n            \n            # CFG rescale\n            if guidance_rescale > 0:\n                x_0_pos = self._pred_to_xstart(x_t, t, pred_pos)\n                x_0_cfg = self._pred_to_xstart(x_t, t, pred)\n                std_pos = x_0_pos.std(dim=list(range(1, x_0_pos.ndim)), keepdim=True)\n                std_cfg = x_0_cfg.std(dim=list(range(1, x_0_cfg.ndim)), keepdim=True)\n                x_0_rescaled = x_0_cfg * (std_pos / std_cfg)\n                x_0 = guidance_rescale * x_0_rescaled + (1 - guidance_rescale) * x_0_cfg\n                pred = self._xstart_to_pred(x_t, t, x_0)\n                \n            return pred"
+    },
+    "pipelines/samplers/guidance_interval_mixin.py:9": {
+      "name": "_inference_model",
+      "line": 9,
+      "code": "def _inference_model(self, model, x_t, t, cond, guidance_strength, guidance_interval, **kwargs):\n        if guidance_interval[0] <= t <= guidance_interval[1]:\n            return super()._inference_model(model, x_t, t, cond, guidance_strength=guidance_strength, **kwargs)\n        else:\n            return super()._inference_model(model, x_t, t, cond, guidance_strength=1, **kwargs)"
+    },
+    "pipelines/trellis2_image_to_3d.py:696": {
+      "name": "get_cond",
+      "line": 696,
+      "code": "def get_cond(\n        self,\n        image: Union[torch.Tensor, Image.Image, List[Image.Image]],\n        resolution: int,\n        include_neg_cond: bool = True,\n        *,\n        fusion_mode: str = \"concat\",   # \"concat\" or \"mean\"\n        max_views: int = 4,            # safety cap for 3090\n    ) -> dict:\n        \"\"\"\n        Get the conditioning information for the model.\n\n        Args:\n            image: One of:\n                - PIL Image\n                - list[PIL Image] (multi-view)\n                - torch.Tensor batch (B,H,W,C) from ComfyUI\n            resolution: Conditioning resolution (e.g. 512 or 1024)\n            include_neg_cond: Whether to include negative conditioning\n            fusion_mode: \"concat\" (recommended) or \"mean\"\n            max_views: Max number of views to fuse when list/batch is provided\n\n        Returns:\n            dict with keys: cond (+ neg_cond if include_neg_cond)\n        \"\"\"\n        self.image_cond_model.image_size = resolution\n\n        # ---- Normalize input into what image_cond_model expects ----\n        # Most implementations expect PIL image or list[PIL images].\n        if isinstance(image, torch.Tensor):\n            # Expect ComfyUI IMAGE tensor: (B,H,W,C) float in [0,1]\n            if image.ndim == 4:\n                # Lazy import to avoid circulars if tensor2pil is in nodes/utils\n                from .nodes import tensor2pil \n                images = [tensor2pil(image[i]) for i in range(min(int(image.shape[0]), max_views))]\n            else:\n                raise ValueError(f\"Expected image tensor with shape (B,H,W,C), got {tuple(image.shape)}\")\n        elif isinstance(image, Image.Image):\n            images = [image]\n        elif isinstance(image, (list, tuple)):\n            # list of PIL images\n            images = list(image)[:max_views]\n            if not images:\n                raise ValueError(\"Empty image list provided to get_cond().\")\n            if not all(isinstance(im, Image.Image) for im in images):\n                raise TypeError(\"get_cond() received a list/tuple but not all elements are PIL Images.\")\n        else:\n            raise TypeError(f\"Unsupported image type for get_cond(): {type(image)}\")\n\n        if self.low_vram:\n            self.image_cond_model.to(self.device)\n\n        # ---- Extract per-view conditioning ----\n        cond = self.image_cond_model(images)\n\n        # Normalize shapes:\n        # Common outputs:\n        #   - (V, N, D) for multi-view\n        #   - (1, N, D) for single-view list length=1\n        #   - (N, D) for some single-image extractors\n        if cond.ndim == 2:\n            # (N, D) -> (1, N, D)\n            cond = cond.unsqueeze(0)\n        elif cond.ndim != 3:\n            raise RuntimeError(f\"Unexpected cond ndim={cond.ndim}, shape={tuple(cond.shape)}\")\n\n        # If we passed multiple views, fuse them into one conditioning sequence\n        if cond.shape[0] > 1:\n            if fusion_mode == \"concat\":\n                # (V, N, D) -> (1, V*N, D)\n                cond = cond.reshape(1, -1, cond.shape[-1])\n            elif fusion_mode == \"mean\":\n                # (V, N, D) -> (1, N, D)\n                cond = cond.mean(dim=0, keepdim=True)\n            else:\n                raise ValueError(f\"Unknown fusion_mode: {fusion_mode}\")\n\n        if self.low_vram:\n            self.image_cond_model.cpu()\n\n        if not include_neg_cond:\n            return {\"cond\": cond}\n\n        neg_cond = torch.zeros_like(cond)\n        return {\"cond\": cond, \"neg_cond\": neg_cond}"
+    },
+    "pipelines/trellis2_image_to_3d.py:783": {
+      "name": "sample_sparse_structure",
+      "line": 783,
+      "code": "def sample_sparse_structure(\n        self,\n        cond: dict,\n        resolution: int,\n        num_samples: int = 1,\n        sampler_params: dict = {},\n        fill_holes: bool = False,\n        hole_structure: int = 1,\n        hole_iterations: int = 1,\n        hole_fill_algorithm: str = \"remove_small_holes\",\n        keep_only_shell: bool = False,\n        verbose: bool = False,\n        dino_lock: float = 0.0,\n        dino_substeps: int = 2,\n        dino_foundation_cap: float = 0.92\n    ) -> torch.Tensor:\n        \"\"\"\n        Sample sparse structures with the given conditioning.\n        \n        Args:\n            cond (dict): The conditioning information.\n            resolution (int): The resolution of the sparse structure.\n            num_samples (int): The number of samples to generate.\n            sampler_params (dict): Additional parameters for the sampler.\n        \"\"\"\n        if self.low_vram:\n            cond = self._cond_to(cond, self.device)                         \n        # Sample sparse structure latent\n        flow_model = self.models['sparse_structure_flow_model']\n        reso = flow_model.resolution\n        in_channels = flow_model.in_channels\n        noise = torch.randn(num_samples, in_channels, reso, reso, reso).to(self.device)\n        sampler_params = {**self.sparse_structure_sampler_params, **sampler_params}\n        if self.low_vram:\n            flow_model.to(self.device)\n        z_s = self.sparse_structure_sampler.sample(\n            flow_model,\n            noise,\n            **cond,\n            **sampler_params,\n            verbose=verbose,\n            tqdm_desc=\"Sampling sparse structure\",\n            dino_lock=dino_lock,\n            dino_substeps=dino_substeps,\n            dino_foundation_cap=dino_foundation_cap\n        ).samples\n        if self.low_vram:\n            flow_model.cpu()\n            self._cleanup_cuda()        \n        # Decode sparse structure latent\n        decoder = self.models['sparse_structure_decoder']\n        if self.low_vram:\n            decoder.to(self.device)\n        decoded = decoder(z_s) > 0\n        if self.low_vram:\n            decoder.cpu()\n            self._cleanup_cuda()\n            \n        # if resolution != decoded.shape[2]:\n            # ratio = decoded.shape[2] // resolution\n            # decoded = torch.nn.functional.max_pool3d(decoded.float(), ratio, ratio, 0) > 0.5\n        if resolution != decoded.shape[2]:\n            if resolution < decoded.shape[2]:\n                ratio = decoded.shape[2] // resolution\n                decoded = torch.nn.functional.max_pool3d(decoded.float(), ratio, ratio, 0) > 0.5\n            else:\n                decoded = torch.nn.functional.interpolate(decoded.float(), size=(resolution, resolution, resolution), mode='nearest') > 0.5\n\n        # Optionally fill holes in the sparse voxel grid using the selected algorithm\n        if fill_holes:\n            try:\n                from scipy.ndimage import binary_closing, label, binary_fill_holes\n                arr = decoded.cpu().numpy()\n                if arr.ndim == 5:\n                    arr = arr[:, 0]\n                closed = np.zeros_like(arr)\n                for b in range(arr.shape[0]):\n                    filled = arr[b].astype(np.bool_)\n                    inv = ~filled\n                    labeled, num_features = label(inv)\n                    border_mask = np.zeros_like(inv)\n                    border_mask[0,:,:] = border_mask[-1,:,:] = 1\n                    border_mask[:,0,:] = border_mask[:,-1,:] = 1\n                    border_mask[:,:,0] = border_mask[:,:,-1] = 1\n                    border_labels = np.unique(labeled[border_mask==1])\n                    holes = np.isin(labeled, border_labels, invert=True) & (labeled > 0)\n                    n_holes = np.unique(labeled[holes]).size\n                    print(f\"[Sparse HoleFill] Batch {b}: Found {n_holes} holes before filling.\")\n                    if hole_fill_algorithm == \"morphological_closing\":\n                        closed[b] = binary_closing(arr[b], structure=np.ones((hole_structure,)*3), iterations=hole_iterations)\n                    elif hole_fill_algorithm == \"flood_fill\":\n                        # Robust structure-preserving hole filling:\n                        # 1. Morphological closing to connect small gaps\n                        # 2. Fill internal holes\n                        # 3. Keep only the largest connected component\n                        from scipy.ndimage import binary_closing, label, binary_fill_holes\n                        # Step 1: Morphological closing (small structure, 1 iter)\n                        closed1 = binary_closing(arr[b], structure=np.ones((hole_structure,)*3), iterations=hole_iterations)\n                        # Step 2: Fill internal holes\n                        filled = binary_fill_holes(closed1)\n                        # Step 3: Keep only the largest connected component\n                        labeled, num = label(filled)\n                        if num > 0:\n                            sizes = np.bincount(labeled.ravel())\n                            sizes[0] = 0  # background\n                            largest = sizes.argmax()\n                            closed[b] = (labeled == largest)\n                        else:\n                            closed[b] = filled                     \n                    elif hole_fill_algorithm == \"remove_small_holes\":\n                        # Remove small holes by area (2D slices)\n                        from skimage.morphology import remove_small_holes\n                        # Apply per-slice (z axis)\n                        temp = np.copy(arr[b])\n                        for z in range(temp.shape[0]):\n                            temp[z] = remove_small_holes(temp[z].astype(bool), area_threshold=hole_structure**2)\n                        closed[b] = temp\n                    else:\n                        print(f\"[Sparse HoleFill] Unknown algorithm: {hole_fill_algorithm}, skipping.\")\n                        closed[b] = arr[b]\n                    # Count holes after filling\n                    filled2 = closed[b].astype(np.bool_)\n                    inv2 = ~filled2\n                    labeled2, num_features2 = label(inv2)\n                    border_labels2 = np.unique(labeled2[border_mask==1])\n                    holes2 = np.isin(labeled2, border_labels2, invert=True) & (labeled2 > 0)\n                    n_holes2 = np.unique(labeled2[holes2]).size\n                    print(f\"[Sparse HoleFill] Batch {b}: {n_holes-n_holes2} holes filled, {n_holes2} remain after filling.\")\n\n                    # Optionally remove deeply interior voxels, keeping surface and near-surface structure\n                    if keep_only_shell:\n                        from scipy.ndimage import binary_erosion\n\n                        filled = closed[b].astype(np.bool_)\n                        before_count = int(filled.sum())\n                        struct = np.ones((3, 3, 3), dtype=bool)\n                        # Erode twice: only voxels surviving 2 erosion passes are >=2 layers deep\n                        # This preserves thin structures (e.g. necks with 3x3 cross-section)\n                        eroded = binary_erosion(filled, structure=struct, border_value=0)\n                        eroded = binary_erosion(eroded, structure=struct, border_value=0)\n                        # Remove only deeply interior voxels (>=2 layers from any surface)\n                        shell = filled & ~eroded\n                        closed[b] = shell\n                        after_count = int(shell.sum())\n                        if verbose:\n                            print(f\"[Sparse Shell] Batch {b}: {before_count} -> {after_count} voxels (removed {before_count - after_count} deeply interior)\")\n\n                decoded = torch.from_numpy(closed).to(decoded.device)\n\n\n                # Debug: print tensor info before extracting coordinates\n                if verbose:\n                    print(f\"[Sparse HoleFill] decoded shape: {decoded.shape}, dtype: {decoded.dtype}, device: {decoded.device}\")\n                    print(f\"[Sparse HoleFill] decoded min: {decoded.min().item()}, max: {decoded.max().item()}, unique: {torch.unique(decoded)}\")\n                # Safety: ensure tensor is contiguous and on CPU for argwhere\n                decoded = decoded.contiguous().cpu()\n\n            except ImportError:\n                print(\"[Warning] scipy or skimage not installed, skipping hole filling.\")\n            except Exception as e:\n                print(f\"[Warning] Hole filling failed: {e}\")\n\n            try:\n                coords = torch.argwhere(decoded)[:, [0, 1, 2, 3]].int()\n            except Exception as e:\n                print(f\"[Sparse HoleFill] Error in torch.argwhere: {e}\")\n                raise\n\n            if verbose:\n                print(f\"[Sparse HoleFill] coords shape: {coords.shape}, min: {coords.min(dim=0).values.tolist() if coords.numel()>0 else 'empty'}, max: {coords.max(dim=0).values.tolist() if coords.numel()>0 else 'empty'}\")\n\n            if coords.numel() == 0:\n                raise RuntimeError(\"No voxels remain after hole filling/shell extraction. The mask is empty. Adjust your input, mask, or hole filling parameters.\")\n        else:\n            coords = torch.argwhere(decoded)[:, [0, 2, 3, 4]].int()\n\n        coords = coords.cpu()\n\n        del decoded\n        del z_s\n        if self.low_vram:\n            cond = self._cond_cpu(cond)\n            self._cleanup_cuda()\n        return coords"
+    }
+  },
+  "execution": {
+    "torch_imported": false,
+    "sampler_imported": false,
+    "sampling": false,
+    "model_weights_loaded": false
+  }
+}

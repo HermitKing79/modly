@@ -1,0 +1,121 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+  "torch": "2.13.0+rocm10.0.0",
+  "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+  "hip": "7.15.26333",
+  "cuda": null,
+  "git_version": "6596a0dea537c1c78520c73cc6678214781a9d06",
+  "gpu_initialized_before": false,
+  "schema": "aten::to.dtype_layout(Tensor(a) self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, bool non_blocking=False, bool copy=False, MemoryFormat? memory_format=None) -> Tensor(a)",
+  "arguments": [
+    {
+      "name": "self",
+      "type": "Tensor",
+      "keyword_only": false,
+      "has_default": false,
+      "default": "None"
+    },
+    {
+      "name": "dtype",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "layout",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "device",
+      "type": "Optional[Device]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "pin_memory",
+      "type": "Optional[bool]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "non_blocking",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "copy",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "memory_format",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    }
+  ],
+  "tests": 11,
+  "passed": true,
+  "log": "test_explicit_valid_defaults_do_not_change_tensor_contract (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_explicit_valid_defaults_do_not_change_tensor_contract) ... ok\ntest_foreign_equal_clone_is_rejected_before_backend (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_foreign_equal_clone_is_rejected_before_backend) ... ok\ntest_frequency_requires_one_verified_cpu_construction (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_frequency_requires_one_verified_cpu_construction) ... ok\ntest_invalid_frequency_construction_fails_before_transfer (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_invalid_frequency_construction_fails_before_transfer) ... ok\ntest_legacy_copy_and_shared_duplicate_budget_are_preserved (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_legacy_copy_and_shared_duplicate_budget_are_preserved) ... ok\ntest_observed_aten_overload_counts_once_in_inference_mode (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_observed_aten_overload_counts_once_in_inference_mode) ... ok\ntest_positional_extras_missing_self_and_missing_device_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_positional_extras_missing_self_and_missing_device_are_rejected) ... ok\ntest_unrelated_cpu_to_gpu_overload_is_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_unrelated_cpu_to_gpu_overload_is_rejected) ... ok\ntest_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) ... ok\ntest_wrong_phase_or_timestep_scope_is_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_phase_or_timestep_scope_is_rejected) ... ok\ntest_wrong_values_shape_or_dtype_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_values_shape_or_dtype_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.199s\n\nOK\n",
+  "intercepted_cpu_copies": [
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "dtype": "torch.float32",
+        "layout": "torch.strided",
+        "device": "cuda:0",
+        "pin_memory": "False",
+        "memory_format": "torch.preserve_format"
+      }
+    },
+    {
+      "operation": "aten._to_copy.default",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    }
+  ],
+  "production_guard_sha256": "8119225ec26dce173fe6a718ed620d45afb0c068f09bf931e11a3012475ff4e5",
+  "gpu_initialized_after": false,
+  "weights_loaded": false,
+  "model_forwards": 0,
+  "network_allowed": false,
+  "gpu_backend_execution": false,
+  "prohibited_imports": []
+}

@@ -1,0 +1,75 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+  "torch": "2.13.0+rocm10.0.0",
+  "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+  "hip": "7.15.26333",
+  "cuda": null,
+  "git_version": "6596a0dea537c1c78520c73cc6678214781a9d06",
+  "gpu_initialized_before": false,
+  "schema": "aten::to.dtype_layout(Tensor(a) self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, bool non_blocking=False, bool copy=False, MemoryFormat? memory_format=None) -> Tensor(a)",
+  "arguments": [
+    {
+      "name": "self",
+      "type": "Tensor",
+      "keyword_only": false,
+      "has_default": false,
+      "default": "None"
+    },
+    {
+      "name": "dtype",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "layout",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "device",
+      "type": "Optional[Device]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "pin_memory",
+      "type": "Optional[bool]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "non_blocking",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "copy",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "memory_format",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    }
+  ],
+  "gpu_initialized_after": false,
+  "weights_loaded": false,
+  "model_forwards": 0,
+  "network_allowed": false,
+  "gpu_backend_execution": false,
+  "prohibited_imports": []
+}

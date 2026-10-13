@@ -139,13 +139,43 @@ def worker(scratch):
         def gpu(values):return any((isinstance(v,torch.Tensor) and v.device.type=='cuda') or
             (isinstance(v,torch.device) and v.type=='cuda') or isinstance(v,str) and v.startswith('cuda') for v in tree_leaves(values))
         frequency=torch.exp(-__import__('numpy').log(10000)*torch.arange(128,dtype=torch.float32)/128)
+        frequency_sources=[] # Identity of the genuine CPU exp result in t_embedder.
         class BoundedDispatch(TorchDispatchMode):
             def __torch_dispatch__(self,func,types,args=(),kwargs=None):
                 kwargs=kwargs or {};name=str(func);values=tree_leaves((args,kwargs));is_gpu=gpu(values)
-                if not is_gpu:return func(*args,**kwargs)
+                if name=='aten.to.dtype_layout' and (phase=='forward' or is_gpu):
+                    # Installed schema: only self is positional; all options are keyword-only.
+                    if (phase!='forward' or not in_timestep or transfers['frequency']
+                        or len(args)!=1 or not isinstance(args[0],torch.Tensor)
+                        or len(frequency_sources)!=1 or args[0] is not frequency_sources[0]
+                        or describe(args[0])!={'shape':[128],'dtype':'torch.float32','device':'cpu'}
+                        or not torch.equal(args[0],frequency)
+                        or set(kwargs)-{'dtype','layout','device','pin_memory','non_blocking','copy','memory_format'}
+                        or kwargs.get('device')!=torch.device('cuda:0')
+                        or kwargs.get('dtype') not in (None,torch.float32)
+                        or kwargs.get('layout') not in (None,torch.strided)
+                        or kwargs.get('pin_memory') is not None and kwargs['pin_memory'] is not False
+                        or kwargs.get('non_blocking',False) is not False
+                        or kwargs.get('copy',False) is not False
+                        or kwargs.get('memory_format') not in (None,torch.preserve_format)):return forbidden()
+                    transfers['frequency']=1
+                if not is_gpu:
+                    result=func(*args,**kwargs)
+                    if phase=='forward' and in_timestep and name=='aten.exp.default':
+                        if (frequency_sources or not isinstance(result,torch.Tensor)
+                            or describe(result)!={'shape':[128],'dtype':'torch.float32','device':'cpu'}
+                            or not torch.equal(result,frequency)):return forbidden()
+                        frequency_sources.append(result)
+                    return result
                 if any((isinstance(v,torch.Tensor) and v.device.type=='cuda' and v.device.index!=0)
                     or isinstance(v,torch.device) and v.type=='cuda' and v.index not in (None,0) for v in values):return forbidden()
                 if phase=='cpu':return forbidden()
+                if phase=='forward' and (
+                    name.startswith('aten.to.') and name!='aten.to.dtype_layout' and args
+                    and isinstance(args[0],torch.Tensor) and args[0].device.type=='cpu'
+                    or name=='aten.copy_.default' and len(args)>1
+                    and isinstance(args[1],torch.Tensor) and args[1].device.type=='cpu'):
+                    return forbidden()
                 if phase=='placement':
                     if not strict_contract.gpu_operation_allowed(name):return forbidden()
                     if name=='aten._to_copy.default':
@@ -170,7 +200,8 @@ def worker(scratch):
                             or kwargs.get('memory_format',torch.preserve_format)!=torch.preserve_format):return forbidden()
                         source=args[0]
                         if source.device.type=='cpu':
-                            if (not in_timestep or transfers['frequency'] or describe(source)!={'shape':[128],'dtype':'torch.float32','device':'cpu'}
+                            if (not in_timestep or transfers['frequency'] or len(frequency_sources)!=1
+                                or source is not frequency_sources[0] or describe(source)!={'shape':[128],'dtype':'torch.float32','device':'cpu'}
                                 or kwargs.get('device')!=torch.device('cuda:0')
                                 or kwargs.get('dtype',torch.float32)!=torch.float32 or not torch.equal(source,frequency)):return forbidden()
                             transfers['frequency']=1

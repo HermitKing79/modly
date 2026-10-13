@@ -1,0 +1,263 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+  "torch": "2.13.0+rocm10.0.0",
+  "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+  "hip": "7.15.26333",
+  "cuda": null,
+  "git_version": "6596a0dea537c1c78520c73cc6678214781a9d06",
+  "gpu_initialized_before": false,
+  "schema": "aten::to.dtype_layout(Tensor(a) self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, bool non_blocking=False, bool copy=False, MemoryFormat? memory_format=None) -> Tensor(a)",
+  "arguments": [
+    {
+      "name": "self",
+      "type": "Tensor",
+      "keyword_only": false,
+      "has_default": false,
+      "default": "None"
+    },
+    {
+      "name": "dtype",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "layout",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "device",
+      "type": "Optional[Device]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "pin_memory",
+      "type": "Optional[bool]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "non_blocking",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "copy",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "memory_format",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    }
+  ],
+  "tests": 8,
+  "passed": false,
+  "log": "test_explicit_valid_defaults_do_not_change_tensor_contract (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_explicit_valid_defaults_do_not_change_tensor_contract) ... FAIL\ntest_foreign_equal_clone_is_rejected_before_backend (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_foreign_equal_clone_is_rejected_before_backend) ... FAIL\ntest_legacy_copy_and_shared_duplicate_budget_are_preserved (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_legacy_copy_and_shared_duplicate_budget_are_preserved) ... FAIL\ntest_observed_tensor_to_path_counts_once_in_inference_mode (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_observed_tensor_to_path_counts_once_in_inference_mode) ... ERROR\ntest_positional_extras_missing_self_and_missing_device_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_positional_extras_missing_self_and_missing_device_are_rejected) ... \n  test_positional_extras_missing_self_and_missing_device_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_positional_extras_missing_self_and_missing_device_are_rejected) (kind='no-device') ... FAIL\ntest_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) ... \n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'device': device(type='cuda')}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'device': device(type='cpu')}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'device': device(type='meta')}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'device': 'cuda:0'}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'dtype': torch.bfloat16}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'layout': torch.sparse_coo}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'pin_memory': True}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'pin_memory': 0}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'non_blocking': True}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'non_blocking': 0}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'copy': True}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'copy': 0}\") ... FAIL\n  test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'memory_format': torch.contiguous_format}\") ... FAIL\ntest_wrong_phase_or_timestep_scope_is_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_phase_or_timestep_scope_is_rejected) ... \n  test_wrong_phase_or_timestep_scope_is_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_phase_or_timestep_scope_is_rejected) (phase='inputs') ... ERROR\n  test_wrong_phase_or_timestep_scope_is_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_phase_or_timestep_scope_is_rejected) (phase='output') ... ERROR\n  test_wrong_phase_or_timestep_scope_is_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_phase_or_timestep_scope_is_rejected) (phase='forward') ... FAIL\ntest_wrong_phase_or_timestep_scope_is_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_phase_or_timestep_scope_is_rejected) ... FAIL\ntest_wrong_values_shape_or_dtype_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_values_shape_or_dtype_are_rejected) ... \n  test_wrong_values_shape_or_dtype_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_values_shape_or_dtype_are_rejected) (corruption='value') ... FAIL\n  test_wrong_values_shape_or_dtype_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_values_shape_or_dtype_are_rejected) (corruption='shape') ... FAIL\n  test_wrong_values_shape_or_dtype_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_values_shape_or_dtype_are_rejected) (corruption='dtype') ... FAIL\n\n======================================================================\nERROR: test_observed_tensor_to_path_counts_once_in_inference_mode (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_observed_tensor_to_path_counts_once_in_inference_mode)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 66, in test_observed_tensor_to_path_counts_once_in_inference_mode\n    result=source.to(device=torch.device('cuda:0'))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-flow-transfer-guard-evidence\\cpu-validation.py\", line 22, in forbidden\n    def forbidden(*args,**kwargs):raise RuntimeError('CPU correction prohibits GPU/model/compile operation')\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: CPU correction prohibits GPU/model/compile operation\n\n======================================================================\nERROR: test_wrong_phase_or_timestep_scope_is_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_phase_or_timestep_scope_is_rejected) (phase='inputs')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 112, in test_wrong_phase_or_timestep_scope_is_rejected\n    with self.subTest(phase=phase),self.assertRaises(RuntimeError):invoke(mode,source)\n                                                                   ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 59, in invoke\n    return mode.__torch_dispatch__(operation,(),(source,) if args is None else args,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_flow_forward.py\", line 158, in __torch_dispatch__\n    key,source,target=copy_source\n    ^^^^^^^^^^^^^^^^^\nTypeError: cannot unpack non-iterable NoneType object\n\n======================================================================\nERROR: test_wrong_phase_or_timestep_scope_is_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_phase_or_timestep_scope_is_rejected) (phase='output')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 112, in test_wrong_phase_or_timestep_scope_is_rejected\n    with self.subTest(phase=phase),self.assertRaises(RuntimeError):invoke(mode,source)\n                                                                   ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 59, in invoke\n    return mode.__torch_dispatch__(operation,(),(source,) if args is None else args,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_flow_forward.py\", line 158, in __torch_dispatch__\n    key,source,target=copy_source\n    ^^^^^^^^^^^^^^^^^\nTypeError: cannot unpack non-iterable NoneType object\n\n======================================================================\nFAIL: test_explicit_valid_defaults_do_not_change_tensor_contract (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_explicit_valid_defaults_do_not_change_tensor_contract)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 77, in test_explicit_valid_defaults_do_not_change_tensor_contract\n    self.assertTrue(torch.equal(result,source));self.assertEqual(ns['transfers']['frequency'],1)\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 0 != 1\n\n======================================================================\nFAIL: test_foreign_equal_clone_is_rejected_before_backend (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_foreign_equal_clone_is_rejected_before_backend)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 80, in test_foreign_equal_clone_is_rejected_before_backend\n    with self.assertRaises(RuntimeError):invoke(mode,foreign)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_legacy_copy_and_shared_duplicate_budget_are_preserved (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_legacy_copy_and_shared_duplicate_budget_are_preserved)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 118, in test_legacy_copy_and_shared_duplicate_budget_are_preserved\n    with self.assertRaises(RuntimeError):invoke(mode,source,operation=second)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_positional_extras_missing_self_and_missing_device_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_positional_extras_missing_self_and_missing_device_are_rejected) (kind='no-device')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 107, in test_positional_extras_missing_self_and_missing_device_are_rejected\n    with self.subTest(kind=kind),self.assertRaises(RuntimeError):invoke(mode,source,kw,args)\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'device': device(type='cuda')}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'device': device(type='cpu')}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'device': device(type='meta')}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'device': 'cuda:0'}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'dtype': torch.bfloat16}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'layout': torch.sparse_coo}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'pin_memory': True}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'pin_memory': 0}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'non_blocking': True}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'non_blocking': 0}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'copy': True}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'copy': 0}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_devices_and_all_unexpected_options_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_devices_and_all_unexpected_options_are_rejected) (change=\"{'memory_format': torch.contiguous_format}\")\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 100, in test_wrong_devices_and_all_unexpected_options_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source,{'device':torch.device('cuda:0'),**change})\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_phase_or_timestep_scope_is_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_phase_or_timestep_scope_is_rejected) (phase='forward')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 112, in test_wrong_phase_or_timestep_scope_is_rejected\n    with self.subTest(phase=phase),self.assertRaises(RuntimeError):invoke(mode,source)\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_phase_or_timestep_scope_is_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_phase_or_timestep_scope_is_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 113, in test_wrong_phase_or_timestep_scope_is_rejected\n    self.assertEqual(ns['transfers']['frequency'],0);self.assertEqual(len(COPIES),start)\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 16 != 15\n\n======================================================================\nFAIL: test_wrong_values_shape_or_dtype_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_values_shape_or_dtype_are_rejected) (corruption='value')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 90, in test_wrong_values_shape_or_dtype_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_values_shape_or_dtype_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_values_shape_or_dtype_are_rejected) (corruption='shape')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 90, in test_wrong_values_shape_or_dtype_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n======================================================================\nFAIL: test_wrong_values_shape_or_dtype_are_rejected (test_amd_sparse_flow_transfer_guard.TransferGuardTests.test_wrong_values_shape_or_dtype_are_rejected) (corruption='dtype')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_flow_transfer_guard.py\", line 90, in test_wrong_values_shape_or_dtype_are_rejected\n    with self.assertRaises(RuntimeError):invoke(mode,source)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RuntimeError not raised\n\n----------------------------------------------------------------------\nRan 8 tests in 0.166s\n\nFAILED (failures=22, errors=3)\n",
+  "intercepted_cpu_copies": [
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "dtype": "torch.float32",
+        "layout": "torch.strided",
+        "device": "cuda:0",
+        "pin_memory": "False",
+        "memory_format": "torch.preserve_format"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten._to_copy.default",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "dtype": "torch.bfloat16",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "layout": "torch.sparse_coo",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0",
+        "pin_memory": "True"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0",
+        "pin_memory": "False"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0",
+        "non_blocking": "True"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0",
+        "copy": "True"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0",
+        "memory_format": "torch.contiguous_format"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        127
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    },
+    {
+      "operation": "aten.to.dtype_layout",
+      "shape": [
+        128
+      ],
+      "kwargs": {
+        "device": "cuda:0"
+      }
+    }
+  ],
+  "production_guard_sha256": "9c0614a0d3e6560be8dc2691d2c2e647924ebde3566018241d641d5effe46e58",
+  "gpu_initialized_after": false,
+  "weights_loaded": false,
+  "model_forwards": 0,
+  "network_allowed": false,
+  "gpu_backend_execution": false,
+  "prohibited_imports": []
+}

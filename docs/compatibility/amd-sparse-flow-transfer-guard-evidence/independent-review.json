@@ -1,0 +1,193 @@
+{
+  "reviewed_at_utc": "2026-10-13T09:34:04.478017+00:00",
+  "reviewer": "independent subagent sparse_flow_transfer_guard_review",
+  "branch": "codex/amd-sparse-flow-transfer-guard-correction",
+  "base_commit": "6c1b882a4c130a78e87a2bfa16959f262362cba7",
+  "scope": "CPU-only guard correction, tests, preservation evidence and read-only sampler recommendation; no authorization for GPU or sampler execution",
+  "findings": [],
+  "recommendation": "Approve this CPU-only correction; no actionable concerns found in the current candidate. Historical GPU proof remains PARTIAL.",
+  "source_sha256": {
+    "scripts/compatibility/amd_sparse_flow_forward.py": "8119225ec26dce173fe6a718ed620d45afb0c068f09bf931e11a3012475ff4e5",
+    "scripts/compatibility/test_amd_sparse_flow_transfer_guard.py": "f83c4baa93efab220f872d5ad9d48c94ebcc7689a532412d4cd25290434aff45",
+    "scripts/compatibility/test_amd_sparse_flow_control.py": "de5f5bef662deaed59dd4525e05087560aba20c35c3d28fdb70183b9277a6c78",
+    "scripts/compatibility/amd_sparse_flow_contract.py": "b9e8fedcb949ddb8f9f9ace4d879392068238cfa25959e220de4f5ae29f7e9cc",
+    "scripts/compatibility/amd_decoder_contract.py": "20d9def94b5965131346f25383a72cb0d8ddc4435a2d2f8c7ebec5d2eff9279a",
+    "scripts/compatibility/amd_sparse_decoder_forward.py": "d7539bbf9d0242cdfbe2fa8baa3f8be6ee524a7994fb44687b674a1cfd4fc75b",
+    "docs/compatibility/amd-sparse-flow-transfer-guard.md": "7982b9805851fab8667267c2eaedb7557c5a271cbf657df90959168755ee41e4",
+    "docs/compatibility/amd-sparse-flow-transfer-guard-evidence/cpu-validation.py": "80c3d503678f135cce943c306e1ba59255b619643ea9f7c2e465050d9dfb5843",
+    "docs/compatibility/amd-sparse-flow-transfer-guard-evidence/cpu-verification.py": "c8e53cca6f0fbde84d3af73663e6dbdd6ef18294853d3d142aa57cb669a0ddd2",
+    "docs/compatibility/amd-sparse-flow-transfer-guard-evidence/preservation-check.py": "96baa6b264ad825d29f6d2cd6d708bc4f1e4f10363b0e8f86e2d360280d23fef",
+    "docs/compatibility/amd-sparse-flow-transfer-guard-evidence/sampler-contract.py": "89e10e88ba59e58ea78dff952403a81eda45ce9842c597f6bf3ed3e51ea8c4c6"
+  },
+  "evidence_sha256": {
+    "schema.json": "6cf671cb850c29c64b8f4fc775bb180d48d16aa235f01d6597deb0a06a3e07ac",
+    "green-final.json": "596da58e290e0da5621321dc9f01c16e9bf6970e9fc8b6285518e915ae36185c",
+    "focused-final.json": "db14af221c8adb51eb3d0eed9e54887f2e29551a40af5f61db8be69943501742",
+    "review.json": "cb3a7ab01908eb6dcae30ddd9b8fff0c8c18fe19fc0fa266b4e83a0065de2e53",
+    "sampler-contract.json": "160d583e41372397841b7a1831a41a95f409a3a5f4084f69b75b9e9b48451c14",
+    "preservation-summary.json": "db4eb4f2a270fb6bd71afb008d642770e84a73b60302630cdee2fba7b8e6fc20"
+  },
+  "fresh_verification": {
+    "runner": "docs/compatibility/amd-sparse-flow-transfer-guard-evidence/cpu-validation.py",
+    "label": "review",
+    "subprocess_timeout_seconds": 45,
+    "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+    "returncode": 0,
+    "tests": 11,
+    "passed": true,
+    "production_guard_sha256": "8119225ec26dce173fe6a718ed620d45afb0c068f09bf931e11a3012475ff4e5",
+    "gpu_initialized_before": false,
+    "gpu_initialized_after": false,
+    "weights_loaded": false,
+    "model_forwards": 0,
+    "gpu_backend_execution": false,
+    "prohibited_imports": []
+  },
+  "saved_tests_reviewed": {
+    "installed_runtime_tests": 11,
+    "host_tests": 23,
+    "host_modules": [
+      {
+        "module": "test_amd_sparse_flow_resume",
+        "tests": 4,
+        "passed": true,
+        "exit": 0,
+        "ai_imports": []
+      },
+      {
+        "module": "test_amd_sparse_flow",
+        "tests": 4,
+        "passed": true,
+        "exit": 0,
+        "ai_imports": []
+      },
+      {
+        "module": "test_amd_sparse_flow_control",
+        "tests": 15,
+        "passed": true,
+        "exit": 0,
+        "ai_imports": []
+      }
+    ],
+    "host_tests_rerun": false,
+    "early_red_error_evidence_retained": [
+      "red.json",
+      "red-contract.json",
+      "red-unrelated.json",
+      "red-copy.json"
+    ],
+    "coverage": "Actual AST-extracted production class; installed Torch CPU frequency exp capture; real ATen overload under inference mode; CPU sink; exact values/identity/dtype/shape; options/devices/phases; duplicate and shared _to_copy budget; unchanged internal cast and lifecycle policy in saved host tests."
+  },
+  "schema_assessment": {
+    "schema": "aten::to.dtype_layout(Tensor(a) self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, bool non_blocking=False, bool copy=False, MemoryFormat? memory_format=None) -> Tensor(a)",
+    "only_self_positional": true,
+    "all_options_keyword_only": true,
+    "guard_matches_schema": true
+  },
+  "guard_assessment": {
+    "frequency_source": "One exact F32[128] CPU exp result captured during genuine timestep scope; equal-valued clones cannot substitute.",
+    "transfer_contract": "Explicit cuda:0, unchanged dtype/layout, no pinning/nonblocking/forced copy, default/preserve memory format, one counter shared with _to_copy.",
+    "internal_cast_policy": "The new frequency-only dtype_layout branch narrows that overload compared with its prior generic admission, as requested. No concrete pinned-forward regression is demonstrated: the pinned timestep source is the sole forward device-changing Tensor.to, saved operations have one dtype_layout and 575 to.dtype calls; existing GPU to.dtype and _to_copy F32/BF16 behavior remains unchanged. No separate GPU-source dtype_layout branch is recommended.",
+    "single_forward_and_classification": "SingleForward, classifier, deadline, release and strict parameter policies are unchanged."
+  },
+  "sampler_report_assessment": {
+    "current_source_and_config_checks": {
+      "pipelines/samplers/flow_euler.py": true,
+      "pipelines/samplers/classifier_free_guidance_mixin.py": true,
+      "pipelines/samplers/guidance_interval_mixin.py": true,
+      "pipelines/trellis2_image_to_3d.py": true,
+      "config_sha256": true,
+      "sampler_config": true,
+      "independent_rational_schedule": true,
+      "total_calls": true
+    },
+    "sigma_min": 1e-05,
+    "steps": 12,
+    "rescale_t": 5.0,
+    "guidance_strength": 7.5,
+    "guidance_rescale": 0.7,
+    "guidance_interval": [
+      0.6,
+      1.0
+    ],
+    "dino_lock": 0.0,
+    "guided_steps": 10,
+    "positive_only_steps": 2,
+    "total_source_faithful_model_calls": 22,
+    "proposal_only": true,
+    "retained_deadlines_seconds": [
+      180,
+      240,
+      480
+    ],
+    "retained_host_ram_gate_bytes": 11411181632,
+    "retained_available_vram_gate_gib": 13,
+    "retained_allocator_cap_gib": 12,
+    "artifact": "Finite F32[1,8,16,16,16] dense latent only; 256KiB safetensors file cap; stop before decoder.",
+    "sampling_implementation_added": false
+  },
+  "preservation_assessment": {
+    "policy_files_unchanged_vs_base": {
+      "scripts/compatibility/amd_sparse_flow_contract.py": true,
+      "scripts/compatibility/amd_decoder_contract.py": true,
+      "scripts/compatibility/amd_sparse_decoder_forward.py": true
+    },
+    "independently_verified_historical_sparse_flow_result_hashes": {
+      "docs/compatibility/amd-sparse-flow-evidence/cpu-copy-diagnostic/results.json": true,
+      "docs/compatibility/amd-sparse-flow-evidence/cpu-metadata/results.json": true,
+      "docs/compatibility/amd-sparse-flow-evidence/cpu-metadata-execution-contract/results.json": true,
+      "docs/compatibility/amd-sparse-flow-evidence/cpu-metadata-final/results.json": true,
+      "docs/compatibility/amd-sparse-flow-evidence/cpu-metadata-final-candidate/results.json": true,
+      "docs/compatibility/amd-sparse-flow-evidence/cpu-metadata-reviewed/results.json": true,
+      "docs/compatibility/amd-sparse-flow-evidence/cpu-metadata-verified/results.json": true,
+      "docs/compatibility/amd-sparse-flow-evidence/cpu-metadata-workspace-fixed/results.json": true,
+      "docs/compatibility/amd-sparse-flow-evidence/run/results.json": true,
+      "docs/compatibility/amd-sparse-flow-resume-evidence/run/results.json": true
+    },
+    "historical_classifications": [
+      "PARTIAL",
+      "PARTIAL"
+    ],
+    "preservation_summary_reviewed": {
+      "inventories_equal": true,
+      "raw_metadata": {
+        "venv-metadata": {
+          "before": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+          "after": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+          "structurally_equal": true
+        },
+        "model-cache-metadata": {
+          "before": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+          "after": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+          "structurally_equal": true
+        }
+      },
+      "historical_files_unchanged": 3424,
+      "source_and_git_preserved": {
+        "historical_files": true,
+        "amd_source_head": true,
+        "amd_source_status": true,
+        "amd_modified_files": true
+      },
+      "historical_local_refs_unchanged": true,
+      "historical_remote_refs_unchanged": true
+    }
+  },
+  "safety_observations": [
+    "Only the explicitly permitted saved CPU-validation.py runner was executed in the installed runtime, with a fresh review label and 45-second subprocess timeout.",
+    "No forward worker, model module call, sampler implementation, DINO rerun, real weight load, GPU initialization or backend transfer was performed.",
+    "Tests alone unwrap lazy Dynamo decorators; the actual production dispatch method body is unchanged by replay.",
+    "Tensor.to(cuda) facade remains unexecuted by the passing replay because it reaches the blocked lazy-init facade; the real installed ATen overload was exercised.",
+    "No production, test, environment, installed dependency, source checkout or historical evidence file was modified by this review.",
+    "Review writes are restricted to the authorized new review.json/scratch/review runner outputs and this independent-review.json."
+  ],
+  "limitations": [
+    "CPU sink proves dispatch admission and rejection, not actual AMD transfer/backend behavior.",
+    "Focused 23 host tests were reviewed from saved final evidence, not independently rerun.",
+    "The 22-call sampler proposal is source/config arithmetic; runtime VRAM stability and numerical output have not been measured."
+  ],
+  "documentation_only_verification": {
+    "verified_at_utc": "2026-10-13T09:36:27.313949+00:00",
+    "note": "Read final report. Its independent-review link, separate 11-test CPU pass with GPU initialization false, and 3,424 preserved historical evidence hashes agree with review.json and preservation-summary.json. All other recorded source and evidence hashes remain current. Only the report hash was synchronized; no tests, GPU/model work or sampler execution were rerun."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "historical_result_sha256": "0a5070619712cfeef08e13ce5faecd6b3d242ffc1d569ab19a1a5d3e823fd17a",
+  "historical_classification": "PARTIAL",
+  "worker_status": "PASS",
+  "transfers": {
+    "x": 1,
+    "t": 1,
+    "cond": 1,
+    "output": 1,
+    "frequency": 0
+  },
+  "operation_histogram": {
+    "aten.view.default": 2,
+    "aten.permute.default": 242,
+    "aten.contiguous.default": 2,
+    "aten.linear.default": 215,
+    "aten.to.dtype_layout": 1,
+    "aten.unsqueeze.default": 242,
+    "aten.to.dtype": 575,
+    "aten.mul.Tensor": 421,
+    "aten.cos.default": 1,
+    "aten.sin.default": 1,
+    "aten.cat.default": 1,
+    "aten.silu.default": 2,
+    "aten.add.Tensor": 240,
+    "aten.chunk.default": 30,
+    "aten.layer_norm.default": 91,
+    "aten.reshape.default": 270,
+    "aten.unbind.int": 60,
+    "aten.linalg_vector_norm.default": 120,
+    "aten.clamp_min.default": 120,
+    "aten.expand_as.default": 120,
+    "aten.div.Tensor": 120,
+    "aten.view_as_complex.default": 60,
+    "aten.view_as_real.default": 60,
+    "aten.scaled_dot_product_attention.default": 60,
+    "aten.gelu.default": 30
+  },
+  "classification_changed": false,
+  "new_gpu_attempt": false
+}

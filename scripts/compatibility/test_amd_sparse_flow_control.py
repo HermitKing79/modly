@@ -47,11 +47,14 @@ def dispatch_replay(phase,source=None,key='x',target='cuda:0',in_timestep=False)
         TorchDispatchMode=object,strict_contract=forward.strict_contract,contract=policy,
         placement_sources={id(source)} if source is not None else set(),copy_source=(key,source,target),
         transfers={k:0 for k in ('x','t','cond','output','frequency')},in_timestep=in_timestep,
-        frequency=frequency,op_counts={},describe=forward.describe,trace=trace)
+        frequency=frequency,frequency_sources=[],op_counts={},describe=forward.describe,trace=trace)
     gpu_node=next(n for n in ast.walk(TREE) if isinstance(n,ast.FunctionDef) and n.name=='gpu')
     node=next(n for n in ast.walk(TREE) if isinstance(n,ast.ClassDef) and n.name=='BoundedDispatch')
     exec(compile(ast.Module(body=[gpu_node,node],type_ignores=[]),str(SOURCE),'exec'),namespace)
-    return namespace['BoundedDispatch'](),namespace
+    mode=namespace['BoundedDispatch']()
+    if phase=='forward' and in_timestep:
+        mode.__torch_dispatch__(Operation('aten.exp.default'),(),(frequency,),{})
+    return mode,namespace
 
 class ControlTests(unittest.TestCase):
     def good_record(self):
@@ -171,6 +174,12 @@ class ControlTests(unittest.TestCase):
             mode,_=dispatch_replay('forward');op=Operation('aten.mul.Tensor')
             mode.__torch_dispatch__(op,(),(Tensor([1],dtype,device='cuda:0'),),{})
             self.assertEqual(op.calls,1)
+    def test_unrelated_cpu_to_gpu_copy_is_rejected(self):
+        mode,ns=dispatch_replay('forward',in_timestep=True)
+        op=Operation('aten.copy_.default')
+        with self.assertRaises(RuntimeError):
+            mode.__torch_dispatch__(op,(),(Tensor([128],device='cuda:0'),ns['frequency']),{})
+        self.assertEqual(op.calls,0);self.assertEqual(ns['transfers']['frequency'],0)
     def test_placement_allows_only_unchanged_observed_defaults(self):
         for dtype in ('torch.float32','torch.bfloat16','torch.complex64'):
             source=Tensor([2],dtype);mode,_=dispatch_replay('placement',source)
