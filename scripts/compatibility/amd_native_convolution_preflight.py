@@ -46,7 +46,7 @@ def private_cache(scratch):
     if digest(tuning)!=audit['tuning']['sha256']:raise ValueError('Tuning copy failed')
     return dict(metadata_name=name,paths=paths,files=expected,helper_path=str(hp),helper=helper,tuning_path=str(tuning),tuning_sha256=audit['tuning']['sha256'])
 
-def inspect_installed(torch):
+def inspect_installed(torch,*,return_leaf=False):
     _,expected_helper=verify_historical()
     if torch.cuda.is_initialized():raise RuntimeError('CPU metadata requires uninitialized GPU')
     runtime=dict(python=sys.version.split()[0],torch=str(torch.__version__),hip=torch.version.hip,cuda=torch.version.cuda)
@@ -98,7 +98,7 @@ def inspect_installed(torch):
         attrs={str(k):v for k,v in attrs.items()},options=opts.__dict__,helper=expected_helper,
         helper_source_sha256=hashlib.sha256(helper_source.encode()).hexdigest(),source_path=str(srcpath),source_sha256=digest(srcpath),
         gpu_initialized=False,weights_loaded=False,native_executed=False)
-    return meta,helper_source
+    return (meta,helper_source,jit) if return_leaf else (meta,helper_source)
 
 def worker(scratch,*,constructor_tests=None):
     r=dict(status='UNKNOWN',gpu_initialized=None)

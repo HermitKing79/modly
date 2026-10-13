@@ -1,0 +1,41 @@
+{
+  "workspace_verified": true,
+  "workspace_value": "C:/Users/wattz/Documents/ChatGPT/modly/proof",
+  "available_host_ram_bytes": 17223180288,
+  "minimum_host_ram_bytes": 1073741824,
+  "host_ram_admitted": true,
+  "observer": {
+    "returncode": 0,
+    "timed_out": false,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":7040,\"RecordId\":11698,\"ProviderName\":\"Service Control Manager\",\"TimeCreated\":\"\\/Date(1791931398777)\\/\"},\"version\":\"5.1.26100.9444\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 7040,
+          "RecordId": 11698,
+          "ProviderName": "Service Control Manager",
+          "TimeCreated": "/Date(1791931398777)/"
+        },
+        "version": "5.1.26100.9444",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "observer_healthy": true,
+  "gpu_initialized": false,
+  "attempt_marker_absent": true,
+  "run_absent": true,
+  "context": "Full-permission passive observer; restricted-context query denied WMI/System-log access"
+}

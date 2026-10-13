@@ -1,0 +1,17 @@
+E
+======================================================================
+ERROR: setUpClass (scripts.compatibility.test_amd_cached_kernel.OracleTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_cached_kernel.py", line 14, in setUpClass
+    cls.f,cls.co,cls.w,cls.b=c.fixture();cls.meta=o.build(cls.co)
+                                                  ^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_cached_kernel_oracle.py", line 17, in build
+    neighbor=np.where(inside&(keys>=0)&(keys<2049),keys,0xffffffff).astype(np.uint32)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: Python int too large to convert to C long
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.032s
+
+FAILED (errors=1)

@@ -1,0 +1,23 @@
+{
+  "workspace_verified": true,
+  "workspace_value": "C:/Users/wattz/Documents/ChatGPT/modly/proof",
+  "available_host_ram_bytes": 17245810688,
+  "minimum_host_ram_bytes": 1073741824,
+  "host_ram_admitted": true,
+  "observer": {
+    "returncode": 0,
+    "timed_out": false,
+    "stdout": "{\"observer_error\":\"Attempted to perform an unauthorized operation.\",\"observer_error_id\":\"System.UnauthorizedAccessException,Microsoft.PowerShell.Commands.GetWinEventCommand\",\"event_error\":\"Attempted to perform an unauthorized operation.\",\"controller_error\":\"Access to a CIM resource was not available to the client.\"}\r\n",
+    "stderr": "",
+    "observation": {
+      "observer_error": "Attempted to perform an unauthorized operation.",
+      "observer_error_id": "System.UnauthorizedAccessException,Microsoft.PowerShell.Commands.GetWinEventCommand",
+      "event_error": "Attempted to perform an unauthorized operation.",
+      "controller_error": "Access to a CIM resource was not available to the client."
+    }
+  },
+  "observer_healthy": false,
+  "gpu_initialized": false,
+  "attempt_marker_absent": true,
+  "run_absent": true
+}
