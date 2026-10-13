@@ -1,0 +1,551 @@
+{
+  "config": {
+    "runtime": {
+      "python": "3.12.10",
+      "torch": "2.13.0+rocm10.0.0",
+      "hip": "7.15.26333",
+      "cuda": null
+    },
+    "triton": "3.8.0",
+    "N": 2049,
+    "LOGN": 11,
+    "grid": [
+      264,
+      2
+    ],
+    "kernel_key": "d5de3d60ef4c1dfce927f5a59a91fdfa35c7de3400fb71acb214abe5dc4fbea5",
+    "jit_source_key": "0bc56b85dfc8fcc49400a2fa3d1939e61d34bf5ce69fdb7d9615e6e53204f838",
+    "cache_environment": {},
+    "signature": {
+      "input": "*fp16",
+      "weight": "*fp16",
+      "bias": "*fp16",
+      "neighbor": "*u32",
+      "sorted_idx": "*i64",
+      "output": "*fp32",
+      "N": "i32",
+      "LOGN": "i32",
+      "Ci": "i32",
+      "Co": "i32",
+      "V": "constexpr",
+      "B1": "constexpr",
+      "B2": "constexpr",
+      "BK": "constexpr",
+      "SPLITK": "constexpr",
+      "allow_ieee": "constexpr",
+      "valid_kernel": "*i32",
+      "valid_kernel_seg": "*i32"
+    },
+    "constants": {
+      "(10,)": 27,
+      "(11,)": 64,
+      "(12,)": 128,
+      "(13,)": 32,
+      "(14,)": 2,
+      "(15,)": true
+    },
+    "attrs": {
+      "(0,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(1,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(2,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(3,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(4,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(5,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(6,)": [],
+      "(7,)": [],
+      "(8,)": [
+        [
+          "tt.divisibility",
+          16
+        ]
+      ],
+      "(9,)": [
+        [
+          "tt.divisibility",
+          16
+        ]
+      ],
+      "(10,)": [],
+      "(11,)": [],
+      "(12,)": [],
+      "(13,)": [],
+      "(14,)": [],
+      "(15,)": [],
+      "(16,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ],
+      "(17,)": [
+        [
+          "tt.divisibility",
+          16
+        ],
+        [
+          "tt.pointer_range",
+          32
+        ]
+      ]
+    },
+    "options": {
+      "num_warps": 4,
+      "waves_per_eu": 3,
+      "num_stages": 2,
+      "num_ctas": 1,
+      "extern_libs": [
+        [
+          "ocml",
+          "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\lib\\ocml.bc"
+        ],
+        [
+          "ockl",
+          "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\lib\\ockl.bc"
+        ]
+      ],
+      "debug": false,
+      "sanitize_overflow": true,
+      "arch": "gfx1201",
+      "supported_fp8_dtypes": [
+        "fp8e4b8",
+        "fp8e4nv",
+        "fp8e5",
+        "fp8e5b16"
+      ],
+      "deprecated_fp8_dot_operand_dtypes": [],
+      "default_dot_input_precision": "ieee",
+      "allowed_dot_input_precisions": [
+        "ieee",
+        "bf16x3",
+        "bf16x6"
+      ],
+      "enable_fp_fusion": true,
+      "launch_cooperative_grid": false,
+      "matrix_instr_nonkdim": 0,
+      "kpack": 1,
+      "allow_flush_denorm": false,
+      "max_num_imprecise_acc_default": 0,
+      "backend_name": "hip",
+      "instrumentation_mode": "",
+      "schedule_hint": "",
+      "llvm_fn_attrs": [],
+      "warp_size": 32
+    },
+    "helper": {
+      "library": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\bin\\amdhip64_7.dll",
+      "library_sha256": "546fb3d6e2d2194a9526fb94ec2fd3aa5b92a48a7595f04efece80162047ef69",
+      "platform": "AMD64,Windows,64bit,WindowsPE",
+      "config": {
+        "language": [
+          "c"
+        ],
+        "library_dirs": null,
+        "include_dirs": [
+          "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include"
+        ],
+        "libraries": null,
+        "ccflags": null
+      },
+      "computed_key": "ec3b3ff5d59bce32e9b2291138d74d09179f18ce05d4c5871e77fb22e214e509",
+      "computed_folder": "5Q5T75OVTPHDF2NSFEITRV2NBELZ6GGOAXKMLBY6O75SFYQU4UEQ",
+      "expected_path": "C:\\Users\\wattz\\.triton\\cache\\5Q5T75OVTPHDF2NSFEITRV2NBELZ6GGOAXKMLBY6O75SFYQU4UEQ\\hip_utils.cp312-win_amd64.pyd",
+      "cache_hit": true,
+      "cached_sha256": "676ff51e09cda672275546e3025caecf5f275bbf1ab2d2f0c17c3e101dc046f2",
+      "installed_formula_matches": true
+    },
+    "helper_source_sha256": "9ea4a2d7c2f83be4403e841f99145165de7f2de99e51a13c1ae07243e902dcfd",
+    "source_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk.py",
+    "source_sha256": "21d5efc8f59f312c62fa45241fc13a9e446cd4c13f11e360cf92216d151301bb",
+    "gpu_initialized": false,
+    "weights_loaded": false,
+    "native_executed": false,
+    "fixture": {
+      "features": {
+        "shape": [
+          2049,
+          1024
+        ],
+        "dtype": "float16",
+        "bytes": 4196352,
+        "sha256": "37ddfb58796ce441309b30934159aa051f86ba991ac694c8a34a5eb90c660217"
+      },
+      "coordinates": {
+        "shape": [
+          2049,
+          4
+        ],
+        "dtype": "int32",
+        "bytes": 32784,
+        "sha256": "92ae8e8595cdb8a21ece7e101a602a2e6b75a07c7937b77752e0d8c50b4487a6"
+      },
+      "weights": {
+        "shape": [
+          1024,
+          3,
+          3,
+          3,
+          1024
+        ],
+        "dtype": "float16",
+        "bytes": 56623104,
+        "sha256": "76c115b12d87500ec2c596e93b2093e507d06e422d8590bba1e3d8d9749418ed"
+      },
+      "bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "float16",
+        "bytes": 2048,
+        "sha256": "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad"
+      }
+    },
+    "constructor_acceptance": {
+      "passed": true,
+      "constructor": {
+        "passed": true,
+        "tests_run": 13,
+        "failures": 0,
+        "errors": 0,
+        "complete_constructor_passed": true,
+        "callbacks_executed": 0,
+        "gpu_initialized": false,
+        "traces": [],
+        "hook_state": {
+          "source_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\knobs.py",
+          "source_sha256": "7468fb1fb4740bb9237c57216b04499400825f62a6177da4214153900feda824",
+          "hooks": {
+            "launch_enter_hook": {
+              "state": "installed-empty-HookChain",
+              "callbacks": 0,
+              "reversed": false
+            },
+            "launch_exit_hook": {
+              "state": "installed-empty-HookChain",
+              "callbacks": 0,
+              "reversed": true
+            },
+            "kernel_load_start_hook": {
+              "state": "installed-empty-HookChain",
+              "callbacks": 0,
+              "reversed": false
+            },
+            "kernel_load_end_hook": {
+              "state": "installed-empty-HookChain",
+              "callbacks": 0,
+              "reversed": true
+            },
+            "kernel_unload_hook": {
+              "state": "installed-empty-HookChain",
+              "callbacks": 0,
+              "reversed": false
+            },
+            "add_stages_inspection_hook": {
+              "state": "None"
+            },
+            "jit_cache_hook": {
+              "state": "None"
+            },
+            "jit_post_compile_hook": {
+              "state": "None"
+            },
+            "listener": {
+              "state": "None"
+            }
+          }
+        }
+      },
+      "policy": {
+        "passed": true,
+        "real_policy_constructed": true,
+        "foreign_leaf_and_buffers_rejected": true,
+        "native_counts": {
+          "convolution": 0,
+          "neighbor": 0,
+          "post1": 0,
+          "post2": 0,
+          "outer": 0,
+          "inner": 0,
+          "jit": 0,
+          "binary": 0,
+          "launch": 0
+        }
+      },
+      "metadata": {
+        "input": {
+          "shape": [
+            2049,
+            1024
+          ],
+          "dtype": "float16",
+          "bytes": 4196352,
+          "sha256": "37ddfb58796ce441309b30934159aa051f86ba991ac694c8a34a5eb90c660217"
+        },
+        "weight": {
+          "shape": [
+            1024,
+            27,
+            1024
+          ],
+          "dtype": "float16",
+          "bytes": 56623104,
+          "sha256": "76c115b12d87500ec2c596e93b2093e507d06e422d8590bba1e3d8d9749418ed"
+        },
+        "bias": {
+          "shape": [
+            1024
+          ],
+          "dtype": "float16",
+          "bytes": 2048,
+          "sha256": "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad"
+        },
+        "neighbor": {
+          "shape": [
+            2049,
+            27
+          ],
+          "dtype": "uint32",
+          "bytes": 221292,
+          "sha256": "517a05ec1811f086a27ca641a78996685713d6ec3bb2f8b68e9811973fd8415b"
+        },
+        "sorted_idx": {
+          "shape": [
+            2049
+          ],
+          "dtype": "int64",
+          "bytes": 16392,
+          "sha256": "a0a69b35affc0e93d21856b5fd1afbe2e3cd510b1fa2f089fc5406cc08daa45f"
+        },
+        "valid_kernel": {
+          "shape": [
+            599
+          ],
+          "dtype": "int32",
+          "bytes": 2396,
+          "sha256": "f49f7118dbb22d46e1f91f99553e0987efe3f610b3f5a603e3902a53f500ded1"
+        },
+        "valid_kernel_seg": {
+          "shape": [
+            34
+          ],
+          "dtype": "int32",
+          "bytes": 136,
+          "sha256": "5966d36ea74b2ebea0b90635dc0ea7ab879418f9939a2a8826b31ba8c5d2af19"
+        },
+        "output": {
+          "shape": [
+            2,
+            2049,
+            1024
+          ],
+          "dtype": "float32",
+          "bytes": 16785408,
+          "sha256": "7885cebf67db0a717e364b8f30837f7ab566bb9dc833b077d788cac88650c65d"
+        }
+      },
+      "proof": {
+        "signals": 35353,
+        "kernel_entries": 599,
+        "segments": 34,
+        "block_counts": [
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          21,
+          21,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
+        "grid": [
+          264,
+          2
+        ],
+        "feature_last_element": 2098175,
+        "weight_last_element": 28311551,
+        "output_last_element": 4196351,
+        "padded_sorted_rows_use_zero": true,
+        "sentinel_input_reads_masked": true,
+        "padded_output_stores_masked": true,
+        "source_sort_ties": "Stable CPU order; equal binary codes have identical Gray masks, so tie order cannot alter block unions."
+      },
+      "artifacts": {
+        "input": {
+          "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-kernel-convolution-evidence\\cpu-acceptance\\scratch\\input.npy",
+          "bytes": 4196480,
+          "sha256": "05ea4d32e669734812d24510e18bdf81abf99f87964cc5b540c1f06e5fed9c90",
+          "shape": [
+            2049,
+            1024
+          ],
+          "dtype": "float16"
+        },
+        "weight": {
+          "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-kernel-convolution-evidence\\cpu-acceptance\\scratch\\weight.npy",
+          "bytes": 56623232,
+          "sha256": "580cd3fac5d0574ecbcda444b559a881969e27a2a6731ea7df74ef0a96295788",
+          "shape": [
+            1024,
+            27,
+            1024
+          ],
+          "dtype": "float16"
+        },
+        "bias": {
+          "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-kernel-convolution-evidence\\cpu-acceptance\\scratch\\bias.npy",
+          "bytes": 2176,
+          "sha256": "f203244222f6fa76bb09c70f3aa98cedbbb723c632c2d3cc3c7c85d3111a13c8",
+          "shape": [
+            1024
+          ],
+          "dtype": "float16"
+        },
+        "neighbor": {
+          "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-kernel-convolution-evidence\\cpu-acceptance\\scratch\\neighbor.npy",
+          "bytes": 221420,
+          "sha256": "746605869ceefebbacdbb3b5708e37692ed27843079031ea6bb5a4c90118a198",
+          "shape": [
+            2049,
+            27
+          ],
+          "dtype": "uint32"
+        },
+        "sorted_idx": {
+          "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-kernel-convolution-evidence\\cpu-acceptance\\scratch\\sorted_idx.npy",
+          "bytes": 16520,
+          "sha256": "7e34fac9a231e46bcbf65fd8c1a4034cfdeb8a973bc42971928fcefcc78f760a",
+          "shape": [
+            2049
+          ],
+          "dtype": "int64"
+        },
+        "valid_kernel": {
+          "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-kernel-convolution-evidence\\cpu-acceptance\\scratch\\valid_kernel.npy",
+          "bytes": 2524,
+          "sha256": "893196134d12d8a429f39adbeec229d00b5ffdac9d7cf71a3dace4c3f1a97493",
+          "shape": [
+            599
+          ],
+          "dtype": "int32"
+        },
+        "valid_kernel_seg": {
+          "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-kernel-convolution-evidence\\cpu-acceptance\\scratch\\valid_kernel_seg.npy",
+          "bytes": 264,
+          "sha256": "9cf1855e590cd3327ebcea5370be98a67b31c8183eab815e2ff032f7be756137",
+          "shape": [
+            34
+          ],
+          "dtype": "int32"
+        },
+        "output": {
+          "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-kernel-convolution-evidence\\cpu-acceptance\\scratch\\output.npy",
+          "bytes": 16785536,
+          "sha256": "ef8275972a62574a754aa688e4c1d9f80f559a7616107857a8c005fae16c0278",
+          "shape": [
+            2,
+            2049,
+            1024
+          ],
+          "dtype": "float32"
+        },
+        "coordinates": {
+          "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-kernel-convolution-evidence\\cpu-acceptance\\scratch\\coordinates.npy",
+          "bytes": 32912,
+          "sha256": "635d2189e1dc178e14bf454932ac3dfb3f5c5a7a0e4bfdeb88f24e8901ce7cc7",
+          "shape": [
+            2049,
+            4
+          ],
+          "dtype": "int32"
+        }
+      },
+      "persistence_verified": true,
+      "gpu_initialized": false,
+      "native_executed": false
+    },
+    "status": "PASS"
+  },
+  "native_contract_sha256": "a398a047bfa9106e25a03452037de7b18bf7ddd8fcb22c7316da7121d8aa9597"
+}

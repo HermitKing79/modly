@@ -1,0 +1,43 @@
+{
+  "verdict": "PASS - fixed centre-identity cached leaf only",
+  "reviewers": [
+    "cached_leaf_access_audit",
+    "cached_leaf_route_review"
+  ],
+  "harness_commit": "ee419ff3887bcf601b0e00529c9e04310b6cd0bc",
+  "reviewed_candidate_hashes_equal_executed_hashes": true,
+  "independent_numeric_method": "Standard-library NPY parsing: all 4196352 F32 values finite, all 2098176 sums match independently regenerated reference, F16 bytes/coordinates match exactly; no NumPy/Torch/native/GPU imports by numeric reviewer.",
+  "artifact_checks": "Both reviewers independently checked all four SHA256/size identities; promoted artifacts match owned worker originals.",
+  "runtime_checks": {
+    "launch_enter_return_pairs": 1,
+    "binary_loads": 1,
+    "helper_loads": 1,
+    "wrapper_neighbor_postprocessor_calls": 0,
+    "observer_healthy": true,
+    "owned_exit_clean_unforced": true,
+    "zero_pytorch_allocated_reserved": true,
+    "owned_tensors_collected": true
+  },
+  "preservation": {
+    "historical_files": 5865,
+    "installed_inventory_sha256_before": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+    "installed_inventory_sha256_after": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+    "installed_inventory_byte_identical": true,
+    "amd_source_changes_backups_unchanged": true,
+    "old_local_remote_branches_unchanged": true
+  },
+  "limitations": [
+    "Exact cached leaf and identity fixture only; full wrapper, native neighbor/postprocessors, general learned weights and decoder untested.",
+    "0.016-second elapsed interval includes host cached-leaf call and GPU synchronization; not pure GPU profiling.",
+    "Zero claim applies to owned PyTorch allocations/reservations. Global sampled free-memory difference remains 13369344 bytes after release; its owner is unproven."
+  ],
+  "reviewer_gpu_or_native_execution": false,
+  "reviewed_evidence_sha256": {
+    "run/results.json": "0c50c28613dde73328846187bc5872ef53982362197e61e245efc74f691600f7",
+    "run/trace.jsonl": "7ea58f2275c37dc7c3fb43bbb1bdaa140c41b7e9aa1b64b8a32e63f27cbf8330",
+    "run/committed-harness.json": "d0d99892b8cb0e5d08b3c17db85f740150f3644fddd9925966e5826c0f667734",
+    "independent-artifact-validation.json": "92b680849054810385fb8c676d85c3cfcaad2684ecad772fec91b57ee8b74297",
+    "git-after.json": "4bcbb2f19202be524c9048d323ad847f4dc52a02050cf165e2c337aafb235445",
+    "inventory-after.json": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475"
+  }
+}
