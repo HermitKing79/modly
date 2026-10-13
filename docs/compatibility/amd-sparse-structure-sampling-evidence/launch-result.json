@@ -1,0 +1,29 @@
+{
+  "classification": "PARTIAL",
+  "operation": "launcher workspace admission",
+  "process_exit_status": 1,
+  "process_elapsed_seconds": 0.6137569,
+  "harness_commit": "003d98165039a2b0aac02fb8c0d376ba6d429d9f",
+  "command": [
+    "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B", "scripts/compatibility/amd_sparse_sampling.py",
+    "--output", "docs/compatibility/amd-sparse-structure-sampling-evidence/run",
+    "--harness-commit", "003d98165039a2b0aac02fb8c0d376ba6d429d9f"
+  ],
+  "error_type": "RuntimeError",
+  "error": "Set WORKSPACE_DIR to the proof checkout before consuming the exclusive attempt",
+  "missing_launcher_setting": "WORKSPACE_DIR=C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof",
+  "raw_stderr": "launcher.stderr.txt",
+  "worker_launched": false,
+  "gpu_attempt_marker_exists": false,
+  "run_directory_exists": false,
+  "real_model_loads": 0,
+  "gpu_initializations": 0,
+  "sampling_sequences": 0,
+  "completed_steps": 0,
+  "completed_model_forwards": 0,
+  "latent_checkpoint_created": false,
+  "retry_performed": false,
+  "failure_kind": "launcher configuration safety check; no native computation attempted",
+  "scope": "CPU preparation passed; GPU sampling, integrity and GPU cleanup remain untested"
+}

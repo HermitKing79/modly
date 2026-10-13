@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_sparse_sampling.py", line 75, in <module>
+    args=parser.parse_args();forward.teardown.verify_workspace();forward.local.EVIDENCE=EVIDENCE
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_blaslt_teardown.py", line 18, in verify_workspace
+    raise RuntimeError('Set WORKSPACE_DIR to the proof checkout before consuming the exclusive attempt')
+RuntimeError: Set WORKSPACE_DIR to the proof checkout before consuming the exclusive attempt
