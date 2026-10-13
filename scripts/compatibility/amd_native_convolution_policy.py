@@ -8,6 +8,7 @@ import numpy as np
 import amd_native_convolution_contract as c
 import amd_native_convolution_preflight as p
 from amd_native_cache_dispatch_proof import normalize_cache_mkdir
+from amd_native_post1_scalar import Post1Scalar
 
 HOOKS_SHA='7468fb1fb4740bb9237c57216b04499400825f62a6177da4214153900feda824'
 CHAIN_DEFAULTS=dict(launch_enter_hook=False,launch_exit_hook=True,kernel_load_start_hook=False,kernel_load_end_hook=True,kernel_unload_hook=False)
@@ -49,6 +50,7 @@ class NativePolicy:
         self.torch=torch;self.private=private;self.meta=meta;self.trace=trace
         self.permit=c.Permit();self.leaf=self.outer=self.inner=None;self.restores=[]
         self.helper_calls=0;self.lookups=[];self.forbidden_calls=[]
+        self.post1_scalar=Post1Scalar(self,torch)
         import triton
         import triton.compiler.compiler as compiler
         import triton.runtime.build as build
@@ -199,6 +201,8 @@ class NativePolicy:
                 else:
                     if len(a)!=3 or type(a[2]) is not int or a[2]!=64:raise RuntimeError('post2 block contract')
                     self.tensor(a[0],(2049,),torch.int32);self.tensor(a[1],(2049,),torch.int64)
+                if _tag=='post1':
+                    with self.post1_scalar.scope(a[0].device):return self.trace.call('native:'+_tag,lambda:_fn(*a))
                 return self.trace.call('native:'+_tag,lambda:_fn(*a))
             self.patch(native,name,call)
         self.spconv=importlib.import_module('flex_gemm.ops.spconv')
@@ -217,6 +221,7 @@ class NativePolicy:
         self.permit.phase='release'
 
     def close(self):
+        self.post1_scalar.clear()
         for obj,name,original in reversed(self.restores):setattr(obj,name,original)
         self.restores.clear()
 
@@ -225,6 +230,8 @@ def dispatch_guard(torch,policy):
     class Bound(TorchDispatchMode):
         def __torch_dispatch__(self,func,types,args=(),kwargs=None):
             kwargs=kwargs or {};phase=policy.permit.phase
+            scalar=policy.post1_scalar
+            scalar_kind=scalar.before(func,args,kwargs)
             def tensors(value):
                 if isinstance(value,torch.Tensor):yield value
                 elif isinstance(value,(list,tuple)):
@@ -232,22 +239,24 @@ def dispatch_guard(torch,policy):
                 elif isinstance(value,dict):
                     for v in value.values():yield from tensors(v)
             gpu=any(t.is_cuda for t in tensors((args,kwargs))) or str(kwargs.get('device','')).startswith('cuda')
-            if gpu:
+            guarded=gpu or scalar.active
+            if guarded:
                 if phase not in ('inputs','convolution','output'):raise RuntimeError('GPU tensor operation outside admitted phase')
                 if phase=='convolution':
                     admitted={'aten.empty.memory_format','aten.empty_strided.default','aten.full.default','aten.fill_.Scalar','aten.view.default',
                         'aten.sort.default','aten.sort.stable','aten.argsort.default','aten.cumsum.default','aten.select.int',
                         'aten._local_scalar_dense.default','aten.sum.dim_IntList','aten._to_copy.default','aten.to.dtype','aten.to.dtype_layout'}
-                    if str(func) not in admitted:raise RuntimeError('Unexpected convolution Torch operation: '+str(func))
+                    if scalar_kind!='read' and str(func) not in admitted:raise RuntimeError('Unexpected convolution Torch operation: '+str(func))
                     if str(func) in ('aten.empty.memory_format','aten.empty_strided.default','aten.full.default'):
                         dtype=kwargs.get('dtype',torch.float32);c.allocation(tuple(args[0]),torch.empty((),dtype=dtype).element_size())
             result=func(*args,**kwargs)
+            scalar.after(scalar_kind,result)
             if gpu:
                 if torch.cuda.max_memory_allocated(0)>c.PEAK_LIMIT or torch.cuda.memory_reserved(0)>c.PEAK_LIMIT:
                     raise RuntimeError('Native smoke exceeds 1GiB observed PyTorch budget')
-                if phase=='convolution':
-                    for t in tensors(result):
-                        alias=(str(func)=='aten.view.default' and t.untyped_storage().data_ptr()==args[0].untyped_storage().data_ptr())
-                        c.result_allocation(str(func),tuple(t.shape),t.element_size(),alias)
+            if guarded and phase=='convolution':
+                for t in tensors(result):
+                    alias=(str(func)=='aten.view.default' and t.untyped_storage().data_ptr()==args[0].untyped_storage().data_ptr())
+                    c.result_allocation(str(func),tuple(t.shape),t.element_size(),alias)
             return result
     return Bound()

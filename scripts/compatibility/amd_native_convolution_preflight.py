@@ -137,7 +137,7 @@ def supervise(*,worker_script=None,probe_name='cpu-probe'):
     from amd_forward_owned_job import OwnedJob
     from amd_bounded_gpu_proof import scratch_environment
     from amd_sparse_decoder_loading import reap_owned_child
-    if probe_name not in ('cpu-probe','cpu-red','cpu-red-isolated','cpu-acceptance','cpu-acceptance-reviewed'):raise ValueError('Exclusive CPU probe name required')
+    if probe_name not in ('cpu-probe','cpu-red','cpu-red-isolated','cpu-acceptance','cpu-acceptance-reviewed','cpu-final'):raise ValueError('Exclusive CPU probe name required')
     output=EV/probe_name;output.mkdir();scratch=output/'scratch';scratch.mkdir()
     job=OwnedJob();child=None;r={};start=time.monotonic()
     try:

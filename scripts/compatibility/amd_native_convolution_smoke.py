@@ -163,6 +163,7 @@ def worker(scratch):
             r['failure_kind']='native' if ('HIP error' in str(exc) or 'CUDA error' in str(exc)) else 'prerequisite_or_guard'
     finally:
         if native is not None:
+            r['post1_scalar_read']=dict(reads=native.post1_scalar.reads,value=native.post1_scalar.value)
             r.update(native_counts=native.permit.counts.copy(),helper_calls=native.helper_calls,lookup_keys=native.lookups,forbidden_calls=native.forbidden_calls)
             # On error issue no additional GPU commands; process containment owns release.
             if r['status']=='PASS':native.close()
@@ -170,7 +171,7 @@ def worker(scratch):
     return 0 if r['status']=='PASS' else 1
 
 def profile():
-    files=['scripts/compatibility/'+name+'.py' for name in ('amd_native_convolution_smoke','amd_native_convolution_contract','amd_native_convolution_policy','amd_native_convolution_preflight','amd_native_cache_dispatch_proof','amd_shape_cache_identity','amd_shape_decoder_preflight','amd_blaslt_teardown')]
+    files=['scripts/compatibility/'+name+'.py' for name in ('amd_native_convolution_smoke','amd_native_convolution_contract','amd_native_convolution_policy','amd_native_post1_scalar','amd_native_convolution_preflight','amd_native_cache_dispatch_proof','amd_shape_cache_identity','amd_shape_decoder_preflight','amd_blaslt_teardown')]
     files+=supervisor.COMMITTED_FILES
     files += [p.relative_to(ROOT).as_posix() for p in (EV/CPU_PROBE/'results.json',preflight.PRIOR,ROOT/'docs/compatibility/amd-shape-decoder-neural-evidence/preflight.json',ROOT/'docs/compatibility/amd-shape-decoder-cache-admission-evidence/native-cache-audit.json',teardown.PINS,teardown.EVIDENCE/'binary-review.json')]
     return SimpleNamespace(kind='native-convolution',evidence=EV,cpu_seconds=45,gpu_seconds=120,overall_seconds=180,

@@ -1,0 +1,25 @@
+{
+  "reviewer": "/root/scalar_dispatch_review",
+  "method": "Independent read-only review; no project execution, imports, tests or edits",
+  "approved": true,
+  "scope": "CPU-only correction and production dispatcher acceptance",
+  "actionable_issues": [],
+  "reviewed_sha256": {
+    "scripts/compatibility/amd_native_post1_scalar.py": "5b8b17a82d4babafbf7b7ac2fa22cbd09a54e6ff0f64992dd043c13479fe8816",
+    "scripts/compatibility/amd_native_convolution_policy.py": "18ab38fd6c08b77b8af549f0ddce936010e828ef4186f640c707cb994fbedbb8",
+    "scripts/compatibility/amd_native_convolution_preflight.py": "52aae071e7a621144df8700e51eac9196b161fd6221aeef286a6524e09f0250e",
+    "scripts/compatibility/amd_native_convolution_smoke.py": "6298c3e19c5db71091a12ea8dec87911aa7d6f7c85c72f99379fd5ddb21ffcbe",
+    "scripts/compatibility/test_amd_native_scalar_dispatch.py": "4ab8ac43029323f8f24b8b4695be8a9638eba7e3290683caa003520b7fc2c16e",
+    "scripts/compatibility/amd_native_scalar_dispatch_correction.py": "8c8dfff9fbf956e9d5514c308ad9a1c76399cc13b495f44ef44a4b4d34e9023a",
+    "docs/compatibility/amd-native-scalar-dispatch-correction-evidence/cpu-final/results.json": "099e294b2dcab506173573c36366899cac3aa8dde05ef29c1277def406eaf14e"
+  },
+  "findings": [
+    "Original storage and prefix metadata revalidated before select/read; regression coverage includes same-dtype storage replacement, joint prefix/scalar replacement and same-storage metadata change.",
+    "No detach permission added.",
+    "Final evidence has13constructor and18scalar tests PASS;11.875seconds clean unforcedJob exit; GPU/native GPU/weights false."
+  ],
+  "limitations": [
+    "Post2 scalar remains blocked; do not retry GPU smoke yet.",
+    "No claim of native GPU numerical correctness."
+  ]
+}

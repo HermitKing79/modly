@@ -1,0 +1,255 @@
+{
+  "classification": "PASS_CPU_ONLY",
+  "source_files": {
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\cuda\\spconv\\neighbor_map.hip": {
+      "sha256": "f5de4b1b1f8ddcf54ccbdb76c7a7ff8759801c3cc312fb0ab8f869d3b78abb92",
+      "size": 16440,
+      "line_ranges": [
+        [
+          66,
+          68
+        ],
+        [
+          218,
+          221
+        ],
+        [
+          286,
+          313
+        ],
+        [
+          423,
+          440
+        ]
+      ],
+      "excerpts": [
+        {
+          "first": 66,
+          "last": 68,
+          "lines": [
+            "        if (v == half_V - 1) {",
+            "            value = idx;",
+            "        }"
+          ]
+        },
+        {
+          "first": 218,
+          "last": 221,
+          "lines": [
+            "        uint32_t tmp = neigh_map[n * V + v];",
+            "        neigh_map_T[v * N + n + n_base] = tmp;",
+            "        tmp = tmp != std::numeric_limits<uint32_t>::max();",
+            "        neigh_mask_T[v * N + n + n_base] = tmp;"
+          ]
+        },
+        {
+          "first": 286,
+          "last": 313,
+          "lines": [
+            "    auto gray_code = torch::empty({N}, torch::dtype(torch::kInt32).device(neighbor_map.device()));",
+            "    auto binary_code = torch::empty({N}, torch::dtype(torch::kInt32).device(neighbor_map.device()));",
+            "    auto neigh_mask_T = torch::empty({V * N}, torch::dtype(torch::kInt32).device(neighbor_map.device()));",
+            "    auto neigh_map_T = torch::empty({V * N}, torch::dtype(torch::kUInt32).device(neighbor_map.device()));",
+            "",
+            "    // Convert neighbor map to gray and binary code",
+            "    neighbor_map_to_gray_binary_code_and_T_map_cuda_kernel<<<",
+            "        (N + BLOCK_SIZE - 1) / BLOCK_SIZE,",
+            "        BLOCK_SIZE,",
+            "        BLOCK_SIZE * V * sizeof(uint32_t)",
+            "    >>>(",
+            "        N,",
+            "        V,",
+            "        neighbor_map.data_ptr<uint32_t>(),",
+            "        gray_code.data_ptr<int32_t>(),",
+            "        binary_code.data_ptr<int32_t>(),",
+            "        neigh_map_T.data_ptr<uint32_t>(),",
+            "        neigh_mask_T.data_ptr<int32_t>()",
+            "    );",
+            "",
+            "    auto sorted_idx = torch::argsort(binary_code);",
+            "",
+            "    // Indexing from mask",
+            "    auto prefix_sum_neighbor_mask = torch::cumsum(neigh_mask_T, 0, torch::kInt32);",
+            "    auto total_valid_signal = prefix_sum_neighbor_mask[-1].item<int32_t>();",
+            "    auto valid_signal_i = torch::empty({total_valid_signal}, torch::dtype(torch::kUInt32).device(neighbor_map.device()));",
+            "    auto valid_signal_o = torch::empty({total_valid_signal}, torch::dtype(torch::kUInt32).device(neighbor_map.device()));",
+            "    auto valid_signal_seg = torch::empty({V + 1}, torch::dtype(torch::kUInt32).device(neighbor_map.device()));"
+          ]
+        },
+        {
+          "first": 423,
+          "last": 440,
+          "lines": [
+            "    auto reduced_code = torch::empty({num_blocks}, torch::dtype(torch::kInt32).device(gray_code.device()));",
+            "    auto seglen = torch::empty({num_blocks + 1}, torch::dtype(torch::kInt32).device(gray_code.device()));",
+            "    reduce_code_cuda_kernel<<<",
+            "        (N + BLOCK_SIZE - 1) / BLOCK_SIZE,",
+            "        BLOCK_SIZE",
+            "    >>>(",
+            "        N,",
+            "        block_size,",
+            "        gray_code.data_ptr<int32_t>(),",
+            "        sorted_idx.data_ptr<int64_t>(),",
+            "        reduced_code.data_ptr<int32_t>(),",
+            "        seglen.data_ptr<int32_t>()",
+            "    );",
+            "",
+            "    seglen = torch::cumsum(seglen, 0, torch::kInt32);",
+            "",
+            "    // Scatter reduced code to valid kernel indices",
+            "    auto valid_kernel_idx = torch::empty({seglen[-1].item<int32_t>()}, torch::dtype(torch::kInt32).device(gray_code.device()));"
+          ]
+        }
+      ]
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\include\\ATen\\core\\TensorBody.h": {
+      "sha256": "207b545e53b2565ad12773faaba812bb716c7b5ffef73afd5b89f53dcd2dd99e",
+      "size": 279222,
+      "line_ranges": [
+        [
+          326,
+          327
+        ],
+        [
+          4048,
+          4050
+        ]
+      ],
+      "excerpts": [
+        {
+          "first": 326,
+          "last": 327,
+          "lines": [
+            "  Tensor operator[](int64_t index) const {",
+            "    return select(0, index);"
+          ]
+        },
+        {
+          "first": 4048,
+          "last": 4050,
+          "lines": [
+            "// aten::item(Tensor self) -> Scalar",
+            "inline at::Scalar Tensor::item() const {",
+            "    return at::_ops::item::call(const_cast<Tensor&>(*this));"
+          ]
+        }
+      ]
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\include\\ATen\\ops\\item_ops.h": {
+      "sha256": "bba274193d11df044022dce08c59bd0a8477503a9a6b42f0505d2d4adf10a316",
+      "size": 1239,
+      "line_ranges": [],
+      "excerpts": []
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\include\\ATen\\ops\\cumsum_ops.h": {
+      "sha256": "dbaea89e717cbd5aa499ec1502c83f771be4619044c894fb963c9121c612948c",
+      "size": 2899,
+      "line_ranges": [],
+      "excerpts": []
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\include\\ATen\\ops\\select_ops.h": {
+      "sha256": "3b4e635b0760129ba60d99b0744a8169e7604440b44cd761216e902373411105",
+      "size": 1371,
+      "line_ranges": [],
+      "excerpts": []
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\include\\c10\\core\\TensorImpl.h": {
+      "sha256": "b0fe4b6ed464a645e747816dcbb27e9b94fc080283a37eb8f6c9b6010a7e4643",
+      "size": 119876,
+      "line_ranges": [
+        [
+          2022,
+          2029
+        ],
+        [
+          2130,
+          2135
+        ]
+      ],
+      "excerpts": [
+        {
+          "first": 2022,
+          "last": 2029,
+          "lines": [
+            "  // 2. `var.set_data(tensor)` uses `shallow_copy_from()` to copy tensor",
+            "  // metadata from `tensor` into `var`, while keeping `var`'s original",
+            "  // AutogradMeta.",
+            "  //",
+            "  // Functions that shallow-copy a TensorImpl (such as",
+            "  // `shallow_copy_and_detach()` / `shallow_copy_from()` /",
+            "  // `copy_tensor_metadata()`) copy the tensor metadata fields (e.g. sizes /",
+            "  // strides / storage pointer / storage_offset) by value. However, the"
+          ]
+        },
+        {
+          "first": 2130,
+          "last": 2135,
+          "lines": [
+            "  virtual void shallow_copy_from(const c10::intrusive_ptr<TensorImpl>& impl) {",
+            "    copy_tensor_metadata(",
+            "        /*src_impl=*/impl.get(),",
+            "        /*dest_impl=*/this,",
+            "        /*version_counter=*/version_counter(),",
+            "        /*allow_tensor_metadata_change=*/allow_tensor_metadata_change());"
+          ]
+        }
+      ]
+    }
+  },
+  "operator_schemas": {
+    "item": "aten::item(Tensor self) -> Scalar",
+    "_local_scalar_dense": "aten::_local_scalar_dense(Tensor self) -> Scalar",
+    "cumsum": "aten::cumsum(Tensor self, int dim, *, ScalarType? dtype=None) -> Tensor"
+  },
+  "post1": {
+    "dtype": "int32",
+    "mask_shape": [
+      55323
+    ],
+    "prefix_shape": [
+      55323
+    ],
+    "scalar_shape": [],
+    "offset": 55322,
+    "reads": 1,
+    "bounds": [
+      2049,
+      55323
+    ],
+    "fixed_fixture_count": 35353,
+    "derivation": "4 * (3*32 - 2)**2 + 8 + 1",
+    "shape_source": "two full32x32planes plus point(2,0,0)",
+    "cpu_only_operator_validation": true
+  },
+  "post2": {
+    "source_line": 440,
+    "blocks": 33,
+    "prefix_shape": [
+      34
+    ],
+    "bounds": [
+      33,
+      891
+    ],
+    "permitted": false
+  },
+  "surrounding_source_operations": [
+    "aten.empty.memory_format",
+    "aten.full.default",
+    "aten.argsort.default",
+    "aten.cumsum.default",
+    "aten.select.int",
+    "aten.view.default",
+    "aten.sum.dim_IntList",
+    "aten._to_copy.default"
+  ],
+  "limitations": [
+    "Source/CPU contracts only; native C++ GPU postprocessing was not executed.",
+    "Historical observed item is consistent with source line310; no C++ stack frame established that line directly.",
+    "No claim that every future GPU dispatch is covered.",
+    "Python convenience factory tests emitted detach; exact native-source ATen overloads passed without admitting detach."
+  ],
+  "gpu_initialized": false,
+  "native_gpu_executed": false,
+  "weights_loaded": false
+}
