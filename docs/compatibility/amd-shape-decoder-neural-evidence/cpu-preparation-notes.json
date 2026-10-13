@@ -1,0 +1,13 @@
+{
+  "gpu_attempts": 0,
+  "cpu_probe_1": "Denied Triton package import through torch meta-device/Dynamo package detection; full original result retained. No weights/GPU/forward.",
+  "cpu_probe_2": "Denied fallback C:/Windows/Temp file probe because owned temp directory was absent; full original result retained. No weights/GPU/forward.",
+  "cpu_probe_3": "Passed after scoped CPU package allowance with all execution/build paths denied and owned cache/temp directories created.",
+  "cpu_probe_4": "Final independently reviewed candidate, source SHA embedded, passed in7.062s; no weights/GPU/model/native forward, Job exited0 without forced cleanup.",
+  "passive_audit_preparation": [
+    "WORKSPACE_DIR check rejected a PowerShell invocation where the per-process variable was absent; CPU-only, no marker/workload created. Subsequent actual invocation explicitly set and verified the variable.",
+    "Windows long-path prefix caused textual parent comparison to reject existing cache children; NTFS samefile comparison verified identity without rewriting caches."
+  ],
+  "regression_preparation": "Initial CPU tempfile fixture was denied in sandbox TEMP; fixture moved to verified owned workspace; final9 tests passed.",
+  "policy": "All diagnostic/preparation failures were examined before specific CPU-only corrections. No GPU retry or cache execution occurred."
+}

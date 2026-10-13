@@ -1,0 +1,2666 @@
+{
+  "returncode": 0,
+  "elapsed_seconds": 6.735000000000582,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "worker_exit_verified": true,
+  "worker": {
+    "status": "PASS",
+    "weights_loaded": false,
+    "gpu_initialized": false,
+    "model_forward_calls": 0,
+    "precision": {
+      "entries": 292,
+      "dtype_counts": {
+        "F16": 216,
+        "F32": 76
+      },
+      "dtype_elements": {
+        "F16": 474163680,
+        "F32": 67783
+      },
+      "fp32_keys": [
+        "blocks.0.0.norm.bias",
+        "blocks.0.0.norm.weight",
+        "blocks.0.1.norm.bias",
+        "blocks.0.1.norm.weight",
+        "blocks.0.2.norm.bias",
+        "blocks.0.2.norm.weight",
+        "blocks.0.3.norm.bias",
+        "blocks.0.3.norm.weight",
+        "blocks.0.4.norm1.bias",
+        "blocks.0.4.norm1.weight",
+        "blocks.1.0.norm.bias",
+        "blocks.1.0.norm.weight",
+        "blocks.1.1.norm.bias",
+        "blocks.1.1.norm.weight",
+        "blocks.1.10.norm.bias",
+        "blocks.1.10.norm.weight",
+        "blocks.1.11.norm.bias",
+        "blocks.1.11.norm.weight",
+        "blocks.1.12.norm.bias",
+        "blocks.1.12.norm.weight",
+        "blocks.1.13.norm.bias",
+        "blocks.1.13.norm.weight",
+        "blocks.1.14.norm.bias",
+        "blocks.1.14.norm.weight",
+        "blocks.1.15.norm.bias",
+        "blocks.1.15.norm.weight",
+        "blocks.1.16.norm1.bias",
+        "blocks.1.16.norm1.weight",
+        "blocks.1.2.norm.bias",
+        "blocks.1.2.norm.weight",
+        "blocks.1.3.norm.bias",
+        "blocks.1.3.norm.weight",
+        "blocks.1.4.norm.bias",
+        "blocks.1.4.norm.weight",
+        "blocks.1.5.norm.bias",
+        "blocks.1.5.norm.weight",
+        "blocks.1.6.norm.bias",
+        "blocks.1.6.norm.weight",
+        "blocks.1.7.norm.bias",
+        "blocks.1.7.norm.weight",
+        "blocks.1.8.norm.bias",
+        "blocks.1.8.norm.weight",
+        "blocks.1.9.norm.bias",
+        "blocks.1.9.norm.weight",
+        "blocks.2.0.norm.bias",
+        "blocks.2.0.norm.weight",
+        "blocks.2.1.norm.bias",
+        "blocks.2.1.norm.weight",
+        "blocks.2.2.norm.bias",
+        "blocks.2.2.norm.weight",
+        "blocks.2.3.norm.bias",
+        "blocks.2.3.norm.weight",
+        "blocks.2.4.norm.bias",
+        "blocks.2.4.norm.weight",
+        "blocks.2.5.norm.bias",
+        "blocks.2.5.norm.weight",
+        "blocks.2.6.norm.bias",
+        "blocks.2.6.norm.weight",
+        "blocks.2.7.norm.bias",
+        "blocks.2.7.norm.weight",
+        "blocks.2.8.norm1.bias",
+        "blocks.2.8.norm1.weight",
+        "blocks.3.0.norm.bias",
+        "blocks.3.0.norm.weight",
+        "blocks.3.1.norm.bias",
+        "blocks.3.1.norm.weight",
+        "blocks.3.2.norm.bias",
+        "blocks.3.2.norm.weight",
+        "blocks.3.3.norm.bias",
+        "blocks.3.3.norm.weight",
+        "blocks.3.4.norm1.bias",
+        "blocks.3.4.norm1.weight",
+        "from_latent.bias",
+        "from_latent.weight",
+        "output_layer.bias",
+        "output_layer.weight"
+      ],
+      "parameter_bytes": 948598492,
+      "persistent_buffers": 0,
+      "weights_loaded": false,
+      "value_integrity_at_real_load": "not exercised; require unchanged StrictLocalComponent plus scoped reversible F16-to-F32 verification"
+    },
+    "parameters": {
+      "output_layer.weight": {
+        "shape": [
+          7,
+          64
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "output_layer.bias": {
+        "shape": [
+          7
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "from_latent.weight": {
+        "shape": [
+          1024,
+          32
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "from_latent.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.0.0.norm.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.0.0.norm.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.0.0.conv.weight": {
+        "shape": [
+          1024,
+          3,
+          3,
+          3,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.0.conv.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.0.mlp.0.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.0.mlp.0.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.0.mlp.2.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.0.mlp.2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.1.norm.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.0.1.norm.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.0.1.conv.weight": {
+        "shape": [
+          1024,
+          3,
+          3,
+          3,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.1.conv.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.1.mlp.0.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.1.mlp.0.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.1.mlp.2.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.1.mlp.2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.2.norm.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.0.2.norm.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.0.2.conv.weight": {
+        "shape": [
+          1024,
+          3,
+          3,
+          3,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.2.conv.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.2.mlp.0.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.2.mlp.0.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.2.mlp.2.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.2.mlp.2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.3.norm.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.0.3.norm.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.0.3.conv.weight": {
+        "shape": [
+          1024,
+          3,
+          3,
+          3,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.3.conv.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.3.mlp.0.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.3.mlp.0.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.3.mlp.2.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.3.mlp.2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.4.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.0.4.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.0.4.conv1.weight": {
+        "shape": [
+          4096,
+          3,
+          3,
+          3,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.4.conv1.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.4.conv2.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.4.conv2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.4.to_subdiv.weight": {
+        "shape": [
+          8,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.0.4.to_subdiv.bias": {
+        "shape": [
+          8
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.0.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.0.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.0.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.0.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.0.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.0.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.0.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.0.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.1.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.1.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.1.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.1.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.1.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.1.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.1.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.1.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.2.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.2.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.2.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.2.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.2.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.2.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.2.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.2.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.3.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.3.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.3.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.3.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.3.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.3.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.3.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.3.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.4.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.4.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.4.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.4.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.4.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.4.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.4.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.4.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.5.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.5.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.5.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.5.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.5.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.5.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.5.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.5.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.6.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.6.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.6.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.6.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.6.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.6.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.6.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.6.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.7.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.7.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.7.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.7.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.7.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.7.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.7.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.7.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.8.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.8.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.8.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.8.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.8.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.8.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.8.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.8.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.9.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.9.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.9.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.9.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.9.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.9.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.9.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.9.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.10.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.10.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.10.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.10.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.10.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.10.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.10.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.10.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.11.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.11.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.11.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.11.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.11.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.11.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.11.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.11.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.12.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.12.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.12.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.12.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.12.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.12.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.12.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.12.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.13.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.13.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.13.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.13.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.13.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.13.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.13.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.13.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.14.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.14.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.14.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.14.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.14.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.14.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.14.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.14.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.15.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.15.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.15.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.15.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.15.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.15.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.15.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.15.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.16.norm1.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.16.norm1.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.1.16.conv1.weight": {
+        "shape": [
+          2048,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.16.conv1.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.16.conv2.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.16.conv2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.16.to_subdiv.weight": {
+        "shape": [
+          8,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.1.16.to_subdiv.bias": {
+        "shape": [
+          8
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.0.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.0.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.0.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.0.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.0.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.0.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.0.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.0.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.1.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.1.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.1.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.1.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.1.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.1.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.1.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.1.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.2.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.2.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.2.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.2.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.2.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.2.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.2.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.2.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.3.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.3.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.3.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.3.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.3.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.3.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.3.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.3.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.4.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.4.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.4.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.4.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.4.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.4.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.4.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.4.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.5.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.5.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.5.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.5.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.5.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.5.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.5.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.5.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.6.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.6.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.6.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.6.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.6.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.6.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.6.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.6.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.7.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.7.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.7.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.7.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.7.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.7.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.7.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.7.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.8.norm1.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.8.norm1.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.2.8.conv1.weight": {
+        "shape": [
+          1024,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.8.conv1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.8.conv2.weight": {
+        "shape": [
+          128,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.8.conv2.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.8.to_subdiv.weight": {
+        "shape": [
+          8,
+          256
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.2.8.to_subdiv.bias": {
+        "shape": [
+          8
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.0.norm.weight": {
+        "shape": [
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.3.0.norm.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.3.0.conv.weight": {
+        "shape": [
+          128,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.0.conv.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.0.mlp.0.weight": {
+        "shape": [
+          512,
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.0.mlp.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.0.mlp.2.weight": {
+        "shape": [
+          128,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.0.mlp.2.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.1.norm.weight": {
+        "shape": [
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.3.1.norm.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.3.1.conv.weight": {
+        "shape": [
+          128,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.1.conv.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.1.mlp.0.weight": {
+        "shape": [
+          512,
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.1.mlp.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.1.mlp.2.weight": {
+        "shape": [
+          128,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.1.mlp.2.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.2.norm.weight": {
+        "shape": [
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.3.2.norm.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.3.2.conv.weight": {
+        "shape": [
+          128,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.2.conv.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.2.mlp.0.weight": {
+        "shape": [
+          512,
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.2.mlp.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.2.mlp.2.weight": {
+        "shape": [
+          128,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.2.mlp.2.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.3.norm.weight": {
+        "shape": [
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.3.3.norm.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.3.3.conv.weight": {
+        "shape": [
+          128,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.3.conv.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.3.mlp.0.weight": {
+        "shape": [
+          512,
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.3.mlp.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.3.mlp.2.weight": {
+        "shape": [
+          128,
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.3.mlp.2.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.4.norm1.weight": {
+        "shape": [
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.3.4.norm1.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta"
+      },
+      "blocks.3.4.conv1.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.4.conv1.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.4.conv2.weight": {
+        "shape": [
+          64,
+          3,
+          3,
+          3,
+          64
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.4.conv2.bias": {
+        "shape": [
+          64
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.4.to_subdiv.weight": {
+        "shape": [
+          8,
+          128
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      },
+      "blocks.3.4.to_subdiv.bias": {
+        "shape": [
+          8
+        ],
+        "dtype": "F16",
+        "device": "meta"
+      }
+    },
+    "buffers": {},
+    "modules": {
+      "": "SparseUnetVaeDecoder",
+      "output_layer": "SparseLinear",
+      "from_latent": "SparseLinear",
+      "blocks": "ModuleList",
+      "blocks.0": "ModuleList",
+      "blocks.0.0": "SparseConvNeXtBlock3d",
+      "blocks.0.0.norm": "LayerNorm32",
+      "blocks.0.0.conv": "SparseConv3d",
+      "blocks.0.0.mlp": "Sequential",
+      "blocks.0.0.mlp.0": "Linear",
+      "blocks.0.0.mlp.1": "SiLU",
+      "blocks.0.0.mlp.2": "Linear",
+      "blocks.0.1": "SparseConvNeXtBlock3d",
+      "blocks.0.1.norm": "LayerNorm32",
+      "blocks.0.1.conv": "SparseConv3d",
+      "blocks.0.1.mlp": "Sequential",
+      "blocks.0.1.mlp.0": "Linear",
+      "blocks.0.1.mlp.1": "SiLU",
+      "blocks.0.1.mlp.2": "Linear",
+      "blocks.0.2": "SparseConvNeXtBlock3d",
+      "blocks.0.2.norm": "LayerNorm32",
+      "blocks.0.2.conv": "SparseConv3d",
+      "blocks.0.2.mlp": "Sequential",
+      "blocks.0.2.mlp.0": "Linear",
+      "blocks.0.2.mlp.1": "SiLU",
+      "blocks.0.2.mlp.2": "Linear",
+      "blocks.0.3": "SparseConvNeXtBlock3d",
+      "blocks.0.3.norm": "LayerNorm32",
+      "blocks.0.3.conv": "SparseConv3d",
+      "blocks.0.3.mlp": "Sequential",
+      "blocks.0.3.mlp.0": "Linear",
+      "blocks.0.3.mlp.1": "SiLU",
+      "blocks.0.3.mlp.2": "Linear",
+      "blocks.0.4": "SparseResBlockC2S3d",
+      "blocks.0.4.norm1": "LayerNorm32",
+      "blocks.0.4.norm2": "LayerNorm32",
+      "blocks.0.4.conv1": "SparseConv3d",
+      "blocks.0.4.conv2": "SparseConv3d",
+      "blocks.0.4.to_subdiv": "SparseLinear",
+      "blocks.0.4.updown": "SparseChannel2Spatial",
+      "blocks.1": "ModuleList",
+      "blocks.1.0": "SparseConvNeXtBlock3d",
+      "blocks.1.0.norm": "LayerNorm32",
+      "blocks.1.0.conv": "SparseConv3d",
+      "blocks.1.0.mlp": "Sequential",
+      "blocks.1.0.mlp.0": "Linear",
+      "blocks.1.0.mlp.1": "SiLU",
+      "blocks.1.0.mlp.2": "Linear",
+      "blocks.1.1": "SparseConvNeXtBlock3d",
+      "blocks.1.1.norm": "LayerNorm32",
+      "blocks.1.1.conv": "SparseConv3d",
+      "blocks.1.1.mlp": "Sequential",
+      "blocks.1.1.mlp.0": "Linear",
+      "blocks.1.1.mlp.1": "SiLU",
+      "blocks.1.1.mlp.2": "Linear",
+      "blocks.1.2": "SparseConvNeXtBlock3d",
+      "blocks.1.2.norm": "LayerNorm32",
+      "blocks.1.2.conv": "SparseConv3d",
+      "blocks.1.2.mlp": "Sequential",
+      "blocks.1.2.mlp.0": "Linear",
+      "blocks.1.2.mlp.1": "SiLU",
+      "blocks.1.2.mlp.2": "Linear",
+      "blocks.1.3": "SparseConvNeXtBlock3d",
+      "blocks.1.3.norm": "LayerNorm32",
+      "blocks.1.3.conv": "SparseConv3d",
+      "blocks.1.3.mlp": "Sequential",
+      "blocks.1.3.mlp.0": "Linear",
+      "blocks.1.3.mlp.1": "SiLU",
+      "blocks.1.3.mlp.2": "Linear",
+      "blocks.1.4": "SparseConvNeXtBlock3d",
+      "blocks.1.4.norm": "LayerNorm32",
+      "blocks.1.4.conv": "SparseConv3d",
+      "blocks.1.4.mlp": "Sequential",
+      "blocks.1.4.mlp.0": "Linear",
+      "blocks.1.4.mlp.1": "SiLU",
+      "blocks.1.4.mlp.2": "Linear",
+      "blocks.1.5": "SparseConvNeXtBlock3d",
+      "blocks.1.5.norm": "LayerNorm32",
+      "blocks.1.5.conv": "SparseConv3d",
+      "blocks.1.5.mlp": "Sequential",
+      "blocks.1.5.mlp.0": "Linear",
+      "blocks.1.5.mlp.1": "SiLU",
+      "blocks.1.5.mlp.2": "Linear",
+      "blocks.1.6": "SparseConvNeXtBlock3d",
+      "blocks.1.6.norm": "LayerNorm32",
+      "blocks.1.6.conv": "SparseConv3d",
+      "blocks.1.6.mlp": "Sequential",
+      "blocks.1.6.mlp.0": "Linear",
+      "blocks.1.6.mlp.1": "SiLU",
+      "blocks.1.6.mlp.2": "Linear",
+      "blocks.1.7": "SparseConvNeXtBlock3d",
+      "blocks.1.7.norm": "LayerNorm32",
+      "blocks.1.7.conv": "SparseConv3d",
+      "blocks.1.7.mlp": "Sequential",
+      "blocks.1.7.mlp.0": "Linear",
+      "blocks.1.7.mlp.1": "SiLU",
+      "blocks.1.7.mlp.2": "Linear",
+      "blocks.1.8": "SparseConvNeXtBlock3d",
+      "blocks.1.8.norm": "LayerNorm32",
+      "blocks.1.8.conv": "SparseConv3d",
+      "blocks.1.8.mlp": "Sequential",
+      "blocks.1.8.mlp.0": "Linear",
+      "blocks.1.8.mlp.1": "SiLU",
+      "blocks.1.8.mlp.2": "Linear",
+      "blocks.1.9": "SparseConvNeXtBlock3d",
+      "blocks.1.9.norm": "LayerNorm32",
+      "blocks.1.9.conv": "SparseConv3d",
+      "blocks.1.9.mlp": "Sequential",
+      "blocks.1.9.mlp.0": "Linear",
+      "blocks.1.9.mlp.1": "SiLU",
+      "blocks.1.9.mlp.2": "Linear",
+      "blocks.1.10": "SparseConvNeXtBlock3d",
+      "blocks.1.10.norm": "LayerNorm32",
+      "blocks.1.10.conv": "SparseConv3d",
+      "blocks.1.10.mlp": "Sequential",
+      "blocks.1.10.mlp.0": "Linear",
+      "blocks.1.10.mlp.1": "SiLU",
+      "blocks.1.10.mlp.2": "Linear",
+      "blocks.1.11": "SparseConvNeXtBlock3d",
+      "blocks.1.11.norm": "LayerNorm32",
+      "blocks.1.11.conv": "SparseConv3d",
+      "blocks.1.11.mlp": "Sequential",
+      "blocks.1.11.mlp.0": "Linear",
+      "blocks.1.11.mlp.1": "SiLU",
+      "blocks.1.11.mlp.2": "Linear",
+      "blocks.1.12": "SparseConvNeXtBlock3d",
+      "blocks.1.12.norm": "LayerNorm32",
+      "blocks.1.12.conv": "SparseConv3d",
+      "blocks.1.12.mlp": "Sequential",
+      "blocks.1.12.mlp.0": "Linear",
+      "blocks.1.12.mlp.1": "SiLU",
+      "blocks.1.12.mlp.2": "Linear",
+      "blocks.1.13": "SparseConvNeXtBlock3d",
+      "blocks.1.13.norm": "LayerNorm32",
+      "blocks.1.13.conv": "SparseConv3d",
+      "blocks.1.13.mlp": "Sequential",
+      "blocks.1.13.mlp.0": "Linear",
+      "blocks.1.13.mlp.1": "SiLU",
+      "blocks.1.13.mlp.2": "Linear",
+      "blocks.1.14": "SparseConvNeXtBlock3d",
+      "blocks.1.14.norm": "LayerNorm32",
+      "blocks.1.14.conv": "SparseConv3d",
+      "blocks.1.14.mlp": "Sequential",
+      "blocks.1.14.mlp.0": "Linear",
+      "blocks.1.14.mlp.1": "SiLU",
+      "blocks.1.14.mlp.2": "Linear",
+      "blocks.1.15": "SparseConvNeXtBlock3d",
+      "blocks.1.15.norm": "LayerNorm32",
+      "blocks.1.15.conv": "SparseConv3d",
+      "blocks.1.15.mlp": "Sequential",
+      "blocks.1.15.mlp.0": "Linear",
+      "blocks.1.15.mlp.1": "SiLU",
+      "blocks.1.15.mlp.2": "Linear",
+      "blocks.1.16": "SparseResBlockC2S3d",
+      "blocks.1.16.norm1": "LayerNorm32",
+      "blocks.1.16.norm2": "LayerNorm32",
+      "blocks.1.16.conv1": "SparseConv3d",
+      "blocks.1.16.conv2": "SparseConv3d",
+      "blocks.1.16.to_subdiv": "SparseLinear",
+      "blocks.1.16.updown": "SparseChannel2Spatial",
+      "blocks.2": "ModuleList",
+      "blocks.2.0": "SparseConvNeXtBlock3d",
+      "blocks.2.0.norm": "LayerNorm32",
+      "blocks.2.0.conv": "SparseConv3d",
+      "blocks.2.0.mlp": "Sequential",
+      "blocks.2.0.mlp.0": "Linear",
+      "blocks.2.0.mlp.1": "SiLU",
+      "blocks.2.0.mlp.2": "Linear",
+      "blocks.2.1": "SparseConvNeXtBlock3d",
+      "blocks.2.1.norm": "LayerNorm32",
+      "blocks.2.1.conv": "SparseConv3d",
+      "blocks.2.1.mlp": "Sequential",
+      "blocks.2.1.mlp.0": "Linear",
+      "blocks.2.1.mlp.1": "SiLU",
+      "blocks.2.1.mlp.2": "Linear",
+      "blocks.2.2": "SparseConvNeXtBlock3d",
+      "blocks.2.2.norm": "LayerNorm32",
+      "blocks.2.2.conv": "SparseConv3d",
+      "blocks.2.2.mlp": "Sequential",
+      "blocks.2.2.mlp.0": "Linear",
+      "blocks.2.2.mlp.1": "SiLU",
+      "blocks.2.2.mlp.2": "Linear",
+      "blocks.2.3": "SparseConvNeXtBlock3d",
+      "blocks.2.3.norm": "LayerNorm32",
+      "blocks.2.3.conv": "SparseConv3d",
+      "blocks.2.3.mlp": "Sequential",
+      "blocks.2.3.mlp.0": "Linear",
+      "blocks.2.3.mlp.1": "SiLU",
+      "blocks.2.3.mlp.2": "Linear",
+      "blocks.2.4": "SparseConvNeXtBlock3d",
+      "blocks.2.4.norm": "LayerNorm32",
+      "blocks.2.4.conv": "SparseConv3d",
+      "blocks.2.4.mlp": "Sequential",
+      "blocks.2.4.mlp.0": "Linear",
+      "blocks.2.4.mlp.1": "SiLU",
+      "blocks.2.4.mlp.2": "Linear",
+      "blocks.2.5": "SparseConvNeXtBlock3d",
+      "blocks.2.5.norm": "LayerNorm32",
+      "blocks.2.5.conv": "SparseConv3d",
+      "blocks.2.5.mlp": "Sequential",
+      "blocks.2.5.mlp.0": "Linear",
+      "blocks.2.5.mlp.1": "SiLU",
+      "blocks.2.5.mlp.2": "Linear",
+      "blocks.2.6": "SparseConvNeXtBlock3d",
+      "blocks.2.6.norm": "LayerNorm32",
+      "blocks.2.6.conv": "SparseConv3d",
+      "blocks.2.6.mlp": "Sequential",
+      "blocks.2.6.mlp.0": "Linear",
+      "blocks.2.6.mlp.1": "SiLU",
+      "blocks.2.6.mlp.2": "Linear",
+      "blocks.2.7": "SparseConvNeXtBlock3d",
+      "blocks.2.7.norm": "LayerNorm32",
+      "blocks.2.7.conv": "SparseConv3d",
+      "blocks.2.7.mlp": "Sequential",
+      "blocks.2.7.mlp.0": "Linear",
+      "blocks.2.7.mlp.1": "SiLU",
+      "blocks.2.7.mlp.2": "Linear",
+      "blocks.2.8": "SparseResBlockC2S3d",
+      "blocks.2.8.norm1": "LayerNorm32",
+      "blocks.2.8.norm2": "LayerNorm32",
+      "blocks.2.8.conv1": "SparseConv3d",
+      "blocks.2.8.conv2": "SparseConv3d",
+      "blocks.2.8.to_subdiv": "SparseLinear",
+      "blocks.2.8.updown": "SparseChannel2Spatial",
+      "blocks.3": "ModuleList",
+      "blocks.3.0": "SparseConvNeXtBlock3d",
+      "blocks.3.0.norm": "LayerNorm32",
+      "blocks.3.0.conv": "SparseConv3d",
+      "blocks.3.0.mlp": "Sequential",
+      "blocks.3.0.mlp.0": "Linear",
+      "blocks.3.0.mlp.1": "SiLU",
+      "blocks.3.0.mlp.2": "Linear",
+      "blocks.3.1": "SparseConvNeXtBlock3d",
+      "blocks.3.1.norm": "LayerNorm32",
+      "blocks.3.1.conv": "SparseConv3d",
+      "blocks.3.1.mlp": "Sequential",
+      "blocks.3.1.mlp.0": "Linear",
+      "blocks.3.1.mlp.1": "SiLU",
+      "blocks.3.1.mlp.2": "Linear",
+      "blocks.3.2": "SparseConvNeXtBlock3d",
+      "blocks.3.2.norm": "LayerNorm32",
+      "blocks.3.2.conv": "SparseConv3d",
+      "blocks.3.2.mlp": "Sequential",
+      "blocks.3.2.mlp.0": "Linear",
+      "blocks.3.2.mlp.1": "SiLU",
+      "blocks.3.2.mlp.2": "Linear",
+      "blocks.3.3": "SparseConvNeXtBlock3d",
+      "blocks.3.3.norm": "LayerNorm32",
+      "blocks.3.3.conv": "SparseConv3d",
+      "blocks.3.3.mlp": "Sequential",
+      "blocks.3.3.mlp.0": "Linear",
+      "blocks.3.3.mlp.1": "SiLU",
+      "blocks.3.3.mlp.2": "Linear",
+      "blocks.3.4": "SparseResBlockC2S3d",
+      "blocks.3.4.norm1": "LayerNorm32",
+      "blocks.3.4.norm2": "LayerNorm32",
+      "blocks.3.4.conv1": "SparseConv3d",
+      "blocks.3.4.conv2": "SparseConv3d",
+      "blocks.3.4.to_subdiv": "SparseLinear",
+      "blocks.3.4.updown": "SparseChannel2Spatial",
+      "blocks.4": "ModuleList"
+    },
+    "parent_source": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sc_vaes\\sparse_unet_vae.py",
+    "backend_initializer_source_sha256": "281fa1c8449732a94d99a24facb437600ab08d8185214d8434008456d56b83d8",
+    "initializer_policy": "unchanged AST initializer only; native forward denied",
+    "low_vram": true,
+    "native_backend_imported": false,
+    "checkpoint_payload_read": false,
+    "runtime": {
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "torch": "2.13.0+rocm10.0.0",
+      "hip": "7.15.26333",
+      "cuda": null,
+      "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py"
+    }
+  },
+  "passed": true
+}

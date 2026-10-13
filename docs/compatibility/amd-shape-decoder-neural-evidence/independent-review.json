@@ -1,0 +1,16 @@
+{
+  "reviewer": "independent read-only shape_decoder_review agent",
+  "approved_scope": "CPU preflight publication; UNKNOWN, GPU NOT ATTEMPTED",
+  "harness_sha256": "327786f654239a1a17278cf73635b662d87a797c81249a77c94539dc2d8d000c",
+  "test_sha256": "f2ac720a90fd5c50cbda78749f3cf2bf672eacee62b7769877a82d27857d33c8",
+  "final_test_log_sha256": "224b5c843441d620075b2fb577e7a65682588696f54f57dd4ec23370261b7862",
+  "final_cpu_result_sha256": "0915e027f345864ca0cf243e414854949bcda0ee95aa38bf78c9206d37df63d9",
+  "findings_resolved": [
+    "Preserve FAIL on exception after nominal success; assign PASS after final GPU check",
+    "Require exact CPU flags and counter, healthy Job, no worker error",
+    "Reject top-level supervisor errors",
+    "Correct final primary feature pair to64+16F16channels;13,826,914,124-byte conservative sum"
+  ],
+  "remaining_actionable_issues": [],
+  "review_statement": "Approved for publishing CPU preflight. Probe4 harness SHA matches current file,9 focused tests passed, report accurately limits manifest/cache/memory findings. No GPU, weights, native backend import or forward calls. Independent reviewer matched322 cache-product hashes and published input hashes. No reviewer edits or executions."
+}
