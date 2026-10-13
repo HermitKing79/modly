@@ -1,0 +1,24 @@
+{
+  "approved_for": "Publication as NO-GO only",
+  "reviewer": "/root/postprocessor_strategy_review",
+  "method": "Read-only review; no execution/imports/edits",
+  "findings": [
+    "Fixed postprocessor source/allocation/output/provenance contracts match installed source.",
+    "41 lower-level checks PASS; genuine source Python interface probe has one reshape error among42tests.",
+    "GPU route blocked before admission; no reshape/detach permission added.",
+    "No numerical/native AMD defect proved."
+  ],
+  "actionable_issues_remaining": [],
+  "reviewed_sha256": {
+    "scripts/compatibility/amd_native_post1_scalar.py": "c2d2a1708345a9e802bd3e82705270670a6c38b4dfbe146917c092079bb3cd9a",
+    "scripts/compatibility/amd_native_convolution_policy.py": "fc4306a5a3cefda08c1afcff095879d7753cf1b0de4762c6e240d07e05397048",
+    "scripts/compatibility/amd_native_convolution_smoke.py": "994fe092fce12ee483584fe32a16eff0e346efbceed7259864c3799e4ba0c0ef",
+    "scripts/compatibility/amd_native_convolution_preflight.py": "52aae071e7a621144df8700e51eac9196b161fd6221aeef286a6524e09f0250e",
+    "scripts/compatibility/amd_native_postprocessor_admission.py": "7fed1844eac4afcd3310b499a849e323149d340a0ccf5197cfa2bf3ab819a8c4",
+    "scripts/compatibility/test_amd_native_postprocessors.py": "5c9194760ed29889b1d4314020222ce948dee369301868166d80d12912ff7e7e",
+    "docs/compatibility/amd-native-postprocessor-admission-evidence/cpu-final/results.json": "9fcea5afa3f79f4e7770ba21eb59ed62df32cd81a7e61fd37b56e641b56faa2f",
+    "docs/compatibility/amd-native-postprocessor-admission-evidence/cpu-probe/results.json": "f155813cf996aeae2fefbedd04c1978e372384bc48a588328ec2ad0ce155ccf0",
+    "scripts/compatibility/test_amd_native_convolution.py": "e38004db0be9f560cd5c11339abd9c1e765c504795df601317b48fb1d8eaf151"
+  },
+  "final_report_and_preservation_review": "Approved as NO-GO; report separates41PASS from42run/1error; three exact reviewed repository-harness exceptions retain strict installation/AMD-source/cache/historical checks."
+}

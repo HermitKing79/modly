@@ -8,7 +8,7 @@ import numpy as np
 import amd_native_convolution_contract as c
 import amd_native_convolution_preflight as p
 from amd_native_cache_dispatch_proof import normalize_cache_mkdir
-from amd_native_post1_scalar import Post1Scalar
+from amd_native_post1_scalar import Post1Scalar,Post2Scalar
 
 HOOKS_SHA='7468fb1fb4740bb9237c57216b04499400825f62a6177da4214153900feda824'
 CHAIN_DEFAULTS=dict(launch_enter_hook=False,launch_exit_hook=True,kernel_load_start_hook=False,kernel_load_end_hook=True,kernel_unload_hook=False)
@@ -51,6 +51,7 @@ class NativePolicy:
         self.permit=c.Permit();self.leaf=self.outer=self.inner=None;self.restores=[]
         self.helper_calls=0;self.lookups=[];self.forbidden_calls=[]
         self.post1_scalar=Post1Scalar(self,torch)
+        self.post2_scalar=Post2Scalar(self,torch);self.post_outputs={}
         import triton
         import triton.compiler.compiler as compiler
         import triton.runtime.build as build
@@ -198,12 +199,21 @@ class NativePolicy:
                 elif _tag=='post1':
                     if len(a)!=1:raise RuntimeError('post1 arity')
                     self.tensor(a[0],(2049,27),torch.uint32)
+                    self.known_input(a[0],'neighbor',0)
                 else:
                     if len(a)!=3 or type(a[2]) is not int or a[2]!=64:raise RuntimeError('post2 block contract')
                     self.tensor(a[0],(2049,),torch.int32);self.tensor(a[1],(2049,),torch.int64)
-                if _tag=='post1':
-                    with self.post1_scalar.scope(a[0].device):return self.trace.call('native:'+_tag,lambda:_fn(*a))
-                return self.trace.call('native:'+_tag,lambda:_fn(*a))
+                    self.known_input(a[0],'post1',0);self.known_input(a[1],'post1',1)
+                if _tag in ('post1','post2'):
+                    scalar=getattr(self,_tag+'_scalar')
+                    with scalar.scope(a[0].device):
+                        result=self.trace.call('native:'+_tag,lambda:_fn(*a))
+                        scalar.finish(result)
+                else:
+                    result=self.trace.call('native:'+_tag,lambda:_fn(*a))
+                    self.tensor(result,(2049,27),torch.uint32)
+                self.remember(_tag,result if _tag!='neighbor' else (result,))
+                return result
             self.patch(native,name,call)
         self.spconv=importlib.import_module('flex_gemm.ops.spconv')
         if self.spconv.ALGORITHM!='masked_implicit_gemm_splitk' or self.spconv.HASHMAP_RATIO!=2.0:
@@ -215,13 +225,25 @@ class NativePolicy:
             self.tensor(t,shape,dtype)
         return self.spconv.sparse_submanifold_conv3d(f,co,c.SHAPE,w,b,neighbor_cache=None,dilation=(1,1,1))
 
+    def remember(self,tag,outputs):
+        self.post_outputs[tag]=[(t,t.untyped_storage(),tuple(t.shape),t.dtype,t.device,t.storage_offset()) for t in outputs]
+
+    def known_input(self,t,tag,index):
+        if tag not in self.post_outputs or index>=len(self.post_outputs[tag]):raise RuntimeError('Missing native input provenance')
+        original,storage,shape,dtype,device,offset=self.post_outputs[tag][index]
+        if (type(t) is not self.torch.Tensor or t._cdata!=original._cdata or t.untyped_storage()._cdata!=storage._cdata
+            or tuple(t.shape)!=shape or t.dtype!=dtype or t.device!=device or t.storage_offset()!=offset
+            or not t.is_contiguous() or t.requires_grad):raise RuntimeError('Foreign/altered native input provenance')
+
     def release(self):
         if self.inner is not None:self.inner.nargs=None
         if self.leaf is not None:self.leaf.device_caches.clear()
         self.permit.phase='release'
+        self.post_outputs.clear()
 
     def close(self):
         self.post1_scalar.clear()
+        self.post2_scalar.clear();self.post_outputs.clear()
         for obj,name,original in reversed(self.restores):setattr(obj,name,original)
         self.restores.clear()
 
@@ -230,7 +252,7 @@ def dispatch_guard(torch,policy):
     class Bound(TorchDispatchMode):
         def __torch_dispatch__(self,func,types,args=(),kwargs=None):
             kwargs=kwargs or {};phase=policy.permit.phase
-            scalar=policy.post1_scalar
+            scalar=policy.post2_scalar if policy.post2_scalar.active else policy.post1_scalar
             scalar_kind=scalar.before(func,args,kwargs)
             def tensors(value):
                 if isinstance(value,torch.Tensor):yield value
@@ -239,7 +261,7 @@ def dispatch_guard(torch,policy):
                 elif isinstance(value,dict):
                     for v in value.values():yield from tensors(v)
             gpu=any(t.is_cuda for t in tensors((args,kwargs))) or str(kwargs.get('device','')).startswith('cuda')
-            guarded=gpu or scalar.active
+            guarded=gpu or phase=='convolution'
             if guarded:
                 if phase not in ('inputs','convolution','output'):raise RuntimeError('GPU tensor operation outside admitted phase')
                 if phase=='convolution':

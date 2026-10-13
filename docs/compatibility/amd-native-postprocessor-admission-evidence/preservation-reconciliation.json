@@ -1,0 +1,19 @@
+{
+  "first_after_check": "Rejected intentional repository harness edit: scripts/compatibility/amd_native_convolution_policy.py",
+  "correction": "Only three authorized repository harness changes now require their exact independent-review hashes; all other prior checksums, installed/source/cache inventories and historical artifact hashes remain strict.",
+  "intentional_harness_changes": {
+    "scripts/compatibility/amd_native_convolution_policy.py": {
+      "previous_sha256": "18ab38fd6c08b77b8af549f0ddce936010e828ef4186f640c707cb994fbedbb8",
+      "reviewed_sha256": "fc4306a5a3cefda08c1afcff095879d7753cf1b0de4762c6e240d07e05397048"
+    },
+    "scripts/compatibility/amd_native_convolution_smoke.py": {
+      "previous_sha256": "6298c3e19c5db71091a12ea8dec87911aa7d6f7c85c72f99379fd5ddb21ffcbe",
+      "reviewed_sha256": "994fe092fce12ee483584fe32a16eff0e346efbceed7259864c3799e4ba0c0ef"
+    },
+    "scripts/compatibility/amd_native_post1_scalar.py": {
+      "previous_sha256": "5b8b17a82d4babafbf7b7ac2fa22cbd09a54e6ff0f64992dd043c13479fe8816",
+      "reviewed_sha256": "c2d2a1708345a9e802bd3e82705270670a6c38b4dfbe146917c092079bb3cd9a"
+    }
+  },
+  "final_after_check": "PASS;5756historical files verified;torch not imported"
+}

@@ -75,5 +75,10 @@ class ContractTests(unittest.TestCase):
         s.authorize(gate,dict(native_contract_sha256='hash'),'hash')
         with self.assertRaises(RuntimeError):s.authorize(gate,dict(native_contract_sha256='hash'),'foreign')
         self.assertEqual(s.classify(dict(status='PASS'),True,True,True),'UNKNOWN')
+    def test_failed_postprocessor_source_interfaces_stop_before_gpu_admission(self):
+        import amd_native_convolution_smoke as s
+        from unittest.mock import patch
+        with patch.object(s.preflight,'verify_historical',side_effect=AssertionError('Admission continued after failed gate')):
+            with self.assertRaisesRegex(ValueError,'CPU acceptance required; GPU route is NO-GO'):s.identity()
 
 if __name__=='__main__':unittest.main()

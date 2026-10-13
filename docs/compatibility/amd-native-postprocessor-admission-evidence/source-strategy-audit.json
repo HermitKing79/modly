@@ -1,0 +1,172 @@
+{
+  "decision": "NO-GO",
+  "chosen_candidate": "A with fixed scoped native allocation/output provenance",
+  "comparison": {
+    "A": "CPU-tested fixed postprocessor contracts; full source Python interfaces fail reshape guard.",
+    "B": "Suspending dispatcher removes pre-allocation/foreign-operation checks; reinstating them is not a smaller correction. Not implemented."
+  },
+  "installed_source_and_binary_sha256": {
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\cuda\\spconv\\neighbor_map.hip": {
+      "size": 16440,
+      "sha256": "f5de4b1b1f8ddcf54ccbdb76c7a7ff8759801c3cc312fb0ab8f869d3b78abb92"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\cuda\\hash\\hash.hip": {
+      "size": 17227,
+      "sha256": "80c142bbed696ef8a5dc0c0d587e9aab9ce7b8d87c0d74f4a9005bc897c99a7c"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\ops\\spconv\\submanifold_conv3d.py": {
+      "size": 17106,
+      "sha256": "51ac1ac963e46228e7d0f928c6237af5e0677705278ebef73bffdb7b43e69aab"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk.py": {
+      "size": 7938,
+      "sha256": "21d5efc8f59f312c62fa45241fc13a9e446cd4c13f11e360cf92216d151301bb"
+    },
+    "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\cuda.cp312-win_amd64.pyd": {
+      "size": 3677184,
+      "sha256": "18b203fca47a482f8b53d7bdfb765b26036cae9628087ecfde17e75742007064"
+    }
+  },
+  "post1": {
+    "scalar": 35353,
+    "dtype": "int32",
+    "prefix": [
+      55323
+    ],
+    "read_count": 1,
+    "bounds": [
+      2049,
+      55323
+    ]
+  },
+  "post2": {
+    "scalar": 599,
+    "dtype": "int32",
+    "prefix": [
+      34
+    ],
+    "offset": 33,
+    "read_count": 1,
+    "bounds": [
+      33,
+      891
+    ],
+    "block_popcounts": [
+      17,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      21,
+      21,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    "sort_ties": "Equal binary codes imply identical Gray masks, so ties cannot change block OR counts."
+  },
+  "source_operations": {
+    "post1": [
+      "empty",
+      "argsort/sort",
+      "cumsum int32 dim0",
+      "select last",
+      "item once"
+    ],
+    "post2": [
+      "empty",
+      "cumsum int32 dim0",
+      "select last",
+      "item once"
+    ],
+    "native_launches": {
+      "neighbor": [
+        "hash insert",
+        "neighbor lookup"
+      ],
+      "post1": [
+        "transpose and Gray code",
+        "gather"
+      ],
+      "post2": [
+        "reduce codes",
+        "scatter codes"
+      ]
+    },
+    "python_tail": [
+      "weight.reshape",
+      "torch.empty splitK float32",
+      "output.sum(dim=0).to(input.dtype)"
+    ]
+  },
+  "explicit_tensor_bytes": {
+    "components": {
+      "fixture_features": 4196352,
+      "fixture_coordinates": 32784,
+      "fixture_weights": 56623104,
+      "fixture_bias": 2048,
+      "hash_keys_values": 32784,
+      "neighbor": 221292,
+      "post1_gray_binary": 16392,
+      "post1_mask_transpose_prefix": 663876,
+      "post1_sorted_indices": 16392,
+      "post1_signals": 282824,
+      "post1_segments": 112,
+      "post2_reduced": 132,
+      "post2_segments_and_prefix": 272,
+      "post2_kernel_indices": 2396,
+      "split_output": 16785408,
+      "sum_output": 8392704,
+      "final_output": 4196352
+    },
+    "total": 91465224,
+    "excludes": [
+      "internal ATen sort values and workspaces",
+      "allocator overhead",
+      "native/runtime scratch"
+    ]
+  },
+  "limits": {
+    "free_vram_bytes": 13958643712,
+    "allocator_cap_bytes": 12884901888,
+    "observed_pytorch_smoke_limit_bytes": 1073741824,
+    "factory_result_limit_bytes": 33554432,
+    "cpu_gpu_overall_deadlines": [
+      45,
+      120,
+      180
+    ]
+  },
+  "cpu_interface_blocker": "aten.reshape.default at genuine source weight.reshape before split output creation",
+  "limitations": [
+    "CPU fixture fills reproduce native-written metadata only; no native execution or numerical convolution proof.",
+    "Explicit ATen view replay did not represent Python reshape dispatch.",
+    "Installed native included headers absent; source bodies/binary provenance are pinned but binary internals not fully reconstructed.",
+    "One GiB limit is observed PyTorch allocated/reserved protection, not a universal native preallocation ceiling.",
+    "CPU failure does not demonstrate identical GPU dispatch or AMD numerical incompatibility."
+  ],
+  "recommended_next_experiment": "One separately approved owned CPU-only observational trace of genuine Python tail interfaces and exact tensor/storage provenance; no operator repair loop or GPU execution."
+}
