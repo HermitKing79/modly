@@ -1,0 +1,41 @@
+[
+  {
+    "module": "test_amd_sparse_flow_resume",
+    "exit": 0,
+    "timeout": false,
+    "stderr": "",
+    "tests": 4,
+    "passed": true,
+    "log": "test_invalid_memory_sample_fails_closed (test_amd_sparse_flow_resume.ResumeTests.test_invalid_memory_sample_fails_closed) ... ok\ntest_only_new_evidence_and_entrypoint_change (test_amd_sparse_flow_resume.ResumeTests.test_only_new_evidence_and_entrypoint_change) ... ok\ntest_review_failure_blocks_configuration (test_amd_sparse_flow_resume.ResumeTests.test_review_failure_blocks_configuration) ... ok\ntest_unchanged_exact_margin_and_available_sample (test_amd_sparse_flow_resume.ResumeTests.test_unchanged_exact_margin_and_available_sample) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nOK\n",
+    "ai_imports": [],
+    "replay": [],
+    "replay_shutdown": {},
+    "diagnostic_stdout": ""
+  },
+  {
+    "module": "test_amd_sparse_flow",
+    "exit": 0,
+    "timeout": false,
+    "stderr": "",
+    "tests": 4,
+    "passed": true,
+    "log": "test_config_and_header (test_amd_sparse_flow.ContractTests.test_config_and_header) ... ok\ntest_exact_parameter_schema (test_amd_sparse_flow.ContractTests.test_exact_parameter_schema) ... ok\ntest_output_contract (test_amd_sparse_flow.ContractTests.test_output_contract) ... ok\ntest_single_call_consumed_even_on_error (test_amd_sparse_flow.ContractTests.test_single_call_consumed_even_on_error) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.008s\n\nOK\n",
+    "ai_imports": [],
+    "replay": [],
+    "replay_shutdown": {},
+    "diagnostic_stdout": ""
+  },
+  {
+    "module": "test_amd_sparse_flow_control",
+    "exit": 0,
+    "timeout": false,
+    "stderr": "",
+    "tests": 14,
+    "passed": true,
+    "log": "test_acceptance_fails_for_bad_counts_release_or_observer (test_amd_sparse_flow_control.ControlTests.test_acceptance_fails_for_bad_counts_release_or_observer) ... ok\ntest_actual_exact_transfers_and_duplicate_rejection (test_amd_sparse_flow_control.ControlTests.test_actual_exact_transfers_and_duplicate_rejection) ... ok\ntest_actual_module_calls_journal_and_phase_scope (test_amd_sparse_flow_control.ControlTests.test_actual_module_calls_journal_and_phase_scope) ... ok\ntest_actual_supervisor_sparse_flow_protocol_and_gate_fail_closed (test_amd_sparse_flow_control.ControlTests.test_actual_supervisor_sparse_flow_protocol_and_gate_fail_closed) ... ok\ntest_cpu_frequency_only_in_timestep_once (test_amd_sparse_flow_control.ControlTests.test_cpu_frequency_only_in_timestep_once) ... ok\ntest_exact_deadline_profile_and_production_gates (test_amd_sparse_flow_control.ControlTests.test_exact_deadline_profile_and_production_gates) ... ok\ntest_inert_pipeline_import_only (test_amd_sparse_flow_control.ControlTests.test_inert_pipeline_import_only) ... ok\ntest_internal_float_casts_and_complex_preservation (test_amd_sparse_flow_control.ControlTests.test_internal_float_casts_and_complex_preservation) ... ok\ntest_mixed_types_permitted_without_changes (test_amd_sparse_flow_control.ControlTests.test_mixed_types_permitted_without_changes) ... ok\ntest_phase_device_and_dtype_fail_closed (test_amd_sparse_flow_control.ControlTests.test_phase_device_and_dtype_fail_closed) ... ok\ntest_placement_allows_only_unchanged_observed_defaults (test_amd_sparse_flow_control.ControlTests.test_placement_allows_only_unchanged_observed_defaults) ... ok\ntest_release_actual_order_and_zero_memory (test_amd_sparse_flow_control.ControlTests.test_release_actual_order_and_zero_memory) ... ok\ntest_release_clear_failure_and_retained_tensor (test_amd_sparse_flow_control.ControlTests.test_release_clear_failure_and_retained_tensor) ... ok\ntest_transfer_negatives_actual_guard (test_amd_sparse_flow_control.ControlTests.test_transfer_negatives_actual_guard) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.120s\n\nOK\n",
+    "ai_imports": [],
+    "replay": [],
+    "replay_shutdown": {},
+    "diagnostic_stdout": "{\"classification\": \"PASS\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}\n{\"classification\": \"PARTIAL\", \"observer_healthy\": true, \"checkpoint_unchanged\": true}"
+  }
+]
