@@ -1,0 +1,67 @@
+{
+  "metadata_name": "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.json",
+  "paths": {
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.source": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-native-convolution-smoke-evidence\\run\\scratch\\t\\2XPD2YHPJQO7Z2JH6WSZVEP57I24PXRUAD5XDLFSCSV6LXCPX2SQ\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.source",
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.ttir": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-native-convolution-smoke-evidence\\run\\scratch\\t\\2XPD2YHPJQO7Z2JH6WSZVEP57I24PXRUAD5XDLFSCSV6LXCPX2SQ\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.ttir",
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.ttgir": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-native-convolution-smoke-evidence\\run\\scratch\\t\\2XPD2YHPJQO7Z2JH6WSZVEP57I24PXRUAD5XDLFSCSV6LXCPX2SQ\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.ttgir",
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.llir": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-native-convolution-smoke-evidence\\run\\scratch\\t\\2XPD2YHPJQO7Z2JH6WSZVEP57I24PXRUAD5XDLFSCSV6LXCPX2SQ\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.llir",
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.amdgcn": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-native-convolution-smoke-evidence\\run\\scratch\\t\\2XPD2YHPJQO7Z2JH6WSZVEP57I24PXRUAD5XDLFSCSV6LXCPX2SQ\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.amdgcn",
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.hsaco": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-native-convolution-smoke-evidence\\run\\scratch\\t\\2XPD2YHPJQO7Z2JH6WSZVEP57I24PXRUAD5XDLFSCSV6LXCPX2SQ\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.hsaco",
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.json": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-native-convolution-smoke-evidence\\run\\scratch\\t\\2XPD2YHPJQO7Z2JH6WSZVEP57I24PXRUAD5XDLFSCSV6LXCPX2SQ\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.json"
+  },
+  "files": {
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.source": {
+      "bytes": 49816,
+      "sha256": "5669c41e1386aa4242e7296ecc0c8eee158b93c4f59f0dd0ab51de116ad9f754"
+    },
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.ttir": {
+      "bytes": 27348,
+      "sha256": "1ecd1e5d244f8febb501984c1a14c8a31e466e80ae61e3d8217f1dd3a2d93a58"
+    },
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.ttgir": {
+      "bytes": 40247,
+      "sha256": "6dbaf48ef1faf4951b22ad755a18557c74e091603288e7f177acc0a34a8ead93"
+    },
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.llir": {
+      "bytes": 83605,
+      "sha256": "118fa872c331b6ddd6c886b1c5554769a133c7f6d2301d6149ebb41a8f48c8c5"
+    },
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.amdgcn": {
+      "bytes": 73188,
+      "sha256": "384769a054d18646c37c68596bf0b18a08756011df45dd6c7c0545dd895fea76"
+    },
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.hsaco": {
+      "bytes": 12176,
+      "sha256": "e639008883feef1e37079d2a809a45cdfef85240aaec7ae9f018d8175cf7fe01"
+    },
+    "sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk_kernel.json": {
+      "bytes": 1214,
+      "sha256": "bd16b51ea51336e6496ca272c198cab44e68a43db7c8749bfdc50bdf11e2a918"
+    }
+  },
+  "helper_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-native-convolution-smoke-evidence\\run\\scratch\\t\\5Q5T75OVTPHDF2NSFEITRV2NBELZ6GGOAXKMLBY6O75SFYQU4UEQ\\hip_utils.cp312-win_amd64.pyd",
+  "helper": {
+    "library": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\bin\\amdhip64_7.dll",
+    "library_sha256": "546fb3d6e2d2194a9526fb94ec2fd3aa5b92a48a7595f04efece80162047ef69",
+    "platform": "AMD64,Windows,64bit,WindowsPE",
+    "config": {
+      "language": [
+        "c"
+      ],
+      "library_dirs": null,
+      "include_dirs": [
+        "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include"
+      ],
+      "libraries": null,
+      "ccflags": null
+    },
+    "computed_key": "ec3b3ff5d59bce32e9b2291138d74d09179f18ce05d4c5871e77fb22e214e509",
+    "computed_folder": "5Q5T75OVTPHDF2NSFEITRV2NBELZ6GGOAXKMLBY6O75SFYQU4UEQ",
+    "expected_path": "C:\\Users\\wattz\\.triton\\cache\\5Q5T75OVTPHDF2NSFEITRV2NBELZ6GGOAXKMLBY6O75SFYQU4UEQ\\hip_utils.cp312-win_amd64.pyd",
+    "cache_hit": true,
+    "cached_sha256": "676ff51e09cda672275546e3025caecf5f275bbf1ab2d2f0c17c3e101dc046f2",
+    "installed_formula_matches": true
+  },
+  "tuning_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-native-convolution-smoke-evidence\\run\\scratch\\autotune.json",
+  "tuning_sha256": "8d54115c6bf50fecc73f01fa08ffbb938a69f07a2eefa7c68279f8417738df5f"
+}

@@ -1,0 +1,18 @@
+{
+  "reviewer": "/root/native_convolution_review",
+  "classification": "UNKNOWN",
+  "supported_cause": "Harness None-only hook check rejects installed default HookChain objects",
+  "installed_source": "D:/AI/Trellis2AMD/venv/Lib/site-packages/triton/knobs.py",
+  "source_lines": {"default_runtime_hook_chains": [497, 503], "default_empty_callback_list": [439, 440]},
+  "live_callback_lists_recorded": false,
+  "gpu_authorized": false,
+  "convolutions": 0,
+  "worker_seconds": 6.687,
+  "exit_code": 1,
+  "observer_healthy": true,
+  "native_artifacts_unchanged": true,
+  "job_active_after_exit": 0,
+  "forced_job_cleanup": false,
+  "verification": "Read-only inspection of saved results and installed source; no imports, GPU work, edits or retries",
+  "review_limitation": "Initial review missed the HookChain-versus-None mismatch; CPU probe did not instantiate the complete production policy"
+}

@@ -1,0 +1,92 @@
+{
+  "classification": "UNKNOWN",
+  "observer_healthy": true,
+  "native_artifacts_unchanged": true,
+  "worker": {
+    "status": "UNKNOWN",
+    "stage": "cpu-admission",
+    "convolution_calls": 0,
+    "weights_loaded": false,
+    "sdk_discovery": [
+      {
+        "command": [
+          "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+          "path",
+          "--root"
+        ],
+        "timeout_seconds": 5.0,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "ERROR: Could not load the `rocm[devel]` package, which is required to access runtime tools and development files. Please install it with your package manager (pip, uv, etc)\r\nERROR: rocm_sdk_devel module for the ROCm SDK development package is not installed. This can typically be obtained by installing `rocm[devel]` from your package manager\r\n",
+        "elapsed_seconds": 2.812
+      }
+    ],
+    "runtime": {
+      "python": "3.12.10",
+      "torch": "2.13.0+rocm10.0.0",
+      "hip": "7.15.26333",
+      "cuda": null
+    },
+    "workspace_binding": {
+      "verified": true,
+      "binding": "_cuda_clearCublasWorkspaces",
+      "module": "torch._C",
+      "extension_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_C.cp312-win_amd64.pyd",
+      "gpu_initialized": false,
+      "native_call_executed": false,
+      "binary_review_sha256": "e27920546e1081c0070ce3350a199a98b74ca9f33317dd588d159685febae04a"
+    },
+    "host_available_bytes": 16806211584,
+    "error_type": "ValueError",
+    "error": "Foreign native hooks",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_native_convolution_smoke.py\", line 92, in worker\n    native=policy_module.NativePolicy(torch,private,meta,source,trace)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_native_convolution_policy.py\", line 27, in __init__\n    if any(getattr(obj,n) is not None for n in names):raise ValueError('Foreign native hooks')\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Foreign native hooks\n",
+    "failure_kind": "prerequisite_or_guard"
+  },
+  "process": {
+    "returncode": 1,
+    "timed_out": false,
+    "pid": 14804,
+    "command": [
+      "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_native_convolution_smoke.py",
+      "--worker",
+      "--output",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-native-convolution-smoke-evidence\\run\\scratch"
+    ],
+    "harness_commit": "2554a08790b189d0a33a89ced1b46a7cad53850e",
+    "job_attached_before_preparation": true,
+    "last_stage": "cpu-admission",
+    "last_worker_trace": {
+      "event": "stage",
+      "name": "cpu-admission",
+      "origin": "worker",
+      "seq": 1,
+      "elapsed_seconds": 1.5939999999973224,
+      "monotonic_seconds": 99186.953,
+      "timestamp_utc": "2026-10-13T21:14:34.742315+00:00",
+      "phase": "cpu"
+    },
+    "elapsed_seconds": 6.686999999990803,
+    "gpu_authorized": false,
+    "stage_timeouts_seconds": {
+      "cpu": 45,
+      "forward_release": 120,
+      "overall": 180
+    },
+    "job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "worker_exit_verified": true,
+    "output_readers_completed": true,
+    "diagnostic_journal_stopped": true,
+    "diagnostic_journal_error": null,
+    "windows_journal_stopped": true,
+    "windows_journal_error": null
+  }
+}
