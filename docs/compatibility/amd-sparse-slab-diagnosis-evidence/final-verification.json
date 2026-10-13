@@ -1,0 +1,38 @@
+{
+  "utc": "2026-10-13T13:24:43.317981+00:00",
+  "base_commit": "4f375f979cff645f60f415c0d7c9b653c7015b0c",
+  "branch": "codex/amd-sparse-slab-diagnosis",
+  "historical_files_hash_verified": 4122,
+  "historical_local_branches_unchanged": true,
+  "historical_remote_branches_unchanged": true,
+  "amd_source_head_status_backup_hashes_unchanged": true,
+  "inventories": {
+    "inventory": {
+      "sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+      "bytes": 137695,
+      "byte_identical": true
+    },
+    "venv-metadata": {
+      "sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+      "bytes": 1933805,
+      "byte_identical": true
+    },
+    "model-cache-metadata": {
+      "sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+      "bytes": 6988,
+      "byte_identical": true
+    }
+  },
+  "inventories_match_previous_published_baseline": true,
+  "diagnostic_scripts_syntax_verified_without_import": [
+    "analyse-saved-data.py",
+    "compare-contracts.py",
+    "passive-inventory.py",
+    "preservation-check.py"
+  ],
+  "all_evidence_json_readable": true,
+  "causal_diagnosis": "UNKNOWN",
+  "torch_imported": false,
+  "model_execution": false,
+  "gpu_initialized": false
+}

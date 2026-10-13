@@ -1,0 +1,205 @@
+{
+  "classification": "UNKNOWN",
+  "canonical_commit": "75fbf0183001ed9876c8dbb35de6b68552ee08bd",
+  "canonical_model_revision": "af44b45f2e35a493886929c6d786e563ec68364d",
+  "official_weight_lfs_hashes_match_saved_execution": true,
+  "local_pipeline_exact_official_bytes": true,
+  "exact_ast_checks": [
+    {
+      "path": "pipelines/trellis2_image_to_3d.py",
+      "class_name": "Trellis2ImageTo3DPipeline",
+      "method": "preprocess_image",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "modules/image_feature_extractor.py",
+      "class_name": "DinoV3FeatureExtractor",
+      "method": "__call__",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "models/sparse_structure_vae.py",
+      "class_name": "SparseStructureDecoder",
+      "method": "forward",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "models/sparse_structure_vae.py",
+      "class_name": "ResBlock3d",
+      "method": "forward",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "models/sparse_structure_vae.py",
+      "class_name": "UpsampleBlock3d",
+      "method": "forward",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "modules/spatial.py",
+      "class_name": null,
+      "method": "pixel_shuffle_3d",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "pipelines/samplers/flow_euler.py",
+      "class_name": "FlowEulerSampler",
+      "method": "_inference_model",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "pipelines/samplers/flow_euler.py",
+      "class_name": "FlowEulerSampler",
+      "method": "_get_model_prediction",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "pipelines/samplers/flow_euler.py",
+      "class_name": "FlowEulerSampler",
+      "method": "_v_to_xstart_eps",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "pipelines/samplers/flow_euler.py",
+      "class_name": "FlowEulerSampler",
+      "method": "sample_once",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "pipelines/samplers/classifier_free_guidance_mixin.py",
+      "class_name": "ClassifierFreeGuidanceSamplerMixin",
+      "method": "_inference_model",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "pipelines/samplers/guidance_interval_mixin.py",
+      "class_name": "GuidanceIntervalSamplerMixin",
+      "method": "_inference_model",
+      "docstring_removed_ast_equal": true
+    },
+    {
+      "path": "pipelines/samplers/flow_euler.py",
+      "method": "FlowEulerSampler.sample",
+      "equal_after_only_tqdm_disable_keyword_removed": true
+    }
+  ],
+  "dense_sdpa_active_branch_equal": true,
+  "attention_module_and_rope_ast_equal": true,
+  "cross_mode_flow_forward_equal_after_explicit_inactive_mode_selection": true,
+  "normalization_active_arithmetic_equal": true,
+  "conditioning": {
+    "resolution": 512,
+    "feature_shape": [
+      1,
+      1029,
+      1024
+    ],
+    "class_and_register_tokens": 5,
+    "patch_tokens": 1024,
+    "all24_layers_executed_once": true,
+    "local_default2048_overridden_to512": true,
+    "preprocessing_ast_equal": true,
+    "huggingface_layer_path_compatibility": "model.layer or model.model.layer; operator loop unchanged",
+    "neg_cond": "zeros_like(cond)"
+  },
+  "sampling": {
+    "parameters": {
+      "steps": 12,
+      "rescale_t": 5.0,
+      "guidance_strength": 7.5,
+      "guidance_rescale": 0.7,
+      "guidance_interval": [
+        0.6,
+        1.0
+      ],
+      "dino_lock": 0.0
+    },
+    "sigma_min": 1e-05,
+    "noise": "one standard Gaussian CPU float32 draw; canonical also draws CPU noise then transfers; same seed policy",
+    "timestep": "1000*t; exact Euler rescaling;12 steps/22 calls",
+    "dino_lock": "0.0: local mixin falls through to genuine Euler path",
+    "latent": "sampler.samples copied without transpose, scale, clipping or shape-SLat normalization"
+  },
+  "numerical_difference_review": {
+    "modulation": "canonical adds F32 modulation to BF16 timestep then rounds; local casts modulation first. Audited checkpoint modulation is BF16 widened reversibly to F32, so the early cast preserves every operand value. Not a demonstrated defect for these weights.",
+    "fp8": "local extra branches inactive; no FP8 model or parameter used",
+    "sdpa": "same source contract; GPU numerical equivalence is not established by static inspection"
+  },
+  "missing_observation": "No object-conditioned sparse result or matched reference backend output exists for this fixture.",
+  "torch_imported": false,
+  "gpu_initialized": false,
+  "weights_loaded": false,
+  "canonical_source_executed": false,
+  "source_hashes": {
+    "pipelines/trellis2_image_to_3d.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/pipelines/trellis2_image_to_3d.py",
+      "canonical_sha256": "e2addfca672354284b23d1541a8f49228d5a727d49220fcb8512cca2cdd38ce9",
+      "local_sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b"
+    },
+    "modules/image_feature_extractor.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/modules/image_feature_extractor.py",
+      "canonical_sha256": "12530b23e8b6a2cc6b87d8cd01922c7b0085199a365b731f19dd0e7ef4919150",
+      "local_sha256": "a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f"
+    },
+    "models/sparse_structure_flow.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/models/sparse_structure_flow.py",
+      "canonical_sha256": "52182c80687e6544d97fc0fcbede738503623376ba29349004d7cc796c6b8efa",
+      "local_sha256": "858d9b076cc71f6955bb292ea394d620ce6f6f53cebb53bff2116a8c5cec026e"
+    },
+    "models/sparse_structure_vae.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/models/sparse_structure_vae.py",
+      "canonical_sha256": "d32e4490b2f5356b72229ee7c8fb25702238b4f0877c49f1cae15ddc9ca615bc",
+      "local_sha256": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857"
+    },
+    "pipelines/samplers/flow_euler.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/pipelines/samplers/flow_euler.py",
+      "canonical_sha256": "b4bd235874adfc47fd3bce3d596249b1ccfa6644983a9b4562c9295a463bc0fd",
+      "local_sha256": "03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5"
+    },
+    "pipelines/samplers/classifier_free_guidance_mixin.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/pipelines/samplers/classifier_free_guidance_mixin.py",
+      "canonical_sha256": "1780182cd7d3c7af3f82b7904aa9c40eb3f632064d77456565c5acccd9598bee",
+      "local_sha256": "ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c"
+    },
+    "pipelines/samplers/guidance_interval_mixin.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/pipelines/samplers/guidance_interval_mixin.py",
+      "canonical_sha256": "633f97c48a811a835d3b894b3e0de794407f60774f6c60a2c6a61e7c0351c6f2",
+      "local_sha256": "0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2"
+    },
+    "modules/attention/full_attn.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/modules/attention/full_attn.py",
+      "canonical_sha256": "64c43354780dcbc3dcf7612ac5e53d6e21c2081234ea63cd329a77f4185dadfc",
+      "local_sha256": "21a2d3c9bc4a80c72db23b4291d5fb062bdf7e5b8f1570cd9ba2cee6672e2ba6"
+    },
+    "modules/attention/modules.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/modules/attention/modules.py",
+      "canonical_sha256": "c055ef95e997233dbec331a3d505a066c52817998726ed2a766d2936790eb65a",
+      "local_sha256": "30935ff98c4a9120d866f6bd1c171153c3b3077894032009aba11bc32353a733"
+    },
+    "modules/attention/rope.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/modules/attention/rope.py",
+      "canonical_sha256": "e3e2a18ea810d090d2766512576398ae21e4e8948bb1097674bd4bafe08197bb",
+      "local_sha256": "5d5b1821f3743aa824c9f3b4db6121c18d14d6c8a72d42238b3944feefd829b6"
+    },
+    "modules/utils.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/modules/utils.py",
+      "canonical_sha256": "09fb39eb94844417e186acf6e073fa376e49117078c3c69c887dfa85468e8418",
+      "local_sha256": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e"
+    },
+    "modules/transformer/modulated.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/modules/transformer/modulated.py",
+      "canonical_sha256": "11fc0179bb68eac6898b0d5c1e73fbdf9012e160c99e77d8ac6a9df6c2e25f83",
+      "local_sha256": "7ad71a73e73025a4fc19b215cc028c891f9bb7c3b989842eeba9c4ee4e92e901"
+    },
+    "modules/norm.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/modules/norm.py",
+      "canonical_sha256": "f89c40abf3356f7b06fc85f0498cd77eefb677a0e0d370a43d14a735f4c40172",
+      "local_sha256": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00"
+    },
+    "modules/spatial.py": {
+      "url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/trellis2/modules/spatial.py",
+      "canonical_sha256": "cfab71d7106b4fdf6cbdd2885646b5590d13439f9308c5b924c069afcdbf185d",
+      "local_sha256": "4a029d5077bb0a5412ee5eceb8de21d3b4c8920a8f53d477441c3c3219a0da3c"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+[
+  {
+    "model": "microsoft/TRELLIS.2-4B",
+    "url": "https://huggingface.co/api/models/microsoft/TRELLIS.2-4B?blobs=true",
+    "revision": "af44b45f2e35a493886929c6d786e563ec68364d",
+    "siblings": [
+      {
+        "rfilename": "ckpts/ss_flow_img_dit_1_3B_64_bf16.json",
+        "blobId": "f71c87cda44a9a940fa3a2d250a0944d606d2245",
+        "size": 467
+      },
+      {
+        "rfilename": "ckpts/ss_flow_img_dit_1_3B_64_bf16.safetensors",
+        "blobId": "aed4d491a3803e41689a789fa2a4cd18d6ec64a5",
+        "size": 2584426920,
+        "lfs": {
+          "sha256": "ca01377c485bec418076d38ee80166d32dc776d744f2553b835cba1e97a7abf6",
+          "size": 2584426920,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "pipeline.json",
+        "blobId": "f5ec14c7f71b3d7f2cb0221c5f568a6871dc5e90",
+        "size": 4186
+      }
+    ],
+    "metadata_bytes": 6827,
+    "response_sha256": "91957f07cec5f86e493c34a89263f45e06b39fb3793430af1c08c362f5470d70",
+    "weights_requested": false
+  },
+  {
+    "model": "microsoft/TRELLIS-image-large",
+    "url": "https://huggingface.co/api/models/microsoft/TRELLIS-image-large?blobs=true",
+    "revision": "25e0d31ffbebe4b5a97464dd851910efc3002d96",
+    "siblings": [
+      {
+        "rfilename": "ckpts/ss_dec_conv3d_16l8_fp16.json",
+        "blobId": "9f3affaf13ab29fe48105229da9fab72ea8de716",
+        "size": 245
+      },
+      {
+        "rfilename": "ckpts/ss_dec_conv3d_16l8_fp16.safetensors",
+        "blobId": "a4b577752af35caab154c83b72427d9cc92285f6",
+        "size": 147591972,
+        "lfs": {
+          "sha256": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a",
+          "size": 147591972,
+          "pointerSize": 134
+        }
+      },
+      {
+        "rfilename": "pipeline.json",
+        "blobId": "4141e1025889c44ec0dc9239157c4226d8387da0",
+        "size": 1987
+      }
+    ],
+    "metadata_bytes": 6359,
+    "response_sha256": "81eeebfa60d062bcec30990db4863a6ea8bcb8a2c7c990fbba37646d49c42f8f",
+    "weights_requested": false
+  },
+  {
+    "model": "facebook/dinov3-vitl16-pretrain-lvd1689m",
+    "url": "https://huggingface.co/api/models/facebook/dinov3-vitl16-pretrain-lvd1689m?blobs=true",
+    "revision": "ea8dc2863c51be0a264bab82070e3e8836b02d51",
+    "siblings": [
+      {
+        "rfilename": "config.json",
+        "blobId": "ab2a8b183fd4fd5213e9898a7f499c7c857b1a86",
+        "size": 745
+      },
+      {
+        "rfilename": "model.safetensors",
+        "blobId": "5fe30316feaa07b25590197bfad7216e9747863d",
+        "size": 1212559808,
+        "lfs": {
+          "sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+          "size": 1212559808,
+          "pointerSize": 135
+        }
+      }
+    ],
+    "metadata_bytes": 5247,
+    "response_sha256": "1b67e5039b15a4829030333f3e9f71561af181af524a04b592379466c543aa3f",
+    "weights_requested": false
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "saved_data_analysis": {"exit_status": 0, "torch_imported": false, "real_weights_loaded": false},
+  "contract_comparison": {
+    "first_cpu_only_error": "KeyError checkpoint_identity when reading the historical DINO result schema",
+    "inspected_schema": "DINO result stores the verified weight identity under feature_checkpoint.provenance.checkpoint_sha256, not checkpoint_identity",
+    "correction": "Read the actual published feature provenance field; historical files were not changed",
+    "final_exit_status": 0,
+    "torch_imported": false,
+    "real_weights_loaded": false
+  },
+  "reference_access": "Read-only canonical source text, pipeline JSON and bounded public Hub metadata. No weight URLs requested.",
+  "additional_model_execution": false,
+  "historical_results_reclassified": false
+}
