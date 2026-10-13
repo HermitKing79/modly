@@ -1,0 +1,23 @@
+test_abnormal_exit_missing_real_calls_and_worker_error_cannot_pass (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_abnormal_exit_missing_real_calls_and_worker_error_cannot_pass) ... ok
+test_genuine_entry_hit_and_miss_with_clean_release_are_accepted (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_genuine_entry_hit_and_miss_with_clean_release_are_accepted) ... ok
+test_missing_counter_or_boolean_counter_cannot_pass (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_missing_counter_or_boolean_counter_cannot_pass) ... ok
+test_native_callback_or_gpu_initialization_invalidates_proof (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_native_callback_or_gpu_initialization_invalidates_proof) ... ok
+test_owned_windows_alias_preserves_real_directory_and_foreign_alias_rejects (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_owned_windows_alias_preserves_real_directory_and_foreign_alias_rejects) ... FAIL
+test_unverified_hit_handles_or_false_miss_cannot_pass (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_unverified_hit_handles_or_false_miss_cannot_pass) ... ok
+
+======================================================================
+FAIL: test_owned_windows_alias_preserves_real_directory_and_foreign_alias_rejects (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_owned_windows_alias_preserves_real_directory_and_foreign_alias_rejects)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_native_cache_dispatch_proof.py", line 25, in test_owned_windows_alias_preserves_real_directory_and_foreign_alias_rejects
+    self.assertEqual(proof.normalize_cache_mkdir(alias,approved),str(approved))
+AssertionError: '\\\\?\\C:\\Users\\wattz\\Documents\\ChatG[75 chars]ence' != 'C:\\Users\\wattz\\Documents\\ChatGPT\\mod[68 chars]ence'
+- \\?\C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-native-cache-dispatch-proof-evidence
+? ----
++ C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-native-cache-dispatch-proof-evidence
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+FAILED (failures=1)

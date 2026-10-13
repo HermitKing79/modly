@@ -1,0 +1,20 @@
+{
+  "reviewer": "/root/native_dispatch_review",
+  "mode": "Independent read-only source/file review; no runtime imports or execution",
+  "cpu_worker_recommendation": "GO for sole120-second CPU worker",
+  "full_decoder_recommendation": "NO-GO",
+  "candidate_sha256": "85957e17d691544ab5dc5deb124063ffe5d870c6e85b23325d17aff2db295dc0",
+  "tests_sha256": "80308d665e0dd4f2882651d76668860fd107b36ac73777ff55cf3b033fbba098",
+  "read_only_files_verified": 213,
+  "read_only_mismatches": 0,
+  "historical_products_verified": 7,
+  "findings": [
+    "Genuine installed compile reaches cache admission before lowering/IR.",
+    "Hit reaches actual FileCacheManager.get_group and CompiledKernel constructor; GPU handles stay lazy.",
+    "Miss rejection occurs before installed cache-manager construction/group lookup.",
+    "Exact pre-created Windows mkdir alias bridge preserves existing final audit authorization; foreign aliases/dir_fd reject and mkdir restores in finally.",
+    "Short scratch/t keeps longest private manifest path252 characters.",
+    "Attested read-only SDK discovery descendant remains five-second bounded and owned; do not claim absence of subprocess descendants.",
+    "Custom FlexGEMM tuners and helper loadability remain unexercised; this cannot establish full decoder readiness."
+  ]
+}

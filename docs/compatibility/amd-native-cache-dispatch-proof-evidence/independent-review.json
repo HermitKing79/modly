@@ -1,0 +1,31 @@
+{
+  "reviewer": "/root/native_dispatch_review",
+  "review_scope": "Independent read-only candidate, installed source, integrity and saved results review",
+  "candidate_sha256": "85957e17d691544ab5dc5deb124063ffe5d870c6e85b23325d17aff2db295dc0",
+  "tests_sha256": "80308d665e0dd4f2882651d76668860fd107b36ac73777ff55cf3b033fbba098",
+  "narrow_entrypoint_result": "PASS",
+  "full_decoder_cache_only_recommendation": "NO-GO",
+  "native_convolution_compatibility": "UNKNOWN",
+  "evidence_verified": {
+    "genuine_compile_calls": 2,
+    "installed_group_lookups": 1,
+    "genuine_compiled_kernel_constructors": 1,
+    "cached_binary_bytes": 12176,
+    "handles_uninitialized": true,
+    "forbidden_callback_counters_zero": true,
+    "gpu_initialized": false,
+    "weights_loaded": false,
+    "returncode": 0,
+    "clean_owned_job_exit": true,
+    "supervised_seconds": 9.172
+  },
+  "scope_limits": [
+    "Missing key rejected at intercepted lookup before actual manager construction/group lookup; hit control exercises installed group and constructor.",
+    "Only explicit ASTSource/target/options/empty-env interface, not full JITFunction.run or FlexGEMM dispatch.",
+    "HIP helper and custom tuners not executed; native-neighbor computation unproved.",
+    "Legal support/tuning coverage gaps are not prediction of the actual turret learned support or proof of AMD incompatibility."
+  ],
+  "next_probe_assessment": "One separately approved isolated synthetic convolution matching known LOGN11/channel/dtype family is reasonable. Actual native dispatch, helper/neighbor paths and identity output must remain fail-closed and unproved until execution.",
+  "further_investigation_requested": false,
+  "gpu_execution_authorized": false
+}

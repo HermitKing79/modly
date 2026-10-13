@@ -1,0 +1,104 @@
+{
+  "returncode": 0,
+  "elapsed_seconds": 9.171999999991385,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "worker_exit_verified": true,
+  "worker": {
+    "status": "PASS",
+    "gpu_initialized": false,
+    "weights_loaded": false,
+    "source_identity_verified": true,
+    "forbidden_calls": {
+      "compilation_pipeline": 0,
+      "native_build": 0,
+      "helper_load": 0,
+      "gpu_handle_init": 0,
+      "jit_run": 0,
+      "gpu_init": 0
+    },
+    "installed_compile_calls": 2,
+    "installed_constructor_calls": 1,
+    "installed_group_calls": 1,
+    "runtime": {
+      "python": "3.12.10",
+      "torch": "2.13.0+rocm10.0.0",
+      "hip": "7.15.26333",
+      "cuda": null
+    },
+    "entrypoint": {
+      "module": "triton.compiler.compiler",
+      "file": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\compiler\\compiler.py",
+      "source_sha256": "58517d38115dbf1caa714742bd904b3ffb8299face140a9237a9334db895f4c5",
+      "cache_lookup": "triton.compiler.compiler.get_cache_manager",
+      "unchanged_compile_function": true,
+      "env_metadata": {},
+      "scope": "Explicit ASTSource/target/options, not JITFunction.run or full FlexGEMM dispatch"
+    },
+    "lookup_keys": [
+      "e5f0512dd1802ea8f40ce9fb2ed1e0b19d51707d160aa0dc714c31bec627cf9d",
+      "d5de3d60ef4c1dfce927f5a59a91fdfa35c7de3400fb71acb214abe5dc4fbea5"
+    ],
+    "windows_alias_bridge_calls": 1,
+    "miss": {
+      "hash": "e5f0512dd1802ea8f40ce9fb2ed1e0b19d51707d160aa0dc714c31bec627cf9d",
+      "rejected": true,
+      "exception": "UnverifiedCacheMiss('Unverified cache key: e5f0512dd1802ea8f40ce9fb2ed1e0b19d51707d160aa0dc714c31bec627cf9d')",
+      "missing_from_historical_and_private_cache": true,
+      "missing_directory_created": false,
+      "only_changed_option": "debug=True"
+    },
+    "hit": {
+      "hash": "d5de3d60ef4c1dfce927f5a59a91fdfa35c7de3400fb71acb214abe5dc4fbea5",
+      "kernel_sha256": "e639008883feef1e37079d2a809a45cdfef85240aaec7ae9f018d8175cf7fe01",
+      "kernel_bytes": 12176,
+      "module": null,
+      "function": null,
+      "run_handle": null,
+      "result_class": "triton.compiler.compiler.CompiledKernel",
+      "private_products_verified": 7
+    },
+    "elapsed_seconds": 7.672000000005937,
+    "harness_sha256": "85957e17d691544ab5dc5deb124063ffe5d870c6e85b23325d17aff2db295dc0",
+    "sdk_discovery": [
+      {
+        "command": [
+          "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+          "path",
+          "--root"
+        ],
+        "timeout_seconds": 5.0,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "ERROR: Could not load the `rocm[devel]` package, which is required to access runtime tools and development files. Please install it with your package manager (pip, uv, etc)\r\nERROR: rocm_sdk_devel module for the ROCm SDK development package is not installed. This can typically be obtained by installing `rocm[devel]` from your package manager\r\n",
+        "elapsed_seconds": 2.766
+      }
+    ],
+    "protected_deny_only": [
+      "HIPBackend.add_stages",
+      "ASTSource.make_ir",
+      "CompiledKernel._init_handles",
+      "JITFunction.run/warmup",
+      "Autotuner.run",
+      "build._build/_load_module_from_path/compile_module_from_src/compile_module_from_file",
+      "amd.driver.compile_module_from_src/HIPUtils.__init__",
+      "PyTorch GPU initialization and model calls"
+    ],
+    "not_exercised": [
+      "FlexGEMM PersistentCacheAutoTuner.__call__/_benchmark",
+      "FlexGEMM TritonPersistentCacheAutotuner.run/_bench",
+      "HIP-helper build/loadability",
+      "JITFunction._do_compile/run and native neighbor processing"
+    ],
+    "flex_policy": "FlexGEMM package import prohibited; custom tuner entry points located/read, not patched or exercised. No benchmark capability admitted.",
+    "native_code_policy": "Host PyTorch/Triton extension modules imported for metadata; no compiler passes, cached helper/HSACO execution or GPU handles."
+  },
+  "narrow_entrypoint_proof_passed": true,
+  "classification": "PASS",
+  "full_decoder_recommendation": "NO-GO"
+}

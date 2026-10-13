@@ -1,0 +1,346 @@
+{
+  "tuning_path": "C:\\Users\\wattz\\.flex_gemm\\autotune_cache.json",
+  "sha256": "8d54115c6bf50fecc73f01fa08ffbb938a69f07a2eefa7c68279f8417738df5f",
+  "module_count": 26,
+  "outer_entry_count": 46,
+  "decoder_pairs": [
+    {
+      "in_channels": 1024,
+      "out_channels": 1024,
+      "known_outer_tuning_buckets": [
+        {
+          "logn": 11,
+          "config": {
+            "SPLITK": 2
+          }
+        },
+        {
+          "logn": 14,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 9,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 10,
+          "config": {
+            "SPLITK": 4
+          }
+        },
+        {
+          "logn": 13,
+          "config": {
+            "SPLITK": 1
+          }
+        }
+      ]
+    },
+    {
+      "in_channels": 1024,
+      "out_channels": 4096,
+      "known_outer_tuning_buckets": [
+        {
+          "logn": 11,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 14,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 9,
+          "config": {
+            "SPLITK": 4
+          }
+        },
+        {
+          "logn": 10,
+          "config": {
+            "SPLITK": 2
+          }
+        },
+        {
+          "logn": 13,
+          "config": {
+            "SPLITK": 1
+          }
+        }
+      ]
+    },
+    {
+      "in_channels": 512,
+      "out_channels": 512,
+      "known_outer_tuning_buckets": [
+        {
+          "logn": 14,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 16,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 11,
+          "config": {
+            "SPLITK": 2
+          }
+        },
+        {
+          "logn": 13,
+          "config": {
+            "SPLITK": 2
+          }
+        },
+        {
+          "logn": 15,
+          "config": {
+            "SPLITK": 1
+          }
+        }
+      ]
+    },
+    {
+      "in_channels": 512,
+      "out_channels": 2048,
+      "known_outer_tuning_buckets": [
+        {
+          "logn": 14,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 16,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 11,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 13,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 15,
+          "config": {
+            "SPLITK": 1
+          }
+        }
+      ]
+    },
+    {
+      "in_channels": 256,
+      "out_channels": 256,
+      "known_outer_tuning_buckets": [
+        {
+          "logn": 16,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 18,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 14,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 15,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 17,
+          "config": {
+            "SPLITK": 1
+          }
+        }
+      ]
+    },
+    {
+      "in_channels": 256,
+      "out_channels": 1024,
+      "known_outer_tuning_buckets": [
+        {
+          "logn": 16,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 18,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 14,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 15,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 17,
+          "config": {
+            "SPLITK": 1
+          }
+        }
+      ]
+    },
+    {
+      "in_channels": 128,
+      "out_channels": 128,
+      "known_outer_tuning_buckets": [
+        {
+          "logn": 18,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 21,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 20,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 16,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 17,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 19,
+          "config": {
+            "SPLITK": 1
+          }
+        }
+      ]
+    },
+    {
+      "in_channels": 128,
+      "out_channels": 512,
+      "known_outer_tuning_buckets": [
+        {
+          "logn": 18,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 21,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 20,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 16,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 17,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 19,
+          "config": {
+            "SPLITK": 1
+          }
+        }
+      ]
+    },
+    {
+      "in_channels": 64,
+      "out_channels": 64,
+      "known_outer_tuning_buckets": [
+        {
+          "logn": 21,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 23,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 18,
+          "config": {
+            "SPLITK": 1
+          }
+        },
+        {
+          "logn": 19,
+          "config": {
+            "SPLITK": 1
+          }
+        }
+      ]
+    }
+  ],
+  "limitation": "Outer tuning-cache inventory only. Each later dispatch also needs exact inner tuning/source/compiler/options/pointer-specialization compatibility. Dynamic learned support is not observed on CPU.",
+  "inspected_paths": {
+    "D:/AI/Trellis2AMD/venv/Lib/site-packages/triton/compiler/compiler.py": "58517d38115dbf1caa714742bd904b3ffb8299face140a9237a9334db895f4c5",
+    "D:/AI/Trellis2AMD/venv/Lib/site-packages/triton/runtime/cache.py": "f1bf883f951104e43b4e3f31346e604ae38eb497836e1163ae4201bf4ac73c81",
+    "D:/AI/Trellis2AMD/venv/Lib/site-packages/triton/runtime/build.py": "c1ca812b73639e7d73be714e2053527c32dd6f5c98c5c31b52e2cd4ff124571e",
+    "D:/AI/Trellis2AMD/venv/Lib/site-packages/triton/backends/amd/driver.py": "048f3915c6942e64c7c84eb47c62f265ad10e6be4584940fe0530f5a630b23f5",
+    "D:/AI/Trellis2AMD/venv/Lib/site-packages/flex_gemm/utils/autotuner.py": "0a8db435e607593f4775d5eeca26e671eaaecc6ec7e15f767ab96bf264d30714"
+  }
+}

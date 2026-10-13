@@ -1,0 +1,18 @@
+test_abnormal_exit_missing_real_calls_and_worker_error_cannot_pass (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_abnormal_exit_missing_real_calls_and_worker_error_cannot_pass) ... ok
+test_genuine_entry_hit_and_miss_with_clean_release_are_accepted (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_genuine_entry_hit_and_miss_with_clean_release_are_accepted) ... FAIL
+test_missing_counter_or_boolean_counter_cannot_pass (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_missing_counter_or_boolean_counter_cannot_pass) ... ok
+test_native_callback_or_gpu_initialization_invalidates_proof (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_native_callback_or_gpu_initialization_invalidates_proof) ... ok
+test_unverified_hit_handles_or_false_miss_cannot_pass (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_unverified_hit_handles_or_false_miss_cannot_pass) ... ok
+
+======================================================================
+FAIL: test_genuine_entry_hit_and_miss_with_clean_release_are_accepted (test_amd_native_cache_dispatch_proof.ProofAcceptance.test_genuine_entry_hit_and_miss_with_clean_release_are_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_native_cache_dispatch_proof.py", line 22, in test_genuine_entry_hit_and_miss_with_clean_release_are_accepted
+    self.assertTrue(proof.result_passed(valid_record()))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=1)
