@@ -42,7 +42,7 @@ def replay():
     nodes=[next(n for n in ast.walk(tree) if isinstance(n,ast.FunctionDef) and n.name=='gpu'),
            next(n for n in ast.walk(tree) if isinstance(n,ast.ClassDef) and n.name=='BoundedDispatch')]
     frequency=torch.exp(-np.log(10000)*torch.arange(128,dtype=torch.float32)/128)
-    ns=dict(torch=torch,tree_leaves=tree_leaves,TorchDispatchMode=TorchDispatchMode,
+    ns=dict(sampling=None,torch=torch,tree_leaves=tree_leaves,TorchDispatchMode=TorchDispatchMode,
         forbidden=forbidden,phase='forward',in_timestep=True,frequency=frequency,frequency_sources=[],
         transfers={k:0 for k in ('x','t','cond','output','frequency')},op_counts={},
         describe=forward.describe,strict_contract=forward.strict_contract,

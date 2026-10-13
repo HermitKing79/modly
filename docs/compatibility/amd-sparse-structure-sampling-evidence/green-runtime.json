@@ -1,0 +1,80 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+  "torch": "2.13.0+rocm10.0.0",
+  "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+  "hip": "7.15.26333",
+  "cuda": null,
+  "git_version": "6596a0dea537c1c78520c73cc6678214781a9d06",
+  "gpu_initialized_before": false,
+  "schema": "aten::to.dtype_layout(Tensor(a) self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, bool non_blocking=False, bool copy=False, MemoryFormat? memory_format=None) -> Tensor(a)",
+  "arguments": [
+    {
+      "name": "self",
+      "type": "Tensor",
+      "keyword_only": false,
+      "has_default": false,
+      "default": "None"
+    },
+    {
+      "name": "dtype",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "layout",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "device",
+      "type": "Optional[Device]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "pin_memory",
+      "type": "Optional[bool]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "non_blocking",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "copy",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "memory_format",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    }
+  ],
+  "tests": 3,
+  "passed": false,
+  "log": "test_actual_sampler_12steps_22calls_frequency_guards_and_logging (test_amd_sparse_sampling_runtime.SamplingRuntimeTests.test_actual_sampler_12steps_22calls_frequency_guards_and_logging) ... ERROR\ntest_factory_role_identity_and_extra_timestep_rejected (test_amd_sparse_sampling_runtime.SamplingRuntimeTests.test_factory_role_identity_and_extra_timestep_rejected) ... ok\ntest_real_cfg_arithmetic_matches_independent_affine_reference (test_amd_sparse_sampling_runtime.SamplingRuntimeTests.test_real_cfg_arithmetic_matches_independent_affine_reference) ... ok\n\n======================================================================\nERROR: test_actual_sampler_12steps_22calls_frequency_guards_and_logging (test_amd_sparse_sampling_runtime.SamplingRuntimeTests.test_actual_sampler_12steps_22calls_frequency_guards_and_logging)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_sampling_runtime.py\", line 76, in test_actual_sampler_12steps_22calls_frequency_guards_and_logging\n    result=control.run(model,inputs,trace,lambda:None,mem)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_sampling_control.py\", line 87, in run\n    result=sampler.sample(model,self.current_x,cond=self.positive,neg_cond=self.negative,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\utils\\_contextlib.py\", line 124, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\flow_euler.py\", line 186, in sample\n    return super().sample(model, noise, cond,\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\utils\\_contextlib.py\", line 124, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\flow_euler.py\", line 364, in sample\n    out = self.sample_once(model, sample, t, t_prev, cond, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_sampling_control.py\", line 73, in step\n    out=original(model_arg,x,t,t_prev,cond,**kwargs)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\utils\\_contextlib.py\", line 124, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\flow_euler.py\", line 322, in sample_once\n    pred_x_0, pred_eps, pred_v = self._get_model_prediction(model, x_t, t, cond, **kwargs)\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\flow_euler.py\", line 292, in _get_model_prediction\n    pred_v = self._inference_model(model, x_t, t, cond, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\guidance_interval_mixin.py\", line 11, in _inference_model\n    return super()._inference_model(model, x_t, t, cond, guidance_strength=guidance_strength, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\classifier_free_guidance_mixin.py\", line 15, in _inference_model\n    pred_pos = super()._inference_model(model, x_t, t, cond, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\flow_euler.py\", line 288, in _inference_model\n    t = torch.tensor([1000 * t] * x_t.shape[0], device=x_t.device, dtype=torch.float32)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_flow_forward.py\", line 154, in timestep_tensor\n    sampling.next_timestep(args,kwargs)\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_sampling_control.py\", line 27, in next_timestep\n    raise RuntimeError('Unapproved/duplicate sampler timestep factory')\nRuntimeError: Unapproved/duplicate sampler timestep factory\n\n----------------------------------------------------------------------\nRan 3 tests in 1.879s\n\nFAILED (errors=1)\n",
+  "compact_trace": [],
+  "production_guard_sha256": "8863cc969ed21b800a48792b5b44241bc1a29764c145e5204ac7cbf3d96c0bee",
+  "gpu_initialized_after": false,
+  "weights_loaded": false,
+  "model_forwards": 0,
+  "network_allowed": false,
+  "gpu_backend_execution": false,
+  "prohibited_imports": []
+}

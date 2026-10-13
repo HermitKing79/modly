@@ -1,0 +1,1231 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+  "torch": "2.13.0+rocm10.0.0",
+  "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+  "hip": "7.15.26333",
+  "cuda": null,
+  "git_version": "6596a0dea537c1c78520c73cc6678214781a9d06",
+  "gpu_initialized_before": false,
+  "schema": "aten::to.dtype_layout(Tensor(a) self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, bool non_blocking=False, bool copy=False, MemoryFormat? memory_format=None) -> Tensor(a)",
+  "arguments": [
+    {
+      "name": "self",
+      "type": "Tensor",
+      "keyword_only": false,
+      "has_default": false,
+      "default": "None"
+    },
+    {
+      "name": "dtype",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "layout",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "device",
+      "type": "Optional[Device]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "pin_memory",
+      "type": "Optional[bool]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "non_blocking",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "copy",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "memory_format",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    }
+  ],
+  "tests": 3,
+  "passed": true,
+  "log": "test_actual_sampler_12steps_22calls_frequency_guards_and_logging (test_amd_sparse_sampling_runtime.SamplingRuntimeTests.test_actual_sampler_12steps_22calls_frequency_guards_and_logging) ... ok\ntest_factory_role_identity_and_extra_timestep_rejected (test_amd_sparse_sampling_runtime.SamplingRuntimeTests.test_factory_role_identity_and_extra_timestep_rejected) ... ok\ntest_real_cfg_arithmetic_matches_independent_affine_reference (test_amd_sparse_sampling_runtime.SamplingRuntimeTests.test_real_cfg_arithmetic_matches_independent_affine_reference) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 1.920s\n\nOK\n",
+  "compact_trace": [
+    {
+      "event": "enter",
+      "name": "euler-step-1",
+      "origin": "worker",
+      "seq": 1,
+      "elapsed_seconds": 0.01600000000325963,
+      "monotonic_seconds": 60474.656,
+      "timestamp_utc": "2026-10-13T10:29:23.965081+00:00",
+      "step": {
+        "index": 1,
+        "t": 1.0,
+        "next_t": 0.9821428571428572
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 2,
+      "elapsed_seconds": 0.01600000000325963,
+      "monotonic_seconds": 60474.656,
+      "timestamp_utc": "2026-10-13T10:29:23.965081+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 3,
+      "elapsed_seconds": 0.01600000000325963,
+      "monotonic_seconds": 60474.656,
+      "timestamp_utc": "2026-10-13T10:29:23.967635+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 4,
+      "elapsed_seconds": 0.01600000000325963,
+      "monotonic_seconds": 60474.656,
+      "timestamp_utc": "2026-10-13T10:29:23.968142+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 5,
+      "elapsed_seconds": 0.01600000000325963,
+      "monotonic_seconds": 60474.656,
+      "timestamp_utc": "2026-10-13T10:29:23.969149+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 6,
+      "elapsed_seconds": 0.01600000000325963,
+      "monotonic_seconds": 60474.656,
+      "timestamp_utc": "2026-10-13T10:29:23.971170+00:00",
+      "step": {
+        "step": 1,
+        "t": 1.0,
+        "next_t": 0.9821428571428572,
+        "forwards": 2,
+        "total_forwards": 2,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.0,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    },
+    {
+      "event": "enter",
+      "name": "euler-step-2",
+      "origin": "worker",
+      "seq": 7,
+      "elapsed_seconds": 0.01600000000325963,
+      "monotonic_seconds": 60474.656,
+      "timestamp_utc": "2026-10-13T10:29:23.971170+00:00",
+      "step": {
+        "index": 2,
+        "t": 0.9821428571428572,
+        "next_t": 0.9615384615384615
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 8,
+      "elapsed_seconds": 0.01600000000325963,
+      "monotonic_seconds": 60474.656,
+      "timestamp_utc": "2026-10-13T10:29:23.971170+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 9,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.972783+00:00",
+      "duration_seconds": 0.014999999999417923,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 10,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.972783+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 11,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.973294+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 12,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.975827+00:00",
+      "step": {
+        "step": 2,
+        "t": 0.9821428571428572,
+        "next_t": 0.9615384615384615,
+        "forwards": 2,
+        "total_forwards": 4,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.014999999999417923,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    },
+    {
+      "event": "enter",
+      "name": "euler-step-3",
+      "origin": "worker",
+      "seq": 13,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.975827+00:00",
+      "step": {
+        "index": 3,
+        "t": 0.9615384615384615,
+        "next_t": 0.9375
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 14,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.976359+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 15,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.976870+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 16,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.976870+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 17,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.978408+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 18,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.979930+00:00",
+      "step": {
+        "step": 3,
+        "t": 0.9615384615384615,
+        "next_t": 0.9375,
+        "forwards": 2,
+        "total_forwards": 6,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.0,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    },
+    {
+      "event": "enter",
+      "name": "euler-step-4",
+      "origin": "worker",
+      "seq": 19,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.979930+00:00",
+      "step": {
+        "index": 4,
+        "t": 0.9375,
+        "next_t": 0.9090909090909092
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 20,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.979930+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 21,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.981447+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 22,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.981962+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 23,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.982971+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 24,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.984498+00:00",
+      "step": {
+        "step": 4,
+        "t": 0.9375,
+        "next_t": 0.9090909090909092,
+        "forwards": 2,
+        "total_forwards": 8,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.0,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    },
+    {
+      "event": "enter",
+      "name": "euler-step-5",
+      "origin": "worker",
+      "seq": 25,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.984498+00:00",
+      "step": {
+        "index": 5,
+        "t": 0.9090909090909092,
+        "next_t": 0.875
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 26,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.984498+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 27,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.986023+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 28,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.986537+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 29,
+      "elapsed_seconds": 0.031000000002677552,
+      "monotonic_seconds": 60474.671,
+      "timestamp_utc": "2026-10-13T10:29:23.987045+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 30,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.988578+00:00",
+      "step": {
+        "step": 5,
+        "t": 0.9090909090909092,
+        "next_t": 0.875,
+        "forwards": 2,
+        "total_forwards": 10,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.01599999999598367,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    },
+    {
+      "event": "enter",
+      "name": "euler-step-6",
+      "origin": "worker",
+      "seq": 31,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.988578+00:00",
+      "step": {
+        "index": 6,
+        "t": 0.875,
+        "next_t": 0.8333333333333334
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 32,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.988578+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 33,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.990101+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 34,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.990101+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 35,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.991638+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 36,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.992684+00:00",
+      "step": {
+        "step": 6,
+        "t": 0.875,
+        "next_t": 0.8333333333333334,
+        "forwards": 2,
+        "total_forwards": 12,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.0,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    },
+    {
+      "event": "enter",
+      "name": "euler-step-7",
+      "origin": "worker",
+      "seq": 37,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.992684+00:00",
+      "step": {
+        "index": 7,
+        "t": 0.8333333333333334,
+        "next_t": 0.7812500000000001
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 38,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.992684+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 39,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.994218+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 40,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.994218+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 41,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.995748+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 42,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.997785+00:00",
+      "step": {
+        "step": 7,
+        "t": 0.8333333333333334,
+        "next_t": 0.7812500000000001,
+        "forwards": 2,
+        "total_forwards": 14,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.0,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    },
+    {
+      "event": "enter",
+      "name": "euler-step-8",
+      "origin": "worker",
+      "seq": 43,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.997785+00:00",
+      "step": {
+        "index": 8,
+        "t": 0.7812500000000001,
+        "next_t": 0.7142857142857144
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 44,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.997785+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 45,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.998794+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 46,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:23.998794+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 47,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:24.000316+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 48,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:24.002363+00:00",
+      "step": {
+        "step": 8,
+        "t": 0.7812500000000001,
+        "next_t": 0.7142857142857144,
+        "forwards": 2,
+        "total_forwards": 16,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.0,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    },
+    {
+      "event": "enter",
+      "name": "euler-step-9",
+      "origin": "worker",
+      "seq": 49,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:24.002363+00:00",
+      "step": {
+        "index": 9,
+        "t": 0.7142857142857144,
+        "next_t": 0.625
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 50,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:24.002872+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 51,
+      "elapsed_seconds": 0.046999999998661224,
+      "monotonic_seconds": 60474.687,
+      "timestamp_utc": "2026-10-13T10:29:24.002872+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 52,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.004395+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 53,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.004978+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 54,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.007066+00:00",
+      "step": {
+        "step": 9,
+        "t": 0.7142857142857144,
+        "next_t": 0.625,
+        "forwards": 2,
+        "total_forwards": 18,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.01600000000325963,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    },
+    {
+      "event": "enter",
+      "name": "euler-step-10",
+      "origin": "worker",
+      "seq": 55,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.007066+00:00",
+      "step": {
+        "index": 10,
+        "t": 0.625,
+        "next_t": 0.5000000000000001
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 56,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.007066+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 57,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.008093+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 58,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.008622+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 59,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.009642+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 60,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.011159+00:00",
+      "step": {
+        "step": 10,
+        "t": 0.625,
+        "next_t": 0.5000000000000001,
+        "forwards": 2,
+        "total_forwards": 20,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.0,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    },
+    {
+      "event": "enter",
+      "name": "euler-step-11",
+      "origin": "worker",
+      "seq": 61,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.011159+00:00",
+      "step": {
+        "index": 11,
+        "t": 0.5000000000000001,
+        "next_t": 0.3125000000000001
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 62,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.011159+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 63,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.012679+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 64,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.013690+00:00",
+      "step": {
+        "step": 11,
+        "t": 0.5000000000000001,
+        "next_t": 0.3125000000000001,
+        "forwards": 1,
+        "total_forwards": 21,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.0,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    },
+    {
+      "event": "enter",
+      "name": "euler-step-12",
+      "origin": "worker",
+      "seq": 65,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.013690+00:00",
+      "step": {
+        "index": 12,
+        "t": 0.3125000000000001,
+        "next_t": 0.0
+      }
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 66,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.014200+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 67,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.015209+00:00",
+      "duration_seconds": 0.0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "state",
+      "name": "euler-step-complete",
+      "origin": "worker",
+      "seq": 68,
+      "elapsed_seconds": 0.06300000000192085,
+      "monotonic_seconds": 60474.703,
+      "timestamp_utc": "2026-10-13T10:29:24.015719+00:00",
+      "step": {
+        "step": 12,
+        "t": 0.3125000000000001,
+        "next_t": 0.0,
+        "forwards": 1,
+        "total_forwards": 22,
+        "all_finite": true,
+        "synchronized": true,
+        "elapsed_seconds": 0.0,
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0
+        }
+      }
+    }
+  ],
+  "production_guard_sha256": "8863cc969ed21b800a48792b5b44241bc1a29764c145e5204ac7cbf3d96c0bee",
+  "gpu_initialized_after": false,
+  "weights_loaded": false,
+  "model_forwards": 0,
+  "network_allowed": false,
+  "gpu_backend_execution": false,
+  "prohibited_imports": []
+}

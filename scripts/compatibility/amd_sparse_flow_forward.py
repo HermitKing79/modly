@@ -72,12 +72,14 @@ def release(torch,component,refs,trace):
     if row['owned_tensors_collected'] is not True:raise RuntimeError('Sparse-flow owned tensors survive cleanup')
     return row
 
-def worker(scratch):
+def worker(scratch,sampling_factory=None):
+    contract=globals()['contract'] if sampling_factory is None else __import__('amd_sparse_sampling_contract')
     record={'status':'FAIL','stage':'startup','sdk_discovery':[],'calls':{},'load_calls':0}
     component=model=output=cpu_output=cpu_inputs=gpu_inputs=torch=None
+    sampling=sampler_result=original_tensor=None
     phase='cpu';module_names={};placement_sources=set();copy_source=None;in_timestep=False
     transfers={'x':0,'t':0,'cond':0,'output':0,'frequency':0};permit=contract.SingleForward();op_counts={}
-    trace=diagnostics.Trace(lambda line:print(line,flush=True))
+    trace=diagnostics.Trace(lambda line:print(line,flush=True),limit=512 if sampling_factory is None else 192)
     def stage(name):
         record['stage']=name;print('FORWARD_STAGE='+name,flush=True);trace.emit('stage',name,phase=phase)
     def forbidden(*a,**k):raise RuntimeError('Unapproved sparse-flow operation in phase '+phase)
@@ -97,7 +99,9 @@ def worker(scratch):
             if event=='import' and contract.prohibited_import(str(args[0])):return forbidden()
             if event=='open' and isinstance(args[0],(str,bytes)):
                 p=Path(os.fsdecode(args[0]))
-                if p.suffix.lower() in ('.safetensors','.pt','.pth','.bin','.gguf','.ckpt') and p.resolve() not in (checkpoint,local.FEATURE.resolve()):return forbidden()
+                allowed=(checkpoint,local.FEATURE.resolve())
+                if sampling_factory is not None:allowed+=((scratch/'sparse-structure-latent.safetensors').resolve(),)
+                if p.suffix.lower() in ('.safetensors','.pt','.pth','.bin','.gguf','.ckpt') and p.resolve() not in allowed:return forbidden()
         sys.addaudithook(audit)
         verified=verify_preflight();stage('runtime-import')
         import torch
@@ -108,6 +112,10 @@ def worker(scratch):
             'torch_path':torch.__file__,'hip':torch.version.hip,'cuda':torch.version.cuda,
             'git_version':torch.version.git_version,'dependencies':{n:importlib.metadata.version(n) for n in ('safetensors','numpy')}}
         trace.emit('state','runtime',runtime=record['runtime'])
+        if sampling_factory is not None:
+            sampling=sampling_factory(torch);transfers['neg_cond']=0
+            record['sampler']={'class':sampling.sampler_class.__name__,'source':__import__('inspect').getfile(sampling.sampler_class),
+                               'parameters':sampling.policy.PARAMS,'sigma_min':sampling.policy.SIGMA_MIN}
         record['workspace_binding']=teardown.verify_runtime_binding(torch)
         torch.set_num_threads(1);original_init=torch.cuda._lazy_init;torch.cuda._lazy_init=forbidden
         torch.load=forbidden;torch.compile=forbidden;torch.hub.load=forbidden
@@ -119,21 +127,38 @@ def worker(scratch):
             if phase!='forward' or id(instance) not in module_names:return forbidden()
             name=module_names[id(instance)]
             selected=(name=='' or name.startswith('blocks.') and (name.count('.')==1 or name.endswith(('.self_attn','.cross_attn'))))
+            if sampling is not None and name=='':sampling.begin_model(args,kwargs,transfers,frequency_sources)
             if selected:
                 key=name or '<root>';record['calls'][key]=record['calls'].get(key,0)+1
-                if record['calls'][key]!=1:return forbidden()
+                if sampling is None and record['calls'][key]!=1:return forbidden()
+                if sampling is not None:sampling.module_enter(key)
             previous=in_timestep
             if name=='t_embedder':in_timestep=True
             try:
                 run=lambda:original_call(instance,*args,**kwargs)
-                result=trace.call('module:'+(name or '<root>'),run,input=describe(args[0]) if args else {}) if selected else run()
+                result=trace.call('module:'+(name or '<root>'),run,input=describe(args[0]) if args else {}) if selected and (sampling is None or name=='') else run()
                 if name.startswith('blocks.') and name.count('.')==1:
-                    memory=local.loading.gpu_memory(torch);trace.emit('memory','after-'+name,memory=memory)
+                    memory=local.loading.gpu_memory(torch)
+                    if sampling is None:trace.emit('memory','after-'+name,memory=memory)
+                    else:sampling.block_memory(memory)
                     if memory['allocated_bytes']>contract.MEMORY_LIMIT or memory['reserved_bytes']>contract.MEMORY_LIMIT:
                         raise RuntimeError('Sparse-flow memory budget exceeded')
+                if sampling is not None and name=='':sampling.end_model(result,transfers)
                 return result
             finally:in_timestep=previous
         torch.nn.Module.__call__=module_call
+        original_tensor=torch.tensor
+        def timestep_tensor(*args,**kwargs):
+            nonlocal phase,copy_source
+            if sampling is None or phase!='forward':return forbidden()
+            sampling.next_timestep(args,kwargs)
+            cpu=original_tensor(*args,device='cpu',dtype=torch.float32)
+            previous=phase;phase='inputs';copy_source=('t',cpu,'cuda:0');transfers['t']=0
+            try:
+                placed=torch.ops.aten._to_copy.default(cpu,device=torch.device('cuda:0'))
+                sampling.staged_timestep(cpu,placed)
+                return placed
+            finally:copy_source=None;phase=previous
         from torch.utils._python_dispatch import TorchDispatchMode
         from torch.utils._pytree import tree_leaves
         def gpu(values):return any((isinstance(v,torch.Tensor) and v.device.type=='cuda') or
@@ -212,7 +237,7 @@ def worker(scratch):
                 elif phase=='release':
                     if not strict_contract.gpu_operation_allowed(name):return forbidden()
                 else:return forbidden()
-                if phase=='forward' and name in ('aten._scaled_dot_product_flash_attention.default','aten._scaled_dot_product_attention_math.default','aten._scaled_dot_product_efficient_attention.default'):
+                if phase=='forward' and sampling is None and name in ('aten._scaled_dot_product_flash_attention.default','aten._scaled_dot_product_attention_math.default','aten._scaled_dot_product_efficient_attention.default'):
                     return trace.call('aten:'+name,lambda:func(*args,**kwargs),input=describe(args[0]))
                 return func(*args,**kwargs)
         with BoundedDispatch():
@@ -226,15 +251,23 @@ def worker(scratch):
                 record['load_calls']=1;return original_load(str(checkpoint),device='cpu')
             safetensors.torch.load_file=load_only
             import psutil
-            if psutil.virtual_memory().available<verified['tensor_data_bytes']*4+1024**3:raise RuntimeError('Insufficient host strict-load margin')
+            available=psutil.virtual_memory().available;required=verified['tensor_data_bytes']*4+1024**3
+            record['ram_before_strict_load']={'available_bytes':available,'required_bytes':required,'admitted':available>=required}
+            if available<required:raise RuntimeError('Insufficient host strict-load margin')
             stage('strict-CPU-load');began=time.monotonic();before=local.loading.process_memory()
             component,model=local.load_cpu();feature=local.verify_feature()
             from safetensors.numpy import load_file
             import numpy as np
             saved=load_file(str(local.FEATURE))
             if set(saved)!={'cond'}:return forbidden()
-            cpu_inputs={'x':torch.from_numpy(((np.arange(32768,dtype=np.int32)%257-128)/128).astype(np.float32)).reshape(1,8,16,16,16),
-                        't':torch.tensor([500.],dtype=torch.float32),'cond':torch.from_numpy(saved['cond'].copy())}
+            if sampling is None:
+                cpu_inputs={'x':torch.from_numpy(((np.arange(32768,dtype=np.int32)%257-128)/128).astype(np.float32)).reshape(1,8,16,16,16),
+                            't':torch.tensor([500.],dtype=torch.float32),'cond':torch.from_numpy(saved['cond'].copy())}
+            else:
+                cpu_inputs={'x':torch.randn(1,8,16,16,16,generator=torch.Generator(device='cpu').manual_seed(contract.SEED),dtype=torch.float32,device='cpu'),
+                            'cond':torch.from_numpy(saved['cond'].copy())}
+                cpu_inputs['neg_cond']=torch.zeros_like(cpu_inputs['cond'])
+                record['noise_generation']={'seed':contract.SEED,'method':'torch.randn CPU Generator.manual_seed; explicit float32; one standard Gaussian draw'}
             saved=None
             record['input']={k:{**describe(v),'sha256':hashlib.sha256(v.numpy().tobytes()).hexdigest()} for k,v in cpu_inputs.items()}
             if record['input']['cond']['sha256']!=feature['output_sha256']:raise RuntimeError('Loaded conditioning values differ from verified checkpoint')
@@ -247,7 +280,8 @@ def worker(scratch):
             if torch.cuda.is_initialized():return forbidden()
             print(supervisor.EVENT+json.dumps({'event':'cpu-ready','gate_one':record['cpu_load'],'checkpoint_sha256':verified['checkpoint_sha256']}),flush=True)
             stage('waiting-for-observer')
-            if sys.stdin.readline().encode()!=AUTHORIZE:raise RuntimeError('GPU forward not authorized')
+            authorization=AUTHORIZE if sampling is None else __import__('amd_sparse_sampling').AUTHORIZE
+            if sys.stdin.readline().encode()!=authorization:raise RuntimeError('GPU forward not authorized')
             phase='placement';torch.cuda._lazy_init=original_init;stage('GPU-metadata')
             torch.cuda.set_device(0);p=torch.cuda.get_device_properties(0)
             if 'RX 9070 XT' not in p.name or p.gcnArchName.split(':')[0]!='gfx1201':raise RuntimeError('Unexpected GPU')
@@ -264,15 +298,21 @@ def worker(scratch):
             record['placement_seconds']=time.monotonic()-began;module_names={id(v):name for name,v in model.named_modules()}
             with torch.inference_mode():
                 gpu_inputs={};phase='inputs';stage('input-transfer')
-                for key in ('x','t','cond'):
+                for key in (('x','t','cond') if sampling is None else ('x','cond','neg_cond')):
                     copy_source=(key,cpu_inputs[key],'cuda:0')
                     gpu_inputs[key]=torch.ops.aten._to_copy.default(cpu_inputs[key],device=torch.device('cuda:0'))
                     if describe(gpu_inputs[key])!={**describe(cpu_inputs[key]),'device':'cuda:0'}:return forbidden()
                 copy_source=None;phase='placement';torch.cuda.synchronize(0)
                 record['before_forward']=local.loading.gpu_memory(torch);trace.emit('memory','before-forward',memory=record['before_forward'])
                 if torch.is_autocast_enabled('cuda') or torch.is_grad_enabled():return forbidden()
-                phase='forward';stage('single-forward');began=time.monotonic()
-                output=permit.run(lambda:model(gpu_inputs['x'],gpu_inputs['t'],gpu_inputs['cond']))
+                phase='forward';stage('single-forward' if sampling is None else 'sampling-sequence');began=time.monotonic()
+                if sampling is None:
+                    output=permit.run(lambda:model(gpu_inputs['x'],gpu_inputs['t'],gpu_inputs['cond']))
+                else:
+                    torch.tensor=timestep_tensor
+                    try:sampler_result=sampling.run(model,gpu_inputs,trace,lambda:torch.cuda.synchronize(0),lambda:local.loading.gpu_memory(torch))
+                    finally:torch.tensor=original_tensor
+                    output=sampler_result.samples
                 phase='placement';trace.call('synchronize:after-forward',lambda:torch.cuda.synchronize(0));record['forward_seconds']=time.monotonic()-began
                 record['after_forward']=local.loading.gpu_memory(torch);trace.emit('memory','after-forward',memory=record['after_forward'])
                 phase='output';stage('output-copy-validation');copy_source=('output',output,'cpu')
@@ -282,16 +322,32 @@ def worker(scratch):
                     'requires_grad':output.requires_grad,'is_inference_tensor':output.is_inference(),'grad_enabled':torch.is_grad_enabled(),
                     'minimum':float(values.min()),'maximum':float(values.max()),'mean':float(values.mean()),'stddev':float(values.std()),
                     'representative_values':values.reshape(-1)[:8].tolist(),'sha256':hashlib.sha256(values.tobytes()).hexdigest()}
-                contract.validate_output(record['output']);values=None
+                contract.validate_output(record['output'])
+                if sampling is not None:
+                    import amd_sparse_latent_checkpoint as artifact
+                    import amd_sparse_sampling as entry
+                    provenance=dict(component='SparseStructureFlowModel',model_checkpoint_sha256=verified['checkpoint_sha256'],
+                        model_config_sha256=verified['config_sha256'],model_source_sha256=local.digest(local.SOURCE/'trellis2/models/sparse_structure_flow.py'),
+                        sampler_sources=json.dumps(entry.sources(),sort_keys=True),params=json.dumps(contract.PARAMS,sort_keys=True),seed=str(contract.SEED),sigma_min=str(contract.SIGMA_MIN),
+                        noise_sha256=record['input']['x']['sha256'],feature_file_sha256=local.FEATURE_SHA,feature_provenance=json.dumps(feature['provenance'],sort_keys=True),
+                        harness_commit=os.environ.get('MODLY_SAMPLING_HARNESS_COMMIT',''),runtime=json.dumps(record['runtime'],sort_keys=True))
+                    record['latent_checkpoint']=artifact.write(scratch/'sparse-structure-latent.safetensors',scratch,values,provenance)
+                values=None
             stage('release');phase='release';refs=[weakref.ref(model),weakref.ref(output),*[weakref.ref(v) for v in gpu_inputs.values()]]
+            if sampling is not None:
+                refs+=sampling.issued;sampling.drop_references();sampler_result=None
             model=output=gpu_inputs=cpu_inputs=cpu_output=None
             record['workspace_clear_calls']=1;record['release']=release(torch,component,refs,trace);component=None
             stage('complete');record['status']='PASS'
     except BaseException as exc:record.update(error_type=type(exc).__name__,error=str(exc),traceback=traceback.format_exc())
     finally:
-        record.update(forward_calls=permit.calls,transfers=transfers,gpu_operation_counts=op_counts)
+        record.update(forward_calls=permit.calls if sampling is None else sampling.budget.calls,
+            transfers=transfers if sampling is None else sampling.transfers(transfers),gpu_operation_counts=op_counts)
+        if sampling is not None:
+            record['sampling']=sampling.report();sampling.drop_references()
+        if original_tensor is not None and torch is not None:torch.tensor=original_tensor
         if component is not None:component.unload()
-        component=model=output=cpu_output=cpu_inputs=gpu_inputs=copy_source=None;gc.collect()
+        component=model=output=cpu_output=cpu_inputs=gpu_inputs=copy_source=sampler_result=sampling=None;gc.collect()
         print(supervisor.RESULT+json.dumps(record),flush=True)
     return 0 if record['status']=='PASS' else 1
 

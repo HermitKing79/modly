@@ -43,7 +43,7 @@ def dispatch_replay(phase,source=None,key='x',target='cuda:0',in_timestep=False)
         preserve_format='preserve',strided='torch.strided',equal=lambda a,b:a is b)
     frequency=Tensor([128])
     trace=diagnostics.Trace(lambda line:diagnostics.validate_record(json.loads(line.removeprefix(diagnostics.MARKER))))
-    namespace=dict(torch=torch,tree_leaves=leaves,phase=phase,forbidden=forbidden,
+    namespace=dict(sampling=None,torch=torch,tree_leaves=leaves,phase=phase,forbidden=forbidden,
         TorchDispatchMode=object,strict_contract=forward.strict_contract,contract=policy,
         placement_sources={id(source)} if source is not None else set(),copy_source=(key,source,target),
         transfers={k:0 for k in ('x','t','cond','output','frequency')},in_timestep=in_timestep,
@@ -70,7 +70,7 @@ class ControlTests(unittest.TestCase):
         node.body=[ast.copy_location(ast.Global(names=n.names),n) if isinstance(n,ast.Nonlocal) else n for n in node.body]
         root=object();block=object();timestep=object();record={'calls':{}};lines=[]
         def forbidden(*a,**k):raise RuntimeError('module rejected')
-        ns=dict(phase='forward',module_names={id(root):'',id(block):'blocks.0',id(timestep):'t_embedder'},
+        ns=dict(sampling=None,phase='forward',module_names={id(root):'',id(block):'blocks.0',id(timestep):'t_embedder'},
             in_timestep=False,record=record,forbidden=forbidden,describe=forward.describe,
             original_call=lambda *a,**k:Tensor([1],device='cuda:0'),trace=diagnostics.Trace(lines.append),
             local=SimpleNamespace(loading=SimpleNamespace(gpu_memory=lambda t:{'allocated_bytes':0,'reserved_bytes':0})),
@@ -180,6 +180,13 @@ class ControlTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             mode.__torch_dispatch__(op,(),(Tensor([128],device='cuda:0'),ns['frequency']),{})
         self.assertEqual(op.calls,0);self.assertEqual(ns['transfers']['frequency'],0)
+    def test_sampling_native_attention_logging_stays_compact(self):
+        mode,ns=dispatch_replay('forward');ns['sampling']=object();lines=[]
+        ns['trace']=diagnostics.Trace(lines.append,limit=192)
+        op=Operation('aten._scaled_dot_product_attention_math.default')
+        for _ in range(100):mode.__torch_dispatch__(op,(),(Tensor([1],device='cuda:0'),),{})
+        self.assertEqual(op.calls,100);self.assertEqual(ns['op_counts'][str(op)],100)
+        self.assertEqual(lines,[])
     def test_placement_allows_only_unchanged_observed_defaults(self):
         for dtype in ('torch.float32','torch.bfloat16','torch.complex64'):
             source=Tensor([2],dtype);mode,_=dispatch_replay('placement',source)

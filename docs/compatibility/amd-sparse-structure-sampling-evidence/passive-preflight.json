@@ -1,0 +1,116 @@
+{
+  "checkpoint_sha256": "ca01377c485bec418076d38ee80166d32dc776d744f2553b835cba1e97a7abf6",
+  "config_sha256": "6cdfb636854f60ffcadd8c49244169cd449f34c5ccdb55b5ff7c04678f9c399e",
+  "checkpoint_entries": 640,
+  "parameter_count": 1292179976,
+  "checkpoint_payload_bytes": 2584359952,
+  "feature": {
+    "verified": true,
+    "shape": [
+      1,
+      1029,
+      1024
+    ],
+    "dtype": "F32",
+    "tensor_bytes": 4214784,
+    "file_bytes": 4215800,
+    "file_sha256": "3f444d42191df07415a8877a3d8d3706cf1b129bedbbb2dfcc0221d5571be56a",
+    "output_sha256": "d94e87d27429936956616a7a1c09a1fd5e0e27337b5716486c271881497dc7ca",
+    "provenance": {
+      "dtype": "F32",
+      "config_sha256": "135ecd23e34a70b6fbed8b083fdecb319b7e3a54e3d849258bbe4ddcf1783bb5",
+      "runtime": "Python 3.12.10; PyTorch 2.13.0+rocm10.0.0; HIP 7.15.26333",
+      "harness_commit": "827bd6d00c549a28c435b4602b8f4bdc6a2eb8a5",
+      "format": "modly-amd-conditioning-v1",
+      "alpha_only": "true",
+      "component": "DINOv3ViTModel",
+      "conditioning_width": "1024",
+      "input_pixel_sha256": "2fa864e19134bc817000a267eaae667fc6326119e5e6402b1eec9f0131c6de42",
+      "input_png_sha256": "9abc7b8f89e5b001e863fc3ef2fbd6813b2e83f63c0a6b0a45203c2ef1edfd8d",
+      "extractor_source_sha256": "a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f",
+      "checkpoint_sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+      "output_sha256": "d94e87d27429936956616a7a1c09a1fd5e0e27337b5716486c271881497dc7ca",
+      "pipeline_source_sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+      "resolution": "512",
+      "shape": "[1,1029,1024]"
+    },
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-dinov3-allocation-evidence\\conditioning.safetensors"
+  },
+  "sampler": {
+    "sampler_sources": {
+      "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\__init__.py": "81174e88221aea4b3d078846cba5c01f45d885ee2ae2240974ec28badc88a076",
+      "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\base.py": "10bc216dc255e64746e51d929fc66d88efa7e3763e48a52a4fae3722d1e01869",
+      "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\flow_euler.py": "03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5",
+      "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\classifier_free_guidance_mixin.py": "ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c",
+      "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\guidance_interval_mixin.py": "0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2"
+    },
+    "dependencies": {
+      "versions": {
+        "easydict": "1.13",
+        "numpy": "2.5.3",
+        "safetensors": "0.8.0",
+        "torch": "2.13.0+rocm10.0.0",
+        "tqdm": "4.70.1"
+      },
+      "pure_entry_hashes": {
+        "tqdm": "f6640d6124aa3fdf496acb9b102d4f3892cc9a1924047e9c259c4f211e46da94",
+        "easydict": "7d561cb13a5f3d12d8b9fdf5fce82e7a15ec42f3bf1361574c7310d83614513a"
+      }
+    },
+    "parameters": {
+      "steps": 12,
+      "rescale_t": 5.0,
+      "guidance_strength": 7.5,
+      "guidance_rescale": 0.7,
+      "guidance_interval": [
+        0.6,
+        1.0
+      ],
+      "dino_lock": 0.0
+    },
+    "sigma_min": 1e-05,
+    "previous_pipeline_config_sha256": "222c359ab1ed9bc6735a640a34f95d47f8681b9bc4aaa101bfb80274676253c6",
+    "torch_imported": false
+  },
+  "ram": {
+    "timestamp_utc": "2026-10-13T10:48:45.894204+00:00",
+    "available_bytes": 18200150016,
+    "required_bytes": 11411181632,
+    "admitted": true,
+    "torch_imported": false
+  },
+  "windows_observation": {
+    "returncode": 0,
+    "timed_out": false,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":10016,\"RecordId\":11578,\"ProviderName\":\"Microsoft-Windows-DistributedCOM\",\"TimeCreated\":\"\\/Date(1791887868723)\\/\"},\"version\":\"5.1.26100.9444\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 10016,
+          "RecordId": 11578,
+          "ProviderName": "Microsoft-Windows-DistributedCOM",
+          "TimeCreated": "/Date(1791887868723)/"
+        },
+        "version": "5.1.26100.9444",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "observer_healthy": true,
+  "elapsed_seconds": 2.811999999998079,
+  "torch_imported": false,
+  "real_model_weights_loaded": false,
+  "gpu_initialized": false
+}

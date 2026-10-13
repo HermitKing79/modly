@@ -313,10 +313,11 @@ def supervise(output,harness_commit,*,profile=None):
     cache=prepare_private_cache if profile is None else profile.prepare_private_cache
     worker_script=Path(__file__).resolve() if profile is None else profile.worker_script
     authorize=b'EXECUTE_ONE_DECODER_FORWARD\n' if profile is None else profile.authorize
-    deadline_contract=(180,240,480) if getattr(profile,'kind',None)=='sparse-flow' else (120,180,360)
+    sparse_profile=getattr(profile,'kind',None) in ('sparse-flow','sparse-sampling')
+    deadline_contract=(180,240,480) if sparse_profile else (120,180,360)
     if profile is not None and (cpu_seconds,gpu_seconds,overall_seconds)!=deadline_contract:
         raise ValueError('Profile deadlines differ from the explicit reviewed contract')
-    authorize_gate=profile.authorize_placement if getattr(profile,'kind',None)=='sparse-flow' else loading_contract.authorize_placement
+    authorize_gate=profile.authorize_placement if sparse_profile else loading_contract.authorize_placement
     output=output.resolve()
     if output!=evidence/'run':raise ValueError('Use the single canonical evidence run directory')
     head=subprocess.run(['git','rev-parse','HEAD'],cwd=ROOT,capture_output=True,check=True,timeout=5).stdout.decode().strip()
@@ -324,7 +325,11 @@ def supervise(output,harness_commit,*,profile=None):
     committed_hashes=verify_committed_files(harness_commit) if profile is None else verify_committed_files(harness_commit,profile.committed_files)
     output.mkdir(parents=True,exist_ok=False)
     with (evidence/'attempt-started.json').open('x',encoding='utf-8') as stream:
-        json.dump({'harness_commit':head,'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'maximum_forwards':1},stream)
+        attempt={'harness_commit':head,'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                 'maximum_forwards':1 if profile is None else getattr(profile,'maximum_forwards',1)}
+        if profile is not None and getattr(profile,'kind',None)=='sparse-sampling':
+            attempt.update(maximum_steps=12,maximum_sequences=1)
+        json.dump(attempt,stream)
         stream.flush();os.fsync(stream.fileno())
     def save(name,value):
         with (output/name).open('x',encoding='utf-8') as stream:

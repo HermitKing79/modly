@@ -1,0 +1,80 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+  "torch": "2.13.0+rocm10.0.0",
+  "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+  "hip": "7.15.26333",
+  "cuda": null,
+  "git_version": "6596a0dea537c1c78520c73cc6678214781a9d06",
+  "gpu_initialized_before": false,
+  "schema": "aten::to.dtype_layout(Tensor(a) self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, bool non_blocking=False, bool copy=False, MemoryFormat? memory_format=None) -> Tensor(a)",
+  "arguments": [
+    {
+      "name": "self",
+      "type": "Tensor",
+      "keyword_only": false,
+      "has_default": false,
+      "default": "None"
+    },
+    {
+      "name": "dtype",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "layout",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "device",
+      "type": "Optional[Device]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "pin_memory",
+      "type": "Optional[bool]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    },
+    {
+      "name": "non_blocking",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "copy",
+      "type": "bool",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "False"
+    },
+    {
+      "name": "memory_format",
+      "type": "Optional[int]",
+      "keyword_only": true,
+      "has_default": true,
+      "default": "None"
+    }
+  ],
+  "tests": 3,
+  "passed": false,
+  "log": "test_actual_sampler_12steps_22calls_frequency_guards_and_logging (test_amd_sparse_sampling_runtime.SamplingRuntimeTests.test_actual_sampler_12steps_22calls_frequency_guards_and_logging) ... FAIL\ntest_factory_role_identity_and_extra_timestep_rejected (test_amd_sparse_sampling_runtime.SamplingRuntimeTests.test_factory_role_identity_and_extra_timestep_rejected) ... ok\ntest_real_cfg_arithmetic_matches_independent_affine_reference (test_amd_sparse_sampling_runtime.SamplingRuntimeTests.test_real_cfg_arithmetic_matches_independent_affine_reference) ... ok\n\n======================================================================\nFAIL: test_actual_sampler_12steps_22calls_frequency_guards_and_logging (test_amd_sparse_sampling_runtime.SamplingRuntimeTests.test_actual_sampler_12steps_22calls_frequency_guards_and_logging)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_sampling_runtime.py\", line 71, in test_actual_sampler_12steps_22calls_frequency_guards_and_logging\n    lines=[];trace=diagnostics.Trace(lines.append,limit=192);ns,mem=hooks(model,control,trace)\n                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_sparse_sampling_runtime.py\", line 46, in hooks\n    if node is None:raise AssertionError('Missing actual production sampling hook: '+name)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Missing actual production sampling hook: timestep_tensor\n\n----------------------------------------------------------------------\nRan 3 tests in 1.926s\n\nFAILED (failures=1)\n",
+  "compact_trace": [],
+  "production_guard_sha256": "8119225ec26dce173fe6a718ed620d45afb0c068f09bf931e11a3012475ff4e5",
+  "gpu_initialized_after": false,
+  "weights_loaded": false,
+  "model_forwards": 0,
+  "network_allowed": false,
+  "gpu_backend_execution": false,
+  "prohibited_imports": []
+}
