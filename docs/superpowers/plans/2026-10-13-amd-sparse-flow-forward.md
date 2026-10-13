@@ -49,3 +49,11 @@ Files: scripts/compatibility/amd_sparse_flow_forward.py and narrow supervisor de
 - [ ] Healthy observer; strictly load only flow checkpoint; one forward using saved DINO features.
 - [ ] Validate finite FP32 [1,8,16,16,16], synchronised timing, release and process exit, or stop on first failure without retry.
 - [ ] Compare preservation snapshots, document PASS/PARTIAL/FAIL, commit/push and verify remote commit. Stop.
+
+## Recorded outcome
+
+Contract/interface/control work and pre-execution publication completed. The
+single attempt stopped at the host-RAM safety check before real checkpoint
+loading or GPU authorization:0loads,0forwards, controlledexit1, clean owned
+Job. Preservation passed. Final classificationPARTIAL; execution-dependent
+completion boxes remain unchecked. No retry or sampling work is authorized.

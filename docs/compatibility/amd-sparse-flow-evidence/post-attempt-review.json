@@ -1,0 +1,80 @@
+{
+  "review_status": "PASS",
+  "reviewer": "independent sparse_flow_contract_review agent",
+  "reviewed_utc": "2026-10-13T07:21:37.478512+00:00",
+  "attempt_classification": "PARTIAL",
+  "execution_state": "BLOCKED_PRE_GPU_AND_PRE_STRICT_LOAD",
+  "blocker": "Insufficient host strict-load margin",
+  "required_available_host_bytes": 11411181632,
+  "gate_available_host_bytes": null,
+  "gate_available_host_bytes_reason": "Exact gate-time sample was not logged; published guard and traceback establish available < required.",
+  "later_host_sample": {
+    "available_bytes": 5957574656,
+    "total_bytes": 34270023680,
+    "timestamp_utc": "2026-10-13T07:17:44Z",
+    "scope": "passive post-attempt sample; exact available bytes at failed gate were not logged"
+  },
+  "gpu_authorized": false,
+  "gpu_context_initialization": false,
+  "gpu_context_evidence": "Runtime/binding checked uninitialized; _lazy_init remains forbidden and CPU BoundedDispatch is active until the unreachable authorization branch.",
+  "strict_checkpoint_load_calls": 0,
+  "model_forward_calls": 0,
+  "transfers": {
+    "x": 0,
+    "t": 0,
+    "cond": 0,
+    "output": 0,
+    "frequency": 0
+  },
+  "gpu_operation_counts": {},
+  "checkpoint_hashing_note": "Preflight identity hashing read checkpoint bytes; no checkpoint tensor loading or model parameter allocation occurred.",
+  "published_harness_commit": "90c656e5d85da78194c3ebe5262aa5d87ecd35ce",
+  "published_harness_matches_saved_hashes_and_git": {
+    "scripts/compatibility/amd_sparse_flow_forward.py": "9c0614a0d3e6560be8dc2691d2c2e647924ebde3566018241d641d5effe46e58",
+    "scripts/compatibility/amd_sparse_flow_local.py": "33304e378575225edb9138f8577f22f75cf0b3986ba50172fb5db428aab0456e",
+    "scripts/compatibility/amd_sparse_flow_contract.py": "b9e8fedcb949ddb8f9f9ace4d879392068238cfa25959e220de4f5ae29f7e9cc",
+    "scripts/compatibility/amd_sparse_decoder_forward.py": "d7539bbf9d0242cdfbe2fa8baa3f8be6ee524a7994fb44687b674a1cfd4fc75b",
+    "scripts/compatibility/amd_blaslt_teardown.py": "ac8456c29291f5ee0bc567086b152f7013f502996179e408577f5806ca3310dd",
+    "experimental/extensions/trellis2-amd/strict_loader.py": "0a4b2aab6fb34a034be1725d4514d71f17c59376151b549ab631ebc8b5c8fc79"
+  },
+  "process": {
+    "elapsed_seconds": 8.514999999999418,
+    "returncode": 1,
+    "timed_out": false,
+    "worker_exit_verified": true,
+    "owned_tree_exit_verified": true,
+    "forced_job_cleanup": false
+  },
+  "observer_healthy": true,
+  "checkpoint_unchanged": true,
+  "preservation": {
+    "passive_inventory_exact_equality": true,
+    "normalized_venv_and_model_cache_equality": {
+      "venv": true,
+      "model-cache": true
+    },
+    "normalization": "Directory stat-size reporting only; file sizes/mtimes/modes unchanged.",
+    "historical_evidence_and_git_refs_preserved": true,
+    "amd_source_preserved": true
+  },
+  "deadlines_seconds": {
+    "cpu": 180,
+    "gpu_forward_release": 240,
+    "overall_worker": 480
+  },
+  "allocator_cap_bytes": 12884901888,
+  "allocator_cap_installed": false,
+  "outcome": "Controlled fail-closed host-resource stop. It is not a GPU arithmetic, architecture/dtype, timeout, forced-cleanup or checkpoint-integrity failure. No retry performed by this review.",
+  "evidence_sha256": {
+    "results.json": "755e558bdbaa79ec8ebf3bb736e1fba9f8bb07c73bf1998a0fca6fedf4765b00",
+    "trace.jsonl": "fb22f24690cd99531c321df9a0fb66de1d3c1dea948cbbc43839c31c7d5a9c97",
+    "worker.stdout.txt": "d9b17f8198c65fad53680c3bfcad3414e76d80c64655573f9e6b7338d76b6e66",
+    "worker.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "committed-harness.json": "bd45279fe38665582271cd94cb0b7d8934f7b06b96e32c0005808b63982987cd",
+    "checkpoint-before.json": "8b81d353c957658b2ef557fc02fd3d89494a0a3f4db29a8bebc40fdce3c722d1",
+    "checkpoint-after.json": "8b81d353c957658b2ef557fc02fd3d89494a0a3f4db29a8bebc40fdce3c722d1"
+  },
+  "reviewer_ai_imports": 0,
+  "reviewer_gpu_operations": 0,
+  "reviewer_model_weight_access": 0
+}

@@ -1,0 +1,23 @@
+{
+  "classification": "PARTIAL",
+  "blocker": "Insufficient host strict-load margin",
+  "checkpoint_loads": 0,
+  "forward_calls": 0,
+  "gpu_authorized": false,
+  "no_gpu_initialization_evidence": "runtime/binding initialize=false; _lazy_init forbidden thereafter; no authorization/dispatch GPU ops",
+  "worker_exit_code": 1,
+  "worker_seconds": 8.514999999999418,
+  "no_timeout": true,
+  "owned_tree_exit_verified": true,
+  "forced_cleanup": false,
+  "observer_healthy": true,
+  "checkpoint_unchanged": true,
+  "inventory_equal": true,
+  "historical_evidence_files": 3302,
+  "meaningful_metadata_changes": 0,
+  "raw_directory_size_changes": 2103,
+  "saved_trace_valid": true,
+  "installed_environments_preserved": true,
+  "source_edits_preserved": true,
+  "prior_branches_preserved": true
+}

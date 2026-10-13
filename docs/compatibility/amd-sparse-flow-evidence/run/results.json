@@ -1,0 +1,131 @@
+{
+  "classification": "PARTIAL",
+  "observer_healthy": true,
+  "checkpoint_unchanged": true,
+  "worker": {
+    "status": "FAIL",
+    "stage": "runtime-import",
+    "sdk_discovery": [
+      {
+        "command": [
+          "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+          "path",
+          "--root"
+        ],
+        "timeout_seconds": 5.0,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "ERROR: Could not load the `rocm[devel]` package, which is required to access runtime tools and development files. Please install it with your package manager (pip, uv, etc)\r\nERROR: rocm_sdk_devel module for the ROCm SDK development package is not installed. This can typically be obtained by installing `rocm[devel]` from your package manager\r\n",
+        "elapsed_seconds": 3.437
+      }
+    ],
+    "calls": {},
+    "load_calls": 0,
+    "sdk_verification": {
+      "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+      "executable_sha256": "95ba504bd187d810fba48cf25f094629d1e17dc67e384706ffb2621f2b869e4c",
+      "source_sha256": {
+        "rocm_sdk/__main__.py": "da3cf689993144403ebd20543c26d2aae20b0298acb81f590df9e78997c9fbf2",
+        "rocm_sdk/_devel.py": "608314f7e710bc44e93e3f8b5c729b5072656d15b463ff98123b826d347f1af6",
+        "rocm_sdk/_dist_info.py": "de0065098100898af4ffc558f0d54190d89923840bc074c4c194673d0915206d",
+        "rocm_sdk/__init__.py": "ed87e36cc153b7811133fb934ff1f018114c394f32a56aa040663ef66c147c3d",
+        "triton/backends/amd/driver.py": "048f3915c6942e64c7c84eb47c62f265ad10e6be4584940fe0530f5a630b23f5"
+      },
+      "developer_package_present": false,
+      "safe_branch": "ModuleNotFoundError before expansion/link reconciliation"
+    },
+    "runtime": {
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "torch": "2.13.0+rocm10.0.0",
+      "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+      "hip": "7.15.26333",
+      "cuda": null,
+      "git_version": "6596a0dea537c1c78520c73cc6678214781a9d06",
+      "dependencies": {
+        "safetensors": "0.8.0",
+        "numpy": "2.5.3"
+      }
+    },
+    "workspace_binding": {
+      "verified": true,
+      "binding": "_cuda_clearCublasWorkspaces",
+      "module": "torch._C",
+      "extension_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_C.cp312-win_amd64.pyd",
+      "gpu_initialized": false,
+      "native_call_executed": false,
+      "binary_review_sha256": "e27920546e1081c0070ce3350a199a98b74ca9f33317dd588d159685febae04a"
+    },
+    "error_type": "RuntimeError",
+    "error": "Insufficient host strict-load margin",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_flow_forward.py\", line 198, in worker\n    if psutil.virtual_memory().available<verified['tensor_data_bytes']*4+1024**3:raise RuntimeError('Insufficient host strict-load margin')\n                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Insufficient host strict-load margin\n",
+    "forward_calls": 0,
+    "transfers": {
+      "x": 0,
+      "t": 0,
+      "cond": 0,
+      "output": 0,
+      "frequency": 0
+    },
+    "gpu_operation_counts": {}
+  },
+  "process": {
+    "returncode": 1,
+    "timed_out": false,
+    "pid": 18380,
+    "command": [
+      "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_sparse_flow_forward.py",
+      "--worker",
+      "--output",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-flow-evidence\\run\\scratch"
+    ],
+    "harness_commit": "90c656e5d85da78194c3ebe5262aa5d87ecd35ce",
+    "job_attached_before_preparation": true,
+    "last_stage": "runtime-import",
+    "last_worker_trace": {
+      "event": "state",
+      "name": "runtime",
+      "origin": "worker",
+      "seq": 2,
+      "elapsed_seconds": 3.4680000000007567,
+      "monotonic_seconds": 48862.843,
+      "timestamp_utc": "2026-10-13T07:15:52.153147+00:00",
+      "runtime": {
+        "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+        "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+        "torch": "2.13.0+rocm10.0.0",
+        "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+        "hip": "7.15.26333",
+        "cuda": null,
+        "git_version": "6596a0dea537c1c78520c73cc6678214781a9d06",
+        "dependencies": {
+          "safetensors": "0.8.0",
+          "numpy": "2.5.3"
+        }
+      }
+    },
+    "elapsed_seconds": 8.514999999999418,
+    "gpu_authorized": false,
+    "stage_timeouts_seconds": {
+      "cpu": 180,
+      "forward_release": 240,
+      "overall": 480
+    },
+    "job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "worker_exit_verified": true,
+    "output_readers_completed": true,
+    "diagnostic_journal_stopped": true,
+    "diagnostic_journal_error": null,
+    "windows_journal_stopped": true,
+    "windows_journal_error": null
+  }
+}
