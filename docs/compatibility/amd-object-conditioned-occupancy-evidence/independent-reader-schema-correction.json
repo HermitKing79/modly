@@ -1,0 +1,16 @@
+{
+  "error": "KeyError invocations in CPU-only independent verifier before artifact copying",
+  "actual_sampling_keys": [
+    "sequences",
+    "started",
+    "completed",
+    "positive_calls",
+    "negative_calls",
+    "steps",
+    "models",
+    "max_block_memory"
+  ],
+  "scope": "saved JSON schema correction only; GPU sequence not repeated or changed",
+  "torch_imported": false,
+  "additional_gpu_execution": false
+}

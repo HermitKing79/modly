@@ -1,0 +1,124 @@
+{
+  "classification": "PASS",
+  "independent_validation": "stdlib bounded NPY header, complete raw F32/bool/I32 payloads, threshold, ordered coordinates,6-neighbor connectivity, hashes and provenance",
+  "artifacts": {
+    "occupancy-logits.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\occupancy-logits.npy",
+      "file_bytes": 1048704,
+      "sha256": "5ec5e5ceb114e477177df91ba0de444dc54a9c70103f4086701b754c76a9e3c2",
+      "byte_identical_to_owned_scratch": true
+    },
+    "occupancy-mask.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\occupancy-mask.npy",
+      "file_bytes": 262272,
+      "sha256": "b30f83758f79a0a512e15e303da9392a4b95d15b50fcd41071ca85da40f191c5",
+      "byte_identical_to_owned_scratch": true
+    },
+    "occupancy-coordinates.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\occupancy-coordinates.npy",
+      "file_bytes": 298688,
+      "sha256": "fc8c67e1b0de4162fbb555339570a2c4595012a957e1a5c8325103a479018069",
+      "byte_identical_to_owned_scratch": true
+    },
+    "occupancy-provenance.json": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\occupancy-provenance.json",
+      "file_bytes": 11902,
+      "sha256": "334426bd9b5bba15fc67e1fd60f5a69a36c3b324f7f2e4fbbf20738a0a22c59c",
+      "byte_identical_to_owned_scratch": true
+    }
+  },
+  "native_shape": [
+    1,
+    1,
+    64,
+    64,
+    64
+  ],
+  "dtype": "float32",
+  "all_finite": true,
+  "threshold": "decoded > 0",
+  "occupied_count": 18660,
+  "occupancy_fraction": 0.0711822509765625,
+  "npy_storage_order": {
+    "logits": "C",
+    "mask": "C",
+    "coordinates": "Fortran"
+  },
+  "payload_hash_policy": "logical C-order bytes, distinct from complete NPY file hash; column-major coordinates decoded explicitly",
+  "bounding_box": {
+    "minimum": [
+      11,
+      0,
+      13
+    ],
+    "maximum": [
+      52,
+      63,
+      51
+    ]
+  },
+  "coordinate_order": [
+    "batch",
+    "D",
+    "H",
+    "W"
+  ],
+  "bounding_box_extents": [
+    42,
+    64,
+    39
+  ],
+  "components": {
+    "connectivity": 6,
+    "count": 1,
+    "largest_sizes": [
+      18660
+    ]
+  },
+  "structure_quality": "connected nonplanar occupancy; source likeness/orientation require separate visual judgment; no detailed-shape accuracy claim",
+  "boundary_occupied_count": 313,
+  "statistics": {
+    "minimum": -208.63558959960938,
+    "maximum": 170.6765594482422,
+    "mean_float64": -137.89312214537108,
+    "stddev_float64": 67.45726979037006
+  },
+  "cpu_loading_seconds": 1.5309999999881256,
+  "synchronized_forward_seconds": 21.187000000005355,
+  "gpu_stage_through_cleanup_seconds": 21.875,
+  "overall_worker_seconds": 30.48399999999674,
+  "peak_allocated_bytes": 1127093760,
+  "peak_reserved_bytes": 1648361472,
+  "release": {
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 1127093760,
+    "peak_reserved_bytes": 1648361472,
+    "available_bytes": 16822960128,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 273022976,
+    "model_collected": true,
+    "input_collected": true,
+    "output_collected": true,
+    "cpu_memory": {
+      "working_set_bytes": 1973354496,
+      "private_commit_bytes": 2308657152,
+      "peak_working_set_bytes": 2051645440,
+      "peak_commit_bytes": 2363387904
+    }
+  },
+  "process_exit_status": 0,
+  "owned_tree_exit_verified": true,
+  "windows_periodic_samples": 5,
+  "maximum_windows_gap_seconds": 5.047000000005937,
+  "trace_records": 99,
+  "process_activity_samples": 12,
+  "observed_process_names": [
+    "python.exe"
+  ],
+  "convolution_host_return_times": [],
+  "host_return_is_gpu_completion": false,
+  "after_forward_synchronization_observed": true,
+  "torch_imported": false,
+  "additional_gpu_execution": false
+}

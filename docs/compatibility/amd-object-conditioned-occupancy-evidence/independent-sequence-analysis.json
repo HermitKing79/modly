@@ -1,0 +1,98 @@
+{
+  "classification": "PASS",
+  "strict_containers_verified": true,
+  "unchanged_noise_and_sampler": true,
+  "exact_forwards": {
+    "dino": 1,
+    "sampling": 22,
+    "decoder": 1
+  },
+  "completed_steps": 12,
+  "artifacts": {
+    "conditioning": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\conditioning.safetensors",
+      "bytes": 4215800,
+      "sha256": "78a0b54210568624639c8cacb7a803d83d4b838b782ea54e7aceab749d47e17a",
+      "payload_sha256": "660fb865efefc6c3775f61a0097af91405e9abfee570a7af66e3c3e3b3276ceb",
+      "shape": [
+        1,
+        1029,
+        1024
+      ],
+      "dtype": "F32",
+      "all_finite": true,
+      "byte_identical_to_owned_scratch": true
+    },
+    "latent": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\sparse-structure-latent.safetensors",
+      "bytes": 134688,
+      "sha256": "9860da7f631fec2324191f3d8098bee61d845a264415117fe1e43ccc1a5a7332",
+      "payload_sha256": "74f5126b108cac58874a5620c61e77e98694172babeb43dde23c9496455f2c78",
+      "shape": [
+        1,
+        8,
+        16,
+        16,
+        16
+      ],
+      "dtype": "F32",
+      "all_finite": true,
+      "byte_identical_to_owned_scratch": true
+    }
+  },
+  "stages": {
+    "dino": {
+      "supervised_seconds": 53.453000000008615,
+      "cpu_loading_seconds": 1.9839999999967404,
+      "synchronized_compute_seconds": 23.828999999997905,
+      "peak_allocated_bytes": 1343300096,
+      "peak_reserved_bytes": 1371537408,
+      "available_before_placement_bytes": 16937582592,
+      "available_after_release_bytes": 16775512064,
+      "allocated_reserved_after_release": [
+        0,
+        0
+      ],
+      "windows_periodic_samples": 6,
+      "maximum_windows_gap_seconds": 7.640999999988708,
+      "process_exit_status": 0,
+      "owned_tree_exit_verified": true
+    },
+    "sampling": {
+      "supervised_seconds": 32.344000000011874,
+      "cpu_loading_seconds": 10.98399999999674,
+      "synchronized_compute_seconds": 7.922000000005937,
+      "peak_allocated_bytes": 2918161408,
+      "peak_reserved_bytes": 3038773248,
+      "available_before_placement_bytes": 16937582592,
+      "available_after_release_bytes": 16807886848,
+      "allocated_reserved_after_release": [
+        0,
+        0
+      ],
+      "windows_periodic_samples": 3,
+      "maximum_windows_gap_seconds": 5.030999999988126,
+      "process_exit_status": 0,
+      "owned_tree_exit_verified": true
+    },
+    "decoder": {
+      "supervised_seconds": 30.48399999999674,
+      "cpu_loading_seconds": 1.5309999999881256,
+      "synchronized_compute_seconds": 21.187000000005355,
+      "peak_allocated_bytes": 1127093760,
+      "peak_reserved_bytes": 1648361472,
+      "available_before_placement_bytes": 16937582592,
+      "available_after_release_bytes": 16822960128,
+      "allocated_reserved_after_release": [
+        0,
+        0
+      ],
+      "windows_periodic_samples": 5,
+      "maximum_windows_gap_seconds": 5.047000000005937,
+      "process_exit_status": 0,
+      "owned_tree_exit_verified": true
+    }
+  },
+  "torch_imported": false,
+  "additional_gpu_execution": false
+}

@@ -1,0 +1,566 @@
+{
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/.gitattributes": {
+    "bytes": 145,
+    "sha256": "137434383e4f1c40723580e758281767309326732b5fc8fe8f6db691be7007ba",
+    "git_blob_bytes": 145,
+    "git_blob_sha256": "137434383e4f1c40723580e758281767309326732b5fc8fe8f6db691be7007ba"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/.gitignore": {
+    "bytes": 129,
+    "sha256": "58893eeb9602f5c43131c736db16b5f94b6dbd40c22b40d838422ec113d63c8f",
+    "git_blob_bytes": 129,
+    "git_blob_sha256": "58893eeb9602f5c43131c736db16b5f94b6dbd40c22b40d838422ec113d63c8f"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/amd-python-image-check.json": {
+    "bytes": 421,
+    "sha256": "b3839bd4cabf8aa0cf6ae5e7114b89112a1ea24391cf0b0012567be44c2e42d8",
+    "git_blob_bytes": 421,
+    "git_blob_sha256": "b3839bd4cabf8aa0cf6ae5e7114b89112a1ea24391cf0b0012567be44c2e42d8"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/comparison-preview.png": {
+    "bytes": 591836,
+    "sha256": "c2b999841a41dd89419baf9e9854aeeee47e7944bae34fa26ec0a83f1eac9cc2",
+    "git_blob_bytes": 591836,
+    "git_blob_sha256": "c2b999841a41dd89419baf9e9854aeeee47e7944bae34fa26ec0a83f1eac9cc2"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/conditioning.safetensors": {
+    "bytes": 4215800,
+    "sha256": "78a0b54210568624639c8cacb7a803d83d4b838b782ea54e7aceab749d47e17a",
+    "git_blob_bytes": 4215800,
+    "git_blob_sha256": "78a0b54210568624639c8cacb7a803d83d4b838b782ea54e7aceab749d47e17a"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/cpu-admission.json": {
+    "bytes": 2558,
+    "sha256": "a0d9551ea05ccb62d1cf1c5c9df4c4f88a0037b7132e634017ef7f933f9c68f6",
+    "git_blob_bytes": 2558,
+    "git_blob_sha256": "a0d9551ea05ccb62d1cf1c5c9df4c4f88a0037b7132e634017ef7f933f9c68f6"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/cpu-test-summary.json": {
+    "bytes": 715,
+    "sha256": "340c031c2c2d67828a129330950a71d6b288cd91a61673d19db7ea2ce4f9e685",
+    "git_blob_bytes": 715,
+    "git_blob_sha256": "340c031c2c2d67828a129330950a71d6b288cd91a61673d19db7ea2ce4f9e685"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/cpu-tests-authorized.txt": {
+    "bytes": 215,
+    "sha256": "b2fb9f1904b8f586b7aef87537f4cf4e289efc7aaed620516fc78ab78df5e579",
+    "git_blob_bytes": 215,
+    "git_blob_sha256": "b2fb9f1904b8f586b7aef87537f4cf4e289efc7aaed620516fc78ab78df5e579"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/cpu-tests-final.txt": {
+    "bytes": 4525,
+    "sha256": "f49e111eb489b8a3520c4a8ec845f54f97096ff8a79e14095bc9d4a45a6a8a04",
+    "git_blob_bytes": 4525,
+    "git_blob_sha256": "f49e111eb489b8a3520c4a8ec845f54f97096ff8a79e14095bc9d4a45a6a8a04"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/cpu-tests.txt": {
+    "bytes": 18146,
+    "sha256": "8f8a0d845b03c37906d3a135b063912023eb400d477d08f5944142cfebfa56c7",
+    "git_blob_bytes": 18146,
+    "git_blob_sha256": "8f8a0d845b03c37906d3a135b063912023eb400d477d08f5944142cfebfa56c7"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/attempt-started.json": {
+    "bytes": 136,
+    "sha256": "8125c7fac9d528f70aec7f34088926c5a35fbf84bec9d018c64f1ccf419cfca5",
+    "git_blob_bytes": 136,
+    "git_blob_sha256": "8125c7fac9d528f70aec7f34088926c5a35fbf84bec9d018c64f1ccf419cfca5"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/checkpoint-after.json": {
+    "bytes": 14963,
+    "sha256": "e3461358477f00ab483c1bfffbc06edf061b9170ca98f03a6ff56287717bc886",
+    "git_blob_bytes": 14963,
+    "git_blob_sha256": "e3461358477f00ab483c1bfffbc06edf061b9170ca98f03a6ff56287717bc886"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/checkpoint-before.json": {
+    "bytes": 14963,
+    "sha256": "e3461358477f00ab483c1bfffbc06edf061b9170ca98f03a6ff56287717bc886",
+    "git_blob_bytes": 14963,
+    "git_blob_sha256": "e3461358477f00ab483c1bfffbc06edf061b9170ca98f03a6ff56287717bc886"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/committed-harness.json": {
+    "bytes": 5013,
+    "sha256": "01f8c5c49615c69e3c423d4289608c2577e13a3de0e156a8999d1686e22d08f8",
+    "git_blob_bytes": 5013,
+    "git_blob_sha256": "01f8c5c49615c69e3c423d4289608c2577e13a3de0e156a8999d1686e22d08f8"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/cpu-gate.json": {
+    "bytes": 22128,
+    "sha256": "ad7f46e238d60fb5493d43b73f7b7c52349cb62ef2b7f66b0c1b5c1a1b94541e",
+    "git_blob_bytes": 22128,
+    "git_blob_sha256": "ad7f46e238d60fb5493d43b73f7b7c52349cb62ef2b7f66b0c1b5c1a1b94541e"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/private-cache.json": {
+    "bytes": 119,
+    "sha256": "c671004fc61d246cd65b9c5b4a8a896554cecd9e7a6322b866abea95af3b5750",
+    "git_blob_bytes": 119,
+    "git_blob_sha256": "c671004fc61d246cd65b9c5b4a8a896554cecd9e7a6322b866abea95af3b5750"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/results.json": {
+    "bytes": 75283,
+    "sha256": "985345c34a8e387ebccc75320e1e4b03d44f932bdd57cc3b0864d5c4e03c93e7",
+    "git_blob_bytes": 75283,
+    "git_blob_sha256": "985345c34a8e387ebccc75320e1e4b03d44f932bdd57cc3b0864d5c4e03c93e7"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/trace.jsonl": {
+    "bytes": 39804,
+    "sha256": "5f6a6565087c3ecd42f7f71a6002ecb7bed3a1223428e7e5b859c5720d6a912e",
+    "git_blob_bytes": 39804,
+    "git_blob_sha256": "5f6a6565087c3ecd42f7f71a6002ecb7bed3a1223428e7e5b859c5720d6a912e"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/windows-after-exit.json": {
+    "bytes": 1556,
+    "sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667",
+    "git_blob_bytes": 1556,
+    "git_blob_sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/windows-before.json": {
+    "bytes": 1556,
+    "sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667",
+    "git_blob_bytes": 1556,
+    "git_blob_sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/windows-cpu-gate.json": {
+    "bytes": 1556,
+    "sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667",
+    "git_blob_bytes": 1556,
+    "git_blob_sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/windows-periodic.jsonl": {
+    "bytes": 8211,
+    "sha256": "2e6db30011b74cc34720baf24f1cd1bc1d4b3089669ee4ba2f0ef46cea80d4ac",
+    "git_blob_bytes": 8211,
+    "git_blob_sha256": "2e6db30011b74cc34720baf24f1cd1bc1d4b3089669ee4ba2f0ef46cea80d4ac"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/worker.stderr.txt": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "git_blob_bytes": 0,
+    "git_blob_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/run/worker.stdout.txt": {
+    "bytes": 92992,
+    "sha256": "efe6ff461a68004c620b38d74b4aa91bd2962e1b6343a0e7b99beb60f80dd60d",
+    "git_blob_bytes": 92992,
+    "git_blob_sha256": "efe6ff461a68004c620b38d74b4aa91bd2962e1b6343a0e7b99beb60f80dd60d"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/decoder/scratch-manifest.json": {
+    "bytes": 124821,
+    "sha256": "df288938409e57ad1da92bb1ff3b1ae9edff6398bf3890688387ddedca067b00",
+    "git_blob_bytes": 124821,
+    "git_blob_sha256": "df288938409e57ad1da92bb1ff3b1ae9edff6398bf3890688387ddedca067b00"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/attempt-started.json": {
+    "bytes": 136,
+    "sha256": "24831d1bccd0343ef52766c71b4c71480b99350c776b10c9fa19b93f743a7b31",
+    "git_blob_bytes": 136,
+    "git_blob_sha256": "24831d1bccd0343ef52766c71b4c71480b99350c776b10c9fa19b93f743a7b31"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/checkpoint-after.json": {
+    "bytes": 80167,
+    "sha256": "a64c0bd87ffa7b519574a28eba121865a2a051535b755bfb41a73f4055977187",
+    "git_blob_bytes": 80167,
+    "git_blob_sha256": "a64c0bd87ffa7b519574a28eba121865a2a051535b755bfb41a73f4055977187"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/checkpoint-before.json": {
+    "bytes": 80167,
+    "sha256": "a64c0bd87ffa7b519574a28eba121865a2a051535b755bfb41a73f4055977187",
+    "git_blob_bytes": 80167,
+    "git_blob_sha256": "a64c0bd87ffa7b519574a28eba121865a2a051535b755bfb41a73f4055977187"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/committed-harness.json": {
+    "bytes": 4899,
+    "sha256": "b6babe3606a106db3fe5750015265147d2e6c618eea577830353b5e5a2de0298",
+    "git_blob_bytes": 4899,
+    "git_blob_sha256": "b6babe3606a106db3fe5750015265147d2e6c618eea577830353b5e5a2de0298"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/cpu-gate.json": {
+    "bytes": 120870,
+    "sha256": "d9085fc9b9108db069cf029766af8c8da00bbf9188a92b21051779291409e1fb",
+    "git_blob_bytes": 120870,
+    "git_blob_sha256": "d9085fc9b9108db069cf029766af8c8da00bbf9188a92b21051779291409e1fb"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/private-cache.json": {
+    "bytes": 96,
+    "sha256": "34fd2dd550f83fd5cbdad7cc26ded9cb00df606826383cd8bf2162697caceaa0",
+    "git_blob_bytes": 96,
+    "git_blob_sha256": "34fd2dd550f83fd5cbdad7cc26ded9cb00df606826383cd8bf2162697caceaa0"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/results.json": {
+    "bytes": 143707,
+    "sha256": "c27c47befa55b1b765c7ac0377b2325be842c81194a0fad8c2cdc4ecbb61c851",
+    "git_blob_bytes": 143707,
+    "git_blob_sha256": "c27c47befa55b1b765c7ac0377b2325be842c81194a0fad8c2cdc4ecbb61c851"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/trace.jsonl": {
+    "bytes": 36788,
+    "sha256": "01dac5c9182391effd42016cc640112fc228f6c7940bbc7824c7f1b0c822c075",
+    "git_blob_bytes": 36788,
+    "git_blob_sha256": "01dac5c9182391effd42016cc640112fc228f6c7940bbc7824c7f1b0c822c075"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/windows-after-exit.json": {
+    "bytes": 1556,
+    "sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667",
+    "git_blob_bytes": 1556,
+    "git_blob_sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/windows-before.json": {
+    "bytes": 1556,
+    "sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667",
+    "git_blob_bytes": 1556,
+    "git_blob_sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/windows-cpu-gate.json": {
+    "bytes": 1556,
+    "sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667",
+    "git_blob_bytes": 1556,
+    "git_blob_sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/windows-periodic.jsonl": {
+    "bytes": 9838,
+    "sha256": "876c3951729d49f5008f767ffa5935275fb72aa0e722d94521e4ae10473351cf",
+    "git_blob_bytes": 9838,
+    "git_blob_sha256": "876c3951729d49f5008f767ffa5935275fb72aa0e722d94521e4ae10473351cf"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/worker.stderr.txt": {
+    "bytes": 160,
+    "sha256": "e17de1126341b39547165f4e1dfa1c96ab0b92b79829a9aa48cbc87bfd4697af",
+    "git_blob_bytes": 160,
+    "git_blob_sha256": "e17de1126341b39547165f4e1dfa1c96ab0b92b79829a9aa48cbc87bfd4697af"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/run/worker.stdout.txt": {
+    "bytes": 203495,
+    "sha256": "a21b156a9977d72801cac8a17baec4c07e51c49912d335171a8b56107ecb6a58",
+    "git_blob_bytes": 203495,
+    "git_blob_sha256": "a21b156a9977d72801cac8a17baec4c07e51c49912d335171a8b56107ecb6a58"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/dino/scratch-manifest.json": {
+    "bytes": 123773,
+    "sha256": "3fa967e922c18802dfc407dd79c1ebf3e0baadedd5f6a5d229b9feb19d6a0687",
+    "git_blob_bytes": 123773,
+    "git_blob_sha256": "3fa967e922c18802dfc407dd79c1ebf3e0baadedd5f6a5d229b9feb19d6a0687"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/git-after.json": {
+    "bytes": 5821,
+    "sha256": "badc2d1489a9533461af13c6c894dba957fba31e347dc69cf20846eac4589646",
+    "git_blob_bytes": 5821,
+    "git_blob_sha256": "badc2d1489a9533461af13c6c894dba957fba31e347dc69cf20846eac4589646"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/git-before.json": {
+    "bytes": 908907,
+    "sha256": "b06eb7a79a082d8f9c2018834019200ac530b8feaeb7ecb98d9f64f0ac29d04f",
+    "git_blob_bytes": 908907,
+    "git_blob_sha256": "b06eb7a79a082d8f9c2018834019200ac530b8feaeb7ecb98d9f64f0ac29d04f"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/image-selection/0a34fae7ba57cb8870df5325b9c30ea474def1b0913c19c596655b85a79fdee4.webp": {
+    "bytes": 108096,
+    "sha256": "83d3765ff57511f11054d62e6beaf52648d277006b6dcb3c1d5f9e03ef502c49",
+    "git_blob_bytes": 108096,
+    "git_blob_sha256": "83d3765ff57511f11054d62e6beaf52648d277006b6dcb3c1d5f9e03ef502c49"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/image-selection/0e4984a9b3765ce80e9853443f9319ecedf90885c74b56cccfebc09402740f8a.webp": {
+    "bytes": 184424,
+    "sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+    "git_blob_bytes": 184424,
+    "git_blob_sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/image-selection/0f168a4b1b6e96c72e9627c97a212c27a4572250ff58e25703b9d0c2bc74191a.webp": {
+    "bytes": 156794,
+    "sha256": "a8d419ac16852b73fbc7b92c6857ba5d4be2f2dd8056bf44af707e6af4d62207",
+    "git_blob_bytes": 156794,
+    "git_blob_sha256": "a8d419ac16852b73fbc7b92c6857ba5d4be2f2dd8056bf44af707e6af4d62207"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/image-selection/candidates.json": {
+    "bytes": 1771,
+    "sha256": "79098e3b0314c163c944e0501b7f1e084fd7339c641bb6de5bcce04cb479197a",
+    "git_blob_bytes": 1771,
+    "git_blob_sha256": "79098e3b0314c163c944e0501b7f1e084fd7339c641bb6de5bcce04cb479197a"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/image-selection/contact-sheet.png": {
+    "bytes": 255887,
+    "sha256": "19ecfea7e0dd0ba7579d1554a610a48970c54f53ea3a92f99b1a4d8cd1457f55",
+    "git_blob_bytes": 255887,
+    "git_blob_sha256": "19ecfea7e0dd0ba7579d1554a610a48970c54f53ea3a92f99b1a4d8cd1457f55"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/independent-readback.py": {
+    "bytes": 10014,
+    "sha256": "03e7669ff11a5da24bc154d3a98e088451eaf5c8f5952ed92620b7d79a69b14f",
+    "git_blob_bytes": 10014,
+    "git_blob_sha256": "03e7669ff11a5da24bc154d3a98e088451eaf5c8f5952ed92620b7d79a69b14f"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/independent-reader-schema-correction.json": {
+    "bytes": 435,
+    "sha256": "be57f1fc03dbdba60a6b0b898306b353fc0bba7693f5d9ca22f38c73a7efbddf",
+    "git_blob_bytes": 435,
+    "git_blob_sha256": "be57f1fc03dbdba60a6b0b898306b353fc0bba7693f5d9ca22f38c73a7efbddf"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/independent-result-analysis.json": {
+    "bytes": 4169,
+    "sha256": "f1634a256751bbceafb7acff699ec1e1376754f49818232901d6b10e96f598c7",
+    "git_blob_bytes": 4169,
+    "git_blob_sha256": "f1634a256751bbceafb7acff699ec1e1376754f49818232901d6b10e96f598c7"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/independent-sequence-analysis.json": {
+    "bytes": 3340,
+    "sha256": "37408567068553a3b42afa05e22662b881a624db390c0632cddb6472c52572e0",
+    "git_blob_bytes": 3340,
+    "git_blob_sha256": "37408567068553a3b42afa05e22662b881a624db390c0632cddb6472c52572e0"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/independent-sequence-check.py": {
+    "bytes": 6590,
+    "sha256": "9eb145266841f6cbd3d3262f4dc16c12e9dbe2320c7478c7ef10ae1697265021",
+    "git_blob_bytes": 6590,
+    "git_blob_sha256": "9eb145266841f6cbd3d3262f4dc16c12e9dbe2320c7478c7ef10ae1697265021"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/input-contract.json": {
+    "bytes": 1670,
+    "sha256": "9f5affe5eb88b496fa476a0da468bde44e245d2595bc9211900e7a109a576d1c",
+    "git_blob_bytes": 1670,
+    "git_blob_sha256": "9f5affe5eb88b496fa476a0da468bde44e245d2595bc9211900e7a109a576d1c"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/inventory-after.json": {
+    "bytes": 137695,
+    "sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+    "git_blob_bytes": 137695,
+    "git_blob_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/inventory-before.json": {
+    "bytes": 137695,
+    "sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+    "git_blob_bytes": 137695,
+    "git_blob_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/model-cache-metadata-after.json.gz": {
+    "bytes": 6988,
+    "sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe",
+    "git_blob_bytes": 6988,
+    "git_blob_sha256": "a60087740c1cf56b94a4909622ca9036a01d014d403d5bdbd3e1079c01fae8fe"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/occupancy-coordinates.npy": {
+    "bytes": 298688,
+    "sha256": "fc8c67e1b0de4162fbb555339570a2c4595012a957e1a5c8325103a479018069",
+    "git_blob_bytes": 298688,
+    "git_blob_sha256": "fc8c67e1b0de4162fbb555339570a2c4595012a957e1a5c8325103a479018069"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/occupancy-logits.npy": {
+    "bytes": 1048704,
+    "sha256": "5ec5e5ceb114e477177df91ba0de444dc54a9c70103f4086701b754c76a9e3c2",
+    "git_blob_bytes": 1048704,
+    "git_blob_sha256": "5ec5e5ceb114e477177df91ba0de444dc54a9c70103f4086701b754c76a9e3c2"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/occupancy-mask.npy": {
+    "bytes": 262272,
+    "sha256": "b30f83758f79a0a512e15e303da9392a4b95d15b50fcd41071ca85da40f191c5",
+    "git_blob_bytes": 262272,
+    "git_blob_sha256": "b30f83758f79a0a512e15e303da9392a4b95d15b50fcd41071ca85da40f191c5"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/occupancy-provenance.json": {
+    "bytes": 11902,
+    "sha256": "334426bd9b5bba15fc67e1fd60f5a69a36c3b324f7f2e4fbbf20738a0a22c59c",
+    "git_blob_bytes": 11902,
+    "git_blob_sha256": "334426bd9b5bba15fc67e1fd60f5a69a36c3b324f7f2e4fbbf20738a0a22c59c"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/passive-inventory.py": {
+    "bytes": 2305,
+    "sha256": "e06cdffacf16a99d09c2e9d2258aac6dfdb36df76ed820c7a71e87d132e0fd89",
+    "git_blob_bytes": 2305,
+    "git_blob_sha256": "e06cdffacf16a99d09c2e9d2258aac6dfdb36df76ed820c7a71e87d132e0fd89"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/pre-execution-review.json": {
+    "bytes": 863,
+    "sha256": "56da03d1ecf278818dda4b7abbad2c6e75250e6615370b812e44b8d6955771e1",
+    "git_blob_bytes": 863,
+    "git_blob_sha256": "56da03d1ecf278818dda4b7abbad2c6e75250e6615370b812e44b8d6955771e1"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/pre-marker-admission.json": {
+    "bytes": 1931,
+    "sha256": "ac01974e8ae5bd48a6c14608e4200685ccc69fd5a6913b7ef186efd6a5d1ea6d",
+    "git_blob_bytes": 1931,
+    "git_blob_sha256": "ac01974e8ae5bd48a6c14608e4200685ccc69fd5a6913b7ef186efd6a5d1ea6d"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/preprocessing-crop.png": {
+    "bytes": 896834,
+    "sha256": "29bffc14cbeeb8d46cc7349d73809d17a8f53ec150626b606260cf2fe166a776",
+    "git_blob_bytes": 896834,
+    "git_blob_sha256": "29bffc14cbeeb8d46cc7349d73809d17a8f53ec150626b606260cf2fe166a776"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/preprocessing-preview.png": {
+    "bytes": 308903,
+    "sha256": "55acdbf5094c0aa3e0f00179fc6c34e73d6d571f85cad4a2b9d831c192ff6335",
+    "git_blob_bytes": 308903,
+    "git_blob_sha256": "55acdbf5094c0aa3e0f00179fc6c34e73d6d571f85cad4a2b9d831c192ff6335"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/render-z-up-preview.py": {
+    "bytes": 3428,
+    "sha256": "0534d8826581fc7ee04e2aa9faf94a69f2c4624742c8e57db383047f55b8686a",
+    "git_blob_bytes": 3428,
+    "git_blob_sha256": "0534d8826581fc7ee04e2aa9faf94a69f2c4624742c8e57db383047f55b8686a"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/attempt-started.json": {
+    "bytes": 182,
+    "sha256": "d4d927495f33013018e5ca20ca1c2a70d52a799b2bd997d7a7842a98fd9ce226",
+    "git_blob_bytes": 182,
+    "git_blob_sha256": "d4d927495f33013018e5ca20ca1c2a70d52a799b2bd997d7a7842a98fd9ce226"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/checkpoint-after.json": {
+    "bytes": 126534,
+    "sha256": "8b81d353c957658b2ef557fc02fd3d89494a0a3f4db29a8bebc40fdce3c722d1",
+    "git_blob_bytes": 126534,
+    "git_blob_sha256": "8b81d353c957658b2ef557fc02fd3d89494a0a3f4db29a8bebc40fdce3c722d1"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/checkpoint-before.json": {
+    "bytes": 126534,
+    "sha256": "8b81d353c957658b2ef557fc02fd3d89494a0a3f4db29a8bebc40fdce3c722d1",
+    "git_blob_bytes": 126534,
+    "git_blob_sha256": "8b81d353c957658b2ef557fc02fd3d89494a0a3f4db29a8bebc40fdce3c722d1"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/committed-harness.json": {
+    "bytes": 5858,
+    "sha256": "02328b83d832275de03de93998de03087fdb57f712697da3f50d350567395fec",
+    "git_blob_bytes": 5858,
+    "git_blob_sha256": "02328b83d832275de03de93998de03087fdb57f712697da3f50d350567395fec"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/cpu-gate.json": {
+    "bytes": 200721,
+    "sha256": "b7d673b8fa571e345857d590cd0b8a64ebbf529bfc21a9aca392ff194f4e31d3",
+    "git_blob_bytes": 200721,
+    "git_blob_sha256": "b7d673b8fa571e345857d590cd0b8a64ebbf529bfc21a9aca392ff194f4e31d3"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/private-cache.json": {
+    "bytes": 98,
+    "sha256": "b35812b2132e9bac4714919b921f3f30c1fc26e09264867a9598ba81e7102ebb",
+    "git_blob_bytes": 98,
+    "git_blob_sha256": "b35812b2132e9bac4714919b921f3f30c1fc26e09264867a9598ba81e7102ebb"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/results.json": {
+    "bytes": 320427,
+    "sha256": "28c04f7dfb13aa3be716e16250e8bcf018e68e0e073b695525b19885ca4f2741",
+    "git_blob_bytes": 320427,
+    "git_blob_sha256": "28c04f7dfb13aa3be716e16250e8bcf018e68e0e073b695525b19885ca4f2741"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/trace.jsonl": {
+    "bytes": 34205,
+    "sha256": "a56207163fc9c879381561fa2798e3d8260a742fc04a8e7aadb0d003a513ed3a",
+    "git_blob_bytes": 34205,
+    "git_blob_sha256": "a56207163fc9c879381561fa2798e3d8260a742fc04a8e7aadb0d003a513ed3a"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/windows-after-exit.json": {
+    "bytes": 1556,
+    "sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667",
+    "git_blob_bytes": 1556,
+    "git_blob_sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/windows-before.json": {
+    "bytes": 1556,
+    "sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667",
+    "git_blob_bytes": 1556,
+    "git_blob_sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/windows-cpu-gate.json": {
+    "bytes": 1556,
+    "sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667",
+    "git_blob_bytes": 1556,
+    "git_blob_sha256": "9196275e1ae5672afc71f9177bd289b941124a3a8cafd1799d017e6f81aaa667"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/windows-periodic.jsonl": {
+    "bytes": 4929,
+    "sha256": "622528e7064c16bfdc9a63d4565d150ee84fb6baca7d5781c25aa45041e7d448",
+    "git_blob_bytes": 4929,
+    "git_blob_sha256": "622528e7064c16bfdc9a63d4565d150ee84fb6baca7d5781c25aa45041e7d448"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/worker.stderr.txt": {
+    "bytes": 1020,
+    "sha256": "69e63fb8dda92231a1134c21a6993e753e2a8d06321996fd656979fc5e388ea4",
+    "git_blob_bytes": 1020,
+    "git_blob_sha256": "69e63fb8dda92231a1134c21a6993e753e2a8d06321996fd656979fc5e388ea4"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/run/worker.stdout.txt": {
+    "bytes": 381294,
+    "sha256": "3cc2451824bf015d73e6e31fac19d4c0634a05ab05090e3d8d46bef085718468",
+    "git_blob_bytes": 381294,
+    "git_blob_sha256": "3cc2451824bf015d73e6e31fac19d4c0634a05ab05090e3d8d46bef085718468"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sampling/scratch-manifest.json": {
+    "bytes": 2061,
+    "sha256": "5569ce50238d5d3d5fa03955cde442b522af32aa3fd310dc711d9d2e844afd6f",
+    "git_blob_bytes": 2061,
+    "git_blob_sha256": "5569ce50238d5d3d5fa03955cde442b522af32aa3fd310dc711d9d2e844afd6f"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/selected-input.png": {
+    "bytes": 968371,
+    "sha256": "07557b7b9f726aad3b291f4902498e52423efadbf746fb2c5759e3e2c6adeef0",
+    "git_blob_bytes": 968371,
+    "git_blob_sha256": "07557b7b9f726aad3b291f4902498e52423efadbf746fb2c5759e3e2c6adeef0"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sequence-attempt-started.json": {
+    "bytes": 184,
+    "sha256": "b51e2f280c6f3ab8d9fc2610c4f1121efff66aa8e5da847aa4c8bb548be4a280",
+    "git_blob_bytes": 184,
+    "git_blob_sha256": "b51e2f280c6f3ab8d9fc2610c4f1121efff66aa8e5da847aa4c8bb548be4a280"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sequence-launch.txt": {
+    "bytes": 305,
+    "sha256": "15cf0507cfe14c65936e673c6db72f4f2c1b1c66aa49af8c8d6f874d2144e861",
+    "git_blob_bytes": 305,
+    "git_blob_sha256": "15cf0507cfe14c65936e673c6db72f4f2c1b1c66aa49af8c8d6f874d2144e861"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sequence-result.json": {
+    "bytes": 13616,
+    "sha256": "eb2a86b6ed288c506f697ea76832609580dc6c6c1063b5605ffa5c8fe4d8d347",
+    "git_blob_bytes": 13616,
+    "git_blob_sha256": "eb2a86b6ed288c506f697ea76832609580dc6c6c1063b5605ffa5c8fe4d8d347"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/sparse-structure-latent.safetensors": {
+    "bytes": 134688,
+    "sha256": "9860da7f631fec2324191f3d8098bee61d845a264415117fe1e43ccc1a5a7332",
+    "git_blob_bytes": 134688,
+    "git_blob_sha256": "9860da7f631fec2324191f3d8098bee61d845a264415117fe1e43ccc1a5a7332"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/venv-metadata-after.json.gz": {
+    "bytes": 1933805,
+    "sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7",
+    "git_blob_bytes": 1933805,
+    "git_blob_sha256": "ccfc309cb9898ba4988a07de3b14f3e5b41679e1bc230d19239c210645ff5af7"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/verify-voxel-preview.py": {
+    "bytes": 3117,
+    "sha256": "33e1fa1ae22cf83bf004954034b3acae4ed910922a40451726bad63ff3f92b9d",
+    "git_blob_bytes": 3117,
+    "git_blob_sha256": "33e1fa1ae22cf83bf004954034b3acae4ed910922a40451726bad63ff3f92b9d"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/voxel-preview-independent.json": {
+    "bytes": 430,
+    "sha256": "c17c769b98c2d5de458fd1c1a4d5519b95d0d488da7d74f159f09b42f3177a17",
+    "git_blob_bytes": 430,
+    "git_blob_sha256": "c17c769b98c2d5de458fd1c1a4d5519b95d0d488da7d74f159f09b42f3177a17"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/voxel-preview-z-up.png": {
+    "bytes": 45751,
+    "sha256": "0ab3d2bf9718519a58005e13a3266650f91e681ab451734d931baded7ac74c59",
+    "git_blob_bytes": 45751,
+    "git_blob_sha256": "0ab3d2bf9718519a58005e13a3266650f91e681ab451734d931baded7ac74c59"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/voxel-preview.json": {
+    "bytes": 708,
+    "sha256": "8fb9b954b5253980e512a541a328fd80e355f69d9b2bb8ec961686be03d286f1",
+    "git_blob_bytes": 708,
+    "git_blob_sha256": "8fb9b954b5253980e512a541a328fd80e355f69d9b2bb8ec961686be03d286f1"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/voxel-preview.obj": {
+    "bytes": 863138,
+    "sha256": "5fa58c438aa29f40e6ecd7a5c169d26ed25263bacbc3ab5f6519e61628d432da",
+    "git_blob_bytes": 863138,
+    "git_blob_sha256": "5fa58c438aa29f40e6ecd7a5c169d26ed25263bacbc3ab5f6519e61628d432da"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/voxel-preview.png": {
+    "bytes": 43764,
+    "sha256": "822d27827fa7e77fef146726cfca817f9a26dff85cf57383385bc135d3574825",
+    "git_blob_bytes": 43764,
+    "git_blob_sha256": "822d27827fa7e77fef146726cfca817f9a26dff85cf57383385bc135d3574825"
+  },
+  "docs/compatibility/amd-object-conditioned-occupancy-evidence/z-up-preview-provenance.json": {
+    "bytes": 954,
+    "sha256": "8553267210c8c4bb5da1bbc78ef105acb46ae89485468c9e4206ab679cd197e7",
+    "git_blob_bytes": 954,
+    "git_blob_sha256": "8553267210c8c4bb5da1bbc78ef105acb46ae89485468c9e4206ab679cd197e7"
+  }
+}
