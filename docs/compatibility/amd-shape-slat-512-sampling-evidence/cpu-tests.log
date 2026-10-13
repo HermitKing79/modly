@@ -1,0 +1,58 @@
+test_budget_rejects_nonfinite_and_foreign_steps (test_amd_shape_sampling_schedule.ScheduleTests.test_budget_rejects_nonfinite_and_foreign_steps) ... ok
+test_exact_source_schedule_has_21_invocations (test_amd_shape_sampling_schedule.ScheduleTests.test_exact_source_schedule_has_21_invocations) ... ok
+test_fail_closed_if_required_count_differs (test_amd_shape_sampling_schedule.ScheduleTests.test_fail_closed_if_required_count_differs) ... ok
+test_previous_sparse_parameters_cannot_be_substituted (test_amd_shape_sampling_schedule.ScheduleTests.test_previous_sparse_parameters_cannot_be_substituted) ... ok
+test_complete_readback_and_exact_normalization (test_amd_shape_sampling_artifact.ArtifactTests.test_complete_readback_and_exact_normalization) ... ok
+test_reject_nonfinite_dtype_shape_and_coordinate_changes (test_amd_shape_sampling_artifact.ArtifactTests.test_reject_nonfinite_dtype_shape_and_coordinate_changes) ... ok
+test_actual_copy_policy_negative_cond_and_seqlen (test_amd_shape_sampling_runtime.RuntimeTests.test_actual_copy_policy_negative_cond_and_seqlen) ... ok
+test_actual_native_sampler_hooks_counts_cache_layout_cleanup_and_journal (test_amd_shape_sampling_runtime.RuntimeTests.test_actual_native_sampler_hooks_counts_cache_layout_cleanup_and_journal) ... ERROR
+test_native_segment_reduce_available_and_population_std (test_amd_shape_sampling_runtime.RuntimeTests.test_native_segment_reduce_available_and_population_std) ... ok
+test_step_factory_wrong_values_kwargs_duplicate_and_invocation (test_amd_shape_sampling_runtime.RuntimeTests.test_step_factory_wrong_values_kwargs_duplicate_and_invocation) ... ok
+test_actual_diagnostics_journal (test_amd_shape_slat_control.ControlTests.test_actual_diagnostics_journal) ... ok
+test_actual_inputs_outputs_and_duplicates (test_amd_shape_slat_control.ControlTests.test_actual_inputs_outputs_and_duplicates) ... ok
+test_classifier_rejects_incomplete_release (test_amd_shape_slat_control.ControlTests.test_classifier_rejects_incomplete_release) ... ok
+test_exact_visibility_restored_after_offline_guard (test_amd_shape_slat_control.ControlTests.test_exact_visibility_restored_after_offline_guard) ... ok
+test_genuine_frequency_overload_and_negative_arguments (test_amd_shape_slat_control.ControlTests.test_genuine_frequency_overload_and_negative_arguments) ... ok
+test_rope_scope_values_and_one_transfer (test_amd_shape_slat_control.ControlTests.test_rope_scope_values_and_one_transfer) ... ok
+test_wrong_identity_device_dtype_operation_phase (test_amd_shape_slat_control.ControlTests.test_wrong_identity_device_dtype_operation_phase) ... ok
+test_exact_architecture_schema (test_amd_shape_slat_contract.ShapeContractTests.test_exact_architecture_schema) ... ok
+test_exact_transfer_contract (test_amd_shape_slat_contract.ShapeContractTests.test_exact_transfer_contract) ... ok
+test_one_forward_only (test_amd_shape_slat_contract.ShapeContractTests.test_one_forward_only) ... ok
+test_pool_threshold_axis_order (test_amd_shape_slat_contract.ShapeContractTests.test_pool_threshold_axis_order) ... ok
+test_reject_invalid_saved_mask_and_nonfinite (test_amd_shape_slat_contract.ShapeContractTests.test_reject_invalid_saved_mask_and_nonfinite) ... ok
+test_unique_ordered_coordinates (test_amd_shape_slat_contract.ShapeContractTests.test_unique_ordered_coordinates) ... ok
+
+======================================================================
+ERROR: test_actual_native_sampler_hooks_counts_cache_layout_cleanup_and_journal (test_amd_shape_sampling_runtime.RuntimeTests.test_actual_native_sampler_hooks_counts_cache_layout_cleanup_and_journal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_shape_sampling_runtime.py", line 67, in test_actual_native_sampler_hooks_counts_cache_layout_cleanup_and_journal
+    cls=entry.import_sampler();model=Fixture();control=ShapeSamplingControl(torch,cls,device='cpu')
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_shape_sampling.py", line 31, in import_sampler
+    verify_sampler();sys.path.insert(0,str(forward.local.SOURCE))
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_shape_sampling.py", line 28, in verify_sampler
+    if not np.array_equal(coords,forward.local.verify_inputs()[2]):raise RuntimeError('Canonical saved coordinates differ')
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_shape_slat_local.py", line 26, in verify_inputs
+    result=feature.verify(FEATURE,FEATURE.parent,{k:row['provenance'][k] for k in feature.FIELDS},row['output_sha256'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_feature_checkpoint.py", line 52, in verify
+    with path.open('rb') as stream:blob=stream.read(MAX_BYTES+1)
+         ^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_shape_slat_control.py", line 8, in audit
+    if e=='open' and isinstance(a[0],(str,bytes)) and str(a[0]).lower().endswith(('.safetensors','.pt','.pth','.ckpt','.gguf')):raise RuntimeError('CPU test forbids checkpoints')
+                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CPU test forbids checkpoints
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.699s
+
+FAILED (errors=1)
+[SPARSE] Conv backend: flex_gemm; Attention backend: flash_attn
+[ATTENTION] Using backend: sdpa
+{"tests_run": 23, "failures": 0, "errors": 1, "successful": false, "gpu_initialized": false, "real_weights_loaded": false, "real_model_forwards": 0, "noise_sha256": "b5fa87e715f728aabcd218a109f492f59c51999039581a20b640c860e77a9c7b", "noise_matches_previous_forward": true, "workspace_verified": true, "segment_reduce_cuda_registration": true, "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]", "torch": "2.13.0+rocm10.0.0", "hip": "7.15.26333", "cuda": null}

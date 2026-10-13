@@ -45,6 +45,7 @@ def describe(t):return dict(shape=list(t.shape),dtype=str(t.dtype),device=str(t.
 class CopyPolicy:
     """Production transfer validator, directly exercised by CPU-only tests."""
     def __init__(self,torch,n):
+        self.contract=contract
         self.torch,self.n=torch,n;self.phase='cpu';self.active=None;self.placement=set();self.frequency=None;self.rope=None
         self.scopes=[];self.counts={k:0 for k in ('x','coords','batch_map','t','cond','output','output_coords','frequency','rope_frequency')}
     def reject(self):raise RuntimeError('Unapproved shape-SLat operation in phase '+self.phase)
@@ -56,7 +57,7 @@ class CopyPolicy:
             if self.active is None:return self.reject()
             key,expected,target=self.active
             if name!='aten._to_copy.default' or source is not expected or kwargs!={'device':torch.device(target)} or self.counts[key]:return self.reject()
-            contract.validate_transfer(key,describe(source),target,self.phase,self.n);self.counts[key]+=1;return
+            self.contract.validate_transfer(key,describe(source),target,self.phase,self.n);self.counts[key]+=1;return
         allowed={'dtype','layout','device','memory_format'}
         if name=='aten.to.dtype_layout':allowed|={'pin_memory','non_blocking','copy'}
         if (set(kwargs)-allowed or kwargs.get('device',torch.device('cuda:0'))!=torch.device('cuda:0')
@@ -77,10 +78,12 @@ class CopyPolicy:
         elif self.phase=='forward':
             if source.device!=torch.device('cuda:0') or dtype not in (None,source.dtype) and {dtype,source.dtype}!={torch.float32,torch.bfloat16}:return self.reject()
         else:return self.reject()
-def worker(scratch):
+def worker(scratch,sampling_factory=None):
     record=dict(status='FAIL',stage='startup',sdk_discovery=[],calls={},load_calls=0,forward_calls=0)
     component=model=output=cpu_output=cpu_coords=inputs=gpu_inputs=sparse=torch=policy=None
-    permit=contract.SingleForward();trace=diagnostics.Trace(lambda line:print(line,flush=True),limit=512);op_counts={};modules={}
+    sampling=sampler_result=original_tensor=None
+    active_contract=contract if sampling_factory is None else __import__('amd_shape_sampling_contract')
+    permit=contract.SingleForward();trace=diagnostics.Trace(lambda line:print(line,flush=True),limit=512 if sampling_factory is None else 192);op_counts={};modules={}
     def forbidden(*a,**k):raise RuntimeError('Unapproved shape-SLat action')
     def stage(name):record['stage']=name;print('FORWARD_STAGE='+name,flush=True);trace.emit('stage',name,phase=policy.phase if policy else 'cpu')
     try:
@@ -95,7 +98,7 @@ def worker(scratch):
         checkpoint=local.PREFIX.with_suffix('.safetensors').resolve()
         def audit(e,a):
             if e.startswith('socket.'):return forbidden()
-            if e=='import' and contract.prohibited_import(str(a[0])):return forbidden()
+            if e=='import' and active_contract.prohibited_import(str(a[0])):return forbidden()
             if e=='open' and isinstance(a[0],(str,bytes)):
                 p=Path(os.fsdecode(a[0]))
                 if p.suffix.lower() in ('.safetensors','.pt','.pth','.bin','.gguf','.ckpt') and p.resolve() not in (checkpoint,local.FEATURE.resolve()):return forbidden()
@@ -108,23 +111,45 @@ def worker(scratch):
         trace.emit('state','runtime',runtime=record['runtime']);record['workspace_binding']=teardown.verify_runtime_binding(torch)
         torch.set_num_threads(1);original_init=torch.cuda._lazy_init;torch.cuda._lazy_init=forbidden
         torch.load=forbidden;torch.compile=forbidden;torch.hub.load=forbidden
-        policy=CopyPolicy(torch,verified['token_count'])
+        if sampling_factory is not None:
+            sampling=sampling_factory(torch)
+            record['sampler']=dict(class_name=sampling.sampler_class.__name__,source=__import__('inspect').getfile(sampling.sampler_class),parameters=sampling.policy.PARAMS,sigma_min=sampling.policy.SIGMA_MIN)
+        policy=CopyPolicy(torch,verified['token_count']) if sampling is None else sampling.copy_policy(verified['token_count'])
         original_call=torch.nn.Module.__call__
         def module_call(instance,*args,**kwargs):
             if policy.phase!='forward' or id(instance) not in modules:return forbidden()
             name=modules[id(instance)];policy.scopes.append(name)
             selected=name=='' or name.startswith('blocks.') and (name.count('.')==1 or name.endswith(('.self_attn','.cross_attn','.rope')))
             try:
+                if sampling is not None and name=='':sampling.begin_model(args,kwargs,policy)
                 if selected and not name.endswith('.rope'):
                     key=name or '<root>';record['calls'][key]=record['calls'].get(key,0)+1
-                    if record['calls'][key]!=1:return forbidden()
-                result=trace.call('module:'+(name or '<root>'),lambda:original_call(instance,*args,**kwargs),input=describe(args[0])) if selected else original_call(instance,*args,**kwargs)
+                    if sampling is None and record['calls'][key]!=1:return forbidden()
+                    if sampling is not None:sampling.module_enter(key)
+                if selected and (sampling is None or name==''):
+                    shape_input=describe(args[0].feats) if sampling is not None and name=='' else describe(args[0])
+                    details=dict(input=shape_input)
+                    if sampling is not None:details['invocation']=sampling.budget.active.copy()
+                    result=trace.call('module:'+(name or '<root>'),lambda:original_call(instance,*args,**kwargs),**details)
+                else:result=original_call(instance,*args,**kwargs)
                 if name.startswith('blocks.') and name.count('.')==1:
-                    memory=local.loading.gpu_memory(torch);trace.emit('memory','after-'+name,memory=memory)
+                    memory=local.loading.gpu_memory(torch)
+                    if sampling is None:trace.emit('memory','after-'+name,memory=memory)
+                    else:sampling.block_memory(memory)
                     if memory['allocated_bytes']>contract.MEMORY_LIMIT or memory['reserved_bytes']>contract.MEMORY_LIMIT:raise RuntimeError('Shape-SLat memory budget exceeded')
+                if sampling is not None and name=='':sampling.end_model(result,policy)
                 return result
             finally:policy.scopes.pop()
         torch.nn.Module.__call__=module_call
+        original_tensor=torch.tensor
+        def timestep_tensor(*args,**kwargs):
+            if sampling is None or policy.phase!='forward':return forbidden()
+            sampling.next_timestep(args,kwargs)
+            cpu=original_tensor(*args,device='cpu',dtype=torch.float32)
+            previous=policy.phase;policy.phase='inputs';policy.active=('t',cpu,'cuda:0');policy.counts['t']=0
+            try:
+                placed=torch.ops.aten._to_copy.default(cpu,device=torch.device('cuda:0'));sampling.staged_timestep(cpu,placed);return placed
+            finally:policy.active=None;policy.phase=previous
         from torch.utils._python_dispatch import TorchDispatchMode
         from torch.utils._pytree import tree_leaves
         class BoundedDispatch(TorchDispatchMode):
@@ -153,7 +178,7 @@ def worker(scratch):
                     op_counts[name]=op_counts.get(name,0)+1
                     if len(op_counts)>128:return forbidden()
                 else:return forbidden()
-                if policy.phase=='forward' and name in ('aten._scaled_dot_product_flash_attention.default','aten._scaled_dot_product_attention_math.default','aten._scaled_dot_product_efficient_attention.default'):
+                if policy.phase=='forward' and sampling is None and name in ('aten._scaled_dot_product_flash_attention.default','aten._scaled_dot_product_attention_math.default','aten._scaled_dot_product_efficient_attention.default'):
                     return trace.call('aten:'+name,lambda:func(*args,**kwargs),input=describe(args[0]))
                 return func(*args,**kwargs)
         with BoundedDispatch():
@@ -177,17 +202,26 @@ def worker(scratch):
             inputs={'x':torch.randn(len(coords),32,generator=torch.Generator(device='cpu').manual_seed(contract.SEED),dtype=torch.float32,device='cpu'),
                 'coords':torch.from_numpy(coords.copy()),'cond':torch.from_numpy(saved['cond'].copy()),'t':torch.tensor([contract.TIMESTEP],dtype=torch.float32,device='cpu')}
             cpu_sparse=SparseTensor(inputs['x'],inputs['coords']);inputs['batch_map']=cpu_sparse.batch_boardcast_map.clone();cpu_sparse=None;saved=None
+            if sampling is not None:
+                inputs.pop('t');inputs['neg_cond']=torch.zeros_like(inputs['cond'])
+                cpu_sparse=SparseTensor(inputs['x'],inputs['coords']);inputs['seqlen']=cpu_sparse.seqlen.clone();cpu_sparse=None
             record['input']={k:{**describe(v),'sha256':hashlib.sha256(v.numpy().tobytes()).hexdigest()} for k,v in inputs.items()}
             if record['input']['cond']['sha256']!=feature['output_sha256'] or record['input']['coords']['sha256']!=json.loads(PROBE.read_text())['worker']['coords_sha256']:raise ValueError('Saved feature/coordinate values differ')
+            if sampling is not None:
+                old=json.loads((local.PINS.parent/'run/results.json').read_text())['worker']['input']['x']['sha256']
+                if record['input']['x']['sha256']!=old:raise ValueError('Canonical CPU noise differs from verified seed contract')
             record['provenance']=dict(seed=contract.SEED,timestep=contract.TIMESTEP,conditioning=feature,checkpoint_sha256=verified['checkpoint_sha256'],config_sha256=verified['config_sha256'],source_sha256=local.digest(local.SOURCE/'trellis2/models/structured_latent_flow.py'),
                 occupancy_logits_sha256=local.LOGITS_SHA,occupancy_mask_sha256=local.MASK_SHA,pooling='max_pool3d((decoded>0).float(),2,2,0)>0.5; argwhere[:,[0,2,3,4]].int()',sparse_attention='explicit existing PyTorch SDPA branch; no FlashAttention fallback',sparse_convolution='none; no convolution used')
+            if sampling is not None:
+                record['provenance'].pop('timestep');record['provenance']['timestep_schedule']=active_contract.times()
             record['cpu_load']=dict(status='PASS',strict=True,assign=True,missing_keys=[],unexpected_keys=[],gpu_initialized=False,parameter_bytes=verified['tensor_data_bytes'],payload_entries=640,
                 reversible_widening_count=220,feature_verified=True,input_token_count=len(coords),tensors=local.manifest(dict(model.named_parameters())),buffers=local.manifest(dict(model.named_buffers())),
                 elapsed_seconds=time.monotonic()-began,memory_before=before,memory_after=local.loading.process_memory(),loader_diagnostics=component.diagnostics.copy())
             contract.authorize_placement(record['cpu_load'],verified,verified['checkpoint_sha256'],verified['checkpoint_sha256'])
             if torch.cuda.is_initialized():return forbidden()
             print(supervisor.EVENT+json.dumps(dict(event='cpu-ready',gate_one=record['cpu_load'],checkpoint_sha256=verified['checkpoint_sha256'])),flush=True);stage('waiting-for-observer')
-            if sys.stdin.readline().encode()!=AUTHORIZE:raise RuntimeError('GPU attempt not authorized')
+            authorization=AUTHORIZE if sampling is None else __import__('amd_shape_sampling').AUTHORIZE
+            if sys.stdin.readline().encode()!=authorization:raise RuntimeError('GPU attempt not authorized')
             policy.phase='placement';torch.cuda._lazy_init=original_init;stage('GPU-metadata');torch.cuda.set_device(0);p=torch.cuda.get_device_properties(0)
             if 'RX 9070 XT' not in p.name or p.gcnArchName.split(':')[0]!='gfx1201':raise RuntimeError('Unexpected GPU')
             record['gpu']=dict(name=p.name,architecture=p.gcnArchName,total_bytes=p.total_memory);trace.emit('state','gpu',gpu=record['gpu'])
@@ -202,15 +236,21 @@ def worker(scratch):
             record['placement_seconds']=time.monotonic()-began;modules={id(v):name for name,v in model.named_modules()}
             with torch.inference_mode():
                 policy.phase='inputs';stage('input-transfer');gpu_inputs={}
-                for key in ('x','coords','cond','t','batch_map'):
+                for key in (('x','coords','cond','t','batch_map') if sampling is None else ('x','coords','cond','neg_cond','batch_map','seqlen')):
                     policy.active=(key,inputs[key],'cuda:0');gpu_inputs[key]=torch.ops.aten._to_copy.default(inputs[key],device=torch.device('cuda:0'))
                 policy.active=None;policy.phase='placement';torch.cuda.synchronize(0)
                 sparse=SparseTensor(gpu_inputs['x'],gpu_inputs['coords'],shape=torch.Size([1,32]))
                 sparse.register_spatial_cache('layout',[slice(0,len(coords))]);sparse.register_spatial_cache('batch_boardcast_map',gpu_inputs['batch_map'])
+                if sampling is not None:sparse.register_spatial_cache('seqlen',gpu_inputs['seqlen'])
                 record['before_forward']=local.loading.gpu_memory(torch);trace.emit('memory','before-forward',memory=record['before_forward'])
                 if torch.is_autocast_enabled('cuda') or torch.is_grad_enabled():return forbidden()
-                policy.phase='forward';stage('single-forward');began=time.monotonic()
-                output=permit.run(lambda:model(sparse,gpu_inputs['t'],gpu_inputs['cond']))
+                policy.phase='forward';stage('single-forward' if sampling is None else 'sampling-sequence');began=time.monotonic()
+                if sampling is None:output=permit.run(lambda:model(sparse,gpu_inputs['t'],gpu_inputs['cond']))
+                else:
+                    torch.tensor=timestep_tensor
+                    try:sampler_result=sampling.run(model,sparse,gpu_inputs,trace,lambda:torch.cuda.synchronize(0),lambda:local.loading.gpu_memory(torch))
+                    finally:torch.tensor=original_tensor
+                    output=sampler_result.samples
                 policy.phase='placement';trace.call('synchronize:after-forward',lambda:torch.cuda.synchronize(0));record['forward_seconds']=time.monotonic()-began
                 record['after_forward']=local.loading.gpu_memory(torch);trace.emit('memory','after-forward',memory=record['after_forward'])
                 if not isinstance(output,SparseTensor):raise ValueError('Genuine model did not return SparseTensor')
@@ -222,22 +262,34 @@ def worker(scratch):
                     'requires_grad':output.feats.requires_grad,'is_inference_tensor':output.feats.is_inference(),'grad_enabled':torch.is_grad_enabled(),'minimum':float(values.min()),'maximum':float(values.max()),
                     'mean':float(values.mean()),'stddev':float(values.std()),'representative_values':values.reshape(-1)[:8].tolist(),'sha256':hashlib.sha256(values.tobytes()).hexdigest()}
                 contract.validate_output(record['output'],len(coords));contract.validate_coords(out_coords,len(coords))
-                for name,array in [('shape-flow-output.npy',values),('shape-flow-coordinates.npy',out_coords)]:
-                    with (scratch/name).open('xb') as f:np.save(f,array,allow_pickle=False);f.flush();os.fsync(f.fileno())
-                    readback=np.load(scratch/name,allow_pickle=False)
-                    if not np.array_equal(readback,array):raise ValueError('Output readback differs')
-                record['artifacts']={name:dict(path=str(scratch/name),file_bytes=(scratch/name).stat().st_size,sha256=local.digest(scratch/name)) for name in ('shape-flow-output.npy','shape-flow-coordinates.npy')}
+                if sampling is None:
+                    for name,array in [('shape-flow-output.npy',values),('shape-flow-coordinates.npy',out_coords)]:
+                        with (scratch/name).open('xb') as f:np.save(f,array,allow_pickle=False);f.flush();os.fsync(f.fileno())
+                        readback=np.load(scratch/name,allow_pickle=False)
+                        if not np.array_equal(readback,array):raise ValueError('Output readback differs')
+                    record['artifacts']={name:dict(path=str(scratch/name),file_bytes=(scratch/name).stat().st_size,sha256=local.digest(scratch/name)) for name in ('shape-flow-output.npy','shape-flow-coordinates.npy')}
+                else:
+                    import amd_shape_sampling as entry
+                    import amd_shape_sampling_artifact as artifact
+                    normalization=entry.verify_sampler()['normalization'];normalized=artifact.denormalize(values,np.array(normalization['mean'],dtype=np.float32),np.array(normalization['std'],dtype=np.float32))
+                    sequence=sampling.report();sequence={**sequence,'models_sha256':hashlib.sha256(json.dumps(sequence['models'],sort_keys=True).encode()).hexdigest()};sequence.pop('models')
+                    provenance=json.loads(json.dumps(dict(harness_commit=os.environ['MODLY_SAMPLING_HARNESS_COMMIT'],checkpoint=record['provenance'],input=record['input'],parameters=active_contract.PARAMS,
+                        sigma_min=active_contract.SIGMA_MIN,seed=active_contract.SEED,sampler_sources=entry.sources(),normalization=normalization,sequence=sequence,raw_output=record['output'])))
+                    record['artifacts']=artifact.write(scratch,values,normalized,out_coords,provenance,noise=inputs['x'].numpy());normalized=None
                 values=out_coords=readback=array=None
             stage('release');policy.phase='release';refs=[weakref.ref(model),weakref.ref(output),weakref.ref(sparse),*[weakref.ref(v) for v in gpu_inputs.values()]]
             sparse.clear_spatial_cache();output.clear_spatial_cache()
+            if sampling is not None:refs+=sampling.issued;sampling.drop_references();sampler_result=None
             model=output=sparse=gpu_inputs=inputs=cpu_output=cpu_coords=None;policy.rope=policy.frequency=policy.active=None;policy.placement.clear();modules.clear()
             record['workspace_clear_calls']=1;record['release']=proven.release(torch,component,refs,trace);component=None
             stage('complete');record['status']='PASS'
     except BaseException as e:record.update(error_type=type(e).__name__,error=str(e),traceback=traceback.format_exc())
     finally:
-        record.update(forward_calls=permit.calls,transfers=policy.counts if policy else {},gpu_operation_counts=op_counts)
+        if original_tensor is not None and torch is not None:torch.tensor=original_tensor
+        record.update(forward_calls=permit.calls if sampling is None else sampling.budget.calls,transfers=(policy.counts if sampling is None else sampling.transfers(policy.counts)) if policy else {},gpu_operation_counts=op_counts)
+        if sampling is not None:record['sampling']=sampling.report();sampling.drop_references()
         if component is not None:component.unload()
-        component=model=output=cpu_output=cpu_coords=inputs=gpu_inputs=sparse=policy=None;gc.collect()
+        component=model=output=cpu_output=cpu_coords=inputs=gpu_inputs=sparse=policy=sampling=sampler_result=None;gc.collect()
         print(supervisor.RESULT+json.dumps(record),flush=True)
     return 0 if record['status']=='PASS' else 1
 if __name__=='__main__':

@@ -1,0 +1,29 @@
+{
+  "review": "PASS: no blockers",
+  "reviewer": "/root/shape_sampling_review",
+  "scope": "Read-only complete candidate review plus final trace-only delta review; no GPU/real weights.",
+  "independent_cpu_tests": 12,
+  "executed_gpu": false,
+  "approved_counts": {
+    "steps": 12,
+    "forwards": 21,
+    "positive": 12,
+    "negative": 9
+  },
+  "reviewed_file_sha256": {
+    "scripts/compatibility/amd_shape_sampling.py": "f6de68801c20dfc767b1694911b4b523d914f5177455ce3f777acacb064e3ffd",
+    "scripts/compatibility/amd_shape_sampling_contract.py": "c6b64b4ecc7dcdd36dff6b3b228e8d399d5a501eb2222a8c92850dd646102f89",
+    "scripts/compatibility/amd_shape_sampling_control.py": "23840d39f7e87dce80c13776bebac84618f4afbffd813195a7da81c7c4c017ed",
+    "scripts/compatibility/amd_shape_sampling_artifact.py": "151829bcb5de071591f663728f2f93c26d692e3cbeed5fd5c16c3531d1783308",
+    "scripts/compatibility/amd_shape_slat_forward.py": "a2992e5e656d256d03f1f13ccd39543e7e438bc4a0aa7f7a1e5428a4a50124f9",
+    "scripts/compatibility/amd_sparse_decoder_forward.py": "b881463ed7462dd2302edf3f570c9995b1c36081ed874c697d3fe48824ba17a9"
+  },
+  "findings_resolved": [
+    "Budget NaN/type rejection",
+    "Compact trace below existing event/journal limits",
+    "Canonical step times/counts/timing/memory evidence required",
+    "All five artifacts and hash crosslinks required"
+  ],
+  "final_trace_identity": "Active invocation ticket copied into root entry record; no added events or computation",
+  "remaining_blockers": []
+}

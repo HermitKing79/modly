@@ -1,0 +1,16 @@
+{
+  "combined_test_issue": "Permanent checkpoint-open audit installed by existing control test blocked reading saved feature metadata in native sampler test. Production code unchanged; isolated processes pass.",
+  "combined_log": "cpu-tests.log",
+  "combined_result": "cpu-tests.json",
+  "passing_tests": {
+    "sampling": 10,
+    "existing_control": 7,
+    "existing_contract": 6,
+    "result_classifier": 2
+  },
+  "total_distinct_focused_tests": 25,
+  "gpu_initialized": false,
+  "real_weights_loaded": false,
+  "real_model_forwards": 0,
+  "workspace_note": "An early CPU-only verify_workspace call rejected missing WORKSPACE_DIR before any marker. Subsequent CPU prelaunch and actual launch explicitly set and verify it in their own PowerShell process."
+}

@@ -1,0 +1,7 @@
+{
+  "original_requested_counts": {"total": 22, "positive": 12, "negative": 10},
+  "canonical_counts": {"total": 21, "positive": 12, "negative": 9},
+  "reason": "With rescale_t=3.0, step9 has t=0.6 and step10 has t=0.5; the inclusive [0.6,1.0] interval guides steps1 through9 only.",
+  "human_answer": "Approve canonical 21 forwards",
+  "scope": "Exactly one canonical12-step sequence. Every other original parameter, safety gate and exclusion retained. No attempt consumed during inspection."
+}

@@ -1,0 +1,21 @@
+test_budget_rejects_nonfinite_and_foreign_steps (test_amd_shape_sampling_schedule.ScheduleTests.test_budget_rejects_nonfinite_and_foreign_steps) ... ok
+test_exact_source_schedule_has_21_invocations (test_amd_shape_sampling_schedule.ScheduleTests.test_exact_source_schedule_has_21_invocations) ... ok
+test_fail_closed_if_required_count_differs (test_amd_shape_sampling_schedule.ScheduleTests.test_fail_closed_if_required_count_differs) ... ok
+test_previous_sparse_parameters_cannot_be_substituted (test_amd_shape_sampling_schedule.ScheduleTests.test_previous_sparse_parameters_cannot_be_substituted) ... ok
+test_complete_readback_and_exact_normalization (test_amd_shape_sampling_artifact.ArtifactTests.test_complete_readback_and_exact_normalization) ... ok
+test_reject_nonfinite_dtype_shape_and_coordinate_changes (test_amd_shape_sampling_artifact.ArtifactTests.test_reject_nonfinite_dtype_shape_and_coordinate_changes) ... ok
+test_actual_copy_policy_negative_cond_and_seqlen (test_amd_shape_sampling_runtime.RuntimeTests.test_actual_copy_policy_negative_cond_and_seqlen) ... ok
+[SPARSE] Conv backend: flex_gemm; Attention backend: flash_attn
+[ATTENTION] Using backend: sdpa
+test_actual_native_sampler_hooks_counts_cache_layout_cleanup_and_journal (test_amd_shape_sampling_runtime.RuntimeTests.test_actual_native_sampler_hooks_counts_cache_layout_cleanup_and_journal) ... 
+Bounded shape-SLat512:   0%|          | 0/12 [00:00<?, ?it/s]
+Bounded shape-SLat512: 100%|##########| 12/12 [00:00<00:00, 158.27it/s]
+ok
+test_native_segment_reduce_available_and_population_std (test_amd_shape_sampling_runtime.RuntimeTests.test_native_segment_reduce_available_and_population_std) ... ok
+test_step_factory_wrong_values_kwargs_duplicate_and_invocation (test_amd_shape_sampling_runtime.RuntimeTests.test_step_factory_wrong_values_kwargs_duplicate_and_invocation) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.849s
+
+OK
+{"tests_run": 10, "errors": 0, "failures": 0, "successful": true, "gpu_initialized": false, "real_weights_loaded": false, "real_model_forwards": 0, "noise_sha256": "b5fa87e715f728aabcd218a109f492f59c51999039581a20b640c860e77a9c7b", "workspace_verified": true, "segment_reduce_cuda_registration": true}

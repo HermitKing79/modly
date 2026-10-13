@@ -1,0 +1,15 @@
+test_actual_copy_policy_negative_cond_and_seqlen (__main__.RuntimeTests.test_actual_copy_policy_negative_cond_and_seqlen) ... ok
+[SPARSE] Conv backend: flex_gemm; Attention backend: flash_attn
+[ATTENTION] Using backend: sdpa
+test_actual_native_sampler_hooks_counts_cache_layout_cleanup_and_journal (__main__.RuntimeTests.test_actual_native_sampler_hooks_counts_cache_layout_cleanup_and_journal) ... 
+Bounded shape-SLat512:   0%|          | 0/12 [00:00<?, ?it/s]
+Bounded shape-SLat512: 100%|##########| 12/12 [00:00<00:00, 160.95it/s]
+ok
+test_native_segment_reduce_available_and_population_std (__main__.RuntimeTests.test_native_segment_reduce_available_and_population_std) ... ok
+test_step_factory_wrong_values_kwargs_duplicate_and_invocation (__main__.RuntimeTests.test_step_factory_wrong_values_kwargs_duplicate_and_invocation) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.829s
+
+OK
+{"gpu_initialized": false, "real_weights_loaded": false, "real_model_forwards": 0, "schema": "aten::to.dtype_layout(Tensor(a) self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, bool non_blocking=False, bool copy=False, MemoryFormat? memory_format=None) -> Tensor(a)"}
