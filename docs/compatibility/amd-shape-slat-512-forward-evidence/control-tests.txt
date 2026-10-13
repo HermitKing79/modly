@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\platform.py", line 910, in uname
+    system, node, release, version, machine = infos = os.uname()
+                                                      ^^^^^^^^
+AttributeError: module 'os' has no attribute 'uname'. Did you mean: 'name'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_shape_slat_control.py", line 10, in <module>
+    import torch
+  File "D:\AI\Trellis2AMD\venv\Lib\site-packages\torch\__init__.py", line 163, in <module>
+    _rocm_init.initialize()
+  File "D:\AI\Trellis2AMD\venv\Lib\site-packages\torch\_rocm_init.py", line 4, in initialize
+    rocm_sdk.initialize_process(
+  File "D:\AI\Trellis2AMD\venv\Lib\site-packages\rocm_sdk\__init__.py", line 145, in initialize_process
+    preload_libraries(*preload_shortnames, rtld_global=rtld_global)
+  File "D:\AI\Trellis2AMD\venv\Lib\site-packages\rocm_sdk\__init__.py", line 111, in preload_libraries
+    paths = find_libraries(shortname)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\Trellis2AMD\venv\Lib\site-packages\rocm_sdk\__init__.py", line 34, in find_libraries
+    is_windows = platform.system() == "Windows"
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\platform.py", line 987, in system
+    return uname().system
+           ^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\platform.py", line 913, in uname
+    node = _node()
+           ^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\platform.py", line 631, in _node
+    return socket.gethostname()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_shape_slat_control.py", line 7, in audit
+    if e.startswith('socket.'):raise RuntimeError('CPU test forbids network')
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CPU test forbids network

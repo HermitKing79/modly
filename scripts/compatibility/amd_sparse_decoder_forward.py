@@ -332,7 +332,7 @@ def supervise(output,harness_commit,*,profile=None):
     cache=prepare_private_cache if profile is None else profile.prepare_private_cache
     worker_script=Path(__file__).resolve() if profile is None else profile.worker_script
     authorize=b'EXECUTE_ONE_DECODER_FORWARD\n' if profile is None else profile.authorize
-    sparse_profile=getattr(profile,'kind',None) in ('sparse-flow','sparse-sampling')
+    sparse_profile=getattr(profile,'kind',None) in ('sparse-flow','sparse-sampling','shape-slat')
     deadline_contract=(180,240,480) if sparse_profile else (120,180,360)
     if profile is not None and (cpu_seconds,gpu_seconds,overall_seconds)!=deadline_contract:
         raise ValueError('Profile deadlines differ from the explicit reviewed contract')

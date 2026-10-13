@@ -1,0 +1,16 @@
+{
+  "supervisor_profile_deadlines_verified": [
+    "sparse-flow",
+    "sparse-sampling",
+    "shape-slat"
+  ],
+  "cpu_seconds": 180,
+  "gpu_seconds": 240,
+  "overall_seconds": 480,
+  "torch_imported": false,
+  "workspace_preflight_initial_missing_variable": "Separate read-only admission command initially lacked WORKSPACE_DIR; verify_workspace rejected before files/attempt marker. Actual launcher sets it in its own PowerShell.",
+  "admission_workspace_return_field": "cpu-admission.json workspace_dir records verify_workspace() None return, not environment value; see launcher-preflight.json for actual value.",
+  "cpu_probe_correction": "Original CPU probe expected rejection of empty synthetic checkpoint was outside try; preserved FAIL with no weights/GPU. Corrected synthetic negative handler passes.",
+  "control_test_correction": "Original CPU test audit rejected local socket.gethostname during torch import; test-only local metadata query permitted, all networking remains prohibited.",
+  "review_visibility_correction": "Restored exact reviewed scratch visibility after offline guard; _lazy_init stays prohibited until parent observer authorization."
+}

@@ -1,0 +1,5539 @@
+{
+  "returncode": 1,
+  "elapsed_seconds": 8.90700000000652,
+  "timed_out": false,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "worker_exit_verified": true,
+  "worker": {
+    "status": "FAIL",
+    "weights_loaded": false,
+    "real_model_forward_calls": 0,
+    "gpu_initialized": false,
+    "sdk_discovery": [
+      {
+        "command": [
+          "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+          "path",
+          "--root"
+        ],
+        "timeout_seconds": 5.0,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "ERROR: Could not load the `rocm[devel]` package, which is required to access runtime tools and development files. Please install it with your package manager (pip, uv, etc)\r\nERROR: rocm_sdk_devel module for the ROCm SDK development package is not installed. This can typically be obtained by installing `rocm[devel]` from your package manager\r\n",
+        "elapsed_seconds": 2.454
+      }
+    ],
+    "parameters": {
+      "t_embedder.mlp.0.weight": {
+        "shape": [
+          1536,
+          256
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "t_embedder.mlp.0.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "t_embedder.mlp.2.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "t_embedder.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "adaLN_modulation.1.weight": {
+        "shape": [
+          9216,
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "adaLN_modulation.1.bias": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "input_layer.weight": {
+        "shape": [
+          1536,
+          32
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "input_layer.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.0.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.1.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.2.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.3.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.4.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.5.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.6.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.7.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.8.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.9.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.10.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.11.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.12.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.13.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.14.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.15.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.16.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.17.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.18.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.19.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.20.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.21.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.22.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.23.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.24.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.25.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.26.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.27.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.28.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.modulation": {
+        "shape": [
+          9216
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.norm2.weight": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.norm2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.self_attn.to_qkv.weight": {
+        "shape": [
+          4608,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.self_attn.to_qkv.bias": {
+        "shape": [
+          4608
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.self_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.self_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.self_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.self_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.cross_attn.to_q.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.cross_attn.to_q.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.cross_attn.to_kv.weight": {
+        "shape": [
+          3072,
+          1024
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.cross_attn.to_kv.bias": {
+        "shape": [
+          3072
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.cross_attn.q_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.cross_attn.k_rms_norm.gamma": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.cross_attn.to_out.weight": {
+        "shape": [
+          1536,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.cross_attn.to_out.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.mlp.mlp.0.weight": {
+        "shape": [
+          8192,
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.mlp.mlp.0.bias": {
+        "shape": [
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.mlp.mlp.2.weight": {
+        "shape": [
+          1536,
+          8192
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "blocks.29.mlp.mlp.2.bias": {
+        "shape": [
+          1536
+        ],
+        "dtype": "BF16",
+        "device": "meta",
+        "is_meta": true
+      },
+      "out_layer.weight": {
+        "shape": [
+          32,
+          1536
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      },
+      "out_layer.bias": {
+        "shape": [
+          32
+        ],
+        "dtype": "F32",
+        "device": "meta",
+        "is_meta": true
+      }
+    },
+    "buffers": {},
+    "strict_header_match": true,
+    "frequency_sha256": "45a8277ca9adce85d7cfd719d467537c1b3165b0579039b1aa882f3326e81214",
+    "frequency_objects": 30,
+    "class_path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\structured_latent_flow.py",
+    "sparse_attention_backend": "sdpa",
+    "sparse_convolution_backend": "none",
+    "dtype_counts": {
+      "BF16": 420,
+      "F32": 220
+    },
+    "token_count": 3743,
+    "feature": {
+      "verified": true,
+      "shape": [
+        1,
+        1029,
+        1024
+      ],
+      "dtype": "F32",
+      "tensor_bytes": 4214784,
+      "file_bytes": 4215800,
+      "file_sha256": "78a0b54210568624639c8cacb7a803d83d4b838b782ea54e7aceab749d47e17a",
+      "output_sha256": "660fb865efefc6c3775f61a0097af91405e9abfee570a7af66e3c3e3b3276ceb",
+      "provenance": {
+        "resolution": "512",
+        "format": "modly-amd-conditioning-v1",
+        "dtype": "F32",
+        "runtime": "Python 3.12.10; PyTorch 2.13.0+rocm10.0.0; HIP 7.15.26333",
+        "conditioning_width": "1024",
+        "input_pixel_sha256": "a5c96545413ae62af74d6a26a12b2f15c30589c1c6b528797195524a30ef99bd",
+        "input_png_sha256": "07557b7b9f726aad3b291f4902498e52423efadbf746fb2c5759e3e2c6adeef0",
+        "config_sha256": "135ecd23e34a70b6fbed8b083fdecb319b7e3a54e3d849258bbe4ddcf1783bb5",
+        "harness_commit": "aeb5173bda5b414ce99274ec4764799968d4f56c",
+        "component": "DINOv3ViTModel",
+        "extractor_source_sha256": "a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f",
+        "shape": "[1,1029,1024]",
+        "output_sha256": "660fb865efefc6c3775f61a0097af91405e9abfee570a7af66e3c3e3b3276ceb",
+        "alpha_only": "true",
+        "pipeline_source_sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+        "checkpoint_sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179"
+      },
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\conditioning.safetensors"
+    },
+    "coords_sha256": "860095760acc7914d0378cadfa49ba4c6a368d5a65662061b8e1c4c792f0d7a5",
+    "cpu_sparse_layout_verified": true,
+    "pooling_torch_equal": true,
+    "error": "ValueError('Component requires nonempty safetensors tensors')",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_shape_slat_probe.py\", line 71, in worker\n    component=StrictLocalComponent(str(config_path),str(path),tiny_factory)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\experimental\\extensions\\trellis2-amd\\strict_loader.py\", line 17, in __init__\n    raise ValueError(\"Component requires nonempty safetensors tensors\")\nValueError: Component requires nonempty safetensors tensors\n"
+  }
+}
