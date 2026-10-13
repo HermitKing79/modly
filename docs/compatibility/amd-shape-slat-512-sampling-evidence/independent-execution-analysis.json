@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "real_sequences": 1,
+  "steps_completed": 12,
+  "root_entries": 21,
+  "root_returns": 21,
+  "positive_calls": 12,
+  "negative_calls": 9,
+  "canonical_ticket_identity": true,
+  "root_module_count": 91,
+  "every_module_forward_count": [
+    21
+  ],
+  "transfers": {
+    "x": 1,
+    "coords": 1,
+    "batch_map": 1,
+    "t": 21,
+    "cond": 1,
+    "output": 1,
+    "output_coords": 1,
+    "frequency": 21,
+    "rope_frequency": 1,
+    "neg_cond": 1,
+    "seqlen": 1
+  },
+  "synchronized_seconds": 8.889999999999418,
+  "worker_seconds": 29.671999999991385,
+  "peak_allocated_bytes": 2911625728,
+  "peak_reserved_bytes": 3078619136,
+  "zero_allocator_release": true,
+  "model_and_owned_tensors_collected": true,
+  "worker_exit": 0,
+  "job_active_after": 0,
+  "forced_cleanup": false,
+  "windows_samples": 3,
+  "windows_max_gap_seconds": 5.0310000000026776,
+  "all_windows_healthy": true,
+  "process_samples": 6,
+  "observed_process_names": [
+    "python.exe"
+  ],
+  "compiler_child_observed": false,
+  "inventory_byte_identical": true,
+  "checkpoint_before_after_byte_identical": true,
+  "historical_files_verified": 5372,
+  "limits": "180/240/480s,13GiB VRAM admission,12GiB allocator cap unchanged",
+  "limitations": [
+    "Numerical sampling PASS does not validate decoded geometry",
+    "Discrete process samples do not exclude in-process or short-lived compilation",
+    "No shape decoder/CuMesh/mesh/textures/GLB executed"
+  ]
+}

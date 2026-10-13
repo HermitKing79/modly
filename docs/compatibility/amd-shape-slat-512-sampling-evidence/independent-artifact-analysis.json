@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "cpu_only": true,
+  "torch_imported": false,
+  "gpu_initialized": false,
+  "real_weights_loaded": false,
+  "artifacts": {
+    "shape-latent-raw.npy": {
+      "container_header": {
+        "descr": "<f4",
+        "fortran_order": false,
+        "shape": [
+          3743,
+          32
+        ]
+      },
+      "payload_sha256": "d198ee94d981020df69b0af6e6bd8c1c8c4946007e2df78afa2914f786297cad",
+      "finite": true,
+      "min": -6.253305435180664,
+      "max": 5.853515625,
+      "mean": 0.018624322488904,
+      "stddev": 1.1917493343353271,
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-raw.npy",
+      "file_bytes": 479232,
+      "sha256": "03fd8208614fcf20c37e40e59c9eb48972c3c7a3ee18a31bab1b0537e86ab2a1",
+      "readback_exact": true
+    },
+    "shape-latent-denormalized.npy": {
+      "container_header": {
+        "descr": "<f4",
+        "fortran_order": false,
+        "shape": [
+          3743,
+          32
+        ]
+      },
+      "payload_sha256": "2e2046fb700c974d9bed7fcf02f00e6f0dfdfc123f9d2e5143c8ae5ef44a67ea",
+      "finite": true,
+      "min": -28.125720977783203,
+      "max": 29.86146354675293,
+      "mean": 0.04061974585056305,
+      "stddev": 6.412017345428467,
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-denormalized.npy",
+      "file_bytes": 479232,
+      "sha256": "90eaf72030f303b209a4d02ae9adc7d4ecd39662344f35f0adc8120bc1e871b9",
+      "readback_exact": true
+    },
+    "shape-latent-coordinates.npy": {
+      "container_header": {
+        "descr": "<i4",
+        "fortran_order": false,
+        "shape": [
+          3743,
+          4
+        ]
+      },
+      "payload_sha256": "860095760acc7914d0378cadfa49ba4c6a368d5a65662061b8e1c4c792f0d7a5",
+      "finite": true,
+      "min": 0.0,
+      "max": 31.0,
+      "mean": 12.200841570932408,
+      "stddev": 8.945500488356693,
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-coordinates.npy",
+      "file_bytes": 60016,
+      "sha256": "949a9e6a2548abcad66354384502c06834d4d56ea3f2fa86b619c25926379ed4",
+      "readback_exact": true
+    },
+    "shape-initial-noise.npy": {
+      "container_header": {
+        "descr": "<f4",
+        "fortran_order": false,
+        "shape": [
+          3743,
+          32
+        ]
+      },
+      "payload_sha256": "b5fa87e715f728aabcd218a109f492f59c51999039581a20b640c860e77a9c7b",
+      "finite": true,
+      "min": -4.723040580749512,
+      "max": 4.164608001708984,
+      "mean": -0.004900113679468632,
+      "stddev": 0.9968647360801697,
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-initial-noise.npy",
+      "file_bytes": 479232,
+      "sha256": "6ba908a9c41e74fc6201e46ac428b4603dddf24bd4ea38d7ab9774ae422235d0",
+      "readback_exact": true
+    },
+    "shape-latent-provenance.json": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-provenance.json",
+      "file_bytes": 14918,
+      "sha256": "4834412e700434f5645cd919dd0d75e9209b6b5d67cc7cb765e98b76890f9a81",
+      "readback_exact": true
+    }
+  },
+  "canonical_denormalization_bit_exact": true,
+  "coords_match_original32": true,
+  "noise_identity_verified": true,
+  "provenance_crosslinks_verified": true
+}
