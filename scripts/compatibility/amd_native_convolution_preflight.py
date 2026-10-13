@@ -52,6 +52,9 @@ def inspect_installed(torch):
     runtime=dict(python=sys.version.split()[0],torch=str(torch.__version__),hip=torch.version.hip,cuda=torch.version.cuda)
     if runtime!=dict(python='3.12.10',torch='2.13.0+rocm10.0.0',hip='7.15.26333',cuda=None):raise ValueError('Wrong runtime')
     import triton
+    from triton import knobs
+    from amd_native_convolution_policy import pin_hook_defaults
+    pin_hook_defaults(knobs)
     import triton.language as tl
     import triton.compiler.compiler as compiler
     import triton.runtime.build as build
@@ -97,7 +100,7 @@ def inspect_installed(torch):
         gpu_initialized=False,weights_loaded=False,native_executed=False)
     return meta,helper_source
 
-def worker(scratch):
+def worker(scratch,*,constructor_tests=None):
     r=dict(status='UNKNOWN',gpu_initialized=None)
     try:
         if sys.stdin.readline().strip()!='OWNED_JOB_ATTACHED':raise RuntimeError('Owned Job required')
@@ -119,23 +122,27 @@ def worker(scratch):
         import triton.runtime.build as build
         import triton.backends.amd.driver as driver
         compiler.compile=deny;build._build=deny;build._load_module_from_path=deny;driver.HIPUtils.__init__=deny
-        r,_=inspect_installed(torch)
+        r,source=inspect_installed(torch)
         f,co,w,b=contract.fixture();contract.validate_fixture(f,co,w,b)
         r['fixture']={k:dict(shape=list(a.shape),dtype=str(a.dtype),bytes=a.nbytes,sha256=hashlib.sha256(a.tobytes()).hexdigest()) for k,a in zip(('features','coordinates','weights','bias'),(f,co,w,b))}
+        if constructor_tests is not None:
+            r['constructor_acceptance']=constructor_tests(torch,r,source,scratch)
+            if r['constructor_acceptance']['passed'] is not True:raise RuntimeError('Complete production constructor regression failed')
         r['status']='PASS';r['gpu_initialized']=torch.cuda.is_initialized()
-    except BaseException as exc:r.update(error=repr(exc),traceback=traceback.format_exc())
+    except BaseException as exc:r.update(status='UNKNOWN',error=repr(exc),traceback=traceback.format_exc())
     print('NATIVE_PREFLIGHT='+json.dumps(r),flush=True)
     return 0 if r['status']=='PASS' else 1
 
-def supervise():
+def supervise(*,worker_script=None,probe_name='cpu-probe'):
     from amd_forward_owned_job import OwnedJob
     from amd_bounded_gpu_proof import scratch_environment
     from amd_sparse_decoder_loading import reap_owned_child
-    output=EV/'cpu-probe';output.mkdir();scratch=output/'scratch';scratch.mkdir()
+    if probe_name not in ('cpu-probe','cpu-red','cpu-red-isolated','cpu-acceptance','cpu-acceptance-reviewed'):raise ValueError('Exclusive CPU probe name required')
+    output=EV/probe_name;output.mkdir();scratch=output/'scratch';scratch.mkdir()
     job=OwnedJob();child=None;r={};start=time.monotonic()
     try:
         with (output/'stdout.txt').open('xb') as out,(output/'stderr.txt').open('xb') as err:
-            child=subprocess.Popen([str(VENV/'Scripts/python.exe'),'-B','-I',str(Path(__file__).resolve()),'--worker','--scratch',str(scratch)],stdin=subprocess.PIPE,stdout=out,stderr=err,env={**os.environ,**scratch_environment(scratch),'WORKSPACE_DIR':str(ROOT)})
+            child=subprocess.Popen([str(VENV/'Scripts/python.exe'),'-B','-I',str(worker_script or Path(__file__).resolve()),'--worker','--scratch',str(scratch)],stdin=subprocess.PIPE,stdout=out,stderr=err,env={**os.environ,**scratch_environment(scratch),'WORKSPACE_DIR':str(ROOT)})
             job.attach(child);child.stdin.write(b'OWNED_JOB_ATTACHED\n');child.stdin.flush();child.stdin.close();child.wait(timeout=120)
             r.update(returncode=child.returncode,elapsed_seconds=time.monotonic()-start)
     except BaseException as exc:r['error']=repr(exc)

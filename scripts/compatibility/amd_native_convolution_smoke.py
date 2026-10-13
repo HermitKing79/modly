@@ -20,11 +20,12 @@ import amd_sparse_decoder_loading as loading
 import amd_forward_diagnostics as diagnostics
 import amd_blaslt_teardown as teardown
 EV=preflight.EV;VENV=preflight.VENV
+CPU_PROBE='cpu-probe'
 AUTHORIZE=b'EXECUTE_ONE_NATIVE_CONVOLUTION\n'
 
 def identity():
     preflight.verify_historical();teardown.verify_binding_evidence()
-    probe=json.loads((EV/'cpu-probe/results.json').read_text())
+    probe=json.loads((EV/CPU_PROBE/'results.json').read_text())
     if probe.get('passed') is not True or probe['worker'].get('gpu_initialized') is not False:raise ValueError('Actual CPU admission required')
     config=probe['worker']
     return dict(config=config,native_contract_sha256=hashlib.sha256(json.dumps(config,sort_keys=True).encode()).hexdigest())
@@ -84,12 +85,13 @@ def worker(scratch):
         r['host_available_bytes']=psutil.virtual_memory().available
         if r['host_available_bytes']<contract.HOST_RAM:raise ValueError('Insufficient host RAM')
         reference,coord_ref,weight,bias=contract.fixture();contract.validate_fixture(reference,coord_ref,weight,bias)
-        expected=json.loads((EV/'cpu-probe/results.json').read_text())['worker']
+        expected=json.loads((EV/CPU_PROBE/'results.json').read_text())['worker']
         for name,a in zip(('features','coordinates','weights','bias'),(reference,coord_ref,weight,bias)):
             if hashlib.sha256(a.tobytes()).hexdigest()!=expected['fixture'][name]['sha256']:raise ValueError('Fixture differs from CPU review')
         verified=identity()
         private=json.loads((scratch.parent/'private-cache.json').read_text())
         native=policy_module.NativePolicy(torch,private,meta,source,trace)
+        r['native_hook_state']=native.hook_state
         r['gate_one']=dict(status='PASS',gpu_initialized=False,weights_loaded=False,fixture_verified=True)
         print(supervisor.EVENT+json.dumps(dict(event='cpu-ready',gate_one=r['gate_one'],native_contract_sha256=verified['native_contract_sha256'])),flush=True)
         if sys.stdin.readline().encode()!=AUTHORIZE:raise RuntimeError('One native convolution authorization required')
@@ -170,7 +172,7 @@ def worker(scratch):
 def profile():
     files=['scripts/compatibility/'+name+'.py' for name in ('amd_native_convolution_smoke','amd_native_convolution_contract','amd_native_convolution_policy','amd_native_convolution_preflight','amd_native_cache_dispatch_proof','amd_shape_cache_identity','amd_shape_decoder_preflight','amd_blaslt_teardown')]
     files+=supervisor.COMMITTED_FILES
-    files += [p.relative_to(ROOT).as_posix() for p in (EV/'cpu-probe/results.json',preflight.PRIOR,ROOT/'docs/compatibility/amd-shape-decoder-neural-evidence/preflight.json',ROOT/'docs/compatibility/amd-shape-decoder-cache-admission-evidence/native-cache-audit.json',teardown.PINS,teardown.EVIDENCE/'binary-review.json')]
+    files += [p.relative_to(ROOT).as_posix() for p in (EV/CPU_PROBE/'results.json',preflight.PRIOR,ROOT/'docs/compatibility/amd-shape-decoder-neural-evidence/preflight.json',ROOT/'docs/compatibility/amd-shape-decoder-cache-admission-evidence/native-cache-audit.json',teardown.PINS,teardown.EVIDENCE/'binary-review.json')]
     return SimpleNamespace(kind='native-convolution',evidence=EV,cpu_seconds=45,gpu_seconds=120,overall_seconds=180,
         identity=identity,source_identity=preflight.verify_historical,validate_config=lambda x:None,classify=classify,
         prepare_private_cache=preflight.private_cache,worker_script=Path(__file__).resolve(),authorize=AUTHORIZE,

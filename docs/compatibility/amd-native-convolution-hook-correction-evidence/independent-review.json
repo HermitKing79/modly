@@ -1,0 +1,16 @@
+{
+  "reviewer": "/root/native_hook_correction_review",
+  "verdict": "No remaining blocker in final surgical correction",
+  "scope": "Hook instance/source identity, complete production constructor CPU acceptance and unchanged native/fixture/safety contracts",
+  "review_activity": "Read-only source and saved evidence; no imports, tests or native/GPU runtime operations",
+  "class_default_identity_gap_fixed": true,
+  "cpu_acceptance_tests": 13,
+  "reviewed_sha256": {
+    "scripts/compatibility/amd_native_convolution_policy.py": "08c9f2796f167d4b20a3e9b6f4bff126c284f837125eeab7d450e4c85f406351",
+    "scripts/compatibility/amd_native_convolution_preflight.py": "872f612b7ec451d59ffda7ed08dee0a0b0caee2ff60057e6bb75b2dec2042d13",
+    "scripts/compatibility/amd_native_convolution_smoke.py": "47d7c937b4425a7a3342e1281020cf21fd01b2fff8bff92e144d65a83e437b5e",
+    "scripts/compatibility/amd_native_convolution_hook_correction.py": "55816fb89f929e6e42a4a82fdb4c244766447c0a19daa952d37a9569adf5e457",
+    "scripts/compatibility/test_amd_native_convolution_hooks.py": "2ae81601edbb105ae0d8e287d2c06b9e6567d7181e8195b9e7072dafdff1908d",
+    "docs/compatibility/amd-native-convolution-hook-correction-evidence/cpu-acceptance-reviewed/results.json": "d57a4d2b276ddf5b39f83faec194b3232e270f67901458d811c6658f6912201e"
+  }
+}

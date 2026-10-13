@@ -9,6 +9,41 @@ import amd_native_convolution_contract as c
 import amd_native_convolution_preflight as p
 from amd_native_cache_dispatch_proof import normalize_cache_mkdir
 
+HOOKS_SHA='7468fb1fb4740bb9237c57216b04499400825f62a6177da4214153900feda824'
+CHAIN_DEFAULTS=dict(launch_enter_hook=False,launch_exit_hook=True,kernel_load_start_hook=False,kernel_load_end_hook=True,kernel_unload_hook=False)
+_INSTALLED_DEFAULTS=None
+
+def pin_hook_defaults(knobs):
+    global _INSTALLED_DEFAULTS
+    path=Path(knobs.__file__).resolve()
+    if path!=(p.SITE/'triton/knobs.py').resolve() or p.digest(path)!=HOOKS_SHA:
+        raise ValueError('Installed Triton hook source identity changed')
+    defaults={name:knobs.runtime_knobs.__dict__[name] for name in CHAIN_DEFAULTS}
+    if _INSTALLED_DEFAULTS is None:_INSTALLED_DEFAULTS=defaults
+    if any(defaults[name] is not _INSTALLED_DEFAULTS[name] for name in CHAIN_DEFAULTS):
+        raise ValueError('Installed native hook defaults replaced')
+
+def validate_hook_state(knobs):
+    if _INSTALLED_DEFAULTS is None:raise ValueError('Source-verified installed hook defaults must be pinned first')
+    pin_hook_defaults(knobs)
+    path=Path(knobs.__file__).resolve()
+    states={}
+    for name,reverse in CHAIN_DEFAULTS.items():
+        default=_INSTALLED_DEFAULTS[name];value=getattr(knobs.runtime,name)
+        if (type(default) is not knobs.HookChain or set(vars(default))!={'calls','reversed'}
+            or type(default.calls) is not list or len(default.calls)!=0
+            or type(default.reversed) is not bool or default.reversed is not reverse):
+            raise ValueError('Foreign/nonempty default native hook: '+name)
+        # None is the already-supported disabled state. Otherwise require the
+        # genuine installed class-default instance, never an arbitrary chain.
+        if value is not None and value is not default:raise ValueError('Foreign native hook: '+name)
+        states[name]=dict(state='None' if value is None else 'installed-empty-HookChain',callbacks=0,reversed=reverse)
+    for obj,names in ((knobs.runtime,('add_stages_inspection_hook','jit_cache_hook','jit_post_compile_hook')),(knobs.compilation,('listener',))):
+        for name in names:
+            if getattr(obj,name) is not None:raise ValueError('Foreign native callback: '+name)
+            states[name]=dict(state='None')
+    return dict(source_path=str(path),source_sha256=HOOKS_SHA,hooks=states)
+
 class NativePolicy:
     def __init__(self,torch,private,meta,source,trace):
         self.torch=torch;self.private=private;self.meta=meta;self.trace=trace
@@ -23,8 +58,7 @@ class NativePolicy:
         from triton import knobs
         if knobs.cache.manager_class is not None or any(getattr(knobs.compilation,k) for k in ('always_compile','override','dump_ir','store_binary_only')):
             raise ValueError('Foreign compilation/cache policy')
-        for obj,names in ((knobs.runtime,('add_stages_inspection_hook','launch_enter_hook','launch_exit_hook','kernel_load_start_hook','kernel_load_end_hook','kernel_unload_hook')),(knobs.compilation,('listener',))):
-            if any(getattr(obj,n) is not None for n in names):raise ValueError('Foreign native hooks')
+        self.hook_state=validate_hook_state(knobs)
         self.patch(HIPBackend,'add_stages',self.deny('lowering'))
         self.patch(compiler.ASTSource,'make_ir',self.deny('IR construction'))
         original_loader=build._load_module_from_path
