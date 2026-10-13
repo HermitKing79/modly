@@ -1,0 +1,26 @@
+{
+  "reviewer": "/root/native_hook_correction_review",
+  "classification": "UNKNOWN",
+  "supported_cause": "Production Torch dispatcher rejects aten.item.default during native post1",
+  "cpu_hook_correction": "PASS",
+  "convolution_calls_entered": 1,
+  "native_neighbor_return": "host-return-only, GPU completion not independently synchronized",
+  "native_post1": "entered, guard error",
+  "later_post2_tuning_jit_binary_launch_counts": 0,
+  "helper_calls": 0,
+  "cache_lookups": [],
+  "numerical_output_verified": false,
+  "live_worker_zero_allocation_release_reached": false,
+  "process_exit_verified": true,
+  "forced_job_cleanup": false,
+  "worker_seconds": 10.375,
+  "exit_code": 1,
+  "windows_observations": "Successful healthy before, CPU gate, periodic and after-exit queries; controller OK, no recorded reset events",
+  "source_support": "neighbor_map.hip:310 scalar read and installed TensorBody.h/item_ops.h aten::item schema are consistent with observed overload; no C++ frame identifies the callsite directly",
+  "review_activity": "Read-only source/evidence inspection; no runtime imports, GPU work, tests, edits or retries",
+  "evidence_sha256": {
+    "run/results.json": "1b9f23622f2a359b44b8fb85d20b9c7bb5b17ae90b38445475e2b89d5de65a1f",
+    "run/trace.jsonl": "ae82d74bbb126a1cf6f793f70508dea4f3cea6ca508bc778f813589d8d21265b",
+    "run/windows-periodic.jsonl": "8a9118c0a04b15b90bd42cf62c8bde76370b1eb22977f882716143e1f61105be"
+  }
+}

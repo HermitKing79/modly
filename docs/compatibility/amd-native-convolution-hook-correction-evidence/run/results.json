@@ -1,0 +1,255 @@
+{
+  "classification": "UNKNOWN",
+  "observer_healthy": true,
+  "native_artifacts_unchanged": true,
+  "worker": {
+    "status": "UNKNOWN",
+    "stage": "single-native-convolution",
+    "convolution_calls": 1,
+    "weights_loaded": false,
+    "sdk_discovery": [
+      {
+        "command": [
+          "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+          "path",
+          "--root"
+        ],
+        "timeout_seconds": 5.0,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "ERROR: Could not load the `rocm[devel]` package, which is required to access runtime tools and development files. Please install it with your package manager (pip, uv, etc)\r\nERROR: rocm_sdk_devel module for the ROCm SDK development package is not installed. This can typically be obtained by installing `rocm[devel]` from your package manager\r\n",
+        "elapsed_seconds": 2.281
+      }
+    ],
+    "runtime": {
+      "python": "3.12.10",
+      "torch": "2.13.0+rocm10.0.0",
+      "hip": "7.15.26333",
+      "cuda": null
+    },
+    "workspace_binding": {
+      "verified": true,
+      "binding": "_cuda_clearCublasWorkspaces",
+      "module": "torch._C",
+      "extension_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_C.cp312-win_amd64.pyd",
+      "gpu_initialized": false,
+      "native_call_executed": false,
+      "binary_review_sha256": "e27920546e1081c0070ce3350a199a98b74ca9f33317dd588d159685febae04a"
+    },
+    "host_available_bytes": 16227000320,
+    "native_hook_state": {
+      "source_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\knobs.py",
+      "source_sha256": "7468fb1fb4740bb9237c57216b04499400825f62a6177da4214153900feda824",
+      "hooks": {
+        "launch_enter_hook": {
+          "state": "installed-empty-HookChain",
+          "callbacks": 0,
+          "reversed": false
+        },
+        "launch_exit_hook": {
+          "state": "installed-empty-HookChain",
+          "callbacks": 0,
+          "reversed": true
+        },
+        "kernel_load_start_hook": {
+          "state": "installed-empty-HookChain",
+          "callbacks": 0,
+          "reversed": false
+        },
+        "kernel_load_end_hook": {
+          "state": "installed-empty-HookChain",
+          "callbacks": 0,
+          "reversed": true
+        },
+        "kernel_unload_hook": {
+          "state": "installed-empty-HookChain",
+          "callbacks": 0,
+          "reversed": false
+        },
+        "add_stages_inspection_hook": {
+          "state": "None"
+        },
+        "jit_cache_hook": {
+          "state": "None"
+        },
+        "jit_post_compile_hook": {
+          "state": "None"
+        },
+        "listener": {
+          "state": "None"
+        }
+      }
+    },
+    "gate_one": {
+      "status": "PASS",
+      "gpu_initialized": false,
+      "weights_loaded": false,
+      "fixture_verified": true
+    },
+    "gpu": {
+      "name": "AMD Radeon RX 9070 XT",
+      "architecture": "gfx1201",
+      "total_bytes": 17095983104,
+      "index": 0
+    },
+    "memory_before": {
+      "allocated_bytes": 0,
+      "reserved_bytes": 0,
+      "peak_allocated_bytes": 0,
+      "peak_reserved_bytes": 0,
+      "available_bytes": 16937582592,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 158400512
+    },
+    "flex_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\__init__.py",
+    "memory_after_inputs": {
+      "allocated_bytes": 60854784,
+      "reserved_bytes": 79691776,
+      "peak_allocated_bytes": 60854784,
+      "peak_reserved_bytes": 79691776,
+      "available_bytes": 16846618624,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 249364480
+    },
+    "error_type": "RuntimeError",
+    "error": "Unexpected convolution Torch operation: aten.item.default",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_native_convolution_smoke.py\", line 126, in worker\n    out,cache=trace.call('genuine-submanifold-convolution',lambda:native.convolve(f,coords,w,b))\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_forward_diagnostics.py\", line 84, in call\n    try:result=call()\n               ^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_native_convolution_smoke.py\", line 126, in <lambda>\n    out,cache=trace.call('genuine-submanifold-convolution',lambda:native.convolve(f,coords,w,b))\n                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_native_convolution_policy.py\", line 212, in convolve\n    return self.spconv.sparse_submanifold_conv3d(f,co,c.SHAPE,w,b,neighbor_cache=None,dilation=(1,1,1))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\ops\\spconv\\submanifold_conv3d.py\", line 372, in sparse_submanifold_conv3d\n    return SubMConv3dFunction.apply(feats, coords, shape, neighbor_cache, weight, bias, dilation)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\autograd\\function.py\", line 625, in apply\n    return super().apply(*args, **kwargs)  # type: ignore[misc]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\ops\\spconv\\submanifold_conv3d.py\", line 318, in forward\n    neighbor_cache = SubMConv3dFunction._compute_neighbor_cache(coords, shape, (Kw, Kh, Kd), dilation)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\ops\\spconv\\submanifold_conv3d.py\", line 78, in _compute_neighbor_cache\n    kernels.cuda.neighbor_map_post_process_for_masked_implicit_gemm_1(neighbor_map)\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_native_convolution_policy.py\", line 202, in call\n    return self.trace.call('native:'+_tag,lambda:_fn(*a))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_forward_diagnostics.py\", line 84, in call\n    try:result=call()\n               ^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_native_convolution_policy.py\", line 202, in <lambda>\n    return self.trace.call('native:'+_tag,lambda:_fn(*a))\n                                                 ^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_compile.py\", line 54, in inner\n    return disable_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1446, in _fn\n    return fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_native_convolution_policy.py\", line 241, in __torch_dispatch__\n    if str(func) not in admitted:raise RuntimeError('Unexpected convolution Torch operation: '+str(func))\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Unexpected convolution Torch operation: aten.item.default\n",
+    "failure_kind": "prerequisite_or_guard",
+    "native_counts": {
+      "convolution": 1,
+      "neighbor": 1,
+      "post1": 1,
+      "post2": 0,
+      "outer": 0,
+      "inner": 0,
+      "jit": 0,
+      "binary": 0,
+      "launch": 0
+    },
+    "helper_calls": 0,
+    "lookup_keys": [],
+    "forbidden_calls": []
+  },
+  "process": {
+    "returncode": 1,
+    "timed_out": false,
+    "pid": 1208,
+    "command": [
+      "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_native_convolution_hook_correction.py",
+      "--worker",
+      "--output",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-native-convolution-hook-correction-evidence\\run\\scratch"
+    ],
+    "harness_commit": "e31fb4168a534af3bf4b8227abac979425cd134c",
+    "job_attached_before_preparation": true,
+    "last_stage": "single-native-convolution",
+    "last_worker_trace": {
+      "event": "error",
+      "name": "genuine-submanifold-convolution",
+      "origin": "worker",
+      "seq": 22,
+      "elapsed_seconds": 9.093000000008033,
+      "monotonic_seconds": 100744.796,
+      "timestamp_utc": "2026-10-13T21:40:32.583475+00:00",
+      "duration_seconds": 0.28100000000267755,
+      "error_type": "RuntimeError",
+      "error": "Unexpected convolution Torch operation: aten.item.default"
+    },
+    "gpu_authorized": true,
+    "last_cpu_activity": {
+      "event": "process",
+      "name": "owned-tree",
+      "origin": "supervisor",
+      "seq": 3,
+      "elapsed_seconds": 4.047000000005937,
+      "monotonic_seconds": 100745.0,
+      "timestamp_utc": "2026-10-13T21:40:32.778748+00:00",
+      "processes": [
+        {
+          "pid": 1208,
+          "created_seconds": 1791927622.58254,
+          "name": "python.exe",
+          "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+          "cpu_seconds": 0.0,
+          "cpu_delta_seconds": 0.0
+        },
+        {
+          "pid": 12260,
+          "created_seconds": 1791927622.594484,
+          "name": "python.exe",
+          "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "cpu_seconds": 5.21875,
+          "cpu_delta_seconds": 1.515625
+        }
+      ],
+      "vanished_pids": [],
+      "psutil_version": "7.2.2",
+      "psutil_path": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\psutil\\__init__.py"
+    },
+    "gpu_memory_samples": {
+      "before": {
+        "event": "memory",
+        "name": "before",
+        "origin": "worker",
+        "seq": 4,
+        "elapsed_seconds": 7.1560000000026776,
+        "monotonic_seconds": 100742.859,
+        "timestamp_utc": "2026-10-13T21:40:30.642647+00:00",
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0,
+          "available_bytes": 16937582592,
+          "total_bytes": 17095983104,
+          "sampled_global_used_bytes": 158400512
+        }
+      },
+      "after-inputs": {
+        "event": "memory",
+        "name": "after-inputs",
+        "origin": "worker",
+        "seq": 15,
+        "elapsed_seconds": 8.812000000005355,
+        "monotonic_seconds": 100744.515,
+        "timestamp_utc": "2026-10-13T21:40:32.301197+00:00",
+        "memory": {
+          "allocated_bytes": 60854784,
+          "reserved_bytes": 79691776,
+          "peak_allocated_bytes": 60854784,
+          "peak_reserved_bytes": 79691776,
+          "available_bytes": 16846618624,
+          "total_bytes": 17095983104,
+          "sampled_global_used_bytes": 249364480
+        }
+      }
+    },
+    "elapsed_seconds": 10.375,
+    "stage_timeouts_seconds": {
+      "cpu": 45,
+      "forward_release": 120,
+      "overall": 180
+    },
+    "job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "worker_exit_verified": true,
+    "cpu_observer_stopped": true,
+    "cpu_observer_error": null,
+    "windows_periodic_stopped": true,
+    "windows_periodic_error": null,
+    "windows_periodic_samples": 1,
+    "output_readers_completed": true,
+    "diagnostic_journal_stopped": true,
+    "diagnostic_journal_error": null,
+    "windows_journal_stopped": true,
+    "windows_journal_error": null
+  }
+}
