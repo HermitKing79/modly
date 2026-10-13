@@ -57,7 +57,13 @@ def verify_preflight():
     return current
 
 
-def worker(scratch,*,allocation_evidence=None,workspace_teardown=False):
+def should_save_features(workspace_teardown,save_features):
+    if type(workspace_teardown) is not bool or type(save_features) is not bool:
+        raise ValueError('Feature-save options must be explicit booleans')
+    return not workspace_teardown or save_features
+
+
+def worker(scratch,*,allocation_evidence=None,workspace_teardown=False,save_features=False):
     record={'status':'FAIL','stage':'startup','sdk_discovery':[],'calls':{},'load_calls':0}
     component=model=feature=pipeline=output=cpu_output=cond=processed=image=torch=None
     phase='cpu';allowed_modules={};placement_sources=set();input_source=None
@@ -75,6 +81,9 @@ def worker(scratch,*,allocation_evidence=None,workspace_teardown=False):
     try:
         if type(workspace_teardown) is not bool or workspace_teardown and allocation_evidence is None:
             raise RuntimeError('Workspace teardown requires the explicit exclusive evidence profile')
+        should_save_features(workspace_teardown,save_features)
+        if save_features and allocation_evidence is None:
+            raise RuntimeError('Explicit feature saving requires owned allocation evidence')
         if sys.stdin.readline().strip()!='OWNED_JOB_ATTACHED':raise RuntimeError('Owned job must contain worker before preparation')
         evidence=local.EVIDENCE if allocation_evidence is None else allocation_evidence
         scratch=scratch.resolve();scratch.relative_to(evidence.resolve())
@@ -294,7 +303,7 @@ def worker(scratch,*,allocation_evidence=None,workspace_teardown=False):
                     'sha256':hashlib.sha256(values.tobytes()).hexdigest(),'requires_grad':output.requires_grad,
                     'is_inference_tensor':output.is_inference(),'grad_enabled':torch.is_grad_enabled()}
                 contract.validate_output(record['output']);contract.validate_counts(record['calls']);values=None
-                if allocation_observer is not None and not workspace_teardown:
+                if allocation_observer is not None and should_save_features(workspace_teardown,save_features):
                     stage('feature-checkpoint');phase='feature-save'
                     from amd_feature_checkpoint import write
                     published=json.loads((evidence/'run/committed-harness.json').read_text())['commit']

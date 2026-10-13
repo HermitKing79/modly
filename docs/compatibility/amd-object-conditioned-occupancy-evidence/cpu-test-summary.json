@@ -1,0 +1,14 @@
+{
+  "final_tests": 28,
+  "final_result": "PASS",
+  "torch_imported": false,
+  "weights_loaded": false,
+  "gpu_initialized": false,
+  "command": "host Python312 -B; AI-import-blocked unittest test_amd_object_occupancy test_amd_blaslt_teardown test_amd_sparse_occupancy",
+  "sandbox_capture": "cpu-tests.txt",
+  "sandbox_result": "27 tests,7 WinError5 path-resolution/temporary-directory permission errors; no compatibility patch",
+  "authorized_capture": "cpu-tests-authorized.txt",
+  "authorized_result": "27 passed",
+  "final_capture": "cpu-tests-final.txt",
+  "final_added_test": "actual reused profiles preserve deadlines, authorization bytes,22forwards12steps1sequence and committed dependencies"
+}

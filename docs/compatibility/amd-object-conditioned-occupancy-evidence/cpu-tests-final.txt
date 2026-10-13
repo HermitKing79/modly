@@ -1,0 +1,35 @@
+test_actual_image_and_cpu_preview (test_amd_object_occupancy.ContinuationTests.test_actual_image_and_cpu_preview) ... ok
+test_actual_profiles_keep_jobs_deadlines_and_authorization (test_amd_object_occupancy.ContinuationTests.test_actual_profiles_keep_jobs_deadlines_and_authorization) ... ok
+test_component_spans_not_global_bbox (test_amd_object_occupancy.ContinuationTests.test_component_spans_not_global_bbox) ... ok
+test_deadlines_and_sampler_settings_unchanged (test_amd_object_occupancy.ContinuationTests.test_deadlines_and_sampler_settings_unchanged) ... ok
+test_dino_explicit_save_preserves_default (test_amd_object_occupancy.ContinuationTests.test_dino_explicit_save_preserves_default) ... ok
+test_new_latent_reader_uses_real_container_and_rejects_tampering (test_amd_object_occupancy.ContinuationTests.test_new_latent_reader_uses_real_container_and_rejects_tampering) ... ok
+test_pipeline_stops_at_first_stage_failure (test_amd_object_occupancy.ContinuationTests.test_pipeline_stops_at_first_stage_failure) ... ok
+test_stage_order_exactly_once (test_amd_object_occupancy.ContinuationTests.test_stage_order_exactly_once) ... ok
+test_tampered_image_fails (test_amd_object_occupancy.ContinuationTests.test_tampered_image_fails) ... ok
+test_classifier_requires_exact_clear_and_unchanged_release (test_amd_blaslt_teardown.TeardownTests.test_classifier_requires_exact_clear_and_unchanged_release) ... ok
+test_clear_failure_stops_no_allocator_recovery_or_retry (test_amd_blaslt_teardown.TeardownTests.test_clear_failure_stops_no_allocator_recovery_or_retry) ... ok
+test_failed_sync_never_clears_workspaces (test_amd_blaslt_teardown.TeardownTests.test_failed_sync_never_clears_workspaces) ... ok
+test_inference_contract_and_zero_release_unchanged (test_amd_blaslt_teardown.TeardownTests.test_inference_contract_and_zero_release_unchanged) ... ok
+test_no_snapshot_history_disable_is_scoped_and_once (test_amd_blaslt_teardown.TeardownTests.test_no_snapshot_history_disable_is_scoped_and_once) ... ok
+test_original_mode_does_not_invoke_private_cleanup (test_amd_blaslt_teardown.TeardownTests.test_original_mode_does_not_invoke_private_cleanup) ... ok
+test_residual_allocation_still_fails_and_gets_one_snapshot (test_amd_blaslt_teardown.TeardownTests.test_residual_allocation_still_fails_and_gets_one_snapshot) ... ok
+test_synchronized_one_clear_after_refs_before_empty_cache (test_amd_blaslt_teardown.TeardownTests.test_synchronized_one_clear_after_refs_before_empty_cache) ... ok
+test_unverified_python_replacement_or_initialized_gpu_rejected (test_amd_blaslt_teardown.TeardownTests.test_unverified_python_replacement_or_initialized_gpu_rejected) ... ok
+test_workspace_guard_rejects_before_attempt_can_be_consumed (test_amd_blaslt_teardown.TeardownTests.test_workspace_guard_rejects_before_attempt_can_be_consumed) ... ok
+test_acceptance_rejects_bad_output_empty_counts_cleanup_and_monitor (test_amd_sparse_occupancy.OccupancyTests.test_acceptance_rejects_bad_output_empty_counts_cleanup_and_monitor) ... ok
+test_actual_cleanup_order_zero_and_binding_failure (test_amd_sparse_occupancy.OccupancyTests.test_actual_cleanup_order_zero_and_binding_failure) ... ok
+test_actual_preflight_identity_workspace_and_bounds_cpu_only (test_amd_sparse_occupancy.OccupancyTests.test_actual_preflight_identity_workspace_and_bounds_cpu_only) ... ok
+test_actual_supervisor_occupancy_profile_and_single_attempt_protocol (test_amd_sparse_occupancy.OccupancyTests.test_actual_supervisor_occupancy_profile_and_single_attempt_protocol) ... ok
+test_exact_real_shapes_transfer_identity_and_arguments (test_amd_sparse_occupancy.OccupancyTests.test_exact_real_shapes_transfer_identity_and_arguments) ... ok
+test_native_threshold_coordinates_components_and_readback (test_amd_sparse_occupancy.OccupancyTests.test_native_threshold_coordinates_components_and_readback) ... ok
+test_output_shape_dtype_nonfinite_and_empty_full_degeneracy (test_amd_sparse_occupancy.OccupancyTests.test_output_shape_dtype_nonfinite_and_empty_full_degeneracy) ... ok
+test_preview_exposed_faces_and_limits (test_amd_sparse_occupancy.OccupancyTests.test_preview_exposed_faces_and_limits) ... ok
+test_true_committed_reader_and_tamper_rejection (test_amd_sparse_occupancy.OccupancyTests.test_true_committed_reader_and_tamper_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 1.587s
+
+OK
+{"classification": "PASS", "observer_healthy": true, "checkpoint_unchanged": true}
+TORCH_IMPORTED=False

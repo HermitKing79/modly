@@ -23,7 +23,7 @@ from services.amd_offline_guard import block_external_actions
 AUTHORIZE=b'EXECUTE_ONE_SPARSE_FLOW_FORWARD\n'
 PROBE=local.EVIDENCE/'cpu-metadata-final-candidate/results.json'
 
-def verify_preflight():
+def verify_preflight(*,feature_expected=None):
     local.verify_sources();teardown.verify_binding_evidence()
     probe=json.loads(PROBE.read_text())
     row=probe.get('worker',{})
@@ -40,7 +40,10 @@ def verify_preflight():
     local.contract.validate_manifest(row['parameters'],row['buffers'],'meta')
     current=local.identity()
     if current['checkpoint_sha256']!=row['checkpoint_sha256']:raise RuntimeError('Checkpoint changed after metadata proof')
-    if local.verify_feature()!=row['feature']:raise RuntimeError('Saved feature evidence changed')
+    if feature_expected is not None and feature_expected.get('verified') is not True:
+        raise RuntimeError('Replacement feature requires a verified complete artifact reference')
+    if local.verify_feature()!=(row['feature'] if feature_expected is None else feature_expected):
+        raise RuntimeError('Saved feature evidence changed')
     return current
 
 def profile():

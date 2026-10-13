@@ -1,0 +1,44 @@
+{
+  "source_url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/assets/example_image/0f168a4b1b6e96c72e9627c97a212c27a4572250ff58e25703b9d0c2bc74191a.webp",
+  "repository_commit": "75fbf0183001ed9876c8dbb35de6b68552ee08bd",
+  "source_sha256": "a8d419ac16852b73fbc7b92c6857ba5d4be2f2dd8056bf44af707e6af4d62207",
+  "git_blob_sha1": "d565e59280e661dee2d9b5d02b581ef82fe3a6da",
+  "source_size": [
+    1042,
+    1042
+  ],
+  "source_mode": "RGBA",
+  "pixel_sha256": "a5c96545413ae62af74d6a26a12b2f15c30589c1c6b528797195524a30ef99bd",
+  "input_png_sha256": "07557b7b9f726aad3b291f4902498e52423efadbf746fb2c5759e3e2c6adeef0",
+  "alpha": {
+    "mode": "alpha-only",
+    "size": [
+      1042,
+      1042
+    ],
+    "foreground_bbox": [
+      47,
+      78,
+      996,
+      964
+    ],
+    "resized_foreground_bbox": [
+      46,
+      77,
+      978,
+      947
+    ],
+    "rembg_required": false
+  },
+  "crop_size": [
+    932,
+    932
+  ],
+  "crop_mode": "RGB",
+  "crop_pixel_sha256": "784f2779e7e349834a83f28f5ca164898da6280c9a76242e89669239b7e0c125",
+  "preview_sha256": "55acdbf5094c0aa3e0f00179fc6c34e73d6d571f85cad4a2b9d831c192ff6335",
+  "selection": "Compact mechanical turret: substantial body/base with visible top and side planes and perspective depth; transparent foreground; detailed 1042-square official source",
+  "preview": "real alpha-only preprocessing then exact extractor LANCZOS512 resize; no Torch import",
+  "changed_numerical_input": "only source image",
+  "diagnostic_criterion": "nonfull zero-threshold mask with one six-connected component spans>=8 on every axis"
+}

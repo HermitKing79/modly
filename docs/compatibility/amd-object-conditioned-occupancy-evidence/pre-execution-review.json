@@ -1,0 +1,16 @@
+{
+  "reviewer": "/root/object_occupancy_review",
+  "base": "39ddc2bf890949676694b4bbfca74f7fd34ea18a",
+  "verdict": "Approve candidate for publication and authorized single sequence, subject to unchanged runtime gates",
+  "scope": "Plan, new launcher/tests, four narrow old-harness diffs, actual3profile read-only replay, original Jobs/observers/caches/deadlines/dtype and zero-release contracts, bounded generated artifact chain, AMD-Python image CPU proof",
+  "reviewer_torch_imported": false,
+  "reviewer_gpu_initialized": false,
+  "reviewer_weights_loaded": false,
+  "reviewer_edits": false,
+  "remaining_execution_checks": [
+    "actual GPU execution and zero release",
+    "coordinate/file-hash independent validation",
+    "diagnostic criterion, bounded preview and visual plausibility",
+    "exact remote publication before execution"
+  ]
+}

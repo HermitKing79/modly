@@ -1,0 +1,66 @@
+{
+  "workspace_verified": true,
+  "torch_imported": false,
+  "weights_loaded": false,
+  "gpu_initialized": false,
+  "ram": {
+    "timestamp_utc": "2026-10-13T14:09:50.472647+00:00",
+    "available_bytes": 18947444736,
+    "required_bytes": 11411181632,
+    "admitted": true,
+    "torch_imported": false
+  },
+  "observer": {
+    "returncode": 0,
+    "timed_out": false,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":7040,\"RecordId\":11589,\"ProviderName\":\"Service Control Manager\",\"TimeCreated\":\"\\/Date(1791899731609)\\/\"},\"version\":\"5.1.26100.9444\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 7040,
+          "RecordId": 11589,
+          "ProviderName": "Service Control Manager",
+          "TimeCreated": "/Date(1791899731609)/"
+        },
+        "version": "5.1.26100.9444",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "checkpoint_sha256": {
+    "dino": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+    "flow": "ca01377c485bec418076d38ee80166d32dc776d744f2553b835cba1e97a7abf6",
+    "decoder": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a"
+  },
+  "eligible_decoder_cache_entries": 9,
+  "source_sha256": "a8d419ac16852b73fbc7b92c6857ba5d4be2f2dd8056bf44af707e6af4d62207",
+  "deadlines": {
+    "dino": [
+      120,
+      180,
+      360
+    ],
+    "sampling": [
+      180,
+      240,
+      480
+    ],
+    "decoder": [
+      120,
+      180,
+      360
+    ]
+  }
+}

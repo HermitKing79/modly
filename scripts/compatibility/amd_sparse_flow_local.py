@@ -50,9 +50,11 @@ def manifest(state):
     return {k:{'shape':list(v.shape),'dtype':dtypes.get(str(v.dtype),str(v.dtype)),
                'device':str(v.device),'is_meta':v.is_meta} for k,v in state.items()}
 
-def verify_feature():
+def verify_feature(*,expected=None):
     import amd_feature_checkpoint as feature
-    old=json.loads((ROOT/'docs/compatibility/amd-dinov3-allocation-evidence/run/results.json').read_text())['worker']['feature_checkpoint']
+    old=json.loads((ROOT/'docs/compatibility/amd-dinov3-allocation-evidence/run/results.json').read_text())['worker']['feature_checkpoint'] if expected is None else expected
+    if expected is not None and expected.get('verified') is not True:
+        raise ValueError('Generated features require a verified artifact reference')
     provenance={k:old['provenance'][k] for k in feature.FIELDS}
     result=feature.verify(FEATURE,FEATURE.parent,provenance,old['output_sha256'])
     if result['file_sha256']!=FEATURE_SHA or result['file_sha256']!=old['file_sha256']:

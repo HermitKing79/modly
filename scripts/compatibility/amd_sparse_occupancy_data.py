@@ -10,14 +10,17 @@ ROOT=Path(__file__).resolve().parents[2]
 INPUT=ROOT/'docs/compatibility/amd-sparse-structure-sampling-evidence/sparse-structure-latent.safetensors'
 INPUT_SHA='8a4da87ae1bbc2d5e5186f300adf11597bf986cb58dfb24a564a2eec287b44f2'
 
-def read_input(path=INPUT):
+def read_input(path=INPUT,*,expected=None):
     from safetensors.numpy import load
     path=Path(path)
     with path.open('rb') as f:blob=f.read(262145)
-    if len(blob)>262144 or hashlib.sha256(blob).hexdigest()!=INPUT_SHA:raise ValueError('Committed sparse latent SHA/size mismatch')
-    old=json.loads((INPUT.parent/'resume-result-analysis.json').read_text())
+    if expected is not None and expected.get('verified') is not True:
+        raise ValueError('Generated latent requires a verified artifact reference')
+    wanted=INPUT_SHA if expected is None else expected['file_sha256']
+    if len(blob)>262144 or hashlib.sha256(blob).hexdigest()!=wanted:raise ValueError('Committed sparse latent SHA/size mismatch')
+    old=json.loads((INPUT.parent/'resume-result-analysis.json').read_text()) if expected is None else expected
     provenance={k:old['provenance'][k] for k in latent.FIELDS}
-    row=latent.verify(path,path.parent,provenance,old['payload_sha256'])
+    row=latent.verify(path,path.parent,provenance,old['payload_sha256'] if expected is None else old['output_sha256'])
     array=load(blob)['sparse_latent'].copy()
     return array,row
 
