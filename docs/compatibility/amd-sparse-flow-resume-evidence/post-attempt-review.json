@@ -1,0 +1,421 @@
+{
+  "review_status": "COMPLETE",
+  "reviewer": "independent sparse_flow_resume_review agent",
+  "reviewed_utc": "2026-10-13T08:52:50.490Z",
+  "scope": "Read-only assessment of saved result/trace, exact executed harness text and pinned timestep source. Only this review artifact was added; no GPU operation, model import/loading, download, runtime retry or harness/raw-classification edit.",
+  "executed_harness_commit": "9505b9f95023cec8edf85556ec2a61c7d79f4db0",
+  "executed_harness_hashes_unchanged": {
+    "scripts/compatibility/amd_sparse_flow_resume.py": "ee651d6bac613815835fd51618a1cd6d19b37286e4938eb424a87d45b4007e83",
+    "scripts/compatibility/amd_sparse_flow_forward.py": "9c0614a0d3e6560be8dc2691d2c2e647924ebde3566018241d641d5effe46e58",
+    "scripts/compatibility/amd_sparse_flow_contract.py": "b9e8fedcb949ddb8f9f9ace4d879392068238cfa25959e220de4f5ae29f7e9cc",
+    "scripts/compatibility/amd_sparse_decoder_forward.py": "d7539bbf9d0242cdfbe2fa8baa3f8be6ee524a7994fb44687b674a1cfd4fc75b"
+  },
+  "reviewed_evidence_sha256": {
+    "run/results.json": "0a5070619712cfeef08e13ce5faecd6b3d242ffc1d569ab19a1a5d3e823fd17a",
+    "run/trace.jsonl": "97242c65a28acd05a6e0efdda2a857e43957d202a9dc996a3dd4580f5ce685e6",
+    "run/committed-harness.json": "803ddba8d12d271574366af962c20578c619035851e681e19186d8622a715cdd",
+    "attempt-started.json": "e61c6c35fd51ff446d12e6a596f42dd4187c7a42b37235957dc9cb9bfe1e6a8c"
+  },
+  "raw_classification": "PARTIAL",
+  "replayed_unchanged_classifier": "PARTIAL",
+  "recommended_overall_classification": "PARTIAL",
+  "computation_assessment": "PASS for the recorded strict-load, full single-forward and finite output contract; no independent numerical-reference accuracy claim.",
+  "transfer_safety_assessment": "INCOMPLETE: the required frequency-copy identity/shape/value/timestep/exactly-once gate was not accounted for by the observed operator overload.",
+  "unchanged_acceptance_checks": {
+    "output_contract": true,
+    "release_contract": true,
+    "strict_cpu_gate": true,
+    "exact_module_calls": true,
+    "status_pass": true,
+    "complete_stage": true,
+    "load_calls_one": true,
+    "forward_calls_one": true,
+    "workspace_clear_calls_one": true,
+    "all_exact_transfers": false,
+    "owned_tensors_collected": true,
+    "workspace_binding_verified": true,
+    "process_ok": true,
+    "observer_healthy": true,
+    "checkpoint_preserved": true
+  },
+  "failed_acceptance_predicates": [
+    "all_exact_transfers"
+  ],
+  "observed": {
+    "worker_status": "PASS",
+    "worker_stage": "complete",
+    "load_calls": 1,
+    "strict_cpu_load": {
+      "status": "PASS",
+      "strict": true,
+      "assign": true,
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "gpu_initialized": false,
+      "parameter_bytes": 2584359952,
+      "payload_entries": 640,
+      "reversible_widening_count": 220,
+      "feature_verified": true,
+      "elapsed_seconds": 10.781000000002678,
+      "memory_before": {
+        "working_set_bytes": 422191104,
+        "private_commit_bytes": 880369664,
+        "peak_working_set_bytes": 422191104,
+        "peak_commit_bytes": 880369664
+      },
+      "memory_after": {
+        "working_set_bytes": 3235926016,
+        "private_commit_bytes": 4342595584,
+        "peak_working_set_bytes": 5675827200,
+        "peak_commit_bytes": 6799081472
+      },
+      "payload_hash_count": 640,
+      "widened_names_count": 220
+    },
+    "saved_feature_verified": true,
+    "saved_feature_sha256": "3f444d42191df07415a8877a3d8d3706cf1b129bedbbb2dfcc0221d5571be56a",
+    "forward_calls": 1,
+    "full_root_block_and_attention_counts_match": true,
+    "root_calls": 1,
+    "blocks": 30,
+    "block_calls_each": 1,
+    "self_attention_calls": 30,
+    "cross_attention_calls": 30,
+    "synchronized_forward_seconds": 4.25,
+    "output": {
+      "shape": [
+        1,
+        8,
+        16,
+        16,
+        16
+      ],
+      "dtype": "torch.float32",
+      "device": "cuda:0",
+      "all_finite": true,
+      "count": 32768,
+      "requires_grad": false,
+      "is_inference_tensor": true,
+      "grad_enabled": false,
+      "minimum": -3.0342698097229004,
+      "maximum": 4.314564228057861,
+      "mean": 0.24628739058971405,
+      "stddev": 1.048169493675232,
+      "representative_values": [
+        0.5937232971191406,
+        0.12156035751104355,
+        0.14212000370025635,
+        0.042950376868247986,
+        0.07753044366836548,
+        0.1203906461596489,
+        0.2702958285808563,
+        0.38414013385772705
+      ],
+      "sha256": "6f9431c4bad8c90379d856555dcaa921115e2af7aa9a31c8f4f537adc47de56a"
+    },
+    "before_placement": {
+      "allocated_bytes": 0,
+      "reserved_bytes": 0,
+      "peak_allocated_bytes": 0,
+      "peak_reserved_bytes": 0,
+      "available_bytes": 16937582592,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 158400512
+    },
+    "after_forward": {
+      "allocated_bytes": 2737083392,
+      "reserved_bytes": 3028287488,
+      "peak_allocated_bytes": 2911063040,
+      "peak_reserved_bytes": 3028287488,
+      "available_bytes": 13793296384,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 3302686720
+    },
+    "release": {
+      "allocated_bytes": 0,
+      "reserved_bytes": 0,
+      "peak_allocated_bytes": 2911063040,
+      "peak_reserved_bytes": 3028287488,
+      "available_bytes": 16815292416,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 280690688,
+      "model_collected": true,
+      "owned_tensors_collected": true,
+      "cpu_memory": {
+        "working_set_bytes": 1572659200,
+        "private_commit_bytes": 2219937792,
+        "peak_working_set_bytes": 5675827200,
+        "peak_commit_bytes": 6799081472
+      }
+    },
+    "workspace_clear_calls": 1,
+    "transfers": {
+      "x": 1,
+      "t": 1,
+      "cond": 1,
+      "output": 1,
+      "frequency": 0
+    },
+    "forward_operator_counts": {
+      "aten.view.default": 2,
+      "aten.permute.default": 242,
+      "aten.contiguous.default": 2,
+      "aten.linear.default": 215,
+      "aten.to.dtype_layout": 1,
+      "aten.unsqueeze.default": 242,
+      "aten.to.dtype": 575,
+      "aten.mul.Tensor": 421,
+      "aten.cos.default": 1,
+      "aten.sin.default": 1,
+      "aten.cat.default": 1,
+      "aten.silu.default": 2,
+      "aten.add.Tensor": 240,
+      "aten.chunk.default": 30,
+      "aten.layer_norm.default": 91,
+      "aten.reshape.default": 270,
+      "aten.unbind.int": 60,
+      "aten.linalg_vector_norm.default": 120,
+      "aten.clamp_min.default": 120,
+      "aten.expand_as.default": 120,
+      "aten.div.Tensor": 120,
+      "aten.view_as_complex.default": 60,
+      "aten.view_as_real.default": 60,
+      "aten.scaled_dot_product_attention.default": 60,
+      "aten.gelu.default": 30
+    },
+    "process": {
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 28.843999999997322,
+      "gpu_authorized": true,
+      "job_attached_before_preparation": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0
+      },
+      "worker_exit_verified": true,
+      "cpu_observer_stopped": true,
+      "cpu_observer_error": null,
+      "windows_periodic_stopped": true,
+      "windows_periodic_error": null,
+      "windows_periodic_samples": 2,
+      "output_readers_completed": true,
+      "diagnostic_journal_stopped": true,
+      "diagnostic_journal_error": null,
+      "windows_journal_stopped": true,
+      "windows_journal_error": null
+    },
+    "observer_healthy": true,
+    "checkpoint_unchanged": true
+  },
+  "pinned_timestep_source": {
+    "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sparse_structure_flow.py",
+    "sha256": "858d9b076cc71f6955bb292ea394d620ce6f6f53cebb53bff2116a8c5cec026e",
+    "pin_matches": true,
+    "constructor_default_frequency_embedding_size": 256,
+    "frequency_shape": [
+      128
+    ],
+    "frequency_dtype": "torch.float32",
+    "frequency_construction_lines": [
+      40,
+      41,
+      42,
+      43
+    ],
+    "construction": "half = dim // 2; torch.exp(-np.log(max_period) * torch.arange(start=0, end=half, dtype=torch.float32) / half).to(device=t.device)",
+    "forward_call_line": 261,
+    "source_behavior": "With the recorded GPU timestep and default CPU factory environment, the source constructs F32 CPU frequencies and requests transfer to the timestep device. The model then uses them for the sinusoidal timestep embedding."
+  },
+  "source_and_observation_distinction": {
+    "directly_observed": [
+      "Raw transfers.frequency is 0; x/t/cond/output are each 1.",
+      "The forward operator histogram records exactly one aten.to.dtype_layout and 575 aten.to.dtype calls.",
+      "The pinned source contains the explicit frequency .to(device=t.device) at line 43 and its SHA256 still matches the reviewed source pin.",
+      "The unchanged worker's special frequency checks and counter increment execute only when name == aten._to_copy.default.",
+      "The general forward branch permits other aten.* calls after its general device/input-dtype checks; the observed aten.to.dtype_layout overload did not receive the special frequency source/shape/value/scope/duplicate checks.",
+      "The unchanged classifier requires transfers == {x:1,t:1,cond:1,output:1,frequency:1}; replaying it from saved evidence returns PARTIAL."
+    ],
+    "inference": "The lone aten.to.dtype_layout is consistent with, and strongly suggests, the pinned timestep frequency device copy. The saved histogram contains no operator argument/source-identity/value record tying that overload to the exact approved frequency tensor, so this cannot be promoted to the missing runtime gate.",
+    "rejected_interpretations": [
+      "frequency == 0 does not prove that the model omitted its source-mandated frequency copy.",
+      "The lone aten.to.dtype_layout count does not independently prove the exact authorized source identity, values, destination and once-only timestep scope.",
+      "Finite output, clean GPU release and healthy observers do not satisfy the separate exact-transfer authorization criterion.",
+      "Changing the saved transfer count or classifier after execution would relax the executed acceptance contract and is not justified."
+    ]
+  },
+  "relevant_executed_code": [
+    {
+      "file": "scripts/compatibility/amd_sparse_flow_forward.py",
+      "lines": [
+        163,
+        164
+      ],
+      "meaning": "General aten.* admission in the forward phase."
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_flow_forward.py",
+      "lines": [
+        168,
+        173,
+        174,
+        175,
+        176
+      ],
+      "meaning": "Exact frequency source, values, shape, dtype, device, timestep and once-only checks are conditional on aten._to_copy.default."
+    },
+    {
+      "file": "scripts/compatibility/amd_sparse_flow_contract.py",
+      "line": 91,
+      "meaning": "Overall PASS requires the exact frequency count of one."
+    }
+  ],
+  "durable_trace_relevant": [
+    {
+      "event": "stage",
+      "name": "single-forward",
+      "origin": "worker",
+      "seq": 11,
+      "elapsed_seconds": 22.93800000000192,
+      "monotonic_seconds": 54209.281,
+      "timestamp_utc": "2026-10-13T08:44:58.594345+00:00",
+      "phase": "forward"
+    },
+    {
+      "event": "enter",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 12,
+      "elapsed_seconds": 22.93800000000192,
+      "monotonic_seconds": 54209.281,
+      "timestamp_utc": "2026-10-13T08:44:58.594345+00:00",
+      "input": {
+        "shape": [
+          1,
+          8,
+          16,
+          16,
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      }
+    },
+    {
+      "event": "return",
+      "name": "module:<root>",
+      "origin": "worker",
+      "seq": 223,
+      "elapsed_seconds": 27.156999999999243,
+      "monotonic_seconds": 54213.5,
+      "timestamp_utc": "2026-10-13T08:45:02.814947+00:00",
+      "duration_seconds": 4.2189999999973224,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "enter",
+      "name": "synchronize:after-forward",
+      "origin": "worker",
+      "seq": 224,
+      "elapsed_seconds": 27.156999999999243,
+      "monotonic_seconds": 54213.5,
+      "timestamp_utc": "2026-10-13T08:45:02.814947+00:00"
+    },
+    {
+      "event": "return",
+      "name": "synchronize:after-forward",
+      "origin": "worker",
+      "seq": 225,
+      "elapsed_seconds": 27.18800000000192,
+      "monotonic_seconds": 54213.531,
+      "timestamp_utc": "2026-10-13T08:45:02.845685+00:00",
+      "duration_seconds": 0.031000000002677552,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "stage",
+      "name": "release",
+      "origin": "worker",
+      "seq": 228,
+      "elapsed_seconds": 27.20300000000134,
+      "monotonic_seconds": 54213.546,
+      "timestamp_utc": "2026-10-13T08:45:02.846750+00:00",
+      "phase": "placement"
+    },
+    {
+      "event": "enter",
+      "name": "blas:clear-workspaces",
+      "origin": "worker",
+      "seq": 231,
+      "elapsed_seconds": 27.281999999999243,
+      "monotonic_seconds": 54213.625,
+      "timestamp_utc": "2026-10-13T08:45:02.928790+00:00"
+    },
+    {
+      "event": "return",
+      "name": "blas:clear-workspaces",
+      "origin": "worker",
+      "seq": 232,
+      "elapsed_seconds": 27.281999999999243,
+      "monotonic_seconds": 54213.625,
+      "timestamp_utc": "2026-10-13T08:45:02.928790+00:00",
+      "duration_seconds": 0,
+      "completion": "host-return-only"
+    },
+    {
+      "event": "memory",
+      "name": "release",
+      "origin": "worker",
+      "seq": 233,
+      "elapsed_seconds": 27.29699999999866,
+      "monotonic_seconds": 54213.64,
+      "timestamp_utc": "2026-10-13T08:45:02.948744+00:00",
+      "memory": {
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 2911063040,
+        "peak_reserved_bytes": 3028287488,
+        "available_bytes": 16815292416,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 280690688,
+        "model_collected": true,
+        "owned_tensors_collected": true,
+        "cpu_memory": {
+          "working_set_bytes": 1572659200,
+          "private_commit_bytes": 2219937792,
+          "peak_working_set_bytes": 5675827200,
+          "peak_commit_bytes": 6799081472
+        }
+      }
+    },
+    {
+      "event": "stage",
+      "name": "complete",
+      "origin": "worker",
+      "seq": 234,
+      "elapsed_seconds": 27.29699999999866,
+      "monotonic_seconds": 54213.64,
+      "timestamp_utc": "2026-10-13T08:45:02.948744+00:00",
+      "phase": "release"
+    }
+  ],
+  "reviewer_operations": {
+    "ai_modules_loaded": [],
+    "gpu_operations": 0,
+    "model_weight_loading": 0,
+    "model_forwards": 0,
+    "harness_edits": 0,
+    "raw_result_edits": 0,
+    "attempts_or_retries": 0
+  },
+  "preservation_scope": "Checkpoint before/after identity and process/observer cleanup are supported by the saved run evidence. This focused review does not replace the parent's separate full environment/cache/source/branch preservation reconciliation.",
+  "recommendation": "Keep the raw and final overall result PARTIAL, describing computation PASS and transfer-safety accounting incomplete. Preserve the consumed attempt marker and exact harness. A future separately scoped CPU-only dispatcher/schema review could establish how to reject or exactly validate the observed overload without relaxing identity/value/once-only checks; no additional real execution is authorized by this review.",
+  "declines": [
+    "Independent numerical-reference comparison: no reference result was available and additional computation was prohibited.",
+    "Full preservation reconciliation: performed separately by the parent; this review is focused on the saved forward and transfer-accounting distinction.",
+    "GPU retry, additional weight loading, harness repair or changed acceptance criteria: outside this review authorization."
+  ]
+}

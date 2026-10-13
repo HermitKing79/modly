@@ -1,0 +1,10 @@
+{
+  "raw_classification": "PARTIAL",
+  "original_classifier": "PARTIAL",
+  "counterfactual_classifier_one_counter_changed_only": "PASS",
+  "raw_evidence_changed": false,
+  "observed_frequency_counter": 0,
+  "observed_high_level_to_dtype_layout_calls": 1,
+  "cause": "frequency accounting/allowance matches _to_copy only; actual high-level to.dtype_layout is unaccounted",
+  "scope": "stdlib-only saved-result predicate diagnosis; counterfactual is not accepted result"
+}

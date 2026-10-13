@@ -1,0 +1,76 @@
+{
+  "classification": "PARTIAL",
+  "model_computation": "PASS",
+  "unresolved": "frequency transfer opcode/accounting guard",
+  "checkpoint_loads": 1,
+  "forward_calls": 1,
+  "all640_payloads_strict": true,
+  "fp32_widenings": 220,
+  "output": {
+    "shape": [
+      1,
+      8,
+      16,
+      16,
+      16
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "all_finite": true,
+    "count": 32768,
+    "requires_grad": false,
+    "is_inference_tensor": true,
+    "grad_enabled": false,
+    "minimum": -3.0342698097229004,
+    "maximum": 4.314564228057861,
+    "mean": 0.24628739058971405,
+    "stddev": 1.048169493675232,
+    "representative_values": [
+      0.5937232971191406,
+      0.12156035751104355,
+      0.14212000370025635,
+      0.042950376868247986,
+      0.07753044366836548,
+      0.1203906461596489,
+      0.2702958285808563,
+      0.38414013385772705
+    ],
+    "sha256": "6f9431c4bad8c90379d856555dcaa921115e2af7aa9a31c8f4f537adc47de56a"
+  },
+  "forward_seconds": 4.25,
+  "cpu_load_seconds": 10.781000000002678,
+  "placement_seconds": 0.5630000000019209,
+  "worker_seconds": 28.843999999997322,
+  "release": {
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 2911063040,
+    "peak_reserved_bytes": 3028287488,
+    "available_bytes": 16815292416,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 280690688,
+    "model_collected": true,
+    "owned_tensors_collected": true,
+    "cpu_memory": {
+      "working_set_bytes": 1572659200,
+      "private_commit_bytes": 2219937792,
+      "peak_working_set_bytes": 5675827200,
+      "peak_commit_bytes": 6799081472
+    }
+  },
+  "observer_healthy": true,
+  "windows_samples": 2,
+  "max_windows_gap_seconds": 5.031999999999243,
+  "worker_trace_rows": 234,
+  "cpu_activity_samples": 4,
+  "observed_executables": [
+    "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe"
+  ],
+  "no_forced_cleanup": true,
+  "exit_code": 0,
+  "installed_environments_preserved": true,
+  "historical_evidence_files": 3375,
+  "raw_directory_size_changes": 0,
+  "raw_results_unchanged": true
+}
