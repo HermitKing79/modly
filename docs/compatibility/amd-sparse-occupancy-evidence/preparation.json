@@ -1,0 +1,980 @@
+{
+  "utc": "2026-10-13T12:12:39.179713+00:00",
+  "workspace_dir": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof",
+  "actual_verify_workspace_passed": true,
+  "ram": {
+    "available_bytes": 16902987776,
+    "required_bytes": 4294967296,
+    "admitted": true
+  },
+  "input": {
+    "verified": true,
+    "shape": [
+      1,
+      8,
+      16,
+      16,
+      16
+    ],
+    "dtype": "F32",
+    "tensor_bytes": 131072,
+    "file_bytes": 134688,
+    "file_sha256": "8a4da87ae1bbc2d5e5186f300adf11597bf986cb58dfb24a564a2eec287b44f2",
+    "output_sha256": "68930e793a5ec752852db45ab9985ab012a0dd32b6e7234f2ebb1f3177d08e56",
+    "provenance": {
+      "component": "SparseStructureFlowModel",
+      "harness_commit": "98d1d29f750236580c7853091dfd949a077b531a",
+      "feature_file_sha256": "3f444d42191df07415a8877a3d8d3706cf1b129bedbbb2dfcc0221d5571be56a",
+      "sigma_min": "1e-05",
+      "runtime": "{\"cuda\": null, \"dependencies\": {\"numpy\": \"2.5.3\", \"safetensors\": \"0.8.0\"}, \"executable\": \"D:\\\\AI\\\\Trellis2AMD\\\\venv\\\\Scripts\\\\python.exe\", \"git_version\": \"6596a0dea537c1c78520c73cc6678214781a9d06\", \"hip\": \"7.15.26333\", \"python\": \"3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]\", \"torch\": \"2.13.0+rocm10.0.0\", \"torch_path\": \"D:\\\\AI\\\\Trellis2AMD\\\\venv\\\\Lib\\\\site-packages\\\\torch\\\\__init__.py\"}",
+      "model_config_sha256": "6cdfb636854f60ffcadd8c49244169cd449f34c5ccdb55b5ff7c04678f9c399e",
+      "seed": "20261013",
+      "feature_provenance": "{\"alpha_only\": \"true\", \"checkpoint_sha256\": \"dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179\", \"component\": \"DINOv3ViTModel\", \"conditioning_width\": \"1024\", \"config_sha256\": \"135ecd23e34a70b6fbed8b083fdecb319b7e3a54e3d849258bbe4ddcf1783bb5\", \"dtype\": \"F32\", \"extractor_source_sha256\": \"a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f\", \"format\": \"modly-amd-conditioning-v1\", \"harness_commit\": \"827bd6d00c549a28c435b4602b8f4bdc6a2eb8a5\", \"input_pixel_sha256\": \"2fa864e19134bc817000a267eaae667fc6326119e5e6402b1eec9f0131c6de42\", \"input_png_sha256\": \"9abc7b8f89e5b001e863fc3ef2fbd6813b2e83f63c0a6b0a45203c2ef1edfd8d\", \"output_sha256\": \"d94e87d27429936956616a7a1c09a1fd5e0e27337b5716486c271881497dc7ca\", \"pipeline_source_sha256\": \"faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b\", \"resolution\": \"512\", \"runtime\": \"Python 3.12.10; PyTorch 2.13.0+rocm10.0.0; HIP 7.15.26333\", \"shape\": \"[1,1029,1024]\"}",
+      "output_sha256": "68930e793a5ec752852db45ab9985ab012a0dd32b6e7234f2ebb1f3177d08e56",
+      "model_source_sha256": "858d9b076cc71f6955bb292ea394d620ce6f6f53cebb53bff2116a8c5cec026e",
+      "noise_sha256": "f76e94b25a4798a5da0e9de56667b5dda38e75bf12ccbc373521fbcd7af1a7b3",
+      "shape": "[1,8,16,16,16]",
+      "params": "{\"dino_lock\": 0.0, \"guidance_interval\": [0.6, 1.0], \"guidance_rescale\": 0.7, \"guidance_strength\": 7.5, \"rescale_t\": 5.0, \"steps\": 12}",
+      "model_checkpoint_sha256": "ca01377c485bec418076d38ee80166d32dc776d744f2553b835cba1e97a7abf6",
+      "sampler_sources": "{\"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\__init__.py\": \"81174e88221aea4b3d078846cba5c01f45d885ee2ae2240974ec28badc88a076\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\base.py\": \"10bc216dc255e64746e51d929fc66d88efa7e3763e48a52a4fae3722d1e01869\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\classifier_free_guidance_mixin.py\": \"ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\flow_euler.py\": \"03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\guidance_interval_mixin.py\": \"0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2\"}",
+      "format": "modly-amd-sparse-structure-latent-v1",
+      "dtype": "F32"
+    },
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-structure-sampling-evidence\\sparse-structure-latent.safetensors"
+  },
+  "decoder_identity": {
+    "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS-image-large\\ckpts\\ss_dec_conv3d_16l8_fp16.safetensors",
+    "file_bytes": 147591972,
+    "mtime_ns": 1791274804653166600,
+    "header_bytes": 6552,
+    "bytes_read": 6560,
+    "tensor_data_bytes": 147585412,
+    "header_sha256": "fb31e5d5ff5d51b91bdab639fa919853e9aaaaf06e4a4e69a918af2799c64b94",
+    "tensor_count": 74,
+    "parameter_count": 73671201,
+    "dtypes": {
+      "F32": 38,
+      "F16": 36
+    },
+    "metadata_only_fixture": false,
+    "metadata": {},
+    "tensors": {
+      "blocks.0.norm1.bias": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          0,
+          2048
+        ]
+      },
+      "blocks.0.norm1.weight": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          2048,
+          4096
+        ]
+      },
+      "blocks.0.norm2.bias": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          4096,
+          6144
+        ]
+      },
+      "blocks.0.norm2.weight": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          6144,
+          8192
+        ]
+      },
+      "blocks.1.norm1.bias": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          8192,
+          10240
+        ]
+      },
+      "blocks.1.norm1.weight": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          10240,
+          12288
+        ]
+      },
+      "blocks.1.norm2.bias": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          12288,
+          14336
+        ]
+      },
+      "blocks.1.norm2.weight": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          14336,
+          16384
+        ]
+      },
+      "blocks.3.norm1.bias": {
+        "dtype": "F32",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          16384,
+          16896
+        ]
+      },
+      "blocks.3.norm1.weight": {
+        "dtype": "F32",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          16896,
+          17408
+        ]
+      },
+      "blocks.3.norm2.bias": {
+        "dtype": "F32",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          17408,
+          17920
+        ]
+      },
+      "blocks.3.norm2.weight": {
+        "dtype": "F32",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          17920,
+          18432
+        ]
+      },
+      "blocks.4.norm1.bias": {
+        "dtype": "F32",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          18432,
+          18944
+        ]
+      },
+      "blocks.4.norm1.weight": {
+        "dtype": "F32",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          18944,
+          19456
+        ]
+      },
+      "blocks.4.norm2.bias": {
+        "dtype": "F32",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          19456,
+          19968
+        ]
+      },
+      "blocks.4.norm2.weight": {
+        "dtype": "F32",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          19968,
+          20480
+        ]
+      },
+      "blocks.6.norm1.bias": {
+        "dtype": "F32",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          20480,
+          20608
+        ]
+      },
+      "blocks.6.norm1.weight": {
+        "dtype": "F32",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          20608,
+          20736
+        ]
+      },
+      "blocks.6.norm2.bias": {
+        "dtype": "F32",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          20736,
+          20864
+        ]
+      },
+      "blocks.6.norm2.weight": {
+        "dtype": "F32",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          20864,
+          20992
+        ]
+      },
+      "blocks.7.norm1.bias": {
+        "dtype": "F32",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          20992,
+          21120
+        ]
+      },
+      "blocks.7.norm1.weight": {
+        "dtype": "F32",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          21120,
+          21248
+        ]
+      },
+      "blocks.7.norm2.bias": {
+        "dtype": "F32",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          21248,
+          21376
+        ]
+      },
+      "blocks.7.norm2.weight": {
+        "dtype": "F32",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          21376,
+          21504
+        ]
+      },
+      "input_layer.bias": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          21504,
+          23552
+        ]
+      },
+      "input_layer.weight": {
+        "dtype": "F32",
+        "shape": [
+          512,
+          8,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          23552,
+          465920
+        ]
+      },
+      "middle_block.0.norm1.bias": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          465920,
+          467968
+        ]
+      },
+      "middle_block.0.norm1.weight": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          467968,
+          470016
+        ]
+      },
+      "middle_block.0.norm2.bias": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          470016,
+          472064
+        ]
+      },
+      "middle_block.0.norm2.weight": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          472064,
+          474112
+        ]
+      },
+      "middle_block.1.norm1.bias": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          474112,
+          476160
+        ]
+      },
+      "middle_block.1.norm1.weight": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          476160,
+          478208
+        ]
+      },
+      "middle_block.1.norm2.bias": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          478208,
+          480256
+        ]
+      },
+      "middle_block.1.norm2.weight": {
+        "dtype": "F32",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          480256,
+          482304
+        ]
+      },
+      "out_layer.0.bias": {
+        "dtype": "F32",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          482304,
+          482432
+        ]
+      },
+      "out_layer.0.weight": {
+        "dtype": "F32",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          482432,
+          482560
+        ]
+      },
+      "out_layer.2.bias": {
+        "dtype": "F32",
+        "shape": [
+          1
+        ],
+        "data_offsets": [
+          482560,
+          482564
+        ]
+      },
+      "out_layer.2.weight": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          32,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          482564,
+          486020
+        ]
+      },
+      "blocks.0.conv1.bias": {
+        "dtype": "F16",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          486020,
+          487044
+        ]
+      },
+      "blocks.0.conv1.weight": {
+        "dtype": "F16",
+        "shape": [
+          512,
+          512,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          487044,
+          14642820
+        ]
+      },
+      "blocks.0.conv2.bias": {
+        "dtype": "F16",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          14642820,
+          14643844
+        ]
+      },
+      "blocks.0.conv2.weight": {
+        "dtype": "F16",
+        "shape": [
+          512,
+          512,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          14643844,
+          28799620
+        ]
+      },
+      "blocks.1.conv1.bias": {
+        "dtype": "F16",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          28799620,
+          28800644
+        ]
+      },
+      "blocks.1.conv1.weight": {
+        "dtype": "F16",
+        "shape": [
+          512,
+          512,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          28800644,
+          42956420
+        ]
+      },
+      "blocks.1.conv2.bias": {
+        "dtype": "F16",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          42956420,
+          42957444
+        ]
+      },
+      "blocks.1.conv2.weight": {
+        "dtype": "F16",
+        "shape": [
+          512,
+          512,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          42957444,
+          57113220
+        ]
+      },
+      "blocks.2.conv.bias": {
+        "dtype": "F16",
+        "shape": [
+          1024
+        ],
+        "data_offsets": [
+          57113220,
+          57115268
+        ]
+      },
+      "blocks.2.conv.weight": {
+        "dtype": "F16",
+        "shape": [
+          1024,
+          512,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          57115268,
+          85426820
+        ]
+      },
+      "blocks.3.conv1.bias": {
+        "dtype": "F16",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          85426820,
+          85427076
+        ]
+      },
+      "blocks.3.conv1.weight": {
+        "dtype": "F16",
+        "shape": [
+          128,
+          128,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          85427076,
+          86311812
+        ]
+      },
+      "blocks.3.conv2.bias": {
+        "dtype": "F16",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          86311812,
+          86312068
+        ]
+      },
+      "blocks.3.conv2.weight": {
+        "dtype": "F16",
+        "shape": [
+          128,
+          128,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          86312068,
+          87196804
+        ]
+      },
+      "blocks.4.conv1.bias": {
+        "dtype": "F16",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          87196804,
+          87197060
+        ]
+      },
+      "blocks.4.conv1.weight": {
+        "dtype": "F16",
+        "shape": [
+          128,
+          128,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          87197060,
+          88081796
+        ]
+      },
+      "blocks.4.conv2.bias": {
+        "dtype": "F16",
+        "shape": [
+          128
+        ],
+        "data_offsets": [
+          88081796,
+          88082052
+        ]
+      },
+      "blocks.4.conv2.weight": {
+        "dtype": "F16",
+        "shape": [
+          128,
+          128,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          88082052,
+          88966788
+        ]
+      },
+      "blocks.5.conv.bias": {
+        "dtype": "F16",
+        "shape": [
+          256
+        ],
+        "data_offsets": [
+          88966788,
+          88967300
+        ]
+      },
+      "blocks.5.conv.weight": {
+        "dtype": "F16",
+        "shape": [
+          256,
+          128,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          88967300,
+          90736772
+        ]
+      },
+      "blocks.6.conv1.bias": {
+        "dtype": "F16",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          90736772,
+          90736836
+        ]
+      },
+      "blocks.6.conv1.weight": {
+        "dtype": "F16",
+        "shape": [
+          32,
+          32,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          90736836,
+          90792132
+        ]
+      },
+      "blocks.6.conv2.bias": {
+        "dtype": "F16",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          90792132,
+          90792196
+        ]
+      },
+      "blocks.6.conv2.weight": {
+        "dtype": "F16",
+        "shape": [
+          32,
+          32,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          90792196,
+          90847492
+        ]
+      },
+      "blocks.7.conv1.bias": {
+        "dtype": "F16",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          90847492,
+          90847556
+        ]
+      },
+      "blocks.7.conv1.weight": {
+        "dtype": "F16",
+        "shape": [
+          32,
+          32,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          90847556,
+          90902852
+        ]
+      },
+      "blocks.7.conv2.bias": {
+        "dtype": "F16",
+        "shape": [
+          32
+        ],
+        "data_offsets": [
+          90902852,
+          90902916
+        ]
+      },
+      "blocks.7.conv2.weight": {
+        "dtype": "F16",
+        "shape": [
+          32,
+          32,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          90902916,
+          90958212
+        ]
+      },
+      "middle_block.0.conv1.bias": {
+        "dtype": "F16",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          90958212,
+          90959236
+        ]
+      },
+      "middle_block.0.conv1.weight": {
+        "dtype": "F16",
+        "shape": [
+          512,
+          512,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          90959236,
+          105115012
+        ]
+      },
+      "middle_block.0.conv2.bias": {
+        "dtype": "F16",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          105115012,
+          105116036
+        ]
+      },
+      "middle_block.0.conv2.weight": {
+        "dtype": "F16",
+        "shape": [
+          512,
+          512,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          105116036,
+          119271812
+        ]
+      },
+      "middle_block.1.conv1.bias": {
+        "dtype": "F16",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          119271812,
+          119272836
+        ]
+      },
+      "middle_block.1.conv1.weight": {
+        "dtype": "F16",
+        "shape": [
+          512,
+          512,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          119272836,
+          133428612
+        ]
+      },
+      "middle_block.1.conv2.bias": {
+        "dtype": "F16",
+        "shape": [
+          512
+        ],
+        "data_offsets": [
+          133428612,
+          133429636
+        ]
+      },
+      "middle_block.1.conv2.weight": {
+        "dtype": "F16",
+        "shape": [
+          512,
+          512,
+          3,
+          3,
+          3
+        ],
+        "data_offsets": [
+          133429636,
+          147585412
+        ]
+      }
+    },
+    "config": {
+      "name": "SparseStructureDecoder",
+      "args": {
+        "out_channels": 1,
+        "latent_channels": 8,
+        "num_res_blocks": 2,
+        "num_res_blocks_middle": 2,
+        "channels": [
+          512,
+          128,
+          32
+        ],
+        "use_fp16": true
+      }
+    },
+    "source_module": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sparse_structure_vae.py",
+    "source_module_sha256": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857",
+    "checkpoint_sha256": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a",
+    "config_sha256": "646781293f1cda74720de85d1cef50a957fb4aebd9a4bd014e454e32f2330ac5"
+  },
+  "dependencies": {
+    "numpy": "2.5.2",
+    "safetensors": "0.8.0",
+    "psutil": "7.2.2"
+  },
+  "pipeline_source_sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+  "eligible_cache_entries": 9,
+  "runtime_libraries": {
+    "_rocm_sdk_core/bin/amd_comgr.dll": {
+      "sha256": "213db0bedaa07027ce136ba1797299a2b0cfa2c6bb33584ce3861be8be067937",
+      "bytes": 121750016,
+      "package": "rocm-sdk-core",
+      "version": "10.0.0",
+      "record_sha256": "cc796a8cda9f014379499ff6bdb98f1686868cc5d620df2e49b1ee2ecc406406"
+    },
+    "_rocm_sdk_core/bin/amdhip64_7.dll": {
+      "sha256": "546fb3d6e2d2194a9526fb94ec2fd3aa5b92a48a7595f04efece80162047ef69",
+      "bytes": 16555520,
+      "package": "rocm-sdk-core",
+      "version": "10.0.0",
+      "record_sha256": "cc796a8cda9f014379499ff6bdb98f1686868cc5d620df2e49b1ee2ecc406406"
+    },
+    "_rocm_sdk_core/bin/hiprtc0715.dll": {
+      "sha256": "19b67aa86ba371c49b2def5e5c863346e81c1b6d67caab125cf10a8c405e0043",
+      "bytes": 1296384,
+      "package": "rocm-sdk-core",
+      "version": "10.0.0",
+      "record_sha256": "cc796a8cda9f014379499ff6bdb98f1686868cc5d620df2e49b1ee2ecc406406"
+    },
+    "_rocm_sdk_libraries/bin/MIOpen.dll": {
+      "sha256": "114bbd178b2ba3bc32eeb3302edbbc17e0127599ba488726713858b72c61c9ae",
+      "bytes": 493655040,
+      "package": "rocm-sdk-libraries",
+      "version": "10.0.0",
+      "record_sha256": "e8837c3ca58bddae282a03714ab1248e6314fc6be1b1292dd1a0ea837988a074"
+    }
+  },
+  "source_contract": {
+    "input_shape": [
+      1,
+      8,
+      16,
+      16,
+      16
+    ],
+    "output_shape": [
+      1,
+      1,
+      64,
+      64,
+      64
+    ],
+    "input_dtype": "float32",
+    "output_dtype": "float32",
+    "intermediate_dtype": "float16",
+    "upsampling": "two pixel_shuffle_3d(...,2) blocks",
+    "threshold": "decoded > 0",
+    "coordinates": [
+      "batch",
+      "D",
+      "H",
+      "W"
+    ],
+    "native_resolution_preserved": true,
+    "optional_later_32_cubed_rule": "max_pool3d(mask.float(),2,2,0)>0.5; not executed"
+  },
+  "deadlines": {
+    "cpu_seconds": 120,
+    "gpu_seconds": 180,
+    "overall_seconds": 360
+  },
+  "allocator_cap_bytes": 12884901888,
+  "live_rocm_vram_admission": "at least13GiB available, zero allocated/reserved; checked by owned worker before placement",
+  "torch_imported": false,
+  "gpu_initialized": false,
+  "model_weights_loaded": false,
+  "attempt_marker_exists": false
+}

@@ -25,7 +25,11 @@ class SingleForward:
 
 class TensorTransfers:
     """Exact single-use input/output copies; never an operator-wide allowance."""
-    def __init__(self):
+    def __init__(self, input_shape=None, output_shape=None):
+        self.input_shape=[1,8,1,1,1] if input_shape is None else list(input_shape)
+        self.output_shape=[1,1,4,4,4] if output_shape is None else list(output_shape)
+        if (self.input_shape,self.output_shape) not in [([1,8,1,1,1],[1,1,4,4,4]),([1,8,16,16,16],[1,1,64,64,64])]:
+            raise ValueError('Only the reviewed tiny or saved-latent decoder shapes are permitted')
         self.counts = {'input': 0, 'output': 0}
         self.active = None
 
@@ -37,8 +41,8 @@ class TensorTransfers:
         stride = description.get('stride')
         if not isinstance(stride,list) or len(stride)!=5 or any(type(value) is not int or value<0 for value in stride):
             raise RuntimeError('Invalid transfer stride metadata')
-        expected = {'shape': [1,8,1,1,1] if direction == 'input' else [1,1,4,4,4],
-                    'stride': [8,1,1,1,1] if direction == 'input' else list(stride),
+        expected = {'shape': self.input_shape if direction == 'input' else self.output_shape,
+                    'stride': [math.prod(self.input_shape[i+1:]) for i in range(5)] if direction == 'input' else list(stride),
                     'dtype': 'torch.float32', 'device': 'cpu' if direction == 'input' else 'cuda:0',
                     'layout': 'torch.strided', 'contiguous': True, 'requires_grad': False}
         if (phase != direction+'-transfer' or description != expected

@@ -1,0 +1,18 @@
+{
+  "reviewer": "/root/sparse_occupancy_review",
+  "scope": "read-only review of native64 contracts, one-forward/transfer guard, ownership and cleanup, bounded readers/writers, provenance and publication",
+  "result": "APPROVED; no blocking defect found",
+  "reviewer_test_result": "Three CPU tests passed; six encountered Windows sandbox WinError5 path restrictions. This is not an independent nine-test PASS.",
+  "primary_test_evidence": "cpu-tests.json records22 passing CPU-only tests with the exact candidate hashes",
+  "production_sha256": {
+    "amd_sparse_occupancy.py": "0bb248a66e28697d28dd659a5077098bc75cf0ecc7c6b54c5a4b616eba410e78",
+    "amd_sparse_occupancy_contract.py": "ab14765c6fff7eb26da689d035645d84000980e1759ab66802f2bd0b018e71d7",
+    "amd_sparse_occupancy_data.py": "eec6dff015a2dbf1fe0b297f62faa2620ad8f77bcce4f01a8f940a19c3d16755",
+    "amd_sparse_decoder_forward.py": "31154369fe2072953b54789add3e7cf2be9b9081d31c55ebcc2ea082d4d61fa9",
+    "amd_decoder_forward_contract.py": "e30b74ca21a3c47fc8150352fab729f54e050ddaac0ea4660b02c284b062a77c",
+    "test_amd_sparse_occupancy.py": "ec4aab7838b24511abb4c4120617779bae61a3eec1a42aea8fd9eb372b6320ef"
+  },
+  "gpu_initialized": false,
+  "model_weights_loaded": false,
+  "source_changes": false
+}

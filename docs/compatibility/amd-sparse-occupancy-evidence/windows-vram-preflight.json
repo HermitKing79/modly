@@ -1,0 +1,29 @@
+{
+  "counters": [
+    {
+      "Name": "luid_0x00000000_0x00015F43_phys_0",
+      "DedicatedUsage": 0,
+      "SharedUsage": 8192,
+      "TotalCommitted": 1363968
+    },
+    {
+      "Name": "luid_0x00000000_0x0001422A_phys_0",
+      "DedicatedUsage": 2968399872,
+      "SharedUsage": 183386112,
+      "TotalCommitted": 3340140544
+    }
+  ],
+  "controllers": [
+    {
+      "Name": "AMD Radeon RX 9070 XT",
+      "Status": "OK",
+      "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019"
+    }
+  ],
+  "known_amd_total_bytes": 17095983104,
+  "all_adapter_dedicated_bytes": 2968399872.0,
+  "conservative_available_estimate_bytes": 14127583232.0,
+  "minimum_bytes": 13958643712,
+  "authoritative_rocm_check": "owned worker before model placement",
+  "gpu_context_initialized": false
+}

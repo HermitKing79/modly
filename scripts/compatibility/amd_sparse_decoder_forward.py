@@ -91,9 +91,10 @@ def source_identity():
     return rows
 
 
-def worker(scratch):
+def worker(scratch, occupancy=None):
+    contract=globals()['contract'] if occupancy is None else occupancy.contract
     record={'status':'FAIL','stage':'startup','forward_calls':0,'sdk_discovery':[]}
-    component=model=latent=output=cpu_output=cpu_input=torch=None
+    component=model=latent=output=cpu_output=cpu_input=torch=saved_array=None
     permit=contract.SingleForward()
     transfers=contract.TensorTransfers()
     phase='cpu'; allowed_modules=set();module_names={};root_id=None;root_calls=0
@@ -122,12 +123,16 @@ def worker(scratch):
                 raise RuntimeError('Unapproved pipeline/mesh import: '+str(args[0]))
             if event=='open' and isinstance(args[0],(str,bytes)):
                 path=Path(os.fsdecode(args[0]))
-                if path.suffix.lower() in ('.safetensors','.pt','.pth','.bin','.ckpt','.gguf') and path.resolve()!=checkpoint:
+                allowed=(checkpoint,) if occupancy is None else (checkpoint,occupancy.data.INPUT.resolve())
+                if path.suffix.lower() in ('.safetensors','.pt','.pth','.bin','.ckpt','.gguf') and path.resolve() not in allowed:
                     raise RuntimeError('Only the audited sparse decoder may be read: '+str(path))
         sys.addaudithook(audit)
         record['verified_support_source']=source_identity()
         verified=previous.identity();record['checkpoint_identity']=verified
         fixture=contract.fixture(verified['config']);record['fixture']=fixture
+        if occupancy is not None:
+            saved_array,record['saved_latent']=occupancy.data.read_input()
+            record['workspace_binding']=occupancy.teardown.verify_binding_evidence()
         import torch
         Path(sys.executable).resolve().relative_to(VENV)
         Path(torch.__file__).resolve().relative_to(VENV/'Lib/site-packages')
@@ -137,6 +142,9 @@ def worker(scratch):
         record['runtime']={'python':sys.version,'executable':sys.executable,'torch':torch.__version__,
                            'torch_path':torch.__file__,'hip':torch.version.hip,'cuda':torch.version.cuda}
         trace.emit('state','runtime',**record['runtime'])
+        if occupancy is not None:
+            record['workspace_binding']=occupancy.teardown.verify_runtime_binding(torch)
+            record['ram_before_load']=occupancy.admission()
         torch.set_num_threads(1)
         original_init=torch.cuda._lazy_init
         def forbidden(*args,**kwargs):raise RuntimeError('Unapproved model loading, initialization or compilation')
@@ -228,6 +236,11 @@ def worker(scratch):
             trace.emit('memory','before-placement',**record['before_placement'])
             if record['before_placement']['allocated_bytes'] or record['before_placement']['reserved_bytes'] or record['before_placement']['available_bytes']<verified['tensor_data_bytes']+512*1024**2:
                 raise RuntimeError('Baseline allocation or insufficient VRAM')
+            if occupancy is not None:
+                if record['before_placement']['available_bytes']<13*1024**3:raise RuntimeError('Less than13GiB available VRAM')
+                torch.cuda.set_per_process_memory_fraction(contract.MEMORY_LIMIT/properties.total_memory,0)
+                record['budget']={'allocator_limit_bytes':contract.MEMORY_LIMIT,'minimum_available_bytes':13*1024**3,
+                                  'cpu_seconds':120,'gpu_seconds':180,'overall_seconds':360}
             torch.backends.cudnn.benchmark=False;torch.backends.cudnn.deterministic=True
             torch.use_deterministic_algorithms(True)
             record['determinism']={'algorithms':True,'cudnn_benchmark':False,'cudnn_deterministic':True}
@@ -236,7 +249,8 @@ def worker(scratch):
             loading_contract.validate_tensors(verified['tensors'],previous.tensor_manifest(model.state_dict()),'cuda:0')
             record['placement_seconds']=time.monotonic()-began
             with torch.inference_mode():
-                cpu_input=torch.tensor(fixture['values'],dtype=torch.float32,device='cpu').reshape(fixture['input_shape'])
+                cpu_input=(torch.tensor(fixture['values'],dtype=torch.float32,device='cpu').reshape(fixture['input_shape'])
+                           if occupancy is None else torch.from_numpy(saved_array))
                 stage('input-transfer');phase='input-transfer'
                 transfers.begin('input',cpu_input,tensor_description(cpu_input),phase)
                 latent=torch.ops.aten._to_copy.default(cpu_input,device=torch.device('cuda:0'))
@@ -263,19 +277,24 @@ def worker(scratch):
                     raise RuntimeError('Output copy changed shape, dtype or layout')
                 description={'shape':list(output.shape),'dtype':str(output.dtype),'device':str(output.device),
                     'requires_grad':output.requires_grad,'inference_mode':torch.is_inference_mode_enabled(),
-                    'values':cpu_output.reshape(-1).tolist()}
+                    **({'values':cpu_output.reshape(-1).tolist()} if occupancy is None else occupancy.output_summary(cpu_output.numpy()))}
                 statistics=contract.validate_output(description,fixture)
                 record['forward']={'status':'PASS','elapsed_seconds':elapsed,'input_shape':list(latent.shape),
                     'input_dtype':str(latent.dtype),'input_device':str(latent.device),'output':description,
                     'statistics':statistics,'output_sha256':hashlib.sha256(cpu_output.numpy().tobytes()).hexdigest(),
                     'grad_enabled':torch.is_grad_enabled(),'output_is_inference_tensor':output.is_inference()}
+                if occupancy is not None:
+                    record['occupancy_artifacts']=occupancy.data.write_output(scratch,cpu_output.numpy(),occupancy.provenance(record))
             record['forward_calls']=permit.calls
             if root_calls!=1 or permit.calls!=1:raise RuntimeError('Forward count invariant failed')
             stage('release')
             phase='release'
             model_ref,input_ref,output_ref=weakref.ref(model),weakref.ref(latent),weakref.ref(output)
             component.unload();component=None;model=latent=output=cpu_output=cpu_input=None
-            gc.collect();torch.cuda.synchronize(0);torch.cuda.empty_cache();torch.cuda.synchronize(0)
+            saved_array=None;gc.collect();torch.cuda.synchronize(0)
+            if occupancy is not None:
+                record['workspace_clear_calls']=1;trace.call('blas:clear-workspaces',torch._C._cuda_clearCublasWorkspaces)
+            torch.cuda.empty_cache();torch.cuda.synchronize(0)
             record['release']={**previous.gpu_memory(torch),'model_collected':model_ref() is None,
                               'input_collected':input_ref() is None,'output_collected':output_ref() is None,
                               'cpu_memory':previous.process_memory()}
@@ -293,7 +312,7 @@ def worker(scratch):
         # After any native error, do not issue another GPU operation. Process exit
         # and parent reaping own cleanup; no retry or attempted GPU repair.
         if component is not None:component.unload()
-        component=model=latent=output=cpu_output=cpu_input=None
+        component=model=latent=output=cpu_output=cpu_input=saved_array=None
         gc.collect()
         print(RESULT+json.dumps(record),flush=True)
     return 0 if record['status']=='PASS' else 1
