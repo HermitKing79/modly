@@ -1,0 +1,21 @@
+{
+  "reviewer": "/root/sparse_occupancy_review",
+  "scope": "read-only final report, execution results, complete published/scratch artifact hashes, preview evidence and preservation audit",
+  "result": "No concrete publication blocker; PASS for bounded decoder/artifact milestone",
+  "confirmed": [
+    "One checkpoint load and one root decoder forward; finite native F32[1,1,64,64,64] output;25.157seconds synchronized forward",
+    "Zero allocated/reserved bytes, collected model/input/output, clean exit0 and owned-tree termination",
+    "Six healthy periodic Windows samples with maximum5.031second gap",
+    "1606-voxel64x24x2 slab limitation explicit; no shape-fidelity claim",
+    "Logits/mask/coords/provenance full hashes and sizes match independent analysis and original scratch",
+    "Preview OBJ/PNG hashes match independent evidence",
+    "Installed inventories, venv metadata and model/cache metadata byte-identical before/after",
+    "Executed production SHA256 hashes remain the originally approved bytes",
+    "Fortran-coordinate independent readback correction sound and documented; file/logical-payload hashes distinguished",
+    "Historical refs/evidence, main and existing AMD source modifications preserved"
+  ],
+  "additional_tests": false,
+  "gpu_initialized": false,
+  "model_execution": false,
+  "edits": false
+}

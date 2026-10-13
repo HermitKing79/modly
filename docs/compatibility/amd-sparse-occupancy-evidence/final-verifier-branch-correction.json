@@ -1,0 +1,9 @@
+{
+  "operation": "Passive CPU-only final Git preservation verification",
+  "original_error": "AssertionError: codex/amd-sparse-occupancy-decode at final-verification.py line22",
+  "cause": "The initial passive verifier incorrectly required the newly authorized continuation branch to stay at its original26fc3aa tip. The reviewed harness was correctly committed/published on that branch at fe02093614605a0621c738b0e7827b287660fd14.",
+  "correction": "Exclude only the authorized continuation branch from historical-tip equality; require its local and GitHub tips to equal the exact executed harness instead. Preserve equality checks for every historical branch and all evidence/source/environment files.",
+  "execution_harness_changed": false,
+  "historical_evidence_changed": false,
+  "additional_gpu_execution": false
+}

@@ -1,0 +1,124 @@
+{
+  "classification": "PASS",
+  "independent_validation": "stdlib bounded NPY header, complete raw F32/bool/I32 payloads, threshold, ordered coordinates,6-neighbor connectivity, hashes and provenance",
+  "artifacts": {
+    "occupancy-logits.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-occupancy-evidence\\occupancy-logits.npy",
+      "file_bytes": 1048704,
+      "sha256": "b30e463e1fb9530a630dd8696f991ed663c4da105d611009993feacf8d187c7c",
+      "byte_identical_to_owned_scratch": true
+    },
+    "occupancy-mask.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-occupancy-evidence\\occupancy-mask.npy",
+      "file_bytes": 262272,
+      "sha256": "d48345608add4a0c864e060b367966e15d1278f3eb52cf55255996a38aa87fdb",
+      "byte_identical_to_owned_scratch": true
+    },
+    "occupancy-coordinates.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-occupancy-evidence\\occupancy-coordinates.npy",
+      "file_bytes": 25824,
+      "sha256": "674202ea9471148271d7f3b58ffb65a4f460dd1dbfaa64c3001a0df2e8cf8b81",
+      "byte_identical_to_owned_scratch": true
+    },
+    "occupancy-provenance.json": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-occupancy-evidence\\occupancy-provenance.json",
+      "file_bytes": 11808,
+      "sha256": "52745a16ed0d9de871d757a63e8495faf7e0e963573804de2fd48ee5dba7d088",
+      "byte_identical_to_owned_scratch": true
+    }
+  },
+  "native_shape": [
+    1,
+    1,
+    64,
+    64,
+    64
+  ],
+  "dtype": "float32",
+  "all_finite": true,
+  "threshold": "decoded > 0",
+  "occupied_count": 1606,
+  "occupancy_fraction": 0.00612640380859375,
+  "npy_storage_order": {
+    "logits": "C",
+    "mask": "C",
+    "coordinates": "Fortran"
+  },
+  "payload_hash_policy": "logical C-order bytes, distinct from complete NPY file hash; column-major coordinates decoded explicitly",
+  "bounding_box": {
+    "minimum": [
+      0,
+      20,
+      31
+    ],
+    "maximum": [
+      63,
+      43,
+      32
+    ]
+  },
+  "coordinate_order": [
+    "batch",
+    "D",
+    "H",
+    "W"
+  ],
+  "bounding_box_extents": [
+    64,
+    24,
+    2
+  ],
+  "components": {
+    "connectivity": 6,
+    "count": 1,
+    "largest_sizes": [
+      1606
+    ]
+  },
+  "structure_quality": "thin connected occupancy, two cells wide on W and touches both D volume boundaries; no detailed-shape quality claim",
+  "boundary_occupied_count": 50,
+  "statistics": {
+    "minimum": -188.1945037841797,
+    "maximum": 133.3202362060547,
+    "mean_float64": -155.70299474809144,
+    "stddev_float64": 20.744696447587593
+  },
+  "cpu_loading_seconds": 1.5779999999940628,
+  "synchronized_forward_seconds": 25.15700000000652,
+  "gpu_stage_through_cleanup_seconds": 26.0,
+  "overall_worker_seconds": 33.98399999999674,
+  "peak_allocated_bytes": 1127093760,
+  "peak_reserved_bytes": 1648361472,
+  "release": {
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 1127093760,
+    "peak_reserved_bytes": 1648361472,
+    "available_bytes": 16822960128,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 273022976,
+    "model_collected": true,
+    "input_collected": true,
+    "output_collected": true,
+    "cpu_memory": {
+      "working_set_bytes": 1938460672,
+      "private_commit_bytes": 2273067008,
+      "peak_working_set_bytes": 2002792448,
+      "peak_commit_bytes": 2311491584
+    }
+  },
+  "process_exit_status": 0,
+  "owned_tree_exit_verified": true,
+  "windows_periodic_samples": 6,
+  "maximum_windows_gap_seconds": 5.0310000000026776,
+  "trace_records": 101,
+  "process_activity_samples": 14,
+  "observed_process_names": [
+    "python.exe"
+  ],
+  "convolution_host_return_times": [],
+  "host_return_is_gpu_completion": false,
+  "after_forward_synchronization_observed": true,
+  "torch_imported": false,
+  "additional_gpu_execution": false
+}

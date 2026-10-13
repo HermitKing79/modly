@@ -1,0 +1,208 @@
+{
+  "native_shape": [
+    1,
+    1,
+    64,
+    64,
+    64
+  ],
+  "threshold": "decoded > 0",
+  "coordinate_order": [
+    "batch",
+    "D",
+    "H",
+    "W"
+  ],
+  "occupied_count": 1606,
+  "occupancy_fraction": 0.00612640380859375,
+  "bounding_box": {
+    "minimum": [
+      0,
+      20,
+      31
+    ],
+    "maximum": [
+      63,
+      43,
+      32
+    ]
+  },
+  "empty": false,
+  "degenerate": false,
+  "components": {
+    "connectivity": 6,
+    "count": 1,
+    "largest_sizes": [
+      1606
+    ],
+    "total_occupied": 1606
+  },
+  "files": {
+    "occupancy-logits.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-occupancy-evidence\\run\\scratch\\occupancy-logits.npy",
+      "file_bytes": 1048704,
+      "file_sha256": "b30e463e1fb9530a630dd8696f991ed663c4da105d611009993feacf8d187c7c",
+      "payload_sha256": "0a7f6b3a154bbfead5268b5a118a47003a3789b4df71ba1432e50ccc6de63b4c",
+      "shape": [
+        1,
+        1,
+        64,
+        64,
+        64
+      ],
+      "dtype": "float32"
+    },
+    "occupancy-mask.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-occupancy-evidence\\run\\scratch\\occupancy-mask.npy",
+      "file_bytes": 262272,
+      "file_sha256": "d48345608add4a0c864e060b367966e15d1278f3eb52cf55255996a38aa87fdb",
+      "payload_sha256": "eb7456fa3bbb4c777b9061fe7762cdd994a7b73487a7624ceebfe476ca23b3d0",
+      "shape": [
+        64,
+        64,
+        64
+      ],
+      "dtype": "bool"
+    },
+    "occupancy-coordinates.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-occupancy-evidence\\run\\scratch\\occupancy-coordinates.npy",
+      "file_bytes": 25824,
+      "file_sha256": "674202ea9471148271d7f3b58ffb65a4f460dd1dbfaa64c3001a0df2e8cf8b81",
+      "payload_sha256": "9cfa35960353df43bdb5cd1f21c4aec70930816bc712698d55ec01ea09ea262b",
+      "shape": [
+        1606,
+        4
+      ],
+      "dtype": "int32"
+    }
+  },
+  "provenance": {
+    "input": {
+      "verified": true,
+      "shape": [
+        1,
+        8,
+        16,
+        16,
+        16
+      ],
+      "dtype": "F32",
+      "tensor_bytes": 131072,
+      "file_bytes": 134688,
+      "file_sha256": "8a4da87ae1bbc2d5e5186f300adf11597bf986cb58dfb24a564a2eec287b44f2",
+      "output_sha256": "68930e793a5ec752852db45ab9985ab012a0dd32b6e7234f2ebb1f3177d08e56",
+      "provenance": {
+        "component": "SparseStructureFlowModel",
+        "harness_commit": "98d1d29f750236580c7853091dfd949a077b531a",
+        "feature_file_sha256": "3f444d42191df07415a8877a3d8d3706cf1b129bedbbb2dfcc0221d5571be56a",
+        "sigma_min": "1e-05",
+        "runtime": "{\"cuda\": null, \"dependencies\": {\"numpy\": \"2.5.3\", \"safetensors\": \"0.8.0\"}, \"executable\": \"D:\\\\AI\\\\Trellis2AMD\\\\venv\\\\Scripts\\\\python.exe\", \"git_version\": \"6596a0dea537c1c78520c73cc6678214781a9d06\", \"hip\": \"7.15.26333\", \"python\": \"3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]\", \"torch\": \"2.13.0+rocm10.0.0\", \"torch_path\": \"D:\\\\AI\\\\Trellis2AMD\\\\venv\\\\Lib\\\\site-packages\\\\torch\\\\__init__.py\"}",
+        "model_config_sha256": "6cdfb636854f60ffcadd8c49244169cd449f34c5ccdb55b5ff7c04678f9c399e",
+        "seed": "20261013",
+        "feature_provenance": "{\"alpha_only\": \"true\", \"checkpoint_sha256\": \"dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179\", \"component\": \"DINOv3ViTModel\", \"conditioning_width\": \"1024\", \"config_sha256\": \"135ecd23e34a70b6fbed8b083fdecb319b7e3a54e3d849258bbe4ddcf1783bb5\", \"dtype\": \"F32\", \"extractor_source_sha256\": \"a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f\", \"format\": \"modly-amd-conditioning-v1\", \"harness_commit\": \"827bd6d00c549a28c435b4602b8f4bdc6a2eb8a5\", \"input_pixel_sha256\": \"2fa864e19134bc817000a267eaae667fc6326119e5e6402b1eec9f0131c6de42\", \"input_png_sha256\": \"9abc7b8f89e5b001e863fc3ef2fbd6813b2e83f63c0a6b0a45203c2ef1edfd8d\", \"output_sha256\": \"d94e87d27429936956616a7a1c09a1fd5e0e27337b5716486c271881497dc7ca\", \"pipeline_source_sha256\": \"faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b\", \"resolution\": \"512\", \"runtime\": \"Python 3.12.10; PyTorch 2.13.0+rocm10.0.0; HIP 7.15.26333\", \"shape\": \"[1,1029,1024]\"}",
+        "output_sha256": "68930e793a5ec752852db45ab9985ab012a0dd32b6e7234f2ebb1f3177d08e56",
+        "model_source_sha256": "858d9b076cc71f6955bb292ea394d620ce6f6f53cebb53bff2116a8c5cec026e",
+        "noise_sha256": "f76e94b25a4798a5da0e9de56667b5dda38e75bf12ccbc373521fbcd7af1a7b3",
+        "shape": "[1,8,16,16,16]",
+        "params": "{\"dino_lock\": 0.0, \"guidance_interval\": [0.6, 1.0], \"guidance_rescale\": 0.7, \"guidance_strength\": 7.5, \"rescale_t\": 5.0, \"steps\": 12}",
+        "model_checkpoint_sha256": "ca01377c485bec418076d38ee80166d32dc776d744f2553b835cba1e97a7abf6",
+        "sampler_sources": "{\"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\__init__.py\": \"81174e88221aea4b3d078846cba5c01f45d885ee2ae2240974ec28badc88a076\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\base.py\": \"10bc216dc255e64746e51d929fc66d88efa7e3763e48a52a4fae3722d1e01869\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\classifier_free_guidance_mixin.py\": \"ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\flow_euler.py\": \"03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5\", \"D:\\\\AI\\\\Trellis2AMD\\\\ComfyUI\\\\custom_nodes\\\\ComfyUI-Trellis2-AMD\\\\trellis2\\\\pipelines\\\\samplers\\\\guidance_interval_mixin.py\": \"0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2\"}",
+        "format": "modly-amd-sparse-structure-latent-v1",
+        "dtype": "F32"
+      },
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-sparse-structure-sampling-evidence\\sparse-structure-latent.safetensors"
+    },
+    "decoder_checkpoint_sha256": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a",
+    "decoder_config_sha256": "646781293f1cda74720de85d1cef50a957fb4aebd9a4bd014e454e32f2330ac5",
+    "decoder_source_sha256": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857",
+    "support_sources": {
+      "trellis2": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\__init__.py",
+        "sha256": "b953c8a82e54705708a115dd0e53b7ca5ccf45b71517463a5e9b8e0de318ee43"
+      },
+      "trellis2.models": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\__init__.py",
+        "sha256": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683"
+      },
+      "trellis2.models.sparse_structure_vae": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sparse_structure_vae.py",
+        "sha256": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857"
+      },
+      "trellis2.modules.norm": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\norm.py",
+        "sha256": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00"
+      },
+      "trellis2.modules.sparse": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\__init__.py",
+        "sha256": "7bb5f88b769568fc59fd07d208d44c58d2a3a7e22609da6dcb8de573fe1138e7"
+      },
+      "trellis2.modules.sparse.basic": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\basic.py",
+        "sha256": "e867e429b9c2fe154000725596b626273fb567025b9c232f3cc79140f00605b7"
+      },
+      "trellis2.modules.sparse.config": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\config.py",
+        "sha256": "525ed9a516bc9576712cce9896a52a0ec9667ba7dc4aa13f24ee6a83353cb722"
+      },
+      "trellis2.modules.sparse.conv": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\__init__.py",
+        "sha256": "da50648b5c8975ab8eb9574df2582d5c0dc03ddc102d301052003ef65af399e2"
+      },
+      "trellis2.modules.sparse.conv.config": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\config.py",
+        "sha256": "ed6505a70dcc94785ce6d8f2e9d40dff3a0edc39e5d2bceea60128f9ed48332b"
+      },
+      "trellis2.modules.sparse.conv.conv": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\conv.py",
+        "sha256": "a1e9f62fdf70f5443967a81b4ca99c0c863d20b063b44ffe264b0fd68bf3e5e3"
+      },
+      "trellis2.modules.sparse.linear": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\linear.py",
+        "sha256": "05cb619ff9cceb27674fc7bbb5aa2bcba93d1bf328d1f3340bb98c0f1240b413"
+      },
+      "trellis2.modules.spatial": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\spatial.py",
+        "sha256": "4a029d5077bb0a5412ee5eceb8de21d3b4c8920a8f53d477441c3c3219a0da3c"
+      },
+      "trellis2.modules.utils": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\utils.py",
+        "sha256": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e"
+      },
+      "trellis2.pipelines": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\__init__.py",
+        "sha256": "88946215d43bc6e8c095b40dc3de9ea76bb4fb4d175d0228829ec865bb790ba9"
+      },
+      "trellis2.renderers": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\renderers\\__init__.py",
+        "sha256": "53d28a650ef53022270d4a6e9e4a8f66714b1cf8edef0b1d7303e1eb8290a576"
+      },
+      "trellis2.representations": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\representations\\__init__.py",
+        "sha256": "861585d0d741e2cb592cef0d252ccc08fe414356fb44f7e84a79185eed841d28"
+      },
+      "trellis2.utils": {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "pipeline_source_sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+    "runtime": {
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "torch": "2.13.0+rocm10.0.0",
+      "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+      "hip": "7.15.26333",
+      "cuda": null
+    },
+    "harness_commit": "fe02093614605a0621c738b0e7827b287660fd14",
+    "threshold": "decoded > 0",
+    "conversion": "none; preserve native64cubed",
+    "coordinate_order": [
+      "batch",
+      "D",
+      "H",
+      "W"
+    ]
+  },
+  "readback_verified": true
+}

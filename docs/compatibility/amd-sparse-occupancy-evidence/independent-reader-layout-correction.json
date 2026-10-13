@@ -1,0 +1,14 @@
+{
+  "operation": "CPU-only independent NPY readback; no GPU attempt",
+  "original_error": "AssertionError at independent-readback.py line42: coordinate header fortran_order was True, while the independent reader initially required False",
+  "inspected_actual_headers": {
+    "occupancy-logits.npy": {"descr": "<f4", "fortran_order": false, "shape": [1,1,64,64,64]},
+    "occupancy-mask.npy": {"descr": "|b1", "fortran_order": false, "shape": [64,64,64]},
+    "occupancy-coordinates.npy": {"descr": "<i4", "fortran_order": true, "shape": [1606,4]}
+  },
+  "cause": "Independent reader assumed all NPY arrays used row-major storage. NumPy argwhere/concatenate produced valid column-major occupied coordinates; the production numpy.load readback correctly supports this.",
+  "correction": "Decode the explicit NPY column-major layout for coordinates and verify both full file hash and logical C-order payload hash. Continue requiring row-major native logits and mask.",
+  "artifacts_changed": false,
+  "execution_harness_changed": false,
+  "additional_gpu_execution": false
+}
