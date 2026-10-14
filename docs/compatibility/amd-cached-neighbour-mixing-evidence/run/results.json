@@ -1,0 +1,457 @@
+{
+  "classification": "PASS",
+  "observer_healthy": true,
+  "native_artifacts_unchanged": true,
+  "worker": {
+    "status": "PASS",
+    "stage": "complete",
+    "weights_loaded": false,
+    "sdk_discovery": [
+      {
+        "command": [
+          "D:\\AI\\Trellis2AMD\\venv\\Scripts\\rocm-sdk.exe",
+          "path",
+          "--root"
+        ],
+        "timeout_seconds": 5.0,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "ERROR: Could not load the `rocm[devel]` package, which is required to access runtime tools and development files. Please install it with your package manager (pip, uv, etc)\r\nERROR: rocm_sdk_devel module for the ROCm SDK development package is not installed. This can typically be obtained by installing `rocm[devel]` from your package manager\r\n",
+        "elapsed_seconds": 1.531
+      }
+    ],
+    "runtime": {
+      "python": "3.12.10",
+      "torch": "2.13.0+rocm10.0.0",
+      "hip": "7.15.26333",
+      "cuda": null
+    },
+    "pointer_proof": {
+      "signals": 35353,
+      "kernel_entries": 599,
+      "segments": 34,
+      "block_counts": [
+        17,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        21,
+        21,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "grid": [
+        264,
+        2
+      ],
+      "feature_last_element": 2098175,
+      "weight_last_element": 28311551,
+      "output_last_element": 4196351,
+      "padded_sorted_rows_use_zero": true,
+      "sentinel_input_reads_masked": true,
+      "padded_output_stores_masked": true,
+      "source_sort_ties": "Stable CPU order; equal binary codes have identical Gray masks, so tie order cannot alter block unions."
+    },
+    "numerical_case": "center1-axis3plus_half-axis1minus_quarter",
+    "numerical_coverage": {
+      "case": "center1-axis3plus_half-axis1minus_quarter",
+      "offsets": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "kernel_indices": [
+        13,
+        14,
+        4
+      ],
+      "weights": [
+        1.0,
+        0.5,
+        -0.25
+      ],
+      "valid_rows": [
+        2049,
+        1984,
+        1025
+      ],
+      "out_of_bounds_missing": [
+        0,
+        64,
+        1024
+      ],
+      "in_bounds_sparse_missing": [
+        0,
+        1,
+        0
+      ],
+      "valid_noncentral_terms": 3081216,
+      "nonidentity_elements": 2064894,
+      "reference_numerator_min": -6119,
+      "reference_numerator_max": 6085,
+      "exact_f32": true,
+      "atol": 0.0,
+      "rtol": 0.0,
+      "coordinate_order": "batch,axis1,axis2,axis3",
+      "reference_uses_precomputed_neighbor_map": false
+    },
+    "reference_metadata": {
+      "cpu_reference": {
+        "shape": [
+          2049,
+          1024
+        ],
+        "dtype": "float32",
+        "bytes": 8392704,
+        "sha256": "9ddd1b805ef252f3efd6f35e3b3a26f76e167752ad14a1625c8d68be15951fda"
+      },
+      "cpu_split_reference": {
+        "shape": [
+          2,
+          2049,
+          1024
+        ],
+        "dtype": "float32",
+        "bytes": 16785408,
+        "sha256": "99b6d82570527c843da26ffec69bd0dfd5aa46bae11d5983f5c4249721baec87"
+      }
+    },
+    "gate_one": {
+      "status": "PASS",
+      "gpu_initialized": false,
+      "weights_loaded": false,
+      "fixture_verified": true
+    },
+    "gpu": {
+      "name": "AMD Radeon RX 9070 XT",
+      "architecture": "gfx1201",
+      "total_bytes": 17095983104,
+      "index": 0
+    },
+    "memory_before": {
+      "allocated_bytes": 0,
+      "reserved_bytes": 0,
+      "peak_allocated_bytes": 0,
+      "peak_reserved_bytes": 0,
+      "available_bytes": 16937582592,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 158400512
+    },
+    "memory_after_inputs": {
+      "allocated_bytes": 77848576,
+      "reserved_bytes": 98566144,
+      "peak_allocated_bytes": 77848576,
+      "peak_reserved_bytes": 98566144,
+      "available_bytes": 16827744256,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 268238848
+    },
+    "synchronized_kernel_seconds": 0.030999999999039574,
+    "memory_after_kernel": {
+      "allocated_bytes": 77848576,
+      "reserved_bytes": 98566144,
+      "peak_allocated_bytes": 77848576,
+      "peak_reserved_bytes": 98566144,
+      "available_bytes": 16827744256,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 268238848
+    },
+    "artifacts": {
+      "raw_splits": {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\run\\scratch\\raw_splits.npy",
+        "bytes": 16785536,
+        "sha256": "e93033470aa6d67cb1f23c0f56eb4b7a7846b368decfb50ce215bd4846bbb8be",
+        "shape": [
+          2,
+          2049,
+          1024
+        ],
+        "dtype": "float32"
+      },
+      "input_features": {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\run\\scratch\\input_features.npy",
+        "bytes": 4196480,
+        "sha256": "05ea4d32e669734812d24510e18bdf81abf99f87964cc5b540c1f06e5fed9c90",
+        "shape": [
+          2049,
+          1024
+        ],
+        "dtype": "float16"
+      },
+      "coordinates": {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\run\\scratch\\coordinates.npy",
+        "bytes": 32912,
+        "sha256": "635d2189e1dc178e14bf454932ac3dfb3f5c5a7a0e4bfdeb88f24e8901ce7cc7",
+        "shape": [
+          2049,
+          4
+        ],
+        "dtype": "int32"
+      },
+      "cpu_reference": {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\run\\scratch\\cpu_reference.npy",
+        "bytes": 8392832,
+        "sha256": "6c97d66b798f7ba34719739c742b09314cbc60a01ae21b1dadcbf435d1e35a01",
+        "shape": [
+          2049,
+          1024
+        ],
+        "dtype": "float32"
+      },
+      "cpu_split_reference": {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\run\\scratch\\cpu_split_reference.npy",
+        "bytes": 16785536,
+        "sha256": "e93033470aa6d67cb1f23c0f56eb4b7a7846b368decfb50ce215bd4846bbb8be",
+        "shape": [
+          2,
+          2049,
+          1024
+        ],
+        "dtype": "float32"
+      },
+      "output_features": {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\run\\scratch\\output_features.npy",
+        "bytes": 8392832,
+        "sha256": "6c97d66b798f7ba34719739c742b09314cbc60a01ae21b1dadcbf435d1e35a01",
+        "shape": [
+          2049,
+          1024
+        ],
+        "dtype": "float32"
+      }
+    },
+    "elementwise": {
+      "elements": 2098176,
+      "raw_elements": 4196352,
+      "mismatched_elements": 0,
+      "split_mismatched_elements": 0,
+      "max_absolute_error": 0.0,
+      "atol": 0.0,
+      "rtol": 0.0,
+      "finite": true,
+      "raw_finite": true,
+      "fp32_reference_exact": true,
+      "per_split_reference_exact": true
+    },
+    "coordinates_unchanged": true,
+    "release": {
+      "allocated_bytes": 0,
+      "reserved_bytes": 0,
+      "peak_allocated_bytes": 77848576,
+      "peak_reserved_bytes": 98566144,
+      "available_bytes": 16924213248,
+      "total_bytes": 17095983104,
+      "sampled_global_used_bytes": 171769856,
+      "owned_tensors_collected": true
+    },
+    "native_counts": {
+      "convolution": 1,
+      "neighbor": 0,
+      "post1": 0,
+      "post2": 0,
+      "outer": 0,
+      "inner": 0,
+      "jit": 1,
+      "binary": 1,
+      "launch": 1
+    },
+    "helper_calls": 1,
+    "lookup_keys": [
+      "d5de3d60ef4c1dfce927f5a59a91fdfa35c7de3400fb71acb214abe5dc4fbea5"
+    ],
+    "forbidden_calls": []
+  },
+  "process": {
+    "returncode": 0,
+    "timed_out": false,
+    "pid": 28292,
+    "command": [
+      "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "-B",
+      "-I",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_neighbor_mixing_convolution.py",
+      "--worker",
+      "--output",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\run\\scratch"
+    ],
+    "harness_commit": "6fd7345e0cb4e5b11c3aa2da1c9b1e5a8006e08d",
+    "job_attached_before_preparation": true,
+    "last_stage": "complete",
+    "last_worker_trace": {
+      "event": "stage",
+      "name": "complete",
+      "origin": "worker",
+      "seq": 43,
+      "elapsed_seconds": 8.967999999997119,
+      "monotonic_seconds": 23230.671,
+      "timestamp_utc": "2026-10-14T07:00:08.987806+00:00",
+      "phase": "release"
+    },
+    "gpu_authorized": true,
+    "last_cpu_activity": {
+      "event": "process",
+      "name": "owned-tree",
+      "origin": "supervisor",
+      "seq": 2,
+      "elapsed_seconds": 2.014999999999418,
+      "monotonic_seconds": 23229.546,
+      "timestamp_utc": "2026-10-14T07:00:07.864570+00:00",
+      "processes": [
+        {
+          "pid": 10648,
+          "created_seconds": 1791961199.3567913,
+          "name": "python.exe",
+          "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "cpu_seconds": 3.640625,
+          "cpu_delta_seconds": 0.375
+        },
+        {
+          "pid": 28292,
+          "created_seconds": 1791961199.3424463,
+          "name": "python.exe",
+          "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+          "cpu_seconds": 0.015625,
+          "cpu_delta_seconds": 0.0
+        }
+      ],
+      "vanished_pids": [],
+      "psutil_version": "7.2.2",
+      "psutil_path": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\psutil\\__init__.py"
+    },
+    "gpu_memory_samples": {
+      "before": {
+        "event": "memory",
+        "name": "before",
+        "origin": "worker",
+        "seq": 4,
+        "elapsed_seconds": 8.592999999997119,
+        "monotonic_seconds": 23230.296,
+        "timestamp_utc": "2026-10-14T07:00:08.621967+00:00",
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 0,
+          "peak_reserved_bytes": 0,
+          "available_bytes": 16937582592,
+          "total_bytes": 17095983104,
+          "sampled_global_used_bytes": 158400512
+        }
+      },
+      "after-inputs": {
+        "event": "memory",
+        "name": "after-inputs",
+        "origin": "worker",
+        "seq": 22,
+        "elapsed_seconds": 8.625,
+        "monotonic_seconds": 23230.328,
+        "timestamp_utc": "2026-10-14T07:00:08.654633+00:00",
+        "memory": {
+          "allocated_bytes": 77848576,
+          "reserved_bytes": 98566144,
+          "peak_allocated_bytes": 77848576,
+          "peak_reserved_bytes": 98566144,
+          "available_bytes": 16827744256,
+          "total_bytes": 17095983104,
+          "sampled_global_used_bytes": 268238848
+        }
+      },
+      "after-kernel": {
+        "event": "memory",
+        "name": "after-kernel",
+        "origin": "worker",
+        "seq": 34,
+        "elapsed_seconds": 8.65599999999904,
+        "monotonic_seconds": 23230.359,
+        "timestamp_utc": "2026-10-14T07:00:08.683758+00:00",
+        "memory": {
+          "allocated_bytes": 77848576,
+          "reserved_bytes": 98566144,
+          "peak_allocated_bytes": 77848576,
+          "peak_reserved_bytes": 98566144,
+          "available_bytes": 16827744256,
+          "total_bytes": 17095983104,
+          "sampled_global_used_bytes": 268238848
+        }
+      },
+      "release": {
+        "event": "memory",
+        "name": "release",
+        "origin": "worker",
+        "seq": 42,
+        "elapsed_seconds": 8.967999999997119,
+        "monotonic_seconds": 23230.671,
+        "timestamp_utc": "2026-10-14T07:00:08.987806+00:00",
+        "memory": {
+          "allocated_bytes": 0,
+          "reserved_bytes": 0,
+          "peak_allocated_bytes": 77848576,
+          "peak_reserved_bytes": 98566144,
+          "available_bytes": 16924213248,
+          "total_bytes": 17095983104,
+          "sampled_global_used_bytes": 171769856
+        }
+      }
+    },
+    "elapsed_seconds": 9.890999999999622,
+    "stage_timeouts_seconds": {
+      "cpu": 45,
+      "forward_release": 120,
+      "overall": 180
+    },
+    "job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "worker_exit_verified": true,
+    "cpu_observer_stopped": true,
+    "cpu_observer_error": null,
+    "windows_periodic_stopped": true,
+    "windows_periodic_error": null,
+    "windows_periodic_samples": 1,
+    "output_readers_completed": true,
+    "diagnostic_journal_stopped": true,
+    "diagnostic_journal_error": null,
+    "windows_journal_stopped": true,
+    "windows_journal_error": null
+  }
+}

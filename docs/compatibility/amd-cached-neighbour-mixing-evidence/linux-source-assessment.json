@@ -49,5 +49,6 @@
     "CuMesh source memcpy fix requires matching binary provenance or separately approved rebuild",
     "geometry sanitization/fill-hole warning policy cannot silently relax failure criteria"
   ],
-  "recommendation": "Linux reference is closer to a first complete512 textured asset. First establish whether a compatible Linux runtime already exists, then separately approve one offline neural-only decode of saved turret latent with explicit backend/precision/admission and finite-output checks. If none exists, stop at prerequisiteUNKNOWN; setup is separate approval. No additional synthetic cases."
+  "recommendation": "Linux reference is closer to a first complete512 textured asset. First establish whether a compatible Linux runtime already exists, then separately approve one offline neural-only decode of saved turret latent with explicit backend/precision/admission and finite-output checks. If none exists, stop at prerequisiteUNKNOWN; setup is separate approval. No additional synthetic cases.",
+  "source_vs_documentation_caveat": "apply_import_time_fixes calls is_hip, which imports torch before removing allocator environment settings. Pre-Torch ordering claimed in HANDOVER is not established; effective allocator-read timing was not executed or verified."
 }

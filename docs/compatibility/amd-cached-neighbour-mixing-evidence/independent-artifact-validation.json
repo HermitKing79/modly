@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "artifacts": {
+    "raw_splits": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\artifacts\\raw_splits.npy",
+      "bytes": 16785536,
+      "sha256": "e93033470aa6d67cb1f23c0f56eb4b7a7846b368decfb50ce215bd4846bbb8be",
+      "shape": [
+        2,
+        2049,
+        1024
+      ],
+      "dtype": "float32",
+      "repository_path": "docs/compatibility/amd-cached-neighbour-mixing-evidence/artifacts/raw_splits.npy",
+      "promoted_after_clean_owned_exit": true
+    },
+    "input_features": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\artifacts\\input_features.npy",
+      "bytes": 4196480,
+      "sha256": "05ea4d32e669734812d24510e18bdf81abf99f87964cc5b540c1f06e5fed9c90",
+      "shape": [
+        2049,
+        1024
+      ],
+      "dtype": "float16",
+      "repository_path": "docs/compatibility/amd-cached-neighbour-mixing-evidence/artifacts/input_features.npy",
+      "promoted_after_clean_owned_exit": true
+    },
+    "coordinates": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\artifacts\\coordinates.npy",
+      "bytes": 32912,
+      "sha256": "635d2189e1dc178e14bf454932ac3dfb3f5c5a7a0e4bfdeb88f24e8901ce7cc7",
+      "shape": [
+        2049,
+        4
+      ],
+      "dtype": "int32",
+      "repository_path": "docs/compatibility/amd-cached-neighbour-mixing-evidence/artifacts/coordinates.npy",
+      "promoted_after_clean_owned_exit": true
+    },
+    "cpu_reference": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\artifacts\\cpu_reference.npy",
+      "bytes": 8392832,
+      "sha256": "6c97d66b798f7ba34719739c742b09314cbc60a01ae21b1dadcbf435d1e35a01",
+      "shape": [
+        2049,
+        1024
+      ],
+      "dtype": "float32",
+      "repository_path": "docs/compatibility/amd-cached-neighbour-mixing-evidence/artifacts/cpu_reference.npy",
+      "promoted_after_clean_owned_exit": true
+    },
+    "cpu_split_reference": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\artifacts\\cpu_split_reference.npy",
+      "bytes": 16785536,
+      "sha256": "e93033470aa6d67cb1f23c0f56eb4b7a7846b368decfb50ce215bd4846bbb8be",
+      "shape": [
+        2,
+        2049,
+        1024
+      ],
+      "dtype": "float32",
+      "repository_path": "docs/compatibility/amd-cached-neighbour-mixing-evidence/artifacts/cpu_split_reference.npy",
+      "promoted_after_clean_owned_exit": true
+    },
+    "output_features": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-cached-neighbour-mixing-evidence\\artifacts\\output_features.npy",
+      "bytes": 8392832,
+      "sha256": "6c97d66b798f7ba34719739c742b09314cbc60a01ae21b1dadcbf435d1e35a01",
+      "shape": [
+        2049,
+        1024
+      ],
+      "dtype": "float32",
+      "repository_path": "docs/compatibility/amd-cached-neighbour-mixing-evidence/artifacts/output_features.npy",
+      "promoted_after_clean_owned_exit": true
+    }
+  },
+  "production_comparator_reused": false,
+  "all_raw_values_finite": true,
+  "raw_elements": 4196352,
+  "reduced_elements": 2098176,
+  "fp32_reference_mismatches": 0,
+  "per_split_reference_mismatches": 0,
+  "coordinates_exact": true,
+  "nonidentity_elements": 2064894,
+  "selected_launch_count": 1,
+  "cached_binary_load_count": 1,
+  "cached_helper_load_count": 1,
+  "completed_synchronization": true,
+  "reviewed_hashes_equal_executed_hashes": true,
+  "gpu_execution_in_validation": false
+}

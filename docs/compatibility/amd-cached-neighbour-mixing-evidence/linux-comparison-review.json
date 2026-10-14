@@ -1,0 +1,17 @@
+{
+  "verdict": "Read-only comparison verified after allocator-order wording correction",
+  "reviewer": "linux_decode_route",
+  "pinned_commit": "0220d73971fd0be242b2b311ac00d590e1b26301",
+  "verified": [
+    "Author-reported512texturedGLB/memory/timings appropriatelyqualified",
+    "Rawnonfinitegeometry/sanitization explicit",
+    "DifferentexplicitGEMM/BF16arithmetic notsilentlyportable",
+    "LocalLinuxavailabilityunknown",
+    "PortablePythonconcepts separatefromLinuxABI/build/prctl",
+    "ExistingWindowsCuMesh719notcausallyattributed",
+    "No further synthetic cases recommended"
+  ],
+  "source_caveat": "is_hip imports torch before allocator env removal; effective timing not demonstrated. No execution undertaken.",
+  "comparison_sha256": "dddbc0118d735f166594fcf45ff5d6c361d4decc68f10aa37937eb786830338f",
+  "source_assessment_sha256": "fc66a6cfc4448712f759bf3b0c460b7e4a83b645ebfa1a331de4053dab11f21e"
+}

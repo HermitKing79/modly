@@ -1,0 +1,38 @@
+{
+  "verdict": "PASS - fixed signed three-tap cached leaf only",
+  "reviewers": [
+    "cached_leaf_access_audit",
+    "cached_leaf_route_review"
+  ],
+  "harness_commit": "6fd7345e0cb4e5b11c3aa2da1c9b1e5a8006e08d",
+  "numeric_review": "Independent standard-library NPY reader recomputed tuple membership, integer three-tap reference and source SplitK routing; all4196352 raw values finite and exact, all2098176 sums/references/outputs exact; no production oracle or ML/GPU imports.",
+  "runtime_review": "One helper/HSACO/launch enter-return pair; completed synchronization;40 exact reviewed/executed file hashes; healthy before/gate/periodic/after monitoring; clean unforced owned exit; zero PyTorch allocated/reserved and collected tensors.",
+  "artifact_review": "All6 promoted hashes/sizes match worker originals; raw bytes equal CPU partial reference; output bytes equal CPU full reference.",
+  "preservation": {
+    "historical_files": 5951,
+    "installed_inventory_byte_identical": true,
+    "inventory_sha256": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+    "historical_refs_unchanged": true,
+    "AMD_source_edits_backups_unchanged": true,
+    "intentional_reviewed_harness_revision": {
+      "scripts/compatibility/amd_cached_kernel_convolution.py": {
+        "previous_sha256": "c9121a870c441f0592aa7fe0f1d75c25581493dc6585a815241f069597284b9b",
+        "reviewed_sha256": "2d55e7e18a502a70b82a6a5b71b35082fbb195e40edcd1964179ffbd91c46670"
+      }
+    }
+  },
+  "limitations": [
+    "Three spatial taps, diagonal channels and zero bias only; general channel mixing/arbitrary weights/nativewrapper/subdivision/decoder notproved.",
+    "0.031s is host cachedcall plus synchronization, not pure GPU profiling.",
+    "PyTorch0/0 does not mean zero global device usage: sampled available-memory difference afterrelease13369344 bytes with unproven owner."
+  ],
+  "reviewer_additional_GPU_or_native_execution": false,
+  "evidence_sha256": {
+    "run/results.json": "cc61174d4f877f5a3cae2ef7542f20777433f914132e1d41edbf07499b2759c0",
+    "run/trace.jsonl": "676f7d50fbab849de93cd4120a4529590ff9eb6407a036e3bdf886ab1edc81b6",
+    "run/committed-harness.json": "9e55f30a456896523a486ac73e2fb7b2a5c997a8aa2342a49a58811895a91ec3",
+    "independent-artifact-validation.json": "b7bf549719e69461b1c04d7a484a306eef334a6d94209006e6526f0370b78be4",
+    "inventory-after.json": "0be055c97659c345754515298c56b8a707d7303a7e30159af00e8a142b9cf475",
+    "git-after.json": "23fb169dc54f55921f4de28d735162ec9871221b746e894f01fdf350e89cf274"
+  }
+}
