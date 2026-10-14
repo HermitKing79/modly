@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "phase": "before-single-worker-teardown",
+  "independent_reviewer": "cached_leaf_access_audit",
+  "venvs": {
+    "amd": {
+      "entries": 94687,
+      "metadata_sha256": "a2fdd34e6b310e3d4684250850cadfad1801536000e49e6557a0523107733527",
+      "distributions": 235,
+      "unchanged": true,
+      "native_binary_hashes_match": 6
+    },
+    "modly": {
+      "entries": 61313,
+      "metadata_sha256": "bcae506c520e1dca7693e700684ae225aceb16b4ed8de50e2cf023c5ec52c38e",
+      "distributions": 127,
+      "unchanged": true,
+      "native_binary_hashes_match": 6
+    }
+  },
+  "python_sources_unchanged": 169,
+  "additional_source_groups_unchanged": [
+    13,
+    7
+  ],
+  "amd_source": {
+    "head": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+    "nodes.py": "d310c97f3f7ff187cd581ed01ea3dbd6217fddb8ad9d59b12bd7c485f93821be",
+    "nodes.py.before-profiler-fix": "585d81c545cce5ca71fee1cb17f47e65b13c7f98b13a6053e1c1699079d7012f",
+    "modified_source_and_backup_unchanged": true
+  },
+  "no_wsl_start_or_native_gpu_import_by_reviewer": true,
+  "no_huge_model_weights_rehashed": true
+}

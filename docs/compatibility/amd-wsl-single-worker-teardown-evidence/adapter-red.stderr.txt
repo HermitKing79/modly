@@ -1,0 +1,19 @@
+test_confirmation_metadata_failure_does_not_interrupt_genuine_job_finish (test_amd_wsl_teardown_probe.TeardownContracts.test_confirmation_metadata_failure_does_not_interrupt_genuine_job_finish) ... FAIL
+
+======================================================================
+FAIL: test_confirmation_metadata_failure_does_not_interrupt_genuine_job_finish (test_amd_wsl_teardown_probe.TeardownContracts.test_confirmation_metadata_failure_does_not_interrupt_genuine_job_finish)
+----------------------------------------------------------------------
+RuntimeError: CPU metadata unavailable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_wsl_teardown_probe.py", line 99, in test_confirmation_metadata_failure_does_not_interrupt_genuine_job_finish
+    with self.assertRaisesRegex(RuntimeError, "CPU confirmation containment verified"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "CPU confirmation containment verified" does not match "CPU metadata unavailable"
+
+----------------------------------------------------------------------
+Ran 1 test in 0.082s
+
+FAILED (failures=1)

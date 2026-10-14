@@ -446,6 +446,26 @@ def supervise(output):
         if child is not None and child.stdin is not None and not child.stdin.closed:
             child.stdin.close()  # EOF keeps the Linux launch gate closed.
         if job is not None:
+            # A normal WSL client can exit milliseconds before its owned
+            # wslhost/conhost helpers. Give them a bounded monitored grace;
+            # unchanged job.finish() remains the last-resort containment.
+            if child is not None and child.poll() == 0 and not observer_failed_local[0]:
+                grace_began = time.monotonic()
+                try:
+                    while job.active():
+                        if time.monotonic() - grace_began >= 5.0:
+                            break
+                        check_deadlines(time.monotonic(), began, None)
+                        try:
+                            monitor.poll(time.monotonic())
+                        except BaseException:
+                            observer_failed_local[0] = True
+                            raise
+                        time.sleep(0.025)
+                    record["windows_job_grace"] = {"empty": job.active() == 0,
+                        "seconds": time.monotonic() - grace_began, "limit_seconds": 5.0}
+                except BaseException as exc:
+                    record["windows_job_grace_error"] = str(exc)
             try:
                 record["windows_job_cleanup"] = await_cleanup(in_thread(job.finish), 6.0)
             except BaseException as exc:
@@ -485,6 +505,7 @@ def supervise(output):
                         and record.get("distro_termination", {}).get("returncode") == 0
                         and record.get("windows_job_cleanup", {}).get("owned_tree_exit_verified") is True
                         and record["windows_job_cleanup"].get("forced_job_cleanup") is False
+                        and "windows_job_grace_error" not in record
                         and "distro_cleanup_or_post_observer_error" not in record):
                     record["classification"] = "PASS"
         except BaseException as exc:

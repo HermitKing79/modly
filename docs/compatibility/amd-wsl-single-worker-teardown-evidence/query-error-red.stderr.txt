@@ -1,0 +1,14 @@
+test_supervisor_failed_job_query_retains_cleanup_monitoring_and_refuses_pass (test_amd_wsl_rocdxg_smoke.SmokeContracts.test_supervisor_failed_job_query_retains_cleanup_monitoring_and_refuses_pass) ... FAIL
+
+======================================================================
+FAIL: test_supervisor_failed_job_query_retains_cleanup_monitoring_and_refuses_pass (test_amd_wsl_rocdxg_smoke.SmokeContracts.test_supervisor_failed_job_query_retains_cleanup_monitoring_and_refuses_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_wsl_rocdxg_smoke.py", line 372, in test_supervisor_failed_job_query_retains_cleanup_monitoring_and_refuses_pass
+    self.assertTrue(result["observer_healthy"])
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 1.611s
+
+FAILED (failures=1)

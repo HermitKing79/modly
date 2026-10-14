@@ -1,0 +1,21 @@
+test_supervisor_waits_for_delayed_normal_helper_exit_before_job_finish (test_amd_wsl_rocdxg_smoke.SmokeContracts.test_supervisor_waits_for_delayed_normal_helper_exit_before_job_finish) ... FAIL
+
+======================================================================
+FAIL: test_supervisor_waits_for_delayed_normal_helper_exit_before_job_finish (test_amd_wsl_rocdxg_smoke.SmokeContracts.test_supervisor_waits_for_delayed_normal_helper_exit_before_job_finish)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_wsl_rocdxg_smoke.py", line 354, in test_supervisor_waits_for_delayed_normal_helper_exit_before_job_finish
+    self.assertEqual((returncode, result["classification"]), (0, "PASS"))
+AssertionError: Tuples differ: (1, 'UNKNOWN') != (0, 'PASS')
+
+First differing element 0:
+1
+0
+
+- (1, 'UNKNOWN')
++ (0, 'PASS')
+
+----------------------------------------------------------------------
+Ran 1 test in 1.604s
+
+FAILED (failures=1)

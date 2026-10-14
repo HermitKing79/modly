@@ -1,0 +1,13 @@
+{
+  "reviewer": "wsl_stdin_review",
+  "no_remaining_blocking_code_findings": true,
+  "independent_focused_suite_passed": 26,
+  "independent_final_diagnostic_tests_passed": 4,
+  "distinct_focused_tests_verified": 27,
+  "reviewed_production_sha256": "e5c4ab78de61ff06b2099872b2b7dfe375d7a07940ee639fd8909c240d4a1b8c",
+  "reviewed_probe_sha256": "8f95b1265173873ef537aced74e11efb98458ba6ce095f782e119597016df7f2",
+  "observation_independently_verified": "PASS; all four identified processes exited naturally with code 0; helpers lagged initial client by3.5601/6.1773ms",
+  "overall_classification": "UNKNOWN",
+  "confirmation_independently_verified": "CPUauthorization, exit0, healthy monitoring,0.032s gracefulwait, emptyunforcedJob and named-onlytermination verified; auxiliaryWinError87 leaves identityevidenceincomplete. RawproductionUNKNOWN expectednoGPUevidence.",
+  "no_wsl_gpu_launch_or_edits_by_reviewer": true
+}

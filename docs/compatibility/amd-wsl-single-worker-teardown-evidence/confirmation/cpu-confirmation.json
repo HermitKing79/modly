@@ -1,0 +1,165 @@
+{
+  "classification": "UNKNOWN",
+  "production_supervisor_returncode": 1,
+  "production_classification": "UNKNOWN",
+  "production_unknown_reason": "CPU guest has no GPU computation/cleanup evidence; GPU acceptance is unchanged",
+  "production_source_sha256": "e5c4ab78de61ff06b2099872b2b7dfe375d7a07940ee639fd8909c240d4a1b8c",
+  "probe_source_sha256": "8f95b1265173873ef537aced74e11efb98458ba6ce095f782e119597016df7f2",
+  "process_events": [
+    {
+      "phase": "attached",
+      "utc": "2026-10-14T09:59:12.513929+00:00",
+      "processes": [
+        {
+          "pid": 21784,
+          "image": "C:\\Windows\\System32\\wsl.exe",
+          "name": "wsl.exe",
+          "sampled_toolhelp": {
+            "parent_pid": 21380,
+            "name": "wsl.exe"
+          },
+          "first_observed_phase": "attached",
+          "created_filetime_100ns": 134364455525073895,
+          "created_utc": "2026-10-14T09:59:12.507389+00:00",
+          "exited": false,
+          "exit_code": null,
+          "exit_filetime_100ns": null,
+          "in_current_job_list": true
+        }
+      ]
+    },
+    {
+      "identity_error": "[WinError 87] The parameter is incorrect."
+    },
+    {
+      "phase": "production-active-query",
+      "utc": "2026-10-14T09:59:19.394537+00:00",
+      "processes": [
+        {
+          "pid": 21784,
+          "image": "C:\\Windows\\System32\\wsl.exe",
+          "name": "wsl.exe",
+          "sampled_toolhelp": {
+            "parent_pid": 21380,
+            "name": "wsl.exe"
+          },
+          "first_observed_phase": "attached",
+          "created_filetime_100ns": 134364455525073895,
+          "created_utc": "2026-10-14T09:59:12.507389+00:00",
+          "exited": true,
+          "exit_code": 0,
+          "exit_filetime_100ns": 134364455593560464,
+          "in_current_job_list": false
+        }
+      ]
+    },
+    {
+      "phase": "production-active-query",
+      "utc": "2026-10-14T09:59:19.394537+00:00",
+      "processes": [
+        {
+          "pid": 21784,
+          "image": "C:\\Windows\\System32\\wsl.exe",
+          "name": "wsl.exe",
+          "sampled_toolhelp": {
+            "parent_pid": 21380,
+            "name": "wsl.exe"
+          },
+          "first_observed_phase": "attached",
+          "created_filetime_100ns": 134364455525073895,
+          "created_utc": "2026-10-14T09:59:12.507389+00:00",
+          "exited": true,
+          "exit_code": 0,
+          "exit_filetime_100ns": 134364455593560464,
+          "in_current_job_list": false
+        }
+      ]
+    },
+    {
+      "phase": "before-production-finish",
+      "utc": "2026-10-14T09:59:19.394537+00:00",
+      "processes": [
+        {
+          "pid": 21784,
+          "image": "C:\\Windows\\System32\\wsl.exe",
+          "name": "wsl.exe",
+          "sampled_toolhelp": {
+            "parent_pid": 21380,
+            "name": "wsl.exe"
+          },
+          "first_observed_phase": "attached",
+          "created_filetime_100ns": 134364455525073895,
+          "created_utc": "2026-10-14T09:59:12.507389+00:00",
+          "exited": true,
+          "exit_code": 0,
+          "exit_filetime_100ns": 134364455593560464,
+          "in_current_job_list": false
+        }
+      ]
+    },
+    {
+      "phase": "production-active-query",
+      "utc": "2026-10-14T09:59:19.394537+00:00",
+      "processes": [
+        {
+          "pid": 21784,
+          "image": "C:\\Windows\\System32\\wsl.exe",
+          "name": "wsl.exe",
+          "sampled_toolhelp": {
+            "parent_pid": 21380,
+            "name": "wsl.exe"
+          },
+          "first_observed_phase": "attached",
+          "created_filetime_100ns": 134364455525073895,
+          "created_utc": "2026-10-14T09:59:12.507389+00:00",
+          "exited": true,
+          "exit_code": 0,
+          "exit_filetime_100ns": 134364455593560464,
+          "in_current_job_list": false
+        }
+      ]
+    },
+    {
+      "phase": "production-active-query",
+      "utc": "2026-10-14T09:59:19.394537+00:00",
+      "processes": [
+        {
+          "pid": 21784,
+          "image": "C:\\Windows\\System32\\wsl.exe",
+          "name": "wsl.exe",
+          "sampled_toolhelp": {
+            "parent_pid": 21380,
+            "name": "wsl.exe"
+          },
+          "first_observed_phase": "attached",
+          "created_filetime_100ns": 134364455525073895,
+          "created_utc": "2026-10-14T09:59:12.507389+00:00",
+          "exited": true,
+          "exit_code": 0,
+          "exit_filetime_100ns": 134364455593560464,
+          "in_current_job_list": false
+        }
+      ]
+    },
+    {
+      "phase": "after-production-finish",
+      "processes": [
+        {
+          "pid": 21784,
+          "image": "C:\\Windows\\System32\\wsl.exe",
+          "name": "wsl.exe",
+          "sampled_toolhelp": {
+            "parent_pid": 21380,
+            "name": "wsl.exe"
+          },
+          "first_observed_phase": "attached",
+          "created_filetime_100ns": 134364455525073895,
+          "created_utc": "2026-10-14T09:59:12.507389+00:00",
+          "exited": true,
+          "exit_code": 0,
+          "exit_filetime_100ns": 134364455593560464
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "classification": "UNKNOWN",
+  "observation": "PASS",
+  "confirmation": "UNKNOWN",
+  "authorized_cpu_wsl_launches": 2,
+  "no_further_execution": true,
+  "both_jobs_unforced_and_empty": true,
+  "source_sha256": {
+    "scripts\\compatibility\\amd_wsl_rocdxg_smoke.py": "e5c4ab78de61ff06b2099872b2b7dfe375d7a07940ee639fd8909c240d4a1b8c",
+    "scripts\\compatibility\\amd_wsl_teardown_probe.py": "8f95b1265173873ef537aced74e11efb98458ba6ce095f782e119597016df7f2",
+    "scripts\\compatibility\\test_amd_wsl_rocdxg_smoke.py": "3f970c2aaf604e487e10863533873d23235715f7505c7655f4f0aafc1816f6bc",
+    "scripts\\compatibility\\test_amd_wsl_teardown_probe.py": "4e8968a6d0a92993eb7c341c7921d7d099e9dd85b8d9144c9e85f3948f7c1b14"
+  },
+  "linux_package_venv_identity_preserved": true,
+  "focused_distinct_tests_passed": 27
+}

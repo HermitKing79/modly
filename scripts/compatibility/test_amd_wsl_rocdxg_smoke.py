@@ -252,16 +252,24 @@ class SmokeContracts(unittest.TestCase):
                     "(out/'results.json').write_text(sys.argv[2],encoding='utf-8')")
         state = {"attached": False, "terminated": False, "commands": [], "child": None}
         class CPUJob:
+            active_reads = 0
             def attach(self, child):
                 if mode == "attach-failure":
                     raise RuntimeError("CPU replay: Job attachment refused")
                 state["attached"] = True
+            def active(self):
+                self.active_reads += 1
+                if mode == "grace-query-failure" and self.active_reads == 1:
+                    raise RuntimeError("CPU replay: Job identity query failed")
+                if mode == "delayed-job-exit": return 2 if self.active_reads <= 2 else 0
+                return 2 if mode == "persistent-job" else 0
             def finish(self):
                 child = state["child"]
                 if child is not None:
                     child.wait(timeout=2)
                 return {"owned_tree_exit_verified": True, "active_after_cleanup": 0,
-                        "forced_job_cleanup": False}
+                        "forced_job_cleanup": mode == "persistent-job" or
+                        (mode == "delayed-job-exit" and self.active_reads <= 2)}
         def observe(since):
             if ((mode == "unhealthy" and state["attached"])
                     or (mode == "post-exit-unhealthy" and state["terminated"])):
@@ -342,6 +350,27 @@ class SmokeContracts(unittest.TestCase):
         self.assertEqual((returncode, result["classification"]), (1, "UNKNOWN"))
         self.assertEqual(result["worker"]["classification"], "PASS")
         self.assertEqual(result["distro_termination"]["returncode"], 1)
+
+    def test_supervisor_waits_for_delayed_normal_helper_exit_before_job_finish(self):
+        returncode, result, phases, stdout, commands = self.replay_supervisor("delayed-job-exit")
+        self.assertEqual((returncode, result["classification"]), (0, "PASS"))
+        self.assertTrue(result["windows_job_grace"]["empty"])
+        self.assertEqual(result["windows_job_grace"]["limit_seconds"], 5.0)
+        self.assertFalse(result["windows_job_cleanup"]["forced_job_cleanup"])
+
+    def test_supervisor_persistent_job_still_forces_cleanup_and_refuses_pass(self):
+        returncode, result, phases, stdout, commands = self.replay_supervisor("persistent-job")
+        self.assertEqual((returncode, result["classification"]), (1, "UNKNOWN"))
+        self.assertFalse(result["windows_job_grace"]["empty"])
+        self.assertLess(result["windows_job_grace"]["seconds"], 5.2)
+        self.assertTrue(result["windows_job_cleanup"]["forced_job_cleanup"])
+
+    def test_supervisor_failed_job_query_retains_cleanup_monitoring_and_refuses_pass(self):
+        returncode, result, phases, stdout, commands = self.replay_supervisor("grace-query-failure")
+        self.assertEqual((returncode, result["classification"]), (1, "UNKNOWN"))
+        self.assertIn("windows_job_grace_error", result)
+        self.assertTrue(result["observer_healthy"])
+        self.assertTrue(result["windows_job_cleanup"]["owned_tree_exit_verified"])
 
 
 if __name__ == "__main__":

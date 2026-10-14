@@ -1,0 +1,41 @@
+test_grace_is_bounded_monitored_and_never_terminates (test_amd_wsl_teardown_probe.TeardownContracts.test_grace_is_bounded_monitored_and_never_terminates) ... FAIL
+test_job_pid_list_requires_complete_bounded_unique_membership (test_amd_wsl_teardown_probe.TeardownContracts.test_job_pid_list_requires_complete_bounded_unique_membership) ... FAIL
+test_native_process_identity_uses_real_current_process_handle (test_amd_wsl_teardown_probe.TeardownContracts.test_native_process_identity_uses_real_current_process_handle) ... FAIL
+
+======================================================================
+FAIL: test_grace_is_bounded_monitored_and_never_terminates (test_amd_wsl_teardown_probe.TeardownContracts.test_grace_is_bounded_monitored_and_never_terminates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_wsl_teardown_probe.py", line 32, in test_grace_is_bounded_monitored_and_never_terminates
+    probe = self.load()
+            ^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_wsl_teardown_probe.py", line 12, in load
+    self.assertTrue(SCRIPT.is_file(), "Missing bounded teardown observer")
+AssertionError: False is not true : Missing bounded teardown observer
+
+======================================================================
+FAIL: test_job_pid_list_requires_complete_bounded_unique_membership (test_amd_wsl_teardown_probe.TeardownContracts.test_job_pid_list_requires_complete_bounded_unique_membership)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_wsl_teardown_probe.py", line 19, in test_job_pid_list_requires_complete_bounded_unique_membership
+    probe = self.load()
+            ^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_wsl_teardown_probe.py", line 12, in load
+    self.assertTrue(SCRIPT.is_file(), "Missing bounded teardown observer")
+AssertionError: False is not true : Missing bounded teardown observer
+
+======================================================================
+FAIL: test_native_process_identity_uses_real_current_process_handle (test_amd_wsl_teardown_probe.TeardownContracts.test_native_process_identity_uses_real_current_process_handle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_wsl_teardown_probe.py", line 50, in test_native_process_identity_uses_real_current_process_handle
+    probe = self.load()
+            ^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_wsl_teardown_probe.py", line 12, in load
+    self.assertTrue(SCRIPT.is_file(), "Missing bounded teardown observer")
+AssertionError: False is not true : Missing bounded teardown observer
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)
