@@ -1,0 +1,102 @@
+{
+  "review": "Independent read-only review of the single fourth-child-count attempt and offline arithmetic",
+  "classification": "PARTIAL",
+  "decision": "Accept the exact count and safe partial-stop evidence; full neural decode remains incomplete",
+  "reviewer_runtime_actions": false,
+  "execution": {
+    "commit": "eda00a114936c9b59f089f7928b10a3745ffa153",
+    "attempts": 1,
+    "automatic_retries": 0,
+    "outer_and_worker_exit_code": 1,
+    "candidate_hashes_match_preexecution_review": true,
+    "decode_sha256": "1a37c58e576ab450c8274d5ef129fb9fef18a2a080239a374c73d4b4949d99a5",
+    "neural_sha256": "f0492fa1ae3fa756a83868848dd0a12fcf0ea49a60011b44c0c09fd740ab7319",
+    "admission_sha256": "4ef9c2a65464da06fc1ba084a300a1f22d2d98b2a04d061c2b687ba539eb0e44",
+    "runtime_sha256": "3964d353157fb2c9bcbfb309d98c8d51abd5eca72a1962325182267651101b01"
+  },
+  "fourth_count": {
+    "site": "blocks.3.4.updown",
+    "call": 1,
+    "parents": 378891,
+    "children": 1842968,
+    "children_per_parent_mean": 4.864111314335785,
+    "mask_shape": [378891, 8],
+    "mask_dtype": "torch.bool",
+    "row_limit": 1000000,
+    "over_limit_by": 842968,
+    "zero_children": false,
+    "over_row_limit": true,
+    "feature_channels": 512,
+    "skip_channels": 128,
+    "out_channels": 64,
+    "parent_spatial_shape": [216, 256, 204],
+    "original_C2S_source": {
+      "qualname": "SparseChannel2Spatial.forward",
+      "sha256": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c"
+    },
+    "original_mask_producer_source": {
+      "qualname": "SparseResBlockC2S3d._forward",
+      "sha256": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce"
+    },
+    "provenance": "Real forward pre-hook reused the unchanged int(sub.feats.sum().item()) scalar. Both recorded source identities agree with the worker's pinned source map.",
+    "durability_and_order": "c2s-count-before-admission is present immediately before worker-finished. Production event_hook/emit calls base.journal, whose append flush and fsync return before c2s_plan executes. Original traceback locates rejection at admission.py:207 -> c2s_plan:47.",
+    "boundary": "The child upper limit alone fails the logged valid parent/width predicate. No fourth C2S admission/completion, fourth skip expansion, final blocks.3.4.conv2, final projection or returned full neural output exists. Fourth child coordinates were never allocated."
+  },
+  "real_progress": {
+    "native_import": "PASS: 18 expected callable bindings",
+    "decoder_CPU": "PASS: recorded 292 CPU parameters, 216 float16 and 76 float32, all gradients disabled, evaluation state and zero buffers",
+    "runtime_precision": "216 BF16 and 76 F32 after the existing conversion",
+    "forward_calls": 1,
+    "convolutions_completed": 39,
+    "last_completed_convolution": "blocks.3.4.conv1",
+    "native_neighbor_maps": 4,
+    "completed_C2S_operations": 6,
+    "completed_row_stages": [3743, 17015, 79169, 378891],
+    "TunableOp": "Three flags false and three environment strings 0 at both after-Torch and pre-GPU checks",
+    "readiness": "QUALIFIED: free VRAM 14627618816 bytes, zero Torch allocations, worker exit 0, healthy observer and unforced empty Job"
+  },
+  "containment": {
+    "healthy_observations": 10,
+    "unhealthy_observations": 0,
+    "windows_job_active_before_after": [0, 0],
+    "forced_job_cleanup": false,
+    "grace_seconds": 0,
+    "owned_tree_exit_verified": true,
+    "named_distro_termination_returncode": 0,
+    "GPU_input_output_refs_collected": true,
+    "CPU_model_parameter_component_refs_collected": true,
+    "workspace_clear_calls": 1,
+    "Torch_release_allocated_reserved_bytes": [0, 0],
+    "Torch_peak_allocated_reserved_bytes": [5588655616, 7291797504],
+    "guest_seconds": 30.982340813999997,
+    "supervisor_seconds": 45.655999999988126,
+    "outer_capture_seconds": 50.4911412,
+    "deadline_exceeded": false,
+    "scope": "Natural owned Windows client exit plus successful named-distro termination. Zero Torch allocator counters do not mean all device memory was free; policy native_calls=0 is the prohibited-entry counter, while four allowed real maps ran."
+  },
+  "offline_estimate_review": {
+    "diagnostic_only": true,
+    "GPU_execution_authorized": false,
+    "actual_count_input_matches_journal": true,
+    "pinned_explicit_GEMM_source_sha256": "67641d13e06ca135a4f90eb71a01f7d8d32448bb5aa7c31b858c69368811fb6b",
+    "child_spatial_volume_upper_bound": 90243072,
+    "four_byte_hash_key_assumption_supported": true,
+    "im2col_bytes": 6369297408,
+    "gathered_upper_bound_bytes": 6369297408,
+    "gathered_self_neighbor_lower_bound_bytes": 235899904,
+    "visible_upper_bound_bytes": 16407944104,
+    "padded_visible_bytes": 20509930130,
+    "allocator_required_using_pre_expansion_baseline_bytes": 27713647250,
+    "allocator_and_free_formulas_pass": false,
+    "formula_check": "Independent integer arithmetic matches the recorded 3x3x3 BF16 64-in/64-out uncached conv_plan terms, including uint32 neighbor map, ratio-2 hash, two worst-case int64 indices and downstream block allowance. Captured pinned source creates full im2col and masked feature gather before mm/addmm.",
+    "limitations": "All-valid-neighbour gather/index estimates are upper bounds and the formula sums buffers with differing lifetimes. Actual valid neighbours, child coordinates, post-C2S retained memory and final-convolution peak were not measured. The offline failure does not prove inevitable OOM and cannot grant admission or relax the 1M row cap."
+  },
+  "timing_limitations": "Native synchronized import was 0.265739538 seconds. CPU stage was 10.899178712 seconds with sampled HWM 2786836480 bytes before BF16 conversion. Last GPU event elapsed 7.178219652 seconds includes placement/progress, not a completed forward duration.",
+  "evidence_sha256": {
+    "run/results.json": "02e00861559a1b4d484c6253d3a44266a57030458aafbced50366fe012d54693",
+    "run/guest/results.json": "56cad7889da8b4937ab2d3e1ce89ef3db6c49fb2244f629c01f677e1ea033ed3",
+    "run/guest/phases.jsonl": "36882934e9e00363252246bef2fdca2b43aed23396ac46a643950a169bfa77ae"
+  },
+  "material_findings": [],
+  "next_action": "Publish the exact partial result and CPU-only estimate with these limits; no automatic runtime retry, limit change or additional GPU attempt is justified."
+}

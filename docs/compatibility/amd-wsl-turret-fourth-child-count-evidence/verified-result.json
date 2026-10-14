@@ -1,0 +1,121 @@
+{
+  "classification": "PARTIAL",
+  "execution_commit": "eda00a114936c9b59f089f7928b10a3745ffa153",
+  "forward_calls": 1,
+  "convolutions_completed": 39,
+  "native_neighbor_maps": 4,
+  "completed_learned_supports": [
+    3743,
+    17015,
+    79169,
+    378891
+  ],
+  "count_events": 7,
+  "fourth_stage": {
+    "phase": "c2s-count-before-admission",
+    "utc": "2026-10-14T23:10:39.438115+00:00",
+    "monotonic_seconds": 35.256769879,
+    "elapsed_gpu_seconds": 7.178219652000003,
+    "site": "blocks.3.4.updown",
+    "call": 1,
+    "parents": 378891,
+    "children": 1842968,
+    "children_per_parent_mean": 4.864111314335785,
+    "children_per_parent_maximum": 8,
+    "mask_shape": [
+      378891,
+      8
+    ],
+    "mask_dtype": "torch.bool",
+    "source": {
+      "module": "trellis2.modules.sparse.spatial.spatial2channel",
+      "qualname": "SparseChannel2Spatial.forward",
+      "path": "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/spatial/spatial2channel.py",
+      "sha256": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c"
+    },
+    "mask_source": {
+      "module": "trellis2.models.sc_vaes.sparse_unet_vae",
+      "qualname": "SparseResBlockC2S3d._forward",
+      "path": "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sc_vaes/sparse_unet_vae.py",
+      "sha256": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce"
+    },
+    "memory": {
+      "free_bytes": 8342953984,
+      "total_bytes": 16974905344,
+      "allocated_bytes": 1594233856,
+      "reserved_bytes": 6129975296
+    },
+    "row_limit": 1000000,
+    "zero_children": false,
+    "over_row_limit": true,
+    "row_limits_would_reject": true,
+    "feature_channels": 512,
+    "skip_channels": 128,
+    "out_channels": 64,
+    "parent_spatial_shape": [
+      216,
+      256,
+      204
+    ]
+  },
+  "first_fourth_expansion_executed": false,
+  "full_neural_output_saved": false,
+  "unchanged_row_cap": 1000000,
+  "admission_error": "PARTIAL: C2S parent/child rows or channel widths outside admitted bounds",
+  "native_import": "PASS",
+  "strict_cpu_loading": "PASS",
+  "checkpoint_entries": 292,
+  "runtime_dtype_counts": {
+    "BF16": 216,
+    "F32": 76
+  },
+  "strict_load_and_widen_seconds": 10.269628602999997,
+  "gpu_initial_free_bytes": 14631796736,
+  "peak_memory": {
+    "allocated": 5588655616,
+    "reserved": 7291797504
+  },
+  "post_release_memory": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "post_release_device_memory": {
+    "free_bytes": 14476099584,
+    "total_bytes": 16974905344
+  },
+  "worker_seconds": 30.982340813999997,
+  "supervisor_seconds": 45.655999999988126,
+  "complete_forward_synchronized_seconds": null,
+  "last_completed_convolution": {
+    "phase": "conv_completed",
+    "utc": "2026-10-14T23:10:39.396819+00:00",
+    "monotonic_seconds": 35.215476354,
+    "elapsed_gpu_seconds": 7.137696404000003,
+    "site": "blocks.3.4.conv1",
+    "rows": 378891,
+    "memory": {
+      "free_bytes": 8342953984,
+      "total_bytes": 16974905344,
+      "allocated_bytes": 1688198656,
+      "reserved_bytes": 6129975296
+    }
+  },
+  "cleanup_sync_error": null,
+  "references_collected": true,
+  "workspace_clear_calls": 1,
+  "observer_healthy": true,
+  "healthy_observations": 10,
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "worker_exit": 1,
+  "named_distro_exit": 0,
+  "no_retry": true,
+  "source_level_estimate_file": "fourth-convolution-offline-estimate.json",
+  "estimate_is_not_observed_OOM": true,
+  "journal_sha256": "36882934e9e00363252246bef2fdca2b43aed23396ac46a643950a169bfa77ae"
+}

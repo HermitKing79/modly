@@ -1,0 +1,37 @@
+{
+  "diagnostic_only": true,
+  "GPU_execution_authorized": false,
+  "actual_children": 1842968,
+  "row_gate_rejects": true,
+  "zero_children": false,
+  "out_channels": 64,
+  "target": "blocks.3.4.conv2, original uncached explicit_gemm, 3x3x3, BF16",
+  "source_sha256": "67641d13e06ca135a4f90eb71a01f7d8d32448bb5aa7c31b858c69368811fb6b",
+  "child_spatial_volume_upper_bound": 90243072,
+  "buffer_upper_bounds": {
+    "im2col_bytes": 6369297408,
+    "gathered_bytes": 6369297408,
+    "neighbor_map_bytes": 199040544,
+    "long_index_bytes": 796162176,
+    "mask_bytes": 49760136,
+    "hash_bytes": 29487488,
+    "output_bytes": 235899904,
+    "block_extra_bytes": 2358999040,
+    "visible_bytes": 16407944104
+  },
+  "gathered_self_neighbor_lower_bound_bytes": 235899904,
+  "padded_visible_bytes": 20509930130,
+  "opaque_headroom_bytes": 1073741824,
+  "free_reserve_bytes": 2147483648,
+  "pre_expansion_memory": {
+    "free_bytes": 8342953984,
+    "total_bytes": 16974905344,
+    "allocated_bytes": 1594233856,
+    "reserved_bytes": 6129975296
+  },
+  "allocator_ceiling_bytes": 12884901888,
+  "allocator_required_using_pre_expansion_retained_bytes": 27713647250,
+  "allocator_formula_passes_using_pre_expansion_baseline": false,
+  "device_free_formula_passes_using_pre_expansion_baseline": false,
+  "limitation": "No child coordinates or neighbour map exists. Gather/index sizes are upper bounds; real valid-neighbour counts and post-C2S retained memory are unmeasured. No admission is granted."
+}

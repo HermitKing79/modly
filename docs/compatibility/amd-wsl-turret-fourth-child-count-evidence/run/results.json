@@ -1,0 +1,5214 @@
+{
+  "classification": "PARTIAL",
+  "distro": "Modly-AMD-Ubuntu-24.04",
+  "started_utc": "2026-10-14T23:09:55.878390+00:00",
+  "script_sha256": "1a37c58e576ab450c8274d5ef129fb9fef18a2a080239a374c73d4b4949d99a5",
+  "host_admission_before": {
+    "available_ram_bytes": 20548775936,
+    "D_free_bytes": 75624431616
+  },
+  "containment_scope": "Windows Job: wsl.exe client; Linux: guest timeout and named-distro termination",
+  "last_resource_poll": 81460.734,
+  "minimum_host_ram_bytes": 14210502656,
+  "minimum_D_free_bytes": 75590877184,
+  "observation_before": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":71,\"RecordId\":13303,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019302466)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 0.547,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 71,
+          "RecordId": 13303,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1792019302466)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "worker_command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/env",
+    "HSA_ENABLE_DXG_DETECTION=1",
+    "LD_LIBRARY_PATH=/opt/rocm-7.2.1/lib:/opt/rocm/lib:/usr/lib/wsl/lib",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "450s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-turret-fourth-child-count-evidence/decode.py",
+    "--worker",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-turret-fourth-child-count-evidence/run/guest"
+  ],
+  "observation_after_attachment": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13311,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019402789)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 0.875,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 291,
+          "RecordId": 13311,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1792019402789)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "CPU_stage_host_observed": 81440.609,
+  "GPU_stage_host_observed": 81452.453,
+  "worker_returncode": 1,
+  "windows_job_grace": {
+    "empty": true,
+    "seconds": 0.0,
+    "limit_seconds": 5.0
+  },
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "distro_termination": {
+    "command": [
+      "wsl.exe",
+      "--terminate",
+      "Modly-AMD-Ubuntu-24.04"
+    ],
+    "returncode": 0,
+    "stdout": "T\u0000h\u0000e\u0000 \u0000o\u0000p\u0000e\u0000r\u0000a\u0000t\u0000i\u0000o\u0000n\u0000 \u0000c\u0000o\u0000m\u0000p\u0000l\u0000e\u0000t\u0000e\u0000d\u0000 \u0000s\u0000u\u0000c\u0000c\u0000e\u0000s\u0000s\u0000f\u0000u\u0000l\u0000l\u0000y\u0000.\u0000 \u0000\r\u0000\n\u0000",
+    "stderr": ""
+  },
+  "observation_after_exit": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13311,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019402789)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 0.562,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 291,
+          "RecordId": 13311,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1792019402789)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "observations": [
+    {
+      "started_monotonic": 81417.562,
+      "ended_monotonic": 81418.093,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":71,\"RecordId\":13303,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019302466)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.531,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 71,
+              "RecordId": 13303,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792019302466)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 81422.562,
+      "ended_monotonic": 81423.109,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":71,\"RecordId\":13303,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019302466)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.547,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 71,
+              "RecordId": 13303,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792019302466)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 81427.562,
+      "ended_monotonic": 81428.437,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13311,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019402789)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.875,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13311,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792019402789)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 81432.578,
+      "ended_monotonic": 81433.14,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13311,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019402789)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.562,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13311,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792019402789)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 81437.593,
+      "ended_monotonic": 81438.125,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13311,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019402789)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.532,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13311,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792019402789)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 81442.593,
+      "ended_monotonic": 81443.14,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13311,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019402789)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.547,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13311,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792019402789)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 81447.593,
+      "ended_monotonic": 81448.156,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13311,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019402789)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.563,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13311,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792019402789)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 81452.593,
+      "ended_monotonic": 81453.156,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13311,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019402789)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.563,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13311,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792019402789)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 81457.609,
+      "ended_monotonic": 81458.203,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13311,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019402789)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.594,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13311,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792019402789)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 81462.609,
+      "ended_monotonic": 81463.171,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13311,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792019402789)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.562,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13311,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792019402789)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    }
+  ],
+  "observer_healthy": true,
+  "worker": {
+    "classification": "PARTIAL",
+    "native_import": "PASS",
+    "decoder_cpu": "PASS",
+    "forward_calls": 1,
+    "started_utc": "2026-10-14T23:10:07.052410+00:00",
+    "gate_authorized": true,
+    "linux_path_validation": {
+      "config": "/mnt/d/AI/Trellis2AMD/ComfyUI/models/microsoft/TRELLIS.2-4B/ckpts/shape_dec_next_dc_f16c32_fp16.json",
+      "weights": "/mnt/d/AI/Trellis2AMD/ComfyUI/models/microsoft/TRELLIS.2-4B/ckpts/shape_dec_next_dc_f16c32_fp16.safetensors",
+      "argument_types": [
+        "str",
+        "str"
+      ],
+      "before_torch_and_flexgemm": true
+    },
+    "saved_inputs": {
+      "tokens": 3743,
+      "features_shape": [
+        3743,
+        32
+      ],
+      "coordinates_shape": [
+        3743,
+        4
+      ],
+      "coordinate_order": "batch,D,H,W; preserved row order",
+      "bounds": [
+        [
+          5,
+          0,
+          6
+        ],
+        [
+          26,
+          31,
+          25
+        ]
+      ],
+      "payload_sha256": "2e2046fb700c974d9bed7fcf02f00e6f0dfdfc123f9d2e5143c8ae5ef44a67ea",
+      "coordinates_payload_sha256": "860095760acc7914d0378cadfa49ba4c6a368d5a65662061b8e1c4c792f0d7a5",
+      "minimum": -28.125720977783203,
+      "maximum": 29.86146354675293,
+      "mean": 0.04061974641393949,
+      "standard_deviation": 6.412017341700306,
+      "finite": true
+    },
+    "source_sha256": {
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/__init__.py": "b953c8a82e54705708a115dd0e53b7ca5ccf45b71517463a5e9b8e0de318ee43",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/components.py": "7954db0d5237afdb8d59b2c277325e7845d0897f5122515377fa2dee4a0f0db8",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/flexi_dual_grid.py": "b365e942258255fe3e4d1d43eaf7320e4fbc415d3186600b44b3f75ee826debc",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/sparse_structure_latent.py": "c3da42606cffbac6b18c0e53cc9140bb59fb8b4e3a1815c9ca1621d6ca6e81fb",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/sparse_voxel_pbr.py": "ed7ebbcc30076f706704d45916f1e14a1de6af5ddb5dd0983e9aeec71a3a76c5",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/structured_latent.py": "da7db26805b9aaccd179dae84e0faaa0d4a58aff4418fca48cfc4e00ea42bcf7",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/structured_latent_shape.py": "8d928918d2c3402ab856e3f4fd63007f14039f3fd508fd1bf9481cc6246c0dda",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/structured_latent_svpbr.py": "4b960a362eb6008fbb99dfcbec3bb00543f0ebcd4f1ce96f1bed3e6e3f8fcebe",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/__init__.py": "d6fee0dfb41d1ba93c7d1a8c7282f600ef7e5afddcddf46c935ca4cb1d45350a",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sparse_elastic_mixin.py": "17b85bc281172d72fec8944821693819643df7eae11713b2a87eed142c09c833",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sparse_structure_flow.py": "858d9b076cc71f6955bb292ea394d620ce6f6f53cebb53bff2116a8c5cec026e",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sparse_structure_vae.py": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/structured_latent_flow.py": "3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/__init__.py": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/image_feature_extractor.py": "a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/norm.py": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/spatial.py": "4a029d5077bb0a5412ee5eceb8de21d3b4c8920a8f53d477441c3c3219a0da3c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/utils.py": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/base.py": "1081dfc48e112d00653ae45f3ed2a3bbee3d82e3926e701c059978e519edd917",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/trellis2_image_to_3d.py": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/trellis2_texturing.py": "14a6f8ee2bca120f76e0112f2733cd250764637709ff642fd6846ae97c63b1e6",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/__init__.py": "88946215d43bc6e8c095b40dc3de9ea76bb4fb4d175d0228829ec865bb790ba9",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/renderers/mesh_renderer.py": "b09c89073e1f3c80812af6ff674a7a53e2964f04bbfbb692c6708b6b2acb9c94",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/renderers/pbr_mesh_renderer.py": "ab33ba6d04b2d1b7e518b90372b242cbe00ad9043be66a22e681261b04de7872",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/renderers/voxel_renderer.py": "8850ca41baa6570f9926ea86f9c6d8f4e5b38077cc437d83f32012156e12efdc",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/renderers/__init__.py": "53d28a650ef53022270d4a6e9e4a8f66714b1cf8edef0b1d7303e1eb8290a576",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/representations/__init__.py": "861585d0d741e2cb592cef0d252ccc08fe414356fb44f7e84a79185eed841d28",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/basic.py": "3ccae80d1eff630d920e26ad5326b2cf47e046e28c1a645da3620f82859fd291",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/utils.py": "66a7d6a13b626a8e170e97881f94b93f28be7796c0c3ba429201a59a11a95e24",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/__init__.py": "89081e15c64c61328300ad1e8a10024d300431359ffad47aab38115d45ba7908",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/camera.py": "a1d9610954d059d5ac1a0c9e2084084abfe781ad5853d3e0e43e68e9d775142c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/data_utils.py": "8868ed0cf40af75e3eaf68a4b5912b7220ed884b063b8058a41f8c53deb393a1",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/dist_utils.py": "0e91c7c5b67c229cf48d12eb32b50f804dd77e6e16fe85544c93c1f17f3fc5fc",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/elastic_utils.py": "eb743b8015232bcc67e33104a4c8d212d41664dbb9a6ea10866dc499f229bc30",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/general_utils.py": "a6d73f04bd00759e3922fa1adc032aa608332534e4aea12dfd2cc51ffd410353",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/grad_clip_utils.py": "c6058be0fdc81dd10da9d88945bad4820f7a35afa2699262b179d81a6686754d",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/loss_utils.py": "0614d65eb03eb43e14263080e8c65f8e4b0592c4fcff9a2edbd7ff541bf4d02d",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/mesh_utils.py": "36d561555bfcc4c41ea123b6d37298fff8d0ec7b6f70fc62c1956f50cb75cec5",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/random_utils.py": "675c2f4f3047a0145d18feabbcb6b0028b39177a3fc7b82b48d4dbd8f0107aca",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/render_utils.py": "51c9d745b7c01dbf2e2ea14280eaca145c1ce500321cef1dac0261212cea2d4e",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/vis_utils.py": "5d233119c5d765d0fce62ea11187baff5139f546633dc06d5fb8b43fdd245697",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sc_vaes/fdg_vae.py": "1d267cdca119eb619674dc87bfccd8c5a1d90288739e2b8e08e6f497ac14ce9c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sc_vaes/sparse_unet_vae.py": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/config.py": "7ac23c43e33ec08946804ce912b2caadf39c3e21c1fd0076664e72c5aea2be70",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/full_attn.py": "21a2d3c9bc4a80c72db23b4291d5fb062bdf7e5b8f1570cd9ba2cee6672e2ba6",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/modules.py": "30935ff98c4a9120d866f6bd1c171153c3b3077894032009aba11bc32353a733",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/proj_attention.py": "d3c2a8749c8efab5222406c56ed10539ea442f4dd5543ec546fc4d4bbdc3a6c9",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/rope.py": "5d5b1821f3743aa824c9f3b4db6121c18d14d6c8a72d42238b3944feefd829b6",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/__init__.py": "68d1195489c1d4d9790d3bd5788877173eb2713ed8d61e3e9ab6448f2ae4b055",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/basic.py": "e867e429b9c2fe154000725596b626273fb567025b9c232f3cc79140f00605b7",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/config.py": "525ed9a516bc9576712cce9896a52a0ec9667ba7dc4aa13f24ee6a83353cb722",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/linear.py": "05cb619ff9cceb27674fc7bbb5aa2bcba93d1bf328d1f3340bb98c0f1240b413",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/nonlinearity.py": "790b4b85edc0ab1a9eb9cb9fbd58c9ac0232ec25a3d9b4bf7e6635ba2de24097",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/norm.py": "6320c2ed1e61ae9d6611cd9d8e14ab7b080546917c373385884febf009ef316f",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/__init__.py": "7bb5f88b769568fc59fd07d208d44c58d2a3a7e22609da6dcb8de573fe1138e7",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/transformer/blocks.py": "bee5ac02e5b054dbc151ec54658489e9e512d5bba627c31b37f11698663f9540",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/transformer/modulated.py": "7ad71a73e73025a4fc19b215cc028c891f9bb7c3b989842eeba9c4ee4e92e901",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/transformer/__init__.py": "9838f0c93475b59778ff055d21372db80a5307d121b18acc328e25c446e97283",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/full_attn.py": "045aabe973d405cb16f8a1a71c5b4d8f76988c99b4e333c29bbc12d51d0cf4b1",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/modules.py": "2c45267b719b26fbaee6af81b1655b7adfa7a62ba114183ca179a934b5101727",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/proj_attention.py": "bc8000712a1c95f3c2b6fac73f509c3270bac496012edd3948b6f0e2b53f56fd",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/rope.py": "298572025ccd6e711afd1bcd1851145001757937b28cb6cc97a36887ba3ae86b",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/windowed_attn.py": "a886470d299fcfdf7c978c81dae83661ee1498f541165a47165e744202b9aea3",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/__init__.py": "0a6976e9088651452a3518d6865ce48fe9ec311a7e27df1f5221370d9228d34d",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/config.py": "ed6505a70dcc94785ce6d8f2e9d40dff3a0edc39e5d2bceea60128f9ed48332b",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/conv.py": "a1e9f62fdf70f5443967a81b4ca99c0c863d20b063b44ffe264b0fd68bf3e5e3",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/conv_flex_gemm.py": "281fa1c8449732a94d99a24facb437600ab08d8185214d8434008456d56b83d8",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/conv_spconv.py": "a3350f019adb1b0f4d6e36b910837252c277900f0ed85806db42807bf2860202",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/conv_torchsparse.py": "4a75b51a6fef42b740c15767b6b0b3e7e4c292234bb1a8f6147889e294f8e5ca",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/__init__.py": "da50648b5c8975ab8eb9574df2582d5c0dc03ddc102d301052003ef65af399e2",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/spatial/basic.py": "0d3c0720c522a29d48c413c6f4fec91e6387909ca6d5c7d7054e5107678779fe",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/spatial/spatial2channel.py": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/spatial/__init__.py": "088f42726f900354b9fae61b9342a52e4a3ee39ad7cf941d81596d11062957ed",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/transformer/blocks.py": "e8b64d7029fd81e6a291743afd18006dad979fb9dd5740948d59b966214dc626",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/transformer/modulated.py": "68fcb53cde091434e6cce1318fe43a91104bf9c83047b5526e190bbf303e4325",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/transformer/__init__.py": "9838f0c93475b59778ff055d21372db80a5307d121b18acc328e25c446e97283",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/rembg/BiRefNet.py": "ef7f34ac7387af5e6bdc91707b7c6bc203851f8576e8a5e681124918b1db84a8",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/rembg/__init__.py": "141567eceee1c12c9241bcea1cfa5a6c352a888d3e6946405abaa52ed4e4e271",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/samplers/base.py": "10bc216dc255e64746e51d929fc66d88efa7e3763e48a52a4fae3722d1e01869",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/samplers/classifier_free_guidance_mixin.py": "ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/samplers/flow_euler.py": "03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/samplers/guidance_interval_mixin.py": "0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/samplers/__init__.py": "81174e88221aea4b3d078846cba5c01f45d885ee2ae2240974ec28badc88a076",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/representations/mesh/base.py": "c950a25bb65fc397c815f6739793be8318e00cfe541f6ed83a3ed7e3d5b7a550",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/representations/mesh/__init__.py": "8c029bd5340eccdb86b43df2070e078b80f642177a2134f1b9996f756fe40722",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/representations/voxel/voxel_model.py": "a0fedc3d7f870139236ff17ff8dbf29392dcb006930de7b94a280f6087a6ce37",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/representations/voxel/__init__.py": "f3282f1059f0aa66d8490b7c37b1eef7079c94eef9fbe4c2d8e4ed730ab495dd",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/flow_matching.py": "7819c20703d11d896d8f97eeaa3e7327f8948309def8e9152eda8188a4fff7d3",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/sparse_flow_matching.py": "69bdf8fd517aeaee0a30edc15a6cc41f69050936296da164539a779520f50a70",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/vae/pbr_vae.py": "49750bdbc46a86fcdb13accef548164c4589da3de2fe16d95e5d53df73ed2380",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/vae/shape_vae.py": "7cec7bb181f7508e2ae2b998f3fe649a41812f1852a43c64b97bbcb2fca020a7",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/vae/sparse_structure_vae.py": "a616293d8c1d69646264cd83aba571bbc4087eafaf9193d42adf7dfe1118f518",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/mixins/classifier_free_guidance.py": "5f3a151d76dd37bed3a261aed84a721d99725b6aed7da8206b298c8d52c077b3",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/mixins/image_conditioned.py": "3e87113f2b4802d2547d13d35aa55f04863d255528166f5ad19441d1e4437fed",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/mixins/image_conditioned_proj.py": "79a6104fccb88f850733bd07a5315532c1b6ad9e52ae33ca5afe5d2952694226",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/mixins/text_conditioned.py": "4bd667ff7a2e9930d795900e323114482390b865c919ae3214704f0737f5ded9"
+    },
+    "checkpoint": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_dec_next_dc_f16c32_fp16.safetensors",
+      "bytes": 948490494,
+      "mtime_ns": 1791274722716299500,
+      "mode": 33206,
+      "verified_prior_stream_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+      "header_bytes": 27560,
+      "header_sha256": "80dc6403ca284a2361109cde3190bc1b5ea5d30936e8f80625cbbc0827062c83",
+      "header_content_bytes_read_this_task": 27568,
+      "full_hash_passes_this_task": 0,
+      "deserialized": false,
+      "unchanged_during_header_read": true,
+      "matches_prior": true,
+      "limitation": "Full checkpoint payload not re-hashed; preservation established by unchanged metadata and bounded header against prior full-hash identity.",
+      "header_reads_this_audit": 1,
+      "checkpoint_payload_bytes_read_this_audit": 0,
+      "freshly_streamed_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+      "guest_path": "/mnt/d/AI/Trellis2AMD/ComfyUI/models/microsoft/TRELLIS.2-4B/ckpts/shape_dec_next_dc_f16c32_fp16.safetensors"
+    },
+    "admission": {
+      "guest_ram_available": 15897718784,
+      "guest_disk_free": 9208135680,
+      "D_disk_free": 75590877184,
+      "CPU_ram_requirement": 6972719480,
+      "guest_disk_requirement": 5368709120,
+      "D_disk_requirement": 53687091200
+    },
+    "tunable_admission": {
+      "after_torch_import": {
+        "flags": {
+          "enabled": false,
+          "tuning": false,
+          "record_untuned": false
+        },
+        "environment": {
+          "PYTORCH_TUNABLEOP_ENABLED": "0",
+          "PYTORCH_TUNABLEOP_TUNING": "0",
+          "PYTORCH_TUNABLEOP_RECORD_UNTUNED": "0"
+        }
+      },
+      "pre_gpu": {
+        "flags": {
+          "enabled": false,
+          "tuning": false,
+          "record_untuned": false
+        },
+        "environment": {
+          "PYTORCH_TUNABLEOP_ENABLED": "0",
+          "PYTORCH_TUNABLEOP_TUNING": "0",
+          "PYTORCH_TUNABLEOP_RECORD_UNTUNED": "0"
+        }
+      }
+    },
+    "runtime": {
+      "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+      "distribution_version": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+      "git_version": "ff65f5bc672795c5e5033900ea0a0c4f8566c8cf",
+      "hip": "7.2.53211-e1a6bc5663",
+      "cuda": null,
+      "python": "3.12.3",
+      "prefix": "/opt/modly-wsl/venv",
+      "gpu_initialized_before": false
+    },
+    "gpu": {
+      "name": "AMD Radeon RX 9070 XT",
+      "architecture": "gfx1201",
+      "count": 1,
+      "total_bytes": 16974905344,
+      "free_bytes": 14631796736,
+      "property_total_bytes": 16974905344
+    },
+    "memory_before": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "gpu_initialized_after_admission": true,
+    "package_path": "/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/__init__.py",
+    "native_path": "/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/kernels/cuda.cpython-312-x86_64-linux-gnu.so",
+    "bindings": [
+      "hashmap_insert",
+      "hashmap_lookup",
+      "hashmap_insert_3d",
+      "hashmap_lookup_3d",
+      "hashmap_insert_3d_idx_as_val",
+      "z_order_encode",
+      "z_order_decode",
+      "hilbert_encode",
+      "hilbert_decode",
+      "hashmap_build_grid_sample_3d_nearest_neighbor_map",
+      "hashmap_build_grid_sample_3d_trilinear_neighbor_map_weight",
+      "hashmap_build_submanifold_conv_neighbour_map",
+      "hashmap_build_sparse_conv_out_coords",
+      "expand_unique_build_sparse_conv_out_coords",
+      "hashmap_build_sparse_conv_neighbour_map",
+      "neighbor_map_post_process_for_masked_implicit_gemm_1_no_bwd",
+      "neighbor_map_post_process_for_masked_implicit_gemm_1",
+      "neighbor_map_post_process_for_masked_implicit_gemm_2"
+    ],
+    "bindings_count": 18,
+    "native_import_synchronized_seconds": 0.26573953800000183,
+    "gpu_initialized_after_import": true,
+    "native_memory_after": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "driver_helper_inactive": true,
+    "cpu_memory_before_loading": {
+      "VmHWM_bytes": 858349568,
+      "VmRSS_bytes": 858349568,
+      "ru_maxrss_bytes": 857767936
+    },
+    "guest_RAM_before_loading": 15634026496,
+    "construction_seconds": 2.527357586000001,
+    "constructed_on_meta": true,
+    "strict_load_and_widen_seconds": 10.269628602999997,
+    "loaded_parameters": {
+      "output_layer.weight": {
+        "shape": [
+          7,
+          64
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "output_layer.bias": {
+        "shape": [
+          7
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "from_latent.weight": {
+        "shape": [
+          1024,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "from_latent.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.0.norm.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.0.norm.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.0.conv.weight": {
+        "shape": [
+          1024,
+          3,
+          3,
+          3,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.0.conv.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.0.mlp.0.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.0.mlp.0.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.0.mlp.2.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.0.mlp.2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.1.norm.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.1.norm.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.1.conv.weight": {
+        "shape": [
+          1024,
+          3,
+          3,
+          3,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.1.conv.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.1.mlp.0.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.1.mlp.0.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.1.mlp.2.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.1.mlp.2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.2.norm.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.2.norm.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.2.conv.weight": {
+        "shape": [
+          1024,
+          3,
+          3,
+          3,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.2.conv.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.2.mlp.0.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.2.mlp.0.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.2.mlp.2.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.2.mlp.2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.3.norm.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.3.norm.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.3.conv.weight": {
+        "shape": [
+          1024,
+          3,
+          3,
+          3,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.3.conv.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.3.mlp.0.weight": {
+        "shape": [
+          4096,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.3.mlp.0.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.3.mlp.2.weight": {
+        "shape": [
+          1024,
+          4096
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.3.mlp.2.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.4.norm1.weight": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.4.norm1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.4.conv1.weight": {
+        "shape": [
+          4096,
+          3,
+          3,
+          3,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.4.conv1.bias": {
+        "shape": [
+          4096
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.4.conv2.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.4.conv2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.4.to_subdiv.weight": {
+        "shape": [
+          8,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.0.4.to_subdiv.bias": {
+        "shape": [
+          8
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.0.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.0.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.0.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.0.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.0.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.0.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.0.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.0.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.1.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.1.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.1.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.1.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.1.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.1.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.1.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.1.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.2.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.2.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.2.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.2.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.2.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.2.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.2.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.2.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.3.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.3.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.3.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.3.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.3.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.3.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.3.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.3.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.4.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.4.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.4.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.4.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.4.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.4.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.4.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.4.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.5.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.5.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.5.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.5.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.5.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.5.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.5.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.5.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.6.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.6.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.6.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.6.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.6.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.6.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.6.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.6.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.7.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.7.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.7.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.7.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.7.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.7.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.7.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.7.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.8.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.8.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.8.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.8.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.8.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.8.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.8.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.8.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.9.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.9.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.9.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.9.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.9.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.9.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.9.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.9.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.10.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.10.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.10.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.10.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.10.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.10.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.10.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.10.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.11.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.11.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.11.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.11.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.11.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.11.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.11.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.11.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.12.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.12.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.12.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.12.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.12.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.12.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.12.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.12.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.13.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.13.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.13.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.13.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.13.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.13.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.13.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.13.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.14.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.14.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.14.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.14.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.14.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.14.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.14.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.14.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.15.norm.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.15.norm.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.15.conv.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.15.conv.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.15.mlp.0.weight": {
+        "shape": [
+          2048,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.15.mlp.0.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.15.mlp.2.weight": {
+        "shape": [
+          512,
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.15.mlp.2.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.16.norm1.weight": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.16.norm1.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.16.conv1.weight": {
+        "shape": [
+          2048,
+          3,
+          3,
+          3,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.16.conv1.bias": {
+        "shape": [
+          2048
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.16.conv2.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.16.conv2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.16.to_subdiv.weight": {
+        "shape": [
+          8,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.1.16.to_subdiv.bias": {
+        "shape": [
+          8
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.0.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.0.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.0.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.0.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.0.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.0.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.0.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.0.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.1.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.1.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.1.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.1.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.1.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.1.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.1.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.1.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.2.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.2.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.2.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.2.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.2.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.2.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.2.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.2.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.3.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.3.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.3.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.3.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.3.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.3.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.3.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.3.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.4.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.4.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.4.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.4.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.4.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.4.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.4.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.4.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.5.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.5.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.5.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.5.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.5.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.5.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.5.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.5.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.6.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.6.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.6.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.6.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.6.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.6.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.6.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.6.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.7.norm.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.7.norm.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.7.conv.weight": {
+        "shape": [
+          256,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.7.conv.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.7.mlp.0.weight": {
+        "shape": [
+          1024,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.7.mlp.0.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.7.mlp.2.weight": {
+        "shape": [
+          256,
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.7.mlp.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.8.norm1.weight": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.8.norm1.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.8.conv1.weight": {
+        "shape": [
+          1024,
+          3,
+          3,
+          3,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.8.conv1.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.8.conv2.weight": {
+        "shape": [
+          128,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.8.conv2.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.8.to_subdiv.weight": {
+        "shape": [
+          8,
+          256
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.2.8.to_subdiv.bias": {
+        "shape": [
+          8
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.0.norm.weight": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.0.norm.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.0.conv.weight": {
+        "shape": [
+          128,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.0.conv.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.0.mlp.0.weight": {
+        "shape": [
+          512,
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.0.mlp.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.0.mlp.2.weight": {
+        "shape": [
+          128,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.0.mlp.2.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.1.norm.weight": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.1.norm.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.1.conv.weight": {
+        "shape": [
+          128,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.1.conv.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.1.mlp.0.weight": {
+        "shape": [
+          512,
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.1.mlp.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.1.mlp.2.weight": {
+        "shape": [
+          128,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.1.mlp.2.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.2.norm.weight": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.2.norm.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.2.conv.weight": {
+        "shape": [
+          128,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.2.conv.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.2.mlp.0.weight": {
+        "shape": [
+          512,
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.2.mlp.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.2.mlp.2.weight": {
+        "shape": [
+          128,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.2.mlp.2.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.3.norm.weight": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.3.norm.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.3.conv.weight": {
+        "shape": [
+          128,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.3.conv.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.3.mlp.0.weight": {
+        "shape": [
+          512,
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.3.mlp.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.3.mlp.2.weight": {
+        "shape": [
+          128,
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.3.mlp.2.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.4.norm1.weight": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.4.norm1.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.4.conv1.weight": {
+        "shape": [
+          512,
+          3,
+          3,
+          3,
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.4.conv1.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.4.conv2.weight": {
+        "shape": [
+          64,
+          3,
+          3,
+          3,
+          64
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.4.conv2.bias": {
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.4.to_subdiv.weight": {
+        "shape": [
+          8,
+          128
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      },
+      "blocks.3.4.to_subdiv.bias": {
+        "shape": [
+          8
+        ],
+        "dtype": "torch.float16",
+        "device": "cpu",
+        "requires_grad": false
+      }
+    },
+    "evaluation_and_gradients_disabled": true,
+    "buffers_count": 0,
+    "decoder_class": "trellis2.models.sc_vaes.sparse_unet_vae.SparseUnetVaeDecoder",
+    "decoder_diagnostics": {
+      "weights_loaded": true,
+      "device": "cpu",
+      "strict": true,
+      "widened_keys": [
+        "blocks.0.0.norm.bias",
+        "blocks.0.0.norm.weight",
+        "blocks.0.1.norm.bias",
+        "blocks.0.1.norm.weight",
+        "blocks.0.2.norm.bias",
+        "blocks.0.2.norm.weight",
+        "blocks.0.3.norm.bias",
+        "blocks.0.3.norm.weight",
+        "blocks.0.4.norm1.bias",
+        "blocks.0.4.norm1.weight",
+        "blocks.1.0.norm.bias",
+        "blocks.1.0.norm.weight",
+        "blocks.1.1.norm.bias",
+        "blocks.1.1.norm.weight",
+        "blocks.1.10.norm.bias",
+        "blocks.1.10.norm.weight",
+        "blocks.1.11.norm.bias",
+        "blocks.1.11.norm.weight",
+        "blocks.1.12.norm.bias",
+        "blocks.1.12.norm.weight",
+        "blocks.1.13.norm.bias",
+        "blocks.1.13.norm.weight",
+        "blocks.1.14.norm.bias",
+        "blocks.1.14.norm.weight",
+        "blocks.1.15.norm.bias",
+        "blocks.1.15.norm.weight",
+        "blocks.1.16.norm1.bias",
+        "blocks.1.16.norm1.weight",
+        "blocks.1.2.norm.bias",
+        "blocks.1.2.norm.weight",
+        "blocks.1.3.norm.bias",
+        "blocks.1.3.norm.weight",
+        "blocks.1.4.norm.bias",
+        "blocks.1.4.norm.weight",
+        "blocks.1.5.norm.bias",
+        "blocks.1.5.norm.weight",
+        "blocks.1.6.norm.bias",
+        "blocks.1.6.norm.weight",
+        "blocks.1.7.norm.bias",
+        "blocks.1.7.norm.weight",
+        "blocks.1.8.norm.bias",
+        "blocks.1.8.norm.weight",
+        "blocks.1.9.norm.bias",
+        "blocks.1.9.norm.weight",
+        "blocks.2.0.norm.bias",
+        "blocks.2.0.norm.weight",
+        "blocks.2.1.norm.bias",
+        "blocks.2.1.norm.weight",
+        "blocks.2.2.norm.bias",
+        "blocks.2.2.norm.weight",
+        "blocks.2.3.norm.bias",
+        "blocks.2.3.norm.weight",
+        "blocks.2.4.norm.bias",
+        "blocks.2.4.norm.weight",
+        "blocks.2.5.norm.bias",
+        "blocks.2.5.norm.weight",
+        "blocks.2.6.norm.bias",
+        "blocks.2.6.norm.weight",
+        "blocks.2.7.norm.bias",
+        "blocks.2.7.norm.weight",
+        "blocks.2.8.norm1.bias",
+        "blocks.2.8.norm1.weight",
+        "blocks.3.0.norm.bias",
+        "blocks.3.0.norm.weight",
+        "blocks.3.1.norm.bias",
+        "blocks.3.1.norm.weight",
+        "blocks.3.2.norm.bias",
+        "blocks.3.2.norm.weight",
+        "blocks.3.3.norm.bias",
+        "blocks.3.3.norm.weight",
+        "blocks.3.4.norm1.bias",
+        "blocks.3.4.norm1.weight",
+        "from_latent.bias",
+        "from_latent.weight",
+        "output_layer.bias",
+        "output_layer.weight"
+      ],
+      "roundtrip_verified": true,
+      "model_forward_calls": 0,
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "entries": 292,
+      "payload_sha256": {
+        "output_layer.weight": "656dbe27957efe4feceb08781cc9c7da51f8300217af2804d2fe990c95587acf",
+        "output_layer.bias": "2807b374c4d06302ce6afd808a786fdf1424ef5f076b7f5ced2cfee1e673ea22",
+        "from_latent.weight": "de306904e82a807566d1c41a8afe2d09d0401f563cbcacb960af354f49e35375",
+        "from_latent.bias": "586ce1d5248c7cd97c55d8ea3cdffc10b0d9468001274b83fc6e968ede6e5346",
+        "blocks.0.0.norm.weight": "16ee8ad17ad33ec31ffc56cc7cfee3c95bcd6763da8699b7106dad7a449edcb4",
+        "blocks.0.0.norm.bias": "634fc91bf95bf61af215bdf27b1ae21a1a575d7e3f04caa8f5e3e04a946fb743",
+        "blocks.0.0.conv.weight": "3c5f418c82756495742af67b3ac805b029e22c6e9098c6578b7f1d9af00d84a9",
+        "blocks.0.0.conv.bias": "5d96675f1ab28180c78d5c860cadecba2c6c374c4dbc8df18489c0072d15a2c8",
+        "blocks.0.0.mlp.0.weight": "9a46cf5cfbd0a49fd1de32dcb7d3652830f9c011fea015926c14a77d33fe636c",
+        "blocks.0.0.mlp.0.bias": "b98226b683a8179d815fd6262f03ae65af25d7f57d02f4f2a5be08a0c8e73af0",
+        "blocks.0.0.mlp.2.weight": "19c2abed8393c6885f9ec02e79dc60ee84731c1fbd0f88dceb67fcd73b3f52b9",
+        "blocks.0.0.mlp.2.bias": "7c1c3121c995a0e738c2f72823af38f1be22db5a8bc3a617997521ebe8ee764a",
+        "blocks.0.1.norm.weight": "b54631f6bc5953c7f3ee49e4bbddc8d8d0ae1c1a49c5b10936660af757d5e733",
+        "blocks.0.1.norm.bias": "c8b956927bea475f4215d3a4c18c616230d7cace0712653c48cdaf772b78444f",
+        "blocks.0.1.conv.weight": "d0f7b17aa2f338091d1e3c2d47cb9ad8ca8022732c5db437202f36b6324c3a7c",
+        "blocks.0.1.conv.bias": "6c0aaa9fece2ffe08973d273087eeb232ae90dc526a494f12b0b3a4d1ad98ba6",
+        "blocks.0.1.mlp.0.weight": "b329317035f6599987a92619b0c11c9543db3845cd4d1d1242067af20898cd56",
+        "blocks.0.1.mlp.0.bias": "12d73c7139b09821b6ae08ebdbb215e2b4a4a0838995d7e3e035e38371c3c2aa",
+        "blocks.0.1.mlp.2.weight": "867e9efc3650c6db50b2d3f36d6897f2025e64148d53a4bc2ee16f6877513b4d",
+        "blocks.0.1.mlp.2.bias": "b9b8bb321e34f0e60b879cd74a87165135fcf271dfb933c1f71814f50688291d",
+        "blocks.0.2.norm.weight": "0cf03197a1349ddd8fc2a9299b8186c908dcf948064dadbbd5a96ddfd1bde6be",
+        "blocks.0.2.norm.bias": "bfb5eec47704c9bae8d0369d5e5ad8b77c62c04761cb381336c2e6bb61870e9a",
+        "blocks.0.2.conv.weight": "a033690c0f1536f609b97c4641cfc8b7c49d220c193b6c9c2babc317556b52d4",
+        "blocks.0.2.conv.bias": "88988dbeb4e6c0b8edc5f326a4147f704275c5835d2a9c4e2e11cef6f76aaa54",
+        "blocks.0.2.mlp.0.weight": "61a5cd262046ac50cb7d54189f49593e5588eb22cd325c6f25bc9a25ed783934",
+        "blocks.0.2.mlp.0.bias": "68a1b7befaf2994f1317f010068db3648b73603cdb080059018a180ee2270186",
+        "blocks.0.2.mlp.2.weight": "2114d64e0ffaa67378b3cd022b8cfca6343bfc3914736569ef8cd61a4901664a",
+        "blocks.0.2.mlp.2.bias": "1aa72b4eddbe2ef95f54eacdd6722c847ff6eaea255fd05f5748c3f3e9722825",
+        "blocks.0.3.norm.weight": "6a925b8493e2396b067c9b4186463329554c58a699961a98a9de049da7cc768d",
+        "blocks.0.3.norm.bias": "46bf2c1fc6ba23b6e0a10ce26c49303a32327de64e5ed055838b4e3bfd1ef009",
+        "blocks.0.3.conv.weight": "5ea4e195e1094ffd9c898c2efad62bc26debcbe7695f3efcfa0b7a58d213f15c",
+        "blocks.0.3.conv.bias": "570b85b4521cd6fb69ed716ffe876f913693aac42729b3a5a10324084c167783",
+        "blocks.0.3.mlp.0.weight": "e5b19dcb1dc3055b6f6bc24070b52b86d7d6bbbdd7bbc14b840218ec58500390",
+        "blocks.0.3.mlp.0.bias": "777fb1c73234c0ee673b5cf101966e481f94ecf1bf004416558e6351053bbe31",
+        "blocks.0.3.mlp.2.weight": "4c8c11314c1ee8013174aceb6fd726ee20572f9dd625750f44631734021d559f",
+        "blocks.0.3.mlp.2.bias": "7696cce8ee64d3d1b96c37f27a81097f14a74a91715a19300db62c39df8b0de6",
+        "blocks.0.4.norm1.weight": "3f248a6bccc04bd743b33b6ebee8572175b88781334b3e1a44ae33306062108e",
+        "blocks.0.4.norm1.bias": "e7ce435f086f0c5c22535430e1f3ce9d695787cd48b33671e133b7c8ce1c8c7f",
+        "blocks.0.4.conv1.weight": "f62c3a3ae35fb728713af1b2b97d87e874b244054359d8ecfdaa670e6ad5e03a",
+        "blocks.0.4.conv1.bias": "daf3839b2aaac97223471b0c8ad1047c7a93a320791acc25a3fd7df5798cbbb7",
+        "blocks.0.4.conv2.weight": "38bf5586192144b9c828af5cba20d5408ef29791267dbc73211fa26a4db844a2",
+        "blocks.0.4.conv2.bias": "965bde2b1ef1168628dfd57cd3cee4c8342e291ee6fbbe244f314492001e719f",
+        "blocks.0.4.to_subdiv.weight": "070d21d614948474ae489ab21f6f79bd4980e0b02deea6c1d10a6393d7bc95cd",
+        "blocks.0.4.to_subdiv.bias": "345076904363c4ab2af9f3dc95fd603d94e586176fafad559ce222ff5cce1ee3",
+        "blocks.1.0.norm.weight": "8680bad99fae4df52d702e8a2e35ae213b4ae39f43611d88f18396b0afeaf9c6",
+        "blocks.1.0.norm.bias": "3571191ecee6868ce855184669c27a3ddf24104648c111cc4eeb7c234a9756f1",
+        "blocks.1.0.conv.weight": "31537d26d98984a18a4a91b799e759410ec26797356438cf190d4d175059bbe8",
+        "blocks.1.0.conv.bias": "1582fa46c6f1848a7b33ae97ae35648b6968786ef9d3ec5736096cfec20509f1",
+        "blocks.1.0.mlp.0.weight": "de25b1d0cc2725b4100dc345ca984bee7c30fd50e0b30d31fecc09cbcd631531",
+        "blocks.1.0.mlp.0.bias": "a933642709bea3f434c41c0c5f094fec3d1c7c6f7dab7273f7669cc9b823e884",
+        "blocks.1.0.mlp.2.weight": "15252fc998c46ec2a44cf47e333f8de3e93c6ca987dd9e314769767b695504d6",
+        "blocks.1.0.mlp.2.bias": "a761347d1d7face3c9fcf27329b9132b5d97768c510a4c72c1f6a9159616d040",
+        "blocks.1.1.norm.weight": "40240ecfb62f71c07d00aac86dd758c4933bb69cec3f6fe50e23d78cd10f9cd5",
+        "blocks.1.1.norm.bias": "285e3d412b2fd8c8e60f039eb0fbfcaf25d3e02a0b8af2477eb082c26cf09907",
+        "blocks.1.1.conv.weight": "2ef6e25ee0539b1fb6e773a4bc44c259d768863625f4706dc90d45d70d42baf8",
+        "blocks.1.1.conv.bias": "2d488961fae826ca34e054fe107099b7719f87ecd0b019855cbf66f7cc4ae819",
+        "blocks.1.1.mlp.0.weight": "cbb055a1f7704971ccd5388294dd7937245ee61108e7389b164b2aacef51bb71",
+        "blocks.1.1.mlp.0.bias": "a8ae364ba600dc11c879e8d863b624dc7dd17542721950ae5a5978bbda25e2a1",
+        "blocks.1.1.mlp.2.weight": "2820a9497dfff8ecfcfcddcf3dc94d46b8106e97325eb22241f4583bd3a9fbdb",
+        "blocks.1.1.mlp.2.bias": "e700ded3b77db4366d54b2d9f012c9c9a3500cebf601718b217fa72fde856cd7",
+        "blocks.1.2.norm.weight": "4383c47856af2f4ca0f24d3200cc1d4209841f13fdb5b4ae3e174a4ceb51785d",
+        "blocks.1.2.norm.bias": "87e0a7dac3df5941ad80219bb3331e6aae9e897f65a24842ca852645a7d6c40e",
+        "blocks.1.2.conv.weight": "9bddd3f3bfa4dc1cb862dceed7f36a9c6c7f988c3e1f446f3baa88d3c086fc4c",
+        "blocks.1.2.conv.bias": "593d6ad27087c8d345196fb95e62c9f654a34f7bf8661af46c36926f2faed850",
+        "blocks.1.2.mlp.0.weight": "b30b31e485df4f5a36ffd00d307f3e75bd709848c9b6c31eff0a4da43f6084f6",
+        "blocks.1.2.mlp.0.bias": "56a5e30df94b4755652c00021c414d54ba8cab6c4b4038eb7db812f635e5f894",
+        "blocks.1.2.mlp.2.weight": "f460668589cedab3c3cd661f74313299482536aa3eed764e578fce4f051abc58",
+        "blocks.1.2.mlp.2.bias": "e4073cca9623d462aafa16bb91e28eeec6561c99388a2c9f17e8cd0a5ba61626",
+        "blocks.1.3.norm.weight": "da674b2a4d6f0b04092e32c6f11d81c60e8413f35478226af7805a0bfefc3469",
+        "blocks.1.3.norm.bias": "4bdc98c147cdc186f6ce6763d50aaca741bfc351d9caf7ea50c20ad1f8a62bbd",
+        "blocks.1.3.conv.weight": "69dd77af04732bbf45677996ffa176f1bfb238e635a75947eebe8571282b0257",
+        "blocks.1.3.conv.bias": "64e23221b978f4d6d0a8bca2d4e3a0c9e1e9eee61f74cd4c9fd7df3cf67b793c",
+        "blocks.1.3.mlp.0.weight": "445a1ee4da767985775f4fc3b55ee0f09c04324af2fea6f9cd03d999f76efc8a",
+        "blocks.1.3.mlp.0.bias": "e5e378c7202541c71a183cdab21f444cfc7814fcc39ac9d1be8909a073de15a2",
+        "blocks.1.3.mlp.2.weight": "4bd605734f9348a5d59c30fc67e48a5d4b33d42a8f05713fc82b91f0f97e4a9c",
+        "blocks.1.3.mlp.2.bias": "2586025f5765776b1bd027a852a609b58ee252fb14ad78b48c035f13304ad745",
+        "blocks.1.4.norm.weight": "468e7b19aa0ca9494e84461ed7f3a93aeb1356010f09e2b17bb58dc0531d127d",
+        "blocks.1.4.norm.bias": "1f41bdc2089fb888df552d68c580ba2cfef23fe00f8a00cab4c5b41acb1e5b60",
+        "blocks.1.4.conv.weight": "534217db6885865c929594b4b3c03a3427bd328da15014285e885584ed2d4998",
+        "blocks.1.4.conv.bias": "c4afa0f3a76232cf6a15b3471c28c576a0c4edcf52a95fd80cd0c90f0bb05040",
+        "blocks.1.4.mlp.0.weight": "58b8bbf2d2515c92dc621f7c5baff7648263636c63c87918aab5f1e3ed881f3c",
+        "blocks.1.4.mlp.0.bias": "f7a4b82829c1f187a21dd4ca543a99464c93ee3b1c9af230539e5c9f9e05d12a",
+        "blocks.1.4.mlp.2.weight": "afdcb87f38b2e0631d70a2bc4389c19623c7f24f3ff655eec058d1943026a331",
+        "blocks.1.4.mlp.2.bias": "e5e7988b608d1eb0c3563eb8f55c16e84a51af4907b1833d1c57d3d7651dc934",
+        "blocks.1.5.norm.weight": "263add9bd76992ed4d73cbe7ae44e4ab278e7c8729bc32b4559cd0cb28e65400",
+        "blocks.1.5.norm.bias": "a238094fda2c2c1598b13d5d8c7509ad9591337e1bd3cc8a60070653acf47cfa",
+        "blocks.1.5.conv.weight": "ed4d72a70b97a3fb204e80932253adf056ab945bf7511350753cc22ee5327365",
+        "blocks.1.5.conv.bias": "cfff98d79d40b932fc4f28ee15af4a7b9250ef1546572eaaa173a07e0d34b770",
+        "blocks.1.5.mlp.0.weight": "6ffcc44bed9e1dc3eaadb3a0ceac06d5c91f1ab418146954203f4c658d1846cf",
+        "blocks.1.5.mlp.0.bias": "d621f60c891900013b837524429679dd5749bcf6da47648890d6955406c42958",
+        "blocks.1.5.mlp.2.weight": "5fb0adc1690cd66027ef4dca2250a782c7a3b16c5bdffc91238810ce93da69a9",
+        "blocks.1.5.mlp.2.bias": "b8af5529b3952d9879c3750345565a69e0d248cada2ab4362964f986db88e419",
+        "blocks.1.6.norm.weight": "611f5f76faff453d87ebea939535e6343bb05f0f657bd64ea9affbb2b6ba84e2",
+        "blocks.1.6.norm.bias": "3ce418ed736ebe4680b8ccbea8130681a10fe1b30c93dea2a755ab776129ed40",
+        "blocks.1.6.conv.weight": "68443fdde7fc8ae194f8b7c3687393423faf5d3581dc13e0bd516b4e75b4e35a",
+        "blocks.1.6.conv.bias": "21fa8dba5fc8260cc71e9dcb236665105ff3fbe78915a468b09a83aaf3b6d75f",
+        "blocks.1.6.mlp.0.weight": "87cd5cb7785ddce7572d667746fb61c1097d56292dc477b10d339327009c909e",
+        "blocks.1.6.mlp.0.bias": "168a5541b2ecf94a98f2cf5e63528301db63897e3b848b172f878030dd3dadae",
+        "blocks.1.6.mlp.2.weight": "f57a000f7695e7843f9e7ba4e23667dd376d82f888a6b931c6cf9fbd3d0ce414",
+        "blocks.1.6.mlp.2.bias": "5f6edc7c72effe8ca5ac4a5847421d7aac74be95f118b5a4e5070e23bfd0efa5",
+        "blocks.1.7.norm.weight": "3ee36f4a8d59faa0a8423c0ebda04fadc5b7e9491b55d38295630b61814ec87c",
+        "blocks.1.7.norm.bias": "bf9992ba384117dc1b00b7656863722ff2992698f6451ce103cf7aa2cb37b432",
+        "blocks.1.7.conv.weight": "926f730af37bdb10721dc0bd09a6c288a7c84c34c6a36afaa25bfd830b7ec600",
+        "blocks.1.7.conv.bias": "a42b15984d058f434cc8fac9161f76692a54bea5d27890caed1d4272aa02c0b2",
+        "blocks.1.7.mlp.0.weight": "c78f908766e03e0c0db3d52f90dabbbe427fa16eccf1f867df77bc8683f52d4e",
+        "blocks.1.7.mlp.0.bias": "078e0ac6b559719259d4b3bc88022942332c387d748f8c962c5bc2e6390f2975",
+        "blocks.1.7.mlp.2.weight": "dd86a0def1dbd7705b3fc68620fc714f30f0e6ec77233b157a1893354f9e176c",
+        "blocks.1.7.mlp.2.bias": "445adb25050eef5f569db6f26ecd5233158c3901cf7994e87b91974a0ad30c89",
+        "blocks.1.8.norm.weight": "b643b9fedc870a63dd888bbee974fabd0f74e8a851603f03f83e4c9776ae8498",
+        "blocks.1.8.norm.bias": "1bd3af34a9f3e4c4bc4881e50784a6a9899e6e7c6bbe7a2ef4ad6dbb81b693aa",
+        "blocks.1.8.conv.weight": "b618998e522a296c63af2ef04982cde23c4e3336f0610f179ddc8077cce44774",
+        "blocks.1.8.conv.bias": "42eb590fd52cf35c2574bd62e94de67c35cd388ef5506b0f0813f3beaa7c4e7c",
+        "blocks.1.8.mlp.0.weight": "c406200777a55307c622c453915a28a7cd14fec6b3094859fa36b2b348a91ff8",
+        "blocks.1.8.mlp.0.bias": "4c2785127dbf80d2b24fd475e7b486d26bcffc6cf47138dafadee3f0054e49af",
+        "blocks.1.8.mlp.2.weight": "f04d273aa91e97195a7122d0c5b12e4889440ed42b536734f63ea3bbeb4e1384",
+        "blocks.1.8.mlp.2.bias": "7eaaebdcdafd2614dc5003586c368eb11d6b72af393f62cb31cf4da013863906",
+        "blocks.1.9.norm.weight": "f12df519254ef5fcc9c85838a67782a1ee4480a8bcd86c2af15be3a871731061",
+        "blocks.1.9.norm.bias": "006c4bc5d779229f2376f11fb7452cab3ac3154583d755310ee4270ffa88044c",
+        "blocks.1.9.conv.weight": "68e6d32573a443288c9ee5a1d2ee0e0cff4caa67d32147eed5d2814ee1e92c00",
+        "blocks.1.9.conv.bias": "f9c4d3e6ce8bc15e2b71cd21334e64061cabd9e9f3581b28e47153a06da70d27",
+        "blocks.1.9.mlp.0.weight": "0a1435a6ea459c191af4e419ed3e5882c27b67322c8e438e9413b621556bf716",
+        "blocks.1.9.mlp.0.bias": "4f741fa87767ae6afdaaac05daed2c70c07c5d6a390e5a0e165c1cff1f06bb2a",
+        "blocks.1.9.mlp.2.weight": "61b55d6742bc506d65f08241b5fc3926b05fd3bead52e43dba552334ea99ba86",
+        "blocks.1.9.mlp.2.bias": "0589d0ca7becb0eedb82df75489f4a6e5767ccc783e4f1c8a6041c59ed4597d0",
+        "blocks.1.10.norm.weight": "c25285f920c9b725dbfe88233e6ddf0457a53dbe94b92a9694bbe23ef42d281e",
+        "blocks.1.10.norm.bias": "c1ddf8e3bfc520ee2f236c80836055225c31c4a7cfaeccba4b475606b28d4fc0",
+        "blocks.1.10.conv.weight": "c44635a9a1ad1a89c12e31fb2a2bc3415c107f4457e31c6e6c8a135c1cb4d381",
+        "blocks.1.10.conv.bias": "c568c0117f7ffd3de1dccbf032cad27cecc48923b7e622a681db2611298957e9",
+        "blocks.1.10.mlp.0.weight": "095b23424520a8052581409c68c291c879a843f575973b40e766dbf2b3a64873",
+        "blocks.1.10.mlp.0.bias": "4dc77572e4a9a3e11777e470606d159960914d911791508bc8d4a63c46a2e9e1",
+        "blocks.1.10.mlp.2.weight": "06d7b802dfaf79b633d8602b72261c8133f2dd064b1784cfc81843425356c845",
+        "blocks.1.10.mlp.2.bias": "af49170f65d440ff34ee65cb0360548dbf34112a97c920d6b9dcb0b3c74d8dae",
+        "blocks.1.11.norm.weight": "da093e166bba8bc5d056ed6833e51b7343591a2a02958c083bc584d15df5ad32",
+        "blocks.1.11.norm.bias": "31c200bc59801338d83c6d2dfeebf1867ba4afdf250814c547a49422826d911c",
+        "blocks.1.11.conv.weight": "b27dacc76f629a0a06bd6f5662018eb40b40d97b3d4205de84c00ec684bc575f",
+        "blocks.1.11.conv.bias": "484e3d1528bf5ddccb78b1014f19b761e27b70fcb5c60c49fb11402bcfc1a1ef",
+        "blocks.1.11.mlp.0.weight": "62e7ecffb951c8ab299cccaa44e686e647e5f1da7f4de2e2e8e4b409687391a5",
+        "blocks.1.11.mlp.0.bias": "ccc0525b13b0789d6f1a6f51b6e2192be598e0c2fa3fa9266cf7d6f80b125601",
+        "blocks.1.11.mlp.2.weight": "284815dc1e6f0a2f3ae280d0f0f52fcd3f9cf9d356081e1e03c14d01106df20d",
+        "blocks.1.11.mlp.2.bias": "d4ec875cd78ff84a55c2783e3eda835e6fe348ec88a5251abbb17824d547c8a1",
+        "blocks.1.12.norm.weight": "7991b8b4092fc5f7d5a227215b4ccdc670785e5810957601719fb80b02ddff9e",
+        "blocks.1.12.norm.bias": "4e5e765682541b07211f2e1f41f1ae7d0014d649740c2a1960cbe01b619d530f",
+        "blocks.1.12.conv.weight": "7e2ea3031b64594bb00ca4c970f1d729a7467aa5ceb310c877f6ac0162936316",
+        "blocks.1.12.conv.bias": "6d44f8117b982d9fc0416ae036f4929caccf636a5ec5ce7de75406f3f71858b0",
+        "blocks.1.12.mlp.0.weight": "9fbc34a366c0614372214773df759dea31b11589e1da6c07f37b6995b3c52380",
+        "blocks.1.12.mlp.0.bias": "de03a4290ed1da8ad9726b61cb1acc72a63e862634dfa05f7268886211f9750d",
+        "blocks.1.12.mlp.2.weight": "8200b56be6484601a9cca47dcdc2a91216f710eccdd648b407ab6c49e0d800ff",
+        "blocks.1.12.mlp.2.bias": "9f12cd4eec78c474d56d6c26ba0cd0d84884d26d542bc520eed415765cb6245f",
+        "blocks.1.13.norm.weight": "65c20e4617e44e5f4ea4ad5584e2c20be1b866b16f1a58febe01b1caa10396fc",
+        "blocks.1.13.norm.bias": "69b91d8d7dee6387bfcc6a1aee6d75e52919a75d7b89ea198ade34ec0dd2471f",
+        "blocks.1.13.conv.weight": "272cbceb2b4432dd42441edc2b6c7ec002a0cce8121e2b1cafc5c7d7068b67f2",
+        "blocks.1.13.conv.bias": "995d9aee8d904063dcd9c188f26f37eb88663dddeaf55873d8193a965166138a",
+        "blocks.1.13.mlp.0.weight": "c72c844aafd68586b6593d0016934336ceb4353560903ea1e1b6d0d0449a413e",
+        "blocks.1.13.mlp.0.bias": "bba5887bb97c2910e45c8eae7dcb7ac19d734e66a73d497c367ad5294943dc4e",
+        "blocks.1.13.mlp.2.weight": "3298adb56195a1807631003405f167a2b20f70f5570f2d472c95d4536b84ba9e",
+        "blocks.1.13.mlp.2.bias": "f73865ca084c4496f3f4c1d54fea2d460b7bf0739e886d6ce119f19e8482bd26",
+        "blocks.1.14.norm.weight": "70d5545879e0de7a3431991c1e80ca3b06b737d816b243df3ccc8abaafa493b8",
+        "blocks.1.14.norm.bias": "7d2009e2a98e47e1096932ce1456c136f6b3a398360e0c157650d7e0991d044e",
+        "blocks.1.14.conv.weight": "8a99250ee6e4e19757c51b647ba0f4192500f5e7a3018e494694d2d7e2211770",
+        "blocks.1.14.conv.bias": "83cf2491363609077190529ca3223fd50c0fce7b8cfe31e76aab425ecae8801f",
+        "blocks.1.14.mlp.0.weight": "272b4b429a25bdea3843c8bb1c6e8b67e1d27d175da4d54d13300584862159f9",
+        "blocks.1.14.mlp.0.bias": "2f9c6f68398e25f34a3b222073ed3cd17d79b88717cc3f6501c4661dc440de2e",
+        "blocks.1.14.mlp.2.weight": "ccf90a64419cf8476ff450a5d3cd4b43ca9d805f4ff0307dc828a064c9b6f56b",
+        "blocks.1.14.mlp.2.bias": "bd05d6d5c2764517bbb9a267b9ff93939babf727cb1b2c13e182f71d1d71de9d",
+        "blocks.1.15.norm.weight": "753cb011c58b1b61d21fa55591bfb6a6b48ce965765c630eba5f85ff9366c623",
+        "blocks.1.15.norm.bias": "3565b61039d9649f14d390ebed13a026fe089ca07406d8fbeef811dd61c53420",
+        "blocks.1.15.conv.weight": "172edc97124a83b280074de69f1753cd354fdc064ab545064b6760755f640b0e",
+        "blocks.1.15.conv.bias": "9543d2c3ab98b9dfd840e6f2a415a10b0f8e6208aec52ff1fc1c1fb794e462be",
+        "blocks.1.15.mlp.0.weight": "334519d827c55b0cf553168746c82c61d6b99ade836350183327046ae19b4237",
+        "blocks.1.15.mlp.0.bias": "031aa471220370979ed1d57f0680dc3b477730bcf29dc459078c190edd28f6f7",
+        "blocks.1.15.mlp.2.weight": "5dd431231e4786a49d536909caa9f3f579227c68d0435da116b840dbe567bc5b",
+        "blocks.1.15.mlp.2.bias": "b97513874213a7dedbfc8790ab9b8b098fa88ff5807b5c8a6bb65f703b21e709",
+        "blocks.1.16.norm1.weight": "6279476309744fe1547598f100b86e380bed69025f1d883d1662dd441365f097",
+        "blocks.1.16.norm1.bias": "b5ddc47c28e90c34c7e70feac1295959bbd3eb2873e9fd956c3e8f09a175a4cf",
+        "blocks.1.16.conv1.weight": "68e63d0718444472d9591874a0ce540b710f5a689809f68d0e4f884915cdae29",
+        "blocks.1.16.conv1.bias": "74fe9092ce543ab1fb03d4f549e2a5528824b968e3eec378b1edf963a63051aa",
+        "blocks.1.16.conv2.weight": "7e6fceb235bc5635311ab83cc539e68946878707aebccd077c996ce6cbd2996e",
+        "blocks.1.16.conv2.bias": "bee28b61859b2f2eea6122a9fe2bf4400e1733ca5681b5a86b67b93b4687a6fc",
+        "blocks.1.16.to_subdiv.weight": "4b33378f747e4362aa901ff0f84181d37f22bfec6053b102f0624b6a7576c6c9",
+        "blocks.1.16.to_subdiv.bias": "7fdf9ef7f822e64d83ef3e65a54431fccd396bbd18ac67d2d629e4735d6654d3",
+        "blocks.2.0.norm.weight": "c00468d5ac4cd2dc113ee0237c6b2242a0b6955abb45c1a944835d1f4dea396d",
+        "blocks.2.0.norm.bias": "bbd08b2317540879b6b1df5b734a079624c4ca72a6a1785871eafd04f924ceba",
+        "blocks.2.0.conv.weight": "d792bf79b1f6f069b3c4b1dadd35cee3ca4b94787066159b6ca73b20be184cde",
+        "blocks.2.0.conv.bias": "aa20fa72773d0fad629ccdc9be7a30f7e3ee4dbeb26328735c308dd7f9c40cef",
+        "blocks.2.0.mlp.0.weight": "8f3f0f9ea66b750236b7cb6490681342b1ca0bd928dc88fbca64827b6208403c",
+        "blocks.2.0.mlp.0.bias": "d7a7a72a3446b2e31984a458293e5856eabb3b55c618fe51a172543a69fc106c",
+        "blocks.2.0.mlp.2.weight": "ceef597b88c72ab8a035e74238f6537f4355c136ca90e6f1ac6dcf4f817730e9",
+        "blocks.2.0.mlp.2.bias": "5bc00108c8e7b3e6f421cfa9ee8f9e8961e341e650cfa0180a4ef5d11d1a4290",
+        "blocks.2.1.norm.weight": "f6aafcff8fc6e098c4d13e57fb681797faeb616430302eb24c303052f167a675",
+        "blocks.2.1.norm.bias": "c25fd3fecb635570da68bfcc541e55d5c1e6ea5fefef3fcf0ebce904a7174206",
+        "blocks.2.1.conv.weight": "be2e7ef6c89a18603a491b718f224f5ae3b99b3b774a3acafc41cf66d93f8c0e",
+        "blocks.2.1.conv.bias": "4c9924c7611935e88ae40f3064f18fa6e9e21e30238ffe80cac7c6d79ecb664c",
+        "blocks.2.1.mlp.0.weight": "a6568877368bd76c828ed3c3ca731b6f0607f967988b28cb591f8a94583b81ee",
+        "blocks.2.1.mlp.0.bias": "c92c8b5cdd43e4d0e7b464cbcbbad1e7b708ab2a125a01224cdd31f2cf03b60d",
+        "blocks.2.1.mlp.2.weight": "fdf45172513dbdba13e2ed9ee7efbb06b92fc9f67392d868d7946c941ad8d116",
+        "blocks.2.1.mlp.2.bias": "663b01978e5249818fcb5ee5d062d4702b719fb67b78168257f16d3331e21d7b",
+        "blocks.2.2.norm.weight": "3b1d7ac71cceeaa3d43aa0080c2d8d7f020f8ce60204bec3d453d58b9506fcb9",
+        "blocks.2.2.norm.bias": "4a496e8d0b9df795f71c335ea58632b79d0974f0ba5e23bf04a14da9be748d0d",
+        "blocks.2.2.conv.weight": "c6bb747e14a4c354abfbc452863c7d8e9279b348cd5ccf4ad11134604a482297",
+        "blocks.2.2.conv.bias": "9a6370822441b5446306a1bad79803aa3cc0f7734075caae61ca8ec398e2c5f4",
+        "blocks.2.2.mlp.0.weight": "4bffed20907aceb372cd2474ad5a1a1e71c77e49a57f752e2cc49141c6b8f10f",
+        "blocks.2.2.mlp.0.bias": "dd01c5de4cefce052e38cef5488ca7225ceb32d5fd5b7a431ead6abc3443fdc5",
+        "blocks.2.2.mlp.2.weight": "1b0448c1f5362dfbb99dcb004006839c1f583472c1d752d881c63fb32cc324fe",
+        "blocks.2.2.mlp.2.bias": "df011fb4d9bc58c4e13669e9b42704f09f7a7800ab66767b3a0fb2573192f78a",
+        "blocks.2.3.norm.weight": "33d9ac012fdb93aad212ac7e31931aff5e0855df7bf678578229686e56c495cf",
+        "blocks.2.3.norm.bias": "b8355d204917ab952db5fd47285be82882abc08748a774e1961a428b740acb17",
+        "blocks.2.3.conv.weight": "debf3a01dc0c0a48dc34c336d9f10423fb7d704638d524613ce0034bc332ea21",
+        "blocks.2.3.conv.bias": "69892cad6bf861fd61f88cf625f3556dbffd2cd1e7ea8b886c37c061e2273d42",
+        "blocks.2.3.mlp.0.weight": "7c07ab37c27fde72e8001f958ce7553df38693624032e419ac2a5357aa58969d",
+        "blocks.2.3.mlp.0.bias": "77e8ed140ca65577870d5d53bf0a850603dae37355ef128d1c43aa9bab1c585a",
+        "blocks.2.3.mlp.2.weight": "70be9b8cbde1a699b5aa1c77e66efd9407ced0f798eee75bc03e891b735b9d3b",
+        "blocks.2.3.mlp.2.bias": "fd20529a4b49a24ba58e1f4c4a032de5116a96df7d75f6981c5164baa50164ce",
+        "blocks.2.4.norm.weight": "7c20f8c4300b97e880d4493792f5996290c9fcc17e28ad3043eaff47bd3e1ffd",
+        "blocks.2.4.norm.bias": "34788da9b7baa761542cbc179ff5ee8d7a8d6285571a3d2c4673a31f0e6e3766",
+        "blocks.2.4.conv.weight": "3e75e010eb0608131488149ec50fa5bd7f56b6f0d0a568012a1746e3362b33ca",
+        "blocks.2.4.conv.bias": "d465b402a0bd1b71f2f671adcb1ba3af606850d6e1ddf09a1df5dadaec2a6eb9",
+        "blocks.2.4.mlp.0.weight": "8a6fb65b5cb20e07c3b5dd856a0f226529d922f19b9898ba6317ccc2007d315c",
+        "blocks.2.4.mlp.0.bias": "1d0a2e1ef371ffa7a7c865ac5276b326e9a545573e5842a619b192e73fbb0928",
+        "blocks.2.4.mlp.2.weight": "4031d1114b5203baec1f3a69065dd1d4dce33a530e141a143fc6fc200b199573",
+        "blocks.2.4.mlp.2.bias": "edaf100f68514bda61e78b767c39087aecd60996c7bac0fb122d6627bd3176ac",
+        "blocks.2.5.norm.weight": "ecf6e221f8c5a0c7e07095272964a4ffafa84491788b155b4709deb8f19d1333",
+        "blocks.2.5.norm.bias": "c9a537481f30f0364e95172c33f3ecb13909d36e823bc739775f3c538cd20fcb",
+        "blocks.2.5.conv.weight": "3ce7569330d87a197a4654d4caf511d14c0d0ccfa3ace120aba9000ef7892ab8",
+        "blocks.2.5.conv.bias": "540a00110f2209c08798391cc65e39928a507c99286f97e80e0fa57a1755f668",
+        "blocks.2.5.mlp.0.weight": "ee51041003bb78864648c6c3ebbbe3fbe7a0c5366dc46b7c80afd3147a6354cc",
+        "blocks.2.5.mlp.0.bias": "a2605f060ad910708bb5bf6c751e17bd1d5adc45ff94dac6870b791574bccd73",
+        "blocks.2.5.mlp.2.weight": "2837efbb6f052b61c02863bf63572da3ebade650c8e001adae2821bb9ec3f6f3",
+        "blocks.2.5.mlp.2.bias": "14377f127c0c8b313f16e56ee6562cae7154b250de6155a3b2201a8f95540821",
+        "blocks.2.6.norm.weight": "a3e77b4316e239a0789807cc76488c40a5157ab834164cd97526aebf86847435",
+        "blocks.2.6.norm.bias": "b8531242ff269ce7c1334eed78fa18c147e798caacfb0168f6feebc39145e44b",
+        "blocks.2.6.conv.weight": "415a28a4a3283692ccb7ed848cb40d6f59919a4aef7fb6bc5467902d5c89d92f",
+        "blocks.2.6.conv.bias": "486e78fb1e7440be72390b119ebdae105140e724fcb571c907877c415491c861",
+        "blocks.2.6.mlp.0.weight": "e308b99e7e24d24cec45968ce7dbfa87408a58fdf7dbef613de11a806c22878b",
+        "blocks.2.6.mlp.0.bias": "f64aba3c492643e5094f9c1fcb7d99f2ac72beb30d5b7e7e7a0e38fb7bd5bc47",
+        "blocks.2.6.mlp.2.weight": "80606fbc02d29dd0e727ec06124692e47f17c843866a58728b3d76def7216e42",
+        "blocks.2.6.mlp.2.bias": "4cd842c4a1f55bc43c7b274e8a94d4d363925c402e0d9c263f7d73fa04c35da7",
+        "blocks.2.7.norm.weight": "a1a9952550b04316d8259bbc15a9ac39ea22372f7b9801b66ae7b2274977ee89",
+        "blocks.2.7.norm.bias": "4e0282926538bffc83bed079ee03f5e27f97abc62d2fb1e1c535092c5c48bf28",
+        "blocks.2.7.conv.weight": "6115cea3c3907cc46f95e2c864f5bd849d307d2d769dbce7ed023693af3319ba",
+        "blocks.2.7.conv.bias": "b51dacc5c3987b8d8706a7433fcff3ca50e064d937190483173ea09c2dd04a2f",
+        "blocks.2.7.mlp.0.weight": "5c22de90dabbcdfa87aeba4b3c7f5ff33b7d99bb0284ac1cf9a3316eaf58edeb",
+        "blocks.2.7.mlp.0.bias": "8cb8c1908a0c78d5723430db71fd307d9ccd5595bc67b96c491f83c576a2983a",
+        "blocks.2.7.mlp.2.weight": "f1a519d878107f487aea98149dcef34bcbef19bc0819518ce7b72a7ca51d9959",
+        "blocks.2.7.mlp.2.bias": "b554dcfc3fd18c200c8250f17f01d98c12f15bc96c4161b2ae47448d2d562edd",
+        "blocks.2.8.norm1.weight": "d7367db1a97558cf5c86c0dad94fe840f09a6efb1ee1dd048d0cd046dd162060",
+        "blocks.2.8.norm1.bias": "e8e91cea08e34c3c7cbedabda23e1d6ad43501c7533d9cad553aef1766930d90",
+        "blocks.2.8.conv1.weight": "587a96a8aba87d0515512b1dfa2889f6be4d640cd33e71ae43daf829a0734031",
+        "blocks.2.8.conv1.bias": "8be48b6724c7584865dfe05ef63012979829899aafd8b9554b4ff34f3c6172f8",
+        "blocks.2.8.conv2.weight": "e9585dea0449a803902e084124a864903cee15ba66cf71061805626e78fc9955",
+        "blocks.2.8.conv2.bias": "9cf67c27406457eeefbbfca3c3c9e1f5539951640bf2dad72ca23d84950e6acb",
+        "blocks.2.8.to_subdiv.weight": "fd10e50801b1ccae2709ab17c15e75bd250a9b7aac24ce57fc6ce635ba73a2e1",
+        "blocks.2.8.to_subdiv.bias": "56f538b9c7233bb47e017423a4593ddc7311205ea0023b5e91a0ecb2bd46bea4",
+        "blocks.3.0.norm.weight": "f4241bea93d3cb83578388b57030460356247cdb43c362de64d4cd90cdc035c0",
+        "blocks.3.0.norm.bias": "a31ceb8b3e11c84b12a1b3aa1fef4f8c10ec32848d46dc961ab14ddf63deaa27",
+        "blocks.3.0.conv.weight": "8d6aabbe22eb90a9f0cba1a9d32943b00af8953697e27364c4722111663fb443",
+        "blocks.3.0.conv.bias": "d4a4a1e54bae9a74343104489b7ef526bd751b3c05ab96fbefceb2e904e7115b",
+        "blocks.3.0.mlp.0.weight": "cc7897e2ff904af893c7748e4f7ac9cf36a1f678eae12cbaf271a5fe9ff030a1",
+        "blocks.3.0.mlp.0.bias": "b5081c1375265030b682b9e540103d5cb066171aab177e82c02fab0a9a68ece3",
+        "blocks.3.0.mlp.2.weight": "d8c35602e8ffbf937d51ba96a219c41d947b1e3ff1c91744a388776a516adb37",
+        "blocks.3.0.mlp.2.bias": "da3bc1c77818a7322f051374b32a3393455b16fdaea30d672287fc6069f593cd",
+        "blocks.3.1.norm.weight": "8187618b381a6c622024c30ac8eec5d13fdb9968fe7b8225d5ebd9b0834af6fa",
+        "blocks.3.1.norm.bias": "4fecfbaddcf873ca79272ab0c19b051f5ab70a3e1ba6799f6e3c7252b910abea",
+        "blocks.3.1.conv.weight": "7e8ec0fcb961346bdef47c6b5bf579c07456c931ccc192bc4133aa03c787beec",
+        "blocks.3.1.conv.bias": "1b571a1135d48854dde68e6ec3d1f156335d998819fb6df56f1192553d82bb67",
+        "blocks.3.1.mlp.0.weight": "0f7583b097b45352a3f79848648179abd1534b52e5d5de365a3e02652e7cade1",
+        "blocks.3.1.mlp.0.bias": "b0bb3ffa8601c77c164354c043c3349ababfcb226d7d10248dae522a889574b0",
+        "blocks.3.1.mlp.2.weight": "63c7201f0b6fc20150bc25a5bc5e91cd9b8b2357fc5b4490742cac479b49e120",
+        "blocks.3.1.mlp.2.bias": "b055d0adcc0b61ef6c96c680804ff22587c874a3ec63d7d6445faa49c45f418b",
+        "blocks.3.2.norm.weight": "35ff0c87c9d79e46f3b8e67a892b28e9e94dad1cd89cfa12b618f2a0f90bcaff",
+        "blocks.3.2.norm.bias": "641dfd74161fb980b95ae3994d7dfdaecb7ffe8893238290f54d149d4f366f27",
+        "blocks.3.2.conv.weight": "278e63e71fcbe08f4a86a0beeef2631c612eefe643e2df5bbf40c82757c6699c",
+        "blocks.3.2.conv.bias": "32f74ef4af8388b7f4d065a49a613b42e1a6bf51894fa0ecfc24a4c2f8ccb1c8",
+        "blocks.3.2.mlp.0.weight": "2f369b7d5cc6f255748542d8b040d83e22a7fef3004dcdadaba45acd200c1ee5",
+        "blocks.3.2.mlp.0.bias": "1d371cd9c8cfaba98d88241e1475a1668592bdd7f19cea2afecf0d5bc3d3841a",
+        "blocks.3.2.mlp.2.weight": "e629c9cd35b938211115e8b87c0b04c4b74900479201e67537b3e893f6e98768",
+        "blocks.3.2.mlp.2.bias": "9648b58d56f0264da8bf6c8f95ab5bc8d7809848bc7a7f8ee92c52ee82b3bae8",
+        "blocks.3.3.norm.weight": "4e592049ea5b2376d38d915c4b367b846af201a9463778c4b6c8e0d14d657d3a",
+        "blocks.3.3.norm.bias": "45cfe9226d386d17a017863ccd98633c8bd193ce6a801a14ac75c50e96cc117f",
+        "blocks.3.3.conv.weight": "bac05eadf636906e4a034690fe9aeb3f0ffa4e21527a6cc2898f2237e86a63dc",
+        "blocks.3.3.conv.bias": "a8e931362264d85d81870c9f49e58163391b40283940d6d1b375899c1bf6f6cb",
+        "blocks.3.3.mlp.0.weight": "4fb5e5f796f640f0271a023dcad1bb5d8c96e1f28dd747d4a10e0367e21dfd56",
+        "blocks.3.3.mlp.0.bias": "b8dd8f3587649cb54a1516f6718287236d693d1e487beaddabe012d80dd3ab34",
+        "blocks.3.3.mlp.2.weight": "9c9616c8f463da481ca84161b66c76a8204f4a7f32a5d142c1edb5bb839f83cc",
+        "blocks.3.3.mlp.2.bias": "3397901881a4d3fe85f12c3bac3cbd61c3253752e31501875841d09872c77596",
+        "blocks.3.4.norm1.weight": "f6b79dfd51e54272722f215c9fae665d66233156fd920c130b6dd78c4629fde4",
+        "blocks.3.4.norm1.bias": "d1d449e0a1ea01006ee6eed5d4f72163ab7e6e4d95eaf03f1b22c6a4a7338915",
+        "blocks.3.4.conv1.weight": "c07fea8088b0b6ce9ac9efb6ac232b2224bece7975b6cb092b26a21cec4f315e",
+        "blocks.3.4.conv1.bias": "fd9641a67e3d717a432a0752eff461a27f2d2451a78df3a463a44e9985ca3234",
+        "blocks.3.4.conv2.weight": "520df98b70eb11c27fe2d2f3629b6d8dca0792af4da2b2dd6fc42d2a85d6ce77",
+        "blocks.3.4.conv2.bias": "53b1bf79078679581d0a969b4c0cc3e1a910b7f96cc98b1ba21ddcc794380ab6",
+        "blocks.3.4.to_subdiv.weight": "6232cbb3b5fde196d8bcd379bdd407c61b436ccf27fde5be921b6f81e8088610",
+        "blocks.3.4.to_subdiv.bias": "9b7d5fc0c2ad49c3d497474cd951b8e608c71cb9a562e33845bd8e19ded2c481"
+      },
+      "original_f16_widened_sha256": {
+        "blocks.0.0.norm.bias": "634fc91bf95bf61af215bdf27b1ae21a1a575d7e3f04caa8f5e3e04a946fb743",
+        "blocks.0.0.norm.weight": "16ee8ad17ad33ec31ffc56cc7cfee3c95bcd6763da8699b7106dad7a449edcb4",
+        "blocks.0.1.norm.bias": "c8b956927bea475f4215d3a4c18c616230d7cace0712653c48cdaf772b78444f",
+        "blocks.0.1.norm.weight": "b54631f6bc5953c7f3ee49e4bbddc8d8d0ae1c1a49c5b10936660af757d5e733",
+        "blocks.0.2.norm.bias": "bfb5eec47704c9bae8d0369d5e5ad8b77c62c04761cb381336c2e6bb61870e9a",
+        "blocks.0.2.norm.weight": "0cf03197a1349ddd8fc2a9299b8186c908dcf948064dadbbd5a96ddfd1bde6be",
+        "blocks.0.3.norm.bias": "46bf2c1fc6ba23b6e0a10ce26c49303a32327de64e5ed055838b4e3bfd1ef009",
+        "blocks.0.3.norm.weight": "6a925b8493e2396b067c9b4186463329554c58a699961a98a9de049da7cc768d",
+        "blocks.0.4.norm1.bias": "e7ce435f086f0c5c22535430e1f3ce9d695787cd48b33671e133b7c8ce1c8c7f",
+        "blocks.0.4.norm1.weight": "3f248a6bccc04bd743b33b6ebee8572175b88781334b3e1a44ae33306062108e",
+        "blocks.1.0.norm.bias": "3571191ecee6868ce855184669c27a3ddf24104648c111cc4eeb7c234a9756f1",
+        "blocks.1.0.norm.weight": "8680bad99fae4df52d702e8a2e35ae213b4ae39f43611d88f18396b0afeaf9c6",
+        "blocks.1.1.norm.bias": "285e3d412b2fd8c8e60f039eb0fbfcaf25d3e02a0b8af2477eb082c26cf09907",
+        "blocks.1.1.norm.weight": "40240ecfb62f71c07d00aac86dd758c4933bb69cec3f6fe50e23d78cd10f9cd5",
+        "blocks.1.10.norm.bias": "c1ddf8e3bfc520ee2f236c80836055225c31c4a7cfaeccba4b475606b28d4fc0",
+        "blocks.1.10.norm.weight": "c25285f920c9b725dbfe88233e6ddf0457a53dbe94b92a9694bbe23ef42d281e",
+        "blocks.1.11.norm.bias": "31c200bc59801338d83c6d2dfeebf1867ba4afdf250814c547a49422826d911c",
+        "blocks.1.11.norm.weight": "da093e166bba8bc5d056ed6833e51b7343591a2a02958c083bc584d15df5ad32",
+        "blocks.1.12.norm.bias": "4e5e765682541b07211f2e1f41f1ae7d0014d649740c2a1960cbe01b619d530f",
+        "blocks.1.12.norm.weight": "7991b8b4092fc5f7d5a227215b4ccdc670785e5810957601719fb80b02ddff9e",
+        "blocks.1.13.norm.bias": "69b91d8d7dee6387bfcc6a1aee6d75e52919a75d7b89ea198ade34ec0dd2471f",
+        "blocks.1.13.norm.weight": "65c20e4617e44e5f4ea4ad5584e2c20be1b866b16f1a58febe01b1caa10396fc",
+        "blocks.1.14.norm.bias": "7d2009e2a98e47e1096932ce1456c136f6b3a398360e0c157650d7e0991d044e",
+        "blocks.1.14.norm.weight": "70d5545879e0de7a3431991c1e80ca3b06b737d816b243df3ccc8abaafa493b8",
+        "blocks.1.15.norm.bias": "3565b61039d9649f14d390ebed13a026fe089ca07406d8fbeef811dd61c53420",
+        "blocks.1.15.norm.weight": "753cb011c58b1b61d21fa55591bfb6a6b48ce965765c630eba5f85ff9366c623",
+        "blocks.1.16.norm1.bias": "b5ddc47c28e90c34c7e70feac1295959bbd3eb2873e9fd956c3e8f09a175a4cf",
+        "blocks.1.16.norm1.weight": "6279476309744fe1547598f100b86e380bed69025f1d883d1662dd441365f097",
+        "blocks.1.2.norm.bias": "87e0a7dac3df5941ad80219bb3331e6aae9e897f65a24842ca852645a7d6c40e",
+        "blocks.1.2.norm.weight": "4383c47856af2f4ca0f24d3200cc1d4209841f13fdb5b4ae3e174a4ceb51785d",
+        "blocks.1.3.norm.bias": "4bdc98c147cdc186f6ce6763d50aaca741bfc351d9caf7ea50c20ad1f8a62bbd",
+        "blocks.1.3.norm.weight": "da674b2a4d6f0b04092e32c6f11d81c60e8413f35478226af7805a0bfefc3469",
+        "blocks.1.4.norm.bias": "1f41bdc2089fb888df552d68c580ba2cfef23fe00f8a00cab4c5b41acb1e5b60",
+        "blocks.1.4.norm.weight": "468e7b19aa0ca9494e84461ed7f3a93aeb1356010f09e2b17bb58dc0531d127d",
+        "blocks.1.5.norm.bias": "a238094fda2c2c1598b13d5d8c7509ad9591337e1bd3cc8a60070653acf47cfa",
+        "blocks.1.5.norm.weight": "263add9bd76992ed4d73cbe7ae44e4ab278e7c8729bc32b4559cd0cb28e65400",
+        "blocks.1.6.norm.bias": "3ce418ed736ebe4680b8ccbea8130681a10fe1b30c93dea2a755ab776129ed40",
+        "blocks.1.6.norm.weight": "611f5f76faff453d87ebea939535e6343bb05f0f657bd64ea9affbb2b6ba84e2",
+        "blocks.1.7.norm.bias": "bf9992ba384117dc1b00b7656863722ff2992698f6451ce103cf7aa2cb37b432",
+        "blocks.1.7.norm.weight": "3ee36f4a8d59faa0a8423c0ebda04fadc5b7e9491b55d38295630b61814ec87c",
+        "blocks.1.8.norm.bias": "1bd3af34a9f3e4c4bc4881e50784a6a9899e6e7c6bbe7a2ef4ad6dbb81b693aa",
+        "blocks.1.8.norm.weight": "b643b9fedc870a63dd888bbee974fabd0f74e8a851603f03f83e4c9776ae8498",
+        "blocks.1.9.norm.bias": "006c4bc5d779229f2376f11fb7452cab3ac3154583d755310ee4270ffa88044c",
+        "blocks.1.9.norm.weight": "f12df519254ef5fcc9c85838a67782a1ee4480a8bcd86c2af15be3a871731061",
+        "blocks.2.0.norm.bias": "bbd08b2317540879b6b1df5b734a079624c4ca72a6a1785871eafd04f924ceba",
+        "blocks.2.0.norm.weight": "c00468d5ac4cd2dc113ee0237c6b2242a0b6955abb45c1a944835d1f4dea396d",
+        "blocks.2.1.norm.bias": "c25fd3fecb635570da68bfcc541e55d5c1e6ea5fefef3fcf0ebce904a7174206",
+        "blocks.2.1.norm.weight": "f6aafcff8fc6e098c4d13e57fb681797faeb616430302eb24c303052f167a675",
+        "blocks.2.2.norm.bias": "4a496e8d0b9df795f71c335ea58632b79d0974f0ba5e23bf04a14da9be748d0d",
+        "blocks.2.2.norm.weight": "3b1d7ac71cceeaa3d43aa0080c2d8d7f020f8ce60204bec3d453d58b9506fcb9",
+        "blocks.2.3.norm.bias": "b8355d204917ab952db5fd47285be82882abc08748a774e1961a428b740acb17",
+        "blocks.2.3.norm.weight": "33d9ac012fdb93aad212ac7e31931aff5e0855df7bf678578229686e56c495cf",
+        "blocks.2.4.norm.bias": "34788da9b7baa761542cbc179ff5ee8d7a8d6285571a3d2c4673a31f0e6e3766",
+        "blocks.2.4.norm.weight": "7c20f8c4300b97e880d4493792f5996290c9fcc17e28ad3043eaff47bd3e1ffd",
+        "blocks.2.5.norm.bias": "c9a537481f30f0364e95172c33f3ecb13909d36e823bc739775f3c538cd20fcb",
+        "blocks.2.5.norm.weight": "ecf6e221f8c5a0c7e07095272964a4ffafa84491788b155b4709deb8f19d1333",
+        "blocks.2.6.norm.bias": "b8531242ff269ce7c1334eed78fa18c147e798caacfb0168f6feebc39145e44b",
+        "blocks.2.6.norm.weight": "a3e77b4316e239a0789807cc76488c40a5157ab834164cd97526aebf86847435",
+        "blocks.2.7.norm.bias": "4e0282926538bffc83bed079ee03f5e27f97abc62d2fb1e1c535092c5c48bf28",
+        "blocks.2.7.norm.weight": "a1a9952550b04316d8259bbc15a9ac39ea22372f7b9801b66ae7b2274977ee89",
+        "blocks.2.8.norm1.bias": "e8e91cea08e34c3c7cbedabda23e1d6ad43501c7533d9cad553aef1766930d90",
+        "blocks.2.8.norm1.weight": "d7367db1a97558cf5c86c0dad94fe840f09a6efb1ee1dd048d0cd046dd162060",
+        "blocks.3.0.norm.bias": "a31ceb8b3e11c84b12a1b3aa1fef4f8c10ec32848d46dc961ab14ddf63deaa27",
+        "blocks.3.0.norm.weight": "f4241bea93d3cb83578388b57030460356247cdb43c362de64d4cd90cdc035c0",
+        "blocks.3.1.norm.bias": "4fecfbaddcf873ca79272ab0c19b051f5ab70a3e1ba6799f6e3c7252b910abea",
+        "blocks.3.1.norm.weight": "8187618b381a6c622024c30ac8eec5d13fdb9968fe7b8225d5ebd9b0834af6fa",
+        "blocks.3.2.norm.bias": "641dfd74161fb980b95ae3994d7dfdaecb7ffe8893238290f54d149d4f366f27",
+        "blocks.3.2.norm.weight": "35ff0c87c9d79e46f3b8e67a892b28e9e94dad1cd89cfa12b618f2a0f90bcaff",
+        "blocks.3.3.norm.bias": "45cfe9226d386d17a017863ccd98633c8bd193ce6a801a14ac75c50e96cc117f",
+        "blocks.3.3.norm.weight": "4e592049ea5b2376d38d915c4b367b846af201a9463778c4b6c8e0d14d657d3a",
+        "blocks.3.4.norm1.bias": "d1d449e0a1ea01006ee6eed5d4f72163ab7e6e4d95eaf03f1b22c6a4a7338915",
+        "blocks.3.4.norm1.weight": "f6b79dfd51e54272722f215c9fae665d66233156fd920c130b6dd78c4629fde4",
+        "from_latent.bias": "586ce1d5248c7cd97c55d8ea3cdffc10b0d9468001274b83fc6e968ede6e5346",
+        "from_latent.weight": "de306904e82a807566d1c41a8afe2d09d0401f563cbcacb960af354f49e35375",
+        "output_layer.bias": "2807b374c4d06302ce6afd808a786fdf1424ef5f076b7f5ced2cfee1e673ea22",
+        "output_layer.weight": "656dbe27957efe4feceb08781cc9c7da51f8300217af2804d2fe990c95587acf"
+      },
+      "dtype_counts": {
+        "F16": 216,
+        "F32": 76
+      },
+      "original_checkpoint_dtype": "F16"
+    },
+    "decoder_source_path": "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sc_vaes/sparse_unet_vae.py",
+    "cpu_memory_loaded": {
+      "VmHWM_bytes": 2786836480,
+      "VmRSS_bytes": 1847238656,
+      "ru_maxrss_bytes": 2786836480
+    },
+    "decoder_cpu_seconds": 10.899178712000001,
+    "cpu_max_rss_bytes": 2786836480,
+    "runtime_dtype_changes": {
+      "blocks.0.0.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.0.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.0.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.0.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.0.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.0.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.1.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.1.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.1.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.1.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.1.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.1.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.2.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.2.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.2.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.2.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.2.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.2.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.3.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.3.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.3.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.3.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.3.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.3.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.4.conv1.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.4.conv1.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.4.conv2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.4.conv2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.4.to_subdiv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.0.4.to_subdiv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.0.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.0.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.0.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.0.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.0.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.0.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.1.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.1.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.1.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.1.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.1.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.1.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.2.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.2.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.2.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.2.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.2.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.2.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.3.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.3.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.3.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.3.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.3.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.3.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.4.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.4.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.4.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.4.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.4.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.4.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.5.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.5.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.5.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.5.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.5.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.5.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.6.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.6.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.6.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.6.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.6.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.6.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.7.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.7.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.7.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.7.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.7.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.7.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.8.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.8.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.8.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.8.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.8.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.8.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.9.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.9.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.9.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.9.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.9.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.9.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.10.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.10.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.10.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.10.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.10.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.10.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.11.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.11.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.11.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.11.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.11.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.11.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.12.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.12.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.12.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.12.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.12.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.12.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.13.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.13.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.13.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.13.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.13.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.13.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.14.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.14.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.14.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.14.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.14.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.14.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.15.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.15.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.15.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.15.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.15.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.15.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.16.conv1.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.16.conv1.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.16.conv2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.16.conv2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.16.to_subdiv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.1.16.to_subdiv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.0.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.0.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.0.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.0.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.0.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.0.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.1.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.1.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.1.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.1.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.1.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.1.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.2.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.2.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.2.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.2.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.2.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.2.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.3.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.3.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.3.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.3.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.3.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.3.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.4.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.4.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.4.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.4.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.4.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.4.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.5.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.5.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.5.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.5.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.5.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.5.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.6.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.6.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.6.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.6.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.6.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.6.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.7.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.7.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.7.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.7.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.7.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.7.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.8.conv1.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.8.conv1.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.8.conv2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.8.conv2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.8.to_subdiv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.2.8.to_subdiv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.0.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.0.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.0.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.0.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.0.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.0.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.1.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.1.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.1.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.1.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.1.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.1.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.2.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.2.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.2.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.2.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.2.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.2.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.3.conv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.3.conv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.3.mlp.0.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.3.mlp.0.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.3.mlp.2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.3.mlp.2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.4.conv1.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.4.conv1.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.4.conv2.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.4.conv2.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.4.to_subdiv.weight": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      },
+      "blocks.3.4.to_subdiv.bias": {
+        "from": "torch.float16",
+        "via": "torch.float32",
+        "to": "torch.bfloat16",
+        "rounding": "BF16 rounding; checkpoint unchanged"
+      }
+    },
+    "runtime_dtype_counts": {
+      "BF16": 216,
+      "F32": 76
+    },
+    "last_event": "c2s-count-before-admission",
+    "neural_failure": {
+      "type": "AdmissionStop",
+      "error": "PARTIAL: C2S parent/child rows or channel widths outside admitted bounds",
+      "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-turret-fourth-child-count-evidence/neural.py\", line 130, in run_neural\n    y,subs=SparseUnetVaeDecoder.forward(model,x,guide_subs=None,return_subs=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sc_vaes/sparse_unet_vae.py\", line 676, in forward\n    h, sub = block(h)\n             ^^^^^^^^\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sc_vaes/sparse_unet_vae.py\", line 370, in forward\n    return self._forward(x, subdiv)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sc_vaes/sparse_unet_vae.py\", line 347, in _forward\n    h = self.updown(h, subdiv_binarized)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1881, in _call_impl\n    return inner()\n           ^^^^^^^\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1818, in inner\n    args_result = hook(self, args)\n                  ^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-turret-fourth-child-count-evidence/admission.py\", line 134, in <lambda>\n    self.handles.append(site[1].register_forward_pre_hook(lambda m, args, s=site: self._up_pre(s, m, args)))\n                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-turret-fourth-child-count-evidence/admission.py\", line 207, in _up_pre\n    plan = c2s_plan(n, block.out_channels*8, block.channels, children, block.out_channels)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-turret-fourth-child-count-evidence/admission.py\", line 47, in c2s_plan\n    require(0 < n <= MAX_ROWS and 0 < children <= min(8*n, MAX_ROWS)\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-turret-fourth-child-count-evidence/admission.py\", line 22, in require\n    raise AdmissionStop('PARTIAL: ' + reason)\nadmission.AdmissionStop: PARTIAL: C2S parent/child rows or channel widths outside admitted bounds\n"
+    },
+    "convolutions_completed": 39,
+    "subdivision_operations": [
+      {
+        "site": "blocks.0.4.updown",
+        "call": 1,
+        "parents": 3743,
+        "children": 17015,
+        "memory": {
+          "free_bytes": 12955389952,
+          "total_bytes": 16974905344,
+          "allocated_bytes": 1094790656,
+          "reserved_bytes": 1528823808
+        }
+      },
+      {
+        "site": "blocks.0.4.updown",
+        "call": 2,
+        "parents": 3743,
+        "children": 17015,
+        "memory": {
+          "free_bytes": 12955389952,
+          "total_bytes": 16974905344,
+          "allocated_bytes": 1068756480,
+          "reserved_bytes": 1528823808
+        }
+      },
+      {
+        "site": "blocks.1.16.updown",
+        "call": 1,
+        "parents": 17015,
+        "children": 79169,
+        "memory": {
+          "free_bytes": 12537921536,
+          "total_bytes": 16974905344,
+          "allocated_bytes": 1170204160,
+          "reserved_bytes": 1944059904
+        }
+      },
+      {
+        "site": "blocks.1.16.updown",
+        "call": 2,
+        "parents": 17015,
+        "children": 79169,
+        "memory": {
+          "free_bytes": 12537921536,
+          "total_bytes": 16974905344,
+          "allocated_bytes": 1112654336,
+          "reserved_bytes": 1944059904
+        }
+      },
+      {
+        "site": "blocks.2.8.updown",
+        "call": 1,
+        "parents": 79169,
+        "children": 378891,
+        "memory": {
+          "free_bytes": 11415912448,
+          "total_bytes": 16974905344,
+          "allocated_bytes": 1358907392,
+          "reserved_bytes": 3063939072
+        }
+      },
+      {
+        "site": "blocks.2.8.updown",
+        "call": 2,
+        "parents": 79169,
+        "children": 378891,
+        "memory": {
+          "free_bytes": 11415912448,
+          "total_bytes": 16974905344,
+          "allocated_bytes": 1227081216,
+          "reserved_bytes": 3063939072
+        }
+      }
+    ],
+    "native_map_calls": 4,
+    "GPU_input_output_tensors_collected": true,
+    "error_type": "AdmissionStop",
+    "error": "PARTIAL: C2S parent/child rows or channel widths outside admitted bounds",
+    "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-turret-fourth-child-count-evidence/decode.py\", line 350, in worker\n    run_neural(model,torch,cuda,record,output,gpu_started)\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-turret-fourth-child-count-evidence/neural.py\", line 171, in run_neural\n    if failure:raise failure[0](failure[1])\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nadmission.AdmissionStop: PARTIAL: C2S parent/child rows or channel widths outside admitted bounds\n",
+    "CPU_model_collected": true,
+    "CPU_parameters_collected": true,
+    "CPU_component_collected": true,
+    "policy_final": {
+      "phase": "cpu_meta",
+      "blocked": {},
+      "tensor_operations_allowed": 9612,
+      "native_calls": 0,
+      "rejected_calls": 0
+    },
+    "workspace_clear_calls": 1,
+    "memory_release": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "memory_peak": {
+      "allocated": 5588655616,
+      "reserved": 7291797504
+    },
+    "device_memory_after_release": {
+      "free_bytes": 14476099584,
+      "total_bytes": 16974905344
+    },
+    "elapsed_seconds": 30.982340813999997,
+    "finished_utc": "2026-10-14T23:10:39.637298+00:00"
+  },
+  "elapsed_seconds": 45.655999999988126,
+  "finished_utc": "2026-10-14T23:10:41.540355+00:00"
+}
