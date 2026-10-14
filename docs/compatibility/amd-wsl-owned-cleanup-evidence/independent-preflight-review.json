@@ -1,0 +1,41 @@
+{
+  "reviewer": "owned_cleanup_security_review",
+  "reviewed_utc": "2026-10-14T16:47:37Z",
+  "decision": "GO_FOR_ONE_CPU_ACCEPTANCE",
+  "scope": "Independent static review of the surgical cleanup guard, focused tests, and bounded CPU acceptance chain. No WSL, tests, AI/native imports, or GPU work executed by this reviewer.",
+  "base_commit": "9a53e6b882818a29228f4236b9249c6fedeabf48",
+  "policy_sha256": "8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd",
+  "guest_sha256": "2bbc1d88fce880644ca73fa58bfaaad558024aad13b978ba5f66191db06a921e",
+  "focused_tests_sha256": "6ce14a951c0ff4197602235753fa2ea21af0158e0a9cfc406194d0e14f701b49",
+  "findings": [],
+  "verified_source_contracts": [
+    "Only os.remove (also emitted by os.unlink) and os.rmdir admit nondefault dir_fd; the prior _write_path and all other filesystem event routes retain their denial.",
+    "Cleanup requires exact integer nonnegative dir_fd and one nonempty relative basename; dot/dotdot, absolute names, both separators, NUL and malformed arguments are rejected.",
+    "Directory attestation uses an absolute undeleted /proc/self/fd target, strict resolution within an exact approved root, directory metadata, positive link/inode values, matching before/resolved/after identity and unchanged proc target.",
+    "The parent directory is checked rather than the child referent, so unlink can safely remove an owned symlink entry while a descriptor opened through a foreign symlink is rejected.",
+    "Tensor, native-call, Triton, network, subprocess and profile restrictions are unchanged.",
+    "The guest installs the actual policy audit and profile guards, performs real TemporaryDirectory/rmtree and owned unlink/rmdir cleanup, imports installed FileLock 4.1.1, rejects unsafe actual fd requests and checks owned and foreign sentinels.",
+    "Temporary and home paths are redirected into an exclusively created owned subtree. The guest refuses AI-library import attempts and ctypes.dlopen; dependency checks use metadata before the genuine FileLock import.",
+    "The host patches only the selected guest script, CPU attempt marker and fixed helper lookup while reusing the existing Windows Job, exact GO token, passive health observers, guest timeout, monitored teardown and named-distro termination.",
+    "The CPU verdict requires worker CPU_PASS, clean import/cleanup evidence, healthy observer, verified unforced Job exit, empty grace and successful bounded distro teardown. It does not treat the production GPU contract as CPU acceptance."
+  ],
+  "anchored_helper_sha256": {
+    "amd_wsl_rocdxg_smoke.py": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2",
+    "amd_bounded_gpu_proof.py": "8910884b4d4bd433df654a8137586eb43711e37e97acfcf8462392ef4258dff4",
+    "amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64",
+    "amd_native_import_preflight.py": "3e66543bfdb81e5ed87d328b68729621433bf2925018e376031abb65621bbdde"
+  },
+  "recorded_evidence_read": {
+    "unit_red": "7 tests; owned cleanup failed at the prior Relative directory descriptor is not admitted rejection",
+    "unit_green": "7 focused tests recorded OK",
+    "prior_regressions": "16 existing policy tests recorded OK",
+    "preservation_before": "Windows and passive Linux records report PASS; Linux capture exit code 0"
+  },
+  "limitations": [
+    "Python audit-hook checks cannot eliminate concurrent descriptor close/reuse or directory/path mutation between final attestation and the subsequent syscall. Host containment remains required; this is bounded instrumentation rather than a complete sandbox.",
+    "On Python 3.12 a resolve symlink-loop RuntimeError remains fail-closed but may be reported as a raw error without incrementing filesystem_write. Required unresolved/closed/foreign/deleted/mismatched cases use ImportPolicyError."
+  ],
+  "GPU_authorized": false,
+  "native_import_authorized": false,
+  "acceptance_authorized_by_review": "One existing installed-WSL CPU cleanup/FileLock acceptance only; no retry, repair, native import or GPU extension."
+}

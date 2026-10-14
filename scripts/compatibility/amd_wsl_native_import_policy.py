@@ -7,6 +7,7 @@ A policy violation terminates the attempt; callers must not catch and retry.
 import importlib
 import os
 from pathlib import Path
+import stat
 import sys
 import threading
 
@@ -222,6 +223,34 @@ class ImportPolicy:
         if not any(resolved == root or resolved.is_relative_to(root) for root in self.writable_roots):
             self.reject("filesystem_write", resolved)
 
+    def _cleanup_relative_path(self, path, dir_fd):
+        """Admit only unlink/rmdir of one entry in an attested owned directory."""
+        if type(dir_fd) is not int or dir_fd < 0:
+            self.reject("filesystem_write", "Invalid cleanup directory descriptor")
+        try:
+            name = os.fsdecode(path)
+            if not name or name in (".", "..") or any(char in name for char in ("/", "\\", "\0")) or Path(name).is_absolute():
+                self.reject("filesystem_write", "Unsafe cleanup basename")
+            before = os.fstat(dir_fd)
+            link = os.readlink("/proc/self/fd/" + str(dir_fd))
+            if not Path(link).is_absolute() or link.endswith(" (deleted)"):
+                self.reject("filesystem_write", "Unresolved/deleted cleanup directory")
+            directory = Path(link).resolve(strict=True)
+            if not any(directory == root or directory.is_relative_to(root) for root in self.writable_roots):
+                self.reject("filesystem_write", "Foreign cleanup directory")
+            resolved_stat = directory.stat()
+            after = os.fstat(dir_fd)
+            identity = lambda value: (value.st_dev, value.st_ino, value.st_mode, value.st_uid, value.st_gid)
+            if (any(not stat.S_ISDIR(value.st_mode) or value.st_nlink <= 0 or value.st_ino <= 0
+                    for value in (before, resolved_stat, after))
+                    or identity(before) != identity(resolved_stat) or identity(before) != identity(after)
+                    or os.readlink("/proc/self/fd/" + str(dir_fd)) != link):
+                self.reject("filesystem_write", "Inconsistent cleanup directory identity")
+            # unlink/rmdir acts on this directory entry, not a symlink's referent.
+            # Audit-hook checks attest current identity; they are not syscall interposition.
+        except (OSError, TypeError, ValueError) as exc:
+            self.reject("filesystem_write", "Cannot attest cleanup directory: " + str(exc))
+
     def audit(self, event, args):
         if event.startswith("subprocess.") or event in ("os.system", "os.exec", "os.spawn", "os.posix_spawn", "os.posix_spawnp", "os.fork", "os.forkpty", "pty.spawn"):
             self.reject("process_execution", event)
@@ -232,7 +261,15 @@ class ImportPolicy:
             write_flags = os.O_WRONLY | os.O_RDWR | os.O_CREAT | os.O_TRUNC | os.O_APPEND
             if (isinstance(mode, str) and any(char in mode for char in "wax+")) or (flags and flags & write_flags):
                 self._write_path(path)
-        elif event in ("os.remove", "os.rmdir", "os.mkdir", "os.chmod", "os.chown", "os.utime"):
+        elif event in ("os.remove", "os.rmdir"):
+            if len(args) != 2 or (args[1] is not None and type(args[1]) is not int):
+                self.reject("filesystem_write", "Malformed cleanup audit arguments")
+            path, dir_fd = args
+            if dir_fd in (None, -1):
+                self._write_path(path)
+            else:
+                self._cleanup_relative_path(path, dir_fd)
+        elif event in ("os.mkdir", "os.chmod", "os.chown", "os.utime"):
             # CPython supplies dir_fd last; chmod/chown/utime may also include
             # additional scalar arguments. Reject relative dir_fd explicitly.
             dir_fd = args[-1] if len(args) > 1 and isinstance(args[-1], int) else None

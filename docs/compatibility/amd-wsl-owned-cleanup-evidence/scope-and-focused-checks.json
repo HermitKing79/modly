@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "existing_methods_changed": [
+    "audit"
+  ],
+  "added_methods": [
+    "_cleanup_relative_path"
+  ],
+  "_write_path_unchanged": true,
+  "all_other_existing_methods_AST_unchanged": true,
+  "policy_sha256": "8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd",
+  "new_focused_tests": 7,
+  "existing_regressions": 16,
+  "red_before_correction": "Expected owned cleanup rejected by original policy",
+  "GPU_or_native_execution": false
+}

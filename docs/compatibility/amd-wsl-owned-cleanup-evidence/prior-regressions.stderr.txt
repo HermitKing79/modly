@@ -1,0 +1,21 @@
+test_active_device_context_stack_overrides_stale_current_device_before_factory (__main__.PolicyContracts.test_active_device_context_stack_overrides_stale_current_device_before_factory) ... ok
+test_all_native_bindings_are_refused_as_c_calls (__main__.PolicyContracts.test_all_native_bindings_are_refused_as_c_calls) ... ok
+test_audit_allows_only_owned_scratch_and_exact_extra_root (__main__.PolicyContracts.test_audit_allows_only_owned_scratch_and_exact_extra_root) ... ok
+test_audit_blocks_process_network_and_external_writes (__main__.PolicyContracts.test_audit_blocks_process_network_and_external_writes) ... ok
+test_cpu_meta_phase_allows_inputs_and_rejects_gpu_before_callback (__main__.PolicyContracts.test_cpu_meta_phase_allows_inputs_and_rejects_gpu_before_callback) ... ok
+test_factory_guards_preserve_device_context_constructor_identity (__main__.PolicyContracts.test_factory_guards_preserve_device_context_constructor_identity) ... ok
+test_frontend_device_guard_prevents_initialization_before_dispatch (__main__.PolicyContracts.test_frontend_device_guard_prevents_initialization_before_dispatch) ... ok
+test_import_phase_rejects_operation_before_callback (__main__.PolicyContracts.test_import_phase_rejects_operation_before_callback) ... ok
+test_injected_dispatch_mode_uses_live_policy_phase (__main__.PolicyContracts.test_injected_dispatch_mode_uses_live_policy_phase) ... ok
+test_installed_audit_hook_stops_real_open_and_process_before_effects (__main__.PolicyContracts.test_installed_audit_hook_stops_real_open_and_process_before_effects) ... ok
+test_positional_schema_device_is_rejected_before_callback (__main__.PolicyContracts.test_positional_schema_device_is_rejected_before_callback) ... ok
+test_profile_handles_shutdown_module_name_none (__main__.PolicyContracts.test_profile_handles_shutdown_module_name_none) ... ok
+test_profile_preserves_constructors_and_gpu_metadata_but_blocks_execution (__main__.PolicyContracts.test_profile_preserves_constructors_and_gpu_metadata_but_blocks_execution) ... ok
+test_runtime_guards_block_callbacks_and_restore_originals (__main__.PolicyContracts.test_runtime_guards_block_callbacks_and_restore_originals) ... ok
+test_runtime_guards_refuse_preexisting_driver_activation (__main__.PolicyContracts.test_runtime_guards_refuse_preexisting_driver_activation) ... ok
+test_unknown_phase_is_refused (__main__.PolicyContracts.test_unknown_phase_is_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.665s
+
+OK

@@ -1,0 +1,12 @@
+test_changed_descriptor_is_rejected (__main__.OwnedCleanup.test_changed_descriptor_is_rejected) ... ok
+test_existing_absolute_path_rules_and_other_restrictions_preserved (__main__.OwnedCleanup.test_existing_absolute_path_rules_and_other_restrictions_preserved) ... ok
+test_foreign_prefix_neighbor_deleted_and_unresolved_rejected (__main__.OwnedCleanup.test_foreign_prefix_neighbor_deleted_and_unresolved_rejected) ... ok
+test_noncleanup_fd_operations_remain_rejected (__main__.OwnedCleanup.test_noncleanup_fd_operations_remain_rejected) ... ok
+test_nondirectory_and_inconsistent_identity_rejected (__main__.OwnedCleanup.test_nondirectory_and_inconsistent_identity_rejected) ... ok
+test_owned_unlink_and_rmdir_are_admitted (__main__.OwnedCleanup.test_owned_unlink_and_rmdir_are_admitted) ... ok
+test_unsafe_names_and_descriptor_types_rejected (__main__.OwnedCleanup.test_unsafe_names_and_descriptor_types_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.057s
+
+OK
