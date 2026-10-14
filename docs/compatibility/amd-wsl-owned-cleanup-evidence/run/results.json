@@ -1,0 +1,683 @@
+{
+  "classification": "UNKNOWN",
+  "distro": "Modly-AMD-Ubuntu-24.04",
+  "started_utc": "2026-10-14T16:50:06.045951+00:00",
+  "script_sha256": "2bbc1d88fce880644ca73fa58bfaaad558024aad13b978ba5f66191db06a921e",
+  "containment_scope": "Windows Job: wsl.exe client; Linux: guest timeout and named-distro termination",
+  "observation_before": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":71,\"RecordId\":12886,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1791996363237)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 0.406,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 71,
+          "RecordId": 12886,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1791996363237)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "worker_command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/env",
+    "HSA_ENABLE_DXG_DETECTION=1",
+    "LD_LIBRARY_PATH=/opt/rocm-7.2.1/lib:/opt/rocm/lib:/usr/lib/wsl/lib",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "90s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-owned-cleanup-evidence/acceptance.py",
+    "--worker",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-owned-cleanup-evidence/run/guest"
+  ],
+  "observation_after_attachment": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":12894,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1791996612583)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 0.406,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 291,
+          "RecordId": 12894,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1791996612583)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "worker_returncode": 0,
+  "windows_job_grace": {
+    "empty": true,
+    "seconds": 0.0,
+    "limit_seconds": 5.0
+  },
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "distro_termination": {
+    "command": [
+      "wsl.exe",
+      "--terminate",
+      "Modly-AMD-Ubuntu-24.04"
+    ],
+    "returncode": 0,
+    "stdout": "T\u0000h\u0000e\u0000 \u0000o\u0000p\u0000e\u0000r\u0000a\u0000t\u0000i\u0000o\u0000n\u0000 \u0000c\u0000o\u0000m\u0000p\u0000l\u0000e\u0000t\u0000e\u0000d\u0000 \u0000s\u0000u\u0000c\u0000c\u0000e\u0000s\u0000s\u0000f\u0000u\u0000l\u0000l\u0000y\u0000.\u0000 \u0000\r\u0000\n\u0000",
+    "stderr": ""
+  },
+  "observation_after_exit": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":12894,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1791996612583)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 0.421,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 291,
+          "RecordId": 12894,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1791996612583)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "observations": [
+    {
+      "started_monotonic": 58627.718,
+      "ended_monotonic": 58628.546,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":71,\"RecordId\":12886,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1791996363237)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.812,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 71,
+              "RecordId": 12886,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1791996363237)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 58632.734,
+      "ended_monotonic": 58633.14,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":71,\"RecordId\":12886,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1791996363237)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.406,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 71,
+              "RecordId": 12886,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1791996363237)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 58637.75,
+      "ended_monotonic": 58638.156,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":12894,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1791996612583)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.406,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 12894,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1791996612583)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 58642.75,
+      "ended_monotonic": 58643.171,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":12894,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1791996612583)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.421,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 12894,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1791996612583)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    }
+  ],
+  "observer_healthy": true,
+  "worker": {
+    "classification": "CPU_PASS",
+    "checks": [
+      {
+        "name": "actual-TemporaryDirectory-nested-cleanup",
+        "outcome": "accepted"
+      },
+      {
+        "name": "actual-shutil-rmtree",
+        "outcome": "accepted"
+      },
+      {
+        "name": "owned-fd-unlink",
+        "outcome": "accepted"
+      },
+      {
+        "name": "owned-fd-rmdir",
+        "outcome": "accepted"
+      },
+      {
+        "name": "foreign-directory",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Foreign cleanup directory"
+      },
+      {
+        "name": "symlink-escaped-directory",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Foreign cleanup directory"
+      },
+      {
+        "name": "nondirectory-fd",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Inconsistent cleanup directory identity"
+      },
+      {
+        "name": "unsafe-basename:''",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Unsafe cleanup basename"
+      },
+      {
+        "name": "unsafe-basename:'.'",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Unsafe cleanup basename"
+      },
+      {
+        "name": "unsafe-basename:'..'",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Unsafe cleanup basename"
+      },
+      {
+        "name": "unsafe-basename:'../foreign/sentinel'",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Unsafe cleanup basename"
+      },
+      {
+        "name": "unsafe-basename:'tmp/escape'",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Unsafe cleanup basename"
+      },
+      {
+        "name": "unsafe-basename:'a\\\\b'",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Unsafe cleanup basename"
+      },
+      {
+        "name": "unsafe-basename:'/home/modly/owned-cleanup-9a53e6b/foreign/sentinel'",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Unsafe cleanup basename"
+      },
+      {
+        "name": "deleted-directory",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Unresolved/deleted cleanup directory"
+      },
+      {
+        "name": "closed-directory-fd",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Cannot attest cleanup directory: [Errno 9] Bad file descriptor"
+      },
+      {
+        "name": "negative-directory-fd",
+        "outcome": "rejected_before_operation",
+        "error": "filesystem_write: Invalid cleanup directory descriptor"
+      },
+      {
+        "name": "genuine-FileLock-4.1.1-import",
+        "outcome": "accepted"
+      },
+      {
+        "name": "owned-symlink-entry-unlink",
+        "outcome": "accepted"
+      }
+    ],
+    "forbidden_import_attempts": [],
+    "native_imports": false,
+    "GPU_actions": false,
+    "started_utc": "2026-10-14T16:50:16.553765+00:00",
+    "authorization_accepted": true,
+    "installed_versions": {
+      "torch": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+      "triton": "3.5.1+rocm7.2.1.gita272dfa8",
+      "filelock": "4.1.1"
+    },
+    "python": "3.12.3",
+    "filelock_path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/filelock/__init__.py",
+    "filelock_sha256": "0df52016bcc268e823809b963b568d17a3cb6ece51727530b9121fef459a0169",
+    "filelock_strict_path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/filelock/_strict.py",
+    "filelock_strict_sha256": "28799c08bff96b810dc810601d6f046b8875e19b21986d5dc86177a4a0331403",
+    "temporary_files_cleaned": true,
+    "foreign_sentinel_unchanged": true,
+    "cleanup_events": [
+      {
+        "event": "os.remove",
+        "args": "('link', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed/tmp/tmphqf3evr5",
+          "device": 2096,
+          "inode": 91374,
+          "mode": 16832,
+          "nlink": 3
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('file', 4)",
+        "directory": {
+          "fd": 4,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed/tmp/tmphqf3evr5/nested",
+          "device": 2096,
+          "inode": 91375,
+          "mode": 16877,
+          "nlink": 2
+        }
+      },
+      {
+        "event": "os.rmdir",
+        "args": "('nested', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed/tmp/tmphqf3evr5",
+          "device": 2096,
+          "inode": 91374,
+          "mode": 16832,
+          "nlink": 3
+        }
+      },
+      {
+        "event": "os.rmdir",
+        "args": "('/home/modly/owned-cleanup-9a53e6b/allowed/tmp/tmphqf3evr5', -1)"
+      },
+      {
+        "event": "os.remove",
+        "args": "('file', 4)",
+        "directory": {
+          "fd": 4,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed/rmtree/sub",
+          "device": 2096,
+          "inode": 91375,
+          "mode": 16877,
+          "nlink": 2
+        }
+      },
+      {
+        "event": "os.rmdir",
+        "args": "('sub', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed/rmtree",
+          "device": 2096,
+          "inode": 91374,
+          "mode": 16877,
+          "nlink": 3
+        }
+      },
+      {
+        "event": "os.rmdir",
+        "args": "('/home/modly/owned-cleanup-9a53e6b/allowed/rmtree', -1)"
+      },
+      {
+        "event": "os.remove",
+        "args": "('file', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed",
+          "device": 2096,
+          "inode": 91367,
+          "mode": 16877,
+          "nlink": 5
+        }
+      },
+      {
+        "event": "os.rmdir",
+        "args": "('empty', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed",
+          "device": 2096,
+          "inode": 91367,
+          "mode": 16877,
+          "nlink": 5
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('sentinel', 4)",
+        "directory": {
+          "fd": 4,
+          "path": "/home/modly/owned-cleanup-9a53e6b/foreign",
+          "device": 2096,
+          "inode": 91368,
+          "mode": 16877,
+          "nlink": 2
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('sentinel', 5)",
+        "directory": {
+          "fd": 5,
+          "path": "/home/modly/owned-cleanup-9a53e6b/foreign",
+          "device": 2096,
+          "inode": 91368,
+          "mode": 16877,
+          "nlink": 2
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('marker', 6)",
+        "directory": {
+          "fd": 6,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed/marker",
+          "device": 2096,
+          "inode": 91372,
+          "mode": 33188,
+          "nlink": 1
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed",
+          "device": 2096,
+          "inode": 91367,
+          "mode": 16877,
+          "nlink": 4
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('.', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed",
+          "device": 2096,
+          "inode": 91367,
+          "mode": 16877,
+          "nlink": 4
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('..', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed",
+          "device": 2096,
+          "inode": 91367,
+          "mode": 16877,
+          "nlink": 4
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('../foreign/sentinel', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed",
+          "device": 2096,
+          "inode": 91367,
+          "mode": 16877,
+          "nlink": 4
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('tmp/escape', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed",
+          "device": 2096,
+          "inode": 91367,
+          "mode": 16877,
+          "nlink": 4
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('a\\\\b', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed",
+          "device": 2096,
+          "inode": 91367,
+          "mode": 16877,
+          "nlink": 4
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('/home/modly/owned-cleanup-9a53e6b/foreign/sentinel', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed",
+          "device": 2096,
+          "inode": 91367,
+          "mode": 16877,
+          "nlink": 4
+        }
+      },
+      {
+        "event": "os.rmdir",
+        "args": "('/home/modly/owned-cleanup-9a53e6b/allowed/deleted', -1)"
+      },
+      {
+        "event": "os.remove",
+        "args": "('entry', 7)",
+        "directory": {
+          "fd": 7,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed/deleted (deleted)",
+          "device": 2096,
+          "inode": 91374,
+          "mode": 16877,
+          "nlink": 0
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('marker', 8)",
+        "descriptor_error": "[Errno 9] Bad file descriptor"
+      },
+      {
+        "event": "os.remove",
+        "args": "('marker', -2)"
+      },
+      {
+        "event": "os.remove",
+        "args": "('probe-link', 8)",
+        "directory": {
+          "fd": 8,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed/tmp/tmpd3s3w91v",
+          "device": 2096,
+          "inode": 91375,
+          "mode": 16832,
+          "nlink": 2
+        }
+      },
+      {
+        "event": "os.remove",
+        "args": "('probe-source', 8)",
+        "directory": {
+          "fd": 8,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed/tmp/tmpd3s3w91v",
+          "device": 2096,
+          "inode": 91375,
+          "mode": 16832,
+          "nlink": 2
+        }
+      },
+      {
+        "event": "os.rmdir",
+        "args": "('/home/modly/owned-cleanup-9a53e6b/allowed/tmp/tmpd3s3w91v', -1)"
+      },
+      {
+        "event": "os.remove",
+        "args": "('foreign-link', 3)",
+        "directory": {
+          "fd": 3,
+          "path": "/home/modly/owned-cleanup-9a53e6b/allowed",
+          "device": 2096,
+          "inode": 91367,
+          "mode": 16877,
+          "nlink": 4
+        }
+      }
+    ],
+    "policy": {
+      "phase": "native_import",
+      "blocked": {
+        "filesystem_write": 13
+      },
+      "tensor_operations_allowed": 0,
+      "native_calls": 0,
+      "rejected_calls": 13
+    },
+    "forbidden_modules": [],
+    "finished_utc": "2026-10-14T16:50:18.164470+00:00"
+  },
+  "elapsed_seconds": 15.5,
+  "finished_utc": "2026-10-14T16:50:21.533334+00:00"
+}

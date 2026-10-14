@@ -1,0 +1,20 @@
+{
+  "reviewer": "owned_cleanup_security_review",
+  "reviewed_utc": "2026-10-14T16:57:15Z",
+  "decision": "READY_FOR_PUBLICATION",
+  "report": "docs/compatibility/amd-wsl-owned-cleanup.md",
+  "report_sha256": "beeda9311efe7002d8871f3c9812cecbed09159f40250cd3e62ff58c9d1cc329",
+  "findings": [],
+  "method": "Read-only final report/source/evidence review and file hash/link checks. No tests, WSL acceptance, native imports or GPU work executed.",
+  "verified_claims": [
+    "The surgical remove/rmdir descriptor carveout and unchanged remaining policy boundaries are described accurately; saved scope evidence and the 38-addition/1-change diff agree.",
+    "23 recorded host tests, one installed acceptance with 19 checks (6 accepted/13 rejected), 27 actual cleanup audit attempts, genuine FileLock import and sentinel/temporary cleanup postconditions agree with the saved evidence.",
+    "Guest/outer exits, 15.500/15.783 second durations, four healthy observations, naturally empty unforced Job and successful named-distro stop agree with the saved evidence.",
+    "The raw GPU supervisor UNKNOWN/exit 1 remains distinct from the separate CPU PASS; no GPU memory query or fresh AI/native import is claimed.",
+    "Windows and Linux after records report PASS; the Windows checkpoint check remains metadata/header only and Linux verifies 922 staged payloads.",
+    "All 133 historical evidence files, four unchanged controls and four preserved bytecode files independently hash-match the saved baseline; all report links resolve.",
+    "Residual concurrent descriptor/path mutation, raw resolve-loop error and denied permission-repair limits remain explicit. Fresh FlexGEMM native import requires separate approval; native loadability and all 18 bindings remain unproved."
+  ],
+  "GPU_authorized": false,
+  "native_import_authorized": false
+}

@@ -1,0 +1,36 @@
+{
+  "reviewer": "owned_cleanup_security_review",
+  "reviewed_utc": "2026-10-14T16:52:34Z",
+  "decision": "PASS_CPU_OWNED_CLEANUP_ACCEPTANCE",
+  "method": "Read-only review of saved results, cleanup metadata, phase journals, verdict, execution capture and frozen source. No acceptance, tests, WSL, native imports or GPU work rerun by this reviewer.",
+  "findings": [],
+  "execution_commit": "289c58c11bcefc7cc5db6af8d105bc7852631f4a",
+  "policy_sha256": "8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd",
+  "guest_sha256": "2bbc1d88fce880644ca73fa58bfaaad558024aad13b978ba5f66191db06a921e",
+  "checks": {"total": 19, "accepted": 6, "rejected_before_operation": 13},
+  "actual_cleanup_audit_attempts": 27,
+  "reproducer_and_FileLock": "Real TemporaryDirectory and shutil.rmtree completed beneath the approved scratch subtree. The genuine installed FileLock 4.1.1 import completed; its probe-link/probe-source cleanup used live directory fd 8 beneath allowed/tmp, device 2096, inode 91375, directory mode 16832 and nlink 2, followed by owned top-directory removal. The prior FileLock TemporaryDirectory cleanup rejection is reproduced and corrected without importing FlexGEMM.",
+  "negative_descriptor_evidence": "Foreign fd 4 and symlink-escaped fd 5 both resolved to foreign inode 91368 and were denied. The nondirectory fd had regular-file mode 33188; the deleted directory showed a deleted proc suffix and nlink 0; the closed fd showed EBADF. Unsafe basenames and negative fd were also denied by the production hook.",
+  "policy_result": {"phase": "native_import", "filesystem_write_rejections": 13, "total_rejected_calls": 13, "native_calls": 0, "tensor_operations_allowed": 0},
+  "postconditions": {"temporary_files_cleaned": true, "foreign_sentinel_unchanged": true, "forbidden_import_attempts": [], "forbidden_modules": [], "raw_worker_matches_guest_result": true},
+  "write_scope_review": "Frozen source isolates fixture setup inside the exclusively created proof scratch tree and enables the policy for all acceptance checks, allowing only its owned subtree and guest evidence directory. No unexpected policy rejection or unapproved write is evidenced; retained marker and foreign sentinel postconditions passed. The cleanup journal records remove/rmdir attempts, including denied requests, rather than a complete trace of every filesystem syscall.",
+  "FileLock_identity": {
+    "version": "4.1.1",
+    "init_path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/filelock/__init__.py",
+    "init_sha256": "0df52016bcc268e823809b963b568d17a3cb6ece51727530b9121fef459a0169",
+    "strict_path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/filelock/_strict.py",
+    "strict_sha256": "28799c08bff96b810dc810601d6f046b8875e19b21986d5dc86177a4a0331403"
+  },
+  "bounded_host_outcome": {"outer_exit": 0, "worker_exit": 0, "worker_classification": "CPU_PASS", "raw_GPU_contract_exit": 1, "raw_GPU_contract_classification": "UNKNOWN", "CPU_verdict": "PASS", "host_elapsed_seconds": 15.5, "healthy_observations": 4, "raw_error_fields": [], "windows_job_empty": true, "forced_job_cleanup": false, "grace_limit_seconds": 5.0, "grace_observed_empty_seconds": 0.0, "named_distro_termination_exit": 0, "installed_CPU_attempts": 1},
+  "evidence_sha256": {
+    "run/guest/results.json": "1b92d9c369e7fa2a89db8922249c50611d81ca07d9e5a3005d52cde64a0f513f",
+    "run/results.json": "5e441a0fc3bf0f7e6e684c091cd034d9cb4520ed81ad466406a47053c253b831",
+    "run/CPU-verdict.json": "877a15bf50032396d4f0f0c090b9e59cfa0c9e7849d0618d564b421c2d6a9ee6",
+    "run/guest/phases.jsonl": "9ec7833c5f5656a35313ac5c90be547c61aa4c15a0fec3867639a478f7193737",
+    "run/phases.jsonl": "32b7cbb50e547f75b8cca2444f782b63ed4da267070916ac5ff0f530b4710240",
+    "host-capture.json": "3256f993cd756cd60aa8b41e3a8b3f714fede2f986aa6215a628c8759d629ab1"
+  },
+  "limits": "This establishes the bounded CPU cleanup/FileLock acceptance only. The audit-to-syscall concurrent descriptor/path mutation window remains; broad host/environment preservation is reviewed separately.",
+  "GPU_authorized": false,
+  "native_import_authorized": false
+}

@@ -1,0 +1,29 @@
+{
+  "classification": "PASS",
+  "host_focused_tests": 23,
+  "installed_WSL_checks": 19,
+  "accepted": 6,
+  "rejected": 13,
+  "real_cleanup_audit_attempts": 27,
+  "one_installed_acceptance": true,
+  "forbidden_import_attempts": [],
+  "native_or_GPU_library_modules": [],
+  "temporary_files_cleaned": true,
+  "foreign_sentinel_unchanged": true,
+  "guest_and_outer_exit": [
+    0,
+    0
+  ],
+  "host_seconds": 15.5,
+  "outer_seconds": 15.7833047,
+  "healthy_observations": 4,
+  "unforced_Job_release": true,
+  "Windows_and_Linux_preservation": "PASS",
+  "preserved_hash_counts": {
+    "historical_evidence": 133,
+    "unchanged_control_code": 4,
+    "preserved_bytecode": 4
+  },
+  "intentional_control_change": "amd_wsl_native_import_policy.py only",
+  "policy_sha256": "8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd"
+}
