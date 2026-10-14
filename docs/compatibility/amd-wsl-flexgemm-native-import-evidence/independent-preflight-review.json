@@ -1,0 +1,63 @@
+{
+  "reviewer": "independent /root/native_import_review",
+  "scope": "Read-only static review for exactly one contained genuine WSL FlexGEMM native import; no native binding, convolution, model or neural forward is authorized.",
+  "decision": "GO_FOR_EXACTLY_ONE_CONTAINED_IMPORT",
+  "status": "PASS",
+  "candidate_sha256": "c8a05f8a2121f2a527a6a9871d8a51b6d11b897228da57930ea01443577d04ae",
+  "passive_linux_sha256": "bbe8386cae24f70f122a61e21f1389dba27596b4eb48361292fb4abb70066fa6",
+  "reviewed_unchanged_controls": {
+    "amd_bounded_gpu_proof.py": "8910884b4d4bd433df654a8137586eb43711e37e97acfcf8462392ef4258dff4",
+    "amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64",
+    "amd_wsl_rocdxg_smoke.py": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2",
+    "amd_wsl_native_import_policy.py": "8292bd7dae51a724aa3a15d5e346b4fe1be8e372adb18f87b58df5a1fdf88058"
+  },
+  "before_evidence_sha256": {
+    "linux-preservation-before.json": "89293eeca85af9f162240dd5fb52826b19e2a0d2476bf7931432655ab50acc47",
+    "windows-preservation-before.json": "d94c17c1edc06ebea18228fd43d8b4b454142da974f5a63b709fa043ab1ee283"
+  },
+  "exclusive_attempt_marker_absent": true,
+  "run_directory_absent": true,
+  "static_native_artifact": {
+    "wheel_sha256": "cadaa86c428a93c3aee10c4dd8dfb66604a424c8145670051ca0ce1a0f296285",
+    "native_sha256": "91f66fa2c0f3567cee71246257bea8eb0fe5af9b6c70617d3c5894aa9f103f01",
+    "hashes_match_static_acceptance": true,
+    "wheel_python_members_ast_parsed": 33,
+    "binding_registration_count": 18,
+    "binding_names_equal_acceptance_and_policy": true,
+    "binding_registration_source": "flex_gemm/kernels/hip/ext.cpp: PYBIND11_MODULE consists of 18 m.def registrations; no binding invocation."
+  },
+  "import_graph_findings": [
+    "flex_gemm imports kernels, ops and utils. kernels imports Triton modules before loading the genuine native cuda module; the later from-import retrieves the already imported module.",
+    "spconv/config.py selects configuration using torch.cuda.get_device_name(), torch.cuda.is_available() and torch.version.hip. These metadata/HIP initialization calls are within the authorized contained worker.",
+    "Import decorators create Config/JIT/autotuner/heuristic wrappers and torch.no_grad decoration; no tensor computation, kernel launch or native binding call occurs at inspected package module/class scope.",
+    "FLEX_GEMM_USE_AUTOTUNE_CACHE=0 and FLEX_GEMM_AUTOSAVE_AUTOTUNE_CACHE=0 precede import, so no persistent autotune cache loading or saving is admitted.",
+    "filelock may perform import-time temporary filesystem probes; TMPDIR is redirected to the unique scratch tree before Torch/Triton/FlexGEMM imports."
+  ],
+  "candidate_controls": [
+    "Host static preflight requires Linux and Windows preservation PASS, pins helpers to scripts/compatibility by resolved path and expected SHA, checks unchanged policy and genuine wheel, and refuses an existing attempt marker or run directory.",
+    "The unchanged supervisor attaches the wsl.exe client to its owned Windows Job and requires healthy observations before launch and after attachment before writing the exact GO token. AI imports remain inside the guest after GO.",
+    "Native-import phase remains fixed. Existing frontend and dispatch guards reject tensor operations; profile guards reject native bindings, forwards and autotuner execution; runtime guards reject compilation, helper build, driver activation and JIT/autotuner run/warmup; audit guards reject Python process/network activity and writes outside owned roots.",
+    "Guest admits exactly one RX 9070 XT / gfx1201 device with at least 13 GiB free, sets the 12 GiB Torch allocator cap, checks zero initial/peak/released Torch allocated and reserved bytes, and verifies inactive Triton helpers after import.",
+    "Boundaries remain 60 seconds from GO, 90-second guest timeout plus five-second kill-after, 120-second host deadline, continuously polled Windows health observations, and explicit termination of only Modly-AMD-Ubuntu-24.04.",
+    "Loaded FlexGEMM package/native paths and native hash are verified. All 18 genuine bindings are inspected for callability without invocation. No model/checkpoint import/loading, convolution or forward path is present.",
+    "The adapter accepts only raw supervisor UNKNOWN / exit 1 and the exact expected NumericalError for the unused vector-add evidence contract, while rejecting every other raw error key and requiring successful worker, observer, natural Job drain and named-distro cleanup evidence."
+  ],
+  "expected_unused_raw_contract_error": "NumericalError: CPU result differs from the exact 256-element F32 reference",
+  "material_limitations": [
+    "Python instrumentation cannot intercept ELF/HIP registration constructors or all native runtime side effects. That opaque native load risk is explicitly accepted for this single contained attempt.",
+    "The 12 GiB cap and zero allocation evidence concern the Torch allocator; they are not a universal cap or measurement of native HIP allocations.",
+    "Windows Job owns the WSL client and its Windows descendants. Linux process containment comes separately from the guest timeout and named-distro termination.",
+    "This review establishes admission for the single attempt, not native load success, kernel correctness, model compatibility or decoder readiness."
+  ],
+  "review_actions": {
+    "stdlib_text_AST_zip_hash_reads": true,
+    "candidate_executions": 0,
+    "WSL_commands": 0,
+    "AI_native_imports": 0,
+    "GPU_actions": 0,
+    "native_binding_calls": 0,
+    "tests_run": 0,
+    "code_edits": 0,
+    "only_review_report_written": true
+  }
+}
