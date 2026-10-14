@@ -1,0 +1,172 @@
+{
+  "reviewer": "independent /root/native_resume_review",
+  "reviewed_utc": "2026-10-14T17:22:51.798981+00:00",
+  "review_status": "PASS",
+  "overall_attempt_classification": "PASS",
+  "decision": "STOP; the single fresh authorized native import is consumed. No retry or automatic decoder progression.",
+  "findings": [],
+  "attempts": 1,
+  "execution_commit": "bfbd6007b2b99a4760698266f9ce1a1b0a45cc8c",
+  "candidate_sha256": "4dacdfdd348438078561fd92999d1db58a8ca6495d8f115c8812ee1ce63eb15a",
+  "method": "Read-only comparison of frozen source, actual guest/raw supervisor records, durable journals, attempt marker, native verdict and host capture. Only this review report was written.",
+  "native_result": {
+    "package_path": "/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/__init__.py",
+    "native_path": "/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/kernels/cuda.cpython-312-x86_64-linux-gnu.so",
+    "native_sha256": "91f66fa2c0f3567cee71246257bea8eb0fe5af9b6c70617d3c5894aa9f103f01",
+    "wheel_sha256": "cadaa86c428a93c3aee10c4dd8dfb66604a424c8145670051ca0ce1a0f296285",
+    "staged_wheel_payloads_checked": 41,
+    "bindings_resolved_callable": 18,
+    "binding_names_match_genuine_source_acceptance": true,
+    "binding_invocations": 0,
+    "driver_helper_inactive": true,
+    "policy_final": {
+      "phase": "native_import",
+      "blocked": {},
+      "tensor_operations_allowed": 0,
+      "native_calls": 0,
+      "rejected_calls": 0
+    },
+    "models_loaded": false,
+    "neural_forwards": 0
+  },
+  "runtime": {
+    "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "distribution_version": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "git_version": "ff65f5bc672795c5e5033900ea0a0c4f8566c8cf",
+    "hip": "7.2.53211-e1a6bc5663",
+    "cuda": null,
+    "python": "3.12.3",
+    "prefix": "/opt/modly-wsl/venv",
+    "gpu_initialized_before": false,
+    "triton": "3.5.1+rocm7.2.1.gita272dfa8",
+    "torch_path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/__init__.py",
+    "triton_path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/triton/__init__.py"
+  },
+  "GPU_admission": {
+    "name": "AMD Radeon RX 9070 XT",
+    "architecture": "gfx1201",
+    "count": 1,
+    "free_bytes": 14003527680,
+    "total_bytes": 16974905344,
+    "property_total_bytes": 16974905344
+  },
+  "memory": {
+    "Torch_allocator_cap_bytes": 12884901888,
+    "before": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "after_import": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "peak": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "release": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "free_bytes_before_import_release": 14003527680
+  },
+  "durations_seconds": {
+    "import_host_return": 0.23478640699999964,
+    "import_synchronized": 0.26686107300000117,
+    "supervisor": 20.48399999999674,
+    "outer_capture": 20.8309151,
+    "worker_GO_elapsed": 6.2809713689999995
+  },
+  "containment": {
+    "exact_candidate_marker_and_capture_match": true,
+    "raw_worker_equals_guest": true,
+    "worker_exit": 0,
+    "outer_exit": 0,
+    "healthy_Windows_observations": 5,
+    "all_observations_exit_zero_no_timeout_controllers_OK_no_events": true,
+    "windows_job_grace": {
+      "empty": true,
+      "seconds": 0.0,
+      "limit_seconds": 5.0
+    },
+    "windows_job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "named_distro_termination_command": [
+      "wsl.exe",
+      "--terminate",
+      "Modly-AMD-Ubuntu-24.04"
+    ],
+    "named_distro_termination_exit": 0,
+    "guest_phases": [
+      "gate-wait",
+      "gate-authorized",
+      "native-import-entry",
+      "native-import-host-return",
+      "native-import-synchronized",
+      "release-entry",
+      "release-return",
+      "worker-finished"
+    ],
+    "host_phases": [
+      "supervisor-start",
+      "wsl-client-started",
+      "windows-job-attached",
+      "go-sent",
+      "wsl-client-exited",
+      "owned-distro-terminated",
+      "supervisor-finished"
+    ]
+  },
+  "verdict_assessment": {
+    "native_adapter": {
+      "classification": "PASS",
+      "attempts": 1,
+      "native_binding_calls": 0,
+      "raw_supervisor_exit": 1,
+      "raw_supervisor_classification": "UNKNOWN",
+      "raw_GPU_contract_unused": true,
+      "worker_classification": "PASS"
+    },
+    "raw_supervisor_classification": "UNKNOWN",
+    "raw_supervisor_exit": 1,
+    "raw_worker_evidence_error": "NumericalError: CPU result differs from the exact 256-element F32 reference",
+    "expected_unused_vector_add_contract_only": true,
+    "reason": "The frozen supervisor requires vector-add evidence absent from this import-only worker. Its raw UNKNOWN/error remains preserved; the separate adapter PASS requires actual native import evidence, healthy observation and natural Job/named-distro cleanup."
+  },
+  "evidence_sha256": {
+    "native_import.py": "4dacdfdd348438078561fd92999d1db58a8ca6495d8f115c8812ee1ce63eb15a",
+    "native-attempt-started.json": "7bf0adc981900c1f268ccd116c3d72d8e4b08777ceefbddd0defae7de36c55d6",
+    "run/guest/results.json": "9f3061a9f7361d585cc5e4998ffd6ae72b6e606d78c5579a692b8742a94d7671",
+    "run/guest/phases.jsonl": "6fa0d2e7a37b129a8d0a865d7a354caa351d4f2e17033ae8b59b1f0f7479ccb1",
+    "run/results.json": "4c3c21095011cc6fbff9e698637de425aee420709abfccad03e5e011e4efd63b",
+    "run/phases.jsonl": "7f15ba1922a80043fa8ffb89686a6ed7f41bde70840cc0eb1a14f7ffa09b2d91",
+    "run/native-verdict.json": "1e6b23bd3f077f5f9d2fe274fa1fbce08ca21fbfa8cba6f7a4111823ac486a31",
+    "host-capture.json": "b5154eb67d5a2f9fa28afdb68e2d145931a120f59d4bcec9613c31467603367e"
+  },
+  "limits": [
+    "Successful load and callable resolution are established for this pinned WSL runtime only. Native computation, convolution, model and decoder compatibility remain unproved.",
+    "Zero sampled/peak Torch allocation and unchanged free-VRAM snapshots do not prove the absence of transient direct native HIP allocations; the cap applies to the Torch allocator.",
+    "Windows Job ownership covers the WSL client and Windows descendants; guest timeout and named-distro termination provide Linux containment.",
+    "Prior failed import remains UNKNOWN; this fresh result does not rewrite historical evidence."
+  ],
+  "smallest_next_separately_approved_step": {
+    "proposal": "CPU-only strict ShapeDecoderComponent.load_cpu acceptance under the existing contract: all 292 checkpoint entries, including 76 F32 and 216 F16; no native binding, kernel, GPU or neural forward.",
+    "performed": false,
+    "automatic_progression_authorized": false
+  },
+  "review_actions": {
+    "WSL_commands": 0,
+    "AI_native_imports": 0,
+    "GPU_actions": 0,
+    "binding_calls": 0,
+    "candidate_executions": 0,
+    "tests_or_acceptance_reruns": 0,
+    "source_edits": 0,
+    "only_review_report_written": true
+  }
+}

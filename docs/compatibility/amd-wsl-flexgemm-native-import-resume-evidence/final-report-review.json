@@ -1,0 +1,42 @@
+{
+  "reviewer": "independent /root/native_resume_review",
+  "reviewed_utc": "2026-10-14T17:30:28.733154+00:00",
+  "status": "PASS",
+  "findings": [],
+  "reviewed_report": "docs/compatibility/amd-wsl-flexgemm-native-import-resume.md",
+  "report_sha256": "8991dcc97dd4f4415f2d3067f8731f4b37abae7092727dc8cc06de87946a2262",
+  "method": "Static comparison with the independently reviewed actual attempt, saved after-preservation records and existing historical identities. No tests, WSL, AI/native import, GPU work or new research.",
+  "claims_verified": [
+    "One genuine pinned HIP extension loaded at its expected staged path and native SHA-256; all 18 bindings resolved callable and zero were invoked.",
+    "Runtime identities and rounded times match: 0.235 s host return, 0.267 s synchronized completion, 6.281 s guest stage, 20.484 s supervisor and 20.831 s outer capture.",
+    "All three free-VRAM samples equal 14003527680 bytes. Before/import/peak/release Torch allocated and reserved values are zero. The initialization claim is explicitly the PyTorch flag; direct native allocation limits remain stated.",
+    "Five healthy Windows observations, natural Job emptiness, no forced cleanup, bounded grace and named-distro exit 0 agree with raw containment evidence.",
+    "Raw GPU supervisor UNKNOWN/exit 1 and its absent-vector-result error remain preserved; the separate adapter native PASS is accurately explained.",
+    "Windows and passive Linux after-preservation PASS support the environment, 922 staged payloads and approved library metadata claims. Final registration records Modly Ubuntu stopped and Docker default.",
+    "All 173 recorded historical evidence files, five controls and four preexisting bytecode files currently hash-match.",
+    "Native computation and decoder compatibility remain unproved. Strict CPU loading of 292 entries with the existing 76 F32/216 F16 contract is proposed only after separate approval, without GPU placement or forward."
+  ],
+  "evidence_sha256": {
+    "independent-outcome-review.json": "b0b538f23b36fb439cbf9fb3b8854da6dfe75c93300b87bb5b5301a6d5b39728",
+    "verified-result-summary.json": "cd3f836f57e9dd6411769ca263af7ac63b79ef0e1dc236f9ed8215f35acca8f6",
+    "windows-preservation-after.json": "c1db3d2f2405e299d6c5a5b89bdb48329b645b4d0c6e7e69f97423190536da83",
+    "linux-preservation-after.json": "5a6172454076287c63ab790e7ed992f0567f8ac7f142c760c02ef7fdd2205a6f",
+    "linux-after-capture.json": "0675eca6744dd35d7ef2946885a41c2daa53b9647529a8c7f7704ef20f52bd9c",
+    "minimal-candidate-diff.json": "202f8525485d4ac355223b51f11948e6f6378c094a3e8d7d393d745cfe3102b6"
+  },
+  "historical_preservation_counts": {
+    "historical_evidence": 173,
+    "unchanged_control_code": 5,
+    "preserved_bytecode": 4
+  },
+  "relative_evidence_links_resolve": true,
+  "boundary": "Single authorized import complete; no retry or automatic CPU/model/decoder progression.",
+  "review_actions": {
+    "tests_or_acceptance_reruns": 0,
+    "WSL_commands": 0,
+    "AI_native_imports": 0,
+    "GPU_actions": 0,
+    "source_or_final_report_edits": 0,
+    "only_final_review_report_written": true
+  }
+}

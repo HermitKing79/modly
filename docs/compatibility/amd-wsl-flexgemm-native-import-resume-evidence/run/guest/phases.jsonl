@@ -1,0 +1,8 @@
+{"phase": "gate-wait", "utc": "2026-10-14T17:19:42.311617+00:00", "monotonic_seconds": 3.716714472, "gpu_allowed": false}
+{"phase": "gate-authorized", "utc": "2026-10-14T17:19:42.876195+00:00", "monotonic_seconds": 4.281296531, "gpu_allowed": true}
+{"phase": "native-import-entry", "utc": "2026-10-14T17:19:48.799108+00:00", "monotonic_seconds": 10.204209748, "gpu": {"name": "AMD Radeon RX 9070 XT", "architecture": "gfx1201", "count": 1, "free_bytes": 14003527680, "total_bytes": 16974905344, "property_total_bytes": 16974905344}, "memory": {"allocated": 0, "reserved": 0}}
+{"phase": "native-import-host-return", "utc": "2026-10-14T17:19:49.055099+00:00", "monotonic_seconds": 10.460199503, "memory": {"allocated": 0, "reserved": 0}}
+{"phase": "native-import-synchronized", "utc": "2026-10-14T17:19:49.087831+00:00", "monotonic_seconds": 10.492930213, "memory": {"allocated": 0, "reserved": 0}}
+{"phase": "release-entry", "utc": "2026-10-14T17:19:49.131694+00:00", "monotonic_seconds": 10.536795072}
+{"phase": "release-return", "utc": "2026-10-14T17:19:49.152472+00:00", "monotonic_seconds": 10.557571435, "memory": {"allocated": 0, "reserved": 0}}
+{"phase": "worker-finished", "utc": "2026-10-14T17:19:49.172101+00:00", "monotonic_seconds": 10.577199394, "classification": "PASS"}

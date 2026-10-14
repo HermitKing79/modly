@@ -1,0 +1,30 @@
+{
+  "classification": "PASS",
+  "native_import_attempts": 1,
+  "bindings_count": 18,
+  "native_binding_calls": 0,
+  "neural_forwards": 0,
+  "candidate_commit": "bfbd6007b2b99a4760698266f9ce1a1b0a45cc8c",
+  "candidate_sha256": "4dacdfdd348438078561fd92999d1db58a8ca6495d8f115c8812ee1ce63eb15a",
+  "native_path": "/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/kernels/cuda.cpython-312-x86_64-linux-gnu.so",
+  "native_sha256": "91f66fa2c0f3567cee71246257bea8eb0fe5af9b6c70617d3c5894aa9f103f01",
+  "host_return_seconds": 0.23478640699999964,
+  "synchronized_import_seconds": 0.26686107300000117,
+  "guest_seconds": 6.2809713689999995,
+  "host_seconds": 20.48399999999674,
+  "outer_seconds": 20.8309151,
+  "HIP_initialized": true,
+  "free_VRAM_each_bytes": 14003527680,
+  "Torch_allocation_and_reservation_each_bytes": 0,
+  "healthy_observations": 5,
+  "natural_empty_Job": true,
+  "forced_cleanup": false,
+  "Windows_and_Linux_preservation": "PASS",
+  "historical_hash_counts": {
+    "historical_evidence": 173,
+    "unchanged_control_code": 5,
+    "preserved_bytecode": 4
+  },
+  "raw_GPU_supervisor_UNKNOWN_preserved": true,
+  "no_guard_suites_rerun": true
+}
