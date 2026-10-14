@@ -1,0 +1,49 @@
+{
+  "classification": "QUALIFIED",
+  "gpu_entry_calls": [],
+  "forbidden_imports": [],
+  "checkpoint_loads": 0,
+  "started_utc": "2026-10-14T19:21:28.259160+00:00",
+  "gpu_initialized_before": false,
+  "gpu_entry_functions_instrumented": [
+    "torch.cuda._lazy_init",
+    "torch.cuda.init",
+    "torch.cuda.device_count",
+    "torch.cuda.get_device_properties",
+    "torch.cuda.current_device",
+    "torch.cuda.set_device",
+    "torch.cuda.synchronize",
+    "torch._C._cuda_getDevice",
+    "torch._C._cuda_getDeviceCount",
+    "torch._C._cuda_init",
+    "torch._C._cuda_setDevice",
+    "torch._C._cuda_synchronize"
+  ],
+  "packaging_version": "25.0",
+  "packaging_path": "/home/modly/native-decoder-preparation-6dd94a85/site-packages/packaging/__init__.py",
+  "safetensors_version": "0.6.2",
+  "safetensors_path": "/home/modly/native-decoder-preparation-6dd94a85/site-packages/safetensors/__init__.py",
+  "load_file_callable": true,
+  "load_file_module": "safetensors.torch",
+  "Version_result": "2.9.1+rocm7.2.1.gitff65f5bc",
+  "runtime": {
+    "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "distribution_version": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "git_version": "ff65f5bc672795c5e5033900ea0a0c4f8566c8cf",
+    "hip": "7.2.53211-e1a6bc5663",
+    "cuda": null,
+    "python": "3.12.3",
+    "prefix": "/opt/modly-wsl/venv",
+    "gpu_initialized_before": false
+  },
+  "gpu_initialized_after": false,
+  "policy": {
+    "phase": "cpu_meta",
+    "blocked": {},
+    "tensor_operations_allowed": 0,
+    "native_calls": 0,
+    "rejected_calls": 0
+  },
+  "elapsed_seconds": 6.300604141999999,
+  "finished_utc": "2026-10-14T19:21:34.559778+00:00"
+}
