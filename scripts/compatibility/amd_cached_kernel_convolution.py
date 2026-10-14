@@ -23,10 +23,20 @@ import amd_forward_diagnostics as diagnostics
 import amd_blaslt_teardown as teardown
 EV=ROOT/'docs/compatibility/amd-cached-kernel-convolution-evidence'
 AUTHORIZE=b'EXECUTE_ONE_CACHED_KERNEL\n'
+NUMERICAL=None  # Only the dedicated, committed neighbour-mixing launcher selects its fixed CPU oracle.
 
 def arrays():
-    f,co,w,b=c.fixture();c.validate_fixture(f,co,w,b);metadata=oracle.build(co);proof=oracle.validate(co,metadata)
+    case=c if NUMERICAL is None else NUMERICAL
+    f,co,w,b=case.fixture();case.validate_fixture(f,co,w,b);metadata=oracle.build(co);proof=oracle.validate(co,metadata)
     return dict(input=f,weight=w.reshape(1024,27,1024),bias=b,**metadata,output=np.full((2,2049,1024),np.nan,np.float32)),co,proof
+
+def cpu_references(values,coordinates):
+    if NUMERICAL is None:return {},{}
+    weights=values['weight'].reshape(1024,3,3,3,1024)
+    reference,coverage=NUMERICAL.reference(values['input'],coordinates,weights,values['bias'])
+    metadata={name:values[name] for name in ('neighbor','sorted_idx','valid_kernel','valid_kernel_seg')}
+    partials=NUMERICAL.split_reference(values['input'],coordinates,weights,metadata,reference)
+    return dict(cpu_reference=reference,cpu_split_reference=partials),coverage
 
 def cpu_acceptance(torch,meta,source,scratch):
     from test_amd_native_convolution_hooks import run_constructor_suite
@@ -37,9 +47,12 @@ def cpu_acceptance(torch,meta,source,scratch):
     private=p.private_cache(scratch);constructor=run_constructor_suite(torch,private,meta,source)
     policy=installed_policy_tests(torch,private,meta,source,leaf)
     values,coords,proof=arrays()
-    artifacts=oracle.save_arrays(scratch,dict(**values,coordinates=coords))
-    return dict(passed=constructor['passed'] and policy['passed'],constructor=constructor,policy=policy,metadata=oracle.describe(values),proof=proof,
+    references,coverage=cpu_references(values,coords)
+    artifacts=oracle.save_arrays(scratch,dict(**values,coordinates=coords,**references))
+    result=dict(passed=constructor['passed'] and policy['passed'],constructor=constructor,policy=policy,metadata=oracle.describe(values),proof=proof,
         artifacts=artifacts,persistence_verified=True,gpu_initialized=torch.cuda.is_initialized(),native_executed=False)
+    if NUMERICAL is not None:result.update(reference_metadata=oracle.describe(references),numerical_coverage=coverage)
+    return result
 
 def identity():
     p.verify_historical();teardown.verify_binding_evidence()
@@ -58,7 +71,8 @@ def counts_valid(counts):
 def classify(r,process_ok,healthy,preserved):
     if (r.get('status')=='PASS' and process_ok and healthy and preserved and counts_valid(r.get('native_counts',{}))
         and r.get('helper_calls')==1 and r.get('lookup_keys')==[p.HIT_KEY] and r.get('forbidden_calls')==[]
-        and r.get('elementwise',{}).get('mismatched_elements')==0 and r.get('elementwise',{}).get('fp32_identity_exact') is True
+        and r.get('elementwise',{}).get('mismatched_elements')==0 and r.get('elementwise',{}).get('fp32_identity_exact' if NUMERICAL is None else 'fp32_reference_exact') is True
+        and (NUMERICAL is None or r.get('elementwise',{}).get('per_split_reference_exact') is True)
         and r.get('coordinates_unchanged') is True and r.get('release',{}).get('allocated_bytes')==0
         and r['release'].get('reserved_bytes')==0 and r['release'].get('owned_tensors_collected') is True):return 'PASS'
     return 'FAIL' if r.get('failure_kind') in ('numerical','native') else 'UNKNOWN'
@@ -105,8 +119,13 @@ def worker(scratch):
         import psutil
         if psutil.virtual_memory().available<c.HOST_RAM:raise RuntimeError('Host RAM admission failed')
         values,coordinates,proof=arrays();r['pointer_proof']=proof
+        references,coverage=cpu_references(values,coordinates)
         verified=identity();expected=verified['config']['constructor_acceptance']['metadata']
         if oracle.describe(values)!=expected:raise RuntimeError('GPU candidate differs from CPU oracle')
+        if NUMERICAL is not None:
+            acceptance=verified['config']['constructor_acceptance']
+            if oracle.describe(references)!=acceptance['reference_metadata'] or coverage!=acceptance['numerical_coverage']:raise RuntimeError('Independent CPU reference changed')
+            r.update(numerical_case=NUMERICAL.CASE,numerical_coverage=coverage,reference_metadata=oracle.describe(references))
         private=json.loads((scratch.parent/'private-cache.json').read_text())
         policy=CachedKernelPolicy(torch,private,meta,source,trace);policy.select_leaf(leaf)
         r['gate_one']=dict(status='PASS',gpu_initialized=False,weights_loaded=False,fixture_verified=True)
@@ -136,9 +155,11 @@ def worker(scratch):
             if before['available_bytes']-r['memory_after_kernel']['available_bytes']>c.PEAK_LIMIT:raise RuntimeError('Unexpected total GPU memory loss exceeds smoke budget')
             stage('raw-output-copy');raw_cpu=trace.call('raw-splits-to-CPU',lambda:torch.ops.aten._to_copy.default(gpu['output'],device=torch.device('cpu')))
             torch.cuda.synchronize(0)
-        r['artifacts']=oracle.save_arrays(scratch,dict(raw_splits=raw_cpu.numpy(),input_features=values['input'],coordinates=coordinates))
+        r['artifacts']=oracle.save_arrays(scratch,dict(raw_splits=raw_cpu.numpy(),input_features=values['input'],coordinates=coordinates,**references))
         stage('CPU-exact-comparison')
-        try:reduced,r['elementwise']=oracle.compare(raw_cpu.numpy(),values['input'])
+        try:
+            reduced,r['elementwise']=(oracle.compare(raw_cpu.numpy(),values['input']) if NUMERICAL is None else
+                NUMERICAL.compare(raw_cpu.numpy(),references['cpu_reference'],references['cpu_split_reference']))
         except ValueError:r['failure_kind']='numerical';raise
         r['artifacts'].update(oracle.save_arrays(scratch,dict(output_features=reduced)))
         r['coordinates_unchanged']=np.array_equal(coordinates,c.fixture()[1]) and oracle.describe(values)==expected

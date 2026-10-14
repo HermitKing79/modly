@@ -1,0 +1,62 @@
+{
+  "verdict": "GO for exact publication then one conditional launch",
+  "reviewers": [
+    "cached_leaf_access_audit",
+    "cached_leaf_route_review"
+  ],
+  "reviewed_sha256": {
+    "scripts/compatibility/amd_cached_kernel_convolution.py": "2d55e7e18a502a70b82a6a5b71b35082fbb195e40edcd1964179ffbd91c46670",
+    "scripts/compatibility/amd_cached_kernel_cpu.py": "3aab2c8a1c91356765151896ad3e3781fa511fd34757d865fe9d018da89f931f",
+    "scripts/compatibility/amd_cached_kernel_oracle.py": "ba6708c2c34fa882b16f49c7110ca8b3cf7e760036a9a15fd8a34d8b613fe1a9",
+    "scripts/compatibility/amd_cached_kernel_policy.py": "aceac47d8b6bf7e565375336e4969d2573058032db0e26e3681122079f76e760",
+    "scripts/compatibility/test_amd_cached_kernel.py": "8111bcac2f8449afd4c6cd0647ca883a99a0255b04efcfd565b236f16f5c7ec4",
+    "scripts/compatibility/test_amd_native_convolution_hooks.py": "2ae81601edbb105ae0d8e287d2c06b9e6567d7181e8195b9e7072dafdff1908d",
+    "scripts/compatibility/amd_native_convolution_preflight.py": "07a5e2d4f3a8fa5e0c245ee581386898aa518f509dd089aa1dcd57b6f0400e0b",
+    "scripts/compatibility/amd_native_convolution_policy.py": "fc4306a5a3cefda08c1afcff095879d7753cf1b0de4762c6e240d07e05397048",
+    "scripts/compatibility/amd_native_post1_scalar.py": "c2d2a1708345a9e802bd3e82705270670a6c38b4dfbe146917c092079bb3cd9a",
+    "scripts/compatibility/amd_native_convolution_contract.py": "675b192f34d4e8ab4d141bd8d814ff456ee8e884905a4cf1c6f769d09183beb5",
+    "scripts/compatibility/amd_native_cache_dispatch_proof.py": "85957e17d691544ab5dc5deb124063ffe5d870c6e85b23325d17aff2db295dc0",
+    "scripts/compatibility/amd_shape_cache_identity.py": "b39dc4d435533b5984bb51e267b1f199395c8fb48446e15c8d12596e085266cf",
+    "scripts/compatibility/amd_shape_decoder_preflight.py": "327786f654239a1a17278cf73635b662d87a797c81249a77c94539dc2d8d000c",
+    "scripts/compatibility/amd_blaslt_teardown.py": "ac8456c29291f5ee0bc567086b152f7013f502996179e408577f5806ca3310dd",
+    "scripts/compatibility/amd_sparse_decoder_forward.py": "880bc2a7bd56f2608195593ebd9fe1321fc86af28b3860acb10b8ede7a2b53ca",
+    "scripts/compatibility/amd_decoder_forward_contract.py": "e30b74ca21a3c47fc8150352fab729f54e050ddaac0ea4660b02c284b062a77c",
+    "scripts/compatibility/amd_sparse_decoder_loading.py": "26a9ccc06e2beb171479368563f084982ec1678508eb50692c78fad7138bed62",
+    "scripts/compatibility/amd_decoder_contract.py": "20d9def94b5965131346f25383a72cb0d8ddc4435a2d2f8c7ebec5d2eff9279a",
+    "scripts/compatibility/amd_bounded_gpu_proof.py": "8910884b4d4bd433df654a8137586eb43711e37e97acfcf8462392ef4258dff4",
+    "scripts/compatibility/amd_native_import_preflight.py": "3e66543bfdb81e5ed87d328b68729621433bf2925018e376031abb65621bbdde",
+    "scripts/compatibility/amd_model_metadata.py": "4e618330bcb784371f57f751097db67299a307d40ad763c46b49f4f7d5f3b775",
+    "scripts/compatibility/amd_forward_diagnostics.py": "468b325ed0f69f738b8d48173340f838b3e461bb2a72b4f994946dbe43fba4a9",
+    "scripts/compatibility/amd_forward_cache_reuse.py": "742b7a07b814bfa0f5d9ff55b47262735d51930bbc5c211995b1d770144cfdc3",
+    "scripts/compatibility/amd_forward_windows_monitor.py": "d7c7596bff6962ab0df695b03588316495dba5f8e7992866f70d9578f1ce6c90",
+    "scripts/compatibility/amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64",
+    "api/services/amd_runtime.py": "16499c8c8b5ef3f133ee872bade91a4332f4195d757da662022511c5049bf756",
+    "api/services/amd_model_metadata.py": "ca7b9f01ea09cb1820208e22f9bb5605bf8cf67159ea0dead9be7036eaf2ab96",
+    "api/services/amd_offline_guard.py": "d874b8cbd0b873a8811c06fc61f28d3c6e36188371c4ab8a0fdc805ee83d6d00",
+    "api/services/amd_observer.py": "b403b1e00627d4101e7c75d6759079d1ea81748ab3350faea29e7eab9add4f88",
+    "experimental/extensions/trellis2-amd/strict_loader.py": "0a4b2aab6fb34a034be1725d4514d71f17c59376151b549ab631ebc8b5c8fc79",
+    "docs/compatibility/amd-sparse-decoder-loading-evidence/run/results.json": "04c1334130138dd3b17294b5b73aeb6fb35638d2eefce64b9c9986875ebe2407",
+    "docs/compatibility/amd-offline-model-audit-evidence/final-assets/ss_dec_conv3d_16l8_fp16.metadata.json": "3589979a622262b71580437df2a534e51df1b270dd82ded8859263431bc79246",
+    "docs/compatibility/amd-instrumented-forward-resume-evidence/cache-plan.json": "d9fd5c8324c99d335fe615e974016b9c0dc4baca77bf3e5f51929e2dd6c26ec2",
+    "docs/compatibility/amd-cached-neighbour-mixing-evidence/cpu-acceptance/results.json": "3ac2fe7b462be71d74fd49dc83374faf16fc4faeb232b01955377fbdebff6d63",
+    "docs/compatibility/amd-shape-decoder-cache-admission-evidence/cpu-probe-5/results.json": "a1e477f0e153e4a6e9c5c3ffb217a9c59baaa0cf95b0d1bf755c2b3f3890024f",
+    "docs/compatibility/amd-blaslt-teardown-evidence/binding-contract.json": "a2664fd511e77d171e70892607b0eaf65045703977f07dd6673797aa1710b2cf",
+    "docs/compatibility/amd-blaslt-teardown-evidence/binary-review.json": "e27920546e1081c0070ce3350a199a98b74ca9f33317dd588d159685febae04a",
+    "scripts/compatibility/amd_neighbor_mixing_convolution.py": "46959165d4f9cbcbc61ddfe369d3ea0bb375dfc4c2f6f377ab2e4776550ca515",
+    "scripts/compatibility/amd_neighbor_mixing_oracle.py": "01d5420619049784978c0ed4fa75a6bba0f68aba59e8a165330d00d0bdd27b97",
+    "scripts/compatibility/test_amd_neighbor_mixing.py": "964aae19b0f32bee4b55fb23343d4ec1f4f15d2c0af8d5075046b038e61aab86"
+  },
+  "checks": [
+    "Full tuple/integer reference independent of GPU output and precomputed neighbor arrays.",
+    "Three actual F16 diagonal-channel taps and zero bias; coordinate-axis offsets explicit.",
+    "F32 numerator and every partial sum exact; all raw SplitK values and reduced output must match separately.",
+    "Actual installed constructor acceptance passed13tests withGPU/native false; all11 scratch-file hashes/sizes independently verified.",
+    "Kernel source/key/helper/compiler/options/signature unchanged; all17 seams, buffer layouts, admission, containment, monitoring and45/120/180 deadlines unchanged.",
+    "NUMERICAL=None retains original identity behavior; dedicated committed launcher selects only fixed three-tap case."
+  ],
+  "limits": [
+    "Three diagonal-channel taps on this fixed support only; general channel mixing, complete native wrapper and learned decoder remain unproved.",
+    "No GPU compatibility verdict until single actual launch and complete exit/preservation checks."
+  ],
+  "reviewer_native_or_gpu_execution": false
+}

@@ -1,0 +1,251 @@
+{
+  "case": {
+    "case": "center1-axis3plus_half-axis1minus_quarter",
+    "offsets": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        -1,
+        0,
+        0
+      ]
+    ],
+    "kernel_indices": [
+      13,
+      14,
+      4
+    ],
+    "weights": [
+      1.0,
+      0.5,
+      -0.25
+    ],
+    "valid_rows": [
+      2049,
+      1984,
+      1025
+    ],
+    "out_of_bounds_missing": [
+      0,
+      64,
+      1024
+    ],
+    "in_bounds_sparse_missing": [
+      0,
+      1,
+      0
+    ],
+    "valid_noncentral_terms": 3081216,
+    "nonidentity_elements": 2064894,
+    "reference_numerator_min": -6119,
+    "reference_numerator_max": 6085,
+    "exact_f32": true,
+    "atol": 0.0,
+    "rtol": 0.0,
+    "coordinate_order": "batch,axis1,axis2,axis3",
+    "reference_uses_precomputed_neighbor_map": false
+  },
+  "fixture": {
+    "input": {
+      "shape": [
+        2049,
+        1024
+      ],
+      "dtype": "float16",
+      "bytes": 4196352,
+      "sha256": "37ddfb58796ce441309b30934159aa051f86ba991ac694c8a34a5eb90c660217"
+    },
+    "weight": {
+      "shape": [
+        1024,
+        27,
+        1024
+      ],
+      "dtype": "float16",
+      "bytes": 56623104,
+      "sha256": "cc6f8dd4e83d7e55ed0db313423eadde64216ba46b8fefd08b834099536ce9cb"
+    },
+    "bias": {
+      "shape": [
+        1024
+      ],
+      "dtype": "float16",
+      "bytes": 2048,
+      "sha256": "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad"
+    },
+    "neighbor": {
+      "shape": [
+        2049,
+        27
+      ],
+      "dtype": "uint32",
+      "bytes": 221292,
+      "sha256": "517a05ec1811f086a27ca641a78996685713d6ec3bb2f8b68e9811973fd8415b"
+    },
+    "sorted_idx": {
+      "shape": [
+        2049
+      ],
+      "dtype": "int64",
+      "bytes": 16392,
+      "sha256": "a0a69b35affc0e93d21856b5fd1afbe2e3cd510b1fa2f089fc5406cc08daa45f"
+    },
+    "valid_kernel": {
+      "shape": [
+        599
+      ],
+      "dtype": "int32",
+      "bytes": 2396,
+      "sha256": "f49f7118dbb22d46e1f91f99553e0987efe3f610b3f5a603e3902a53f500ded1"
+    },
+    "valid_kernel_seg": {
+      "shape": [
+        34
+      ],
+      "dtype": "int32",
+      "bytes": 136,
+      "sha256": "5966d36ea74b2ebea0b90635dc0ea7ab879418f9939a2a8826b31ba8c5d2af19"
+    },
+    "output": {
+      "shape": [
+        2,
+        2049,
+        1024
+      ],
+      "dtype": "float32",
+      "bytes": 16785408,
+      "sha256": "7885cebf67db0a717e364b8f30837f7ab566bb9dc833b077d788cac88650c65d"
+    }
+  },
+  "references": {
+    "cpu_reference": {
+      "shape": [
+        2049,
+        1024
+      ],
+      "dtype": "float32",
+      "bytes": 8392704,
+      "sha256": "9ddd1b805ef252f3efd6f35e3b3a26f76e167752ad14a1625c8d68be15951fda"
+    },
+    "cpu_split_reference": {
+      "shape": [
+        2,
+        2049,
+        1024
+      ],
+      "dtype": "float32",
+      "bytes": 16785408,
+      "sha256": "99b6d82570527c843da26ffec69bd0dfd5aa46bae11d5983f5c4249721baec87"
+    }
+  },
+  "kernel_source": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\triton\\spconv\\sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk.py",
+  "kernel_source_sha256": "21d5efc8f59f312c62fa45241fc13a9e446cd4c13f11e360cf92216d151301bb",
+  "kernel_cache_key": "d5de3d60ef4c1dfce927f5a59a91fdfa35c7de3400fb71acb214abe5dc4fbea5",
+  "hsaco_sha256": "e639008883feef1e37079d2a809a45cdfef85240aaec7ae9f018d8175cf7fe01",
+  "helper": {
+    "library": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_rocm_sdk_core\\bin\\amdhip64_7.dll",
+    "library_sha256": "546fb3d6e2d2194a9526fb94ec2fd3aa5b92a48a7595f04efece80162047ef69",
+    "platform": "AMD64,Windows,64bit,WindowsPE",
+    "config": {
+      "language": [
+        "c"
+      ],
+      "library_dirs": null,
+      "include_dirs": [
+        "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\include"
+      ],
+      "libraries": null,
+      "ccflags": null
+    },
+    "computed_key": "ec3b3ff5d59bce32e9b2291138d74d09179f18ce05d4c5871e77fb22e214e509",
+    "computed_folder": "5Q5T75OVTPHDF2NSFEITRV2NBELZ6GGOAXKMLBY6O75SFYQU4UEQ",
+    "expected_path": "C:\\Users\\wattz\\.triton\\cache\\5Q5T75OVTPHDF2NSFEITRV2NBELZ6GGOAXKMLBY6O75SFYQU4UEQ\\hip_utils.cp312-win_amd64.pyd",
+    "cache_hit": true,
+    "cached_sha256": "676ff51e09cda672275546e3025caecf5f275bbf1ab2d2f0c17c3e101dc046f2",
+    "installed_formula_matches": true
+  },
+  "signature": {
+    "input": "*fp16",
+    "weight": "*fp16",
+    "bias": "*fp16",
+    "neighbor": "*u32",
+    "sorted_idx": "*i64",
+    "output": "*fp32",
+    "N": "i32",
+    "LOGN": "i32",
+    "Ci": "i32",
+    "Co": "i32",
+    "V": "constexpr",
+    "B1": "constexpr",
+    "B2": "constexpr",
+    "BK": "constexpr",
+    "SPLITK": "constexpr",
+    "allow_ieee": "constexpr",
+    "valid_kernel": "*i32",
+    "valid_kernel_seg": "*i32"
+  },
+  "options": {
+    "num_warps": 4,
+    "waves_per_eu": 3,
+    "num_stages": 2,
+    "num_ctas": 1,
+    "extern_libs": [
+      [
+        "ocml",
+        "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\lib\\ocml.bc"
+      ],
+      [
+        "ockl",
+        "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\triton\\backends\\amd\\lib\\ockl.bc"
+      ]
+    ],
+    "debug": false,
+    "sanitize_overflow": true,
+    "arch": "gfx1201",
+    "supported_fp8_dtypes": [
+      "fp8e4b8",
+      "fp8e4nv",
+      "fp8e5",
+      "fp8e5b16"
+    ],
+    "deprecated_fp8_dot_operand_dtypes": [],
+    "default_dot_input_precision": "ieee",
+    "allowed_dot_input_precisions": [
+      "ieee",
+      "bf16x3",
+      "bf16x6"
+    ],
+    "enable_fp_fusion": true,
+    "launch_cooperative_grid": false,
+    "matrix_instr_nonkdim": 0,
+    "kpack": 1,
+    "allow_flush_denorm": false,
+    "max_num_imprecise_acc_default": 0,
+    "backend_name": "hip",
+    "instrumentation_mode": "",
+    "schedule_hint": "",
+    "llvm_fn_attrs": [],
+    "warp_size": 32
+  },
+  "principal_gpu_buffer_bytes": 77847128,
+  "cpu_acceptance_passed": true,
+  "gpu_initialized": false,
+  "native_executed": false,
+  "reference_math": "U=F16_feature*1024 integer; R=(4*U(center)+2*U(axis3+1)-U(axis1-1))/4096; missing terms zero. Full reference uses tuple lookup and actual weight coefficients.",
+  "split_math": "k=32*valid_kernel_position+channel//32; plane0 iff k<16*segment_length, else plane1. Partial sum must exactly agree with independent full reference.",
+  "tolerance": {
+    "atol": 0.0,
+    "rtol": 0.0
+  },
+  "host_tests_passed": 13,
+  "installed_constructor_tests_passed": 13,
+  "scratch_artifacts_verified": 11
+}

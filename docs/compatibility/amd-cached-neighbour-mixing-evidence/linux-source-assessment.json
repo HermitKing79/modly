@@ -1,0 +1,53 @@
+{
+  "repository": "kr4ckhe4d/trellis2-9070xt",
+  "commit": "0220d73971fd0be242b2b311ac00d590e1b26301",
+  "assessment": "read-only primary source inspection; no clone/environment/GPU access or execution",
+  "sources": {
+    "HANDOVER.md": "15d14c9ce514fd3a3f586dec979413f7d0ed3878",
+    "inference/amd_fixes.py": "7b5ab89cbcb36487c3ef511b1f9174a44fe9f751",
+    "inference/gpu_process.py": "caf69dd19b1203c3cd0af9267de8e387a1df5bf1",
+    "inference/server_glb.py": "3c49e48cee120fd891da1dc55885701b80d3596e"
+  },
+  "identity_kind": "Git blob SHA, not file SHA256",
+  "local_linux_environment_verified": false,
+  "author_reported": {
+    "GPU": "RX9070XT/gfx1201",
+    "OS": "Linux",
+    "ROCm": "7.2.4",
+    "torch": "2.13.0+rocm7.1",
+    "python": "3.12",
+    "supported_resolution": 512,
+    "warm_seconds": 21.4,
+    "peak_memory_reported_GB": 9.7,
+    "triangles_approx": 190000,
+    "glb_MB_approx": 8.5,
+    "materials": [
+      "base colour",
+      "metallic roughness"
+    ],
+    "raw_vertices_nonfinite": true
+  },
+  "differences": [
+    "explicit_gemm instead of our cached masked-implicit SplitK",
+    "mixedBF16 shape decoder/FP32 norms instead of originalF16 body",
+    "persistent GPU child instead of zero-live-allocation disposable proof worker",
+    "normal from_pretrained/cached HF rather than our strict per-component local loader",
+    "guarded fill_holes/patch failures can warn and continue; raw nonfinite meshes exported after processing"
+  ],
+  "windows_portable_concepts": [
+    "GPU-owning child process; retain Windows Job objects",
+    "stage residency and CPU texture-latent offload",
+    "allocator setting/import-order checks",
+    "possible explicit-GEMM alternative subject to installed native wrapper proof",
+    "possible vectorized PyTorch texture rasterization subject to numerical and resource proof",
+    "signature-aware GLB export mapping"
+  ],
+  "requires_separate_proof_or_platform": [
+    "BF16 is an arithmetic change requiring explicit precision approval",
+    "Linux.so binaries and /opt/rocm build/ABI scripts cannot be copied into Windows.pyd environment",
+    "Linuxprctl replaced by established Windows containment",
+    "CuMesh source memcpy fix requires matching binary provenance or separately approved rebuild",
+    "geometry sanitization/fill-hole warning policy cannot silently relax failure criteria"
+  ],
+  "recommendation": "Linux reference is closer to a first complete512 textured asset. First establish whether a compatible Linux runtime already exists, then separately approve one offline neural-only decode of saved turret latent with explicit backend/precision/admission and finite-output checks. If none exists, stop at prerequisiteUNKNOWN; setup is separate approval. No additional synthetic cases."
+}
