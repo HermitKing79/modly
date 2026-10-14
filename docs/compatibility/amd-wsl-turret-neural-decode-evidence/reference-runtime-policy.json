@@ -1,0 +1,200 @@
+{
+  "schema": "modly.amd_decoder.reference_runtime_policy.v1",
+  "assessment": "Phase A source inspection only; no model load, native import, forward, GPU action, install, clone, or external source edit",
+  "proof_checkout_base": "a9c9ad7bcdd164836d7f44244f32ad82a4ea2839",
+  "reference": {
+    "repository": "kr4ckhe4d/trellis2-9070xt",
+    "commit": "0220d73971fd0be242b2b311ac00d590e1b26301",
+    "retrieval": "Connected GitHub GET fetch_file and recursive git tree; exact commit ref supplied",
+    "amd_fixes": {
+      "path": "inference/amd_fixes.py",
+      "git_blob_sha1": "7b5ab89cbcb36487c3ef511b1f9174a44fe9f751",
+      "url": "https://github.com/kr4ckhe4d/trellis2-9070xt/blob/0220d73971fd0be242b2b311ac00d590e1b26301/inference/amd_fixes.py#L114-L133",
+      "tf32_lines": [
+        114,
+        121
+      ],
+      "algorithm_lines": [
+        123,
+        133
+      ],
+      "selective_bf16_lines": [
+        223,
+        249
+      ],
+      "selective_bf16_url": "https://github.com/kr4ckhe4d/trellis2-9070xt/blob/0220d73971fd0be242b2b311ac00d590e1b26301/inference/amd_fixes.py#L223-L249",
+      "captured_excerpt_file": "reference-amd-fixes.py.txt",
+      "capture_scope": "Exact inspected lines 114-133 and 223-249 reproduced from tool output; not the full file"
+    },
+    "handover": {
+      "path": "HANDOVER.md",
+      "git_blob_sha1": "15d14c9ce514fd3a3f586dec979413f7d0ed3878",
+      "runtime_policy_lines": [
+        145,
+        150
+      ],
+      "runtime_policy_url": "https://github.com/kr4ckhe4d/trellis2-9070xt/blob/0220d73971fd0be242b2b311ac00d590e1b26301/HANDOVER.md#L145-L150",
+      "remaining_nonfinite_lines": [
+        228,
+        230
+      ],
+      "remaining_nonfinite_url": "https://github.com/kr4ckhe4d/trellis2-9070xt/blob/0220d73971fd0be242b2b311ac00d590e1b26301/HANDOVER.md#L228-L230"
+    },
+    "setup": {
+      "path": "scripts/setup-rocm.sh",
+      "git_blob_sha1": "d18567535454c466c457f42a6052639a44301b87",
+      "vendor_branch_selection_line": 61,
+      "url": "https://github.com/kr4ckhe4d/trellis2-9070xt/blob/0220d73971fd0be242b2b311ac00d590e1b26301/scripts/setup-rocm.sh#L61"
+    }
+  },
+  "local_source": {
+    "root": "D:/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD",
+    "sha256": {
+      "trellis2/models/sc_vaes/sparse_unet_vae.py": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+      "trellis2/modules/utils.py": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e",
+      "trellis2/modules/norm.py": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00",
+      "trellis2/modules/sparse/norm.py": "6320c2ed1e61ae9d6611cd9d8e14ab7b080546917c373385884febf009ef316f",
+      "trellis2/modules/sparse/linear.py": "05cb619ff9cceb27674fc7bbb5aa2bcba93d1bf328d1f3340bb98c0f1240b413",
+      "trellis2/modules/sparse/conv/config.py": "ed6505a70dcc94785ce6d8f2e9d40dff3a0edc39e5d2bceea60128f9ed48332b",
+      "trellis2/modules/sparse/conv/conv_flex_gemm.py": "281fa1c8449732a94d99a24facb437600ab08d8185214d8434008456d56b83d8"
+    },
+    "decisive_lines": {
+      "trellis2/models/sc_vaes/sparse_unet_vae.py": {
+        "projection_construction": [
+          579,
+          580
+        ],
+        "fp16_body_conversion": [
+          628,
+          635
+        ],
+        "fp32_body_conversion": [
+          644,
+          651
+        ],
+        "fp32_input_projection_then_body_cast": [
+          666,
+          667
+        ],
+        "output_cast_norm_projection_low_vram": [
+          687,
+          694
+        ],
+        "output_cast_norm_projection_regular": [
+          696,
+          698
+        ],
+        "subdivision_return": [
+          699,
+          705
+        ],
+        "convnext_norm_conv_mlp": [
+          386,
+          392
+        ],
+        "upsample_norm_conv_subdivision": [
+          327,
+          334
+        ]
+      },
+      "trellis2/modules/utils.py": {
+        "mixed_precision_primitive_whitelist": [
+          5,
+          16
+        ],
+        "manual_cast_autocast_condition": [
+          75,
+          85
+        ]
+      },
+      "trellis2/modules/norm.py": {
+        "layer_norm_fp32_computation_and_return_dtype": [
+          28,
+          32
+        ]
+      },
+      "trellis2/modules/sparse/conv/config.py": {
+        "default_masked_algorithm": 2,
+        "default_hashmap_ratio": 3
+      },
+      "trellis2/modules/sparse/conv/conv_flex_gemm.py": {
+        "per_convolution_algorithm_and_ratio_reset": [
+          37,
+          39
+        ]
+      }
+    }
+  },
+  "runtime_policy": {
+    "sequence": [
+      "Complete unchanged strict original-F16 checkpoint CPU load and existing 76 exact F16-to-F32 widenings first",
+      "On the already loaded neural parent, execute dec.blocks.float()",
+      "Apply conversion only to primitive layers satisfying isinstance(layer, trellis2.modules.utils.MIX_PRECISION_MODULES), replacing each such parameter data with p.data.bfloat16()",
+      "Set dec.dtype = torch.bfloat16",
+      "Present input as x.replace(x.feats.float()) to the original SparseUnetVaeDecoder forward, equivalently pre-normalize admitted input features to F32",
+      "Set trellis2.modules.sparse.conv.config.FLEX_GEMM_ALGO = 'explicit_gemm' before any neural convolution",
+      "Set flex_gemm.kernels.triton.spconv.config.allow_tf32 = False before forward"
+    ],
+    "primitive_whitelist": [
+      "torch.nn.Conv1d",
+      "torch.nn.Conv2d",
+      "torch.nn.Conv3d",
+      "torch.nn.ConvTranspose1d",
+      "torch.nn.ConvTranspose2d",
+      "torch.nn.ConvTranspose3d",
+      "torch.nn.Linear",
+      "trellis2.modules.sparse.SparseConv3d",
+      "trellis2.modules.sparse.SparseInverseConv3d",
+      "trellis2.modules.sparse.SparseLinear"
+    ],
+    "parameter_contract": {
+      "strict_cpu_load_counts": {
+        "F16": 216,
+        "F32": 76
+      },
+      "reference_runtime_expected_counts": {
+        "BF16": 216,
+        "F32": 76
+      },
+      "total_parameters": 292,
+      "buffers": 0,
+      "f32_parameters": {
+        "body_norm": 72,
+        "from_latent_and_output_layer": 4
+      },
+      "bf16_parameters": "All 216 previously F16 parameters: block convolutions, MLP linear layers, and to_subdiv linears",
+      "shapes_and_keys": "Preserved",
+      "checkpoint": "Original F16 checkpoint bytes and strict loader contract preserved; BF16 rounding is a separate runtime conversion",
+      "bf16_conversion_validation": "Use a separate runtime dtype/value manifest; do not compare against the original F16/F32 strict manifest"
+    },
+    "tensor_contract": {
+      "input_features": "F32",
+      "from_latent": "F32",
+      "body_features_and_primitive_parameters": "BF16",
+      "normalization_parameters_and_computation": "F32, then cast normalized values back to incoming feature dtype",
+      "output_finalize": "Body features cast to input F32, final layer_norm then F32 output_layer",
+      "raw_output_features": "F32 [dynamic_N, 7]",
+      "subdivision_logits": "Four BF16 sparse tensors when return_subs=True; derived from BF16 to_subdiv projections and unchanged parent return",
+      "autocast": "The local manual_cast path casts only when autocast is disabled; keep autocast disabled for the stated norm contract"
+    },
+    "unchanged_flags": "Reference does not change use_fp16, use_fp8, eval mode, low_vram, shape/key layout, or projections; apply BF16 through body modules and dec.dtype",
+    "algorithm": {
+      "trellis_config_module": "trellis2.modules.sparse.conv.config",
+      "trellis_config_attribute": "FLEX_GEMM_ALGO",
+      "value": "explicit_gemm",
+      "tf32_module": "flex_gemm.kernels.triton.spconv.config",
+      "tf32_attribute": "allow_tf32",
+      "tf32_value": false,
+      "hashmap_ratio": 2,
+      "per_call_reset": "Local conv_flex_gemm.py reapplies Trellis config on every convolution; changing only the FlexGEMM global or FLEX_GEMM_ALGO environment variable does not establish this local policy",
+      "torch_tf32": "Pinned reference contains no separate torch.backends.cuda.matmul/cudnn TF32 flag setting"
+    }
+  },
+  "conclusion": "No decoder-source incompatibility identified for this selective conversion policy. Native BF16 explicit_gemm availability and memory admission remain separate checks.",
+  "caveats": [
+    "The pinned reference root repository does not contain a pinned vendored TRELLIS decoder commit; setup-rocm.sh selects andyluo7/TRELLIS.2 add-rocm-support branch. This proves matching runtime policy against the independently pinned local decoder, not numerical parity with the reference installation.",
+    "HANDOVER.md reports non-finite raw decoder vertices after its BF16 policy; BF16 does not guarantee finite neural outputs.",
+    "Existing checkpoint F16-to-F32 widenings are byte-exact; F16-to-BF16 runtime conversion rounds significands and cannot use the prior round-trip proof.",
+    "The broad reference pipeline patch includes unrelated pipeline and mesh changes; only the inspected decoder conversion and algorithm/TF32 assignments belong to this neural-only policy."
+  ]
+}

@@ -1,0 +1,55 @@
+# Exact inspected excerpts of inference/amd_fixes.py
+# Repository: kr4ckhe4d/trellis2-9070xt
+# Commit: 0220d73971fd0be242b2b311ac00d590e1b26301
+# Git blob SHA1: 7b5ab89cbcb36487c3ef511b1f9174a44fe9f751
+# Captured from prior connected GitHub fetch_file tool output; full response not retained across turn completion.
+# Line numbers refer to the pinned original file. This is an excerpt, not executable code.
+
+114:     # FlexGEMM: AMD Triton supports ieee / bf16x3 / bf16x6 — not tf32.
+115:     try:
+116:         import flex_gemm.kernels.triton.spconv.config as flexgemm_config
+117: 
+118:         flexgemm_config.allow_tf32 = False
+119:         _note("flexgemm: allow_tf32=False (AMD Triton has no tf32)")
+120:     except Exception as exc:
+121:         logger.warning("[amd] flexgemm tf32 patch skipped: %s", exc)
+122: 
+123:     # FlexGEMM: the Triton tl.dot (*implicit_gemm*) algorithms produced wrong
+124:     # geometry on gfx1151. rocBLAS explicit_gemm is the safe default; override
+125:     # with FLEX_GEMM_ALGO to test whether RDNA4 behaves better.
+126:     try:
+127:         from trellis2.modules.sparse.conv import config as sparse_conv_config
+128: 
+129:         algo = os.environ.get("FLEX_GEMM_ALGO", "explicit_gemm")
+130:         sparse_conv_config.FLEX_GEMM_ALGO = algo
+131:         _note(f"flexgemm: algo={algo}")
+132:     except Exception as exc:
+133:         logger.warning("[amd] flexgemm algo patch skipped: %s", exc)
+
+223:     # shape_slat_decoder in bf16 rather than fp16: same memory, fp32 exponent
+224:     # range, which kills the overflow-NaNs that show up as missing cells.
+225:     # Mirrors upstream convert_to_fp16 (MIX_PRECISION_MODULES only; norms stay
+226:     # fp32) and feeds fp32 in so extraction keeps fp32 vertex precision.
+227:     if os.environ.get("AMD_BF16_SHAPE_DECODER", "1") == "1":
+228:         try:
+229:             from trellis2.modules.utils import MIX_PRECISION_MODULES
+230: 
+231:             dec = pipeline.models["shape_slat_decoder"]
+232:             dec.blocks.float()
+233: 
+234:             def _to_bf16(layer):
+235:                 if isinstance(layer, MIX_PRECISION_MODULES):
+236:                     for p in layer.parameters():
+237:                         p.data = p.data.bfloat16()
+238: 
+239:             dec.blocks.apply(_to_bf16)
+240:             dec.dtype = torch.bfloat16
+241:             _orig_forward = dec.forward
+242: 
+243:             def _bf16_safe_forward(x, *args, **kwargs):
+244:                 return _orig_forward(x.replace(x.feats.float()), *args, **kwargs)
+245: 
+246:             dec.forward = _bf16_safe_forward
+247:             _note("shape_slat_decoder: bf16 mixed precision, fp32 io")
+248:         except Exception as exc:
+249:             logger.warning("[amd] shape decoder bf16 skipped: %s", exc)

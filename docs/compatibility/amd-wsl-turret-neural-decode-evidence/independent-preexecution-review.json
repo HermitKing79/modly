@@ -1,0 +1,112 @@
+{
+  "review_kind": "independent_source_and_evidence_only_neural_preexecution_review",
+  "review_date": "2026-10-14",
+  "decision": "GO",
+  "scope": "One conditional genuine parent-only turret neural forward using the exact reviewed candidate, after its publication. No retry, alternate precision/backend/resolution, extraction, sampling, build or repair is admitted.",
+  "user_requirement_source": "C:/Users/wattz/.codex/attachments/e711ebe2-8b79-4870-9a28-bfbcf7df0be3/Pasted text.txt",
+  "base": "a9c9ad7bcdd164836d7f44244f32ad82a4ea2839",
+  "branch": "codex/amd-wsl-turret-neural-decode",
+  "reviewer_runtime_model_native_or_GPU_actions": false,
+  "reviewer_weight_reads": false,
+  "reviewer_candidate_edits": false,
+  "exact_candidate_sha256": {
+    "decode.py": "82db909ada8fed41b14fdb4300542d43a7b8cef6e3bf9b6f7c1451751d822460",
+    "neural.py": "e1273f400403fb4f9a32ad9e334859b1d187d262fc7f4fbd0c11085d585b4606",
+    "runtime.py": "3964d353157fb2c9bcbfb309d98c8d51abd5eca72a1962325182267651101b01",
+    "admission.py": "9eb44f2b17e770b544eeed9573d730f433367e46d50ac7fd4bc61c57b4141fa5"
+  },
+  "candidate_manifest_matches_current_files": true,
+  "reviewed_verification_records": {
+    "host_preflight": {
+      "exit": 0,
+      "seconds": 1.1955518,
+      "marker_absent": true,
+      "run_absent": true,
+      "genuine_metadata_component_only": true,
+      "metadata_tensor_entries": 292,
+      "metadata_original_dtypes": {"F16": 292},
+      "AI_native_imports": false,
+      "available_host_RAM_bytes": 17971077120,
+      "D_free_bytes": 75822620672,
+      "capture_sha256": "c42efdc7e1301d1d9f93e3626c64b30ba22576bab54a7c18a70da7c27c849b4e"
+    },
+    "runtime_CPU_tests": {
+      "tests": 6,
+      "status": "PASS",
+      "record": "runtime-tests-reviewed.stderr.txt",
+      "sha256": "7b237debf1aca5f4d34874809f539a1bc6f6fb654753dda7b90c489504055f0b",
+      "coverage": "Selective BF16/F32 policy, full input contract, actual CPU output writer, production native argument/phase/restoration controls with metadata-only inputs, and tensor traceback-release regression. These are not GPU convolution experiments."
+    },
+    "admission_CPU_tests": {
+      "tests": 13,
+      "status": "PASS",
+      "record": "admission-tests.stderr.txt",
+      "sha256": "5c16b5d2f1ea35b170a8f88e7adad2408b6a749c039239e643473be58689a848",
+      "coverage": "Source-aware callback order, bounds, cache/row/width validation, authentic mask child counting and pre-operation refusals."
+    },
+    "Linux_passive_before": {
+      "status": "PASS",
+      "audit_exit": 0,
+      "named_stop_exit": 0,
+      "AI_imports": false,
+      "GPU_actions": false,
+      "guest_available_RAM_bytes": 15787417600,
+      "original_staged_payloads": 922,
+      "approved_packaging_payloads": 23,
+      "baseline_venv_packages_dpkg_sources_preserved": true
+    }
+  },
+  "Phase_A": {
+    "reference": "kr4ckhe4d/trellis2-9070xt@0220d73971fd0be242b2b311ac00d590e1b26301",
+    "reference_policy_sha256": "47dcfbbbd20e1e769b787c1160c029fdd6f90d0cf226d8cdfe4d0a1e64c9043c",
+    "reference_excerpt_sha256": "723063afb90fa1095fad6b5c35fe2c53814ede2912415b84a0abafcf73abe5d1",
+    "source_match": "The captured reference calls blocks.float(), converts only MIX_PRECISION_MODULES to BF16, sets decoder.dtype=BF16 and feeds F32. The pinned local parent uses F32 from_latent/output_layer and LayerNorm32 with F32 normalization followed by the incoming feature dtype. The candidate applies the same selective policy after unchanged strict loading.",
+    "strict_checkpoint_first": "All 292 original F16 entries and the existing 76 byte-exact F32 widenings are verified before runtime conversion. Existing ShapeDecoderComponent and StrictLocalComponent remain unchanged.",
+    "runtime_conversion": "Exactly the 216 previously F16 block parameters become BF16, with every change recorded including the F32 intermediate and BF16 rounding. All 76 sensitive F32 tensors, parameter names/shapes and eval/gradient state are preserved. BF16 conversion is not described as lossless checkpoint widening.",
+    "algorithm": "The actual Trellis conv configuration and FlexGEMM global both use explicit_gemm; hashmap ratio remains 2.0. Local conv_flex_gemm reapplies the root settings each convolution. FlexGEMM Triton allow_tf32 and Torch TF32 flags are false.",
+    "source_guards": "All seven decisive local source hashes in the reference policy match and are covered by the existing 97-file guest source guard.",
+    "reference_limit": "This verifies a matching source policy, not numerical parity or successful BF16/native execution. The reference itself reports nonfinite output risk; this candidate requires finite completed neural output."
+  },
+  "Phase_B": {
+    "all_40_original_sparse_convolutions_gated": true,
+    "all_8_original_C2S_expansions_gated": true,
+    "original_4_learned_masks_and_coordinate_order_preserved": true,
+    "conv_checks": "Before each original callback, validate real support rows, BF16 width/weights, I32 coordinates, kernel/stride/dilation, sequence and real cached neighbor-map layout. Bound full im2col, masked gather, long indices, mask, hash/map, output and downstream original block buffers against current live allocation/reservation and device free memory.",
+    "C2S_checks": "Count children from the genuine boolean learned mask before the original nonzero/repeat/coordinate/gather allocations. Check exact shared mask and parent support on both original calls; budget feature and skip expansions, geometry temporaries, skip repeat and downstream norm/activation/residual buffers.",
+    "boundary_checks": "Placement admission includes model bytes, full authentic input, initial F32 projection and cast. The preceding same-row/width ConvNeXt downstream allowance covers the up-block to_subdiv/norm/SiLU prefix. The final conv2 allowance covers the original F32 cast/norm/seven-channel projection.",
+    "actual_cache_API_matches": "Pinned SparseConv3d uses the checked 3-tuples, (Co,3,3,3,Ci) weight layout and exact cache key; the wheel cache object exposes neighbor_map. Both C2S calls have fresh learned-mask handling rather than a cached replacement.",
+    "maximum_active_rows": 1000000,
+    "initial_free_VRAM_bytes": 13958643712,
+    "PyTorch_allocator_limit_bytes": 12884901888,
+    "operating_free_reserve_bytes": 2147483648,
+    "allocator_opaque_headroom_bytes": 1073741824,
+    "visible_allocation_padding_percent": 25,
+    "opaque_allocation_limit": "The visible source budgets, extra headroom and allocator ceiling are practical admission controls. They do not mathematically bound undocumented native HIP/BLAS allocations or guarantee against device faults; external containment and monitoring remain required."
+  },
+  "Phase_C": {
+    "input": "Unmodified, hash-verified denormalized F32 [3743,32] and I32 [3743,4], with original row order and fresh spatial cache.",
+    "forward": "Call the genuine SparseUnetVaeDecoder.forward(model,x,guide_subs=None,return_subs=True) exactly once under inference mode and eval/disabled gradients. low_vram selects only the pinned original implementation's chunking; admission does not assume that flag alone bounds memory.",
+    "native_boundary": "Only original hashmap_build_submanifold_conv_neighbour_map is admitted, inside an admitted active convolution. Require exact 12 arguments, tensor identity/device/dtypes/contiguity/hash sizing/spatial/kernel/dilation values, explicit algorithm and default stream. Reject repeated native calls at a site, all other bindings and foreign native/profile entries.",
+    "compilation_policy": "Existing compiler/JIT/autotune/runtime guards and process/network/filesystem audit remain installed after import/CPU tensor guards end. No compilation, tuning miss, algorithm fallback or retry is admitted.",
+    "containment": "Reuse the exact GO handshake, Windows Job attach before GO, continuous healthy device/system-event monitoring, host RAM/D-disk polls, guest timeout and named Modly distro termination. Require unforced owned-tree cleanup and a healthy post-exit observation for reliable acceptance.",
+    "deadlines_seconds": {"native": 60, "CPU": 120, "GPU_including_placement_validation_release": 240, "guest": 450, "authorized_worker": 430, "host": 480},
+    "output_acceptance": "Require all 40 convs and eight C2S calls; genuine F32 [N,7] output/I32 coordinates, four BF16 subdivision outputs with source-consistent support/mask linkage, valid coordinate ranges/unique support and numerical finiteness. Save the ten original CPU tensors to a fresh local artifact directory outside Git, cap payload at 256MiB/header at 128KiB, verify readback including raw tensor hashes, and record file/tensor SHA256 plus provenance.",
+    "release": "Remove callback/profile/native wrappers, clear original spatial caches and tensor locals, collect input/output and model/component/parameter weak references, synchronize, clear the BLAS workspace exactly once and empty allocator cache. Require allocated/reserved GPU bytes zero; cleanup failures remain unqualified."
+  },
+  "resolved_findings": [
+    {
+      "finding": "An active failure traceback retained genuine forward/hook tensor frames and could mask AdmissionStop with a weakref error.",
+      "resolution": "Production detach_failure stores original type/message/formatted traceback, clears the traceback, then cleanup checks references and rethrows a new exception preserving the stop class. A focused actual CPU-tensor regression passes."
+    },
+    {
+      "finding": "The copied newE resource record retained obsolete CPU-only total deadlines.",
+      "resolution": "The newE record now states the actual 60/120/240/450/430/480 deadlines and labels the inherited CPU memory/hash timing basis."
+    }
+  ],
+  "remaining_blockers": [],
+  "conditions_before_the_one_attempt": [
+    "Publish and verify this exact candidate and review before reserving the marker; the host entry requires the exact published HEAD and candidate identity manifest.",
+    "All live worker identity, source/payload, GPU/RAM/disk and per-operation gates must pass. A refusal or runtime error ends this route with its original boundary evidence; no repair/retry/fallback follows.",
+    "The root task owns the sole runtime attempt and final decision from actual measurements; this GO is preparation approval, not evidence that neural output already exists."
+  ]
+}
