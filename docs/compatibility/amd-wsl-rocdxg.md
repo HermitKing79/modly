@@ -1,6 +1,6 @@
 # Isolated Ubuntu WSL2 ROCm compatibility
 
-2026-10-14. Base `1794c909a8cab0f042c0d38ec088cc8b4935f363`; development branch `codex/amd-wsl-rocdxg-smoke`. **Preparation complete; GPU classification pending the one authorised attempt.** No TRELLIS installation or model execution is included.
+2026-10-14. Base `1794c909a8cab0f042c0d38ec088cc8b4935f363`; development branch `codex/amd-wsl-rocdxg-smoke`. **UNKNOWN for basic WSL GPU execution: isolated installation and CPU import succeeded, but the one supervised attempt stopped at the guest authorization gate before Torch import.** No TRELLIS installation or model execution is included.
 
 ## Installed candidate and preservation
 
@@ -29,6 +29,18 @@ The reviewed harness uses an exclusive attempt marker, healthy Windows observati
 
 ## Outcome and next step
 
-Pending the approved single attempt. Results, native/runtime versus harness failures, final preservation, payload/disk measurements and the smallest justified decoder-related next action will be recorded after execution. No TRELLIS installation or decoding follows automatically.
+The exact reviewed execution candidate was committed and GitHub-verified as `ec7acede847231fa95da2427b9b408a1f0431c36` before the attempt. Its SHA256 `6a34ffc0f799f1900d65d2a860b3933afb4dae8ab07ab111f9a3adc367ff24f2` agrees with the exclusive marker, host and guest records. [Execution identity](amd-wsl-rocdxg-evidence/execution-harness.json), [host result](amd-wsl-rocdxg-evidence/run/results.json), [guest result](amd-wsl-rocdxg-evidence/run/guest/results.json).
+
+The host attached its Job and logged `go-sent`. The guest rejected `await_go(sys.stdin)` with `Host authorization absent or refused; no Torch import or GPU work`. It recorded only `gate-wait` and `worker-finished`, `gate_authorized=false`, and no GPU-stage start. Exact received stdin was not recorded, so neither EOF nor newline conversion is established as the cause. **This is a harness/transport boundary failure, not evidence of a ROCm numerical or native GPU defect.** The dedicated distro's GPU visibility, numerical result and VRAM/allocator cleanup remain unmeasured.
+
+The worker and supervisor exited with status 1. Supervision took 11.172 seconds. Three healthy Windows observations started five seconds apart, including one after termination. The client Job had zero remaining processes with no forced Job cleanup; termination of only `Modly-AMD-Ubuntu-24.04` succeeded. No retry occurred. Both distros are now stopped; Docker remains default. [Independent-readable integrity summary](amd-wsl-rocdxg-evidence/independent-readable-outcome.json), [post-host preservation](amd-wsl-rocdxg-evidence/host-after.json).
+
+Retained download payloads plus the 1,106-byte requirements file total **6,452,645,001 bytes (6.01 GiB)**. This includes Ubuntu, prebuilt ROCm/OpenMP packages, AMD Torch/Triton, and admitted binary Python dependencies. APT index/metadata and transient pip-resolution traffic are additional; total network bandwidth was not metered. Final VHD physical allocation is **18,921,553,920 bytes (17.62 GiB)**; D: retains **79,728,582,656 bytes (74.25 GiB)** free. [Measured disk footprint](amd-wsl-rocdxg-evidence/disk-after.json).
+
+**One recommended next action:** separately approve a CPU-only replay of the actual WSL stdin route with the same startup environment, timeout and Python flags, recording the host-written bytes and guest-received bytes/line. This is the smallest missing observation; do not infer a fix or consume another GPU attempt before it is resolved. The exclusive failed-attempt marker remains intact.
+
+After that boundary and a separately authorised basic GPU proof pass, the decoder-related milestone is installation/qualification of only the pinned genuine neural-decoder dependencies, followed by one strict offline decode of the preserved turret latent/coordinates, stopping before extraction. There is no basis to approve that execution yet. Current WSL/PyTorch 2.9.1/ROCm 7.2.1 differs from the [Linux reference](amd-linux-route-comparison.md)'s native Linux/PyTorch 2.13/ROCm 7.2.4, explicit-GEMM and mixed BF16/FP32 decoder. FlexGEMM, TRELLIS, O-Voxel and CuMesh have not been installed in this distro; no decoder precision policy, learned subdivision admission or neural computation is proved here.
 
 Rollback is documented in the [plan](../superpowers/plans/2026-10-14-amd-wsl-rocdxg-smoke.md). No distro deletion or global WSL shutdown is performed automatically.
+
+Final preservation: independent post-audit matched both Windows venv metadata/distributions, all12 selected native binary hashes,169 native Python sources, AMD modified file/backup hashes and all five turret assets. Direct Git verified the unchanged AMD source HEAD/status. Historical local and GitHub refs match the pre-installation baseline; main is `f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea`. Only newly added WSL proof/report/test paths differ from the starting commit. [Post-audit](amd-wsl-rocdxg-evidence/independent-preservation-after.json), [Git preservation](amd-wsl-rocdxg-evidence/git-preservation-after.json), [independent outcome review](amd-wsl-rocdxg-evidence/outcome-review.json).

@@ -1,0 +1,21 @@
+{
+  "reviewer":"wsl_smoke_review",
+  "classification":"UNKNOWN",
+  "supported_boundary":"Host GO sent; guest authorization rejected before Torch import or GPU stage",
+  "exact_received_stdin_recorded":false,
+  "EOF_or_newline_cause_proved":false,
+  "native_or_numerical_GPU_failure_proved":false,
+  "GPU_memory_or_numerical_evidence_exists":false,
+  "client_exit":1,
+  "observer_health_verified":true,
+  "healthy_observation_count":3,
+  "observation_start_gap_seconds":5,
+  "windows_job_remaining_processes":0,
+  "forced_job_cleanup":false,
+  "owned_distro_termination_exit":0,
+  "harness_SHA256_matches_published_candidate":"6a34ffc0f799f1900d65d2a860b3933afb4dae8ab07ab111f9a3adc367ff24f2",
+  "verified_candidate_commit":"ec7acede847231fa95da2427b9b408a1f0431c36",
+  "next_missing_observation":"CPU-only actual WSL stdin replay with host written bytes and guest received bytes/line",
+  "review_was_read_only":true,
+  "no_followup_execution":true
+}

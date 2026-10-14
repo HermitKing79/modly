@@ -1,0 +1,31 @@
+{
+  "reviewer": "cached_leaf_access_audit",
+  "result": "PASS",
+  "amd_metadata_entries": 94687,
+  "modly_metadata_entries": 61313,
+  "amd_metadata_sha256": "a2fdd34e6b310e3d4684250850cadfad1801536000e49e6557a0523107733527",
+  "modly_metadata_sha256": "bcae506c520e1dca7693e700684ae225aceb16b4ed8de50e2cf023c5ec52c38e",
+  "distribution_metadata_pyvenv_cfg_match": true,
+  "native_binary_hashes_checked": 12,
+  "native_binary_hashes_match": true,
+  "inspected_native_python_sources_match": 169,
+  "amd_edits_and_backup_match": true,
+  "saved_turret_assets_verified": {
+    "latent": "90eaf72030f303b209a4d02ae9adc7d4ecd39662344f35f0adc8120bc1e871b9",
+    "coordinates": "949a9e6a2548abcad66354384502c06834d4d56ea3f2fa86b619c25926379ed4",
+    "decoder": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "decoder_config": "5f1b856dffce79466fb18f5f0eefc08f08c673b24b3c05b20359c0b6d318a209",
+    "provenance": "4834412e700434f5645cd919dd0d75e9209b6b5d67cc7cb765e98b76890f9a81"
+  },
+  "ai_imports": false,
+  "guest_started": false,
+  "phase": "after-isolated-WSL-setup-and-single-attempt",
+  "amd_source_HEAD": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+  "amd_source_status": " M nodes.py\n?? nodes.py.before-profiler-fix",
+  "source_status_verifier": "root direct read-only Git; subagent Git status unavailable",
+  "additional_source_hashes_match": 13,
+  "preflight_source_hashes_match": 7,
+  "preservation_deltas": [],
+  "new_ubuntu_is_intentional_and_excluded": true,
+  "no_guest_start_or_gpu_actions_in_post_audit": true
+}

@@ -1,0 +1,33 @@
+{
+  "classification": "UNKNOWN",
+  "host_go_sent": true,
+  "worker_gate_authorized": false,
+  "torch_import_in_attempt": false,
+  "gpu_calculation_executed": false,
+  "input_gate_error": "Host authorization absent or refused; no Torch import or GPU work",
+  "received_stdin_not_recorded": true,
+  "worker_exit": 1,
+  "supervisor_exit": 1,
+  "observer_healthy": true,
+  "observations": 3,
+  "maximum_observer_start_gap_seconds": 5.0,
+  "client_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "owned_distro_termination": 0,
+  "elapsed_seconds": 11.171999999998661,
+  "gpu_memory_measurements": null,
+  "gpu_numerical_result": null,
+  "artifact_hashes": {
+    "run\\phases.jsonl": "1d9ada42e4f549d208e07d71ae08a53742c378b621d9b535aae373fe786dde74",
+    "run\\results.json": "a496f305314c743d5cf8552bf39322126ad501e6f12e0ab4fc385ac4da4cf61e",
+    "run\\worker.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run\\worker.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run\\guest\\phases.jsonl": "5e22521af8cb41702810f4ada5a8a20f0fa506e4370cbb8a64288edde860774b",
+    "run\\guest\\results.json": "b0f6568ea1420f60235abe3ed9c4bc0cdae3c669a20281777a47b41232fc7e24"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "exit": 0,
+  "stdout": "{\"distros\":[{\"DistributionName\":\"docker-desktop\",\"Version\":2,\"BasePath\":\"\\\\\\\\?\\\\C:\\\\Users\\\\wattz\\\\AppData\\\\Local\\\\Docker\\\\wsl\\\\main\"},{\"DistributionName\":\"Modly-AMD-Ubuntu-24.04\",\"Version\":2,\"BasePath\":\"D:\\\\AI\\\\Modly-WSL\\\\Ubuntu24.04\"}],\"default\":{\"DefaultDistribution\":\"{233f076a-c415-4c50-958f-22a80fe55639}\"},\"driver\":{\"DeviceName\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"InfName\":\"oem85.inf\",\"IsSigned\":true}}\n",
+  "stderr": "",
+  "host": {
+    "distros": [
+      {
+        "DistributionName": "docker-desktop",
+        "Version": 2,
+        "BasePath": "\\\\?\\C:\\Users\\wattz\\AppData\\Local\\Docker\\wsl\\main"
+      },
+      {
+        "DistributionName": "Modly-AMD-Ubuntu-24.04",
+        "Version": 2,
+        "BasePath": "D:\\AI\\Modly-WSL\\Ubuntu24.04"
+      }
+    ],
+    "default": {
+      "DefaultDistribution": "{233f076a-c415-4c50-958f-22a80fe55639}"
+    },
+    "driver": {
+      "DeviceName": "AMD Radeon RX 9070 XT",
+      "DriverVersion": "32.0.31041.1004",
+      "DriverDate": "/Date(1786924800000)/",
+      "InfName": "oem85.inf",
+      "IsSigned": true
+    }
+  },
+  "before": {
+    "driver": {
+      "DeviceName": "AMD Radeon RX 9070 XT",
+      "DriverVersion": "32.0.31041.1004",
+      "DriverDate": "/Date(1786924800000)/",
+      "InfName": "oem85.inf",
+      "IsSigned": true
+    },
+    "distros": [
+      {
+        "DistributionName": "docker-desktop",
+        "Version": 2,
+        "BasePath": "\\\\?\\C:\\Users\\wattz\\AppData\\Local\\Docker\\wsl\\main"
+      }
+    ],
+    "default": {
+      "DefaultDistribution": "{233f076a-c415-4c50-958f-22a80fe55639}",
+      "DefaultVersion": null
+    },
+    "location_exists": false,
+    "os": {
+      "Caption": "Microsoft Windows 11 Pro",
+      "Version": "10.0.26200",
+      "BuildNumber": "26200",
+      "FreePhysicalMemory": 18670116
+    },
+    "host": {
+      "Name": "HERMIT",
+      "HypervisorPresent": true,
+      "TotalPhysicalMemory": 34270023680
+    },
+    "disks": [
+      {
+        "DeviceID": "C:",
+        "Size": 999005614080,
+        "FreeSpace": 98018541568
+      },
+      {
+        "DeviceID": "D:",
+        "Size": 250058108928,
+        "FreeSpace": 105102913536
+      },
+      {
+        "DeviceID": "E:",
+        "Size": 1000202039296,
+        "FreeSpace": 612697587712
+      }
+    ]
+  }
+}
