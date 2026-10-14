@@ -1,0 +1,31 @@
+{
+  "classification": "PASS",
+  "all_256_values_exact": true,
+  "max_absolute_error": 0.0,
+  "finite_values": 256,
+  "gpu_vector_add_entry_and_return_count": 1,
+  "harness_commit": "40a139eebbc5d74584786ee764415a5b8cc31b57",
+  "all_source_sha256_agree": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2",
+  "healthy_observation_count": 5,
+  "maximum_observer_start_gap_seconds": 5.014999999999418,
+  "cpu_free_readback_no_gpu_execution": true,
+  "historical_evidence_files_unchanged": 157,
+  "artifacts": {
+    "docs/compatibility/amd-wsl-rocdxg-gpu-resume-evidence/run/results.json": {
+      "bytes": 35627,
+      "sha256": "0d06e459fd8228d6df03690d44aafd6526487a6f62d12be26fd9135b381ad9a2"
+    },
+    "docs/compatibility/amd-wsl-rocdxg-gpu-resume-evidence/run/guest/results.json": {
+      "bytes": 15797,
+      "sha256": "a59d0e2421d476d5b727103aa3912f355018e46357feb04958560245dd5e52c7"
+    },
+    "docs/compatibility/amd-wsl-rocdxg-gpu-resume-evidence/run/guest/phases.jsonl": {
+      "bytes": 3606,
+      "sha256": "438f3090dc42f4eaeca444b40362f37fb74829d1e832bd1a64fb8bca1633284c"
+    },
+    "docs/compatibility/amd-wsl-rocdxg-gpu-resume-evidence/gpu-attempt.marker": {
+      "bytes": 315,
+      "sha256": "3b934a72f2fc3295bf5a87af53aee6f9006fe658955e0ec98071cc36bfe2e9fd"
+    }
+  }
+}

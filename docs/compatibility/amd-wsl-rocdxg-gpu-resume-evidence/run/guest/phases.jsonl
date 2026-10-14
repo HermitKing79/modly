@@ -1,0 +1,31 @@
+{"phase": "gate-wait", "utc": "2026-10-14T10:30:53.384080+00:00", "monotonic_seconds": 3.716525556, "gpu_allowed": false}
+{"phase": "gate-authorized", "utc": "2026-10-14T10:30:54.314565+00:00", "monotonic_seconds": 4.647017292, "gpu_allowed": true}
+{"phase": "device-count-start", "utc": "2026-10-14T10:30:59.148479+00:00", "monotonic_seconds": 9.480925067}
+{"phase": "device-count-complete", "utc": "2026-10-14T10:30:59.187450+00:00", "monotonic_seconds": 9.519898188}
+{"phase": "device-properties-start", "utc": "2026-10-14T10:30:59.193909+00:00", "monotonic_seconds": 9.526354266}
+{"phase": "device-properties-complete", "utc": "2026-10-14T10:30:59.201041+00:00", "monotonic_seconds": 9.533486566}
+{"phase": "free-vram-start", "utc": "2026-10-14T10:30:59.206359+00:00", "monotonic_seconds": 9.538803558}
+{"phase": "free-vram-complete", "utc": "2026-10-14T10:30:59.212300+00:00", "monotonic_seconds": 9.544744084}
+{"phase": "allocator-cap-start", "utc": "2026-10-14T10:30:59.217818+00:00", "monotonic_seconds": 9.550262382}
+{"phase": "allocator-cap-complete", "utc": "2026-10-14T10:30:59.223215+00:00", "monotonic_seconds": 9.555659233}
+{"phase": "reset-memory-peak-start", "utc": "2026-10-14T10:30:59.228757+00:00", "monotonic_seconds": 9.561201436}
+{"phase": "reset-memory-peak-complete", "utc": "2026-10-14T10:30:59.234348+00:00", "monotonic_seconds": 9.566792779}
+{"phase": "memory-before-start", "utc": "2026-10-14T10:30:59.239879+00:00", "monotonic_seconds": 9.572323801}
+{"phase": "memory-before-complete", "utc": "2026-10-14T10:30:59.245747+00:00", "monotonic_seconds": 9.578191909}
+{"phase": "copy-left-to-gpu-start", "utc": "2026-10-14T10:30:59.265935+00:00", "monotonic_seconds": 9.598380577}
+{"phase": "copy-left-to-gpu-complete", "utc": "2026-10-14T10:31:00.074636+00:00", "monotonic_seconds": 10.407085271}
+{"phase": "copy-right-to-gpu-start", "utc": "2026-10-14T10:31:00.081497+00:00", "monotonic_seconds": 10.41394243}
+{"phase": "copy-right-to-gpu-complete", "utc": "2026-10-14T10:31:00.087078+00:00", "monotonic_seconds": 10.419522003}
+{"phase": "one-vector-addition-start", "utc": "2026-10-14T10:31:00.092918+00:00", "monotonic_seconds": 10.425362652}
+{"phase": "one-vector-addition-complete", "utc": "2026-10-14T10:31:00.300903+00:00", "monotonic_seconds": 10.633354437}
+{"phase": "addition-synchronize-start", "utc": "2026-10-14T10:31:00.307527+00:00", "monotonic_seconds": 10.639971256}
+{"phase": "addition-synchronize-complete", "utc": "2026-10-14T10:31:00.313880+00:00", "monotonic_seconds": 10.646325283}
+{"phase": "copy-result-to-cpu-start", "utc": "2026-10-14T10:31:00.320018+00:00", "monotonic_seconds": 10.652463036}
+{"phase": "copy-result-to-cpu-complete", "utc": "2026-10-14T10:31:00.325507+00:00", "monotonic_seconds": 10.6579523}
+{"phase": "copy-synchronize-start", "utc": "2026-10-14T10:31:00.331625+00:00", "monotonic_seconds": 10.664069426}
+{"phase": "copy-synchronize-complete", "utc": "2026-10-14T10:31:00.337297+00:00", "monotonic_seconds": 10.669741648}
+{"phase": "memory-peak-start", "utc": "2026-10-14T10:31:00.343469+00:00", "monotonic_seconds": 10.67591423}
+{"phase": "memory-peak-complete", "utc": "2026-10-14T10:31:00.349693+00:00", "monotonic_seconds": 10.682138055}
+{"phase": "memory-release-start", "utc": "2026-10-14T10:31:00.375351+00:00", "monotonic_seconds": 10.707796718}
+{"phase": "memory-release-complete", "utc": "2026-10-14T10:31:00.381859+00:00", "monotonic_seconds": 10.714303651, "allocated": 0, "reserved": 0}
+{"phase": "worker-finished", "utc": "2026-10-14T10:31:00.388144+00:00", "monotonic_seconds": 10.720589651, "classification": "PASS"}

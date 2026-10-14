@@ -1,0 +1,18 @@
+{
+  "reviewer": "wsl_stdin_review",
+  "classification": "PASS",
+  "all256_outputs_independently_verified": true,
+  "vector_add_entry_and_return_count": 1,
+  "runtime_source_marker_identity_verified": true,
+  "free_vram_admission_allocator_cap_smoke_peak_release_verified": true,
+  "all_three_tensor_references_collected": true,
+  "healthy_windows_observations": 5,
+  "maximum_start_gap_seconds": 5.015,
+  "worker_exit_zero_empty_unforced_job_verified": true,
+  "only_named_distro_terminated": true,
+  "addition_seconds": 0.227005624,
+  "gpu_stage_seconds": 6.067107102,
+  "host_seconds": 21.187,
+  "no_additional_gpu_wsl_tests_or_edits_by_reviewer": true,
+  "scope_limit": "Small PyTorch fixture only; no decoder or application-extension compatibility claim."
+}

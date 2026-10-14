@@ -1,0 +1,14 @@
+{
+  "harness_commit": "40a139eebbc5d74584786ee764415a5b8cc31b57",
+  "harness_sha256": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2",
+  "command": [
+    "python312",
+    "-B",
+    "-I",
+    "scripts/compatibility/amd_wsl_rocdxg_smoke.py",
+    "--output",
+    "docs/compatibility/amd-wsl-rocdxg-gpu-resume-evidence/run"
+  ],
+  "authorized_gpu_attempts": 1,
+  "no_automatic_retry": true
+}
