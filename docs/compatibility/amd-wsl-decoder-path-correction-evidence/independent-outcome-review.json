@@ -1,0 +1,106 @@
+{
+  "reviewer": "shape_cpu_loading_review",
+  "classification": "UNKNOWN",
+  "disposition": "STOP; single runtime attempt consumed. Preserve exact candidate and evidence. No dependency correction, install, source repair, runtime retry or further investigation authorized by this review.",
+  "candidate_sha256": "26b2679293ce7ab0d2eab190e45bc4d8ab3bcbb34734aa0e2f395b515a2b62fa",
+  "published_candidate_commit_from_capture": "83e5d7f6ff810cee274b9d2f106c3809c3c21d9b",
+  "candidate_hash_matches_current_file_marker_capture_and_supervisor": true,
+  "review_method": "Read-only inspection of full saved worker/supervisor results, journals, marker, stdout/stderr, capture and candidate hash. No extra source/cache/dependency investigation, WSL action, tests, imports or weight execution; only this review JSON written.",
+  "failure_boundary": {
+    "error_type": "ModuleNotFoundError",
+    "error": "No module named 'packaging'",
+    "traceback_chain": [
+      "loading.py:297 model=component.load_cpu()",
+      "shape_decoder_loader.py:157 model=self._component.load_cpu()",
+      "strict_loader.py:37 from safetensors.torch import load_file",
+      "staged safetensors/torch.py:5 from packaging.version import Version"
+    ],
+    "actual_CPU_loading_call_entered": true,
+    "genuine_parent_factory_entered": false,
+    "meta_model_construction_reached": false,
+    "safetensors_load_file_invoked": false,
+    "checkpoint_weight_tensors_materialized": false,
+    "strict_loaded_byte_verification_reached": false,
+    "F16_to_F32_widening_reached": false,
+    "decoder_cpu_record": "NOT_ATTEMPTED",
+    "status_interpretation": "decoder_cpu remains the initial status because successful loading was not reached. The traceback proves the real component/strict load_cpu methods were called; it must not be paraphrased as no CPU-loading call occurred.",
+    "cause_interpretation": "A demonstrated missing Python import dependency at the staged safetensors.torch import boundary. No native binary, real constructor, checkpoint-value, shape or precision incompatibility was demonstrated."
+  },
+  "successful_preceding_boundaries": {
+    "Linux_argument_types": ["str", "str"],
+    "Linux_path_validation_before_Torch_and_FlexGEMM": true,
+    "config_and_checkpoint_identity_checked": true,
+    "checkpoint_freshly_streamed_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "checkpoint_file_bytes": 948490494,
+    "native_import": "PASS",
+    "native_package_path": "/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/__init__.py",
+    "native_binary_path": "/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/kernels/cuda.cpython-312-x86_64-linux-gnu.so",
+    "native_bindings_callable": 18,
+    "native_import_synchronized_seconds": 0.2619753659999997,
+    "Triton_driver_helper_inactive": true,
+    "runtime_identity": "Python 3.12.3; torch 2.9.1+rocm7.2.1.gitff65f5bc; HIP 7.2.53211-e1a6bc5663; /opt/modly-wsl/venv.",
+    "GPU_identity": "One AMD Radeon RX 9070 XT, gfx1201; approved runtime admission initialized the GPU context."
+  },
+  "execution_measurements": {
+    "runtime_attempts": 1,
+    "worker_exit_code": 1,
+    "outer_exit_code": 1,
+    "worker_elapsed_seconds": 12.314674225000001,
+    "supervisor_elapsed_seconds": 25.484000000004016,
+    "outer_elapsed_seconds": 26.384975,
+    "guest_admission_RAM_available_bytes": 15935324160,
+    "guest_RAM_before_CPU_loading_bytes": 15675420672,
+    "minimum_host_RAM_available_bytes": 13993553920,
+    "CPU_RAM_requirement_bytes": 6972719480,
+    "CPU_before_loading": {
+      "VmRSS_bytes": 762695680,
+      "VmHWM_bytes": 762695680,
+      "ru_maxrss_bytes": 761933824
+    },
+    "GPU_memory_before": {"allocated": 0, "reserved": 0},
+    "GPU_native_memory_after": {"allocated": 0, "reserved": 0},
+    "GPU_memory_release": {"allocated": 0, "reserved": 0},
+    "policy_final": {
+      "phase": "cpu_meta",
+      "blocked": {},
+      "tensor_operations_allowed": 0,
+      "native_calls": 0,
+      "rejected_calls": 0
+    },
+    "no_neural_forward": true,
+    "limits_preserved": "60/120/240/220/270-second native/CPU/guest/authorized-worker/host deadlines, 13 GiB free VRAM, 12 GiB allocator ceiling, existing RAM/disk floors and guards.",
+    "measurement_limits": "Observed zeros concern recorded PyTorch allocator snapshots and instrumented tensor/native-binding calls. GPU context initialization occurred as recorded. GPU memory_peak and CPU loaded/after-release/loading-integrity measurements are absent, not measured zeros. Raw checkpoint bytes were streamed for SHA identity; no checkpoint weight tensors were materialized."
+  },
+  "containment": {
+    "host_journal": ["supervisor-start", "wsl-client-started", "windows-job-attached", "go-sent", "wsl-client-exited", "owned-distro-terminated", "supervisor-finished"],
+    "guest_journal": ["gate-wait", "gate-authorized", "native-import-entry", "native-qualified-CPU-preparation-entry", "worker-finished"],
+    "Windows_Job_attached_before_binary_GO": true,
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "grace_empty": true,
+    "grace_seconds": 0.0,
+    "named_distro": "Modly-AMD-Ubuntu-24.04",
+    "named_distro_termination_returncode": 0,
+    "observer_healthy": true,
+    "healthy_observations": 6,
+    "observer_capture_seconds": [0.469, 0.422, 0.453, 0.422, 0.437, 0.437],
+    "observer_findings": "Every saved observation completed normally, reported controller Status OK and no selected GPU/driver events; healthy post-exit observation present.",
+    "scope_limit": "Windows Job covers the WSL client/helper tree; Linux containment is guest timeout and successful named-distro termination. Host and guest monotonic clocks are separate."
+  },
+  "unknown_evidence_gaps": [
+    "No genuine parent construction, complete CPU state-dictionary assignment, loaded-value byte proof or lossless widening occurred.",
+    "Final 292 CPU parameters, zero actual model buffers, eval/grad-disabled state and model/parameter/component weakref collection were not exercised or recorded.",
+    "No successful CPU load timing, loaded/after-release CPU RSS/HWM or final GPU peak record exists.",
+    "Post-run protected-environment/package/source/remote-reference preservation was pending at this outcome review; this review does not independently certify it."
+  ],
+  "minimal_next_action": "Finish the planned passive after-preservation and publish UNKNOWN with the exact missing-packaging boundary. Do not modify or rerun this candidate. A later separately authorized dependency correction may address packaging in the isolated staged runtime; it is outside this attempt and is not approved here.",
+  "evidence_sha256": {
+    "run/results.json": "72987952cce684f5ce65522d7f38fbb533f0e1087d5a82ca6c2934beb6049c9b",
+    "run/guest/results.json": "a933a54278626f54bd9f6a17d6c20fefe0ffc769d4ad7770e91dff9297adeb56",
+    "run/phases.jsonl": "4f30719413b932f842783d50d0876c29c9d9c3dee21ccb7cb5f01b4bbc5d48ad",
+    "run/guest/phases.jsonl": "e5846d3a57725beb94508a9a6c523a35c13928da13d31778a5ddb691127901dc",
+    "host-capture.json": "0761b77d51a71bee30733d27d9ce067fa7e87e662fb035b24b8de9bbdb368a2d"
+  }
+}

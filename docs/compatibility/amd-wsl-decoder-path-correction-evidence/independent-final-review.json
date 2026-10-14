@@ -1,0 +1,48 @@
+{
+  "reviewer": "shape_cpu_loading_review",
+  "decision": "PASS_FOR_UNKNOWN_REPORT_PUBLICATION",
+  "execution_classification": "UNKNOWN",
+  "report": "docs/compatibility/amd-wsl-decoder-path-correction.md",
+  "report_sha256": "34c6637443e8f558a87e53e0641ae2770091dc4579c31cca8b90aa88b2433914",
+  "candidate_sha256": "26b2679293ce7ab0d2eab190e45bc4d8ab3bcbb34734aa0e2f395b515a2b62fa",
+  "published_execution_candidate": "83e5d7f6ff810cee274b9d2f106c3809c3c21d9b",
+  "outstanding_findings": [],
+  "review_method": "Read-only review of the exact final report, saved actual outcome/captures/journals, completed Windows/Linux after-preservation records, final preservation verification and saved WSL stopped-state text. No dependency/cache/source investigation, tests, WSL action, imports or weight execution. Only this final review JSON was written.",
+  "outcome_claims": {
+    "UNKNOWN_correct": true,
+    "reason": "Exact candidate completed path validation and genuine native import, then actual component/strict load_cpu invocation stopped at the demonstrated missing packaging dependency before the meta factory and load_file invocation. Model readiness and real weight integrity remain unproved.",
+    "native_import_PASS_18_callable_bindings_zero_invocations_supported": true,
+    "Linux_string_paths_validated_before_Torch_and_FlexGEMM_supported": true,
+    "real_CPU_loader_entry_described_correctly": true,
+    "raw_decoder_cpu_NOT_ATTEMPTED_status_not_misinterpreted": true,
+    "preloading_CPU_memory_snapshot_not_claimed_model_peak": true,
+    "GPU_allocator_snapshot_zeros_not_claimed_peak": true,
+    "HIP_metadata_initialization_acknowledged": true,
+    "missing_construction_load_integrity_widening_collection_measurements_unmeasured": true,
+    "single_attempt_and_no_runtime_repair_retry_supported": true,
+    "two_preflight_glue_corrections_with_preserved_failed_captures_supported": true,
+    "six_healthy_observations_unforced_empty_Job_and_named_stop_supported": true
+  },
+  "preservation_readback": {
+    "verification_after_status": "PASS",
+    "historical_files_unchanged": 259,
+    "control_sources_unchanged": 5,
+    "loaders_unchanged": 2,
+    "preexisting_bytecode_unchanged": 4,
+    "prior_remote_heads_unchanged": true,
+    "prior_remote_heads_count": 51,
+    "prior_local_heads_unchanged": true,
+    "candidate_hash_matches_final_verification": true,
+    "Windows_before_and_after": "PASS; two environment identities, 12 selected native hashes, selected source/AMD edits/backups, four saved turret artifacts and checkpoint metadata/header match; no unexpected after deltas.",
+    "Linux_before_and_after": "PASS; baseline venv/packages/dpkg/source and approved-library metadata preserved; 922 staged payloads verified; passive checks report no AI imports or GPU actions.",
+    "after_preservation_gaps_in_outcome_review_resolved": true,
+    "WSL_status": "Modly-AMD-Ubuntu-24.04 Stopped, version 2; docker-desktop remains default and Stopped, version 2.",
+    "scope_limit": "Reviewed saved verification evidence without repeating protected-environment file hashes or remote Git queries. Preservation coverage remains metadata/selected hashes where the records specify that method."
+  },
+  "next_action_supported": "Publish UNKNOWN and stop. Any future isolated packaging qualification and CPU-only safetensors.torch import check requires separate approval; no installation, model load, runtime retry, neural forward, subdivision or native workspace experiment is approved by this review.",
+  "evidence_sha256": {
+    "verification-after.json": "764f13eea1fe2cc851880fcb60faeff5d4660c87e2bddd7b6742c0b2c51716e5",
+    "windows-preservation-after.json": "b0d0cd29eda7df6a2375ff2d47f245e80ae3e0b7030364bb9a8a9fa918c1d278",
+    "linux-preservation-after.json": "6708eeafa8725bba6a50c9f6f5d641a7347b8195e608b8ce07505f2f6fe9d067"
+  }
+}
