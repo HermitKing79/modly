@@ -1,0 +1,42 @@
+{
+  "review_kind": "focused_read_only_TunableOp_startup_delta_review",
+  "review_date": "2026-10-14",
+  "decision": "GO",
+  "scope": "Publish the exact candidate, then one conditional genuine full saved-turret neural-only sequence. No additional runtime acceptance, setter fallback, retry, alternate arithmetic/backend, source repair or extraction.",
+  "reviewer_runtime_Torch_WSL_model_or_GPU_actions": false,
+  "reviewer_candidate_edits": false,
+  "candidate_sha256": {
+    "decode.py": "ef9bf356f04f74a5f9efb8ca1ae79e928f8d57f2d1e8c1b226cb9b890c0bbefe",
+    "neural.py": "ced0f9ba5c1d861e6f41e9036da3e667b1a6772509eab90eab994e4cff8f5147",
+    "runtime.py": "3964d353157fb2c9bcbfb309d98c8d51abd5eca72a1962325182267651101b01",
+    "admission.py": "9eb44f2b17e770b544eeed9573d730f433367e46d50ac7fd4bc61c57b4141fa5"
+  },
+  "delta_verified_against_old_reviewed_candidate": {
+    "old_decode_sha256": "82db909ada8fed41b14fdb4300542d43a7b8cef6e3bf9b6f7c1451751d822460",
+    "decode_delta": "Fresh scratch/artifact paths; set the three TunableOp environment variables to string 0 after GO before every worker dependency import; add one independent three-flag/environment verifier and call it immediately after Torch import and at the old pre-GPU boundary, with two durable success journals.",
+    "neural_delta": "Only the matching fresh artifact directory path changes.",
+    "runtime_and_admission": "Exact unchanged hashes; no arithmetic, mask, allocation-plan, native-boundary or callback changes.",
+    "existing_strict_loaders_and_controls": "Reused unchanged; no checkpoint loading, widening or source-contract changes."
+  },
+  "startup_admission": {
+    "environment": ["PYTORCH_TUNABLEOP_ENABLED=0", "PYTORCH_TUNABLEOP_TUNING=0", "PYTORCH_TUNABLEOP_RECORD_UNTUNED=0"],
+    "early_order": "Assignment precedes NumPy/contract/source/checkpoint dependency imports and Torch. The first verification is the statement immediately following import torch, before GPU device admission, native import or real CPU loading.",
+    "late_order": "The second verification replaces the old short-circuit OR guard after strict loading/BF16 configuration and before CPU/tensor guards are restored and GPU placement/forward is entered.",
+    "queries": "All three genuine is_enabled, tuning_is_enabled and record_untuned_is_enabled getters are evaluated independently. All returned values must be actual booleans and exactly false; all three live environment values must still be string 0.",
+    "evidence": "Both complete flags/environment dictionaries are saved in tunable_admission and journaled after successful admission. Any malformed/true flag or environment drift raises and stops; no API setter or fallback is used.",
+    "qualification_limit": "Environment-zero behavior remains a live condition in this newly authorized worker, not an already executed acceptance. The prior CPU-only qualifier demonstrated getter/control behavior with inherited environment, and installed source documents environment precedence."
+  },
+  "verification_records": {
+    "final_startup_regressions": "Five focused host-only tests PASS after the two logging lines were added; no Torch/runtime imports.",
+    "final_startup_record_sha256": "cbb664dffeed1e18518a7178d08d97833e4a8541935bab935b164b3c9398dd60",
+    "read_only_host_preflight": "PASS: current guest/helper paths, 450-second guest timeout, marker/run absent, host admission and genuine metadata-only component/header/source verification. AI/native modules not imported; weights not loaded.",
+    "preflight_stdout_sha256": "d89d185df058396457f819291ada68a2b8367ad9ebb03de23b1be79275fcf2af",
+    "host_RAM_available_bytes": 15986479104,
+    "D_free_bytes": 75805839360,
+    "original_checkpoint_stream_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "fresh_passive_Linux": "Root record PASS for baseline/source/staged payload preservation and sufficient fresh RAM; no extra runtime acceptance performed."
+  },
+  "inherited_reviewed_boundaries": "The prior full source/safety review remains applicable: genuine unchanged parent/input/order and selective BF16/F32 policy; all 40 convolutions/eight C2S expansions; original learned masks; explicit GEMM and source-pinned native/default-stream boundary; compiler/JIT/autotune/process/network guards; 13GiB initial free/12GiB allocator/2GiB free reserve/1GiB opaque headroom/25% padding/1M rows; original output/readback/release; exact GO, Windows Job, monitoring and named termination; native/CPU/GPU/guest/authorized/host deadlines 60/120/240/450/430/480 seconds. These genuine GPU paths remain unexercised until this attempt.",
+  "remaining_specific_blockers": [],
+  "conditions": "Publish/verify these exact files before reserving the fresh exclusive marker. Root owns the sole attempt and actual outcome review. Both live flag admissions and every inherited identity/resource/operation/containment gate must pass; failure ends the route without retry or repair."
+}
