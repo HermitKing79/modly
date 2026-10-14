@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-checkpoint-schema-correction-evidence\loading.py", line 554, in <module>
+    if __name__=='__main__': raise SystemExit(main())
+                                              ^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-checkpoint-schema-correction-evidence\loading.py", line 549, in main
+    if args.preflight: print(json.dumps(preflight()));return 0
+                                        ^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-checkpoint-schema-correction-evidence\loading.py", line 537, in preflight
+    absolute_file(PREFIX.with_suffix('.json'), 'component configuration')
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\api\services\amd_runtime.py", line 64, in absolute_file
+    path = local_path(value, label).resolve(strict=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\api\services\amd_runtime.py", line 40, in local_path
+    raise ValueError(f"{label} must be an explicit absolute local path")
+ValueError: component configuration must be an explicit absolute local path

@@ -1,0 +1,25 @@
+{
+  "checkpoint_bytes": 948490494,
+  "checkpoint_mtime_ns": 1791274722716299500,
+  "checkpoint_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+  "streaming_SHA_seconds": 0.6559999999954016,
+  "streamed_bytes_per_second": 1445869655.49794,
+  "configuration_sha256": "5f1b856dffce79466fb18f5f0eefc08f08c673b24b3c05b20359c0b6d318a209",
+  "parameter_entries": 292,
+  "original_F16_payload_bytes": 948462926,
+  "final_parameter_bytes": 948598492,
+  "largest_original_tensor_bytes": 226492416,
+  "temporary_tensor_allowance_bytes": 905969664,
+  "processing_reserve_bytes": 3221225472,
+  "host_and_guest_admission_bytes": 6972719480,
+  "formula": "2*original_F16_payload + final_parameters + 4*largest_tensor + 3GiB reserve",
+  "deadlines_seconds": {
+    "native": 60,
+    "CPU": 120,
+    "guest": 240,
+    "authorized_worker": 220,
+    "host": 270
+  },
+  "deadline_adjustment": false,
+  "model_deserialization": false
+}

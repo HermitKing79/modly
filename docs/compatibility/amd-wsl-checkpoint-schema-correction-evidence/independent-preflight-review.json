@@ -1,0 +1,139 @@
+{
+  "reviewer": "shape_cpu_loading_review",
+  "decision": "STOP_AT_READ_ONLY_PREFLIGHT",
+  "classification": "UNKNOWN",
+  "candidate_sha256": "aa9efe254e7bd235698c00c44ab0a5c98d80a3ad5797e3e30715159301ab953b",
+  "candidate_hash_matches_capture_and_current_file": true,
+  "review_method": "Read-only inspection of candidate changes, every directly consumed input JSON field/path, unchanged loader/path-gate source, pinned constructor/import paths and saved exact host preflight output. No execution of another preflight, tests, WSL, Torch/model/native code or weights by this reviewer. Only this review JSON was written.",
+  "checkpoint_correction": {
+    "shared_function": "checkpoint_record(checkpoint)",
+    "host_and_worker_use_same_function": true,
+    "actual_key": "decoder_checkpoint_metadata_and_header_only",
+    "strict_fields": ["status", "path", "bytes", "mtime_ns", "verified_prior_stream_sha256"],
+    "strict_provenance_fields": ["checkpoint_bytes", "checkpoint_mtime_ns", "checkpoint_sha256"],
+    "checks": "Exact integer/string types and pinned values; Windows-record path identity mapped to the explicit host/guest path; strict resolution and regular-file check; size/mtime identity before and after streamed SHA256.",
+    "captured_checkpoint_schema_pass": true,
+    "captured_checkpoint_bytes": 948490494,
+    "captured_checkpoint_mtime_ns": 1791274722716299500,
+    "captured_freshly_streamed_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "deserialization": false,
+    "record_context": "Returned preservation counters/limitation fields are inherited from the original bounded-header audit; freshly_streamed_sha256 is the new helper's current full-hash result. The inherited full_hash_passes_this_task=0 is not a statement that this preflight did not stream the checkpoint."
+  },
+  "direct_input_audit": [
+    {
+      "file": "new evidence/windows-preservation-before.json",
+      "consumed_fields": ["status", "decoder_checkpoint_metadata_and_header_only.path", "decoder_checkpoint_metadata_and_header_only.bytes", "decoder_checkpoint_metadata_and_header_only.mtime_ns", "decoder_checkpoint_metadata_and_header_only.verified_prior_stream_sha256"],
+      "result": "Present; exact expected types and values. Historical missing decoder_checkpoint key is corrected."
+    },
+    {
+      "file": "new evidence/checkpoint-and-resource-preflight.json",
+      "consumed_fields": ["checkpoint_bytes", "checkpoint_mtime_ns", "checkpoint_sha256"],
+      "result": "Present; exact pinned values and types."
+    },
+    {
+      "file": "new evidence/preservation-before.json",
+      "consumed_fields": ["unchanged_control_code", "loader_code"],
+      "result": "Five control and two loader paths exist; current hashes match every consumed recorded hash."
+    },
+    {
+      "file": "docs/compatibility/amd-wsl-shape-decoder-cpu-loading-evidence/linux-preservation-after.json",
+      "consumed_fields": ["status", "RAM_available_bytes"],
+      "result": "Present and PASS; recorded RAM exceeds CPU_RAM. The source is explicitly labeled previous Linux baseline and linux_identity_freshly_observed=false, not a fresh guest observation. No WSL action is required for this read."
+    },
+    {
+      "file": "docs/compatibility/amd-wsl-native-decoder-preparation-evidence/staging.json",
+      "consumed_fields": ["target"],
+      "result": "Matches /home/modly/native-decoder-preparation-6dd94a85/site-packages; prior passive Linux-after evidence verified all 922 staged payloads."
+    },
+    {
+      "file": "docs/compatibility/amd-wsl-flexgemm-build-evidence/static-acceptance.json",
+      "consumed_fields": ["wheel_sha256", "native_member", "native_sha256", "source_binding_names"],
+      "result": "Present; local wheel path exists; native member is flex_gemm/kernels/cuda.cpython-312-x86_64-linux-gnu.so; all 18 binding names are unique. No native import was performed for this audit."
+    },
+    {
+      "file": "docs/compatibility/amd-wsl-neural-decoder-preparation-evidence/decoder-contract-readback.json",
+      "consumed_fields": ["source_checks", "source_checks.*.expected_sha256"],
+      "result": "All 97 consumed rows contain the expected SHA256 field and valid hash strings; every recorded Windows source path exists. Guest /mnt/<drive>/ mapping is source-consistent."
+    },
+    {
+      "file": "docs/compatibility/amd-shape-decoder-neural-evidence/cpu-probe-4/results.json",
+      "consumed_fields": ["worker", "worker.parameters", "worker.parameters.*.shape", "worker.parameters.*.dtype", "worker.parameters.*.device"],
+      "result": "Present; 292 meta parameters, 216 F16 and 76 F32, zero buffers. Cached checkpoint metadata agrees on every key/shape with original all-F16 storage. No weight payload was loaded."
+    },
+    {
+      "file": "Explicit checkpoint configuration JSON",
+      "consumed_fields": ["name", "args", "args.resolution", "args.model_channels", "args.latent_channels", "args.num_blocks", "args.block_type", "args.up_block_type", "args.block_args", "args.use_fp16"],
+      "result": "Matches unchanged AUDITED_CONFIG and pinned config hash. The genuine parent factory removes resolution and supplies out_channels=7 as before."
+    },
+    {
+      "file": "Cached original safetensors metadata / unchanged metadata-reader source",
+      "consumed_fields": ["metadata_only_fixture", "tensors", "tensors.*.dtype", "tensors.*.shape", "tensors.*.data_offsets", "header_bytes"],
+      "result": "Cached schema contains the complete 292-entry, 948462926-byte original F16 payload and nonfixture flag. All shapes/keys match the pinned manifest; the metadata reader and strict loader contract remain unchanged. Actual loading is untested."
+    }
+  ],
+  "direct_path_and_import_audit": {
+    "ROOT": "SCRIPT.parents[3] resolves the proof checkout in this evidence directory depth.",
+    "API_and_extension": "ROOT/api/services/amd_runtime.py and amd_model_metadata.py, plus both existing loader modules, exist at the reused paths. Their import-time source is stdlib-only until actual loader execution.",
+    "constructor_source": "Pinned trellis2/models/sc_vaes/sparse_unet_vae.py exists; unchanged ShapeDecoderComponent imports that genuine parent and checks class source identity. The listed pinned utils/norm/sparse linear/conv/spatial source paths exist. No new constructor or fake module is introduced.",
+    "factory_placement": "The unchanged StrictLocalComponent executes its factory under torch.device(meta); no factory is executed by host preflight.",
+    "saved_inputs": "The reused ROOT-based turret latent, coordinates and provenance paths remain the same recorded artifact paths.",
+    "control_helpers": "The saved stdout confirms both genuine local helper paths/hashes, selected new evidence worker path and exact named-distro command. Command construction is not process launch.",
+    "worker_outputs": "The existing producer/consumer paths remain run/guest/results.json and run/guest/phases.jsonl with classification/phase fields written by the existing worker/journal. They were not created because runtime entry was not admitted.",
+    "fresh_marker_and_scratch": "Marker and run are absent; new scratch path is /home/modly/shape-decoder-cpu-c4552110. No scratch or WSL action occurred during the saved host preflight."
+  },
+  "blocking_finding": {
+    "type": "Existing loader input-interface mismatch",
+    "worker_call": "ShapeDecoderComponent(PREFIX.with_suffix('.json'), PREFIX.with_suffix('.safetensors'))",
+    "cause": "Both arguments are pathlib.Path objects. Unchanged StrictLocalComponent passes each unchanged to absolute_file, and services.amd_runtime.local_path explicitly requires a str before resolving the local path.",
+    "actual_host_preflight_boundary": "loading.py line 537 -> services/amd_runtime.py line 64 -> local_path line 40",
+    "actual_error_type": "ValueError",
+    "actual_error": "component configuration must be an explicit absolute local path",
+    "weights_argument_status": "Not reached after the first rejection; the same source-proven string type requirement applies to its Path argument.",
+    "no_fix_performed": true,
+    "compatibility_interpretation": "This blocks preparation at the wrapper/loader path contract. It is not a demonstrated native, model, dtype, shape or checkpoint-value incompatibility."
+  },
+  "actual_preflight_outcome": {
+    "command_from_capture": "python -B -I -S loading.py --preflight",
+    "host_preflight_executions": 1,
+    "exit_code": 1,
+    "elapsed_seconds": 0.9834217,
+    "checkpoint_schema_and_full_hash_passed": true,
+    "helper_paths_and_host_admission_recorded": true,
+    "host_available_ram_bytes": 17304338432,
+    "D_free_bytes": 75839397888,
+    "marker_absent_capture_and_readback": true,
+    "run_absent_capture_and_readback": true,
+    "WSL_launched": false,
+    "Torch_FlexGEMM_imported": false,
+    "GPU_initialization": false,
+    "checkpoint_deserialized": false,
+    "native_import": "NOT_ATTEMPTED",
+    "CPU_model_load": "NOT_ATTEMPTED",
+    "runtime_guard_memory_and_model_integrity_measurements": "Unmeasured; must not be reported as zero or PASS.",
+    "conditional_runtime_attempt": "Condition not met; no runtime GO, marker reservation or WSL/model attempt."
+  },
+  "final_report_review": {
+    "file": "docs/compatibility/amd-wsl-checkpoint-schema-correction.md",
+    "sha256": "16b965e442cebc32cf755592fea7cd5f155d426d1c32a9d9170ea66cf47e50c2",
+    "decision": "Outcome and scope approved as UNKNOWN; publication remains subject to root's planned final historical/Git preservation verification.",
+    "outcome_claims_supported": true,
+    "candidate_and_capture_identity_supported": true,
+    "actual_checkpoint_schema_pass_and_path_blocker_described_correctly": true,
+    "inherited_checkpoint_audit_fields_distinguished_from_fresh_hash": true,
+    "historical_Linux_baseline_not_claimed_fresh": true,
+    "unmeasured_runtime_model_GPU_fields_not_claimed_zero_or_PASS": true,
+    "no_automatic_path_fix_or_runtime_retry": true,
+    "fresh_Windows_after_status": "PASS",
+    "fresh_Windows_after_unexpected_deltas": [],
+    "fresh_Windows_after_WSL_started": false,
+    "fresh_Windows_after_GPU_or_native_runtime_actions": false,
+    "fresh_Windows_after_checkpoint_metadata_header_matches": true,
+    "pending_publication_check": "This reviewer was asked not to repeat historical/remote branch/bytecode audits. The report's final preservation statements must be supported by root's planned saved verification before publication; this review approves no additional runtime entry."
+  },
+  "next_action": "Complete the already planned final passive historical/Git preservation checks, publish UNKNOWN and stop on the exposed path-contract blocker. Preserve this exact candidate and captures. No str conversion, loader change, retry or runtime attempt is authorized by this review.",
+  "evidence_sha256": {
+    "schema-preflight.stdout.txt": "4dd6221c0e495b70fa5bd91e2010419d39dfb86db306c1664d320a9fc6007315",
+    "schema-preflight.stderr.txt": "67166379a7a7ccda363490a9824aaf53cbdace790d807a74e8ef904ca107ca48",
+    "schema-preflight-capture.json": "455c6fe9ebf3c295592c92784999b479293db84121c603f7cf15855f72419c61"
+  }
+}
