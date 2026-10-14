@@ -1,0 +1,35 @@
+{
+  "reviewer": "independent device_context_review agent",
+  "report_verdict": "APPROVE publication of UNKNOWN; no runtime PASS",
+  "classification": "UNKNOWN",
+  "installed_runtime_acceptance": "NOT RUN",
+  "host_launch_attempts": 1,
+  "report_sha256": "53a7b37100db1a7ebc8263b5fd32903866145f08e84f6781ec35c94df513e9ad",
+  "reviewed_files_sha256": {
+    "docs/compatibility/amd-wsl-device-context-correction.md": "53a7b37100db1a7ebc8263b5fd32903866145f08e84f6781ec35c94df513e9ad",
+    "docs/compatibility/amd-wsl-device-context-correction-evidence/host-launch-capture.json": "3c9780333888e561ec2d9815a31ad0b9745a06a29aae31be9e9955715fd8b4db",
+    "docs/compatibility/amd-wsl-device-context-correction-evidence/host-launch.stderr.txt": "27b30d40079d2a5a091e578993f4b3c8fb01bf844fffd4203facf9f254210b8f",
+    "docs/compatibility/amd-wsl-device-context-correction-evidence/focused-unit-result.json": "019c2e9d1c4972f259e5a0b8450f2683e8ba5ab85e8971a287e602facc812651",
+    "docs/compatibility/amd-wsl-device-context-correction-evidence/Windows-preservation.json": "b65279f7ee10590bd1cd4834c6270b3aced737ab69c2971da32974cdf38c68bb",
+    "docs/compatibility/amd-wsl-device-context-correction-evidence/linux-preservation-after.json": "f82ffaeaa7bcb770f393c042b4bde28cac4d5c9f3e5c7d7f74501179cda97dbc",
+    "docs/compatibility/amd-wsl-device-context-correction-evidence/historical-preservation-after.json": "585bcba634f4f5f5e4df540f015810eae70353cae13909292d392fd95c4bec50",
+    "docs/compatibility/amd-wsl-device-context-correction-evidence/outcome-independent-review.json": "8958356ccaf49206c48f223ad82a2b7236416496f755fff1465e4183bd63560c"
+  },
+  "findings": [],
+  "confirmed": [
+    "Report separates 16 host metadata unit regressions from zero genuine installed-runtime route checks",
+    "Frozen policy/test hashes match saved focused-unit evidence; no code correction followed the mandated launch stop",
+    "Host failure cause and ordering agree with genuine helper/source paths, exclusive marker, empty run and preserved traceback",
+    "Traceback is expressly labelled a transcription from returned tool text, not a direct machine stderr capture or a rerun",
+    "No WSL worker, GO authorization, Job or execution HealthMonitor was created for the failed host acceptance",
+    "Independent Windows preservation reports no environment/native/source/edit/backup/turret changes and bounds checkpoint proof to metadata/header",
+    "Linux preservation reports unchanged baseline metadata/package/dpkg/source identities with no AI imports/GPU actions",
+    "49 prior task evidence files and four existing untracked caches are preserved; empty directory presence is recorded without pretending Git stores it",
+    "Next action is exactly one separately approved host helper-lookup correction and CPU acceptance; no native/GPU/model execution is recommended automatically"
+  ],
+  "limitations": [
+    "This reviewer performed read-only source/evidence review, not a fresh test or environment scan",
+    "Installed-runtime DeviceContext protection, native compatibility and genuine decoder preparation remain unverified",
+    "Remote publication must still be verified by the publisher after committing and pushing"
+  ]
+}

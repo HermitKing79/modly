@@ -1,0 +1,43 @@
+{
+  "reviewer": "independent device_context_review agent",
+  "classification": "UNKNOWN",
+  "installed_runtime_acceptance": "NOT RUN",
+  "guard_contract_execution_qualified": false,
+  "host_launch_attempts": 1,
+  "WSL_acceptance_worker_started": false,
+  "GPU_or_native_work_performed": false,
+  "evidence": {
+    "exclusive_marker": "CPU-attempt-started.json",
+    "empty_run_directory": "run/",
+    "focused_units": "focused-unit-result.json",
+    "preserved_preflight_review": "independent-review.json",
+    "actual_marker": {
+      "started_utc": "2026-10-14T14:19:55.527142+00:00",
+      "distro": "Modly-AMD-Ubuntu-24.04",
+      "script_sha256": "09a0d3830d7c1cecd2d9b1804334d7eaa39a0a46daddff48596c37682ae6385a",
+      "output": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-device-context-correction-evidence\\run"
+    }
+  },
+  "reviewed_sha256": {
+    "scripts/compatibility/amd_wsl_native_import_policy.py": "8292bd7dae51a724aa3a15d5e346b4fe1be8e372adb18f87b58df5a1fdf88058",
+    "scripts/compatibility/test_amd_wsl_native_import_policy.py": "46d1ac70656b1cdb140fd212d7d3438f687cd4c1b92fb2491d3132ddf1fc5cc9",
+    "docs/compatibility/amd-wsl-device-context-correction-evidence/acceptance.py": "09a0d3830d7c1cecd2d9b1804334d7eaa39a0a46daddff48596c37682ae6385a",
+    "scripts/compatibility/amd_wsl_rocdxg_smoke.py": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2"
+  },
+  "confirmed_cause": {
+    "failed_path": "docs/compatibility/amd-wsl-device-context-correction-evidence/amd_bounded_gpu_proof.py",
+    "host_patch": "acceptance.host patches smoke.SCRIPT to evidence/acceptance.py",
+    "genuine_helper_lookup": "amd_wsl_rocdxg_smoke.load_sibling uses SCRIPT.with_name(name + .py)",
+    "ordering": "supervise reserves the attempt marker/run, then immediately loads amd_bounded_gpu_proof before constructing the health monitor, entering its try block or creating any WSL process/Windows Job",
+    "missing_file_independently_verified": true,
+    "error_reported_by_root": "FileNotFoundError for the redirected helper path",
+    "empty_run_independently_verified": true
+  },
+  "decision": [
+    "The static policy correction and 16 host-only regressions remain preserved, but neither proves installed-runtime DeviceContext acceptance",
+    "Preflight GO failed to account for shared SCRIPT use in worker and helper lookup; the sole host launch failed before genuine WSL acceptance",
+    "No repair, retry, additional test or WSL/native/GPU action is justified by the completed authorization; stop with UNKNOWN"
+  ],
+  "smallest_next_action": "Separately approve one CPU-only continuation binding acceptance host helper lookup to the original scripts/compatibility directory while preserving the worker-script identity, marker evidence, reviewed guard and all existing containment. Use a new exclusive acceptance directory and execute only the currently deferred genuine installed-runtime CPU acceptance; no device-policy redesign.",
+  "reviewer_actions": "Read saved marker, empty run directory and exact production/helper/acceptance sources; wrote this outcome review. No Torch/WSL/native invocation, additional acceptance or code edit."
+}

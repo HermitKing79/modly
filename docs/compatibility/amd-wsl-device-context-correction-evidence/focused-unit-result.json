@@ -1,0 +1,16 @@
+{
+  "tests_run": 16,
+  "exit": 0,
+  "unittest_seconds": 0.46,
+  "command": [
+    "C:/Users/wattz/AppData/Local/Programs/Python/Python312/python.exe",
+    "-B",
+    "-I",
+    "-S",
+    "scripts/compatibility/test_amd_wsl_native_import_policy.py"
+  ],
+  "test_first_observation": "new active-CUDA stack test failed with ImportPolicyError not raised before correction",
+  "final_observation": "16 tests passed; no WSL/Torch imports in host units",
+  "policy_sha256": "8292bd7dae51a724aa3a15d5e346b4fe1be8e372adb18f87b58df5a1fdf88058",
+  "tests_sha256": "46d1ac70656b1cdb140fd212d7d3438f687cd4c1b92fb2491d3132ddf1fc5cc9"
+}

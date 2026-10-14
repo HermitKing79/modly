@@ -1,0 +1,33 @@
+{
+  "reviewer": "independent device_context_review agent",
+  "verdict": "GO for exactly one installed-runtime CPU acceptance; execution result pending",
+  "scope": "Source/static policy, direct tests and single CPU acceptance; no Torch/WSL/native/GPU invocation by reviewer",
+  "reviewed_sha256": {
+    "scripts/compatibility/amd_wsl_native_import_policy.py": "8292bd7dae51a724aa3a15d5e346b4fe1be8e372adb18f87b58df5a1fdf88058",
+    "scripts/compatibility/test_amd_wsl_native_import_policy.py": "46d1ac70656b1cdb140fd212d7d3438f687cd4c1b92fb2491d3132ddf1fc5cc9",
+    "docs/compatibility/amd-wsl-device-context-correction-evidence/acceptance.py": "09a0d3830d7c1cecd2d9b1804334d7eaa39a0a46daddff48596c37682ae6385a"
+  },
+  "installed_source_evidence": "installed-source-before.json",
+  "focused_tests_evidence": "focused-unit-result.json",
+  "findings": [],
+  "verified_contracts": [
+    "Matches installed Torch 2.9.1 reverse active-mode selection without calling get_default_device or resolving an indexless CUDA device",
+    "Only exact installed DeviceContext classes and exact torch.device values admit implicit routing; foreign/subclass modes and malformed context state fail before original callback",
+    "Original cached constructor identities are primed and preserved; only original cached factories receive implicit context policy; explicit CPU/meta overrides remain accepted",
+    "Tensor.to(otherTensor) selects the verified tensor device before considering its type method; explicit CUDA and Tensor.cuda/new_empty CUDA requests remain prohibited",
+    "Every negative route requires ImportPolicyError, zero original callback entries and zero GPU-entry probe calls; substitute lazy-init denial cannot satisfy a pass",
+    "Positive controls require genuine original callback observations, with exact guard restoration and native-module absence required for CPU_PASS",
+    "Existing production binary authorization, owned Job accounting/grace, periodic Windows monitoring, deadlines and named-distro cleanup reused unchanged",
+    "Raw GPU supervisor UNKNOWN is retained; separate CPU verdict checks genuine successful worker exit, healthy observer, natural empty Job and unforced cleanup without fabricated GPU results"
+  ],
+  "pre_acceptance_review_corrections": [
+    "Active mutable DeviceContext.device now requires exact genuine device type instead of trusting arbitrary type metadata",
+    "Excluded native/model module absence is an assertion required by guest CPU_PASS and host CPU verdict",
+    "Modified source files normalized to original LF for a minimal reviewable diff"
+  ],
+  "limitations": [
+    "Scoped existing patched frontend routes and demonstrated tests; does not claim a general adversarial Torch sandbox",
+    "No FlexGEMM/native import, checkpoint loading or GPU execution qualified by this review",
+    "No installed-runtime PASS may be claimed until the one authorized acceptance completes with its actual evidence"
+  ]
+}

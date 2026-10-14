@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-device-context-correction-evidence\acceptance.py", line 168, in <module>
+    raise SystemExit(host(args.output))
+                     ^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-device-context-correction-evidence\acceptance.py", line 148, in host
+    raw_exit=smoke.supervise(output)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_wsl_rocdxg_smoke.py", line 377, in supervise
+    helper = load_sibling("amd_bounded_gpu_proof")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\amd_wsl_rocdxg_smoke.py", line 47, in load_sibling
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1132, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-device-context-correction-evidence\\amd_bounded_gpu_proof.py'

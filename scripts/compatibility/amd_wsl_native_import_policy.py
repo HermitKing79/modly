@@ -115,7 +115,14 @@ class ImportPolicy:
             # DeviceContext compares function identities. Populate its existing
             # cache before wrappers replace module attributes, preserving the
             # genuine original factory's implicit meta/CPU device routing.
-            device_context._device_constructors()
+            constructors = device_context._device_constructors()
+        else:
+            self.reject("tensor_operation", "Cannot attest original device constructors")
+        get_modes = getattr(getattr(torch, "overrides", None), "_get_current_function_mode_stack", None)
+        context_type = getattr(device_context, "DeviceContext", None)
+        device_type = getattr(torch, "device", None)
+        if not callable(get_modes) or not isinstance(context_type, type) or not isinstance(device_type, type):
+            self.reject("tensor_operation", "Cannot inspect genuine active DeviceContext stack")
         factory_names = ("empty", "empty_strided", "zeros", "ones", "full", "tensor", "as_tensor", "asarray",
                          "from_numpy", "arange", "rand", "randn", "randint", "eye", "linspace", "logspace",
                          "randperm", "scalar_tensor", "empty_like", "zeros_like", "ones_like", "full_like",
@@ -133,19 +140,31 @@ class ImportPolicy:
                 for value in self._leaves((args, kwargs)):
                     if isinstance(value, torch.Tensor):
                         self._check_device(value.device)
+                try:
+                    modes = get_modes()
+                except Exception as exc:
+                    self.reject("tensor_operation", "Cannot read active device stack: " + str(exc))
+                if not isinstance(modes, list) or any(type(mode) is not context_type for mode in modes):
+                    self.reject("tensor_operation", "Foreign or unresolvable active function mode")
                 device = kwargs.get("device")
                 if _name == "to" and len(args) > 1:
                     requested = args[1]
-                    if isinstance(requested, (str, int)) or hasattr(requested, "type"):
-                        device = requested
-                    elif isinstance(requested, torch.Tensor):
+                    if isinstance(requested, torch.Tensor):
                         device = requested.device
+                    elif isinstance(requested, (str, int)) or hasattr(requested, "type"):
+                        device = requested
                 self._check_device(device)
                 if not _method and device is None:
-                    context_device = getattr(device_context, "CURRENT_DEVICE", None)
-                    if context_device is not None:
+                    # Installed Torch uses the last DeviceContext on its mode stack.
+                    # Only cached constructors receive its implicit device injection.
+                    # Never call get_default_device(): index resolution creates a tensor.
+                    if modes and _original in constructors:
+                        active = modes[-1]
+                        context_device = getattr(active, "device", None)
+                        if type(context_device) is not device_type:
+                            self.reject("tensor_operation", "Active DeviceContext device cannot be attested")
                         self._check_device(context_device)
-                    else:
+                    elif _original in constructors:
                         default_device = getattr(getattr(torch, "_C", None), "_get_default_device", None)
                         if not callable(default_device):
                             self.reject("tensor_operation", "Cannot attest default factory device")

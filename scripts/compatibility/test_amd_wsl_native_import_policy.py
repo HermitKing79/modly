@@ -23,6 +23,10 @@ def fake_function(module, name, body="return 7"):
     return namespace[name]
 
 
+class FakeDevice:
+    def __init__(self,kind):self.type=kind
+
+
 class FakeTensor:
     def __init__(self, device):
         self.device = types.SimpleNamespace(type=device)
@@ -91,9 +95,13 @@ class PolicyContracts(unittest.TestCase):
             def factory(*args, **kwargs):
                 calls.append(kwargs.get("device", "cpu"))
                 return FakeTensor(kwargs.get("device", "cpu"))
-            torch = types.SimpleNamespace(Tensor=FakeTensor, empty=factory,
+            torch = types.SimpleNamespace(Tensor=FakeTensor, device=FakeDevice, empty=factory,
                                           _C=types.SimpleNamespace(_get_default_device=lambda: "cpu"))
-            policy.install_tensor_guards(torch)
+            class DeviceContext: pass
+            torch.overrides=types.SimpleNamespace(_get_current_function_mode_stack=lambda:[])
+            context=types.SimpleNamespace(DeviceContext=DeviceContext,_device_constructors=lambda:{factory})
+            with patch.dict(sys.modules,{"torch.utils._device":context}):
+                policy.install_tensor_guards(torch)
             try:
                 with self.assertRaises(module.ImportPolicyError):
                     torch.empty((1,), device="cpu")
@@ -120,29 +128,64 @@ class PolicyContracts(unittest.TestCase):
             policy = self.policy(module, root)
             policy.set_phase("cpu_meta")
             calls = []
-            context = types.SimpleNamespace(CURRENT_DEVICE="meta")
+            class DeviceContext:
+                def __init__(self,device):self.device=FakeDevice(device)
+            active=DeviceContext("meta")
+            context = types.SimpleNamespace(CURRENT_DEVICE=None,DeviceContext=DeviceContext)
             def factory(*args, **kwargs):
                 calls.append(1)
                 self.assertIn(factory, context.cached)
-                return FakeTensor(context.CURRENT_DEVICE)
+                return FakeTensor(active.device.type)
             def constructors():
                 if not hasattr(context, "cached"):
                     context.cached = {torch.empty}
                 return context.cached
             context._device_constructors = constructors
-            torch = types.SimpleNamespace(Tensor=FakeTensor, empty=factory,
+            torch = types.SimpleNamespace(Tensor=FakeTensor, device=FakeDevice, empty=factory,
                                           _C=types.SimpleNamespace(_get_default_device=lambda: "cpu"))
+            torch.overrides=types.SimpleNamespace(_get_current_function_mode_stack=lambda:[active])
             with patch.dict(sys.modules, {"torch.utils._device": context}):
                 policy.install_tensor_guards(torch)
                 try:
                     self.assertTrue(hasattr(context, "cached"), "Original constructor identity was not preserved")
                     self.assertEqual(torch.empty((1,)).device.type, "meta")
-                    context.CURRENT_DEVICE = "cuda"
+                    active.device = FakeDevice("cuda")
                     with self.assertRaises(module.ImportPolicyError):
                         torch.empty((1,))
                     self.assertEqual(calls, [1])
                 finally:
                     policy.restore_tensor_guards()
+
+    def test_active_device_context_stack_overrides_stale_current_device_before_factory(self):
+        module=self.load()
+        class DeviceContext:
+            def __init__(self,device):self.device=FakeDevice(device)
+        with temporary_root() as root:
+            policy=self.policy(module,root);policy.set_phase('cpu_meta');calls=[];stack=[]
+            def factory(*a,**k):calls.append(1);return FakeTensor(k.get('device','cpu'))
+            context=types.SimpleNamespace(CURRENT_DEVICE=None,DeviceContext=DeviceContext,_device_constructors=lambda:{factory})
+            torch=types.SimpleNamespace(Tensor=FakeTensor,device=FakeDevice,empty=factory,_C=types.SimpleNamespace(_get_default_device=lambda:'cpu'),overrides=types.SimpleNamespace(_get_current_function_mode_stack=lambda:list(stack)))
+            with patch.dict(sys.modules,{'torch.utils._device':context}):
+                policy.install_tensor_guards(torch)
+                try:
+                    stack.append(DeviceContext('cuda'))
+                    with self.assertRaises(module.ImportPolicyError):torch.empty((1,))
+                    self.assertEqual(calls,[])
+                    self.assertEqual(torch.empty((1,),device='cpu').device.type,'cpu')
+                    stack.append(DeviceContext('meta'))
+                    torch.empty((1,))
+                    self.assertEqual(calls,[1,1])
+                    stack[:]=[DeviceContext('cpu')];stack[0].device='cuda'
+                    with self.assertRaises(module.ImportPolicyError):torch.empty((1,))
+                    self.assertEqual(calls,[1,1])
+                    class AlteredContext(DeviceContext):pass
+                    stack[:]=[AlteredContext('cpu')]
+                    with self.assertRaises(module.ImportPolicyError):torch.empty((1,),device='cpu')
+                    stack[:]=[object()]
+                    with self.assertRaises(module.ImportPolicyError):torch.empty((1,),device='cpu')
+                    self.assertEqual(calls,[1,1])
+                finally:policy.restore_tensor_guards()
+            self.assertIs(torch.empty,factory)
 
     def test_profile_preserves_constructors_and_gpu_metadata_but_blocks_execution(self):
         module = self.load()

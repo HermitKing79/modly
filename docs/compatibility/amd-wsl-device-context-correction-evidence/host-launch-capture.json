@@ -1,0 +1,25 @@
+{
+  "classification": "UNKNOWN",
+  "command": [
+    "C:/Users/wattz/AppData/Local/Programs/Python/Python312/python.exe",
+    "-B",
+    "-I",
+    "-S",
+    "docs/compatibility/amd-wsl-device-context-correction-evidence/acceptance.py",
+    "--output",
+    "docs/compatibility/amd-wsl-device-context-correction-evidence/run"
+  ],
+  "exit": 1,
+  "wall_seconds": 0.5195919,
+  "capture_source": "exit/timing from completed exec result; traceback transcribed from returned tool text; no rerun",
+  "stderr": "host-launch.stderr.txt",
+  "stdout": "host-launch.stdout.txt",
+  "acceptance_source_sha256": "09a0d3830d7c1cecd2d9b1804334d7eaa39a0a46daddff48596c37682ae6385a",
+  "host_launches": 1,
+  "installed_runtime_acceptances": 0,
+  "WSL_worker_started": false,
+  "Job_created": false,
+  "health_monitor_started": false,
+  "GPU_work": false,
+  "stop_honored": true
+}
