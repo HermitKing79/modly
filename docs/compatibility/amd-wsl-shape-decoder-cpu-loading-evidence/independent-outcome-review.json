@@ -1,0 +1,77 @@
+{
+  "reviewer": "shape_cpu_loading_review",
+  "classification": "UNKNOWN",
+  "disposition": "STOP; preserve the exact candidate, consumed attempt marker and failure evidence; no retry or correction performed or authorized by this review.",
+  "candidate_sha256": "00a7b3f4fafea5b172a9a3fe75779f6a67f280e43e235eae06c3f9550ba44ea6",
+  "candidate_hash_unchanged": true,
+  "candidate_commit_from_host_capture": "04aeb78d9e1f50ad8625fd3496abdf43601daca1",
+  "review_method": "Read-only source and saved evidence review. No WSL action, candidate execution, Torch/model/native import or checkpoint weight-payload read. Only this review JSON was written.",
+  "failure_boundary": {
+    "error_type": "KeyError",
+    "error": "'decoder_checkpoint'",
+    "file": "loading.py",
+    "line": 170,
+    "consumed_file": "windows-preservation-before.json",
+    "expected_key": "decoder_checkpoint",
+    "actual_key": "decoder_checkpoint_metadata_and_header_only",
+    "actual_record_has_required_fields": "The actual record includes bytes=948490494 and mtime_ns=1791274722716299500, but the worker never reached their comparison because its top-level key was absent.",
+    "boundary": "After static staged-package/wheel/source/config checks and saved-array validation, before guest RAM/disk admission, import torch, policy installation, GPU runtime admission, FlexGEMM import, genuine parent import/construction or checkpoint loading.",
+    "worker_elapsed_seconds": 1.402068172,
+    "guest_classification": "UNKNOWN",
+    "native_import": "NOT_ATTEMPTED",
+    "decoder_cpu": "NOT_ATTEMPTED",
+    "cause": "Deterministic preparation evidence-schema mismatch, not a demonstrated real loader, source, dtype, shape, value, native or hardware incompatibility."
+  },
+  "preexecution_review_miss": {
+    "acknowledgment": "I missed the mismatch between the worker's decoder_checkpoint lookup and the actual decoder_checkpoint_metadata_and_header_only record when issuing the preexecution GO. That GO should have required validation of the exact consumed schema before execution.",
+    "preflight_gap": "Candidate preflight checked preservation PASS status and separately checked checkpoint-and-resource-preflight.json, but did not validate the exact checkpoint record lookup performed later by the guest.",
+    "prior_review_preserved": true
+  },
+  "execution_scope_evidence": {
+    "host_attempts": 1,
+    "exclusive_marker_preserved": true,
+    "host_exit_code": 1,
+    "worker_exit_code": 1,
+    "host_capture_elapsed_seconds": 10.7080416,
+    "supervisor_elapsed_seconds": 10.48399999999674,
+    "guest_phases": ["gate-wait", "gate-authorized", "worker-finished"],
+    "native_import_entry_absent": true,
+    "CPU_preparation_entry_absent": true,
+    "no_model_or_native_stage_entered": "Supported by the exact exception boundary, unchanged source ordering, NOT_ATTEMPTED statuses and absent native/CPU entry journals.",
+    "no_GPU_tensor_work_or_neural_forward_demonstrated": true,
+    "worker_checkpoint_payload_loading": "Not reached; only the checkpoint stat call precedes the failing metadata lookup. Root's separate approved preflight streaming hash is not a model load."
+  },
+  "containment": {
+    "distro": "Modly-AMD-Ubuntu-24.04",
+    "host_sequence": ["supervisor-start", "wsl-client-started", "windows-job-attached", "go-sent", "wsl-client-exited", "owned-distro-terminated", "supervisor-finished"],
+    "Job_attachment_before_GO": true,
+    "windows_owned_tree_exit_verified": true,
+    "windows_active_before_cleanup": 0,
+    "windows_active_after_cleanup": 0,
+    "windows_forced_job_cleanup": false,
+    "windows_job_grace_empty": true,
+    "distro_termination_returncode": 0,
+    "observer_healthy": true,
+    "observer_captures": 3,
+    "observer_capture_seconds": [1.063, 0.906, 0.406],
+    "observer_controller_status": "OK in every capture; no selected GPU/driver events reported; prelaunch, post-attachment and post-termination captures present.",
+    "minimum_host_RAM_bytes": 14590124032,
+    "minimum_D_free_bytes": 75826814976,
+    "scope_limit": "Windows Job covers the WSL client/helper tree; Linux containment is the guest timeout plus successful named-distro termination. Host and guest monotonic clocks are separate."
+  },
+  "unknown_evidence_gaps": [
+    "No genuine native import qualification or CPU model loading occurred; no real parameter bytes, widening integrity, final CPU state, eval/grad state or model/parameter weakref release can be claimed.",
+    "Torch runtime identity, GPU initialization state, zero allocation/reservation measurements and runtime policy counters were never recorded because their stage was not reached. Their absence must not be reported as measured zeros.",
+    "CPU loading RSS/HWM and construction/loading timings were never measured.",
+    "Post-run Windows and Linux protected-environment preservation checks were pending when this review was written; this review does not independently certify post-run filesystem/package preservation."
+  ],
+  "minimal_next_action": "Finish the already planned passive post-run preservation and publish this UNKNOWN result without modifying or rerunning the candidate. A separately authorized future preparation correction can align the single checkpoint record lookup with the saved schema and validate that exact bytes/mtime_ns contract using stdlib-only metadata checks before any runtime entry. Keep existing loaders, policy, containment and deadlines; use fresh evidence and a new exclusive attempt marker after independent review. No such correction or new attempt is authorized here.",
+  "evidence_sha256": {
+    "run/results.json": "fa3e93888049c4cee0b08d76e98ab5952dd4c3b702d840259d7b27722885b90e",
+    "run/guest/results.json": "bd8704e91873b4e1e26f16d28d967c9db4e0a075bf13751ed799cb27f907f4b3",
+    "run/phases.jsonl": "a9ed5e843a8ff6b8651ff5cb5e64c5a28ecefdf4f6c038f4a094bafc4ac6ff18",
+    "run/guest/phases.jsonl": "72dcc93035b7cb6c1e96d7ac4b5e157e3a15722d05b63306f5a7c577da3b02dc",
+    "host-capture.json": "0fe76fac20b74b24c01ffe5ce52f5c6e3bdbe1a41eeb41837134f9f8d3c2c2cd",
+    "windows-preservation-before.json": "edc6f0bdb5ed4970ba7044b59bb76861ac56f5cab9ba4fdc156e5463c1a6a74c"
+  }
+}

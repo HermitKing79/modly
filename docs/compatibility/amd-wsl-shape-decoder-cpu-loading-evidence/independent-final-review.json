@@ -1,0 +1,76 @@
+{
+  "reviewer": "shape_cpu_loading_review",
+  "decision": "PASS_FOR_UNKNOWN_REPORT_PUBLICATION",
+  "execution_classification": "UNKNOWN",
+  "report": "docs/compatibility/amd-wsl-shape-decoder-cpu-loading.md",
+  "report_sha256": "ebe19bee7010733c96db90435361748bef7f288c883a5594bc24f84d80d5e8ae",
+  "candidate_sha256": "00a7b3f4fafea5b172a9a3fe75779f6a67f280e43e235eae06c3f9550ba44ea6",
+  "candidate_unchanged": true,
+  "outstanding_findings": [],
+  "review_method": "Read-only review of the corrected final report, saved execution and preservation evidence, fresh remote-before/after text snapshots, and the existing launcher-branch reflog file. No new execution, tests, WSL action, AI/native import or weight-payload read; no candidate/loader edits. Only this review JSON was written.",
+  "outcome_claims": {
+    "UNKNOWN_supported": true,
+    "reason": "The single authorized host attempt exited on the exact preparation-schema KeyError at loading.py line 170 before Torch import, native import, genuine constructor or model loading. Both native_import and decoder_cpu remain NOT_ATTEMPTED. No runtime readiness success or real loader incompatibility was established.",
+    "preflight_review_miss_transparent": true,
+    "missing_measurements_not_reported_as_zero": true,
+    "single_attempt_and_no_retry_supported": true,
+    "durations_and_containment_match_saved_records": true,
+    "no_new_execution_authorized_by_final_report": true
+  },
+  "preservation_claims": {
+    "verification_after_status": "PASS",
+    "historical_files_unchanged": 207,
+    "control_sources_unchanged": 5,
+    "existing_loaders_unchanged": 2,
+    "preexisting_bytecode_unchanged": 4,
+    "Windows_after_status": "PASS",
+    "Windows_scope": "Both venv metadata/distribution identities; 12 selected native binary hashes; selected source identities; AMD edits/backups; four saved turret artifacts; decoder checkpoint metadata and bounded header.",
+    "Linux_after_status": "PASS",
+    "Linux_scope": "Baseline venv metadata and packages/dpkg; selected installed source hashes; protected ROCm dpkg verification; approved-library metadata; all 922 staged payloads.",
+    "approved_library_metadata_before_after_matches": true,
+    "baseline_venv_metadata_before_after_matches": true,
+    "checkpoint_after_full_stream_hash_recorded": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "checkpoint_after_bytes": 948490494,
+    "checkpoint_after_deserialized": false,
+    "configuration_hash_claim_attributed_to_preflight": true,
+    "reviewer_repeated_full_checkpoint_read": false,
+    "pending_after_checks_from_outcome_review_now_resolved": true,
+    "limitations": "This is a review of saved preservation checks, not a repeated filesystem or weight hash audit. Windows coverage includes metadata and selected hashes; approved-library coverage is metadata."
+  },
+  "remote_and_local_reference_review": {
+    "fresh_remote_before_rows": 49,
+    "fresh_remote_after_rows": 50,
+    "missing_or_changed_before_rows": [],
+    "all_49_prior_branch_tips_preserved": true,
+    "main_tip_before_and_after": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+    "extra_after_row": "The task's new branch; existing branch preservation does not imply that no new task branch was created.",
+    "legacy_manifest_discrepancy": {
+      "branch": "codex/amd-wsl-launcher-path-correction",
+      "inherited_tip": "511e135b7c7cf4fd3e4af30586e36a64524e6e24",
+      "fresh_before_and_after_tip": "9d439e0f1044804456021649a512d14d38bea7e6",
+      "passive_reflog_new_tip": "9d439e0f1044804456021649a512d14d38bea7e6",
+      "passive_reflog_commit_epoch": 1791993495,
+      "passive_reflog_commit_local_time": "2026-10-14 16:58:15 +01:00",
+      "single_attempt_local_time": "2026-10-14 18:57:16 +01:00",
+      "interpretation": "The inherited refs record is stale for this branch. The existing tip was already recorded by the fresh remote-before snapshot and by a reflog event preceding this task; the final report transparently distinguishes that discrepancy from a task-caused branch change."
+    }
+  },
+  "passive_cleanup_review": {
+    "passive_linux_exit": 0,
+    "named_distro_stop_exit": 0,
+    "AI_native_imports": false,
+    "GPU_actions": false,
+    "wsl_status_artifact": "wsl-status-after.txt",
+    "Modly_AMD_Ubuntu_24_04": "Stopped; version 2",
+    "docker_desktop": "Default marker retained; Stopped; version 2"
+  },
+  "resolved_report_finding": "Removed the unsupported attribution of configuration preservation to the Windows-after record. The corrected report says decoder metadata/header there and retains the supported preflight configuration SHA separately.",
+  "minimal_next_action_supported": "Stop and publish the UNKNOWN result. A future separately authorized preparation change may align the single checkpoint key and validate the exact consumed metadata schema before a fresh marker and independent review. Existing loaders/policy remain unchanged; this result authorizes no retry, native compatibility repair or GPU neural execution.",
+  "evidence_sha256": {
+    "verification-after.json": "a214bc813983f165133aec2bf3cc633b7b3d089d28728cba0fe12f0bf55def57",
+    "windows-preservation-after.json": "34d67321eabf5aefdd0819ea490031b82f4d06bf4d3659ea541d58e90681463d",
+    "linux-preservation-after.json": "2ca1c4f73547fba6c7c6cb19ff6c21ac72ac66330ea0654d83578e7d1d664240",
+    "passive-after-capture.json": "6e005caf4f39606dc1cce117db371d26cf52e4dea521f3a08bc69de03554f149",
+    "wsl-status-after.txt": "fab342426ac0361a900595e2212c1e9525cfd60abe6a4781ca8835160c3ecf5b"
+  }
+}

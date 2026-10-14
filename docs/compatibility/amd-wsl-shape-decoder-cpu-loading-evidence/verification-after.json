@@ -1,0 +1,46 @@
+{
+  "historical_evidence": {
+    "files": 207,
+    "mismatches": [],
+    "unchanged": true
+  },
+  "unchanged_control_code": {
+    "files": 5,
+    "mismatches": [],
+    "unchanged": true
+  },
+  "preserved_bytecode": {
+    "files": 4,
+    "mismatches": [],
+    "unchanged": true
+  },
+  "loader_code": {
+    "files": 2,
+    "mismatches": [],
+    "unchanged": true
+  },
+  "local_branch_preservation": {
+    "unchanged": true,
+    "legacy_manifest_deltas": [
+      {
+        "branch": "codex/amd-wsl-launcher-path-correction",
+        "inherited_refs_manifest": "511e135b7c7cf4fd3e4af30586e36a64524e6e24",
+        "actual": "9d439e0f1044804456021649a512d14d38bea7e6",
+        "matches_fresh_remote_before": true
+      }
+    ],
+    "note": "Inherited refs manifest contains older tips. Discrepancies match the fresh live remote-before snapshot; launcher branch reflog independently predates this task."
+  },
+  "checkpoint_after": {
+    "sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "bytes": 948490494,
+    "streamed_only": true,
+    "deserialized": false
+  },
+  "prior_GitHub_branches_unchanged": true,
+  "prior_GitHub_branches_checked": 49,
+  "windows_after_status": "PASS",
+  "linux_after_status": "PASS",
+  "candidate_sha256": "00a7b3f4fafea5b172a9a3fe75779f6a67f280e43e235eae06c3f9550ba44ea6",
+  "status": "PASS"
+}
