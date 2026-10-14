@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-decoder-path-correction-evidence\loading.py", line 591, in <module>
+    if __name__=='__main__': raise SystemExit(main())
+                                              ^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-decoder-path-correction-evidence\loading.py", line 586, in main
+    if args.preflight: print(json.dumps(preflight()));return 0
+                                        ^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-decoder-path-correction-evidence\loading.py", line 560, in preflight
+    raise RuntimeError('Host and guest decoder path pairs differ')
+RuntimeError: Host and guest decoder path pairs differ

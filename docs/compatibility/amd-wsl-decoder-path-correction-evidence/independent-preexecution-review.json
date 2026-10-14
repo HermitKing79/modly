@@ -1,0 +1,99 @@
+{
+  "reviewer": "shape_cpu_loading_review",
+  "decision": "GO",
+  "candidate_sha256": "26b2679293ce7ab0d2eab190e45bc4d8ab3bcbb34734aa0e2f395b515a2b62fa",
+  "candidate_hash_matches_current_file_and_passing_preflight": true,
+  "findings": [],
+  "scope": "Exactly one supervised native import and conditional genuine CPU parent-decoder load after this exact candidate is published and verified. No forward, GPU tensors/model placement, native binding invocation, O-Voxel child construction, build, helper activation, runtime repair or retry.",
+  "review_method": "Read-only inspection of complete candidate and narrow diff, actual three host preflight stdout/stderr/captures, existing source/import/loader contracts and fresh passive Linux-before receipt. No preflight/test execution, WSL action, Torch/model/native import or weight-payload read by this reviewer. Only this review JSON was written.",
+  "authorized_glue_corrections": {
+    "guest_loader_call": "Exactly both PREFIX.with_suffix arguments are serialized with str() at the genuine ShapeDecoderComponent call boundary.",
+    "guest_before_runtime": "The same Linux string pair is validated by genuine absolute_file and explicit resolved-path/config SHA checks before Torch/FlexGEMM import.",
+    "host_validator": "Uses genuine absolute_file on PREFIX_HOST Windows string paths and checks the explicit corresponding Linux pair with as_posix().",
+    "shared_checkpoint_reader": "checkpoint_record remains unchanged from the approved schema correction and is used by host preflight and guest worker.",
+    "host_metadata_component": "Constructs genuine ShapeDecoderComponent with Windows string paths, verifies pinned source hashes, config/header/manifest and loaded=false, then unloads. It does not call load_cpu or factory.",
+    "host_import_guard": "Host-preflight-only audit hook and post-construction module check prohibit AI/native imports; tensor/native runtime policy is unchanged.",
+    "fresh_paths": "New evidence directory and /home/modly/shape-decoder-cpu-c8614c09 scratch; earlier candidates, markers and logs remain preserved."
+  },
+  "actual_preflights": [
+    {
+      "number": 1,
+      "candidate_sha256": "8c23b171859941508663a94e811ab1e8babc3af56e49515af06adcb1a8e33a9f",
+      "exit_code": 1,
+      "elapsed_seconds": 0.9820881,
+      "cause": "Workspace-only base.guest_path rejected the D-drive checkpoint path.",
+      "WSL_launched": false,
+      "correction_cycles_before_run": 0
+    },
+    {
+      "number": 2,
+      "candidate_sha256": "e709dcf73c049cd0bfd145d827ba984628989e18678f47a13953b4ed2988a0e8",
+      "exit_code": 1,
+      "elapsed_seconds": 0.9856328,
+      "cause": "Host comparison used Windows backslashes from str(PREFIX) instead of platform-independent as_posix().",
+      "WSL_launched": false,
+      "correction_cycles_before_run": 1
+    },
+    {
+      "number": 3,
+      "candidate_sha256": "26b2679293ce7ab0d2eab190e45bc4d8ab3bcbb34734aa0e2f395b515a2b62fa",
+      "exit_code": 0,
+      "elapsed_seconds": 0.9654459,
+      "stderr_empty": true,
+      "checkpoint_freshly_streamed_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+      "metadata_tensor_entries": 292,
+      "metadata_tensor_dtypes": {"F16": 292},
+      "header_bytes_read": 27568,
+      "source_manifest_verified": true,
+      "loaded": false,
+      "weights_loaded": false,
+      "AI_native_modules_imported": false,
+      "WSL_launched": false,
+      "correction_cycles_before_run": 2
+    }
+  ],
+  "correction_cycle_limit": "Both explicitly authorized caller-glue correction cycles are consumed. No further correction cycle or runtime retry is approved by this review.",
+  "direct_input_and_path_audit": {
+    "checkpoint_schema": "Correct actual decoder_checkpoint_metadata_and_header_only key; exact path, integer bytes/mtime, prior SHA and checkpoint preflight provenance fields validated and exercised by passing preflight.",
+    "config_and_manifest": "Pinned genuine config/header/292-parameter manifest validated by actual metadata constructor; original F16 key/shape contract unchanged.",
+    "staging_and_native": "Unchanged staging target, wheel/native_member/native SHA fields and 18 unique binding names remain valid consumed fields; fresh passive Linux record verifies all 922 staged payloads.",
+    "source_checks": "Unchanged 97 source-contract rows have expected_sha256 fields and existing mapped Windows paths; actual component _verify_source passed its eight pinned source hashes.",
+    "local_dependencies": "Existing api services, genuine loader modules, historical parameter proof and control helper paths are correct; no module stub, replacement factory or alternate loader introduced.",
+    "host_vs_guest": "Host preflight validates Windows strings; guest repeats actual Linux string/path/config validation before runtime imports. Passing host metadata validation does not claim a Linux constructor or model load occurred.",
+    "historical_guest_receipt": "The host-preflight historical Linux baseline is explicitly labeled not freshly observed; fresh passive Linux-before receipt is separately saved before runtime entry."
+  },
+  "unchanged_runtime_contract": {
+    "policy_and_controls_hashes_match": 5,
+    "existing_loader_hashes_match": 2,
+    "shape_decoder_loader_sha256": "8fa385af60aff19ddeabc305d01885abd4c4bf3b7a8a0d89d87b9397666bd571",
+    "strict_loader_sha256": "0a4b2aab6fb34a034be1725d4514d71f17c59376151b549ab631ebc8b5c8fc79",
+    "policy_sha256": "8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd",
+    "construction": "Genuine SparseUnetVaeDecoder, source identity checked, inside unchanged StrictLocalComponent torch.device(meta) context only after completed genuine FlexGEMM import.",
+    "load": "Complete 292 original F16 keys/shapes/dtypes/device and byte equality; exact 76 lossless F32 widenings; final 216 F16/76 F32, CPU, zero buffers, eval and gradients disabled.",
+    "forbidden_execution": "Unchanged tensor/runtime/profile/compiler/helper/autotuner guards remain active across native import and CPU load; zero GPU allocation/reservation peaks and final native/rejected-call counts required."
+  },
+  "resources_and_containment": {
+    "host_preflight_available_RAM_bytes": 17930194944,
+    "fresh_Linux_before_status": "PASS",
+    "fresh_Linux_available_RAM_bytes": 15812939776,
+    "fresh_Linux_staged_payloads_verified": 922,
+    "host_and_guest_RAM_floor_bytes": 6972719480,
+    "host_RAM_poll_seconds": 1,
+    "fresh_guest_RAM_check_before_CPU_load": true,
+    "guest_disk_floor_GiB": 5,
+    "D_disk_floor_GiB": 50,
+    "free_VRAM_floor_GiB": 13,
+    "PyTorch_allocator_ceiling_GiB": 12,
+    "deadlines_seconds": {"native": 60, "CPU": 120, "guest": 240, "authorized_worker": 220, "host": 270},
+    "reservation": "Exclusive x/fsync marker plus fresh run/guest and scratch directory creation; marker and run independently absent at review.",
+    "owned_runtime": "Existing Windows Job attachment before binary GO; named distro timeout/termination; monitored cleanup and healthy post-exit observation required.",
+    "CPU_release": "Strong local factory/model/component references cleared, unload and GC, model/component/all-parameter weakrefs required collected, with CPU RSS/HWM recorded before/loaded/after release.",
+    "qualification": "Any exception, timeout, guard rejection, forced cleanup or incomplete post-exit evidence prevents successful qualification; no retry loop."
+  },
+  "go_conditions": [
+    "Publish and verify this exact candidate before the single runtime attempt; execution hash must remain identical.",
+    "Use exactly one supervisor invocation and existing binary-GO admission/containment. Keep every stated limit unchanged.",
+    "Stop on any remaining real source/import/load blocker or runtime failure; preserve UNKNOWN or demonstrated NO-GO evidence without repair/retry.",
+    "Record final native/CPU integrity and cleanup evidence before claiming model loading PASS. Preflight success alone is not model readiness."
+  ]
+}
