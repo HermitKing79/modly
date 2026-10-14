@@ -1,0 +1,17 @@
+# Genuine WSL shape-decoder CPU loading — prepared candidate
+
+Base: `687eb2b7d6088bae0690541c93b5b8591a07a5b4`. Branch: `codex/amd-wsl-shape-decoder-cpu-loading`.
+
+This candidate authorizes one contained genuine FlexGEMM import followed by one strict CPU load of the original `shape_dec_next_dc_f16c32_fp16` checkpoint. No neural forward, GPU model placement, native binding invocation or mesh extraction is authorized. No attempt has run at this preparation commit.
+
+The worker reuses `ShapeDecoderComponent.load_cpu()` and `StrictLocalComponent` unchanged. It constructs the exact `SparseUnetVaeDecoder` parent on meta, requires all 292 original F16 entries to match complete keys, shapes, dtypes and payload bytes, then widens only the audited 76 parameters with byte-exact F16 round trips. The other 216 remain F16. Evaluation mode, disabled gradients, CPU devices and zero buffers are required. Weak references verify collection of the model, component and every parameter after unloading.
+
+The checkpoint is 948,490,494 bytes, SHA-256 `e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581`; configuration SHA-256 `5f1b856dffce79466fb18f5f0eefc08f08c673b24b3c05b20359c0b6d318a209`. The original was streamed once for identity verification without deserialization. No checkpoint is copied to this repository. The original full 3,743-row turret inputs and source manifest are preserved.
+
+Host and guest admission require 6,972,719,480 available RAM bytes (6.49 GiB), including checkpoint clone overlap, final parameters, conservative temporary allowance and 3 GiB processing reserve. This is an admission budget, not a formal RSS ceiling. Host available RAM measured 17,319,051,264 bytes; guest 15,781,330,944 bytes. The existing 120-second CPU deadline remains unchanged; measured cached checkpoint hashing took 0.656 seconds. Native import is bounded to 60 seconds, guest timeout 240 seconds, authorized worker 220 seconds and overall supervision 270 seconds.
+
+The genuine Linux FlexGEMM wheel/binary, pinned Torch/Triton runtime and corrected import policy remain unchanged. The existing 13 GiB free-VRAM admission and 12 GiB allocator ceiling apply to incidental metadata initialization. No model tensors may move to GPU, and Torch allocated/reserved/peak GPU memory must remain zero. Binary GO, owned Windows Job, periodic healthy Windows monitoring, monitored five-second natural-exit grace and termination of only the named Modly Ubuntu distro are reused.
+
+[Pre-execution independent review](amd-wsl-shape-decoder-cpu-loading-evidence/independent-loading-preexecution-review.json) gives GO for candidate SHA-256 `00a7b3f4fafea5b172a9a3fe75779f6a67f280e43e235eae06c3f9550ba44ea6`, with no findings. [Resource and checkpoint preflight](amd-wsl-shape-decoder-cpu-loading-evidence/checkpoint-and-resource-preflight.json), [static helper-path preflight](amd-wsl-shape-decoder-cpu-loading-evidence/static-preflight.stdout.txt), Windows/Linux preservation records and historical hash inventory are saved beside the candidate. No guard acceptance suites, prior GPU proofs or real weights have been loaded during preparation. Existing untracked bytecode files are preserved and excluded from the commit.
+
+Exactly one exclusive marker and fresh scratch/output directory will be used. Any source, import, policy, resource, strict-state or containment failure stops the attempt; no repair or retry follows. The final report will record PASS, UNKNOWN or NO-GO from actual evidence and independent outcome review.

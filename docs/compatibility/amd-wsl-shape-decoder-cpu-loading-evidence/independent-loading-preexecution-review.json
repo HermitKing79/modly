@@ -1,0 +1,56 @@
+{
+  "reviewer": "shape_cpu_loading_review",
+  "decision": "GO",
+  "scope": "One supervised genuine FlexGEMM import followed by one genuine CPU parent-decoder load; no forwards, GPU tensors, native binding calls, O-Voxel child construction, builds, installs or retries.",
+  "candidate": "loading.py",
+  "candidate_sha256": "00a7b3f4fafea5b172a9a3fe75779f6a67f280e43e235eae06c3f9550ba44ea6",
+  "review_method": "Read-only inspection of the complete candidate, existing loader and policy sources, pinned genuine parent source, cpu-probe-4 parameter manifest, preflight and preservation JSON. No candidate execution, Torch/model import, WSL action or checkpoint payload read by this reviewer. Only this review JSON was written.",
+  "findings": [],
+  "loader_identity": {
+    "shape_decoder_loader_sha256": "8fa385af60aff19ddeabc305d01885abd4c4bf3b7a8a0d89d87b9397666bd571",
+    "strict_loader_sha256": "0a4b2aab6fb34a034be1725d4514d71f17c59376151b549ab631ebc8b5c8fc79",
+    "policy_sha256": "8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd",
+    "existing_loaders_unchanged": true,
+    "factory_instrumentation": "Times the existing factory under StrictLocalComponent's existing meta-device context; neither changes the constructor nor replaces the loader.",
+    "genuine_parent_class": "trellis2.models.sc_vaes.sparse_unet_vae.SparseUnetVaeDecoder",
+    "state_contract": "292 original F16 checkpoint entries, strict complete keys/shapes/dtypes/devices and byte equality, then exactly 76 byte-exact F16/F32/F16 widenings; final 216 F16 and 76 F32, CPU only, zero buffers, eval and gradients disabled."
+  },
+  "memory_arithmetic_bytes": {
+    "checkpoint_file": 948490494,
+    "checkpoint_header_and_prefix": 27568,
+    "original_F16_tensor_payload": 948462926,
+    "final_parameter_payload": 948598492,
+    "widening_extra": 135566,
+    "largest_original_tensor": 226492416,
+    "strict_clone_live_overlap": 1896925852,
+    "streaming_verification_live_payload_peak": 1401455950,
+    "widening_live_payload_peak": 948796238,
+    "candidate_conservative_host_and_guest_admission": 6972719480,
+    "candidate_processing_reserve": 3221225472,
+    "arithmetic_limit": "Live payload calculations exclude runtime/native-library overhead, mmap/page-cache residency and allocator retention. Admission is a conservative budget, not a formal process RSS ceiling."
+  },
+  "checks": {
+    "exclusive_marker_and_output": "Fresh marker absent and run directory absent at review; base.save_json opens the marker with x and flushes/fsyncs, preventing reuse; fresh run and guest scratch also reject existing paths.",
+    "admission": "6972719480-byte host and guest floor; fresh guest RAM read directly before loading; host RAM and D free-space checks repeat every second; 5 GiB guest disk and 50 GiB D-disk floors preserved.",
+    "observability": "CPU VmRSS, VmHWM and ru_maxrss before loading, while loaded and after release; existing factory, total load/widen and complete CPU-stage timings recorded; final primitive parameter manifest and zero buffers recorded.",
+    "cleanup": "Strong local factory references cleared; explicit model/component unload and GC; independent weakrefs require model, component and every parameter to disappear. Existing owned Windows Job plus named guest termination and post-exit healthy observation remain required for qualification.",
+    "forbidden_execution": "Unchanged pinned tensor, runtime, native-call, forward, compiler/helper, filesystem and autotuner policy remains installed across native import and CPU loading; zero GPU allocation/reservation peaks and final rejected/native-call counts are required.",
+    "source_or_import_failure": "Any exception exits the single attempt with UNKNOWN evidence; no repair or retry path exists."
+  },
+  "deadlines_seconds": {
+    "native": 60,
+    "CPU": 120,
+    "guest": 240,
+    "authorized_worker": 220,
+    "host": 270
+  },
+  "preflight_evidence_readback": {
+    "windows_preservation": "PASS",
+    "linux_preservation": "PASS",
+    "host_available_ram_bytes": 17319051264,
+    "guest_available_ram_bytes": 15781330944,
+    "checkpoint_sha256_from_root_preflight": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "checkpoint_payload_hash_independently_repeated_by_reviewer": false
+  },
+  "go_limit": "This decision covers only the candidate hash above and exactly one supervised attempt. It provides no forward, GPU placement, mesh/O-Voxel, build, helper or retry authorization."
+}
