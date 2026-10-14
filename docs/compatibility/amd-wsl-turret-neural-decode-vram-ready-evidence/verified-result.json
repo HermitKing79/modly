@@ -1,0 +1,74 @@
+{
+  "classification": "PARTIAL",
+  "execution_commit": "948e98a53d0eb3846716dc94c4ef8dbb3100e899",
+  "candidate_sha256": "74a6b306ec9dceaaaad81cae140b11849012601b4d9d7d676effb08753284f6a",
+  "live_readiness_free_bytes": 14518063104,
+  "actual_admission_free_bytes": 14618472448,
+  "initial_free_GiB": 13.614513397216797,
+  "forward_calls": 1,
+  "convolutions_completed": 39,
+  "native_maps": 4,
+  "completed_subdivision_parent_child_pairs": [
+    [
+      3743,
+      17015
+    ],
+    [
+      3743,
+      17015
+    ],
+    [
+      17015,
+      79169
+    ],
+    [
+      17015,
+      79169
+    ],
+    [
+      79169,
+      378891
+    ],
+    [
+      79169,
+      378891
+    ]
+  ],
+  "last_completed_convolution": {
+    "site": "blocks.3.4.conv1",
+    "rows": 378891,
+    "elapsed_gpu_seconds": 7.004497416000003
+  },
+  "stop": "PARTIAL: C2S parent/child rows or channel widths outside admitted bounds",
+  "rejected_child_count_preserved": false,
+  "rejected_child_count_possible_values": "0 OR 1000001..3031128; exact value not recorded",
+  "memory_peak": {
+    "allocated": 5588655616,
+    "reserved": 7291797504
+  },
+  "peak_allocated_GiB": 5.204841136932373,
+  "peak_reserved_GiB": 6.791015625,
+  "memory_release": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "workspace_clear_calls": 1,
+  "all_owned_references_collected": true,
+  "worker_seconds": 31.045585486,
+  "supervisor_seconds": 45.578000000008615,
+  "outer_seconds": 46.602856,
+  "GPU_stage_entry_to_worker_finished_journal_seconds": 7.272893455000002,
+  "complete_forward_synchronized_timing_available": false,
+  "healthy_observations": 10,
+  "worker_returncode": 1,
+  "Job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "no_neural_artifact": true,
+  "protected_historical_and_bytecode_files": 523,
+  "automatic_retries": 0
+}
