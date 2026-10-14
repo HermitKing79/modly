@@ -1,0 +1,11 @@
+{
+  "reviewer": "wsl_stdin_review",
+  "candidate_sha256": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2",
+  "no_blocking_findings": true,
+  "independent_host_tests_passed": 22,
+  "independent_tests_seconds": 10.719,
+  "native_payload_integrity_independently_reviewed": true,
+  "seven_triton_discrepancies_are_wheel_metadata_not_changed_binaries": true,
+  "no_auxiliary_identity_instrumentation": true,
+  "no_wsl_gpu_launch_or_edits_by_reviewer": true
+}

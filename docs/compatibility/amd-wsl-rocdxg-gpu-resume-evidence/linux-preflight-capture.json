@@ -1,0 +1,23 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "90s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-"
+  ],
+  "returncode": 0,
+  "stdout": "{\"checked_python_files\": 24940, \"python_mismatches\": 7, \"dpkg_verify_returncode\": 0, \"dpkg_verify_stdout\": \"??5??????   /usr/lib/systemd/system/logrotate.timer\\n????????? c /etc/sudoers\\n????????? c /etc/sudoers.d/README\\nmissing     /var/lib/polkit-1/localauthority (Permission denied)\\nmissing     /var/lib/polkit-1/localauthority/10-vendor.d (Permission denied)\\nmissing     /var/lib/polkit-1/localauthority/10-vendor.d/org.freedesktop.packagekit.pkla (Permission denied)\\n\"}\n",
+  "stderr": "",
+  "seconds": 78.20300000000134,
+  "named_distro_termination_returncode": 0
+}

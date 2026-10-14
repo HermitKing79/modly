@@ -38,7 +38,7 @@ HOST_DEADLINE = 120.0
 GPU_DEADLINE = 60.0
 OBSERVATION_DEADLINE = 10.0
 OBSERVATION_INTERVAL = 5.0
-ATTEMPT_MARKER = ROOT / "docs/compatibility/amd-wsl-rocdxg-evidence/gpu-attempt.marker"
+ATTEMPT_MARKER = ROOT / "docs/compatibility/amd-wsl-rocdxg-gpu-resume-evidence/gpu-attempt.marker"
 
 
 def load_sibling(name):

@@ -1,0 +1,50 @@
+{
+  "wheel_path": "D:\\AI\\Modly-WSL\\Downloads\\triton-3.5.1+rocm7.2.1.gita272dfa8-cp312-cp312-linux_x86_64.whl",
+  "wheel_sha256": "07787af1d28c273852f897bfeaa7bca29f2fa4a13ca0f28f535832b240ce7016",
+  "original_download_sha256": "07787af1d28c273852f897bfeaa7bca29f2fa4a13ca0f28f535832b240ce7016",
+  "original_url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/triton-3.5.1%2Brocm7.2.1.gita272dfa8-cp312-cp312-linux_x86_64.whl",
+  "entries": [
+    {
+      "path": "triton/_C/libproton.so",
+      "wheel_payload_sha256": "6dd1972835cf57ab43a0dfbbbb5046e2f1deed159ac553b2a0272df68716737f",
+      "installed_payload_matches_original_wheel": true,
+      "record_value_disagrees_with_wheel_payload": true
+    },
+    {
+      "path": "triton/_C/libtriton.so",
+      "wheel_payload_sha256": "2a1b2369cd5525a807d43b6addabefd1fee1e99c600ffd45d4b028801c6c5561",
+      "installed_payload_matches_original_wheel": true,
+      "record_value_disagrees_with_wheel_payload": true
+    },
+    {
+      "path": "triton/backends/amd/lib/libamdhip64.so",
+      "wheel_payload_sha256": "f637f743f96604d4df35c0d1fda3a596890559877f4a8964c0479a3ca98cc287",
+      "installed_payload_matches_original_wheel": true,
+      "record_value_disagrees_with_wheel_payload": true
+    },
+    {
+      "path": "triton/backends/amd/lib/libdrm.so",
+      "wheel_payload_sha256": "d36dcc9a0a46c4099f1687bd20c64ab295a383847ef457cde2d091fa673d48a0",
+      "installed_payload_matches_original_wheel": true,
+      "record_value_disagrees_with_wheel_payload": true
+    },
+    {
+      "path": "triton/backends/amd/lib/libdrm_amdgpu.so",
+      "wheel_payload_sha256": "f9553b9e2b906255de80a95ba3a2e7c079242db378a23504c03c9ed67718d414",
+      "installed_payload_matches_original_wheel": true,
+      "record_value_disagrees_with_wheel_payload": true
+    },
+    {
+      "path": "triton/backends/amd/lib/libhsa-runtime64.so",
+      "wheel_payload_sha256": "ddbefa4c57f6e15751e5ce75fcc955a09df9588e1c34ccb74010fda68ef6d3d1",
+      "installed_payload_matches_original_wheel": true,
+      "record_value_disagrees_with_wheel_payload": true
+    },
+    {
+      "path": "triton/backends/amd/llvm/bin/ld.lld",
+      "wheel_payload_sha256": "b7ae622860c744d9f9af5c1937d655b3dbbedba5feaaad9a50339e2a688f270f",
+      "installed_payload_matches_original_wheel": true,
+      "record_value_disagrees_with_wheel_payload": true
+    }
+  ]
+}
