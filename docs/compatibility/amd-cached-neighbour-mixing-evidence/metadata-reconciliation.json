@@ -1,0 +1,298 @@
+{
+  "status": "PASS",
+  "raw_metadata_directory_size_differences": 41,
+  "all_file_entries_identical": true,
+  "file_entries_checked": 374,
+  "path_sets_mtimes_modes_unchanged": true,
+  "existing_normalized_inventory_byte_identical": true,
+  "interpretation": "Only directory st_size reporting differs; the existing normalization excludes directory size. No file size/mtime/mode or directory path/mtime/mode differences were found. No cause beyond reporting variability is asserted.",
+  "differences": [
+    {
+      "root": "D:\\AI\\Trellis2AMD\\ComfyUI\\models",
+      "directory": "configs",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "D:\\AI\\Trellis2AMD\\ComfyUI\\models",
+      "directory": "facebook/dinov3-vitl16-pretrain-lvd1689m",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "D:\\AI\\Trellis2AMD\\ComfyUI\\models",
+      "directory": "facebook/dinov3-vitl16-pretrain-lvd1689m/.cache/huggingface/download",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "D:\\AI\\Trellis2AMD\\ComfyUI\\models",
+      "directory": "microsoft/TRELLIS.2-4B",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "D:\\AI\\Trellis2AMD\\ComfyUI\\models",
+      "directory": "microsoft/TRELLIS.2-4B/.cache/huggingface/download",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "D:\\AI\\Trellis2AMD\\ComfyUI\\models",
+      "directory": "microsoft/TRELLIS.2-4B/.cache/huggingface/download/ckpts",
+      "before_size": 0,
+      "after_size": 8192,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "D:\\AI\\Trellis2AMD\\ComfyUI\\models",
+      "directory": "microsoft/TRELLIS.2-4B/ckpts",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/_hy3dgen/hy3dgen",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/_hy3dgen/hy3dgen/shapegen",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/_hy3dgen/hy3dgen/shapegen/__pycache__",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/_hy3dgen/hy3dgen/shapegen/models",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/_hy3dgen/hy3dgen/shapegen/models/autoencoders",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/_hy3dgen/hy3dgen/shapegen/models/autoencoders/__pycache__",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/_hy3dgen/hy3dgen/shapegen/models/denoisers",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/_hy3dgen/hy3dgen/texgen",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/_hy3dgen/hy3dgen/texgen/custom_rasterizer/lib/custom_rasterizer_kernel",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/_hy3dgen/hy3dgen/texgen/differentiable_renderer",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/_hy3dgen/hy3dgen/texgen/utils",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/hunyuan3d-dit-v2-mini",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "hunyuan3d-mini/generate/hunyuan3d-vae-v2-mini",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/.cache/huggingface",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/.cache/huggingface/download",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/.cache/huggingface/download/Vision",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/.cache/huggingface/download/decoders/Stage1",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/.cache/huggingface/download/decoders/Stage2",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/.cache/huggingface/download/refiner",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/.cache/huggingface/download/shape",
+      "before_size": 0,
+      "after_size": 8192,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/.cache/huggingface/download/texture",
+      "before_size": 0,
+      "after_size": 8192,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/decoders/Stage2",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/generate/decoders/Stage2",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/generate/encoders",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/generate/refiner",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/generate/shape",
+      "before_size": 0,
+      "after_size": 8192,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/generate/test",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/generate/texture",
+      "before_size": 0,
+      "after_size": 8192,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/refine/decoders/Stage2",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/refine/encoders",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/refine/refiner",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/refine/shape",
+      "before_size": 0,
+      "after_size": 8192,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/refine/test",
+      "before_size": 0,
+      "after_size": 4096,
+      "mtime_and_mode_unchanged": true
+    },
+    {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\models",
+      "directory": "trellis2/refine/texture",
+      "before_size": 0,
+      "after_size": 8192,
+      "mtime_and_mode_unchanged": true
+    }
+  ]
+}
