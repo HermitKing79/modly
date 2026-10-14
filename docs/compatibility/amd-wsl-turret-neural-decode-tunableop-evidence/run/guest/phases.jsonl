@@ -1,0 +1,4 @@
+{"phase": "gate-wait", "utc": "2026-10-14T22:00:42.110702+00:00", "monotonic_seconds": 3.77445731, "gpu_allowed": false}
+{"phase": "gate-authorized", "utc": "2026-10-14T22:00:42.724705+00:00", "monotonic_seconds": 4.388463779, "gpu_allowed": true}
+{"phase": "tunable-after-torch-import", "utc": "2026-10-14T22:00:54.254777+00:00", "monotonic_seconds": 15.918536236, "tunable": {"flags": {"enabled": false, "tuning": false, "record_untuned": false}, "environment": {"PYTORCH_TUNABLEOP_ENABLED": "0", "PYTORCH_TUNABLEOP_TUNING": "0", "PYTORCH_TUNABLEOP_RECORD_UNTUNED": "0"}}}
+{"phase": "worker-finished", "utc": "2026-10-14T22:00:54.814394+00:00", "monotonic_seconds": 16.47814939, "classification": "UNKNOWN"}

@@ -1,0 +1,93 @@
+{
+  "review_kind": "focused_read_only_single_neural_sequence_outcome",
+  "review_date": "2026-10-14",
+  "decision": "UNKNOWN",
+  "raw_guest_and_supervisor_classification": "UNKNOWN",
+  "assessment": "The one authorized sequence passed the early TunableOp check, then stopped at initial free-VRAM admission before native import, CPU decoder loading or neural execution. No native/model compatibility or neural result was tested.",
+  "reviewer_runtime_Torch_WSL_GPU_tests_or_repairs": false,
+  "execution_commit": "638436ec3a084ec9005b1b03ae97af1115871ca0",
+  "decode_sha256_unchanged": "ef9bf356f04f74a5f9efb8ca1ae79e928f8d57f2d1e8c1b226cb9b890c0bbefe",
+  "evidence_sha256": {
+    "run/results.json": "23abcf551ecd5eacac36015a883842becefa3f74026ad202deae63d6d866bb2f",
+    "run/guest/results.json": "220ce8e7dce08362adfe91502a93af318c916cfb8074ab122ff847d2e596bf40",
+    "run/phases.jsonl": "88ef013abee4415616ca80f41213dea1c4bb8c931dfd1ca4b680411be51ae5dd",
+    "run/guest/phases.jsonl": "44c24e0ecfcf22f5e811ae6149d566f57050d6e028605f83e66457e594b67599",
+    "execution-host-capture.json": "792a89de797d56183c2df5c5ccac7841573d657b555c03f302fa9c6d3a1a8338",
+    "neural-attempt.marker": "dfb885df40e3635cfac6305218e20faf59632b9b60894ea0786f44a490d381f5"
+  },
+  "observed_failure": {
+    "source": "decode.py:256",
+    "type": "RuntimeError",
+    "error": "GPU identity/free-VRAM admission refused",
+    "GPU_identity": {"name": "AMD Radeon RX 9070 XT", "architecture": "gfx1201", "count": 1, "total_bytes": 16974905344},
+    "all_identity_conditions_match": true,
+    "required_initial_free_VRAM_bytes": 13958643712,
+    "observed_free_VRAM_bytes": 13772447744,
+    "observed_free_VRAM_GiB": 12.826591491699219,
+    "shortfall_bytes": 186195968,
+    "shortfall_MiB": 177.5703125,
+    "threshold_unchanged": true,
+    "interpretation": "Only the free-memory condition fails the combined identity/free-VRAM gate. This is a safe resource-admission refusal at the observed moment, not evidence of native incompatibility, numerical failure, OOM or a crashed GPU operation. The record does not identify the owner/cause of unavailable device memory."
+  },
+  "TunableOp_evidence": {
+    "after_torch_import": {
+      "flags": {"enabled": false, "tuning": false, "record_untuned": false},
+      "environment": {"PYTORCH_TUNABLEOP_ENABLED": "0", "PYTORCH_TUNABLEOP_TUNING": "0", "PYTORCH_TUNABLEOP_RECORD_UNTUNED": "0"}
+    },
+    "durable_early_phase_matches_worker_record": true,
+    "early_actual_environment_zero_admission": "PASS",
+    "pre_gpu_check_reached": false,
+    "limit": "This worker directly verifies pre-import environment-zero behavior and all three early booleans. It does not verify the later pre-GPU state, which was never reached, or retroactively reveal the old failed worker's unrecorded flags."
+  },
+  "execution_boundary": {
+    "gate_authorized": true,
+    "saved_full_input_validated": "F32 [3743,32] and I32 [3743,4], original row order and recorded hashes",
+    "source_and_checkpoint_stream_identity_verified": true,
+    "native_import": "NOT_ATTEMPTED",
+    "decoder_CPU_load": "NOT_ATTEMPTED",
+    "forward_calls": 0,
+    "GPU_model_placement_convolutions_subdivisions_output": "not reached",
+    "real_parameter_weak_reference_checks": "not applicable: no model/parameter objects loaded",
+    "checkpoint_limit": "The original checkpoint was streamed for identity verification, but not deserialized or loaded into a decoder. No weight-loading success is inferred from that hash.",
+    "allocator_cap_setting": "Not reached: the initial floor gate occurs before per-process cap installation and peak reset."
+  },
+  "cleanup_and_scope": {
+    "policy_final": {"phase": "native_import", "blocked": {}, "tensor_operations_allowed": 0, "native_calls": 0, "rejected_calls": 0},
+    "Torch_allocator_peak": {"allocated": 0, "reserved": 0},
+    "Torch_allocator_release": {"allocated": 0, "reserved": 0},
+    "baseline_allocator_sample_present": false,
+    "device_free_after_release_bytes": 13772447744,
+    "permitted_GPU_metadata_initialization": "Device identity/free-memory metadata was queried; zero Torch allocation does not claim an uninitialized GPU context or zero driver memory use.",
+    "host_nested_worker_matches_raw_guest": true,
+    "host_error_fields": [],
+    "worker_and_outer_exit": 1,
+    "healthy_observations": 6,
+    "observation_errors_timeouts_events_or_bad_controller_status": [],
+    "maximum_observation_start_gap_seconds": 5.01600000000326,
+    "healthy_post_exit_observation": true,
+    "Job_attached_before_GO": true,
+    "Job_grace_empty_seconds": 0.0,
+    "Job_active_before_and_after_cleanup": [0, 0],
+    "forced_Job_cleanup": false,
+    "owned_tree_exit_verified": true,
+    "named_termination": "Modly-AMD-Ubuntu-24.04",
+    "named_termination_exit": 0,
+    "worker_stdout_and_stderr_empty": true,
+    "host_stderr_empty": true
+  },
+  "bounds": {
+    "authorized_sequences": 1,
+    "automatic_retries": 0,
+    "marker_matches_actual_candidate_and_commit": true,
+    "worker_elapsed_seconds": 12.075117038,
+    "supervisor_elapsed_seconds": 25.562000000005355,
+    "outer_elapsed_seconds": 30.0531539,
+    "native_CPU_GPU_guest_authorized_host_deadlines_seconds": [60, 120, 240, 450, 430, 480],
+    "completed_inside_retained_deadlines": true,
+    "CPU_load_or_neural_stage_timing": "absent because not attempted",
+    "clock_note": "Host and guest clocks have different offset/skew; local phase order and their own elapsed measurements were reviewed independently."
+  },
+  "preservation_review": "Separate root-task after-preservation/final report verification is outside this focused outcome review.",
+  "findings": [],
+  "next_action": "Preserve and publish this resource-admission result, then stop. Any further VRAM readiness investigation or fresh decoder sequence needs separate approval; do not lower the threshold, poll for a retry, or repair this consumed attempt."
+}

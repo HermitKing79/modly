@@ -1,0 +1,61 @@
+{
+  "classification": "UNKNOWN",
+  "cause": "Initial 13 GiB free-VRAM admission refused",
+  "execution_commit": "638436ec3a084ec9005b1b03ae97af1115871ca0",
+  "candidate_sha256": "ef9bf356f04f74a5f9efb8ca1ae79e928f8d57f2d1e8c1b226cb9b890c0bbefe",
+  "free_VRAM_bytes": 13772447744,
+  "free_VRAM_GiB": 12.826591491699219,
+  "required_VRAM_bytes": 13958643712,
+  "shortfall_bytes": 186195968,
+  "shortfall_MiB": 177.5703125,
+  "after_Torch_admission": {
+    "flags": {
+      "enabled": false,
+      "tuning": false,
+      "record_untuned": false
+    },
+    "environment": {
+      "PYTORCH_TUNABLEOP_ENABLED": "0",
+      "PYTORCH_TUNABLEOP_TUNING": "0",
+      "PYTORCH_TUNABLEOP_RECORD_UNTUNED": "0"
+    }
+  },
+  "pre_GPU_tuning_check_reached": false,
+  "native_import": "NOT_ATTEMPTED",
+  "checkpoint_deserialized": false,
+  "forward_calls": 0,
+  "convolutions_or_subdivisions_entered": false,
+  "neural_artifact_created": false,
+  "worker_seconds": 12.075117038,
+  "supervisor_seconds": 25.562000000005355,
+  "outer_seconds": 30.0531539,
+  "worker_returncode": 1,
+  "healthy_observations": 6,
+  "policy": {
+    "phase": "native_import",
+    "blocked": {},
+    "tensor_operations_allowed": 0,
+    "native_calls": 0,
+    "rejected_calls": 0
+  },
+  "memory_peak": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "memory_release": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "named_distro_termination_returncode": 0,
+  "original_local_heads_preserved": 55,
+  "historical_files_and_bytecode_preserved": 482,
+  "Linux_preservation": "PASS",
+  "automatic_retries": 0
+}
