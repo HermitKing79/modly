@@ -1,0 +1,28 @@
+{
+  "reviewer": "independent /root/native_resume_review",
+  "status": "PASS",
+  "decision": "GO_FOR_EXACTLY_ONE_CONTAINED_IMPORT",
+  "findings": [],
+  "candidate_sha256": "4dacdfdd348438078561fd92999d1db58a8ca6495d8f115c8812ee1ce63eb15a",
+  "review_source": "Completed independent agent report; static text/AST/ZIP/hash reads only",
+  "changes_only": [
+    "expected policy hash",
+    "exclusive scratch path"
+  ],
+  "guard_suites_rerun": false,
+  "no_model_or_decoder_continuation": true,
+  "helpers_binary_GO_and_containment_unchanged": true,
+  "bounds_seconds": [
+    60,
+    90,
+    120
+  ],
+  "free_VRAM_GiB": 13,
+  "Torch_allocator_GiB": 12,
+  "Linux_and_Windows_preservation": "PASS",
+  "historical_files_verified": 173,
+  "limitations": [
+    "Opaque ELF/HIP constructors outside Python instrumentation",
+    "Torch cap does not bound direct native HIP allocations"
+  ]
+}

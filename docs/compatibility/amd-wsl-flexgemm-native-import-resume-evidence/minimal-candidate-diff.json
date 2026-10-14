@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "candidate_sha256": "4dacdfdd348438078561fd92999d1db58a8ca6495d8f115c8812ee1ce63eb15a",
+  "reference_sha256": "c8a05f8a2121f2a527a6a9871d8a51b6d11b897228da57930ea01443577d04ae",
+  "changes_only": [
+    "expected ImportPolicy SHA-256",
+    "fresh exclusive scratch path",
+    "new evidence directory via __file__"
+  ],
+  "policy_unchanged": true,
+  "guard_suites_rerun": false,
+  "historical_files_verified": 173,
+  "shared_supervisor_binary_GO_unchanged": true,
+  "decoder_or_model_continuation": false
+}
