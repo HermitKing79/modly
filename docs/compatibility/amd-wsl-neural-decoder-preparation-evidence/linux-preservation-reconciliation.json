@@ -1,0 +1,16 @@
+{
+  "original_capture": "linux-preservation-capture.json",
+  "diagnostic_capture": "linux-preservation-diagnostic-capture.json",
+  "raw_identity_flag": false,
+  "cause": "Guest in-memory md.distributions rows were tuples; baseline parsed JSON rows were lists. Python tuple != list although serialized values match.",
+  "json_normalized_identity_equal": true,
+  "venv_metadata_sha256_equal": true,
+  "dpkg_rows_equal": true,
+  "python_packages_equal": true,
+  "headers_tools_os_and_cmake_equal": true,
+  "extra_gpu_or_native_actions": 0,
+  "original_evidence_modified": false,
+  "filesystem_available_before": 13103751168,
+  "filesystem_available_after": 13053116416,
+  "filesystem_free_bytes_not_installed_identity": "Free space can vary across WSL startup/shutdown; no claim of whole-filesystem byte identity."
+}

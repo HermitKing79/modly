@@ -1,0 +1,24 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "30s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-S",
+    "-"
+  ],
+  "returncode": 0,
+  "stdout": "{\"tools\": {\"cc\": null, \"gcc\": null, \"g++\": null, \"clang\": null, \"clang++\": null, \"hipcc\": null, \"cmake\": null, \"ninja\": null}, \"headers\": {\"/opt/rocm/include/hip/hip_runtime.h\": false, \"/opt/rocm/include/hip/hip_runtime_api.h\": false, \"/opt/rocm/include/hipblas/hipblas.h\": false, \"/opt/rocm/include/hipblaslt/hipblaslt.h\": false, \"/opt/rocm/llvm/bin/clang++\": false, \"/opt/rocm/llvm/bin/clang\": false, \"/opt/rocm/bin/hipcc\": false, \"/opt/rocm/amdgcn/bitcode\": false, \"/usr/include/python3.12/Python.h\": false, \"/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/torch/extension.h\": true}, \"torch_cmake_abi_flags\": [\"#   TORCH_CXX_FLAGS    -- Additional (required) compiler flags\", \"if(TORCH_CXX_FLAGS)\", \"set_property(TARGET torch PROPERTY INTERFACE_COMPILE_OPTIONS \\\"${TORCH_CXX_FLAGS}\\\")\"], \"filesystem_total_bytes\": 33501757440, \"filesystem_available_bytes\": 13053116416}\n",
+  "stderr": "",
+  "seconds": 6.311999999998079,
+  "named_distro_termination_returncode": 0
+}

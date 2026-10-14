@@ -1,0 +1,35 @@
+{
+  "classification": "UNKNOWN",
+  "base": "67a9e4ac02bf90b6702b0592216b3093acd48059",
+  "branch": "codex/amd-wsl-neural-decoder-preparation",
+  "installed_additions": [],
+  "package_payload_download_bytes": 0,
+  "source_builds": 0,
+  "native_or_gpu_imports": 0,
+  "GPU_initialization": false,
+  "checkpoint_tensor_loads": 0,
+  "neural_forwards": 0,
+  "blocking_prerequisite": "No qualified prebuilt native extension; absent host/HIP compiler and development headers. Substantial toolchain needs separate approval.",
+  "prospective_toolchain": {
+    "new_packages": 59,
+    "upgrades": 2,
+    "archive_bytes": 626410386,
+    "known_installed_size_bytes": 319531008,
+    "unknown_installed_size": [
+      "rocm-llvm"
+    ]
+  },
+  "CPU_regressions": {
+    "count": 9,
+    "passed": 9,
+    "scope": "Inherited callback/resource planners, not Linux explicit GEMM qualification"
+  },
+  "strict_linux_load_qualified": false,
+  "precision_conversion_performed": false,
+  "future_native_workspace_admission_qualified": false,
+  "full_saved_turret_preserved": true,
+  "Windows_and_Linux_installed_identity_preserved": true,
+  "independent_report_review": "No blocking findings",
+  "GPU_attempt_not_authorized_or_performed": true,
+  "next_step": "Separate targeted toolchain/disk/ABI admission and one pinned FlexGEMM build against unchanged Torch2.9.1/ROCm7.2.1. No broad setup script or new synthetic tests."
+}

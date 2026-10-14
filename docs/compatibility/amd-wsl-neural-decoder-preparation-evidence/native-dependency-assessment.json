@@ -1,0 +1,77 @@
+{
+  "decision": "UNKNOWN",
+  "native_dependency": "FlexGEMM Torch C++/HIP extension",
+  "linux_reference_commit": "0220d73971fd0be242b2b311ac00d590e1b26301",
+  "reference_setup_native_revision": "unpinned JeffreyXiang/FlexGEMM main; successful build revision not recoverable",
+  "independently_audited_upstream_commit": "6dd94a859c26ee8246888502eada3dd8ad85532e",
+  "source_urls": [
+    "https://github.com/kr4ckhe4d/trellis2-9070xt/blob/0220d73971fd0be242b2b311ac00d590e1b26301/scripts/setup-rocm.sh",
+    "https://github.com/JeffreyXiang/FlexGEMM/blob/6dd94a859c26ee8246888502eada3dd8ad85532e/setup.py",
+    "https://github.com/JeffreyXiang/FlexGEMM/blob/6dd94a859c26ee8246888502eada3dd8ad85532e/flex_gemm/ops/spconv/submanifold_conv3d.py",
+    "https://api.github.com/repos/JeffreyXiang/FlexGEMM/releases",
+    "https://pypi.org/pypi/flex-gemm/json",
+    "https://repo.radeon.com/rocm/apt/7.2.1/dists/noble/main/binary-amd64/Packages"
+  ],
+  "extension": {
+    "translation_units": 7,
+    "builder": "torch.utils.cpp_extension.CUDAExtension",
+    "target": "gfx1201",
+    "language": "C++17/OpenMP",
+    "links": [
+      "c10",
+      "torch",
+      "torch_cpu",
+      "torch_python",
+      "amdhip64",
+      "c10_hip",
+      "torch_hip"
+    ],
+    "actual_cxx_abi_bit_validated": false
+  },
+  "explicit_gemm_removes_native_neighbor_extension": false,
+  "prebuilt": {
+    "official_v1_0_v1_1_wheel_assets": 0,
+    "pypi_flex_gemm_response": 404,
+    "candidate_commit": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+    "candidate_path": "wheels/Linux/Python3.12/flex_gemm-1.0.0+rocm10.0-cp312-cp312-linux_x86_64.whl",
+    "bytes": 3685157,
+    "git_blob": "6ed1a2e7f92e73686e7b414c0799eeedf3254274",
+    "status": "unqualified, not demonstrated incompatible",
+    "downloaded": false,
+    "loaded": false
+  },
+  "triton_hip_host_helper": {
+    "needs": [
+      "ordinary cc/gcc/clang",
+      "Python.h",
+      "bundled HIP headers",
+      "libamdhip64"
+    ],
+    "distinct_from_torch_extension": true,
+    "source_sha256": {
+      "runtime/build.py": "dd72205f6f7aa637c32c7ebdc136d1667ee6bef27c87358f2d5168501b82d837",
+      "backends/amd/driver.py": "e68505098eef3e7c0b050cb91da2587ab6c10d455ca0b941ff06fa8068e16305",
+      "backends/amd/driver.c": "744a70d34945512312bd0e409cd73fe170c06481d55ef5252792be2e603192f5"
+    }
+  },
+  "llvm_bounded_metadata": {
+    "archive_bytes": 544593292,
+    "sha256": "1cbad039d161a03f9c4df81193fdb81d55d9a79e400ce8ce26ee55488512e0bd",
+    "http_range": [
+      0,
+      65535
+    ],
+    "control_gzip_byte_range": [
+      132,
+      768
+    ],
+    "installed_size": "absent from package index and actual control header",
+    "whole_package_downloaded": false
+  },
+  "read_only_assessment_author": "independent native dependency reviewer /root/wsl_flexgemm_qualification",
+  "package_payload_downloads": 0,
+  "installed_additions": [],
+  "builds": 0,
+  "native_loads": 0,
+  "gpu_actions": 0
+}

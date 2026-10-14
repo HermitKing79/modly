@@ -1,0 +1,24 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "30s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-S",
+    "-"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<stdin>\", line 59, in <module>\nRuntimeError: Installed Linux identity changed\n",
+  "seconds": 8.014999999999418,
+  "named_distro_termination_returncode": 0
+}

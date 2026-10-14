@@ -1,0 +1,3685 @@
+{
+  "checkpoint_header_verified": true,
+  "checkpoint_tensors": {
+    "blocks.0.0.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        0,
+        2048
+      ]
+    },
+    "blocks.0.0.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        3,
+        3,
+        3,
+        1024
+      ],
+      "data_offsets": [
+        2048,
+        56625152
+      ]
+    },
+    "blocks.0.0.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        4096
+      ],
+      "data_offsets": [
+        56625152,
+        56633344
+      ]
+    },
+    "blocks.0.0.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        4096,
+        1024
+      ],
+      "data_offsets": [
+        56633344,
+        65021952
+      ]
+    },
+    "blocks.0.0.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        65021952,
+        65024000
+      ]
+    },
+    "blocks.0.0.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        4096
+      ],
+      "data_offsets": [
+        65024000,
+        73412608
+      ]
+    },
+    "blocks.0.0.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        73412608,
+        73414656
+      ]
+    },
+    "blocks.0.0.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        73414656,
+        73416704
+      ]
+    },
+    "blocks.0.1.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        73416704,
+        73418752
+      ]
+    },
+    "blocks.0.1.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        3,
+        3,
+        3,
+        1024
+      ],
+      "data_offsets": [
+        73418752,
+        130041856
+      ]
+    },
+    "blocks.0.1.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        4096
+      ],
+      "data_offsets": [
+        130041856,
+        130050048
+      ]
+    },
+    "blocks.0.1.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        4096,
+        1024
+      ],
+      "data_offsets": [
+        130050048,
+        138438656
+      ]
+    },
+    "blocks.0.1.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        138438656,
+        138440704
+      ]
+    },
+    "blocks.0.1.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        4096
+      ],
+      "data_offsets": [
+        138440704,
+        146829312
+      ]
+    },
+    "blocks.0.1.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        146829312,
+        146831360
+      ]
+    },
+    "blocks.0.1.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        146831360,
+        146833408
+      ]
+    },
+    "blocks.0.2.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        146833408,
+        146835456
+      ]
+    },
+    "blocks.0.2.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        3,
+        3,
+        3,
+        1024
+      ],
+      "data_offsets": [
+        146835456,
+        203458560
+      ]
+    },
+    "blocks.0.2.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        4096
+      ],
+      "data_offsets": [
+        203458560,
+        203466752
+      ]
+    },
+    "blocks.0.2.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        4096,
+        1024
+      ],
+      "data_offsets": [
+        203466752,
+        211855360
+      ]
+    },
+    "blocks.0.2.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        211855360,
+        211857408
+      ]
+    },
+    "blocks.0.2.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        4096
+      ],
+      "data_offsets": [
+        211857408,
+        220246016
+      ]
+    },
+    "blocks.0.2.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        220246016,
+        220248064
+      ]
+    },
+    "blocks.0.2.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        220248064,
+        220250112
+      ]
+    },
+    "blocks.0.3.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        220250112,
+        220252160
+      ]
+    },
+    "blocks.0.3.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        3,
+        3,
+        3,
+        1024
+      ],
+      "data_offsets": [
+        220252160,
+        276875264
+      ]
+    },
+    "blocks.0.3.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        4096
+      ],
+      "data_offsets": [
+        276875264,
+        276883456
+      ]
+    },
+    "blocks.0.3.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        4096,
+        1024
+      ],
+      "data_offsets": [
+        276883456,
+        285272064
+      ]
+    },
+    "blocks.0.3.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        285272064,
+        285274112
+      ]
+    },
+    "blocks.0.3.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        4096
+      ],
+      "data_offsets": [
+        285274112,
+        293662720
+      ]
+    },
+    "blocks.0.3.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        293662720,
+        293664768
+      ]
+    },
+    "blocks.0.3.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        293664768,
+        293666816
+      ]
+    },
+    "blocks.0.4.conv1.bias": {
+      "dtype": "F16",
+      "shape": [
+        4096
+      ],
+      "data_offsets": [
+        293666816,
+        293675008
+      ]
+    },
+    "blocks.0.4.conv1.weight": {
+      "dtype": "F16",
+      "shape": [
+        4096,
+        3,
+        3,
+        3,
+        1024
+      ],
+      "data_offsets": [
+        293675008,
+        520167424
+      ]
+    },
+    "blocks.0.4.conv2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        520167424,
+        520168448
+      ]
+    },
+    "blocks.0.4.conv2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        520168448,
+        534324224
+      ]
+    },
+    "blocks.0.4.norm1.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        534324224,
+        534326272
+      ]
+    },
+    "blocks.0.4.norm1.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        534326272,
+        534328320
+      ]
+    },
+    "blocks.0.4.to_subdiv.bias": {
+      "dtype": "F16",
+      "shape": [
+        8
+      ],
+      "data_offsets": [
+        534328320,
+        534328336
+      ]
+    },
+    "blocks.0.4.to_subdiv.weight": {
+      "dtype": "F16",
+      "shape": [
+        8,
+        1024
+      ],
+      "data_offsets": [
+        534328336,
+        534344720
+      ]
+    },
+    "blocks.1.0.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        534344720,
+        534345744
+      ]
+    },
+    "blocks.1.0.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        534345744,
+        548501520
+      ]
+    },
+    "blocks.1.0.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        548501520,
+        548505616
+      ]
+    },
+    "blocks.1.0.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        548505616,
+        550602768
+      ]
+    },
+    "blocks.1.0.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        550602768,
+        550603792
+      ]
+    },
+    "blocks.1.0.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        550603792,
+        552700944
+      ]
+    },
+    "blocks.1.0.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        552700944,
+        552701968
+      ]
+    },
+    "blocks.1.0.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        552701968,
+        552702992
+      ]
+    },
+    "blocks.1.1.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        552702992,
+        552704016
+      ]
+    },
+    "blocks.1.1.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        552704016,
+        566859792
+      ]
+    },
+    "blocks.1.1.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        566859792,
+        566863888
+      ]
+    },
+    "blocks.1.1.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        566863888,
+        568961040
+      ]
+    },
+    "blocks.1.1.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        568961040,
+        568962064
+      ]
+    },
+    "blocks.1.1.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        568962064,
+        571059216
+      ]
+    },
+    "blocks.1.1.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        571059216,
+        571060240
+      ]
+    },
+    "blocks.1.1.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        571060240,
+        571061264
+      ]
+    },
+    "blocks.1.10.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        571061264,
+        571062288
+      ]
+    },
+    "blocks.1.10.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        571062288,
+        585218064
+      ]
+    },
+    "blocks.1.10.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        585218064,
+        585222160
+      ]
+    },
+    "blocks.1.10.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        585222160,
+        587319312
+      ]
+    },
+    "blocks.1.10.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        587319312,
+        587320336
+      ]
+    },
+    "blocks.1.10.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        587320336,
+        589417488
+      ]
+    },
+    "blocks.1.10.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        589417488,
+        589418512
+      ]
+    },
+    "blocks.1.10.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        589418512,
+        589419536
+      ]
+    },
+    "blocks.1.11.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        589419536,
+        589420560
+      ]
+    },
+    "blocks.1.11.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        589420560,
+        603576336
+      ]
+    },
+    "blocks.1.11.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        603576336,
+        603580432
+      ]
+    },
+    "blocks.1.11.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        603580432,
+        605677584
+      ]
+    },
+    "blocks.1.11.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        605677584,
+        605678608
+      ]
+    },
+    "blocks.1.11.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        605678608,
+        607775760
+      ]
+    },
+    "blocks.1.11.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        607775760,
+        607776784
+      ]
+    },
+    "blocks.1.11.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        607776784,
+        607777808
+      ]
+    },
+    "blocks.1.12.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        607777808,
+        607778832
+      ]
+    },
+    "blocks.1.12.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        607778832,
+        621934608
+      ]
+    },
+    "blocks.1.12.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        621934608,
+        621938704
+      ]
+    },
+    "blocks.1.12.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        621938704,
+        624035856
+      ]
+    },
+    "blocks.1.12.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        624035856,
+        624036880
+      ]
+    },
+    "blocks.1.12.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        624036880,
+        626134032
+      ]
+    },
+    "blocks.1.12.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        626134032,
+        626135056
+      ]
+    },
+    "blocks.1.12.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        626135056,
+        626136080
+      ]
+    },
+    "blocks.1.13.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        626136080,
+        626137104
+      ]
+    },
+    "blocks.1.13.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        626137104,
+        640292880
+      ]
+    },
+    "blocks.1.13.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        640292880,
+        640296976
+      ]
+    },
+    "blocks.1.13.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        640296976,
+        642394128
+      ]
+    },
+    "blocks.1.13.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        642394128,
+        642395152
+      ]
+    },
+    "blocks.1.13.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        642395152,
+        644492304
+      ]
+    },
+    "blocks.1.13.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        644492304,
+        644493328
+      ]
+    },
+    "blocks.1.13.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        644493328,
+        644494352
+      ]
+    },
+    "blocks.1.14.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        644494352,
+        644495376
+      ]
+    },
+    "blocks.1.14.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        644495376,
+        658651152
+      ]
+    },
+    "blocks.1.14.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        658651152,
+        658655248
+      ]
+    },
+    "blocks.1.14.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        658655248,
+        660752400
+      ]
+    },
+    "blocks.1.14.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        660752400,
+        660753424
+      ]
+    },
+    "blocks.1.14.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        660753424,
+        662850576
+      ]
+    },
+    "blocks.1.14.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        662850576,
+        662851600
+      ]
+    },
+    "blocks.1.14.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        662851600,
+        662852624
+      ]
+    },
+    "blocks.1.15.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        662852624,
+        662853648
+      ]
+    },
+    "blocks.1.15.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        662853648,
+        677009424
+      ]
+    },
+    "blocks.1.15.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        677009424,
+        677013520
+      ]
+    },
+    "blocks.1.15.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        677013520,
+        679110672
+      ]
+    },
+    "blocks.1.15.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        679110672,
+        679111696
+      ]
+    },
+    "blocks.1.15.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        679111696,
+        681208848
+      ]
+    },
+    "blocks.1.15.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        681208848,
+        681209872
+      ]
+    },
+    "blocks.1.15.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        681209872,
+        681210896
+      ]
+    },
+    "blocks.1.16.conv1.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        681210896,
+        681214992
+      ]
+    },
+    "blocks.1.16.conv1.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        681214992,
+        737838096
+      ]
+    },
+    "blocks.1.16.conv2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        737838096,
+        737838608
+      ]
+    },
+    "blocks.1.16.conv2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        737838608,
+        741377552
+      ]
+    },
+    "blocks.1.16.norm1.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        741377552,
+        741378576
+      ]
+    },
+    "blocks.1.16.norm1.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        741378576,
+        741379600
+      ]
+    },
+    "blocks.1.16.to_subdiv.bias": {
+      "dtype": "F16",
+      "shape": [
+        8
+      ],
+      "data_offsets": [
+        741379600,
+        741379616
+      ]
+    },
+    "blocks.1.16.to_subdiv.weight": {
+      "dtype": "F16",
+      "shape": [
+        8,
+        512
+      ],
+      "data_offsets": [
+        741379616,
+        741387808
+      ]
+    },
+    "blocks.1.2.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        741387808,
+        741388832
+      ]
+    },
+    "blocks.1.2.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        741388832,
+        755544608
+      ]
+    },
+    "blocks.1.2.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        755544608,
+        755548704
+      ]
+    },
+    "blocks.1.2.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        755548704,
+        757645856
+      ]
+    },
+    "blocks.1.2.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        757645856,
+        757646880
+      ]
+    },
+    "blocks.1.2.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        757646880,
+        759744032
+      ]
+    },
+    "blocks.1.2.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        759744032,
+        759745056
+      ]
+    },
+    "blocks.1.2.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        759745056,
+        759746080
+      ]
+    },
+    "blocks.1.3.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        759746080,
+        759747104
+      ]
+    },
+    "blocks.1.3.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        759747104,
+        773902880
+      ]
+    },
+    "blocks.1.3.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        773902880,
+        773906976
+      ]
+    },
+    "blocks.1.3.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        773906976,
+        776004128
+      ]
+    },
+    "blocks.1.3.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        776004128,
+        776005152
+      ]
+    },
+    "blocks.1.3.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        776005152,
+        778102304
+      ]
+    },
+    "blocks.1.3.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        778102304,
+        778103328
+      ]
+    },
+    "blocks.1.3.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        778103328,
+        778104352
+      ]
+    },
+    "blocks.1.4.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        778104352,
+        778105376
+      ]
+    },
+    "blocks.1.4.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        778105376,
+        792261152
+      ]
+    },
+    "blocks.1.4.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        792261152,
+        792265248
+      ]
+    },
+    "blocks.1.4.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        792265248,
+        794362400
+      ]
+    },
+    "blocks.1.4.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        794362400,
+        794363424
+      ]
+    },
+    "blocks.1.4.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        794363424,
+        796460576
+      ]
+    },
+    "blocks.1.4.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        796460576,
+        796461600
+      ]
+    },
+    "blocks.1.4.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        796461600,
+        796462624
+      ]
+    },
+    "blocks.1.5.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        796462624,
+        796463648
+      ]
+    },
+    "blocks.1.5.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        796463648,
+        810619424
+      ]
+    },
+    "blocks.1.5.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        810619424,
+        810623520
+      ]
+    },
+    "blocks.1.5.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        810623520,
+        812720672
+      ]
+    },
+    "blocks.1.5.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        812720672,
+        812721696
+      ]
+    },
+    "blocks.1.5.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        812721696,
+        814818848
+      ]
+    },
+    "blocks.1.5.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        814818848,
+        814819872
+      ]
+    },
+    "blocks.1.5.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        814819872,
+        814820896
+      ]
+    },
+    "blocks.1.6.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        814820896,
+        814821920
+      ]
+    },
+    "blocks.1.6.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        814821920,
+        828977696
+      ]
+    },
+    "blocks.1.6.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        828977696,
+        828981792
+      ]
+    },
+    "blocks.1.6.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        828981792,
+        831078944
+      ]
+    },
+    "blocks.1.6.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        831078944,
+        831079968
+      ]
+    },
+    "blocks.1.6.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        831079968,
+        833177120
+      ]
+    },
+    "blocks.1.6.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        833177120,
+        833178144
+      ]
+    },
+    "blocks.1.6.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        833178144,
+        833179168
+      ]
+    },
+    "blocks.1.7.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        833179168,
+        833180192
+      ]
+    },
+    "blocks.1.7.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        833180192,
+        847335968
+      ]
+    },
+    "blocks.1.7.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        847335968,
+        847340064
+      ]
+    },
+    "blocks.1.7.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        847340064,
+        849437216
+      ]
+    },
+    "blocks.1.7.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        849437216,
+        849438240
+      ]
+    },
+    "blocks.1.7.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        849438240,
+        851535392
+      ]
+    },
+    "blocks.1.7.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        851535392,
+        851536416
+      ]
+    },
+    "blocks.1.7.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        851536416,
+        851537440
+      ]
+    },
+    "blocks.1.8.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        851537440,
+        851538464
+      ]
+    },
+    "blocks.1.8.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        851538464,
+        865694240
+      ]
+    },
+    "blocks.1.8.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        865694240,
+        865698336
+      ]
+    },
+    "blocks.1.8.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        865698336,
+        867795488
+      ]
+    },
+    "blocks.1.8.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        867795488,
+        867796512
+      ]
+    },
+    "blocks.1.8.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        867796512,
+        869893664
+      ]
+    },
+    "blocks.1.8.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        869893664,
+        869894688
+      ]
+    },
+    "blocks.1.8.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        869894688,
+        869895712
+      ]
+    },
+    "blocks.1.9.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        869895712,
+        869896736
+      ]
+    },
+    "blocks.1.9.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        512
+      ],
+      "data_offsets": [
+        869896736,
+        884052512
+      ]
+    },
+    "blocks.1.9.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        2048
+      ],
+      "data_offsets": [
+        884052512,
+        884056608
+      ]
+    },
+    "blocks.1.9.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        2048,
+        512
+      ],
+      "data_offsets": [
+        884056608,
+        886153760
+      ]
+    },
+    "blocks.1.9.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        886153760,
+        886154784
+      ]
+    },
+    "blocks.1.9.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        2048
+      ],
+      "data_offsets": [
+        886154784,
+        888251936
+      ]
+    },
+    "blocks.1.9.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        888251936,
+        888252960
+      ]
+    },
+    "blocks.1.9.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        888252960,
+        888253984
+      ]
+    },
+    "blocks.2.0.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        888253984,
+        888254496
+      ]
+    },
+    "blocks.2.0.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        888254496,
+        891793440
+      ]
+    },
+    "blocks.2.0.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        891793440,
+        891795488
+      ]
+    },
+    "blocks.2.0.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        891795488,
+        892319776
+      ]
+    },
+    "blocks.2.0.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        892319776,
+        892320288
+      ]
+    },
+    "blocks.2.0.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        892320288,
+        892844576
+      ]
+    },
+    "blocks.2.0.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        892844576,
+        892845088
+      ]
+    },
+    "blocks.2.0.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        892845088,
+        892845600
+      ]
+    },
+    "blocks.2.1.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        892845600,
+        892846112
+      ]
+    },
+    "blocks.2.1.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        892846112,
+        896385056
+      ]
+    },
+    "blocks.2.1.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        896385056,
+        896387104
+      ]
+    },
+    "blocks.2.1.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        896387104,
+        896911392
+      ]
+    },
+    "blocks.2.1.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        896911392,
+        896911904
+      ]
+    },
+    "blocks.2.1.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        896911904,
+        897436192
+      ]
+    },
+    "blocks.2.1.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        897436192,
+        897436704
+      ]
+    },
+    "blocks.2.1.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        897436704,
+        897437216
+      ]
+    },
+    "blocks.2.2.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        897437216,
+        897437728
+      ]
+    },
+    "blocks.2.2.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        897437728,
+        900976672
+      ]
+    },
+    "blocks.2.2.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        900976672,
+        900978720
+      ]
+    },
+    "blocks.2.2.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        900978720,
+        901503008
+      ]
+    },
+    "blocks.2.2.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        901503008,
+        901503520
+      ]
+    },
+    "blocks.2.2.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        901503520,
+        902027808
+      ]
+    },
+    "blocks.2.2.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        902027808,
+        902028320
+      ]
+    },
+    "blocks.2.2.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        902028320,
+        902028832
+      ]
+    },
+    "blocks.2.3.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        902028832,
+        902029344
+      ]
+    },
+    "blocks.2.3.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        902029344,
+        905568288
+      ]
+    },
+    "blocks.2.3.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        905568288,
+        905570336
+      ]
+    },
+    "blocks.2.3.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        905570336,
+        906094624
+      ]
+    },
+    "blocks.2.3.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        906094624,
+        906095136
+      ]
+    },
+    "blocks.2.3.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        906095136,
+        906619424
+      ]
+    },
+    "blocks.2.3.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        906619424,
+        906619936
+      ]
+    },
+    "blocks.2.3.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        906619936,
+        906620448
+      ]
+    },
+    "blocks.2.4.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        906620448,
+        906620960
+      ]
+    },
+    "blocks.2.4.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        906620960,
+        910159904
+      ]
+    },
+    "blocks.2.4.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        910159904,
+        910161952
+      ]
+    },
+    "blocks.2.4.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        910161952,
+        910686240
+      ]
+    },
+    "blocks.2.4.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        910686240,
+        910686752
+      ]
+    },
+    "blocks.2.4.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        910686752,
+        911211040
+      ]
+    },
+    "blocks.2.4.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        911211040,
+        911211552
+      ]
+    },
+    "blocks.2.4.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        911211552,
+        911212064
+      ]
+    },
+    "blocks.2.5.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        911212064,
+        911212576
+      ]
+    },
+    "blocks.2.5.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        911212576,
+        914751520
+      ]
+    },
+    "blocks.2.5.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        914751520,
+        914753568
+      ]
+    },
+    "blocks.2.5.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        914753568,
+        915277856
+      ]
+    },
+    "blocks.2.5.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        915277856,
+        915278368
+      ]
+    },
+    "blocks.2.5.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        915278368,
+        915802656
+      ]
+    },
+    "blocks.2.5.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        915802656,
+        915803168
+      ]
+    },
+    "blocks.2.5.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        915803168,
+        915803680
+      ]
+    },
+    "blocks.2.6.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        915803680,
+        915804192
+      ]
+    },
+    "blocks.2.6.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        915804192,
+        919343136
+      ]
+    },
+    "blocks.2.6.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        919343136,
+        919345184
+      ]
+    },
+    "blocks.2.6.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        919345184,
+        919869472
+      ]
+    },
+    "blocks.2.6.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        919869472,
+        919869984
+      ]
+    },
+    "blocks.2.6.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        919869984,
+        920394272
+      ]
+    },
+    "blocks.2.6.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        920394272,
+        920394784
+      ]
+    },
+    "blocks.2.6.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        920394784,
+        920395296
+      ]
+    },
+    "blocks.2.7.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        920395296,
+        920395808
+      ]
+    },
+    "blocks.2.7.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        920395808,
+        923934752
+      ]
+    },
+    "blocks.2.7.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        923934752,
+        923936800
+      ]
+    },
+    "blocks.2.7.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        256
+      ],
+      "data_offsets": [
+        923936800,
+        924461088
+      ]
+    },
+    "blocks.2.7.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        924461088,
+        924461600
+      ]
+    },
+    "blocks.2.7.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        256,
+        1024
+      ],
+      "data_offsets": [
+        924461600,
+        924985888
+      ]
+    },
+    "blocks.2.7.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        924985888,
+        924986400
+      ]
+    },
+    "blocks.2.7.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        924986400,
+        924986912
+      ]
+    },
+    "blocks.2.8.conv1.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        924986912,
+        924988960
+      ]
+    },
+    "blocks.2.8.conv1.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        3,
+        3,
+        3,
+        256
+      ],
+      "data_offsets": [
+        924988960,
+        939144736
+      ]
+    },
+    "blocks.2.8.conv2.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        939144736,
+        939144992
+      ]
+    },
+    "blocks.2.8.conv2.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        939144992,
+        940029728
+      ]
+    },
+    "blocks.2.8.norm1.bias": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        940029728,
+        940030240
+      ]
+    },
+    "blocks.2.8.norm1.weight": {
+      "dtype": "F16",
+      "shape": [
+        256
+      ],
+      "data_offsets": [
+        940030240,
+        940030752
+      ]
+    },
+    "blocks.2.8.to_subdiv.bias": {
+      "dtype": "F16",
+      "shape": [
+        8
+      ],
+      "data_offsets": [
+        940030752,
+        940030768
+      ]
+    },
+    "blocks.2.8.to_subdiv.weight": {
+      "dtype": "F16",
+      "shape": [
+        8,
+        256
+      ],
+      "data_offsets": [
+        940030768,
+        940034864
+      ]
+    },
+    "blocks.3.0.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        940034864,
+        940035120
+      ]
+    },
+    "blocks.3.0.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        940035120,
+        940919856
+      ]
+    },
+    "blocks.3.0.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        940919856,
+        940920880
+      ]
+    },
+    "blocks.3.0.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        128
+      ],
+      "data_offsets": [
+        940920880,
+        941051952
+      ]
+    },
+    "blocks.3.0.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        941051952,
+        941052208
+      ]
+    },
+    "blocks.3.0.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        512
+      ],
+      "data_offsets": [
+        941052208,
+        941183280
+      ]
+    },
+    "blocks.3.0.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        941183280,
+        941183536
+      ]
+    },
+    "blocks.3.0.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        941183536,
+        941183792
+      ]
+    },
+    "blocks.3.1.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        941183792,
+        941184048
+      ]
+    },
+    "blocks.3.1.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        941184048,
+        942068784
+      ]
+    },
+    "blocks.3.1.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        942068784,
+        942069808
+      ]
+    },
+    "blocks.3.1.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        128
+      ],
+      "data_offsets": [
+        942069808,
+        942200880
+      ]
+    },
+    "blocks.3.1.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        942200880,
+        942201136
+      ]
+    },
+    "blocks.3.1.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        512
+      ],
+      "data_offsets": [
+        942201136,
+        942332208
+      ]
+    },
+    "blocks.3.1.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        942332208,
+        942332464
+      ]
+    },
+    "blocks.3.1.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        942332464,
+        942332720
+      ]
+    },
+    "blocks.3.2.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        942332720,
+        942332976
+      ]
+    },
+    "blocks.3.2.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        942332976,
+        943217712
+      ]
+    },
+    "blocks.3.2.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        943217712,
+        943218736
+      ]
+    },
+    "blocks.3.2.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        128
+      ],
+      "data_offsets": [
+        943218736,
+        943349808
+      ]
+    },
+    "blocks.3.2.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        943349808,
+        943350064
+      ]
+    },
+    "blocks.3.2.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        512
+      ],
+      "data_offsets": [
+        943350064,
+        943481136
+      ]
+    },
+    "blocks.3.2.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        943481136,
+        943481392
+      ]
+    },
+    "blocks.3.2.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        943481392,
+        943481648
+      ]
+    },
+    "blocks.3.3.conv.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        943481648,
+        943481904
+      ]
+    },
+    "blocks.3.3.conv.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        943481904,
+        944366640
+      ]
+    },
+    "blocks.3.3.mlp.0.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        944366640,
+        944367664
+      ]
+    },
+    "blocks.3.3.mlp.0.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        128
+      ],
+      "data_offsets": [
+        944367664,
+        944498736
+      ]
+    },
+    "blocks.3.3.mlp.2.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        944498736,
+        944498992
+      ]
+    },
+    "blocks.3.3.mlp.2.weight": {
+      "dtype": "F16",
+      "shape": [
+        128,
+        512
+      ],
+      "data_offsets": [
+        944498992,
+        944630064
+      ]
+    },
+    "blocks.3.3.norm.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        944630064,
+        944630320
+      ]
+    },
+    "blocks.3.3.norm.weight": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        944630320,
+        944630576
+      ]
+    },
+    "blocks.3.4.conv1.bias": {
+      "dtype": "F16",
+      "shape": [
+        512
+      ],
+      "data_offsets": [
+        944630576,
+        944631600
+      ]
+    },
+    "blocks.3.4.conv1.weight": {
+      "dtype": "F16",
+      "shape": [
+        512,
+        3,
+        3,
+        3,
+        128
+      ],
+      "data_offsets": [
+        944631600,
+        948170544
+      ]
+    },
+    "blocks.3.4.conv2.bias": {
+      "dtype": "F16",
+      "shape": [
+        64
+      ],
+      "data_offsets": [
+        948170544,
+        948170672
+      ]
+    },
+    "blocks.3.4.conv2.weight": {
+      "dtype": "F16",
+      "shape": [
+        64,
+        3,
+        3,
+        3,
+        64
+      ],
+      "data_offsets": [
+        948170672,
+        948391856
+      ]
+    },
+    "blocks.3.4.norm1.bias": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        948391856,
+        948392112
+      ]
+    },
+    "blocks.3.4.norm1.weight": {
+      "dtype": "F16",
+      "shape": [
+        128
+      ],
+      "data_offsets": [
+        948392112,
+        948392368
+      ]
+    },
+    "blocks.3.4.to_subdiv.bias": {
+      "dtype": "F16",
+      "shape": [
+        8
+      ],
+      "data_offsets": [
+        948392368,
+        948392384
+      ]
+    },
+    "blocks.3.4.to_subdiv.weight": {
+      "dtype": "F16",
+      "shape": [
+        8,
+        128
+      ],
+      "data_offsets": [
+        948392384,
+        948394432
+      ]
+    },
+    "from_latent.bias": {
+      "dtype": "F16",
+      "shape": [
+        1024
+      ],
+      "data_offsets": [
+        948394432,
+        948396480
+      ]
+    },
+    "from_latent.weight": {
+      "dtype": "F16",
+      "shape": [
+        1024,
+        32
+      ],
+      "data_offsets": [
+        948396480,
+        948462016
+      ]
+    },
+    "output_layer.bias": {
+      "dtype": "F16",
+      "shape": [
+        7
+      ],
+      "data_offsets": [
+        948462016,
+        948462030
+      ]
+    },
+    "output_layer.weight": {
+      "dtype": "F16",
+      "shape": [
+        7,
+        64
+      ],
+      "data_offsets": [
+        948462030,
+        948462926
+      ]
+    }
+  },
+  "storage_dtype_counts": {
+    "F16": 292
+  },
+  "model_dtype_counts_from_prior_windows_meta_proof": {
+    "F16": 216,
+    "F32": 76
+  },
+  "persistent_buffers": {},
+  "strict_loading_on_linux_torch2_9_validated": false,
+  "weights_loaded": false,
+  "source_checks": {
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\__init__.py": {
+      "actual_sha256": "b953c8a82e54705708a115dd0e53b7ca5ccf45b71517463a5e9b8e0de318ee43",
+      "expected_sha256": "b953c8a82e54705708a115dd0e53b7ca5ccf45b71517463a5e9b8e0de318ee43",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\datasets\\components.py": {
+      "actual_sha256": "7954db0d5237afdb8d59b2c277325e7845d0897f5122515377fa2dee4a0f0db8",
+      "expected_sha256": "7954db0d5237afdb8d59b2c277325e7845d0897f5122515377fa2dee4a0f0db8",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\datasets\\flexi_dual_grid.py": {
+      "actual_sha256": "b365e942258255fe3e4d1d43eaf7320e4fbc415d3186600b44b3f75ee826debc",
+      "expected_sha256": "b365e942258255fe3e4d1d43eaf7320e4fbc415d3186600b44b3f75ee826debc",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\datasets\\sparse_structure_latent.py": {
+      "actual_sha256": "c3da42606cffbac6b18c0e53cc9140bb59fb8b4e3a1815c9ca1621d6ca6e81fb",
+      "expected_sha256": "c3da42606cffbac6b18c0e53cc9140bb59fb8b4e3a1815c9ca1621d6ca6e81fb",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\datasets\\sparse_voxel_pbr.py": {
+      "actual_sha256": "ed7ebbcc30076f706704d45916f1e14a1de6af5ddb5dd0983e9aeec71a3a76c5",
+      "expected_sha256": "ed7ebbcc30076f706704d45916f1e14a1de6af5ddb5dd0983e9aeec71a3a76c5",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\datasets\\structured_latent.py": {
+      "actual_sha256": "da7db26805b9aaccd179dae84e0faaa0d4a58aff4418fca48cfc4e00ea42bcf7",
+      "expected_sha256": "da7db26805b9aaccd179dae84e0faaa0d4a58aff4418fca48cfc4e00ea42bcf7",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\datasets\\structured_latent_shape.py": {
+      "actual_sha256": "8d928918d2c3402ab856e3f4fd63007f14039f3fd508fd1bf9481cc6246c0dda",
+      "expected_sha256": "8d928918d2c3402ab856e3f4fd63007f14039f3fd508fd1bf9481cc6246c0dda",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\datasets\\structured_latent_svpbr.py": {
+      "actual_sha256": "4b960a362eb6008fbb99dfcbec3bb00543f0ebcd4f1ce96f1bed3e6e3f8fcebe",
+      "expected_sha256": "4b960a362eb6008fbb99dfcbec3bb00543f0ebcd4f1ce96f1bed3e6e3f8fcebe",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\datasets\\__init__.py": {
+      "actual_sha256": "d6fee0dfb41d1ba93c7d1a8c7282f600ef7e5afddcddf46c935ca4cb1d45350a",
+      "expected_sha256": "d6fee0dfb41d1ba93c7d1a8c7282f600ef7e5afddcddf46c935ca4cb1d45350a",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sparse_elastic_mixin.py": {
+      "actual_sha256": "17b85bc281172d72fec8944821693819643df7eae11713b2a87eed142c09c833",
+      "expected_sha256": "17b85bc281172d72fec8944821693819643df7eae11713b2a87eed142c09c833",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sparse_structure_flow.py": {
+      "actual_sha256": "858d9b076cc71f6955bb292ea394d620ce6f6f53cebb53bff2116a8c5cec026e",
+      "expected_sha256": "858d9b076cc71f6955bb292ea394d620ce6f6f53cebb53bff2116a8c5cec026e",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sparse_structure_vae.py": {
+      "actual_sha256": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857",
+      "expected_sha256": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\structured_latent_flow.py": {
+      "actual_sha256": "3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c",
+      "expected_sha256": "3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\__init__.py": {
+      "actual_sha256": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683",
+      "expected_sha256": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\image_feature_extractor.py": {
+      "actual_sha256": "a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f",
+      "expected_sha256": "a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\norm.py": {
+      "actual_sha256": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00",
+      "expected_sha256": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\spatial.py": {
+      "actual_sha256": "4a029d5077bb0a5412ee5eceb8de21d3b4c8920a8f53d477441c3c3219a0da3c",
+      "expected_sha256": "4a029d5077bb0a5412ee5eceb8de21d3b4c8920a8f53d477441c3c3219a0da3c",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\utils.py": {
+      "actual_sha256": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e",
+      "expected_sha256": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\base.py": {
+      "actual_sha256": "1081dfc48e112d00653ae45f3ed2a3bbee3d82e3926e701c059978e519edd917",
+      "expected_sha256": "1081dfc48e112d00653ae45f3ed2a3bbee3d82e3926e701c059978e519edd917",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_image_to_3d.py": {
+      "actual_sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+      "expected_sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_texturing.py": {
+      "actual_sha256": "14a6f8ee2bca120f76e0112f2733cd250764637709ff642fd6846ae97c63b1e6",
+      "expected_sha256": "14a6f8ee2bca120f76e0112f2733cd250764637709ff642fd6846ae97c63b1e6",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\__init__.py": {
+      "actual_sha256": "88946215d43bc6e8c095b40dc3de9ea76bb4fb4d175d0228829ec865bb790ba9",
+      "expected_sha256": "88946215d43bc6e8c095b40dc3de9ea76bb4fb4d175d0228829ec865bb790ba9",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\renderers\\mesh_renderer.py": {
+      "actual_sha256": "b09c89073e1f3c80812af6ff674a7a53e2964f04bbfbb692c6708b6b2acb9c94",
+      "expected_sha256": "b09c89073e1f3c80812af6ff674a7a53e2964f04bbfbb692c6708b6b2acb9c94",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\renderers\\pbr_mesh_renderer.py": {
+      "actual_sha256": "ab33ba6d04b2d1b7e518b90372b242cbe00ad9043be66a22e681261b04de7872",
+      "expected_sha256": "ab33ba6d04b2d1b7e518b90372b242cbe00ad9043be66a22e681261b04de7872",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\renderers\\voxel_renderer.py": {
+      "actual_sha256": "8850ca41baa6570f9926ea86f9c6d8f4e5b38077cc437d83f32012156e12efdc",
+      "expected_sha256": "8850ca41baa6570f9926ea86f9c6d8f4e5b38077cc437d83f32012156e12efdc",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\renderers\\__init__.py": {
+      "actual_sha256": "53d28a650ef53022270d4a6e9e4a8f66714b1cf8edef0b1d7303e1eb8290a576",
+      "expected_sha256": "53d28a650ef53022270d4a6e9e4a8f66714b1cf8edef0b1d7303e1eb8290a576",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\representations\\__init__.py": {
+      "actual_sha256": "861585d0d741e2cb592cef0d252ccc08fe414356fb44f7e84a79185eed841d28",
+      "expected_sha256": "861585d0d741e2cb592cef0d252ccc08fe414356fb44f7e84a79185eed841d28",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\basic.py": {
+      "actual_sha256": "3ccae80d1eff630d920e26ad5326b2cf47e046e28c1a645da3620f82859fd291",
+      "expected_sha256": "3ccae80d1eff630d920e26ad5326b2cf47e046e28c1a645da3620f82859fd291",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\utils.py": {
+      "actual_sha256": "66a7d6a13b626a8e170e97881f94b93f28be7796c0c3ba429201a59a11a95e24",
+      "expected_sha256": "66a7d6a13b626a8e170e97881f94b93f28be7796c0c3ba429201a59a11a95e24",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\__init__.py": {
+      "actual_sha256": "89081e15c64c61328300ad1e8a10024d300431359ffad47aab38115d45ba7908",
+      "expected_sha256": "89081e15c64c61328300ad1e8a10024d300431359ffad47aab38115d45ba7908",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\camera.py": {
+      "actual_sha256": "a1d9610954d059d5ac1a0c9e2084084abfe781ad5853d3e0e43e68e9d775142c",
+      "expected_sha256": "a1d9610954d059d5ac1a0c9e2084084abfe781ad5853d3e0e43e68e9d775142c",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\data_utils.py": {
+      "actual_sha256": "8868ed0cf40af75e3eaf68a4b5912b7220ed884b063b8058a41f8c53deb393a1",
+      "expected_sha256": "8868ed0cf40af75e3eaf68a4b5912b7220ed884b063b8058a41f8c53deb393a1",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\dist_utils.py": {
+      "actual_sha256": "0e91c7c5b67c229cf48d12eb32b50f804dd77e6e16fe85544c93c1f17f3fc5fc",
+      "expected_sha256": "0e91c7c5b67c229cf48d12eb32b50f804dd77e6e16fe85544c93c1f17f3fc5fc",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\elastic_utils.py": {
+      "actual_sha256": "eb743b8015232bcc67e33104a4c8d212d41664dbb9a6ea10866dc499f229bc30",
+      "expected_sha256": "eb743b8015232bcc67e33104a4c8d212d41664dbb9a6ea10866dc499f229bc30",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\general_utils.py": {
+      "actual_sha256": "a6d73f04bd00759e3922fa1adc032aa608332534e4aea12dfd2cc51ffd410353",
+      "expected_sha256": "a6d73f04bd00759e3922fa1adc032aa608332534e4aea12dfd2cc51ffd410353",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\grad_clip_utils.py": {
+      "actual_sha256": "c6058be0fdc81dd10da9d88945bad4820f7a35afa2699262b179d81a6686754d",
+      "expected_sha256": "c6058be0fdc81dd10da9d88945bad4820f7a35afa2699262b179d81a6686754d",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\loss_utils.py": {
+      "actual_sha256": "0614d65eb03eb43e14263080e8c65f8e4b0592c4fcff9a2edbd7ff541bf4d02d",
+      "expected_sha256": "0614d65eb03eb43e14263080e8c65f8e4b0592c4fcff9a2edbd7ff541bf4d02d",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\mesh_utils.py": {
+      "actual_sha256": "36d561555bfcc4c41ea123b6d37298fff8d0ec7b6f70fc62c1956f50cb75cec5",
+      "expected_sha256": "36d561555bfcc4c41ea123b6d37298fff8d0ec7b6f70fc62c1956f50cb75cec5",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\random_utils.py": {
+      "actual_sha256": "675c2f4f3047a0145d18feabbcb6b0028b39177a3fc7b82b48d4dbd8f0107aca",
+      "expected_sha256": "675c2f4f3047a0145d18feabbcb6b0028b39177a3fc7b82b48d4dbd8f0107aca",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\render_utils.py": {
+      "actual_sha256": "51c9d745b7c01dbf2e2ea14280eaca145c1ce500321cef1dac0261212cea2d4e",
+      "expected_sha256": "51c9d745b7c01dbf2e2ea14280eaca145c1ce500321cef1dac0261212cea2d4e",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\vis_utils.py": {
+      "actual_sha256": "5d233119c5d765d0fce62ea11187baff5139f546633dc06d5fb8b43fdd245697",
+      "expected_sha256": "5d233119c5d765d0fce62ea11187baff5139f546633dc06d5fb8b43fdd245697",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\utils\\__init__.py": {
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sc_vaes\\fdg_vae.py": {
+      "actual_sha256": "1d267cdca119eb619674dc87bfccd8c5a1d90288739e2b8e08e6f497ac14ce9c",
+      "expected_sha256": "1d267cdca119eb619674dc87bfccd8c5a1d90288739e2b8e08e6f497ac14ce9c",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sc_vaes\\sparse_unet_vae.py": {
+      "actual_sha256": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+      "expected_sha256": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\attention\\config.py": {
+      "actual_sha256": "7ac23c43e33ec08946804ce912b2caadf39c3e21c1fd0076664e72c5aea2be70",
+      "expected_sha256": "7ac23c43e33ec08946804ce912b2caadf39c3e21c1fd0076664e72c5aea2be70",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\attention\\full_attn.py": {
+      "actual_sha256": "21a2d3c9bc4a80c72db23b4291d5fb062bdf7e5b8f1570cd9ba2cee6672e2ba6",
+      "expected_sha256": "21a2d3c9bc4a80c72db23b4291d5fb062bdf7e5b8f1570cd9ba2cee6672e2ba6",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\attention\\modules.py": {
+      "actual_sha256": "30935ff98c4a9120d866f6bd1c171153c3b3077894032009aba11bc32353a733",
+      "expected_sha256": "30935ff98c4a9120d866f6bd1c171153c3b3077894032009aba11bc32353a733",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\attention\\proj_attention.py": {
+      "actual_sha256": "d3c2a8749c8efab5222406c56ed10539ea442f4dd5543ec546fc4d4bbdc3a6c9",
+      "expected_sha256": "d3c2a8749c8efab5222406c56ed10539ea442f4dd5543ec546fc4d4bbdc3a6c9",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\attention\\rope.py": {
+      "actual_sha256": "5d5b1821f3743aa824c9f3b4db6121c18d14d6c8a72d42238b3944feefd829b6",
+      "expected_sha256": "5d5b1821f3743aa824c9f3b4db6121c18d14d6c8a72d42238b3944feefd829b6",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\attention\\__init__.py": {
+      "actual_sha256": "68d1195489c1d4d9790d3bd5788877173eb2713ed8d61e3e9ab6448f2ae4b055",
+      "expected_sha256": "68d1195489c1d4d9790d3bd5788877173eb2713ed8d61e3e9ab6448f2ae4b055",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\basic.py": {
+      "actual_sha256": "e867e429b9c2fe154000725596b626273fb567025b9c232f3cc79140f00605b7",
+      "expected_sha256": "e867e429b9c2fe154000725596b626273fb567025b9c232f3cc79140f00605b7",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\config.py": {
+      "actual_sha256": "525ed9a516bc9576712cce9896a52a0ec9667ba7dc4aa13f24ee6a83353cb722",
+      "expected_sha256": "525ed9a516bc9576712cce9896a52a0ec9667ba7dc4aa13f24ee6a83353cb722",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\linear.py": {
+      "actual_sha256": "05cb619ff9cceb27674fc7bbb5aa2bcba93d1bf328d1f3340bb98c0f1240b413",
+      "expected_sha256": "05cb619ff9cceb27674fc7bbb5aa2bcba93d1bf328d1f3340bb98c0f1240b413",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\nonlinearity.py": {
+      "actual_sha256": "790b4b85edc0ab1a9eb9cb9fbd58c9ac0232ec25a3d9b4bf7e6635ba2de24097",
+      "expected_sha256": "790b4b85edc0ab1a9eb9cb9fbd58c9ac0232ec25a3d9b4bf7e6635ba2de24097",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\norm.py": {
+      "actual_sha256": "6320c2ed1e61ae9d6611cd9d8e14ab7b080546917c373385884febf009ef316f",
+      "expected_sha256": "6320c2ed1e61ae9d6611cd9d8e14ab7b080546917c373385884febf009ef316f",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\__init__.py": {
+      "actual_sha256": "7bb5f88b769568fc59fd07d208d44c58d2a3a7e22609da6dcb8de573fe1138e7",
+      "expected_sha256": "7bb5f88b769568fc59fd07d208d44c58d2a3a7e22609da6dcb8de573fe1138e7",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\transformer\\blocks.py": {
+      "actual_sha256": "bee5ac02e5b054dbc151ec54658489e9e512d5bba627c31b37f11698663f9540",
+      "expected_sha256": "bee5ac02e5b054dbc151ec54658489e9e512d5bba627c31b37f11698663f9540",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\transformer\\modulated.py": {
+      "actual_sha256": "7ad71a73e73025a4fc19b215cc028c891f9bb7c3b989842eeba9c4ee4e92e901",
+      "expected_sha256": "7ad71a73e73025a4fc19b215cc028c891f9bb7c3b989842eeba9c4ee4e92e901",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\transformer\\__init__.py": {
+      "actual_sha256": "9838f0c93475b59778ff055d21372db80a5307d121b18acc328e25c446e97283",
+      "expected_sha256": "9838f0c93475b59778ff055d21372db80a5307d121b18acc328e25c446e97283",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\attention\\full_attn.py": {
+      "actual_sha256": "045aabe973d405cb16f8a1a71c5b4d8f76988c99b4e333c29bbc12d51d0cf4b1",
+      "expected_sha256": "045aabe973d405cb16f8a1a71c5b4d8f76988c99b4e333c29bbc12d51d0cf4b1",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\attention\\modules.py": {
+      "actual_sha256": "2c45267b719b26fbaee6af81b1655b7adfa7a62ba114183ca179a934b5101727",
+      "expected_sha256": "2c45267b719b26fbaee6af81b1655b7adfa7a62ba114183ca179a934b5101727",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\attention\\proj_attention.py": {
+      "actual_sha256": "bc8000712a1c95f3c2b6fac73f509c3270bac496012edd3948b6f0e2b53f56fd",
+      "expected_sha256": "bc8000712a1c95f3c2b6fac73f509c3270bac496012edd3948b6f0e2b53f56fd",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\attention\\rope.py": {
+      "actual_sha256": "298572025ccd6e711afd1bcd1851145001757937b28cb6cc97a36887ba3ae86b",
+      "expected_sha256": "298572025ccd6e711afd1bcd1851145001757937b28cb6cc97a36887ba3ae86b",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\attention\\windowed_attn.py": {
+      "actual_sha256": "a886470d299fcfdf7c978c81dae83661ee1498f541165a47165e744202b9aea3",
+      "expected_sha256": "a886470d299fcfdf7c978c81dae83661ee1498f541165a47165e744202b9aea3",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\attention\\__init__.py": {
+      "actual_sha256": "0a6976e9088651452a3518d6865ce48fe9ec311a7e27df1f5221370d9228d34d",
+      "expected_sha256": "0a6976e9088651452a3518d6865ce48fe9ec311a7e27df1f5221370d9228d34d",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\config.py": {
+      "actual_sha256": "ed6505a70dcc94785ce6d8f2e9d40dff3a0edc39e5d2bceea60128f9ed48332b",
+      "expected_sha256": "ed6505a70dcc94785ce6d8f2e9d40dff3a0edc39e5d2bceea60128f9ed48332b",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\conv.py": {
+      "actual_sha256": "a1e9f62fdf70f5443967a81b4ca99c0c863d20b063b44ffe264b0fd68bf3e5e3",
+      "expected_sha256": "a1e9f62fdf70f5443967a81b4ca99c0c863d20b063b44ffe264b0fd68bf3e5e3",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\conv_flex_gemm.py": {
+      "actual_sha256": "281fa1c8449732a94d99a24facb437600ab08d8185214d8434008456d56b83d8",
+      "expected_sha256": "281fa1c8449732a94d99a24facb437600ab08d8185214d8434008456d56b83d8",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\conv_spconv.py": {
+      "actual_sha256": "a3350f019adb1b0f4d6e36b910837252c277900f0ed85806db42807bf2860202",
+      "expected_sha256": "a3350f019adb1b0f4d6e36b910837252c277900f0ed85806db42807bf2860202",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\conv_torchsparse.py": {
+      "actual_sha256": "4a75b51a6fef42b740c15767b6b0b3e7e4c292234bb1a8f6147889e294f8e5ca",
+      "expected_sha256": "4a75b51a6fef42b740c15767b6b0b3e7e4c292234bb1a8f6147889e294f8e5ca",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\conv\\__init__.py": {
+      "actual_sha256": "da50648b5c8975ab8eb9574df2582d5c0dc03ddc102d301052003ef65af399e2",
+      "expected_sha256": "da50648b5c8975ab8eb9574df2582d5c0dc03ddc102d301052003ef65af399e2",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\spatial\\basic.py": {
+      "actual_sha256": "0d3c0720c522a29d48c413c6f4fec91e6387909ca6d5c7d7054e5107678779fe",
+      "expected_sha256": "0d3c0720c522a29d48c413c6f4fec91e6387909ca6d5c7d7054e5107678779fe",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\spatial\\spatial2channel.py": {
+      "actual_sha256": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c",
+      "expected_sha256": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\spatial\\__init__.py": {
+      "actual_sha256": "088f42726f900354b9fae61b9342a52e4a3ee39ad7cf941d81596d11062957ed",
+      "expected_sha256": "088f42726f900354b9fae61b9342a52e4a3ee39ad7cf941d81596d11062957ed",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\transformer\\blocks.py": {
+      "actual_sha256": "e8b64d7029fd81e6a291743afd18006dad979fb9dd5740948d59b966214dc626",
+      "expected_sha256": "e8b64d7029fd81e6a291743afd18006dad979fb9dd5740948d59b966214dc626",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\transformer\\modulated.py": {
+      "actual_sha256": "68fcb53cde091434e6cce1318fe43a91104bf9c83047b5526e190bbf303e4325",
+      "expected_sha256": "68fcb53cde091434e6cce1318fe43a91104bf9c83047b5526e190bbf303e4325",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\transformer\\__init__.py": {
+      "actual_sha256": "9838f0c93475b59778ff055d21372db80a5307d121b18acc328e25c446e97283",
+      "expected_sha256": "9838f0c93475b59778ff055d21372db80a5307d121b18acc328e25c446e97283",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\rembg\\BiRefNet.py": {
+      "actual_sha256": "ef7f34ac7387af5e6bdc91707b7c6bc203851f8576e8a5e681124918b1db84a8",
+      "expected_sha256": "ef7f34ac7387af5e6bdc91707b7c6bc203851f8576e8a5e681124918b1db84a8",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\rembg\\__init__.py": {
+      "actual_sha256": "141567eceee1c12c9241bcea1cfa5a6c352a888d3e6946405abaa52ed4e4e271",
+      "expected_sha256": "141567eceee1c12c9241bcea1cfa5a6c352a888d3e6946405abaa52ed4e4e271",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\base.py": {
+      "actual_sha256": "10bc216dc255e64746e51d929fc66d88efa7e3763e48a52a4fae3722d1e01869",
+      "expected_sha256": "10bc216dc255e64746e51d929fc66d88efa7e3763e48a52a4fae3722d1e01869",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\classifier_free_guidance_mixin.py": {
+      "actual_sha256": "ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c",
+      "expected_sha256": "ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\flow_euler.py": {
+      "actual_sha256": "03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5",
+      "expected_sha256": "03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\guidance_interval_mixin.py": {
+      "actual_sha256": "0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2",
+      "expected_sha256": "0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\__init__.py": {
+      "actual_sha256": "81174e88221aea4b3d078846cba5c01f45d885ee2ae2240974ec28badc88a076",
+      "expected_sha256": "81174e88221aea4b3d078846cba5c01f45d885ee2ae2240974ec28badc88a076",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\representations\\mesh\\base.py": {
+      "actual_sha256": "c950a25bb65fc397c815f6739793be8318e00cfe541f6ed83a3ed7e3d5b7a550",
+      "expected_sha256": "c950a25bb65fc397c815f6739793be8318e00cfe541f6ed83a3ed7e3d5b7a550",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\representations\\mesh\\__init__.py": {
+      "actual_sha256": "8c029bd5340eccdb86b43df2070e078b80f642177a2134f1b9996f756fe40722",
+      "expected_sha256": "8c029bd5340eccdb86b43df2070e078b80f642177a2134f1b9996f756fe40722",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\representations\\voxel\\voxel_model.py": {
+      "actual_sha256": "a0fedc3d7f870139236ff17ff8dbf29392dcb006930de7b94a280f6087a6ce37",
+      "expected_sha256": "a0fedc3d7f870139236ff17ff8dbf29392dcb006930de7b94a280f6087a6ce37",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\representations\\voxel\\__init__.py": {
+      "actual_sha256": "f3282f1059f0aa66d8490b7c37b1eef7079c94eef9fbe4c2d8e4ed730ab495dd",
+      "expected_sha256": "f3282f1059f0aa66d8490b7c37b1eef7079c94eef9fbe4c2d8e4ed730ab495dd",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\flow_matching\\flow_matching.py": {
+      "actual_sha256": "7819c20703d11d896d8f97eeaa3e7327f8948309def8e9152eda8188a4fff7d3",
+      "expected_sha256": "7819c20703d11d896d8f97eeaa3e7327f8948309def8e9152eda8188a4fff7d3",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\flow_matching\\sparse_flow_matching.py": {
+      "actual_sha256": "69bdf8fd517aeaee0a30edc15a6cc41f69050936296da164539a779520f50a70",
+      "expected_sha256": "69bdf8fd517aeaee0a30edc15a6cc41f69050936296da164539a779520f50a70",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\vae\\pbr_vae.py": {
+      "actual_sha256": "49750bdbc46a86fcdb13accef548164c4589da3de2fe16d95e5d53df73ed2380",
+      "expected_sha256": "49750bdbc46a86fcdb13accef548164c4589da3de2fe16d95e5d53df73ed2380",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\vae\\shape_vae.py": {
+      "actual_sha256": "7cec7bb181f7508e2ae2b998f3fe649a41812f1852a43c64b97bbcb2fca020a7",
+      "expected_sha256": "7cec7bb181f7508e2ae2b998f3fe649a41812f1852a43c64b97bbcb2fca020a7",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\vae\\sparse_structure_vae.py": {
+      "actual_sha256": "a616293d8c1d69646264cd83aba571bbc4087eafaf9193d42adf7dfe1118f518",
+      "expected_sha256": "a616293d8c1d69646264cd83aba571bbc4087eafaf9193d42adf7dfe1118f518",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\flow_matching\\mixins\\classifier_free_guidance.py": {
+      "actual_sha256": "5f3a151d76dd37bed3a261aed84a721d99725b6aed7da8206b298c8d52c077b3",
+      "expected_sha256": "5f3a151d76dd37bed3a261aed84a721d99725b6aed7da8206b298c8d52c077b3",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\flow_matching\\mixins\\image_conditioned.py": {
+      "actual_sha256": "3e87113f2b4802d2547d13d35aa55f04863d255528166f5ad19441d1e4437fed",
+      "expected_sha256": "3e87113f2b4802d2547d13d35aa55f04863d255528166f5ad19441d1e4437fed",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\flow_matching\\mixins\\image_conditioned_proj.py": {
+      "actual_sha256": "79a6104fccb88f850733bd07a5315532c1b6ad9e52ae33ca5afe5d2952694226",
+      "expected_sha256": "79a6104fccb88f850733bd07a5315532c1b6ad9e52ae33ca5afe5d2952694226",
+      "match": true
+    },
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\trainers\\flow_matching\\mixins\\text_conditioned.py": {
+      "actual_sha256": "4bd667ff7a2e9930d795900e323114482390b865c919ae3214704f0737f5ded9",
+      "expected_sha256": "4bd667ff7a2e9930d795900e323114482390b865c919ae3214704f0737f5ded9",
+      "match": true
+    }
+  },
+  "original_parent_forward_proof": "Pinned original parent forward returns raw F32 [dynamic_N,7] plus four F16 sparse subdivision tensors before child mesh conversion; preserve eval, low_vram, resolution512 and clear_spatial_cache.",
+  "growth": {
+    "maximum_support": [
+      3743,
+      29944,
+      239552,
+      1916416,
+      15331328
+    ],
+    "resolution": [
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    "native_neighbor_visible_bytes": 10425303152,
+    "primary_final_features_bytes": 2453012480,
+    "model_parameter_bytes": 948598492,
+    "worst_visible_final_bytes": 13826914124,
+    "allocator_cap_bytes": 12884901888,
+    "free_vram_admission_bytes": 13958643712,
+    "unconditional_12gib_completion_established": false,
+    "limitations": "Conservative visible sum excludes sorting/cumsum workspace, retained earlier-stage caches, outputs/subdivision tensors and other temporaries; learned support is unknown. A pre-call support/memory gate is still required."
+  },
+  "bf16_loss_example": {
+    "original_half_bits": "3c01",
+    "f16_value": 1.0009765625,
+    "bf16_value": 1.0,
+    "byte_exact_roundtrip": false
+  },
+  "linux_native_import_or_forward_calls": 0,
+  "prior_windows_parameter_metadata_only": true
+}

@@ -1,0 +1,23 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "60s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-"
+  ],
+  "returncode": 0,
+  "stdout": "{\"returncode\": 0, \"new_package_count\": 59, \"upgrade_count\": 2, \"archive_bytes_sum\": 626410386, \"known_installed_bytes_sum\": 319531008, \"missing_installed_size_packages\": [\"rocm-llvm\"]}\n",
+  "stderr": "",
+  "seconds": 6.860000000000582,
+  "named_distro_termination_returncode": 0
+}

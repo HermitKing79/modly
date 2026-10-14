@@ -1,0 +1,67 @@
+{
+  "independent_reviewer": "cached_leaf_access_audit",
+  "status": "PASS",
+  "before_status": "PASS",
+  "after_status": "PASS",
+  "phase": "after-CPU-only-WSL-decoder-preparation",
+  "windows_venvs": {
+    "amd": {
+      "entries": 94687,
+      "metadata_sha256": "a2fdd34e6b310e3d4684250850cadfad1801536000e49e6557a0523107733527",
+      "distributions": 235,
+      "inventory_distribution_package_pyvenv_cfg_match": true,
+      "native_binary_hashes_match": 6
+    },
+    "modly": {
+      "entries": 61313,
+      "metadata_sha256": "bcae506c520e1dca7693e700684ae225aceb16b4ed8de50e2cf023c5ec52c38e",
+      "distributions": 127,
+      "inventory_distribution_package_pyvenv_cfg_match": true,
+      "native_binary_hashes_match": 6
+    }
+  },
+  "source_hash_groups_match": [169, 13, 7],
+  "amd_source": {
+    "head": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+    "head_matches": true,
+    "nodes.py": "d310c97f3f7ff187cd581ed01ea3dbd6217fddb8ad9d59b12bd7c485f93821be",
+    "nodes.py.before-profiler-fix": "585d81c545cce5ca71fee1cb17f47e65b13c7f98b13a6053e1c1699079d7012f",
+    "modified_files_match": true
+  },
+  "all_four_protected_prior_WSL_source_hashes_match": true,
+  "historical_WSL_evidence": {
+    "files": 185,
+    "all_hashes_and_pathsets_match_current_before": true,
+    "rocdxg_manifest_sha256": "52d63ade849a52ba1b58401a10856d061c976fae1c2ca69e1a8f6ed247d22dc5",
+    "stdin_manifest_sha256": "e7fd02fbbdfffd336006d5ffae4f83b58b47dfcd47375d02bcbea4bb8406dbc0",
+    "teardown_manifest_sha256": "2694dd2c37a502f95cb0b73cc8f4196a61078bc0cf7387be4dd023c2c12f63f4",
+    "gpu_resume_manifest_sha256": "dba7c60574f7a623ec41decdc6adb68c7752336c7954f910528d05fb15bfb4a2"
+  },
+  "small_saved_inputs": {
+    "all_four_hashes_match_prior": true,
+    "latent_sha256": "90eaf72030f303b209a4d02ae9adc7d4ecd39662344f35f0adc8120bc1e871b9",
+    "coordinates_sha256": "949a9e6a2548abcad66354384502c06834d4d56ea3f2fa86b619c25926379ed4",
+    "provenance_sha256": "4834412e700434f5645cd919dd0d75e9209b6b5d67cc7cb765e98b76890f9a81",
+    "conditioning_sha256": "78a0b54210568624639c8cacb7a803d83d4b838b782ea54e7aceab749d47e17a"
+  },
+  "decoder_checkpoint": {
+    "path": "D:/AI/Trellis2AMD/ComfyUI/models/microsoft/TRELLIS.2-4B/ckpts/shape_dec_next_dc_f16c32_fp16.safetensors",
+    "verified_before_stream_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "verified_before_header_sha256": "80dc6403ca284a2361109cde3190bc1b5ea5d30936e8f80625cbbc0827062c83",
+    "expected_and_actual_bytes_after": 948490494,
+    "expected_and_actual_mtime_ns_after": 1791274722716299500,
+    "actual_mode_after": 33206,
+    "metadata_matches_published_identity": true,
+    "full_hash_repeated": false,
+    "checkpoint_content_bytes_read_after": 0
+  },
+  "unexpected_deltas": [],
+  "AI_native_imports": false,
+  "WSL_started": false,
+  "GPU_actions": false,
+  "model_tensor_deserialization": false,
+  "Git_commands_or_mutations": false,
+  "downloads_or_installs": false,
+  "broader_audit": false,
+  "only_this_new_report_written_by_reviewer": true
+}

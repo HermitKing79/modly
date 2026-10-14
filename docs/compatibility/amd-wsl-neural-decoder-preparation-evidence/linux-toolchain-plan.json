@@ -1,0 +1,660 @@
+{
+  "requested": [
+    "hip-dev=7.2.53211.70201-81~24.04",
+    "hipcc=1.1.1.70201-81~24.04",
+    "rocm-llvm=22.0.0.26084.70201-81~24.04",
+    "rocm-device-libs=1.0.0.70201-81~24.04",
+    "python3.12-dev",
+    "build-essential",
+    "ninja-build",
+    "hipblas-dev",
+    "hipblaslt-dev",
+    "hipcub-dev",
+    "hipsolver-dev",
+    "hipsparse-dev",
+    "rocthrust-dev"
+  ],
+  "command": [
+    "apt-get",
+    "--simulate",
+    "--no-install-recommends",
+    "install",
+    "hip-dev=7.2.53211.70201-81~24.04",
+    "hipcc=1.1.1.70201-81~24.04",
+    "rocm-llvm=22.0.0.26084.70201-81~24.04",
+    "rocm-device-libs=1.0.0.70201-81~24.04",
+    "python3.12-dev",
+    "build-essential",
+    "ninja-build",
+    "hipblas-dev",
+    "hipblaslt-dev",
+    "hipcub-dev",
+    "hipsolver-dev",
+    "hipsparse-dev",
+    "rocthrust-dev"
+  ],
+  "returncode": 0,
+  "stdout": "NOTE: This is only a simulation!\n      apt-get needs root privileges for real execution.\n      Keep also in mind that locking is deactivated,\n      so don't depend on the relevance to the real current situation!\nReading package lists...\nBuilding dependency tree...\nReading state information...\nThe following additional packages will be installed:\n  bzip2 cpp cpp-13 cpp-13-x86-64-linux-gnu cpp-x86-64-linux-gnu dpkg-dev g++\n  g++-13 g++-13-x86-64-linux-gnu g++-x86-64-linux-gnu gcc gcc-11-base gcc-13\n  gcc-13-base gcc-13-x86-64-linux-gnu gcc-x86-64-linux-gnu hipblas-common-dev\n  hsa-rocr-dev libasan6 libasan8 libatomic1 libcc1-0 libdpkg-perl libdrm-dev\n  libdrm-nouveau2 libdrm-radeon1 libexpat1 libexpat1-dev libgcc-11-dev\n  libgcc-13-dev libhwasan0 libisl23 libitm1 liblsan0 libmpc3 libpciaccess-dev\n  libpciaccess0 libpython3.12-dev libquadmath0 libstdc++-11-dev\n  libstdc++-13-dev libtsan0 libtsan2 libubsan1 lto-disabled-list make\n  rocprim-dev zlib1g-dev\nSuggested packages:\n  bzip2-doc cpp-doc gcc-13-locales cpp-13-doc debian-keyring g++-multilib\n  g++-13-multilib gcc-13-doc gcc-multilib manpages-dev autoconf automake\n  libtool flex bison gdb gcc-doc gcc-13-multilib gdb-x86-64-linux-gnu bzr\n  libstdc++-11-doc libstdc++-13-doc make-doc\nRecommended packages:\n  fakeroot libalgorithm-merge-perl libfile-copy-recursive-perl\n  libfile-listing-perl libfile-which-perl liburi-perl libdrm-amdgpu-dev\n  libfile-fcntllock-perl gcc-multilib g++-multilib\nThe following NEW packages will be installed:\n  build-essential bzip2 cpp cpp-13 cpp-13-x86-64-linux-gnu\n  cpp-x86-64-linux-gnu dpkg-dev g++ g++-13 g++-13-x86-64-linux-gnu\n  g++-x86-64-linux-gnu gcc gcc-11-base gcc-13 gcc-13-base\n  gcc-13-x86-64-linux-gnu gcc-x86-64-linux-gnu hip-dev hipblas-common-dev\n  hipblas-dev hipblaslt-dev hipcc hipcub-dev hipsolver-dev hipsparse-dev\n  hsa-rocr-dev libasan6 libasan8 libatomic1 libcc1-0 libdpkg-perl libdrm-dev\n  libdrm-nouveau2 libdrm-radeon1 libexpat1-dev libgcc-11-dev libgcc-13-dev\n  libhwasan0 libisl23 libitm1 liblsan0 libmpc3 libpciaccess-dev\n  libpython3.12-dev libquadmath0 libstdc++-11-dev libstdc++-13-dev libtsan0\n  libtsan2 libubsan1 lto-disabled-list make ninja-build python3.12-dev\n  rocm-device-libs rocm-llvm rocprim-dev rocthrust-dev zlib1g-dev\nThe following packages will be upgraded:\n  libexpat1 libpciaccess0\n2 upgraded, 59 newly installed, 0 to remove and 52 not upgraded.\nInst libexpat1 [2.6.1-2ubuntu0.4] (2.6.1-2ubuntu0.6 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst gcc-13-base (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libisl23 (0.26-3build1.1 Ubuntu:24.04/noble-updates [amd64])\nInst libmpc3 (1.3.1-1build1.1 Ubuntu:24.04/noble-updates [amd64])\nInst cpp-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst cpp-13 (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst cpp-x86-64-linux-gnu (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nInst cpp (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nInst libcc1-0 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libitm1 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libatomic1 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libasan8 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst liblsan0 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libtsan2 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libubsan1 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libhwasan0 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libquadmath0 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libgcc-13-dev (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst gcc-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst gcc-13 (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst gcc-x86-64-linux-gnu (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nInst gcc (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nInst libstdc++-13-dev (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst g++-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst g++-13 (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst g++-x86-64-linux-gnu (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nInst g++ (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nInst make (4.3-4.1build2 Ubuntu:24.04/noble [amd64])\nInst libdpkg-perl (1.22.6ubuntu6.6 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [all])\nInst bzip2 (1.0.8-5.1ubuntu0.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst lto-disabled-list (47 Ubuntu:24.04/noble [all])\nInst dpkg-dev (1.22.6ubuntu6.6 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [all])\nInst build-essential (12.10ubuntu1 Ubuntu:24.04/noble [amd64])\nInst gcc-11-base (11.5.0-1ubuntu1~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libasan6 (11.5.0-1ubuntu1~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libtsan0 (11.5.0-1ubuntu1~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libgcc-11-dev (11.5.0-1ubuntu1~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libstdc++-11-dev (11.5.0-1ubuntu1~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst rocm-llvm (22.0.0.26084.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst libdrm-radeon1 (2.4.125-1ubuntu0.1~24.04.2 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libdrm-nouveau2 (2.4.125-1ubuntu0.1~24.04.2 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libpciaccess0 [0.17-3ubuntu0.24.04.2] (0.17-3ubuntu0.24.04.3 Ubuntu:24.04/noble-updates [amd64])\nInst libpciaccess-dev (0.17-3ubuntu0.24.04.3 Ubuntu:24.04/noble-updates [amd64])\nInst libdrm-dev (2.4.125-1ubuntu0.1~24.04.2 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst hsa-rocr-dev (1.18.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst hipcc (1.1.1.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst hip-dev (7.2.53211.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst hipblas-common-dev (1.4.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst hipblas-dev (3.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst hipblaslt-dev (1.2.2.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst rocprim-dev (4.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst hipcub-dev (4.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst hipsolver-dev (3.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst hipsparse-dev (4.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst libexpat1-dev (2.6.1-2ubuntu0.6 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst zlib1g-dev (1:1.3.dfsg-3.1ubuntu2.2 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst libpython3.12-dev (3.12.3-1ubuntu0.17 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst ninja-build (1.11.1-2 Ubuntu:24.04/noble [amd64])\nInst python3.12-dev (3.12.3-1ubuntu0.17 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nInst rocm-device-libs (1.0.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nInst rocthrust-dev (4.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf libexpat1 (2.6.1-2ubuntu0.6 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf gcc-13-base (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libisl23 (0.26-3build1.1 Ubuntu:24.04/noble-updates [amd64])\nConf libmpc3 (1.3.1-1build1.1 Ubuntu:24.04/noble-updates [amd64])\nConf cpp-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf cpp-13 (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf cpp-x86-64-linux-gnu (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nConf cpp (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nConf libcc1-0 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libitm1 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libatomic1 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libasan8 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf liblsan0 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libtsan2 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libubsan1 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libhwasan0 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libquadmath0 (14.2.0-4ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libgcc-13-dev (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf gcc-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf gcc-13 (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf gcc-x86-64-linux-gnu (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nConf gcc (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nConf libstdc++-13-dev (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf g++-13-x86-64-linux-gnu (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf g++-13 (13.3.0-6ubuntu2~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf g++-x86-64-linux-gnu (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nConf g++ (4:13.2.0-7ubuntu1 Ubuntu:24.04/noble [amd64])\nConf make (4.3-4.1build2 Ubuntu:24.04/noble [amd64])\nConf libdpkg-perl (1.22.6ubuntu6.6 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [all])\nConf bzip2 (1.0.8-5.1ubuntu0.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf lto-disabled-list (47 Ubuntu:24.04/noble [all])\nConf dpkg-dev (1.22.6ubuntu6.6 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [all])\nConf build-essential (12.10ubuntu1 Ubuntu:24.04/noble [amd64])\nConf gcc-11-base (11.5.0-1ubuntu1~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libasan6 (11.5.0-1ubuntu1~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libtsan0 (11.5.0-1ubuntu1~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libgcc-11-dev (11.5.0-1ubuntu1~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libstdc++-11-dev (11.5.0-1ubuntu1~24.04.1 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf rocm-llvm (22.0.0.26084.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf libdrm-radeon1 (2.4.125-1ubuntu0.1~24.04.2 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libdrm-nouveau2 (2.4.125-1ubuntu0.1~24.04.2 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libpciaccess0 (0.17-3ubuntu0.24.04.3 Ubuntu:24.04/noble-updates [amd64])\nConf libpciaccess-dev (0.17-3ubuntu0.24.04.3 Ubuntu:24.04/noble-updates [amd64])\nConf libdrm-dev (2.4.125-1ubuntu0.1~24.04.2 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf hsa-rocr-dev (1.18.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf hipcc (1.1.1.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf hip-dev (7.2.53211.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf hipblas-common-dev (1.4.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf hipblas-dev (3.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf hipblaslt-dev (1.2.2.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf rocprim-dev (4.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf hipcub-dev (4.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf hipsolver-dev (3.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf hipsparse-dev (4.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf libexpat1-dev (2.6.1-2ubuntu0.6 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf zlib1g-dev (1:1.3.dfsg-3.1ubuntu2.2 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf libpython3.12-dev (3.12.3-1ubuntu0.17 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf ninja-build (1.11.1-2 Ubuntu:24.04/noble [amd64])\nConf python3.12-dev (3.12.3-1ubuntu0.17 Ubuntu:24.04/noble-updates, Ubuntu:24.04/noble-security [amd64])\nConf rocm-device-libs (1.0.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\nConf rocthrust-dev (4.2.0.70201-81~24.04 repo.radeon.com:7.2.1/noble [amd64])\n",
+  "stderr": "",
+  "packages": [
+    {
+      "Package": "libexpat1",
+      "Version": "2.6.1-2ubuntu0.6",
+      "Size": "98940",
+      "Installed-Size": "416",
+      "Filename": "pool/main/e/expat/libexpat1_2.6.1-2ubuntu0.6_amd64.deb",
+      "SHA256": "494b8e672f722130c6bca6a7bc4cc31a43ca891a31d60d868bfdd699a3c20b13",
+      "Depends": "libc6 (>= 2.38)",
+      "previous_version": "2.6.1-2ubuntu0.4"
+    },
+    {
+      "Package": "gcc-13-base",
+      "Version": "13.3.0-6ubuntu2~24.04.1",
+      "Size": "51616",
+      "Installed-Size": "113",
+      "Filename": "pool/main/g/gcc-13/gcc-13-base_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "e859aca26585bb91113a451f1e66bc0e5283cb08797d679aacc1d936ae6dff8e",
+      "Depends": null,
+      "previous_version": null
+    },
+    {
+      "Package": "libisl23",
+      "Version": "0.26-3build1.1",
+      "Size": "679812",
+      "Installed-Size": "2032",
+      "Filename": "pool/main/i/isl/libisl23_0.26-3build1.1_amd64.deb",
+      "SHA256": "4e040926e50fb961fae9bf95660189d468336a4a17bc321872c434fc8f777e7f",
+      "Depends": "libc6 (>= 2.14), libgmp10 (>= 2:6.3.0+dfsg)",
+      "previous_version": null
+    },
+    {
+      "Package": "libmpc3",
+      "Version": "1.3.1-1build1.1",
+      "Size": "54636",
+      "Installed-Size": "149",
+      "Filename": "pool/main/m/mpclib3/libmpc3_1.3.1-1build1.1_amd64.deb",
+      "SHA256": "cebe6098bb3d66fdacac9dc6fe406a651216d9c00f27c3f9c159d15d96cdf864",
+      "Depends": "libc6 (>= 2.4), libgmp10 (>= 2:6.3.0+dfsg), libmpfr6 (>= 4.0.0)",
+      "previous_version": null
+    },
+    {
+      "Package": "cpp-13-x86-64-linux-gnu",
+      "Version": "13.3.0-6ubuntu2~24.04.1",
+      "Size": "10714542",
+      "Installed-Size": "30807",
+      "Filename": "pool/main/g/gcc-13/cpp-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "2ca48bf0c2d6465bc39322899715a85d934b4d7442dd5586a7bebbe3ce0f806b",
+      "Depends": "gcc-13-base (= 13.3.0-6ubuntu2~24.04.1), libc6 (>= 2.38), libgmp10 (>= 2:6.3.0+dfsg), libisl23 (>= 0.15), libmpc3 (>= 1.1.0), libmpfr6 (>= 3.1.3), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)",
+      "previous_version": null
+    },
+    {
+      "Package": "cpp-13",
+      "Version": "13.3.0-6ubuntu2~24.04.1",
+      "Size": "1042",
+      "Installed-Size": "11",
+      "Filename": "pool/main/g/gcc-13/cpp-13_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "c7535331fbb183c802c3bf4b6b210872dcc12d0421b3212b3c4b940f2c59ed3a",
+      "Depends": "gcc-13-base (= 13.3.0-6ubuntu2~24.04.1), cpp-13-x86-64-linux-gnu (= 13.3.0-6ubuntu2~24.04.1)",
+      "previous_version": null
+    },
+    {
+      "Package": "cpp-x86-64-linux-gnu",
+      "Version": "4:13.2.0-7ubuntu1",
+      "Size": "5326",
+      "Installed-Size": "20",
+      "Filename": "pool/main/g/gcc-defaults/cpp-x86-64-linux-gnu_13.2.0-7ubuntu1_amd64.deb",
+      "SHA256": "85059b30960de3582e8612740614da3dfe47241d0368a28dea686188cf7648dd",
+      "Depends": "cpp-13-x86-64-linux-gnu (>= 13.2.0-11~)",
+      "previous_version": null
+    },
+    {
+      "Package": "cpp",
+      "Version": "4:13.2.0-7ubuntu1",
+      "Size": "22442",
+      "Installed-Size": "37",
+      "Filename": "pool/main/g/gcc-defaults/cpp_13.2.0-7ubuntu1_amd64.deb",
+      "SHA256": "b51f8094760f7b41afdcb1fe1b5a57fc64b75a090859918af17450a10f8c7d31",
+      "Depends": "cpp-13 (>= 13.2.0-11~), cpp-x86-64-linux-gnu (= 4:13.2.0-7ubuntu1)",
+      "previous_version": null
+    },
+    {
+      "Package": "libcc1-0",
+      "Version": "14.2.0-4ubuntu2~24.04.1",
+      "Size": "48002",
+      "Installed-Size": "148",
+      "Filename": "pool/main/g/gcc-14/libcc1-0_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "454456436ca767817a860557263d7cc2489f0a410f03efff4c0bb236d579ec09",
+      "Depends": "gcc-14-base (= 14.2.0-4ubuntu2~24.04.1), libc6 (>= 2.15), libgcc-s1 (>= 3.0), libstdc++6 (>= 5.2)",
+      "previous_version": null
+    },
+    {
+      "Package": "libitm1",
+      "Version": "14.2.0-4ubuntu2~24.04.1",
+      "Size": "29702",
+      "Installed-Size": "115",
+      "Filename": "pool/main/g/gcc-14/libitm1_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "1fca498129dd3510294809d77ee754f72a9de281111200e9b7b9a5adf37faa9f",
+      "Depends": "gcc-14-base (= 14.2.0-4ubuntu2~24.04.1), libc6 (>= 2.34)",
+      "previous_version": null
+    },
+    {
+      "Package": "libatomic1",
+      "Version": "14.2.0-4ubuntu2~24.04.1",
+      "Size": "10466",
+      "Installed-Size": "49",
+      "Filename": "pool/main/g/gcc-14/libatomic1_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "fe49cbbc7be753528380c724a8eef5f1e31dffa9221f692c5069048d81c7449d",
+      "Depends": "gcc-14-base (= 14.2.0-4ubuntu2~24.04.1), libc6 (>= 2.14)",
+      "previous_version": null
+    },
+    {
+      "Package": "libasan8",
+      "Version": "14.2.0-4ubuntu2~24.04.1",
+      "Size": "3026656",
+      "Installed-Size": "10791",
+      "Filename": "pool/main/g/gcc-14/libasan8_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "8321aac6230fa1da320e76eb6288b7436164624aec449ed3933ea6c4cc86daac",
+      "Depends": "gcc-14-base (= 14.2.0-4ubuntu2~24.04.1), libc6 (>= 2.34), libgcc-s1 (>= 3.3)",
+      "previous_version": null
+    },
+    {
+      "Package": "liblsan0",
+      "Version": "14.2.0-4ubuntu2~24.04.1",
+      "Size": "1321652",
+      "Installed-Size": "3828",
+      "Filename": "pool/main/g/gcc-14/liblsan0_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "dc0c2a1a053e833ba4d71e1ec2ba4244fe301761ad4a91d6725f927a52d86a14",
+      "Depends": "gcc-14-base (= 14.2.0-4ubuntu2~24.04.1), libc6 (>= 2.34), libgcc-s1 (>= 3.3)",
+      "previous_version": null
+    },
+    {
+      "Package": "libtsan2",
+      "Version": "14.2.0-4ubuntu2~24.04.1",
+      "Size": "2771910",
+      "Installed-Size": "8902",
+      "Filename": "pool/main/g/gcc-14/libtsan2_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "8cbcc9b3ae5ef23b449383d47a9035b27596e307d7dce7df9b83d47a7acd1d91",
+      "Depends": "gcc-14-base (= 14.2.0-4ubuntu2~24.04.1), libc6 (>= 2.34), libgcc-s1 (>= 3.4)",
+      "previous_version": null
+    },
+    {
+      "Package": "libubsan1",
+      "Version": "14.2.0-4ubuntu2~24.04.1",
+      "Size": "1183812",
+      "Installed-Size": "3364",
+      "Filename": "pool/main/g/gcc-14/libubsan1_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "a16dea3abe2dcac99bcfae27e7e5672fde64573c3c170dcb0cd55631238f9814",
+      "Depends": "gcc-14-base (= 14.2.0-4ubuntu2~24.04.1), libc6 (>= 2.34), libgcc-s1 (>= 3.3), libstdc++6 (>= 4.1.1)",
+      "previous_version": null
+    },
+    {
+      "Package": "libhwasan0",
+      "Version": "14.2.0-4ubuntu2~24.04.1",
+      "Size": "1640706",
+      "Installed-Size": "4897",
+      "Filename": "pool/main/g/gcc-14/libhwasan0_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "2195318cfe68fe16b601913ef7b33c9a900372f57861643fdc9ae6fef84534cd",
+      "Depends": "gcc-14-base (= 14.2.0-4ubuntu2~24.04.1), libc6 (>= 2.34), libgcc-s1 (>= 3.3)",
+      "previous_version": null
+    },
+    {
+      "Package": "libquadmath0",
+      "Version": "14.2.0-4ubuntu2~24.04.1",
+      "Size": "153316",
+      "Installed-Size": "300",
+      "Filename": "pool/main/g/gcc-14/libquadmath0_14.2.0-4ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "dc8f0ca542e09d662f29370c8393c016440dd4bc5c996c5fcc19f632b63ce3b0",
+      "Depends": "gcc-14-base (= 14.2.0-4ubuntu2~24.04.1), libc6 (>= 2.38)",
+      "previous_version": null
+    },
+    {
+      "Package": "libgcc-13-dev",
+      "Version": "13.3.0-6ubuntu2~24.04.1",
+      "Size": "2680642",
+      "Installed-Size": "16082",
+      "Filename": "pool/main/g/gcc-13/libgcc-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "cd689db2691edaa10f37329307292796bb599e722e0505c79e14caaa1fe9a93a",
+      "Depends": "gcc-13-base (= 13.3.0-6ubuntu2~24.04.1), libgcc-s1 (>= 13.3.0-6ubuntu2~24.04.1), libgomp1 (>= 13.3.0-6ubuntu2~24.04.1), libitm1 (>= 13.3.0-6ubuntu2~24.04.1), libatomic1 (>= 13.3.0-6ubuntu2~24.04.1), libasan8 (>= 13.3.0-6ubuntu2~24.04.1), liblsan0 (>= 13.3.0-6ubuntu2~24.04.1), libtsan2 (>= 13.3.0-6ubuntu2~24.04.1), libubsan1 (>= 13.3.0-6ubuntu2~24.04.1), libhwasan0 (>= 13.3.0-6ubuntu2~24.04.1), libquadmath0 (>= 13.3.0-6ubuntu2~24.04.1)",
+      "previous_version": null
+    },
+    {
+      "Package": "gcc-13-x86-64-linux-gnu",
+      "Version": "13.3.0-6ubuntu2~24.04.1",
+      "Size": "21084546",
+      "Installed-Size": "61333",
+      "Filename": "pool/main/g/gcc-13/gcc-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "a134b0319a82d14581b3a14820d2832af4ec9778ed8b9b4ddaeecfb0555ec325",
+      "Depends": "cpp-13-x86-64-linux-gnu (= 13.3.0-6ubuntu2~24.04.1), gcc-13-base (= 13.3.0-6ubuntu2~24.04.1), libcc1-0 (>= 13.3.0-6ubuntu2~24.04.1), binutils-x86-64-linux-gnu (>= 2.39), libgcc-13-dev (= 13.3.0-6ubuntu2~24.04.1), libc6 (>= 2.38), libgcc-s1 (>= 3.0), libgmp10 (>= 2:6.3.0+dfsg), libisl23 (>= 0.15), libmpc3 (>= 1.1.0), libmpfr6 (>= 3.1.3), libstdc++6 (>= 5), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)",
+      "previous_version": null
+    },
+    {
+      "Package": "gcc-13",
+      "Version": "13.3.0-6ubuntu2~24.04.1",
+      "Size": "494262",
+      "Installed-Size": "553",
+      "Filename": "pool/main/g/gcc-13/gcc-13_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "7438ff160b020a74970672189ecae25d0ca650de6d7f543f12a3134192cffbd9",
+      "Depends": "gcc-13-x86-64-linux-gnu (= 13.3.0-6ubuntu2~24.04.1), gcc-13-base (= 13.3.0-6ubuntu2~24.04.1), cpp-13 (= 13.3.0-6ubuntu2~24.04.1), binutils (>= 2.39)",
+      "previous_version": null
+    },
+    {
+      "Package": "gcc-x86-64-linux-gnu",
+      "Version": "4:13.2.0-7ubuntu1",
+      "Size": "1212",
+      "Installed-Size": "25",
+      "Filename": "pool/main/g/gcc-defaults/gcc-x86-64-linux-gnu_13.2.0-7ubuntu1_amd64.deb",
+      "SHA256": "72e79089a10e381360bfc6f03c5e5d8c2ff177d6dbac2cd7ffb3cc1383f57591",
+      "Depends": "cpp-x86-64-linux-gnu (= 4:13.2.0-7ubuntu1), gcc-13-x86-64-linux-gnu (>= 13.2.0-11~)",
+      "previous_version": null
+    },
+    {
+      "Package": "gcc",
+      "Version": "4:13.2.0-7ubuntu1",
+      "Size": "5018",
+      "Installed-Size": "37",
+      "Filename": "pool/main/g/gcc-defaults/gcc_13.2.0-7ubuntu1_amd64.deb",
+      "SHA256": "0e0bb8b25153ed1c44ab92bc219eed469fcb5820c5c0bc6454b2fd366a33d3ee",
+      "Depends": "cpp (= 4:13.2.0-7ubuntu1), cpp-x86-64-linux-gnu (= 4:13.2.0-7ubuntu1), gcc-13 (>= 13.2.0-11~), gcc-x86-64-linux-gnu (= 4:13.2.0-7ubuntu1)",
+      "previous_version": null
+    },
+    {
+      "Package": "libstdc++-13-dev",
+      "Version": "13.3.0-6ubuntu2~24.04.1",
+      "Size": "2419834",
+      "Installed-Size": "21662",
+      "Filename": "pool/main/g/gcc-13/libstdc++-13-dev_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "ee5633e863e19c3381ed97842ce35ed32ede96a3d1ae4e94c051d3036fe21347",
+      "Depends": "gcc-13-base (= 13.3.0-6ubuntu2~24.04.1), libgcc-13-dev (= 13.3.0-6ubuntu2~24.04.1), libstdc++6 (>= 13.3.0-6ubuntu2~24.04.1), libc6-dev (>= 2.13-0ubuntu6)",
+      "previous_version": null
+    },
+    {
+      "Package": "g++-13-x86-64-linux-gnu",
+      "Version": "13.3.0-6ubuntu2~24.04.1",
+      "Size": "12161938",
+      "Installed-Size": "33545",
+      "Filename": "pool/main/g/gcc-13/g++-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "0bd6af6164252d4ea9170d201ee4c10a3120fe0fc04985a00be3bc9076353844",
+      "Depends": "gcc-13-base (= 13.3.0-6ubuntu2~24.04.1), gcc-13-x86-64-linux-gnu (= 13.3.0-6ubuntu2~24.04.1), libstdc++-13-dev (= 13.3.0-6ubuntu2~24.04.1), libc6 (>= 2.38), libgmp10 (>= 2:6.3.0+dfsg), libisl23 (>= 0.15), libmpc3 (>= 1.1.0), libmpfr6 (>= 3.1.3), libzstd1 (>= 1.5.5), zlib1g (>= 1:1.1.4)",
+      "previous_version": null
+    },
+    {
+      "Package": "g++-13",
+      "Version": "13.3.0-6ubuntu2~24.04.1",
+      "Size": "16048",
+      "Installed-Size": "29",
+      "Filename": "pool/main/g/gcc-13/g++-13_13.3.0-6ubuntu2~24.04.1_amd64.deb",
+      "SHA256": "0f3ef964b8a91a9cd7bebfd126839a21941c55547cadcf4aa00204bc8cc43985",
+      "Depends": "g++-13-x86-64-linux-gnu (= 13.3.0-6ubuntu2~24.04.1), gcc-13-base (= 13.3.0-6ubuntu2~24.04.1), gcc-13 (= 13.3.0-6ubuntu2~24.04.1)",
+      "previous_version": null
+    },
+    {
+      "Package": "g++-x86-64-linux-gnu",
+      "Version": "4:13.2.0-7ubuntu1",
+      "Size": "964",
+      "Installed-Size": "11",
+      "Filename": "pool/main/g/gcc-defaults/g++-x86-64-linux-gnu_13.2.0-7ubuntu1_amd64.deb",
+      "SHA256": "145b027a542db5b21f85d4f9e242f51c62c69914fc484adb3a4881ca8e2f3913",
+      "Depends": "cpp-x86-64-linux-gnu (= 4:13.2.0-7ubuntu1), gcc-x86-64-linux-gnu (= 4:13.2.0-7ubuntu1), g++-13-x86-64-linux-gnu (>= 13.2.0-11~)",
+      "previous_version": null
+    },
+    {
+      "Package": "g++",
+      "Version": "4:13.2.0-7ubuntu1",
+      "Size": "1100",
+      "Installed-Size": "13",
+      "Filename": "pool/main/g/gcc-defaults/g++_13.2.0-7ubuntu1_amd64.deb",
+      "SHA256": "800a84b369c64b18d65f0fb5c1533de0446c880ee4f1cadad64e3363327f63f0",
+      "Depends": "cpp (= 4:13.2.0-7ubuntu1), cpp-x86-64-linux-gnu (= 4:13.2.0-7ubuntu1), gcc (= 4:13.2.0-7ubuntu1), g++-13 (>= 13.2.0-11~), g++-x86-64-linux-gnu (= 4:13.2.0-7ubuntu1), gcc-13 (>= 13.2.0-11~)",
+      "previous_version": null
+    },
+    {
+      "Package": "make",
+      "Version": "4.3-4.1build2",
+      "Size": "179752",
+      "Installed-Size": "404",
+      "Filename": "pool/main/m/make-dfsg/make_4.3-4.1build2_amd64.deb",
+      "SHA256": "1fe6a815b56c7b6e9ce4086a363f09444bbd0a0d30e230c453d0b78e44b57a99",
+      "Depends": "libc6 (>= 2.38)",
+      "previous_version": null
+    },
+    {
+      "Package": "libdpkg-perl",
+      "Version": "1.22.6ubuntu6.6",
+      "Size": "268420",
+      "Installed-Size": "1612",
+      "Filename": "pool/main/d/dpkg/libdpkg-perl_1.22.6ubuntu6.6_all.deb",
+      "SHA256": "db57f9f0608f78001b5f468e03541fdb88b7e30a07b46d0bcdb57a916a6e8c11",
+      "Depends": "perl:any, dpkg (>= 1.18.11)",
+      "previous_version": null
+    },
+    {
+      "Package": "bzip2",
+      "Version": "1.0.8-5.1ubuntu0.1",
+      "Size": "34560",
+      "Installed-Size": "109",
+      "Filename": "pool/main/b/bzip2/bzip2_1.0.8-5.1ubuntu0.1_amd64.deb",
+      "SHA256": "60fb79214dd8366fa39d7e69911294e72b9f1a4425a3d22f211359c8626e4b9e",
+      "Depends": "libbz2-1.0 (= 1.0.8-5.1ubuntu0.1), libc6 (>= 2.34)",
+      "previous_version": null
+    },
+    {
+      "Package": "lto-disabled-list",
+      "Version": "47",
+      "Size": "12400",
+      "Installed-Size": "41",
+      "Filename": "pool/main/l/lto-disabled-list/lto-disabled-list_47_all.deb",
+      "SHA256": "cac0f63c88188f376bb4df10a2af2b49a607bbef97a57db50ed58f678c21eee9",
+      "Depends": null,
+      "previous_version": null
+    },
+    {
+      "Package": "dpkg-dev",
+      "Version": "1.22.6ubuntu6.6",
+      "Size": "1074218",
+      "Installed-Size": "1721",
+      "Filename": "pool/main/d/dpkg/dpkg-dev_1.22.6ubuntu6.6_all.deb",
+      "SHA256": "70da073557dbed76dc14eb1e682e7ec30fcb736f3d98812490a4c785b4c481cb",
+      "Depends": "perl:any, libdpkg-perl (= 1.22.6ubuntu6.6), tar (>= 1.28-1), bzip2, xz-utils (>= 5.4.0), patch (>= 2.7), make, binutils, lto-disabled-list",
+      "previous_version": null
+    },
+    {
+      "Package": "build-essential",
+      "Version": "12.10ubuntu1",
+      "Size": "4928",
+      "Installed-Size": "17",
+      "Filename": "pool/main/b/build-essential/build-essential_12.10ubuntu1_amd64.deb",
+      "SHA256": "9b2159b95a4c01937309783c7c8a6ec8dfbcb7ffd604951c9713ac52ee9c7268",
+      "Depends": "libc6-dev | libc-dev, gcc (>= 4:12.3), g++ (>= 4:12.3), make, dpkg-dev (>= 1.17.11)",
+      "previous_version": null
+    },
+    {
+      "Package": "gcc-11-base",
+      "Version": "11.5.0-1ubuntu1~24.04.1",
+      "Size": "45580",
+      "Installed-Size": "109",
+      "Filename": "pool/universe/g/gcc-11/gcc-11-base_11.5.0-1ubuntu1~24.04.1_amd64.deb",
+      "SHA256": "30bea92fc6b45d107e5f01328950f49ee7ff5bf101a8ebc96b39003ec98c4c09",
+      "Depends": null,
+      "previous_version": null
+    },
+    {
+      "Package": "libasan6",
+      "Version": "11.5.0-1ubuntu1~24.04.1",
+      "Size": "2264206",
+      "Installed-Size": "7499",
+      "Filename": "pool/universe/g/gcc-11/libasan6_11.5.0-1ubuntu1~24.04.1_amd64.deb",
+      "SHA256": "0547d5675d4a4b2741754cbc469274a340ee5fae84acc9c836fab62912b204e7",
+      "Depends": "gcc-11-base (= 11.5.0-1ubuntu1~24.04.1), libc6 (>= 2.34), libgcc-s1",
+      "previous_version": null
+    },
+    {
+      "Package": "libtsan0",
+      "Version": "11.5.0-1ubuntu1~24.04.1",
+      "Size": "2267544",
+      "Installed-Size": "7254",
+      "Filename": "pool/universe/g/gcc-11/libtsan0_11.5.0-1ubuntu1~24.04.1_amd64.deb",
+      "SHA256": "d5db13528facd513d5892d6011437bafeb6cd6412768e675716bd0e8d48c47ab",
+      "Depends": "gcc-11-base (= 11.5.0-1ubuntu1~24.04.1), libc6 (>= 2.34), libgcc-s1",
+      "previous_version": null
+    },
+    {
+      "Package": "libgcc-11-dev",
+      "Version": "11.5.0-1ubuntu1~24.04.1",
+      "Size": "2481338",
+      "Installed-Size": "13886",
+      "Filename": "pool/universe/g/gcc-11/libgcc-11-dev_11.5.0-1ubuntu1~24.04.1_amd64.deb",
+      "SHA256": "ce467e464ad713caaf5b8b20fd707513eea9b53be86d899f4c38770ace07e8a1",
+      "Depends": "gcc-11-base (= 11.5.0-1ubuntu1~24.04.1), libgcc-s1 (>= 11.5.0-1ubuntu1~24.04.1), libgomp1 (>= 11.5.0-1ubuntu1~24.04.1), libitm1 (>= 11.5.0-1ubuntu1~24.04.1), libatomic1 (>= 11.5.0-1ubuntu1~24.04.1), libasan6 (>= 11.5.0-1ubuntu1~24.04.1), liblsan0 (>= 11.5.0-1ubuntu1~24.04.1), libtsan0 (>= 11.5.0-1ubuntu1~24.04.1), libubsan1 (>= 11.5.0-1ubuntu1~24.04.1), libquadmath0 (>= 11.5.0-1ubuntu1~24.04.1)",
+      "previous_version": null
+    },
+    {
+      "Package": "libstdc++-11-dev",
+      "Version": "11.5.0-1ubuntu1~24.04.1",
+      "Size": "2094156",
+      "Installed-Size": "18793",
+      "Filename": "pool/universe/g/gcc-11/libstdc++-11-dev_11.5.0-1ubuntu1~24.04.1_amd64.deb",
+      "SHA256": "d97c42f258f923a728c6e2268fa557cf6fb3d331b9ced9387d2c024d77816fe7",
+      "Depends": "gcc-11-base (= 11.5.0-1ubuntu1~24.04.1), libgcc-11-dev (= 11.5.0-1ubuntu1~24.04.1), libstdc++6 (>= 11.5.0-1ubuntu1~24.04.1), libc6-dev (>= 2.13-0ubuntu6)",
+      "previous_version": null
+    },
+    {
+      "Package": "rocm-llvm",
+      "Version": "22.0.0.26084.70201-81~24.04",
+      "Size": "544593292",
+      "Installed-Size": null,
+      "Filename": "pool/main/r/rocm-llvm/rocm-llvm_22.0.0.26084.70201-81~24.04_amd64.deb",
+      "SHA256": "1cbad039d161a03f9c4df81193fdb81d55d9a79e400ce8ce26ee55488512e0bd",
+      "Depends": "python3, libc6, libstdc++6|libstdc++8, libstdc++-5-dev|libstdc++-7-dev|libstdc++-11-dev|libstdc++-12-dev|libstdc++-13-dev|libstdc++-14-dev, libgcc-5-dev|libgcc-7-dev|libgcc-11-dev|libgcc-12-dev|libgcc-13-dev|libgcc-14-dev, rocm-core",
+      "previous_version": null
+    },
+    {
+      "Package": "libdrm-radeon1",
+      "Version": "2.4.125-1ubuntu0.1~24.04.2",
+      "Size": "20776",
+      "Installed-Size": "83",
+      "Filename": "pool/main/libd/libdrm/libdrm-radeon1_2.4.125-1ubuntu0.1~24.04.2_amd64.deb",
+      "SHA256": "f2e3d9fa356ad8bd29a8aebacaf2814b943b4c6810313b8b9588474b059e5c1a",
+      "Depends": "libc6 (>= 2.4), libdrm2 (>= 2.4.108)",
+      "previous_version": null
+    },
+    {
+      "Package": "libdrm-nouveau2",
+      "Version": "2.4.125-1ubuntu0.1~24.04.2",
+      "Size": "17620",
+      "Installed-Size": "71",
+      "Filename": "pool/main/libd/libdrm/libdrm-nouveau2_2.4.125-1ubuntu0.1~24.04.2_amd64.deb",
+      "SHA256": "66587e0e1ddd11c0b4fdff3d5c336e0acaae6897e585e1eae2ce40da168a2b3b",
+      "Depends": "libc6 (>= 2.38), libdrm2 (>= 2.4.108)",
+      "previous_version": null
+    },
+    {
+      "Package": "libpciaccess0",
+      "Version": "0.17-3ubuntu0.24.04.3",
+      "Size": "19220",
+      "Installed-Size": "61",
+      "Filename": "pool/main/libp/libpciaccess/libpciaccess0_0.17-3ubuntu0.24.04.3_amd64.deb",
+      "SHA256": "87a3b1c2a09f54d229e5e1f5424adc806e8f99bbb8aa8c8dea114b727f7a5a96",
+      "Depends": "libc6 (>= 2.38), zlib1g (>= 1:1.1.4)",
+      "previous_version": "0.17-3ubuntu0.24.04.2"
+    },
+    {
+      "Package": "libpciaccess-dev",
+      "Version": "0.17-3ubuntu0.24.04.3",
+      "Size": "22026",
+      "Installed-Size": "96",
+      "Filename": "pool/main/libp/libpciaccess/libpciaccess-dev_0.17-3ubuntu0.24.04.3_amd64.deb",
+      "SHA256": "c7f43bbf28744acd1ae32be0dc6401813d746695a2b531697901658951f320e8",
+      "Depends": "libpciaccess0 (= 0.17-3ubuntu0.24.04.3)",
+      "previous_version": null
+    },
+    {
+      "Package": "libdrm-dev",
+      "Version": "2.4.125-1ubuntu0.1~24.04.2",
+      "Size": "314338",
+      "Installed-Size": "1389",
+      "Filename": "pool/main/libd/libdrm/libdrm-dev_2.4.125-1ubuntu0.1~24.04.2_amd64.deb",
+      "SHA256": "ffc5f987e5361a1acd7337b9b4e32e3993901453e179f275ce9a338c8004f1a8",
+      "Depends": "libdrm2 (= 2.4.125-1ubuntu0.1~24.04.2), libdrm-intel1 (= 2.4.125-1ubuntu0.1~24.04.2), libdrm-radeon1 (= 2.4.125-1ubuntu0.1~24.04.2), libdrm-nouveau2 (= 2.4.125-1ubuntu0.1~24.04.2), libdrm-amdgpu1 (= 2.4.125-1ubuntu0.1~24.04.2), libpciaccess-dev",
+      "previous_version": null
+    },
+    {
+      "Package": "hsa-rocr-dev",
+      "Version": "1.18.0.70201-81~24.04",
+      "Size": "139490",
+      "Installed-Size": "733",
+      "Filename": "pool/main/h/hsa-rocr-dev/hsa-rocr-dev_1.18.0.70201-81~24.04_amd64.deb",
+      "SHA256": "03a9277d715bd0c97a73d2dc7455ab2edfe1bf5b9ee63a6a0356c2fa14d9d395",
+      "Depends": "libdrm-amdgpu-dev | libdrm-dev, rocm-core, hsa-rocr",
+      "previous_version": null
+    },
+    {
+      "Package": "hipcc",
+      "Version": "1.1.1.70201-81~24.04",
+      "Size": "212662",
+      "Installed-Size": "525",
+      "Filename": "pool/main/h/hipcc/hipcc_1.1.1.70201-81~24.04_amd64.deb",
+      "SHA256": "2ec5ab1dcefa6b9a441015634e1272e05897b30b8ca489f0aaab16138cc1538a",
+      "Depends": "rocm-core, rocm-llvm",
+      "previous_version": null
+    },
+    {
+      "Package": "hip-dev",
+      "Version": "7.2.53211.70201-81~24.04",
+      "Size": "372798",
+      "Installed-Size": "2823",
+      "Filename": "pool/main/h/hip-dev/hip-dev_7.2.53211.70201-81~24.04_amd64.deb",
+      "SHA256": "5fb031d567f08f11a489a9c7dfbad401928d71828f41e2768fa24d3afe41892d",
+      "Depends": "libc6, file, hip-runtime-amd, rocm-llvm, rocm-core, hsa-rocr-dev, hipcc",
+      "previous_version": null
+    },
+    {
+      "Package": "hipblas-common-dev",
+      "Version": "1.4.0.70201-81~24.04",
+      "Size": "5768",
+      "Installed-Size": "57",
+      "Filename": "pool/main/h/hipblas-common-dev/hipblas-common-dev_1.4.0.70201-81~24.04_amd64.deb",
+      "SHA256": "280919d3df391d941994ab4eac2bca7a3ba7058523546a9a2fef5fd0da0b8fa4",
+      "Depends": "rocm-core",
+      "previous_version": null
+    },
+    {
+      "Package": "hipblas-dev",
+      "Version": "3.2.0.70201-81~24.04",
+      "Size": "75318",
+      "Installed-Size": "2488",
+      "Filename": "pool/main/h/hipblas-dev/hipblas-dev_3.2.0.70201-81~24.04_amd64.deb",
+      "SHA256": "2c0bf5c4adbf601f4e1bef21b0e54dbc4cb14d163d8cf83d05e283ec88a580aa",
+      "Depends": "hipblas-common-dev (>= 1.4.0), hipblas (>= 3.2.0.70201)",
+      "previous_version": null
+    },
+    {
+      "Package": "hipblaslt-dev",
+      "Version": "1.2.2.70201-81~24.04",
+      "Size": "234324",
+      "Installed-Size": "2437",
+      "Filename": "pool/main/h/hipblaslt-dev/hipblaslt-dev_1.2.2.70201-81~24.04_amd64.deb",
+      "SHA256": "7a5c829a8971633ffa7f92f37734b95d9e69095be04e8f21c85bdb026c6c6d45",
+      "Depends": "hipblas-common-dev (>= 1.0.0), hipblaslt (>= 1.2.2.70201)",
+      "previous_version": null
+    },
+    {
+      "Package": "rocprim-dev",
+      "Version": "4.2.0.70201-81~24.04",
+      "Size": "310108",
+      "Installed-Size": "6573",
+      "Filename": "pool/main/r/rocprim-dev/rocprim-dev_4.2.0.70201-81~24.04_amd64.deb",
+      "SHA256": "364df46102b4fd6ce5a25f977c1b83d4d8d0ce5ed8f6e079d652f2bd2fef09d5",
+      "Depends": "hip-runtime-amd (>= 4.5.0), rocm-core",
+      "previous_version": null
+    },
+    {
+      "Package": "hipcub-dev",
+      "Version": "4.2.0.70201-81~24.04",
+      "Size": "90518",
+      "Installed-Size": "1484",
+      "Filename": "pool/main/h/hipcub-dev/hipcub-dev_4.2.0.70201-81~24.04_amd64.deb",
+      "SHA256": "1f57356accb1aeb97e61295f22d66d76ca1d98d20b49d7ab4446f80c83f6a0e2",
+      "Depends": "rocprim-dev (>= 2.10.1), rocm-core",
+      "previous_version": null
+    },
+    {
+      "Package": "hipsolver-dev",
+      "Version": "3.2.0.70201-81~24.04",
+      "Size": "18996",
+      "Installed-Size": "471",
+      "Filename": "pool/main/h/hipsolver-dev/hipsolver-dev_3.2.0.70201-81~24.04_amd64.deb",
+      "SHA256": "cb9eb61ef691b5fef354089ebd1815f9be6f62d03ddffac33c1a300bdeeffa28",
+      "Depends": "hipsolver (>= 3.2.0.70201)",
+      "previous_version": null
+    },
+    {
+      "Package": "hipsparse-dev",
+      "Version": "4.2.0.70201-81~24.04",
+      "Size": "64892",
+      "Installed-Size": "1165",
+      "Filename": "pool/main/h/hipsparse-dev/hipsparse-dev_4.2.0.70201-81~24.04_amd64.deb",
+      "SHA256": "487b653bd7cfdee68d302fedb5b37124610072d34d84850bbba0fe40b204d4fe",
+      "Depends": "hipsparse (>= 4.2.0.70201)",
+      "previous_version": null
+    },
+    {
+      "Package": "libexpat1-dev",
+      "Version": "2.6.1-2ubuntu0.6",
+      "Size": "146542",
+      "Installed-Size": "864",
+      "Filename": "pool/main/e/expat/libexpat1-dev_2.6.1-2ubuntu0.6_amd64.deb",
+      "SHA256": "87281ce46d74f261caff4ac404fe5af7b07f185d305246fef81797ddc20fa9f8",
+      "Depends": "libexpat1 (= 2.6.1-2ubuntu0.6), libc6-dev | libc-dev",
+      "previous_version": null
+    },
+    {
+      "Package": "zlib1g-dev",
+      "Version": "1:1.3.dfsg-3.1ubuntu2.2",
+      "Size": "894116",
+      "Installed-Size": "1322",
+      "Filename": "pool/main/z/zlib/zlib1g-dev_1.3.dfsg-3.1ubuntu2.2_amd64.deb",
+      "SHA256": "e9152a08af21ab22bc99e8bfa98f1eb83955b2cc3653bcefecab394ecf9d1b63",
+      "Depends": "zlib1g (= 1:1.3.dfsg-3.1ubuntu2.2), libc6-dev | libc-dev",
+      "previous_version": null
+    },
+    {
+      "Package": "libpython3.12-dev",
+      "Version": "3.12.3-1ubuntu0.17",
+      "Size": "5683746",
+      "Installed-Size": "29034",
+      "Filename": "pool/main/p/python3.12/libpython3.12-dev_3.12.3-1ubuntu0.17_amd64.deb",
+      "SHA256": "c123ddab7763e45199e21b4ac8545e705f20a0315b9ada4c236b52fb088c4e16",
+      "Depends": "libpython3.12-stdlib (= 3.12.3-1ubuntu0.17), libpython3.12t64 (= 3.12.3-1ubuntu0.17), libexpat1-dev, zlib1g-dev",
+      "previous_version": null
+    },
+    {
+      "Package": "ninja-build",
+      "Version": "1.11.1-2",
+      "Size": "128926",
+      "Installed-Size": "355",
+      "Filename": "pool/universe/n/ninja-build/ninja-build_1.11.1-2_amd64.deb",
+      "SHA256": "6a17f76a0f75586f1292f6c61a9b07fd0dec963baf6a102b17673f601c6b323a",
+      "Depends": "libc6 (>= 2.38), libstdc++6 (>= 13.1)",
+      "previous_version": null
+    },
+    {
+      "Package": "python3.12-dev",
+      "Version": "3.12.3-1ubuntu0.17",
+      "Size": "497932",
+      "Installed-Size": "502",
+      "Filename": "pool/main/p/python3.12/python3.12-dev_3.12.3-1ubuntu0.17_amd64.deb",
+      "SHA256": "c5d002080f07dd3524e6f2609bbf11a56b6f1d4ad28af8e34e4dce5121c85481",
+      "Depends": "python3.12 (= 3.12.3-1ubuntu0.17), libpython3.12-dev (= 3.12.3-1ubuntu0.17), libpython3.12t64 (= 3.12.3-1ubuntu0.17)",
+      "previous_version": null
+    },
+    {
+      "Package": "rocm-device-libs",
+      "Version": "1.0.0.70201-81~24.04",
+      "Size": "728304",
+      "Installed-Size": "3405",
+      "Filename": "pool/main/r/rocm-device-libs/rocm-device-libs_1.0.0.70201-81~24.04_amd64.deb",
+      "SHA256": "5cdbb764a564c9749c026314aa376ead100bec3419c96bc676577896bbf52827",
+      "Depends": "rocm-core",
+      "previous_version": null
+    },
+    {
+      "Package": "rocthrust-dev",
+      "Version": "4.2.0.70201-81~24.04",
+      "Size": "411430",
+      "Installed-Size": "5390",
+      "Filename": "pool/main/r/rocthrust-dev/rocthrust-dev_4.2.0.70201-81~24.04_amd64.deb",
+      "SHA256": "e0c1e9fd34dd05845b625854b441a43d604566d67dc30be073048f5cc57f54fc",
+      "Depends": "rocprim-dev (>= 2.10.1), rocm-core",
+      "previous_version": null
+    }
+  ],
+  "new_package_count": 59,
+  "upgrade_count": 2,
+  "archive_bytes_sum": 626410386,
+  "known_installed_bytes_sum": 319531008,
+  "missing_installed_size_packages": [
+    "rocm-llvm"
+  ],
+  "executed_installation": false,
+  "compiler_or_gpu_execution": false
+}
