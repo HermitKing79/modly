@@ -1,0 +1,119 @@
+{
+  "independent_reviewer": "native_import_preservation",
+  "status": "PASS",
+  "phase": "after-single-turret-neural-decode-attempt-UNKNOWN-tunable-policy-before-GPU-stage",
+  "comparison_prior_record": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-turret-neural-decode-evidence\\windows-preservation-before.json",
+  "comparison_prior_record_sha256": "2e4a172bdc613b408f824a8d53792d7937aab9ac8228b6c5f07ff6f95c72c146",
+  "comparison_saved_inventory": "docs/compatibility/amd-cached-neighbour-mixing-evidence/inventory-after.json",
+  "windows_venvs": {
+    "amd": {
+      "path": "D:\\AI\\Trellis2AMD\\venv",
+      "entries": 94687,
+      "metadata_sha256": "a2fdd34e6b310e3d4684250850cadfad1801536000e49e6557a0523107733527",
+      "distributions": 235,
+      "distribution_identity_sha256": "e0b7cc7c77b663f6ff18046aba6d990caf73d0b83326d10924972cf5e7271a85",
+      "native_binary_hashes_checked": 6,
+      "native_binary_identity_sha256": "b1a386fb0e1fd2f3b326a93a9042b497b45a17f0ecba17f18187c98665e1394a",
+      "metadata_matches_prior": true,
+      "distribution_matches_prior": true,
+      "native_binary_hashes_match": true,
+      "inventory_distribution_package_pyvenv_cfg_match": true,
+      "matches_prior": true
+    },
+    "modly": {
+      "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv",
+      "entries": 61313,
+      "metadata_sha256": "bcae506c520e1dca7693e700684ae225aceb16b4ed8de50e2cf023c5ec52c38e",
+      "distributions": 127,
+      "distribution_identity_sha256": "325484fa4fb88fd0b530035ed9e1569832e3620a16f01cd64e5e74db1900f378",
+      "native_binary_hashes_checked": 6,
+      "native_binary_identity_sha256": "e7014aa37a165264739de2af229dcb108c1f2c24c05930b3fc5cb4d391c6ede1",
+      "metadata_matches_prior": true,
+      "distribution_matches_prior": true,
+      "native_binary_hashes_match": true,
+      "inventory_distribution_package_pyvenv_cfg_match": true,
+      "matches_prior": true
+    }
+  },
+  "source_groups": {
+    "python": {
+      "checked": 169,
+      "identity_sha256": "455b4897de20a9e566d0e5b65722c3c28fb258dde5acb51c5852d7458d449bd4",
+      "all_match": true
+    },
+    "source_sha256": {
+      "checked": 13,
+      "identity_sha256": "49fc3d0819b129fce1ac3a4fa772f4789c8cee85f8364f323f44faf8e57edcb5",
+      "all_match": true
+    },
+    "preflight_source_sha256": {
+      "checked": 7,
+      "identity_sha256": "6e7dfcb13c73c1904be961a7053070386dc027dadfdd58e26f1d042339b14cc6",
+      "all_match": true
+    }
+  },
+  "amd_source": {
+    "head": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+    "modified_files": {
+      "nodes.py": "d310c97f3f7ff187cd581ed01ea3dbd6217fddb8ad9d59b12bd7c485f93821be",
+      "nodes.py.before-profiler-fix": "585d81c545cce5ca71fee1cb17f47e65b13c7f98b13a6053e1c1699079d7012f"
+    },
+    "matches_prior": true,
+    "head_read_method": "Passive .git/HEAD and reference files; no Git invocation"
+  },
+  "small_saved_inputs": {
+    "latent": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-denormalized.npy",
+      "bytes": 479232,
+      "sha256": "90eaf72030f303b209a4d02ae9adc7d4ecd39662344f35f0adc8120bc1e871b9",
+      "matches_prior": true
+    },
+    "coordinates": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-coordinates.npy",
+      "bytes": 60016,
+      "sha256": "949a9e6a2548abcad66354384502c06834d4d56ea3f2fa86b619c25926379ed4",
+      "matches_prior": true
+    },
+    "provenance": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-provenance.json",
+      "bytes": 14918,
+      "sha256": "4834412e700434f5645cd919dd0d75e9209b6b5d67cc7cb765e98b76890f9a81",
+      "matches_prior": true
+    },
+    "conditioning": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\conditioning.safetensors",
+      "bytes": 4215800,
+      "sha256": "78a0b54210568624639c8cacb7a803d83d4b838b782ea54e7aceab749d47e17a",
+      "matches_prior": true
+    }
+  },
+  "decoder_checkpoint_metadata_and_header_only": {
+    "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_dec_next_dc_f16c32_fp16.safetensors",
+    "bytes": 948490494,
+    "mtime_ns": 1791274722716299500,
+    "mode": 33206,
+    "verified_prior_stream_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "header_bytes": 27560,
+    "header_sha256": "80dc6403ca284a2361109cde3190bc1b5ea5d30936e8f80625cbbc0827062c83",
+    "header_content_bytes_read_this_task": 27568,
+    "full_hash_passes_this_task": 0,
+    "deserialized": false,
+    "unchanged_during_header_read": true,
+    "matches_prior": true,
+    "limitation": "Full checkpoint payload not re-hashed; preservation established by unchanged metadata and bounded header against prior full-hash identity.",
+    "header_reads_this_audit": 1,
+    "checkpoint_payload_bytes_read_this_audit": 0
+  },
+  "unexpected_deltas": [],
+  "AI_native_imports": false,
+  "WSL_started_by_this_audit": false,
+  "GPU_or_native_runtime_actions": false,
+  "builds_or_installs": false,
+  "Git_commands_or_mutations": false,
+  "broader_investigation": false,
+  "only_report_written": true,
+  "elapsed_seconds": 35.781,
+  "method": "Reused existing passive snapshot() reads package/distribution/source/native files and lstat metadata without importing installed packages. JSON identity: sorted keys, compact separators; normalized directory sizes. Only 12 selected native binaries hashed; AMD HEAD read passively. Native identity uses the prior path-to-hash map; checkpoint header identity includes its 8-byte length prefix.",
+  "native_binary_identity_method": "SHA256 of sorted-key compact JSON map from path to actual binary SHA256",
+  "decoder_header_identity_method": "SHA256 of 8-byte safetensors length prefix followed by exactly header_bytes header bytes"
+}

@@ -1,0 +1,25 @@
+{
+  "artifact_exists": false,
+  "convolution_and_subdivision": "not reached",
+  "retry_count": 0,
+  "forward_calls": 0,
+  "sha256": {
+    "runtime.py": "3964d353157fb2c9bcbfb309d98c8d51abd5eca72a1962325182267651101b01",
+    "tunable-source-readback.json": "cb428a5525427b27dfc1ffef6274043eaac3ac54a4331a6e63551a040afc2761",
+    "admission.py": "9eb44f2b17e770b544eeed9573d730f433367e46d50ac7fd4bc61c57b4141fa5",
+    "execution-host-capture.json": "990226ffb5049f992877b00384f929163bfcae1a2a7ed869773bf135188fcb8c",
+    "decode.py": "82db909ada8fed41b14fdb4300542d43a7b8cef6e3bf9b6f7c1451751d822460",
+    "run/guest/phases.jsonl": "de92f397d7c26d5013952477cd3caa32aaad74f74bf7a98bb7cea8576f4b02a4",
+    "neural-attempt.marker": "3fb171b7815e0ea50648a8aa3f3a9ee0276e71cdd67da799785dd9acf70b4615",
+    "run/results.json": "bad8ef5217164c60294828e32d5175c92b16fc9a8933c18092103b0f2e9acde2",
+    "neural.py": "e1273f400403fb4f9a32ad9e334859b1d187d262fc7f4fbd0c11085d585b4606",
+    "preservation-verification.json": "a1cd6324c96fcecc5fa8aa8811420ea59c96a789128c0e01dbdf99cca1c8acc3",
+    "run/guest/results.json": "f1b32eac35f37d5e9b7ba3b3784f84b108d3be2b45681530d66fb50871bca7e6"
+  },
+  "measured_flags": "not recorded",
+  "model_placement": false,
+  "candidate_changed_after_attempt": false,
+  "boundary": "decode.py:325: Unexpected Torch BLAS tuning policy",
+  "GPU_stage_entered": false,
+  "classification": "UNKNOWN"
+}
