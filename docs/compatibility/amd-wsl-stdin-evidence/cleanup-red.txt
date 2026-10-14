@@ -1,0 +1,14 @@
+test_job_attachment_failure_retains_monitoring_and_named_termination (test_amd_wsl_stdin_probe.ProbeCleanup.test_job_attachment_failure_retains_monitoring_and_named_termination) ... FAIL
+
+======================================================================
+FAIL: test_job_attachment_failure_retains_monitoring_and_named_termination (test_amd_wsl_stdin_probe.ProbeCleanup.test_job_attachment_failure_retains_monitoring_and_named_termination)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_wsl_stdin_probe.py", line 65, in test_job_attachment_failure_retains_monitoring_and_named_termination
+    self.assertGreater(state["observed_during_cleanup"], 0)
+AssertionError: 0 not greater than 0
+
+----------------------------------------------------------------------
+Ran 1 test in 0.397s
+
+FAILED (failures=1)

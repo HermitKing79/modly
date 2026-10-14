@@ -101,14 +101,16 @@ def guest_path(path):
 
 
 def await_go(stream):
-    if stream.readline() != "GO\n":
+    # The host closes stdin after its exact three-byte token. Reading one
+    # extra byte rejects CRLF/trailing data and requires EOF for acceptance.
+    if stream.read(4) != b"GO\n":
         raise RuntimeError("Host authorization absent or refused; no Torch import or GPU work")
 
 
 def authorize_go(stream, job_attached, before, after):
     if not job_attached or not healthy_observation(before) or not healthy_observation(after):
         raise RuntimeError("GO requires Job attachment and healthy prelaunch/post-attachment observations")
-    stream.write("GO\n")
+    stream.write(b"GO\n")
     stream.flush()
 
 
@@ -254,7 +256,7 @@ def worker(output):
         return {"allocated": torch.cuda.memory_allocated(0), "reserved": torch.cuda.memory_reserved(0)}
     try:
         journal(output, "gate-wait", gpu_allowed=False)
-        await_go(sys.stdin)
+        await_go(sys.stdin.buffer)
         record["gate_authorized"] = True
         journal(output, "gate-authorized", gpu_allowed=True)
         gpu_began = time.monotonic()
@@ -403,8 +405,7 @@ def supervise(output):
         record["worker_command"] = command
         job = load_sibling("amd_forward_owned_job").OwnedJob()
         with (output / "worker.stdout.txt").open("xb") as stdout, (output / "worker.stderr.txt").open("xb") as stderr:
-            child = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=stdout, stderr=stderr,
-                                     text=True, encoding="utf-8")
+            child = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=stdout, stderr=stderr)
             journal(output, "wsl-client-started", pid=child.pid, gpu_allowed=False)
             job.attach(child)
             attached = time.monotonic()

@@ -1,0 +1,49 @@
+{
+  "case": "original-go",
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/env",
+    "HSA_ENABLE_DXG_DETECTION=1",
+    "LD_LIBRARY_PATH=/opt/rocm-7.2.1/lib:/opt/rocm/lib:/usr/lib/wsl/lib",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "90s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_wsl_stdin_probe.py",
+    "--worker",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-stdin-evidence/original-text/original-go/guest"
+  ],
+  "host_mode": {
+    "text": true,
+    "encoding": "utf-8"
+  },
+  "logical_request_utf8_hex": "474f0a",
+  "actual_pipe_write_hex": "474f0d0a",
+  "child_exit": 0,
+  "received": {
+    "raw_prefix_hex": "474f0d0a",
+    "raw_prefix_limit": 16,
+    "smoke_sha256": "6a34ffc0f799f1900d65d2a860b3933afb4dae8ab07ab111f9a3adc367ff24f2",
+    "executable": "/opt/modly-wsl/venv/bin/python",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "accepted": false,
+    "gate_reads": [
+      {
+        "method": "readline",
+        "repr": "'GO\\r\\n'",
+        "utf8_hex": "474f0d0a"
+      }
+    ],
+    "gate_error": "Host authorization absent or refused; no Torch import or GPU work",
+    "torch_imported": false,
+    "triton_imported": false
+  }
+}

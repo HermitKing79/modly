@@ -1,0 +1,18 @@
+{
+  "raw_prefix_hex": "474f0a",
+  "raw_prefix_limit": 16,
+  "smoke_sha256": "19e1b7bc59c23f593408e57a995b7fa80d1313e92a5d3ca4704636d106209d69",
+  "executable": "/opt/modly-wsl/venv/bin/python",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "accepted": true,
+  "gate_reads": [
+    {
+      "method": "read",
+      "bound": 4,
+      "hex": "474f0a",
+      "bytes": 3
+    }
+  ],
+  "torch_imported": false,
+  "triton_imported": false
+}

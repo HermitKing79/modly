@@ -101,11 +101,20 @@ class SmokeContracts(unittest.TestCase):
 
     def test_worker_gate_accepts_only_exact_go_and_refuses_eof(self):
         smoke = self.load()
-        smoke.await_go(io.StringIO("GO\n"))
-        for content in ("", "NO\n", "GO extra\n", "GO"):
+        smoke.await_go(io.BytesIO(b"GO\n"))
+        for content in (b"", b"NO\n", b"GO extra\n", b"GO", b"GO\r\n", b"GO\nX", b"\n"):
             with self.subTest(content=content):
                 with self.assertRaises(RuntimeError):
-                    smoke.await_go(io.StringIO(content))
+                    smoke.await_go(io.BytesIO(content))
+
+    def test_worker_gate_rejects_text_stream_and_bounds_extra_data_read(self):
+        smoke = self.load()
+        with self.assertRaises(RuntimeError):
+            smoke.await_go(io.StringIO("GO\n"))
+        stream = io.BytesIO(b"GO\n" + b"X" * 4096)
+        with self.assertRaises(RuntimeError):
+            smoke.await_go(stream)
+        self.assertEqual(stream.tell(), 4)
 
     def test_runtime_identity_accepts_exact_lightweight_distribution_and_runtime(self):
         smoke = self.load()
@@ -131,13 +140,13 @@ class SmokeContracts(unittest.TestCase):
         smoke = self.load()
         for attached, before, after in ((False, healthy(), healthy()),
                                         (True, {}, healthy()), (True, healthy(), {})):
-            pipe = io.StringIO()
+            pipe = io.BytesIO()
             with self.assertRaises(RuntimeError):
                 smoke.authorize_go(pipe, attached, before, after)
-            self.assertEqual(pipe.getvalue(), "")
-        pipe = io.StringIO()
+            self.assertEqual(pipe.getvalue(), b"")
+        pipe = io.BytesIO()
         smoke.authorize_go(pipe, True, healthy(), healthy())
-        self.assertEqual(pipe.getvalue(), "GO\n")
+        self.assertEqual(pipe.getvalue(), b"GO\n")
 
     def test_cleanup_refuses_live_refs_nonzero_memory_or_excessive_peak(self):
         smoke = self.load()
@@ -260,6 +269,8 @@ class SmokeContracts(unittest.TestCase):
                         "observation": {"events": [{"Id": 4101}]}}
             return healthy()
         def launch(command, **kwargs):
+            self.assertNotIn("text", kwargs, "Production stdin must stay binary")
+            self.assertNotIn("encoding", kwargs, "Production stdin must not translate newlines")
             self.assertEqual(command[:6], ["wsl.exe", "-d", "Modly-AMD-Ubuntu-24.04", "-u", "modly", "--exec"])
             self.assertEqual(command[-2:], ["--worker", smoke.guest_path(output / "guest")])
             state["commands"].append(command)

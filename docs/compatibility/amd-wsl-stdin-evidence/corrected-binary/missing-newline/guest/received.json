@@ -1,0 +1,19 @@
+{
+  "raw_prefix_hex": "474f",
+  "raw_prefix_limit": 16,
+  "smoke_sha256": "19e1b7bc59c23f593408e57a995b7fa80d1313e92a5d3ca4704636d106209d69",
+  "executable": "/opt/modly-wsl/venv/bin/python",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "accepted": false,
+  "gate_reads": [
+    {
+      "method": "read",
+      "bound": 4,
+      "hex": "474f",
+      "bytes": 2
+    }
+  ],
+  "gate_error": "Host authorization absent or refused; no Torch import or GPU work",
+  "torch_imported": false,
+  "triton_imported": false
+}

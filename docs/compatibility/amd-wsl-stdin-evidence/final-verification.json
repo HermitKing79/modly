@@ -1,0 +1,37 @@
+{
+  "classification": "UNKNOWN",
+  "protocol_corrected": true,
+  "production_protocol_cases": 7,
+  "all_guest_exit_codes": 0,
+  "forced_job_cleanup": true,
+  "remaining_owned_job_processes_before_cleanup": 2,
+  "owned_tree_exit_verified_after_cleanup": true,
+  "focused_cpu_tests_passed": 20,
+  "independent_review_passed": true,
+  "no_gpu_execution": true,
+  "no_guest_torch_or_triton_import": true,
+  "no_environment_installation_or_modification": true,
+  "windows_preservation": {
+    "reviewer": "cached_leaf_access_audit",
+    "both_venv_inventories_and_distributions_unchanged": true,
+    "native_binaries_unchanged": 12,
+    "python_sources_unchanged": 169,
+    "additional_source_groups_unchanged": [
+      13,
+      7
+    ],
+    "amd_head_unchanged": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+    "nodes_py_unchanged": true,
+    "nodes_backup_unchanged": true
+  },
+  "files": {
+    "scripts/compatibility/amd_wsl_rocdxg_smoke.py": "19e1b7bc59c23f593408e57a995b7fa80d1313e92a5d3ca4704636d106209d69",
+    "scripts/compatibility/test_amd_wsl_rocdxg_smoke.py": "175960c9fef582af1632c479787138e57b6f16ab3142aeff496dfeaef3c2e9ed",
+    "scripts/compatibility/amd_wsl_stdin_probe.py": "ab7470c0550e1d9ef8527a74dcc1e4248cf5f2fede20edee150f7ca34bfb0a95",
+    "scripts/compatibility/test_amd_wsl_stdin_probe.py": "9e90412611b201a28f223bc50d130832d093ada52ed6b400a09e2f99c057ec9c",
+    "docs/compatibility/amd-wsl-stdin-evidence/original-text/probe-source.py": "c976678a1d432db876aa2c0e513de447ed20147acbf591c770a24116f7b35f01",
+    "docs/compatibility/amd-wsl-stdin-evidence/corrected-binary/probe-source.py": "80e951599d2a4b1983ed43596a2bde7955c7719ecb29c38f5d96d64dbc7e1c1b",
+    "docs/compatibility/amd-wsl-stdin-evidence/cpu-final.stderr.txt": "05dcc08ea0814d79f55f9244f77a106f7119fa995270fb3f53854ef775aeb19d",
+    "docs/compatibility/amd-wsl-stdin-evidence/cleanup-red.txt": "537f2cb441a0b59cc0a2684b364006af04e40a5e29e835eefa9af9cac068463c"
+  }
+}

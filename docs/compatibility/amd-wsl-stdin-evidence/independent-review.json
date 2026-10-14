@@ -1,0 +1,9 @@
+{
+  "reviewer": "wsl_stdin_review",
+  "no_blocking_findings": true,
+  "independent_focused_tests": 20,
+  "cleanup_regression_mutation_detected": true,
+  "production_smoke_sha256": "19e1b7bc59c23f593408e57a995b7fa80d1313e92a5d3ca4704636d106209d69",
+  "probe_sha256": "ab7470c0550e1d9ef8527a74dcc1e4248cf5f2fede20edee150f7ca34bfb0a95",
+  "outcome_qualification": "Seven corrected protocol cases successful; aggregate UNKNOWN because Job cleanup forcibly terminated two remaining owned processes. No WSL/GPU execution or edits by reviewer."
+}
