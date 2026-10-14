@@ -1,0 +1,34 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "2460s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-S",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-flexgemm-build-evidence/build-monitor.py"
+  ],
+  "minimum_host_available_RAM_bytes": 13139378176,
+  "minimum_D_free_bytes": 76236816384,
+  "GPU_actions": false,
+  "build_retry": false,
+  "worker_exit": 0,
+  "natural_job_grace_seconds": 0.0,
+  "job": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "final_named_distro_termination_exit": 0,
+  "total_seconds": 219.92199999999866
+}

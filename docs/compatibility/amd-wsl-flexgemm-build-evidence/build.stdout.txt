@@ -1,0 +1,216 @@
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/hash/api.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/hash/api.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/hash/hash.cuh -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/hash/hash.cuh [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/hash/hash.cu -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/hash/hash.hip [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/serialize/api.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/serialize/api.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/serialize/utils.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/serialize/utils.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/serialize/z_order.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/serialize/z_order.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/serialize/hilbert.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/serialize/hilbert.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/serialize/api.cu -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/serialize/api.hip [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/grid_sample/grid_sample.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/grid_sample/grid_sample.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/grid_sample/grid_sample.cu -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/grid_sample/grid_sample.hip [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/spconv/subm_neighbor_map.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/subm_neighbor_map.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/spconv/subm_neighbor_map.cu -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/subm_neighbor_map.hip [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/spconv/sparse_neighbor_map.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/sparse_neighbor_map.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/spconv/utils.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/utils.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/spconv/sparse_neighbor_map.cu -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/sparse_neighbor_map.hip [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/spconv/migemm_neighmap_pp.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/migemm_neighmap_pp.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/spconv/migemm_neighmap_pp.cu -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/migemm_neighmap_pp.hip [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/grid_sample/api.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/grid_sample/api.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/spconv/api.h -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/api.h [ok]
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/cuda/ext.cpp -> /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/ext.cpp [ok]
+Total number of unsupported CUDA function calls: 0
+
+
+Total number of replaced kernel launches: 31
+running bdist_wheel
+running build
+running build_py
+creating build/lib.linux-x86_64-cpython-312/flex_gemm
+copying flex_gemm/__init__.py -> build/lib.linux-x86_64-cpython-312/flex_gemm
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/utils
+copying flex_gemm/utils/autotuner.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/utils
+copying flex_gemm/utils/__init__.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/utils
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/ops
+copying flex_gemm/ops/serialize.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/ops
+copying flex_gemm/ops/utils.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/ops
+copying flex_gemm/ops/__init__.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/ops
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/ops/spconv
+copying flex_gemm/ops/spconv/submanifold_conv3d.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/ops/spconv
+copying flex_gemm/ops/spconv/sparse_conv3d.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/ops/spconv
+copying flex_gemm/ops/spconv/__init__.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/ops/spconv
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/ops/grid_sample
+copying flex_gemm/ops/grid_sample/grid_sample_torch.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/ops/grid_sample
+copying flex_gemm/ops/grid_sample/grid_sample.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/ops/grid_sample
+copying flex_gemm/ops/grid_sample/__init__.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/ops/grid_sample
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/kernels
+copying flex_gemm/kernels/__init__.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton
+copying flex_gemm/kernels/triton/utils.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton
+copying flex_gemm/kernels/triton/__init__.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_conv_masked_implicit_gemm_splitk.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_masked_implicit_gemm.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/config.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_conv_implicit_gemm_splitk.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_implicit_gemm.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_masked_implicit_gemm.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_conv_implicit_gemm.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_implicit_gemm_splitk.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_implicit_gemm_splitk.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_conv_masked_implicit_gemm.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_implicit_gemm.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_masked_implicit_gemm_splitk.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+copying flex_gemm/kernels/triton/spconv/__init__.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/grid_sample
+copying flex_gemm/kernels/triton/grid_sample/config.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/grid_sample
+copying flex_gemm/kernels/triton/grid_sample/indice_weighed_sum_bwd.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/grid_sample
+copying flex_gemm/kernels/triton/grid_sample/indice_weighed_sum_fwd.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/grid_sample
+copying flex_gemm/kernels/triton/grid_sample/__init__.py -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/grid_sample
+running egg_info
+creating flex_gemm.egg-info
+writing flex_gemm.egg-info/PKG-INFO
+writing dependency_links to flex_gemm.egg-info/dependency_links.txt
+writing requirements to flex_gemm.egg-info/requires.txt
+writing top-level names to flex_gemm.egg-info/top_level.txt
+writing manifest file 'flex_gemm.egg-info/SOURCES.txt'
+reading manifest file 'flex_gemm.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'flex_gemm.egg-info/SOURCES.txt'
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip
+copying flex_gemm/kernels/hip/ext.cpp -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/grid_sample
+copying flex_gemm/kernels/hip/grid_sample/grid_sample.hip -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/grid_sample
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/hash
+copying flex_gemm/kernels/hip/hash/hash.hip -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/hash
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/serialize
+copying flex_gemm/kernels/hip/serialize/api.hip -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/serialize
+creating build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv
+copying flex_gemm/kernels/hip/spconv/migemm_neighmap_pp.hip -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv
+copying flex_gemm/kernels/hip/spconv/sparse_neighbor_map.hip -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv
+copying flex_gemm/kernels/hip/spconv/subm_neighbor_map.hip -> build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv
+running build_ext
+building 'flex_gemm.kernels.cuda' extension
+[1/7] c++ -MMD -MF /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/ext.o.d -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/THH -I/opt/rocm-7.2.1/include -I/opt/modly-wsl/venv/include -I/usr/include/python3.12 -c -c /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/ext.cpp -o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/ext.o -D__HIP_PLATFORM_AMD__=1 -DUSE_ROCM=1 -DHIPBLAS_V2 -fPIC -D__HIP_PLATFORM_AMD__=1 -DUSE_ROCM=1 -DHIPBLAS_V2 -fPIC -O3 -std=c++17 -fopenmp -D_GLIBCXX_USE_CXX11_ABI=1 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=cuda
+[2/7] /opt/rocm-7.2.1/bin/hipcc  -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/THH -I/opt/rocm-7.2.1/include -I/opt/modly-wsl/venv/include -I/usr/include/python3.12 -c -c /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/grid_sample/grid_sample.hip -o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/grid_sample/grid_sample.o -D__HIP_PLATFORM_AMD__=1 -DUSE_ROCM=1 -DHIPBLAS_V2 -fPIC -DCUDA_HAS_FP16=1 -D__HIP_NO_HALF_OPERATORS__=1 -D__HIP_NO_HALF_CONVERSIONS__=1 -DHIP_ENABLE_WARP_SYNC_BUILTINS=1 -O3 -std=c++17 --offload-arch=gfx1201 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=cuda -fno-gpu-rdc
+[3/7] /opt/rocm-7.2.1/bin/hipcc  -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/THH -I/opt/rocm-7.2.1/include -I/opt/modly-wsl/venv/include -I/usr/include/python3.12 -c -c /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/hash/hash.hip -o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/hash/hash.o -D__HIP_PLATFORM_AMD__=1 -DUSE_ROCM=1 -DHIPBLAS_V2 -fPIC -DCUDA_HAS_FP16=1 -D__HIP_NO_HALF_OPERATORS__=1 -D__HIP_NO_HALF_CONVERSIONS__=1 -DHIP_ENABLE_WARP_SYNC_BUILTINS=1 -O3 -std=c++17 --offload-arch=gfx1201 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=cuda -fno-gpu-rdc
+[4/7] /opt/rocm-7.2.1/bin/hipcc  -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/THH -I/opt/rocm-7.2.1/include -I/opt/modly-wsl/venv/include -I/usr/include/python3.12 -c -c /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/serialize/api.hip -o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/serialize/api.o -D__HIP_PLATFORM_AMD__=1 -DUSE_ROCM=1 -DHIPBLAS_V2 -fPIC -DCUDA_HAS_FP16=1 -D__HIP_NO_HALF_OPERATORS__=1 -D__HIP_NO_HALF_CONVERSIONS__=1 -DHIP_ENABLE_WARP_SYNC_BUILTINS=1 -O3 -std=c++17 --offload-arch=gfx1201 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=cuda -fno-gpu-rdc
+[5/7] /opt/rocm-7.2.1/bin/hipcc  -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/THH -I/opt/rocm-7.2.1/include -I/opt/modly-wsl/venv/include -I/usr/include/python3.12 -c -c /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/migemm_neighmap_pp.hip -o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv/migemm_neighmap_pp.o -D__HIP_PLATFORM_AMD__=1 -DUSE_ROCM=1 -DHIPBLAS_V2 -fPIC -DCUDA_HAS_FP16=1 -D__HIP_NO_HALF_OPERATORS__=1 -D__HIP_NO_HALF_CONVERSIONS__=1 -DHIP_ENABLE_WARP_SYNC_BUILTINS=1 -O3 -std=c++17 --offload-arch=gfx1201 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=cuda -fno-gpu-rdc
+/home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/migemm_neighmap_pp.hip:247:17: warning: loop not unrolled: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+  247 | __global__ void reduce_code_kernel(
+      |                 ^
+1 warning generated when compiling for gfx1201.
+[6/7] /opt/rocm-7.2.1/bin/hipcc  -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/THH -I/opt/rocm-7.2.1/include -I/opt/modly-wsl/venv/include -I/usr/include/python3.12 -c -c /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/sparse_neighbor_map.hip -o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv/sparse_neighbor_map.o -D__HIP_PLATFORM_AMD__=1 -DUSE_ROCM=1 -DHIPBLAS_V2 -fPIC -DCUDA_HAS_FP16=1 -D__HIP_NO_HALF_OPERATORS__=1 -D__HIP_NO_HALF_CONVERSIONS__=1 -DHIP_ENABLE_WARP_SYNC_BUILTINS=1 -O3 -std=c++17 --offload-arch=gfx1201 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=cuda -fno-gpu-rdc
+[7/7] /opt/rocm-7.2.1/bin/hipcc  -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/torch/csrc/api/include -I/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/include/THH -I/opt/rocm-7.2.1/include -I/opt/modly-wsl/venv/include -I/usr/include/python3.12 -c -c /home/modly/flexgemm-build-6dd94a85/source/flex_gemm/kernels/hip/spconv/subm_neighbor_map.hip -o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv/subm_neighbor_map.o -D__HIP_PLATFORM_AMD__=1 -DUSE_ROCM=1 -DHIPBLAS_V2 -fPIC -DCUDA_HAS_FP16=1 -D__HIP_NO_HALF_OPERATORS__=1 -D__HIP_NO_HALF_CONVERSIONS__=1 -DHIP_ENABLE_WARP_SYNC_BUILTINS=1 -O3 -std=c++17 --offload-arch=gfx1201 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=cuda -fno-gpu-rdc
+x86_64-linux-gnu-g++ -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -shared -Wl,-O1 -Wl,-Bsymbolic-functions /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/ext.o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/grid_sample/grid_sample.o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/hash/hash.o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/serialize/api.o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv/migemm_neighmap_pp.o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv/sparse_neighbor_map.o /home/modly/flexgemm-build-6dd94a85/source/build/temp.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv/subm_neighbor_map.o -L/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib -L/opt/rocm-7.2.1/lib -L/opt/rocm-7.2.1/hip/lib -L/usr/lib/x86_64-linux-gnu -lc10 -ltorch -ltorch_cpu -ltorch_python -lamdhip64 -lc10_hip -ltorch_hip -o build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/cuda.cpython-312-x86_64-linux-gnu.so
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/flex_gemm
+creating build/bdist.linux-x86_64/wheel/flex_gemm/kernels
+creating build/bdist.linux-x86_64/wheel/flex_gemm/kernels/triton
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/utils.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton
+creating build/bdist.linux-x86_64/wheel/flex_gemm/kernels/triton/grid_sample
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/grid_sample/config.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/grid_sample
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/grid_sample/indice_weighed_sum_bwd.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/grid_sample
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/grid_sample/indice_weighed_sum_fwd.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/grid_sample
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/grid_sample/__init__.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/grid_sample
+creating build/bdist.linux-x86_64/wheel/flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_conv_masked_implicit_gemm_splitk.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_masked_implicit_gemm.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/config.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_conv_implicit_gemm_splitk.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_implicit_gemm.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_masked_implicit_gemm.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_conv_implicit_gemm.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_implicit_gemm_splitk.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_implicit_gemm_splitk.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_conv_masked_implicit_gemm.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_implicit_gemm.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_masked_implicit_gemm_splitk.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/spconv/__init__.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/triton/__init__.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/triton
+creating build/bdist.linux-x86_64/wheel/flex_gemm/kernels/hip
+creating build/bdist.linux-x86_64/wheel/flex_gemm/kernels/hip/serialize
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/serialize/api.hip -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/hip/serialize
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/ext.cpp -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/hip
+creating build/bdist.linux-x86_64/wheel/flex_gemm/kernels/hip/hash
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/hash/hash.hip -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/hip/hash
+creating build/bdist.linux-x86_64/wheel/flex_gemm/kernels/hip/grid_sample
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/grid_sample/grid_sample.hip -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/hip/grid_sample
+creating build/bdist.linux-x86_64/wheel/flex_gemm/kernels/hip/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv/migemm_neighmap_pp.hip -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/hip/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv/sparse_neighbor_map.hip -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/hip/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/hip/spconv/subm_neighbor_map.hip -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels/hip/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/__init__.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/kernels/cuda.cpython-312-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./flex_gemm/kernels
+creating build/bdist.linux-x86_64/wheel/flex_gemm/ops
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/ops/serialize.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/ops
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/ops/utils.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/ops
+creating build/bdist.linux-x86_64/wheel/flex_gemm/ops/grid_sample
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/ops/grid_sample/grid_sample_torch.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/ops/grid_sample
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/ops/grid_sample/grid_sample.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/ops/grid_sample
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/ops/grid_sample/__init__.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/ops/grid_sample
+creating build/bdist.linux-x86_64/wheel/flex_gemm/ops/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/ops/spconv/submanifold_conv3d.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/ops/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/ops/spconv/sparse_conv3d.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/ops/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/ops/spconv/__init__.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/ops/spconv
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/ops/__init__.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/ops
+creating build/bdist.linux-x86_64/wheel/flex_gemm/utils
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/utils/autotuner.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/utils
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/utils/__init__.py -> build/bdist.linux-x86_64/wheel/./flex_gemm/utils
+copying build/lib.linux-x86_64-cpython-312/flex_gemm/__init__.py -> build/bdist.linux-x86_64/wheel/./flex_gemm
+running install_egg_info
+Copying flex_gemm.egg-info to build/bdist.linux-x86_64/wheel/./flex_gemm-1.0.0-py3.12.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/flex_gemm-1.0.0.dist-info/WHEEL
+creating '/home/modly/flexgemm-build-6dd94a85/artifacts/.tmp-vqurfglz/flex_gemm-1.0.0-cp312-cp312-linux_x86_64.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'flex_gemm/__init__.py'
+adding 'flex_gemm/kernels/__init__.py'
+adding 'flex_gemm/kernels/cuda.cpython-312-x86_64-linux-gnu.so'
+adding 'flex_gemm/kernels/hip/ext.cpp'
+adding 'flex_gemm/kernels/hip/grid_sample/grid_sample.hip'
+adding 'flex_gemm/kernels/hip/hash/hash.hip'
+adding 'flex_gemm/kernels/hip/serialize/api.hip'
+adding 'flex_gemm/kernels/hip/spconv/migemm_neighmap_pp.hip'
+adding 'flex_gemm/kernels/hip/spconv/sparse_neighbor_map.hip'
+adding 'flex_gemm/kernels/hip/spconv/subm_neighbor_map.hip'
+adding 'flex_gemm/kernels/triton/__init__.py'
+adding 'flex_gemm/kernels/triton/utils.py'
+adding 'flex_gemm/kernels/triton/grid_sample/__init__.py'
+adding 'flex_gemm/kernels/triton/grid_sample/config.py'
+adding 'flex_gemm/kernels/triton/grid_sample/indice_weighed_sum_bwd.py'
+adding 'flex_gemm/kernels/triton/grid_sample/indice_weighed_sum_fwd.py'
+adding 'flex_gemm/kernels/triton/spconv/__init__.py'
+adding 'flex_gemm/kernels/triton/spconv/config.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_conv_implicit_gemm.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_conv_implicit_gemm_splitk.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_conv_masked_implicit_gemm.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_conv_masked_implicit_gemm_splitk.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_implicit_gemm.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_implicit_gemm_splitk.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_masked_implicit_gemm.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_masked_implicit_gemm_splitk.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_implicit_gemm.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_implicit_gemm_splitk.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_masked_implicit_gemm.py'
+adding 'flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk.py'
+adding 'flex_gemm/ops/__init__.py'
+adding 'flex_gemm/ops/serialize.py'
+adding 'flex_gemm/ops/utils.py'
+adding 'flex_gemm/ops/grid_sample/__init__.py'
+adding 'flex_gemm/ops/grid_sample/grid_sample.py'
+adding 'flex_gemm/ops/grid_sample/grid_sample_torch.py'
+adding 'flex_gemm/ops/spconv/__init__.py'
+adding 'flex_gemm/ops/spconv/sparse_conv3d.py'
+adding 'flex_gemm/ops/spconv/submanifold_conv3d.py'
+adding 'flex_gemm/utils/__init__.py'
+adding 'flex_gemm/utils/autotuner.py'
+adding 'flex_gemm-1.0.0.dist-info/licenses/LICENSE'
+adding 'flex_gemm-1.0.0.dist-info/METADATA'
+adding 'flex_gemm-1.0.0.dist-info/WHEEL'
+adding 'flex_gemm-1.0.0.dist-info/top_level.txt'
+adding 'flex_gemm-1.0.0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel

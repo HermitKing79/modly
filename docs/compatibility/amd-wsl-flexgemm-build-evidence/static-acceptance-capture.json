@@ -1,0 +1,24 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "180s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-S",
+    "-"
+  ],
+  "exit": 0,
+  "stdout": "{\"wheel\": \"/home/modly/flexgemm-build-6dd94a85/artifacts/flex_gemm-1.0.0-cp312-cp312-linux_x86_64.whl\", \"wheel_bytes\": 3231402, \"wheel_sha256\": \"cadaa86c428a93c3aee10c4dd8dfb66604a424c8145670051ca0ce1a0f296285\", \"native_bytes\": 11568136, \"needed_libraries\": [\"libc10.so\", \"libtorch.so\", \"libtorch_cpu.so\", \"libtorch_python.so\", \"libamdhip64.so.7\", \"libstdc++.so.6\", \"libm.so.6\", \"libgcc_s.so.1\", \"libc.so.6\"], \"all18_names_present\": true, \"PyInit_cuda_exported\": true, \"baseline_venv_matches\": true, \"ROCDXG_HIP_HSA_payload_verification_passed\": true, \"CPU_import_performed\": false, \"final_guest_free_bytes\": 9829523456, \"final_D_free_bytes\": 76236816384, \"static_acceptance\": \"PASS\"}\n",
+  "stderr": "",
+  "seconds": 8.23399999999674,
+  "named_distro_termination_exit": 0
+}

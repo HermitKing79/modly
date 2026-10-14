@@ -1,0 +1,28 @@
+{
+  "archive": "/home/modly/flexgemm-build-6dd94a85/inputs/rocm-llvm_22.0.0.26084.70201-81~24.04_amd64.deb",
+  "URL": "https://repo.radeon.com/rocm/apt/7.2.1/pool/main/r/rocm-llvm/rocm-llvm_22.0.0.26084.70201-81~24.04_amd64.deb",
+  "expected_sha256": "1cbad039d161a03f9c4df81193fdb81d55d9a79e400ce8ce26ee55488512e0bd",
+  "expected_bytes": 544593292,
+  "before_guest_free_bytes": 13019340800,
+  "before_D_free_bytes": 79489499136,
+  "package_installed": false,
+  "expanded_files_written": false,
+  "GPU_or_model_actions": false,
+  "download_bytes": 544593292,
+  "actual_sha256": "1cbad039d161a03f9c4df81193fdb81d55d9a79e400ce8ce26ee55488512e0bd",
+  "download_seconds": 34.409934712,
+  "control": "Package: rocm-llvm\nArchitecture: amd64\nSection: devel\nPriority: optional\nMaintainer: ROCm Compiler Support <rocm.compiler.support@amd.com>\nVersion: 22.0.0.26084.70201-81~24.04\nRelease:    81~24.04\nDepends: python3, libc6, libstdc++6|libstdc++8, libstdc++-5-dev|libstdc++-7-dev|libstdc++-11-dev|libstdc++-12-dev|libstdc++-13-dev|libstdc++-14-dev, libgcc-5-dev|libgcc-7-dev|libgcc-11-dev|libgcc-12-dev|libgcc-13-dev|libgcc-14-dev, rocm-core\nRecommends: gcc, g++, gcc-multilib, g++-multilib, rocm-device-libs\nDescription: ROCm core compiler\n  ROCm core compiler based on LLVM 22.0.0\n",
+  "expanded_regular_file_bytes": 2121369507,
+  "conservative_4KiB_member_allocation_bytes": 2123792384,
+  "members": 996,
+  "member_types": {
+    "5": 85,
+    "0": 871,
+    "2": 40
+  },
+  "archive_inspection_seconds": 6.805657414000002,
+  "status": "verified",
+  "after_guest_free_bytes": 12474753024,
+  "after_D_free_bytes": 78952628224,
+  "total_seconds": 41.305073481
+}

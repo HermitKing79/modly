@@ -1,0 +1,91 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  bzip2-doc cpp-doc gcc-13-locales cpp-13-doc debian-keyring g++-multilib
+  g++-13-multilib gcc-13-doc gcc-multilib manpages-dev autoconf automake
+  libtool flex bison gdb gcc-doc gcc-13-multilib gdb-x86-64-linux-gnu bzr
+  libstdc++-11-doc libstdc++-13-doc make-doc
+Recommended packages:
+  fakeroot libalgorithm-merge-perl libfile-copy-recursive-perl
+  libfile-listing-perl libfile-which-perl liburi-perl libdrm-amdgpu-dev
+  libfile-fcntllock-perl gcc-multilib g++-multilib
+The following NEW packages will be installed:
+  build-essential bzip2 cpp cpp-13 cpp-13-x86-64-linux-gnu
+  cpp-x86-64-linux-gnu dpkg-dev g++ g++-13 g++-13-x86-64-linux-gnu
+  g++-x86-64-linux-gnu gcc gcc-11-base gcc-13 gcc-13-base
+  gcc-13-x86-64-linux-gnu gcc-x86-64-linux-gnu hip-dev hipblas-common-dev
+  hipblas-dev hipblaslt-dev hipcc hipcub-dev hipsolver-dev hipsparse-dev
+  hsa-rocr-dev libasan6 libasan8 libatomic1 libcc1-0 libdpkg-perl libdrm-dev
+  libdrm-nouveau2 libdrm-radeon1 libexpat1-dev libgcc-11-dev libgcc-13-dev
+  libhwasan0 libisl23 libitm1 liblsan0 libmpc3 libpciaccess-dev
+  libpython3.12-dev libquadmath0 libstdc++-11-dev libstdc++-13-dev libtsan0
+  libtsan2 libubsan1 lto-disabled-list make ninja-build python3.12-dev
+  rocm-device-libs rocm-llvm rocprim-dev rocthrust-dev zlib1g-dev
+The following packages will be upgraded:
+  libexpat1 libpciaccess0
+2 upgraded, 59 newly installed, 0 to remove and 52 not upgraded.
+Need to get 81.8 MB/626 MB of archives.
+After this operation, 319 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libexpat1 amd64 2.6.1-2ubuntu0.6 [98.9 kB]
+Get:2 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 hsa-rocr-dev amd64 1.18.0.70201-81~24.04 [139 kB]
+Get:3 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 hipcc amd64 1.1.1.70201-81~24.04 [213 kB]
+Get:4 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 hip-dev amd64 7.2.53211.70201-81~24.04 [373 kB]
+Get:5 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 hipblas-common-dev amd64 1.4.0.70201-81~24.04 [5768 B]
+Get:6 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 hipblas-dev amd64 3.2.0.70201-81~24.04 [75.3 kB]
+Get:7 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 hipblaslt-dev amd64 1.2.2.70201-81~24.04 [234 kB]
+Get:8 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 rocprim-dev amd64 4.2.0.70201-81~24.04 [310 kB]
+Get:9 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 hipcub-dev amd64 4.2.0.70201-81~24.04 [90.5 kB]
+Get:10 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 hipsolver-dev amd64 3.2.0.70201-81~24.04 [19.0 kB]
+Get:11 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 hipsparse-dev amd64 4.2.0.70201-81~24.04 [64.9 kB]
+Get:12 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 rocm-device-libs amd64 1.0.0.70201-81~24.04 [728 kB]
+Get:13 https://repo.radeon.com/rocm/apt/7.2.1 noble/main amd64 rocthrust-dev amd64 4.2.0.70201-81~24.04 [411 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 gcc-13-base amd64 13.3.0-6ubuntu2~24.04.1 [51.6 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libisl23 amd64 0.26-3build1.1 [680 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libmpc3 amd64 1.3.1-1build1.1 [54.6 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 cpp-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [10.7 MB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 cpp-13 amd64 13.3.0-6ubuntu2~24.04.1 [1042 B]
+Get:19 http://archive.ubuntu.com/ubuntu noble/main amd64 cpp-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1 [5326 B]
+Get:20 http://archive.ubuntu.com/ubuntu noble/main amd64 cpp amd64 4:13.2.0-7ubuntu1 [22.4 kB]
+Get:21 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcc1-0 amd64 14.2.0-4ubuntu2~24.04.1 [48.0 kB]
+Get:22 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libitm1 amd64 14.2.0-4ubuntu2~24.04.1 [29.7 kB]
+Get:23 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libatomic1 amd64 14.2.0-4ubuntu2~24.04.1 [10.5 kB]
+Get:24 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libasan8 amd64 14.2.0-4ubuntu2~24.04.1 [3027 kB]
+Get:25 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 liblsan0 amd64 14.2.0-4ubuntu2~24.04.1 [1322 kB]
+Get:26 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libtsan2 amd64 14.2.0-4ubuntu2~24.04.1 [2772 kB]
+Get:27 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libubsan1 amd64 14.2.0-4ubuntu2~24.04.1 [1184 kB]
+Get:28 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libhwasan0 amd64 14.2.0-4ubuntu2~24.04.1 [1641 kB]
+Get:29 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libquadmath0 amd64 14.2.0-4ubuntu2~24.04.1 [153 kB]
+Get:30 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgcc-13-dev amd64 13.3.0-6ubuntu2~24.04.1 [2681 kB]
+Get:31 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 gcc-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [21.1 MB]
+Get:32 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 gcc-13 amd64 13.3.0-6ubuntu2~24.04.1 [494 kB]
+Get:33 http://archive.ubuntu.com/ubuntu noble/main amd64 gcc-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1 [1212 B]
+Get:34 http://archive.ubuntu.com/ubuntu noble/main amd64 gcc amd64 4:13.2.0-7ubuntu1 [5018 B]
+Get:35 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libstdc++-13-dev amd64 13.3.0-6ubuntu2~24.04.1 [2420 kB]
+Get:36 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 g++-13-x86-64-linux-gnu amd64 13.3.0-6ubuntu2~24.04.1 [12.2 MB]
+Get:37 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 g++-13 amd64 13.3.0-6ubuntu2~24.04.1 [16.0 kB]
+Get:38 http://archive.ubuntu.com/ubuntu noble/main amd64 g++-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1 [964 B]
+Get:39 http://archive.ubuntu.com/ubuntu noble/main amd64 g++ amd64 4:13.2.0-7ubuntu1 [1100 B]
+Get:40 http://archive.ubuntu.com/ubuntu noble/main amd64 make amd64 4.3-4.1build2 [180 kB]
+Get:41 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libdpkg-perl all 1.22.6ubuntu6.6 [268 kB]
+Get:42 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 bzip2 amd64 1.0.8-5.1ubuntu0.1 [34.6 kB]
+Get:43 http://archive.ubuntu.com/ubuntu noble/main amd64 lto-disabled-list all 47 [12.4 kB]
+Get:44 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dpkg-dev all 1.22.6ubuntu6.6 [1074 kB]
+Get:45 http://archive.ubuntu.com/ubuntu noble/main amd64 build-essential amd64 12.10ubuntu1 [4928 B]
+Get:46 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 gcc-11-base amd64 11.5.0-1ubuntu1~24.04.1 [45.6 kB]
+Get:47 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libasan6 amd64 11.5.0-1ubuntu1~24.04.1 [2264 kB]
+Get:48 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libtsan0 amd64 11.5.0-1ubuntu1~24.04.1 [2268 kB]
+Get:49 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libgcc-11-dev amd64 11.5.0-1ubuntu1~24.04.1 [2481 kB]
+Get:50 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libstdc++-11-dev amd64 11.5.0-1ubuntu1~24.04.1 [2094 kB]
+Get:51 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libdrm-radeon1 amd64 2.4.125-1ubuntu0.1~24.04.2 [20.8 kB]
+Get:52 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libdrm-nouveau2 amd64 2.4.125-1ubuntu0.1~24.04.2 [17.6 kB]
+Get:53 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpciaccess0 amd64 0.17-3ubuntu0.24.04.3 [19.2 kB]
+Get:54 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpciaccess-dev amd64 0.17-3ubuntu0.24.04.3 [22.0 kB]
+Get:55 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libdrm-dev amd64 2.4.125-1ubuntu0.1~24.04.2 [314 kB]
+Get:56 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libexpat1-dev amd64 2.6.1-2ubuntu0.6 [147 kB]
+Get:57 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 zlib1g-dev amd64 1:1.3.dfsg-3.1ubuntu2.2 [894 kB]
+Get:58 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpython3.12-dev amd64 3.12.3-1ubuntu0.17 [5684 kB]
+Get:59 http://archive.ubuntu.com/ubuntu noble/universe amd64 ninja-build amd64 1.11.1-2 [129 kB]
+Get:60 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 python3.12-dev amd64 3.12.3-1ubuntu0.17 [498 kB]
+Fetched 81.8 MB in 1s (67.3 MB/s)
+Download complete and in download only mode

@@ -1,0 +1,35 @@
+
+Dynamic section at offset 0xaba70 contains 32 entries:
+  Tag        Type                         Name/Value
+ 0x0000000000000001 (NEEDED)             Shared library: [libc10.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libtorch.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libtorch_cpu.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libtorch_python.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libamdhip64.so.7]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x000000000000000c (INIT)               0xf000
+ 0x000000000000000d (FINI)               0x47814
+ 0x0000000000000019 (INIT_ARRAY)         0xab378
+ 0x000000000000001b (INIT_ARRAYSZ)       56 (bytes)
+ 0x000000000000001a (FINI_ARRAY)         0xab3b0
+ 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)
+ 0x000000006ffffef5 (GNU_HASH)           0x260
+ 0x0000000000000005 (STRTAB)             0x3eb0
+ 0x0000000000000006 (SYMTAB)             0xe80
+ 0x000000000000000a (STRSZ)              27327 (bytes)
+ 0x000000000000000b (SYMENT)             24 (bytes)
+ 0x0000000000000003 (PLTGOT)             0xabfe8
+ 0x0000000000000002 (PLTRELSZ)           4968 (bytes)
+ 0x0000000000000014 (PLTREL)             RELA
+ 0x0000000000000017 (JMPREL)             0xcea8
+ 0x0000000000000007 (RELA)               0xaef8
+ 0x0000000000000008 (RELASZ)             8112 (bytes)
+ 0x0000000000000009 (RELAENT)            24 (bytes)
+ 0x000000006ffffffe (VERNEED)            0xad78
+ 0x000000006fffffff (VERNEEDNUM)         5
+ 0x000000006ffffff0 (VERSYM)             0xa970
+ 0x000000006ffffff9 (RELACOUNT)          119
+ 0x0000000000000000 (NULL)               0x0

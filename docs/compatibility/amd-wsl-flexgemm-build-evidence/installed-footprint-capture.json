@@ -1,0 +1,24 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "30s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-S",
+    "-"
+  ],
+  "exit": 0,
+  "stdout": "{\"all61_package_owned_nondirectory_allocated_bytes\": 2447974400, \"new59_package_owned_nondirectory_allocated_bytes\": 2447527936, \"all61_logical_bytes\": 2435803317, \"unique_nondirectory_inodes\": 6077, \"meaning\": \"Observed allocated filesystem blocks; directories/dpkg metadata excluded. All61 includes two replacement packages; this is not claimed as exact net-new disk consumption.\", \"final_guest_filesystem_total_bytes\": 33501757440, \"final_guest_free_bytes\": 9812627456, \"final_D_free_bytes\": 76188581888, \"GPU_or_model_actions\": false}\n",
+  "stderr": "",
+  "seconds": 5.719000000004598,
+  "named_distro_termination_exit": 0
+}

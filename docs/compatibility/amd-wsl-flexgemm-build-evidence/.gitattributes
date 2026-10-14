@@ -1,0 +1,3 @@
+# Preserve captured tool output verbatim, including CR progress lines/columns.
+*.txt -text whitespace=-blank-at-eol,-blank-at-eof
+*.whl -text

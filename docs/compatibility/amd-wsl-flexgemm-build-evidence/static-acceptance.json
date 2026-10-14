@@ -1,0 +1,202 @@
+{
+  "wheel": "/home/modly/flexgemm-build-6dd94a85/artifacts/flex_gemm-1.0.0-cp312-cp312-linux_x86_64.whl",
+  "preserved_copy": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-flexgemm-build-evidence/flex_gemm-1.0.0-cp312-cp312-linux_x86_64.whl",
+  "wheel_bytes": 3231402,
+  "wheel_sha256": "cadaa86c428a93c3aee10c4dd8dfb66604a424c8145670051ca0ce1a0f296285",
+  "wheel_metadata": "Metadata-Version: 2.4\nName: flex_gemm\nVersion: 1.0.0\nSummary: A Cross-Platform Backend for High-Performance Sparse Convolutions\nAuthor-email: Jianfeng Xiang <belljig@outlook.com>\nLicense: MIT License\n        \n        Copyright (c) 2025 Jianfeng Xiang (belljig@outlook.com)\n        \n        Permission is hereby granted, free of charge, to any person obtaining a copy\n        of this software and associated documentation files (the \"Software\"), to deal\n        in the Software without restriction, including without limitation the rights\n        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n        copies of the Software, and to permit persons to whom the Software is\n        furnished to do so, subject to the following conditions:\n        \n        The above copyright notice and this permission notice shall be included in all\n        copies or substantial portions of the Software.\n        \n        THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n        SOFTWARE.\n        \nRequires-Python: >=3.8\nDescription-Content-Type: text/markdown\nLicense-File: LICENSE\nRequires-Dist: torch>=2.4.0\nRequires-Dist: triton>=3.2.0; platform_system != \"Windows\"\nRequires-Dist: triton-windows>=3.2.0; platform_system == \"Windows\"\nRequires-Dist: filelock\nDynamic: license-file\n\n# FlexGEMM\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![Triton](https://img.shields.io/badge/Triton-%E2%89%A53.2.0-blue)](https://github.com/openai/triton)\n[![PyTorch](https://img.shields.io/badge/PyTorch-%E2%89%A52.4.0-red)](https://pytorch.org/)\n\n**FlexGEMM** is a high-performance, **Triton-powered GEMM backend** designed for **3D sparse convolutions**. \n\nIt implements **Explicit**, **Implicit**, and **Masked Implicit** algorithm variants, featuring optional **Split-K** parallelism for sparse GEMM. FlexGEMM delivers **state-of-the-art performance** for Submanifold Convolution and voxel-based neural networks, consistently outperforming existing solutions.\n\n### Resources\n- **Deep Dive**: Read the technical blog at [JeffreyXiang's Blog](https://jeffreyxiang.github.io/en/blogs/flexgemm).\n- **Real-world Demo**: See FlexGEMM in action in the [TRELLIS.2](https://github.com/microsoft/TRELLIS.2) project.\n\n\n## \u2728 Why FlexGEMM?\n\n- **Triton-First Architecture**: Built entirely on [Triton](https://github.com/triton-lang/triton), ensuring high-performance kernel execution and cross-platform compatibility.\n- **Sparse-Optimized**: Specifically tailored for 3D sparse tensors, efficiently handling highly irregular sparsity patterns.\n- **Blazing Fast**: Consistently outperforms standard sparse convolution libraries (such as `spconv`, `torchsparse`) in training throughput.\n\n## \ud83d\udee0\ufe0f Installation\n\n### Prerequisites\n* **PyTorch** \u2265 2.4.0\n* **Triton** \u2265 3.2.0\n\n### Install via pip\n```bash\ngit clone https://github.com/JeffreyXiang/FlexGEMM.git\ncd FlexGEMM\npip install . --no-build-isolation\n```\n\n## \ud83d\udcbb Usage Example\n\nHere is a minimal example demonstrating how to perform a sparse submanifold convolution using FlexGEMM:\n\n```python\nimport torch\nimport flex_gemm\nfrom flex_gemm.ops.spconv import sparse_submanifold_conv3d\nfrom tests.spconv_fwd import sphere_coords\n\n# 1. Prepare Sparse Voxel Data\n# Generate a sparse voxel shell\nfeats, coords, shape = sphere_coords(256, 256, dtype=torch.float16, device='cuda')\n\n# 2. Define Weights and Bias\nCi, Co = 256, 256\nKs = 3\nweight = torch.randn(Co, Ks, Ks, Ks, Ci, dtype=torch.float16, device='cuda', requires_grad=True)\nbias = torch.randn(Co, dtype=torch.float16, device='cuda', requires_grad=True)\n\n# 3. Configure Algorithm\n# Example: Using Masked Implicit GEMM with Split-K optimization\nflex_gemm.ops.spconv.set_algorithm(\n    flex_gemm.ops.spconv.Algorithm.MASKED_IMPLICIT_GEMM_SPLITK\n)\n\n# 4. Forward Pass\nout_feats, neighbor_cache = sparse_submanifold_conv3d(\n    feats, coords, shape,\n    weight, bias,\n)\n\n# 5. Backward Pass\nout_feats.sum().backward()\n```\n\n## \ud83d\udcca Performance\n\nFlexGEMM demonstrates significant speed improvements over existing baselines.\n\n**Test Environment:**\n* **GPU**: NVIDIA A100 80GB PCIe\n* **Software**: PyTorch 2.4.1, CUDA 12.0, Triton 3.2.0\n\n### Benchmark Results\n\n> **Note**: FlexGEMM achieves **~2\u00d7 acceleration** compared to previous state-of-the-art methods under efficient data formats like FP16 and TF32.\n\n#### 1. FP16 Precision (Training Speed)\n![](assets/benchmark_train_fp16.png)\n\n#### 2. TF32 Precision (Training Speed)\n![](assets/benchmark_train_tf32.png)\n\n#### 3. FP32 Precision (Training Speed)\n![](assets/benchmark_train_fp32.png)\n\n### Performance Summary\n\n*   **SOTA Speed**: Consistently outperforms `spconv`, `torchsparse`, and `fvdb`.\n*   **Scalability**: Robust performance across various channel widths (C=64 to C=1024) and resolutions (RES=8 to RES=1024).\n*   **Memory Efficient**: Delivers higher throughput without increasing GPU memory overhead.\n*   **Application Ready**: Ideal for high-resolution voxelized point clouds, submanifold convolutions, and large-scale 3D networks.\n\n## \ud83e\udd1d Contributing\n\nWe welcome contributions to make FlexGEMM faster and more robust!\n\n### How to help\n*   **Report Bugs**: Open an issue describing the bug and how to reproduce it.\n*   **Suggest Features**: Have an idea for a new algorithm or optimization? Let us know!\n*   **Submit Pull Requests**:\n    1.  Fork the repository and create your branch from `main`.\n    2.  Ensure your code follows the project's style.\n    3.  Run the tests in the `tests/` directory to ensure no regressions.\n    4.  Open a Pull Request with a detailed description.\n\nWe appreciate all contributors who help improve this project!\n\n## \ud83d\udcdc License\n\nThis project is released under the [MIT License](LICENSE).\n",
+  "wheel_tag": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp312-cp312-linux_x86_64\n\n",
+  "wheel_members": [
+    "flex_gemm/__init__.py",
+    "flex_gemm/kernels/__init__.py",
+    "flex_gemm/kernels/cuda.cpython-312-x86_64-linux-gnu.so",
+    "flex_gemm/kernels/hip/ext.cpp",
+    "flex_gemm/kernels/hip/grid_sample/grid_sample.hip",
+    "flex_gemm/kernels/hip/hash/hash.hip",
+    "flex_gemm/kernels/hip/serialize/api.hip",
+    "flex_gemm/kernels/hip/spconv/migemm_neighmap_pp.hip",
+    "flex_gemm/kernels/hip/spconv/sparse_neighbor_map.hip",
+    "flex_gemm/kernels/hip/spconv/subm_neighbor_map.hip",
+    "flex_gemm/kernels/triton/__init__.py",
+    "flex_gemm/kernels/triton/utils.py",
+    "flex_gemm/kernels/triton/grid_sample/__init__.py",
+    "flex_gemm/kernels/triton/grid_sample/config.py",
+    "flex_gemm/kernels/triton/grid_sample/indice_weighed_sum_bwd.py",
+    "flex_gemm/kernels/triton/grid_sample/indice_weighed_sum_fwd.py",
+    "flex_gemm/kernels/triton/spconv/__init__.py",
+    "flex_gemm/kernels/triton/spconv/config.py",
+    "flex_gemm/kernels/triton/spconv/sparse_conv_implicit_gemm.py",
+    "flex_gemm/kernels/triton/spconv/sparse_conv_implicit_gemm_splitk.py",
+    "flex_gemm/kernels/triton/spconv/sparse_conv_masked_implicit_gemm.py",
+    "flex_gemm/kernels/triton/spconv/sparse_conv_masked_implicit_gemm_splitk.py",
+    "flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_implicit_gemm.py",
+    "flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_implicit_gemm_splitk.py",
+    "flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_masked_implicit_gemm.py",
+    "flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_bwd_masked_implicit_gemm_splitk.py",
+    "flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_implicit_gemm.py",
+    "flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_implicit_gemm_splitk.py",
+    "flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_masked_implicit_gemm.py",
+    "flex_gemm/kernels/triton/spconv/sparse_submanifold_conv_fwd_masked_implicit_gemm_splitk.py",
+    "flex_gemm/ops/__init__.py",
+    "flex_gemm/ops/serialize.py",
+    "flex_gemm/ops/utils.py",
+    "flex_gemm/ops/grid_sample/__init__.py",
+    "flex_gemm/ops/grid_sample/grid_sample.py",
+    "flex_gemm/ops/grid_sample/grid_sample_torch.py",
+    "flex_gemm/ops/spconv/__init__.py",
+    "flex_gemm/ops/spconv/sparse_conv3d.py",
+    "flex_gemm/ops/spconv/submanifold_conv3d.py",
+    "flex_gemm/utils/__init__.py",
+    "flex_gemm/utils/autotuner.py",
+    "flex_gemm-1.0.0.dist-info/licenses/LICENSE",
+    "flex_gemm-1.0.0.dist-info/METADATA",
+    "flex_gemm-1.0.0.dist-info/WHEEL",
+    "flex_gemm-1.0.0.dist-info/top_level.txt",
+    "flex_gemm-1.0.0.dist-info/RECORD"
+  ],
+  "native_member": "flex_gemm/kernels/cuda.cpython-312-x86_64-linux-gnu.so",
+  "native_bytes": 11568136,
+  "native_sha256": "91f66fa2c0f3567cee71246257bea8eb0fe5af9b6c70617d3c5894aa9f103f01",
+  "needed_libraries": [
+    "libc10.so",
+    "libtorch.so",
+    "libtorch_cpu.so",
+    "libtorch_python.so",
+    "libamdhip64.so.7",
+    "libstdc++.so.6",
+    "libm.so.6",
+    "libgcc_s.so.1",
+    "libc.so.6"
+  ],
+  "source_binding_names": [
+    "hashmap_insert",
+    "hashmap_lookup",
+    "hashmap_insert_3d",
+    "hashmap_lookup_3d",
+    "hashmap_insert_3d_idx_as_val",
+    "z_order_encode",
+    "z_order_decode",
+    "hilbert_encode",
+    "hilbert_decode",
+    "hashmap_build_grid_sample_3d_nearest_neighbor_map",
+    "hashmap_build_grid_sample_3d_trilinear_neighbor_map_weight",
+    "hashmap_build_submanifold_conv_neighbour_map",
+    "hashmap_build_sparse_conv_out_coords",
+    "expand_unique_build_sparse_conv_out_coords",
+    "hashmap_build_sparse_conv_neighbour_map",
+    "neighbor_map_post_process_for_masked_implicit_gemm_1_no_bwd",
+    "neighbor_map_post_process_for_masked_implicit_gemm_1",
+    "neighbor_map_post_process_for_masked_implicit_gemm_2"
+  ],
+  "all18_names_present": true,
+  "PyInit_cuda_exported": true,
+  "gfx1201_metadata_present": true,
+  "cxx11_abi_from_compiler_and_Torch": 1,
+  "unresolved_shared_libraries": [],
+  "commands": {
+    "elf-header": {
+      "command": [
+        "readelf",
+        "-h",
+        "/home/modly/flexgemm-build-6dd94a85/qualification/cuda.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "exit": 0
+    },
+    "elf-dynamic": {
+      "command": [
+        "readelf",
+        "-d",
+        "/home/modly/flexgemm-build-6dd94a85/qualification/cuda.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "exit": 0
+    },
+    "elf-defined-symbols": {
+      "command": [
+        "nm",
+        "-D",
+        "--defined-only",
+        "/home/modly/flexgemm-build-6dd94a85/qualification/cuda.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "exit": 0
+    },
+    "elf-library-trace": {
+      "command": [
+        "ldd",
+        "/home/modly/flexgemm-build-6dd94a85/qualification/cuda.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "exit": 0
+    },
+    "protected-runtime-dpkg-verify": {
+      "command": [
+        "dpkg",
+        "--verify",
+        "rocdxg-roct",
+        "hip-runtime-amd",
+        "hsa-rocr"
+      ],
+      "exit": 0
+    }
+  },
+  "CPU_import_performed": false,
+  "CPU_import_safety": "UNKNOWN: HIP registration constructors not proven free of HSA/GPU initialization; leave dlopen closed",
+  "baseline_venv_metadata_sha256": "64204442ab3f61afc62d0e6745f039166805988ea87bfda87bcf12298369ae05",
+  "baseline_venv_matches": true,
+  "python_packages": [
+    [
+      "Jinja2",
+      "3.1.6"
+    ],
+    [
+      "MarkupSafe",
+      "3.0.4"
+    ],
+    [
+      "filelock",
+      "4.1.1"
+    ],
+    [
+      "fsspec",
+      "2026.9.0"
+    ],
+    [
+      "mpmath",
+      "1.3.0"
+    ],
+    [
+      "networkx",
+      "3.7"
+    ],
+    [
+      "pip",
+      "24.0"
+    ],
+    [
+      "setuptools",
+      "84.0.0"
+    ],
+    [
+      "sympy",
+      "1.14.0"
+    ],
+    [
+      "torch",
+      "2.9.1+rocm7.2.1.lw.gitff65f5bc"
+    ],
+    [
+      "triton",
+      "3.5.1+rocm7.2.1.gita272dfa8"
+    ],
+    [
+      "typing_extensions",
+      "4.16.0"
+    ]
+  ],
+  "ROCDXG_HIP_HSA_payload_verification_passed": true,
+  "approved_dpkg_after_matches": true,
+  "rocdxg_version": "1.2.0",
+  "native_functions_called": 0,
+  "model_tensors_loaded": 0,
+  "GPU_actions": false,
+  "final_guest_free_bytes": 9829523456,
+  "final_D_free_bytes": 76236816384,
+  "static_acceptance": "PASS"
+}

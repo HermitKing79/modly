@@ -1,0 +1,25 @@
+{
+  "driver": [
+    {
+      "Name": "AMD Radeon RX 9070 XT",
+      "DriverVersion": "32.0.31041.1004",
+      "Status": "OK"
+    }
+  ],
+  "D_free_bytes": 79537733632,
+  "host_free_ram_bytes": 18831847424,
+  "wsl_list": "  NAME                      STATE           VERSION\r\n\r\n* docker-desktop            Stopped         2\r\n\r\n  Modly-AMD-Ubuntu-24.04    Stopped         2\r\n\r\n\r\n",
+  "distro_registrations": [
+    {
+      "DistributionName": "docker-desktop",
+      "BasePath": "\\\\?\\C:\\Users\\wattz\\AppData\\Local\\Docker\\wsl\\main",
+      "Version": 2
+    },
+    {
+      "DistributionName": "Modly-AMD-Ubuntu-24.04",
+      "BasePath": "D:\\AI\\Modly-WSL\\Ubuntu24.04",
+      "Version": 2
+    }
+  ],
+  "default_distro": "{233f076a-c415-4c50-958f-22a80fe55639}"
+}

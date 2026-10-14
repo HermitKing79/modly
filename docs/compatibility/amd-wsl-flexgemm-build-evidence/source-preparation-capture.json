@@ -1,0 +1,23 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "120s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-S",
+    "-"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"commit\": \"6dd94a859c26ee8246888502eada3dd8ad85532e\",\n  \"URL\": \"https://codeload.github.com/JeffreyXiang/FlexGEMM/tar.gz/6dd94a859c26ee8246888502eada3dd8ad85532e\",\n  \"source_dir\": \"/home/modly/flexgemm-build-6dd94a85/source\",\n  \"archive_bytes\": 463566,\n  \"archive_sha256\": \"44f979f4b2686e425a22f022bc8cc438ebe8a0dec48f5585246aeaf73430a5b3\",\n  \"source_file_bytes\": 3636046,\n  \"headers\": {\n    \"/usr/include/python3.12/Python.h\": true,\n    \"/opt/rocm-7.2.1/include/hip/hip_runtime.h\": true,\n    \"/opt/rocm-7.2.1/include/hipblas/hipblas.h\": true,\n    \"/opt/rocm-7.2.1/include/hipblaslt/hipblaslt.h\": true,\n    \"/opt/rocm-7.2.1/include/hipsolver/hipsolver.h\": true,\n    \"/opt/rocm-7.2.1/include/hipsparse/hipsparse.h\": true,\n    \"/opt/rocm-7.2.1/include/hipcub/hipcub.hpp\": true,\n    \"/opt/rocm-7.2.1/include/thrust/version.h\": true\n  },\n  \"native_build_or_GPU_actions\": false,\n  \"source_modified_by_hand\": false\n}\n",
+  "stderr": "",
+  "seconds": 5.609000000004016
+}

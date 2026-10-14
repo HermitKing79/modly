@@ -1,0 +1,22 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "120s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-"
+  ],
+  "exit": 0,
+  "stdout": "{\"identity_matches_prior\": true, \"exact_apt_plan_matches\": true, \"cxx11_abi\": true, \"torch\": \"2.9.1+rocm7.2.1.gitff65f5bc\", \"torch_hip\": \"7.2.53211-e1a6bc5663\", \"rocm_path\": \"/opt/rocm-7.2.1\", \"bdist_wheel_module\": \"/opt/modly-wsl/venv/lib/python3.12/site-packages/setuptools/command/bdist_wheel.py\", \"gpu_initialized\": false, \"filesystem_available_bytes\": 13036216320, \"guest_ram_bytes\": {\"MemTotal\": 16722329600, \"MemAvailable\": 15569338368}}\n",
+  "stderr": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:279: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\n",
+  "seconds": 13.359000000004016
+}

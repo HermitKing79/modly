@@ -1,0 +1,29 @@
+{
+  "classification": "PASS",
+  "scope": "One pinned native build and user-permitted static qualification only",
+  "runtime_native_import_full_relocations_and_decoder_readiness": "UNKNOWN",
+  "builds": 1,
+  "retries": 0,
+  "build_seconds": 212.042563507,
+  "wheel_sha256": "cadaa86c428a93c3aee10c4dd8dfb66604a424c8145670051ca0ce1a0f296285",
+  "wheel_bytes": 3231402,
+  "APT_new_packages": 59,
+  "APT_upgrades": [
+    "libexpat1",
+    "libpciaccess0"
+  ],
+  "APT_payload_bytes": 626410386,
+  "LLVM_regular_expanded_bytes": 2121369507,
+  "working_Linux_Python_environment_preserved": true,
+  "ROCDXG_HIP_HSA_payloads_verified": true,
+  "Windows_preservation": "before/afterPASS",
+  "historical_WSL_files_verified": 207,
+  "historical_hash_deltas": [],
+  "GPU_execution": false,
+  "native_extension_import": false,
+  "model_tensor_loading": false,
+  "decoder_forward": false,
+  "wheel_installed_into_baseline": false,
+  "production_worker_or_main_changes": false,
+  "next_approval": "Minimal genuine full-turret decoder preparation/qualification with the saved wheel, before one conditional neural-only decode; no synthetic tests"
+}

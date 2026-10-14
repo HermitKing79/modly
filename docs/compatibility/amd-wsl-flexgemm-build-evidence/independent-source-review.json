@@ -1,0 +1,10 @@
+{
+  "reviewer": "/root/wsl_flexgemm_qualification",
+  "pinned_source": "6dd94a859c26ee8246888502eada3dd8ad85532e",
+  "source_static_review": "No definite incompatible source API identified; build subject to measured admission",
+  "CPU_import_safety": "UNKNOWN; HIP registration constructors not proven free of HSA/GPU initialization; no dlopen admitted",
+  "setup_sha256": "9411c37c682d32417d5963b9dec3511ede1c89ef5c6014d54b1d73ea90028b6c",
+  "pyproject_sha256": "33bb082fc42516d6fd5fe44de6a5adb9c7190f1c24b1480902e88ce8b0b3d483",
+  "binding_sha256": "87e739555f3e364716c8c062b2a0f201b0f6f23fc7852318e38e7f67043db2c0",
+  "independent_reviewer_GPU_or_native_actions": false
+}
