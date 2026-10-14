@@ -1,0 +1,29 @@
+{
+  "candidate_sha256": "3751cb3666b42e1285717b6e73f523919c659c28485e7f771e9f00ded63bb2a5",
+  "status": "PASS",
+  "historical_local_heads_unchanged": 52,
+  "historical_remote_heads_unchanged": 52,
+  "windows_preservation_groups_equal": true,
+  "comparisons_are_read_only": true,
+  "main_unchanged": true,
+  "staged_package_comparison": "Key/value comparison; JSON member order disregarded",
+  "linux_transient_fields": [
+    "RAM_available_bytes",
+    "guest_free_bytes",
+    "D_free_bytes",
+    "phase"
+  ],
+  "execution_commit": "67a1f1eeb4e73cc5edbceea92a540e268ca27150",
+  "unchanged_file_counts": {
+    "preserved_bytecode": 4,
+    "loader_code": 2,
+    "unchanged_control_code": 5,
+    "historical_evidence": 306
+  },
+  "approved_packaging_addition": {
+    "version": "25.0",
+    "bytes": 238344,
+    "files": 23
+  },
+  "linux_baseline_and_old_payloads_unchanged": true
+}

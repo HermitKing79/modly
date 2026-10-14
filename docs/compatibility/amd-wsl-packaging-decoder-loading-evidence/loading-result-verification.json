@@ -1,0 +1,36 @@
+{
+  "CPU_release_weakrefs_collected": true,
+  "sha256": {
+    "packaging-staging.json": "e6cd2cca08b23c6310e5db42080bb07ef7a40e3acadc35bb04dd3d755e1557c8",
+    "CPU-loading-attempt.marker": "dcba2d602e6f07957bcc8ebc5d928cd9a864a80c3ba5c986da88bc57d111ad18",
+    "windows-preservation-before.json": "00ca614817dbc22dfe3d4237b165a4a8bc105351ed71071143c72b9fb967e2d8",
+    "loading.py": "3751cb3666b42e1285717b6e73f523919c659c28485e7f771e9f00ded63bb2a5",
+    "preservation-verification.json": "14669b9220359968e985993e3730f4084fc5c74e634b73dd52a8d2a9e9d7f654",
+    "loading-host-capture.json": "09bbb9f8ae973c2c5d39c737a0cb3c88c32bcebbb2963c6aaed18241a783d1aa",
+    "run/guest/results.json": "314965b03033d9dd63db638131122e79f3814a8247680c86c0002b253222b8c8",
+    "run/results.json": "cd6dcf8c5e8442fcb2acd6ac6edc06a47106680ad050f6546ebdedbdc6c15101",
+    "windows-preservation-after.json": "69361f74ea25651c17f2cf1a0f8937ede576becfd969e5085d896d0003e908be",
+    "dependency-run/results.json": "9d5f32b3d1e61ba83aaafe0c4ebbbcad52b9e4140a34972e47a3b425e4e14aa1",
+    "dependency-run/guest/results.json": "c8d96bc72b42463fd0966014f7a6d4b53386cc22778406559a9215b1bb99dccf",
+    "run/guest/phases.jsonl": "9fa7a33857e0327c7751e9f014b9c402e84079f62779188e0f8412d2d8b7937c",
+    "linux-preservation-after.json": "bdc7067287a4fe6ec85deb1ffbb979ba1850d8187e557a0800c297984aeb0b72",
+    "linux-preservation-before.json": "0991afde0d7646b14ff394c5fd19741b6624efb42f205ed88dc0996a4317ec29"
+  },
+  "parameters": 292,
+  "status": "PASS",
+  "buffers": 0,
+  "dtypes": {
+    "torch.float32": 76,
+    "torch.float16": 216
+  },
+  "verification": "Read-only raw record validation; no test rerun",
+  "native_binding_calls": 0,
+  "healthy_periodic_observations": 9,
+  "named_distro_stop": 0,
+  "model_forward_calls": 0,
+  "model_load_attempts": 1,
+  "worker_exit": 0,
+  "unforced_empty_job": true,
+  "execution_commit": "67a1f1eeb4e73cc5edbceea92a540e268ca27150",
+  "GPU_memory_zero_all_stages": true
+}

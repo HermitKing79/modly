@@ -1,0 +1,98 @@
+{
+  "review_kind": "independent_read_only_final_report_and_preservation_review",
+  "review_date": "2026-10-14",
+  "decision": "PASS",
+  "publication_decision": "The final report may publish the bounded successful CPU loading result.",
+  "report": "docs/compatibility/amd-wsl-packaging-decoder-loading.md",
+  "report_sha256": "3b305a5f1b23329b1b36c191b25680ecd1334905cf730c448360ec0b4f2be7d5",
+  "candidate_sha256_unchanged": "3751cb3666b42e1285717b6e73f523919c659c28485e7f771e9f00ded63bb2a5",
+  "reviewer_runtime_actions": false,
+  "reviewer_real_weight_reads": false,
+  "reviewer_candidate_loader_or_report_edits": false,
+  "outcome_review": "independent-loading-outcome-review.json",
+  "outcome_review_sha256": "e0ebac701f2d482140e49eff15a8bac1cf3afc309df43bf2f1da44df8a66fa9e",
+  "accepted_outcome": {
+    "one_CPU_dependency_acceptance": "PASS",
+    "one_genuine_model_CPU_load": "PASS",
+    "raw_guest_and_supervisor_classification": "QUALIFIED",
+    "model_attempts": 1,
+    "worker_supervisor_outer_exit": 0,
+    "exact_parameter_manifest_match": true,
+    "CPU_parameters": 292,
+    "F16_parameters": 216,
+    "F32_parameters_losslessly_widened": 76,
+    "GPU_allocator_baseline_peak_release_bytes": 0,
+    "native_binding_calls": 0,
+    "model_forward_calls": 0,
+    "weak_reference_release_verified": true,
+    "healthy_observations": 9,
+    "unforced_empty_Job_verified": true,
+    "named_Modly_distro_stop_exit": 0
+  },
+  "measurements_supported": {
+    "native_import_and_synchronization_seconds": 0.25817925200000147,
+    "CPU_stage_seconds": 11.002077384,
+    "worker_peak_CPU_RSS_bytes": 2699878400,
+    "guest_supervisor_outer_seconds": [22.55974898, 40.61000000000058, 41.500631],
+    "RAM_VRAM_disk_admission_and_deadlines_match_records": true
+  },
+  "preservation": {
+    "preservation_verification_record": "preservation-verification.json",
+    "preservation_verification_sha256": "14669b9220359968e985993e3730f4084fc5c74e634b73dd52a8d2a9e9d7f654",
+    "record_status": "PASS",
+    "independent_current_file_hash_comparison": {
+      "historical_evidence": 306,
+      "unchanged_control_code": 5,
+      "loader_code": 2,
+      "preserved_bytecode": 4,
+      "missing_or_hash_mismatched_files": []
+    },
+    "independent_saved_head_comparison": {
+      "prior_local_heads_unchanged": 52,
+      "prior_remote_heads_unchanged": 52,
+      "main_before_and_after": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+      "allowed_task_branch": "codex/amd-wsl-packaging-decoder-loading",
+      "count_note": "The local before inventory contains 53 heads because the new task branch already exists. Its authorized advancement is excluded from the 52 prior protected heads; it is the sole local delta. The remote before inventory contains 52 prior heads and remote after adds the task branch. All 52 prior hashes match in both inventories."
+    },
+    "windows_before_status": "PASS",
+    "windows_after_status": "PASS",
+    "windows_protected_groups_independently_equal": [
+      "windows_venvs",
+      "source_groups",
+      "amd_source",
+      "small_saved_inputs",
+      "decoder_checkpoint_metadata_and_header_only"
+    ],
+    "windows_unexpected_deltas": [],
+    "windows_checkpoint_audit_limit": "The independent Windows audits preserve checkpoint metadata/header; the report correctly states that scope. Current full stream identity and decoder config verification come from the preflight/actual worker, not a claimed Windows after full-payload rehash.",
+    "linux_before_status": "PASS",
+    "linux_after_status": "PASS",
+    "linux_independent_nontransient_deltas": ["staged_packages", "packaging_payloads_verified"],
+    "linux_delta_interpretation": "Exactly the approved packaging 25.0 addition: staged package inventory gains packaging and verified packaging payload count changes from 0 to 23. All other nontransient Linux fields match.",
+    "original_staged_payloads_verified": 922,
+    "approved_packaging_files": 23,
+    "approved_packaging_bytes": 238344,
+    "baseline_venv_packages_dpkg_sources_libraries_preserved": true,
+    "passive_after_audit_exit": 0,
+    "passive_after_AI_imports": false,
+    "passive_after_GPU_actions": false,
+    "passive_after_named_stop_exit": 0,
+    "docker_desktop_default_and_stopped": true,
+    "Modly_distro_stopped_after_final_passive_audit": true
+  },
+  "preservation_audit_sha256": {
+    "windows-preservation-before.json": "00ca614817dbc22dfe3d4237b165a4a8bc105351ed71071143c72b9fb967e2d8",
+    "windows-preservation-after.json": "69361f74ea25651c17f2cf1a0f8937ede576becfd969e5085d896d0003e908be",
+    "linux-preservation-before.json": "0991afde0d7646b14ff394c5fd19741b6624efb42f205ed88dc0996a4317ec29",
+    "linux-preservation-after.json": "bdc7067287a4fe6ec85deb1ffbb979ba1850d8187e557a0800c297984aeb0b72"
+  },
+  "limitations_are_transparent": [
+    "PASS is restricted to CPU loading/integrity/release. The report explicitly does not qualify a neural decode or geometry quality.",
+    "Permitted HIP metadata initialization actually occurred; zero GPU bytes and CPU-only parameters are reported without claiming an uninitialized GPU context.",
+    "The inherited checkpoint deserialized=false/header-only fields are explicitly distinguished from actual weights_loaded=true and complete final tensor evidence.",
+    "No retry, model forward, native binding invocation or additional runtime repair was performed.",
+    "The next neural-only decode is a separately approved future proposal, including memory/resource and compilation policy preparation. It is not authorized or executed by this report."
+  ],
+  "findings": [],
+  "minimal_next_action": "Publish the report and review artifacts, then stop runtime work. A future neural decode requires its separate approval and concrete preparation."
+}
