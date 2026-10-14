@@ -1,0 +1,90 @@
+{
+  "classification": "QUALIFIED",
+  "gpu_entry_calls": [],
+  "forbidden_imports": [],
+  "controls_called": [
+    "enable",
+    "tuning_enable",
+    "record_untuned_enable"
+  ],
+  "started_utc": "2026-10-14T21:09:13.991138+00:00",
+  "environment_before": {
+    "PYTORCH_TUNABLEOP_ENABLED": {
+      "set": false,
+      "value": null
+    },
+    "PYTORCH_TUNABLEOP_RECORD_UNTUNED": {
+      "set": false,
+      "value": null
+    },
+    "PYTORCH_TUNABLEOP_TUNING": {
+      "set": false,
+      "value": null
+    }
+  },
+  "gpu_initialized_before": false,
+  "gpu_entry_functions_instrumented": [
+    "torch.cuda._lazy_init",
+    "torch.cuda.init",
+    "torch.cuda.device_count",
+    "torch.cuda.get_device_properties",
+    "torch.cuda.current_device",
+    "torch.cuda.set_device",
+    "torch.cuda.synchronize",
+    "torch._C._cuda_getDevice",
+    "torch._C._cuda_getDeviceCount",
+    "torch._C._cuda_init",
+    "torch._C._cuda_setDevice",
+    "torch._C._cuda_synchronize"
+  ],
+  "source": {
+    "path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/cuda/tunable.py",
+    "sha256": "b30632498091a445433ef2d9254c9a1b44ab3e329c6656f0beeae7bd65104a39"
+  },
+  "runtime": {
+    "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "distribution_version": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "git_version": "ff65f5bc672795c5e5033900ea0a0c4f8566c8cf",
+    "hip": "7.2.53211-e1a6bc5663",
+    "cuda": null,
+    "python": "3.12.3",
+    "prefix": "/opt/modly-wsl/venv",
+    "gpu_initialized_before": false,
+    "triton_distribution": "3.5.1+rocm7.2.1.gita272dfa8"
+  },
+  "flags_before": {
+    "enabled": false,
+    "tuning": true,
+    "record_untuned": false
+  },
+  "flags_after": {
+    "enabled": false,
+    "tuning": false,
+    "record_untuned": false
+  },
+  "environment_after": {
+    "PYTORCH_TUNABLEOP_ENABLED": {
+      "set": false,
+      "value": null
+    },
+    "PYTORCH_TUNABLEOP_RECORD_UNTUNED": {
+      "set": false,
+      "value": null
+    },
+    "PYTORCH_TUNABLEOP_TUNING": {
+      "set": false,
+      "value": null
+    }
+  },
+  "gpu_initialized_after": false,
+  "policy": {
+    "phase": "native_import",
+    "blocked": {},
+    "tensor_operations_allowed": 0,
+    "native_calls": 0,
+    "rejected_calls": 0
+  },
+  "restoration_verified": true,
+  "elapsed_seconds": 8.039296223000001,
+  "finished_utc": "2026-10-14T21:09:22.030446+00:00"
+}

@@ -1,0 +1,39 @@
+{
+  "review_kind": "focused_read_only_CPU_TunableOp_candidate_review",
+  "review_date": "2026-10-14",
+  "decision": "GO",
+  "scope": "Publish the exact candidate, then execute one CPU-only installed-runtime flag qualification. No model/weight load, Tensor computation, GPU entry, FlexGEMM/Triton execution, decoder alteration or retry.",
+  "probe_sha256": "fa187428e4ec09b8b96b3922a89904b3460ee27319ab859391a47aae35286886",
+  "host_regression_source_sha256": "fb0cfaa9a9bff249fb65a3661374d7032569c22adbf3e6425ad886ad9667842a",
+  "installed_TunableOp_source": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/cuda/tunable.py",
+  "installed_source_sha256": "b30632498091a445433ef2d9254c9a1b44ab3e329c6656f0beeae7bd65104a39",
+  "reviewer_runtime_import_flag_query_or_GPU_actions": false,
+  "reviewer_candidate_edits": false,
+  "preflight_record": "PASS: exact probe guest path and compatibility helper anchors, source identity, exclusive marker/run absence, GPU_authorized=false and original named distro command verified.",
+  "focused_host_regressions": "Five tests pass after the final one-line policy-phase change. They test independent queries, boolean types, environment preservation, negative acceptance gates and paths/helper anchor; they import no Torch.",
+  "flags_and_environment": {
+    "pre_query_environment": "Capture all PYTORCH_TUNABLEOP_* keys, including explicit unset records for the three controlling keys, before Torch import and any flag query.",
+    "independent_getters": ["is_enabled", "tuning_is_enabled", "record_untuned_is_enabled"],
+    "genuine_setters_once_each_with_False": ["enable", "tuning_enable", "record_untuned_enable"],
+    "acceptance": "Require independently recorded boolean before-values, all three after-values false, exact control order and unchanged environment. An environment override that retains true produces UNKNOWN and stops without environment fallback or retry.",
+    "source_basis": "Captured installed source lines 170-179 document environment precedence/caching; lines 219-253 show the six exact wrappers calling their corresponding _C flag bindings with no Tensor or model operations.",
+    "result_limit": "This qualifies process-local control behavior in the new worker. It does not retroactively identify the prior failed worker's unrecorded flags, persist settings into a future worker, or authorize a neural retry."
+  },
+  "safety_and_containment": {
+    "GPU_entry_denial": "Python/C entry profiling is active before Torch import. Genuine _lazy_init and _cuda_init presence is mandatory; available real GPU entry methods are patched to record-and-deny. Qualification requires no calls and Torch initialization false before/after.",
+    "Tensor_denial": "Final candidate uses unchanged ImportPolicy native_import phase and dispatch/frontend guards, denying every Tensor operation before execution. Qualification additionally requires zero Tensor/native/rejection counters.",
+    "other_scope_guards": "Forbidden model/native imports, model-file access, network/process creation and writes outside owned scratch/evidence are rejected. No flag/tuning execution loop or real computation is present.",
+    "paths_and_marker": "Own fresh scratch and run/guest paths. Exclusive CPU-tunableop.marker records the actual probe SHA and GPU_authorized=false. Host output is restricted to this evidence run directory.",
+    "helper_anchor": "runner.SCRIPT selects only the probe; base.SCRIPT remains anchored at scripts/compatibility. Local preflight, qualifier, marker reservation and deadlines are adapted without changing the reused supervisor implementation.",
+    "supervisor": "Retains exact binary GO, Job attachment before GO, healthy monitoring, owned-tree cleanup, named distro termination and post-exit observation. Stage/guest/host bounds are 60/90/120 seconds; one marker prevents another authorized sequence.",
+    "restoration": "Original Tensor guards and GPU methods are restored and their identities checked. TunableOp settings are intentionally left at their qualified values only until this disposable process exits."
+  },
+  "prior_pre_forward_assertion_audit": [
+    "decode.py:315-316 conversion-key contract, :322 private cleanup API presence and :262-264 inactive Triton helper checks were actually cleared by the previous worker. Later GPU behavior remains unproven.",
+    "runtime.py:80 default-stream-zero requirement is deliberate because the pinned HIP native binding launches on stream 0; it is a live admission condition, not a demonstrated erroneous predicate.",
+    "neural.py:110 placement admission and :113 GPU device check were never reached. No additional demonstrated brittle pre-forward defect was identified. The old decoder/candidate is unchanged."
+  ],
+  "resolved_scope_note": "The earlier cpu_meta phase allowed CPU/meta Tensor operations and only rejected a nonzero count at qualification. The adopted native_import phase provides the requested pre-operation denial without changing shared policy or required flag APIs.",
+  "remaining_specific_blockers": [],
+  "conditions": "Publish/verify this exact probe before the sole worker. The root task owns execution and outcome review; any failed identity, entry, flag or containment check ends UNKNOWN without correction or retry."
+}

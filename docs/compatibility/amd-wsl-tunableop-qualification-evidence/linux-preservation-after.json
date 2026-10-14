@@ -1,0 +1,327 @@
+{
+  "native_build_source_files_verified": 80,
+  "status": "PASS",
+  "phase": "after",
+  "baseline_venv_metadata_sha256": "64204442ab3f61afc62d0e6745f039166805988ea87bfda87bcf12298369ae05",
+  "baseline_venv_unchanged": true,
+  "baseline_packages_and_dpkg_unchanged": true,
+  "installed_source_hashes_unchanged": true,
+  "staged_packages": {
+    "flex-gemm": "1.0.0",
+    "numpy": "2.2.6",
+    "packaging": "25.0",
+    "safetensors": "0.6.2"
+  },
+  "staged_payloads_verified": 922,
+  "packaging_payloads_verified": 23,
+  "needed_libraries": [
+    "libc10.so",
+    "libtorch.so",
+    "libtorch_cpu.so",
+    "libtorch_python.so",
+    "libamdhip64.so.7",
+    "libstdc++.so.6",
+    "libm.so.6",
+    "libgcc_s.so.1",
+    "libc.so.6"
+  ],
+  "approved_library_paths": {
+    "libc10.so": {
+      "path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libc10.so",
+      "resolved": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libc10.so",
+      "bytes": 1372168,
+      "mtime_ns": 1791966570706411318
+    },
+    "libtorch.so": {
+      "path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libtorch.so",
+      "resolved": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libtorch.so",
+      "bytes": 103408,
+      "mtime_ns": 1791966574579809580
+    },
+    "libtorch_cpu.so": {
+      "path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so",
+      "resolved": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so",
+      "bytes": 425326880,
+      "mtime_ns": 1791966557465621095
+    },
+    "libtorch_python.so": {
+      "path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libtorch_python.so",
+      "resolved": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libtorch_python.so",
+      "bytes": 30319760,
+      "mtime_ns": 1791966544656070487
+    },
+    "libamdhip64.so.7": {
+      "path": "/opt/rocm-7.2.1/lib/libamdhip64.so.7",
+      "resolved": "/opt/rocm-7.2.1/lib/libamdhip64.so.7.2.70201",
+      "bytes": 27152336,
+      "mtime_ns": 1773356960000000000
+    },
+    "libstdc++.so.6": {
+      "path": "/lib/x86_64-linux-gnu/libstdc++.so.6",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33",
+      "bytes": 2592224,
+      "mtime_ns": 1766093810000000000
+    },
+    "libm.so.6": {
+      "path": "/lib/x86_64-linux-gnu/libm.so.6",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+      "bytes": 952616,
+      "mtime_ns": 1788444912000000000
+    },
+    "libgcc_s.so.1": {
+      "path": "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+      "bytes": 183024,
+      "mtime_ns": 1766093810000000000
+    },
+    "libc.so.6": {
+      "path": "/lib/x86_64-linux-gnu/libc.so.6",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "bytes": 2129424,
+      "mtime_ns": 1788444912000000000
+    },
+    "libnuma.so.1": {
+      "path": "/lib/x86_64-linux-gnu/libnuma.so.1",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libnuma.so.1.0.0",
+      "bytes": 52248,
+      "mtime_ns": 1767965793000000000
+    },
+    "libdl.so.2": {
+      "path": "/lib/x86_64-linux-gnu/libdl.so.2",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libdl.so.2",
+      "bytes": 14408,
+      "mtime_ns": 1788444912000000000
+    },
+    "libpthread.so.0": {
+      "path": "/lib/x86_64-linux-gnu/libpthread.so.0",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libpthread.so.0",
+      "bytes": 14408,
+      "mtime_ns": 1788444912000000000
+    },
+    "libtorch_hip.so": {
+      "path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libtorch_hip.so",
+      "resolved": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libtorch_hip.so",
+      "bytes": 436586824,
+      "mtime_ns": 1791966574564395183
+    },
+    "librt.so.1": {
+      "path": "/lib/x86_64-linux-gnu/librt.so.1",
+      "resolved": "/usr/lib/x86_64-linux-gnu/librt.so.1",
+      "bytes": 14624,
+      "mtime_ns": 1788444912000000000
+    },
+    "libgomp.so.1": {
+      "path": "/lib/x86_64-linux-gnu/libgomp.so.1",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0",
+      "bytes": 352304,
+      "mtime_ns": 1766093810000000000
+    },
+    "libroctracer64.so.4": {
+      "path": "/opt/rocm-7.2.1/lib/libroctracer64.so.4",
+      "resolved": "/opt/rocm-7.2.1/lib/libroctracer64.so.4.1.70201",
+      "bytes": 347896,
+      "mtime_ns": 1773357507000000000
+    },
+    "libshm.so": {
+      "path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libshm.so",
+      "resolved": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libshm.so",
+      "bytes": 45096,
+      "mtime_ns": 1791966544323298903
+    },
+    "libroctx64.so.4": {
+      "path": "/opt/rocm-7.2.1/lib/libroctx64.so.4",
+      "resolved": "/opt/rocm-7.2.1/lib/libroctx64.so.4.1.70201",
+      "bytes": 14616,
+      "mtime_ns": 1773357507000000000
+    },
+    "libc10_hip.so": {
+      "path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libc10_hip.so",
+      "resolved": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libc10_hip.so",
+      "bytes": 832032,
+      "mtime_ns": 1791966574573082080
+    },
+    "libMIOpen.so.1": {
+      "path": "/opt/rocm-7.2.1/lib/libMIOpen.so.1",
+      "resolved": "/opt/rocm-7.2.1/lib/libMIOpen.so.1.0.70201",
+      "bytes": 1057241984,
+      "mtime_ns": 1773382726000000000
+    },
+    "librocsolver.so.0": {
+      "path": "/opt/rocm-7.2.1/lib/librocsolver.so.0",
+      "resolved": "/opt/rocm-7.2.1/lib/librocsolver.so.0.7.70201",
+      "bytes": 867725784,
+      "mtime_ns": 1773381946000000000
+    },
+    "librocprofiler-register.so.0": {
+      "path": "/opt/rocm-7.2.1/lib/librocprofiler-register.so.0",
+      "resolved": "/opt/rocm-7.2.1/lib/librocprofiler-register.so.0.6.0",
+      "bytes": 590232,
+      "mtime_ns": 1773355746000000000
+    },
+    "libhsa-runtime64.so.1": {
+      "path": "/opt/rocm-7.2.1/lib/libhsa-runtime64.so.1",
+      "resolved": "/opt/rocm-7.2.1/lib/libhsa-runtime64.so.1.18.70201",
+      "bytes": 4248144,
+      "mtime_ns": 1773356503000000000
+    },
+    "libhiprtc.so.7": {
+      "path": "/opt/rocm-7.2.1/lib/libhiprtc.so.7",
+      "resolved": "/opt/rocm-7.2.1/lib/libhiprtc.so.7.2.70201",
+      "bytes": 858952,
+      "mtime_ns": 1773356960000000000
+    },
+    "libhipblas.so.3": {
+      "path": "/opt/rocm-7.2.1/lib/libhipblas.so.3",
+      "resolved": "/opt/rocm-7.2.1/lib/libhipblas.so.3.2.70201",
+      "bytes": 896872,
+      "mtime_ns": 1773382231000000000
+    },
+    "libhipfft.so.0": {
+      "path": "/opt/rocm-7.2.1/lib/libhipfft.so.0",
+      "resolved": "/opt/rocm-7.2.1/lib/libhipfft.so.0.1.70201",
+      "bytes": 66648,
+      "mtime_ns": 1773361095000000000
+    },
+    "libhiprand.so.1": {
+      "path": "/opt/rocm-7.2.1/lib/libhiprand.so.1",
+      "resolved": "/opt/rocm-7.2.1/lib/libhiprand.so.1.1.70201",
+      "bytes": 14200,
+      "mtime_ns": 1773359330000000000
+    },
+    "libhipsparse.so.4": {
+      "path": "/opt/rocm-7.2.1/lib/libhipsparse.so.4",
+      "resolved": "/opt/rocm-7.2.1/lib/libhipsparse.so.4.2.0.70201",
+      "bytes": 280696,
+      "mtime_ns": 1773380541000000000
+    },
+    "libhipsolver.so.1": {
+      "path": "/opt/rocm-7.2.1/lib/libhipsolver.so.1",
+      "resolved": "/opt/rocm-7.2.1/lib/libhipsolver.so.1.0.70201",
+      "bytes": 272808,
+      "mtime_ns": 1773382060000000000
+    },
+    "libhipsparselt.so.0": {
+      "path": "/opt/rocm-7.2.1/lib/libhipsparselt.so.0",
+      "resolved": "/opt/rocm-7.2.1/lib/libhipsparselt.so.0.2.70201",
+      "bytes": 6998976,
+      "mtime_ns": 1773380650000000000
+    },
+    "libaotriton_v2.so.0.11.1": {
+      "path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libaotriton_v2.so.0.11.1",
+      "resolved": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libaotriton_v2.so.0.11.1",
+      "bytes": 15374193,
+      "mtime_ns": 1791966557579273470
+    },
+    "librccl.so.1": {
+      "path": "/opt/rocm-7.2.1/lib/librccl.so.1",
+      "resolved": "/opt/rocm-7.2.1/lib/librccl.so.1.0.70201",
+      "bytes": 571796256,
+      "mtime_ns": 1773372975000000000
+    },
+    "librocblas.so.5": {
+      "path": "/opt/rocm-7.2.1/lib/librocblas.so.5",
+      "resolved": "/opt/rocm-7.2.1/lib/librocblas.so.5.2.70201",
+      "bytes": 55521368,
+      "mtime_ns": 1773377207000000000
+    },
+    "libhipblaslt.so.1": {
+      "path": "/opt/rocm-7.2.1/lib/libhipblaslt.so.1",
+      "resolved": "/opt/rocm-7.2.1/lib/libhipblaslt.so.1.2.70201",
+      "bytes": 8753200,
+      "mtime_ns": 1773358368000000000
+    },
+    "libmagma.so": {
+      "path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libmagma.so",
+      "resolved": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/lib/libmagma.so",
+      "bytes": 1151733184,
+      "mtime_ns": 1791966553991444133
+    },
+    "libzstd.so.1": {
+      "path": "/lib/x86_64-linux-gnu/libzstd.so.1",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libzstd.so.1.5.5",
+      "bytes": 755864,
+      "mtime_ns": 1723170802000000000
+    },
+    "libamd_comgr.so.3": {
+      "path": "/opt/rocm-7.2.1/lib/libamd_comgr.so.3",
+      "resolved": "/opt/rocm-7.2.1/lib/libamd_comgr.so.3.0.0",
+      "bytes": 160076064,
+      "mtime_ns": 1773356517000000000
+    },
+    "librocm-core.so.1": {
+      "path": "/opt/rocm-7.2.1/lib/librocm-core.so.1",
+      "resolved": "/opt/rocm-7.2.1/lib/librocm-core.so.1.0.70201",
+      "bytes": 14656,
+      "mtime_ns": 1773355731000000000
+    },
+    "libelf.so.1": {
+      "path": "/lib/x86_64-linux-gnu/libelf.so.1",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libelf-0.190.so",
+      "bytes": 121560,
+      "mtime_ns": 1742227438000000000
+    },
+    "libdrm.so.2": {
+      "path": "/lib/x86_64-linux-gnu/libdrm.so.2",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libdrm.so.2.125.0",
+      "bytes": 92760,
+      "mtime_ns": 1779212699000000000
+    },
+    "libdrm_amdgpu.so.1": {
+      "path": "/lib/x86_64-linux-gnu/libdrm_amdgpu.so.1",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so.1.125.0",
+      "bytes": 47680,
+      "mtime_ns": 1779212699000000000
+    },
+    "librocfft.so.0": {
+      "path": "/opt/rocm-7.2.1/lib/librocfft.so.0",
+      "resolved": "/opt/rocm-7.2.1/lib/librocfft.so.0.1.70201",
+      "bytes": 25309128,
+      "mtime_ns": 1773360889000000000
+    },
+    "librocrand.so.1": {
+      "path": "/opt/rocm-7.2.1/lib/librocrand.so.1",
+      "resolved": "/opt/rocm-7.2.1/lib/librocrand.so.1.1.70201",
+      "bytes": 732429352,
+      "mtime_ns": 1773359106000000000
+    },
+    "librocsparse.so.1": {
+      "path": "/opt/rocm-7.2.1/lib/librocsparse.so.1",
+      "resolved": "/opt/rocm-7.2.1/lib/librocsparse.so.1.0.70201",
+      "bytes": 487761856,
+      "mtime_ns": 1773379907000000000
+    },
+    "liblzma.so.5": {
+      "path": "/lib/x86_64-linux-gnu/liblzma.so.5",
+      "resolved": "/usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5",
+      "bytes": 202904,
+      "mtime_ns": 1779984407000000000
+    },
+    "librocm_smi64.so.1": {
+      "path": "/opt/rocm-7.2.1/lib/librocm_smi64.so.1",
+      "resolved": "/opt/rocm-7.2.1/lib/librocm_smi64.so.1.0.70201",
+      "bytes": 1396128,
+      "mtime_ns": 1773355745000000000
+    },
+    "librocroller.so.1": {
+      "path": "/opt/rocm-7.2.1/lib/librocroller.so.1",
+      "resolved": "/opt/rocm-7.2.1/lib/librocroller.so.1.0.0",
+      "bytes": 82804696,
+      "mtime_ns": 1773357864000000000
+    },
+    "libz.so.1": {
+      "path": "/lib/x86_64-linux-gnu/libz.so.1",
+      "resolved": "/usr/lib/x86_64-linux-gnu/libz.so.1.3",
+      "bytes": 113000,
+      "mtime_ns": 1787654490000000000
+    }
+  },
+  "protected_ROCm_dpkg_verification": true,
+  "RAM_available_bytes": 15785844736,
+  "guest_free_bytes": 9372962816,
+  "D_free_bytes": 75805839360,
+  "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+  "kernel": "6.18.33.2-microsoft-standard-WSL2",
+  "DXG_present": true,
+  "AI_imports": false,
+  "GPU_actions": false
+}

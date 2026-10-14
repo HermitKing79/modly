@@ -1,0 +1,43 @@
+{
+  "classification": "PASS",
+  "execution_commit": "97b7e5afcb1833eab7b8a35f51615b920c2b8d74",
+  "probe_sha256": "fa187428e4ec09b8b96b3922a89904b3460ee27319ab859391a47aae35286886",
+  "flags_before": {
+    "enabled": false,
+    "tuning": true,
+    "record_untuned": false
+  },
+  "flags_after": {
+    "enabled": false,
+    "tuning": false,
+    "record_untuned": false
+  },
+  "TunableOp_environment_all_absent": true,
+  "CPU_worker_seconds": 8.039296223000001,
+  "supervisor_seconds": 20.577999999994063,
+  "host_capture_seconds": 21.6881734,
+  "healthy_observations": 5,
+  "GPU_entry_calls": [],
+  "GPU_initialized": false,
+  "Tensor_operations": 0,
+  "worker_returncode": 0,
+  "windows_job_grace": {
+    "empty": true,
+    "seconds": 0.0,
+    "limit_seconds": 5.0
+  },
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "named_distro_termination_returncode": 0,
+  "historical_files_and_existing_bytecode_verified": 78,
+  "original_local_branches_verified": 54,
+  "Linux_venv_and_staged_payloads_unchanged": true,
+  "native_or_model_imports": [],
+  "Torch_flag_metadata_controls_are_authorized": true,
+  "decoder_candidate_modified": false
+}
