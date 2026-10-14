@@ -1,0 +1,32 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-m",
+    "pip",
+    "--isolated",
+    "--disable-pip-version-check",
+    "install",
+    "--no-index",
+    "--no-cache-dir",
+    "--no-compile",
+    "--only-binary=:all:",
+    "--find-links",
+    "/mnt/d/AI/Modly-WSL/Downloads",
+    "--find-links",
+    "/mnt/d/AI/Modly-WSL/Downloads/Python",
+    "--require-hashes",
+    "-r",
+    "/mnt/d/AI/Modly-WSL/Downloads/Python/requirements.txt"
+  ],
+  "exit": 0,
+  "seconds": 100.76499999999942,
+  "gpu_calls": 0
+}

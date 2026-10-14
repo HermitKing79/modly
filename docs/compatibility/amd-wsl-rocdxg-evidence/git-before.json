@@ -1,0 +1,35 @@
+{
+  "base": "1794c909a8cab0f042c0d38ec088cc8b4935f363",
+  "branch": {
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exit": 0,
+    "stdout": "codex/amd-wsl-rocdxg-smoke\n",
+    "stderr": ""
+  },
+  "local": {
+    "command": [
+      "git",
+      "for-each-ref",
+      "--format=%(objectname) %(refname:short)",
+      "refs/heads"
+    ],
+    "exit": 0,
+    "stdout": "4ce67676d9a0cd4e9dc12f63cbc4763e639d4101 codex/amd-alpha-headless-import\n065bc79b8c2db97eea3892c34481dbe21e6a118d codex/amd-blaslt-workspace-teardown\n521d3d29e06fdde2e324e7d1bce7e03ef10dfaa8 codex/amd-bounded-gpu-proof\n92cdb3fccdf6ccc60f3a241684aafe323c8c34fd codex/amd-cached-kernel-convolution-proof\n1794c909a8cab0f042c0d38ec088cc8b4935f363 codex/amd-cached-neighbour-mixing-proof\n62409edb5545857012116cb64fc2335acd938f54 codex/amd-dinov3-allocation-diagnosis\ndfc01cb2f233e2d2cbabfcec6a27ac4c42f23668 codex/amd-dinov3-conditioning-proof\ne2842ffc0e443840066aa839cc1cfb98c16969d3 codex/amd-forward-diagnostic-correction\n9fe6ae24f683aecd14f1eb970fd76b9d5088f9db codex/amd-forward-timeout-investigation\nbb6988d46cf49343208723bd591eef2ec42bfd53 codex/amd-instrumented-decoder-forward-resume\n18ef0677a0acbab1eab987ac69842027401af9ca codex/amd-instrumented-sparse-decoder-forward\n06dbd15030ade1cdec0205e1bd2dd0d56a3d6602 codex/amd-native-cache-dispatch-proof\n534897addbc3dab755a81c312facef13b9ef7a25 codex/amd-native-convolution-hook-correction\n0e23dfcd4eb7d0d86ee91e081903bc4280016cc9 codex/amd-native-convolution-smoke\nbe8a90379c08f5fd21c941bcb9092da6b7cd69fa codex/amd-native-import-preflight\nc9e1a35ce9941753e64536885e59d947cd0a7f1e codex/amd-native-postprocessor-admission\nd0a7cd6b81abb14d502fe8604d0ec34bca385ce6 codex/amd-native-python-tail-contract\n493063ace1d303252ed86d3f2c96e1867e4bc13d codex/amd-native-scalar-dispatch-correction\n27232cf6b2ba7f03e59327bc69065364a6960eb3 codex/amd-object-conditioned-occupancy\n74f63c844e94da5b4a0742e5fe7ada9355ba3c13 codex/amd-offline-alpha-geometry-loader\nd0f3426f85509e9705cec7852beef13b31fb2e70 codex/amd-offline-model-audit\nd04f6ac45934dad8399bb86e36950790051586ff codex/amd-shape-decoder-cache-admission\n05e03ee76e78bffb91d526269f92edbdae03245f codex/amd-shape-decoder-neural-proof\n5eb759d186b8f661c954b0a0b680370ff04057cf codex/amd-shape-slat-512-forward\n1251feaff427f84507b1500b2af0d631bac7566f codex/amd-shape-slat-512-sampling\n0f82092515849041ee7df313fef5d2bad2a7ab98 codex/amd-sparse-decoder-forward\n7192c236fb0aa7559b71740a4995e8623769b821 codex/amd-sparse-decoder-forward-guard-correction\nf518deae75bb4626d17d29812b995d4488d90edf codex/amd-sparse-decoder-loading-proof\n53c971134763ba4583803262439b5e0592f7e6d1 codex/amd-sparse-flow-forward\n6c1b882a4c130a78e87a2bfa16959f262362cba7 codex/amd-sparse-flow-forward-resume\n38e73a5e02476a597ab0b91bd4f2fc58754baf4d codex/amd-sparse-flow-transfer-guard-correction\n4f375f979cff645f60f415c0d7c9b653c7015b0c codex/amd-sparse-occupancy-decode\n39ddc2bf890949676694b4bbfca74f7fd34ea18a codex/amd-sparse-slab-diagnosis\n26fc3aa988c57f082542a80636a63f436218f3fb codex/amd-sparse-structure-sampling\n874a843e240d6c96b6149f7908c1734472ec0dcc codex/amd-trellis2-bounded-proof\n7c2c9634db52c7e78bfa90be16ed6bf969dc2dbe codex/amd-worker-scaffold\n1794c909a8cab0f042c0d38ec088cc8b4935f363 codex/amd-wsl-rocdxg-smoke\nf11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea main\n",
+    "stderr": ""
+  },
+  "remote": {
+    "command": [
+      "git",
+      "ls-remote",
+      "--heads",
+      "origin"
+    ],
+    "exit": 0,
+    "stdout": "4ce67676d9a0cd4e9dc12f63cbc4763e639d4101\trefs/heads/codex/amd-alpha-headless-import\n065bc79b8c2db97eea3892c34481dbe21e6a118d\trefs/heads/codex/amd-blaslt-workspace-teardown\n521d3d29e06fdde2e324e7d1bce7e03ef10dfaa8\trefs/heads/codex/amd-bounded-gpu-proof\n92cdb3fccdf6ccc60f3a241684aafe323c8c34fd\trefs/heads/codex/amd-cached-kernel-convolution-proof\n1794c909a8cab0f042c0d38ec088cc8b4935f363\trefs/heads/codex/amd-cached-neighbour-mixing-proof\n62409edb5545857012116cb64fc2335acd938f54\trefs/heads/codex/amd-dinov3-allocation-diagnosis\ndfc01cb2f233e2d2cbabfcec6a27ac4c42f23668\trefs/heads/codex/amd-dinov3-conditioning-proof\ne2842ffc0e443840066aa839cc1cfb98c16969d3\trefs/heads/codex/amd-forward-diagnostic-correction\n9fe6ae24f683aecd14f1eb970fd76b9d5088f9db\trefs/heads/codex/amd-forward-timeout-investigation\nbb6988d46cf49343208723bd591eef2ec42bfd53\trefs/heads/codex/amd-instrumented-decoder-forward-resume\n18ef0677a0acbab1eab987ac69842027401af9ca\trefs/heads/codex/amd-instrumented-sparse-decoder-forward\n06dbd15030ade1cdec0205e1bd2dd0d56a3d6602\trefs/heads/codex/amd-native-cache-dispatch-proof\n534897addbc3dab755a81c312facef13b9ef7a25\trefs/heads/codex/amd-native-convolution-hook-correction\n0e23dfcd4eb7d0d86ee91e081903bc4280016cc9\trefs/heads/codex/amd-native-convolution-smoke\nbe8a90379c08f5fd21c941bcb9092da6b7cd69fa\trefs/heads/codex/amd-native-import-preflight\nc9e1a35ce9941753e64536885e59d947cd0a7f1e\trefs/heads/codex/amd-native-postprocessor-admission\nd0a7cd6b81abb14d502fe8604d0ec34bca385ce6\trefs/heads/codex/amd-native-python-tail-contract\n493063ace1d303252ed86d3f2c96e1867e4bc13d\trefs/heads/codex/amd-native-scalar-dispatch-correction\n27232cf6b2ba7f03e59327bc69065364a6960eb3\trefs/heads/codex/amd-object-conditioned-occupancy\n74f63c844e94da5b4a0742e5fe7ada9355ba3c13\trefs/heads/codex/amd-offline-alpha-geometry-loader\nd0f3426f85509e9705cec7852beef13b31fb2e70\trefs/heads/codex/amd-offline-model-audit\nd04f6ac45934dad8399bb86e36950790051586ff\trefs/heads/codex/amd-shape-decoder-cache-admission\n05e03ee76e78bffb91d526269f92edbdae03245f\trefs/heads/codex/amd-shape-decoder-neural-proof\n5eb759d186b8f661c954b0a0b680370ff04057cf\trefs/heads/codex/amd-shape-slat-512-forward\n1251feaff427f84507b1500b2af0d631bac7566f\trefs/heads/codex/amd-shape-slat-512-sampling\n0f82092515849041ee7df313fef5d2bad2a7ab98\trefs/heads/codex/amd-sparse-decoder-forward\n7192c236fb0aa7559b71740a4995e8623769b821\trefs/heads/codex/amd-sparse-decoder-forward-guard-correction\nf518deae75bb4626d17d29812b995d4488d90edf\trefs/heads/codex/amd-sparse-decoder-loading-proof\n53c971134763ba4583803262439b5e0592f7e6d1\trefs/heads/codex/amd-sparse-flow-forward\n6c1b882a4c130a78e87a2bfa16959f262362cba7\trefs/heads/codex/amd-sparse-flow-forward-resume\n38e73a5e02476a597ab0b91bd4f2fc58754baf4d\trefs/heads/codex/amd-sparse-flow-transfer-guard-correction\n4f375f979cff645f60f415c0d7c9b653c7015b0c\trefs/heads/codex/amd-sparse-occupancy-decode\n39ddc2bf890949676694b4bbfca74f7fd34ea18a\trefs/heads/codex/amd-sparse-slab-diagnosis\n26fc3aa988c57f082542a80636a63f436218f3fb\trefs/heads/codex/amd-sparse-structure-sampling\n874a843e240d6c96b6149f7908c1734472ec0dcc\trefs/heads/codex/amd-trellis2-bounded-proof\n7c2c9634db52c7e78bfa90be16ed6bf969dc2dbe\trefs/heads/codex/amd-worker-scaffold\nf11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea\trefs/heads/main\n",
+    "stderr": ""
+  }
+}

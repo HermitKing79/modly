@@ -1,0 +1,20 @@
+{
+  "command": [
+    "wsl.exe",
+    "--distribution",
+    "Modly-AMD-Ubuntu-24.04",
+    "--user",
+    "root",
+    "--exec",
+    "python3",
+    "-I",
+    "-S",
+    "-c",
+    "import json,platform,os;from pathlib import Path;s=os.statvfs('/');print(json.dumps({'os_release':Path('/etc/os-release').read_text(),'kernel':platform.release(),'python':platform.python_version(),'dxg_exists':Path('/dev/dxg').exists(),'dxcore_exists':Path('/usr/lib/wsl/lib/libdxcore.so').exists(),'disk_available_bytes':s.f_bavail*s.f_frsize,'disk_total_bytes':s.f_blocks*s.f_frsize,'wsl_conf':Path('/etc/wsl.conf').read_text() if Path('/etc/wsl.conf').exists() else None}))"
+  ],
+  "exit": 0,
+  "stdout": "{\"os_release\": \"PRETTY_NAME=\\\"Ubuntu 24.04.5 LTS\\\"\\nNAME=\\\"Ubuntu\\\"\\nVERSION_ID=\\\"24.04\\\"\\nVERSION=\\\"24.04.5 LTS (Noble Numbat)\\\"\\nVERSION_CODENAME=noble\\nID=ubuntu\\nID_LIKE=debian\\nHOME_URL=\\\"https://www.ubuntu.com/\\\"\\nSUPPORT_URL=\\\"https://help.ubuntu.com/\\\"\\nBUG_REPORT_URL=\\\"https://bugs.launchpad.net/ubuntu/\\\"\\nPRIVACY_POLICY_URL=\\\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\\\"\\nUBUNTU_CODENAME=noble\\nLOGO=ubuntu-logo\\n\", \"kernel\": \"6.18.33.2-microsoft-standard-WSL2\", \"python\": \"3.12.3\", \"dxg_exists\": true, \"dxcore_exists\": true, \"disk_available_bytes\": 30431764480, \"disk_total_bytes\": 33501757440, \"wsl_conf\": \"[boot]\\nsystemd=true\\n\"}\n",
+  "stderr": "",
+  "seconds": 5.515999999999622,
+  "default_preserved": true
+}

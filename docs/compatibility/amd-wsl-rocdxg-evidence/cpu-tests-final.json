@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/compatibility",
+    "-p",
+    "test_amd_wsl_rocdxg_smoke.py",
+    "-v"
+  ],
+  "exit": 0,
+  "harness_sha256": "6a34ffc0f799f1900d65d2a860b3933afb4dae8ab07ab111f9a3adc367ff24f2",
+  "tests_sha256": "91db87db73e9b3445774fd322c8eda5b98b36aab5261f62087701a8335fddc85"
+}

@@ -1,0 +1,12 @@
+{
+  "reviewer": "wsl_smoke_review",
+  "decision": "Approved for one bounded GPU attempt after final CPU/resource gates",
+  "harness_sha256": "6a34ffc0f799f1900d65d2a860b3933afb4dae8ab07ab111f9a3adc367ff24f2",
+  "tests_sha256": "91db87db73e9b3445774fd322c8eda5b98b36aab5261f62087701a8335fddc85",
+  "blocking_findings_remaining": [],
+  "corrected_findings": ["Startup LD_LIBRARY_PATH supplied before Linux Python", "Strictly-after observer timestamp avoids coarse-clock false admission", "Runtime and distribution identity both pinned to genuine AMD wheel"],
+  "focused_cpu_acceptance": "18 tests passed; earlier 16 tests independently passed; final two identity tests independently passed",
+  "cpu_import_and_physical_admission_verified_by_root": true,
+  "gpu_execution_performed_by_reviewer": false,
+  "scope": "One256-element deterministic F32 vector addition; no TRELLIS"
+}

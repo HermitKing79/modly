@@ -1,0 +1,82 @@
+{
+  "utc": "2026-10-14T08:08:44.555136+00:00",
+  "host": {
+    "driver": {
+      "DeviceName": "AMD Radeon RX 9070 XT",
+      "DriverVersion": "32.0.31041.1004",
+      "DriverDate": "/Date(1786924800000)/",
+      "InfName": "oem85.inf",
+      "IsSigned": true
+    },
+    "distros": [
+      {
+        "DistributionName": "docker-desktop",
+        "Version": 2,
+        "BasePath": "\\\\?\\C:\\Users\\wattz\\AppData\\Local\\Docker\\wsl\\main"
+      }
+    ],
+    "default": {
+      "DefaultDistribution": "{233f076a-c415-4c50-958f-22a80fe55639}",
+      "DefaultVersion": null
+    },
+    "location_exists": false,
+    "os": {
+      "Caption": "Microsoft Windows 11 Pro",
+      "Version": "10.0.26200",
+      "BuildNumber": "26200",
+      "FreePhysicalMemory": 18670116
+    },
+    "host": {
+      "Name": "HERMIT",
+      "HypervisorPresent": true,
+      "TotalPhysicalMemory": 34270023680
+    },
+    "disks": [
+      {
+        "DeviceID": "C:",
+        "Size": 999005614080,
+        "FreeSpace": 98018541568
+      },
+      {
+        "DeviceID": "D:",
+        "Size": 250058108928,
+        "FreeSpace": 105102913536
+      },
+      {
+        "DeviceID": "E:",
+        "Size": 1000202039296,
+        "FreeSpace": 612697587712
+      }
+    ]
+  },
+  "wsl": [
+    {
+      "command": [
+        "wsl.exe",
+        "--list",
+        "--verbose"
+      ],
+      "exit": 0,
+      "stdout": "  NAME              STATE           VERSION\r\n* docker-desktop    Stopped         2\r\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl.exe",
+        "--status"
+      ],
+      "exit": 0,
+      "stdout": "Default Distribution: docker-desktop\r\nDefault Version: 2\r\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "wsl.exe",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "WSL version: 2.7.12.0\r\nKernel version: 6.18.33.2-2\r\nWSLg version: 1.0.73.2\r\nMSRDC version: 1.2.7214\r\nDirect3D version: 1.611.1-81528511\r\nDXCore version: 10.0.26100.1-240331-1435.ge-release\r\nWindows version: 10.0.26200.9711\r\n",
+      "stderr": ""
+    }
+  ]
+}

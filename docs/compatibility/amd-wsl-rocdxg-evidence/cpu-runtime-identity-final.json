@@ -1,0 +1,26 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/env",
+    "HSA_ENABLE_DXG_DETECTION=1",
+    "LD_LIBRARY_PATH=/opt/rocm-7.2.1/lib:/opt/rocm/lib:/usr/lib/wsl/lib",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "45s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-"
+  ],
+  "guest_source": "import sys,os,json,platform,importlib.metadata as md,subprocess\nfrom pathlib import Path\nimport torch\nbefore=torch.cuda.is_initialized()\ndef denied(*args,**kwargs):raise RuntimeError('CPU preflight prohibits GPU initialization/API calls')\ntorch.cuda._lazy_init=denied;torch.cuda.init=denied;torch._C._cuda_init=denied\nfor name in ['device_count','get_device_properties','is_available','mem_get_info']:setattr(torch.cuda,name,denied)\nassert not before and not torch.cuda.is_initialized()\nassert torch.__version__=='2.9.1+rocm7.2.1.lw.gitff65f5bc' and str(torch.version.hip).startswith('7.2') and torch.version.cuda is None\np=subprocess.run(['dpkg-query','-W','-f=${Package}\\t${Version}\\n'],capture_output=True,text=True,timeout=15);assert p.returncode==0\nstat=Path('/dev/dxg').stat();s=os.statvfs('/');print(json.dumps({'python':platform.python_version(),'torch':torch.__version__,'hip':torch.version.hip,'cuda':torch.version.cuda,'triton_distribution':md.version('triton'),'torch_path':torch.__file__,'prefix':sys.prefix,'gpu_initialized_before':before,'gpu_initialized_after':torch.cuda.is_initialized(),'gpu_api_calls':0,'LD_LIBRARY_PATH':os.environ['LD_LIBRARY_PATH'],'HSA_ENABLE_DXG_DETECTION':os.environ['HSA_ENABLE_DXG_DETECTION'],'dxg_user_rw':os.access('/dev/dxg',os.R_OK|os.W_OK),'dxg_mode':oct(stat.st_mode),'kernel':platform.release(),'disk_free_bytes':s.f_bavail*s.f_frsize,'installed_dpkg_packages':p.stdout.splitlines(),'installed_python_packages':sorted([(d.metadata['Name'],d.version) for d in md.distributions()])}))\n",
+  "exit": 1,
+  "stdout": "",
+  "stderr": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:279: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\nTraceback (most recent call last):\n  File \"<stdin>\", line 9, in <module>\nAssertionError\n",
+  "seconds": 8.10899999999674
+}

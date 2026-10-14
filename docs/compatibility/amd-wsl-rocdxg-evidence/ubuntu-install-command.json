@@ -1,0 +1,19 @@
+{
+  "command": [
+    "wsl.exe",
+    "--install",
+    "--from-file",
+    "D:\\AI\\Modly-WSL\\Downloads\\ubuntu-24.04.5-wsl-amd64.wsl",
+    "--name",
+    "Modly-AMD-Ubuntu-24.04",
+    "--location",
+    "D:\\AI\\Modly-WSL\\Ubuntu24.04",
+    "--version",
+    "2",
+    "--vhd-size",
+    "32GB",
+    "--no-launch"
+  ],
+  "timeout_seconds": 300,
+  "no_windows_update_or_feature_commands": true
+}

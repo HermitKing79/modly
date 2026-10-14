@@ -1,0 +1,18 @@
+{
+  "stage": "before-substantial-package-installation",
+  "distro": "Modly-AMD-Ubuntu-24.04",
+  "location": "D:\\AI\\Modly-WSL\\Ubuntu24.04",
+  "distro_version": "Ubuntu 24.04.5 LTS",
+  "distro_source": "https://releases.ubuntu.com/24.04.5/ubuntu-24.04.5-wsl-amd64.wsl",
+  "distro_compressed_bytes": 388975696,
+  "distro_sha256": "bb415d824822c4b878125729af451a5d18fb13d1cf5cbed9a7393ad64ac6039e",
+  "rocdxg": {"version":"1.2.0", "url":"https://github.com/ROCm/librocdxg/releases/download/v1.2.0/rocdxg-roct_1.2.0_amd64.deb", "compressed_bytes":166894, "sha256":"3ed9526719290cd8f590150dad8ea0f234fa779bea6a4c9a8449d7ae6b8cfb6e"},
+  "torch": {"version":"2.9.1+rocm7.2.1.lw.gitff65f5bc", "url":"https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/torch-2.9.1%2Brocm7.2.1.lw.gitff65f5bc-cp312-cp312-linux_x86_64.whl", "compressed_bytes":1650644034, "uncompressed_bytes":3231657694},
+  "triton": {"version":"3.5.1+rocm7.2.1.gita272dfa8", "url":"https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/triton-3.5.1%2Brocm7.2.1.gita272dfa8-cp312-cp312-linux_x86_64.whl", "compressed_bytes":287563448},
+  "rocm_apt": {"version":"7.2.1", "repository":"https://repo.radeon.com/rocm/apt/7.2.1/", "suite":"noble", "component":"main", "direct_candidate":"hip-runtime-amd=7.2.53211.70201-81~24.04", "direct_amd_dependency_compressed_bytes":73362592, "full_elf_dependency_manifest_required_before_install":true},
+  "principal_image_and_wheels_and_rocdxg_compressed_bytes":2327350072,
+  "complete_installed_footprint_known":false,
+  "admission_policy":"Compute exact apt/pip dependency sizes before installation. Reject driver/DKMS/SDK/compiler/source-build requirements. Stop if downloads exceed 8 GiB or physical distro growth exceeds 20 GiB; retain 50 GiB free on D:.",
+  "expected_compatibility":"Current official ROCDXG matrix lists 1.2.0 with ROCm 7.2.x and RX9070XT. Driver32.0.31041.1004 maps to Adrenalin26.8.1. Current WSL kernel is newer than the older AMD matrix; basic execution remains unproved.",
+  "sources":["https://gpuopen.com/version-table/","https://github.com/ROCm/librocdxg","https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/install/installrad/native_linux/install-pytorch.html","https://raw.githubusercontent.com/microsoft/WSL/master/distributions/DistributionInfo.json"]
+}
