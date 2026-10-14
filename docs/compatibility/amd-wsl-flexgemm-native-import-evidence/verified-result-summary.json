@@ -1,0 +1,42 @@
+{
+  "classification": "UNKNOWN",
+  "exact_blocker": "filesystem_write: Relative directory descriptor is not admitted",
+  "operation": "FileLock tempfile cleanup: os.unlink(entry.name, dir_fd=topfd)",
+  "native_ELF_load_reached": false,
+  "expected_bindings": 18,
+  "bindings_resolved": null,
+  "loaded_binary_verified": false,
+  "HIP_initialized_for_admission": true,
+  "gpu": {
+    "name": "AMD Radeon RX 9070 XT",
+    "architecture": "gfx1201",
+    "count": 1,
+    "free_bytes": 14233980928,
+    "total_bytes": 16974905344,
+    "property_total_bytes": 16974905344
+  },
+  "memory_before": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "memory_release": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "after_import_and_peak_not_captured": true,
+  "one_import_entry": true,
+  "native_policy_unchanged": true,
+  "host_seconds": 20.5,
+  "guest_seconds": 6.069213382000001,
+  "healthy_observations": 5,
+  "job": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "worker_exit": 1,
+  "Linux_before_after_payloads_match": true,
+  "approved_library_metadata_unchanged": true
+}

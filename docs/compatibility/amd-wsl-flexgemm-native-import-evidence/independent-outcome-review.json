@@ -1,0 +1,160 @@
+{
+  "reviewer": "independent /root/native_import_review",
+  "review_status": "PASS",
+  "overall_attempt_classification": "UNKNOWN",
+  "native_binary_stage": "NOT_REACHED",
+  "native_loadability": "UNKNOWN",
+  "decision": "STOP; the single authorized import attempt is consumed, with no retry or policy edit.",
+  "attempts": 1,
+  "candidate_sha256": "c8a05f8a2121f2a527a6a9871d8a51b6d11b897228da57930ea01443577d04ae",
+  "evidence_sha256": {
+    "native-attempt-started.json": "64ed830c1bfae773b2850e1e7d8b80ef2396a800f891dfdbe5b5ee40efc74bb5",
+    "run/guest/results.json": "fcb03e8da7d6c455efe7db96320f54b54c29d359f6bba2937c052c96f9d234e6",
+    "run/guest/phases.jsonl": "cc7b8a5f652e3bd77154c4167bed2cf5d864e0aed80048d72abfb23ce1c1fa7a",
+    "run/results.json": "d09a91cf662246d05ac47d71d03c7ef22f58850604f77b90e4c3bdf833eff89b",
+    "run/phases.jsonl": "4b437babd438ae33721f80585c7ab9a8e77e277b86cd0b81f2b40adc736bc19b",
+    "run/native-verdict.json": "b6073e60e889e59d6a99c3b34dea8172b26d2ee9e9d63ff05967c1f74d49ee43",
+    "independent-preflight-review.json": "bff9af89fe1694196413939aaff7ca390661fdd994e1acf4b23803f1cf8f70ea"
+  },
+  "cause": {
+    "error_type": "ImportPolicyError",
+    "error": "filesystem_write: Relative directory descriptor is not admitted",
+    "failing_operation": "filelock._strict import-time tempfile.TemporaryDirectory cleanup -> shutil.rmtree -> _rmtree_safe_fd -> os.unlink(entry.name, dir_fd=topfd)",
+    "policy_boundary": "amd_wsl_native_import_policy.ImportPolicy._write_path rejects every dir_fd other than None or -1 before resolving its owned directory.",
+    "attribution": "Dependency temporary-cleanup behavior conflicts with the proof audit policy. This outcome supplies no evidence of an AMD defect, ELF load incompatibility or native kernel failure."
+  },
+  "source_faithful_binary_stage_evidence": {
+    "pinned_wheel_sha256": "cadaa86c428a93c3aee10c4dd8dfb66604a424c8145670051ca0ce1a0f296285",
+    "native_module_imports_in_complete_wheel_python_sources": [
+      [
+        "flex_gemm/kernels/__init__.py",
+        2,
+        "from . import cuda"
+      ]
+    ],
+    "ordering": "flex_gemm/__init__.py line 10 imports kernels. kernels/__init__.py line 1 imports Triton; line 2 imports cuda. The exception aborts line 1 through grid_sample/indice_weighed_sum_fwd.py line 6 -> utils/autotuner.py line 11 -> filelock.",
+    "native_branch_conclusion": "The cuda import at kernels/__init__.py line 2 is not reached; the guest second from-import of cuda after import flex_gemm is also not reached.",
+    "strength_and_limit": "NOT_REACHED follows from the complete pinned wheel import graph and recorded Python traceback. No separate native-loader trace was collected; no native-path, binding or post-import evidence exists."
+  },
+  "recorded_admission": {
+    "gate_authorized": true,
+    "gpu": {
+      "name": "AMD Radeon RX 9070 XT",
+      "architecture": "gfx1201",
+      "count": 1,
+      "free_bytes": 14233980928,
+      "total_bytes": 16974905344,
+      "property_total_bytes": 16974905344
+    },
+    "gpu_initialized_before": false,
+    "gpu_initialized_after_admission": true,
+    "allocator_cap_bytes": 12884901888
+  },
+  "recorded_worker_evidence": {
+    "native_import_field": "ENTERED",
+    "native_import_field_meaning": "ENTERED marks entry to the full package-import statement; it does not mean the native ELF loader was entered.",
+    "memory_before": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "memory_release": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "vram_after_release": {
+      "free_bytes": 14233980928,
+      "total_bytes": 16974905344
+    },
+    "policy_final": {
+      "phase": "native_import",
+      "blocked": {
+        "filesystem_write": 1
+      },
+      "tensor_operations_allowed": 0,
+      "native_calls": 0,
+      "rejected_calls": 1
+    },
+    "models_loaded": false,
+    "neural_forwards": 0,
+    "native_binding_calls_recorded": 0,
+    "elapsed_seconds": 6.069213382000001,
+    "guest_phases": [
+      "gate-wait",
+      "gate-authorized",
+      "native-import-entry",
+      "release-entry",
+      "release-return",
+      "worker-finished"
+    ],
+    "cleanup_error_present": false
+  },
+  "missing_due_to_early_exception": {
+    "memory_after_import": "NOT_RECORDED",
+    "memory_peak": "NOT_RECORDED",
+    "vram_after_import": "NOT_RECORDED",
+    "package_path": "NOT_RECORDED",
+    "native_path": "NOT_RECORDED",
+    "native_sha256": "NOT_RECORDED",
+    "bindings": "NOT_RECORDED",
+    "bindings_count": "NOT_RECORDED",
+    "driver_helper_inactive": "NOT_RECORDED",
+    "import_host_return_seconds": "NOT_RECORDED",
+    "import_synchronized_seconds": "NOT_RECORDED"
+  },
+  "allocation_claim_limit": "Only before/released Torch allocated and reserved bytes were sampled as zero. Peak and after-import measurements are absent; this review does not assert zero peak or universal native-HIP allocation absence.",
+  "recorded_containment": {
+    "worker_returncode": 1,
+    "host_elapsed_seconds": 20.5,
+    "healthy_observation_count": 5,
+    "observer_healthy": true,
+    "all_observations_exit_zero_no_timeout_controllers_OK_no_events": true,
+    "windows_job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "named_distro_termination": {
+      "command": [
+        "wsl.exe",
+        "--terminate",
+        "Modly-AMD-Ubuntu-24.04"
+      ],
+      "returncode": 0
+    },
+    "host_phases": [
+      "supervisor-start",
+      "wsl-client-started",
+      "windows-job-attached",
+      "go-sent",
+      "wsl-client-exited",
+      "owned-distro-terminated",
+      "supervisor-finished"
+    ],
+    "raw_host_error_keys": [],
+    "note": "The Job was already empty at cleanup and required no forced termination. The supervisor grace block is absent because the worker exited with code 1; natural emptiness is evidenced by Job active counts, not a missing grace record."
+  },
+  "host_verdict_assessment": "UNKNOWN is correct. Worker UNKNOWN/exit 1 cannot satisfy the import-only PASS predicate; the unused vector-add NumericalError exemption is not exercised for this early failure.",
+  "prior_preflight_gap": {
+    "acknowledgement": "This reviewer identified filelock import-time temporary probes but overlooked CPython 3.12 fd-safe rmtree cleanup. Redirecting TMPDIR to owned scratch did not make its dir_fd operations admissible. The earlier preflight readiness assessment was too broad for this dependency cleanup path.",
+    "scope_that_held": "The unchanged policy rejected the unadmitted operation, the candidate stopped without retry or policy relaxation, Torch release completed, Windows observations stayed healthy, and owned Job/named-distro cleanup completed."
+  },
+  "cheapest_next_separately_approved_step": {
+    "type": "CPU_ONLY_POLICY_CORRECTION_AND_REPRODUCER",
+    "proposal": "Correct only the fd-relative unlink/rmdir admission needed by owned temporary-directory cleanup: attest each live directory descriptor through /proc/self/fd and directory metadata to the approved scratch/temp root, validate basename targets, and reject foreign, unresolved, deleted or traversal-bearing cases. Keep all native/tensor/runtime/process/network guards and other filesystem rules intact.",
+    "minimum_validation": "One CPU-only stdlib TemporaryDirectory/shutil.rmtree reproducer under the actual corrected audit policy, with owned cleanup accepted and foreign-directory/traversal descriptors rejected. No Torch, Triton, FlexGEMM/native import or GPU initialization is needed.",
+    "native_attempt_authorization": "Any later genuine native import remains a fresh separately approved attempt after CPU-only validation; current marker and run evidence must be preserved.",
+    "performed": false
+  },
+  "review_actions": {
+    "stdlib_text_AST_zip_hash_reads": true,
+    "candidate_executions": 0,
+    "WSL_commands": 0,
+    "AI_native_imports": 0,
+    "GPU_actions": 0,
+    "tests_run": 0,
+    "policy_or_candidate_edits": 0,
+    "only_new_outcome_report_written": true
+  }
+}

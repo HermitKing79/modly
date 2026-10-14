@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "helpers": {
+    "amd_bounded_gpu_proof": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_bounded_gpu_proof.py",
+      "sha256": "8910884b4d4bd433df654a8137586eb43711e37e97acfcf8462392ef4258dff4"
+    },
+    "amd_forward_owned_job": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_forward_owned_job.py",
+      "sha256": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64"
+    }
+  },
+  "guest": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-flexgemm-native-import-evidence\\native_import.py",
+  "script_sha256": "c8a05f8a2121f2a527a6a9871d8a51b6d11b897228da57930ea01443577d04ae",
+  "worker_command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/env",
+    "HSA_ENABLE_DXG_DETECTION=1",
+    "LD_LIBRARY_PATH=/opt/rocm-7.2.1/lib:/opt/rocm/lib:/usr/lib/wsl/lib",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "90s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-flexgemm-native-import-evidence/native_import.py",
+    "--worker",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-flexgemm-native-import-evidence/run/guest"
+  ],
+  "marker_absent": true,
+  "policy_sha256": "8292bd7dae51a724aa3a15d5e346b4fe1be8e372adb18f87b58df5a1fdf88058",
+  "wheel_sha256": "cadaa86c428a93c3aee10c4dd8dfb66604a424c8145670051ca0ce1a0f296285",
+  "native_sha256": "91f66fa2c0f3567cee71246257bea8eb0fe5af9b6c70617d3c5894aa9f103f01"
+}

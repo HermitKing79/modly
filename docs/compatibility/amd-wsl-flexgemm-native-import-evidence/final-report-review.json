@@ -1,0 +1,40 @@
+{
+  "reviewer": "independent /root/native_import_review",
+  "status": "PASS",
+  "report": "docs/compatibility/amd-wsl-flexgemm-native-import.md",
+  "report_sha256": "340faf3b870eb4554ee79259276d389be35f1e76bdb5698e3fa24afb8bcf9348",
+  "candidate_sha256": "c8a05f8a2121f2a527a6a9871d8a51b6d11b897228da57930ea01443577d04ae",
+  "reviewed_evidence_sha256": {
+    "run/guest/results.json": "fcb03e8da7d6c455efe7db96320f54b54c29d359f6bba2937c052c96f9d234e6",
+    "run/results.json": "d09a91cf662246d05ac47d71d03c7ef22f58850604f77b90e4c3bdf833eff89b",
+    "run/native-verdict.json": "b6073e60e889e59d6a99c3b34dea8172b26d2ee9e9d63ff05967c1f74d49ee43",
+    "verified-result-summary.json": "523de0023d1ed7ce03b063c22d13aea5e8cd10b508f8f0ba71d769d72e90a5d9",
+    "host-capture.json": "42e038b9211bcadad4c94bcc23e0f0edbe3266a1dcaa322a0c000d99d6dd5de7",
+    "linux-preservation-before.json": "89293eeca85af9f162240dd5fb52826b19e2a0d2476bf7931432655ab50acc47",
+    "linux-preservation-after.json": "c25eb3d61c84b6ba7dda764d9626776bed8e1af75e545566b350840d264d280a",
+    "windows-preservation-after.json": "044a708333ff2eb4a14a4dcae00ae94b3b3efc180ca1a383ef53c98437073806",
+    "preservation-after.json": "7d143ed003a81391bfbb6f20de1404dad0039360bfc167af05e25988a102a693",
+    "independent-outcome-review.json": "432d0c2b40fd4694356bcd158ccf28c8b56e5c01108979478fbce5bbf1c9a040"
+  },
+  "findings": [],
+  "resolved_report_precision_finding": "The configured success-only five-second Windows Job grace was not entered after worker exit 1. Report wording now distinguishes this from the recorded already-empty Job cleanup.",
+  "conclusions": [
+    "UNKNOWN is correctly retained for the single consumed package-import attempt. The full pinned import graph and traceback support native ELF NOT_REACHED; no AMD/native incompatibility is inferred.",
+    "Recorded runtime/GPU identities, 14,233,980,928-byte VRAM observations, 12-GiB Torch cap, before/release zero allocator samples, 6.069-second worker and 20.500-second supervisor values agree with the exact raw records.",
+    "Peak, post-import, loaded-binary and callable-binding records are correctly described as absent. Static/staged binary hashes are not presented as loaded-module verification.",
+    "Five healthy Windows observations, naturally empty owned Job with no forced cleanup, worker/host exit 1 and successful termination of only the named Modly distro agree with recorded outcome.",
+    "Linux before/after PASS each verifies 922 staged payloads and unchanged approved library metadata; Windows after PASS establishes the stated passive preservation scope without checkpoint tensor deserialization or payload rehash.",
+    "The report acknowledges the missed fd-relative filelock temporary cleanup admission. Its only next action is a separately approved CPU-only owned-temporary cleanup correction with a genuine stdlib reproducer and negative descriptor/traversal cases. A fresh native import needs separate approval; model loading and the saved 3,743-row neural forward remain deferred.",
+    "No retry, policy repair or new CPU/GPU test milestone is claimed or performed in the final report."
+  ],
+  "review_scope_limit": "Read-only report/evidence comparison. No remote GitHub recheck, worker/native/WSL execution, AI imports or tests were performed by this reviewer.",
+  "actions": {
+    "report_or_code_edits": 0,
+    "candidate_executions": 0,
+    "WSL_commands": 0,
+    "AI_native_imports": 0,
+    "GPU_actions": 0,
+    "tests_run": 0,
+    "only_final_report_review_written": true
+  }
+}

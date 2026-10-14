@@ -1,0 +1,60 @@
+{
+  "classification": "UNKNOWN",
+  "native_import": "ENTERED",
+  "started_utc": "2026-10-14T16:20:04.126789+00:00",
+  "gate_authorized": true,
+  "native_binding_calls": 0,
+  "models_loaded": false,
+  "neural_forwards": 0,
+  "wheel_sha256": "cadaa86c428a93c3aee10c4dd8dfb66604a424c8145670051ca0ce1a0f296285",
+  "staged_payloads_checked": 41,
+  "runtime": {
+    "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "distribution_version": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "git_version": "ff65f5bc672795c5e5033900ea0a0c4f8566c8cf",
+    "hip": "7.2.53211-e1a6bc5663",
+    "cuda": null,
+    "python": "3.12.3",
+    "prefix": "/opt/modly-wsl/venv",
+    "gpu_initialized_before": false,
+    "triton": "3.5.1+rocm7.2.1.gita272dfa8",
+    "torch_path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/__init__.py",
+    "triton_path": "/opt/modly-wsl/venv/lib/python3.12/site-packages/triton/__init__.py"
+  },
+  "gpu": {
+    "name": "AMD Radeon RX 9070 XT",
+    "architecture": "gfx1201",
+    "count": 1,
+    "free_bytes": 14233980928,
+    "total_bytes": 16974905344,
+    "property_total_bytes": 16974905344
+  },
+  "allocator_cap_bytes": 12884901888,
+  "memory_before": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "gpu_initialized_after_admission": true,
+  "error_type": "ImportPolicyError",
+  "error": "filesystem_write: Relative directory descriptor is not admitted",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-flexgemm-native-import-evidence/native_import.py\", line 155, in guest\n    import flex_gemm\n  File \"/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/__init__.py\", line 10, in <module>\n    from . import kernels\n  File \"/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/kernels/__init__.py\", line 1, in <module>\n    from . import triton\n  File \"/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/kernels/triton/__init__.py\", line 1, in <module>\n    from .grid_sample import *\n  File \"/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/kernels/triton/grid_sample/__init__.py\", line 2, in <module>\n    from .indice_weighed_sum_fwd import indice_weighed_sum_fwd\n  File \"/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/kernels/triton/grid_sample/indice_weighed_sum_fwd.py\", line 6, in <module>\n    from ....utils.autotuner import triton_autotune\n  File \"/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/utils/__init__.py\", line 1, in <module>\n    from .autotuner import autotune, save_autotune_cache, load_autotune_cache, get_autotune_cache\n  File \"/home/modly/native-decoder-preparation-6dd94a85/site-packages/flex_gemm/utils/autotuner.py\", line 11, in <module>\n    from filelock import FileLock\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/filelock/__init__.py\", line 41, in <module>\n    from ._soft_rw import AsyncAcquireSoftReadWriteReturnProxy, AsyncSoftReadWriteLock, SoftReadWriteLock\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/filelock/_soft_rw/__init__.py\", line 5, in <module>\n    from ._async import AsyncAcquireSoftReadWriteReturnProxy, AsyncSoftReadWriteLock\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/filelock/_soft_rw/_async.py\", line 21, in <module>\n    from ._sync import SoftReadWriteLock\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/filelock/_soft_rw/_sync.py\", line 30, in <module>\n    from ._storage import OsFiles\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/filelock/_soft_rw/_storage.py\", line 14, in <module>\n    from filelock._strict import _link_no_follow, _raise_if_hard_links_unsupported\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/filelock/_strict.py\", line 86, in <module>\n    _LINK_HONORS_FOLLOW_SYMLINKS: Final[bool] = _probe_link_follow_symlinks()\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/modly-wsl/venv/lib/python3.12/site-packages/filelock/_strict.py\", line 77, in _probe_link_follow_symlinks\n    with tempfile.TemporaryDirectory() as directory:\n  File \"/usr/lib/python3.12/tempfile.py\", line 1085, in __exit__\n    self.cleanup()\n  File \"/usr/lib/python3.12/tempfile.py\", line 1089, in cleanup\n    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)\n  File \"/usr/lib/python3.12/tempfile.py\", line 1069, in _rmtree\n    _rmtree(name, onexc=onexc)\n  File \"/usr/lib/python3.12/shutil.py\", line 785, in rmtree\n    _rmtree_safe_fd(fd, path, onexc)\n  File \"/usr/lib/python3.12/shutil.py\", line 715, in _rmtree_safe_fd\n    os.unlink(entry.name, dir_fd=topfd)\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_wsl_native_import_policy.py\", line 241, in audit\n    self._write_path(args[0], dir_fd)\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_wsl_native_import_policy.py\", line 215, in _write_path\n    self.reject(\"filesystem_write\", \"Relative directory descriptor is not admitted\")\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_wsl_native_import_policy.py\", line 45, in reject\n    raise ImportPolicyError(boundary + \": \" + str(detail))\namd_wsl_native_import_policy.ImportPolicyError: filesystem_write: Relative directory descriptor is not admitted\n",
+  "memory_release": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "vram_after_release": {
+    "free_bytes": 14233980928,
+    "total_bytes": 16974905344
+  },
+  "policy_final": {
+    "phase": "native_import",
+    "blocked": {
+      "filesystem_write": 1
+    },
+    "tensor_operations_allowed": 0,
+    "native_calls": 0,
+    "rejected_calls": 1
+  },
+  "elapsed_seconds": 6.069213382000001,
+  "finished_utc": "2026-10-14T16:20:10.810107+00:00"
+}
