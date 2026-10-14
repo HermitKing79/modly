@@ -1,0 +1,231 @@
+{
+  "classification": "CPU_PASS",
+  "checks": [
+    {
+      "check": "native-import-phase-factory-denial",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "explicit-CPU",
+      "outcome": "ACCEPTED",
+      "device": "cpu",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 1
+    },
+    {
+      "check": "explicit-meta",
+      "outcome": "ACCEPTED",
+      "device": "meta",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 1
+    },
+    {
+      "check": "implicit-CPU",
+      "outcome": "ACCEPTED",
+      "device": "cpu",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 1
+    },
+    {
+      "check": "context-implicit-CPU",
+      "outcome": "ACCEPTED",
+      "device": "cpu",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 2
+    },
+    {
+      "check": "context-implicit-meta",
+      "outcome": "ACCEPTED",
+      "device": "meta",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 2
+    },
+    {
+      "check": "explicit-cuda-<class 'str'>",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "explicit-cuda:0-<class 'str'>",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "explicit-cuda-<class 'torch.device'>",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "exact-original-implicit-CUDA",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "explicit-CPU-overrides-CUDA-context",
+      "outcome": "ACCEPTED",
+      "device": "cpu",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 2
+    },
+    {
+      "check": "nested-CUDA-then-meta",
+      "outcome": "ACCEPTED",
+      "device": "meta",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 3
+    },
+    {
+      "check": "nested-meta-then-CUDA",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "tensor-to-CPU",
+      "outcome": "ACCEPTED",
+      "device": "cpu",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 1
+    },
+    {
+      "check": "tensor-to-other-CPU",
+      "outcome": "ACCEPTED",
+      "device": "cpu",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 1
+    },
+    {
+      "check": "tensor-to-meta",
+      "outcome": "ACCEPTED",
+      "device": "meta",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 1
+    },
+    {
+      "check": "tensor-to-dtype-only",
+      "outcome": "ACCEPTED",
+      "device": "cpu",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 1
+    },
+    {
+      "check": "tensor-to-CUDA-positional",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "tensor-to-CUDA-keyword",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "tensor-to-CUDA-index",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "tensor-cuda",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "tensor-new-empty-CUDA",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "empty-like-CPU-not-context-constructor",
+      "outcome": "ACCEPTED",
+      "device": "cpu",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 2
+    },
+    {
+      "check": "set-default-cpu",
+      "outcome": "ACCEPTED",
+      "device": "cpu",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 2
+    },
+    {
+      "check": "set-default-meta",
+      "outcome": "ACCEPTED",
+      "device": "meta",
+      "shape": [
+        1
+      ],
+      "original_callbacks": 2
+    },
+    {
+      "check": "set-default-cuda",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "foreign-mode-before-original",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    },
+    {
+      "check": "malformed-active-device-before-original",
+      "outcome": "REJECTED_BEFORE_ORIGINAL",
+      "original_callbacks": 0
+    }
+  ],
+  "GPU_entry_attempts": [],
+  "native_imports": false,
+  "real_weights_loaded": false,
+  "started_utc": "2026-10-14T15:43:58.225231+00:00",
+  "authorization_accepted": true,
+  "runtime": {
+    "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "distribution": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "hip": "7.2.53211-e1a6bc5663",
+    "cuda": null,
+    "python": "3.12.3",
+    "prefix": "/opt/modly-wsl/venv",
+    "triton": "3.5.1+rocm7.2.1.gita272dfa8"
+  },
+  "GPU_initialized_before": false,
+  "policy": {
+    "phase": "cpu_meta",
+    "blocked": {
+      "tensor_operation": 14
+    },
+    "tensor_operations_allowed": 14,
+    "native_calls": 0,
+    "rejected_calls": 14
+  },
+  "constructor_identity_preserved": true,
+  "guards_restored": true,
+  "GPU_initialized_after": false,
+  "native_module_absent": true,
+  "GPU_initialized_final": false,
+  "finished_utc": "2026-10-14T15:44:05.482001+00:00"
+}

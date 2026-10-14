@@ -1,0 +1,21 @@
+{
+  "classification": "PASS",
+  "checks": 28,
+  "accepted_CPU_meta_checks": 14,
+  "rejected_before_original_checks": 14,
+  "GPU_entry_attempts": [],
+  "GPU_initialized_final": false,
+  "clean_worker_exit": true,
+  "unforced_owned_Job_exit": true,
+  "healthy_observer": true,
+  "only_named_distro_terminated": true,
+  "runtime": {
+    "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "distribution": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "hip": "7.2.53211-e1a6bc5663",
+    "cuda": null,
+    "python": "3.12.3",
+    "prefix": "/opt/modly-wsl/venv",
+    "triton": "3.5.1+rocm7.2.1.gita272dfa8"
+  }
+}

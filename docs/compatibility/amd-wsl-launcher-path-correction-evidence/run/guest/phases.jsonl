@@ -1,0 +1,56 @@
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.355399+00:00", "monotonic_seconds": 9.915046702, "check": "native-import-phase-factory-denial"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.375525+00:00", "monotonic_seconds": 9.935168331, "check": "native-import-phase-factory-denial", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.394987+00:00", "monotonic_seconds": 9.954630709, "check": "explicit-CPU"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.427820+00:00", "monotonic_seconds": 9.98746357, "check": "explicit-CPU", "outcome": "ACCEPTED", "device": "cpu", "shape": [1], "original_callbacks": 1}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.447688+00:00", "monotonic_seconds": 10.007331798, "check": "explicit-meta"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.468760+00:00", "monotonic_seconds": 10.02840302, "check": "explicit-meta", "outcome": "ACCEPTED", "device": "meta", "shape": [1], "original_callbacks": 1}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.488550+00:00", "monotonic_seconds": 10.048192901, "check": "implicit-CPU"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.508434+00:00", "monotonic_seconds": 10.068077179, "check": "implicit-CPU", "outcome": "ACCEPTED", "device": "cpu", "shape": [1], "original_callbacks": 1}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.528087+00:00", "monotonic_seconds": 10.087730263, "check": "context-implicit-CPU"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.548444+00:00", "monotonic_seconds": 10.108087794, "check": "context-implicit-CPU", "outcome": "ACCEPTED", "device": "cpu", "shape": [1], "original_callbacks": 2}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.568301+00:00", "monotonic_seconds": 10.127944279, "check": "context-implicit-meta"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.588274+00:00", "monotonic_seconds": 10.147917652, "check": "context-implicit-meta", "outcome": "ACCEPTED", "device": "meta", "shape": [1], "original_callbacks": 2}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.608158+00:00", "monotonic_seconds": 10.167800857, "check": "explicit-cuda-<class 'str'>"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.627685+00:00", "monotonic_seconds": 10.187328618, "check": "explicit-cuda-<class 'str'>", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.646773+00:00", "monotonic_seconds": 10.206416111, "check": "explicit-cuda:0-<class 'str'>"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.666051+00:00", "monotonic_seconds": 10.225694778, "check": "explicit-cuda:0-<class 'str'>", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.684991+00:00", "monotonic_seconds": 10.244634412, "check": "explicit-cuda-<class 'torch.device'>"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.704155+00:00", "monotonic_seconds": 10.263798185, "check": "explicit-cuda-<class 'torch.device'>", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.723697+00:00", "monotonic_seconds": 10.283340412, "check": "exact-original-implicit-CUDA"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.743374+00:00", "monotonic_seconds": 10.303016893, "check": "exact-original-implicit-CUDA", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.762647+00:00", "monotonic_seconds": 10.322290387, "check": "explicit-CPU-overrides-CUDA-context"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.782340+00:00", "monotonic_seconds": 10.341982876, "check": "explicit-CPU-overrides-CUDA-context", "outcome": "ACCEPTED", "device": "cpu", "shape": [1], "original_callbacks": 2}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.801906+00:00", "monotonic_seconds": 10.361549323, "check": "nested-CUDA-then-meta"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.821506+00:00", "monotonic_seconds": 10.381148986, "check": "nested-CUDA-then-meta", "outcome": "ACCEPTED", "device": "meta", "shape": [1], "original_callbacks": 3}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.840920+00:00", "monotonic_seconds": 10.400565372, "check": "nested-meta-then-CUDA"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.860315+00:00", "monotonic_seconds": 10.419957991, "check": "nested-meta-then-CUDA", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.879764+00:00", "monotonic_seconds": 10.439406896, "check": "tensor-to-CPU"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.902003+00:00", "monotonic_seconds": 10.461646228, "check": "tensor-to-CPU", "outcome": "ACCEPTED", "device": "cpu", "shape": [1], "original_callbacks": 1}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.921316+00:00", "monotonic_seconds": 10.480959731, "check": "tensor-to-other-CPU"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.940540+00:00", "monotonic_seconds": 10.500183686, "check": "tensor-to-other-CPU", "outcome": "ACCEPTED", "device": "cpu", "shape": [1], "original_callbacks": 1}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:04.959824+00:00", "monotonic_seconds": 10.519467813, "check": "tensor-to-meta"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:04.984001+00:00", "monotonic_seconds": 10.543644892, "check": "tensor-to-meta", "outcome": "ACCEPTED", "device": "meta", "shape": [1], "original_callbacks": 1}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.002935+00:00", "monotonic_seconds": 10.562580629, "check": "tensor-to-dtype-only"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.024504+00:00", "monotonic_seconds": 10.584148147, "check": "tensor-to-dtype-only", "outcome": "ACCEPTED", "device": "cpu", "shape": [1], "original_callbacks": 1}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.044026+00:00", "monotonic_seconds": 10.603669357, "check": "tensor-to-CUDA-positional"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.063115+00:00", "monotonic_seconds": 10.622758059, "check": "tensor-to-CUDA-positional", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.082566+00:00", "monotonic_seconds": 10.642211362, "check": "tensor-to-CUDA-keyword"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.101834+00:00", "monotonic_seconds": 10.661479419, "check": "tensor-to-CUDA-keyword", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.121431+00:00", "monotonic_seconds": 10.681075027, "check": "tensor-to-CUDA-index"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.141258+00:00", "monotonic_seconds": 10.700901074, "check": "tensor-to-CUDA-index", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.161110+00:00", "monotonic_seconds": 10.720753554, "check": "tensor-cuda"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.180304+00:00", "monotonic_seconds": 10.739947482, "check": "tensor-cuda", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.199069+00:00", "monotonic_seconds": 10.758712421, "check": "tensor-new-empty-CUDA"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.218355+00:00", "monotonic_seconds": 10.777998832, "check": "tensor-new-empty-CUDA", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.237926+00:00", "monotonic_seconds": 10.797569584, "check": "empty-like-CPU-not-context-constructor"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.257106+00:00", "monotonic_seconds": 10.816749146, "check": "empty-like-CPU-not-context-constructor", "outcome": "ACCEPTED", "device": "cpu", "shape": [1], "original_callbacks": 2}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.276646+00:00", "monotonic_seconds": 10.836288949, "check": "set-default-cpu"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.296464+00:00", "monotonic_seconds": 10.856108819, "check": "set-default-cpu", "outcome": "ACCEPTED", "device": "cpu", "shape": [1], "original_callbacks": 2}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.315943+00:00", "monotonic_seconds": 10.875586345, "check": "set-default-meta"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.335471+00:00", "monotonic_seconds": 10.895114256, "check": "set-default-meta", "outcome": "ACCEPTED", "device": "meta", "shape": [1], "original_callbacks": 2}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.355098+00:00", "monotonic_seconds": 10.914741463, "check": "set-default-cuda"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.375319+00:00", "monotonic_seconds": 10.934962602, "check": "set-default-cuda", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.395111+00:00", "monotonic_seconds": 10.954755298, "check": "foreign-mode-before-original"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.415058+00:00", "monotonic_seconds": 10.974703735, "check": "foreign-mode-before-original", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}
+{"phase": "check-entry", "utc": "2026-10-14T15:44:05.435011+00:00", "monotonic_seconds": 10.994655365, "check": "malformed-active-device-before-original"}
+{"phase": "check-return", "utc": "2026-10-14T15:44:05.454672+00:00", "monotonic_seconds": 11.014315415, "check": "malformed-active-device-before-original", "outcome": "REJECTED_BEFORE_ORIGINAL", "original_callbacks": 0}

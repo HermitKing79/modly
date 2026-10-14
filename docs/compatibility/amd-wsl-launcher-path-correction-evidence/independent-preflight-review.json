@@ -1,0 +1,40 @@
+{
+  "reviewer": "independent launcher_review agent",
+  "verdict": "GO for exactly one already authorized installed-runtime CPU acceptance; actual result pending",
+  "base": "511e135b7c7cf4fd3e4af30586e36a64524e6e24",
+  "review_scope": "Read-only source/diff/hash review plus this review artifact. No WSL, Torch, native, GPU, test, observer or acceptance execution by reviewer.",
+  "reviewed_sha256": {
+    "docs/compatibility/amd-wsl-launcher-path-correction-evidence/acceptance.py": "1a2c4b23f0a8a183363c464235b35f92693f461527757ab393849a3c22185ad8",
+    "docs/compatibility/amd-wsl-launcher-path-correction-evidence/installed-source-before.json": "8a6213bca62845122a4f6b149e46e000876f1793011e1ea29a50695929ff8808",
+    "scripts/compatibility/amd_wsl_native_import_policy.py": "8292bd7dae51a724aa3a15d5e346b4fe1be8e372adb18f87b58df5a1fdf88058",
+    "scripts/compatibility/test_amd_wsl_native_import_policy.py": "46d1ac70656b1cdb140fd212d7d3438f687cd4c1b92fb2491d3132ddf1fc5cc9",
+    "scripts/compatibility/amd_wsl_rocdxg_smoke.py": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2",
+    "scripts/compatibility/amd_bounded_gpu_proof.py": "8910884b4d4bd433df654a8137586eb43711e37e97acfcf8462392ef4258dff4",
+    "scripts/compatibility/amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64",
+    "scripts/compatibility/amd_native_import_preflight.py": "3e66543bfdb81e5ed87d328b68729621433bf2925018e376031abb65621bbdde"
+  },
+  "findings": [],
+  "independent_static_checks": {
+    "guest_source_exactly_unchanged": true,
+    "installed_source_manifest_exactly_unchanged": true,
+    "DeviceContext_policy_and_16_test_source_unchanged": true,
+    "shared_supervisor_and_helpers_unchanged": true,
+    "new_attempt_marker_absent_at_review": true,
+    "new_helper_preflight_record_absent_at_review": true
+  },
+  "verified_contracts": [
+    "The exact new diff only adds host helper_preflight and patches smoke.load_sibling alongside its existing guest SCRIPT and marker patches.",
+    "Before smoke.supervise and therefore before reserve_attempt, helper_preflight resolves and verifies amd_bounded_gpu_proof.py and amd_forward_owned_job.py under ROOT/scripts/compatibility, hashes them against preserved control sources, and imports the real modules from those anchored paths.",
+    "The cached fixed_helper mapping admits only those two supervisor helpers and serves the direct supervisor helper loads plus authorize_go's healthy_observation helper load independently of the patched guest SCRIPT.",
+    "amd_bounded_gpu_proof's nested amd_native_import_preflight import retains the real module's original SCRIPT in scripts/compatibility.",
+    "Selected guest resolves to the new evidence acceptance.py; its command is constructed through the unmodified production worker_command and guest_path, and preflight records the selected guest path and hash before the attempt marker.",
+    "No replacement Job, observer, authorization validator, supervisor result or cleanup result is fabricated. The production binary GO/EOF protocol, real Job attach/accounting/grace, periodic passive observer, deadlines, guest timeout and termination of only the named distro remain unchanged.",
+    "Guest source matches the prior reviewed CPU acceptance exactly, including rejection before original callbacks, GPU-entry probes, positive controls, identity preservation, restoration and excluded native/model absence assertions.",
+    "The existing separate CPU verdict retains the raw production supervisor UNKNOWN and requires real successful CPU worker exit, healthy observer, natural empty Job, unforced cleanup and successful named-distro termination."
+  ],
+  "execution_gate": "The sole host invocation must save helper-preflight.json showing both actual imported helper paths under ROOT/scripts/compatibility and the intended new guest hash before its exclusive CPU-attempt-started.json marker. Outcome must be reviewed from saved records without rerunning.",
+  "limitations": [
+    "This source review does not itself execute helper resolution or qualify installed-runtime CPU acceptance.",
+    "No native import, GPU operation, real weight loading, framework redesign or additional acceptance is qualified."
+  ]
+}
