@@ -1,0 +1,52 @@
+{
+  "classification": "QUALIFIED",
+  "forbidden_imports": [],
+  "tunable_admission": {
+    "after_torch_import": {
+      "flags": {
+        "enabled": false,
+        "tuning": false,
+        "record_untuned": false
+      },
+      "environment": {
+        "PYTORCH_TUNABLEOP_ENABLED": "0",
+        "PYTORCH_TUNABLEOP_TUNING": "0",
+        "PYTORCH_TUNABLEOP_RECORD_UNTUNED": "0"
+      }
+    }
+  },
+  "runtime": {
+    "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "distribution_version": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "git_version": "ff65f5bc672795c5e5033900ea0a0c4f8566c8cf",
+    "hip": "7.2.53211-e1a6bc5663",
+    "cuda": null,
+    "python": "3.12.3",
+    "prefix": "/opt/modly-wsl/venv",
+    "gpu_initialized_before": false
+  },
+  "gpu": {
+    "count": 1,
+    "name": "AMD Radeon RX 9070 XT",
+    "architecture": "gfx1201",
+    "free_bytes": 14627618816,
+    "total_bytes": 16974905344
+  },
+  "memory_before": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "memory_release": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "free_bytes_after_release": 14627618816,
+  "policy": {
+    "phase": "native_import",
+    "blocked": {},
+    "tensor_operations_allowed": 0,
+    "native_calls": 0,
+    "rejected_calls": 0
+  },
+  "elapsed_seconds": 6.923830902
+}
