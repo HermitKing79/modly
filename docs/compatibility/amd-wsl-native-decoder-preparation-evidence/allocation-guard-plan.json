@@ -1,0 +1,14 @@
+{
+  "goal": "Describe the original Linux EXPLICIT_GEMM branch's visible allocations and reject execution before unknown library workspace is allocated.",
+  "scope": "Pure CPU diagnostic arithmetic for the fixed 40-convolution/four-subdivision decoder; no installed hooks, algorithm selection, model import, WSL, native build or GPU calls.",
+  "files": ["scripts/compatibility/amd_wsl_decoder_admission.py", "scripts/compatibility/test_amd_wsl_decoder_admission.py"],
+  "steps": [
+    "Verify local Linux source-copy identities and read the already verified wheel as data for init_hashmap.",
+    "Enumerate actual convolution weights and four C2S source boundaries against checkpoint-header metadata.",
+    "Run focused tests first with the missing guard module, then implement visible allocation arithmetic and unconditional unknown-workspace rejection before callbacks.",
+    "Run host-only tests and save source/formula/boundary evidence; leave whole-decoder admission NO-GO."
+  ],
+  "explicit_visible_formula_uint32": "16*N + 21*N*K + 4*N*K*Ci + 2*N*Co, K=27",
+  "unresolved": ["ATen advanced-indexing and matrix-multiplication/BLAS internal workspace", "Allocator rounding and surrounding neural lifetimes", "No installed preallocation hooks"],
+  "current_default": "MASKED_IMPLICIT_GEMM_SPLITK is distinct from the proposed original EXPLICIT_GEMM branch; its no_bwd postprocessor workspace remains unaudited."
+}

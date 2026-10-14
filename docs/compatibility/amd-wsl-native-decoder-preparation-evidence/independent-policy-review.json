@@ -1,0 +1,39 @@
+{
+  "verdict": "NO-GO for candidate execution",
+  "native_compatibility": "UNKNOWN",
+  "policy_frozen": true,
+  "native_attempt_performed": false,
+  "real_weights_loaded": false,
+  "FlexGEMM_import_performed": false,
+  "supersession": {
+    "earlier_record": "policy-cpu-acceptance-corrected.json",
+    "earlier_result": "PASS for explicit-device frontend protection and genuine Torch/Triton constructors only",
+    "superseded_for_candidate_admission": true,
+    "reason": "Later exact-candidate CPU confirmation passed implicit meta/CPU routing but failed default GPU device rejection before Torch._lazy_init. Earlier PASS does not qualify the frozen full policy."
+  },
+  "last_confirmation": {
+    "exit": 1,
+    "seconds": 9.9223775,
+    "source": "policy-cpu-meta-confirmation.py",
+    "source_sha256": "88145d24e99410b55ac840c2e212e75df14e279bb2ed3648558d9efb59953cad",
+    "policy": "scripts/compatibility/amd_wsl_native_import_policy.py",
+    "policy_sha256": "694f883a6c52631beb35622372bf0ecc04d446e41cc0b5afa5d1998416c4ec02",
+    "stdout": "policy-cpu-meta-confirmation.stdout.txt",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr": "policy-cpu-meta-confirmation.stderr.txt",
+    "stderr_sha256": "385c5b04d0e3a4ab2780dda3dea201932de3adb75e14d004af20beb91e4d1c23",
+    "implicit_meta_route": "PASS",
+    "implicit_cpu_route": "PASS",
+    "default_GPU_frontend_rejection": "FAIL",
+    "actual_GPU_initialization": "Intercepted by CPU probe replacement of torch.cuda._lazy_init before original call",
+    "capture_note": "Original tool output was a combined stream with stderr and no stdout; preserved without rerunning."
+  },
+  "defect": "Torch2.9.1 DeviceContext on the actual with torch.device(cuda) route injects the default CUDA device through __torch_function__ after the factory wrapper. module CURRENT_DEVICE remained insufficient to attest that active context. TorchDispatchMode receives the operation after frontend lazy initialization, so neither boundary proved rejection before initialization.",
+  "smallest_future_CPU_only_correction": "Before calling the original factory, inspect the genuine active TorchFunctionMode stack for DeviceContext.device rather than relying on module CURRENT_DEVICE. Retain the cached original constructor identities. Separately authorize one CPU-only check of implicit CPU, implicit meta, explicit GPU and implicit GPU device requests, with _lazy_init and GPU metadata replaced by rejection, no FlexGEMM/native extension/weights/forward. Stop if any GPU-entry probe is reached.",
+  "limitations": [
+    "Python instrumentation does not contain ELF constructors; native import remains a separately approved GPU-risk action.",
+    "No inference from the toolchain build/static ELF qualification proves native load compatibility.",
+    "No additional fixes, tests or GPU actions after the final stop decision."
+  ],
+  "related_review": "policy-and-loader-independent-review.json"
+}

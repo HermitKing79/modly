@@ -1,0 +1,11 @@
+{
+  "exit": 1,
+  "seconds": 9.9384661,
+  "source": "policy-cpu-original-source.py",
+  "source_sha256": "c63a5d9d0f5600c07475989e63e4ae17cb04fa611496f0b8955346be918f96ae",
+  "stdout": "policy-cpu-original.stdout.txt",
+  "stderr": "policy-cpu-original.stderr.txt",
+  "native_import_attempted": false,
+  "GPU_lazy_init_intercepted": true,
+  "note": "Original tool returned a combined output stream containing this stderr and no stdout; preserved without rerunning."
+}

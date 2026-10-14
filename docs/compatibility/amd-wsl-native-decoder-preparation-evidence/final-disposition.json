@@ -1,0 +1,22 @@
+{
+  "classification": "UNKNOWN",
+  "disposition": "STOP_BEFORE_GENUINE_NATIVE_IMPORT",
+  "recorded_utc": "2026-10-14T13:38:31.0811077Z",
+  "reviewer": "/root/wsl_stdin_review",
+  "supersedes": "independentpreflightreview.json",
+  "historical_review_sha256": "c763915156a2b63fbd2987cb92d1f32481cbb28f4ed0180e551c1b2c6a9a20d5",
+  "historical_review_preserved": true,
+  "stop_basis": "Root reported final actual Linux meta/default-device CPU confirmation failed before any native attempt",
+  "failure": "with torch.device(cuda), DeviceContext injects CUDA after the frontend guard when CURRENT_DEVICE is None, reaching the lazy-initialization denial boundary",
+  "meaning": "The frontend policy is not qualified for the actual Linux runtime; static approval and earlier narrower CPU PASS do not establish safe native or decoder admission",
+  "genuine_FlexGEMM_import_attempts": 0,
+  "genuine_checkpoint_tensor_loading": false,
+  "neural_forward_calls": 0,
+  "native_attempt_marker_present": false,
+  "repairs_after_stop": 0,
+  "tests_after_stop": 0,
+  "code_frozen": true,
+  "full_saved_turret_tokens": 3743,
+  "neural_workspace_readiness": "UNKNOWN",
+  "actions_remaining": "Publication and preservation only; no further execution authorized by this review"
+}

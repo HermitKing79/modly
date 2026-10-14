@@ -1,0 +1,10 @@
+# Preserve exact reviewed bytes for this bounded proof only.
+/docs/compatibility/amd-wsl-native-decoder-preparation.md -text whitespace=cr-at-eol
+/experimental/extensions/trellis2-amd/shape_decoder_loader.py -text whitespace=cr-at-eol
+/scripts/compatibility/amd_wsl_decoder_admission.py -text whitespace=cr-at-eol
+/scripts/compatibility/amd_wsl_native_decoder_preparation.py -text whitespace=cr-at-eol
+/scripts/compatibility/amd_wsl_native_import_policy.py -text whitespace=cr-at-eol
+/scripts/compatibility/test_amd_shape_decoder_loader.py -text whitespace=cr-at-eol
+/scripts/compatibility/test_amd_wsl_decoder_admission.py -text whitespace=cr-at-eol
+/scripts/compatibility/test_amd_wsl_native_decoder_preparation.py -text whitespace=cr-at-eol
+/scripts/compatibility/test_amd_wsl_native_import_policy.py -text whitespace=cr-at-eol

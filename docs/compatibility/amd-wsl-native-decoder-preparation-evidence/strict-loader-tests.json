@@ -1,0 +1,27 @@
+{
+  "command": [
+    "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-native-decoder-preparation-evidence\\cpu-loader-tests.py",
+    "test_amd_strict_loader.py",
+    "strict-loader-tests"
+  ],
+  "test_pattern": "test_amd_strict_loader.py",
+  "tests_run": 5,
+  "expected_tests": 5,
+  "passed": true,
+  "elapsed_seconds": 3.5159999999959837,
+  "runtime": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "torch": "2.12.0+rocm7.14.0",
+    "hip": "7.14.60850",
+    "cuda": null,
+    "gpu_initialized": false
+  },
+  "execution_scope": "tiny synthetic CPU/meta tensors; GPU lazy initialization denied in each test",
+  "forbidden_native_or_decoder_modules": [],
+  "real_checkpoint_tensor_loading": false,
+  "stdout": "strict-loader-tests.stdout.txt",
+  "stderr": "strict-loader-tests.stderr.txt"
+}

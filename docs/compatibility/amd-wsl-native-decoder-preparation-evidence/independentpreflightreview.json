@@ -1,0 +1,42 @@
+{
+  "reviewer": "/root/wsl_stdin_review",
+  "reviewed_utc": "2026-10-14T13:34:56.2556842Z",
+  "status": "APPROVED_FOR_ONE_NATIVE_IMPORT_AND_CONDITIONAL_CPU_LOAD",
+  "scope": "Independent read-only source review of root worker/supervisor, import policy and admission; own loader excluded",
+  "source_sha256": {
+    "scripts/compatibility/amd_wsl_native_decoder_preparation.py": "7d88570dffa5707542a74d78b9948b53bc248b8df523201a1afe1ac8429f2925",
+    "scripts/compatibility/amd_wsl_native_import_policy.py": "694f883a6c52631beb35622372bf0ecc04d446e41cc0b5afa5d1998416c4ec02",
+    "scripts/compatibility/amd_wsl_decoder_admission.py": "7107cd2a33404441b1b2be8591d89ef97d189b015c4df207c8f8f0d653439057"
+  },
+  "new_WSL_GPU_native_or_checkpoint_execution": false,
+  "accepted_contracts": [
+    "Exclusive single native attempt marker; actual binary GO gate after Job attachment and healthy observations",
+    "Named-distro-only termination; unchanged shared OwnedJob finish; healthy cleanup monitoring",
+    "Native 60s, CPU loading 120s, guest timeout 240s and host deadline 270s",
+    "Native import phase blocks all dispatched tensor operations; CPU/meta phase rejects GPU tensors/devices",
+    "Profile guards cover neural Module calls and FlexGEMM/native/autotune functions; Triton compiler/helper launch boundaries guarded",
+    "Cache/home/temp writes confined to owned staging/evidence; network/process audit rejection",
+    "Admission helpers always reject original explicit convolution/subdivision before allocation; full turret objective retained"
+  ],
+  "initial_findings": [
+    {
+      "severity": "Important",
+      "path": "scripts/compatibility/amd_wsl_native_decoder_preparation.py",
+      "line": 81,
+      "finding": "validate_qualified accepts nominal qualification without evidence of successful complete CPU decoder loading or CPU model collection",
+      "required_change": "Require decoder_cpu PASS, CPU_model_collected true, exact 292 entries/216 F16/76 F32 and exact widening roundtrip/no-forward diagnostics",
+      "resolution": "Resolved: validator now requires complete CPU/release diagnostics and rejects error/cleanup/final policy violations"
+    },
+    {
+      "severity": "Important",
+      "path": "scripts/compatibility/amd_wsl_native_decoder_preparation.py",
+      "line": 81,
+      "finding": "Worker finally may append cleanup_error after classification became QUALIFIED; validator also does not reject worker errors or final policy violations",
+      "required_change": "Reject error/cleanup_error and validate final policy rejection/native counters before qualification",
+      "resolution": "Resolved: validator now requires complete CPU/release diagnostics and rejects error/cleanup/final policy violations"
+    }
+  ],
+  "current_blocking_findings": [],
+  "disposition": "No blocking pre-attempt findings in root worker/supervisor, import policy or non-executable admission. Scope is one genuine native import then conditional CPU loading, with zero neural forwards; workspace qualification remains UNKNOWN.",
+  "own_loader_excluded_from_independent_review": true
+}

@@ -1,0 +1,13 @@
+test_actual_constructor_shape_dtype_keys_and_buffers_fail_closed (test_amd_shape_decoder_loader.ShapeDecoderLoaderTests.test_actual_constructor_shape_dtype_keys_and_buffers_fail_closed) ... ok
+test_cold_loader_import_does_not_import_torch_or_native_packages (test_amd_shape_decoder_loader.ShapeDecoderLoaderTests.test_cold_loader_import_does_not_import_torch_or_native_packages) ... ok
+test_failed_roundtrip_unloads_and_does_not_expose_partial_model (test_amd_shape_decoder_loader.ShapeDecoderLoaderTests.test_failed_roundtrip_unloads_and_does_not_expose_partial_model) ... ok
+test_manifest_config_and_source_changes_are_rejected (test_amd_shape_decoder_loader.ShapeDecoderLoaderTests.test_manifest_config_and_source_changes_are_rejected) ... ok
+test_native_gate_blocks_construction_and_failure_is_sticky (test_amd_shape_decoder_loader.ShapeDecoderLoaderTests.test_native_gate_blocks_construction_and_failure_is_sticky) ... ok
+test_original_checkpoint_missing_extra_wrong_shape_and_dtype_are_rejected (test_amd_shape_decoder_loader.ShapeDecoderLoaderTests.test_original_checkpoint_missing_extra_wrong_shape_and_dtype_are_rejected) ... ok
+test_strict_original_bytes_then_only_76_exact_widenings_and_release (test_amd_shape_decoder_loader.ShapeDecoderLoaderTests.test_strict_original_bytes_then_only_76_exact_widenings_and_release) ... ok
+test_two_argument_api_requires_completed_import_then_uses_pinned_manifest (test_amd_shape_decoder_loader.ShapeDecoderLoaderTests.test_two_argument_api_requires_completed_import_then_uses_pinned_manifest) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.793s
+
+OK

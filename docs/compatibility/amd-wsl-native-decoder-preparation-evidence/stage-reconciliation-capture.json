@@ -1,0 +1,23 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "60s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "-S",
+    "-"
+  ],
+  "exit": 0,
+  "stdout": "{\"staged_packages\": {\"flex_gemm\": \"1.0.0\", \"numpy\": \"2.2.6\", \"safetensors\": \"0.6.2\"}, \"canonical_staged_packages\": {\"flex-gemm\": \"1.0.0\", \"numpy\": \"2.2.6\", \"safetensors\": \"0.6.2\"}, \"archive_expanded_bytes\": 70899187, \"new_dependency_download_bytes\": 17013453, \"guest_free_bytes\": 9688104960, \"D_free_bytes\": 76070092800, \"guest_RAM_bytes\": {\"MemTotal\": 16722313216, \"MemAvailable\": 15822823424}, \"package_installation_repeated\": false}\n",
+  "stderr": "",
+  "seconds": 7.719000000004598
+}

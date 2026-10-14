@@ -1,0 +1,39 @@
+{
+  "result": "PASS",
+  "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+  "torch_distribution": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+  "hip": "7.2.53211-e1a6bc5663",
+  "triton": "3.5.1+rocm7.2.1.gita272dfa8",
+  "python": "3.12.3",
+  "GPU_initialized": false,
+  "GPU_entry_attempts": [],
+  "FlexGEMM_imported": false,
+  "native_extension_imported": false,
+  "Triton_driver_activated": false,
+  "rejected_boundaries": [
+    "import tensor factory",
+    "GPU requested device",
+    "JIT run",
+    "compile",
+    "autotuner run",
+    "helper shared alias",
+    "helper AMD alias",
+    "process",
+    "network",
+    "foreign write"
+  ],
+  "policy": {
+    "phase": "cpu_meta",
+    "blocked": {
+      "tensor_operation": 2,
+      "triton_execution": 5,
+      "process_execution": 1,
+      "network": 1,
+      "filesystem_write": 1
+    },
+    "tensor_operations_allowed": 2,
+    "native_calls": 0,
+    "rejected_calls": 10
+  },
+  "scratch": "/home/modly/native-decoder-preparation-6dd94a85/policy-cpu-4y_ahrbo"
+}

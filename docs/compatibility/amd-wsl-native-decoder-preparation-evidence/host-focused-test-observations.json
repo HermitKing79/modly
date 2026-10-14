@@ -1,0 +1,35 @@
+{
+  "tests": [
+    {
+      "command": [
+        "C:/Users/wattz/AppData/Local/Programs/Python/Python312/python.exe",
+        "-B",
+        "-I",
+        "-S",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_wsl_native_decoder_preparation.py"
+      ],
+      "exit_code": 0,
+      "tests_run": 6,
+      "unittest_seconds": 0.071,
+      "stdout_scope": "host-only synthetic lifecycle / integer admission; no WSL or Torch",
+      "test_source_sha256": "6907678e0bb93d90e4802f289e1d45b01e097d1eba705f4edb9057191247d914",
+      "observation_source": "completed command outputs in this session; no rerun after stop"
+    },
+    {
+      "command": [
+        "C:/Users/wattz/AppData/Local/Programs/Python/Python312/python.exe",
+        "-B",
+        "-I",
+        "-S",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_wsl_decoder_admission.py"
+      ],
+      "exit_code": 0,
+      "tests_run": 8,
+      "unittest_seconds": 0.003,
+      "stdout_scope": "host-only synthetic lifecycle / integer admission; no WSL or Torch",
+      "test_source_sha256": "9f064f439ed3ca10040931f48e698b33e29461dff169ee99796712ed6c9db815",
+      "observation_source": "completed command outputs in this session; no rerun after stop"
+    }
+  ],
+  "complete_installed_policy_acceptance": "FAILED; these tests do not qualify native execution"
+}

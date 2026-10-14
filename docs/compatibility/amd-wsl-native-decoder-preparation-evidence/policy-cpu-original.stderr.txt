@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-native-decoder-preparation-evidence/policy-cpu-acceptance.py", line 67, in <module>
+    must_reject('GPU requested device', lambda: torch.empty((1,), device='cuda'))
+  File "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-native-decoder-preparation-evidence/policy-cpu-acceptance.py", line 55, in must_reject
+    call()
+  File "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-native-decoder-preparation-evidence/policy-cpu-acceptance.py", line 67, in <lambda>
+    must_reject('GPU requested device', lambda: torch.empty((1,), device='cuda'))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-native-decoder-preparation-evidence/policy-cpu-acceptance.py", line 22, in no_gpu
+    raise RuntimeError('CPU acceptance prohibits GPU entry')
+RuntimeError: CPU acceptance prohibits GPU entry
+Exception ignored in: <function _removeHandlerRef at 0x7fbf77bf9da0>
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 874, in _removeHandlerRef
+  File "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_wsl_native_import_policy.py", line 117, in profile
+AttributeError: 'NoneType' object has no attribute 'startswith'

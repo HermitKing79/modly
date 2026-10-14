@@ -1,0 +1,49 @@
+{
+  "verdict": "PASS for publication as UNKNOWN/native compatibility and NO-GO/current execution candidate",
+  "actionable_findings": [],
+  "reviewed_sha256": {
+    "docs/compatibility/amd-wsl-native-decoder-preparation.md": "315eb5224df0749ddafc7ff151bf8da905d153f3a0f3236889257350bbbb11e3",
+    "docs/compatibility/amd-wsl-native-decoder-preparation-evidence/independent-policy-review.json": "422de85f065f4a3012901d5a010701e32236e05e20141fa8a3a29fb191ce68f6",
+    "docs/compatibility/amd-wsl-native-decoder-preparation-evidence/final-disposition.json": "c3380a6421f819723a7779693bd9cd61a470e82399f08fe8ba3b2a75254edbee",
+    "docs/compatibility/amd-wsl-native-decoder-preparation-evidence/windows-preservation-after.json": "d88403a82238caf6a1c23dfaaf3ed8c3fdea3d1b272947bcc8ca8d6aa7f56be3",
+    "docs/compatibility/amd-wsl-native-decoder-preparation-evidence/linux-preservation-after.json": "42712fc79a5acaf99ff6d8692783a433d5ac67ef55ae9376a6963c17885e68bb",
+    "docs/compatibility/amd-wsl-native-decoder-preparation-evidence/historical-preservation-after.json": "f79653bfab11962d0286fdba95ccb81636deba3e24fbe58c0bd3b4554978969f"
+  },
+  "failed_confirmation": {
+    "exit": 1,
+    "seconds": 9.9223775,
+    "stdout_empty": true,
+    "final_GPU_state_JSON_unavailable": true,
+    "original_lazy_init_intercepted": true,
+    "native_incompatibility_demonstrated": false
+  },
+  "supersession": "Earlier14 policy regressions and narrow explicit-device PASS do not qualify the frozen policy; failed complete implicit-device acceptance controls final execution admission",
+  "decoder_scope": "Actual292 parameter CPU loading and76 real widenings were NOT RUN. Only tiny synthetic loader regressions occurred; strict source design is accurately described as prepared, not demonstrated genuine loading.",
+  "workspace_scope": "40 convolution/four logical subdivision source inventory and visible EXPLICIT_GEMM formulas are prospective CPU arithmetic, not installed hooks or full decoder/workspace admission; masked default separately unresolved and unchanged.",
+  "resources": {
+    "new_download_bytes": 17013453,
+    "isolated_regular_file_bytes": 87915175,
+    "guest_free_bytes": 9620484096,
+    "D_free_bytes": 76014514176,
+    "guest_floor_bytes": 5368709120,
+    "D_floor_bytes": 53687091200,
+    "staged_payloads_verified": 922
+  },
+  "preservation": {
+    "Windows_environments_and_AMD_edits_match": true,
+    "Linux_baseline_and_dpkg_match": true,
+    "historical_files_checked": 262,
+    "historical_local_refs_checked": 44,
+    "attempt_marker_absent": true,
+    "native_run_directory_absent": true
+  },
+  "recommended_next_action": "Report correctly requests separately approved CPU-only default-device guard correction/acceptance; no native import or forward retry is authorized by this report.",
+  "review_actions": {
+    "code_edits": false,
+    "tests": false,
+    "WSL": false,
+    "GPU": false,
+    "native_or_real_weights": false,
+    "only_review_record_written": true
+  }
+}

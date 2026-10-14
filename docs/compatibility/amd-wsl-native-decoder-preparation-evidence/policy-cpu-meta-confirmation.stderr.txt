@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-native-decoder-preparation-evidence/policy-cpu-meta-confirmation.py", line 74, in <module>
+    must_reject('default GPU requested device', lambda: torch.empty((1,)))
+  File "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-native-decoder-preparation-evidence/policy-cpu-meta-confirmation.py", line 56, in must_reject
+    call()
+  File "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-native-decoder-preparation-evidence/policy-cpu-meta-confirmation.py", line 74, in <lambda>
+    must_reject('default GPU requested device', lambda: torch.empty((1,)))
+                                                        ^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_wsl_native_import_policy.py", line 153, in guarded
+    return _original(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/modly-wsl/venv/lib/python3.12/site-packages/torch/utils/_device.py", line 103, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-native-decoder-preparation-evidence/policy-cpu-meta-confirmation.py", line 22, in no_gpu
+    raise RuntimeError('CPU acceptance prohibits GPU entry')
+RuntimeError: CPU acceptance prohibits GPU entry
