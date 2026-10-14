@@ -1,0 +1,30 @@
+{
+  "phase": "1: independent read-only source equivalence audit",
+  "decision": "Row chunking is mathematically equivalent under the conditions below; this is not execution approval",
+  "reviewer_runtime_actions": false,
+  "source_identities": {
+    "pinned-linux-submanifold_conv3d.py.txt": "67641d13e06ca135a4f90eb71a01f7d8d32448bb5aa7c31b858c69368811fb6b",
+    "trellis2/modules/sparse/conv/conv_flex_gemm.py": "281fa1c8449732a94d99a24facb437600ab08d8185214d8434008456d56b83d8",
+    "trellis2/modules/sparse/spatial/spatial2channel.py": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c"
+  },
+  "original_operation": "Pinned function lines 147-174 allocates zero im2col(N*V,Ci), masks neighbor_map.view(-1) against 0xffffffff, gathers full feats at global neighbor indices, views im2col(N,V*Ci), then uses weight.view(Co,V*Ci).transpose(0,1) with the original torch.mm or torch.addmm(bias,...). Each output row is independent of other output rows.",
+  "equivalence_conditions": [
+    "Only blocks.3.4.conv2 may use the replacement, with exact active site/module/input/weight/bias identity and existing explicit_gemm policy. Every other call delegates to the preserved original function.",
+    "Slice the complete neighbor map by output-row range while keeping its V neighbor order. Gather from the complete input feature array using unmodified global indices; do not slice input features, rebase indices, subset coordinates or rebuild native maps per chunk.",
+    "Mask the uint32 0xffffffff sentinel before it can index feats. Missing neighbors remain zero and valid duplicate indices remain valid gathers.",
+    "Keep the exact existing contiguous weight view and transpose. Adapter names dimensions Co,Kd,Kh,Kw,Ci whereas the pinned function names Co,Kw,Kh,Kd,Ci; the authorized 3x3x3 shape is symmetric, but a new permutation would still change kernel-slot correspondence.",
+    "Keep BF16 input/output and the same mm/addmm operation. Replacing fused addmm by mm plus a separate addition is not a rounding-equivalence claim.",
+    "Preallocate the complete output tensor and fill every disjoint row slice once, including the short final chunk. Do not concatenate retained chunk outputs or mutate the global input/cache.",
+    "Leave SubMConv3dFunction.forward cache construction, full native neighbor map, adapter cache registration and x.replace output unchanged. Original C2S mask, child coordinates and child row order must remain unchanged.",
+    "Install/restore the actual staticmethod descriptor in finally and preserve its exact source identity. Drop chunk temporaries before the next chunk; preserved exceptions and callback closures must not retain GPU tensors after teardown."
+  ],
+  "C2S_and_adapter": "Original C2S lines 75-88 uses boolean nonzero order, repeat_interleave of parents and idx*8+subidx feature gather. Original sparse adapter lines 37-59 passes full x.feats/x.coords/weight to the native wrapper, registers the original cache, and returns x.replace(out). Chunking the later final convolution needs no change to either path.",
+  "CPU_qualification": {
+    "mapping_tests": "Require exact shape/dtype/order and exact zero-fill/global-index behavior on deterministic representable fixtures, including neighbors outside the current output chunk, sentinels, bias and no-bias, and a non-divisible tail. Small exactly representable fixtures can demand exact output equality.",
+    "numerical_tolerance": "No universal tolerance is proved by this source. Changing GEMM M can change BLAS kernel selection/reduction and rounded BF16 outputs even though the real-arithmetic expression is identical. For selected finite bounded CPU fixtures, declare a tight dtype-aware tolerance before the test, report actual max absolute/relative errors, and keep structural mapping assertions exact. BF16 spacing is about 1/128 relative within each binade; a one-ULP-oriented fixture criterion is useful but is not a universal bound near cancellation or zero. Do not loosen a failed criterion automatically.",
+    "scope": "A CPU fixture comparison establishes those fixtures and row/index construction, not bitwise equivalence or a numerical error bound for the full HIP decoder. Same torch API does not independently establish the backend accumulation mode."
+  },
+  "memory_and_admission": "Full features, coordinates, global neighbor map and full output remain resident. Only im2col, gather, masked indices and GEMM temporaries become row-bounded. Admission must still count global residency plus chunk/downstream lifetimes and unchanged reserves; source equivalence alone does not authorize a row cap or VRAM limit change.",
+  "material_blockers_in_the_plan": [],
+  "pending": "Review the complete exact candidate and recorded CPU qualification/admission evidence before any conditional real decoder execution."
+}

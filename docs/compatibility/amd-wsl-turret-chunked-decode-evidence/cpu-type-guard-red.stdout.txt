@@ -1,0 +1,1 @@
+{"tests_run": 11, "failures": 1, "errors": 0, "torch": "2.13.0+rocm10.0.0", "GPU_entries": [], "GPU_initialized": false, "CPU_equivalence": [{"dtype": "torch.float32", "rtol": 1e-05, "atol": 1e-06, "max_abs": 0.0}, {"dtype": "torch.bfloat16", "rtol": 0.0078125, "atol": 0.0009765625, "max_abs": 0.0}], "native_execution": false, "weights_loaded": false}

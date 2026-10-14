@@ -1,0 +1,86 @@
+{
+  "audit": "CPU arithmetic and source reads only; no Torch/native/GPU/WSL imports or execution",
+  "source_sha256": {
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\spatial\\spatial2channel.py": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sc_vaes\\sparse_unet_vae.py": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\norm.py": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00",
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\basic.py": "e867e429b9c2fe154000725596b626273fb567025b9c232f3cc79140f00605b7",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-native-decoder-preparation-evidence\\pinned-linux-submanifold_conv3d.py.txt": "67641d13e06ca135a4f90eb71a01f7d8d32448bb5aa7c31b858c69368811fb6b",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-native-decoder-preparation-evidence\\pinned-linux-utils.py.txt": "e64e9809395099be6a72e49b31b9eeabeb0c68ab3136326bf8cce1001bec9d8c",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-native-decoder-preparation-evidence\\pinned-linux-subm_neighbor_map.cu.txt": "7e6ffd2e476ec2144d53388e48c862640ff6bb2e882ad6f6380d6825fd18649c"
+  },
+  "counts": {
+    "parents": 378891,
+    "children": 1842968,
+    "tile": 32768,
+    "chunks": 57,
+    "last_tile": 7960
+  },
+  "original_path": {
+    "two_uncached_C2S_calls": true,
+    "C2S_feature_widths": [
+      64,
+      16
+    ],
+    "skip_repeat_width": 64,
+    "low_vram_chunk_size": 65536,
+    "inplace_residual": true,
+    "final_projection": "F32 layer_norm then original linear64to7"
+  },
+  "C2S": {
+    "visible_bytes": 2766585408,
+    "padded_bytes": 3458231760,
+    "source_terms": "P*64 + N*176 geometry for both expansions; N*(64+16)*2 feature gathers; N*64*2 skip repeat; N*64*16 downstream allowance",
+    "caveat": "Second C2S requires new live-memory check retaining first expansion; do not assume first admission covers later peaks"
+  },
+  "final_convolution": {
+    "terms": {
+      "global_map": 199040544,
+      "global_hash": 29487488,
+      "tile_im2col": 113246208,
+      "tile_gather_upper": 113246208,
+      "tile_long_indices_upper": 14155776,
+      "tile_mask": 884736,
+      "tile_gemm_output": 4194304,
+      "full_conv_output": 235899904,
+      "existing_downstream_extra": 2358999040
+    },
+    "visible_bytes": 3069154208,
+    "padded_bytes": 3836442760,
+    "allocation_formula": "max(live_allocated,live_reserved)+padded+1GiB<=12GiB; live_free>=padded+2GiB",
+    "native_map": "Full global N27 uint32; hash ratio2 with uint32 keys/values; no local-map substitution",
+    "map_volume_upper": 90243072,
+    "hash_index_bytes": 4
+  },
+  "existing_finalization": {
+    "full_F32_output_bytes": 51603104,
+    "F32_cast_and_norm_65536_tile_bytes_upper": 33554432,
+    "retained_first_plus_current_projection_tile_bytes_upper": 3670016,
+    "coverage": "These and full residual/skip buffers fit within unchanged N*(16*Ci+4*Co) downstream allowance"
+  },
+  "artifact": {
+    "final_coords_bytes": 29487488,
+    "subdivision_logits_plus_coords_bytes": 15322176,
+    "payload_bytes": 96412768,
+    "payload_cap": 268435456,
+    "validation_device": "CPU only; no full GPU uniqueness/finiteness buffers required"
+  },
+  "historical_first_C2S_baseline": {
+    "allocated": 1594233856,
+    "reserved": 6129975296,
+    "free": 8342953984
+  },
+  "historical_baseline_arithmetic_only": {
+    "C2S_allocator_required": 10661948880,
+    "C2S_free_required": 5605715408,
+    "final_conv_allocator_required": 11040159880,
+    "final_conv_free_required": 5983926408
+  },
+  "GPU_execution_authorized": false,
+  "remaining_requirements": [
+    "Independently verify candidate tile reference lifetime: release im2col/gather/index/mask/output temporaries before next tile; otherwise overlap must be explicitly included",
+    "Admit both C2S operations and final convolution against actual live memory; historical measurements are not permission",
+    "Narrow exception applies only expected final 1842968 support; preserve earlier million-row guards",
+    "Require installed native C++ helper allocations unchanged; preserve1GiBopaque and25percentvisible padding"
+  ]
+}

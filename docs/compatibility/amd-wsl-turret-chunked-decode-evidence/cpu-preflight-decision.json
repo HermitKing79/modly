@@ -1,0 +1,90 @@
+{
+  "CPU_contract_decision": "PASS",
+  "CPU_tests": {
+    "tests_run": 11,
+    "failures": 0,
+    "errors": 0,
+    "torch": "2.13.0+rocm10.0.0",
+    "GPU_entries": [],
+    "GPU_initialized": false,
+    "CPU_equivalence": [
+      {
+        "dtype": "torch.float32",
+        "rtol": 1e-05,
+        "atol": 1e-06,
+        "max_abs": 0.0
+      },
+      {
+        "dtype": "torch.bfloat16",
+        "rtol": 0.0078125,
+        "atol": 0.0009765625,
+        "max_abs": 0.0
+      }
+    ],
+    "native_execution": false,
+    "weights_loaded": false
+  },
+  "source_pinned": true,
+  "weights_loaded": false,
+  "GPU_execution_performed": false,
+  "historical_comparison_only": true,
+  "actual_live_admission_required": true,
+  "historical_pre_expansion": {
+    "free_bytes": 8342953984,
+    "total_bytes": 16974905344,
+    "allocated_bytes": 1594233856,
+    "reserved_bytes": 6129975296
+  },
+  "plans": {
+    "both_original_C2S_allowance_each_live_check": {
+      "geometry_bytes": 348611392,
+      "gathered_bytes": 294874880,
+      "skip_repeat_bytes": 235899904,
+      "block_extra_bytes": 1887199232,
+      "visible_bytes": 2766585408,
+      "parents": 378891,
+      "children": 1842968,
+      "feature_channels": 512,
+      "skip_channels": 128,
+      "out_channels": 64,
+      "historical_allocator_required": 10661948880,
+      "historical_device_free_required": 5605715408
+    },
+    "final_chunked_convolution": {
+      "im2col_bytes": 113246208,
+      "gathered_bytes": 113246208,
+      "neighbor_map_bytes": 199040544,
+      "hash_bytes": 29487488,
+      "long_index_bytes": 14155776,
+      "mask_bytes": 884736,
+      "output_bytes": 235899904,
+      "tile_output_bytes": 4194304,
+      "block_extra_bytes": 2358999040,
+      "visible_bytes": 3069154208,
+      "rows": 1842968,
+      "tile_rows": 32768,
+      "chunks": 57,
+      "last_chunk_rows": 7960,
+      "in_channels": 64,
+      "out_channels": 64,
+      "spatial_volume": 90243072,
+      "cached": false,
+      "historical_allocator_required": 11040159880,
+      "historical_device_free_required": 5983926408
+    }
+  },
+  "artifact_payload_bytes": 96412768,
+  "artifact_limit_bytes": 268435456,
+  "unchanged_deadlines_seconds": {
+    "CPU": 120,
+    "GPU": 240,
+    "guest": 450,
+    "host": 480
+  },
+  "initial_free_GiB": 13,
+  "allocator_ceiling_GiB": 12,
+  "device_free_reserve_GiB": 2,
+  "opaque_headroom_GiB": 1,
+  "global_row_cap": 1000000,
+  "specific_final_row_exception": 1842968
+}

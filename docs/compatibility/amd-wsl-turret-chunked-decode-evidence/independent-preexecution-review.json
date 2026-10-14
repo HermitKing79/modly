@@ -1,0 +1,47 @@
+{
+  "review": "Focused independent read-only review of the final-site chunked decoder candidate",
+  "decision": "GO",
+  "scope": "One fresh readiness check and, only if qualified and all live admissions pass, one genuine full saved-input parent decode. No retry, further support exception or limit relaxation.",
+  "reviewer_runtime_actions": false,
+  "verified_candidate_sha256": {
+    "decode.py": "dbe1bbc78849630bac108e9578f39ca9d965f035ca57eb7bf1112bb03c443c1a",
+    "neural.py": "61a3ee0c71b80853300ac199582f580b144f192ca9e71fbde40d8aeeb751ceeb",
+    "runtime.py": "55b3862d35d1c6b88cd8bfc97c682d6cff00a94bea9586bc9fa2166cf501b49e",
+    "admission.py": "3ecff9c2d58a1a318c4c675103a665fccd523a8e662eee08e935ed26dad5ef1a",
+    "chunked_final.py": "98528f4a5933c65cdc719aa11509f6ec00bdb4dc4df3dd600909f467278a2436"
+  },
+  "source_and_import": "Prior staging.json identifies flex_gemm/ops/spconv/submanifold_conv3d.py in /home/modly/native-decoder-preparation-6dd94a85/site-packages and its preserved source copy SHA67641d13e06ca135a4f90eb71a01f7d8d32448bb5aa7c31b858c69368811fb6b. The new import names that module. FinalConvolutionPatch requires its original staticmethod descriptor and this actual loaded source-file hash. Fresh passive preservation verifies the staged payload closure; reviewer did not import it.",
+  "site_and_map_attestation": {
+    "activation": "Only the genuine blocks.3.4.conv2 pre-hook swaps the class staticmethod, after original admission establishes the exact active site/module/input and 39 preceding convolutions plus both fourth C2S calls.",
+    "call_guard": "One call; exact module.weight and bias identity; feats is the active SparseTensor's full BF16[1842968,64] on cuda:0; correct full uint32 contiguous map shape. Foreign/repeated calls reject.",
+    "native_map": "Original full-coordinate native cache construction remains intact. NativeBoundary stores the genuine final native-return object and replacement requires object identity with that map; indices are never rebased.",
+    "restoration": "Normal final module post-hook restores the original staticmethod descriptor. If an earlier hook, admission, chunk, journal or forward fails, outer finally calls patch.remove before clearing other callbacks/references and records exact descriptor restoration. Admission post-hook runs first and its clearing of active_conv does not invalidate patch's normal restoration check."
+  },
+  "arithmetic_equivalence": "Output-row slices preserve V-slot order and zero-fill missing 0xffffffff neighbours. Each tile gathers from FULL feats at original global indices, uses the original weight.view(Co,V*Ci).transpose(0,1) and original mm/addmm bias branch, then copies into its disjoint full-output slice. No mask, coordinate order, original C2S forward, cache or native-map implementation is replaced. The 32768-row tile implies 57 chunks and a 7960-row tail. Chunk temporaries are deleted before the next entry.",
+  "fixed_support_exception": "Only stage-3 genuine C2S accepts exact integer tuple(378891,512,128,1842968,64). Original MAX_ROWS=1000000 remains in all general planners and earlier stages. Final post-hooks accept only the required 16/64-channel full-support tensors; output validation requires exactly1842968 rows. Any different genuine mask count stops.",
+  "admission_and_teardown": "Live memory admission precedes fourth original C2S operations, original full native-map construction, full chunked output allocation, and each tile. Global input/map/output residency and downstream allowance remain counted; tile im2col/gather/index buffers are bounded. Existing allocator12GiB, free reserve2GiB, opaque headroom1GiB, padding25%, initial free13GiB and deadlines60/120/240/450/430/480 remain unchanged. Existing traceback detachment, hook/native/profile restoration, cache clearing, weakref checks and Torch allocator release remain; final map is explicitly dropped by hooks.remove.",
+  "output_acceptance": "Require 40 convolutions, eight original C2S records, five native maps, 57 chunks covering all1842968 rows and restored patch. Output writer validates ten CPU contiguous tensors, finite F32[1842968,7]/I32[1842968,4], unique in-bounds coordinates, all four original BF16 subdivision logits and learned-mask count linkage. Payload limit256MiB/header128KiB, exact tensor/byte hashes and readback, and artifact path outside Git remain.",
+  "recorded_CPU_qualification": {
+    "tests": 11,
+    "failures": 0,
+    "errors": 0,
+    "Torch": "2.13.0+rocm10.0.0 on Windows CPU",
+    "GPU_entries": [],
+    "GPU_initialized": false,
+    "native_execution": false,
+    "weights_loaded": false,
+    "fixtures": "Actual pinned original-forward AST, independent coordinate-tuple reference, cross-tile global neighbours, sentinels, bias/no-bias, small/non-divisible tiles, layout rejection, exact support/type guards, live refusal and staticmethod lifecycle/failure restoration",
+    "numerics": "Exact representable BF16/F32 fixtures equal the original/reference. Dense seeded fixtures show maxabs0 with predeclared F32 rtol1e-5/atol1e-6 and BF16 rtol1/128/atol1/1024.",
+    "limitation": "Reviewer read captured results and test source; did not run tests. Simulated native owner/CPU fixtures do not establish actual HIP kernel selection, bitwise GPU equality or a universal BF16 error bound. Mathematical row/index expression equivalence is supported."
+  },
+  "recorded_preflight": {
+    "host_available_RAM_bytes": 20252979200,
+    "host_D_free_bytes": 75490213888,
+    "fresh_guest_available_RAM_bytes": 15799058432,
+    "host_metadata": "Correct actual helper/guest paths, exclusive marker absent, genuine metadata component/header292F16/source manifest; no model loading or AI/native imports",
+    "Linux_before": "PASS: baseline/source unchanged, 922 staged payloads and23 packaging payloads; AI_imports=false/GPU_actions=false",
+    "caveat": "Preflight's inherited Linux identity and checkpoint header-only labels are not fresh runtime or weight-load evidence. Separate fresh passive audit supplies current Linux preservation; historical hash duration remains labelled historical."
+  },
+  "material_blockers": [],
+  "runtime_evidence_pending": "Actual readiness, exact final mask/support, global native map, 57 chunk completions, synchronized full forward/output readback, restoration, monitor/owned cleanup and preservation must be verified after the single attempt."
+}

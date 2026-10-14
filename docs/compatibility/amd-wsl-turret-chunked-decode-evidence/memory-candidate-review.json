@@ -1,0 +1,52 @@
+{
+  "review": "Independent focused CPU-only read-only allocation/lifecycle source review",
+  "decision": "GO for one conditional genuine attempt after unchanged runtime admissions; no guaranteed memory-completion claim",
+  "candidate_sha256": {
+    "admission.py": "3ecff9c2d58a1a318c4c675103a665fccd523a8e662eee08e935ed26dad5ef1a",
+    "chunked_final.py": "98528f4a5933c65cdc719aa11509f6ec00bdb4dc4df3dd600909f467278a2436",
+    "neural.py": "61a3ee0c71b80853300ac199582f580b144f192ca9e71fbde40d8aeeb751ceeb",
+    "runtime.py": "55b3862d35d1c6b88cd8bfc97c682d6cff00a94bea9586bc9fa2166cf501b49e",
+    "decode.py": "dbe1bbc78849630bac108e9578f39ca9d965f035ca57eb7bf1112bb03c443c1a",
+    "cpu-tests.py": "783f8192620293fcd4e38263cf5bd65ededb6219eb83f16a676b1493284d4aca"
+  },
+  "reviewer_actions": {
+    "Torch_imported": false,
+    "native_imported": false,
+    "GPU_or_WSL_executed": false,
+    "AI_checkpoint_loaded": false,
+    "installed_files_changed": false
+  },
+  "saved_test_evidence": {
+    "tests_run": 10,
+    "failures": 0,
+    "errors": 0,
+    "GPU_initialized": false,
+    "native_execution": false,
+    "weights_loaded": false,
+    "scope": "Read recorded evidence; no reviewer rerun"
+  },
+  "checked": [
+    "Original installed C2S code and mask generation unchanged; both calls independently admitted with fresh live memory",
+    "Exactly fixed 378891parents/1842968children/512feature/128skip/64out exception at fourth learned stage only; earlier cap and all 40 convolution order checks retained",
+    "Final native global neighbour map and ratio2 uint32 hash counted by pre-convolution admission; only proven final map identity may reach patched explicitGEMM",
+    "Full output plus first tile admitted before full-output allocation; each tile admitted before its im2col/gather/index/mm allocations",
+    "Old tile result/im2col/mask/flat references deleted before next tile; global input/map/output intentionally retained and observed by live-memory accounting",
+    "Source-pinned weight view/transposition, bias addmm, full feature gather and uint32 sentinel handling retained",
+    "25percent visible padding,1GiBopaqueheadroom,2GiBdevicefree reserve,12GiBallocator ceiling unchanged",
+    "Existing low_vram65536 norm/SiLU,skiprepeat,inplace residual and fused F32layernorm+64to7 projection unchanged and conservatively covered by finalconv downstream allowance",
+    "Final finite/unique/statistical validation and artifact readback CPUonly; exactten-tensor payload96412768bytes below256MiB",
+    "Finally restores original staticmethod descriptor; removes hooks/native wrappers; clears final map and sparse caches; references collected before proven workspace/allocator cleanup"
+  ],
+  "memory_limitations": [
+    "Historical first-C2S baseline is not post-expansion admission; actual live reserved/free may still trigger safe PARTIAL rejection",
+    "1GiB opaque headroom bounds established workspace assumption rather than proving every internal native allocator; original CUDA/HIP computation may still fault and must stop",
+    "CPU structural/numerical fixture equivalence does not prove bitwise HIP output equivalence; no precision or algorithm fallback is authorized"
+  ],
+  "blocking_findings": [],
+  "predictable_unbudgeted_allocation_findings": [],
+  "conditions_before_GPU": [
+    "Verify these exact candidate hashes still match final published harness",
+    "Preserve normal initialVRAM/RAM/disk/native/source/checkpoint/TunableOp/monitoring gates",
+    "No second forward or automatic relaxation if any live admission fails"
+  ]
+}

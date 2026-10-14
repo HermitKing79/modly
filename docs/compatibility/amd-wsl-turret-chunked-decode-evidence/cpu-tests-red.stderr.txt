@@ -1,0 +1,59 @@
+test_dense_weights_declared_tolerance (__main__.Equivalence.test_dense_weights_declared_tolerance) ... FAIL
+test_global_reference_bias_sentinels_cross_chunks_short_tail (__main__.Equivalence.test_global_reference_bias_sentinels_cross_chunks_short_tail) ... FAIL
+test_invalid_layout_and_tile_rejected (__main__.Equivalence.test_invalid_layout_and_tile_rejected) ... FAIL
+test_chunk_and_artifact_formula (__main__.Memory.test_chunk_and_artifact_formula) ... FAIL
+test_exact_final_contract_and_original_cap (__main__.Memory.test_exact_final_contract_and_original_cap) ... FAIL
+test_live_memory_rejection_precedes_allocator_callback (__main__.Memory.test_live_memory_rejection_precedes_allocator_callback) ... FAIL
+
+======================================================================
+FAIL: test_dense_weights_declared_tolerance (__main__.Equivalence.test_dense_weights_declared_tolerance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-chunked-decode-evidence\cpu-tests.py", line 85, in test_dense_weights_declared_tolerance
+    self.assertIsNotNone(candidate,'row-chunked implementation not yet written')
+AssertionError: unexpectedly None : row-chunked implementation not yet written
+
+======================================================================
+FAIL: test_global_reference_bias_sentinels_cross_chunks_short_tail (__main__.Equivalence.test_global_reference_bias_sentinels_cross_chunks_short_tail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-chunked-decode-evidence\cpu-tests.py", line 59, in test_global_reference_bias_sentinels_cross_chunks_short_tail
+    self.assertIsNotNone(candidate,'row-chunked implementation not yet written')
+AssertionError: unexpectedly None : row-chunked implementation not yet written
+
+======================================================================
+FAIL: test_invalid_layout_and_tile_rejected (__main__.Equivalence.test_invalid_layout_and_tile_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-chunked-decode-evidence\cpu-tests.py", line 96, in test_invalid_layout_and_tile_rejected
+    self.assertIsNotNone(candidate,'row-chunked implementation not yet written')
+AssertionError: unexpectedly None : row-chunked implementation not yet written
+
+======================================================================
+FAIL: test_chunk_and_artifact_formula (__main__.Memory.test_chunk_and_artifact_formula)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-chunked-decode-evidence\cpu-tests.py", line 113, in test_chunk_and_artifact_formula
+    self.assertTrue(hasattr(admission,'chunked_conv_plan'),'chunked admission not yet written')
+AssertionError: False is not true : chunked admission not yet written
+
+======================================================================
+FAIL: test_exact_final_contract_and_original_cap (__main__.Memory.test_exact_final_contract_and_original_cap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-chunked-decode-evidence\cpu-tests.py", line 103, in test_exact_final_contract_and_original_cap
+    self.assertTrue(hasattr(admission,'final_c2s_plan'),'fixed-support admission not yet written')
+AssertionError: False is not true : fixed-support admission not yet written
+
+======================================================================
+FAIL: test_live_memory_rejection_precedes_allocator_callback (__main__.Memory.test_live_memory_rejection_precedes_allocator_callback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-chunked-decode-evidence\cpu-tests.py", line 123, in test_live_memory_rejection_precedes_allocator_callback
+    self.assertTrue(hasattr(admission,'chunked_conv_plan'),'chunked admission not yet written')
+AssertionError: False is not true : chunked admission not yet written
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+FAILED (failures=6)

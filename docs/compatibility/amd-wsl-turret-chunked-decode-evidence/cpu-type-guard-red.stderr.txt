@@ -1,0 +1,25 @@
+test_dense_weights_declared_tolerance (__main__.Equivalence.test_dense_weights_declared_tolerance) ... ok
+test_global_reference_bias_sentinels_cross_chunks_short_tail (__main__.Equivalence.test_global_reference_bias_sentinels_cross_chunks_short_tail) ... ok
+test_invalid_layout_and_tile_rejected (__main__.Equivalence.test_invalid_layout_and_tile_rejected) ... ok
+test_chunk_and_artifact_formula (__main__.Memory.test_chunk_and_artifact_formula) ... ok
+test_exact_final_contract_and_original_cap (__main__.Memory.test_exact_final_contract_and_original_cap) ... ok
+test_final_plan_rejects_non_integer_metadata (__main__.Memory.test_final_plan_rejects_non_integer_metadata) ... FAIL
+test_live_admission_at_historical_baseline_and_free_reserve_refusal (__main__.Memory.test_live_admission_at_historical_baseline_and_free_reserve_refusal) ... ok
+test_live_memory_rejection_precedes_allocator_callback (__main__.Memory.test_live_memory_rejection_precedes_allocator_callback) ... ok
+test_admission_failure_stops_tile_loop (__main__.PatchLifecycle.test_admission_failure_stops_tile_loop) ... ok
+test_foreign_descriptor_and_repeated_lifecycle_rejected (__main__.PatchLifecycle.test_foreign_descriptor_and_repeated_lifecycle_rejected) ... ok
+test_original_unmodified_until_final_scope_and_restored_after_failure (__main__.PatchLifecycle.test_original_unmodified_until_final_scope_and_restored_after_failure) ... ok
+
+======================================================================
+FAIL: test_final_plan_rejects_non_integer_metadata (__main__.Memory.test_final_plan_rejects_non_integer_metadata)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-chunked-decode-evidence\cpu-tests.py", line 143, in test_final_plan_rejects_non_integer_metadata
+    with self.assertRaises(admission.AdmissionStop):admission.final_c2s_plan(378891,512,128,1842968.0,64)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AdmissionStop not raised
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.786s
+
+FAILED (failures=1)
