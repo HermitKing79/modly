@@ -1,0 +1,53 @@
+{
+  "review": "Focused independent read-only review of fourth-stage child-count logging",
+  "decision": "GO",
+  "scope": "One fresh metadata readiness worker, then one genuine saved-input neural decoder attempt only if readiness qualifies. Existing limits and stop behavior remain mandatory.",
+  "reviewer_runtime_actions": false,
+  "identities_sha256": {
+    "decode.py": "1a37c58e576ab450c8274d5ef129fb9fef18a2a080239a374c73d4b4949d99a5",
+    "neural.py": "f0492fa1ae3fa756a83868848dd0a12fcf0ea49a60011b44c0c09fd740ab7319",
+    "runtime.py": "3964d353157fb2c9bcbfb309d98c8d51abd5eca72a1962325182267651101b01",
+    "admission.py": "4ef9c2a65464da06fc1ba084a300a1f22d2d98b2a04d061c2b687ba539eb0e44",
+    "readiness.py": "283d9228f1de768cd2ee98844ab78bfeba7110f6c67403bced29ee1f6f7f2028",
+    "offline-estimate.py": "077af5e614afb0a6ecca65f8f6692c3b93058d83fab38a37dd1c53522b6b9e5d"
+  },
+  "source_diff": {
+    "comparison": "amd-wsl-turret-neural-decode-vram-ready-evidence",
+    "decode_neural_readiness": "Fresh scratch/artifact paths only",
+    "runtime": "Byte-identical",
+    "admission": "Two standard-library imports, source_identity helper, and one emit immediately after the unchanged children=int(sub.feats.sum().item()). Existing cache checks, c2s_plan, _admit, mask state and forward order are unchanged.",
+    "mask_reduction_count": "One existing reduction; logging reuses its integer scalar",
+    "source_identity": "Module, qualname, source path and full source-file SHA256 of the bound original C2S forward and mask-producing block._forward; neither callable is invoked or replaced by this helper"
+  },
+  "logging_review": {
+    "before_original_rejection": true,
+    "durable_bridge": "Production neural.event_hook calls emit, which calls base.journal; recorded CPU tests exercise this exact bridge including fsync",
+    "fields": ["site", "call", "parents", "children", "children_per_parent_mean", "maximum_children_per_parent", "boolean_mask_shape_and_dtype", "original_forward_and_mask_source_identity", "memory", "row_limit", "zero_children", "over_row_limit", "row_limits_would_reject", "channel_widths", "parent_spatial_shape"],
+    "mutation": "No mask or gate mutation demonstrated. The event dictionary is newly constructed and contains scalar/metadata values, not retained tensors.",
+    "failure_behavior": "Source hashing, metadata sampling or durable journal failure stops before the original expansion; it cannot grant admission"
+  },
+  "recorded_preflight_evidence": {
+    "host_available_ram_bytes": 18477559808,
+    "host_D_free_bytes": 75621285888,
+    "fresh_guest_available_ram_bytes": 15793778688,
+    "windows_before": "PASS",
+    "linux_before": "PASS: 922 original staged payloads and 23 packaging payloads; AI_imports=false and GPU_actions=false",
+    "checkpoint_streamed_identity": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "marker_absent_in_preflight": true,
+    "helper_paths": "Actual selected guest and existing supervisor helpers are anchored to the fresh evidence directory and workspace",
+    "tests": "Read captured final results only: three CPU fixture durability/count tests and two offline formula tests passed; reviewer did not execute them",
+    "preflight_metadata_caveat": "Inherited checkpoint row retains old header-only labels; freshly_streamed_sha256 records the current streaming identity. Historical streaming duration is explicitly labelled historical. Preflight Linux identity field is inherited, while the separate linux-preservation-before.json is fresh."
+  },
+  "unchanged_bounds": {
+    "maximum_rows": 1000000,
+    "initial_free_VRAM_GiB": 13,
+    "allocator_ceiling_GiB": 12,
+    "free_reserve_GiB": 2,
+    "opaque_headroom_GiB": 1,
+    "visible_padding_percent": 25,
+    "deadline_seconds": {"native": 60, "CPU": 120, "GPU": 240, "guest": 450, "authorized_worker": 430, "host": 480}
+  },
+  "offline_estimate": "Standard-library CPU arithmetic only. Final-convolution buffer terms match the existing uncached explicit-GEMM plan with its downstream block allowance. It explicitly uses pre-expansion memory and upper bounds, because child coordinates, valid-neighbour counts and post-C2S memory do not exist after a rejected expansion. It cannot authorize GPU execution or relaxation of the row cap.",
+  "limitations": "Readiness and model execution have not occurred at review time. Actual masks, count, source hashes, available VRAM and containment remain runtime evidence to verify after the single attempt. CPU fixture masks/device seam are simulated and do not prove the real fourth count.",
+  "material_blockers": []
+}

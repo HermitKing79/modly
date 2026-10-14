@@ -1,0 +1,56 @@
+EEE
+======================================================================
+ERROR: test_over_cap_persists_before_original_rejection (__main__.Tests.test_over_cap_persists_before_original_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-fourth-child-count-evidence\child-count-tests.py", line 66, in test_over_cap_persists_before_original_rejection
+    def test_over_cap_persists_before_original_rejection(self):self.rejected([(True,)*8]*125000+[(True,)+(False,)*7],1000001)
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-fourth-child-count-evidence\child-count-tests.py", line 56, in rejected
+    record=json.loads((output/'phases.jsonl').read_text().strip())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-turret-fourth-child-count-evidence\\tmpdkybzpm6\\phases.jsonl'
+
+======================================================================
+ERROR: test_within_cap_keeps_original_plan_and_mask (__main__.Tests.test_within_cap_keeps_original_plan_and_mask)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-fourth-child-count-evidence\child-count-tests.py", line 72, in test_within_cap_keeps_original_plan_and_mask
+    record=json.loads((output/'phases.jsonl').read_text().strip())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-turret-fourth-child-count-evidence\\tmpprsvlgna\\phases.jsonl'
+
+======================================================================
+ERROR: test_zero_persists_before_original_rejection (__main__.Tests.test_zero_persists_before_original_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-fourth-child-count-evidence\child-count-tests.py", line 65, in test_zero_persists_before_original_rejection
+    def test_zero_persists_before_original_rejection(self):self.rejected([(False,)*8]*2,0)
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-fourth-child-count-evidence\child-count-tests.py", line 56, in rejected
+    record=json.loads((output/'phases.jsonl').read_text().strip())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-turret-fourth-child-count-evidence\\tmpezlqh1rn\\phases.jsonl'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.039s
+
+FAILED (errors=3)

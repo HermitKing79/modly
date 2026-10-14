@@ -1,0 +1,35 @@
+F.F
+======================================================================
+FAIL: test_over_cap_persists_before_original_rejection (__main__.Tests.test_over_cap_persists_before_original_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-fourth-child-count-evidence\child-count-tests.py", line 70, in test_over_cap_persists_before_original_rejection
+    def test_over_cap_persists_before_original_rejection(self):self.rejected([(True,)*8]*125000+[(True,)+(False,)*7],1000001)
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-fourth-child-count-evidence\child-count-tests.py", line 65, in rejected
+    self.assertEqual(record['mask_shape'],[len(rows),8]);self.assertEqual(record['mask_dtype'],'bool')
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "<class 'bool'>" != 'bool'
+- <class 'bool'>
++ bool
+
+
+======================================================================
+FAIL: test_zero_persists_before_original_rejection (__main__.Tests.test_zero_persists_before_original_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-fourth-child-count-evidence\child-count-tests.py", line 69, in test_zero_persists_before_original_rejection
+    def test_zero_persists_before_original_rejection(self):self.rejected([(False,)*8]*2,0)
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-fourth-child-count-evidence\child-count-tests.py", line 65, in rejected
+    self.assertEqual(record['mask_shape'],[len(rows),8]);self.assertEqual(record['mask_dtype'],'bool')
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "<class 'bool'>" != 'bool'
+- <class 'bool'>
++ bool
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.046s
+
+FAILED (failures=2)
