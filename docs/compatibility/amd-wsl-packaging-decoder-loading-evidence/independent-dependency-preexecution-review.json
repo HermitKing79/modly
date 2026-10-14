@@ -1,0 +1,68 @@
+{
+  "reviewer": "shape_cpu_loading_review",
+  "decision": "GO_FOR_ONE_CPU_DEPENDENCY_ACCEPTANCE",
+  "candidate": "dependency_acceptance.py",
+  "candidate_sha256": "52d9dcf705498b67b04b7222f09c91a9c37bce245064eac68e88c1d1bece2249",
+  "reused_runner_sha256": "3751cb3666b42e1285717b6e73f523919c659c28485e7f771e9f00ded63bb2a5",
+  "candidate_hash_matches_current_file": true,
+  "findings": [],
+  "scope": "Exactly one installed-WSL CPU import acceptance of packaging.Version and callable safetensors.torch.load_file. No checkpoint loading, model construction, GPU entry, unrelated native/model imports, network, child process, build, install or retry in this probe. Phase C still requires successful Phase B and complete owned cleanup before its separate genuine CPU load.",
+  "review_method": "Read-only inspection of complete acceptance script, runner adapter signatures/gates, unchanged helper validator/marker source, actual staged safetensors Python-source readback and packaging wheel Python imports/metadata. No tests, acceptance execution, WSL action, Torch/native import or weight load by this reviewer; only this review JSON written.",
+  "source_import_closure": {
+    "staged_safetensors_init_sha256": "c1bcca66501582702c8c79aaaf2b922428800efa4367134609f8fc57363402dd",
+    "staged_safetensors_torch_sha256": "2b6d7a7ba0d010bee02c9904778452fa5463a0ae837d2f005ec8a2bbf98eefcb",
+    "actual_copies_match_staging_readback_hashes": true,
+    "safetensors_init": "Reexports the existing _safetensors_rust extension.",
+    "safetensors_torch_immediate": "stdlib os/sys/collections/typing, packaging.version.Version, torch and safetensors reexports; globals create dtype maps and Version comparisons without GPU-entry calls.",
+    "lazy_imports": "ctypes and NumPy are inside the saving _tobytes function, not an additional immediate import or load_file dependency. Existing NumPy is already staged for the unchanged strict CPU byte path.",
+    "packaging_Version": "packaging 25.0 Version imports stdlib itertools/re/typing and included _structures; _structures has no imports. Wheel metadata has no Requires-Dist.",
+    "parent_source": "The prior real worker already imported the genuine pinned parent module before its missing-packaging failure; its later constructor backend uses the already qualified FlexGEMM path. No additional demonstrated source dependency gap found."
+  },
+  "staging_readback": {
+    "status": "PASS",
+    "target": "/home/modly/native-decoder-preparation-6dd94a85/site-packages",
+    "packaging_version": "25.0",
+    "wheel_sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484",
+    "wheel_hash_matches_local_archive": true,
+    "installed_files": 23,
+    "installed_bytes": 238344,
+    "installations": 1,
+    "original_staged_payloads_verified_before": 922,
+    "baseline_venv_modified": false,
+    "AI_native_imports_during_staging": false,
+    "staging_exit": 0,
+    "named_distro_stop_exit": 0
+  },
+  "surgical_preexecution_findings_resolved": [
+    {
+      "issue": "runtime dict omitted gpu_initialized_before required by unchanged base.validate_runtime_identity",
+      "resolution": "Exact current candidate includes the actual top-level false flag in its nested runtime dict before validation."
+    },
+    {
+      "issue": "base.reserve_attempt would record base helper SCRIPT hash rather than actual acceptance candidate",
+      "resolution": "Exclusive local reserve now uses base.save_json x/fsync with this SCRIPT hash and GPU_authorized=false; hashlib is imported. Base helper SCRIPT anchor remains untouched."
+    }
+  ],
+  "GPU_and_weight_denial": {
+    "installed_before_Torch_import": "sys and threading profile plus import/network/process/model-path audit hook.",
+    "required_genuine_GPU_functions": ["torch.cuda._lazy_init", "torch._C._cuda_init"],
+    "functions_must_exist_and_be_callable_before_patching": true,
+    "qualification_requires_critical_function_instrumentation": true,
+    "GPU_entry_denials": "Python CUDA lifecycle entry and selected actual torch._C CUDA/HIP entry functions are profiled before body execution and patched after Torch import; every attempted entry records a denial and stops acceptance.",
+    "tensor_and_native_guard": "Unchanged ImportPolicy cpu_meta tensor frontend/dispatch guards installed before dependency imports; its profile is chained with the CPU-denial profile, not replaced.",
+    "checkpoint_denial": "Any safetensors.torch.load_file invocation increments checkpoint_loads and raises; model file access is prohibited.",
+    "required_success": "GPU-entry calls empty, initialized-before/after false, packaging25.0 and safetensors0.6.2 from exact stage, callable load_file, zero checkpoint loads, zero forbidden imports/native calls/policy rejections, complete runtime identity and no error.",
+    "no_fake_GPU_probe": "The required entries are taken from the genuine installed Torch module; no substitute tensor/model API is introduced."
+  },
+  "owned_adapter_contract": {
+    "output": "Exact fresh dependency-run path only; marker and run independently absent at review.",
+    "marker": "CPU-dependency-import.marker; exclusive x/fsync; actual acceptance SCRIPT identity; GPU_authorized=false; retained after any failure.",
+    "supervisor": "Existing loading.supervise reused with acceptance SCRIPT, CPU qualifier, exclusive marker and bounded deadlines; base helper anchor stays at scripts/compatibility.",
+    "Phase_B_preflight": "Adapter skips the Phase C dependency-result gate to avoid circular admission; staging PASS is checked before owned launch.",
+    "Phase_C_preflight": "Main loading.py separately requires accepted Phase B supervisor/worker qualification, return0, healthy observer and unforced cleanup before reserving its own loading marker.",
+    "deadlines_seconds": {"CPU_stage_after_GO": 60, "guest_timeout": 90, "host": 120},
+    "containment": "Existing Job attachment before binary GO, continuous host monitoring/resource floors, guest timeout, named-distro termination and healthy post-exit/empty-unforced-Job qualification retained.",
+    "journal_scope": "Generic reused supervisor journal naming does not grant GPU permission; CPU marker and actual worker denial guards explicitly prohibit GPU entry."
+  },
+  "go_limit": "Run this exact candidate once. A guard hit, import failure, incomplete evidence, timeout or failed cleanup ends UNKNOWN and stops; no repair/retry is approved. Actual Phase B acceptance must pass before claiming closure resolved or proceeding to the separately gated model-load phase."
+}
