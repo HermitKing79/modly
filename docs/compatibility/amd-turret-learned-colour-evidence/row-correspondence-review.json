@@ -1,0 +1,98 @@
+{
+  "classification": "PASS",
+  "review": "Independent original PLY vertex-to-learned-material row correspondence",
+  "reviewer": "colour_row_correspondence subagent",
+  "audit_starting_head": "fa3a98c",
+  "scope": "Previously executed read-only CPU audit; no model inference or mesh conversion was executed by this reviewer.",
+  "execution": {
+    "CPU_only": true,
+    "numpy_and_stdlib_only": true,
+    "read_only_numpy_memmaps": true,
+    "python_bytecode_writes_disabled": true,
+    "AI_GPU_imports_audit_blocked": ["torch", "triton", "flex_gemm", "o_voxel", "trellis2", "cupy"],
+    "child_process_and_network_execution_audit_blocked": true,
+    "WSL_executed": false,
+    "Torch_executed": false,
+    "ROCm_executed": false,
+    "models_executed": false,
+    "native_extensions_executed": false,
+    "Blender_executed": false,
+    "input_files_modified": false
+  },
+  "actual_file_sha256": {
+    "neural_geometry": {
+      "path": "C:/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-wsl-turret-writer-ready-4870856/turret-neural-output.safetensors",
+      "sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22",
+      "matches_pinned_identity": true
+    },
+    "learned_material": {
+      "path": "C:/Users/wattz/Documents/ModlyArtifacts/amd-turret-texture-owner-067f668/field/texture-field.safetensors",
+      "sha256": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80",
+      "matches_pinned_identity": true
+    },
+    "original_mesh": {
+      "path": "C:/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-turret-cpu-mesh-ad07f96/turret-full.ply",
+      "sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a",
+      "matches_pinned_identity": true
+    }
+  },
+  "actual_array_checks": {
+    "geometry_coordinate_shape": [1842968, 4],
+    "material_coordinate_shape": [1842968, 4],
+    "geometry_coordinate_dtype": "I32",
+    "material_coordinate_dtype": "I32",
+    "geometry_coordinates_payload_sha256": "c87fa21d6f863aced647b48e0bb2edebe32523d36c742e350d39ccfea3fc0934",
+    "material_coordinates_payload_sha256": "c87fa21d6f863aced647b48e0bb2edebe32523d36c742e350d39ccfea3fc0934",
+    "all_geometry_material_coordinate_rows_equal": true,
+    "PLY_vertex_count": 1842968,
+    "PLY_face_count": 4012360,
+    "all_PLY_vertices_bitwise_equal_rowwise_source_formula": true,
+    "all_PLY_vertices_bitwise_equal_vertices_npy": true,
+    "all_PLY_faces_equal_faces_npy": true,
+    "vertex_bit_comparison": "float32 arrays viewed as little-endian uint32; all rows compared in bounded 32768-row batches",
+    "coordinate_comparison": "np.array_equal plus independently computed complete payload SHA256"
+  },
+  "rowwise_vertex_formula": {
+    "input": "c_i = geometry coordinates[i,1:]; x_i = geometry features[i,:3]",
+    "stable_sigmoid": "z=exp(-abs(x_i)); where(x_i>=0, F32(1)/(F32(1)+z), z/(F32(1)+z))",
+    "dual": "F32(2)*sigmoid(x_i)-F32(.5)",
+    "vertex": "(c_i.astype(F32)+dual_i)*F32(1/512)-F32(.5)",
+    "axis_order": "Original [D,H,W] treated as XYZ with no permutation"
+  },
+  "static_source_review": [
+    {
+      "path": "scripts/compatibility/amd_flexible_dual_grid_cpu.py",
+      "sha256": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40",
+      "functions_and_lines": {
+        "transform_features": 19,
+        "vertices": 32,
+        "faces_lookup_sort": 48,
+        "faces_original_indices_restored": 63,
+        "write_ply": 77,
+        "write_original_vertex_bytes": 87
+      },
+      "finding": "Vertex construction is rowwise. Sorting only builds a coordinate-key lookup; order[pos] maps matched neighbours back to original global vertex indices. PLY writes the complete verts array in its original order without removal, repair, or reordering."
+    },
+    {
+      "path": "docs/compatibility/amd-turret-cpu-mesh-extraction-evidence/extract.py",
+      "sha256": "b8d9478ad48e349333a4e108d1fae8a0f290d70b4daabfeee8d016242cddffce",
+      "lines": [92, 98, 119, 120, 121, 122, 123, 124, 125],
+      "finding": "Worker takes original coordinates[:,1:] and features; computes vertices with the audited functions, saves every vertex and face unchanged, and checks PLY and NPY readback. Duplicate-face detection sorts a separate temporary face-key buffer only. Unused vertices are retained."
+    },
+    {
+      "path": "docs/compatibility/amd-turret-texture-owner-evidence/neural.py",
+      "sha256": "5d3301c00fb29a51c86e861e63d097d35096de7d769d4d407e745fd364525647",
+      "lines": [72, 73, 74, 75, 76],
+      "finding": "The saved material path requires np.array_equal(coords, prepared['geometry_coords']); learned features are the rowwise raw*F32(.5)+F32(.5) transform with no clamp. This source was inspected as text only and was never imported or executed."
+    }
+  ],
+  "material_channel_contract": {
+    "features_shape": [1842968, 6],
+    "features_dtype": "F32",
+    "channels": ["red", "green", "blue", "metallic", "roughness", "alpha"],
+    "saved_feature_transform": "raw*F32(.5)+F32(.5), no clamp",
+    "metadata_path": "C:/Users/wattz/Documents/ModlyArtifacts/amd-turret-texture-owner-067f668/field/texture-field-metadata.json"
+  },
+  "conclusion": "For every original PLY vertex index i in [0,1842968), learned material feature row i corresponds to that vertex's unchanged geometry coordinate row i. No nearest-neighbour matching, coordinate sort, vertex removal, or guessed material mapping is required.",
+  "blockers": []
+}

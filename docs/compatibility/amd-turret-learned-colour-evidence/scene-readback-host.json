@@ -1,0 +1,31 @@
+{
+  "command": [
+    "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--threads",
+    "4",
+    "--python-exit-code",
+    "1",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\learned-colour.blend",
+    "--python",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-learned-colour-evidence\\verify_blend.py"
+  ],
+  "CPU_only": true,
+  "render_calls": 0,
+  "deadline_seconds": 60,
+  "memory_cap_bytes": 6442450944,
+  "returncode": 0,
+  "peak_committed_bytes": 847458304,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 6.014999999999873,
+  "blend_sha256_after": "b5c91db6b4c9717da987ab7c6d65ba495f78b0fcb87cd10e0ad3944dc1e17632",
+  "blend_unchanged": true
+}

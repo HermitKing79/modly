@@ -1,0 +1,123 @@
+{
+  "classification": "PASS",
+  "preview_type": "direct-row learned-colour preview; not final source-faithful trilinear PBR bake",
+  "vertex_count": 1842968,
+  "triangle_count": 4012360,
+  "geometry_byte_exact": true,
+  "source_rows_verified": 1842968,
+  "sources_preserved": [
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\turret-full.ply",
+      "sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a",
+      "bytes": 74276526,
+      "mtime_ns": 1792025475328510300,
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field\\texture-field.safetensors",
+      "sha256": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80",
+      "bytes": 117958320,
+      "mtime_ns": 1792053724831300300,
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors",
+      "sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22",
+      "bytes": 96433760,
+      "mtime_ns": 1792024391251261900,
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\vertices.npy",
+      "bytes": 22115744,
+      "sha256": "2c4ea4aa3ac6dc870e5305c5448a3a3e5e75f09c6ecfc41c3e93aab57819f140",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\faces.npy",
+      "bytes": 48148448,
+      "sha256": "453acbcd87c8190c1600b27ec3cab0052db75ad65dcb01ec9734cf8863ab5b81",
+      "unchanged": true
+    }
+  ],
+  "outputs": {
+    "front": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-front.png",
+      "bytes": 406300,
+      "sha256": "262aa6f754954c09a9d17fab77f6003f425ac1dec0331b5ee956add9363d7955"
+    },
+    "side": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-side.png",
+      "bytes": 385481,
+      "sha256": "ff3319685760ef59351b4e6f96295675e589bdef883d15d6a603c79ba8b9325e"
+    },
+    "rear": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-rear.png",
+      "bytes": 409443,
+      "sha256": "0ddd758fa08286a1cb74b1e59cf4562fef6a34a8b6960e069b0637636a94103f"
+    },
+    "turret-learned-colour.ply": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\turret-learned-colour.ply",
+      "bytes": 79805490,
+      "sha256": "d79f6fb38d23e2f0c7bcc492153290d67767466411f71dc19fcc5c6540ceeb72"
+    },
+    "learned-colour.blend": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\learned-colour.blend",
+      "bytes": 97205266,
+      "sha256": "b5c91db6b4c9717da987ab7c6d65ba495f78b0fcb87cd10e0ad3944dc1e17632"
+    },
+    "conversion.json": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\conversion.json",
+      "bytes": 2595,
+      "sha256": "9cbcc13c7ac8542f7f78d999a84bb9254b07a38a4193e15e0a2e6a1c900572ba"
+    },
+    "render-metadata.json": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\render-metadata.json",
+      "bytes": 5189,
+      "sha256": "8fb6ade4f5fde45ca30acf8e9d00cf82b5eda99f41bb585246b09ff88123ef37"
+    }
+  },
+  "PNG_checks": {
+    "front": {
+      "dimensions": [
+        640,
+        640
+      ],
+      "non_grey_pixels_delta_over_8": 1010,
+      "maximum_RGB_channel_difference": 33,
+      "pixels_any_channel_at_least_254": 0
+    },
+    "side": {
+      "dimensions": [
+        640,
+        640
+      ],
+      "non_grey_pixels_delta_over_8": 1245,
+      "maximum_RGB_channel_difference": 34,
+      "pixels_any_channel_at_least_254": 0
+    },
+    "rear": {
+      "dimensions": [
+        640,
+        640
+      ],
+      "non_grey_pixels_delta_over_8": 16,
+      "maximum_RGB_channel_difference": 10,
+      "pixels_any_channel_at_least_254": 0
+    }
+  },
+  "Blender_version": "5.2.1 LTS",
+  "render_CPU_only": true,
+  "render_samples": 64,
+  "CPU_denoiser": "OpenImageDenoise",
+  "original_unclamped_material_preserved": true,
+  "only_derived_RGB_clamped_and_quantized": true,
+  "manual_emission": false,
+  "full_PBR_bake": false,
+  "render_process_seconds": 40.40599999999995,
+  "render_peak_committed_bytes": 2224345088,
+  "saved_scene_reopened_and_verified": true,
+  "scene_readback_seconds": 6.014999999999873,
+  "timestamp_utc": "2026-10-15T09:06:22.178856+00:00",
+  "restrictions": "No WSL, Torch, ROCm, TRELLIS models, topology changes, UV bake or GLB export; Blender built-in CPU denoising used as requested."
+}

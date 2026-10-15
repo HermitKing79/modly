@@ -1,0 +1,55 @@
+{
+  "classification": "PASS",
+  "reviewer": "Independent colour_row_correspondence subagent",
+  "CPU_only": true,
+  "read_only_numpy_memmaps": true,
+  "AI_GPU_imports_audit_blocked": [
+    "torch",
+    "triton",
+    "flex_gemm",
+    "o_voxel",
+    "trellis2",
+    "cupy"
+  ],
+  "child_network_execution_audit_blocked": true,
+  "WSL_execution": false,
+  "Torch_ROCm_model_native_Blender_execution": false,
+  "input_files_modified": false,
+  "checks": {
+    "vertex_count_exact": true,
+    "face_count_exact": true,
+    "every_XYZ_bit_preserved": true,
+    "every_face_index_and_winding_preserved": true,
+    "every_face_record_byte_preserved": true,
+    "all_face_counts_three": true,
+    "every_RGB_byte_matches_genuine_material_formula": true,
+    "all_material_geometry_coordinate_rows_equal": true,
+    "fresh_source_hashes_unchanged": true
+  },
+  "vertex_count": 1842968,
+  "face_count": 4012360,
+  "RGB_formula": "rint(clip(field.features[:,:3],F32(0),F32(1))*F32(255)).astype(u1)",
+  "source_sha256": {
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\turret-full.ply": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a",
+    "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field\\texture-field.safetensors": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22"
+  },
+  "coloured_PLY": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\turret-learned-colour.ply",
+    "bytes": 79805490,
+    "sha256": "d79f6fb38d23e2f0c7bcc492153290d67767466411f71dc19fcc5c6540ceeb72"
+  },
+  "XYZ_payload_sha256": "ad9f926cd1168ede80979f359a949d818f92aa3871cc950df17231cdb83ef559",
+  "RGB_payload_sha256": "45db29e954f49c90235a86b7477cc1990c6fe3c1e2e6a3e021bb9cd9f557d514",
+  "face_record_payload_sha256": "d03b126f17e86206bdf1a0d850c0f7b92ab11d487d1ac0eabcc828ec8f2cbb77",
+  "material_coordinates_payload_sha256": "c87fa21d6f863aced647b48e0bb2edebe32523d36c742e350d39ccfea3fc0934",
+  "geometry_coordinates_payload_sha256": "c87fa21d6f863aced647b48e0bb2edebe32523d36c742e350d39ccfea3fc0934",
+  "static_converter_review": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-learned-colour-evidence\\colour_preview.py",
+    "sha256": "b97c5672ccc952c155d79b82daf5a9f6ef7f5e4d02b1cee8d43312d70128db7b",
+    "fundamental_errors": [],
+    "finding": "Direct row mapping is proven by exact material/geometry coordinate equality. Quantization uses the requested F32 clipping, scaling and rint. Structured vertex records preserve original F32 XYZ bits. Entire original face record suffix is copied unchanged. No framework added; only NumPy/stdlib; original artifacts read-only.",
+    "scope": "CPU direct-row learned RGB preview; not PBR baking"
+  },
+  "NumPy_version": "2.5.2"
+}

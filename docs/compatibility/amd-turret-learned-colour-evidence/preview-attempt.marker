@@ -1,0 +1,20 @@
+{
+  "CPU_only": true,
+  "command": [
+    "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--threads",
+    "4",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-learned-colour-evidence\\render_preview.py"
+  ],
+  "available_RAM_bytes": 22402912256,
+  "memory_cap_bytes": 6442450944,
+  "deadline_seconds": 180,
+  "script_sha256": "43c8076cdd153936d060363b06b71587aad7e1509a39746f5930b9946d14ea9e",
+  "PLY_sha256": "d79f6fb38d23e2f0c7bcc492153290d67767466411f71dc19fcc5c6540ceeb72"
+}

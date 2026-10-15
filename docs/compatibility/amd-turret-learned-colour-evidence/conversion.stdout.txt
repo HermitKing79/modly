@@ -1,0 +1,49 @@
+{
+  "classification": "PASS",
+  "mode": "direct-row learned-colour preview; not trilinear PBR bake",
+  "source_mesh": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\turret-full.ply",
+    "sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a"
+  },
+  "material": {
+    "path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field\\texture-field.safetensors",
+    "sha256": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80"
+  },
+  "neural_sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22",
+  "source_artifacts": {
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\turret-full.ply": {
+      "bytes": 74276526,
+      "mtime_ns": 1792025475328510300,
+      "sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a"
+    },
+    "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field\\texture-field.safetensors": {
+      "bytes": 117958320,
+      "mtime_ns": 1792053724831300300,
+      "sha256": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80"
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors": {
+      "bytes": 96433760,
+      "mtime_ns": 1792024391251261900,
+      "sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22"
+    }
+  },
+  "vertex_count": 1842968,
+  "face_count": 4012360,
+  "coloured_ply": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\turret-learned-colour.ply",
+    "bytes": 79805490,
+    "sha256": "d79f6fb38d23e2f0c7bcc492153290d67767466411f71dc19fcc5c6540ceeb72"
+  },
+  "RGB_quantization": "rint(clip(F32 RGB,0,1)*F32(255)).astype(u1)",
+  "RGB_payload_sha256": "45db29e954f49c90235a86b7477cc1990c6fe3c1e2e6a3e021bb9cd9f557d514",
+  "vertex_payload_sha256": "ad9f926cd1168ede80979f359a949d818f92aa3871cc950df17231cdb83ef559",
+  "face_payload_sha256": "4e2de7427def4b8077dcc41bdcccd657032aadafbf860ef6edbd98e5b69e4725",
+  "face_record_payload_sha256": "d03b126f17e86206bdf1a0d850c0f7b92ab11d487d1ac0eabcc828ec8f2cbb77",
+  "coordinate_payload_sha256": "c87fa21d6f863aced647b48e0bb2edebe32523d36c742e350d39ccfea3fc0934",
+  "RGB_clamped_values": 434,
+  "geometry_unchanged": true,
+  "all_rows_coloured": true,
+  "elapsed_seconds": 0.9369999999998981,
+  "NumPy_version": "2.3.5",
+  "AI_or_WSL_execution": false
+}

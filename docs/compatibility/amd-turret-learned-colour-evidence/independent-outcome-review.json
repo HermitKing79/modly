@@ -1,0 +1,123 @@
+{
+  "classification": "PASS",
+  "reviewer": "Independent colour_row_correspondence subagent",
+  "scope": "direct-row learned-colour preview; not PBR baking",
+  "reviewer_execution": {
+    "read_only_stdlib_audit": true,
+    "AI_GPU_Blender_imports_audit_blocked": true,
+    "child_network_execution_audit_blocked": true,
+    "Blender_executed": false,
+    "WSL_executed": false,
+    "Torch_ROCm_models_executed": false,
+    "tests_executed": false,
+    "only_review_JSON_written": true
+  },
+  "checks": {
+    "conversion_receipts_identical": true,
+    "conversion_matches_independently_verified_PLY": true,
+    "earlier_independent_input_and_PLY_review_PASS": true,
+    "front_file_identity_matches_metadata": true,
+    "front_PNG_is_640_square_RGB8": true,
+    "rear_file_identity_matches_metadata": true,
+    "rear_PNG_is_640_square_RGB8": true,
+    "side_file_identity_matches_metadata": true,
+    "side_PNG_is_640_square_RGB8": true,
+    "blend_file_identity_matches_metadata": true,
+    "render_has_all_three_views": true,
+    "render_CPU64_OIDN_no_GPU": true,
+    "render_sRGB_attribute_all_bytes_verified": true,
+    "render_geometry_payloads_match_conversion": true,
+    "matte_shader_verified_nonemissive": true,
+    "render_colour_management": true,
+    "render_host_succeeded_within_limits": true,
+    "render_host_normal_cleanup": true,
+    "saved_scene_readback_PASS": true,
+    "saved_scene_payloads_match_conversion": true,
+    "saved_scene_shader_cameras_CPU_colour_management": true,
+    "scene_readback_host_success_within_limits": true,
+    "scene_readback_normal_cleanup": true,
+    "render_script_matches_execution_marker": true
+  },
+  "actual_outputs": {
+    "front": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-front.png",
+      "bytes": 406300,
+      "sha256": "262aa6f754954c09a9d17fab77f6003f425ac1dec0331b5ee956add9363d7955",
+      "PNG_IHDR": {
+        "width": 640,
+        "height": 640,
+        "bit_depth": 8,
+        "colour_type": 2
+      }
+    },
+    "rear": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-rear.png",
+      "bytes": 409443,
+      "sha256": "0ddd758fa08286a1cb74b1e59cf4562fef6a34a8b6960e069b0637636a94103f",
+      "PNG_IHDR": {
+        "width": 640,
+        "height": 640,
+        "bit_depth": 8,
+        "colour_type": 2
+      }
+    },
+    "side": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-side.png",
+      "bytes": 385481,
+      "sha256": "ff3319685760ef59351b4e6f96295675e589bdef883d15d6a603c79ba8b9325e",
+      "PNG_IHDR": {
+        "width": 640,
+        "height": 640,
+        "bit_depth": 8,
+        "colour_type": 2
+      }
+    },
+    "blend": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\learned-colour.blend",
+      "bytes": 97205266,
+      "sha256": "b5c91db6b4c9717da987ab7c6d65ba495f78b0fcb87cd10e0ad3944dc1e17632"
+    }
+  },
+  "source_input_integrity": "Covered by the independently executed CPU full-row review in independent-coloured-ply-review.json; root performs final post-render source integrity streaming. This outcome review freshly hashes the coloured PLY, three PNGs and saved blend.",
+  "render_host": {
+    "elapsed_seconds": 40.40599999999995,
+    "peak_committed_bytes": 2224345088,
+    "memory_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "normal_cleanup": true
+  },
+  "scene_readback": {
+    "elapsed_seconds": 6.014999999999873,
+    "render_calls": 0,
+    "peak_committed_bytes": 847458304,
+    "normal_cleanup": true,
+    "result": "PASS: geometry, saved sRGB attribute, actual shader links, cameras, CPU64/OIDN and AgX persisted"
+  },
+  "visual_review": {
+    "all_three_actual_PNGs_viewed": true,
+    "finding": "Front, rear and side are fully framed and readable on a neutral dark background. Turret surface is dark grey with restrained red and blue details; lighting is matte and nonemissive. No blank, missing-colour, cropped-object or obvious rendering failure is visible.",
+    "dimensions": [
+      640,
+      640
+    ]
+  },
+  "static_code_review": {
+    "files": {
+      "colour_preview.py": "b97c5672ccc952c155d79b82daf5a9f6ef7f5e4d02b1cee8d43312d70128db7b",
+      "render_preview.py": "43c8076cdd153936d060363b06b71587aad7e1509a39746f5930b9946d14ea9e",
+      "render_host.py": "65a2ab0bf09e2112e324cd5334fb402891a74ce26a77dd2adce9b49a10726653",
+      "verify_blend.py": "280033b56be39afcd80f23668259d6473f8c8e9cda6715c6683d19f1c84174d7"
+    },
+    "fundamental_findings": [],
+    "conclusion": "No fundamental errors found. Renderer explicitly imports sRGB, compares actual ordered geometry and recovered sRGB bytes before and after render/save, links the verified colour attribute to matte Principled Base Color, and uses CPU Cycles with CPU OIDN. Host imposes 6 GiB process memory and 180-second bounds with owned-tree cleanup. Independent saved-scene readback checks persisted geometry/colours/shader links/cameras without rendering or saving. No new framework was added."
+  },
+  "receipt_sha256": {
+    "conversion.json": "9cbcc13c7ac8542f7f78d999a84bb9254b07a38a4193e15e0a2e6a1c900572ba",
+    "preview-host.json": "0bd190ea08186ccf4d33b0e624c17432c6aedeb0bfb3c861c66009463ad7034a",
+    "scene-readback.json": "2faa4c796d22c4b9f603746a328bf3022953524d8858bfc58a5ad9d7044ad390",
+    "scene-readback-host.json": "bed50db92e3afc9cb97f09901bae80e70524f9feface4967413ad592eb364f90",
+    "independent-coloured-ply-review.json": "9fdfaae9998a2a87a13a613435f32cbd0517ee4204d2fe7c6ec67ea434f6292d"
+  },
+  "render_metadata_sha256": "8fb6ade4f5fde45ca30acf8e9d00cf82b5eda99f41bb585246b09ff88123ef37",
+  "blockers": []
+}

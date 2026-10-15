@@ -1,0 +1,179 @@
+{
+  "classification": "PASS",
+  "vertex_count": 1842968,
+  "face_count": 4012360,
+  "bbox": [
+    [
+      -0.34096986055374146,
+      -0.5001831650733948,
+      -0.28355714678764343
+    ],
+    [
+      0.3415977954864502,
+      0.499592125415802,
+      0.29461854696273804
+    ]
+  ],
+  "source_PLY_sha256": "d79f6fb38d23e2f0c7bcc492153290d67767466411f71dc19fcc5c6540ceeb72",
+  "geometry_unchanged": true,
+  "engine": "CYCLES",
+  "device": "CPU",
+  "samples": 64,
+  "threads": 4,
+  "denoising": true,
+  "denoiser": "OPENIMAGEDENOISE",
+  "denoising_use_gpu": false,
+  "transparent": false,
+  "canonical_up_axis": "+Z",
+  "import_settings": {
+    "filepath": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\turret-learned-colour.ply",
+    "import_colors": "SRGB",
+    "merge_verts": false,
+    "global_scale": 1.0,
+    "use_scene_unit": false,
+    "forward_axis": "Y",
+    "up_axis": "Z"
+  },
+  "colour_interpretation": "PLY byte RGB is canonical image colour display sRGB",
+  "imported_attribute_before_and_after": {
+    "name": "Col",
+    "domain": "POINT",
+    "data_type": "FLOAT_COLOR",
+    "RGB_payload_sha256": "45db29e954f49c90235a86b7477cc1990c6fe3c1e2e6a3e021bb9cd9f557d514",
+    "all_imported_sRGB_bytes_match": true,
+    "alpha_is_one": true
+  },
+  "material": {
+    "node_type": "ShaderNodeVertexColor",
+    "attribute_name": "Col",
+    "linked_socket": "Principled BSDF.Base Color",
+    "metallic": 0,
+    "roughness": 0.8,
+    "emission_strength": 0,
+    "full_PBR_reconstruction": false
+  },
+  "view_transform": "AgX",
+  "look": "None",
+  "exposure": 0.0,
+  "gamma": 1.0,
+  "lights": [
+    {
+      "name": "Key",
+      "normalized_energy": 80,
+      "energy": 79.96405029296875,
+      "size": 2.4994382858276367,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Fill",
+      "normalized_energy": 40,
+      "energy": 39.982025146484375,
+      "size": 2.4994382858276367,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Back",
+      "normalized_energy": 60,
+      "energy": 59.97303771972656,
+      "size": 2.4994382858276367,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "views": [
+    {
+      "name": "front",
+      "PNG": "preview-front.png",
+      "camera_object": "Preview front",
+      "camera_location": [
+        1.5172144174575806,
+        -3.309896469116211,
+        1.660331130027771
+      ],
+      "camera_quaternion": [
+        0.8214350938796997,
+        0.5289393067359924,
+        0.11544136703014374,
+        0.17927877604961395
+      ],
+      "ortho_scale": 1.1615064144134521,
+      "seconds": 7.9202109000002565
+    },
+    {
+      "name": "rear",
+      "PNG": "preview-rear.png",
+      "camera_object": "Preview rear",
+      "camera_location": [
+        -1.516586422920227,
+        3.309305191040039,
+        1.660331130027771
+      ],
+      "camera_quaternion": [
+        0.17927877604961395,
+        0.11544136703014374,
+        -0.5289393067359924,
+        -0.8214350938796997
+      ],
+      "ortho_scale": 1.1615064144134521,
+      "seconds": 7.295466500000202
+    },
+    {
+      "name": "side",
+      "PNG": "preview-side.png",
+      "camera_object": "Preview side",
+      "camera_location": [
+        3.819990873336792,
+        0.146615132689476,
+        1.1808159351348877
+      ],
+      "camera_quaternion": [
+        0.5577095150947571,
+        0.41199958324432373,
+        0.42815032601356506,
+        0.5795721411705017
+      ],
+      "ortho_scale": 1.1483021974563599,
+      "seconds": 7.7216238000000885
+    }
+  ],
+  "active_camera": "Preview front",
+  "Blender_version": "5.2.1 LTS",
+  "actual_geometry_payloads_before_and_after": {
+    "vertex_payload_sha256": "ad9f926cd1168ede80979f359a949d818f92aa3871cc950df17231cdb83ef559",
+    "face_payload_sha256": "4e2de7427def4b8077dcc41bdcccd657032aadafbf860ef6edbd98e5b69e4725"
+  },
+  "elapsed_seconds": 32.67217819999996,
+  "outputs": {
+    "front": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-front.png",
+      "bytes": 406300,
+      "sha256": "262aa6f754954c09a9d17fab77f6003f425ac1dec0331b5ee956add9363d7955"
+    },
+    "rear": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-rear.png",
+      "bytes": 409443,
+      "sha256": "0ddd758fa08286a1cb74b1e59cf4562fef6a34a8b6960e069b0637636a94103f"
+    },
+    "side": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-side.png",
+      "bytes": 385481,
+      "sha256": "ff3319685760ef59351b4e6f96295675e589bdef883d15d6a603c79ba8b9325e"
+    },
+    "blend": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\learned-colour.blend",
+      "bytes": 97205266,
+      "sha256": "b5c91db6b4c9717da987ab7c6d65ba495f78b0fcb87cd10e0ad3944dc1e17632"
+    }
+  }
+}
