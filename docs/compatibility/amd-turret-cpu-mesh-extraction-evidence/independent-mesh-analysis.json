@@ -1,0 +1,30 @@
+{
+  "classification": "PASS_GEOMETRY_READBACK",
+  "CPU_only": true,
+  "forbidden_imports": [],
+  "file_hashes": {
+    "turret-full.ply": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a",
+    "vertices.npy": "2c4ea4aa3ac6dc870e5305c5448a3a3e5e75f09c6ecfc41c3e93aab57819f140",
+    "faces.npy": "453acbcd87c8190c1600b27ec3cab0052db75ad65dcb01ec9734cf8863ab5b81"
+  },
+  "index_and_PLY_readback": true,
+  "original_vertices_exact": true,
+  "max_vertex_transform_error": 0.0,
+  "every_quad_source_verified": true,
+  "valid_quads": 2006180,
+  "split_1": 1005364,
+  "split_2": 1000816,
+  "omitted_missing_corner_quads": 1616,
+  "omitted_out_of_grid_quads": 0,
+  "edge_incidence": {
+    "unique_edges": 5877390,
+    "boundary_edges": 164154,
+    "two_face_edges": 5374787,
+    "nonmanifold_edges": 338449,
+    "maximum_incidence": 4,
+    "no_orientation_or_self_intersection_test": true
+  },
+  "preview_safe": true,
+  "numpy": "2.3.5",
+  "elapsed_seconds": 1.485000000000582
+}

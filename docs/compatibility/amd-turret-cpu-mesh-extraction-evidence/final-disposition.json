@@ -1,0 +1,51 @@
+{
+  "classification": "PARTIAL",
+  "conversion_and_file_readback": "PASS",
+  "topology_stop_applied": true,
+  "preview_rendered": false,
+  "preview_attempt_marker_exists": false,
+  "repair_performed": false,
+  "model_loading_or_GPU_execution": false,
+  "source_neural_artifact_unchanged": true,
+  "all_ten_source_tensor_hashes_verified": true,
+  "edge_incidence": {
+    "unique_edges": 5877390,
+    "boundary_edges": 164154,
+    "two_face_edges": 5374787,
+    "nonmanifold_edges": 338449,
+    "maximum_incidence": 4,
+    "no_orientation_or_self_intersection_test": true
+  },
+  "artifacts": {
+    "turret-full.ply": {
+      "Windows_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\turret-full.ply",
+      "bytes": 74276526,
+      "sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a"
+    },
+    "vertices.npy": {
+      "Windows_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\vertices.npy",
+      "bytes": 22115744,
+      "sha256": "2c4ea4aa3ac6dc870e5305c5448a3a3e5e75f09c6ecfc41c3e93aab57819f140"
+    },
+    "faces.npy": {
+      "Windows_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\faces.npy",
+      "bytes": 48148448,
+      "sha256": "453acbcd87c8190c1600b27ec3cab0052db75ad65dcb01ec9734cf8863ab5b81"
+    },
+    "provenance.json": {
+      "Windows_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\provenance.json",
+      "bytes": 23224,
+      "sha256": "0d66d429c4af8d5ce59e1cf7f6fa8415d79a19dd0b0192c41e3d3971955ca886"
+    }
+  },
+  "source_hash": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22",
+  "CPU_peak_committed_bytes": 261132288,
+  "conversion_seconds": 1.2039999999979045,
+  "worker_seconds": 2.937999999994645,
+  "historical_files_unchanged": 396,
+  "old_local_branches_unchanged": 60,
+  "old_remote_branches_unchanged": 60,
+  "Windows_five_preservation_groups_unchanged": true,
+  "WSL_started": false,
+  "next": "Inspect saved unmodified PLY in Blender; no decoder rerun or automatic repair."
+}

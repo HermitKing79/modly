@@ -1,0 +1,19 @@
+{
+  "review": "Final read-only report/disposition consistency check",
+  "decision": "ACCEPT_PARTIAL_AND_STOP",
+  "report_sha256": "3a9089c181e09f9c9d3fcaaf9f77df408dba34e1aaae4d3ac4a9ec74e920ad1a",
+  "overall_classification": "PARTIAL",
+  "conversion_and_independent_readback": "PASS",
+  "topology": {
+    "boundary_edges": 164154,
+    "nonmanifold_edges_more_than_two_faces": 338449,
+    "maximum_incidence": 4,
+    "two_face_edges": 5374787,
+    "closed_edge_manifold": false
+  },
+  "source_and_file_accuracy": "Report/disposition agree with the reviewed actual counts, complete1842968 vertices/4012360 triangles, three output hashes/sizes, source correspondence, CPU timings/committed peaks and natural Job cleanup. The1616 source missing-corner omissions are correctly distinguished from a converter mismatch. No GPU or neural-model cause is inferred.",
+  "stop": "The reported user topology STOP is correctly applied: prepared preview scripts were not executed; no Blender import/render, PNG/GLB, repair, additional extraction or decoder retry followed. Full raw PLY/arrays remain outside Git for the user to open.",
+  "prior_preview_safe_field": "The independent analysis PASS/preview_safe field describes finite, valid-index, readable geometry only. It is not rendering authorization and does not override the user STOP or this overallPARTIAL disposition. Earlier raw analysis evidence remains unchanged.",
+  "limits": "Orientation, self-intersections and further topology diagnosis were not performed. This final check read the report and final-disposition record; no runtime actions or additional investigation occurred. Preservation/publication claims outside the already reviewed result remain backed by the parent's saved audits.",
+  "material_report_errors": []
+}

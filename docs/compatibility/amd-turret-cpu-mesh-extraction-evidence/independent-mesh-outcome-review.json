@@ -1,0 +1,76 @@
+{
+  "review": "Independent actual CPU mesh outcome, inverse source-quad and edge-incidence verification",
+  "conversion_result": "PASS",
+  "decision": "SAFE_TO_PREVIEW_RAW_MESH_WITH_TOPOLOGY_WARNINGS",
+  "topology_warning": "The source-faithful raw mesh has164154 boundary edges and338449 edges incident to more than two faces(maximum4). It is not a closed edge-manifold mesh. No repair was performed or is implied by preview approval.",
+  "actual_extraction": {
+    "CPU_only": true,
+    "worker_returncode": 0,
+    "forbidden_AI_GPU_imports": [],
+    "extraction_seconds": 1.2039999999979045,
+    "worker_total_seconds": 2.937999999994645,
+    "peak_process_committed_bytes": 261132288,
+    "owned_Job_active_before_after": [0, 0],
+    "forced_cleanup": false,
+    "source_and_worker_hashes_match_preexecution_review": true,
+    "raw_source_unchanged": true,
+    "reported_repeated_index_zero_area_duplicate_triangles": [0, 0, 0]
+  },
+  "artifact": {
+    "directory": "C:/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-turret-cpu-mesh-ad07f96",
+    "vertices_shape": [1842968, 3],
+    "vertices_dtype": "float32",
+    "faces_shape": [4012360, 3],
+    "faces_dtype": "int32",
+    "PLY_bytes": 74276526,
+    "PLY_sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a",
+    "vertices_NPY_sha256": "2c4ea4aa3ac6dc870e5305c5448a3a3e5e75f09c6ecfc41c3e93aab57819f140",
+    "faces_NPY_sha256": "453acbcd87c8190c1600b27ec3cab0052db75ad65dcb01ec9734cf8863ab5b81",
+    "all_file_hashes_independently_match": true,
+    "PLY_NPY_exact_readback": true,
+    "source_neural_sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22"
+  },
+  "independent_source_verification": {
+    "all_ten_raw_source_tensor_hashes_match": true,
+    "all_original_vertices_preserved_in_exact_order": true,
+    "vertex_transform_max_abs_error": 0.0,
+    "every_consecutive_triangle_pair_checked": true,
+    "quad_count": 2006180,
+    "checks": "Inverse each face pair into its original four global indices; exact axis offsets and source-coordinate corners, positive original edge flag, original winding/split pattern, float32 softplus product rule, strict original anchor/axis order and no duplicate anchors. This does not call the converter or rebuild mesh arrays.",
+    "split_1": 1005364,
+    "split_2": 1000816,
+    "unrepresented_positive_flags": 1616,
+    "all_unrepresented_flags_proven_missing_a_corner": true,
+    "unrepresented_out_of_grid_quads": 0,
+    "interpretation": "The1616 omissions are the reference's missing-neighbour rule, not an extraction failure. All valid source quads are accounted for."
+  },
+  "independent_edge_incidence": {
+    "undirected_edges": 5877390,
+    "one_face_boundary_edges": 164154,
+    "two_face_edges": 5374787,
+    "more_than_two_face_edges": 338449,
+    "maximum_faces_per_edge": 4,
+    "orientation_self_intersection_connected_components_not_tested": true
+  },
+  "bounded_review_execution": {
+    "allowed_CPU_NumPy_only": true,
+    "bundled_Python_used": true,
+    "forbidden_imports": [],
+    "production_converter_reexecuted": false,
+    "mesh_or_source_modified": false,
+    "analysis_seconds": 1.485000000000582,
+    "process_committed_memory_limit_bytes": 2147483648,
+    "host_deadline_seconds": 90,
+    "peak_process_committed_bytes": 314077184,
+    "returncode": 0,
+    "natural_Job_active_before_after": [0, 0],
+    "forced_cleanup": false
+  },
+  "evidence_sha256": {
+    "independent_mesh_check.py": "886d9635eedde263a519533f1bf0b2c7d68a14b5322fab589ef1d1a1d36b54fa",
+    "independent-mesh-analysis.json": "68f1861e1aed04acdc93ca7628aa8ec34b86075644b984925a0f50253da18551",
+    "extraction-worker.json": "8f2fbe07e5c2aaf78f7d63fa25396bdda83a968c127e46cf4a214dd500cc2d38",
+    "extraction-host.json": "4bddb1e72f4ecd68d81b3846162cbbefcb7bfc3c8304d9b55cc0680cb40563ae"
+  },
+  "limits": "CPU formula/source correspondence is verified for this artifact; no exact native-GPU extractor comparison was performed. Committed memory is not RSS. Preview is a visual inspection of raw untextured geometry, not a watertightness/manufacturing-quality claim. Further diagnostics or repairs require separate task scope."
+}
