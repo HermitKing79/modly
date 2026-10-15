@@ -1,0 +1,28 @@
+{
+  "classification": "BLOCKED",
+  "decision": "NO-GO for unmodified-source Blender COLLAPSE at100K/30K",
+  "source_PLY_sha256": "d79f6fb38d23e2f0c7bcc492153290d67767466411f71dc19fcc5c6540ceeb72",
+  "census": {
+    "vertices": 1842968,
+    "triangles": 4012360,
+    "edges": 5877390,
+    "boundary_edges": 164154,
+    "two_face_edges": 5374787,
+    "nonmanifold_gt2_edges": 338449,
+    "maximum_edge_face_incidence": 4,
+    "vertices_incident_to_gt2_edges": 331921,
+    "faces_incident_to_gt2_edges": 994310,
+    "faces_with_at_least_two_protected_vertices": 1097383,
+    "source_guard_derived_minimum_face_bound": 1097383
+  },
+  "requested_targets": [
+    100000,
+    30000
+  ],
+  "full_turret_decimation_calls": 0,
+  "candidate_meshes_exported": 0,
+  "renders": 0,
+  "stop_reason": "Protected nonmanifold topology alone exceeds both triangle targets; tiny installed-runtime fixture corroborates protected-face behavior.",
+  "no_mesh_repair_or_method_retry": true,
+  "elapsed_seconds": 2.3445573999997578
+}

@@ -1,0 +1,31 @@
+{
+  "reviewer": "/root/lod_method_review",
+  "mode": "Independent read-only source and outcome review; no execution or edits",
+  "execution_safety_review": "GO for one tiny CPU fixture and read-only census",
+  "milestone_decision": "BLOCKED / NO-GO for100K and30K with unchanged-source Blender COLLAPSE",
+  "fixture": {
+    "input_triangles": 132,
+    "requested_triangles": 3,
+    "actual_triangles": 4,
+    "protected_face_positions_winding_RGBA_exact": true,
+    "new_RGBA_rows": 2,
+    "referenced_new_RGBA_rows": 0,
+    "no_surface_interpolation_fidelity_claim": true
+  },
+  "protected_source_face_count_lower_bound": 1097383,
+  "proof": "First-collapse induction preserves every original gt2-face edge and its endpoint protection. Every triangle with at least two protected endpoints has no collapsible edge. This bounds face count; its third unlocked vertex could move.",
+  "actual_build_sources_checked": [
+    "https://github.com/blender/blender/blob/9e2066aef7ef/source/blender/bmesh/tools/bmesh_decimate_collapse.cc",
+    "https://github.com/blender/blender/blob/9e2066aef7ef/source/blender/bmesh/intern/bmesh_core.cc",
+    "https://github.com/blender/blender/blob/9e2066aef7ef/source/blender/bmesh/intern/bmesh_mesh_convert.cc"
+  ],
+  "hidden_duplicate_cleanup_invalidation_found": false,
+  "actual_executed_probe_sha256": "8ec9d7e420155e9b6fbd38849d8dd854286724d0d5af42305607b5b9d916bf8a",
+  "pre_review_to_execution_change": "Added referenced-only new-colour counter; diagnostics only",
+  "process_exit": 0,
+  "seconds": 5.14,
+  "peak_committed_bytes": 698236928,
+  "natural_empty_Job": true,
+  "ten_source_manifests_match": true,
+  "limitations": "No full-source decimation, LOD mesh, render or other automatic optimisation method tested"
+}

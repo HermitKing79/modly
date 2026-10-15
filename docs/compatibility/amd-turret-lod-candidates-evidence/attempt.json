@@ -1,0 +1,23 @@
+{
+  "command": [
+    "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--threads",
+    "4",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-lod-candidates-evidence\\probe.py"
+  ],
+  "CPU_only": true,
+  "deadline_seconds": 60,
+  "memory_cap_bytes": 2147483648,
+  "host_available_RAM_bytes": 20078915584,
+  "scripts": {
+    "probe.py": "8ec9d7e420155e9b6fbd38849d8dd854286724d0d5af42305607b5b9d916bf8a",
+    "common.py": "0ab458e52b7879a6af787c1af2ba455321a67722709ad52f19991043ddf2fdcd",
+    "host.py": "90546e45c23ca6f3c5307bd4b0c5b34a3d40ef2997662a572850c87a6bd29b60"
+  }
+}
