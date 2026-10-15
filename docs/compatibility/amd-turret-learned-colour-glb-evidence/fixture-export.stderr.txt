@@ -1,0 +1,2 @@
+C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-learned-colour-glb-evidence\blender_glb.py:112: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat = bpy.data.materials.new('Original supported RGB node connection');mat.use_nodes=True;mesh.materials.append(mat)

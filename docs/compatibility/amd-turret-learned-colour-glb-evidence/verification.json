@@ -1,0 +1,109 @@
+{
+  "classification": "PASS",
+  "scope": "Portable direct-row learned-colour GLB, not spatial PBR bake",
+  "GLB": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-coloured-glb-357e541\\turret-learned-colour.glb",
+    "bytes": 479788924,
+    "sha256": "ea9ea02c87311e91ddd455a2d0664ec5a2965adc966b108f72c3e3ce1f98df15"
+  },
+  "original_vertices": 1842968,
+  "triangles": 4012360,
+  "glTF_vertices": 11989981,
+  "geometry_winding_and_triangle_multiplicity_exact": true,
+  "linear_RGB_payload_error": 0,
+  "fresh_Blender_import_sRGB_exact": true,
+  "no_external_resources": true,
+  "constant_metallic": 0,
+  "constant_roughness": 0.8,
+  "opaque": true,
+  "emission": false,
+  "source_linear_RGB_reference_sha256": "ce010634db30e056c1d67d799b9e1ccdf09c9a1e14c5e6e14193a273bb6f29f8",
+  "sources_unchanged": [
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-pbr-3485263\\learned-pbr.blend",
+      "bytes": 114365124,
+      "sha256": "555ef22321040a806b8d21cad65087eb0b424d46e6d9ed8a2a11c6a49cc79339"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\turret-full.ply",
+      "bytes": 74276526,
+      "sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field\\texture-field.safetensors",
+      "bytes": 117958320,
+      "sha256": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors",
+      "bytes": 96433760,
+      "sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\learned-colour.blend",
+      "bytes": 97205266,
+      "sha256": "b5c91db6b4c9717da987ab7c6d65ba495f78b0fcb87cd10e0ad3944dc1e17632"
+    }
+  ],
+  "focused_CPU_unit_tests_passed": 4,
+  "fixture_exports": 1,
+  "fixture_imports": 2,
+  "full_exports": 1,
+  "full_imports": 1,
+  "initial_fixture_import_limitation": "Verifier assumed explicit layer_name; installed importer deliberately uses active render colour. Failed record preserved.",
+  "processes": {
+    "fixture-export": {
+      "elapsed_seconds": 3.54700000000048,
+      "peak_committed_bytes": 291098624,
+      "deadline_seconds": 60,
+      "memory_cap_bytes": 2147483648,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      }
+    },
+    "fixture-import-confirmation": {
+      "elapsed_seconds": 2.8590000000003783,
+      "peak_committed_bytes": 272347136,
+      "deadline_seconds": 60,
+      "memory_cap_bytes": 2147483648,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      }
+    },
+    "full-export": {
+      "elapsed_seconds": 15.5,
+      "peak_committed_bytes": 3210952704,
+      "deadline_seconds": 300,
+      "memory_cap_bytes": 8589934592,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      }
+    },
+    "full-import": {
+      "elapsed_seconds": 50.17199999999957,
+      "peak_committed_bytes": 6008889344,
+      "deadline_seconds": 180,
+      "memory_cap_bytes": 8589934592,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      }
+    }
+  },
+  "no_Torch_ROCm_WSL_models_or_geometry_changes": true
+}

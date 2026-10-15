@@ -1,0 +1,25 @@
+{
+  "phase": "fixture-import",
+  "CPU_only": true,
+  "command": [
+    "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--threads",
+    "4",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-learned-colour-glb-evidence\\blender_glb.py"
+  ],
+  "deadline_seconds": 60,
+  "memory_cap_bytes": 2147483648,
+  "host_available_RAM_bytes": 20979269632,
+  "disk_free_bytes": 111549599744,
+  "scripts": {
+    "blender_glb.py": "37b3b167b52671767a3b866eaaa386ecca92453a38b48ae7f11c3ad61f613797",
+    "contract.py": "8497174ca28a7ec9932be7ac905ee8fab84b6a1adbd5c46a8ddc0383d99d5f17",
+    "host.py": "aeceb41b8320678727ef5f0b774c796c568d2db24c5ccef4d83f88810e54dbe8"
+  }
+}

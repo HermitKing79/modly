@@ -1,0 +1,22 @@
+{
+  "reviewer": "/root/glb_contract_review",
+  "mode": "Independent read-only source and outcome review; no edits or Blender launches",
+  "pre_execution_decision": "GO",
+  "outcome": "PASS",
+  "fixture": "Supported original ShaderNodeVertexColor connection, exact FLOAT32 COLOR_0, preserved triangles and colour; active-layer verifier correction matches installed importer source",
+  "full_asset": {
+    "bytes": 479788924,
+    "sha256": "ea9ea02c87311e91ddd455a2d0664ec5a2965adc966b108f72c3e3ce1f98df15",
+    "triangles": 4012360,
+    "glTF_vertices": 11989981,
+    "raw_linear_RGB_maximum_error": 0.0,
+    "geometry_winding_multiplicity_and_display_RGB": "Exact"
+  },
+  "independently_rehashed": ["GLB", "All five original source files"],
+  "process_result": "Both full runs exit 0, naturally empty Jobs, no forced cleanup, below 8 GiB and 300/180-second limits",
+  "limitations": [
+    "Blender 5.2.1 fresh import tested; no other viewer or render in this milestone",
+    "Constant metallic 0 / roughness 0.8; spatial learned PBR channels not baked",
+    "Approximately 480 MB and 12 million normal-split vertices remains substantial"
+  ]
+}

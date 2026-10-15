@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-learned-colour-glb-evidence\blender_glb.py", line 150, in <module>
+    assert links[0].from_socket.name=='Color' and links[0].from_node.layer_name==obj.data.color_attributes[0].name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+Error: script failed, file: 'C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-learned-colour-glb-evidence\blender_glb.py', exiting.
