@@ -1,0 +1,35 @@
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decode-resume-evidence\decode.py", line 767, in <module>
+    if __name__=='__main__': raise SystemExit(main())
+                                              ^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decode-resume-evidence\decode.py", line 761, in main
+    if args.preflight: print(json.dumps(preflight()));return 0
+                                        ^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decode-resume-evidence\decode.py", line 702, in preflight
+    directory = check_directory()
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decode-resume-evidence\artifact_io.py", line 58, in check_directory
+    approved_root(root, authority=ownership(root))
+                                  ^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decode-resume-evidence\output_owner.py", line 79, in ownership
+    host_verify(root)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decode-resume-evidence\output_owner.py", line 65, in host_verify
+    current = snapshot(root, files)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decode-resume-evidence\output_owner.py", line 32, in snapshot
+    raise RuntimeError('Read-only Windows ownership query failed: '+run.stderr.decode(errors='replace'))
+RuntimeError: Read-only Windows ownership query failed: Exception calling "ProcessRecord" with "1" argument(s): "Access to a CIM resource was not available to the client."
+
+At line:278 char:5
+
++     $__cmdletization_objectModelWrapper.ProcessRecord($__cmdletizatio ...
+
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    + CategoryInfo          : NotSpecified: (:) [], ParentContainsErrorRecordException
+
+    + FullyQualifiedErrorId : CimException
+
+ 
+
+

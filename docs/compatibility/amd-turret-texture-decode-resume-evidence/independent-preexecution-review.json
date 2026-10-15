@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "reviewer": "texture_decode_review independent agent",
+  "reviewed_utc": "2026-10-15T08:38:00.5054142Z",
+  "scope": "Only decode.py/readiness.py prelaunch correction, fresh paths and unchanged reused safety/computation.",
+  "blocking_findings": [],
+  "checks": [
+    "Exact prelaunch threshold is 37 * GiB // 2 = 19864223744 bytes; live host floor remains 12 GiB and D-free floor remains 50 GiB.",
+    "The Windows-only readiness script takes exactly three GlobalMemoryStatusEx readings five seconds apart after at least 60 seconds from the recorded request time; each reading and final verdict are exclusively saved with flush/fsync.",
+    "Saved readiness is PASS with three qualifying samples and observed settling above 60 seconds. Final live pre-marker measurement is separately journaled with actual value, 18.5 GiB threshold and verdict before any reservation.",
+    "Fresh evidence/scratch/marker/run paths are selected. The copied artifact bridge derives its marker from the new directory, while the same empty owner-attested permanent field is reused.",
+    "Original CPU qualification/evidence references remain explicit. Eight computation/writer/ownership files are byte-identical to the resource-ready source; native, precision, guide, tiling, allocator, deadline, health and persistence guards are unchanged."
+  ],
+  "readiness": {
+    "classification": "PASS",
+    "required_bytes": 19864223744,
+    "settling_seconds_observed": 92.54456329345703,
+    "samples": [
+      {
+        "timestamp_utc": "2026-10-15T09:37:06.544563+01:00",
+        "available_ram_bytes": 21596692480,
+        "required_prelaunch_ram_bytes": 19864223744,
+        "pass": true,
+        "seconds_since_request": 92.54456329345703
+      },
+      {
+        "timestamp_utc": "2026-10-15T09:37:11.546313+01:00",
+        "available_ram_bytes": 21381218304,
+        "required_prelaunch_ram_bytes": 19864223744,
+        "pass": true,
+        "seconds_since_request": 97.54631400108337
+      },
+      {
+        "timestamp_utc": "2026-10-15T09:37:16.547383+01:00",
+        "available_ram_bytes": 21590618112,
+        "required_prelaunch_ram_bytes": 19864223744,
+        "pass": true,
+        "seconds_since_request": 102.54738306999207
+      }
+    ]
+  },
+  "new_marker_present": false,
+  "new_run_present": false,
+  "permanent_field_entries": 0,
+  "condition": "This review permits only the user-authorized conditional single decode after exact publication/manifest validation and fresh final resource, ownership, model/input/native gates. No execution result or genuine texture output is claimed.",
+  "reviewer_actions": "Read-only source/hash/readiness inspection and this JSON only; no tests, WSL/GPU commands, model imports or implementation edits.",
+  "sha256": {
+    "decode.py": "8e6d52b84a4be0aceb57f9b942e6bc83f8998decb931c287f40d2a31263b543d",
+    "readiness.py": "464b2057d194ebe66ba5a8d488ac912dad8f30cbd9d0a144175f147a07b4e8fe",
+    "ram-readiness.json": "ef571e553191f4fc238b140138b21f3ab77309649d5e02d7f51a6b21f5c9abec",
+    "ram-readiness-samples.jsonl": "57e22f2bc967a1c7b841de056bce0ed317627f74c5ad7f6c6e6dbf6611d303f3",
+    "neural.py": "5d3301c00fb29a51c86e861e63d097d35096de7d769d4d407e745fd364525647",
+    "runtime.py": "935d431c107ec6ea856bdccff9d1c88298403c7e9afe07232b22e74525bf0e10",
+    "admission.py": "99c1078cbcb4b026feeec3f085976586f1118812bdd3d4b5fbe0e76c47cbbbbe",
+    "chunked_final.py": "707d73d7331a4896bffeb851c2aa144175841cd4752a4497760d9f6a44ea2d39",
+    "artifact_io.py": "4a1d55f77eb3e45e115592e17e0fa4948bb58278fd5a7bf71af561c1ed9543f4",
+    "output_owner.py": "02d862b93ad08edb7830e49169fe6adc9921bebd2755cd94cbce2179e3bf9648",
+    "owner-attestation.json": "f5209e299c5f50d14465269f2b933ea0e5023b4690bf2b9501a29d5931b9a88e",
+    "windows_owner.ps1": "6849a3ac5375cc1693ce306ea28fa4ce9bed32305b8926bc2f5e6034c75f1a94"
+  }
+}
