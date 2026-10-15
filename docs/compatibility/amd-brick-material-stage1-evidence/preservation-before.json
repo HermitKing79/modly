@@ -1,0 +1,105 @@
+{
+  "schema": "modly.amd.brick-material-stage1-preservation-before.v1",
+  "created_utc": "2026-10-15T23:24:55.464185+00:00",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "mission_base": "df416889bc65ad43f0f928c563c6d99c64e730a8",
+  "protected_files": {
+    "checked": 100,
+    "unchanged": 100,
+    "changed_or_missing": 0
+  },
+  "source": {
+    "AMD_HEAD": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+    "HEAD_status_nodes_and_backup_match_previous": true,
+    "qualified_source_bindings_unchanged": 21
+  },
+  "environment": {
+    "comparison": {
+      "amd": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      },
+      "modly": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      }
+    },
+    "native_identities": 12,
+    "historical_source_identities": 13,
+    "selected_packages": {
+      "amd": 13,
+      "modly": 15
+    }
+  },
+  "archives_and_local_only": {
+    "archive_hashes_match": 2,
+    "CRC_readback_members": 40,
+    "current_local_only_unchanged": 20
+  },
+  "brick_authentication": {
+    "source_images_unchanged": 2,
+    "source_image_sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+    "DINO_conditioning_copies_verified": 2,
+    "DINO_conditioning_sha256": "471c04ea88df611a84cb311880e600e703c034254946b01807763e11c569f2b2",
+    "DINO_shape": [
+      1,
+      1029,
+      1024
+    ],
+    "saved_shape_files_unchanged": 5,
+    "shape_rows": 4430,
+    "shape_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "neural_bundle_files_unchanged": 3,
+    "neural_rows": 1957891,
+    "mesh_files_unchanged": 4,
+    "private_visual_PNGs_unchanged": 12,
+    "visual_private_output_receipts_unchanged": 25,
+    "old_raw_receipts_unchanged": 41,
+    "prior_report_evidence_groups": {
+      "neural": 21,
+      "mesh": 23,
+      "latest_visual": 21
+    }
+  },
+  "texture_flow_checkpoint": {
+    "model": "slat_flow_imgshape2tex_dit_1_3B_512_bf16",
+    "bytes": 2584672728,
+    "mtime_ns": 1791274799154024700,
+    "header_bytes": 66960,
+    "header_sha256": "2374eaaa837c1ad0081a8032586a4d7a2ba2a1ae8c512837f41ea300e24dac66",
+    "tensor_count": 640,
+    "parameter_count": 1292302880,
+    "dtype_counts": {
+      "BF16": 640
+    },
+    "header_bytes_read_this_audit": 66968,
+    "weight_payload_bytes_read": 0,
+    "metadata_header_config_match_prior": true,
+    "old_authenticated_full_sha256": "8371aa1c5d13be79dcd5ddfd2cf3835e902e204dc34427169a1c702828e1a94d",
+    "old_full_hash_provenance_receipt": "docs/compatibility/amd-turret-texture-route-evidence/local-assets.json",
+    "old_full_hash_provenance_receipt_sha256": "9f764cece1ae4630ec437b2a45d8619ff894c3312190e86813350a1490c2d481"
+  },
+  "host_RAM_disk_snapshot": {
+    "timestamp_utc": "2026-10-15T23:24:55.464185+00:00",
+    "available_physical_RAM_bytes": 19596324864,
+    "total_physical_RAM_bytes": 34270023680,
+    "C_free_bytes": 107908489216,
+    "D_free_bytes": 74269659136,
+    "snapshot_only_not_runtime_GPU_admission": true,
+    "GPU_queries": 0
+  },
+  "private_receipt": {
+    "alias": "workspace-artifacts/amd-brick-material-stage1-df41688/preservation-before.json",
+    "sha256": "090e731cccf80c73504aba432c0fa8a10d98a3adad5046067b0addfbbbba338c"
+  },
+  "scope_limits": [
+    "Preservation auditor performed no GPU/WSL start,Torch/model/native AI import,sampling,tests,package installation,network or Git mutation. Root owns runtime and GPU admission.",
+    "Original2image hashes,DINO conditioning,4430shape outputs,neural3file1957891row bundle,mesh4files and12private visual PNGs were checked by saved hashes; no images decoded,published or copied and no mesh processing.",
+    "Selected13 AMD/15 Modly distribution metadata,pyvenv.cfg,12 native payload/PE identities and13 historical source hashes checked; not exhaustive entire-environment bytes.",
+    "Texture flow checkpoint metadata/config66968-byte header and original shape decoder27568-byte header only; no checkpoint weight payload stream or deserialization. Root runtime must freshly admit actual weights.",
+    "No fresh Linux filesystem inventory. Current host RAM/disk snapshot does not authorize or replace the live worker guards."
+  ],
+  "identity_concerns": []
+}

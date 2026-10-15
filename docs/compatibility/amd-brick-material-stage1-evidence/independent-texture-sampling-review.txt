@@ -1,0 +1,72 @@
+GO: fresh brick texture sampling CPU/source gate
+Reviewer: /root/brick_texture_sampling_review
+Source base: df416889bc65ad43f0f928c563c6d99c64e730a8
+Scope: read-only source and CPU evidence review; no Torch import, model load,
+GPU/WSL/native execution, installation, download, or decoder work by reviewer.
+
+The seven fresh adapter/texture implementation and test files exactly match
+the SHA-256 identities in texture-candidate-cpu-review.json. Installed sampler,
+flow model, pipeline, attention/config/utils and texture-flow config sources
+match their pinned hashes. No adapter or sampler implementation change is needed.
+
+Actual current qualification evidence reviewed:
+- fresh-cpu-tests.stdout.txt: 10 focused tests PASS, 4.972 seconds, Torch absent.
+  These cover genuine saved 4430-row lineage, one normalization, layouts,
+  production persistence, contexts, post-run identity and source/profile closure.
+  The two existing tests that import Torch were omitted under this phase's
+  no-Torch boundary; their unchanged source was qualified in the prior review.
+- hardlink-cpu-test.stdout.txt: the single previously excluded hardlink test
+  PASS, 0.011 seconds, Torch absent. The old fixture-permission limitation is
+  resolved by this current focused run; no broad historical suite was required.
+- prepare.stdout.txt, empty prepare.stderr.txt and the two canonical prepared
+  JSONs: successful CPU-only preparation with model_inference=false.
+- cpu_preflight.py and cpu-preflight.json: PASS_CPU_PREFLIGHT, explicit import/
+  network guard, Torch absent, GPU not initialized, checkpoint not loaded.
+
+Canonical prepared inputs:
+shape = new-image/occupancy/shape; target = new-image/occupancy/texture.
+texture-input-contract.json SHA-256:
+a0d8269a5a8cf11e86c9264562fcb35fdbd043cc2a2031fbc8cd7170843e4a62
+persistence-preflight.json SHA-256:
+82484a7437e12be5971964085cbae887e52c623c590c22508057f695442b440b
+Token count = 4430. Exact fresh DINO file SHA-256:
+471c04ea88df611a84cb311880e600e703c034254946b01807763e11c569f2b2
+Exact fresh coordinate payload SHA-256:
+e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520
+Once-normalized saved shape-condition SHA-256:
+1fc845dcaababa524bf822d3b2f2c2fdce7f22e46e8ec8ebfd670114cdbf6ccb
+
+Actual private production probe was independently reopened using only
+PowerShell/.NET public safetensors header/payload parsing. It is 1,772,840 bytes
+with an 832-byte header. All four exact 4430-row F32/I32 tensor payload hashes
+match the prepared metadata. Full artifact SHA-256:
+06d2a63051c6dfc846165929cccd0674878cea450a90a581bdcae494bb15b8e2
+Root: C:/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688
+Probe is explicitly synthetic and torch_imported=false. The real latent
+directory exists and is empty; the canonical texture/run remains absent.
+
+Current full checkpoint digest and metadata identity PASS:
+8371aa1c5d13be79dcd5ddfd2cf3835e902e204dc34427169a1c702828e1a94d
+2,584,672,728 bytes; 640 BF16 checkpoint entries; exact 64-input/32-output config
+SHA-256 3093796257a62f838d2e5578ac4580ca3b7d88d10b87d348065d3fdfcc4c2077.
+CPU preflight did not instantiate or load the model. Three available-RAM
+samples were 19,624,796,160 / 19,625,512,960 / 19,623,194,624 bytes, above 12 GiB.
+
+Retained runtime contract: original 12 Euler steps, guidance 1.0, zero negative
+forwards, one sequence, fresh texture noise/state before the 32 shape columns,
+saved denormalized shape normalized once, distinct original texture statistics,
+strict 640-entry BF16 loading with exactly 220 reversible F32 widenings, explicit
+PyTorch SDPA, and actual TunableOp disabled at import and before forwarding.
+Historical 3743 default is preserved; only the fresh adapter admits up to 4430.
+180-second CPU / 240-second GPU / 480-second overall budgets, 13-GiB free VRAM
+admission, 12-GiB allocator cap, 2-GiB live margin plus 1-GiB opaque reserve,
+12-GiB RAM requirement, owned Job/observer containment and natural zero-allocation/
+zero-reservation release requirements remain unchanged.
+
+No deterministic CPU/source blocker remains for ONE genuine texture-SLat sample.
+Before that attempt, publish the exact prepared JSONs and evidence, use the new
+published HEAD as the harness identity, and pass the existing complete committed-
+file closure check. This review does not claim that publication already occurred.
+Live strict-load, device admission, observer and release gates remain decisive.
+No texture decoder, six-channel PBR, baking, export, GLB or visual-material proof
+is included in this GO.

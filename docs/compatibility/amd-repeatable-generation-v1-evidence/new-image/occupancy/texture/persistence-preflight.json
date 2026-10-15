@@ -1,0 +1,58 @@
+{
+  "verified": true,
+  "artifact_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-material-stage1-df41688\\persistence-probe\\texture-latent.safetensors",
+  "metadata_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-material-stage1-df41688\\persistence-probe\\texture-latent-metadata.json",
+  "metadata": {
+    "artifact_bytes": 1772840,
+    "artifact_file": "texture-latent.safetensors",
+    "artifact_sha256": "06d2a63051c6dfc846165929cccd0674878cea450a90a581bdcae494bb15b8e2",
+    "format": "modly-amd-texture-latent-v1",
+    "provenance": {
+      "noise": {
+        "source": "synthetic-independent-probe-sequence"
+      },
+      "purpose": "cpu-only-persistence-probe",
+      "synthetic": true
+    },
+    "tensors": {
+      "coords": {
+        "dtype": "I32",
+        "sha256": "b7711900eaa457b6f9003b895269e4c561738940cf203a3790c26e022413033e",
+        "shape": [
+          4430,
+          4
+        ],
+        "tensor_bytes": 70880
+      },
+      "denormalized": {
+        "dtype": "F32",
+        "sha256": "8a3566c1dc27d2495da5f0431324efdadbcb3d1857aa0d2dbe9c15b81736e3e5",
+        "shape": [
+          4430,
+          32
+        ],
+        "tensor_bytes": 567040
+      },
+      "noise": {
+        "dtype": "F32",
+        "sha256": "2b1d63bc2bab23a59fcc913e6143ce5deb9d8f67684f20f522c214a5b4c61cd3",
+        "shape": [
+          4430,
+          32
+        ],
+        "tensor_bytes": 567040
+      },
+      "raw": {
+        "dtype": "F32",
+        "sha256": "c4972c9457bc1d41ce55ffadad684070d4e74dd00386bf5d2a771488c88d42ed",
+        "shape": [
+          4430,
+          32
+        ],
+        "tensor_bytes": 567040
+      }
+    }
+  },
+  "synthetic": true,
+  "torch_imported": false
+}
