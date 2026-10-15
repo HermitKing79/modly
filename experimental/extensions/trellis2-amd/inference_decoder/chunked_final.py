@@ -71,13 +71,13 @@ class FinalConvolutionPatch:
         name,module,x=self.hooks.active_conv
         require(name==SITE and module is self.module and feats is x.feats
                 and weight is module.weight and bias is module.bias
-                and feats.ndim==2 and feats.shape[1]==64 and 0<feats.shape[0]<=FINAL_ROWS
+                and feats.ndim==2 and feats.shape[1]==64 and 0<feats.shape[0]<=self.hooks.final_rows
                 and feats.shape[0]==self.hooks.up_states[3]['children'] and feats.dtype==self.torch.bfloat16
                 and feats.device==self.torch.device('cuda',0),'foreign final input/weight/bias')
         neighbor=neighbor_cache['neighbor_map']
         require(neighbor is self.hooks.final_neighbor_map,'map is not the admitted genuine global native result')
         n=feats.shape[0]
-        plan=chunked_conv_plan(n,TILE_ROWS,prod(x.spatial_shape))
+        plan=chunked_conv_plan(n,TILE_ROWS,prod(x.spatial_shape),contract=self.hooks.contract)
         # Native map now exists. Include full output and conservative downstream
         # allowance; retained model/input/caches are observed by _admit, not guessed.
         allocation={k:v for k,v in plan.items() if k.endswith('_bytes') and k!='visible_bytes'}

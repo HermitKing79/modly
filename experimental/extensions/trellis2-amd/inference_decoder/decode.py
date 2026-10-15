@@ -35,7 +35,8 @@ GiB=1024**3
 sys.dont_write_bytecode=True
 sys.path[:0]=[str(CODE),str(ROOT/'scripts/compatibility')]
 import amd_wsl_rocdxg_smoke as base
-from run_contract import load,digest
+from run_contract import load,digest,final_limit,support_counts,BRICK_PARENT_ROWS,BRICK_FINAL_ROWS
+from chunked_large import validate_records
 
 
 def checkpoint_record(checkpoint):
@@ -72,14 +73,24 @@ def checkpoint_record(checkpoint):
 
 
 def validate_qualified(record,contract):
+    final_limit(contract)
     if contract.large_convolution_tiling:
-        from chunked_large import validate_records
         validate_records(record.get('large_tiled_convolutions'))
         if record.get('large_convolution_patch_restored') is not True:
             raise RuntimeError('Large convolution patch was not restored')
     rows=record.get('output',{}).get('rows',0)
     if type(rows) is not int or not 0<rows<=contract.maximum_final_rows:
         raise RuntimeError('Final run support outside qualified bounds')
+    if contract.final_support_profile is not None:
+        support_counts(rows,[s['parents'] for s in record.get('output',{}).get('subdivisions',[])],contract)
+        expected_children=(*BRICK_PARENT_ROWS[1:],BRICK_FINAL_ROWS)
+        expected=[(f'blocks.{i}.{(4,16,8,4)[i]}.updown',call,parents,expected_children[i])
+                  for i,parents in enumerate(BRICK_PARENT_ROWS) for call in (1,2)]
+        observed=[(s.get('site'),s.get('call'),s.get('parents'),s.get('children'))
+                  for s in record.get('subdivision_operations',[])]
+        if observed!=expected:raise RuntimeError('Qualified brick C2S lifecycle/lineage differs')
+        if any(s['rows']!=BRICK_PARENT_ROWS[-1] for s in record['large_tiled_convolutions']):
+            raise RuntimeError('Qualified brick large convolution support differs')
     d=record.get('decoder_diagnostics',{})
     if (record.get('decoder_cpu')!='PASS' or record.get('native_import')!='PASS'
         or record.get('forward_calls')!=1 or record.get('convolutions_completed')!=40

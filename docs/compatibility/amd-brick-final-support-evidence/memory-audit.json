@@ -1,0 +1,157 @@
+{
+  "schema": "modly.amd.brick-final-support-memory-audit.v1",
+  "audited_utc": "2026-10-15T15:14:48.475Z",
+  "baseline_commit": "a0f9b74beca6d6bbdc1c818e53b577ee677ba9a3",
+  "result": "CPU_PROJECTION_ONLY; EXISTING_DEFAULT_SUPPORT_GUARDS_REJECT",
+  "scope": "Independent read-only source/formula audit. Root candidate edits were in progress after baseline reads; this is not candidate approval or execution qualification. No tests, model loading, GPU or WSL.",
+  "source_blobs_at_baseline": {
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "aed70051d409d23a31f9c33a6b780d1475ca403a",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "e826a3b0dd84d7af8dd8c6201c78ff1aff6ca20f",
+    "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "502bf47338c6735b0d0e75264a05f5cc4b065c98",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py": "80f001f1b06cfee2219663ff2c2fe22b75b70575",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "9c88b7c0b23a942e1eced6365aedaa026424b61c",
+    "experimental/extensions/trellis2-amd/inference_decoder/decode.py": "a56b29c66ba7263a229956bcc23cdc29d3dba6cd",
+    "scripts/compatibility/amd_generation_decode.py": "950194ec42361b3993132d077ff64c4863ab7177",
+    "scripts/compatibility/amd_generation_mesh.py": "25c1c26a39544dcda5be4e83af7600e3e13ca4f2",
+    "scripts/compatibility/amd_flexible_dual_grid_cpu.py": "60f68f0615952f8696a2d61ffd8bbbf98dc3e010"
+  },
+  "inputs": {
+    "actual_final_children": 1957891,
+    "parent_rows": [
+      4430,
+      21391,
+      97313,
+      438684
+    ],
+    "parent_sum": 561818,
+    "tile_rows": 32768,
+    "measured_pre_fourth_memory": {
+      "allocated_bytes": 1684097024,
+      "reserved_bytes": 3451912192,
+      "free_bytes": 11531587584
+    },
+    "measurement_scope": "Latest genuine count-before-admission at fourth C2S; not a measurement after either expansion or at final convolution.",
+    "journal_sha256": "8a94cb6418b0cad86a01f909cb678a13ccd0b264abbc7e3eadb1dd2ab7132084",
+    "guest_results_sha256": "4a14be63f19de90ad3bc74e4feb498767928be24e1b6ea76201cffd33b79e7eb"
+  },
+  "unchanged_policy": {
+    "allocator_limit_bytes": 12884901888,
+    "free_reserve_bytes": 2147483648,
+    "opaque_headroom_bytes": 1073741824,
+    "padding": "ceil(visible*1.25)",
+    "initial_free_VRAM_bytes": 13958643712,
+    "host_live_RAM_floor_bytes": 12884901888
+  },
+  "fourth_C2S": {
+    "source": "admission._c2s_bytes; original SparseResBlockC2S3d calls SparseChannel2Spatial twice with the same strict>0 mask.",
+    "components": {
+      "geometry_bytes": 372664592,
+      "gathered_bytes": 313262560,
+      "skip_repeat_bytes": 250610048,
+      "block_extra_bytes": 2004880384
+    },
+    "visible_bytes": 2941417584,
+    "padded_bytes": 3676771980,
+    "maximum_permitted_live_baseline_bytes": 8134388084,
+    "minimum_required_device_free_bytes": 5824255628,
+    "using_measured_pre_fourth_sample": {
+      "allocator_total_including_opaque_bytes": 8202425996,
+      "allocator_margin_bytes": 4682475892,
+      "device_free_margin_bytes": 5707331956
+    },
+    "liveness": "Both 64-channel and 16-channel gathered children, both coordinate constructions, later 64-channel repeated skip, normalization/SiLU, conv2 output and residual allowances remain included. Current model, conv1 output and prior native caches are already in the measured baseline.",
+    "second_expansion": "The same full conservative plan is checked again using newly measured memory. The pre-fourth sample cannot be relabelled as this later baseline."
+  },
+  "final64": {
+    "source": "Unchanged admission.chunked_conv_plan and chunked_final.row_chunked_explicit.",
+    "components": {
+      "im2col_bytes": 113246208,
+      "gathered_bytes": 113246208,
+      "neighbor_map_bytes": 211452228,
+      "hash_bytes": 31326256,
+      "long_index_bytes": 14155776,
+      "mask_bytes": 884736,
+      "output_bytes": 250610048,
+      "tile_output_bytes": 4194304,
+      "block_extra_bytes": 2506100480
+    },
+    "visible_bytes": 3245216244,
+    "padded_bytes": 4056520305,
+    "maximum_permitted_pre_native_baseline_bytes": 7754639759,
+    "minimum_required_pre_native_device_free_bytes": 6204003953,
+    "full_output_after_map": {
+      "visible_bytes": 3002437760,
+      "padded_bytes": 3753047200,
+      "maximum_live_baseline_bytes": 8058112864,
+      "minimum_device_free_bytes": 5900530848
+    },
+    "each_tile_after_output": {
+      "visible_bytes": 2751827712,
+      "padded_bytes": 3439784640,
+      "maximum_live_baseline_bytes": 8371375424,
+      "minimum_device_free_bytes": 5587268288
+    },
+    "tiles": 60,
+    "last_tile_rows": 24579,
+    "accounting": "Full global map/hash are admitted before native creation. After map creation only map/hash allowances are removed; after full output allocation only its allowance is additionally removed. Model, retained maps and full output remain in actual live measurements. Original block_extra stays in every plan.",
+    "projection_limit": "These thresholds are CPU calculations. Post-expansion reserved/free memory, runtime, finite output and actual final execution remain unmeasured."
+  },
+  "serialization_and_reader": {
+    "ten_tensor_payload_bytes": 104125380,
+    "tensor_payloads": {
+      "features_F32_N7": 54820948,
+      "coordinates_I32_N4": 31326256,
+      "all_parent_logits_BF16": 8989088,
+      "all_parent_coordinates_I32": 8989088
+    },
+    "file_upper_bound_with_128KiB_header_and_prefix_bytes": 104256460,
+    "existing_payload_limit_bytes": 268435456,
+    "host_copy_whole_file_limit_bytes": 268435456,
+    "header_boundary": "Guest artifact_io permits 128KiB; host amd_generation_mesh permits 64KiB. Full-profile CPU serialization/readback must exercise real metadata and stay within the stricter 64KiB host bound; payload size alone is insufficient.",
+    "source_visible_CPU_scratch_examples": {
+      "all_F32_parent_logits_bytes": 17978176,
+      "largest_F64_feature_statistics_array_bytes": 109641896,
+      "largest_single_tensor_hash_bytes_copy": 54820948,
+      "fourth_nonzero_two_int64_index_arrays_bytes": 31326256,
+      "fourth_child_coordinate_array_bytes": 31326256,
+      "stdlib_readback_block_bytes": 1048576
+    },
+    "CPU_projection": "Original CPU tensors total 104MB. Writer/readback may coexist with an additional mapped/restored tensor set and serialization/hash copies; chain validation and unique checks allocate further index/coordinate scratch. Existing host reader uses memmaps and bounded reads, but library/native sort/serializer workspace is not established as a strict peak by this source audit. Qualify full-sized CPU writer/reader with actual metadata before any runtime.",
+    "version_note": "The Windows safetensors source was read without importing it; its pointer-based save implementation does not establish the exact WSL package implementation. No zero-copy or measured peak claim is made."
+  },
+  "integer_and_converter_bounds": {
+    "final_row_index_max": 1957890,
+    "hash_entries": 3915782,
+    "global_neighbor_map_entries": 52863057,
+    "maximum_512_grid_key": 134217727,
+    "conclusion": "Existing int32 coordinates/vertex indices, uint32 neighbor indices/sentinel and int64 CPU keys/index arithmetic have ample representational capacity. No coordinate or neighbor rebasing is required.",
+    "converter_existing_MAX_ROWS": 2000000,
+    "row_headroom": 42109,
+    "existing_explicit_MAX_FACES_guard": false,
+    "worst_case_triangles": 11747346,
+    "reason": "At most three flagged quads per original row, two triangles per quad; flags and valid-neighbor surface counts are still unknown.",
+    "worst_case_face_array_bytes": 140968152,
+    "worst_case_face_list_plus_concatenate_bytes": 281936304,
+    "vertices_bytes": 23494692,
+    "worst_case_PLY_payload_bytes": 176210190,
+    "worst_case_three_mesh_output_payload_bytes": 340673034,
+    "CPU_mesh_projection": "Full memmaps, transformed features, coordinate copies, keys/sort buffers, batched neighbors and list-plus-concatenated faces coexist. Source-visible arrays remain far below the 12GiB host floor, but this is not a measured process peak or proof of final topology. Any new face bound must account for the worst case or fail closed explicitly."
+  },
+  "required_bound_propagation": [
+    "admission: final_c2s_plan, chunked_conv_plan, output_payload_bytes, AdmissionHooks._sparse/_conv_pre/_up_pre",
+    "run_contract: exact maximum_final_rows parse/document authentication, reconstruct_children and validate_chain",
+    "neural.validate_output and final C2S/output shape validation",
+    "chunked_final.FinalConvolutionPatch final row guard and explicit planner bound",
+    "artifact_io.expected_schema/verify_file and unchanged complete ten-tensor readback",
+    "decode.validate_qualified contract-bound row acceptance and exact 60-tile final coverage",
+    "amd_generation_decode host manifest and independently bound mesh reader call",
+    "amd_generation_mesh.read_neural final row bound; preserve 4430 initial and 1M parent caps",
+    "amd_flexible_dual_grid_cpu already accepts this count below 2M; retain it and qualify face/output working sets"
+  ],
+  "conclusion": "No deterministic allocator or integer blocker follows from the unchanged formulas for this measured full support. Existing defaults correctly reject it today. A narrowly input-bound, default-preserving final-support profile plus complete CPU writer/reader/admission qualification is required; this audit does not authorize a cap change, GPU forward or model load.",
+  "tests_run": false,
+  "model_loaded": false,
+  "gpu_execution": false,
+  "wsl_execution": false,
+  "reviewer_source_edits": false
+}

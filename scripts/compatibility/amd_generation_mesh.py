@@ -7,6 +7,23 @@ import amd_flexible_dual_grid_cpu as converter
 MAX_ROWS=1_842_968
 MAX_INITIAL_ROWS=4430
 MAX_BYTES=256*1024**2
+_CONTRACT_API=None
+
+def _contract_api():
+ global _CONTRACT_API
+ if _CONTRACT_API is None:
+  import importlib.util,sys
+  path=Path(__file__).resolve().parents[2]/'experimental/extensions/trellis2-amd/inference_decoder/run_contract.py'
+  name='_modly_generation_mesh_run_contract'
+  spec=importlib.util.spec_from_file_location(name,path);module=importlib.util.module_from_spec(spec)
+  previous=sys.modules.get(name);sys.modules[name]=module
+  try:spec.loader.exec_module(module)
+  except BaseException:
+   if previous is None:sys.modules.pop(name,None)
+   else:sys.modules[name]=previous
+   raise
+  _CONTRACT_API=module
+ return _CONTRACT_API
 def digest(path):
  with Path(path).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def _object(pairs):
@@ -15,13 +32,16 @@ def _object(pairs):
   if key in result:raise ValueError('Duplicate artifact header key')
   result[key]=value
  return result
-def read_neural(path,expected_sha256):
+def read_neural(path,expected_sha256,*,contract=None):
  opened=[]
- try:return _read_neural(path,expected_sha256,opened)
+ try:return _read_neural(path,expected_sha256,opened,contract=contract)
  except BaseException:
   for array in opened:array._mmap.close()
   raise
-def _read_neural(path,expected_sha256,opened):
+def _read_neural(path,expected_sha256,opened,*,contract=None):
+ policy=_contract_api()
+ if contract is not None:contract=policy.parse(contract.document())
+ limit=policy.final_limit(contract)
  path=Path(path)
  if path.is_symlink() or not path.is_file() or path.stat().st_nlink!=1:raise ValueError('Plain single-link neural artifact required')
  if not 8<path.stat().st_size<=MAX_BYTES or digest(path)!=expected_sha256:raise ValueError('Neural artifact size/hash differs')
@@ -32,13 +52,20 @@ def _read_neural(path,expected_sha256,opened):
   header=json.loads(f.read(length),object_pairs_hook=_object)
  names={'features','coordinates'}|{f'subdivision_{i}_{suffix}' for i in range(4) for suffix in ('coordinates','logits')}
  if set(header)-{'__metadata__'}!=names:raise ValueError('Complete original ten tensors required')
+ if contract is not None and contract.final_support_profile is not None:
+  try:
+   provenance=json.loads(header['__metadata__']['provenance'],object_pairs_hook=_object)
+   policy.artifact_binding(provenance,contract)
+   policy.support_counts(header['features']['shape'][0],
+                         [header[f'subdivision_{i}_coordinates']['shape'][0] for i in range(4)],contract)
+  except (KeyError,TypeError,IndexError) as exc:raise ValueError('Bound profile artifact provenance required') from exc
  payload=path.stat().st_size-8-length;arrays={};ranges=[]
  for name in names:
   row=header[name]
   if set(row)!={'dtype','shape','data_offsets'}:raise ValueError('Unexpected tensor descriptor')
   dtype={'F32':'<f4','I32':'<i4','BF16':'<u2'}.get(row['dtype'])
   shape=row['shape'];a,b=row['data_offsets']
-  if dtype is None or not isinstance(shape,list) or len(shape)!=2 or any(type(n) is not int or not 0<n<=MAX_ROWS for n in shape):raise ValueError('Invalid tensor shape/dtype')
+  if dtype is None or not isinstance(shape,list) or len(shape)!=2 or any(type(n) is not int or not 0<n<=limit for n in shape):raise ValueError('Invalid tensor shape/dtype')
   if any(type(n) is not int for n in (a,b)) or not 0<=a<b<=payload or b-a!=np.prod(shape)*np.dtype(dtype).itemsize:raise ValueError('Invalid tensor payload layout')
   ranges.append((a,b));arrays[name]=np.memmap(path,mode='r',offset=8+length+a,dtype=dtype,shape=tuple(shape));opened.append(arrays[name])
  previous=0
@@ -69,11 +96,12 @@ def _read_neural(path,expected_sha256,opened):
   next_coords=arrays[f'subdivision_{i+1}_coordinates'] if i<3 else coords
   if not np.array_equal(child_coords,next_coords):raise ValueError('Original C2S child coordinates/order differ')
   counts.append(children)
+ policy.support_counts(n,[len(arrays[f'subdivision_{i}_coordinates']) for i in range(4)],contract)
  if path.stat().st_size!=before.st_size or path.stat().st_mtime_ns!=before.st_mtime_ns:raise ValueError('Neural artifact changed while reading')
  return arrays,counts
 
-def extract(source,sha256,output):
- began=time.monotonic();arrays,subdivisions=read_neural(source,sha256)
+def extract(source,sha256,output,*,contract=None):
+ began=time.monotonic();arrays,subdivisions=read_neural(source,sha256,contract=contract)
  output=Path(output);output.mkdir(exist_ok=False)
  coords=np.ascontiguousarray(arrays['coordinates'][:,1:]);features=arrays['features']
  dual,flags,weight=converter.transform_features(features)
@@ -96,5 +124,6 @@ def extract(source,sha256,output):
  with (output/'mesh.json').open('x') as f:json.dump(result,f,indent=2,allow_nan=False)
  return result
 if __name__=='__main__':
- parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--source',type=Path,required=True);parser.add_argument('--sha256',required=True);parser.add_argument('--output',type=Path,required=True)
- args=parser.parse_args();print(json.dumps(extract(args.source,args.sha256,args.output)))
+ parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--source',type=Path,required=True);parser.add_argument('--sha256',required=True);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--run-contract',type=Path)
+ args=parser.parse_args();contract=_contract_api().load(args.run_contract) if args.run_contract else None
+ print(json.dumps(extract(args.source,args.sha256,args.output,contract=contract)))

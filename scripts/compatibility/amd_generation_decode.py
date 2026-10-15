@@ -222,7 +222,8 @@ class BaseProxy:
 
 
 class Runtime:
-    def __init__(self,shape_evidence,evidence,harness_commit,run_id,*,tile_large_convolutions=False):
+    def __init__(self,shape_evidence,evidence,harness_commit,run_id,*,tile_large_convolutions=False,
+                 final_support_profile=None):
         from amd_generation_occupancy import plain_path
         self.evidence=plain_path(evidence);self.evidence.relative_to(APPROVED_ROOT.resolve())
         if self.evidence.name!='decode':raise ValueError('Use a fresh owned decode stage')
@@ -241,10 +242,12 @@ class Runtime:
             'input_sha256':{k:v['sha256'] for k,v in self.bundle['inputs'].items()},
             'source_job_sha256':self.bundle['source_job_sha256'],'output_directory':str(root/'geometry'),
             'scratch_directory':str(root/'scratch'),'repo_root':guest_path(ROOT),
-            'maximum_final_rows':1842968,'maximum_intermediate_rows':1000000,
+            'maximum_final_rows':self.contract_module.BRICK_FINAL_ROWS if final_support_profile is not None else 1842968,
+            'maximum_intermediate_rows':1000000,
             'native_stage':self.contract_module.NATIVE_STAGE,
             'host_evidence_directory':guest_path(self.evidence/'run/guest'),
-            **({'large_convolution_tiling':True} if tile_large_convolutions else {})})
+            **({'large_convolution_tiling':True} if tile_large_convolutions else {}),
+            **({'final_support_profile':final_support_profile} if final_support_profile is not None else {})})
         self.copy_error=None;self.copy_receipt=None;self._supervisor=None
 
     def host_admission(self):
@@ -275,6 +278,11 @@ class Runtime:
         if fresh['source_job_sha256']!=self.contract.source_job_sha256:raise ValueError('Source shape job changed')
         names=sorted(set(STATIC_FILES+list(COMMITTED_FILES)+list(self.bundle['required_files'])+
             [p.relative_to(ROOT).as_posix() for p in CODE.glob('*.py')]))
+        if self.contract.final_support_profile is not None:
+            measured=self.contract_module.BRICK_MEASUREMENT
+            if digest(ROOT/measured)!=self.contract_module.BRICK_MEASUREMENT_SHA256:
+                raise ValueError('Measured final-support qualification evidence changed')
+            names.append(measured)
         verified=verify_committed_files(self.commit,names,timeout_seconds=GIT_READ_SECONDS)
         if digest(ROOT/'scripts/compatibility/amd_wsl_native_import_policy.py')!='8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd':
             raise ValueError('Qualified native policy changed')
@@ -353,7 +361,8 @@ class Runtime:
         path=target/'shape-decoded.safetensors'
         if output['bytes']!=path.stat().st_size or output['path']!=str(self.contract.output_directory/path.name):
             raise ValueError('Guest output path or bytes differ')
-        arrays,children=mesh.read_neural(path,output['sha256'])
+        self.contract_module.artifact_binding(provenance,self.contract)
+        arrays,children=mesh.read_neural(path,output['sha256'],contract=self.contract)
         try:
             hashes={k:hashlib.sha256(memoryview(v)).hexdigest() for k,v in arrays.items()}
             if (hashes!=output['tensor_payload_sha256'] or len(arrays['features'])!=output['rows']
@@ -397,8 +406,10 @@ def main(argv=None):
     parser.add_argument('--harness-commit',required=True);parser.add_argument('--run-id',required=True)
     parser.add_argument('--preflight',action='store_true')
     parser.add_argument('--tile-large-convolutions',action='store_true')
+    parser.add_argument('--final-support-profile',choices=['brick-1957891-v1'])
     args=parser.parse_args(argv);runtime=Runtime(args.shape_evidence,args.evidence,args.harness_commit,args.run_id,
-                                              tile_large_convolutions=args.tile_large_convolutions)
+                                              tile_large_convolutions=args.tile_large_convolutions,
+                                              final_support_profile=args.final_support_profile)
     if args.preflight:print(json.dumps(runtime.preflight()));return 0
     return runtime.supervise()
 

@@ -10,6 +10,7 @@ from admission import AdmissionHooks, AdmissionStop, GIB, MAX_ROWS, FINAL_ROWS
 from chunked_final import FinalConvolutionPatch
 from chunked_large import LargeSupportConvolutionPatch, validate_records
 from runtime import NativeBoundary, validate_tensor_contract
+from run_contract import final_limit, support_counts
 
 MAX_OUTPUT=256*1024**2
 
@@ -19,9 +20,9 @@ def detach_failure(exc):
     exc.__traceback__=None
     return detail,(kind,message)
 
-def validate_output(tensors,torch,initial_count,initial_coords=None):
+def validate_output(tensors,torch,initial_count,initial_coords=None,*,contract=None):
     coords=tensors['coordinates'];feats=tensors['features'];n=coords.shape[0]
-    if (not 0<n<=FINAL_ROWS or tuple(coords.shape)!=(n,4) or coords.dtype!=torch.int32
+    if (not 0<n<=final_limit(contract) or tuple(coords.shape)!=(n,4) or coords.dtype!=torch.int32
         or tuple(feats.shape)!=(n,7) or feats.dtype!=torch.float32):
         raise RuntimeError('Neural output shape/dtype/row contract')
     def coordinate_ok(c,resolution):
@@ -43,7 +44,7 @@ def validate_output(tensors,torch,initial_count,initial_coords=None):
         if not np.array_equal(tensors['subdivision_0_coordinates'].numpy(),initial_coords):
             raise ValueError('First subdivision coordinates differ from authenticated run input')
     from run_contract import validate_chain
-    validate_chain([(tensors[f'subdivision_{i}_coordinates'].numpy(), tensors[f'subdivision_{i}_logits'].float().numpy()) for i in range(4)], coords.numpy(), initial_count)
+    validate_chain([(tensors[f'subdivision_{i}_coordinates'].numpy(), tensors[f'subdivision_{i}_logits'].float().numpy()) for i in range(4)], coords.numpy(), initial_count,contract=contract)
     if len(tensors)!=10 or any(t.device.type!='cpu' or not t.is_contiguous() for t in tensors.values()):
         raise RuntimeError('CPU output artifact tensor closure differs')
     if any(not bool(torch.isfinite(t).all()) for t in tensors.values() if t.is_floating_point()):
@@ -61,8 +62,23 @@ def preserve_output(tensors,torch,provenance,contract):
     from artifact_io import write_output
     from run_contract import load_inputs
     _,initial_coords,_=load_inputs(contract)
-    summary=validate_output(tensors,torch,contract.initial_count,initial_coords)
+    summary=validate_output(tensors,torch,contract.initial_count,initial_coords,contract=contract)
     return write_output(tensors,torch,provenance,summary,contract)
+
+
+def output_provenance(record,contract,rows,chunks,large_records=None):
+    """The actual serializer metadata, also exercised by the CPU qualification."""
+    value={'source':record['source_sha256'],'checkpoint_sha256':record['checkpoint']['freshly_streamed_sha256'],
+        'inputs':record['saved_inputs'],'input_file_sha256':dict(contract.input_sha256),
+        'run_contract_sha256':contract.sha256,'source_job_sha256':contract.source_job_sha256,
+        'native_binary_sha256':'91f66fa2c0f3567cee71246257bea8eb0fe5af9b6c70617d3c5894aa9f103f01',
+        'algorithm':'explicit_gemm','BF16_policy':'216 body tensors after original strict F16/F32 verification',
+        'runtime':record['runtime'],'forward_calls':1,'convolutions':40,'resolution':512,'mesh_extraction':False,
+        'final_convolution':{'source_equivalent_row_chunking':True,'rows':rows,'tile_rows':32768,
+            'chunks':chunks,'global_native_neighbor_map':True,'global_input_indices_preserved':True}}
+    if contract.final_support_profile is not None:value['final_support_profile']=contract.final_support_profile
+    if large_records is not None:value['large_convolutions']=[dict(r) for r in large_records]
+    return value
 
 
 def run_neural(model,torch,cuda,record,output,gpu_started,contract,*,journal=None):
@@ -88,7 +104,7 @@ def run_neural(model,torch,cuda,record,output,gpu_started,contract,*,journal=Non
         return dict(free_bytes=free,total_bytes=total,allocated_bytes=torch.cuda.memory_allocated(0),reserved_bytes=torch.cuda.memory_reserved(0))
     try:
         hooks=AdmissionHooks(model,torch,emit=event_hook,memory=memory,reclaim_unused_cache=True,
-                             tile_large_convolutions=contract.large_convolution_tiling).install()
+                             tile_large_convolutions=contract.large_convolution_tiling,contract=contract).install()
         native=NativeBoundary(cuda,record['bindings'],hooks,torch,conv_config,spconv,emit).install()
         if contract.large_convolution_tiling:
             from admission import LARGE_TILED_SITES
@@ -139,14 +155,8 @@ def run_neural(model,torch,cuda,record,output,gpu_started,contract,*,journal=Non
             cpu_tensors[f'subdivision_{i}_logits']=sub.feats.detach().cpu().contiguous()
             cpu_tensors[f'subdivision_{i}_coordinates']=sub.coords.detach().cpu().contiguous()
         sub=None
-        provenance={'source':record['source_sha256'],'checkpoint_sha256':record['checkpoint']['freshly_streamed_sha256'],
-            'inputs':record['saved_inputs'],'input_file_sha256':dict(contract.input_sha256),'run_contract_sha256':contract.sha256,'source_job_sha256':contract.source_job_sha256,
-            'native_binary_sha256':'91f66fa2c0f3567cee71246257bea8eb0fe5af9b6c70617d3c5894aa9f103f01',
-            'algorithm':'explicit_gemm','BF16_policy':'216 body tensors after original strict F16/F32 verification',
-            'runtime':record['runtime'],'forward_calls':1,'convolutions':40,'resolution':512,'mesh_extraction':False}
-        provenance['final_convolution']={'source_equivalent_row_chunking':True,'rows':y.feats.shape[0],'tile_rows':32768,
-            'chunks':patch.chunks,'global_native_neighbor_map':True,'global_input_indices_preserved':True}
-        if large_patch:provenance['large_convolutions']=[dict(r) for r in large_patch.records]
+        provenance=output_provenance(record,contract,y.feats.shape[0],patch.chunks,
+                                     large_patch.records if large_patch else None)
         record['output']=preserve_output(cpu_tensors,torch,provenance,contract)
         emit('output-readback-verified',output_sha256=record['output']['sha256'],bytes=record['output']['bytes'])
     except BaseException as exc:

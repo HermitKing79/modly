@@ -12,6 +12,17 @@ INPUT_NAMES = ('shape-latent-denormalized.npy', 'coords.npy')
 MAX_INITIAL_ROWS = 4430
 MAX_INTERMEDIATE_ROWS = 1_000_000
 MAX_FINAL_ROWS = 1_842_968
+# One measured run only. This is not a larger default generation envelope.
+BRICK_PROFILE = 'brick-1957891-v1'
+BRICK_FINAL_ROWS = 1_957_891
+BRICK_PARENT_ROWS = (4430, 21391, 97313, 438684)
+BRICK_INPUT_SHA256 = {
+    'shape-latent-denormalized.npy': 'e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808',
+    'coords.npy': '17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c'}
+BRICK_SOURCE_JOB_SHA256 = 'b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f'
+BRICK_CHECKPOINT_SHA256 = 'e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581'
+BRICK_MEASUREMENT = 'docs/compatibility/amd-brick-row-tiling-resume-evidence/execution-result.json'
+BRICK_MEASUREMENT_SHA256 = '03d66c89933a5c400c6d825173149c0fa75a8c747d4d5d7ac738ae83571a2b34'
 NATIVE_STAGE = '/home/modly/native-decoder-preparation-6dd94a85'
 MAX_CONTRACT_BYTES = 65536
 
@@ -51,6 +62,7 @@ class RunContract:
     native_stage: PurePosixPath
     host_evidence_directory: PurePosixPath | None = None
     large_convolution_tiling: bool = False
+    final_support_profile: str | None = None
 
     def document(self):
         value = {'schema': SCHEMA, 'initial_count': self.initial_count,
@@ -63,6 +75,8 @@ class RunContract:
             value['host_evidence_directory']=str(self.host_evidence_directory)
         if self.large_convolution_tiling:
             value['large_convolution_tiling']=True
+        if self.final_support_profile is not None:
+            value['final_support_profile']=self.final_support_profile
         return value
 
     @property
@@ -75,13 +89,22 @@ def parse(document):
     fields = {'schema','initial_count','input_paths','input_sha256','source_job_sha256',
               'output_directory','scratch_directory','repo_root','maximum_final_rows',
               'maximum_intermediate_rows','native_stage'}
-    if (type(document) is not dict or set(document)-{'host_evidence_directory','large_convolution_tiling'} != fields
+    if (type(document) is not dict or set(document)-{'host_evidence_directory','large_convolution_tiling','final_support_profile'} != fields
             or document.get('schema') != SCHEMA):
         raise ValueError('Exact neural run contract schema required')
     tiling=document.get('large_convolution_tiling',False)
     if type(tiling) is not bool:raise ValueError('Large convolution tiling must be an explicit boolean')
+    profile=document.get('final_support_profile')
+    final_max=MAX_FINAL_ROWS
+    if 'final_support_profile' in document:
+        if (type(profile) is not str or profile!=BRICK_PROFILE or not tiling
+                or document['initial_count']!=BRICK_PARENT_ROWS[0]
+                or document['input_sha256']!=BRICK_INPUT_SHA256
+                or document['source_job_sha256']!=BRICK_SOURCE_JOB_SHA256):
+            raise ValueError('Final-support profile is not bound to the measured brick run')
+        final_max=BRICK_FINAL_ROWS
     for key, low, high in [('initial_count',1,MAX_INITIAL_ROWS),
-                            ('maximum_final_rows',MAX_FINAL_ROWS,MAX_FINAL_ROWS),
+                            ('maximum_final_rows',final_max,final_max),
                             ('maximum_intermediate_rows',MAX_INTERMEDIATE_ROWS,MAX_INTERMEDIATE_ROWS)]:
         if type(document[key]) is not int or not low <= document[key] <= high:
             raise ValueError('Run contract exceeds qualified bounds: '+key)
@@ -113,7 +136,36 @@ def parse(document):
             raise ValueError('Host journal must be an exact new-image stage run/guest directory')
     return RunContract(document['initial_count'], MappingProxyType(paths), MappingProxyType(hashes),
                        _sha(document['source_job_sha256']), output, scratch, repo,
-                       document['maximum_final_rows'], document['maximum_intermediate_rows'], stage, host, tiling)
+                       document['maximum_final_rows'], document['maximum_intermediate_rows'], stage, host, tiling, profile)
+
+
+def final_limit(contract=None):
+    """Revalidate the authenticated opt-in even for directly constructed objects."""
+    return MAX_FINAL_ROWS if contract is None else parse(contract.document()).maximum_final_rows
+
+
+def support_counts(final_rows, parent_rows, contract=None):
+    contract=None if contract is None else parse(contract.document())
+    limit=final_limit(contract)
+    if (type(final_rows) is not int or not 0<final_rows<=limit or len(parent_rows)!=4
+            or any(type(n) is not int or not 0<n<=MAX_INTERMEDIATE_ROWS for n in parent_rows)
+            or parent_rows[0]>MAX_INITIAL_ROWS):
+        raise ValueError('Output support exceeds qualified bounds')
+    if contract is not None and contract.final_support_profile is not None:
+        if final_rows!=BRICK_FINAL_ROWS or tuple(parent_rows)!=BRICK_PARENT_ROWS:
+            raise ValueError('Final-support output differs from measured brick lineage')
+
+
+def artifact_binding(provenance, contract):
+    contract=None if contract is None else parse(contract.document())
+    final_limit(contract)
+    if contract is not None and contract.final_support_profile is not None:
+        expected={'run_contract_sha256':contract.sha256,'source_job_sha256':contract.source_job_sha256,
+                  'input_file_sha256':dict(contract.input_sha256),
+                  'final_support_profile':contract.final_support_profile,
+                  'checkpoint_sha256':BRICK_CHECKPOINT_SHA256}
+        if any(provenance.get(k)!=v for k,v in expected.items()):
+            raise ValueError('Qualified final-support artifact provenance differs')
 
 
 def load(path):
@@ -169,7 +221,7 @@ def load_inputs(contract):
     return features, coords, summary
 
 
-def reconstruct_children(parent_coords, logits):
+def reconstruct_children(parent_coords, logits, *, contract=None):
     """Original C2S parent-major nonzero order; child bits x=0,y=1,z=2."""
     import numpy as np
     if (parent_coords.dtype != np.int32 or parent_coords.ndim != 2 or parent_coords.shape[1] != 4
@@ -177,24 +229,25 @@ def reconstruct_children(parent_coords, logits):
             or not np.isfinite(logits).all()):
         raise ValueError('Original int32 coordinates and exact F32-expanded logits required')
     parents, children = np.nonzero(logits > 0)
-    if not 0 < len(parents) <= MAX_FINAL_ROWS:
+    if not 0 < len(parents) <= final_limit(contract):
         raise ValueError('Selected child support outside qualified bound')
     result = parent_coords[parents].copy(); result[:,1:] *= 2
     for axis in range(3): result[:,axis+1] += ((children // (2**axis)) % 2).astype(np.int32)
     return result
 
 
-def validate_chain(stages, final_coords, initial_count):
+def validate_chain(stages, final_coords, initial_count, *, contract=None):
     import numpy as np
     if len(stages) != 4 or len(stages[0][0]) != initial_count:
         raise ValueError('Exactly four subdivisions linked to the initial run support required')
+    support_counts(len(final_coords),[len(c) for c,s in stages],contract)
     for i,(coords,logits) in enumerate(stages):
         if (not 0 < len(coords) <= MAX_INTERMEDIATE_ROWS or coords.dtype != np.int32
                 or coords.shape != (len(coords),4) or (coords[:,0] != 0).any()
                 or (coords[:,1:] < 0).any() or (coords[:,1:] >= 32*2**i).any()
                 or len(np.unique(coords,axis=0)) != len(coords)):
             raise ValueError('Invalid genuine subdivision coordinates')
-        child = reconstruct_children(coords, logits)
+        child = reconstruct_children(coords, logits,contract=contract if i==3 else None)
         expected = stages[i+1][0] if i < 3 else final_coords
         if not np.array_equal(child, expected):
             raise ValueError('Original C2S child support/order differs from next stage')

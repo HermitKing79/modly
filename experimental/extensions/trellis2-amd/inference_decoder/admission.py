@@ -2,6 +2,7 @@
 from math import prod
 from hashlib import sha256
 from pathlib import Path
+from run_contract import final_limit, support_counts, BRICK_PARENT_ROWS, BRICK_FINAL_ROWS
 
 GIB = 1024**3
 MAX_ROWS = 1_000_000
@@ -55,11 +56,14 @@ def c2s_plan(n, feature_channels, skip_channels, children, out_channels):
     return _c2s_bytes(n, feature_channels, skip_channels, children, out_channels)
 
 
-def final_c2s_plan(n, feature_channels, skip_channels, children, out_channels):
+def final_c2s_plan(n, feature_channels, skip_channels, children, out_channels, *, contract=None):
     require(all(type(v) is int for v in (n,feature_channels,skip_channels,children,out_channels))
-            and 0 < n <= MAX_ROWS and 0 < children <= min(8*n, FINAL_ROWS)
+            and 0 < n <= MAX_ROWS and 0 < children <= min(8*n, final_limit(contract))
             and (feature_channels,skip_channels,out_channels)==(512,128,64),
             'fourth C2S differs from the proven full support/widths')
+    if contract is not None and contract.final_support_profile is not None:
+        require((n,children)==(BRICK_PARENT_ROWS[-1],BRICK_FINAL_ROWS),
+                'fourth C2S differs from measured brick parent/child count')
     return _c2s_bytes(n, feature_channels, skip_channels, children, out_channels)
 
 
@@ -78,10 +82,12 @@ def _c2s_bytes(n, feature_channels, skip_channels, children, out_channels):
     return p
 
 
-def chunked_conv_plan(n, tile, volume):
-    require(type(n) is int and 0<n<=FINAL_ROWS and type(tile) is int and 0<tile<=TILE_ROWS
+def chunked_conv_plan(n, tile, volume, *, contract=None):
+    require(type(n) is int and 0<n<=final_limit(contract) and type(tile) is int and 0<tile<=TILE_ROWS
             and type(volume) is int and 0<volume<=512**3,
             'final chunked convolution support/tile/spatial volume differs')
+    if contract is not None and contract.final_support_profile is not None:
+        require(n==BRICK_FINAL_ROWS,'final convolution differs from measured brick support')
     # Global map and original ratio-2 hash; only im2col/gather/index/mm are tiled.
     p=dict(im2col_bytes=tile*27*64*2,gathered_bytes=tile*27*64*2,
            neighbor_map_bytes=n*27*4,hash_bytes=2*n*8,
@@ -94,9 +100,10 @@ def chunked_conv_plan(n, tile, volume):
     return p
 
 
-def output_payload_bytes(final_rows, parent_rows):
+def output_payload_bytes(final_rows, parent_rows, *, contract=None):
     require(len(parent_rows)==4 and all(type(n) is int and 0<n<=MAX_ROWS for n in parent_rows), "invalid output parent rows")
-    require(type(final_rows) is int and 0<final_rows<=FINAL_ROWS, "invalid final output rows")
+    require(type(final_rows) is int and 0<final_rows<=final_limit(contract), "invalid final output rows")
+    support_counts(final_rows,parent_rows,contract)
     return final_rows*(7*4+4*4)+sum(parent_rows)*(8*2+4*4)
 
 
@@ -122,8 +129,12 @@ def large_chunked_conv_plan(n, ci, co, tile, volume, cached=False, block_extra=0
 
 class AdmissionHooks:
     def __init__(self, decoder, torch, emit=None, memory=None, *, reclaim_unused_cache=False,
-                 tile_large_convolutions=False):
+                 tile_large_convolutions=False, contract=None):
         self.decoder, self.torch = decoder, torch
+        self.contract=contract
+        self.final_rows=final_limit(contract)
+        if contract is not None and contract.final_support_profile is not None:
+            require(tile_large_convolutions is True,'qualified brick support requires large convolution tiling')
         require(type(reclaim_unused_cache) is bool, 'cache release opt-in must be boolean')
         self.reclaim_unused_cache = reclaim_unused_cache
         self.cache_reclaims = []
@@ -187,7 +198,7 @@ class AdmissionHooks:
 
     def _sparse(self, x, width=None, final=False):
         n, c = x.feats.shape
-        require((0 < n <= MAX_ROWS or (final and 0<n<=FINAL_ROWS and c in (16,64)))
+        require((0 < n <= MAX_ROWS or (final and 0<n<=self.final_rows and c in (16,64)))
                 and (width is None or c == width), 'feature rows/width mismatch')
         require(tuple(x.coords.shape) == (n, 4) and x.coords.dtype == self.torch.int32,
                 'coordinate rows/shape/dtype mismatch')
@@ -263,8 +274,8 @@ class AdmissionHooks:
         extra = n*(16*ci+4*block.mlp[0].out_features) if kind == 'conv' else n*(16*ci+4*co)
         self.rows = n
         if final:
-            require(0<n<=FINAL_ROWS and ci==co==64 and cache is None, 'final full support/cache differs')
-            plan=chunked_conv_plan(n,TILE_ROWS,prod(x.spatial_shape))
+            require(0<n<=self.final_rows and ci==co==64 and cache is None, 'final full support/cache differs')
+            plan=chunked_conv_plan(n,TILE_ROWS,prod(x.spatial_shape),contract=self.contract)
         elif self.tile_large_convolutions and name in LARGE_TILED_SITES:
             require(ci==128 and co==(512 if name==LARGE_TILED_SITES[-1] else 128)
                     and (cache is None)==(name==LARGE_TILED_SITES[0]),
@@ -308,16 +319,21 @@ class AdmissionHooks:
             memory=self.memory(),row_limit=MAX_ROWS,zero_children=children==0,
             over_row_limit=children>MAX_ROWS,
             row_limits_would_reject=not (0<n<=MAX_ROWS and 0<children<=min(8*n,MAX_ROWS)),
-            bounded_fourth_support=(stage==3 and 0<n<=MAX_ROWS and 0<children<=min(8*n,FINAL_ROWS)
+            bounded_fourth_support=(stage==3 and 0<n<=MAX_ROWS and 0<children<=min(8*n,self.final_rows)
                 and (block.out_channels*8,block.channels,block.out_channels)==(512,128,64)),
+            qualified_final_row_limit=self.final_rows,
             feature_channels=block.out_channels*8,skip_channels=block.channels,out_channels=block.out_channels,
             parent_spatial_shape=list(x.spatial_shape)))
         require(x.get_spatial_cache('channel2spatial_2') is None, f'{name}: unexpected cache would bypass learned mask')
         if call:
             require(state['mask'] is sub.feats and state['parents'] == n and state['children'] == children
                     and self.torch.equal(state['coords'], x.coords), f'{name}: second C2S changed mask/parent support')
-        planner = final_c2s_plan if stage==3 else c2s_plan
-        plan = planner(n, block.out_channels*8, block.channels, children, block.out_channels)
+        if self.contract is not None and self.contract.final_support_profile is not None:
+            expected=(*BRICK_PARENT_ROWS[1:],BRICK_FINAL_ROWS)
+            require(n==BRICK_PARENT_ROWS[stage] and children==expected[stage],
+                    f'{name}: learned support differs from measured brick lineage')
+        plan = (final_c2s_plan(n,block.out_channels*8,block.channels,children,block.out_channels,contract=self.contract)
+                if stage==3 else c2s_plan(n,block.out_channels*8,block.channels,children,block.out_channels))
         self._admit(name, plan)
         state.update(mask=sub.feats, coords=sub.coords, parents=n, children=children, pending_width=x.feats.shape[1]//8)
 

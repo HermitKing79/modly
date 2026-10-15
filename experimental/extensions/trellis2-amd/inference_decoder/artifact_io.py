@@ -8,7 +8,7 @@ import json
 from math import prod
 import os
 from pathlib import Path
-from run_contract import MAX_INITIAL_ROWS, MAX_INTERMEDIATE_ROWS, MAX_FINAL_ROWS, digest
+from run_contract import digest, support_counts, artifact_binding
 
 MAX_OUTPUT = 256*1024**2
 MAX_HEADER = 128*1024
@@ -21,12 +21,9 @@ def durable_json(path, record):
         stream.flush();os.fsync(stream.fileno())
 
 
-def expected_schema(summary):
+def expected_schema(summary,contract=None):
     n=summary['rows']; stages=summary['subdivisions']
-    if (type(n) is not int or not 0<n<=MAX_FINAL_ROWS or len(stages)!=4
-            or any(type(s['parents']) is not int or not 0<s['parents']<=MAX_INTERMEDIATE_ROWS for s in stages)
-            or stages[0]['parents']>MAX_INITIAL_ROWS):
-        raise ValueError('Output support exceeds qualified bounds')
+    support_counts(n,[s['parents'] for s in stages],contract)
     schema={'features':('F32',[n,7]),'coordinates':('I32',[n,4])}
     for i,stage in enumerate(stages):
         schema[f'subdivision_{i}_logits']=('BF16',[stage['parents'],8])
@@ -34,8 +31,10 @@ def expected_schema(summary):
     return schema
 
 
-def verify_file(path, provenance, summary, tensor_hashes):
+def verify_file(path, provenance, summary, tensor_hashes,contract=None):
     """Independent of Torch/safetensors readers; exact schema, metadata and bytes."""
+    artifact_binding(provenance,contract)
+    schema=expected_schema(summary,contract)
     path=Path(path);before=path.stat()
     if path.is_symlink() or not path.is_file() or not 8<before.st_size<=MAX_OUTPUT+MAX_HEADER:
         raise ValueError('Bounded regular neural artifact required')
@@ -46,7 +45,6 @@ def verify_file(path, provenance, summary, tensor_hashes):
         if header.pop('__metadata__')!={'provenance':json.dumps(provenance,sort_keys=True),
                                        'summary':json.dumps(summary,sort_keys=True)}:
             raise ValueError('Readback metadata differs')
-        schema=expected_schema(summary)
         if set(header)!=set(schema) or set(tensor_hashes)!=set(schema):
             raise ValueError('Readback tensor closure differs')
         ranges=[]
@@ -75,21 +73,23 @@ def verify_file(path, provenance, summary, tensor_hashes):
 def write_output(tensors, torch, provenance, summary, contract):
     from safetensors.torch import save_file,load_file
     from artifact_paths import attest_output
-    target=attest_output(contract);path=target/FILENAME
+    artifact_binding(provenance,contract)
+    expected_schema(summary,contract)
     if (provenance.get('run_contract_sha256')!=contract.sha256
             or provenance.get('source_job_sha256')!=contract.source_job_sha256
             or summary['subdivisions'][0]['parents']!=contract.initial_count):
         raise ValueError('Output run provenance differs')
+    target=attest_output(contract);path=target/FILENAME
     if path.exists():raise FileExistsError(str(path))
     save_file(tensors,str(path),metadata={'provenance':json.dumps(provenance,sort_keys=True),
                                         'summary':json.dumps(summary,sort_keys=True)})
-    with path.open('rb') as stream:os.fsync(stream.fileno())
+    with path.open('r+b') as stream:os.fsync(stream.fileno())
     restored=load_file(str(path),device='cpu')
     hashes={k:hashlib.sha256(t.view(torch.uint8).numpy().tobytes()).hexdigest() for k,t in tensors.items()}
     if (set(restored)!=set(tensors) or any(not torch.equal(restored[k],v) or restored[k].dtype!=v.dtype for k,v in tensors.items())):
         raise ValueError('Safetensors output readback differs')
     del restored
-    verified=verify_file(path,provenance,summary,hashes)
+    verified=verify_file(path,provenance,summary,hashes,contract)
     result=dict(summary,path=str(path),**{k:v for k,v in verified.items() if k!='payload_bytes'},
                 readback_verified_before_release=True,host_verification_pending=True)
     durable_json(target/'provenance.json',{'provenance':provenance,'output':result,

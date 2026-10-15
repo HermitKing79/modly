@@ -1,0 +1,144 @@
+{
+  "schema": "modly.amd.brick-final-support-independent-review.v1",
+  "created_utc": "2026-10-15T15:27:29.8845789Z",
+  "classification": "CLEAR_CPU_READINESS_ONLY",
+  "scope": "Independent read-only source, arithmetic, provenance and saved-test-evidence review. No source edits, tests, model loading, GPU or WSL execution by this reviewer in this qualification.",
+  "starting_commit": "a0f9b74beca6d6bbdc1c818e53b577ee677ba9a3",
+  "profile": "brick-1957891-v1",
+  "blocking_findings": [],
+  "source_sha256": {
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "6f4831747c6973d860a55c1988af5105f4fadb53b79e50164a86ffe81f73f21a",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "10a2792b47ab24ec64cf5d911c37fa12ac789a1d7134c5221d0479ced1bdb989",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_paths.py": "73a690d8c03e7a4a6f69b07e45ccd92fa08b3d461f1e47841745c1eafa25f441",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py": "6c69e5a1376aae9cd60b9892b2a8f335f1e6cfc61173d55bfa1332c0004bbcfc",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_large.py": "ff1d5727518e79c578206bfbe2af3c6bc4650ad3b2942290a5676fbfc38d7121",
+    "experimental/extensions/trellis2-amd/inference_decoder/decode.py": "d19099e32c51c9cd40fb25068b6bfdba7478fad1f0489bb1bab2fc3e443c5e63",
+    "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "f3d982046ca58fb7a2eb0b49c3d0c89fbcf9aa3189cc86018a3c1749b0c01295",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "0998c6e0c9a8d5c262b6f258f60fb11d82e8b51aec2c5fd48c771c33ef999f57",
+    "experimental/extensions/trellis2-amd/inference_decoder/runtime.py": "ea4199df31941795b7a5a5bb58d0f180f610c6ad17e8358b16393696a30c3c2e",
+    "experimental/extensions/trellis2-amd/inference_decoder/stage_journal.py": "0deada43d569717d57c6835b11be90b55c6685efc733fa8ce07e4c1acb5476e0",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_admission_reclaim.py": "05197951308051f012a969444cd76594a7fdc4305b92c549fefe178b472dd540",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_decoder.py": "51a4815d97a6f5c761a626205706e79dade125566ee1cff1b3e81174f6ef2048",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_final_support.py": "9dbcc872eeba52fe77d2a3450349019dd91d730e7ef53446387ccf6ed66879a1",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_large_tiling.py": "2438dbf64528902cd9faf33034fc36c98c3704ebb9bd2974765ba33e39a92f80",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_tiling_contract.py": "b48261427ef35ab4405a3d6e1868fbff831d9784a530dd6dd3a7c9aa176a20cf",
+    "scripts/compatibility/amd_flexible_dual_grid_cpu.py": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40",
+    "scripts/compatibility/amd_generation_decode.py": "aea6c3346ff7f5d65743be540eeebed538c0589c343c41dd52a23efe797a6ada",
+    "scripts/compatibility/amd_generation_mesh.py": "68a5e64bf7ab65c98f9b798e8d81c61c6cb629b1eaaf193637d5e52de0cae8e8",
+    "scripts/compatibility/test_amd_final_support_host.py": "3b0518cefedf821c90f986e4c879bb773d291e8f8232892e3464a75d1d05f3f8",
+    "scripts/compatibility/test_amd_generation_decode.py": "f9b098a0a06e450d99f345a3f0805ecc57d4ac6254984c9c72bc8480125b2c3f",
+    "scripts/compatibility/test_amd_generation_support_profile.py": "b6b746958d19fb2dda260412860016633b9f849bc79474f63793a56c2a5c9ba1"
+  },
+  "all_21_source_bindings_match_current": true,
+  "evidence_sha256": {
+    "docs/compatibility/amd-brick-final-support.md": "1635588ad3324befa3e4c10604341bd4c6930853c8198174dd218402b852026f",
+    "docs/compatibility/amd-brick-final-support-evidence/qualification.json": "f9e0bed3c765900f426758768a3b56f10670acf6fc356d7e92a0b836291925b6",
+    "docs/compatibility/amd-brick-final-support-evidence/consumer-final.json": "cb2681dc56ab39f9fc4ca1608752812edee4f6c4442e520dd59d3e37fae326c7",
+    "docs/compatibility/amd-brick-final-support-evidence/memory-audit.json": "f1933850a4cbd7a986bfcd7a26987052bc62277207ef3ef0bdeb217f9eadc54b",
+    "docs/compatibility/amd-brick-final-support-evidence/preservation-before.json": "54ced4a72407b9a210099c2381cfe54b414b1717dcce808465a1d57759871b7b",
+    "docs/compatibility/amd-brick-final-support-evidence/preservation-after.json": "7dc57369576d3f125d679cc5002d316b515cd9fbf1214388aa1ba3b23da4b7bf"
+  },
+  "test_evidence": {
+    "distinct_checks": 79,
+    "affected_import_checks_repeated": 3,
+    "execution_attribution": "Author/root executed the saved CPU tests; reviewer read their logs and verified their hashes without rerunning.",
+    "logs": [
+      {
+        "path": "docs/compatibility/amd-brick-final-support-evidence/decoder-tests.stdout.txt",
+        "sha256": "89f3b15e847db7223a17c35d2c301854ec2de96e7bdce070abbfd01666aeee39",
+        "tests": 48,
+        "result": "OK",
+        "reviewer_reran": false
+      },
+      {
+        "path": "docs/compatibility/amd-brick-final-support-evidence/host-regression.stdout.txt",
+        "sha256": "63edb3b208f2769e9cbaec609e8a44284c5793efec7bf4f96a883b60d561cd84",
+        "tests": 17,
+        "result": "OK",
+        "reviewer_reran": false
+      },
+      {
+        "path": "docs/compatibility/amd-brick-final-support-evidence/host-profile.stdout.txt",
+        "sha256": "1403243da1a893c1027f5e87b5419f8c225254dab56848a897a3a211f56c5cb2",
+        "tests": 7,
+        "result": "OK",
+        "reviewer_reran": false
+      },
+      {
+        "path": "docs/compatibility/amd-brick-final-support-evidence/consumer-final.stdout.txt",
+        "sha256": "44c31156bea85e1e4c6d3db4f72cd209860ef6ea31408bf8fc60a5932a774abd",
+        "tests": 7,
+        "result": "OK",
+        "reviewer_reran": false
+      },
+      {
+        "path": "docs/compatibility/amd-brick-final-support-evidence/import-acceptance.stdout.txt",
+        "sha256": "de133b9f20cb17ad09a93baaf834052e87acf44c0743ea75dec5351846d2236c",
+        "tests": 3,
+        "result": "OK",
+        "reviewer_reran": false
+      }
+    ],
+    "older_consumer_receipt": "consumer-cpu-tests.json remains preserved as intermediate evidence; its earlier test-only source hash is superseded by consumer-final.json."
+  },
+  "reviewed_contract": {
+    "final_rows": 1957891,
+    "parent_rows": [
+      4430,
+      21391,
+      97313,
+      438684
+    ],
+    "historical_default_final_rows": 1842968,
+    "historical_sampler_default_rows": 3743,
+    "maximum_tile_rows": 32768,
+    "final_tiles": 60,
+    "last_tile_rows": 24579,
+    "profile_binding": "Explicit optional tag, exact source-job, two saved input hashes, checkpoint provenance, parent/support sequence and large-convolution tiling; host preflight pins the published measurement receipt and committed closure.",
+    "propagation": "Same authenticated contract reaches both fourth-stage C2S admissions, sparse/final tile plans, ten-tensor schema, finite/strict-order chain validator, artifact writer/readback, host acceptance and independent CPU mesh reader.",
+    "integer_bounds": "Row, neighbour, ratio-2 hash and 512-grid key bounds fit the existing integer representations.",
+    "unchanged_controls": "12 GiB allocator cap, 13 GiB initial free VRAM, 2 GiB device-free reserve, 1 GiB opaque headroom, 1.25 visible padding, host RAM/disk floors, stage deadlines, owned lifecycle and native/checkpoint policies remain unchanged.",
+    "retained_liveness": "Second C2S remeasures the live baseline with the first expansion retained. Final plans retain full output, global native map/hash and block-extra buffers; tile plans exclude only already-live allocations."
+  },
+  "full_size_CPU_evidence": {
+    "fixture": "Synthetic CPU coordinates/logits/features with actual production provenance builder and preserved genuine prior raw record; not an authentic recovered final mask/output.",
+    "payload_bytes": 104125380,
+    "header_bytes": 23200,
+    "host_header_limit_bytes": 65536,
+    "file_bytes": 104148588,
+    "peak_Windows_working_set_bytes": 1099055104,
+    "result": "Actual neural finite/chain validation, production safetensors writer/readback and both readers passed; negative provenance, bound, nonfinite and chain/order cases rejected and ten mappings closed.",
+    "temporary_fixture_removed": true,
+    "mesh_extraction_executed": false
+  },
+  "findings_and_resolutions": [
+    {
+      "finding": "Profile acceptance could otherwise combine an internally valid large-convolution receipt with foreign support.",
+      "resolution": "Acceptance now requires all six large-convolution receipts to use the authenticated 438684-row parent support; negative regression passed."
+    },
+    {
+      "finding": "A reduced metadata fixture would not prove the stricter host 64 KiB header boundary.",
+      "resolution": "The actual shared production provenance builder and six large records are used in the full CPU artifact; measured header is 23200 bytes."
+    },
+    {
+      "finding": "Actual Windows fsync on a read-only artifact handle failed EBADF.",
+      "resolution": "Only the owned freshly written artifact is reopened r+b, without truncation; durability and actual readback remain enabled."
+    },
+    {
+      "finding": "Late pure-CPU helper imports could fail after the host restored its temporary module path.",
+      "resolution": "decode binds run-contract and large-record helpers during the existing module-import scope. Saved 17 host regressions and three affected entry/acceptance checks passed after this change; no AI imports or handshake changes were added."
+    },
+    {
+      "finding": "Test metrics previously had a fixed historical receipt destination.",
+      "resolution": "Metrics now require an explicit opt-in path and exclusive creation. Historical receipt is retained; final source and log are bound separately."
+    }
+  ],
+  "remaining_limits": [
+    "Admission values in memory-audit.json are CPU projections from unchanged formulas. Only the prior genuine pre-fourth-stage memory sample is measured; post-first-expansion, second-expansion, final map/output/tile baselines and completion time remain unmeasured.",
+    "The Windows synthetic consumer peak and CPU arithmetic tests do not prove WSL model execution, GPU allocator peak, numerical acceptance or a genuine final neural artifact.",
+    "Existing converter MAX_ROWS=2000000 admits this row count with 42109 spare, but actual flags/topology/faces are unknown. Worst-case 11747346 triangles and 281936304 bytes for face arrays plus concatenation require a separately bounded future mesh RAM/disk gate. No mesh, materials, GLB or UI generation is proved.",
+    "Historical neural result remains PARTIAL 39/40. No authentic fourth-stage mask or complete neural output was saved by that run."
+  ],
+  "report_review": "Current report and qualification distinguish CPU PASS from the prior PARTIAL neural run and make no unsupported final-output, mesh/material/GLB/UI completion claim.",
+  "decision": "CPU-qualified preparation is clear for consideration of a separately user-authorised single neural-only run with exact profile, fresh exclusive paths and unchanged live admissions. This review grants no GPU/WSL execution authorisation and does not raise general/default limits."
+}

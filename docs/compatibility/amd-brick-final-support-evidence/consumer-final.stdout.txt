@@ -1,0 +1,12 @@
+test_altered_profile_provenance_and_bare_high_limit_rejected_by_consumers (test_amd_generation_support_profile.FullProfileRoundtripTests.test_altered_profile_provenance_and_bare_high_limit_rejected_by_consumers) ... ok
+test_full_synthetic_profile_actual_writer_finite_validator_and_both_readers (test_amd_generation_support_profile.FullProfileRoundtripTests.test_full_synthetic_profile_actual_writer_finite_validator_and_both_readers) ... ok
+test_nonfinite_features_rejected_by_actual_neural_validator_and_mesh_reader (test_amd_generation_support_profile.FullProfileRoundtripTests.test_nonfinite_features_rejected_by_actual_neural_validator_and_mesh_reader) ... ok
+test_profile_reader_rejects_changed_chain_and_closes_all_mappings (test_amd_generation_support_profile.FullProfileRoundtripTests.test_profile_reader_rejects_changed_chain_and_closes_all_mappings) ... ok
+test_artifact_schema_accepts_only_authenticated_exact_profile_support (test_amd_generation_support_profile.SupportConsumerTests.test_artifact_schema_accepts_only_authenticated_exact_profile_support) ... ok
+test_mesh_loads_exact_contract_code_instead_of_bare_module_binding (test_amd_generation_support_profile.SupportConsumerTests.test_mesh_loads_exact_contract_code_instead_of_bare_module_binding) ... ok
+test_mesh_profile_contract_cannot_admit_a_different_small_chain (test_amd_generation_support_profile.SupportConsumerTests.test_mesh_profile_contract_cannot_admit_a_different_small_chain) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 21.144s
+
+OK

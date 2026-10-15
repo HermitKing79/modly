@@ -1,0 +1,44 @@
+{
+  "production_record_sha256": "4a14be63f19de90ad3bc74e4feb498767928be24e1b6ea76201cffd33b79e7eb",
+  "production_record_path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/guest/results.json",
+  "synthetic_tensor_build_seconds": 0.12001080000118236,
+  "actual_finite_and_chain_validation_seconds": 7.933144899998297,
+  "actual_writer_and_readback_seconds": 0.33287689999997383,
+  "schema": "modly.amd.final-support-consumer-cpu-tests.v1",
+  "classification": "CPU_CONSUMER_PASS",
+  "fixture": "synthetic CPU coordinates/logits/features; no genuine decoder mask recovery",
+  "production_metadata": "actual neural.output_provenance builder with latest genuine raw source/runtime/input record",
+  "full_fixture_checks": [
+    "altered provenance and unauthenticated raised limit rejected before mapping",
+    "actual writer, finite/chain validator and both full-size readers; <=64KiB production header; default rejects expanded rows",
+    "NaN rejected by actual neural validator and CPU mesh reader",
+    "changed C2S coordinate order rejected and all ten memmaps closed"
+  ],
+  "payload_bytes": 104125380,
+  "header_bytes": 23200,
+  "file_bytes": 104148588,
+  "header_bound_bytes": 65536,
+  "payload_bound_bytes": 268435456,
+  "total_full_fixture_seconds": 23.297937100000127,
+  "process_working_set_bytes": 520798208,
+  "peak_process_working_set_bytes": 1097908224,
+  "gpu_initialized": false,
+  "model_weights_loaded": false,
+  "native_packages_imported": false,
+  "mesh_extraction_executed": false,
+  "cpu_threads": 1,
+  "command": "D:/AI/Trellis2AMD/venv/Scripts/python.exe -B -m unittest test_amd_generation_support_profile",
+  "cwd": "scripts/compatibility",
+  "observed_red_and_fix": {
+    "failure": "Actual write_output fsync on rb handle raised OSError [Errno 9] Bad file descriptor on Windows",
+    "fix": "Use r+b for the owned freshly written artifact fsync; actual durability/readback remains enabled"
+  },
+  "source_sha256": {
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "10a2792b47ab24ec64cf5d911c37fa12ac789a1d7134c5221d0479ced1bdb989",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "0998c6e0c9a8d5c262b6f258f60fb11d82e8b51aec2c5fd48c771c33ef999f57",
+    "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "f3d982046ca58fb7a2eb0b49c3d0c89fbcf9aa3189cc86018a3c1749b0c01295",
+    "scripts/compatibility/amd_generation_mesh.py": "68a5e64bf7ab65c98f9b798e8d81c61c6cb629b1eaaf193637d5e52de0cae8e8",
+    "scripts/compatibility/test_amd_generation_support_profile.py": "9ead38e350bc86b708717ba9744a1cebbe45d0c299e74ef603095d18f85bb284"
+  },
+  "temporary_fixture_removed": true
+}
