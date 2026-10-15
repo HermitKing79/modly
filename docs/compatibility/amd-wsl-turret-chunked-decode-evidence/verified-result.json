@@ -1,0 +1,74 @@
+{
+  "classification": "UNKNOWN",
+  "execution_commit": "e14489cc17a240a8eff922580596d35a7db94353",
+  "attempts": 1,
+  "automatic_retries": 0,
+  "genuine_neural_computation": "COMPLETED_AND_SYNCHRONIZED",
+  "forward_calls": 1,
+  "convolutions_completed": 40,
+  "native_neighbor_maps": 5,
+  "completed_supports": [
+    3743,
+    17015,
+    79169,
+    378891,
+    1842968
+  ],
+  "C2S_calls": 8,
+  "final_convolution_chunks": 57,
+  "tail_rows": 7960,
+  "full_coordinates_not_truncated": true,
+  "forward_synchronized_seconds": 10.966630407,
+  "output_copy_and_validator_return_evidence": "Executed writer traceback reaches mkdir after validate_output returns. Shape, coordinate uniqueness/bounds, subdivision linkage and finiteness guards therefore did not raise. Returned summary and numerical statistics were not durably recorded. This is control-flow inference, not artifact readback.",
+  "expected_validated_features_shape": [
+    1842968,
+    7
+  ],
+  "expected_validated_coordinates_shape": [
+    1842968,
+    4
+  ],
+  "output_artifact_written": false,
+  "intended_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-chunked-a28e16e\\turret-neural-output.safetensors",
+  "artifact_bytes": null,
+  "artifact_sha256": null,
+  "artifact_readback": false,
+  "failure": {
+    "type": "ImportPolicyError",
+    "error": "filesystem_write: /mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts",
+    "traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/pathlib.py\", line 1313, in mkdir\n    os.mkdir(self, mode)\nFileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-wsl-turret-chunked-a28e16e'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-turret-chunked-decode-evidence/neural.py\", line 154, in run_neural\n    record['output']=preserve_output(cpu_tensors,torch,provenance)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-turret-chunked-decode-evidence/neural.py\", line 59, in preserve_output\n    ARTIFACTS.mkdir(parents=True,exist_ok=False)\n  File \"/usr/lib/python3.12/pathlib.py\", line 1317, in mkdir\n    self.parent.mkdir(parents=True, exist_ok=True)\n  File \"/usr/lib/python3.12/pathlib.py\", line 1313, in mkdir\n    os.mkdir(self, mode)\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_wsl_native_import_policy.py\", line 278, in audit\n    self._write_path(args[0], dir_fd)\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_wsl_native_import_policy.py\", line 224, in _write_path\n    self.reject(\"filesystem_write\", resolved)\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_wsl_native_import_policy.py\", line 46, in reject\n    raise ImportPolicyError(boundary + \": \" + str(detail))\namd_wsl_native_import_policy.ImportPolicyError: filesystem_write: /mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts\n"
+  },
+  "cause": "Missing host artifact parent; worker is authorized only to write within exact leaf. parents=True attempted creation outside allowed root.",
+  "final_patch_restored": true,
+  "peak_memory": {
+    "allocated": 5588655616,
+    "reserved": 7291797504
+  },
+  "released_memory": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "device_memory_after_release": {
+    "free_bytes": 14409015296,
+    "total_bytes": 16974905344
+  },
+  "reference_collection": true,
+  "workspace_clear_calls": 1,
+  "worker_seconds": 39.905949678,
+  "supervisor_seconds": 55.67200000000594,
+  "healthy_observations": 12,
+  "natural_job": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "worker_exit": 1,
+  "named_distro_exit": 0,
+  "historical_files_preserved": 643,
+  "prior_local_remote_branches_preserved": [
+    58,
+    58
+  ]
+}
