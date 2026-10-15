@@ -1,0 +1,123 @@
+{
+  "schema": "modly.amd.stage-adapter-review.v1",
+  "status": "CPU_REVIEW_CLEAR",
+  "guest": {
+    "status": "CPU_TESTS_PASS",
+    "review_type": "implementer_cpu_verification",
+    "tests_passed": 15,
+    "test_command": "python -B experimental/extensions/trellis2-amd/inference_decoder/test_decoder.py",
+    "coverage": [
+      "4430-row real NPY readback and tensor input admission",
+      "4431 contract/reader/tensor rejection",
+      "full four-stage coordinate linkage and raw nonbinary BF16 logits",
+      "late cleanup failure/nonzero release rejects final qualification",
+      "identical durable journal bridge bytes and journal-only host write policy",
+      "source-faithful tiled CPU convolution and memory refusal"
+    ],
+    "GPU_or_WSL_executed": false,
+    "model_generation_proven": false
+  },
+  "mesh": {
+    "status": "REVIEW_CLEAR",
+    "review_type": "independent_read_only",
+    "tests_executed_by_reviewer": false,
+    "blocking_findings": [],
+    "checked": [
+      "strict-positive raw BF16 bit interpretation including signed zero handling",
+      "four-stage parent-major C2S coordinate and order reconstruction",
+      "4430 initial/1000000 intermediate/1842968 final support separation",
+      "unchanged CPU dual-grid converter reuse",
+      "mismatched-child regression fixture"
+    ]
+  },
+  "shape": {
+    "status": "REVIEW_CLEAR",
+    "review_type": "independent_read_only",
+    "blocking_findings": [],
+    "tests_executed_by_reviewer": false,
+    "implementer_reported_CPU_tests_passed": 18,
+    "implementer_reported_test_command": "python -B -m unittest test_amd_generation_shape",
+    "test_working_directory": "scripts/compatibility",
+    "test_interpreter": "installed Windows AMD Python",
+    "test_temporary_directory": "workspace artifact CPU test directory",
+    "checked": [
+      "adapter count4430 and4431 denial",
+      "historical default3743 retained in control/classifier/artifact APIs",
+      "explicit runtime artifact facade carries4430 through denormalization and exclusive NPY writing",
+      "fresh feature/occupancy provenance and complete upstream release checks",
+      "classifier requires current resource qualification and observed3GiB free minimum for extended counts",
+      "new adapter free-memory guard runs at existing post-block observations; historical control unchanged",
+      "1sequence12steps21forwards and12GiB13GiB180/240/480 limits unchanged",
+      "seeded4430 CPU noise/NPY roundtrip regression and missing/tampered resource receipt rejection"
+    ],
+    "resolved_findings": [
+      "missing current-resource-receipt classifier check was corrected before this final review"
+    ],
+    "additional_live_guard": {
+      "minimum_observed_free_vram_bytes": 3221225472,
+      "scope": "new adapter at existing post-block memory observations",
+      "historical_preplacement_cap_difference_bytes": 1073741824
+    }
+  },
+  "count_policy": {
+    "historical_fixture_initial_count": 3743,
+    "measured_new_initial_count": 4430,
+    "new_initial_ceiling": 4430,
+    "4431_admitted": false,
+    "basis": "3743 was a saved fixture bound, not a demonstrated kernel or resource boundary; 4430 is a bounded CPU qualification, not a completion guarantee.",
+    "historical_default_token_caps_retained": 3743
+  },
+  "resource_basis": {
+    "record": "docs/compatibility/amd-shape-slat-512-sampling-evidence/run/results.json",
+    "record_sha256": "06fcb0f34c2989e8dcacf634ac8d1267d6b34ad51fdcf4d4805277916a86a50c",
+    "historical_status": "PASS",
+    "historical_peak_allocated_bytes": 2911625728,
+    "historical_peak_reserved_bytes": 3078619136,
+    "historical_forward_seconds": 8.889999999999418,
+    "input_count_ratio": 1.1835426128773712,
+    "quadratic_size_ratio": 1.4007731164965949,
+    "coarse_whole_peak_reserved_scaled_by_quadratic_ratio_bytes": 4312446922,
+    "estimate_is_guarantee": false,
+    "rounding": "ceiling"
+  },
+  "unchanged_limits": {
+    "allocator_bytes": 12884901888,
+    "initial_free_bytes": 13958643712,
+    "free_reserve_bytes": 2147483648,
+    "opaque_headroom_bytes": 1073741824,
+    "visible_plan_padding": "5/4 rounded upward",
+    "maximum_intermediate_rows": 1000000,
+    "maximum_final_rows": 1842968,
+    "tile_rows": 32768,
+    "decoder_convolutions": 40,
+    "decoder_C2S_operations": 8,
+    "shape_steps": 12,
+    "shape_forwards": 21,
+    "GPU_seconds": 240,
+    "shape_CPU_seconds": 180,
+    "decoder_CPU_seconds": 120,
+    "native_import_seconds": 60,
+    "overall_host_seconds": 480,
+    "scope_note": "2GiB free reserve plus1GiB opaque headroom are decoder planner limits. Historical shape preplacement13GiB minus12GiB cap remains1GiB; the new adapter additionally requires3GiB at post-block observations."
+  },
+  "source_sha256": {
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "1ed5ef8be6e8800aa3048fbfd929be282a582b98663f39f491c49f5ead2035ef",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "03de2c71d89b0b7806af99c286f8d26d4cec620af8f1a0775f116584cdf6efb9",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_paths.py": "73a690d8c03e7a4a6f69b07e45ccd92fa08b3d461f1e47841745c1eafa25f441",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py": "de293ae408c546ce879e15b70bc646f46d013a6b5df73f9b04ab08bdd89fbe5f",
+    "experimental/extensions/trellis2-amd/inference_decoder/decode.py": "9228b0757c80b8d96196d134cffd08b63d7423fd177ab471bbed5f7b4464f25e",
+    "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "2ff2eec7516b394254ca0b17419a38c7550804bc81bdf9d97f3bf1138ad6b8e7",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "db13bd27cd946f9134aaaf7a978aa9d9713a95b61d29675e686b5215d00982ac",
+    "experimental/extensions/trellis2-amd/inference_decoder/runtime.py": "8f2450c53aaf1c73b66f954c4ff5393e03b4351a38f5a16689d4f3953e30a5ca",
+    "experimental/extensions/trellis2-amd/inference_decoder/stage_journal.py": "0deada43d569717d57c6835b11be90b55c6685efc733fa8ce07e4c1acb5476e0",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_decoder.py": "51a4815d97a6f5c761a626205706e79dade125566ee1cff1b3e81174f6ef2048",
+    "scripts/compatibility/amd_generation_mesh.py": "d21adf63286f8459a2bb664806ea5ba7eb34c2b1f646251118e82cc5028c96ed",
+    "scripts/compatibility/amd_generation_shape.py": "4e4c8253e36815526b266c38237438bbc3a5a5d396d0072500a44792856d2233",
+    "scripts/compatibility/amd_shape_sampling_artifact.py": "f73060f92858a4a79ab452fa33c0e4989b008597ce4455aab48724c42898bad6",
+    "scripts/compatibility/amd_shape_sampling_contract.py": "fb95e591ed1b192a8de304c31e0c69e4fdff807dd0820da54ed442c8f95b957f",
+    "scripts/compatibility/amd_shape_sampling_control.py": "5db8909ba4731b2601a061757439c18d611f35a2cec52bafb1b1f8c7c695b9e6",
+    "scripts/compatibility/amd_shape_slat_forward.py": "01f917e99dd5bd2aba17c9423c68fc4faacb1cd173cbc4eebe281828d89194ec",
+    "scripts/compatibility/test_amd_generation_mesh.py": "c542bcf0bb21c341865f6871c8efacfe777cacfc23d2df2433550d590df0e769",
+    "scripts/compatibility/test_amd_generation_shape.py": "4e29cbc992c29fc2c46b6f359946ce0a098fbe6273ef8c265f1a5b54fef04d1b"
+  }
+}

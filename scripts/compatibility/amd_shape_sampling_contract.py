@@ -50,14 +50,16 @@ def validate_transfer(key,row,target,phase,n):
     if key=='seqlen':
         if row!=dict(shape=[1],dtype='torch.int64',device='cpu') or target!='cuda:0' or phase!='inputs':raise ValueError('Sparse sequence-length transfer differs')
     else:previous.validate_transfer(key,row,target,phase,n)
-def classify(record,process_ok,healthy,preserved):
+def classify(record,process_ok,healthy,preserved,*,token_count=TOKEN_COUNT,maximum_tokens=TOKEN_COUNT):
     try:
+        if type(maximum_tokens) is not int or not 0<maximum_tokens<=32768:raise ValueError('Invalid explicit shape token bound')
+        if type(token_count) is not int or not 0<token_count<=maximum_tokens:raise ValueError('Token count exceeds the qualified shape cap')
         def seconds(value,limit):
             if type(value) not in (float,int) or not math.isfinite(value) or not 0<=value<=limit:raise ValueError('Invalid/unbounded timing')
         def digest(value):
             if type(value) is not str or re.fullmatch('[0-9a-f]{64}',value) is None:raise ValueError('Invalid artifact digest')
         seconds(record['forward_seconds'],GPU_SECONDS);seconds(record['cpu_load']['elapsed_seconds'],CPU_SECONDS)
-        previous.validate_output(record['output'],TOKEN_COUNT)
+        previous.validate_output(record['output'],token_count)
         from amd_decoder_contract import validate_release
         validate_release(record['release'])
         per_model={'<root>':1,**{f'blocks.{i}':1 for i in range(30)},**{f'blocks.{i}.{a}':1 for i in range(30) for a in ('self_attn','cross_attn')}}
@@ -79,7 +81,7 @@ def classify(record,process_ok,healthy,preserved):
         if record['transfers']!=transfers:raise ValueError('Transfer counts differ')
         artifacts=record['artifacts']
         if set(artifacts)!={'shape-latent-raw.npy','shape-latent-denormalized.npy','shape-latent-coordinates.npy','shape-initial-noise.npy','shape-latent-provenance.json'}:raise ValueError('Unexpected/missing artifacts')
-        for key,dtype,shape,size in [('shape-latent-raw.npy','float32',[TOKEN_COUNT,32],479232),('shape-latent-denormalized.npy','float32',[TOKEN_COUNT,32],479232),('shape-latent-coordinates.npy','int32',[TOKEN_COUNT,4],60016),('shape-initial-noise.npy','float32',[TOKEN_COUNT,32],479232)]:
+        for key,dtype,shape,size in [('shape-latent-raw.npy','float32',[token_count,32],128+token_count*128),('shape-latent-denormalized.npy','float32',[token_count,32],128+token_count*128),('shape-latent-coordinates.npy','int32',[token_count,4],128+token_count*16),('shape-initial-noise.npy','float32',[token_count,32],128+token_count*128)]:
             if artifacts[key]['verified'] is not True or artifacts[key]['dtype']!=dtype or artifacts[key]['shape']!=shape or artifacts[key]['file_bytes']!=size:raise ValueError('Saved latent artifact incomplete')
             digest(artifacts[key]['sha256']);digest(artifacts[key]['payload_sha256'])
         for name,expected in [('shape-latent-raw.npy',record['output']['sha256']),('shape-latent-coordinates.npy',record['input']['coords']['sha256']),('shape-initial-noise.npy',record['input']['x']['sha256'])]:

@@ -8,7 +8,10 @@ class SamplingCopyPolicy(CopyPolicy):
     def __init__(self,torch,n):
         super().__init__(torch,n);self.contract=policy;self.counts.update(neg_cond=0,seqlen=0)
 class ShapeSamplingControl:
-    def __init__(self,torch,sampler_class,*,device='cuda:0'):
+    def __init__(self,torch,sampler_class,*,device='cuda:0',token_count=policy.TOKEN_COUNT,maximum_tokens=policy.TOKEN_COUNT):
+        if type(maximum_tokens) is not int or not 0<maximum_tokens<=32768:raise ValueError('Invalid explicit shape token bound')
+        if type(token_count) is not int or not 0<token_count<=maximum_tokens:raise ValueError('Token count exceeds the qualified shape cap')
+        self.token_count=token_count
         self.torch=torch;self.sampler_class=sampler_class;self.device=device;self.policy=policy
         self.budget=policy.Budget();self.steps=[];self.models=[];self.issued=[];self.sequences=0
         self.current_x=self.step_x=self.positive=self.negative=self.coords=self.cache_phase=None
@@ -19,8 +22,8 @@ class ShapeSamplingControl:
             or str(t.device)!=self.device or t.requires_grad):raise RuntimeError('Foreign shape sampling tensor')
     def sparse_check(self,x):
         from trellis2.modules.sparse import SparseTensor
-        if not isinstance(x,SparseTensor) or list(x.shape)!=[1,32] or x.coords is not self.coords or x.layout!=[slice(0,policy.TOKEN_COUNT)]:raise RuntimeError('Sparse layout/coordinate identity changed')
-        self.tensor_check(x.feats,[policy.TOKEN_COUNT,32])
+        if not isinstance(x,SparseTensor) or list(x.shape)!=[1,32] or x.coords is not self.coords or x.layout!=[slice(0,self.token_count)]:raise RuntimeError('Sparse layout/coordinate identity changed')
+        self.tensor_check(x.feats,[self.token_count,32])
     def next_timestep(self,args,kwargs):
         ticket=self.budget.next_ticket()
         if (self.pending_t is not None or self.factory_ticket is not None or len(args)!=1 or type(args[0]) is not list
@@ -50,7 +53,7 @@ class ShapeSamplingControl:
         self.sparse_check(result)
         if self.active_counts!=MODULES or copy.counts['frequency']!=1 or copy.counts['rope_frequency']!=1 or not self.torch.isfinite(result.feats).all().item():raise RuntimeError('Incomplete/nonfinite model computation')
         phase=result.get_spatial_cache(PHASE_KEY)
-        if (not isinstance(phase,self.torch.Tensor) or list(phase.shape)!=[policy.TOKEN_COUNT,64] or phase.dtype!=self.torch.complex64 or str(phase.device)!=self.device):raise RuntimeError('RoPE cache structure differs')
+        if (not isinstance(phase,self.torch.Tensor) or list(phase.shape)!=[self.token_count,64] or phase.dtype!=self.torch.complex64 or str(phase.device)!=self.device):raise RuntimeError('RoPE cache structure differs')
         if self.cache_phase is None:self.cache_phase=phase;self.issued.append(weakref.ref(phase))
         elif phase is not self.cache_phase:raise RuntimeError('RoPE cache regenerated')
         ticket=self.budget.active;self.budget.end_forward(ticket);self.frequency_copies+=1;self.issued.append(weakref.ref(result))
@@ -63,7 +66,7 @@ class ShapeSamplingControl:
         self.sequences=1;self.current_x=x;self.coords=x.coords;self.positive=inputs['cond'];self.negative=inputs['neg_cond']
         self.sparse_check(x);self.tensor_check(self.positive,[1,1029,1024]);self.tensor_check(self.negative,[1,1029,1024])
         seqlen=x.get_spatial_cache('seqlen')
-        if (not isinstance(seqlen,self.torch.Tensor) or list(seqlen.shape)!=[1] or seqlen.dtype!=self.torch.int64 or str(seqlen.device)!=self.device or seqlen.item()!=policy.TOKEN_COUNT):raise RuntimeError('Exact precached sparse sequence length required')
+        if (not isinstance(seqlen,self.torch.Tensor) or list(seqlen.shape)!=[1] or seqlen.dtype!=self.torch.int64 or str(seqlen.device)!=self.device or seqlen.item()!=self.token_count):raise RuntimeError('Exact precached sparse sequence length required')
         if not self.torch.isfinite(x.feats).all().item() or not self.torch.isfinite(self.positive).all().item() or not self.torch.equal(self.negative,self.torch.zeros_like(self.negative)):raise RuntimeError('Invalid initial sampling tensors')
         sampler=self.sampler_class(sigma_min=policy.SIGMA_MIN);original=sampler.sample_once
         def step(model_arg,x,t,t_prev,cond=None,**kwargs):

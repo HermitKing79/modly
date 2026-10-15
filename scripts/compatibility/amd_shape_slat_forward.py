@@ -78,7 +78,10 @@ class CopyPolicy:
         elif self.phase=='forward':
             if source.device!=torch.device('cuda:0') or dtype not in (None,source.dtype) and {dtype,source.dtype}!={torch.float32,torch.bfloat16}:return self.reject()
         else:return self.reject()
-def worker(scratch,sampling_factory=None):
+def worker(scratch,sampling_factory=None,*,runtime=None):
+    # A per-run adapter may supply independently validated image artifacts. The
+    # historical proof retains its exact local inputs and checks by default.
+    local=globals()['local'] if runtime is None else runtime.local
     record=dict(status='FAIL',stage='startup',sdk_discovery=[],calls={},load_calls=0,forward_calls=0)
     component=model=output=cpu_output=cpu_coords=inputs=gpu_inputs=sparse=torch=policy=None
     sampling=sampler_result=original_tensor=None
@@ -101,9 +104,11 @@ def worker(scratch,sampling_factory=None):
             if e=='import' and active_contract.prohibited_import(str(a[0])):return forbidden()
             if e=='open' and isinstance(a[0],(str,bytes)):
                 p=Path(os.fsdecode(a[0]))
-                if p.suffix.lower() in ('.safetensors','.pt','.pth','.bin','.gguf','.ckpt') and p.resolve() not in (checkpoint,local.FEATURE.resolve()):return forbidden()
+                readable=(checkpoint,local.FEATURE.resolve()) if runtime is None else (checkpoint,local.FEATURE.resolve(),*runtime.readable_tensor_paths)
+                if p.suffix.lower() in ('.safetensors','.pt','.pth','.bin','.gguf','.ckpt') and p.resolve() not in readable:return forbidden()
         sys.addaudithook(audit)
-        verified=verify_preflight();record['token_count']=verified['token_count'];stage('runtime-import')
+        verified=verify_preflight() if runtime is None else runtime.verify_preflight()
+        record['token_count']=verified['token_count'];stage('runtime-import')
         import torch
         if torch.cuda.is_initialized():return forbidden()
         record['runtime']=dict(python=sys.version,executable=sys.executable,torch=str(torch.__version__),torch_path=torch.__file__,hip=torch.version.hip,cuda=torch.version.cuda,
@@ -206,10 +211,12 @@ def worker(scratch,sampling_factory=None):
                 inputs.pop('t');inputs['neg_cond']=torch.zeros_like(inputs['cond'])
                 cpu_sparse=SparseTensor(inputs['x'],inputs['coords']);inputs['seqlen']=cpu_sparse.seqlen.clone();cpu_sparse=None
             record['input']={k:{**describe(v),'sha256':hashlib.sha256(v.numpy().tobytes()).hexdigest()} for k,v in inputs.items()}
-            if record['input']['cond']['sha256']!=feature['output_sha256'] or record['input']['coords']['sha256']!=json.loads(PROBE.read_text())['worker']['coords_sha256']:raise ValueError('Saved feature/coordinate values differ')
-            if sampling is not None:
-                old=json.loads((local.PINS.parent/'run/results.json').read_text())['worker']['input']['x']['sha256']
-                if record['input']['x']['sha256']!=old:raise ValueError('Canonical CPU noise differs from verified seed contract')
+            if runtime is None:
+                if record['input']['cond']['sha256']!=feature['output_sha256'] or record['input']['coords']['sha256']!=json.loads(PROBE.read_text())['worker']['coords_sha256']:raise ValueError('Saved feature/coordinate values differ')
+                if sampling is not None:
+                    old=json.loads((local.PINS.parent/'run/results.json').read_text())['worker']['input']['x']['sha256']
+                    if record['input']['x']['sha256']!=old:raise ValueError('Canonical CPU noise differs from verified seed contract')
+            else:record['generation_inputs']=runtime.validate_inputs(record['input'],feature,coords)
             record['provenance']=dict(seed=contract.SEED,timestep=contract.TIMESTEP,conditioning=feature,checkpoint_sha256=verified['checkpoint_sha256'],config_sha256=verified['config_sha256'],source_sha256=local.digest(local.SOURCE/'trellis2/models/structured_latent_flow.py'),
                 occupancy_logits_sha256=local.LOGITS_SHA,occupancy_mask_sha256=local.MASK_SHA,pooling='max_pool3d((decoded>0).float(),2,2,0)>0.5; argwhere[:,[0,2,3,4]].int()',sparse_attention='explicit existing PyTorch SDPA branch; no FlashAttention fallback',sparse_convolution='none; no convolution used')
             if sampling is not None:
@@ -220,7 +227,7 @@ def worker(scratch,sampling_factory=None):
             contract.authorize_placement(record['cpu_load'],verified,verified['checkpoint_sha256'],verified['checkpoint_sha256'])
             if torch.cuda.is_initialized():return forbidden()
             print(supervisor.EVENT+json.dumps(dict(event='cpu-ready',gate_one=record['cpu_load'],checkpoint_sha256=verified['checkpoint_sha256'])),flush=True);stage('waiting-for-observer')
-            authorization=AUTHORIZE if sampling is None else __import__('amd_shape_sampling').AUTHORIZE
+            authorization=(AUTHORIZE if sampling is None else __import__('amd_shape_sampling').AUTHORIZE) if runtime is None else runtime.authorize
             if sys.stdin.readline().encode()!=authorization:raise RuntimeError('GPU attempt not authorized')
             policy.phase='placement';torch.cuda._lazy_init=original_init;stage('GPU-metadata');torch.cuda.set_device(0);p=torch.cuda.get_device_properties(0)
             if 'RX 9070 XT' not in p.name or p.gcnArchName.split(':')[0]!='gfx1201':raise RuntimeError('Unexpected GPU')
@@ -269,12 +276,15 @@ def worker(scratch,sampling_factory=None):
                         if not np.array_equal(readback,array):raise ValueError('Output readback differs')
                     record['artifacts']={name:dict(path=str(scratch/name),file_bytes=(scratch/name).stat().st_size,sha256=local.digest(scratch/name)) for name in ('shape-flow-output.npy','shape-flow-coordinates.npy')}
                 else:
-                    import amd_shape_sampling as entry
+                    if runtime is None:import amd_shape_sampling as entry
+                    else:entry=runtime.entry
                     import amd_shape_sampling_artifact as artifact
+                    if runtime is not None:artifact=runtime.artifact
                     normalization=entry.verify_sampler()['normalization'];normalized=artifact.denormalize(values,np.array(normalization['mean'],dtype=np.float32),np.array(normalization['std'],dtype=np.float32))
                     sequence=sampling.report();sequence={**sequence,'models_sha256':hashlib.sha256(json.dumps(sequence['models'],sort_keys=True).encode()).hexdigest()};sequence.pop('models')
                     provenance=json.loads(json.dumps(dict(harness_commit=os.environ['MODLY_SAMPLING_HARNESS_COMMIT'],checkpoint=record['provenance'],input=record['input'],parameters=active_contract.PARAMS,
                         sigma_min=active_contract.SIGMA_MIN,seed=active_contract.SEED,sampler_sources=entry.sources(),normalization=normalization,sequence=sequence,raw_output=record['output'])))
+                    if runtime is not None:provenance['generation_inputs']=record['generation_inputs']
                     record['artifacts']=artifact.write(scratch,values,normalized,out_coords,provenance,noise=inputs['x'].numpy());normalized=None
                 values=out_coords=readback=array=None
             stage('release');policy.phase='release';refs=[weakref.ref(model),weakref.ref(output),weakref.ref(sparse),*[weakref.ref(v) for v in gpu_inputs.values()]]
