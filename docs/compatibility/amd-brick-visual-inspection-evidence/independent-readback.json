@@ -1,0 +1,247 @@
+{
+  "classification": "PASS",
+  "source_mesh_unchanged": true,
+  "original_ordered_position_and_face_payloads_verified": true,
+  "exact_camera_axis_and_opposite_isometric_directions_verified": true,
+  "camera_direction_F32_tolerance": 1e-06,
+  "shared_orthographic_scale_verified": true,
+  "computed_scale": 1.5038471580500772,
+  "all_actual_scales_equal_exact_float32_round": 1.5038471221923828,
+  "nine_complete_PNGs_reopened": true,
+  "all_derived_images_reopened": true,
+  "image_pixel_statistics": {
+    "pos-x": {
+      "extrema": [
+        [
+          0,
+          136
+        ],
+        [
+          0,
+          136
+        ],
+        [
+          0,
+          136
+        ]
+      ],
+      "channel_stddev": [
+        13.024779427720043,
+        13.027493594792807,
+        13.016829283733667
+      ]
+    },
+    "neg-x": {
+      "extrema": [
+        [
+          0,
+          135
+        ],
+        [
+          0,
+          136
+        ],
+        [
+          0,
+          136
+        ]
+      ],
+      "channel_stddev": [
+        13.919690027903087,
+        13.92423863740711,
+        13.90874464135445
+      ]
+    },
+    "pos-y": {
+      "extrema": [
+        [
+          0,
+          136
+        ],
+        [
+          0,
+          136
+        ],
+        [
+          0,
+          136
+        ]
+      ],
+      "channel_stddev": [
+        13.647629990588397,
+        13.650925180499884,
+        13.637993000509082
+      ]
+    },
+    "neg-y": {
+      "extrema": [
+        [
+          0,
+          136
+        ],
+        [
+          0,
+          136
+        ],
+        [
+          0,
+          136
+        ]
+      ],
+      "channel_stddev": [
+        13.779304576708817,
+        13.782610940088425,
+        13.77356187003164
+      ]
+    },
+    "pos-z": {
+      "extrema": [
+        [
+          0,
+          137
+        ],
+        [
+          0,
+          137
+        ],
+        [
+          0,
+          137
+        ]
+      ],
+      "channel_stddev": [
+        10.969584389463721,
+        10.973376940853079,
+        10.961143797298908
+      ]
+    },
+    "neg-z": {
+      "extrema": [
+        [
+          0,
+          136
+        ],
+        [
+          0,
+          136
+        ],
+        [
+          0,
+          136
+        ]
+      ],
+      "channel_stddev": [
+        12.440062652347487,
+        12.443820099253154,
+        12.4300653887171
+      ]
+    },
+    "iso-a": {
+      "extrema": [
+        [
+          0,
+          135
+        ],
+        [
+          0,
+          134
+        ],
+        [
+          0,
+          135
+        ]
+      ],
+      "channel_stddev": [
+        13.067244865384302,
+        13.073241641414471,
+        13.060266905351455
+      ]
+    },
+    "iso-b": {
+      "extrema": [
+        [
+          0,
+          135
+        ],
+        [
+          0,
+          136
+        ],
+        [
+          0,
+          136
+        ]
+      ],
+      "channel_stddev": [
+        14.502602499122323,
+        14.508165038003883,
+        14.49235491310798
+      ]
+    },
+    "silhouette-pos-z": {
+      "extrema": [
+        [
+          0,
+          255
+        ],
+        [
+          0,
+          255
+        ],
+        [
+          0,
+          255
+        ]
+      ],
+      "channel_stddev": [
+        79.44030197152259,
+        79.44030197152259,
+        79.44030197152259
+      ]
+    }
+  },
+  "all_images_private_only": true,
+  "raw_private_files": {
+    "renders\\attempt-marker.json": {
+      "bytes": 1087,
+      "sha256": "ef7168ee42304b322ec66763c1cecefb9fdc9bd1a1dbb81f99b86a707c8c1f52"
+    },
+    "renders\\host-result.json": {
+      "bytes": 32640,
+      "sha256": "7daa846b39fd66655034cec2882d8d211d64ad7976cd2f598f44cb770a98faa7"
+    },
+    "renders\\render-metadata.json": {
+      "bytes": 15341,
+      "sha256": "394b54c5633598d56c8ad38c00b4712481b2405c91e3ae5bcaf91974f974d6ee"
+    },
+    "renders\\stdout.txt": {
+      "bytes": 1873,
+      "sha256": "a3034191b8b327be71ccbfd73cf23acd6565381d344d2f59fd0ed8f44f5991e6"
+    },
+    "renders\\stderr.txt": {
+      "bytes": 694,
+      "sha256": "206b7695a28cbb7227192e2a85fd18a964ca37f1b4bf85435b01b9ecdd836acf"
+    },
+    "composition-host.json": {
+      "bytes": 814,
+      "sha256": "d2a59aac4974266c10232e3d2c72d81f9b86f42995c2494e11e4360dc816914f"
+    },
+    "composition.stdout.txt": {
+      "bytes": 3630,
+      "sha256": "1821b9eff0d9a866c9b5537ef3171389f6fd7faab6df834933405e95a245abc3"
+    },
+    "composition.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "actual_resources": {
+    "peak_working_set_bytes": 2628403200,
+    "peak_committed_bytes": 2904969216,
+    "minimum_sampled_available_RAM_bytes": 17995100160,
+    "minimum_sampled_free_disk_bytes": 108242665472,
+    "samples": 113,
+    "supervisor_seconds": 114.04699999999866,
+    "renderer_seconds": 107.16448510000191
+  }
+}

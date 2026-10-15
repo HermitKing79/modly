@@ -1,0 +1,27 @@
+{
+  "CPU_only": true,
+  "command": [
+    "C:\\Users\\wattz\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-visual-inspection-evidence\\compose_views.py",
+    "--reference-view",
+    "pos-x"
+  ],
+  "memory_cap_bytes": 1073741824,
+  "deadline_seconds": 60,
+  "returncode": 0,
+  "process_memory": {
+    "peak_working_set_bytes": 64282624,
+    "peak_pagefile_bytes": 55422976
+  },
+  "peak_committed_bytes": 55422976,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 1.75,
+  "classification": "PASS"
+}

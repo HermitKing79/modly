@@ -1,0 +1,160 @@
+{
+  "schema": "modly.amd.brick-visual-inspection-preservation-after.v1",
+  "created_utc": "2026-10-15T18:56:17.467429+00:00",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "protected_files": {
+    "checked": 100,
+    "unchanged": 100,
+    "changed_or_missing": 0
+  },
+  "source": {
+    "AMD_HEAD": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+    "status_nodes_and_backup_match_before": true,
+    "qualified_source_bindings_unchanged": 21
+  },
+  "environment": {
+    "comparison": {
+      "amd": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      },
+      "modly": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      }
+    },
+    "native_identities": 12,
+    "source_identities": 13,
+    "selected_packages": {
+      "amd": 13,
+      "modly": 15
+    }
+  },
+  "archives_and_local_only": {
+    "archive_hashes_match": 2,
+    "CRC_readback_members": 40,
+    "current_files_unchanged": 20
+  },
+  "saved_brick_files_unchanged": 5,
+  "historical_raw_unchanged": {
+    "original_C4": 3,
+    "RAM_stopped_tiling": 9,
+    "partial39of40": 11,
+    "completed_neural": 13,
+    "CPU_extraction": 5
+  },
+  "previous_reports_and_public_evidence_unchanged": {
+    "neural": 21,
+    "mesh": 23
+  },
+  "original_mesh4files_unchanged": true,
+  "neural3file_bundle_unchanged": true,
+  "original_source_images": {
+    "copies_verified": 2,
+    "original_photo_sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+    "staged_source_sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+    "both_unchanged": true,
+    "dimensions_authenticated_before": [
+      1018,
+      1018
+    ],
+    "mode_authenticated_before": "RGBA",
+    "provenance_receipts_unchanged": 3
+  },
+  "checkpoint": {
+    "metadata_header_configuration_match": true,
+    "header_bytes_read": 27568,
+    "weight_payload_bytes_read": 0
+  },
+  "NEW_private_image_text_inventory": [
+    {
+      "relative_path": "renders/view-pos-x.png",
+      "bytes": 885588,
+      "sha256": "be2454863b66546131a3cc702953de06f8f0f507d0e062a4564c2d2f10f077f2"
+    },
+    {
+      "relative_path": "renders/view-neg-x.png",
+      "bytes": 868546,
+      "sha256": "cdc72213d71fa591cfb1a8fb18985edc8ca599f44378090dfd39ada130e419cd"
+    },
+    {
+      "relative_path": "renders/view-pos-y.png",
+      "bytes": 877791,
+      "sha256": "b011ceec0b444499b7d0efc918d85eca41a12acdbb43d620e995def74219697e"
+    },
+    {
+      "relative_path": "renders/view-neg-y.png",
+      "bytes": 904501,
+      "sha256": "27d35b46b98e8ff787d91b5d2fa04e4fc7d5bd9683b8206abcdd9e4132628f5f"
+    },
+    {
+      "relative_path": "renders/view-pos-z.png",
+      "bytes": 828994,
+      "sha256": "8ddbde81593a2ed80c80382936520af4391c3541a7bf11f084803522e7814936"
+    },
+    {
+      "relative_path": "renders/view-neg-z.png",
+      "bytes": 819192,
+      "sha256": "2d61774efb686241f4cf92e603c4684cc0bff8fbdf905da9a9196d7312e8e934"
+    },
+    {
+      "relative_path": "renders/view-iso-a.png",
+      "bytes": 889592,
+      "sha256": "42e70079830df4c5da3c1f873a1eaafbf478de15f55cd480e9b2f06e70665a98"
+    },
+    {
+      "relative_path": "renders/view-iso-b.png",
+      "bytes": 868251,
+      "sha256": "6ffc0ade527fbc952debcbdbeebe96973f6445e3be2ad6ea1edf0003ef60a25f"
+    },
+    {
+      "relative_path": "renders/silhouette-pos-z.png",
+      "bytes": 271509,
+      "sha256": "b61a24e87405e387c0ceac3936e1c5ebcd4a33908d2ac95bafc0c70a14979b65"
+    },
+    {
+      "relative_path": "contact-sheet.png",
+      "bytes": 1036709,
+      "sha256": "f87fde9ae5fb045fe290a5146e917ac73898e2cb03142eb611fe87ead2ab3417"
+    },
+    {
+      "relative_path": "source-comparison.png",
+      "bytes": 960460,
+      "sha256": "36c7c43e87da162be12d24735930c05654317d0f6c8cb2d95650f1e5a27a266c"
+    },
+    {
+      "relative_path": "surface-detail.png",
+      "bytes": 301811,
+      "sha256": "8439a3478181cf7597508e8d87708cfa8a8287ee7cc8fb868be13c60ae78552e"
+    }
+  ],
+  "NEW_render_receipt_observed": {
+    "CPU_only": true,
+    "host": "PASS",
+    "returncode": 0,
+    "job_exit_natural": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "first_frame_verified_before_remaining": true,
+    "one_mesh_import": true,
+    "source_file_and_geometry_payloads_before_after_equal": true,
+    "render_PNGs": 9,
+    "composed_private_PNGs": 3,
+    "composition_returncode": 0,
+    "auditor_visual_assessment_performed": false
+  },
+  "new_public_evidence_image_files": 0,
+  "private_receipt": {
+    "alias": "workspace-artifacts/amd-brick-visual-inspection-b536fb6/preservation-after.json",
+    "sha256": "9fb183b85d6296273b28044681fefad2e080b14c9a54489f31c1f71e3bcad3e3"
+  },
+  "scope_limits": [
+    "Preservation auditor executed no Blender,render,mesh processing,CPU tests,model/native imports,GPU/WSL starts,package installation,network or Git mutation.",
+    "New private images were inventoried and hashed without opening,decoding or independently visually assessing them. Root-owned CPU render/composition receipts are observed separately.",
+    "Selected13 AMD/15 Modly package version/WHEEL,pyvenv.cfg,12 native payload/PE and13 source identities match; this is not an exhaustive entire-environment byte scan.",
+    "Checkpoint metadata/config/header27568bytes only; no weight payload read or deserialization and no fresh Linux filesystem inventory.",
+    "Original photo,staged source,mesh4files and all saved earlier evidence remain unchanged. No image file was created in the public evidence folder by this audit."
+  ]
+}

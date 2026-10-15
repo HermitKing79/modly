@@ -1,0 +1,129 @@
+{
+  "classification": "PASS",
+  "images_private_only": true,
+  "source_sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+  "source_unchanged": true,
+  "reference_view": "pos-x",
+  "reference_projection_calibrated": false,
+  "render_images": {
+    "pos-x": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\renders\\view-pos-x.png",
+      "bytes": 885588,
+      "sha256": "be2454863b66546131a3cc702953de06f8f0f507d0e062a4564c2d2f10f077f2",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    "neg-x": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\renders\\view-neg-x.png",
+      "bytes": 868546,
+      "sha256": "cdc72213d71fa591cfb1a8fb18985edc8ca599f44378090dfd39ada130e419cd",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    "pos-y": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\renders\\view-pos-y.png",
+      "bytes": 877791,
+      "sha256": "b011ceec0b444499b7d0efc918d85eca41a12acdbb43d620e995def74219697e",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    "neg-y": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\renders\\view-neg-y.png",
+      "bytes": 904501,
+      "sha256": "27d35b46b98e8ff787d91b5d2fa04e4fc7d5bd9683b8206abcdd9e4132628f5f",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    "pos-z": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\renders\\view-pos-z.png",
+      "bytes": 828994,
+      "sha256": "8ddbde81593a2ed80c80382936520af4391c3541a7bf11f084803522e7814936",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    "neg-z": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\renders\\view-neg-z.png",
+      "bytes": 819192,
+      "sha256": "2d61774efb686241f4cf92e603c4684cc0bff8fbdf905da9a9196d7312e8e934",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    "iso-a": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\renders\\view-iso-a.png",
+      "bytes": 889592,
+      "sha256": "42e70079830df4c5da3c1f873a1eaafbf478de15f55cd480e9b2f06e70665a98",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    "iso-b": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\renders\\view-iso-b.png",
+      "bytes": 868251,
+      "sha256": "6ffc0ade527fbc952debcbdbeebe96973f6445e3be2ad6ea1edf0003ef60a25f",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    "silhouette-pos-z": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\renders\\silhouette-pos-z.png",
+      "bytes": 271509,
+      "sha256": "b61a24e87405e387c0ceac3936e1c5ebcd4a33908d2ac95bafc0c70a14979b65",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    }
+  },
+  "derived_images": {
+    "contact-sheet.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\contact-sheet.png",
+      "bytes": 1036709,
+      "sha256": "f87fde9ae5fb045fe290a5146e917ac73898e2cb03142eb611fe87ead2ab3417",
+      "dimensions": [
+        1440,
+        1612
+      ]
+    },
+    "source-comparison.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\source-comparison.png",
+      "bytes": 960460,
+      "sha256": "36c7c43e87da162be12d24735930c05654317d0f6c8cb2d95650f1e5a27a266c",
+      "dimensions": [
+        1600,
+        890
+      ]
+    },
+    "surface-detail.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\surface-detail.png",
+      "bytes": 301811,
+      "sha256": "8439a3478181cf7597508e8d87708cfa8a8287ee7cc8fb868be13c60ae78552e",
+      "dimensions": [
+        1300,
+        1000
+      ]
+    }
+  },
+  "render_geometry_unchanged": true,
+  "diagnostic_crop_source": "+X",
+  "diagnostic_crop_box_pixels": [
+    470,
+    360,
+    660,
+    590
+  ],
+  "diagnostic_is_not_edge_incidence_map": true
+}

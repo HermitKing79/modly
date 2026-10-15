@@ -1,0 +1,101 @@
+{
+  "schema": "modly.amd.brick-visual-inspection-independent-outcome-review.v1",
+  "classification": "PASS_WITH_VISUAL_LIMITATIONS",
+  "reviewer": "Independent brick_visual_review subagent",
+  "scope": "One unchanged full PLY import, eight clay views and one silhouette; technical render success and qualitative visual inspection, without topology repair or production asset qualification.",
+  "review_execution": {
+    "Blender_models_GPU_WSL_executed": false,
+    "mesh_or_NPY_payloads_re_read": false,
+    "mesh_topology_or_components_analyzed": false,
+    "Git_mutated": false,
+    "images_copied_modified_or_published": false,
+    "read_only_CPU_Pillow_hash_and_camera_audit": true,
+    "private_contact_sheet_source_comparison_and_detail_viewed": true,
+    "only_this_text_review_written_for_outcome": true
+  },
+  "checks": {
+    "host_and_renderer_classifications_PASS": true,
+    "one_PLY_import_and_exact_expected_nine_output_set_and_order": true,
+    "all_nine_actual_PNG_hashes_and_sizes_match_renderer_and_composition_receipts": true,
+    "all_nine_PNG_verify_and_full_decode_RGB_1024_square_with_handles_closed": true,
+    "first_positive_X_hash_matches_checkpoint_host_verification_and_final_output": true,
+    "final_scripts_match_preexecution_and_actual_attempt_hashes": true,
+    "six_axis_two_opposite_isometric_camera_directions_and_quaternion_aim_verified": true,
+    "camera_basis_unit_orthogonal_and_finite_camera_bbox_values_verified": true,
+    "all_nine_actual_ortho_scales_equal_float32_roundtrip_of_shared_computed_scale": true,
+    "source_mesh_bbox_matches_original_mesh_json": true,
+    "source_file_before_after_identity_receipts_equal_and_match_original_mesh_json": true,
+    "ordered_geometry_payload_hashes_match_before_after_and_first_checkpoint": true,
+    "actual_original_and_staged_source_image_SHA256_rechecked": true,
+    "private_derived_image_hashes_match_composition_receipt": true,
+    "owned_Job_attached_before_start_and_remaining_gate_completed": true,
+    "all_113_resource_samples_admitted_and_natural_owned_tree_exit": true
+  },
+  "actual_render": {
+    "Blender_version": "5.2.1 LTS",
+    "engine": "CYCLES",
+    "device": "CPU",
+    "normal_view_samples": 32,
+    "normal_view_denoiser": "CPU OPENIMAGEDENOISE",
+    "threads": 4,
+    "flat_shading": true,
+    "source_colors_used": false,
+    "silhouette_exception": "Opaque black emission on white; one sample, no denoising.",
+    "vertices": 1957891,
+    "triangles": 4173584,
+    "mesh_import_count": 1,
+    "source_PLY_sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+    "geometry_payloads_before_and_after": {
+      "vertices.npy": "bdfcbbe8f251b33daa64c6832c4c1278b3a29600cf825a022478b0b87bb573c3",
+      "faces.npy": "5fa284e1698929f4f0f6c78edc2e26632fcde6e43ad7eb57b36ae6fc9f88d883"
+    },
+    "shared_scale_computed_double": 1.5038471580500772,
+    "shared_scale_stored_Blender_float32": 1.5038471221923828,
+    "host_elapsed_seconds": 114.04699999999866,
+    "peak_working_set_bytes": 2628403200,
+    "peak_committed_bytes": 2904969216,
+    "process_memory_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "minimum_sampled_available_RAM_bytes": 17995100160,
+    "minimum_sampled_disk_free_bytes": 108242665472,
+    "required_RAM_floor_bytes": 12884901888,
+    "required_disk_floor_bytes": 2147483648,
+    "GO_REMAINING_authorized_at_host_elapsed_seconds": 27.014999999999418,
+    "returncode": 0,
+    "Job_active_before_cleanup": 0,
+    "Job_active_after_cleanup": 0,
+    "forced_Job_cleanup": false
+  },
+  "visual_findings": [
+    "All nine panels are framed and readable; no blank, clipped-object or obvious camera failure is visible.",
+    "Axis and opposite isometric views show a volumetric brick core with vegetation wrapping multiple sides. Top and bottom views show depth rather than only a front-facing relief.",
+    "The source comparison supports broad qualitative correspondence: stacked bricks, a top vine arch and a lower wrapped vegetation cluster. The source-facing choice is +X by visual comparison only; camera and projection are not calibrated to the source photograph.",
+    "Thin tangled strands, ragged foliage edges, small dark pinprick marks on brick faces and a few detached-looking specks remain visible. These are visual concerns, not indexed diagnoses of holes, boundary or nonmanifold edges, or disconnected components.",
+    "The neutral-clay render intentionally omits the source photograph's colours, textures and material appearance. Visual correspondence does not establish dimensional accuracy, hidden-surface correctness or production readiness."
+  ],
+  "image_identities": {
+    "view-pos-x.png": {"bytes": 885588, "sha256": "be2454863b66546131a3cc702953de06f8f0f507d0e062a4564c2d2f10f077f2"},
+    "view-neg-x.png": {"bytes": 868546, "sha256": "cdc72213d71fa591cfb1a8fb18985edc8ca599f44378090dfd39ada130e419cd"},
+    "view-pos-y.png": {"bytes": 877791, "sha256": "b011ceec0b444499b7d0efc918d85eca41a12acdbb43d620e995def74219697e"},
+    "view-neg-y.png": {"bytes": 904501, "sha256": "27d35b46b98e8ff787d91b5d2fa04e4fc7d5bd9683b8206abcdd9e4132628f5f"},
+    "view-pos-z.png": {"bytes": 828994, "sha256": "8ddbde81593a2ed80c80382936520af4391c3541a7bf11f084803522e7814936"},
+    "view-neg-z.png": {"bytes": 819192, "sha256": "2d61774efb686241f4cf92e603c4684cc0bff8fbdf905da9a9196d7312e8e934"},
+    "view-iso-a.png": {"bytes": 889592, "sha256": "42e70079830df4c5da3c1f873a1eaafbf478de15f55cd480e9b2f06e70665a98"},
+    "view-iso-b.png": {"bytes": 868251, "sha256": "6ffc0ade527fbc952debcbdbeebe96973f6445e3be2ad6ea1edf0003ef60a25f"},
+    "silhouette-pos-z.png": {"bytes": 271509, "sha256": "b61a24e87405e387c0ceac3936e1c5ebcd4a33908d2ac95bafc0c70a14979b65"}
+  },
+  "private_receipt_sha256": {
+    "host-result.json": "7daa846b39fd66655034cec2882d8d211d64ad7976cd2f598f44cb770a98faa7",
+    "render-metadata.json": "394b54c5633598d56c8ad38c00b4712481b2405c91e3ae5bcaf91974f974d6ee",
+    "attempt-marker.json": "ef7168ee42304b322ec66763c1cecefb9fdc9bd1a1dbb81f99b86a707c8c1f52",
+    "first-view.json": "70fb375c37d0f7c6610cbda42b5945909c9df96824dc2d257b983d19eb761997",
+    "first-frame-host-verification.json": "717832f3bde454aee5df1b145f17809ce7285cf5a303dd9a1eafef4d159ff9a0",
+    "image-verification.json": "1ba6b8a402848b3695947e07f02a75e2e708458b23245efa7039ca49795886ab"
+  },
+  "limits": [
+    "Source mesh integrity is supported by the actual host streaming hashes and renderer exact ordered payload checks, cross-checked against the original mesh.json. This reviewer did not re-read full mesh or NPY payloads.",
+    "Finite camera and bbox values were independently checked; this review did not rescan every vertex for finiteness or perform connected-component or spatial edge analysis.",
+    "All images remain private local artifacts. This public receipt contains text and hashes only. Final preservation-after and publication-scope checks belong to the root review."
+  ],
+  "technical_blockers": []
+}

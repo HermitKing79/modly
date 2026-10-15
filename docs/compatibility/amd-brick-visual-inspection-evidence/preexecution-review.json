@@ -1,0 +1,62 @@
+{
+  "schema": "modly.amd.brick-visual-inspection-preexecution-review.v1",
+  "classification": "GO_ONE_BOUNDED_CPU_SESSION",
+  "reviewer": "Independent brick_visual_review subagent",
+  "approved_base": "b536fb6d140c297ec845cb5741b19370884105a5",
+  "branch": "codex/amd-repeatable-generation-v1",
+  "scope": "Static review of one full unchanged PLY import and nine private inspection PNGs; actual execution and visual outcome are not yet verified.",
+  "review_execution": {
+    "Blender_launched": false,
+    "full_PLY_or_NPY_read": false,
+    "GPU_WSL_Torch_models_executed": false,
+    "Git_mutated": false,
+    "implementation_edited": false,
+    "only_this_review_file_written": true,
+    "render_output_directory_absent_at_final_review": true
+  },
+  "frozen_script_sha256": {
+    "render_host.py": "45544069f5bd660ad02cd1e8e868ccc5ee4793a4b0d168e58729b65e80e37a40",
+    "render_views.py": "45a4169bf294241d167858d1f92f440014992c860d0599531faad6e44e527412",
+    "test_render_host.py": "1f4c1b2e99989926b64d23ff1fab06a31f26a5ff0b3d61570feb4e06d615de88",
+    "test_render_views.py": "80ec50e2b2f51b93c5aade2a999eb37e88d93bc3bddcdf8a4e4d61fd7fcb1dc2"
+  },
+  "source": {
+    "alias": "workspace-artifacts/amd-brick-cpu-mesh-8473579/mesh/mesh.ply",
+    "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+    "vertices": 1957891,
+    "triangles": 4173584,
+    "identity_basis": "Approved source identity and preservation-before receipt; this reviewer did not re-read geometry payloads."
+  },
+  "checks": {
+    "host_and_renderer_agree_on_private_renders_child": true,
+    "one_explicit_PLY_import_merge_disabled_identity_transform": true,
+    "ordered_F32_vertices_I32_triangle_rows_verified_before_after": true,
+    "first_view_is_positive_X": true,
+    "host_checks_first_actual_PNG_hash_size_1024_RGB_nonuniformity": true,
+    "host_checks_first_receipt_CPU_no_GPU_denoising_source_counts_geometry": true,
+    "remaining_views_wait_for_host_GO_REMAINING": true,
+    "GO_tokens_exact_LF_and_reader_wait_bounded_30_seconds": true,
+    "owned_Job_cap_installed_and_child_attached_before_GO_START": true,
+    "six_GiB_process_cap_180_second_deadline": true,
+    "twelve_GiB_RAM_two_GiB_disk_initial_and_live_floors": true,
+    "eight_normal_clay_views_CPU_Cycles_1024_square_32_samples_CPU_OIDN_flat": true,
+    "six_axes_two_opposite_isometrics_one_silhouette": true,
+    "no_model_execution_mesh_export_blend_save_modifiers_or_geometry_edits": true,
+    "images_and_runtime_outputs_remain_private": true,
+    "no_automatic_retry_on_existing_renders_directory": true,
+    "owned_tree_cleanup_and_source_file_identity_rechecked": true
+  },
+  "silhouette_exception": "The ninth output is an opaque black unlit emission mask on white, rendered with one sample and denoising disabled. The eight neutral-clay views use 32 samples and CPU OIDN. Root confirmed this intentional mask policy; the user did not prescribe sample counts.",
+  "prior_route_precedent": "The successful amd-turret-learned-colour-evidence renderer and independent outcome receipt establish local Blender 5.2 precedent for the same AgX look None, CPU OIDN properties and Y-forward/Z-up PLY settings. Embedded stdin is newly exercised here; a missing or malformed stream fails closed before import or continuation.",
+  "tests": {
+    "execution_by_reviewer": false,
+    "root_reported_host_tests": "4 PASS, including malformed image identity, GPU/count/geometry receipt negatives and resource admission checks",
+    "renderer_agent_reported_camera_tests": "4 PASS"
+  },
+  "resolved_findings": [
+    "Initial renderer expected the private parent while host passed its renders child; renderer now requires the same renders child.",
+    "First-frame host validation now rejects CPU/source/count/geometry contract failures in addition to checking actual PNG bytes and pixels."
+  ],
+  "outcome_requirements": "Claim complete only after the actual host and renderer receipts pass, all nine expected PNGs exist and are inspected, measured containment and natural owned-tree exit pass, exact ordered geometry and original source files remain unchanged, and the preservation-after checks pass. A failed or partial run must remain partial and must not trigger another attempt.",
+  "blockers": []
+}

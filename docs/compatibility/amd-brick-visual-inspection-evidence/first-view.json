@@ -1,0 +1,52 @@
+{
+  "name": "pos-x",
+  "PNG": "view-pos-x.png",
+  "axis_direction": [
+    1,
+    0,
+    0
+  ],
+  "camera_location": [
+    2.797344923019409,
+    -0.0018387436866760254,
+    0.0007975846529006958
+  ],
+  "camera_quaternion": [
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "camera_right": [
+    0.0,
+    1.0,
+    0.0
+  ],
+  "camera_up": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "ortho_scale": 1.5038471221923828,
+  "filename": "view-pos-x.png",
+  "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-visual-inspection-b536fb6\\renders\\view-pos-x.png",
+  "bytes": 885588,
+  "sha256": "be2454863b66546131a3cc702953de06f8f0f507d0e062a4564c2d2f10f077f2",
+  "width": 1024,
+  "height": 1024,
+  "seconds": 12.49362249999831,
+  "elapsed_seconds": 20.49619939999684,
+  "classification": "FIRST_VIEW_COMPLETE",
+  "device": "CPU",
+  "samples": 32,
+  "threads": 4,
+  "denoising_use_gpu": false,
+  "vertex_count": 1957891,
+  "face_count": 4173584,
+  "source_PLY_sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+  "geometry_payloads": {
+    "vertices.npy": "bdfcbbe8f251b33daa64c6832c4c1278b3a29600cf825a022478b0b87bb573c3",
+    "faces.npy": "5fa284e1698929f4f0f6c78edc2e26632fcde6e43ad7eb57b36ae6fc9f88d883"
+  },
+  "geometry_unchanged_after_first_view": true
+}
