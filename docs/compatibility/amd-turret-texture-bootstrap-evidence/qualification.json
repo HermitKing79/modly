@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "GPU_initialized": false,
+  "weights_loaded": false,
+  "focused_tests": [
+    {
+      "suite": "bootstrap-order-and-unchanged-computation",
+      "tests": 2,
+      "passed": 2
+    }
+  ],
+  "unchanged_computational_contracts": {
+    "qualification_path": "docs/compatibility/amd-turret-texture-decoder-evidence/qualification.json",
+    "sha256": "9f616b1f77cb53ba1fed1f43d80ea1c7143c19233eed5a3ef19096f23d9f3137",
+    "prior_results": "72 focused tests:71 passed,1 privilege skip; not rerun"
+  },
+  "real_WSL_cold_start_required_before_inference": true
+}

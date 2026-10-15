@@ -1,0 +1,124 @@
+{
+  "verified": true,
+  "artifact_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-bootstrap-473b7bd\\probe\\texture-field.safetensors",
+  "metadata_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-bootstrap-473b7bd\\probe\\texture-field-metadata.json",
+  "metadata": {
+    "artifact_bytes": 736,
+    "artifact_file": "texture-field.safetensors",
+    "artifact_sha256": "28ebf773ce72dac0c6ace8516d7914327660830ad7a231b1ab23ad317464c23e",
+    "channel_statistics": {
+      "features": {
+        "alpha": {
+          "max": 4.5,
+          "mean": 3.0,
+          "min": 1.5
+        },
+        "blue": {
+          "max": 3.0,
+          "mean": 1.5,
+          "min": 0.0
+        },
+        "green": {
+          "max": 2.5,
+          "mean": 1.0,
+          "min": -0.5
+        },
+        "metallic": {
+          "max": 3.5,
+          "mean": 2.0,
+          "min": 0.5
+        },
+        "red": {
+          "max": 2.0,
+          "mean": 0.5,
+          "min": -1.0
+        },
+        "roughness": {
+          "max": 4.0,
+          "mean": 2.5,
+          "min": 1.0
+        }
+      },
+      "raw": {
+        "alpha": {
+          "max": 8.0,
+          "mean": 5.0,
+          "min": 2.0
+        },
+        "blue": {
+          "max": 5.0,
+          "mean": 2.0,
+          "min": -1.0
+        },
+        "green": {
+          "max": 4.0,
+          "mean": 1.0,
+          "min": -2.0
+        },
+        "metallic": {
+          "max": 6.0,
+          "mean": 3.0,
+          "min": 0.0
+        },
+        "red": {
+          "max": 3.0,
+          "mean": 0.0,
+          "min": -3.0
+        },
+        "roughness": {
+          "max": 7.0,
+          "mean": 4.0,
+          "min": 1.0
+        }
+      }
+    },
+    "channels": [
+      "red",
+      "green",
+      "blue",
+      "metallic",
+      "roughness",
+      "alpha"
+    ],
+    "format": "modly-amd-texture-field-v1",
+    "payload_bytes": 128,
+    "provenance": {
+      "mode": "fixture",
+      "purpose": "actual-writer-new-root-bootstrap-correction"
+    },
+    "tensors": {
+      "coordinates": {
+        "dtype": "I32",
+        "sha256": "ae4b10c03c8353dbf917c1e84887a12712534cd933aa8b7dd894074d7357ef3e",
+        "shape": [
+          2,
+          4
+        ],
+        "tensor_bytes": 32
+      },
+      "features": {
+        "dtype": "F32",
+        "sha256": "2d7c60abb1d0a59ecad7ef9a40034aa97e6e2651378aca5e3f2e7bb45acc5057",
+        "shape": [
+          2,
+          6
+        ],
+        "tensor_bytes": 48
+      },
+      "raw": {
+        "dtype": "F32",
+        "sha256": "74b85b6d5acdd8b2e9aa7d390b47df6f7e65965493b716a4c54fedc2c2215564",
+        "shape": [
+          2,
+          6
+        ],
+        "tensor_bytes": 48
+      }
+    }
+  },
+  "output_root": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-bootstrap-473b7bd",
+  "host_write_and_readback": true,
+  "torch_imported": false,
+  "GPU_initialized": false,
+  "free_bytes": 107586760704
+}

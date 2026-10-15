@@ -1,0 +1,46 @@
+{
+  "classification": "UNKNOWN",
+  "CPU_cold_attempts": 1,
+  "neural_attempts": 0,
+  "neural_marker_absent": true,
+  "raw_error": "Artifact root/files must be owned by the current user",
+  "failing_boundary": "CPU writer approved_root(field): lstat(field).st_uid != os.getuid()",
+  "owner_numbers": "Not captured; no second WSL probe run",
+  "numpy_import_order": "Original missing-module exception is past; NumPy-dependent writer reached owned-root check",
+  "module_origin_and_version_acceptance": "Not reached after shared bootstrap raised; not claimed",
+  "CPU_unit_tests": {
+    "passed": 2,
+    "prior_71_pass_suite_rerun": false
+  },
+  "computational_sources_byte_identical": true,
+  "observer_healthy": true,
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "named_distro_terminated": true,
+  "supervisor_seconds": 10.952999999994063,
+  "saved_inputs": [
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-4f845cd\\latent\\texture-latent.safetensors",
+      "bytes": 1539912,
+      "sha256": "5506c4d0199bef64423b41b8bed560e2b7def9d29c5bb1c3072c0ea31ee1ddc4"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors",
+      "bytes": 96433760,
+      "sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22"
+    }
+  ],
+  "historical_remote_heads_preserved": 65,
+  "original_failed_marker_preserved": true,
+  "Windows_preservation": "PASS",
+  "Linux_preservation_scope": "Unchanged audit restricts CPU worker Python writes to its exclusive scratch and cold-run output; no installation/repair command. No fresh comprehensive Linux inventory.",
+  "real_output_file": null,
+  "output_leaf": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-bootstrap-473b7bd\\field",
+  "field_empty": true,
+  "no_retry": true
+}

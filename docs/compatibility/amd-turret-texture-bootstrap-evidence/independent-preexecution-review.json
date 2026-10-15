@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "reviewer": "texture_decode_review independent agent",
+  "scope": "Only bootstrap order, exact shared CPU route, cold AI denial, reused containment and unchanged computational code",
+  "findings": [],
+  "reviewed_source_sha256": {
+    "admission.py": "99c1078cbcb4b026feeec3f085976586f1118812bdd3d4b5fbe0e76c47cbbbbe",
+    "artifact_io.py": "c408dfd3de92cdcc09364b375bf40c7f26b930757a7a1691c02696084ebb6c4d",
+    "bootstrap-tests.py": "322c1862456b27fb1bf52f62e886fb848d1a5dc55217e857df0a1f54698c57a1",
+    "chunked_final.py": "707d73d7331a4896bffeb851c2aa144175841cd4752a4497760d9f6a44ea2d39",
+    "cold_start.py": "fd56a2abb6442903b88f49b3b48e315976726d563ada45758a7472386d2faaf3",
+    "decode.py": "335be50418a00d1901a37dd4acb4a9c16d82dc608b7342c69fe91946b7893db4",
+    "neural.py": "5d3301c00fb29a51c86e861e63d097d35096de7d769d4d407e745fd364525647",
+    "runtime.py": "935d431c107ec6ea856bdccff9d1c88298403c7e9afe07232b22e74525bf0e10"
+  },
+  "conditions": [
+    "One real installed WSL cold-start must PASS before inference marker or checkpoint load",
+    "Fresh resource admission and unchanged numerical/precision/cache guards remain mandatory"
+  ],
+  "reviewer_execution": "No tests, WSL, GPU or code edits"
+}
