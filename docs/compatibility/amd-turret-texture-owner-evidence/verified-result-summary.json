@@ -1,0 +1,78 @@
+{
+  "classification": "UNKNOWN",
+  "CPU_ownership_acceptance": "PASS",
+  "GPU_capable_attempts": 1,
+  "forward_entry_recorded": false,
+  "neural_forward": "Not reached under frozen durable-entry contract",
+  "strict_checkpoint_load_complete": "Not proved; no guest results",
+  "harness_commit": "1b1db019fb1609add72e09add79d97bcd8873405",
+  "error_type": "RuntimeError",
+  "error": "Host RAM/D-disk floor failed",
+  "failing_resource_values": "Not recorded by existing combined admission function",
+  "initial_resources": {
+    "available_ram_bytes": 18454679552,
+    "D_free_bytes": 75137884160,
+    "required_host_ram_bytes": 12884901888
+  },
+  "last_successful_available_ram_bytes": 13013250048,
+  "last_successful_D_free_bytes": 75137884160,
+  "gpu_admission": {
+    "name": "AMD Radeon RX 9070 XT",
+    "architecture": "gfx1201",
+    "count": 1,
+    "total_bytes": 16974905344,
+    "free_bytes": 14579568640,
+    "property_total_bytes": 16974905344
+  },
+  "last_guest_phase": {
+    "phase": "native-qualified-CPU-preparation-entry",
+    "utc": "2026-10-15T07:46:26.924094+00:00",
+    "monotonic_seconds": 17.809441665,
+    "memory": {
+      "allocated": 0,
+      "reserved": 0
+    }
+  },
+  "host_elapsed_seconds": 36.296999999991385,
+  "Windows_client_exit": 1,
+  "observer_healthy": true,
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 4,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": true,
+    "cleanup_seconds": 0.0
+  },
+  "distro_termination_returncode": 0,
+  "final_Torch_memory": "Unmeasured; forced containment, no zero-release claim",
+  "field_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field",
+  "genuine_texture_output": null,
+  "field_empty": true,
+  "saved_inputs_and_checkpoint": [
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-4f845cd\\latent\\texture-latent.safetensors",
+      "bytes": 1539912,
+      "mtime_ns": 1792028963457928900,
+      "sha256": "5506c4d0199bef64423b41b8bed560e2b7def9d29c5bb1c3072c0ea31ee1ddc4",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors",
+      "bytes": 96433760,
+      "mtime_ns": 1792024391251261900,
+      "sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_dec_next_dc_f16c32_fp16.safetensors",
+      "bytes": 948458812,
+      "mtime_ns": 1791274770477513600,
+      "sha256": "97ea69addea2ecd9312910f5f548234665eef51c088386180b7cd5b258645e3c",
+      "unchanged": true
+    }
+  ],
+  "all_28_candidate_pins_unchanged": true,
+  "historical_remote_heads_preserved": 66,
+  "Windows_preservation": "PASS",
+  "no_retry_or_postfailure_guard_change": true
+}

@@ -1,0 +1,426 @@
+{
+  "classification": "UNKNOWN",
+  "distro": "Modly-AMD-Ubuntu-24.04",
+  "started_utc": "2026-10-15T07:46:06.260119+00:00",
+  "script_sha256": "fc02b386519ce3c58e4a0632fef08ce1fe714344586a536f1901dd11aa9f453d",
+  "host_admission_before": {
+    "available_ram_bytes": 18454679552,
+    "D_free_bytes": 75137884160,
+    "required_host_ram_bytes": 12884901888
+  },
+  "containment_scope": "Windows Job: wsl.exe client; Linux: guest timeout and named-distro termination",
+  "last_resource_poll": 112412.234,
+  "minimum_host_ram_bytes": 13013250048,
+  "minimum_D_free_bytes": 75137884160,
+  "observation_before": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":71,\"RecordId\":13556,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792050125198)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 0.797,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 71,
+          "RecordId": 13556,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1792050125198)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "worker_command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/env",
+    "HSA_ENABLE_DXG_DETECTION=1",
+    "LD_LIBRARY_PATH=/opt/rocm-7.2.1/lib:/opt/rocm/lib:/usr/lib/wsl/lib",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "450s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-B",
+    "-I",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-turret-texture-owner-evidence/decode.py",
+    "--worker",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-turret-texture-owner-evidence/run/guest"
+  ],
+  "observation_after_attachment": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13564,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792050368287)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 0.953,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 291,
+          "RecordId": 13564,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1792050368287)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "CPU_stage_host_observed": 112407.343,
+  "error_type": "RuntimeError",
+  "error": "Host RAM/D-disk floor failed",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-texture-owner-evidence\\decode.py\", line 545, in supervise\n    tick()\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-texture-owner-evidence\\decode.py\", line 490, in tick\n    admission=host_admission()\n              ^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-texture-owner-evidence\\decode.py\", line 141, in host_admission\n    if value.available<HOST_RAM or free<50*GiB: raise RuntimeError('Host RAM/D-disk floor failed')\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Host RAM/D-disk floor failed\n",
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 4,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": true,
+    "cleanup_seconds": 0.0
+  },
+  "distro_termination": {
+    "command": [
+      "wsl.exe",
+      "--terminate",
+      "Modly-AMD-Ubuntu-24.04"
+    ],
+    "returncode": 0,
+    "stdout": "T\u0000h\u0000e\u0000 \u0000o\u0000p\u0000e\u0000r\u0000a\u0000t\u0000i\u0000o\u0000n\u0000 \u0000c\u0000o\u0000m\u0000p\u0000l\u0000e\u0000t\u0000e\u0000d\u0000 \u0000s\u0000u\u0000c\u0000c\u0000e\u0000s\u0000s\u0000f\u0000u\u0000l\u0000l\u0000y\u0000.\u0000 \u0000\r\u0000\n\u0000",
+    "stderr": ""
+  },
+  "worker_returncode": 1,
+  "observation_after_exit": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13564,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792050368287)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 1.203,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 291,
+          "RecordId": 13564,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1792050368287)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "observations": [
+    {
+      "started_monotonic": 112387.953,
+      "ended_monotonic": 112388.75,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":71,\"RecordId\":13556,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792050125198)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.797,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 71,
+              "RecordId": 13556,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792050125198)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 112392.968,
+      "ended_monotonic": 112393.921,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13564,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792050368287)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.953,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13564,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792050368287)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 112397.984,
+      "ended_monotonic": 112398.796,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13564,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792050368287)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.812,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13564,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792050368287)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 112402.984,
+      "ended_monotonic": 112405.437,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13564,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792050368287)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 2.453,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13564,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792050368287)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 112408.0,
+      "ended_monotonic": 112411.046,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13564,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792050368287)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 3.046,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13564,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792050368287)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 112413.0,
+      "ended_monotonic": 112417.875,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13564,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792050368287)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 4.875,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13564,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792050368287)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 112418.0,
+      "ended_monotonic": 112419.484,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13564,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792050368287)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 1.484,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13564,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792050368287)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 112423.0,
+      "ended_monotonic": 112424.203,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":13564,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792050368287)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 1.203,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 13564,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792050368287)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    }
+  ],
+  "observer_healthy": true,
+  "worker_evidence_error": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\wattz\\\\Documents\\\\ChatGPT\\\\modly\\\\proof\\\\docs\\\\compatibility\\\\amd-turret-texture-owner-evidence\\\\run\\\\guest\\\\results.json'",
+  "elapsed_seconds": 36.296999999991385,
+  "finished_utc": "2026-10-15T07:46:42.561602+00:00"
+}

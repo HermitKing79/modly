@@ -1,0 +1,5 @@
+{"phase": "gate-wait", "utc": "2026-10-15T07:46:12.938921+00:00", "monotonic_seconds": 3.824263083, "gpu_allowed": false}
+{"phase": "gate-authorized", "utc": "2026-10-15T07:46:13.576594+00:00", "monotonic_seconds": 4.461940928, "gpu_allowed": true}
+{"phase": "tunable-after-torch-import", "utc": "2026-10-15T07:46:26.100515+00:00", "monotonic_seconds": 16.985861457, "tunable": {"flags": {"enabled": false, "tuning": false, "record_untuned": false}, "environment": {"PYTORCH_TUNABLEOP_ENABLED": "0", "PYTORCH_TUNABLEOP_TUNING": "0", "PYTORCH_TUNABLEOP_RECORD_UNTUNED": "0"}}}
+{"phase": "native-import-entry", "utc": "2026-10-15T07:46:26.635415+00:00", "monotonic_seconds": 17.520760732, "gpu": {"name": "AMD Radeon RX 9070 XT", "architecture": "gfx1201", "count": 1, "total_bytes": 16974905344, "free_bytes": 14579568640, "property_total_bytes": 16974905344}}
+{"phase": "native-qualified-CPU-preparation-entry", "utc": "2026-10-15T07:46:26.924094+00:00", "monotonic_seconds": 17.809441665, "memory": {"allocated": 0, "reserved": 0}}

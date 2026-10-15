@@ -1,0 +1,61 @@
+{
+  "classification": "UNKNOWN",
+  "reviewer": "texture_decode_review independent agent",
+  "reviewed_utc": "2026-10-15T07:50:08.5587547Z",
+  "harness_commit": "1b1db019fb1609add72e09add79d97bcd8873405",
+  "assessment": "The single conditional production launch was stopped by the combined host RAM/D-disk floor during strict CPU preparation. The qualified CPU ownership/persistence result remains valid, but no genuine texture field was produced.",
+  "resource_evidence": {
+    "error": "Host RAM/D-disk floor failed",
+    "failing_sample_recorded": false,
+    "required_RAM_bytes": 12884901888,
+    "required_D_free_bytes": 53687091200,
+    "initial_available_RAM_bytes": 18454679552,
+    "initial_D_free_bytes": 75137884160,
+    "last_successful_minimum_RAM_bytes": 13013250048,
+    "last_successful_minimum_D_free_bytes": 75137884160,
+    "interpretation": "host_admission raises before returning or recording the failing values. The records establish that RAM was below its floor, D free space was below its floor, or both. They do not identify the failed quantity or exact deficit. Last successful minima are not the failing sample."
+  },
+  "progress": {
+    "initial_GPU_free_bytes": 14579568640,
+    "initial_GPU_total_bytes": 16974905344,
+    "initial_GPU_admission": "Journaled native-import-entry confirms admitted gfx1201/RX 9070 XT and initial free-memory gate.",
+    "after_Torch_import_TunableOp": "enabled=false; tuning=false; record_untuned=false; all three environment values 0",
+    "last_guest_event": "native-qualified-CPU-preparation-entry at 2026-10-15T07:46:26.924094+00:00",
+    "Torch_memory_at_that_event": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "native_scope": "Frozen source reaches that journal only after native path/hash, 18 bindings, synchronization, deadline, zero-allocation and inactive Triton-helper checks.",
+    "strict_CPU_load_completion": "UNPROVED",
+    "GPU_decode_stage_recorded": false,
+    "decoder_forward_recorded": false,
+    "guest_final_results_present": false,
+    "permanent_field_entries": 0
+  },
+  "containment": {
+    "forced_job_cleanup": true,
+    "active_before_cleanup": 4,
+    "active_after_cleanup": 0,
+    "owned_tree_exit_verified": true,
+    "named_distro_termination_returncode": 0,
+    "observer_healthy": true,
+    "recorded_WSL_client_returncode": 1,
+    "host_elapsed_seconds": 36.296999999991385,
+    "release_limit": "Forced process containment and healthy host observation do not establish clean worker termination, final zero Torch allocation, reserved-memory release or workspace cleanup. The native-entry zero-memory sample is not a final release measurement."
+  },
+  "retained_CPU_qualification": "The separate one real WSL CPU fixture and independent Windows payload/SID/ACL readback remain PASS; probe SHA-256 92dc27521f2adeb4394e80a6b361b162c3b7aadd9947cb53e66809579f989fe5. This does not establish production model numerical validity or full-field persistence.",
+  "identity_checks": "All 28 frozen candidate files still match their manifest hashes.",
+  "disposition": "Retain the consumed production attempt marker and evidence. No retry, source correction, additional WSL run or GPU action was performed by this reviewer.",
+  "reviewer_actions": "Read-only source, journal, result, manifest and empty-field inspection plus this JSON only; no tests or Torch/model/native imports.",
+  "evidence_sha256": {
+    "candidate-identities.json": "2ff8c5cedb5dd8b127871a9a5496e84666c199a165024ca0d781440eb802858a",
+    "decode.py": "fc02b386519ce3c58e4a0632fef08ce1fe714344586a536f1901dd11aa9f453d",
+    "neural-attempt.marker": "a4c6c1ed446ae1d9ebaf44e49bd0c6007a012ab9a4c8a460bfcc6effe2ec2c33",
+    "run/results.json": "db03fa78d70fa1c7d73eaaa230ef081991041c5e805d2a5d1f57b5d90870428e",
+    "run/phases.jsonl": "2e764f8fcdf46512a2f55a963a2de74a3ca09cc646816d42e28613598f8d935a",
+    "run/guest/phases.jsonl": "f547a370857372abcdfae11da1dfd7b46cbb1ffb2522984046f7371e01c67c1f",
+    "cold-run/CPU-verdict.json": "9ec8dcc4437f8cc4846f2d1fae7c9782542209841d4e65fa8be325fb0daa2f40",
+    "independent-cpu-acceptance-review.json": "a1cdc1ef876e503a53d2d064536af26b433b203c18b67f871adf66ebbc4c01b7",
+    "persistence-preflight.json": "bd32909708e8774424d5b339496da8c5a2d0da0f52cb2a29122ee43ec8943235"
+  }
+}
