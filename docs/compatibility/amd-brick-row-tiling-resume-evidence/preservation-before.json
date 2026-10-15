@@ -1,0 +1,91 @@
+{
+  "schema": "modly.amd.brick-row-tiling-resume-preservation-before.v1",
+  "created_utc": "2026-10-15T14:48:01.625422+00:00",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "mission_base": "43a637d51f668c787a2335606a4516a54145ab61",
+  "protected_files": {
+    "checked": 100,
+    "unchanged": 100,
+    "changed_or_missing": 0,
+    "intentional_proof_harness_edits_excluded": true
+  },
+  "archive_and_local_only": {
+    "archive_SHA256_matches": 2,
+    "CRC_readback_members": 40,
+    "current_files_unchanged": 20
+  },
+  "amd_source": {
+    "HEAD": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+    "HEAD_status_nodes_and_backup_match_previous": true
+  },
+  "environment": {
+    "comparison": {
+      "amd": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      },
+      "modly": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      }
+    },
+    "native_identities": 12,
+    "historical_source_identities": 13,
+    "selected_packages": {
+      "amd": 13,
+      "modly": 15
+    }
+  },
+  "saved_brick_shape": {
+    "source_job": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/results.json",
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "rows": 4430,
+    "CPU_reader_lineage_and_canonical_denormalization_passed": true,
+    "saved_files_unchanged": 5,
+    "artifacts": [
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-raw.npy",
+        "bytes": 567168,
+        "sha256": "28ec1d009e88e1c03686b1bd283786dc0bca6f77b37e014088c439b3a2001317"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-denormalized.npy",
+        "bytes": 567168,
+        "sha256": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-coordinates.npy",
+        "bytes": 71008,
+        "sha256": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-initial-noise.npy",
+        "bytes": 567168,
+        "sha256": "247b5cf76038d0b8fa54ed9cecf88dcab57c5facebbde4ede4066cfb44ce6c15"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-provenance.json",
+        "bytes": 17247,
+        "sha256": "9772ca2b523e324179e260b3fba7c7d61a1519fb923b78651f3c4613b7d08255"
+      }
+    ]
+  },
+  "earlier_attempts": {
+    "original_C4_authenticated_receipts_unchanged": 3,
+    "last_RAM_stopped_attempt_raw_unchanged": 9,
+    "raw_modified": false
+  },
+  "private_receipt": {
+    "alias": "workspace-artifacts/amd-brick-row-tiling-resume-43a637d/preservation-before.json",
+    "sha256": "8aecbfcd9f9c4a905597abe3ba2f602f387f2bcd3568fed087056ff1cca41365"
+  },
+  "scope_limits": [
+    "No GPU/WSL start, model/native imports, tests/builds, network or Git mutations.",
+    "Selected13 AMD and15 Modly distribution metadata, pyvenv.cfg,12 native PE/payload identities and13 historical sources checked; no exhaustive environment tree hash.",
+    "No model-weight payload re-stream or fresh Linux filesystem inventory; existing authenticated runtime checkpoint preflight evidence retained."
+  ],
+  "GPU_WSL_model_imports_tests_network_Git_mutations": false,
+  "identity_concerns": []
+}

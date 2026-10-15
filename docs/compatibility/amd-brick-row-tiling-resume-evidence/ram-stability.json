@@ -1,0 +1,35 @@
+{
+  "scope": "read-only GlobalMemoryStatusEx stability samples; no Torch/WSL/GPU",
+  "samples": [
+    {
+      "utc": "2026-10-15T14:44:49.083147+00:00",
+      "available_ram_bytes": 20128989184,
+      "available_GiB": 18.74658203125,
+      "D_free_bytes": 74690142208,
+      "required_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200,
+      "existing_floor_pass": true
+    },
+    {
+      "utc": "2026-10-15T14:44:54.083935+00:00",
+      "available_ram_bytes": 20402966528,
+      "available_GiB": 19.00174331665039,
+      "D_free_bytes": 74690142208,
+      "required_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200,
+      "existing_floor_pass": true
+    },
+    {
+      "utc": "2026-10-15T14:44:59.084217+00:00",
+      "available_ram_bytes": 20469538816,
+      "available_GiB": 19.063743591308594,
+      "D_free_bytes": 74690142208,
+      "required_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200,
+      "existing_floor_pass": true
+    }
+  ],
+  "all_existing_floors_pass": true,
+  "minimum_available_bytes": 20128989184,
+  "range_bytes": 340549632
+}

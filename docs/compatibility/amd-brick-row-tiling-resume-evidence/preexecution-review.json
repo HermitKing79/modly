@@ -1,0 +1,28 @@
+{
+  "schema": "modly.amd.brick-row-tiling-resume-preexecution-review.v1",
+  "reviewed_utc": "2026-10-15T14:46:02.044Z",
+  "result": "CLEAR",
+  "harness_commit": "43a637d51f668c787a2335606a4516a54145ab61",
+  "prior_executed_harness": "e0388f8e15bdc3355de0505459be1f0bf6742051",
+  "code_unchanged": true,
+  "checked": "The revision delta contains only seven result/report files. All 11 source hashes in prior CPU qualification and all 11 source/default-policy hashes in prior independent review match current bytes; tracked source is clean.",
+  "prior_receipts": {
+    "docs/compatibility/amd-brick-row-tiling-evidence/cpu-qualification.json": "a6937105128f88418b9d6e9082bbf705fd1edc927d330c37b7a18d2966c99862",
+    "docs/compatibility/amd-brick-row-tiling-evidence/preexecution-review.json": "25659443bae392fedd6df2074ff2f8b8106c2ed2bc8f5a0ba00295a3f97afc11"
+  },
+  "fresh_host_stage": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode",
+  "fresh_host_stage_absent_at_review": true,
+  "guest_run_root": "/home/modly/run-brick-row-tiling-resume-43a637d-v1",
+  "guest_scope": "Valid existing contract ownership syntax; actual guest absence/exclusive creation remains an execution gate, not independently inspected.",
+  "old_marker_sha256": {
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/decode/decode-attempt-started.json": "0ca6b51f5f8316a56a6dd5b8be98d988e116bf1d181f8b9232a0e67c11728e97",
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-ebeb48c/decode/decode-attempt-started.json": "5973722b0cd7308ec6c4abed65f122fc9e142f723556237d371a2b919e9cf6b8"
+  },
+  "old_attempt_markers_preserved": true,
+  "admission": "Current revision is reusable with the exact harness commit above and explicit --tile-large-convolutions. Root must still pass existing source/input/resource preflight, exclusive ownership and unchanged live safety checks; this review makes no current resource-admission claim.",
+  "execution_limit": "One human-authorized fresh attempt only; no retry or source change.",
+  "tests_run": false,
+  "gpu_execution": false,
+  "wsl_execution": false,
+  "source_edits": false
+}

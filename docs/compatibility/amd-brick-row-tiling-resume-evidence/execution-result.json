@@ -1,0 +1,364 @@
+{
+  "schema": "modly.amd.brick-row-tiling-resume-result.v1",
+  "created_utc": "2026-10-15T14:54:15.141000+00:00",
+  "classification": "PARTIAL",
+  "goal": "Authenticated full neural output not achieved",
+  "harness_commit": "43a637d51f668c787a2335606a4516a54145ab61",
+  "code_modified": false,
+  "attempts": 1,
+  "retry": false,
+  "run_contract_sha256": "045c814bddd86f7b8512fc926bf9d69405d55ac033ed01d8c5cae44851cc6c88",
+  "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+  "input_sha256": {
+    "shape-latent-denormalized.npy": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808",
+    "coords.npy": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c"
+  },
+  "input_rows": 4430,
+  "runtime": {
+    "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "distribution_version": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "git_version": "ff65f5bc672795c5e5033900ea0a0c4f8566c8cf",
+    "hip": "7.2.53211-e1a6bc5663",
+    "cuda": null,
+    "python": "3.12.3",
+    "gpu_initialized_before": false
+  },
+  "gpu": {
+    "name": "AMD Radeon RX 9070 XT",
+    "architecture": "gfx1201",
+    "count": 1,
+    "total_bytes": 16974905344,
+    "free_bytes": 15138869248,
+    "property_total_bytes": 16974905344
+  },
+  "checkpoint": {
+    "bytes": 948490494,
+    "freshly_streamed_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "header_sha256": "80dc6403ca284a2361109cde3190bc1b5ea5d30936e8f80625cbbc0827062c83"
+  },
+  "strict_loaded_entries": 292,
+  "runtime_dtype_counts": {
+    "BF16": 216,
+    "F32": 76
+  },
+  "forward_calls": 1,
+  "event_counts": {
+    "conv_completed": 39,
+    "c2s_completed": 6,
+    "large-tile-entry": 84,
+    "large-tile-return": 84,
+    "native-host-return": 4,
+    "final-tile-return": 0
+  },
+  "convolutions_required": 40,
+  "support_lineage_completed": [
+    4430,
+    21391,
+    97313,
+    438684
+  ],
+  "C2S_operations": [
+    {
+      "site": "blocks.0.4.updown",
+      "call": 1,
+      "parents": 4430,
+      "children": 21391,
+      "memory": {
+        "free_bytes": 13337030656,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1106567168,
+        "reserved_bytes": 1650458624
+      }
+    },
+    {
+      "site": "blocks.0.4.updown",
+      "call": 2,
+      "parents": 4430,
+      "children": 21391,
+      "memory": {
+        "free_bytes": 13337030656,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1076095488,
+        "reserved_bytes": 1650458624
+      }
+    },
+    {
+      "site": "blocks.1.16.updown",
+      "call": 1,
+      "parents": 21391,
+      "children": 97313,
+      "memory": {
+        "free_bytes": 12780220416,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1204155904,
+        "reserved_bytes": 2206203904
+      }
+    },
+    {
+      "site": "blocks.1.16.updown",
+      "call": 2,
+      "parents": 21391,
+      "children": 97313,
+      "memory": {
+        "free_bytes": 12780220416,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1130552320,
+        "reserved_bytes": 2206203904
+      }
+    },
+    {
+      "site": "blocks.2.8.updown",
+      "call": 1,
+      "parents": 97313,
+      "children": 438684,
+      "memory": {
+        "free_bytes": 11437477888,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1426099200,
+        "reserved_bytes": 3546284032
+      }
+    },
+    {
+      "site": "blocks.2.8.updown",
+      "call": 2,
+      "parents": 97313,
+      "children": 438684,
+      "memory": {
+        "free_bytes": 11435642880,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1261897216,
+        "reserved_bytes": 3546284032
+      }
+    }
+  ],
+  "large_tiled_convolutions": [
+    {
+      "site": "blocks.2.8.conv2",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": false,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.0.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.1.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.2.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.3.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.4.conv1",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 512,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    }
+  ],
+  "fourth_learned_count": {
+    "phase": "c2s-count-before-admission",
+    "utc": "2026-10-15T14:51:26.985585+00:00",
+    "monotonic_seconds": 85.860268761,
+    "elapsed_gpu_seconds": 55.04718037599999,
+    "site": "blocks.3.4.updown",
+    "call": 1,
+    "parents": 438684,
+    "children": 1957891,
+    "children_per_parent_mean": 4.463101002088063,
+    "children_per_parent_maximum": 8,
+    "mask_shape": [
+      438684,
+      8
+    ],
+    "mask_dtype": "torch.bool",
+    "source": {
+      "module": "trellis2.modules.sparse.spatial.spatial2channel",
+      "qualname": "SparseChannel2Spatial.forward",
+      "path": "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/spatial/spatial2channel.py",
+      "sha256": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c"
+    },
+    "mask_source": {
+      "module": "trellis2.models.sc_vaes.sparse_unet_vae",
+      "qualname": "SparseResBlockC2S3d._forward",
+      "path": "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sc_vaes/sparse_unet_vae.py",
+      "sha256": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce"
+    },
+    "memory": {
+      "free_bytes": 11531587584,
+      "total_bytes": 16974905344,
+      "allocated_bytes": 1684097024,
+      "reserved_bytes": 3451912192
+    },
+    "row_limit": 1000000,
+    "zero_children": false,
+    "over_row_limit": true,
+    "row_limits_would_reject": true,
+    "bounded_fourth_support": false,
+    "feature_channels": 512,
+    "skip_channels": 128,
+    "out_channels": 64,
+    "parent_spatial_shape": [
+      224,
+      212,
+      256
+    ]
+  },
+  "applicable_final_row_cap": 1842968,
+  "selected_child_excess": 114923,
+  "fourth_expansion_performed": false,
+  "final_convolution_performed": false,
+  "error_type": "AdmissionStop",
+  "error": "PARTIAL: fourth C2S differs from the proven full support/widths",
+  "native_or_numerical_failure_demonstrated": false,
+  "host_resource_all_samples_admitted": true,
+  "final_pre_marker_host_admission": {
+    "timestamp_utc": "2026-10-15T14:50:00.556655+00:00",
+    "stage": "pre-marker",
+    "available_ram_bytes": 20466962432,
+    "D_free_bytes": 74690142208,
+    "required_ram_bytes": 12884901888,
+    "required_D_free_bytes": 53687091200,
+    "admitted": true
+  },
+  "minimum_host_ram_bytes": 13806620672,
+  "minimum_D_free_bytes": 74522365952,
+  "CPU_decoder_load_seconds": 11.778628698000002,
+  "CPU_high_water_bytes": 2786889728,
+  "last_convolution_host_return_gpu_elapsed_seconds": 54.903248846000004,
+  "stop_gpu_elapsed_seconds": 55.04718037599999,
+  "complete_forward_synchronized_seconds": null,
+  "worker_elapsed_seconds": 81.125603622,
+  "supervisor_elapsed_seconds": 91.375,
+  "memory_peak": {
+    "allocated": 3354263040,
+    "reserved": 4389339136
+  },
+  "memory_release": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "device_memory_after_release": {
+    "free_bytes": 14986571776,
+    "total_bytes": 16974905344
+  },
+  "tensors_and_models_collected": {
+    "GPU_input_output_tensors_collected": true,
+    "CPU_model_collected": true,
+    "CPU_parameters_collected": true,
+    "CPU_component_collected": true
+  },
+  "patches_restored": {
+    "large_convolution_patch_restored": true,
+    "final_convolution_patch_restored": true
+  },
+  "workspace_clear_calls": 1,
+  "cache_reclaim_attempts": 0,
+  "import_policy_rejections": 0,
+  "observer_healthy": true,
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "windows_job_grace": {
+    "empty": true,
+    "seconds": 0.0,
+    "limit_seconds": 5.0
+  },
+  "named_distro_termination_returncode": 0,
+  "worker_returncode": 1,
+  "complete_output_artifact": null,
+  "raw_local_evidence": {
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/decode-attempt-started.json": {
+      "bytes": 376,
+      "sha256": "2b0e79fb555addc9a9f62be9fa789d0dd728b95222acf1af69a58025be698c29"
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/final-result.json": {
+      "bytes": 276,
+      "sha256": "f98988f9f364cd976f6953eafae2d90e50fcf4725d20b6defd5db4f8bec4c634"
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/resource-admission.jsonl": {
+      "bytes": 20793,
+      "sha256": "301d52f306b5a9c309c0d3b67258945757d53ae7f5b1c1db50e52529719efea2"
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run-contract.json": {
+      "bytes": 1441,
+      "sha256": "16eb115d975b1340c4c2781bf8f4451e59aa7e2bc81d7a00efa3e185d2746ad9"
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/phases.jsonl": {
+      "bytes": 1323,
+      "sha256": "acc17a109aba9cc7ca35f24ffa6c5ab9e9ed7454295799fb3cbad36d4a923dcc"
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/results.json": {
+      "bytes": 224071,
+      "sha256": "547bbabfd9f1e7f924b7b6795a332f292f00f0a5b4077ce9e22829a8f8fe2ebe"
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/worker.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/worker.stdout.txt": {
+      "bytes": 434,
+      "sha256": "95ef875f5b0ac8e3e7f8dc55fc831074eac21fe6c57bd390690c7f7032571f1d"
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/guest/phases.jsonl": {
+      "bytes": 179941,
+      "sha256": "8a94cb6418b0cad86a01f909cb678a13ccd0b264abbc7e3eadb1dd2ab7132084"
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/guest/results.json": {
+      "bytes": 162487,
+      "sha256": "4a14be63f19de90ad3bc74e4feb498767928be24e1b6ea76201cffd33b79e7eb"
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/guest/run-contract.json": {
+      "bytes": 1420,
+      "sha256": "105d7aba7122ccd1ccdc359e1b72152944235501cc6088ed659188e6103a692d"
+    }
+  },
+  "next_step": "Separately qualify the actual1957891-row final C2S/final64-convolution/output-reader admission on CPU under unchanged allocator/reserves. Do not simply raise the cap or run another forward."
+}

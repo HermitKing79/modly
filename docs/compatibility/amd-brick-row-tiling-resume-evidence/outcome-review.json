@@ -1,0 +1,156 @@
+{
+  "schema": "modly.amd.brick-row-tiling-resume-outcome-review.v1",
+  "reviewed_utc": "2026-10-15T14:54:41.353Z",
+  "review_result": "CLEAR",
+  "primary_mission": "BLOCKED",
+  "actual_attempt_classification": "PARTIAL",
+  "stop_category": "UNCHANGED_FINAL_SUPPORT_QUALIFICATION_CAP",
+  "scope": "Independent read-only audit of saved host/guest results, journal, resources, source hashes and input identity. No tests, source changes, GPU, WSL or retry.",
+  "attempt": {
+    "harness_commit": "43a637d51f668c787a2335606a4516a54145ab61",
+    "root": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode",
+    "run_contract_sha256": "045c814bddd86f7b8512fc926bf9d69405d55ac033ed01d8c5cae44851cc6c88",
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "recorded_forward_invocations": 1,
+    "raw_adapter_classification": "PARTIAL",
+    "raw_supervisor_classification": "PARTIAL",
+    "raw_guest_classification": "PARTIAL"
+  },
+  "provenance": {
+    "all_prior_review_source_and_policy_hashes_match": true,
+    "tracked_source_unchanged": true,
+    "input_rows": 4430,
+    "denormalized_file_sha256": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808",
+    "coordinate_file_sha256": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c",
+    "source_job_and_both_input_file_hashes_independently_rechecked": true,
+    "checkpoint_sha256_recorded": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "native_import": "PASS",
+    "decoder_cpu": "PASS",
+    "runtime_dtype_counts": {
+      "BF16": 216,
+      "F32": 76
+    }
+  },
+  "completed_work": {
+    "journal_events": 377,
+    "convolutions_completed": 39,
+    "required_convolutions": 40,
+    "large_tiled_sites": [
+      "blocks.2.8.conv2",
+      "blocks.3.0.conv",
+      "blocks.3.1.conv",
+      "blocks.3.2.conv",
+      "blocks.3.3.conv",
+      "blocks.3.4.conv1"
+    ],
+    "rows_per_large_site": 438684,
+    "tile_rows": 32768,
+    "tiles_per_site": 14,
+    "last_tile_rows": 12700,
+    "large_tile_entries": 84,
+    "large_tile_returns": 84,
+    "first_large_map_fresh_then_same_map_reused_at_five_sites": true,
+    "C2S_operations_completed": 6,
+    "learned_levels_expanded": 3,
+    "native_global_map_calls": 4,
+    "final64_tile_entries": 0,
+    "final64_rows": 0,
+    "interpretation": "The six added row-tiled convolutions completed in this genuine run. This establishes execution under the unchanged guards, not complete neural output or independent numerical equivalence of all GPU outputs."
+  },
+  "actual_stop": {
+    "type": "AdmissionStop",
+    "error": "PARTIAL: fourth C2S differs from the proven full support/widths",
+    "site": "blocks.3.4.updown",
+    "call": 1,
+    "parents": 438684,
+    "authentic_selected_children": 1957891,
+    "source_mask": "Original strict >0 learned mask, supplied as source-validated boolean support before C2S expansion.",
+    "mask_shape": [
+      438684,
+      8
+    ],
+    "mask_dtype": "torch.bool",
+    "children_per_parent": 4.463101002088063,
+    "mathematical_child_upper_bound": 3509472,
+    "applicable_final_cap": 1842968,
+    "excess_rows": 114923,
+    "excess_percent": 6.235756670761511,
+    "plan_selection": "admission._up_pre selects final_c2s_plan for stage3; it requires children<=min(8*parents,FINAL_ROWS). The recorded widths 512/128/64 match; child support exceeds FINAL_ROWS.",
+    "generic_journal_row_limit": 1000000,
+    "generic_limit_note": "The generic row_limit/over_row_limit fields describe intermediate diagnostics. The fourth-stage guard uses the separate 1,842,968 final cap; 1M is not the applicable limit.",
+    "expansion_admitted": false,
+    "fourth_expansion_completed": false,
+    "final_neighbor_map_created": false,
+    "final_convolution_executed": false,
+    "neural_artifact_verified_or_delivered": false,
+    "secondary_acceptance_error": "Final run support outside qualified bounds"
+  },
+  "cleanup_and_resources": {
+    "Torch_allocator_peak": {
+      "allocated": 3354263040,
+      "reserved": 4389339136
+    },
+    "measured_Torch_release": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "owned_GPU_tensors_collected": true,
+    "CPU_model_collected": true,
+    "large_patch_restored": true,
+    "final_patch_restored": true,
+    "cache_reclaim_attempts": 0,
+    "natural_empty_Job": true,
+    "forced_job_cleanup": false,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "observer_healthy": true,
+    "named_distro_termination_returncode": 0,
+    "minimum_recorded_host_RAM_bytes": 13806620672,
+    "required_host_RAM_bytes": 12884901888,
+    "minimum_recorded_D_free_bytes": 74522365952,
+    "resource_rejections": 0
+  },
+  "evidence_sha256": {
+    "final-result.json": "f98988f9f364cd976f6953eafae2d90e50fcf4725d20b6defd5db4f8bec4c634",
+    "resource-admission.jsonl": "301d52f306b5a9c309c0d3b67258945757d53ae7f5b1c1db50e52529719efea2",
+    "run-contract.json": "16eb115d975b1340c4c2781bf8f4451e59aa7e2bc81d7a00efa3e185d2746ad9",
+    "run/results.json": "547bbabfd9f1e7f924b7b6795a332f292f00f0a5b4077ce9e22829a8f8fe2ebe",
+    "run/guest/results.json": "4a14be63f19de90ad3bc74e4feb498767928be24e1b6ea76201cffd33b79e7eb",
+    "run/guest/phases.jsonl": "8a94cb6418b0cad86a01f909cb678a13ccd0b264abbc7e3eadb1dd2ab7132084"
+  },
+  "final_document_review": {
+    "reviewed_utc": "2026-10-15T14:58:40.141Z",
+    "result": "CLEAR",
+    "report": {
+      "path": "docs/compatibility/amd-brick-row-tiling-resume.md",
+      "sha256": "ae4046ce75e08aab8356faab371dd63008d65af3f336bd1b81bfe30a5e43e489"
+    },
+    "derived_result": {
+      "path": "docs/compatibility/amd-brick-row-tiling-resume-evidence/execution-result.json",
+      "sha256": "03d66c89933a5c400c6d825173149c0fa75a8c747d4d5d7ac738ae83571a2b34",
+      "classification": "PARTIAL"
+    },
+    "checks": [
+      "All 11 raw-file sizes and hashes match the saved evidence; public execution/resource journal copies match raw bytes.",
+      "Neural result remains PARTIAL and full generation incomplete. No final artifact, finite-feature/readback acceptance or synchronized complete-forward timing is claimed.",
+      "Report distinguishes the applicable 1,842,968 final-support cap from the generic 1M intermediate diagnostic and correctly states the 114,923-row excess.",
+      "Completed six-site execution, 84 tile returns, natural cleanup, measured Torch release and peak counters agree with raw records.",
+      "Next action is separately approved CPU qualification of actual full support under unchanged budgets; no automatic cap raise or further GPU execution is authorized."
+    ],
+    "resolved_finding": "Publication wording now states all 76 preexisting branch heads, including main, without double-counting main.",
+    "publication": "Normal commit/push and exact historical-head preservation verification remain root-owned final actions.",
+    "tests_run": false,
+    "gpu_execution": false,
+    "wsl_execution": false
+  },
+  "next_step": "CPU-only admission qualification of the actual full 1,957,891-row support across fourth C2S, final64 convolution and output/readback, retaining all GPU budgets. This is not an automatic cap raise or authorization for another GPU attempt.",
+  "limitations": [
+    "The full parent forward, fourth expansion, final64 path and neural artifact remain incomplete.",
+    "No new-image mesh, material, GLB or UI outcome is proved.",
+    "No numerical/native failure or allocator OOM is recorded; the observed stop is the preserved support qualification guard."
+  ],
+  "reviewer_tests_run": false,
+  "reviewer_source_edits": false,
+  "reviewer_gpu_execution": false,
+  "reviewer_wsl_execution": false
+}

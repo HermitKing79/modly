@@ -1,0 +1,137 @@
+{
+  "schema": "modly.amd.brick-row-tiling-resume-preservation-after.v1",
+  "created_utc": "2026-10-15T14:53:56.687246+00:00",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "protected_files": {
+    "checked": 100,
+    "unchanged": 100,
+    "changed_or_missing": 0,
+    "intentional_proof_harness_edits_excluded": true
+  },
+  "source": {
+    "HEAD": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+    "HEAD_status_nodes_and_backup_match_before": true
+  },
+  "archives_and_local_only": {
+    "archives_hash_unchanged": 2,
+    "members_CRC_read_back": 40,
+    "current_files_unchanged": 20
+  },
+  "environment": {
+    "comparison": {
+      "amd": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      },
+      "modly": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      }
+    },
+    "selected_packages": {
+      "amd": 13,
+      "modly": 15
+    },
+    "native_identities": 12,
+    "source_identities": 13
+  },
+  "saved_brick_inputs": {
+    "rows": 4430,
+    "saved_files_unchanged": 5,
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "CPU_full_lineage_canonical_denormalization_reopened": true
+  },
+  "older_attempt_receipts": {
+    "original_C4_unchanged": 3,
+    "older_RAM_stopped_attempt_raw_unchanged": 9
+  },
+  "resume_attempt": {
+    "raw_files_read_only": [
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/decode-attempt-started.json",
+        "bytes": 376,
+        "sha256": "2b0e79fb555addc9a9f62be9fa789d0dd728b95222acf1af69a58025be698c29"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/final-result.json",
+        "bytes": 276,
+        "sha256": "f98988f9f364cd976f6953eafae2d90e50fcf4725d20b6defd5db4f8bec4c634"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/resource-admission.jsonl",
+        "bytes": 20793,
+        "sha256": "301d52f306b5a9c309c0d3b67258945757d53ae7f5b1c1db50e52529719efea2"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/guest/phases.jsonl",
+        "bytes": 179941,
+        "sha256": "8a94cb6418b0cad86a01f909cb678a13ccd0b264abbc7e3eadb1dd2ab7132084"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/guest/results.json",
+        "bytes": 162487,
+        "sha256": "4a14be63f19de90ad3bc74e4feb498767928be24e1b6ea76201cffd33b79e7eb"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/guest/run-contract.json",
+        "bytes": 1420,
+        "sha256": "105d7aba7122ccd1ccdc359e1b72152944235501cc6088ed659188e6103a692d"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/phases.jsonl",
+        "bytes": 1323,
+        "sha256": "acc17a109aba9cc7ca35f24ffa6c5ab9e9ed7454295799fb3cbad36d4a923dcc"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/results.json",
+        "bytes": 224071,
+        "sha256": "547bbabfd9f1e7f924b7b6795a332f292f00f0a5b4077ce9e22829a8f8fe2ebe"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/worker.stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run/worker.stdout.txt",
+        "bytes": 434,
+        "sha256": "95ef875f5b0ac8e3e7f8dc55fc831074eac21fe6c57bd390690c7f7032571f1d"
+      },
+      {
+        "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-resume-43a637d/decode/run-contract.json",
+        "bytes": 1441,
+        "sha256": "16eb115d975b1340c4c2781bf8f4451e59aa7e2bc81d7a00efa3e185d2746ad9"
+      }
+    ],
+    "classification": "PARTIAL",
+    "forward_calls": 1,
+    "convolutions_completed": 39,
+    "large_tiled_sites_completed": 6,
+    "fourth_learned_children": 1957891,
+    "unchanged_final_row_limit": 1842968,
+    "memory_release": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "job_exited_naturally": true,
+    "job_active_before_cleanup": 0,
+    "job_active_after_cleanup": 0,
+    "named_distro_termination_returncode": 0,
+    "observer_healthy": true,
+    "final_guest_result_and_journal_present": true,
+    "neural_artifact_absent": true
+  },
+  "private_receipt": {
+    "alias": "workspace-artifacts/amd-brick-row-tiling-resume-43a637d/preservation-after.json",
+    "sha256": "1cd55712d7e84a4213db046d63580e5357d6acabfd157a033cdff260c7738498"
+  },
+  "scope_limits": [
+    "No GPU/WSL start, model/native imports, tests/builds, network or Git mutations.",
+    "Selected13 AMD and15 Modly distribution metadata, pyvenv.cfg,12 native PE/payload identities and13 historical sources checked; no exhaustive environment tree hash.",
+    "No model-weight payload re-stream or fresh Linux filesystem inventory; existing authenticated runtime checkpoint preflight evidence retained."
+  ],
+  "GPU_WSL_model_imports_tests_network_Git_mutations": false,
+  "raw_files_modified": false
+}
