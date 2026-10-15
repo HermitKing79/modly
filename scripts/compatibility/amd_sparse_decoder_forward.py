@@ -65,13 +65,15 @@ def prepare_private_cache(scratch):
             'runtime_libraries':plan['runtime_libraries'],'private_copy_hashes_verified':True}
 
 
-def verify_committed_files(commit,files=None):
+def verify_committed_files(commit,files=None,*,timeout_seconds=5):
+    if type(timeout_seconds) not in (int,float) or not 0<timeout_seconds<=30:
+        raise ValueError('Read-only Git timeout must be finite and at most30 seconds')
     if len(commit)!=40 or any(char not in '0123456789abcdef' for char in commit):
         raise ValueError('Supply the exact published harness commit SHA')
     hashes={}
     for name in COMMITTED_FILES if files is None else files:
         try:
-            committed=subprocess.run(['git','show',commit+':'+name],cwd=ROOT,capture_output=True,check=True,timeout=5).stdout
+            committed=subprocess.run(['git','show',commit+':'+name],cwd=ROOT,capture_output=True,check=True,timeout=timeout_seconds).stdout
         except subprocess.CalledProcessError as exc:
             raise RuntimeError('Required harness dependency is absent from the published commit: '+name) from exc
         working=(ROOT/name).read_bytes()

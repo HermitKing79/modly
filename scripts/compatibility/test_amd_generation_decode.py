@@ -24,6 +24,23 @@ except ModuleNotFoundError as error:
 
 @unittest.skipIf(subject is None,'Host adapter not implemented')
 class DecodeHostTests(unittest.TestCase):
+    def test_git_read_timeout_preserves_default_and_exact_content_checks(self):
+        import amd_sparse_decoder_forward as verifier
+        path=self.root/'published.py';path.write_bytes(b'expected\r\n')
+        with patch.object(verifier,'ROOT',self.root),patch.object(verifier.subprocess,'run',return_value=SimpleNamespace(stdout=b'expected\n')) as call:
+            verifier.verify_committed_files('1'*40,['published.py'])
+            self.assertEqual(call.call_args.kwargs['timeout'],5)
+            verifier.verify_committed_files('1'*40,['published.py'],timeout_seconds=subject.GIT_READ_SECONDS)
+            self.assertEqual(call.call_args.kwargs['timeout'],15)
+            call.return_value.stdout=b'changed\n'
+            with self.assertRaisesRegex(RuntimeError,'differs from published'):
+                verifier.verify_committed_files('1'*40,['published.py'],timeout_seconds=15)
+    def test_git_read_timeout_rejects_invalid_budgets_before_command(self):
+        import amd_sparse_decoder_forward as verifier
+        with patch.object(verifier.subprocess,'run') as call:
+            for value in (0,-1,31,True,float('inf'),float('nan'),'15'):
+                with self.assertRaises(ValueError):verifier.verify_committed_files('1'*40,[],timeout_seconds=value)
+            call.assert_not_called()
     def setUp(self):
         import numpy as np
         self.np=np

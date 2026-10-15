@@ -1,0 +1,30 @@
+{
+  "scope": "CPU-only pre-marker launch",
+  "classification": "BLOCKED",
+  "candidate_commit": "1863027cc5ad16419a741020dfb6a60df98e6873",
+  "recorded_utc": "2026-10-15T13:26:13.866932+00:00",
+  "command": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "exception": "subprocess.TimeoutExpired: command timed out after 5 seconds",
+  "WSL_started": false,
+  "checkpoint_loaded": false,
+  "GPU_attempt_started": false,
+  "decode_evidence_directory_existed_after_failure": false,
+  "attempt_marker_existed_after_failure": false,
+  "one_read_only_observation": {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "timeout_seconds": 15,
+    "elapsed_seconds": 1.9219999999986612,
+    "returncode": 0,
+    "stdout_commit": "1863027cc5ad16419a741020dfb6a60df98e6873"
+  },
+  "diagnosis": "A host read-only Git deadline expired; underlying cause is not established. This does not demonstrate an AMD inference failure.",
+  "proposed_correction": "Bound only new-owner Git preflight reads at15 seconds; retain historical default5 and every model/native/GPU timeout."
+}

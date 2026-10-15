@@ -25,6 +25,7 @@ CODE=ROOT/'experimental/extensions/trellis2-amd/inference_decoder'
 GUEST_ENTRY=CODE/'decode.py'
 LEGACY=ROOT/'docs/compatibility/amd-wsl-turret-artifact-writer-ready-evidence/decode.py'
 CHECKPOINT_SHA='e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581'
+GIT_READ_SECONDS=15
 STATIC_FILES=['scripts/compatibility/amd_generation_decode.py','scripts/compatibility/test_amd_generation_decode.py',
     'scripts/compatibility/amd_generation_mesh.py','scripts/compatibility/amd_flexible_dual_grid_cpu.py',
     'scripts/compatibility/amd_generation_shape.py','scripts/compatibility/amd_generation_occupancy.py',
@@ -265,14 +266,14 @@ class Runtime:
         from amd_sparse_decoder_forward import verify_committed_files,COMMITTED_FILES
         if os.environ.get('WORKSPACE_DIR')!=str(ROOT):raise ValueError('Explicit checkout WORKSPACE_DIR required')
         if self.evidence.exists():raise FileExistsError('Decode stage already exists; no automatic retry')
-        actual=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True,timeout=5).strip()
+        actual=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True,timeout=GIT_READ_SECONDS).strip()
         if actual!=self.commit:raise ValueError('Run only the exact published current HEAD')
         admission=self.host_admission()
         fresh=shape_inputs(self.bundle['source_job'].parents[1])
         if fresh['source_job_sha256']!=self.contract.source_job_sha256:raise ValueError('Source shape job changed')
         names=sorted(set(STATIC_FILES+list(COMMITTED_FILES)+list(self.bundle['required_files'])+
             [p.relative_to(ROOT).as_posix() for p in CODE.glob('*.py')]))
-        verified=verify_committed_files(self.commit,names)
+        verified=verify_committed_files(self.commit,names,timeout_seconds=GIT_READ_SECONDS)
         if digest(ROOT/'scripts/compatibility/amd_wsl_native_import_policy.py')!='8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd':
             raise ValueError('Qualified native policy changed')
         preserved=read_json(LEGACY.parent/'preservation-before.json')

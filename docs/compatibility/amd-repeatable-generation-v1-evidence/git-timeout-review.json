@@ -1,0 +1,34 @@
+{
+  "schema": "modly.amd.git-read-timeout-review.v1",
+  "reviewed_utc": "2026-10-15T13:26:42.4469909Z",
+  "classification": "CLEAR",
+  "blocking_findings": [],
+  "scope": "Independent read-only review of the bounded Git preflight timeout correction before publication and the first genuine decode attempt.",
+  "source_sha256": {
+    "scripts/compatibility/amd_generation_decode.py": "04d52261331cb7da79cb667f01f668c6b914af9e0e84895c98863f1231d6e5a3",
+    "scripts/compatibility/amd_sparse_decoder_forward.py": "7d0d44e49aee42dc6154df9ae392d5df219a580dd87b214bc47d2f2331999fa8",
+    "scripts/compatibility/test_amd_generation_decode.py": "1beefedbcc51b8dbce3cdc06b8fcbfb343af8f643c9fb4489288765f1f36a95c"
+  },
+  "checks": {
+    "historical_git_show_default_seconds": 5,
+    "new_owner_head_and_git_show_seconds": 15,
+    "explicit_timeout_must_be_numeric_finite_positive_and_at_most_seconds": 30,
+    "boolean_string_nan_infinite_and_out_of_range_timeout_rejected_before_command": true,
+    "exact_head_and_committed_content_equality_checks_preserved": true,
+    "only_existing_crlf_normalization_permitted": true,
+    "no_retry_or_command_substitution_added": true,
+    "model_native_gpu_and_host_execution_deadlines_unchanged": true,
+    "memory_resource_containment_go_eof_and_cleanup_guards_unchanged": true,
+    "changes_remain_before_attempt_marker_and_wsl_launch": true
+  },
+  "validation": {
+    "root_reported_cpu_tests_passed": 16,
+    "focused_regressions": ["historical default5 and explicit15 with matching content", "changed committed content rejected", "invalid timeout rejected before command"],
+    "actual_4430_source_reader_included": true,
+    "tests_rerun_by_reviewer": false,
+    "whitespace_check_passed": true,
+    "prelaunch_failure_record": "docs/compatibility/amd-repeatable-generation-v1-evidence/prelaunch-git-timeout.json"
+  },
+  "reviewer_executed_wsl_or_gpu": false,
+  "limitations": "The read-only Git timeout cause remains undetermined. This correction does not establish successful neural execution; publication and all existing runtime gates remain required."
+}
