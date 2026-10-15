@@ -1,0 +1,12 @@
+{
+  "phase": "new-image Windows DINO/sparse-sampling/native-occupancy",
+  "independent_reviewer": "generation_architecture_audit",
+  "blocking_findings": [],
+  "review": "Only staged image/contract identity and artifact routing are parameterized. Worker script and four environment identity values are validated. Original model/sampler/precision/cache/Job/observer/deadline/release guards remain. Optional diagnostic voxel preview is explicitly omitted, without modifying or relaxing its historical cap.",
+  "focused_CPU_tests": 9,
+  "focused_CPU_tests_passed": true,
+  "actual_AMD_python_contract_reproduced": true,
+  "source_sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+  "GPU_execution_at_review": false,
+  "not_full_generation_acceptance": true
+}

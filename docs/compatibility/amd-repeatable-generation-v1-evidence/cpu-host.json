@@ -1,0 +1,22 @@
+{
+  "probe": "CPU admission only",
+  "command_alias": [
+    "WINDOWS_AMD_PYTHON",
+    "-B",
+    "admission_probe.py",
+    "OWNED_OUTPUT"
+  ],
+  "deadline_seconds": 30,
+  "memory_cap_bytes": 536870912,
+  "script_sha256": "67f1a8bc7b428006a896dcd365d4b15c4bc819a50974a098c71fe2c6d235616f",
+  "returncode": 0,
+  "peak_committed_bytes": 38776832,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 2.42200000000048
+}

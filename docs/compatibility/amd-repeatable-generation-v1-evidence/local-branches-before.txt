@@ -1,0 +1,77 @@
+  codex/amd-alpha-headless-import                   4ce6767 Prove real AMD headless imports and explicit alpha-only input boundary
+  codex/amd-blaslt-workspace-teardown               065bc79 Record passing BLASLt teardown and preserved AMD environments
+  codex/amd-bounded-gpu-proof                       521d3d2 test: prove bounded AMD GPU initialization and CuMesh boundary
+  codex/amd-cached-kernel-convolution-proof         92cdb3f Record passing single cached AMD kernel launch and verified outputs
+  codex/amd-cached-neighbour-mixing-proof           1794c90 Document directory-only metadata reconciliation
+  codex/amd-dinov3-allocation-diagnosis             62409ed Document DINO allocation diagnosis and preserve conditioning features
+  codex/amd-dinov3-conditioning-proof               dfc01cb Record real DINOv3 conditioning and strict cleanup limitation
+  codex/amd-forward-diagnostic-correction           e2842ff Correct AMD forward diagnostic payload logging with CPU-only lifecycle regressions
+  codex/amd-forward-timeout-investigation           9fe6ae2 Investigate AMD decoder timeout and add bounded host diagnostics
+  codex/amd-instrumented-decoder-forward-resume     bb6988d Record PASS for the single genuine AMD decoder forward and compilation evidence
+  codex/amd-instrumented-sparse-decoder-forward     18ef067 Record PARTIAL instrumented decoder attempt stopped by GPU metadata trace collision
+  codex/amd-native-cache-dispatch-proof             06dbd15 Record installed dispatch proof publication and Git preservation
+  codex/amd-native-convolution-hook-correction      534897a Preserve single native attempt stopped at scalar-read guard
+  codex/amd-native-convolution-smoke                0e23dfc Record blocked native-convolution launch and preservation evidence
+  codex/amd-native-import-preflight                 be8a903 test: bound AMD native imports and SDK discovery preflight
+  codex/amd-native-postprocessor-admission          c9e1a35 Bound native postprocessor contracts and report full-interface NO-GO
+  codex/amd-native-python-tail-contract             d0a7cd6 Preserve single CPU tail capture failure and repair record persistence
+  codex/amd-native-scalar-dispatch-correction       493063a Guard native post1 scalar provenance with CPU acceptance evidence
+  codex/amd-object-conditioned-occupancy            27232cf Publish passing object-conditioned sparse occupancy evidence
+  codex/amd-offline-alpha-geometry-loader           74f63c8 Add offline alpha-only AMD geometry preparation via worker IPC
+  codex/amd-offline-model-audit                     d0f3426 Audit offline AMD TRELLIS assets and record headless import blocker
+* codex/amd-repeatable-generation-v1                6ea0abb Measure bounded Planar turret decimation and stop escalation
+  codex/amd-shape-decoder-cache-admission           d04f6ac Record verified AMD cache admission publication and preservation
+  codex/amd-shape-decoder-neural-proof              05e03ee Record verified neural decoder preflight publication
+  codex/amd-shape-slat-512-forward                  5eb759d docs(amd): publish successful single shape-SLat forward evidence
+  codex/amd-shape-slat-512-sampling                 1251fea Record successful canonical AMD shape-SLat sampling and verified artifacts
+  codex/amd-sparse-decoder-forward                  0f82092 Record PARTIAL decoder forward attempt stopped at guarded input copy
+  codex/amd-sparse-decoder-forward-guard-correction 7192c23 Record PARTIAL fresh decoder attempt stopped at forward-stage timeout
+  codex/amd-sparse-decoder-loading-proof            f518dea Prove offline sparse decoder CPU load and AMD placement release
+  codex/amd-sparse-flow-forward                     53c9711 docs: record sparse-flow attempt blocked by host memory guard
+  codex/amd-sparse-flow-forward-resume              6c1b882 docs: record bounded sparse-flow execution and transfer guard gap
+  codex/amd-sparse-flow-transfer-guard-correction   38e73a5 fix: guard exact sparse-flow timestep frequency transfer
+  codex/amd-sparse-occupancy-decode                 4f375f9 Preserve successful AMD saved-latent decode and native voxel preview
+  codex/amd-sparse-slab-diagnosis                   39ddc2b Document CPU-only sparse occupancy slab diagnosis
+  codex/amd-sparse-structure-sampling               26fc3aa Record first image-conditioned sparse-structure sampling PASS
+  codex/amd-trellis2-bounded-proof                  874a843 docs: record bounded AMD TRELLIS.2 compatibility proof
+  codex/amd-turret-compact-colour-glb               1f947fa Export compact learned-colour turret GLB without duplicated normals
+  codex/amd-turret-cpu-mesh-extraction              9380d3a Preserve first genuine turret PLY and stop on verified topology defects
+  codex/amd-turret-face-fan-proof                   e32915d Document bounded turret face-fan decimation NO-GO
+  codex/amd-turret-learned-colour-glb               d3eec48 Export and verify full-resolution learned-colour turret GLB
+  codex/amd-turret-learned-colour-preview           3485263 Publish genuine learned-colour turret previews and verified Blender scene
+  codex/amd-turret-learned-pbr-preview              357e541 Keep generated preview bytecode local and untracked
+  codex/amd-turret-lod-candidates                   ad7a436 Document topology blocker for 100K and 30K turret LODs
+  codex/amd-turret-planar-patches                   6ea0abb Measure bounded Planar turret decimation and stop escalation
+  codex/amd-turret-texture-bootstrap-correction     067f668 Correct texture bootstrap order and preserve real WSL ownership rejection
+  codex/amd-turret-texture-decode-resume            fa3a98c Record genuine guided texture field PASS and verified clean release
+  codex/amd-turret-texture-decoder                  473b7bd Record contained texture decoder bootstrap blockage and preservation
+  codex/amd-turret-texture-owner-admission          5f89b0a Record ownership PASS and bounded decoder host-resource stop
+  codex/amd-turret-texture-resource-ready           b371afa Preserve reviewed texture-resource evidence bytes in Git
+  codex/amd-turret-texture-route-audit              4f845cd docs: audit offline turret texture route and reuse contracts
+  codex/amd-turret-texture-sampling                 c9e4d3b docs: record genuine twelve-step turret texture latent PASS
+  codex/amd-turret-visual-preview                   0a1cdee Publish genuine full-resolution turret CPU preview images
+  codex/amd-worker-scaffold                         7c2c963 Add opt-in offline AMD worker scaffold and bounded IPC proof
+  codex/amd-wsl-checkpoint-schema-correction        c8614c0 Correct shared checkpoint schema and record stopped path preflight
+  codex/amd-wsl-decoder-path-correction             e24808e Record native qualification and missing CPU loader dependency
+  codex/amd-wsl-device-context-correction           511e135 Correct active DeviceContext guard and document blocked CPU acceptance
+  codex/amd-wsl-flexgemm-build                      ab97328 build: preserve pinned WSL FlexGEMM artifact and static qualification
+  codex/amd-wsl-flexgemm-native-import              9a53e6b Record policy-blocked FlexGEMM import and verified clean release
+  codex/amd-wsl-flexgemm-native-import-resume       687eb2b Record genuine WSL FlexGEMM load and 18-binding PASS
+  codex/amd-wsl-launcher-path-correction            9d439e0 Fix WSL acceptance helper resolution and verify CPU guards
+  codex/amd-wsl-native-decoder-preparation          4e32bea Document blocked WSL native qualification and strict decoder preparation
+  codex/amd-wsl-neural-decoder-preparation          a233a75 docs: record WSL neural decoder dependency admission blocker
+  codex/amd-wsl-owned-cleanup-correction            f921f3d Publish genuine CPU FileLock cleanup acceptance and preservation
+  codex/amd-wsl-packaging-decoder-loading           a9c9ad7 Document strict WSL shape-decoder CPU loading PASS
+  codex/amd-wsl-rocdxg-gpu-resume                   67a9e4a Record successful single WSL ROCm GPU smoke and preservation
+  codex/amd-wsl-rocdxg-smoke                        1d9d5c9 docs: record isolated WSL smoke attempt blocked at launch gate
+  codex/amd-wsl-shape-decoder-cpu-loading           c455211 Record stopped WSL CPU decoder load and preserved evidence
+  codex/amd-wsl-single-worker-teardown              3b8ee66 Bound WSL helper teardown grace and record CPU process evidence
+  codex/amd-wsl-stdin-correction                    c7ad0dd Fix WSL authorization byte contract and preserve CPU transport evidence
+  codex/amd-wsl-tunableop-qualification             51429f6 Record PASS for CPU-only WSL TunableOp qualification
+  codex/amd-wsl-turret-artifact-writer-ready        ad07f96 Preserve genuine full turret neural output with verified writer and cleanup
+  codex/amd-wsl-turret-chunked-decode               4870856 Record complete turret computation and artifact-parent preservation failure
+  codex/amd-wsl-turret-fourth-child-count           a28e16e Record genuine fourth-stage count and unchanged admission stop
+  codex/amd-wsl-turret-neural-decode                bd8825b Record UNKNOWN at pre-forward WSL TunableOp admission gate
+  codex/amd-wsl-turret-neural-decode-tunableop      d55a7ab Record UNKNOWN at unchanged VRAM gate for corrected turret decode
+  codex/amd-wsl-turret-neural-decode-vram-ready     5a7bf53 Record genuine turret decode PARTIAL at fourth subdivision admission
+  main                                              f11a4d2 Merge pull request #367 from lightningpixel/release/v0.4.3

@@ -1,0 +1,64 @@
+{
+  "classification": "BLOCKED",
+  "probe_type": "CPU input and production method admission, not GPU inference or application IPC",
+  "source": {
+    "repo_relative_path": "docs/compatibility/amd-object-conditioned-occupancy-evidence/image-selection/0e4984a9b3765ce80e9853443f9319ecedf90885c74b56cccfebc09402740f8a.webp",
+    "sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+    "bytes": 184424,
+    "pixel_sha256": "3660a3f09c500cb4acc7816dbebf40ee37d623529aa1e461a34fb1b38da947d6",
+    "subject": "vine-covered brick fragment; materially different from turret",
+    "alpha_validation": {
+      "mode": "alpha-only",
+      "size": [
+        1018,
+        1018
+      ],
+      "foreground_bbox": [
+        198,
+        46,
+        820,
+        973
+      ],
+      "resized_foreground_bbox": [
+        198,
+        46,
+        820,
+        973
+      ],
+      "rembg_required": false
+    }
+  },
+  "runtime_metadata_only": {
+    "python": "3.12.10",
+    "torch_distribution": "2.13.0+rocm10.0.0",
+    "pillow": "12.3.0"
+  },
+  "production_method": "experimental/extensions/trellis2-amd/generator.py:AMDScaffold.generate",
+  "production_method_sha256": "bb458f0a752f047a550fdb1bc4a3bf5c2b0e2b8f1ad011aca024ff0c41dff71a",
+  "request_params": {
+    "mock": false,
+    "image_mode": "alpha-only"
+  },
+  "exact_rejection": "AMD scaffold requires mock=true; inference is not implemented",
+  "rejected_before_identity_or_model_loading": true,
+  "negative_image_cases": [
+    {
+      "case": "unreadable",
+      "rejected": true,
+      "error": "alpha-only image could not be decoded: cannot identify image file <_io.BytesIO object at 0x000002BCD98D9440>"
+    },
+    {
+      "case": "empty",
+      "rejected": true,
+      "error": "alpha-only image bytes are empty or exceed the byte limit"
+    }
+  ],
+  "AI_import_attempts": [],
+  "model_loads": 0,
+  "GPU_initializations": 0,
+  "neural_forwards": 0,
+  "generated_mesh": null,
+  "generated_material": null,
+  "generated_GLB": null,
+  "elapsed_seconds": 0.2650000000012369
+}

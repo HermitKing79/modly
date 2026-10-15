@@ -1,0 +1,43 @@
+{
+  "source_path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/source-image.webp",
+  "source_sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+  "source_bytes": 184424,
+  "source_size": [
+    1018,
+    1018
+  ],
+  "source_mode": "RGBA",
+  "pixel_sha256": "3660a3f09c500cb4acc7816dbebf40ee37d623529aa1e461a34fb1b38da947d6",
+  "input_png_sha256": "6bfa5558629816b3b5f36d8eabe1284664c2258e0165ce9ac594ce8a30c7f533",
+  "alpha": {
+    "mode": "alpha-only",
+    "size": [
+      1018,
+      1018
+    ],
+    "foreground_bbox": [
+      198,
+      46,
+      820,
+      973
+    ],
+    "resized_foreground_bbox": [
+      198,
+      46,
+      820,
+      973
+    ],
+    "rembg_required": false
+  },
+  "crop_size": [
+    926,
+    926
+  ],
+  "crop_mode": "RGB",
+  "crop_pixel_sha256": "e3514cb51f6a0c66bb4f60bea3618ba2b4e129ac682cc2ebdc9bacfe0f9f4500",
+  "preprocessing": "original alpha-only preprocess_image; RMBG absent",
+  "weights_loaded": false,
+  "gpu_initialized": false,
+  "scope": "native-sparse-occupancy-only",
+  "full_generation": false
+}

@@ -1,0 +1,8 @@
+{
+  "reviewers": ["generation_architecture_audit", "repeatable_inference_audit", "new_image_proof_gate_review"],
+  "architecture": "Existing HTTP, subprocess, result URL, viewport and GLB download plumbing is present. Actual AMD generate remains mock-only/preparation-only, with30second deadline and GPU/subprocess-denying guards.",
+  "full_generation_gate": "No supported existing new-image full-generation command found. Input provenance,3743token layout, fourth-stage378891/1842968support,57tiles, texture guides and export sources require coordinated run-derived parameterization. Simply changing paths or calling unguarded source functions does not qualify.",
+  "probe_review": "No blocker. Constructor assigns state/paths only; production generate rejects mock=false before identity/readiness/model handling. Separate Pillow validation is CPU-only. Do not describe this as inference, IPC or GPU compatibility evidence.",
+  "decision": "BLOCKED before new-image inference; no AMD computation failure demonstrated",
+  "remaining_primary_acceptance_gap": "Genuine new-image geometry/material/GLB proof, then application Generate/viewport/export and sequential lifecycle validation"
+}
