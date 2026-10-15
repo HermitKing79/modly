@@ -1,0 +1,78 @@
+{
+  "classification": "PASS",
+  "harness_commit": "0366fc068cad546ec0ebafb153424bf24c443794",
+  "artifact_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field\\texture-field.safetensors",
+  "artifact_bytes": 117958320,
+  "artifact_sha256": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80",
+  "metadata_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field\\texture-field-metadata.json",
+  "metadata_bytes": 9139,
+  "metadata_sha256": "8b9f9c5c69ef79014468563b311eae8e6b9e13a6ab05c21dd245d1c1eebeb59b",
+  "tensors": {
+    "coordinates": {
+      "dtype": "I32",
+      "sha256": "c87fa21d6f863aced647b48e0bb2edebe32523d36c742e350d39ccfea3fc0934",
+      "shape": [
+        1842968,
+        4
+      ],
+      "tensor_bytes": 29487488
+    },
+    "features": {
+      "dtype": "F32",
+      "sha256": "e78f8c5610a73a05092842bb3031e90702706a89f698c6cd78488b6441699a52",
+      "shape": [
+        1842968,
+        6
+      ],
+      "tensor_bytes": 44231232
+    },
+    "raw": {
+      "dtype": "F32",
+      "sha256": "7328d2c6671800dccde530aac01b157b386a4421d213f2f7fba7bd65d88c988b",
+      "shape": [
+        1842968,
+        6
+      ],
+      "tensor_bytes": 44231232
+    }
+  },
+  "forward_calls": 1,
+  "convolutions_completed": 40,
+  "C2S_operations": 8,
+  "final_tiles": 57,
+  "rows": 1842968,
+  "strict_checkpoint_entries": 284,
+  "runtime_dtype_counts": {
+    "F16": 208,
+    "F32": 76
+  },
+  "forward_synchronized_seconds": 11.003087949000001,
+  "GPU_stage_seconds": 24.233526655,
+  "worker_seconds": 48.097045865000005,
+  "supervisor_seconds": 62.0,
+  "VRAM_peak": {
+    "allocated": 5585014272,
+    "reserved": 7312769024
+  },
+  "minimum_available_host_RAM_bytes": 14853283840,
+  "host_total_physical_bytes": 34270023680,
+  "largest_sampled_nonavailable_physical_bytes": 19416739840,
+  "CPU_preparation_process_high_water_bytes": 2786930688,
+  "memory_release": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "worker_returncode": 0,
+  "observer_healthy": true,
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "independent_verified_before_release": true,
+  "independent_verified_after_exit": "PASS",
+  "all_inputs_preserved": true,
+  "limitations": "Allocator peaks measured by Torch. Windows RAM samples are one-second supervisor observations, not continuous peak telemetry. Material field is not a baked texture or GLB; transformed finite overshoots remain unclamped."
+}

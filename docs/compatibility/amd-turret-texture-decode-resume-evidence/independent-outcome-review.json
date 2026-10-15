@@ -1,0 +1,136 @@
+{
+  "classification": "PASS",
+  "reviewer": "texture_decode_review independent agent",
+  "reviewed_utc": "2026-10-15T08:46:48.8519460Z",
+  "findings": [],
+  "harness_commit": "0366fc068cad546ec0ebafb153424bf24c443794",
+  "result": "One genuine guided decoder forward produced a finite six-channel field, saved permanently and independently verified against all 1842968 original geometry cells.",
+  "artifact": {
+    "Windows_path": "C:/Users/wattz/Documents/ModlyArtifacts/amd-turret-texture-owner-067f668/field/texture-field.safetensors",
+    "metadata_path": "C:/Users/wattz/Documents/ModlyArtifacts/amd-turret-texture-owner-067f668/field/texture-field-metadata.json",
+    "bytes": 117958320,
+    "sha256": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80",
+    "metadata_sha256": "8b9f9c5c69ef79014468563b311eae8e6b9e13a6ab05c21dd245d1c1eebeb59b",
+    "raw": "F32[1842968,6]",
+    "features": "F32[1842968,6]",
+    "coordinates": "I32[1842968,4]",
+    "payload_sha256": {
+      "raw": "7328d2c6671800dccde530aac01b157b386a4421d213f2f7fba7bd65d88c988b",
+      "features": "e78f8c5610a73a05092842bb3031e90702706a89f698c6cd78488b6441699a52",
+      "coordinates": "c87fa21d6f863aced647b48e0bb2edebe32523d36c742e350d39ccfea3fc0934"
+    }
+  },
+  "independent_CPU_inspection": "Reviewer streamed the actual permanent file SHA256, parsed bounded public safetensors layouts, rehashed all three payloads, matched header provenance and sidecar, checked every float finite, verified bit-exact unclamped F32(raw*.5+.5), recomputed all saved per-channel statistics, and compared every coordinate row/order with the preserved geometry. The original geometry full SHA and saved latent full SHA still match their pinned identities. AI imports were denied in this CPU reader; Torch was not imported.",
+  "execution": {
+    "forward_calls": 1,
+    "original_convolutions": 40,
+    "unique_convolution_sites": 40,
+    "C2S_operations": 8,
+    "native_global_maps": 5,
+    "final_tiles": 57,
+    "tile_rows_covered_contiguously": 1842968,
+    "strict_original_F16_payloads": 284,
+    "runtime_F16_parameters": 208,
+    "runtime_F32_parameters": 76,
+    "exact_widened_keys": 76,
+    "strict_roundtrip_verified": true,
+    "runtime_precision_changes": {},
+    "geometry_coordinate_order_exact": true
+  },
+  "channel_statistics": {
+    "features": {
+      "alpha": {
+        "max": 1.008357286453247,
+        "mean": 1.0000178624024745,
+        "min": 0.9928321838378906
+      },
+      "blue": {
+        "max": 1.0205942392349243,
+        "mean": 0.24918226681903857,
+        "min": -0.025736689567565918
+      },
+      "green": {
+        "max": 1.0299763679504395,
+        "mean": 0.24726618868724545,
+        "min": -0.029217779636383057
+      },
+      "metallic": {
+        "max": 1.046318769454956,
+        "mean": 0.4828247101244646,
+        "min": -0.025036334991455078
+      },
+      "red": {
+        "max": 1.0364840030670166,
+        "mean": 0.24773163793805272,
+        "min": -0.02477341890335083
+      },
+      "roughness": {
+        "max": 0.7638838887214661,
+        "mean": 0.5908718073151894,
+        "min": -0.029478728771209717
+      }
+    },
+    "raw": {
+      "alpha": {
+        "max": 1.0167146921157837,
+        "mean": 1.0000357248237395,
+        "min": 0.9856643080711365
+      },
+      "blue": {
+        "max": 1.0411884784698486,
+        "mean": -0.5016354663553925,
+        "min": -1.0514733791351318
+      },
+      "green": {
+        "max": 1.059952735900879,
+        "mean": -0.5054676226208208,
+        "min": -1.0584355592727661
+      },
+      "metallic": {
+        "max": 1.092637538909912,
+        "mean": -0.03435057974381213,
+        "min": -1.0500726699829102
+      },
+      "red": {
+        "max": 1.0729681253433228,
+        "mean": -0.5045367241193657,
+        "min": -1.0495468378067017
+      },
+      "roughness": {
+        "max": 0.5277677774429321,
+        "mean": 0.1817436145910499,
+        "min": -1.0589574575424194
+      }
+    }
+  },
+  "measurements": {
+    "strict_CPU_seconds": 10.650614458,
+    "forward_synchronized_seconds": 11.003087949000001,
+    "GPU_stage_seconds": 24.233526655,
+    "worker_seconds": 48.097045865000005,
+    "host_seconds": 62.0,
+    "initial_GPU_free_bytes": 15780134912,
+    "peak_Torch_allocated_bytes": 5585014272,
+    "peak_Torch_reserved_bytes": 7312769024,
+    "minimum_host_RAM_bytes": 14853283840,
+    "minimum_D_free_bytes": 75137884160
+  },
+  "persistence_and_release": [
+    "Actual Windows verification completed while the worker remained alive and acknowledged the exact artifact/metadata plus current marker hash; another independent Windows readback passed after clean termination.",
+    "Recorded Windows SID/ACL and NTFS identity checks passed around both host reader operations.",
+    "Torch allocated/reserved bytes returned to 0/0, input/output weakrefs and model/parameter/component collection passed, the final patch was restored, and workspace cleanup occurred once.",
+    "Worker exit 0; healthy observer; naturally empty Job 0->0 with no forced cleanup; named-distro termination returned 0."
+  ],
+  "identity": "All 53 frozen manifest entries match current bytes. Earlier attempt markers were not modified by this reviewer.",
+  "limitations": "PASS establishes authentic full-field generation, finiteness, geometry alignment and durable persistence. Visual appearance, mesh colour preview, UV baking and GLB export were not evaluated or performed in this review. Recorded values outside [0,1] were preserved without clamp.",
+  "reviewer_actions": "Read-only evidence/source/CPU artifact inspection and this JSON only; no model rerun, tests, WSL/GPU command, installation or implementation edit.",
+  "evidence_sha256": {
+    "candidate-identities.json": "e5b734b78c98bd10c5093acfcc4bd73d1cf8302074e9967da4b689af322bcb66",
+    "neural-attempt.marker": "feb2590d745453e7f6899ebfeb730fcbc6f354d8d8693b4abe119074f8a4a960",
+    "run/results.json": "3aa3426b52bfc58e818b9653c6c1649331372b6712eb063112589d4a24adda38",
+    "run/guest/results.json": "76a679d65b08403e8845b764b8078cb8330e575185aa2deddc6fa9186049e22f",
+    "run/guest/phases.jsonl": "477f2a012f93ba1f559432a4c615010217ba3e8ff4684dbf34f776e73ad1ec66",
+    "run/guest/artifact-ready.json": "fd8e813b53fd068b84354c6cea1f7c6f79ba328b7a1f0de342fdbeb5fd88c8d1",
+    "run/guest/host-artifact-verified.json": "5f6a2cf9a73a215336c5d24870dba09b7c04103bf7c711817f1c1cabd1167c48"
+  }
+}
