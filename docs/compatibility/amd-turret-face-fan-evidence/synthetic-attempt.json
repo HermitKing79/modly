@@ -1,0 +1,26 @@
+{
+  "phase": "synthetic",
+  "command": [
+    "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--threads",
+    "4",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-face-fan-evidence\\worker.py"
+  ],
+  "CPU_only": true,
+  "deadline_seconds": 60,
+  "memory_cap_bytes": 2147483648,
+  "host_available_RAM_bytes": 19498795008,
+  "scripts": {
+    "host.py": "6348f6940e03f009f7509cf0c6ef1002c95e4872e90a2ac2a680779af741bb5a",
+    "common.py": "81c4d514b84d8e77809549c803b649fd8dd98769bdeeb99c23f47b54d8c43221",
+    "worker.py": "da7ee269cfec012683c6b8b535750dc425f1360b2c5548d56178d4be030fd7af",
+    "core.py": "071ea3031204062817d0496985f32513634e61754fb935d3b8dd5353f695b1b1",
+    "metrics.py": "e2f090d4120c3ad390c759f723d76f95b5cdb469f0531c8f665bb05efa7a1767"
+  }
+}

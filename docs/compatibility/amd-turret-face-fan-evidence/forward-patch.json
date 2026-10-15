@@ -1,0 +1,788 @@
+{
+  "name": "forward-patch",
+  "decision": "NO-GO",
+  "reasons": [
+    "excessive_boundary_length",
+    "excessive_fragmentation",
+    "excessive_vertex_duplication",
+    "geometry_max",
+    "geometry_p95",
+    "geometry_rms",
+    "silhouette_x",
+    "silhouette_y",
+    "silhouette_z",
+    "source_to_target_RGB_P95",
+    "source_to_target_RGB_RMS",
+    "source_to_target_lost_surface_sheet_area",
+    "source_to_target_missing_sheet_or_query"
+  ],
+  "actual_Blender_ingest_XYZ_triangles_RGBA_sheet_labels_byte_exact": true,
+  "synthetic": false,
+  "criteria": {
+    "real_ratio": 0.25,
+    "synthetic_ratio": 0.05,
+    "max_patch_faces": 6000,
+    "fixed_vertex_rings": 3,
+    "max_prepared_vertex_factor": 2.0,
+    "max_boundary_length_factor": 3.0,
+    "min_area_in_largest_4x_original_components": 0.95,
+    "max_real_output_fraction": 0.3,
+    "max_fraction_of_control_faces": 0.8,
+    "geometry_normalized_rms": 0.005,
+    "geometry_normalized_p95": 0.01,
+    "geometry_normalized_max": 0.03,
+    "min_axis_silhouette_iou": 0.98,
+    "max_rgb_rms": 0.02,
+    "max_rgb_p95": 0.05,
+    "max_lost_sheet_area_fraction": 0.01
+  },
+  "before": {
+    "vertices": 131,
+    "triangles": 272,
+    "nonmanifold_gt2_edges": 65,
+    "boundary_edges": 74,
+    "boundary_length": 0.14202366736385053,
+    "components": 1,
+    "component_areas": [
+      0.0004578211536252248
+    ],
+    "top4_area_fraction": 1.0,
+    "zero_area_triangles": 0,
+    "bounds": {
+      "min": [
+        0.09451127052307129,
+        -0.32324981689453125,
+        0.11741006374359131
+      ],
+      "max": [
+        0.10976660251617432,
+        -0.31127917766571045,
+        0.12625986337661743
+      ]
+    }
+  },
+  "separated": {
+    "vertices": 317,
+    "triangles": 272,
+    "nonmanifold_gt2_edges": 0,
+    "boundary_edges": 294,
+    "boundary_length": 0.5580486771446312,
+    "components": 34,
+    "component_areas": [
+      4.63442929484081e-05,
+      6.189902364373073e-05,
+      3.06408231289568e-06,
+      2.686208924505784e-05,
+      7.312202835763108e-06,
+      1.5975058506080137e-05,
+      1.979389859613306e-05,
+      1.4617115028856885e-05,
+      1.9079380216068497e-05,
+      9.711695792989244e-06,
+      1.4389396216435025e-05,
+      1.64669145190279e-05,
+      3.3510621976717293e-06,
+      1.8164335037076798e-05,
+      1.6178555056192984e-05,
+      6.036165389004552e-06,
+      1.2787934033016673e-05,
+      1.0066398604814478e-05,
+      3.216622726019794e-06,
+      2.402539993949736e-06,
+      1.1028449412954969e-05,
+      4.200414431460792e-05,
+      7.361028546922976e-06,
+      1.169197059410799e-05,
+      7.239809555860807e-06,
+      1.1211512055251468e-05,
+      1.5193445157126359e-05,
+      7.740483260780362e-06,
+      2.5834029014013436e-06,
+      5.48349875917691e-06,
+      1.5056834342894626e-06,
+      2.169966383901718e-06,
+      3.2970003069927315e-06,
+      1.5919960426566172e-06
+    ],
+    "top4_area_fraction": 0.3868531385004277,
+    "zero_area_triangles": 0,
+    "bounds": {
+      "min": [
+        0.09451127052307129,
+        -0.32324981689453125,
+        0.11741006374359131
+      ],
+      "max": [
+        0.10976660251617432,
+        -0.31127917766571045,
+        0.12625986337661743
+      ]
+    }
+  },
+  "preservation": {
+    "ordered_triangle_origins_exact": true,
+    "ordered_corner_XYZ_byte_exact": true,
+    "ordered_corner_RGBA_byte_exact": true,
+    "surface_triangle_payload_sha256": "2f2d3f1fbbbec6ec5c93ee2037cc2dc8cbb328eacd1386602dc22b6aef13252f",
+    "corner_RGBA_sha256": "3baf900870e51683377c959175bb9bd3d87e7a5b92f25349f59eefd6176f5f19",
+    "vertex_duplicates_added": 186,
+    "new_boundaries_from_original_gt2_edges": 227,
+    "new_boundaries_from_other_original_edges": 0,
+    "original_bad_edge_descendant_incidence_histogram": {
+      "1": 227
+    }
+  },
+  "ratio": 0.25,
+  "requested_triangles": 68,
+  "control_decimated": {
+    "vertices": 81,
+    "triangles": 202,
+    "nonmanifold_gt2_edges": 65,
+    "boundary_edges": 44,
+    "boundary_length": 0.13313874879338902,
+    "components": 1,
+    "component_areas": [
+      0.0005052775086647436
+    ],
+    "top4_area_fraction": 1.0,
+    "zero_area_triangles": 0,
+    "bounds": {
+      "min": [
+        0.09451127052307129,
+        -0.3230922818183899,
+        0.11748528480529785
+      ],
+      "max": [
+        0.10931198298931122,
+        -0.31140488386154175,
+        0.12658903002738953
+      ]
+    }
+  },
+  "separated_decimated": {
+    "vertices": 138,
+    "triangles": 68,
+    "nonmanifold_gt2_edges": 0,
+    "boundary_edges": 126,
+    "boundary_length": 0.5067330023260324,
+    "components": 29,
+    "component_areas": [
+      4.606901278884018e-05,
+      6.194014943622446e-05,
+      3.06408231289568e-06,
+      2.803591457021523e-06,
+      7.273183553383238e-06,
+      1.8872200435768557e-05,
+      1.1110544585081336e-05,
+      1.481010210999489e-05,
+      1.938790440926617e-05,
+      5.8076432484654525e-06,
+      1.3728734038100614e-05,
+      3.09375792773517e-06,
+      1.7225957863168393e-05,
+      1.2646456597977407e-05,
+      3.8961057388884115e-06,
+      6.6867337429025226e-06,
+      1.3493404282385488e-05,
+      1.0854427951669117e-05,
+      4.1566066503615706e-05,
+      1.7831193667788382e-05,
+      7.2774587710536e-06,
+      2.0808697961869844e-05,
+      1.186522463259289e-05,
+      6.391148100754064e-06,
+      1.4947821448780568e-05,
+      7.722330783298064e-06,
+      1.3478538100736077e-05,
+      5.48349875917691e-06,
+      3.2970003069927315e-06
+    ],
+    "top4_area_fraction": 0.4023870084569926,
+    "zero_area_triangles": 0,
+    "bounds": {
+      "min": [
+        0.094511017203331,
+        -0.3232496380805969,
+        0.11723343282938004
+      ],
+      "max": [
+        0.10976660251617432,
+        -0.3113134205341339,
+        0.12627427279949188
+      ]
+    }
+  },
+  "control_measurements": {
+    "source_diagonal": 0.02131526005731775,
+    "source_to_target": {
+      "complete": true,
+      "samples": {
+        "vertices": 317,
+        "centroids": 239
+      },
+      "matched_samples": 556,
+      "failed_queries": 0,
+      "missing_sheet_ids": [],
+      "lost_sheet_area": 0,
+      "lost_sheet_area_fraction": 0.0,
+      "geometry_normalized": {
+        "rms": 0.026406012079434077,
+        "p95": 0.05221499233800749,
+        "max": 0.1739766352495325
+      },
+      "rgb_channel_error": {
+        "rms": 0.004535354416302414,
+        "p95": 0.010200318688024462,
+        "max": 0.049903660762482586
+      },
+      "alpha_error": {
+        "rms": 4.2895514398371525e-17,
+        "p95": 1.1102230246251565e-16,
+        "max": 2.220446049250313e-16
+      },
+      "rgba_rmse_by_channel": [
+        0.004726087650852665,
+        0.004478867734117473,
+        0.004394560089606332,
+        4.2895514398371525e-17
+      ],
+      "matched_sheets_only": {
+        "geometry_normalized": {
+          "rms": 0.026406012079434077,
+          "p95": 0.05221499233800749,
+          "max": 0.1739766352495325
+        },
+        "rgb_channel_error": {
+          "rms": 0.004535354416302414,
+          "p95": 0.010200318688024462,
+          "max": 0.049903660762482586
+        },
+        "alpha_error": {
+          "rms": 4.2895514398371525e-17,
+          "p95": 1.1102230246251565e-16,
+          "max": 2.220446049250313e-16
+        },
+        "rgba_rmse_by_channel": [
+          0.004726087650852665,
+          0.004478867734117473,
+          0.004394560089606332,
+          4.2895514398371525e-17
+        ]
+      }
+    },
+    "target_to_source": {
+      "complete": true,
+      "samples": {
+        "vertices": 267,
+        "centroids": 142
+      },
+      "matched_samples": 409,
+      "failed_queries": 0,
+      "missing_sheet_ids": [],
+      "lost_sheet_area": 0,
+      "lost_sheet_area_fraction": 0.0,
+      "geometry_normalized": {
+        "rms": 0.030560119132065022,
+        "p95": 0.014634629683006956,
+        "max": 0.4229301148221705
+      },
+      "rgb_channel_error": {
+        "rms": 0.0028607231961419385,
+        "p95": 0.0036719594735610665,
+        "max": 0.023503401399523186
+      },
+      "alpha_error": {
+        "rms": 3.9965615941026103e-17,
+        "p95": 0.0,
+        "max": 2.220446049250313e-16
+      },
+      "rgba_rmse_by_channel": [
+        0.002992352692283934,
+        0.0028196409756079703,
+        0.0027652597976478227,
+        3.9965615941026103e-17
+      ],
+      "matched_sheets_only": {
+        "geometry_normalized": {
+          "rms": 0.030560119132065022,
+          "p95": 0.014634629683006956,
+          "max": 0.4229301148221705
+        },
+        "rgb_channel_error": {
+          "rms": 0.0028607231961419385,
+          "p95": 0.0036719594735610665,
+          "max": 0.023503401399523186
+        },
+        "alpha_error": {
+          "rms": 3.9965615941026103e-17,
+          "p95": 0.0,
+          "max": 2.220446049250313e-16
+        },
+        "rgba_rmse_by_channel": [
+          0.002992352692283934,
+          0.0028196409756079703,
+          0.0027652597976478227,
+          3.9965615941026103e-17
+        ]
+      }
+    },
+    "worst_direction_geometry_normalized": {
+      "rms": 0.030560119132065022,
+      "p95": 0.05221499233800749,
+      "max": 0.4229301148221705
+    },
+    "source_sheet_areas": {
+      "0": 4.634429294840811e-05,
+      "1": 6.189902364373072e-05,
+      "2": 3.06408231289568e-06,
+      "3": 2.6862089245057838e-05,
+      "4": 7.312202835763108e-06,
+      "5": 1.5975058506080137e-05,
+      "6": 1.9793898596133062e-05,
+      "7": 1.4617115028856887e-05,
+      "8": 1.9079380216068497e-05,
+      "9": 9.711695792989244e-06,
+      "10": 1.4389396216435025e-05,
+      "11": 1.6466914519027903e-05,
+      "12": 3.3510621976717293e-06,
+      "13": 1.8164335037076798e-05,
+      "14": 1.6178555056192984e-05,
+      "15": 6.036165389004552e-06,
+      "16": 1.2787934033016673e-05,
+      "17": 1.0066398604814481e-05,
+      "18": 3.216622726019794e-06,
+      "19": 2.402539993949736e-06,
+      "20": 1.1028449412954969e-05,
+      "21": 4.2004144314607925e-05,
+      "22": 7.361028546922976e-06,
+      "23": 1.169197059410799e-05,
+      "24": 7.239809555860807e-06,
+      "25": 1.121151205525147e-05,
+      "26": 1.5193445157126359e-05,
+      "27": 7.740483260780362e-06,
+      "28": 2.5834029014013436e-06,
+      "29": 5.48349875917691e-06,
+      "30": 1.5056834342894626e-06,
+      "31": 2.169966383901718e-06,
+      "32": 3.2970003069927315e-06,
+      "33": 1.5919960426566172e-06
+    },
+    "target_sheet_areas": {
+      "0": 9.03296077875532e-05,
+      "1": 6.130576344417831e-05,
+      "2": 3.06408231289568e-06,
+      "3": 2.8961897941442152e-05,
+      "4": 7.312202835763108e-06,
+      "5": 1.5975058506080137e-05,
+      "6": 1.9777647261664934e-05,
+      "7": 1.4617115028856887e-05,
+      "8": 1.9079380216068497e-05,
+      "9": 9.711695792989244e-06,
+      "10": 1.512524169463185e-05,
+      "11": 1.6466914519027903e-05,
+      "12": 3.3510621976717293e-06,
+      "13": 1.8198209763864784e-05,
+      "14": 1.6178555056192984e-05,
+      "15": 6.036165389004552e-06,
+      "16": 1.258244783167486e-05,
+      "17": 1.0066398604814481e-05,
+      "18": 3.216622726019794e-06,
+      "19": 2.402539993949736e-06,
+      "20": 1.0889814817279557e-05,
+      "21": 4.2456340828144056e-05,
+      "22": 7.361028546922976e-06,
+      "23": 1.169197059410799e-05,
+      "24": 8.34275667236712e-06,
+      "25": 1.121151205525147e-05,
+      "26": 1.5193445157126359e-05,
+      "27": 7.740483260780362e-06,
+      "28": 2.5834029014013436e-06,
+      "29": 5.48349875917691e-06,
+      "30": 1.5056834342894626e-06,
+      "31": 2.169966383901718e-06,
+      "32": 3.2970003069927315e-06,
+      "33": 1.5919960426566172e-06
+    },
+    "source_degenerate_faces": 0,
+    "target_degenerate_faces": 0,
+    "silhouettes": {
+      "x": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 13362,
+        "target_pixels": 17843,
+        "intersection_pixels": 11205,
+        "union_pixels": 20000,
+        "iou": 0.56025,
+        "lost_fraction": 0.1614279299506062,
+        "gained_fraction": 0.49678191887441997,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          -0.31726449728012085,
+          0.12183496356010437
+        ],
+        "original_bounds_span": 0.013167703151702882
+      },
+      "y": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 25374,
+        "target_pixels": 25027,
+        "intersection_pixels": 24631,
+        "union_pixels": 25770,
+        "iou": 0.9558013193636011,
+        "lost_fraction": 0.02928194214550327,
+        "gained_fraction": 0.015606526365571057,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.1021389365196228,
+          0.12183496356010437
+        ],
+        "original_bounds_span": 0.01678086519241333
+      },
+      "z": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 34338,
+        "target_pixels": 33807,
+        "intersection_pixels": 33231,
+        "union_pixels": 34914,
+        "iou": 0.9517958412098299,
+        "lost_fraction": 0.03223833653678141,
+        "gained_fraction": 0.016774419011008214,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.1021389365196228,
+          -0.31726449728012085
+        ],
+        "original_bounds_span": 0.01678086519241333
+      }
+    },
+    "sampling_limits": [
+      "Fixed seed 0; at most 512 (vertex, sheet) occurrences and 512 unique area-stratified face centroids per direction.",
+      "Finite samples can miss narrow holes, small fragments and unsampled maxima; these are not Hausdorff bounds.",
+      "Centroid strata selecting one face are deduplicated; reported errors are unweighted sample statistics.",
+      "Nearest matches are restricted to the same face sheet; ambiguities within one sheet remain possible.",
+      "Silhouettes use three axis views, 256x256 pixel centers and a fixed source frame with 10% padding; clipping and empty views are explicit.",
+      "Color errors use supplied channel values without color-space conversion; isolated unreferenced vertices are ignored."
+    ]
+  },
+  "separated_measurements": {
+    "source_diagonal": 0.02131526005731775,
+    "source_to_target": {
+      "complete": false,
+      "samples": {
+        "vertices": 317,
+        "centroids": 239
+      },
+      "matched_samples": 524,
+      "failed_queries": 0,
+      "missing_sheet_ids": [
+        18,
+        19,
+        28,
+        30,
+        31,
+        33
+      ],
+      "lost_sheet_area": 1.3470211482218671e-05,
+      "lost_sheet_area_fraction": 0.029422431391725238,
+      "geometry_normalized": {
+        "rms": null,
+        "p95": null,
+        "max": null
+      },
+      "rgb_channel_error": {
+        "rms": null,
+        "p95": null,
+        "max": null
+      },
+      "alpha_error": {
+        "rms": null,
+        "p95": null,
+        "max": null
+      },
+      "rgba_rmse_by_channel": null,
+      "matched_sheets_only": {
+        "geometry_normalized": {
+          "rms": 0.026433098505785103,
+          "p95": 0.055719505450931205,
+          "max": 0.1307598298949434
+        },
+        "rgb_channel_error": {
+          "rms": 0.008058701161694633,
+          "p95": 0.017178843022389777,
+          "max": 0.057727854803832135
+        },
+        "alpha_error": {
+          "rms": 5.1556545252377015e-17,
+          "p95": 1.1102230246251565e-16,
+          "max": 2.220446049250313e-16
+        },
+        "rgba_rmse_by_channel": [
+          0.00832036089419467,
+          0.008024910685679466,
+          0.007823068216353413,
+          5.1556545252377015e-17
+        ]
+      }
+    },
+    "target_to_source": {
+      "complete": true,
+      "samples": {
+        "vertices": 125,
+        "centroids": 49
+      },
+      "matched_samples": 174,
+      "failed_queries": 0,
+      "missing_sheet_ids": [],
+      "lost_sheet_area": 0,
+      "lost_sheet_area_fraction": 0.0,
+      "geometry_normalized": {
+        "rms": 0.0273520827698403,
+        "p95": 0.050577026351374316,
+        "max": 0.1327154195922732
+      },
+      "rgb_channel_error": {
+        "rms": 0.004513978485815517,
+        "p95": 0.011807686797720852,
+        "max": 0.022841228862585015
+      },
+      "alpha_error": {
+        "rms": 4.373382751267837e-17,
+        "p95": 1.1102230246251565e-16,
+        "max": 2.220446049250313e-16
+      },
+      "rgba_rmse_by_channel": [
+        0.004820514556047412,
+        0.0044518227975191265,
+        0.0042511079150781474,
+        4.373382751267837e-17
+      ],
+      "matched_sheets_only": {
+        "geometry_normalized": {
+          "rms": 0.0273520827698403,
+          "p95": 0.050577026351374316,
+          "max": 0.1327154195922732
+        },
+        "rgb_channel_error": {
+          "rms": 0.004513978485815517,
+          "p95": 0.011807686797720852,
+          "max": 0.022841228862585015
+        },
+        "alpha_error": {
+          "rms": 4.373382751267837e-17,
+          "p95": 1.1102230246251565e-16,
+          "max": 2.220446049250313e-16
+        },
+        "rgba_rmse_by_channel": [
+          0.004820514556047412,
+          0.0044518227975191265,
+          0.0042511079150781474,
+          4.373382751267837e-17
+        ]
+      }
+    },
+    "worst_direction_geometry_normalized": {
+      "rms": null,
+      "p95": null,
+      "max": null
+    },
+    "source_sheet_areas": {
+      "0": 4.634429294840811e-05,
+      "1": 6.189902364373072e-05,
+      "2": 3.06408231289568e-06,
+      "3": 2.6862089245057838e-05,
+      "4": 7.312202835763108e-06,
+      "5": 1.5975058506080137e-05,
+      "6": 1.9793898596133062e-05,
+      "7": 1.4617115028856887e-05,
+      "8": 1.9079380216068497e-05,
+      "9": 9.711695792989244e-06,
+      "10": 1.4389396216435025e-05,
+      "11": 1.6466914519027903e-05,
+      "12": 3.3510621976717293e-06,
+      "13": 1.8164335037076798e-05,
+      "14": 1.6178555056192984e-05,
+      "15": 6.036165389004552e-06,
+      "16": 1.2787934033016673e-05,
+      "17": 1.0066398604814481e-05,
+      "18": 3.216622726019794e-06,
+      "19": 2.402539993949736e-06,
+      "20": 1.1028449412954969e-05,
+      "21": 4.2004144314607925e-05,
+      "22": 7.361028546922976e-06,
+      "23": 1.169197059410799e-05,
+      "24": 7.239809555860807e-06,
+      "25": 1.121151205525147e-05,
+      "26": 1.5193445157126359e-05,
+      "27": 7.740483260780362e-06,
+      "28": 2.5834029014013436e-06,
+      "29": 5.48349875917691e-06,
+      "30": 1.5056834342894626e-06,
+      "31": 2.169966383901718e-06,
+      "32": 3.2970003069927315e-06,
+      "33": 1.5919960426566172e-06
+    },
+    "target_sheet_areas": {
+      "0": 4.606901278884018e-05,
+      "1": 6.194014943622446e-05,
+      "2": 3.06408231289568e-06,
+      "3": 2.3612289418891366e-05,
+      "4": 7.273183553383238e-06,
+      "5": 1.1110544585081336e-05,
+      "6": 1.8872200435768557e-05,
+      "7": 1.481010210999489e-05,
+      "8": 1.938790440926617e-05,
+      "9": 5.8076432484654525e-06,
+      "10": 1.3728734038100614e-05,
+      "11": 1.7831193667788382e-05,
+      "12": 3.09375792773517e-06,
+      "13": 1.3493404282385488e-05,
+      "14": 1.7225957863168393e-05,
+      "15": 3.8961057388884115e-06,
+      "16": 1.2646456597977407e-05,
+      "17": 6.6867337429025226e-06,
+      "20": 1.0854427951669117e-05,
+      "21": 4.1566066503615706e-05,
+      "22": 7.2774587710536e-06,
+      "23": 1.186522463259289e-05,
+      "24": 6.391148100754064e-06,
+      "25": 1.3478538100736077e-05,
+      "26": 1.4947821448780568e-05,
+      "27": 7.722330783298064e-06,
+      "29": 5.48349875917691e-06,
+      "32": 3.2970003069927315e-06
+    },
+    "source_degenerate_faces": 0,
+    "target_degenerate_faces": 0,
+    "silhouettes": {
+      "x": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 13362,
+        "target_pixels": 12219,
+        "intersection_pixels": 11283,
+        "union_pixels": 14298,
+        "iou": 0.7891313470415443,
+        "lost_fraction": 0.15559048046699595,
+        "gained_fraction": 0.07004939380332285,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          -0.31726449728012085,
+          0.12183496356010437
+        ],
+        "original_bounds_span": 0.013167703151702882
+      },
+      "y": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 25374,
+        "target_pixels": 25708,
+        "intersection_pixels": 25122,
+        "union_pixels": 25960,
+        "iou": 0.9677195685670262,
+        "lost_fraction": 0.009931425868999763,
+        "gained_fraction": 0.023094506187435956,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.1021389365196228,
+          0.12183496356010437
+        ],
+        "original_bounds_span": 0.01678086519241333
+      },
+      "z": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 34338,
+        "target_pixels": 33372,
+        "intersection_pixels": 33280,
+        "union_pixels": 34430,
+        "iou": 0.9665988963113564,
+        "lost_fraction": 0.03081134603063661,
+        "gained_fraction": 0.0026792474809249228,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.1021389365196228,
+          -0.31726449728012085
+        ],
+        "original_bounds_span": 0.01678086519241333
+      }
+    },
+    "sampling_limits": [
+      "Fixed seed 0; at most 512 (vertex, sheet) occurrences and 512 unique area-stratified face centroids per direction.",
+      "Finite samples can miss narrow holes, small fragments and unsampled maxima; these are not Hausdorff bounds.",
+      "Centroid strata selecting one face are deduplicated; reported errors are unweighted sample statistics.",
+      "Nearest matches are restricted to the same face sheet; ambiguities within one sheet remain possible.",
+      "Silhouettes use three axis views, 256x256 pixel centers and a fixed source frame with 10% padding; clipping and empty views are explicit.",
+      "Color errors use supplied channel values without color-space conversion; isolated unreferenced vertices are ignored."
+    ]
+  },
+  "control_modifier_seconds": 0.0010925999995379243,
+  "separated_modifier_seconds": 0.0009814000004553236,
+  "elapsed_seconds": 0.4177875999994285,
+  "artifacts": {
+    "source": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-face-fans-ad7a436\\forward-patch-source.npz",
+      "bytes": 9022,
+      "sha256": "b7f68e6613057dbde1bd35bca3b3ec603f204a37d4cc225ff75f53976ab7114d"
+    },
+    "separated": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-face-fans-ad7a436\\forward-patch-separated.npz",
+      "bytes": 17036,
+      "sha256": "fc5f00e61deb916f2a800387b4bcd3ffcb820f08e74a56a72cb3be42f8f7e1fc"
+    },
+    "control-decimated": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-face-fans-ad7a436\\forward-patch-control-decimated.npz",
+      "bytes": 6502,
+      "sha256": "46a94ddb55796f582ffb5b2ddf17ff303ecb1a0aeeb52aa174a9051dc7f4c8f3"
+    },
+    "separated-decimated": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-face-fans-ad7a436\\forward-patch-separated-decimated.npz",
+      "bytes": 5954,
+      "sha256": "fcca70802fd74acc1dffca4a99d99990ab1d196d82ff0654122cfcaf8667eff8"
+    }
+  },
+  "patch_extraction": {
+    "target": [
+      0.1,
+      -0.32,
+      0.1
+    ],
+    "seed_global_vertex_rows": [
+      1214655,
+      1214693
+    ],
+    "seed_midpoint": [
+      0.10151442885398865,
+      -0.3169470727443695,
+      0.11923003196716309
+    ],
+    "distance_from_target": 0.019529669455474123,
+    "fixed_vertex_rings": 3,
+    "complete_four_face_seed": true,
+    "complete_original_seed_endpoint_stars": true,
+    "seed_local_face_rows": [
+      77,
+      82,
+      88,
+      90
+    ],
+    "natural_original_boundary_edges": 0,
+    "artificial_extraction_boundary_edges": 74,
+    "partially_cropped_original_nonmanifold_edges": 10,
+    "join_policy": "Only original GLOBAL incidence2; cropped incidence4 is never mistaken for manifold",
+    "sample_scope": "Local patch only; does not test complete housing, barrels, base or global silhouette",
+    "provenance": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-face-fans-ad7a436\\forward-patch-source-provenance.npz",
+      "bytes": 10238,
+      "sha256": "c9d135664f6b0c43de184014f9667f3c90a432b41d8321ee69cf13fa06b82941"
+    }
+  }
+}

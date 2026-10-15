@@ -1,0 +1,19 @@
+{
+  "decision": "NO-GO",
+  "reviewers": ["fan_separation_review", "patch_metric_review"],
+  "scope": "Cross-review of bounded separation, original-global incidence handling, actual Blender decimation integration, metrics, saved outcome and stop decision",
+  "findings": [
+    "Preparation preserves original ordered triangles and corner positions/colours, while removing greater-than-two face incidence; it does not assert all original bad edges become open boundaries.",
+    "Real-patch crop boundaries and partially cropped global junctions are explicitly accounted for; complete seed junction and endpoint stars are retained.",
+    "The real patch fragments into34 components and loses6 sheet labels after decimation; geometry and silhouette failures independently justify stopping before the second patch.",
+    "Complete-source geometry and RGB statistics are unavailable after sheet loss; observed matched-surface RGB errors pass and must not be reported as measured threshold failures.",
+    "No whole-turret quality or alternative fan-pairing conclusion follows from this single real patch."
+  ],
+  "pre_execution_corrections": [
+    "Required post-decimation non-manifold rejection and clipped-silhouette rejection before either execution.",
+    "Added exact actual-Blender XYZ/triangle/RGBA/face-sheet ingestion assertions before the real phase; preserved exact synthetic executed source separately."
+  ],
+  "final_report_review": "patch_metric_review confirmed geometry, silhouettes, lost-label area and matched RGB figures against saved results. Clarified that full-mesh edge analysis was read-only, while preparation/decimation remained bounded to patches.",
+  "remaining_blocking_review_findings": [],
+  "further_experiments_authorized_by_review": false
+}

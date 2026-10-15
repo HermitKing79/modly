@@ -1,0 +1,567 @@
+{
+  "name": "synthetic",
+  "decision": "GO",
+  "reasons": [],
+  "synthetic": true,
+  "criteria": {
+    "real_ratio": 0.25,
+    "synthetic_ratio": 0.05,
+    "max_patch_faces": 6000,
+    "fixed_vertex_rings": 3,
+    "max_prepared_vertex_factor": 2.0,
+    "max_boundary_length_factor": 3.0,
+    "min_area_in_largest_4x_original_components": 0.95,
+    "max_real_output_fraction": 0.3,
+    "max_fraction_of_control_faces": 0.8,
+    "geometry_normalized_rms": 0.005,
+    "geometry_normalized_p95": 0.01,
+    "geometry_normalized_max": 0.03,
+    "min_axis_silhouette_iou": 0.98,
+    "max_rgb_rms": 0.02,
+    "max_rgb_p95": 0.05,
+    "max_lost_sheet_area_fraction": 0.01
+  },
+  "before": {
+    "vertices": 561,
+    "triangles": 1024,
+    "nonmanifold_gt2_edges": 16,
+    "boundary_edges": 128,
+    "boundary_length": 16.0,
+    "components": 1,
+    "component_areas": [
+      8.0
+    ],
+    "top4_area_fraction": 1.0,
+    "zero_area_triangles": 0,
+    "bounds": {
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "separated": {
+    "vertices": 612,
+    "triangles": 1024,
+    "nonmanifold_gt2_edges": 0,
+    "boundary_edges": 192,
+    "boundary_length": 24.0,
+    "components": 4,
+    "component_areas": [
+      2.0,
+      2.0,
+      2.0,
+      2.0
+    ],
+    "top4_area_fraction": 1.0,
+    "zero_area_triangles": 0,
+    "bounds": {
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "preservation": {
+    "ordered_triangle_origins_exact": true,
+    "ordered_corner_XYZ_byte_exact": true,
+    "ordered_corner_RGBA_byte_exact": true,
+    "surface_triangle_payload_sha256": "9e289a743dbdeee156a3120ed971c6383252464ff1aa17f86cb771776c56e400",
+    "corner_RGBA_sha256": "663a93c18613d64674995e3534f9e3d0ee8a4322c63c6f22c51f4697a5465383",
+    "vertex_duplicates_added": 51,
+    "new_boundaries_from_original_gt2_edges": 64,
+    "new_boundaries_from_other_original_edges": 0,
+    "original_bad_edge_descendant_incidence_histogram": {
+      "1": 64
+    }
+  },
+  "ratio": 0.05,
+  "requested_triangles": 51,
+  "control_decimated": {
+    "vertices": 21,
+    "triangles": 64,
+    "nonmanifold_gt2_edges": 16,
+    "boundary_edges": 8,
+    "boundary_length": 11.313708498984761,
+    "components": 1,
+    "component_areas": [
+      4.0
+    ],
+    "top4_area_fraction": 1.0,
+    "zero_area_triangles": 0,
+    "bounds": {
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "separated_decimated": {
+    "vertices": 45,
+    "triangles": 51,
+    "nonmanifold_gt2_edges": 0,
+    "boundary_edges": 31,
+    "boundary_length": 24.0,
+    "components": 4,
+    "component_areas": [
+      2.0,
+      2.0,
+      2.0,
+      2.0
+    ],
+    "top4_area_fraction": 1.0,
+    "zero_area_triangles": 0,
+    "bounds": {
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "control_measurements": {
+    "source_diagonal": 3.4641016151377544,
+    "source_to_target": {
+      "complete": true,
+      "samples": {
+        "vertices": 512,
+        "centroids": 512
+      },
+      "matched_samples": 1024,
+      "failed_queries": 0,
+      "missing_sheet_ids": [],
+      "lost_sheet_area": 0,
+      "lost_sheet_area_fraction": 0.0,
+      "geometry_normalized": {
+        "rms": 0.06450844961767244,
+        "p95": 0.15309310200227697,
+        "max": 0.20412414173849558
+      },
+      "rgb_channel_error": {
+        "rms": 0.012901693414538002,
+        "p95": 0.030618629084839234,
+        "max": 0.040824826613036866
+      },
+      "alpha_error": {
+        "rms": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "rgba_rmse_by_channel": [
+        0.015801282653264526,
+        0.01122174059057648,
+        0.011124436323591785,
+        0.0
+      ],
+      "matched_sheets_only": {
+        "geometry_normalized": {
+          "rms": 0.06450844961767244,
+          "p95": 0.15309310200227697,
+          "max": 0.20412414173849558
+        },
+        "rgb_channel_error": {
+          "rms": 0.012901693414538002,
+          "p95": 0.030618629084839234,
+          "max": 0.040824826613036866
+        },
+        "alpha_error": {
+          "rms": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "rgba_rmse_by_channel": [
+          0.015801282653264526,
+          0.01122174059057648,
+          0.011124436323591785,
+          0.0
+        ]
+      }
+    },
+    "target_to_source": {
+      "complete": true,
+      "samples": {
+        "vertices": 72,
+        "centroids": 64
+      },
+      "matched_samples": 136,
+      "failed_queries": 0,
+      "missing_sheet_ids": [],
+      "lost_sheet_area": 0,
+      "lost_sheet_area_fraction": 0.0,
+      "geometry_normalized": {
+        "rms": 2.6147373379551584e-09,
+        "p95": 4.301594713252975e-09,
+        "max": 1.72063788530119e-08
+      },
+      "rgb_channel_error": {
+        "rms": 2.0720754409170704e-09,
+        "p95": 5.764065534959126e-09,
+        "max": 5.764065534959126e-09
+      },
+      "alpha_error": {
+        "rms": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "rgba_rmse_by_channel": [
+        3.4879420634946473e-09,
+        5.978085229652217e-10,
+        5.978085229652217e-10,
+        0.0
+      ],
+      "matched_sheets_only": {
+        "geometry_normalized": {
+          "rms": 2.6147373379551584e-09,
+          "p95": 4.301594713252975e-09,
+          "max": 1.72063788530119e-08
+        },
+        "rgb_channel_error": {
+          "rms": 2.0720754409170704e-09,
+          "p95": 5.764065534959126e-09,
+          "max": 5.764065534959126e-09
+        },
+        "alpha_error": {
+          "rms": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "rgba_rmse_by_channel": [
+          3.4879420634946473e-09,
+          5.978085229652217e-10,
+          5.978085229652217e-10,
+          0.0
+        ]
+      }
+    },
+    "worst_direction_geometry_normalized": {
+      "rms": 0.06450844961767244,
+      "p95": 0.15309310200227697,
+      "max": 0.20412414173849558
+    },
+    "source_sheet_areas": {
+      "0": 2.0,
+      "1": 2.0,
+      "2": 2.0,
+      "3": 2.0
+    },
+    "target_sheet_areas": {
+      "0": 1.0,
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0
+    },
+    "source_degenerate_faces": 0,
+    "target_degenerate_faces": 0,
+    "silhouettes": {
+      "x": {
+        "informative": false,
+        "reason": "source projects to no occupied pixel centers",
+        "source_pixels": 0,
+        "target_pixels": 0,
+        "intersection_pixels": 0,
+        "union_pixels": 0,
+        "iou": null,
+        "lost_fraction": null,
+        "gained_fraction": null,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.0,
+          0.0
+        ],
+        "original_bounds_span": 2.2
+      },
+      "y": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 53824,
+        "target_pixels": 27144,
+        "intersection_pixels": 27144,
+        "union_pixels": 53824,
+        "iou": 0.5043103448275862,
+        "lost_fraction": 0.4956896551724138,
+        "gained_fraction": 0.0,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.0,
+          0.0
+        ],
+        "original_bounds_span": 2.2
+      },
+      "z": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 53824,
+        "target_pixels": 27144,
+        "intersection_pixels": 27144,
+        "union_pixels": 53824,
+        "iou": 0.5043103448275862,
+        "lost_fraction": 0.4956896551724138,
+        "gained_fraction": 0.0,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.0,
+          0.0
+        ],
+        "original_bounds_span": 2.2
+      }
+    },
+    "sampling_limits": [
+      "Fixed seed 0; at most 512 (vertex, sheet) occurrences and 512 unique area-stratified face centroids per direction.",
+      "Finite samples can miss narrow holes, small fragments and unsampled maxima; these are not Hausdorff bounds.",
+      "Centroid strata selecting one face are deduplicated; reported errors are unweighted sample statistics.",
+      "Nearest matches are restricted to the same face sheet; ambiguities within one sheet remain possible.",
+      "Silhouettes use three axis views, 256x256 pixel centers and a fixed source frame with 10% padding; clipping and empty views are explicit.",
+      "Color errors use supplied channel values without color-space conversion; isolated unreferenced vertices are ignored."
+    ]
+  },
+  "separated_measurements": {
+    "source_diagonal": 3.4641016151377544,
+    "source_to_target": {
+      "complete": true,
+      "samples": {
+        "vertices": 512,
+        "centroids": 512
+      },
+      "matched_samples": 1024,
+      "failed_queries": 0,
+      "missing_sheet_ids": [],
+      "lost_sheet_area": 0,
+      "lost_sheet_area_fraction": 0.0,
+      "geometry_normalized": {
+        "rms": 9.361513155640554e-09,
+        "p95": 1.9237316663420977e-08,
+        "max": 3.8474633326841954e-08
+      },
+      "rgb_channel_error": {
+        "rms": 9.350154560138218e-09,
+        "p95": 1.618451313403331e-08,
+        "max": 2.3448559044075146e-08
+      },
+      "alpha_error": {
+        "rms": 3.655289179967359e-17,
+        "p95": 0.0,
+        "max": 2.220446049250313e-16
+      },
+      "rgba_rmse_by_channel": [
+        1.2029924860433379e-08,
+        6.049520144381354e-09,
+        8.99779888475352e-09,
+        3.655289179967359e-17
+      ],
+      "matched_sheets_only": {
+        "geometry_normalized": {
+          "rms": 9.361513155640554e-09,
+          "p95": 1.9237316663420977e-08,
+          "max": 3.8474633326841954e-08
+        },
+        "rgb_channel_error": {
+          "rms": 9.350154560138218e-09,
+          "p95": 1.618451313403331e-08,
+          "max": 2.3448559044075146e-08
+        },
+        "alpha_error": {
+          "rms": 3.655289179967359e-17,
+          "p95": 0.0,
+          "max": 2.220446049250313e-16
+        },
+        "rgba_rmse_by_channel": [
+          1.2029924860433379e-08,
+          6.049520144381354e-09,
+          8.99779888475352e-09,
+          3.655289179967359e-17
+        ]
+      }
+    },
+    "target_to_source": {
+      "complete": true,
+      "samples": {
+        "vertices": 45,
+        "centroids": 43
+      },
+      "matched_samples": 88,
+      "failed_queries": 0,
+      "missing_sheet_ids": [],
+      "lost_sheet_area": 0,
+      "lost_sheet_area_fraction": 0.0,
+      "geometry_normalized": {
+        "rms": 3.559317085121342e-09,
+        "p95": 8.60318942650595e-09,
+        "max": 1.72063788530119e-08
+      },
+      "rgb_channel_error": {
+        "rms": 8.57188840969679e-09,
+        "p95": 1.6270811313877194e-08,
+        "max": 2.3883779077378858e-08
+      },
+      "alpha_error": {
+        "rms": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "rgba_rmse_by_channel": [
+        1.0921455605010248e-08,
+        4.857290156940637e-09,
+        8.806835556768404e-09,
+        0.0
+      ],
+      "matched_sheets_only": {
+        "geometry_normalized": {
+          "rms": 3.559317085121342e-09,
+          "p95": 8.60318942650595e-09,
+          "max": 1.72063788530119e-08
+        },
+        "rgb_channel_error": {
+          "rms": 8.57188840969679e-09,
+          "p95": 1.6270811313877194e-08,
+          "max": 2.3883779077378858e-08
+        },
+        "alpha_error": {
+          "rms": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "rgba_rmse_by_channel": [
+          1.0921455605010248e-08,
+          4.857290156940637e-09,
+          8.806835556768404e-09,
+          0.0
+        ]
+      }
+    },
+    "worst_direction_geometry_normalized": {
+      "rms": 9.361513155640554e-09,
+      "p95": 1.9237316663420977e-08,
+      "max": 3.8474633326841954e-08
+    },
+    "source_sheet_areas": {
+      "0": 2.0,
+      "1": 2.0,
+      "2": 2.0,
+      "3": 2.0
+    },
+    "target_sheet_areas": {
+      "0": 2.0,
+      "1": 2.0,
+      "2": 2.0,
+      "3": 2.0
+    },
+    "source_degenerate_faces": 0,
+    "target_degenerate_faces": 0,
+    "silhouettes": {
+      "x": {
+        "informative": false,
+        "reason": "source projects to no occupied pixel centers",
+        "source_pixels": 0,
+        "target_pixels": 0,
+        "intersection_pixels": 0,
+        "union_pixels": 0,
+        "iou": null,
+        "lost_fraction": null,
+        "gained_fraction": null,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.0,
+          0.0
+        ],
+        "original_bounds_span": 2.2
+      },
+      "y": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 53824,
+        "target_pixels": 53824,
+        "intersection_pixels": 53824,
+        "union_pixels": 53824,
+        "iou": 1.0,
+        "lost_fraction": 0.0,
+        "gained_fraction": 0.0,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.0,
+          0.0
+        ],
+        "original_bounds_span": 2.2
+      },
+      "z": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 53824,
+        "target_pixels": 53824,
+        "intersection_pixels": 53824,
+        "union_pixels": 53824,
+        "iou": 1.0,
+        "lost_fraction": 0.0,
+        "gained_fraction": 0.0,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.0,
+          0.0
+        ],
+        "original_bounds_span": 2.2
+      }
+    },
+    "sampling_limits": [
+      "Fixed seed 0; at most 512 (vertex, sheet) occurrences and 512 unique area-stratified face centroids per direction.",
+      "Finite samples can miss narrow holes, small fragments and unsampled maxima; these are not Hausdorff bounds.",
+      "Centroid strata selecting one face are deduplicated; reported errors are unweighted sample statistics.",
+      "Nearest matches are restricted to the same face sheet; ambiguities within one sheet remain possible.",
+      "Silhouettes use three axis views, 256x256 pixel centers and a fixed source frame with 10% padding; clipping and empty views are explicit.",
+      "Color errors use supplied channel values without color-space conversion; isolated unreferenced vertices are ignored."
+    ]
+  },
+  "control_modifier_seconds": 0.002749299999777577,
+  "separated_modifier_seconds": 0.0024532999996154103,
+  "elapsed_seconds": 0.6627932999999757,
+  "artifacts": {
+    "source": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-face-fans-ad7a436\\synthetic-source.npz",
+      "bytes": 33094,
+      "sha256": "7f40b59fcdb70c02d28772201f538f63f3e4562a56fa1e817bacec95fedae7b2"
+    },
+    "separated": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-face-fans-ad7a436\\synthetic-separated.npz",
+      "bytes": 39688,
+      "sha256": "2b53ba0529ccc5a4285ef07c0a934b3af884f2d1bc8804f519d54b8474523a64"
+    },
+    "control-decimated": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-face-fans-ad7a436\\synthetic-control-decimated.npz",
+      "bytes": 2614,
+      "sha256": "f8bfac6a511f1e86e5458755f71973d54d471e97dad8a031a636f2d7694c5fa9"
+    },
+    "separated-decimated": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-face-fans-ad7a436\\synthetic-separated-decimated.npz",
+      "bytes": 3078,
+      "sha256": "c661f694890c724fd67a488b0a10b6e6ece2051dd72bd1840e40b600ebba2494"
+    }
+  },
+  "patch_extraction": null
+}

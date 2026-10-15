@@ -1,0 +1,47 @@
+{
+  "decision": "NO-GO",
+  "cases": [
+    {
+      "name": "forward-patch",
+      "decision": "NO-GO",
+      "reasons": [
+        "excessive_boundary_length",
+        "excessive_fragmentation",
+        "excessive_vertex_duplication",
+        "geometry_max",
+        "geometry_p95",
+        "geometry_rms",
+        "silhouette_x",
+        "silhouette_y",
+        "silhouette_z",
+        "source_to_target_RGB_P95",
+        "source_to_target_RGB_RMS",
+        "source_to_target_lost_surface_sheet_area",
+        "source_to_target_missing_sheet_or_query"
+      ]
+    }
+  ],
+  "criteria": {
+    "real_ratio": 0.25,
+    "synthetic_ratio": 0.05,
+    "max_patch_faces": 6000,
+    "fixed_vertex_rings": 3,
+    "max_prepared_vertex_factor": 2.0,
+    "max_boundary_length_factor": 3.0,
+    "min_area_in_largest_4x_original_components": 0.95,
+    "max_real_output_fraction": 0.3,
+    "max_fraction_of_control_faces": 0.8,
+    "geometry_normalized_rms": 0.005,
+    "geometry_normalized_p95": 0.01,
+    "geometry_normalized_max": 0.03,
+    "min_axis_silhouette_iou": 0.98,
+    "max_rgb_rms": 0.02,
+    "max_rgb_p95": 0.05,
+    "max_lost_sheet_area_fraction": 0.01
+  },
+  "elapsed_seconds": 1.6095688999994309,
+  "full_mesh_separations": 0,
+  "full_mesh_decimations": 0,
+  "GLB_exports": 0,
+  "stop_after_first_failing_real_patch": true
+}

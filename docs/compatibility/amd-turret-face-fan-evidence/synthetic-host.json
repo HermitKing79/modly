@@ -1,0 +1,94 @@
+{
+  "phase": "synthetic",
+  "command": [
+    "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--threads",
+    "4",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-face-fan-evidence\\worker.py"
+  ],
+  "CPU_only": true,
+  "deadline_seconds": 60,
+  "memory_cap_bytes": 2147483648,
+  "host_available_RAM_bytes": 19498795008,
+  "scripts": {
+    "host.py": "6348f6940e03f009f7509cf0c6ef1002c95e4872e90a2ac2a680779af741bb5a",
+    "common.py": "81c4d514b84d8e77809549c803b649fd8dd98769bdeeb99c23f47b54d8c43221",
+    "worker.py": "da7ee269cfec012683c6b8b535750dc425f1360b2c5548d56178d4be030fd7af",
+    "core.py": "071ea3031204062817d0496985f32513634e61754fb935d3b8dd5353f695b1b1",
+    "metrics.py": "e2f090d4120c3ad390c759f723d76f95b5cdb469f0531c8f665bb05efa7a1767"
+  },
+  "returncode": 0,
+  "peak_committed_bytes": 289189888,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 3.42200000000048,
+  "sources_after": [
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-pbr-3485263\\learned-pbr.blend",
+      "bytes": 114365124,
+      "sha256": "555ef22321040a806b8d21cad65087eb0b424d46e6d9ed8a2a11c6a49cc79339"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\turret-full.ply",
+      "bytes": 74276526,
+      "sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field\\texture-field.safetensors",
+      "bytes": 117958320,
+      "sha256": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors",
+      "bytes": 96433760,
+      "sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\learned-colour.blend",
+      "bytes": 97205266,
+      "sha256": "b5c91db6b4c9717da987ab7c6d65ba495f78b0fcb87cd10e0ad3944dc1e17632"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-coloured-glb-357e541\\turret-learned-colour.glb",
+      "bytes": 479788924,
+      "sha256": "ea9ea02c87311e91ddd455a2d0664ec5a2965adc966b108f72c3e3ce1f98df15"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\turret-learned-colour.ply",
+      "bytes": 79805490,
+      "sha256": "d79f6fb38d23e2f0c7bcc492153290d67767466411f71dc19fcc5c6540ceeb72"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-compact-glb-d3eec48\\turret-learned-colour-compact.glb",
+      "bytes": 92305152,
+      "sha256": "6f3a71eb1dc683a83a83ba0b1c6e0add87391ef1d7ee4a9e0faf4092eb3f6c2d"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-front.png",
+      "bytes": 406300,
+      "sha256": "262aa6f754954c09a9d17fab77f6003f425ac1dec0331b5ee956add9363d7955"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-side.png",
+      "bytes": 385481,
+      "sha256": "ff3319685760ef59351b4e6f96295675e589bdef883d15d6a603c79ba8b9325e"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-coloured-glb-357e541\\source-linear-RGB.npy",
+      "bytes": 22115744,
+      "sha256": "ce010634db30e056c1d67d799b9e1ccdf09c9a1e14c5e6e14193a273bb6f29f8"
+    }
+  ],
+  "completed": true
+}
