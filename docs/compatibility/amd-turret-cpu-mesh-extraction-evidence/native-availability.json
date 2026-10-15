@@ -1,0 +1,206 @@
+{
+  "status": "STATIC_ASSESSMENT_COMPLETE",
+  "decision": "Use a source-equivalent CPU sparse-grid converter; existing native extraction is not qualified for this CPU task.",
+  "Windows": [
+    {
+      "environment": "modly",
+      "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\o_voxel\\_C.cp311-win_amd64.pyd",
+      "bytes": 883712,
+      "sha256": "9c80daaf9ec5240bc43c83587d570b69f2ed9f9c7d4d873ff5ecb1f1ab8ad02f",
+      "exists": true,
+      "matches_saved_binary_and_PE_imports": true,
+      "package": "0.0.1+cu126torch2.11",
+      "Python_ABI": "cp311",
+      "format": "PE32+ x86-64",
+      "required_runtime": "cudart64_12.dll",
+      "saved_Torch": "2.11.0+rocm7.14.0"
+    },
+    {
+      "environment": "amd",
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\o_voxel\\_C.cp312-win_amd64.pyd",
+      "bytes": 2811904,
+      "sha256": "4900ba16cb2d24c816e968fb54c74218f119e12ad942a81f8d318215802bf953",
+      "exists": true,
+      "matches_saved_binary_and_PE_imports": true,
+      "package": "0.0.1+rocm.10.0",
+      "Python_ABI": "cp312",
+      "format": "PE32+ x86-64",
+      "required_runtime": "amdhip64_7.dll",
+      "saved_Torch": "2.13.0+rocm10.0.0"
+    }
+  ],
+  "WSL": {
+    "latest_complete_preservation": "docs/compatibility/amd-wsl-turret-artifact-writer-ready-evidence/linux-preservation-after.json",
+    "baseline_packages_record": "docs/compatibility/amd-wsl-native-decoder-preparation-evidence/staging.json",
+    "stage": "/home/modly/native-decoder-preparation-6dd94a85/site-packages",
+    "recorded_staged_packages": {
+      "flex-gemm": "1.0.0",
+      "numpy": "2.2.6",
+      "packaging": "25.0",
+      "safetensors": "0.6.2"
+    },
+    "recorded_baseline_Torch": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "o_voxel_in_recorded_stage_or_baseline_package_set": false,
+    "fresh_live_WSL_filesystem_check_performed": false,
+    "qualification": "No o_voxel extraction qualification in the established WSL stage; stopped WSL was not started for discovery.",
+    "local_prebuilt_wheel": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\wheels\\Linux\\Python3.12\\o_voxel-0.0.1+rocm.10.0-cp312-cp312-linux_x86_64.whl",
+      "bytes": 19038701,
+      "sha256": "fb6c66d51191954575821a626ba905fe39b297fc14038b3284b012a48ba648fe",
+      "tag": "cp312-cp312-linux_x86_64",
+      "native_member": "o_voxel/_C.cpython-312-x86_64-linux-gnu.so",
+      "native_bytes": 67847800,
+      "native_sha256": "88981b36c7f3bb304ba6ad52473cdf5e24bdc816499e0891c898ac45d23457ae",
+      "DT_NEEDED": [
+        "libc10.so",
+        "libtorch.so",
+        "libtorch_cpu.so",
+        "libtorch_python.so",
+        "libamdhip64.so.7",
+        "libstdc++.so.6",
+        "libm.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ],
+      "imported_or_staged_this_task": false,
+      "Torch_CXX_ABI_compatibility_with_baseline": "Unqualified; library names and CPython tag alone cannot establish ABI compatibility."
+    }
+  },
+  "pinned_conversion_sources": [
+    {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\o_voxel\\convert\\flexible_dual_grid.py",
+      "bytes": 18928,
+      "sha256": "2538315098531d5306e2cb5bf84942335e114c23fd1192dbd1920800c1c9b7a2",
+      "LF_normalized_sha256": "03611b87118bf14b5a5cb430ce019cbee539e036997c273b7066bae86083e268"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\o_voxel\\convert\\flexible_dual_grid.py",
+      "bytes": 18309,
+      "sha256": "801eb5edda6486dfd4fec1baec7ae182b8343025101e06a24cbaad0cb0062d53",
+      "LF_normalized_sha256": "801eb5edda6486dfd4fec1baec7ae182b8343025101e06a24cbaad0cb0062d53"
+    }
+  ],
+  "Linux_wheel_source": {
+    "member": "o_voxel/convert/flexible_dual_grid.py",
+    "bytes": 18537,
+    "sha256": "03611b87118bf14b5a5cb430ce019cbee539e036997c273b7066bae86083e268",
+    "AMD_installed_source_LF_normalized_equal": true,
+    "mesh_function_lines": [
+      234,
+      392
+    ]
+  },
+  "extraction_constraints": [
+    "Ordinary o_voxel package import eagerly imports postprocess -> flex_gemm -> Triton configuration; preserved final preflight failed the PyTorch GPU initialization guard. No new import was attempted.",
+    "flexible_dual_grid_to_mesh calls _C.hashmap_insert_3d_idx_as_val_cuda and _C.hashmap_lookup_3d_cuda even for CPU tensor input; there is no CPU dispatch in the wrapper.",
+    "The native mesh_to_flexible_dual_grid_cpu function is the reverse mesh-to-grid direction.",
+    "Windows PE cp311/cp312 modules cannot be used as Linux ELF modules; each depends on its named CPython/Torch/runtime stack.",
+    "ELF or PE dependency identities do not prove callable extraction, successful symbol resolution, or safe GPU execution."
+  ],
+  "shortest_CPU_route": {
+    "method": "Read pinned source as text; implement its train=False sparse coordinate lookup, quad construction and triangulation using CPU NumPy without importing o_voxel/Torch.",
+    "edge_offsets": [
+      [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    ],
+    "quad_split_1": [
+      0,
+      1,
+      2,
+      0,
+      2,
+      3
+    ],
+    "quad_split_2": [
+      0,
+      1,
+      3,
+      3,
+      1,
+      2
+    ],
+    "validity": "Only edges with all four source voxels present form quads; match source edge/intersection iteration order.",
+    "weighted_split": "Choose split_1 iff w0*w2 > w1*w3; ties choose split_2.",
+    "world_vertices": "(coords.float32 + dual_vertices) * ((aabb[1]-aabb[0])/grid_size) + aabb[0]",
+    "train": false,
+    "geometry_status": "Algorithmic route identified; mesh validity must be established by the authorized converter and its actual artifact."
+  },
+  "evidence": [
+    "docs/compatibility/amd-cached-neighbour-mixing-evidence/inventory-after.json",
+    "docs/compatibility/amd-native-import-preflight-evidence/final/results.json",
+    "docs/compatibility/amd-wsl-native-decoder-preparation-evidence/stage-source.py",
+    "docs/compatibility/amd-wsl-turret-artifact-writer-ready-evidence/linux-preservation-after.json"
+  ],
+  "AI_Torch_native_imports": false,
+  "GPU_actions": false,
+  "WSL_commands_or_start": false,
+  "Git_commands_or_mutations": false,
+  "installs_or_builds": false,
+  "installed_files_edited": false,
+  "model_or_checkpoint_payloads_accessed_by_static_native_assessment": false
+}

@@ -1,0 +1,39 @@
+{
+  "review": "Read-only source contracts for saved-neural-output to full CPU mesh conversion",
+  "decision": "Source guidance only; candidate execution review pending",
+  "reviewer_AI_GPU_WSL_actions": false,
+  "official_source": {
+    "URL": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/de38fdd4082638cb4e6d2285f2e215280bd3f485/o-voxel/o_voxel/convert/flexible_dual_grid.py",
+    "sha256": "112bd474d580f279ac196129f7989df6fdafa7ed7e08c350f2b386553e73e17d",
+    "comparison": "Requested official main source was read online and compared with the preserved installed source. Relevant inference offsets, split-weight rule and final grid/AABB transform agree; full files are not identical."
+  },
+  "installed_source_sha256": {
+    "o_voxel/convert/flexible_dual_grid.py": "2538315098531d5306e2cb5bf84942335e114c23fd1192dbd1920800c1c9b7a2",
+    "trellis2/models/sc_vaes/fdg_vae.py": "1d267cdca119eb619674dc87bfccd8c5a1d90288739e2b8e08e6f497ac14ce9c"
+  },
+  "decoder_feature_contract": {
+    "coordinates": "Use saved coordinates[:,1:] directly, preserving original row and axis order; no D/H/W permutation",
+    "dual_vertex": "With default voxel_margin0.5: 2*sigmoid(features[:,0:3])-0.5",
+    "edge_flags": "features[:,3:6]>0, strict threshold",
+    "split_weight": "softplus(features[:,6:7]), supplied for this inference path; preserve float32 values and products",
+    "world_vertex": "(coordinates+dual_vertex)/512-0.5, using saved artifact resolution512 and AABB[-0.5,0.5]^3",
+    "resolution_caveat": "Checkpoint configuration says256, but saved actual output provenance and full support are512. Do not copy the checkpoint's geometry resolution into this approved saved-output conversion.",
+    "margin_caveat": "The configured default margin permits dual vertices[-0.5,1.5] and world positions up to half a voxel outside nominal AABB: generic bound[-0.5009765625,0.5009765625]. Do not clamp or reject against nominal[-0.5,0.5]."
+  },
+  "edge_neighbor_offsets_in_exact_order": [
+    [[0,0,0],[0,0,1],[0,1,1],[0,1,0]],
+    [[0,0,0],[1,0,0],[1,0,1],[0,0,1]],
+    [[0,0,0],[0,1,0],[1,1,0],[1,0,0]]
+  ],
+  "triangulation": {
+    "split_1": [[0,1,2],[0,2,3]],
+    "split_2": [[0,1,3],[3,1,2]],
+    "selection": "Choose split1 iff q0*q2>q1*q3; equality chooses split2. Float32 product underflow can create genuine ties; float64 comparison can change topology.",
+    "winding": "Preserve these ordered indices. On canonical planar cells the normal points toward the negative coordinate axis for all three groups. Source does not flip winding using a sign or automatically orient an outward solid.",
+    "order": "intersected_flag boolean indexing selects row-major(voxel original row,axis) quads. Emit both ordered triangles for each valid quad; chunking must not reorder vertices or change global original indices."
+  },
+  "global_lookup": "Sort integer coordinate keys only for membership search; map successful search positions back through the sort permutation to ORIGINAL saved row indices. Keep every original vertex, including unused rows. A quad exists only if all four distinct coordinate queries are present. Explicitly range-check each query axis before linearizing to prevent z/y carry alias at512; native out-of-range behavior is not established by the Python source alone. Never clamp a query, reuse a missing index or fill a missing corner.",
+  "reference_differences": "Installed converter adds device-aware statics, triangle chunks and an optional overlapping tiled helper. For this global conversion use the common nontraining, supplied-split-weight core. The official early vertices expression involving2*N is overwritten by the actual inference grid/AABB branch; do not use it. Training midpoint construction and the split_weight=None angle fallback are outside this artifact contract.",
+  "acceptance_caveats": "Report selected flags, valid quads, missing-any-corner quads, out-of-grid queries and exactly2*valid_quads triangles. Source retains geometrically degenerate triangles and unused vertices; no automatic deletion, weld, hole filling, simplification or winding repair is source-equivalent. Finite valid indexed geometry alone does not prove watertightness, manifoldness, lack of self-intersections or visual quality. Diagnose boundary/nonmanifold/degenerate counts without inventing missing geometry.",
+  "pending": "Review exact CPU candidate, bounded resource/I-O plan and recorded offline tests before conversion. No converter was implemented or executed by this reviewer."
+}

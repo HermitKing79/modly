@@ -1,0 +1,27 @@
+{
+  "review": "Focused independent read-only review before one full CPU mesh extraction",
+  "decision": "GO",
+  "scope": "One CPU-only conversion of the exact immutable saved neural artifact; no decoder, Torch, GPU, WSL or native AI extractor execution and no automatic repair/retry",
+  "reviewer_runtime_actions": false,
+  "identities_sha256": {
+    "amd_flexible_dual_grid_cpu.py": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40",
+    "test_amd_flexible_dual_grid_cpu.py": "2c55dbefb545cab6da37acd8987913f57241c3838f9d4f555e8acb9577b6dda3",
+    "extract.py": "b8d9478ad48e349333a4e108d1fae8a0f290d70b4daabfeee8d016242cddffce",
+    "unchanged_amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64"
+  },
+  "input_admission": "Fixed size96433760/SHA dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22; bounded header, exact ten tensor schema and complete offsets, every raw payload hash, provenance/sidecar, F32 finite values and BF16 exponent finite check, unique bounded coordinates/batch0 and positive-BF16 subdivision count linkage. All maps are read-only; full source hash is checked again after conversion.",
+  "source_equivalence": {
+    "reference": "Contracts in independent-source-contract-review.json; official commitde38fdd and preserved installed sources",
+    "transforms": "Stable float32 sigmoid dual=2*sigmoid-.5, strict positive flag logits, threshold20 softplus, float32 weight products; final world=(originalcoords+dual)/512-.5 with margin bound, no axis permutation or clipping",
+    "connectivity": "Exact three offset groups, row-major original-row/axis selection and original quad corner order. Global sorted integer keys map successful searches back through original row permutation. Each query is range-checked and must match all four original coordinate keys, preventing end-sentinel indexing and linear-key wrap.",
+    "triangulation": "Exact source split arrays; split1 only for q0*q2>q1*q3, equality selects2. Original winding/global original vertex indices and every original vertex are preserved. No chunk seam, vertex prune or tile-local lookup.",
+    "numerical_caveat": "NumPy and Torch sigmoid/softplus kernels can round differently near split-product ties. The code translates the inference formulas in float32; this is not a bitwise GPU topology/vertex equality proof. No automatic precision or tie-rule change is present."
+  },
+  "allocation_and_containment": "32768-row flag/query batches; global sort/face arrays are linear in N, with no dense512-cube or quadratic allocation. Concatenation temporarily holds chunk face arrays and complete faces; this residency is not described as fully streamed. Worst general face count6N is bounded by N<=2M. Duplicate detection builds one int64 key per face using bounded chunks and sorts it; N^3<=8e18 fits signed64. Admission requires6GiB host RAM/2GiB output disk, one owned Job with KILL_ON_JOB_CLOSE and2GiB process committed-memory limit, child waits for GO after attachment, CPU deadline180seconds and native-thread counts1. Measured Job peaks are committed bytes, not RSS or a file-map working-set ceiling.",
+  "output_validation": "Nonempty finite full vertices, valid original index range, correct half-voxel AABB margin; repeated indices, exact zero-area triangles and duplicate triangles reject without repair. Original vertices/faces are saved as NPY and binary little-endian PLY, reopened and compared exactly, then hashed with provenance. Duplicate canonical face keys ignore winding for detection but do not mutate accepted triangle order.",
+  "quality_scope": "Zero-area/duplicate rejection is stricter than the source converter, which can retain degeneracy. Any such runtime failure must stop, not trigger deletion or remeshing. Missing-neighbour counts include out-of-grid cases, so those diagnostics overlap. Passing these checks does not establish watertightness, manifoldness, outward global orientation or absence of self-intersections.",
+  "recorded_tests": "Read tests-final.stderr.txt: six tests PASS covering axis/winding/tie, both splits/cross-batch/global order, missing corner/key-wrap, float32 scale/transforms, invalid inputs and exact binary PLY readback. Earlier failed temp-directory fixture was corrected to the workspace; no production formula change. Reviewer did not run tests.",
+  "freshness_at_review": "Extraction marker and exact output leaf were absent",
+  "material_blockers": [],
+  "outcome_requirements": "Review actual host/worker errors, measured committed peak, natural Job cleanup, source unchanged, complete output/reopen hashes and topology diagnostics before reporting PASS. Source review is not proof that the full artifact has no source-generated degeneracy or that resource admissions will pass."
+}
