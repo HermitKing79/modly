@@ -1,0 +1,803 @@
+{
+  "status": "PASS",
+  "timestamp_utc": "2026-10-15T01:38:08.921849+00:00",
+  "baseline_commit": "4f845cd306c839d0e833efe488de44b65d82584c",
+  "comparison": "Prior texture-route preservation and its exact preview/input references",
+  "files": {
+    "protected": [
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\turret-full.ply",
+        "bytes": 74276526,
+        "mtime_ns": 1792025475328510300,
+        "sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\vertices.npy",
+        "bytes": 22115744,
+        "mtime_ns": 1792025475225160500,
+        "sha256": "2c4ea4aa3ac6dc870e5305c5448a3a3e5e75f09c6ecfc41c3e93aab57819f140",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\faces.npy",
+        "bytes": 48148448,
+        "mtime_ns": 1792025475281586100,
+        "sha256": "453acbcd87c8190c1600b27ec3cab0052db75ad65dcb01ec9734cf8863ab5b81",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\provenance.json",
+        "bytes": 23224,
+        "mtime_ns": 1792025475650366600,
+        "sha256": "0d66d429c4af8d5ce59e1cf7f6fa8415d79a19dd0b0192c41e3d3971955ca886",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors",
+        "bytes": 96433760,
+        "mtime_ns": 1792024391251261900,
+        "sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\provenance.json",
+        "bytes": 22024,
+        "mtime_ns": 1792024392090528400,
+        "sha256": "8f428dea1c98ffabbea24a1986d388094a29bb9c9123a3a0dc48a55f9229a625",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+        "bytes": 113014232,
+        "mtime_ns": 1787629294000000000,
+        "sha256": "284f4041f98e113f3dc10654a7193ffaaa9bfdfec8b87fa116620a48b5f6d4cb",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\.gitattributes",
+        "bytes": 50,
+        "mtime_ns": 1792025454087038800,
+        "sha256": "d9bba498873d5db3446327e4f68375c8605667a73daf7b08660f01ef6bab5c66",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\authoritative-source.json",
+        "bytes": 371,
+        "mtime_ns": 1792025023511681600,
+        "sha256": "c2c7f2b3dcc5f331a2d56d4cfae857291cc339999cf7a6415bb9c6f41f7c67be",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\candidate-identities.json",
+        "bytes": 411,
+        "mtime_ns": 1792025406240147900,
+        "sha256": "b051f771c5df722599309755eb0d011662a0384c22b03c269e9a96aa2ace7521",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\extract.py",
+        "bytes": 11762,
+        "mtime_ns": 1792025258209255800,
+        "sha256": "b8d9478ad48e349333a4e108d1fae8a0f290d70b4daabfeee8d016242cddffce",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\extraction-attempt.marker",
+        "bytes": 439,
+        "mtime_ns": 1792025471827324900,
+        "sha256": "a7e92a8aa973da69b0b79ba1fa0cc57c23b19946b24237535dd10c5ef9afd327",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\extraction-host.json",
+        "bytes": 331,
+        "mtime_ns": 1792025475684761000,
+        "sha256": "4bddb1e72f4ecd68d81b3846162cbbefcb7bfc3c8304d9b55cc0680cb40563ae",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\extraction-worker.json",
+        "bytes": 23265,
+        "mtime_ns": 1792025475651404200,
+        "sha256": "8f2fbe07e5c2aaf78f7d63fa25396bdda83a968c127e46cf4a214dd500cc2d38",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\extraction.stderr.txt",
+        "bytes": 0,
+        "mtime_ns": 1792025471827324900,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\extraction.stdout.txt",
+        "bytes": 2133,
+        "mtime_ns": 1792025475651404200,
+        "sha256": "49e58a616972b644124c73e5231a3d50df3a25c47d22264e50b1109bd57eb867",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\final-disposition.json",
+        "bytes": 2182,
+        "mtime_ns": 1792025824808208300,
+        "sha256": "94eee97c167d2fe0304d251fb380959525084809b59f2b25b907c85ea76b3e40",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\historical-files-before.json",
+        "bytes": 64290,
+        "mtime_ns": 1792025004689328400,
+        "sha256": "60d94bab93e00167a96666983fdeac1f9b0f59fe0e8c5697bf44e81fa12ebd30",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\independent-final-disposition-review.json",
+        "bytes": 1777,
+        "mtime_ns": 1792025861804333400,
+        "sha256": "91f272610dcc7a162b0c9c955402353c973552d34a934d7f538098dfbc4266f4",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\independent-mesh-analysis-host.json",
+        "bytes": 261,
+        "mtime_ns": 1792025647492112200,
+        "sha256": "20c5ada5b8d4a1c502695aff1a32744b59ed304b1637118f5050658a66f6591d",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\independent-mesh-analysis.json",
+        "bytes": 1014,
+        "mtime_ns": 1792025647450549400,
+        "sha256": "68f1861e1aed04acdc93ca7628aa8ec34b86075644b984925a0f50253da18551",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\independent-mesh-outcome-review.json",
+        "bytes": 4176,
+        "mtime_ns": 1792025728552845500,
+        "sha256": "6a4e5da47c57ffeec4c6a854e67f286ea18cd62f8e4e9f88d4a9c57b89e8860d",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\independent-source-contract-review.json",
+        "bytes": 4517,
+        "mtime_ns": 1792025124916031400,
+        "sha256": "dc4138cd65dda056746c68199b412e351265dfd94db13486651fcae02a2072fc",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\independent_mesh_check.py",
+        "bytes": 9214,
+        "mtime_ns": 1792025639607827800,
+        "sha256": "886d9635eedde263a519533f1bf0b2c7d68a14b5322fab589ef1d1a1d36b54fa",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\installed-fdg-vae.py.txt",
+        "bytes": 6328,
+        "mtime_ns": 1792025004691862900,
+        "sha256": "1d267cdca119eb619674dc87bfccd8c5a1d90288739e2b8e08e6f497ac14ce9c",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\installed-flexible-dual-grid.py.txt",
+        "bytes": 18928,
+        "mtime_ns": 1792025004690854300,
+        "sha256": "2538315098531d5306e2cb5bf84942335e114c23fd1192dbd1920800c1c9b7a2",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\installed-render-utils.py.txt",
+        "bytes": 6110,
+        "mtime_ns": 1792025654833782700,
+        "sha256": "51c9d745b7c01dbf2e2ea14280eaca145c1ce500321cef1dac0261212cea2d4e",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\local-heads-after.txt",
+        "bytes": 5506,
+        "mtime_ns": 1792025805724293200,
+        "sha256": "44b8ece58c9bfb05a348f913ff005388688c29a6c87646e5f333f90bbc514370",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\local-heads-before.txt",
+        "bytes": 5506,
+        "mtime_ns": 1792025002781945000,
+        "sha256": "005791f81fe563d586617d5d6d2313ef653caf9a61e116c436f21392e6cedc5d",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\mesh-preexecution-review.json",
+        "bytes": 4806,
+        "mtime_ns": 1792025433996365700,
+        "sha256": "c10b9f1d732a7d088eda8feb163e35c87b22cfde2295826f3f3d91d093415615",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\microsoft-flexible-dual-grid.py.txt",
+        "bytes": 14939,
+        "mtime_ns": 1792025023511681600,
+        "sha256": "112bd474d580f279ac196129f7989df6fdafa7ed7e08c350f2b386553e73e17d",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\native-availability.json",
+        "bytes": 7110,
+        "mtime_ns": 1792025152524502800,
+        "sha256": "1ca487ef486b12b720c5c966073890aa40fa320274f38e71d34c438ee60806ae",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\remote-heads-after.txt",
+        "bytes": 5506,
+        "mtime_ns": 1792025805684313900,
+        "sha256": "bd57e5cf02d7d26c7a38bab2a10dc3c9e7daeb6eac4858784439b83e94eb57aa",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\remote-heads-before.txt",
+        "bytes": 5416,
+        "mtime_ns": 1792025278165028800,
+        "sha256": "5cdf6a96c80e07cec7b3168059956292e23f478d0a1cf63cee5db70e1e486a9f",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\render_host.py",
+        "bytes": 2772,
+        "mtime_ns": 1792025575890149600,
+        "sha256": "f3310b89c1936cfe4713bb190d58eba6ed4973e9c16f478236545cdcb4fcdb9e",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\render_preview.py",
+        "bytes": 7316,
+        "mtime_ns": 1792025654189567500,
+        "sha256": "e0ee364e925887436334bcdadcc6923c3e20a1bbec969e28a745d67278ac7fd1",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\source-artifact-after.json",
+        "bytes": 1753,
+        "mtime_ns": 1792025824451472400,
+        "sha256": "864218232220e4fc60aed23b0c0f44a26b4b7dd8f73eb7e9fea466ee80f0ad80",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\source-artifact-before.json",
+        "bytes": 1753,
+        "mtime_ns": 1792025004533142000,
+        "sha256": "864218232220e4fc60aed23b0c0f44a26b4b7dd8f73eb7e9fea466ee80f0ad80",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\tests-final.stderr.txt",
+        "bytes": 765,
+        "mtime_ns": 1792025134493150800,
+        "sha256": "b1221cf4ce78118f8bed2ad3aad5154cbefcc1e942a51161bc3c60a88730e3e1",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\tests-final.stdout.txt",
+        "bytes": 0,
+        "mtime_ns": 1792025132791985000,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\tests-green.stderr.txt",
+        "bytes": 4324,
+        "mtime_ns": 1792025117497408900,
+        "sha256": "8cf46a2e9621e42fdee04d558d15089af68ac1d2b68f4a1c06646ff772cddae6",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\tests-green.stdout.txt",
+        "bytes": 0,
+        "mtime_ns": 1792025115814901600,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\tests-red.stderr.txt",
+        "bytes": 283,
+        "mtime_ns": 1792025061529493500,
+        "sha256": "38912baede20f938c4383be8100fc2dc9363cb8cf3aedff99f55c24685f11230",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\tests-red.stdout.txt",
+        "bytes": 0,
+        "mtime_ns": 1792025060315900900,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\windows-preservation-after.json",
+        "bytes": 6072,
+        "mtime_ns": 1792025668212637100,
+        "sha256": "9b2549d3074e2753681f7403d75a5ff3ac78f00447ff756cf0d317fdfe2ffa95",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\windows-preservation-before.json",
+        "bytes": 6070,
+        "mtime_ns": 1792025092127933700,
+        "sha256": "4bbf59295ce8ec388ee8aae7883cb1e89ad6063dd9986393ef282ec36272bd78",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\wsl-after.txt",
+        "bytes": 302,
+        "mtime_ns": 1792025805765545500,
+        "sha256": "18a3e04b3ea0062f72bfc43deabf7d8b57a00b5e51a590b142e6e55455f6e199",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-cpu-mesh-extraction-evidence\\ply-fixture-ys5a9ts6\\mesh.ply",
+        "bytes": 279,
+        "mtime_ns": 1792025133212042200,
+        "sha256": "bebf27163cb5e852e42d7a08fc860756612c3951ea3fc201ccb4c3ed35d70f37",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_flexible_dual_grid_cpu.py",
+        "bytes": 5637,
+        "mtime_ns": 1792025115363400900,
+        "sha256": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_flexible_dual_grid_cpu.py",
+        "bytes": 4419,
+        "mtime_ns": 1792025132335961500,
+        "sha256": "2c55dbefb545cab6da37acd8987913f57241c3838f9d4f555e8acb9577b6dda3",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_forward_owned_job.py",
+        "bytes": 3908,
+        "mtime_ns": 1791835730733282700,
+        "sha256": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64",
+        "stable_during_read": true,
+        "matches": true
+      }
+    ],
+    "source": [
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_image_to_3d.py",
+        "bytes": 164969,
+        "mtime_ns": 1791246067662253400,
+        "sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\structured_latent_flow.py",
+        "bytes": 10992,
+        "mtime_ns": 1791246067648885200,
+        "sha256": "3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sc_vaes\\sparse_unet_vae.py",
+        "bytes": 28514,
+        "mtime_ns": 1791246067647819100,
+        "sha256": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\spatial\\spatial2channel.py",
+        "bytes": 4510,
+        "mtime_ns": 1791246067655202100,
+        "sha256": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\flow_euler.py",
+        "bytes": 39785,
+        "mtime_ns": 1791246067659731900,
+        "sha256": "03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\classifier_free_guidance_mixin.py",
+        "bytes": 1402,
+        "mtime_ns": 1791246067659731900,
+        "sha256": "ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\guidance_interval_mixin.py",
+        "bytes": 556,
+        "mtime_ns": 1791246067659731900,
+        "sha256": "0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\attention\\full_attn.py",
+        "bytes": 12680,
+        "mtime_ns": 1791246067651715400,
+        "sha256": "045aabe973d405cb16f8a1a71c5b4d8f76988c99b4e333c29bbc12d51d0cf4b1",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\config.py",
+        "bytes": 1330,
+        "mtime_ns": 1791246067653179400,
+        "sha256": "525ed9a516bc9576712cce9896a52a0ec9667ba7dc4aa13f24ee6a83353cb722",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\utils.py",
+        "bytes": 3741,
+        "mtime_ns": 1791246067657717000,
+        "sha256": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\pipeline.json",
+        "bytes": 4186,
+        "mtime_ns": 1791274723063057200,
+        "sha256": "222c359ab1ed9bc6735a640a34f95d47f8681b9bc4aaa101bfb80274676253c6",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_512_bf16.json",
+        "bytes": 458,
+        "mtime_ns": 1791274671522142700,
+        "sha256": "3093796257a62f838d2e5578ac4580ca3b7d88d10b87d348065d3fdfcc4c2077",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_dec_next_dc_f16c32_fp16.json",
+        "bytes": 705,
+        "mtime_ns": 1791274672170156400,
+        "sha256": "22074e4ab5b28e2b72d33a3fe61bf416134b89e12d0fc5c729f37da75da0c4d1",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\o_voxel\\postprocess.py",
+        "bytes": 14100,
+        "mtime_ns": 1791246082588020300,
+        "sha256": "35b62242503944cb16c25b7a1c8730b632b2f55d7a1f3b0b6dd2051779908e4b",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\cumesh.py",
+        "bytes": 17681,
+        "mtime_ns": 1791246071879046400,
+        "sha256": "eabb42a0e1e4a06e994103fa21ff22c07cf9b467b4110e7445971a3aad31dac9",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\nodes.py",
+        "bytes": 347422,
+        "mtime_ns": 1791273995100681700,
+        "sha256": "d310c97f3f7ff187cd581ed01ea3dbd6217fddb8ad9d59b12bd7c485f93821be",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_texturing.py",
+        "bytes": 16611,
+        "mtime_ns": 1791246067662759700,
+        "sha256": "14a6f8ee2bca120f76e0112f2733cd250764637709ff642fd6846ae97c63b1e6",
+        "stable_during_read": true,
+        "matches": true
+      }
+    ],
+    "saved_inputs": [
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-raw.npy",
+        "bytes": 479232,
+        "mtime_ns": 1791911616061773400,
+        "sha256": "03fd8208614fcf20c37e40e59c9eb48972c3c7a3ee18a31bab1b0537e86ab2a1",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-denormalized.npy",
+        "bytes": 479232,
+        "mtime_ns": 1791911616069139000,
+        "sha256": "90eaf72030f303b209a4d02ae9adc7d4ecd39662344f35f0adc8120bc1e871b9",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-coordinates.npy",
+        "bytes": 60016,
+        "mtime_ns": 1791911616075136000,
+        "sha256": "949a9e6a2548abcad66354384502c06834d4d56ea3f2fa86b619c25926379ed4",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\conditioning.safetensors",
+        "bytes": 4215800,
+        "mtime_ns": 1791901525044743800,
+        "sha256": "78a0b54210568624639c8cacb7a803d83d4b838b782ea54e7aceab749d47e17a",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\selected-input.png",
+        "bytes": 968371,
+        "mtime_ns": 1791900382360222000,
+        "sha256": "07557b7b9f726aad3b291f4902498e52423efadbf746fb2c5759e3e2c6adeef0",
+        "stable_during_read": true,
+        "matches": true
+      }
+    ],
+    "preview": [
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\comparison.png",
+        "bytes": 1650960,
+        "mtime_ns": 1792026475183377500,
+        "sha256": "ed3076db43a4fd106ade089e6e9e01fd06acd7f1b04429a4a2e64b34ae1a92cc",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\preview-back.png",
+        "bytes": 342223,
+        "mtime_ns": 1792026403150426600,
+        "sha256": "5a7c56cc123ae7816279e6003380afeacfe3b4bf8d176a76988e54fca2bdfdea",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\preview-front.png",
+        "bytes": 482627,
+        "mtime_ns": 1792026402228611200,
+        "sha256": "daab47d2121783a5ae4db9b9d7481d7815c0d44cc07ce94bb4bf83625689a252",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\preview-side.png",
+        "bytes": 478080,
+        "mtime_ns": 1792026404180637100,
+        "sha256": "31ce5a683e7edda2c542dcd19f80f3b499e878b583cb37d10041a0b2239c3588",
+        "stable_during_read": true,
+        "matches": true
+      },
+      {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\render-metadata.json",
+        "bytes": 3241,
+        "mtime_ns": 1792026406344790800,
+        "sha256": "82da3e2346bbff844003254766e09033fedca2c73fded05c6ffd422146e30119",
+        "stable_during_read": true,
+        "matches": true
+      }
+    ]
+  },
+  "AMD_source_backup": {
+    "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\nodes.py.before-profiler-fix",
+    "bytes": 347601,
+    "mtime_ns": 1791246067643159100,
+    "sha256": "585d81c545cce5ca71fee1cb17f47e65b13c7f98b13a6053e1c1699079d7012f",
+    "stable_during_read": true,
+    "matches": true
+  },
+  "windows_environments": {
+    "amd": {
+      "root": "D:\\AI\\Trellis2AMD\\venv",
+      "distribution_count": 235,
+      "distributions_match": true,
+      "pyvenv_cfg_matches": true,
+      "selected_package_wheels_match": {
+        "cumesh": true,
+        "flex-gemm": true,
+        "numpy": true,
+        "nvdiffrast": true,
+        "o-voxel": true,
+        "pillow": true,
+        "rocm": true,
+        "safetensors": true,
+        "torch": true,
+        "torchvision": true,
+        "transformers": true,
+        "triton-windows": true,
+        "utils3d": true
+      },
+      "native_binaries": [
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_C.cp312-win_amd64.pyd",
+          "bytes": 214537728,
+          "mtime_ns": 1791246071780992900,
+          "sha256": "32526ca0976822800b2320ee3cc12db5ef3fc8fb4641d721dabca8714e5b71ac",
+          "stable_during_read": true,
+          "matches": true
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_cubvh.cp312-win_amd64.pyd",
+          "bytes": 45829632,
+          "mtime_ns": 1791246071875455900,
+          "sha256": "70a886bb952bb48cf56fc46b3744840e33b07820991620c6eae350a154676ff0",
+          "stable_during_read": true,
+          "matches": true
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_xatlas.cp312-win_amd64.pyd",
+          "bytes": 547328,
+          "mtime_ns": 1791246071877497200,
+          "sha256": "66da37345044e2161f7811f2d9ff67750f8fb3c203c16bc5abdfd6e739111e00",
+          "stable_during_read": true,
+          "matches": true
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\cuda.cp312-win_amd64.pyd",
+          "bytes": 3677184,
+          "mtime_ns": 1791246077615016500,
+          "sha256": "18b203fca47a482f8b53d7bdfb765b26036cae9628087ecfde17e75742007064",
+          "stable_during_read": true,
+          "matches": true
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\o_voxel\\_C.cp312-win_amd64.pyd",
+          "bytes": 2811904,
+          "mtime_ns": 1791246082586488900,
+          "sha256": "4900ba16cb2d24c816e968fb54c74218f119e12ad942a81f8d318215802bf953",
+          "stable_during_read": true,
+          "matches": true
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_nvdiffrast_c.cp312-win_amd64.pyd",
+          "bytes": 7920640,
+          "mtime_ns": 1791246085318838400,
+          "sha256": "87abc0f0bd44423feeb4f7e3f0b3e103c57caf9069dbf7952af72b6b0d8a4391",
+          "stable_during_read": true,
+          "matches": true
+        }
+      ],
+      "broad_recursive_metadata_inventory_performed": false
+    },
+    "modly": {
+      "root": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv",
+      "distribution_count": 127,
+      "distributions_match": true,
+      "pyvenv_cfg_matches": true,
+      "selected_package_wheels_match": {
+        "accelerate": true,
+        "cumesh": true,
+        "flex-gemm": true,
+        "gguf": true,
+        "numpy": true,
+        "nvdiffrast": true,
+        "o-voxel": true,
+        "pillow": true,
+        "rocm": true,
+        "safetensors": true,
+        "sdnq": true,
+        "torch": true,
+        "torchvision": true,
+        "transformers": true,
+        "triton-windows": true
+      },
+      "native_binaries": [
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\cumesh\\_C.cp311-win_amd64.pyd",
+          "bytes": 13448704,
+          "mtime_ns": 1791799542317974800,
+          "sha256": "5b38e7ab66e212281adba4ad71d864d5121017e0a2e7408d8bb24e0a41284587",
+          "stable_during_read": true,
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\cumesh\\_cubvh.cp311-win_amd64.pyd",
+          "bytes": 3326464,
+          "mtime_ns": 1791799542327131100,
+          "sha256": "747437a22ee109c85f29bdb50a8821770d662987a65e469b3cfa1acb75d8379c",
+          "stable_during_read": true,
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\cumesh\\_cumesh_xatlas.cp311-win_amd64.pyd",
+          "bytes": 421888,
+          "mtime_ns": 1791799542329724600,
+          "sha256": "eb1084194f26df7c4090ea8d05b815eb48c6260fb9edc6ba7143caee970094e0",
+          "stable_during_read": true,
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\cuda.cp311-win_amd64.pyd",
+          "bytes": 1013760,
+          "mtime_ns": 1791799545988910400,
+          "sha256": "cd727c7c4df6eaca6997bc2b50d6a3096752b8c14a2b889b0a057ec6a0fe162e",
+          "stable_during_read": true,
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\o_voxel\\_C.cp311-win_amd64.pyd",
+          "bytes": 883712,
+          "mtime_ns": 1791799553371918800,
+          "sha256": "9c80daaf9ec5240bc43c83587d570b69f2ed9f9c7d4d873ff5ecb1f1ab8ad02f",
+          "stable_during_read": true,
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\_nvdiffrast_c.cp311-win_amd64.pyd",
+          "bytes": 7721472,
+          "mtime_ns": 1791799549824901600,
+          "sha256": "cf3cb83479ad064e7127b2f77264b94e54a5956fae2358c16a57631fe440b7da",
+          "stable_during_read": true,
+          "matches": true
+        }
+      ],
+      "broad_recursive_metadata_inventory_performed": false
+    }
+  },
+  "unexpected_deltas": [],
+  "AI_GPU_native_imports": false,
+  "WSL_started": false,
+  "model_loads": 0,
+  "builds_or_installs": false,
+  "method_note": "File stability compares size and mtime_ns (access time may change on reads); package names use standard hyphen/underscore/dot normalization. Initial atime-sensitive diagnostic retained separately and superseded.",
+  "limitations": "Selected distribution/package/native metadata and protected-file identity; no broad venv tree scan or fresh WSL inventory. Model checkpoint payload verification belongs to the separately bounded CPU qualification."
+}

@@ -1,0 +1,65 @@
+test_actual_probe_writer_exits_before_independent_parent_readback (test_amd_texture_sampling_artifact.ArtifactTests.test_actual_probe_writer_exits_before_independent_parent_readback) ... ok
+test_boolean_tensor_offsets_cannot_masquerade_as_standard_integers (test_amd_texture_sampling_artifact.ArtifactTests.test_boolean_tensor_offsets_cannot_masquerade_as_standard_integers) ... ok
+test_expected_metadata_detects_consistently_replaced_artifact (test_amd_texture_sampling_artifact.ArtifactTests.test_expected_metadata_detects_consistently_replaced_artifact) ... ok
+test_full_roundtrip_and_standard_safetensors_layout (test_amd_texture_sampling_artifact.ArtifactTests.test_full_roundtrip_and_standard_safetensors_layout) ... ok
+test_hardlinked_output_never_modifies_an_existing_file (test_amd_texture_sampling_artifact.ArtifactTests.test_hardlinked_output_never_modifies_an_existing_file) ... ERROR
+test_independent_reader_in_clean_process_without_torch (test_amd_texture_sampling_artifact.ArtifactTests.test_independent_reader_in_clean_process_without_torch) ... ok
+test_no_overwrite_even_when_only_metadata_already_exists (test_amd_texture_sampling_artifact.ArtifactTests.test_no_overwrite_even_when_only_metadata_already_exists) ... ok
+test_payload_and_sidecar_tampering_are_rejected (test_amd_texture_sampling_artifact.ArtifactTests.test_payload_and_sidecar_tampering_are_rejected) ... ok
+test_probe_uses_fresh_directory_and_independently_readable_artifact (test_amd_texture_sampling_artifact.ArtifactTests.test_probe_uses_fresh_directory_and_independently_readable_artifact) ... FAIL
+test_reader_rejects_wrong_root_filename_and_oversized_files (test_amd_texture_sampling_artifact.ArtifactTests.test_reader_rejects_wrong_root_filename_and_oversized_files) ... ok
+test_reject_invalid_or_oversized_provenance_before_writing (test_amd_texture_sampling_artifact.ArtifactTests.test_reject_invalid_or_oversized_provenance_before_writing) ... ok
+test_reject_invalid_tensors_before_any_file_is_created (test_amd_texture_sampling_artifact.ArtifactTests.test_reject_invalid_tensors_before_any_file_is_created) ... ok
+test_repeated_write_preserves_both_files (test_amd_texture_sampling_artifact.ArtifactTests.test_repeated_write_preserves_both_files) ... ok
+test_root_must_exist_be_absolute_and_be_outside_git (test_amd_texture_sampling_artifact.ArtifactTests.test_root_must_exist_be_absolute_and_be_outside_git) ... ok
+test_symlink_root_or_output_never_follows_target (test_amd_texture_sampling_artifact.ArtifactTests.test_symlink_root_or_output_never_follows_target) ... skipped "Windows symlink privilege unavailable: [WinError 1314] A required privilege is not held by the client: 'C:\\\\Users\\\\wattz\\\\AppData\\\\Local\\\\Temp\\\\texture-artifact-test-6nugm1uz\\\\target' -> 'C:\\\\Users\\\\wattz\\\\AppData\\\\Local\\\\Temp\\\\texture-artifact-test-6nugm1uz\\\\link'"
+test_canonical_twelve_positive_forwards_even_inside_interval (test_amd_texture_sampling_contract.TextureContractTests.test_canonical_twelve_positive_forwards_even_inside_interval) ... ok
+test_exact_64_in_32_out_640_bf16_checkpoint (test_amd_texture_sampling_contract.TextureContractTests.test_exact_64_in_32_out_640_bf16_checkpoint) ... ok
+test_shape_once_texture_distinct_denormalization (test_amd_texture_sampling_contract.TextureContractTests.test_shape_once_texture_distinct_denormalization) ... ok
+test_transfer_keeps_noise_and_shape_as_distinct_32_channel_inputs (test_amd_texture_sampling_contract.TextureContractTests.test_transfer_keeps_noise_and_shape_as_distinct_32_channel_inputs) ... ok
+test_actual_meta_schema_and_thirty_genuine_cpu_rope_attributes (test_amd_texture_sampling_local.TextureLocalTests.test_actual_meta_schema_and_thirty_genuine_cpu_rope_attributes) ... ok
+test_existing_reversible_widening_checks_original_payload_bytes (test_amd_texture_sampling_local.TextureLocalTests.test_existing_reversible_widening_checks_original_payload_bytes) ... ok
+test_saved_denormalized_shape_feature_and_pipeline_identities (test_amd_texture_sampling_local.TextureLocalTests.test_saved_denormalized_shape_feature_and_pipeline_identities) ... ok
+test_wrong_architecture_fails_before_model_import (test_amd_texture_sampling_local.TextureLocalTests.test_wrong_architecture_fails_before_model_import) ... ok
+test_complete_twelve_positive_evidence (test_amd_texture_sampling_result.ResultTests.test_complete_twelve_positive_evidence) ... ok
+test_exact_memory_cap_and_reserve_boundaries (test_amd_texture_sampling_result.ResultTests.test_exact_memory_cap_and_reserve_boundaries) ... ok
+test_reject_artifact_identity_and_provenance_substitution (test_amd_texture_sampling_result.ResultTests.test_reject_artifact_identity_and_provenance_substitution) ... ok
+test_reject_changed_sequence_timing_and_transfer (test_amd_texture_sampling_result.ResultTests.test_reject_changed_sequence_timing_and_transfer) ... ok
+test_actual_sampler_twelve_positive_forwards_concat_cache_and_cleanup (test_amd_texture_sampling_runtime.RuntimeTests.test_actual_sampler_twelve_positive_forwards_concat_cache_and_cleanup) ... 
+Bounded texture-SLat512:   0%|          | 0/12 [00:00<?, ?it/s]
+Bounded texture-SLat512: 100%|##########| 12/12 [00:00<00:00, 238.57it/s]
+ok
+test_wrong_concat_order_foreign_conditions_and_memory_are_rejected (test_amd_texture_sampling_runtime.RuntimeTests.test_wrong_concat_order_foreign_conditions_and_memory_are_rejected) ... ok
+
+======================================================================
+ERROR: test_hardlinked_output_never_modifies_an_existing_file (test_amd_texture_sampling_artifact.ArtifactTests.test_hardlinked_output_never_modifies_an_existing_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_texture_sampling_artifact.py", line 140, in test_hardlinked_output_never_modifies_an_existing_file
+    target.write_bytes(b'keep')
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1036, in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_shape_sampling_runtime.py", line 19, in audit
+    if e=='open' and isinstance(a[0],(str,bytes)) and str(a[0]).lower().endswith(('.pt','.pth','.ckpt','.bin')):return forbidden()
+                                                                                                                       ^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_shape_sampling_runtime.py", line 15, in forbidden
+    def forbidden(*a,**k):raise RuntimeError('CPU proof forbids GPU/checkpoint/compilation')
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CPU proof forbids GPU/checkpoint/compilation
+
+======================================================================
+FAIL: test_probe_uses_fresh_directory_and_independently_readable_artifact (test_amd_texture_sampling_artifact.ArtifactTests.test_probe_uses_fresh_directory_and_independently_readable_artifact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_texture_sampling_artifact.py", line 209, in test_probe_uses_fresh_directory_and_independently_readable_artifact
+    self.assertFalse(result['torch_imported'])
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 29 tests in 6.559s
+
+FAILED (failures=1, errors=1, skipped=1)

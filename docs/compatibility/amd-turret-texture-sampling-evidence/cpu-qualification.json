@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "focused_tests": 30,
+  "skipped": 1,
+  "isolated_processes": 5,
+  "gpu_initialized": false,
+  "weights_loaded": false,
+  "actual_meta_architecture_verified": true,
+  "genuine_sampler_cpu_fixture_verified": true,
+  "production_provenance_and_writer_together_verified": true,
+  "negative_guards_verified": true,
+  "persistence_after_writer_exit_verified": true,
+  "test_logs": [
+    "cpu-artifact.stderr.txt",
+    "cpu-contract.stderr.txt",
+    "cpu-local.stderr.txt",
+    "cpu-result-isolated.stderr.txt",
+    "cpu-runtime.stderr.txt"
+  ],
+  "earlier_runner_failures": "Combined runner global guard/Torch contamination and isolated result import path preserved; final five isolated processes pass."
+}

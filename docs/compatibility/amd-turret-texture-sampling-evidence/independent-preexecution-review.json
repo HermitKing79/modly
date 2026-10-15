@@ -1,0 +1,64 @@
+{
+  "reviewer": "/root/texture_preservation_review",
+  "timestamp_utc": "2026-10-15T01:47:20.601773+00:00",
+  "classification": "GO_FOR_ONE_BOUNDED_TEXTURE_SAMPLING_ATTEMPT_AFTER_EXACT_COMMIT_PUBLICATION",
+  "baseline_commit": "4f845cd306c839d0e833efe488de44b65d82584c",
+  "scope": "Focused read-only final source review and inspection of completed isolated CPU qualification/persistence evidence; no new CPU qualification, GPU/native execution, model/weight load, WSL start, installs, branches or commits by reviewer.",
+  "source_sha256": {
+    "scripts/compatibility/amd_texture_sampling.py": "cd123436e99ced26a0ef21f9c07c8bf16b0681b9b1f2da48a538acb4b159f3a9",
+    "scripts/compatibility/amd_texture_sampling_artifact.py": "16121dddcc8ad4453ef1f53a750bd71635adaf880249c418b7828ed2fcc9b2ac",
+    "scripts/compatibility/amd_texture_sampling_contract.py": "0a9decc33472428c4a8e5bed70d5c1d3c0cb82fe63e70ae2862b381b430085ad",
+    "scripts/compatibility/amd_texture_sampling_control.py": "e91eb5f0e821103395e74183fb0c3606749dfd6e4b429aa7f52f0671b24a4dd1",
+    "scripts/compatibility/amd_texture_sampling_local.py": "5500a258c3ccc6d02ecbc1ee68358f919a2c223041c9e88ff8016f819c799eb2",
+    "scripts/compatibility/test_amd_texture_sampling_artifact.py": "71118ca699b6ef51183b03d13948adc944e1a41ebf7ff3b4626b8d0c894b6c88",
+    "scripts/compatibility/test_amd_texture_sampling_contract.py": "68cb6f892b9d85c9bc6cf1c1c1c04f2accd801e54b06a637e351f09069093ac4",
+    "scripts/compatibility/test_amd_texture_sampling_local.py": "85400e0efd624baba8caea1d9f4bcedbc2a879efab436cd7f673d5f501a5a7bb",
+    "scripts/compatibility/test_amd_texture_sampling_result.py": "e2c5b72d9a7bdb285262040858800d6627f2ecdf81017a3d071b3c0958590169",
+    "scripts/compatibility/test_amd_texture_sampling_runtime.py": "e9ac69670a9be5c22c1e0d9f91d69a0954e9b475dccff3bc16c682e786ce91ca",
+    "scripts/compatibility/amd_sparse_decoder_forward.py": "86af455ea42fb9565fd70911e206ab7c87a35297ea3947c63adb575a4d10f278"
+  },
+  "evidence_sha256": {
+    "cpu-qualification.json": "3fa87cd3dc639bf3651b74cd510154e98ce3f4b85881569a068074fe2ca780b1",
+    "source-contract.json": "91cc57618205d01ed39ab5c37d8883ed716cea75a5f028222475d6af9d70fc85",
+    "persistence-preflight.json": "94da855628dbaa45f1ec5ebdd8380701d8cc0f85bd6f1c1988a6e11157b42230",
+    "preflight-identity.json": "26e64b0ea691b3f80138589421db0850c053eb2115cc656bf9c36ab54cdf4fe5",
+    "baseline-preservation.json": "1e4984d4412c0fa00019bdf4465074e604df5295bdf51c2d767bf3b1dc022c29",
+    "cpu-artifact.stderr.txt": "f9933c78e45e0250383ecbfe205772787ed612f42bfebc3a58946f570c4ed58e",
+    "cpu-contract.stderr.txt": "27f5982adc8f910ba51e5f3e9cb39776bb2866763954022c5f2db09a385de2cf",
+    "cpu-local.stderr.txt": "cd0e0c46531f0d1126c12ef9a2214e5ef6aedd384cc88821fe9365da63328e33",
+    "cpu-result-isolated.stderr.txt": "1962b8aa29bbd8cc6ea11f0685af7f6310b3657b7843ef82f36980b1046604a0",
+    "cpu-runtime.stderr.txt": "9988e7fcdc64c480589035a75422528032df9e8045fccabbd55bcb0f63c26c6a"
+  },
+  "cpu_tests": {
+    "total": 30,
+    "passed": 29,
+    "skipped": 1,
+    "isolated_processes": 5,
+    "skip_reason": "Windows symlink privilege unavailable",
+    "all_isolated_logs_confirm_success": true
+  },
+  "resolved_review_findings": [
+    "Final acceptance requires all three exact false TunableOp boolean predicates and zero-valued environment settings at import and immediately before genuine forward, with expected GPU initialization phases.",
+    "Allocator allowance now equals min(12GiB, measured initial free bytes minus2GiB free reserve minus1GiB opaque workspace headroom); per-step and per-block measured free/cap checks remain.",
+    "Host catches artifact verification errors after owned worker exit and writes independent post-exit verification outcome; PASS requires verified persistence and worker exit."
+  ],
+  "validated_contract": [
+    "One canonical12-step sequence, exactly12 positive forwards and0 negative forwards, no repeat authorization.",
+    "Sampler state remains F32[3743,32]; approved saved denormalized shape is normalized once with exact shape statistics, transferred once separately, and genuine source sparse_cat forms noise/state first plus shape condition second for the64-channel input projection.",
+    "CPU architecture/payload schema requires640 BF16 checkpoint entries with exact64input32output dimensions; source-consistent runtime schema and220 reversible BF16-to-F32 widenings are checked; no blanket precision repair.",
+    "Fresh deterministic texture seed20261015 and raw noise are preserved; original coordinate object/layout and saved DINO provenance are checked.",
+    "Actual production provenance helper, twelve-call sampler/control/hook replay, exact bounded writer/reader and independent safetensors.numpy tensor readback passed before GPU execution.",
+    "Permanent latent and probe roots are explicit, outside every Git ancestor, alias/reparse/symlink/hardlink guarded; exclusive writes, flush/fsync, bounded finite tensor/header checks and byte/hash readback are implemented.",
+    "Raw and texture-denormalized finite F32[3743,32], original I32[3743,4] coordinates, initial noise and provenance are retained.",
+    "GPU reference collection covers controller, source sampler histories, SparseTensor/cache/model/input ownership; release requires zero owned allocated/reserved bytes and synchronized single workspace clear.",
+    "Existing owned Windows Job, offline/native/compilation/transfer guards, observers and180/240/480second limits are retained; shared supervisor edits only add texture profile recognition and explicit approved scratch root.",
+    "Texture decoder, geometry resampling/repair, baking and export are outside this candidate."
+  ],
+  "remaining_blockers": [],
+  "execution_conditions": [
+    "Commit and publish the exact reviewed candidate and pinned evidence; supervisor must verify that exact commit and dependencies.",
+    "Consume exactly one canonical attempt marker; any admission failure, timeout or PARTIAL outcome stops without retry.",
+    "After execution require clean process/job ownership exit, independent artifact verification and preservation postcheck before a success claim."
+  ],
+  "review_limit": "This is pre-execution admission of the narrowly authorized operation. Genuine texture numerics, GPU runtime health, measured peaks and final artifacts are established only by the one attempted run; CPU fixtures do not establish them."
+}

@@ -1,0 +1,32 @@
+{
+  "reviewer": "/root/texture_preservation_review",
+  "status": "SOURCE_REVIEW_COMPLETE_RUNTIME_NOT_AUTHORIZED_BY_THIS_REVIEW",
+  "baseline_commit": "4f845cd306c839d0e833efe488de44b65d82584c",
+  "baseline_report": "baseline-preservation.json",
+  "no_AI_GPU_native_imports": true,
+  "no_WSL_start": true,
+  "no_model_loads": true,
+  "preserved_originals": true,
+  "reviewed_files": [
+    "scripts/compatibility/amd_shape_sampling.py",
+    "scripts/compatibility/amd_shape_sampling_control.py",
+    "scripts/compatibility/amd_shape_sampling_contract.py",
+    "scripts/compatibility/amd_shape_sampling_artifact.py",
+    "scripts/compatibility/amd_shape_slat_forward.py",
+    "scripts/compatibility/amd_shape_slat_local.py",
+    "scripts/compatibility/amd_sparse_decoder_forward.py",
+    "scripts/compatibility/amd_sparse_flow_forward.py"
+  ],
+  "requirements": [
+    "Set three TunableOp environment values to zero before Torch import; record and require exact bool all-false actual flags at import and before real forward.",
+    "Keep 32-channel sampler state. Transfer the approved normalized saved shape condition once; admit exact concat_cond kwarg identity and coordinates. Verify genuine model internal noise-first64-channel concatenation.",
+    "Use fresh deterministic texture noise; require exactly12positive,0negative,12steps,1sequence. Remove legacy21-call and old-shape-noise expectations.",
+    "Enforce12GiB allocator ceiling, continuing2GiB measured free reserve plus explicit workspace headroom; old13GiB initial admission alone is insufficient.",
+    "Write finite raw and texture-denormalized F32 latent, original I32 coordinates, fresh noise and complete provenance outside Git using create-exclusive bounded persistence and byte/hash readback.",
+    "After clean worker/job exit and zero owned allocated/reserved bytes, host independently reopens and verifies full artifacts/provenance/counters; existing supervisor identity postcheck does not verify outputs.",
+    "Retain genuine source SDPA backend setter and strict640-key mixed BF16/F32 runtime schema with220 verified reversible widenings.",
+    "Stop after sampling; no texture decoder, geometry repair, bake or export."
+  ],
+  "source_note": "flow_euler._inference_model lines287-289 forwards kwargs; structured_latent_flow.forward lines214-215 performs sp.sparse_cat([x,concat_cond],dim=-1). The root module input remains32-channel; input_layer receives64.",
+  "unchanged_runtime_state": "Source/configs, AMD backup, protected artifacts, package metadata and selected native hashes match prior texture-route evidence."
+}

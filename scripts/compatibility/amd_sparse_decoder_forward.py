@@ -320,7 +320,7 @@ def worker(scratch, occupancy=None):
 
 def profile_deadlines(kind):
     if kind=='native-convolution':return (45,120,180)
-    if kind in ('sparse-flow','sparse-sampling','shape-slat','shape-sampling'):return (180,240,480)
+    if kind in ('sparse-flow','sparse-sampling','shape-slat','shape-sampling','texture-sampling'):return (180,240,480)
     return (120,180,360)
 
 
@@ -338,7 +338,7 @@ def supervise(output,harness_commit,*,profile=None):
     cache=prepare_private_cache if profile is None else profile.prepare_private_cache
     worker_script=Path(__file__).resolve() if profile is None else profile.worker_script
     authorize=b'EXECUTE_ONE_DECODER_FORWARD\n' if profile is None else profile.authorize
-    sparse_profile=getattr(profile,'kind',None) in ('sparse-flow','sparse-sampling','shape-slat','shape-sampling')
+    sparse_profile=getattr(profile,'kind',None) in ('sparse-flow','sparse-sampling','shape-slat','shape-sampling','texture-sampling')
     native_profile=getattr(profile,'kind',None)=='native-convolution'
     deadline_contract=profile_deadlines(getattr(profile,'kind',None))
     if profile is not None and (cpu_seconds,gpu_seconds,overall_seconds)!=deadline_contract:
@@ -353,7 +353,7 @@ def supervise(output,harness_commit,*,profile=None):
     with (evidence/'attempt-started.json').open('x',encoding='utf-8') as stream:
         attempt={'harness_commit':head,'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
                  'maximum_forwards':1 if profile is None else getattr(profile,'maximum_forwards',1)}
-        if profile is not None and getattr(profile,'kind',None) in ('sparse-sampling','shape-sampling'):
+        if profile is not None and getattr(profile,'kind',None) in ('sparse-sampling','shape-sampling','texture-sampling'):
             attempt.update(maximum_steps=12,maximum_sequences=1)
         json.dump(attempt,stream)
         stream.flush();os.fsync(stream.fileno())
@@ -371,7 +371,14 @@ def supervise(output,harness_commit,*,profile=None):
         before=windows_observation(since);save('windows-before.json',before)
         if not healthy_observation(before):raise RuntimeError('Unhealthy Windows observer before launch')
         healthy=True
-        scratch=output/'scratch';scratch.mkdir()
+        scratch=getattr(profile,'scratch_directory',None) if profile is not None else None
+        if scratch is None:
+            scratch=output/'scratch';scratch.mkdir()
+        else:
+            # Only the texture profile supplies its pre-qualified permanent root.
+            if getattr(profile,'kind',None)!='texture-sampling':raise ValueError('Foreign permanent scratch profile')
+            from amd_texture_sampling_artifact import approved_root
+            scratch=approved_root(scratch)
         save('private-cache.json',cache(scratch))
         journal=diagnostics.Journal(output/'trace.jsonl')
         windows_journal=diagnostics.Journal(output/'windows-periodic.jsonl')
