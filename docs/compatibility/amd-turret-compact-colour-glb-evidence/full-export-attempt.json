@@ -1,0 +1,26 @@
+{
+  "phase": "full-export",
+  "CPU_only": true,
+  "command": [
+    "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--threads",
+    "4",
+    "--python-exit-code",
+    "1",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-pbr-3485263\\learned-pbr.blend",
+    "--python",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-compact-colour-glb-evidence\\blender_glb.py"
+  ],
+  "deadline_seconds": 300,
+  "memory_cap_bytes": 8589934592,
+  "host_available_RAM_bytes": 20398239744,
+  "disk_free_bytes": 110689832960,
+  "scripts": {
+    "blender_glb.py": "7bc8a52a751a8bb7196b1a29ae609e4639f4368c3ad5b373f5cd7fa277e0ac3b",
+    "contract.py": "54721c28a5aee7ea912757f331e1b31988267bd9726cc8077556ecb9fbdb11b5",
+    "host.py": "2bd0e0be64349ef9c15905e278594e5e62f2b12a30298e90aebd229998bde9e9"
+  }
+}

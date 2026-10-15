@@ -1,0 +1,23 @@
+{
+  "reviewer": "/root/compact_glb_review",
+  "mode": "Independent read-only source/outcome review; no Blender launches or edits",
+  "pre_execution_decision": "GO",
+  "outcome": "PASS",
+  "actual_GLB_independently_rehashed": {
+    "bytes": 92305152,
+    "sha256": "6f3a71eb1dc683a83a83ba0b1c6e0add87391ef1d7ee4a9e0faf4092eb3f6c2d",
+    "vertices": 1839821,
+    "indices": 12037080,
+    "attributes": ["POSITION", "COLOR_0"]
+  },
+  "all_six_original_inputs_independently_rehashed": true,
+  "triangles_winding_positions_and_display_RGB": "Exact; 4012360 triangles; baseline canonical hash preserved",
+  "raw_linear_RGB_error": 0,
+  "size_reduction_percent": 80.76129994197198,
+  "vertex_reduction_percent": 84.6553468266547,
+  "unreferenced_source_vertex_rows": 3147,
+  "processes": "All four exited naturally, empty owned Jobs, no forced cleanup, reviewed script identities consistent",
+  "shading": "Source and import flat, without custom normals. Pixel identity untested; computed versus rounded stored normals may cause small highlight differences.",
+  "blockers": [],
+  "additional_render_required": false
+}

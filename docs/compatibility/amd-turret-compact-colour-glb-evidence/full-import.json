@@ -1,0 +1,79 @@
+{
+  "classification": "PASS",
+  "phase": "full-import",
+  "fresh_scene_import": true,
+  "imported_smooth_faces": 0,
+  "imported_custom_normals": false,
+  "standalone_without_source_blend": true,
+  "learned_RGB_shader_link_verified": true,
+  "shader_colour_layer": "",
+  "render_colour_index": 0,
+  "binary_payload_verification": {
+    "all_triangle_corners_exact_position_and_RGB": true,
+    "triangle_multiset_including_winding_and_multiplicity_exact": true,
+    "canonical_triangle_sha256": "727a1d8ab867fbac6896df334eaedd31be66ffab5d5e46d6eeffcbf75de4d1f3",
+    "triangles": 4012360,
+    "source_vertices": 1842968,
+    "imported_vertices": 1839821,
+    "source_unique_position_RGB_keys": 1842968,
+    "import_colour_domain": "POINT",
+    "maximum_linear_RGB_error": 0.0
+  },
+  "all_triangle_corners_exact_position_and_RGB": true,
+  "triangle_multiset_including_winding_and_multiplicity_exact": true,
+  "canonical_triangle_sha256": "727a1d8ab867fbac6896df334eaedd31be66ffab5d5e46d6eeffcbf75de4d1f3",
+  "triangles": 4012360,
+  "source_vertices": 1842968,
+  "imported_vertices": 1839821,
+  "source_unique_position_RGB_keys": 1842968,
+  "import_colour_domain": "CORNER",
+  "maximum_linear_RGB_error": null,
+  "portable_embedded_GLB": true,
+  "NORMAL_omitted": true,
+  "COLOR_0": {
+    "bufferView": 1,
+    "componentType": 5126,
+    "count": 1839821,
+    "type": "VEC3"
+  },
+  "POSITION": {
+    "bufferView": 0,
+    "componentType": 5126,
+    "count": 1839821,
+    "max": [
+      0.3415977954864502,
+      0.29461854696273804,
+      0.5001831650733948
+    ],
+    "min": [
+      -0.34096986055374146,
+      -0.2833772897720337,
+      -0.499592125415802
+    ],
+    "type": "VEC3"
+  },
+  "indices": {
+    "bufferView": 2,
+    "componentType": 5125,
+    "count": 12037080,
+    "type": "SCALAR"
+  },
+  "material": {
+    "doubleSided": true,
+    "name": "Learned RGB preview - matte nonmetal",
+    "pbrMetallicRoughness": {
+      "metallicFactor": 0,
+      "roughnessFactor": 0.800000011920929
+    }
+  },
+  "images": 0,
+  "textures": 0,
+  "glTF_axis_conversion": "Blender (x,y,z) to (x,z,-y); determinant +1",
+  "Blender_version": "5.2.1 LTS",
+  "elapsed_seconds": 20.86691619999965,
+  "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-compact-glb-d3eec48\\turret-learned-colour-compact.glb",
+  "bytes": 92305152,
+  "sha256": "6f3a71eb1dc683a83a83ba0b1c6e0add87391ef1d7ee4a9e0faf4092eb3f6c2d",
+  "CPU_only": true,
+  "no_render": true
+}

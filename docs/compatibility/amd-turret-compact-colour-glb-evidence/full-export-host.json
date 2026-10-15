@@ -1,0 +1,69 @@
+{
+  "phase": "full-export",
+  "CPU_only": true,
+  "command": [
+    "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--threads",
+    "4",
+    "--python-exit-code",
+    "1",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-pbr-3485263\\learned-pbr.blend",
+    "--python",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-compact-colour-glb-evidence\\blender_glb.py"
+  ],
+  "deadline_seconds": 300,
+  "memory_cap_bytes": 8589934592,
+  "host_available_RAM_bytes": 20398239744,
+  "disk_free_bytes": 110689832960,
+  "scripts": {
+    "blender_glb.py": "7bc8a52a751a8bb7196b1a29ae609e4639f4368c3ad5b373f5cd7fa277e0ac3b",
+    "contract.py": "54721c28a5aee7ea912757f331e1b31988267bd9726cc8077556ecb9fbdb11b5",
+    "host.py": "2bd0e0be64349ef9c15905e278594e5e62f2b12a30298e90aebd229998bde9e9"
+  },
+  "returncode": 0,
+  "peak_committed_bytes": 1885712384,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 9.45300000000043,
+  "sources_after": [
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-pbr-3485263\\learned-pbr.blend",
+      "bytes": 114365124,
+      "sha256": "555ef22321040a806b8d21cad65087eb0b424d46e6d9ed8a2a11c6a49cc79339"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\turret-full.ply",
+      "bytes": 74276526,
+      "sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field\\texture-field.safetensors",
+      "bytes": 117958320,
+      "sha256": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors",
+      "bytes": 96433760,
+      "sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\learned-colour.blend",
+      "bytes": 97205266,
+      "sha256": "b5c91db6b4c9717da987ab7c6d65ba495f78b0fcb87cd10e0ad3944dc1e17632"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-coloured-glb-357e541\\turret-learned-colour.glb",
+      "bytes": 479788924,
+      "sha256": "ea9ea02c87311e91ddd455a2d0664ec5a2965adc966b108f72c3e3ce1f98df15"
+    }
+  ],
+  "acceptance": true
+}
