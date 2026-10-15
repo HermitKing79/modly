@@ -1,0 +1,49 @@
+{
+  "classification": "PASS",
+  "reviewer": "Independent pbr_review subagent",
+  "scope": "Focused static preexecution review of the bounded CPU learned-PBR side preview; no candidate execution or runtime success claim",
+  "blockers": [],
+  "reviewed_files_sha256": {
+    "pbr_contract.py": "303e4a48f7af4a8cf7ea666acaac56f736ae95245a48ad16cad3de48d2fc9abb",
+    "pbr_preview.py": "5c864abc17565e2bbdebc5a7d4eb103ec5a6cad5e7a7b5bed44e4cdbca2b6e4e",
+    "host.py": "a2492511517e8bebf59ce7dc4ef8baca7f55e933948fba03c5a514571f4fd401",
+    "contract-tests.py": "d8d5f87ad15a63b954aec5a5b4cb34ada98449836f3d352e8ce75582a2f4d869",
+    "scripts/compatibility/amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64"
+  },
+  "checks": {
+    "approved_input_blend_and_genuine_field_hashes_are_enforced": true,
+    "previous_exact_row_proof_is_reused_without_repeating_old_suites": true,
+    "raw_F32_channels_3_4_5_map_to_FLOAT_POINT_attributes": true,
+    "raw_values_are_copied_without_clamping_or_colour_conversion": true,
+    "all_three_saved_attribute_buffers_are_compared_bitwise_to_the_genuine_field": true,
+    "metallic_and_roughness_use_separate_attribute_Fac_to_MINMAX_0_1_clamp_links": true,
+    "existing_Col_to_Base_Color_link_is_checked_and_preserved": true,
+    "original_geometry_RGB_bytes_and_linear_RGBA_are_checked_before_and_after": true,
+    "raw_alpha_is_retained_with_Principled_Alpha_unlinked_at_one": true,
+    "emission_strength_zero_is_checked": true,
+    "camera_light_world_AgX_and_render_settings_are_snapshotted_and_compared": true,
+    "existing_side_camera_is_selected_without_changing_its_pose": true,
+    "render_branch_has_one_640_square_CPU_64_sample_OIDN_render_call": true,
+    "readback_branch_has_no_render_call": true,
+    "separate_fresh_output_scene_is_required": true,
+    "owned_job_sets_6_GiB_process_memory_cap_and_180_second_render_deadline": true,
+    "readback_deadline_is_60_seconds": true,
+    "host_admission_requires_10_GiB_available_RAM_and_2_GiB_free_disk": true,
+    "original_scene_and_field_hashes_are_checked_after_execution": true
+  },
+  "test_evidence": {
+    "existing_log": "tests-green.txt",
+    "observed_result": "Three focused CPU contract tests passed",
+    "tests_rerun_by_reviewer": false
+  },
+  "reviewer_execution": {
+    "candidate_code": false,
+    "Blender": false,
+    "WSL": false,
+    "Torch_or_AI": false,
+    "tests": false,
+    "source_edits": false,
+    "only_written_file": "preexecution-review.json"
+  },
+  "remaining_verification": "The owned render and separate saved-scene CPU readback must pass before runtime completion is claimed."
+}

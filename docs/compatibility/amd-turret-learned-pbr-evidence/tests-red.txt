@@ -1,0 +1,41 @@
+test_derived_arrays_do_not_mutate_source (__main__.Tests.test_derived_arrays_do_not_mutate_source) ... ERROR
+test_genuine_channel_order_and_no_clamp (__main__.Tests.test_genuine_channel_order_and_no_clamp) ... ERROR
+test_invalid_dtype_shape_or_nonfinite_rejected (__main__.Tests.test_invalid_dtype_shape_or_nonfinite_rejected) ... ERROR
+
+======================================================================
+ERROR: test_derived_arrays_do_not_mutate_source (__main__.Tests.test_derived_arrays_do_not_mutate_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-learned-pbr-evidence\contract-tests.py", line 12, in test_derived_arrays_do_not_mutate_source
+    x=np.zeros((2,6),np.float32);v=m.raw_channels(x);v['Trellis_alpha_raw'][0]=1;self.assertEqual(x.sum(),0)
+                                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-learned-pbr-evidence\pbr_contract.py", line 22, in raw_channels
+    raise NotImplementedError('Raw F32 channel mapping not implemented')
+NotImplementedError: Raw F32 channel mapping not implemented
+
+======================================================================
+ERROR: test_genuine_channel_order_and_no_clamp (__main__.Tests.test_genuine_channel_order_and_no_clamp)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-learned-pbr-evidence\contract-tests.py", line 7, in test_genuine_channel_order_and_no_clamp
+    x=np.array([[.1,.2,.3,-.02,1.04,1.008],[.4,.5,.6,.9,.12,.99]],np.float32);old=x.tobytes();v=m.raw_channels(x)
+                                                                                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-learned-pbr-evidence\pbr_contract.py", line 22, in raw_channels
+    raise NotImplementedError('Raw F32 channel mapping not implemented')
+NotImplementedError: Raw F32 channel mapping not implemented
+
+======================================================================
+ERROR: test_invalid_dtype_shape_or_nonfinite_rejected (__main__.Tests.test_invalid_dtype_shape_or_nonfinite_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-learned-pbr-evidence\contract-tests.py", line 15, in test_invalid_dtype_shape_or_nonfinite_rejected
+    with self.assertRaises(ValueError):m.raw_channels(x)
+                                       ^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-learned-pbr-evidence\pbr_contract.py", line 22, in raw_channels
+    raise NotImplementedError('Raw F32 channel mapping not implemented')
+NotImplementedError: Raw F32 channel mapping not implemented
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+FAILED (errors=3)

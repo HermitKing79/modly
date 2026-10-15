@@ -1,0 +1,112 @@
+{
+  "classification": "PASS",
+  "reviewer": "Independent pbr_review subagent",
+  "scope": "Outcome evidence review, independent stdlib CPU field-channel hashing, fresh source/output/metadata hashing, and visual inspection; no Blender or tests executed by reviewer",
+  "blockers": [],
+  "raw_channels": {
+    "Trellis_metallic_raw": {
+      "source_column": 3,
+      "dtype": "F32",
+      "saved_attribute_type": "FLOAT",
+      "saved_domain": "POINT",
+      "genuine_field_sha256": "09891100c422bb135a097bd1303dd7dcf3506795d690357b6721f30e6021409e",
+      "saved_render_and_readback_sha256_match": true,
+      "minimum": -0.025036334991455078,
+      "maximum": 1.046318769454956,
+      "outside_0_1": 397
+    },
+    "Trellis_roughness_raw": {
+      "source_column": 4,
+      "dtype": "F32",
+      "saved_attribute_type": "FLOAT",
+      "saved_domain": "POINT",
+      "genuine_field_sha256": "7aad7873ee3aa5bc4966de0b52da2b77194c1fe6412fd291915dfd2d51732dae",
+      "saved_render_and_readback_sha256_match": true,
+      "minimum": -0.029478728771209717,
+      "maximum": 0.7638838887214661,
+      "outside_0_1": 23
+    },
+    "Trellis_alpha_raw": {
+      "source_column": 5,
+      "dtype": "F32",
+      "saved_attribute_type": "FLOAT",
+      "saved_domain": "POINT",
+      "genuine_field_sha256": "26b097471de4647455b697fe03c559f6ef4212b4eb04b718a35390a95c01d9e9",
+      "saved_render_and_readback_sha256_match": true,
+      "minimum": 0.9928321838378906,
+      "maximum": 1.008357286453247,
+      "outside_0_1": 958059
+    }
+  },
+  "geometry_and_RGB": {
+    "vertex_payload_sha256": "ad9f926cd1168ede80979f359a949d818f92aa3871cc950df17231cdb83ef559",
+    "face_payload_sha256": "4e2de7427def4b8077dcc41bdcccd657032aadafbf860ef6edbd98e5b69e4725",
+    "RGB_payload_sha256": "45db29e954f49c90235a86b7477cc1990c6fe3c1e2e6a3e021bb9cd9f557d514",
+    "linear_RGBA_sha256": "6c2f745064a95a3b077ee8682346f22971e95a81c56ce7e2b889eae5c36b9fa1"
+  },
+  "checks": {
+    "reviewed_script_hashes_unchanged": true,
+    "raw_channels_match_genuine_field_bitwise_in_render_and_saved_scene_readback": true,
+    "raw_overshoots_retained": true,
+    "clamp_links_MINMAX_0_1_and_alpha_unlinked_one_verified_by_reviewed_readback_code": true,
+    "Col_link_and_linear_RGBA_preserved": true,
+    "geometry_and_RGB_match_original_evidence": true,
+    "cameras_lights_world_AgX_render_settings_unchanged_except_active_side_camera": true,
+    "separate_saved_scene_CPU_no_render_readback_passed": true,
+    "one_authorized_render_and_no_readback_render": true,
+    "both_owned_jobs_exited_normally_within_memory_and_time_caps": true,
+    "original_blend_and_material_fresh_hashes_unchanged": true
+  },
+  "render_host": {
+    "elapsed_seconds": 27.467999999999847,
+    "peak_committed_bytes": 2280869888,
+    "returncode": 0,
+    "forced_job_cleanup": false
+  },
+  "readback_host": {
+    "elapsed_seconds": 15.75,
+    "peak_committed_bytes": 961273856,
+    "returncode": 0,
+    "forced_job_cleanup": false,
+    "no_render": true
+  },
+  "source_sha256": {
+    "original_blend": "b5c91db6b4c9717da987ab7c6d65ba495f78b0fcb87cd10e0ad3944dc1e17632",
+    "genuine_field": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80"
+  },
+  "outputs": {
+    "preview-side.png": {
+      "bytes": 381526,
+      "sha256": "ee3c38db6071f01b0aff7810677dd3cff04c8f8e6dc2fb667050cedb7c100143"
+    },
+    "learned-pbr.blend": {
+      "bytes": 114365124,
+      "sha256": "555ef22321040a806b8d21cad65087eb0b424d46e6d9ed8a2a11c6a49cc79339"
+    }
+  },
+  "PNG_dimensions": [
+    640,
+    640
+  ],
+  "metadata_sha256": {
+    "artifacts\\amd-turret-learned-pbr-3485263\\render-metadata.json": "b610a3f5b1134fced12e33402ecdb1d1cd55eca21929a968114028a73dfd92a9",
+    "proof\\docs\\compatibility\\amd-turret-learned-pbr-evidence\\render-metadata.json": "b610a3f5b1134fced12e33402ecdb1d1cd55eca21929a968114028a73dfd92a9",
+    "proof\\docs\\compatibility\\amd-turret-learned-pbr-evidence\\scene-readback.json": "3391d410574a5809f8148a7e69ea393e2ea2894a4a8b7ddba616329d7da64f2e",
+    "proof\\docs\\compatibility\\amd-turret-learned-pbr-evidence\\render-host.json": "e1165788f1de30642901a401c832d9d31d50b2f05e25722a0c4d84fdc8bb6742",
+    "proof\\docs\\compatibility\\amd-turret-learned-pbr-evidence\\readback-host.json": "210f65c32ca7089bbab072c19a85853e792cfb88452e58c2d1de9a70c5be88f5",
+    "proof\\docs\\compatibility\\amd-turret-learned-pbr-evidence\\render-attempt.marker": "be86466eca656ec4f09ad75d827ae909ff96cef107f8b1248822b32cfa0a1152",
+    "proof\\docs\\compatibility\\amd-turret-learned-pbr-evidence\\readback-attempt.marker": "1b6ca662e55bb072ad5442e1711f62e60329208e90057614f108af984940020e",
+    "proof\\docs\\compatibility\\amd-turret-learned-pbr-evidence\\preexecution-review.json": "63ab9063dac7bd94ac79a4d49d3e77b462a702fd0a6551de1bd45aff923649f2"
+  },
+  "visual_review": "Same side framing and lighting. The learned-PBR image shows modest changes in local highlights and a slightly darker body. It is not a dramatic visual improvement.",
+  "receipt_correction": "The preexecution receipt had one extra d in the manually transcribed reused OwnedJob hash. The receipt was corrected to the freshly read hash; no script changed.",
+  "reviewer_execution": {
+    "stdlib_CPU_binary_and_JSON_reads": true,
+    "Blender": false,
+    "tests": false,
+    "WSL": false,
+    "Torch_or_AI": false,
+    "render_or_retuning": false,
+    "artifact_edits": false
+  }
+}

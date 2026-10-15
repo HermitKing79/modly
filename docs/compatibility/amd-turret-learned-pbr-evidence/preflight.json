@@ -1,0 +1,49 @@
+{
+  "classification": "PASS",
+  "timestamp_utc": "2026-10-15T09:25:23.135539+00:00",
+  "source_blend": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\learned-colour.blend",
+    "sha256": "b5c91db6b4c9717da987ab7c6d65ba495f78b0fcb87cd10e0ad3944dc1e17632",
+    "bytes": 97205266,
+    "mtime_ns": 1792054867923573500
+  },
+  "material_field": {
+    "path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field\\texture-field.safetensors",
+    "sha256": "7b24c946765d8e5de9718dbc358ce35141a56d836aa54fe7f8945cb1acbf7a80",
+    "bytes": 117958320,
+    "mtime_ns": 1792053724831300300
+  },
+  "reference_side": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-colour-fa3a98c\\preview-side.png",
+    "sha256": "ff3319685760ef59351b4e6f96295675e589bdef883d15d6a603c79ba8b9325e"
+  },
+  "row_correspondence_proof_reused": true,
+  "ordered_coordinates_sha256": "c87fa21d6f863aced647b48e0bb2edebe32523d36c742e350d39ccfea3fc0934",
+  "raw_attributes": {
+    "Trellis_metallic_raw": {
+      "source_column": 3,
+      "sha256": "09891100c422bb135a097bd1303dd7dcf3506795d690357b6721f30e6021409e",
+      "min": -0.025036334991455078,
+      "max": 1.046318769454956,
+      "mean": 0.4828247101244646
+    },
+    "Trellis_roughness_raw": {
+      "source_column": 4,
+      "sha256": "7aad7873ee3aa5bc4966de0b52da2b77194c1fe6412fd291915dfd2d51732dae",
+      "min": -0.029478728771209717,
+      "max": 0.7638838887214661,
+      "mean": 0.5908718073151894
+    },
+    "Trellis_alpha_raw": {
+      "source_column": 5,
+      "sha256": "26b097471de4647455b697fe03c559f6ef4212b4eb04b718a35390a95c01d9e9",
+      "min": 0.9928321838378906,
+      "max": 1.008357286453247,
+      "mean": 1.0000178624024745
+    }
+  },
+  "new_output": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-pbr-3485263",
+  "render_marker_absent": true,
+  "Blender_started": false,
+  "AI_or_WSL_execution": false
+}

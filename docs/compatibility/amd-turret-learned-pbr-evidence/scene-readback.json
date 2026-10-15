@@ -1,0 +1,56 @@
+{
+  "classification": "PASS",
+  "no_render": true,
+  "saved_scene": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-pbr-3485263\\learned-pbr.blend",
+  "geometry_and_RGB": {
+    "vertex_payload_sha256": "ad9f926cd1168ede80979f359a949d818f92aa3871cc950df17231cdb83ef559",
+    "face_payload_sha256": "4e2de7427def4b8077dcc41bdcccd657032aadafbf860ef6edbd98e5b69e4725",
+    "RGB_payload_sha256": "45db29e954f49c90235a86b7477cc1990c6fe3c1e2e6a3e021bb9cd9f557d514",
+    "linear_RGBA_sha256": "6c2f745064a95a3b077ee8682346f22971e95a81c56ce7e2b889eae5c36b9fa1"
+  },
+  "attributes": {
+    "Trellis_metallic_raw": {
+      "source_column": 3,
+      "data_type": "FLOAT",
+      "domain": "POINT",
+      "sha256": "09891100c422bb135a097bd1303dd7dcf3506795d690357b6721f30e6021409e",
+      "min": -0.025036334991455078,
+      "max": 1.046318769454956,
+      "mean": 0.4828247101244646,
+      "outside_0_1": 397,
+      "raw_unclamped": true
+    },
+    "Trellis_roughness_raw": {
+      "source_column": 4,
+      "data_type": "FLOAT",
+      "domain": "POINT",
+      "sha256": "7aad7873ee3aa5bc4966de0b52da2b77194c1fe6412fd291915dfd2d51732dae",
+      "min": -0.029478728771209717,
+      "max": 0.7638838887214661,
+      "mean": 0.5908718073151894,
+      "outside_0_1": 23,
+      "raw_unclamped": true
+    },
+    "Trellis_alpha_raw": {
+      "source_column": 5,
+      "data_type": "FLOAT",
+      "domain": "POINT",
+      "sha256": "26b097471de4647455b697fe03c559f6ef4212b4eb04b718a35390a95c01d9e9",
+      "min": 0.9928321838378906,
+      "max": 1.008357286453247,
+      "mean": 1.0000178624024745,
+      "outside_0_1": 958059,
+      "raw_unclamped": true
+    }
+  },
+  "RGB_link_preserved": [
+    "Verified learned sRGB vertex colour",
+    "Color",
+    "Principled BSDF",
+    "Base Color"
+  ],
+  "settings_match_original": true,
+  "alpha": 1,
+  "emission_strength": 0,
+  "Blender_version": "5.2.1 LTS"
+}

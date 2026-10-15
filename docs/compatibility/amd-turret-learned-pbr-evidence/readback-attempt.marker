@@ -1,0 +1,22 @@
+{
+  "CPU_only": true,
+  "render_calls_authorized": 0,
+  "command": [
+    "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--threads",
+    "4",
+    "--python-exit-code",
+    "1",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-learned-pbr-3485263\\learned-pbr.blend",
+    "--python",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-learned-pbr-evidence\\pbr_preview.py"
+  ],
+  "deadline_seconds": 60,
+  "memory_cap_bytes": 6442450944,
+  "source_scene_sha256": "555ef22321040a806b8d21cad65087eb0b424d46e6d9ed8a2a11c6a49cc79339",
+  "script_sha256": "5c864abc17565e2bbdebc5a7d4eb103ec5a6cad5e7a7b5bed44e4cdbca2b6e4e",
+  "contract_sha256": "303e4a48f7af4a8cf7ea666acaac56f736ae95245a48ad16cad3de48d2fc9abb"
+}
