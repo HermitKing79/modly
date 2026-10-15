@@ -1,0 +1,109 @@
+{
+  "vertex_count": 1842968,
+  "face_count": 4012360,
+  "bbox": [
+    [
+      -0.34096986055374146,
+      -0.5001831650733948,
+      -0.28355714678764343
+    ],
+    [
+      0.3415977954864502,
+      0.499592125415802,
+      0.29461854696273804
+    ]
+  ],
+  "source_PLY_sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a",
+  "geometry_unchanged": true,
+  "engine": "CYCLES",
+  "device": "CPU",
+  "samples": 8,
+  "threads": 4,
+  "denoising": false,
+  "transparent": false,
+  "canonical_up_axis": "+Z",
+  "import_settings": {
+    "filepath": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-cpu-mesh-ad07f96\\turret-full.ply",
+    "merge_verts": false,
+    "global_scale": 1.0,
+    "use_scene_unit": false,
+    "forward_axis": "Y",
+    "up_axis": "Z"
+  },
+  "views": [
+    {
+      "name": "front",
+      "PNG": "preview-front.png",
+      "camera_location": [
+        1.5172144174575806,
+        -3.309896469116211,
+        1.660331130027771
+      ],
+      "camera_quaternion": [
+        0.8214350938796997,
+        0.5289393067359924,
+        0.11544136703014374,
+        0.17927877604961395
+      ],
+      "ortho_scale": 1.1615064144134521,
+      "seconds": 1.4903317999996943
+    },
+    {
+      "name": "back",
+      "PNG": "preview-back.png",
+      "camera_location": [
+        -1.516586422920227,
+        3.309305191040039,
+        1.660331130027771
+      ],
+      "camera_quaternion": [
+        0.17927877604961395,
+        0.11544136703014374,
+        -0.5289393067359924,
+        -0.8214350938796997
+      ],
+      "ortho_scale": 1.1615064144134521,
+      "seconds": 0.9216065999935381
+    },
+    {
+      "name": "side",
+      "PNG": "preview-side.png",
+      "camera_location": [
+        3.819990873336792,
+        0.146615132689476,
+        1.1808159351348877
+      ],
+      "camera_quaternion": [
+        0.5577095150947571,
+        0.41199958324432373,
+        0.42815032601356506,
+        0.5795721411705017
+      ],
+      "ortho_scale": 1.1483021974563599,
+      "seconds": 1.0306306999991648
+    }
+  ],
+  "Blender_version": "5.2.1 LTS",
+  "actual_geometry_payloads_before_and_after": {
+    "vertex_payload_sha256": "ad9f926cd1168ede80979f359a949d818f92aa3871cc950df17231cdb83ef559",
+    "face_payload_sha256": "4e2de7427def4b8077dcc41bdcccd657032aadafbf860ef6edbd98e5b69e4725"
+  },
+  "elapsed_seconds": 8.55968489999941,
+  "outputs": {
+    "front": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\preview-front.png",
+      "bytes": 482627,
+      "sha256": "daab47d2121783a5ae4db9b9d7481d7815c0d44cc07ce94bb4bf83625689a252"
+    },
+    "back": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\preview-back.png",
+      "bytes": 342223,
+      "sha256": "5a7c56cc123ae7816279e6003380afeacfe3b4bf8d176a76988e54fca2bdfdea"
+    },
+    "side": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\preview-side.png",
+      "bytes": 478080,
+      "sha256": "31ce5a683e7edda2c542dcd19f80f3b499e878b583cb37d10041a0b2239c3588"
+    }
+  }
+}

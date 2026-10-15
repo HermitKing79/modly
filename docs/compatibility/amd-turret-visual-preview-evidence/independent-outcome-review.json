@@ -1,0 +1,56 @@
+{
+  "review": "Independent actual CPU visual-preview outcome and saved-image inspection",
+  "classification": "PASS_WITH_VISUAL_LIMITATIONS",
+  "decision": "Accept the one approved three-view CPU preview; no rerender or repair",
+  "reviewer_Blender_AI_GPU_WSL_execution": false,
+  "actual_runtime": {
+    "Blender": "5.2.1 LTS",
+    "returncode": 0,
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 8,
+    "threads": 4,
+    "denoising": false,
+    "PNG_format": "640x640 RGB8 opaque",
+    "script_seconds": 8.55968489999941,
+    "host_seconds": 13.39100000000326,
+    "peak_process_committed_bytes": 1597411328,
+    "process_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "available_RAM_before_bytes": 18758627328,
+    "natural_Job_active_before_after": [0, 0],
+    "forced_cleanup": false,
+    "owned_tree_exit_verified": true,
+    "host_error": "Absent",
+    "stderr": "Only nonfatal Material.use_nodes/World.use_nodes deprecation warnings concerning future Blender6.0"
+  },
+  "geometry_preservation": {
+    "vertices": 1842968,
+    "triangles": 4012360,
+    "source_PLY_sha256_before_and_after": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a",
+    "Blender_vertex_payload_sha256": "ad9f926cd1168ede80979f359a949d818f92aa3871cc950df17231cdb83ef559",
+    "Blender_face_loop_payload_sha256": "4e2de7427def4b8077dcc41bdcccd657032aadafbf860ef6edbd98e5b69e4725",
+    "reviewer_independent_NPY_payload_hashes_match": true,
+    "actual_before_after_checks": "Executed renderer compared all Blender coordinates and triangle loops against the original NPY arrays before and after rendering, with exact counts/bounds/identity transform; no geometry operators or modifiers",
+    "merge_vertices": false,
+    "scale": 1.0,
+    "canonical_up": "+Z",
+    "topology_status": "Unchanged raw mesh:164154 boundary edges and338449 nonmanifold edges. Visual preview success does not change the earlier mesh topology PARTIAL disposition."
+  },
+  "outputs": {
+    "front": {"bytes": 482627, "sha256": "daab47d2121783a5ae4db9b9d7481d7815c0d44cc07ce94bb4bf83625689a252"},
+    "back": {"bytes": 342223, "sha256": "5a7c56cc123ae7816279e6003380afeacfe3b4bf8d176a76988e54fca2bdfdea"},
+    "side": {"bytes": 478080, "sha256": "31ce5a683e7edda2c542dcd19f80f3b499e878b583cb37d10041a0b2239c3588"},
+    "comparison_sha256": "ed3076db43a4fd106ade089e6e9e01fd06acd7f1b04429a4a2e64b34ae1a92cc",
+    "render_metadata_sha256": "82da3e2346bbff844003254766e09033fedca2c73fded05c6ffd422146e30119",
+    "source_output_and_evidence_copy_hashes_match": true,
+    "PNG_headers_independently_checked": "All three640x640, bitdepth8, color type2(RGB); decoded actual comparison includes the same three views and input reference"
+  },
+  "visual_inspection": "Front and side show a recognizable multi-barrel turret, base and upper housing with the complete silhouette in frame. The rear is heavily overexposed: broad near-white/clipped highlights obscure surface detail. Front/top highlights are bright and all views show visible eight-sample grain. These are limited grey previews, not clean presentation-quality renders, texture reconstruction or a topology validation. No corrective rerender was performed.",
+  "source_identity": {
+    "render_preview.py": "7c0705f6847248811813f9c15af0b9b898ae6fb006768aafa914634207404f35",
+    "render_host.py": "15c99b656f9eecfd20c9a185fac8077ab841707bd9cdd6ce92f2f5a461bea871",
+    "preview-host.json": "bac27582819f36a22977d5a13b02c6ea2b8e8fef9cfd311e10f6733228e0ac34"
+  },
+  "scope_limit": "Reviewer only read logs/metadata, hashed existing image/mesh/NPY payload files and viewed the saved comparison. No Blender, AI, WSL, GPU/native extraction, new inference or repair was executed. Final historical preservation/publication checks remain with the parent."
+}

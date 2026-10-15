@@ -1,0 +1,19 @@
+{
+  "review": "Focused independent read-only review of one explicitly approved visual preview",
+  "decision": "GO_FOR_ONE_BOUNDED_CPU_PREVIEW",
+  "authorization": "The new user approval permits visual preview regardless of known topology. It overrides the earlier render STOP only for this single read-only preview; repair/topology modification remains excluded.",
+  "reviewer_Blender_AI_GPU_WSL_execution": false,
+  "source_sha256": {
+    "render_preview.py": "7c0705f6847248811813f9c15af0b9b898ae6fb006768aafa914634207404f35",
+    "render_host.py": "15c99b656f9eecfd20c9a185fac8077ab841707bd9cdd6ce92f2f5a461bea871"
+  },
+  "immutable_input": "Exact full PLY SHA89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a,1842968 original vertices/4012360 faces, existing extraction receipt; source file identity is checked by host before launch, renderer after all views and host after exit.",
+  "fresh_outputs": "Only artifacts/amd-turret-preview-9380d3a; exclusive fresh directory/scratch, marker absent and output absent at review. Existing mesh/evidence/previous outputs are not reset or overwritten.",
+  "geometry_integrity": "No mesh edit, merge, transform, modifier, smooth, decimation or repair operation. PLY import uses scale1, scene-unitfalse, Y-forward/Z-up and mergefalse where supported; identity object matrix and counts/bounds asserted. Actual Blender vertices/loop indices are read via foreach_get and compared exactly with immutable original NPY arrays before rendering and after all views. Material/lights/cameras change only presentation.",
+  "render_scope": "Cycles deviceCPU asserted before each render;8 samples,4 threads,640x640 RGB8 opaque PNG, denoising/adaptive sampling/compositor/sequencer disabled, fixed grey material and three orthographic front/back/side cameras with Z-up framing. Factory-startup/background/disable-autoexec; config/scripts/extensions/temp confined to fresh scratch. No mesh export or topology operation.",
+  "bounded_host": "10GiB available-RAM and2GiB disk admission; owned Windows Job6GiB process committed-memory cap/KILL_ON_JOB_CLOSE and180-second wait. The demonstrated attachment-failure cleanup gap was fixed before launch: only this started Popen child is killed/waited if attachment fails, then normal Job cleanup runs. No automatic retry.",
+  "API_preflight": "Existing Blender5.2 executable and its bundled NumPy package are present. Modern official PLY operator documentation supports the selected flags; actual operator RNA is queried by the script. No demonstrated first-launch API defect found. Static checks do not confirm actual Blender runtime behavior.",
+  "API_source": "https://docs.blender.org/api/5.4/bpy.ops.wm.html#bpy.ops.wm.ply_import",
+  "outcome_requirements": "Require all three PNGs and metadata, actual CPU settings, exact before/after geometry payloads, unchanged source PLY, no host error, measured committed peak below cap and natural verified Job cleanup. Inspect images for framing/readability. Known164154 boundary/338449 nonmanifold edges remain; a preview does not improve topology or change the overall mesh qualification.",
+  "material_blockers": []
+}

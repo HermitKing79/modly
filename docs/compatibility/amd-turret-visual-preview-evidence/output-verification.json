@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "host_exit": 0,
+  "CPU_renderer": true,
+  "geometry_payloads_unchanged": true,
+  "outputs": {
+    "comparison.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\comparison.png",
+      "bytes": 1650960,
+      "sha256": "ed3076db43a4fd106ade089e6e9e01fd06acd7f1b04429a4a2e64b34ae1a92cc"
+    },
+    "preview-back.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\preview-back.png",
+      "bytes": 342223,
+      "sha256": "5a7c56cc123ae7816279e6003380afeacfe3b4bf8d176a76988e54fca2bdfdea"
+    },
+    "preview-front.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\preview-front.png",
+      "bytes": 482627,
+      "sha256": "daab47d2121783a5ae4db9b9d7481d7815c0d44cc07ce94bb4bf83625689a252"
+    },
+    "preview-side.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\preview-side.png",
+      "bytes": 478080,
+      "sha256": "31ce5a683e7edda2c542dcd19f80f3b499e878b583cb37d10041a0b2239c3588"
+    },
+    "render-metadata.json": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-preview-9380d3a\\render-metadata.json",
+      "bytes": 3241,
+      "sha256": "82da3e2346bbff844003254766e09033fedca2c73fded05c6ffd422146e30119"
+    }
+  },
+  "comparison_reference": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\preprocessing-preview.png",
+    "sha256": "55acdbf5094c0aa3e0f00179fc6c34e73d6d571f85cad4a2b9d831c192ff6335"
+  },
+  "comparison_only_layout": true,
+  "original_render_PNG_pixels_not_modified": true
+}

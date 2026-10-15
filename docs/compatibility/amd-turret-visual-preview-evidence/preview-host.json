@@ -1,0 +1,27 @@
+{
+  "command": [
+    "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
+    "--background",
+    "--factory-startup",
+    "--disable-autoexec",
+    "--threads",
+    "4",
+    "--python-exit-code",
+    "1",
+    "--python",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-visual-preview-evidence\\render_preview.py"
+  ],
+  "CPU_only": true,
+  "available_RAM_bytes": 18758627328,
+  "returncode": 0,
+  "peak_committed_bytes": 1597411328,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 13.39100000000326,
+  "PLY_sha256_after_exit": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a"
+}
