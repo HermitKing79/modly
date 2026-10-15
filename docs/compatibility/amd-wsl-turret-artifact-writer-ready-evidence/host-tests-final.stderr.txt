@@ -1,0 +1,16 @@
+test_computation_and_validator_unchanged (__main__.WriterPreparation.test_computation_and_validator_unchanged) ... ok
+test_host_preparation_rejects_traversal_before_mutation (__main__.WriterPreparation.test_host_preparation_rejects_traversal_before_mutation) ... FAIL
+test_nonrecursive_leaf_creation (__main__.WriterPreparation.test_nonrecursive_leaf_creation) ... ok
+
+======================================================================
+FAIL: test_host_preparation_rejects_traversal_before_mutation (__main__.WriterPreparation.test_host_preparation_rejects_traversal_before_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-artifact-writer-ready-evidence\host-tests.py", line 35, in test_host_preparation_rejects_traversal_before_mutation
+    self.assertIn('Unapproved artifact leaf',r.stderr)
+AssertionError: 'Unapproved artifact leaf' not found in 'File C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-turret-artifact-writer-ready-evidence\\arti\nfact_parent.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see \nabout_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.\n    + CategoryInfo          : SecurityError: (:) [], ParentContainsErrorRecordException\n    + FullyQualifiedErrorId : UnauthorizedAccess\n'
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.309s
+
+FAILED (failures=1)

@@ -1,0 +1,37 @@
+{
+  "review": "Focused independent read-only source review before the single CPU writer acceptance",
+  "decision": "GO_FOR_ONE_CPU_WRITER_ACCEPTANCE",
+  "scope": "No genuine decoder or GPU execution is approved by this review. Require the actual CPU result and post-termination host verification before the later conditional decoder decision.",
+  "reviewer_runtime_actions": false,
+  "reviewed_source_sha256": {
+    "artifact_io.py": "02e9a332f9092035909a899bcb2f7bfcce89fefde79ba22207c87af0be68a9cd",
+    "artifact_paths.py": "8b530a8eb69982525bed571e725fa4958bb6f224e6a1373a69d809c7bd7bd89c",
+    "artifact_parent.ps1": "9996da72727ec5d3140ff5e1d435dce19a055f1ba871c3bff53d5f1afb382125",
+    "writer_acceptance.py": "8eccd7cc0f67fe1feb56e87a75779b8d6e166d3b8f13bea77845d55a859a2fdd",
+    "decode.py": "1b1f8714eb4a4f04e8a465425d0bf6a7b37b13cb439622e780c7f621bba5dcc8",
+    "neural.py": "5df3a3107847d94291749d08d9d53b22f353e5bf351631902afb7c903e993b58"
+  },
+  "identity_refresh": "Final writer differs from reviewed cbb5e554 only by four lines hashing the actual existing ImportPolicy source and rejecting anything except8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd before its import. Removing only those four lines in memory reproduces the exact prior reviewed hash. Actual unchanged policy file hash matches; CPU acceptance scope is unchanged and GO remains.",
+  "prior_failure_addressed": "Trusted Windows preparation creates only the exact absent artifacts parent before any attempt marker, checks expected SID/permissions and rejects reparse/redirection. Fixed host and guest leaf mappings agree; the worker verifies the existing writable parent and absent leaf. Production leaf mkdir is nonrecursive and exclusive, so it never requests parent creation through ImportPolicy.",
+  "shared_IO": "The CPU fixture and real neural wrapper call the same artifact_io.write_output. Existing production validate_output and run_neural remain unchanged. The three computation files are byte-identical to the reviewed chunked candidate. The helper preserves tensor equality/raw-byte readback and checks both provenance and core summary metadata before durable publication.",
+  "receipt_protocol": {
+    "publication_issue_fixed": "The initial exists-before-complete-write race was reported during review and corrected before runtime. Both READY and ACK now use one helper: refuse an existing destination, exclusively write a same-directory .publishing sibling, flush/fsync, then rename within the already approved root. Existing ImportPolicy permits and confines both rename paths.",
+    "live_verifier": "Host independently checks the fixed expected Windows path, attempt marker hash, bounded file/header/READY size, full file hash, exact ten tensor names/dtypes/shapes, complete nonoverlapping offsets and every raw tensor payload hash, metadata/core summary and provenance sidecar. Core metadata summary is correctly distinct from the enriched output receipt.",
+    "release_gate": "Worker waits for PASS with matching file SHA/size before returning from shared writer. Host verification has a9-second bound, worker wait10seconds; existing monitored worker/guest/host containment remains. Missing, late or failed receipt stops acceptance.",
+    "after_termination": "Parent explicitly schedules the same independent verifier again after contained worker termination; that future receipt is not yet evidence."
+  },
+  "CPU_acceptance_scope": "One exclusive marker/run/scratch and separate fixture artifact leaf; genuine pinned WSL Torch and safetensors0.6.2, ten tiny CPU F32/I32/BF16 fixture tensors, shared production writer. CPU fixture payload is344bytes by the source shapes. ImportPolicy cpu_meta confines CPU tensors and writes; explicit import audit forbids Flex/Triton/Trellis/geometry modules and checkpoint paths. Genuine GPU entries are denied and counted, GPU initialization must remain false; qualification requires no forbidden imports, no policy rejection/native entry and a verified independent receipt. No model/native-GPU/weight computation is present in this path.",
+  "contained_adapter": "Reuses the existing owned-job/health-monitor supervisor with the actual CPU script selected, base helper anchor intact, CPU60/guest90/host120-second bounds, natural-job/named-distro cleanup requirements and exclusive attempt reservation. No new launcher architecture or policy expansion.",
+  "recorded_preparation": {
+    "host_parent_created_once": true,
+    "parent_owner_SID_suffix": "1001",
+    "parent_and_checked_ancestors_reparse": false,
+    "both_leaves_absent": true,
+    "C_free_bytes": 108665815040,
+    "PowerShell": "Bundled Core7.6.5 used without changing execution-policy configuration",
+    "fresh_passive_Linux": "PASS922 staged payloads plus23 packaging payloads; AI_imports=false/GPU_actions=false",
+    "host_tests": "Read captured four passing standard-library tests: computation/validator identity, nonrecursive mkdir, traversal refusal before mutation, atomic completed-content publication/repeat refusal. Reviewer did not run them."
+  },
+  "material_blockers": [],
+  "pending": "Actual single CPU acceptance, marker/source identities, genuine GPU deny counters, complete file/receipt hashes, post-termination verification, healthy monitor and natural cleanup must be reviewed before any genuine decoder attempt."
+}

@@ -1,0 +1,21 @@
+test_receipt_published_only_after_complete_write (__main__.WriterPreparation.test_receipt_published_only_after_complete_write) ... FAIL
+
+======================================================================
+FAIL: test_receipt_published_only_after_complete_write (__main__.WriterPreparation.test_receipt_published_only_after_complete_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-wsl-turret-artifact-writer-ready-evidence\host-tests.py", line 50, in test_receipt_published_only_after_complete_write
+    self.assertEqual(observed,[{'complete':True}])
+AssertionError: Lists differ: [] != [{'complete': True}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'complete': True}
+
+- []
++ [{'complete': True}]
+
+----------------------------------------------------------------------
+Ran 1 test in 0.010s
+
+FAILED (failures=1)
