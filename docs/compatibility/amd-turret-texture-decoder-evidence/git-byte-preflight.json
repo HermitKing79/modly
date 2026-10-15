@@ -1,0 +1,9 @@
+{
+  "status": "caught-before-attempt",
+  "path": "api/services/amd_model_metadata.py",
+  "difference": "Only Git LF versus existing working-tree CRLF; executable text identical",
+  "working_sha256": "ca7b9f01ea09cb1820208e22f9bb5605bf8cf67159ea0dead9be7036eaf2ab96",
+  "committed_lf_sha256": "aec3639bd778ebcb779765839edd21eb09d4389a77ed30fb229bfea111e29d6f",
+  "correction": "Preserve existing reviewed working-tree bytes with -text; no on-disk source edits, guard or runtime changes",
+  "marker_exists": false
+}

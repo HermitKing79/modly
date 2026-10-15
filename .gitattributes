@@ -16,3 +16,5 @@
 /scripts/compatibility/test_amd_texture_decoder_inputs.py -text whitespace=cr-at-eol
 /scripts/compatibility/test_amd_texture_decoder_loader.py -text whitespace=cr-at-eol
 /scripts/compatibility/test_amd_texture_field_artifact.py -text whitespace=cr-at-eol
+
+/api/services/amd_model_metadata.py -text whitespace=cr-at-eol
