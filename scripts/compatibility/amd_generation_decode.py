@@ -222,7 +222,7 @@ class BaseProxy:
 
 
 class Runtime:
-    def __init__(self,shape_evidence,evidence,harness_commit,run_id):
+    def __init__(self,shape_evidence,evidence,harness_commit,run_id,*,tile_large_convolutions=False):
         from amd_generation_occupancy import plain_path
         self.evidence=plain_path(evidence);self.evidence.relative_to(APPROVED_ROOT.resolve())
         if self.evidence.name!='decode':raise ValueError('Use a fresh owned decode stage')
@@ -235,6 +235,7 @@ class Runtime:
         with module_binding('run_contract',self.contract_module):
             self.guest=load_module('_amd_generation_guest_decode',GUEST_ENTRY)
         root=PurePosixPath('/home/modly')/run_id
+        if type(tile_large_convolutions) is not bool:raise ValueError('Explicit boolean tiling opt-in required')
         self.contract=self.contract_module.parse({'schema':self.contract_module.SCHEMA,'initial_count':self.bundle['count'],
             'input_paths':{k:guest_path(v['path']) for k,v in self.bundle['inputs'].items()},
             'input_sha256':{k:v['sha256'] for k,v in self.bundle['inputs'].items()},
@@ -242,7 +243,8 @@ class Runtime:
             'scratch_directory':str(root/'scratch'),'repo_root':guest_path(ROOT),
             'maximum_final_rows':1842968,'maximum_intermediate_rows':1000000,
             'native_stage':self.contract_module.NATIVE_STAGE,
-            'host_evidence_directory':guest_path(self.evidence/'run/guest')})
+            'host_evidence_directory':guest_path(self.evidence/'run/guest'),
+            **({'large_convolution_tiling':True} if tile_large_convolutions else {})})
         self.copy_error=None;self.copy_receipt=None;self._supervisor=None
 
     def host_admission(self):
@@ -394,7 +396,9 @@ def main(argv=None):
     parser.add_argument('--shape-evidence',type=Path,required=True);parser.add_argument('--evidence',type=Path,required=True)
     parser.add_argument('--harness-commit',required=True);parser.add_argument('--run-id',required=True)
     parser.add_argument('--preflight',action='store_true')
-    args=parser.parse_args(argv);runtime=Runtime(args.shape_evidence,args.evidence,args.harness_commit,args.run_id)
+    parser.add_argument('--tile-large-convolutions',action='store_true')
+    args=parser.parse_args(argv);runtime=Runtime(args.shape_evidence,args.evidence,args.harness_commit,args.run_id,
+                                              tile_large_convolutions=args.tile_large_convolutions)
     if args.preflight:print(json.dumps(runtime.preflight()));return 0
     return runtime.supervise()
 

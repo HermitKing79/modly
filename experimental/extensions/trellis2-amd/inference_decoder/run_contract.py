@@ -50,6 +50,7 @@ class RunContract:
     maximum_intermediate_rows: int
     native_stage: PurePosixPath
     host_evidence_directory: PurePosixPath | None = None
+    large_convolution_tiling: bool = False
 
     def document(self):
         value = {'schema': SCHEMA, 'initial_count': self.initial_count,
@@ -60,6 +61,8 @@ class RunContract:
                 'maximum_intermediate_rows': self.maximum_intermediate_rows, 'native_stage': str(self.native_stage)}
         if self.host_evidence_directory is not None:
             value['host_evidence_directory']=str(self.host_evidence_directory)
+        if self.large_convolution_tiling:
+            value['large_convolution_tiling']=True
         return value
 
     @property
@@ -72,9 +75,11 @@ def parse(document):
     fields = {'schema','initial_count','input_paths','input_sha256','source_job_sha256',
               'output_directory','scratch_directory','repo_root','maximum_final_rows',
               'maximum_intermediate_rows','native_stage'}
-    if (type(document) is not dict or set(document)-{'host_evidence_directory'} != fields
+    if (type(document) is not dict or set(document)-{'host_evidence_directory','large_convolution_tiling'} != fields
             or document.get('schema') != SCHEMA):
         raise ValueError('Exact neural run contract schema required')
+    tiling=document.get('large_convolution_tiling',False)
+    if type(tiling) is not bool:raise ValueError('Large convolution tiling must be an explicit boolean')
     for key, low, high in [('initial_count',1,MAX_INITIAL_ROWS),
                             ('maximum_final_rows',MAX_FINAL_ROWS,MAX_FINAL_ROWS),
                             ('maximum_intermediate_rows',MAX_INTERMEDIATE_ROWS,MAX_INTERMEDIATE_ROWS)]:
@@ -108,7 +113,7 @@ def parse(document):
             raise ValueError('Host journal must be an exact new-image stage run/guest directory')
     return RunContract(document['initial_count'], MappingProxyType(paths), MappingProxyType(hashes),
                        _sha(document['source_job_sha256']), output, scratch, repo,
-                       document['maximum_final_rows'], document['maximum_intermediate_rows'], stage, host)
+                       document['maximum_final_rows'], document['maximum_intermediate_rows'], stage, host, tiling)
 
 
 def load(path):

@@ -88,6 +88,9 @@ class NativeBoundary:
         if tuple(result.shape)!=(n,27) or result.dtype!=self.torch.uint32 or result.device!=coords.device:
             raise RuntimeError('Native map output contract failed')
         if site=='blocks.3.4.conv2':self.hooks.final_neighbor_map=result
+        if self.hooks.tile_large_convolutions and site=='blocks.2.8.conv2':
+            if self.hooks.large_neighbor_map is not None:raise RuntimeError('Duplicate large native map')
+            self.hooks.large_neighbor_map=result;self.hooks.large_neighbor_coords=coords
         self.calls+=1
         self.emit('native-host-return',site=site,rows=n,call=self.calls,host_return_is_not_sync=True)
         return result

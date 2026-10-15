@@ -72,6 +72,11 @@ def checkpoint_record(checkpoint):
 
 
 def validate_qualified(record,contract):
+    if contract.large_convolution_tiling:
+        from chunked_large import validate_records
+        validate_records(record.get('large_tiled_convolutions'))
+        if record.get('large_convolution_patch_restored') is not True:
+            raise RuntimeError('Large convolution patch was not restored')
     rows=record.get('output',{}).get('rows',0)
     if type(rows) is not int or not 0<rows<=contract.maximum_final_rows:
         raise RuntimeError('Final run support outside qualified bounds')

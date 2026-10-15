@@ -94,6 +94,18 @@ class DecodeHostTests(unittest.TestCase):
             with self.assertRaises(ValueError):self.runtime.preflight()
         self.assertFalse(self.runtime.evidence.exists())
 
+    def test_large_tiling_is_explicit_and_bound_to_run_contract(self):
+        self.assertFalse(self.runtime.contract.large_convolution_tiling)
+        self.assertNotIn('large_convolution_tiling',self.runtime.contract.document())
+        enabled=subject.Runtime(self.shape,self.root/'decode','1'*40,'run-cpu-fixture',
+                                tile_large_convolutions=True)
+        self.assertTrue(enabled.contract.large_convolution_tiling)
+        self.assertNotEqual(enabled.contract.sha256,self.runtime.contract.sha256)
+        self.assertIs(enabled.contract.document()['large_convolution_tiling'],True)
+        with self.assertRaises(ValueError):
+            subject.Runtime(self.shape,self.root/'decode','1'*40,'run-cpu-fixture',tile_large_convolutions=1)
+        self.assertFalse(self.runtime.evidence.exists())
+
     def test_live_admission_enforces_twelve_gib_and_records_failure_values(self):
         def memory(pointer):pointer._obj.available=11*1024**3;return 1
         capture=io.StringIO()

@@ -1,0 +1,118 @@
+{
+  "schema": "modly.amd.brick-row-tiling-preexecution-review.v1",
+  "reviewed_utc": "2026-10-15T14:14:50.044Z",
+  "result": "CLEAR",
+  "mission_base": "ebeb48cd9b7a1b8919bd4eff956b65027e96def9",
+  "scope": "Independent source, memory/lifecycle and authenticated opt-in review; bounded CPU tests only. No GPU or WSL execution.",
+  "source_sha256": {
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "01e13f1bd574fac15d4e39678ff27bb879427a3ae4ffce142a3069486a925625",
+    "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "16a6bb7896da3183f9e4c02171caba8bdd200805f141668bb3db076fc6835c2a",
+    "experimental/extensions/trellis2-amd/inference_decoder/runtime.py": "ea4199df31941795b7a5a5bb58d0f180f610c6ad17e8358b16393696a30c3c2e",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_large.py": "ff1d5727518e79c578206bfbe2af3c6bc4650ad3b2942290a5676fbfc38d7121",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "4d4f0a3455901e918087f01729460ae494e3c107dd4fce613833ce207354e7e8",
+    "experimental/extensions/trellis2-amd/inference_decoder/decode.py": "ec958d5a8f295da3c82543a84667d15d767b986820f2f481480d6303332b951d",
+    "scripts/compatibility/amd_generation_decode.py": "7926f6cb4b577ed65c454a046c4712522065a68573d077f458005856081b6498",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_large_tiling.py": "2438dbf64528902cd9faf33034fc36c98c3704ebb9bd2974765ba33e39a92f80",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_tiling_contract.py": "b48261427ef35ab4405a3d6e1868fbff831d9784a530dd6dd3a7c9aa176a20cf"
+  },
+  "unchanged_sha256": {
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py": "de293ae408c546ce879e15b70bc646f46d013a6b5df73f9b04ab08bdd89fbe5f",
+    "scripts/compatibility/amd_wsl_native_import_policy.py": "8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd"
+  },
+  "pinned_math_source": {
+    "wheel_sha256": "cadaa86c428a93c3aee10c4dd8dfb66604a424c8145670051ca0ce1a0f296285",
+    "member": "flex_gemm/ops/spconv/submanifold_conv3d.py",
+    "member_sha256": "67641d13e06ca135a4f90eb71a01f7d8d32448bb5aa7c31b858c69368811fb6b",
+    "independently_read_from_preserved_linux_wheel": true,
+    "checked": "Original global neighbor map, sentinel mask, im2col gather, weight view/transpose and addmm/mm equations."
+  },
+  "checked": [
+    "Only six ordered modules are patched: blocks.2.8.conv2, blocks.3.0-3.3.conv, blocks.3.4.conv1. Exact module/input/weight/bias/source/static descriptor identities are required; foreign and repeated calls fail closed.",
+    "NativeBoundary captures the genuine full 438684-row map and its original coordinates at convolution34. All later five sites require the same neighbor cache object, map object and coordinate object. No tile-specific neighbor maps or index rebasing are introduced.",
+    "Only output rows and temporary im2col/gather/indices/mask/GEMM result are tiled. Every tile reads the entire global source, including cross-tile neighbors. BF16, checkpoint, strict precision conversion and weight layout remain unchanged.",
+    "Before native allocation, plan includes full map and ratio2 hash. After map creation only those already-live allowances are removed; after full output allocation only the already-live output allowance is additionally removed. Retained model, prior maps, coordinates and full output stay in measured live memory; original downstream block_extra is retained.",
+    "The optional manifest boolean defaultsFalse and is omitted from old canonical documents; enabling it changes the authenticated contract hash. Host CLI alone supplies the explicit opt-in, with existing exact-HEAD/committed-source/pre-marker gates and owned supervisor unchanged.",
+    "Shared original descriptor is restored and checked after both patches are removed, including failure cleanup. Handles, authentic cache references and hook-held tensors are cleared before existing collection/release checks.",
+    "Acceptance retains one parent forward, 40 original convolutions, eight original C2S operations, five native global maps, unchanged final64 tile coverage, strict output chain/readback and zero-release requirements; opt-in additionally requires complete ordered six-site receipts.",
+    "12GiB allocator cap, 13GiB initial free, 2GiB free reserve plus1GiB opaque headroom, 1.25 padding, all native/CPU/GPU/host deadlines, TunableOp-off policy, single owned Job and final64 tiler remain unchanged."
+  ],
+  "independent_cpu_verification": [
+    {
+      "interpreter": "D:/AI/Trellis2AMD/venv/Scripts/python.exe",
+      "working_directory": ".",
+      "command": "-B experimental/extensions/trellis2-amd/inference_decoder/test_large_tiling.py",
+      "tests": 13,
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "interpreter": "D:/AI/Trellis2AMD/venv/Scripts/python.exe",
+      "working_directory": ".",
+      "command": "-B experimental/extensions/trellis2-amd/inference_decoder/test_tiling_contract.py",
+      "tests": 2,
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check -- experimental/extensions/trellis2-amd/inference_decoder scripts/compatibility/amd_generation_decode.py",
+      "result": "PASS; line-ending notices only",
+      "exit_code": 0
+    }
+  ],
+  "measured_support_plan": {
+    "rows": 438684,
+    "tile_rows": 32768,
+    "chunks_per_site": 14,
+    "last_chunk_rows": 12700,
+    "plans": [
+      {
+        "sites": "convolution34 uncached128-to128",
+        "visible_bytes": 1766144912,
+        "padded_bytes": 2207681140
+      },
+      {
+        "sites": "convolutions35-38 cached128-to128",
+        "visible_bytes": 2385566720,
+        "padded_bytes": 2981958400
+      },
+      {
+        "sites": "convolution39 cached128-to512",
+        "visible_bytes": 2747641856,
+        "padded_bytes": 3434552320
+      }
+    ],
+    "whole_output_bytes": {
+      "channels128": 112303104,
+      "channels512": 449212416
+    },
+    "conclusion": "No deterministic admission blocker follows from these bounded plans. Actual live allocator/device-free measurements must pass at every original site, full-output boundary and tile."
+  },
+  "remaining_bounds": {
+    "fourth_subdivision": "Unknown until genuine logits; preserve strict >0 mask and exact C2S coordinate chain. No support truncation or cap relaxation.",
+    "maximum_intermediate_rows": 1000000,
+    "maximum_final_rows": 1842968,
+    "fourth_C2S_at_final_cap": {
+      "visible_bytes": 2770412160,
+      "padded_bytes": 3463015200
+    },
+    "final64_at_final_cap": {
+      "visible_bytes": 3069154208,
+      "padded_bytes": 3836442760,
+      "chunks": 57,
+      "last_chunk_rows": 7960
+    },
+    "ten_tensor_output_payload_at_final_cap_bytes": 99068768,
+    "artifact_payload_cap_bytes": 268435456,
+    "statement": "These are conservative CPU calculations, not predictions of the fourth mask, numerical output, runtime, peak memory or final generation success."
+  },
+  "repaired_finding": "Restoration diagnostic ordering now attests the shared descriptor after both the large and final patches are removed.",
+  "limitations": [
+    "CPU arithmetic/lifecycle equivalence does not establish GPU BF16 bitwise equivalence across changed GEMM row sizes.",
+    "Fourth-stage support, live admissions, GPU performance and output validity remain unexecuted.",
+    "Root owns publication and authorization of any single genuine attempt; this review is not a runtime PASS."
+  ],
+  "gpu_execution": false,
+  "wsl_execution": false,
+  "model_weights_loaded": false,
+  "reviewer_source_edits": false
+}

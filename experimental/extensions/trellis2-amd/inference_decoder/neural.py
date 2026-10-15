@@ -8,6 +8,7 @@ import traceback
 import weakref
 from admission import AdmissionHooks, AdmissionStop, GIB, MAX_ROWS, FINAL_ROWS
 from chunked_final import FinalConvolutionPatch
+from chunked_large import LargeSupportConvolutionPatch, validate_records
 from runtime import NativeBoundary, validate_tensor_contract
 
 MAX_OUTPUT=256*1024**2
@@ -74,7 +75,7 @@ def run_neural(model,torch,cuda,record,output,gpu_started,contract,*,journal=Non
     import flex_gemm.ops.spconv as spconv
     from flex_gemm.ops.spconv.submanifold_conv3d import SubMConv3dFunction
     x_cpu=c_cpu=x=y=subs=cpu_tensors=None
-    hooks=native=patch=None;handles=[];tensor_refs=[]
+    hooks=native=patch=large_patch=None;handles=[];tensor_refs=[]
     failure=None
     def emit(event,**details):
         if time.monotonic()-gpu_started>=240:raise TimeoutError('240-second GPU stage deadline')
@@ -86,8 +87,14 @@ def run_neural(model,torch,cuda,record,output,gpu_started,contract,*,journal=Non
         free,total=torch.cuda.mem_get_info(0)
         return dict(free_bytes=free,total_bytes=total,allocated_bytes=torch.cuda.memory_allocated(0),reserved_bytes=torch.cuda.memory_reserved(0))
     try:
-        hooks=AdmissionHooks(model,torch,emit=event_hook,memory=memory,reclaim_unused_cache=True).install()
+        hooks=AdmissionHooks(model,torch,emit=event_hook,memory=memory,reclaim_unused_cache=True,
+                             tile_large_convolutions=contract.large_convolution_tiling).install()
         native=NativeBoundary(cuda,record['bindings'],hooks,torch,conv_config,spconv,emit).install()
+        if contract.large_convolution_tiling:
+            from admission import LARGE_TILED_SITES
+            modules={name:dict(model.named_modules())[name] for name in LARGE_TILED_SITES}
+            large_patch=LargeSupportConvolutionPatch(SubMConv3dFunction,modules,hooks,torch,emit).install()
+            modules=None
         patch=FinalConvolutionPatch(SubMConv3dFunction,model.blocks[3][-1].conv2,hooks,torch,emit).install()
         spconv.set_algorithm('explicit_gemm');spconv.set_hashmap_ratio(2.0)
         a,c,saved_inputs=load_inputs(contract)
@@ -123,6 +130,7 @@ def run_neural(model,torch,cuda,record,output,gpu_started,contract,*,journal=Non
         record['forward_synchronized_seconds']=time.monotonic()-forward_started
         emit('neural-forward-synchronized',rows=y.feats.shape[0],memory=memory())
         hooks.assert_complete()
+        if large_patch:validate_records(large_patch.records)
         if len(subs)!=4 or y.feats.dtype!=torch.float32:raise RuntimeError('Parent neural return type/precision differs')
         tensor_refs += [weakref.ref(y.feats),weakref.ref(y.coords)]
         cpu_tensors={'features':y.feats.detach().cpu().contiguous(),'coordinates':y.coords.detach().cpu().contiguous()}
@@ -138,6 +146,7 @@ def run_neural(model,torch,cuda,record,output,gpu_started,contract,*,journal=Non
             'runtime':record['runtime'],'forward_calls':1,'convolutions':40,'resolution':512,'mesh_extraction':False}
         provenance['final_convolution']={'source_equivalent_row_chunking':True,'rows':y.feats.shape[0],'tile_rows':32768,
             'chunks':patch.chunks,'global_native_neighbor_map':True,'global_input_indices_preserved':True}
+        if large_patch:provenance['large_convolutions']=[dict(r) for r in large_patch.records]
         record['output']=preserve_output(cpu_tensors,torch,provenance,contract)
         emit('output-readback-verified',output_sha256=record['output']['sha256'],bytes=record['output']['bytes'])
     except BaseException as exc:
@@ -154,7 +163,13 @@ def run_neural(model,torch,cuda,record,output,gpu_started,contract,*,journal=Non
         record['native_map_calls']=native.calls if native else 0
         record['final_convolution_chunks']=patch.chunks if patch else 0
         record['final_convolution_rows']=patch.rows_completed if patch else 0
+        if large_patch:
+            record['large_tiled_convolutions']=[dict(r) for r in large_patch.records]
+            large_patch.remove()
         if patch:patch.remove()
+        if large_patch:
+            record['large_convolution_patch_restored']=SubMConv3dFunction.__dict__[large_patch.name] is large_patch.original_descriptor
+            large_patch=None
         record['final_convolution_patch_restored']=patch is None or SubMConv3dFunction.__dict__[patch.name] is patch.original_descriptor
         patch=None
         if native:native.remove()

@@ -1,0 +1,142 @@
+{
+  "schema": "modly.amd.brick-tiling-cpu-qualification.v1",
+  "created_utc": "2026-10-15T14:14:49.118610+00:00",
+  "classification": "CPU_QUALIFIED",
+  "mission_base": "ebeb48cd9b7a1b8919bd4eff956b65027e96def9",
+  "genuine_neural_execution": "NOT_ATTEMPTED",
+  "source_sha256": {
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "01e13f1bd574fac15d4e39678ff27bb879427a3ae4ffce142a3069486a925625",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_large.py": "ff1d5727518e79c578206bfbe2af3c6bc4650ad3b2942290a5676fbfc38d7121",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py": "de293ae408c546ce879e15b70bc646f46d013a6b5df73f9b04ab08bdd89fbe5f",
+    "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "16a6bb7896da3183f9e4c02171caba8bdd200805f141668bb3db076fc6835c2a",
+    "experimental/extensions/trellis2-amd/inference_decoder/runtime.py": "ea4199df31941795b7a5a5bb58d0f180f610c6ad17e8358b16393696a30c3c2e",
+    "experimental/extensions/trellis2-amd/inference_decoder/decode.py": "ec958d5a8f295da3c82543a84667d15d767b986820f2f481480d6303332b951d",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "4d4f0a3455901e918087f01729460ae494e3c107dd4fce613833ce207354e7e8",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_large_tiling.py": "2438dbf64528902cd9faf33034fc36c98c3704ebb9bd2974765ba33e39a92f80",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_tiling_contract.py": "b48261427ef35ab4405a3d6e1868fbff831d9784a530dd6dd3a7c9aa176a20cf",
+    "scripts/compatibility/amd_generation_decode.py": "7926f6cb4b577ed65c454a046c4712522065a68573d077f458005856081b6498",
+    "scripts/compatibility/test_amd_generation_decode.py": "f9b098a0a06e450d99f345a3f0805ecc57d4ac6254984c9c72bc8480125b2c3f"
+  },
+  "root_executed_tests": [
+    {
+      "cwd": "experimental/extensions/trellis2-amd/inference_decoder",
+      "command": "Windows AMD Python -B -m unittest test_tiling_contract test_admission_reclaim test_decoder",
+      "tests": 27,
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "cwd": ".",
+      "command": "Windows AMD Python -B experimental/extensions/trellis2-amd/inference_decoder/test_large_tiling.py",
+      "tests": 13,
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "cwd": "scripts/compatibility",
+      "command": "Windows AMD Python -B -m unittest test_amd_generation_decode",
+      "tests": 17,
+      "exit_code": 0,
+      "result": "PASS"
+    }
+  ],
+  "preliminary_environment_mismatch": {
+    "command": "bundled CPU Python -B -m unittest test_amd_generation_decode",
+    "result": "one missing safetensors dependency; rerun with already installed AMD interpreter passed; no installation or code workaround"
+  },
+  "red_green_evidence": {
+    "tests": "test_tiling_contract.py",
+    "before": "2 expected assertion failures: missing opt-in APIs",
+    "after": "2 PASS"
+  },
+  "numerical_contract": {
+    "F32": "random 128-to128/512 features/weights; original pinned forward, independent full im2col and coordinate-derived F64 sum; rtol=atol=1e-5",
+    "BF16": "exactly representable small integer/quarter-valued multi-offset/bias fixtures; exact equality",
+    "GPU_bitwise_equivalence_proven": false,
+    "global_source_indices": "unchanged; full feature table used for each sliced neighbor-map tile"
+  },
+  "measured_support_plans": {
+    "conv34": {
+      "plan": {
+        "im2col_bytes": 226492416,
+        "gathered_bytes": 226492416,
+        "neighbor_map_bytes": 47377872,
+        "hash_bytes": 7018944,
+        "long_index_bytes": 14155776,
+        "mask_bytes": 884736,
+        "output_bytes": 112303104,
+        "tile_output_bytes": 8388608,
+        "block_extra_bytes": 1123031040,
+        "visible_bytes": 1766144912,
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 128,
+        "tile_rows": 32768,
+        "chunks": 14,
+        "last_chunk_rows": 12700,
+        "spatial_volume": 12156928,
+        "cached": false
+      },
+      "padded_bytes": 2207681140
+    },
+    "conv35_to38": {
+      "plan": {
+        "im2col_bytes": 226492416,
+        "gathered_bytes": 226492416,
+        "neighbor_map_bytes": 0,
+        "hash_bytes": 0,
+        "long_index_bytes": 14155776,
+        "mask_bytes": 884736,
+        "output_bytes": 112303104,
+        "tile_output_bytes": 8388608,
+        "block_extra_bytes": 1796849664,
+        "visible_bytes": 2385566720,
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 128,
+        "tile_rows": 32768,
+        "chunks": 14,
+        "last_chunk_rows": 12700,
+        "spatial_volume": 12156928,
+        "cached": true
+      },
+      "padded_bytes": 2981958400
+    },
+    "conv39": {
+      "plan": {
+        "im2col_bytes": 226492416,
+        "gathered_bytes": 226492416,
+        "neighbor_map_bytes": 0,
+        "hash_bytes": 0,
+        "long_index_bytes": 14155776,
+        "mask_bytes": 884736,
+        "output_bytes": 449212416,
+        "tile_output_bytes": 33554432,
+        "block_extra_bytes": 1796849664,
+        "visible_bytes": 2747641856,
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 512,
+        "tile_rows": 32768,
+        "chunks": 14,
+        "last_chunk_rows": 12700,
+        "spatial_volume": 12156928,
+        "cached": true
+      },
+      "padded_bytes": 3434552320
+    }
+  },
+  "limits": {
+    "tile_rows": 32768,
+    "allocator_bytes": 12884901888,
+    "initial_free_bytes": 13958643712,
+    "device_free_reserve_bytes": 2147483648,
+    "opaque_headroom_bytes": 1073741824,
+    "maximum_intermediate_rows": 1000000,
+    "maximum_final_rows": 1842968,
+    "gpu_seconds": 240,
+    "host_seconds": 480
+  },
+  "remaining_unknown": "Genuine fourth subdivision count and fresh live admission; unchanged caps stop before unsafe expansion.",
+  "no_models_GPU_WSL_native_imports_during_CPU_tests": true
+}

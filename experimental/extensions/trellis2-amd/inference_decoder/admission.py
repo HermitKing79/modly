@@ -13,6 +13,8 @@ FREE_RESERVE = 2 * GIB
 OPAQUE_HEADROOM = GIB
 COUNTS = (4, 16, 8, 4, 0)
 WIDTHS = (1024, 512, 256, 128, 64)
+LARGE_TILED_SITES = ('blocks.2.8.conv2', *(f'blocks.3.{i}.conv' for i in range(4)),
+                     'blocks.3.4.conv1')
 
 
 class AdmissionStop(RuntimeError):
@@ -98,12 +100,37 @@ def output_payload_bytes(final_rows, parent_rows):
     return final_rows*(7*4+4*4)+sum(parent_rows)*(8*2+4*4)
 
 
+def large_chunked_conv_plan(n, ci, co, tile, volume, cached=False, block_extra=0):
+    require(all(type(v) is int for v in (n,ci,co,tile,volume,block_extra))
+            and 0<n<=MAX_ROWS and ci==128 and co in (128,512)
+            and 0<tile<=TILE_ROWS and 0<volume<=512**3 and block_extra>=0
+            and type(cached) is bool, 'large tiled convolution dimensions/budget differ')
+    t=min(n,tile)
+    # Same full global map/hash and downstream allowance as the original plan.
+    # Only the source's im2col/gather/index/GEMM temporaries become row-bounded.
+    p=dict(im2col_bytes=t*27*ci*2,gathered_bytes=t*27*ci*2,
+           neighbor_map_bytes=0 if cached else n*27*4,
+           hash_bytes=0 if cached else 2*n*8,
+           long_index_bytes=2*t*27*8,mask_bytes=t*27,
+           output_bytes=n*co*2,tile_output_bytes=t*co*2,block_extra_bytes=block_extra)
+    p['visible_bytes']=sum(p.values())
+    p.update(rows=n,in_channels=ci,out_channels=co,tile_rows=tile,
+             chunks=(n+tile-1)//tile,last_chunk_rows=(n-1)%tile+1,
+             spatial_volume=volume,cached=cached)
+    return p
+
+
 class AdmissionHooks:
-    def __init__(self, decoder, torch, emit=None, memory=None, *, reclaim_unused_cache=False):
+    def __init__(self, decoder, torch, emit=None, memory=None, *, reclaim_unused_cache=False,
+                 tile_large_convolutions=False):
         self.decoder, self.torch = decoder, torch
         require(type(reclaim_unused_cache) is bool, 'cache release opt-in must be boolean')
         self.reclaim_unused_cache = reclaim_unused_cache
         self.cache_reclaims = []
+        require(type(tile_large_convolutions) is bool, 'large tiling opt-in must be boolean')
+        self.tile_large_convolutions=tile_large_convolutions
+        self.large_neighbor_map=self.large_neighbor_coords=None
+        self.large_conv_plan=None
         self.emit = emit or (lambda event: None)
         self.memory = memory or self._memory
         self.handles, self.sequence, self.up_states = [], [], {}
@@ -238,6 +265,12 @@ class AdmissionHooks:
         if final:
             require(0<n<=FINAL_ROWS and ci==co==64 and cache is None, 'final full support/cache differs')
             plan=chunked_conv_plan(n,TILE_ROWS,prod(x.spatial_shape))
+        elif self.tile_large_convolutions and name in LARGE_TILED_SITES:
+            require(ci==128 and co==(512 if name==LARGE_TILED_SITES[-1] else 128)
+                    and (cache is None)==(name==LARGE_TILED_SITES[0]),
+                    f'{name}: large tiling width/cache lifecycle differs')
+            plan=large_chunked_conv_plan(n,ci,co,TILE_ROWS,prod(x.spatial_shape),cache is not None,extra)
+            self.large_conv_plan=plan
         else:
             plan=conv_plan(n, ci, co, prod(x.spatial_shape), cache is not None, extra)
         self._admit(name,plan)
@@ -310,6 +343,8 @@ class AdmissionHooks:
         self.handles.clear()
         self.active_conv = None
         self.final_neighbor_map = None
+        self.large_neighbor_map=self.large_neighbor_coords=None
+        self.large_conv_plan=None
         for state in self.up_states.values():
             state.pop('mask', None)
             state.pop('coords', None)
