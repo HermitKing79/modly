@@ -1,0 +1,70 @@
+{
+  "reviewer": "/root/texture_preservation_review",
+  "classification": "PASS",
+  "timestamp_utc": "2026-10-15T01:51:42.990113+00:00",
+  "harness_commit": "759508067ee23ad677f8c1e55408108a52c45f08",
+  "attempts_observed": 1,
+  "artifact": {
+    "path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-4f845cd\\latent\\texture-latent.safetensors",
+    "bytes": 1539912,
+    "sha256": "5506c4d0199bef64423b41b8bed560e2b7def9d29c5bb1c3072c0ea31ee1ddc4",
+    "tensor_payload_sha256": {
+      "raw": "02fa82d4d9f34db37ca8b16a7b792216db10a8db9526861edd4c3f8e519ccc6f",
+      "denormalized": "be5dab9445d8a487d32d2f2f2e9fcd85f2d3514cc5f7474114d455d195314807",
+      "coords": "860095760acc7914d0378cadfa49ba4c6a368d5a65662061b8e1c4c792f0d7a5",
+      "noise": "8d08933ef581e63c44ef7f2a9423a4fcb842cab704577b28dfa07d56f344bcff"
+    },
+    "raw_and_denormalized_finite": true,
+    "texture_denormalization_byte_exact": true,
+    "original_coordinate_order_byte_exact": true,
+    "noise_matches_recorded_initial_noise": true,
+    "seed": 20261015,
+    "metadata_bytes": 39171,
+    "metadata_sha256": "5d1d79c35c8c25e1765cccf4edc678335ad0cde3bd51a68590f7d9412ffae1bc"
+  },
+  "independent_readers": [
+    "Production bounded reader reopened after worker exit",
+    "Separate manual public-format header/payload decoder with NumPy"
+  ],
+  "sequence": {
+    "steps": 12,
+    "positive_forwards": 12,
+    "negative_forwards": 0,
+    "genuine_modules": 91,
+    "calls_per_module": 12,
+    "concat_calls": 12
+  },
+  "timing_seconds": {
+    "strict_CPU_load": 10.452999999994063,
+    "genuine_sampling": 7.10899999999674,
+    "whole_owned_worker": 29.078000000008615
+  },
+  "peaks_bytes": {
+    "allocated": 2909045248,
+    "reserved": 3080716288,
+    "host_working_set": 5726339072,
+    "host_private_commit": 6861062144
+  },
+  "actual_TunableOp_all_false_twice": true,
+  "natural_job_and_worker_exit": true,
+  "windows_health_and_periodic_observer_pass": true,
+  "owned_GPU_allocated_reserved_after_release": [
+    0,
+    0
+  ],
+  "original_artifacts_sources_backup_selected_Windows_metadata_preserved": true,
+  "preservation_report": "preservation-after.json",
+  "torch_imported_by_reviewer": false,
+  "new_GPU_model_WSL_install_actions": 0,
+  "limitations": "This verifies genuine texture latents and their saved provenance, not visual fidelity, a texture decoder, six-channel material fields, UVs, baking, emissive glow or a textured GLB. No additional inference or retry was performed.",
+  "factual_report_review": {
+    "status": "PASS",
+    "measurement_summary": "verified-result-summary.json",
+    "measurement_summary_sha256": "cd414477f692ef2df30c77eb4e102e89f30f17e173491b8c95a736cb5c0bd83b",
+    "all_reported_measurements_match_raw_execution": true,
+    "wording_corrections_sent_to_root": [
+      "Change stale actual-results future tense to present tense.",
+      "Qualify kernel/subprocess prohibition as unapproved; reviewed Torch binding and SDK-discovery exception are allowed."
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "classification": "PASS",
+  "harness_commit": "759508067ee23ad677f8c1e55408108a52c45f08",
+  "worker_exit_verified": true,
+  "observer_healthy": true,
+  "checkpoint_unchanged": true,
+  "steps": 12,
+  "positive_forwards": 12,
+  "negative_forwards": 0,
+  "forward_seconds": 7.10899999999674,
+  "cpu_load_seconds": 10.452999999994063,
+  "whole_worker_seconds": 29.078000000008615,
+  "peak_GPU_allocated_bytes": 2909045248,
+  "peak_GPU_reserved_bytes": 3080716288,
+  "peak_host_working_set_bytes": 5726339072,
+  "peak_host_commit_bytes": 6861062144,
+  "zero_owned_release": true,
+  "artifact": {
+    "artifact_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-4f845cd\\latent\\texture-latent.safetensors",
+    "metadata_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-4f845cd\\latent\\texture-latent-metadata.json"
+  },
+  "artifact_bytes": 1539912,
+  "artifact_sha256": "5506c4d0199bef64423b41b8bed560e2b7def9d29c5bb1c3072c0ea31ee1ddc4",
+  "metadata_bytes": 39171,
+  "metadata_sha256": "5d1d79c35c8c25e1765cccf4edc678335ad0cde3bd51a68590f7d9412ffae1bc",
+  "tensor_identities": {
+    "coords": {
+      "dtype": "I32",
+      "sha256": "860095760acc7914d0378cadfa49ba4c6a368d5a65662061b8e1c4c792f0d7a5",
+      "shape": [
+        3743,
+        4
+      ],
+      "tensor_bytes": 59888
+    },
+    "denormalized": {
+      "dtype": "F32",
+      "sha256": "be5dab9445d8a487d32d2f2f2e9fcd85f2d3514cc5f7474114d455d195314807",
+      "shape": [
+        3743,
+        32
+      ],
+      "tensor_bytes": 479104
+    },
+    "noise": {
+      "dtype": "F32",
+      "sha256": "8d08933ef581e63c44ef7f2a9423a4fcb842cab704577b28dfa07d56f344bcff",
+      "shape": [
+        3743,
+        32
+      ],
+      "tensor_bytes": 479104
+    },
+    "raw": {
+      "dtype": "F32",
+      "sha256": "02fa82d4d9f34db37ca8b16a7b792216db10a8db9526861edd4c3f8e519ccc6f",
+      "shape": [
+        3743,
+        32
+      ],
+      "tensor_bytes": 479104
+    }
+  }
+}
