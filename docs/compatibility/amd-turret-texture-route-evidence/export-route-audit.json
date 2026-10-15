@@ -1,0 +1,173 @@
+{
+  "status": "READ_ONLY_SOURCE_ASSESSMENT_COMPLETE",
+  "decision": "Do not send the immutable full turret through stock to_glb or the repair/remesh helpers. First persist genuine six-channel texture attributes separately; the cheapest geometry-preserving export is CPU sampled vertex RGBA, with metallic/roughness retained as sidecars until a separate UV/PBR bake is qualified.",
+  "source_identity": {
+    "postprocess": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\o_voxel\\postprocess.py",
+      "sha256": "35b62242503944cb16c25b7a1c8730b632b2f55d7a1f3b0b6dd2051779908e4b"
+    },
+    "cumesh": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\cumesh.py",
+      "sha256": "eabb42a0e1e4a06e994103fa21ff22c07cf9b467b4110e7445971a3aad31dac9"
+    },
+    "nodes": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\nodes.py",
+      "sha256": "d310c97f3f7ff187cd581ed01ea3dbd6217fddb8ad9d59b12bd7c485f93821be"
+    },
+    "texturing": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_texturing.py",
+      "sha256": "14a6f8ee2bca120f76e0112f2733cd250764637709ff642fd6846ae97c63b1e6"
+    }
+  },
+  "raw_mesh": {
+    "vertex_count": 1842968,
+    "face_count": 4012360,
+    "nonmanifold": "Reported by parent; not rescanned here.",
+    "policy": "Preserve original PLY, all source positions/faces/winding, unused vertices and ordering; no repair, weld, decimation, simplification, cap removal or overwrite."
+  },
+  "exact_existing_export_blockers": [
+    {
+      "source": "o_voxel/postprocess.py:14-331",
+      "finding": "Unconditional vertices.cuda/faces.cuda, CuMesh construction and fill_holes. remesh=False still simplifies twice, removes duplicate faces/components, repairs nonmanifold edges, fills holes and unifies orientations; remesh=True rebuilds topology. No preserve-topology flag."
+    },
+    {
+      "source": "cumesh/cumesh.py:406-478",
+      "finding": "uv_unwrap unconditionally calls remove_degenerate_faces, accelerated compute_charts, then CPU _xatlas packing; vertex maps reindex/duplicate seam vertices. Raw nonmanifold full mesh UV success is unqualified; source provides no preservation guarantee."
+    },
+    {
+      "source": "o_voxel/postprocess.py and nodes.py:1248-1300",
+      "finding": "Texture bake requires CuMesh/cubvh for closest-point mapping, _nvdiffrast_c RasterizeCudaContext/rasterize/interpolate, and FlexGEMM grid_sample_3d on cuda. Native GPU path, not a CPU serializer."
+    },
+    {
+      "source": "nodes.py:2965-3007",
+      "finding": "Trellis2OvoxelExportToGLB explicitly requests remesh=True and remesh_project=0; incompatible with unmodified original geometry."
+    },
+    {
+      "source": "gguf-source/generator.py:930-1105",
+      "finding": "Geometry helper remeshes/repairs/fills holes, fixes winding, strips ground-cap faces and constructs Trimesh(process=True). Not a preservation-safe shortcut."
+    }
+  ],
+  "existing_vertex_bake_branch": {
+    "source": "nodes.py:Trellis2UnWrapAndRasterizer.process:1103-1372",
+    "bake_on_vertices": true,
+    "UV_and_BVH_mapping_skipped": true,
+    "explicit_repairs_in_this_branch": false,
+    "remaining_GPU_calls": [
+      "vertices/faces.cuda",
+      "CuMesh.init/read/compute_vertex_normals",
+      "FlexGEMM grid_sample_3d"
+    ],
+    "output": "Trimesh(process=False) with per-vertex base RGB and alpha; placeholder textures. Learned metallic/roughness are not exported in this branch.",
+    "alpha_caveat": "OPAQUE forces alpha=255; other choices sample alpha values, but this ColorVisuals branch does not explicitly attach a PBR alphaMode.",
+    "axes": "Select reorient_vertices=None for raw XYZ; default rotates axes."
+  },
+  "learned_material_contract": {
+    "base_color": [
+      0,
+      3
+    ],
+    "metallic": [
+      3,
+      4
+    ],
+    "roughness": [
+      4,
+      5
+    ],
+    "alpha": [
+      5,
+      6
+    ],
+    "active_channels": 6,
+    "decode_transform": "tex_slat_decoder(slat) * 0.5 + 0.5",
+    "emissive": "Not in active inference pbr_attr_layout or either exporter; dataset classes mentioning emissive do not establish trained/output/export support.",
+    "GLB_textures": "Base-color PNG RGBA; metallicRoughness texture R=0,G=roughness,B=metallic; material factors 1.0. Stock alphaMode=OPAQUE; AMD UV node exposes MASK/BLEND.",
+    "existing_shape_features": "Current seven geometry channels are dual-vertex logits, intersection logits and split weight, not learned PBR values. No texture attributes in the qualified shape artifact."
+  },
+  "current_native_versions_from_preserved_inventory": {
+    "amd": {
+      "cumesh": "1.0+rocm10.0",
+      "nvdiffrast": "0.4.0+rocm10.0",
+      "o-voxel": "0.0.1+rocm.10.0",
+      "torch": "2.13.0+rocm10.0.0",
+      "triton-windows": "3.8.0.post29"
+    },
+    "modly": {
+      "cumesh": "0.0.1+cu126torch2.11",
+      "nvdiffrast": "0.4.0+cu126torch2.11",
+      "o-voxel": "0.0.1+cu126torch2.11",
+      "torch": "2.11.0+rocm7.14.0",
+      "triton-windows": "3.6.0.post26"
+    }
+  },
+  "WSL_state_from_latest_complete_staging_record": {
+    "source": "docs/compatibility/amd-wsl-turret-artifact-writer-ready-evidence/linux-preservation-after.json",
+    "baseline_Torch": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "stage_packages": {
+      "flex-gemm": "1.0.0",
+      "numpy": "2.2.6",
+      "packaging": "25.0",
+      "safetensors": "0.6.2"
+    },
+    "missing_from_established_stage": [
+      "cumesh",
+      "o_voxel",
+      "nvdiffrast",
+      "trimesh",
+      "cv2",
+      "Pillow",
+      "xatlas"
+    ],
+    "fresh_WSL_check": false,
+    "ABI": "Windows cp311/cp312 PE wheels cannot be used as WSL ELF libraries. Reference Linux Torch2.13/ROCm7.2.4 differs from current Torch2.9.1/ROCm7.2.1; no native ABI or full texture-bake qualification inferred."
+  },
+  "existing_fixes_and_reference": [
+    {
+      "source": "nodes.py:72-76,1320-1322",
+      "finding": "inpaint_channel restores singleton channel dimension for OpenCV output; reusable channel-shape fix, not a native/UV/topology solution."
+    },
+    {
+      "source": "gguf-source/generator.py:893-904",
+      "finding": "Resets metallicFactor to zero based on a color-only assumption. Do not reuse for genuine learned metallic/roughness textures; it would suppress learned metallicity."
+    },
+    {
+      "source": "gguf-source/setup.py:438-466",
+      "finding": "Excludes cumesh/remeshing.py from the incompatible generic remeshing patch; fixes a historical missing-hashmap failure, but still performs topology-changing remeshing."
+    },
+    {
+      "source": "docs/compatibility/amd-linux-route-comparison.md and amd-cached-neighbour-mixing-evidence/linux-source-assessment.json",
+      "pinned_commit": "0220d73971fd0be242b2b311ac00d590e1b26301",
+      "HANDOVER_git_blob": "15d14c9ce514fd3a3f586dec979413f7d0ed3878",
+      "finding": "Cached local assessment reports genuine 512 textured GLB, PyTorch vectorized rasterizer fallback, signature-aware export, CuMesh HIP memcpy fix and guarded hole fills. Author reports raw nonfinite geometry removed during export. This does not qualify untouched nonmanifold mesh UV/baking here; no source/binary fixes transplanted."
+    }
+  ],
+  "one_recommended_texture_plan": [
+    "Keep the exact full PLY and arrays immutable. Reuse saved shape latent/conditioning/subdivision support for separately authorized texture flow/decoder work; do not rerun geometry or re-encode/repair this full mesh.",
+    "Persist the finite six-channel sparse PBR field and coordinates before any export. Then use a CPU sparse trilinear sampler at original vertex positions, preserving original order and all triangles; save RGBA and separate metallic/roughness/alpha arrays.",
+    "Cheapest initial material export: a CPU GLB writer from unchanged vertices/indices with vertex RGBA and explicitly documented constant rough/nonmetal material. This bypasses UV/CuMesh/nvdiffrast and works independently of manifoldness. It is a learned base-color preview, not full spatial metallic/roughness PBR.",
+    "Full standard learned-PBR GLB still needs UV textures. No existing drop-in preservation-safe path is qualified: isolate UV/baking on an export copy and validate identical triangle geometry while accounting for seam duplication; never invoke repairs or overwrite the original. Treat that as a later bounded export qualification."
+  ],
+  "CPU_export_availability": {
+    "preserved_AI_envs": "Both contain Trimesh5.1.1, NumPy, Pillow and OpenCV; availability from saved metadata, no import qualification performed.",
+    "ordinary_system_Python_metadata_only": {
+      "numpy": "2.5.2",
+      "Pillow": "12.3.0",
+      "trimesh": null,
+      "pygltflib": null,
+      "xatlas": null
+    },
+    "cheapest_no_install_choice": "Existing contained CPU/NumPy helper plus a small GLB serializer, or existing Blender5.2 CPU exporter; neither executed in this audit."
+  },
+  "limitations": "Static local source and preserved manifests only. No claim that nonmanifold UV unwrapping, native rasterization or learned texture inference currently works. No model/checkpoint payloads inspected.",
+  "actions": {
+    "GPU_or_Torch_or_native_imports": false,
+    "model_loads": false,
+    "WSL_start_or_commands": false,
+    "environment_modifications": false,
+    "installs_or_builds": false,
+    "installed_source_edits": false,
+    "full_inventory_repeats": false,
+    "agents_spawned": false,
+    "report_only_written": true
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "status": "LOCAL_ASSETS_PRESENT",
+  "model_checkpoints": {
+    "slat_flow_imgshape2tex_dit_1_3B_512_bf16": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_512_bf16.safetensors",
+      "bytes": 2584672728,
+      "mtime_ns": 1791274799154024700,
+      "sha256": "8371aa1c5d13be79dcd5ddfd2cf3835e902e204dc34427169a1c702828e1a94d",
+      "header_with_8byte_prefix_sha256": "2374eaaa837c1ad0081a8032586a4d7a2ba2a1ae8c512837f41ea300e24dac66",
+      "header_bytes": 66960,
+      "tensor_count": 640,
+      "parameter_count": 1292302880,
+      "dtypes": {
+        "BF16": 640
+      },
+      "payload_layout_valid": true,
+      "matches_prior_header_stat": true,
+      "config": {
+        "name": "SLatFlowModel",
+        "args": {
+          "resolution": 32,
+          "in_channels": 64,
+          "out_channels": 32,
+          "model_channels": 1536,
+          "cond_channels": 1024,
+          "num_blocks": 30,
+          "num_heads": 12,
+          "mlp_ratio": 5.3334,
+          "pe_mode": "rope",
+          "share_mod": true,
+          "initialization": "scaled",
+          "qk_rms_norm": true,
+          "qk_rms_norm_cross": true,
+          "dtype": "bfloat16"
+        }
+      },
+      "config_sha256": "3093796257a62f838d2e5578ac4580ca3b7d88d10b87d348065d3fdfcc4c2077",
+      "stream_hash_seconds": 5.26600000000326,
+      "weights_deserialized": false,
+      "comparison_with_proven_shape_model": {
+        "model": "slat_flow_img2shape_dit_1_3B_512_bf16",
+        "missing_keys": [],
+        "new_keys": [],
+        "different_shapes": {
+          "input_layer.weight": [
+            [
+              1536,
+              32
+            ],
+            [
+              1536,
+              64
+            ]
+          ]
+        }
+      }
+    },
+    "tex_dec_next_dc_f16c32_fp16": {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_dec_next_dc_f16c32_fp16.safetensors",
+      "bytes": 948458812,
+      "mtime_ns": 1791274770477513600,
+      "sha256": "97ea69addea2ecd9312910f5f548234665eef51c088386180b7cd5b258645e3c",
+      "header_with_8byte_prefix_sha256": "ad3ed458569d937eace6ac42d9b6aa83853d654ebd0847791bbf19e2e31ab02b",
+      "header_bytes": 26792,
+      "tensor_count": 284,
+      "parameter_count": 474216006,
+      "dtypes": {
+        "F16": 284
+      },
+      "payload_layout_valid": true,
+      "matches_prior_header_stat": true,
+      "config": {
+        "name": "SparseUnetVaeDecoder",
+        "args": {
+          "out_channels": 6,
+          "model_channels": [
+            1024,
+            512,
+            256,
+            128,
+            64
+          ],
+          "latent_channels": 32,
+          "num_blocks": [
+            4,
+            16,
+            8,
+            4,
+            0
+          ],
+          "block_type": [
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d",
+            "SparseConvNeXtBlock3d"
+          ],
+          "up_block_type": [
+            "SparseResBlockC2S3d",
+            "SparseResBlockC2S3d",
+            "SparseResBlockC2S3d",
+            "SparseResBlockC2S3d"
+          ],
+          "block_args": [
+            {},
+            {},
+            {},
+            {},
+            {}
+          ],
+          "pred_subdiv": false,
+          "use_fp16": true
+        }
+      },
+      "config_sha256": "22074e4ab5b28e2b72d33a3fe61bf416134b89e12d0fc5c729f37da75da0c4d1",
+      "stream_hash_seconds": 1.9219999999913853,
+      "weights_deserialized": false,
+      "comparison_with_proven_shape_model": {
+        "model": "shape_dec_next_dc_f16c32_fp16",
+        "missing_keys": [
+          "blocks.0.4.to_subdiv.bias",
+          "blocks.0.4.to_subdiv.weight",
+          "blocks.1.16.to_subdiv.bias",
+          "blocks.1.16.to_subdiv.weight",
+          "blocks.2.8.to_subdiv.bias",
+          "blocks.2.8.to_subdiv.weight",
+          "blocks.3.4.to_subdiv.bias",
+          "blocks.3.4.to_subdiv.weight"
+        ],
+        "new_keys": [],
+        "different_shapes": {
+          "output_layer.weight": [
+            [
+              7,
+              64
+            ],
+            [
+              6,
+              64
+            ]
+          ],
+          "output_layer.bias": [
+            [
+              7
+            ],
+            [
+              6
+            ]
+          ]
+        }
+      },
+      "candidate_shape_policy_partition_NOT_validated": {
+        "BF16": 208,
+        "F32": 76,
+        "unclassified": []
+      }
+    }
+  },
+  "image": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\selected-input.png",
+    "bytes": 968371,
+    "sha256": "07557b7b9f726aad3b291f4902498e52423efadbf746fb2c5759e3e2c6adeef0",
+    "mode": "RGBA",
+    "size": [
+      1042,
+      1042
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "original_pixels_match": true,
+    "source_url": "https://raw.githubusercontent.com/microsoft/TRELLIS.2/75fbf0183001ed9876c8dbb35de6b68552ee08bd/assets/example_image/0f168a4b1b6e96c72e9627c97a212c27a4572250ff58e25703b9d0c2bc74191a.webp"
+  },
+  "saved_inputs": {
+    "shape-latent-raw.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-raw.npy",
+      "bytes": 479232,
+      "sha256": "03fd8208614fcf20c37e40e59c9eb48972c3c7a3ee18a31bab1b0537e86ab2a1",
+      "dtype": "float32",
+      "shape": [
+        3743,
+        32
+      ],
+      "finite": true,
+      "payload_sha256": "d198ee94d981020df69b0af6e6bd8c1c8c4946007e2df78afa2914f786297cad"
+    },
+    "shape-latent-denormalized.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-denormalized.npy",
+      "bytes": 479232,
+      "sha256": "90eaf72030f303b209a4d02ae9adc7d4ecd39662344f35f0adc8120bc1e871b9",
+      "dtype": "float32",
+      "shape": [
+        3743,
+        32
+      ],
+      "finite": true,
+      "payload_sha256": "2e2046fb700c974d9bed7fcf02f00e6f0dfdfc123f9d2e5143c8ae5ef44a67ea"
+    },
+    "shape-latent-coordinates.npy": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-shape-slat-512-sampling-evidence\\shape-latent-coordinates.npy",
+      "bytes": 60016,
+      "sha256": "949a9e6a2548abcad66354384502c06834d4d56ea3f2fa86b619c25926379ed4",
+      "dtype": "int32",
+      "shape": [
+        3743,
+        4
+      ],
+      "finite": true,
+      "payload_sha256": "860095760acc7914d0378cadfa49ba4c6a368d5a65662061b8e1c4c792f0d7a5"
+    },
+    "conditioning.safetensors": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-object-conditioned-occupancy-evidence\\conditioning.safetensors",
+      "bytes": 4215800,
+      "sha256": "78a0b54210568624639c8cacb7a803d83d4b838b782ea54e7aceab749d47e17a",
+      "shape": [
+        1,
+        1029,
+        1024
+      ],
+      "dtype": "F32",
+      "matches_sampling_provenance": true
+    }
+  },
+  "shape_denormalization_byte_exact": true,
+  "saved_guide_artifact": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors",
+    "sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22",
+    "guides": [
+      {
+        "stage": 0,
+        "logits": {
+          "dtype": "BF16",
+          "shape": [
+            3743,
+            8
+          ],
+          "data_offsets": [
+            88751680,
+            88811568
+          ]
+        },
+        "coordinates": {
+          "dtype": "I32",
+          "shape": [
+            3743,
+            4
+          ],
+          "data_offsets": [
+            81090592,
+            81150480
+          ]
+        },
+        "selected_children": 17015
+      },
+      {
+        "stage": 1,
+        "logits": {
+          "dtype": "BF16",
+          "shape": [
+            17015,
+            8
+          ],
+          "data_offsets": [
+            88811568,
+            89083808
+          ]
+        },
+        "coordinates": {
+          "dtype": "I32",
+          "shape": [
+            17015,
+            4
+          ],
+          "data_offsets": [
+            81150480,
+            81422720
+          ]
+        },
+        "selected_children": 79169
+      },
+      {
+        "stage": 2,
+        "logits": {
+          "dtype": "BF16",
+          "shape": [
+            79169,
+            8
+          ],
+          "data_offsets": [
+            89083808,
+            90350512
+          ]
+        },
+        "coordinates": {
+          "dtype": "I32",
+          "shape": [
+            79169,
+            4
+          ],
+          "data_offsets": [
+            81422720,
+            82689424
+          ]
+        },
+        "selected_children": 378891
+      },
+      {
+        "stage": 3,
+        "logits": {
+          "dtype": "BF16",
+          "shape": [
+            378891,
+            8
+          ],
+          "data_offsets": [
+            90350512,
+            96412768
+          ]
+        },
+        "coordinates": {
+          "dtype": "I32",
+          "shape": [
+            378891,
+            4
+          ],
+          "data_offsets": [
+            82689424,
+            88751680
+          ]
+        },
+        "selected_children": 1842968
+      }
+    ],
+    "initial_parent_coordinates_byte_identical": true,
+    "final_rows": 1842968
+  },
+  "pipeline_json_sha256": "222c359ab1ed9bc6735a640a34f95d47f8681b9bc4aaa101bfb80274676253c6",
+  "canonical_texture_params": {
+    "name": "FlowEulerGuidanceIntervalSampler",
+    "args": {
+      "sigma_min": 1e-05
+    },
+    "params": {
+      "steps": 12,
+      "guidance_strength": 1.0,
+      "guidance_rescale": 0.0,
+      "guidance_interval": [
+        0.6,
+        0.9
+      ],
+      "rescale_t": 3.0
+    }
+  },
+  "current_read_only_resources": {
+    "host_available_RAM_bytes": 19161321472,
+    "C_disk_free_bytes": 107732496384,
+    "D_disk_free_bytes": 75152564224,
+    "VRAM_not_queried": true
+  },
+  "no_AI_GPU_imports_or_model_construction": true,
+  "checkpoint_audit_method": "bounded JSON/header plus streaming SHA-256, not tensor deserialization",
+  "header_convention_note": "Previous audit hashes include 8-byte length prefix. Raw-JSON-only SHA was initially compared, then correctly reconciled; no checkpoint changes."
+}

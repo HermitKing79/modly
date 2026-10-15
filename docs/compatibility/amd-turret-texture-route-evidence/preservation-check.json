@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "protected_files_checked_against_prior_preview": 51,
+  "protected_file_differences": [],
+  "source_files": [
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_image_to_3d.py",
+      "sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\structured_latent_flow.py",
+      "sha256": "3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\models\\sc_vaes\\sparse_unet_vae.py",
+      "sha256": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\spatial\\spatial2channel.py",
+      "sha256": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\flow_euler.py",
+      "sha256": "03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\classifier_free_guidance_mixin.py",
+      "sha256": "ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\samplers\\guidance_interval_mixin.py",
+      "sha256": "0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\attention\\full_attn.py",
+      "sha256": "045aabe973d405cb16f8a1a71c5b4d8f76988c99b4e333c29bbc12d51d0cf4b1",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\sparse\\config.py",
+      "sha256": "525ed9a516bc9576712cce9896a52a0ec9667ba7dc4aa13f24ee6a83353cb722",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\modules\\utils.py",
+      "sha256": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\pipeline.json",
+      "sha256": "222c359ab1ed9bc6735a640a34f95d47f8681b9bc4aaa101bfb80274676253c6",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\slat_flow_imgshape2tex_dit_1_3B_512_bf16.json",
+      "sha256": "3093796257a62f838d2e5578ac4580ca3b7d88d10b87d348065d3fdfcc4c2077",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_dec_next_dc_f16c32_fp16.json",
+      "sha256": "22074e4ab5b28e2b72d33a3fe61bf416134b89e12d0fc5c729f37da75da0c4d1",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\o_voxel\\postprocess.py",
+      "sha256": "35b62242503944cb16c25b7a1c8730b632b2f55d7a1f3b0b6dd2051779908e4b",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\cumesh.py",
+      "sha256": "eabb42a0e1e4a06e994103fa21ff22c07cf9b467b4110e7445971a3aad31dac9",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\nodes.py",
+      "sha256": "d310c97f3f7ff187cd581ed01ea3dbd6217fddb8ad9d59b12bd7c485f93821be",
+      "matches": true
+    },
+    {
+      "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\pipelines\\trellis2_texturing.py",
+      "sha256": "14a6f8ee2bca120f76e0112f2733cd250764637709ff642fd6846ae97c63b1e6",
+      "matches": true
+    }
+  ],
+  "AMD_backup_matches_prior": true,
+  "windows_environments": {
+    "amd": {
+      "pyvenv_cfg_matches": true,
+      "distributions": 235,
+      "distribution_identities_match_saved_inventory": true,
+      "native_binaries": [
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_C.cp312-win_amd64.pyd",
+          "sha256": "32526ca0976822800b2320ee3cc12db5ef3fc8fb4641d721dabca8714e5b71ac",
+          "matches": true
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_cubvh.cp312-win_amd64.pyd",
+          "sha256": "70a886bb952bb48cf56fc46b3744840e33b07820991620c6eae350a154676ff0",
+          "matches": true
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\cumesh\\_xatlas.cp312-win_amd64.pyd",
+          "sha256": "66da37345044e2161f7811f2d9ff67750f8fb3c203c16bc5abdfd6e739111e00",
+          "matches": true
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\cuda.cp312-win_amd64.pyd",
+          "sha256": "18b203fca47a482f8b53d7bdfb765b26036cae9628087ecfde17e75742007064",
+          "matches": true
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\o_voxel\\_C.cp312-win_amd64.pyd",
+          "sha256": "4900ba16cb2d24c816e968fb54c74218f119e12ad942a81f8d318215802bf953",
+          "matches": true
+        },
+        {
+          "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\_nvdiffrast_c.cp312-win_amd64.pyd",
+          "sha256": "87abc0f0bd44423feeb4f7e3f0b3e103c57caf9069dbf7952af72b6b0d8a4391",
+          "matches": true
+        }
+      ]
+    },
+    "modly": {
+      "pyvenv_cfg_matches": true,
+      "distributions": 127,
+      "distribution_identities_match_saved_inventory": true,
+      "native_binaries": [
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\cumesh\\_C.cp311-win_amd64.pyd",
+          "sha256": "5b38e7ab66e212281adba4ad71d864d5121017e0a2e7408d8bb24e0a41284587",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\cumesh\\_cubvh.cp311-win_amd64.pyd",
+          "sha256": "747437a22ee109c85f29bdb50a8821770d662987a65e469b3cfa1acb75d8379c",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\cumesh\\_cumesh_xatlas.cp311-win_amd64.pyd",
+          "sha256": "eb1084194f26df7c4090ea8d05b815eb48c6260fb9edc6ba7143caee970094e0",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\flex_gemm\\kernels\\cuda.cp311-win_amd64.pyd",
+          "sha256": "cd727c7c4df6eaca6997bc2b50d6a3096752b8c14a2b889b0a057ec6a0fe162e",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\o_voxel\\_C.cp311-win_amd64.pyd",
+          "sha256": "9c80daaf9ec5240bc43c83587d570b69f2ed9f9c7d4d873ff5ecb1f1ab8ad02f",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\wattz\\Documents\\Modly\\extensions\\trellis2\\venv\\Lib\\site-packages\\_nvdiffrast_c.cp311-win_amd64.pyd",
+          "sha256": "cf3cb83479ad064e7127b2f77264b94e54a5956fae2358c16a57631fe440b7da",
+          "matches": true
+        }
+      ]
+    }
+  },
+  "inventory_hash_convention": "Previous inventory uses importlib.metadata.read_text: decoded UTF-8 and universal-newline normalization before SHA-256. An initial raw-byte comparison was corrected to that same convention; file content was not changed.",
+  "WSL_fresh_inventory": false,
+  "WSL_note": "Not started; package availability is from the preserved latest completed staging manifest.",
+  "no_model_loading_AI_native_imports_or_environment_changes": true
+}

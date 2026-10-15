@@ -1,0 +1,31 @@
+{
+  "reviewer": "/root/shape_cpu_loading_review",
+  "decision": "PASS_FOR_SOURCE_ONLY_REPORT_PUBLICATION",
+  "overall_readiness": "PARTIAL",
+  "runtime_go": false,
+  "material_findings": [],
+  "review_scope": "Read-only final report consistency review against the three new evidence JSONs. No additional runtime, source research, model imports/loads, WSL, GPU/native actions, tests, or report modifications.",
+  "reviewed_sha256": {
+    "docs/compatibility/amd-turret-texture-route.md": "fd7343cc52ce4d89ad8b7cd9cb1ed84f81ab2c9ff50afe78be811062cdea0ec0",
+    "local-assets.json": "9f764cece1ae4630ec437b2a45d8619ff894c3312190e86813350a1490c2d481",
+    "independent-texture-source-audit.json": "4b17ec4c7fa357ab835421c563cc1de02f86c874bd7df1a3057b6001c670b47c",
+    "export-route-audit.json": "cb7fbedce3f0f443e8565fa65b2732eb62b8679e8f5a24fc3fcd9dd9b5d0d73a"
+  },
+  "consistent_claims": [
+    "Exact texture model/config identities, file hashes,640 BF16 flow entries and284 F16 decoder entries match local-assets.json. Header/layout/full-file hashing is distinguished from tensor deserialization and strict loading.",
+    "The original denormalized shape latent is normalized with shape statistics, concatenated after fresh32-channel noise to64 flow input channels, and texture output is denormalized with separate texture statistics. Saved DINO[1,1029,1024] and original3743 coordinate order are reused.",
+    "Canonical12 Euler steps with guidance1.0 and DINOlock0 require12 positive model forwards, without an unconditional CFG second evaluation. This is a proposed execution contract, not an observed texture run.",
+    "The four saved learned guides determine3743->17015->79169->378891->1842968 support. The report explicitly requires exact live parent-coordinate order because C2S ignores guide coordinates and consumes features by row position.",
+    "The active six-channel layout is RGB,metallic,roughness,alpha; no learned emissive channel or genuine blue glow is claimed. Existing geometry output is not a texture field.",
+    "Configured texture F16 and current tiling precision/identity contracts require explicit qualification. The pinned Linux selective BF16 fix is shape-only; local texture validity is not inferred from reference textured GLB or prior shape success.",
+    "Large final64-channel convolution and im2col/gather requirements remain despite3743 initial tokens. Prior shape tiling measurements are identified as comparisons; proposed texture resource ranges are estimates, not new measured peaks or a proven admission bound.",
+    "Six F32 output channels plus I32 coordinates require73,718,720 raw payload bytes, approximately73.72MB. Flow and decoder should not remain simultaneously resident.",
+    "Stock to_glb and existing UV paths alter topology or remain unqualified. The report preserves the original mesh, avoids fill_holes in the whole decode wrapper, and separates base-colour preview from complete spatial PBR export.",
+    "The smallest proposed Windows milestone is exact64-channel CPU/strict-load qualification followed by one separately approved texture-latent sampling sequence, persistence and release; it stops before texture decode,repair,baking or export. No DINO or shape regeneration is required."
+  ],
+  "limits": [
+    "6-8GiB host/4-6GiB flow GPU and8-10GiB decoder GPU are provisional planning allowances; actual source/dtype/schema/workspace admission and measurements remain necessary.",
+    "Available host RAM is a read-only observation; VRAM was not queried. Source review does not establish executable texture readiness or authorize a worker.",
+    "This receipt verifies report/evidence consistency. It does not independently repeat full checkpoint hashing, source-data scans, prior performance measurements or preservation inventories."
+  ]
+}
