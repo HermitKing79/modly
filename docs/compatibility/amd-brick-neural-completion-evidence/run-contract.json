@@ -1,0 +1,22 @@
+{
+  "schema": "modly.amd.neural-run.v1",
+  "initial_count": 4430,
+  "input_paths": {
+    "shape-latent-denormalized.npy": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-denormalized.npy",
+    "coords.npy": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-coordinates.npy"
+  },
+  "input_sha256": {
+    "shape-latent-denormalized.npy": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808",
+    "coords.npy": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c"
+  },
+  "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+  "output_directory": "/home/modly/run-brick-final-support-c9447dd/geometry",
+  "scratch_directory": "/home/modly/run-brick-final-support-c9447dd/scratch",
+  "repo_root": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof",
+  "maximum_final_rows": 1957891,
+  "maximum_intermediate_rows": 1000000,
+  "native_stage": "/home/modly/native-decoder-preparation-6dd94a85",
+  "host_evidence_directory": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/final-support-c9447dd/decode/run/guest",
+  "large_convolution_tiling": true,
+  "final_support_profile": "brick-1957891-v1"
+}

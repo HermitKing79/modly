@@ -1,0 +1,36 @@
+{
+  "samples": [
+    {
+      "sample": 1,
+      "timestamp_utc": "2026-10-15T15:38:58.427466+00:00",
+      "available_ram_bytes": 20182065152,
+      "total_ram_bytes": 34270023680,
+      "D_free_bytes": 74532851712,
+      "C_free_bytes": 108823740416,
+      "required_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200
+    },
+    {
+      "sample": 2,
+      "timestamp_utc": "2026-10-15T15:39:03.428618+00:00",
+      "available_ram_bytes": 20192526336,
+      "total_ram_bytes": 34270023680,
+      "D_free_bytes": 74532851712,
+      "C_free_bytes": 108823736320,
+      "required_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200
+    },
+    {
+      "sample": 3,
+      "timestamp_utc": "2026-10-15T15:39:08.429006+00:00",
+      "available_ram_bytes": 20198387712,
+      "total_ram_bytes": 34270023680,
+      "D_free_bytes": 74532851712,
+      "C_free_bytes": 108823949312,
+      "required_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200
+    }
+  ],
+  "classification": "PASS",
+  "scope": "Read-only GlobalMemoryStatusEx and disk; no Torch/WSL/GPU"
+}

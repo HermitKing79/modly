@@ -1,0 +1,97 @@
+{
+  "schema": "modly.amd.brick-neural-completion-preexecution-review.v1",
+  "created_utc": "2026-10-15T15:39:32.0219552Z",
+  "classification": "CLEAR_CANDIDATE_ONLY",
+  "harness_commit": "c9447ddcba283eaa365defc74704a22442906579",
+  "scope": "Read-only CPU review of the published candidate, saved qualification, exact input identities, flags and planned paths. No tests, model loading, WSL/GPU execution or Git/source mutations.",
+  "known_prelaunch_blockers": [],
+  "qualification": {
+    "path": "docs/compatibility/amd-brick-final-support-evidence/qualification.json",
+    "sha256": "f9e0bed3c765900f426758768a3b56f10670acf6fc356d7e92a0b836291925b6",
+    "source_bindings_checked": 21,
+    "all_source_bindings_current": true,
+    "source_sha256": {
+      "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "6f4831747c6973d860a55c1988af5105f4fadb53b79e50164a86ffe81f73f21a",
+      "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "10a2792b47ab24ec64cf5d911c37fa12ac789a1d7134c5221d0479ced1bdb989",
+      "experimental/extensions/trellis2-amd/inference_decoder/artifact_paths.py": "73a690d8c03e7a4a6f69b07e45ccd92fa08b3d461f1e47841745c1eafa25f441",
+      "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py": "6c69e5a1376aae9cd60b9892b2a8f335f1e6cfc61173d55bfa1332c0004bbcfc",
+      "experimental/extensions/trellis2-amd/inference_decoder/chunked_large.py": "ff1d5727518e79c578206bfbe2af3c6bc4650ad3b2942290a5676fbfc38d7121",
+      "experimental/extensions/trellis2-amd/inference_decoder/decode.py": "d19099e32c51c9cd40fb25068b6bfdba7478fad1f0489bb1bab2fc3e443c5e63",
+      "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "f3d982046ca58fb7a2eb0b49c3d0c89fbcf9aa3189cc86018a3c1749b0c01295",
+      "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "0998c6e0c9a8d5c262b6f258f60fb11d82e8b51aec2c5fd48c771c33ef999f57",
+      "experimental/extensions/trellis2-amd/inference_decoder/runtime.py": "ea4199df31941795b7a5a5bb58d0f180f610c6ad17e8358b16393696a30c3c2e",
+      "experimental/extensions/trellis2-amd/inference_decoder/stage_journal.py": "0deada43d569717d57c6835b11be90b55c6685efc733fa8ce07e4c1acb5476e0",
+      "experimental/extensions/trellis2-amd/inference_decoder/test_admission_reclaim.py": "05197951308051f012a969444cd76594a7fdc4305b92c549fefe178b472dd540",
+      "experimental/extensions/trellis2-amd/inference_decoder/test_decoder.py": "51a4815d97a6f5c761a626205706e79dade125566ee1cff1b3e81174f6ef2048",
+      "experimental/extensions/trellis2-amd/inference_decoder/test_final_support.py": "9dbcc872eeba52fe77d2a3450349019dd91d730e7ef53446387ccf6ed66879a1",
+      "experimental/extensions/trellis2-amd/inference_decoder/test_large_tiling.py": "2438dbf64528902cd9faf33034fc36c98c3704ebb9bd2974765ba33e39a92f80",
+      "experimental/extensions/trellis2-amd/inference_decoder/test_tiling_contract.py": "b48261427ef35ab4405a3d6e1868fbff831d9784a530dd6dd3a7c9aa176a20cf",
+      "scripts/compatibility/amd_flexible_dual_grid_cpu.py": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40",
+      "scripts/compatibility/amd_generation_decode.py": "aea6c3346ff7f5d65743be540eeebed538c0589c343c41dd52a23efe797a6ada",
+      "scripts/compatibility/amd_generation_mesh.py": "68a5e64bf7ab65c98f9b798e8d81c61c6cb629b1eaaf193637d5e52de0cae8e8",
+      "scripts/compatibility/test_amd_final_support_host.py": "3b0518cefedf821c90f986e4c879bb773d291e8f8232892e3464a75d1d05f3f8",
+      "scripts/compatibility/test_amd_generation_decode.py": "f9b098a0a06e450d99f345a3f0805ecc57d4ac6254984c9c72bc8480125b2c3f",
+      "scripts/compatibility/test_amd_generation_support_profile.py": "b6b746958d19fb2dda260412860016633b9f849bc79474f63793a56c2a5c9ba1"
+    }
+  },
+  "prior_independent_review": {
+    "path": "docs/compatibility/amd-brick-final-support-evidence/independent-review.json",
+    "sha256": "ad6d1138819b451a87bf27591089ad6081df59da26d12c68b97aa3b319fc0f7b"
+  },
+  "preservation_before": {
+    "path": "docs/compatibility/amd-brick-neural-completion-evidence/preservation-before.json",
+    "sha256": "30ccd5fd2795495ef9d121ff97a8804e1a958f784a7c35a25fcc468100018d05"
+  },
+  "launch_contract": {
+    "entry": "scripts/compatibility/amd_generation_decode.py:Runtime",
+    "flags": [
+      "--tile-large-convolutions",
+      "--final-support-profile",
+      "brick-1957891-v1"
+    ],
+    "shape_evidence": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape",
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "initial_rows": 4430,
+    "input_sha256": {
+      "shape-latent-denormalized.npy": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808",
+      "shape-latent-coordinates.npy": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c"
+    },
+    "run_id": "run-brick-final-support-c9447dd",
+    "host_evidence": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/final-support-c9447dd/decode",
+    "host_mirror": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/final-support-c9447dd/decode/run/guest",
+    "guest_output": "/home/modly/run-brick-final-support-c9447dd/geometry",
+    "guest_scratch": "/home/modly/run-brick-final-support-c9447dd/scratch",
+    "guest_artifact": "/home/modly/run-brick-final-support-c9447dd/geometry/shape-decoded.safetensors",
+    "host_artifact": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/final-support-c9447dd/decode/run/guest/shape-decoded.safetensors",
+    "fresh_host_stage_absent_at_review": true,
+    "path_review": "Both CLI options reach Runtime and the authenticated run contract. Guest output is local to the new run; bounded allowlisted export targets this exact host run/guest mirror. The host stage uses exclusive creation and rejects a preexisting attempt."
+  },
+  "unchanged_guards": {
+    "allocator_cap_bytes": 12884901888,
+    "initial_free_VRAM_bytes": 13958643712,
+    "device_free_reserve_bytes": 2147483648,
+    "opaque_headroom_bytes": 1073741824,
+    "visible_padding": 1.25,
+    "host_RAM_floor_bytes": 12884901888,
+    "D_free_floor_bytes": 53687091200,
+    "deadlines_seconds": {
+      "native": 60,
+      "CPU": 120,
+      "GPU": 240,
+      "authorised_worker": 430,
+      "outer_WSL_command": 450,
+      "host": 480
+    },
+    "maximum_neural_forwards": 1,
+    "maximum_tile_rows": 32768,
+    "final_profile_rows": 1957891,
+    "historical_default_final_rows": 1842968,
+    "policy": "Exact HEAD/committed closure and authenticated brick input are checked before the attempt marker. Existing GO/EOF, owned Job/observer, named-distro cleanup, output hashing and independent finite/chain acceptance remain active."
+  },
+  "limits": [
+    "Live host RAM/disk, initial VRAM and all later operation admissions remain mandatory; this source review does not measure their current values.",
+    "Post-expansion live VRAM, final map/convolution time and authentic finite final output remain unproved until the authorised attempt completes.",
+    "No decoder changes, retries, mesh extraction, texture/material processing, GLB or frontend work are covered."
+  ],
+  "decision": "No hidden known prelaunch blocker was found in the unchanged CPU-qualified candidate. Candidate approval only: root retains sole execution control for the one user-authorised attempt and must stop on any existing guard failure."
+}

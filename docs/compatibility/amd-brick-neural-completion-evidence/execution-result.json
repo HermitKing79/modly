@@ -1,0 +1,482 @@
+{
+  "schema": "modly.amd.brick-neural-completion-result.v1",
+  "created_utc": "2026-10-15T15:49:02.667049+00:00",
+  "classification": "PASS",
+  "harness_commit": "c9447ddcba283eaa365defc74704a22442906579",
+  "profile": "brick-1957891-v1",
+  "attempts": 1,
+  "retry": false,
+  "decoder_code_modified": false,
+  "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+  "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+  "saved_input_sha256": {
+    "shape-latent-denormalized.npy": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808",
+    "coords.npy": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c"
+  },
+  "runtime": {
+    "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "distribution_version": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "git_version": "ff65f5bc672795c5e5033900ea0a0c4f8566c8cf",
+    "hip": "7.2.53211-e1a6bc5663",
+    "cuda": null,
+    "python": "3.12.3",
+    "prefix": "/opt/modly-wsl/venv",
+    "gpu_initialized_before": false
+  },
+  "gpu": {
+    "name": "AMD Radeon RX 9070 XT",
+    "architecture": "gfx1201",
+    "count": 1,
+    "total_bytes": 16974905344,
+    "free_bytes": 14772154368,
+    "property_total_bytes": 16974905344
+  },
+  "checkpoint": {
+    "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\shape_dec_next_dc_f16c32_fp16.safetensors",
+    "bytes": 948490494,
+    "mtime_ns": 1791274722716299500,
+    "mode": 33206,
+    "verified_prior_stream_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "header_bytes": 27560,
+    "header_sha256": "80dc6403ca284a2361109cde3190bc1b5ea5d30936e8f80625cbbc0827062c83",
+    "header_content_bytes_read_this_task": 27568,
+    "full_hash_passes_this_task": 0,
+    "deserialized": false,
+    "unchanged_during_header_read": true,
+    "matches_prior": true,
+    "limitation": "Full checkpoint payload not re-hashed; preservation established by unchanged metadata and bounded header against prior full-hash identity.",
+    "header_reads_this_audit": 1,
+    "checkpoint_payload_bytes_read_this_audit": 0,
+    "freshly_streamed_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "guest_path": "/mnt/d/AI/Trellis2AMD/ComfyUI/models/microsoft/TRELLIS.2-4B/ckpts/shape_dec_next_dc_f16c32_fp16.safetensors"
+  },
+  "runtime_dtype_counts": {
+    "BF16": 216,
+    "F32": 76
+  },
+  "strict_loaded_entries": 292,
+  "forward_calls": 1,
+  "convolutions_completed": 40,
+  "event_counts": {
+    "gate-wait": 1,
+    "gate-authorized": 1,
+    "tunable-after-torch-import": 1,
+    "native-import-entry": 1,
+    "native-qualified-CPU-preparation-entry": 1,
+    "tunable-pre-gpu": 1,
+    "gpu-stage-entry": 1,
+    "admission": 200,
+    "model-placement-entry": 1,
+    "model-placement-synchronized": 1,
+    "neural-forward-entry": 1,
+    "from-latent-entry": 1,
+    "from-latent-host-return": 1,
+    "native-entry": 5,
+    "native-host-return": 5,
+    "conv_completed": 40,
+    "c2s-count-before-admission": 8,
+    "c2s_completed": 8,
+    "large-tile-entry": 84,
+    "large-tile-return": 84,
+    "final-tile-entry": 60,
+    "final-tile-return": 60,
+    "neural-forward-host-return": 1,
+    "neural-forward-synchronized": 1,
+    "output-readback-verified": 1,
+    "worker-finished": 1
+  },
+  "large_tiled_convolutions": [
+    {
+      "site": "blocks.2.8.conv2",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": false,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.0.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.1.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.2.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.3.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.4.conv1",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 512,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    }
+  ],
+  "C2S_operations": [
+    {
+      "site": "blocks.0.4.updown",
+      "call": 1,
+      "parents": 4430,
+      "children": 21391,
+      "memory": {
+        "free_bytes": 12969246720,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1106567168,
+        "reserved_bytes": 1650458624
+      }
+    },
+    {
+      "site": "blocks.0.4.updown",
+      "call": 2,
+      "parents": 4430,
+      "children": 21391,
+      "memory": {
+        "free_bytes": 12969246720,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1076095488,
+        "reserved_bytes": 1650458624
+      }
+    },
+    {
+      "site": "blocks.1.16.updown",
+      "call": 1,
+      "parents": 21391,
+      "children": 97313,
+      "memory": {
+        "free_bytes": 12412436480,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1204155904,
+        "reserved_bytes": 2206203904
+      }
+    },
+    {
+      "site": "blocks.1.16.updown",
+      "call": 2,
+      "parents": 21391,
+      "children": 97313,
+      "memory": {
+        "free_bytes": 12412436480,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1130552320,
+        "reserved_bytes": 2206203904
+      }
+    },
+    {
+      "site": "blocks.2.8.updown",
+      "call": 1,
+      "parents": 97313,
+      "children": 438684,
+      "memory": {
+        "free_bytes": 11070226432,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1426099200,
+        "reserved_bytes": 3546284032
+      }
+    },
+    {
+      "site": "blocks.2.8.updown",
+      "call": 2,
+      "parents": 97313,
+      "children": 438684,
+      "memory": {
+        "free_bytes": 11070226432,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1261897216,
+        "reserved_bytes": 3546284032
+      }
+    },
+    {
+      "site": "blocks.3.4.updown",
+      "call": 1,
+      "parents": 438684,
+      "children": 1957891,
+      "memory": {
+        "free_bytes": 10930233344,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1967081984,
+        "reserved_bytes": 3703570432
+      }
+    },
+    {
+      "site": "blocks.3.4.updown",
+      "call": 2,
+      "parents": 438684,
+      "children": 1957891,
+      "memory": {
+        "free_bytes": 10930233344,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1611849216,
+        "reserved_bytes": 3703570432
+      }
+    }
+  ],
+  "final_rows": 1957891,
+  "final_tiles": 60,
+  "last_final_tile": {
+    "phase": "final-tile-return",
+    "utc": "2026-10-15T15:45:45.717642+00:00",
+    "monotonic_seconds": 116.47185864,
+    "elapsed_gpu_seconds": 80.14948998700001,
+    "start": 1933312,
+    "end": 1957891,
+    "rows": 24579,
+    "chunk": 60,
+    "memory": {
+      "free_bytes": 10930233344,
+      "total_bytes": 16974905344,
+      "allocated_bytes": 2073911808,
+      "reserved_bytes": 3703570432
+    },
+    "host_return_is_not_sync": true
+  },
+  "output": {
+    "rows": 1957891,
+    "features_shape": [
+      1957891,
+      7
+    ],
+    "coordinates_shape": [
+      1957891,
+      4
+    ],
+    "features_dtype": "torch.float32",
+    "coordinate_dtype": "torch.int32",
+    "coordinate_order": "[batch,D,H,W], original C2S parent/child order",
+    "subdivisions": [
+      {
+        "stage": 0,
+        "parents": 4430,
+        "selected_children": 21391,
+        "logits_dtype": "torch.bfloat16"
+      },
+      {
+        "stage": 1,
+        "parents": 21391,
+        "selected_children": 97313,
+        "logits_dtype": "torch.bfloat16"
+      },
+      {
+        "stage": 2,
+        "parents": 97313,
+        "selected_children": 438684,
+        "logits_dtype": "torch.bfloat16"
+      },
+      {
+        "stage": 3,
+        "parents": 438684,
+        "selected_children": 1957891,
+        "logits_dtype": "torch.bfloat16"
+      }
+    ],
+    "payload_bytes": 104125380,
+    "finite": true,
+    "feature_min": -120.37931823730469,
+    "feature_max": 55.420440673828125,
+    "feature_mean": -4.614968681844316,
+    "feature_std": 11.744506074449,
+    "path": "/home/modly/run-brick-final-support-c9447dd/geometry/shape-decoded.safetensors",
+    "verified": true,
+    "bytes": 104148612,
+    "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "tensor_payload_sha256": {
+      "features": "5eedc14f04267303cc9ac344270f7141c2c2d4a94e0c0510585928757a4b0c52",
+      "coordinates": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+      "subdivision_0_logits": "9c31de9c275fa78590743bb9ec7bf0accc3cab7f92e4f3096e99162d8963f07e",
+      "subdivision_0_coordinates": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520",
+      "subdivision_1_logits": "c519845ae44a8e30a83038de03578b7cecd8aaf2fcebdb6c1e437e20208a538a",
+      "subdivision_1_coordinates": "16ecc9780a85d722e83fdf52ed3841e7038a69d203f086a0524094a63f18a594",
+      "subdivision_2_logits": "6f74789f5076a42399ec6cf6048a792d1e4953fac3294597bceb717a74e965ba",
+      "subdivision_2_coordinates": "8f1c7d4bfb4f031965f2e095929fa592b394eb60841d02a786805e08f707d81d",
+      "subdivision_3_logits": "285f0adba1078694c3112a2ef8c0afbeb0779e951f65ffdaf48cd399cc524304",
+      "subdivision_3_coordinates": "ab09fb4a330c0a07aead43193aeec79e6ea9b1efa85c62aeb4ca810a0f79d19e"
+    },
+    "reader": "bounded stdlib tensor header/payload reader",
+    "readback_verified_before_release": true,
+    "host_verification_pending": true
+  },
+  "synchronized_forward_seconds": 79.36611756799999,
+  "gpu_stage_seconds": 87.774342556,
+  "worker_elapsed_seconds": 114.02758522799999,
+  "supervisor_elapsed_seconds": 140.63999999999942,
+  "decoder_cpu_seconds": 11.650478675999999,
+  "CPU_loading_high_water_bytes": 2787229696,
+  "measured_Torch_peak_bytes": {
+    "allocated": 3354263040,
+    "reserved": 4389339136
+  },
+  "memory_release": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "device_memory_after_release": {
+    "free_bytes": 14637944832,
+    "total_bytes": 16974905344
+  },
+  "minimum_recorded_host_available_RAM_bytes": 13792145408,
+  "minimum_recorded_D_free_bytes": 74264416256,
+  "all_host_resource_admissions_passed": true,
+  "host_resource_samples": 137,
+  "all_live_allocation_admissions_passed": true,
+  "admission_cache_reclaims": {
+    "enabled": true,
+    "attempts": 0,
+    "admitted_after": 0,
+    "records": []
+  },
+  "monitoring_healthy": true,
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "windows_job_grace": {
+    "empty": true,
+    "seconds": 0.0,
+    "limit_seconds": 5.0
+  },
+  "distro_termination": {
+    "command": [
+      "wsl.exe",
+      "--terminate",
+      "Modly-AMD-Ubuntu-24.04"
+    ],
+    "returncode": 0,
+    "stdout": "T\u0000h\u0000e\u0000 \u0000o\u0000p\u0000e\u0000r\u0000a\u0000t\u0000i\u0000o\u0000n\u0000 \u0000c\u0000o\u0000m\u0000p\u0000l\u0000e\u0000t\u0000e\u0000d\u0000 \u0000s\u0000u\u0000c\u0000c\u0000e\u0000s\u0000s\u0000f\u0000u\u0000l\u0000l\u0000y\u0000.\u0000 \u0000\r\u0000\n\u0000",
+    "stderr": ""
+  },
+  "worker_returncode": 0,
+  "independent_host_verification": {
+    "ten_tensors_verified": true,
+    "rows": 1957891,
+    "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "tensor_payload_sha256": {
+      "subdivision_2_logits": "6f74789f5076a42399ec6cf6048a792d1e4953fac3294597bceb717a74e965ba",
+      "coordinates": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+      "subdivision_3_logits": "285f0adba1078694c3112a2ef8c0afbeb0779e951f65ffdaf48cd399cc524304",
+      "subdivision_0_coordinates": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520",
+      "subdivision_1_coordinates": "16ecc9780a85d722e83fdf52ed3841e7038a69d203f086a0524094a63f18a594",
+      "subdivision_1_logits": "c519845ae44a8e30a83038de03578b7cecd8aaf2fcebdb6c1e437e20208a538a",
+      "features": "5eedc14f04267303cc9ac344270f7141c2c2d4a94e0c0510585928757a4b0c52",
+      "subdivision_0_logits": "9c31de9c275fa78590743bb9ec7bf0accc3cab7f92e4f3096e99162d8963f07e",
+      "subdivision_3_coordinates": "ab09fb4a330c0a07aead43193aeec79e6ea9b1efa85c62aeb4ca810a0f79d19e",
+      "subdivision_2_coordinates": "8f1c7d4bfb4f031965f2e095929fa592b394eb60841d02a786805e08f707d81d"
+    },
+    "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "independent_of_worker": true,
+    "model_or_GPU_imported": false
+  },
+  "raw_files": {
+    "decode-attempt-started.json": {
+      "bytes": 376,
+      "sha256": "25c2abfc239f85b0c437b0da82362eabb1c6a37a59ce82e4e28dd7a1a35c8395",
+      "published_copy": "attempt-marker.json"
+    },
+    "run-contract.json": {
+      "bytes": 1471,
+      "sha256": "0ac5719aedd74260eceb5e5da8f6a36d9b4d63617e61847cf8a5530a6bf6be39",
+      "published_copy": "run-contract.json"
+    },
+    "final-result.json": {
+      "bytes": 2461,
+      "sha256": "8c4ea837154cf51940404467b81181489e9dd9617b998ff7f7f63a8a9e05ca8a",
+      "published_copy": "final-result.json"
+    },
+    "resource-admission.jsonl": {
+      "bytes": 32743,
+      "sha256": "ab0c1521a3e06b8d04efda0c6602b3a89ac2e14e78033ff7f0e5f96aaa1ccace",
+      "published_copy": "resource-admission.jsonl"
+    },
+    "run/phases.jsonl": {
+      "bytes": 1326,
+      "sha256": "41de2a1d01c28e14fea4aee72ddb7db8216f8ff11c3e9e401c0e79e37928e644",
+      "published_copy": "host-phases.jsonl"
+    },
+    "run/results.json": {
+      "bytes": 242191,
+      "sha256": "d09f77f3fc781f3811b0ba39bdda5b25df1cd4f7bd762b94362a77aa2d79af43",
+      "published_copy": "host-results.json"
+    },
+    "run/worker.stdout.txt": {
+      "bytes": 678,
+      "sha256": "dd8fe2a6194903f64e5e7d7cc06b23362cb8bd0bcfabd2eea9982cfd9b674926",
+      "published_copy": "worker.stdout.txt"
+    },
+    "run/worker.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_copy": "worker.stderr.txt"
+    },
+    "run/guest/phases.jsonl": {
+      "bytes": 265486,
+      "sha256": "ca8d16d1e943ad068cf33fcdd762b6ce3f9e895a1b34a3dbfe83cca170c17b89",
+      "published_copy": "execution-phases.jsonl"
+    },
+    "run/guest/results.json": {
+      "bytes": 161516,
+      "sha256": "86acd940d7a252f5a1247e12a362c0ae71de9a808dd67ccc837a9ae7fa95fa27",
+      "published_copy": "guest-results.json"
+    },
+    "run/guest/run-contract.json": {
+      "bytes": 1449,
+      "sha256": "4676626d1061e6cd7090b560f952a974a584f8ea9e6218378b7902294b93bd4f",
+      "published_copy": "guest-run-contract.json"
+    },
+    "run/guest/provenance.json": {
+      "bytes": 26328,
+      "sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407",
+      "published_copy": "guest-provenance.json"
+    },
+    "run/guest/shape-decoded.safetensors": {
+      "bytes": 104148612,
+      "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+      "published_copy": null,
+      "local_only": true
+    }
+  },
+  "permanent_artifact_verification": "artifact-verification.json (separate independently verified local copy)",
+  "exclusions": "No conditioning/sampling rerun, mesh extraction, texture generation, GLB or frontend work."
+}

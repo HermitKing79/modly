@@ -1,0 +1,306 @@
+{
+  "schema": "modly.amd.brick-neural-completion-outcome-review.v1",
+  "created_utc": "2026-10-15T15:52:27.1709644Z",
+  "classification": "PASS_NEURAL_ONLY",
+  "scope": "Independent CPU-only read/hash/arithmetic review of saved raw worker, supervisor, phase/resource journals, contract, provenance and separate artifact-verification evidence. No model/native imports, tests, GPU/WSL execution, source edits or Git mutation by reviewer.",
+  "harness_commit": "c9447ddcba283eaa365defc74704a22442906579",
+  "evidence_root": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/final-support-c9447dd/decode",
+  "blocking_findings": [],
+  "raw_artifacts": {
+    "decode-attempt-started.json": {
+      "bytes": 376,
+      "sha256": "25c2abfc239f85b0c437b0da82362eabb1c6a37a59ce82e4e28dd7a1a35c8395"
+    },
+    "final-result.json": {
+      "bytes": 2461,
+      "sha256": "8c4ea837154cf51940404467b81181489e9dd9617b998ff7f7f63a8a9e05ca8a"
+    },
+    "resource-admission.jsonl": {
+      "bytes": 32743,
+      "sha256": "ab0c1521a3e06b8d04efda0c6602b3a89ac2e14e78033ff7f0e5f96aaa1ccace"
+    },
+    "run-contract.json": {
+      "bytes": 1471,
+      "sha256": "0ac5719aedd74260eceb5e5da8f6a36d9b4d63617e61847cf8a5530a6bf6be39"
+    },
+    "run/results.json": {
+      "bytes": 242191,
+      "sha256": "d09f77f3fc781f3811b0ba39bdda5b25df1cd4f7bd762b94362a77aa2d79af43"
+    },
+    "run/guest/run-contract.json": {
+      "bytes": 1449,
+      "sha256": "4676626d1061e6cd7090b560f952a974a584f8ea9e6218378b7902294b93bd4f"
+    },
+    "run/guest/results.json": {
+      "bytes": 161516,
+      "sha256": "86acd940d7a252f5a1247e12a362c0ae71de9a808dd67ccc837a9ae7fa95fa27"
+    },
+    "run/guest/phases.jsonl": {
+      "bytes": 265486,
+      "sha256": "ca8d16d1e943ad068cf33fcdd762b6ce3f9e895a1b34a3dbfe83cca170c17b89"
+    },
+    "run/guest/provenance.json": {
+      "bytes": 26328,
+      "sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407"
+    },
+    "run/guest/shape-decoded.safetensors": {
+      "bytes": 104148612,
+      "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861"
+    }
+  },
+  "source_provenance": {
+    "qualification_path": "docs/compatibility/amd-brick-final-support-evidence/qualification.json",
+    "qualification_sha256": "f9e0bed3c765900f426758768a3b56f10670acf6fc356d7e92a0b836291925b6",
+    "all_21_qualified_source_bindings_current": true,
+    "contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+    "host_and_guest_contract_semantically_equal": true,
+    "profile": "brick-1957891-v1",
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "input_sha256": {
+      "shape-latent-denormalized.npy": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808",
+      "coords.npy": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c"
+    },
+    "original_model_source_files": 97,
+    "all_model_source_identities_equal_prior_authentic_resume": true,
+    "native_binary_sha256": "91f66fa2c0f3567cee71246257bea8eb0fe5af9b6c70617d3c5894aa9f103f01",
+    "native_bindings": 18,
+    "native_import": "PASS",
+    "CPU_decoder": "PASS",
+    "strict_load_entries": 292,
+    "missing_keys": 0,
+    "unexpected_keys": 0,
+    "roundtrip_verified": true,
+    "verified_checkpoint_precision": {
+      "F16": 216,
+      "F32": 76
+    },
+    "runtime_precision": {
+      "BF16": 216,
+      "F32": 76
+    },
+    "runtime_F16_to_BF16_changes": 216,
+    "checkpoint_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "checkpoint_note": "Checkpoint identity is bound to authenticated prior payload identity, preserved header/metadata and actual strict per-tensor loader verification; reviewer did not reread or deserialize weights.",
+    "TunableOp_enabled": false,
+    "TunableOp_tuning": false,
+    "TunableOp_record_untuned": false,
+    "TunableOp_verified_at": [
+      "after_torch_import",
+      "pre_gpu"
+    ],
+    "driver_helper_inactive": true,
+    "policy_rejected_calls": 0
+  },
+  "completed_execution": {
+    "forward_calls": 1,
+    "phase_records": 570,
+    "neural_forward_entries": 1,
+    "neural_synchronized_events": 1,
+    "convolutions": 40,
+    "unique_convolution_sites": 40,
+    "native_map_entries": 5,
+    "native_map_host_returns": 5,
+    "native_map_rows": [
+      4430,
+      21391,
+      97313,
+      438684,
+      1957891
+    ],
+    "large_tiled_sites": [
+      {
+        "site": "blocks.2.8.conv2",
+        "entries": 14,
+        "returns": 14,
+        "rows": 438684,
+        "covered_rows": 438684,
+        "last_tile_rows": 12700
+      },
+      {
+        "site": "blocks.3.0.conv",
+        "entries": 14,
+        "returns": 14,
+        "rows": 438684,
+        "covered_rows": 438684,
+        "last_tile_rows": 12700
+      },
+      {
+        "site": "blocks.3.1.conv",
+        "entries": 14,
+        "returns": 14,
+        "rows": 438684,
+        "covered_rows": 438684,
+        "last_tile_rows": 12700
+      },
+      {
+        "site": "blocks.3.2.conv",
+        "entries": 14,
+        "returns": 14,
+        "rows": 438684,
+        "covered_rows": 438684,
+        "last_tile_rows": 12700
+      },
+      {
+        "site": "blocks.3.3.conv",
+        "entries": 14,
+        "returns": 14,
+        "rows": 438684,
+        "covered_rows": 438684,
+        "last_tile_rows": 12700
+      },
+      {
+        "site": "blocks.3.4.conv1",
+        "entries": 14,
+        "returns": 14,
+        "rows": 438684,
+        "covered_rows": 438684,
+        "last_tile_rows": 12700
+      }
+    ],
+    "large_tile_entries": 84,
+    "large_tile_returns": 84,
+    "final_tile_entries": 60,
+    "final_tile_returns": 60,
+    "final_last_tile_rows": 24579,
+    "all_tile_ranges_paired_contiguous_and_complete": true,
+    "C2S_completed": 8,
+    "parent_rows": [
+      4430,
+      21391,
+      97313,
+      438684
+    ],
+    "learned_children": [
+      21391,
+      97313,
+      438684,
+      1957891
+    ],
+    "C2S_calls_per_level": 2,
+    "mask": "Authentic strict-positive learned masks; exact parent/child order and original initial coordinates verified by worker, host and separate CPU artifact reader.",
+    "applicable_final_cap": 1957891,
+    "generic_intermediate_row_limit": 1000000,
+    "generic_limit_note": "Fourth-stage journal over_row_limit diagnostics refer to the generic intermediate bound; bounded_fourth_support and authenticated qualified_final_row_limit=1957891 govern this stage.",
+    "large_patch_restored": true,
+    "final_patch_restored": true
+  },
+  "genuine_output": {
+    "rows": 1957891,
+    "features_shape": [
+      1957891,
+      7
+    ],
+    "features_dtype": "F32",
+    "coordinates_shape": [
+      1957891,
+      4
+    ],
+    "coordinates_dtype": "I32",
+    "subdivision_logits_dtype": "BF16",
+    "tensors": 10,
+    "finite": true,
+    "payload_bytes": 104125380,
+    "header_bytes": 23224,
+    "file_bytes": 104148612,
+    "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "worker_readback_verified_before_release": true,
+    "independent_host_tensors_verified": true,
+    "separate_CPU_verification_receipt": "docs/compatibility/amd-brick-neural-completion-evidence/artifact-verification.json",
+    "separate_CPU_verification_sha256": "bd89db799671b8fbde8c4e9e96a39aefab6b984baaa062ccfce199eb16794945",
+    "separate_CPU_reader_pass": true,
+    "copy_immutability_verified": true,
+    "original_coordinate_linkage": true,
+    "all_ten_mappings_closed": true
+  },
+  "measured_resources": {
+    "peak_field_paths": [
+      "run/guest/results.json:memory_peak.allocated",
+      "run/guest/results.json:memory_peak.reserved"
+    ],
+    "Torch_peak_allocated_bytes": 3354263040,
+    "Torch_peak_reserved_bytes": 4389339136,
+    "hook_memory_samples": 547,
+    "maximum_hook_sampled_allocated_bytes": 2073911808,
+    "maximum_hook_sampled_reserved_bytes": 4389339136,
+    "minimum_hook_sampled_device_free_bytes": 10225041408,
+    "peak_scope": "Torch allocator peaks, separate from hook samples. No whole-device peak including opaque driver allocations is inferred.",
+    "initial_device_free_bytes": 14772154368,
+    "allocator_cap_bytes": 12884901888,
+    "initial_device_free_floor_bytes": 13958643712,
+    "device_free_reserve_bytes": 2147483648,
+    "opaque_headroom_bytes": 1073741824,
+    "admission_records": 200,
+    "all_admitted": true,
+    "minimum_allocator_predicate_margin_bytes": 4051069327,
+    "minimum_device_free_predicate_margin_bytes": 4726229391,
+    "cache_release_enabled": true,
+    "cache_release_attempts": 0,
+    "host_resource_records": 137,
+    "minimum_host_RAM_bytes": 13792145408,
+    "host_RAM_floor_bytes": 12884901888,
+    "minimum_D_free_bytes": 74264416256,
+    "D_free_floor_bytes": 53687091200,
+    "resource_rejections": 0
+  },
+  "measured_deadlines": {
+    "synchronized_forward_seconds": 79.36611756799999,
+    "GPU_stage_seconds": 87.774342556,
+    "GPU_deadline_seconds": 240,
+    "native_gate_to_CPU_entry_seconds": 13.606711081,
+    "native_deadline_seconds": 60,
+    "CPU_entry_to_GPU_entry_seconds": 12.624457050999997,
+    "CPU_deadline_seconds": 120,
+    "guest_authorized_to_finished_seconds": 114.02898514200001,
+    "authorised_worker_deadline_seconds": 430,
+    "outer_command_deadline_seconds": 450,
+    "host_supervisor_elapsed_seconds": 140.63999999999942,
+    "host_acceptance_deadline_seconds": 480,
+    "host_acceptance": "Adapter PASS follows its unchanged complete-host deadline check; supervisor elapsed excludes later independent host acceptance work."
+  },
+  "cleanup": {
+    "worker_returncode": 0,
+    "Torch_initial": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "Torch_release": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "GPU_input_output_tensors_collected": true,
+    "CPU_model_collected": true,
+    "CPU_parameters_collected": true,
+    "CPU_component_collected": true,
+    "workspace_clear_calls": 1,
+    "Job_grace_empty": true,
+    "Job_active_before_cleanup": 0,
+    "Job_active_after_cleanup": 0,
+    "forced_Job_cleanup": false,
+    "owned_tree_exit_verified": true,
+    "named_distro_termination_returncode": 0,
+    "observer_healthy": true,
+    "periodic_observer_captures": 29,
+    "periodic_capture_failures": 0,
+    "reported_driver_events": 0
+  },
+  "limits": [
+    "PASS applies to this one genuine neural decode and saved complete tensor artifact. No retry or additional inference is covered.",
+    "No mesh extraction, surface/topology quality, textures/materials, GLB export or end-to-end application Generate flow is established.",
+    "Future mesh extraction remains a separate bounded CPU gate; unchanged converter row allowance alone does not bound actual face count or process peak."
+  ],
+  "decision": "Saved raw evidence and independent CPU artifact verification support neural completion PASS with unchanged qualified source, safety controls and natural cleanup.",
+  "final_document_review": {
+    "classification": "CLEAR",
+    "report_path": "docs/compatibility/amd-brick-neural-completion.md",
+    "report_sha256": "8ce8bab3f8b93ee3e4f5d13d349618c92ed4f6f599fd7c285986a0dd438fe1e1",
+    "derived_result_path": "docs/compatibility/amd-brick-neural-completion-evidence/execution-result.json",
+    "derived_result_sha256": "ae490544bba80908b0c8db39b211648d729c96ccf898f1ecd25c8262f27fdc66",
+    "review": "Report and derived result accurately distinguish this genuine neural PASS from unperformed mesh, texture/material, GLB and frontend work. Exact counters, resource scope and natural cleanup are supported by bound raw evidence. Coordinate dtype and all 76 preexisting heads including main are stated without ambiguity.",
+    "resolved_wording": [
+      "Four pairs comprise original BF16 subdivision logits and I32 coordinates.",
+      "All 76 preexisting branch heads include main; no additional main head is counted."
+    ],
+    "new_execution": false,
+    "formatting_review": "Report formatting only: removed two trailing Markdown spaces after the SHA line and added a blank line before File. No semantic, source or raw-evidence change; report digest updated to the root-provided final value."
+  }
+}

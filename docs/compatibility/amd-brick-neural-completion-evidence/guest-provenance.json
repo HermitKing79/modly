@@ -1,0 +1,332 @@
+{
+  "provenance": {
+    "source": {
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/__init__.py": "b953c8a82e54705708a115dd0e53b7ca5ccf45b71517463a5e9b8e0de318ee43",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/components.py": "7954db0d5237afdb8d59b2c277325e7845d0897f5122515377fa2dee4a0f0db8",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/flexi_dual_grid.py": "b365e942258255fe3e4d1d43eaf7320e4fbc415d3186600b44b3f75ee826debc",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/sparse_structure_latent.py": "c3da42606cffbac6b18c0e53cc9140bb59fb8b4e3a1815c9ca1621d6ca6e81fb",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/sparse_voxel_pbr.py": "ed7ebbcc30076f706704d45916f1e14a1de6af5ddb5dd0983e9aeec71a3a76c5",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/structured_latent.py": "da7db26805b9aaccd179dae84e0faaa0d4a58aff4418fca48cfc4e00ea42bcf7",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/structured_latent_shape.py": "8d928918d2c3402ab856e3f4fd63007f14039f3fd508fd1bf9481cc6246c0dda",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/structured_latent_svpbr.py": "4b960a362eb6008fbb99dfcbec3bb00543f0ebcd4f1ce96f1bed3e6e3f8fcebe",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/datasets/__init__.py": "d6fee0dfb41d1ba93c7d1a8c7282f600ef7e5afddcddf46c935ca4cb1d45350a",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sparse_elastic_mixin.py": "17b85bc281172d72fec8944821693819643df7eae11713b2a87eed142c09c833",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sparse_structure_flow.py": "858d9b076cc71f6955bb292ea394d620ce6f6f53cebb53bff2116a8c5cec026e",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sparse_structure_vae.py": "1370846d2d39630dfe3d926bf207f562126c77301f48e058d2e6cbc870f7f857",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/structured_latent_flow.py": "3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/__init__.py": "07b4379d46eb68cf138bf6d36256ea34a59981906eae854f8e28a39bf4b60683",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/image_feature_extractor.py": "a803e125aa47d015faa0acb0aeed2e6a01133d7f01e3b8603ecc92885e4c080f",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/norm.py": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/spatial.py": "4a029d5077bb0a5412ee5eceb8de21d3b4c8920a8f53d477441c3c3219a0da3c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/utils.py": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/base.py": "1081dfc48e112d00653ae45f3ed2a3bbee3d82e3926e701c059978e519edd917",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/trellis2_image_to_3d.py": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/trellis2_texturing.py": "14a6f8ee2bca120f76e0112f2733cd250764637709ff642fd6846ae97c63b1e6",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/__init__.py": "88946215d43bc6e8c095b40dc3de9ea76bb4fb4d175d0228829ec865bb790ba9",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/renderers/mesh_renderer.py": "b09c89073e1f3c80812af6ff674a7a53e2964f04bbfbb692c6708b6b2acb9c94",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/renderers/pbr_mesh_renderer.py": "ab33ba6d04b2d1b7e518b90372b242cbe00ad9043be66a22e681261b04de7872",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/renderers/voxel_renderer.py": "8850ca41baa6570f9926ea86f9c6d8f4e5b38077cc437d83f32012156e12efdc",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/renderers/__init__.py": "53d28a650ef53022270d4a6e9e4a8f66714b1cf8edef0b1d7303e1eb8290a576",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/representations/__init__.py": "861585d0d741e2cb592cef0d252ccc08fe414356fb44f7e84a79185eed841d28",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/basic.py": "3ccae80d1eff630d920e26ad5326b2cf47e046e28c1a645da3620f82859fd291",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/utils.py": "66a7d6a13b626a8e170e97881f94b93f28be7796c0c3ba429201a59a11a95e24",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/__init__.py": "89081e15c64c61328300ad1e8a10024d300431359ffad47aab38115d45ba7908",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/camera.py": "a1d9610954d059d5ac1a0c9e2084084abfe781ad5853d3e0e43e68e9d775142c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/data_utils.py": "8868ed0cf40af75e3eaf68a4b5912b7220ed884b063b8058a41f8c53deb393a1",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/dist_utils.py": "0e91c7c5b67c229cf48d12eb32b50f804dd77e6e16fe85544c93c1f17f3fc5fc",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/elastic_utils.py": "eb743b8015232bcc67e33104a4c8d212d41664dbb9a6ea10866dc499f229bc30",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/general_utils.py": "a6d73f04bd00759e3922fa1adc032aa608332534e4aea12dfd2cc51ffd410353",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/grad_clip_utils.py": "c6058be0fdc81dd10da9d88945bad4820f7a35afa2699262b179d81a6686754d",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/loss_utils.py": "0614d65eb03eb43e14263080e8c65f8e4b0592c4fcff9a2edbd7ff541bf4d02d",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/mesh_utils.py": "36d561555bfcc4c41ea123b6d37298fff8d0ec7b6f70fc62c1956f50cb75cec5",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/random_utils.py": "675c2f4f3047a0145d18feabbcb6b0028b39177a3fc7b82b48d4dbd8f0107aca",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/render_utils.py": "51c9d745b7c01dbf2e2ea14280eaca145c1ce500321cef1dac0261212cea2d4e",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/vis_utils.py": "5d233119c5d765d0fce62ea11187baff5139f546633dc06d5fb8b43fdd245697",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sc_vaes/fdg_vae.py": "1d267cdca119eb619674dc87bfccd8c5a1d90288739e2b8e08e6f497ac14ce9c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/models/sc_vaes/sparse_unet_vae.py": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/config.py": "7ac23c43e33ec08946804ce912b2caadf39c3e21c1fd0076664e72c5aea2be70",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/full_attn.py": "21a2d3c9bc4a80c72db23b4291d5fb062bdf7e5b8f1570cd9ba2cee6672e2ba6",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/modules.py": "30935ff98c4a9120d866f6bd1c171153c3b3077894032009aba11bc32353a733",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/proj_attention.py": "d3c2a8749c8efab5222406c56ed10539ea442f4dd5543ec546fc4d4bbdc3a6c9",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/rope.py": "5d5b1821f3743aa824c9f3b4db6121c18d14d6c8a72d42238b3944feefd829b6",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/attention/__init__.py": "68d1195489c1d4d9790d3bd5788877173eb2713ed8d61e3e9ab6448f2ae4b055",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/basic.py": "e867e429b9c2fe154000725596b626273fb567025b9c232f3cc79140f00605b7",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/config.py": "525ed9a516bc9576712cce9896a52a0ec9667ba7dc4aa13f24ee6a83353cb722",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/linear.py": "05cb619ff9cceb27674fc7bbb5aa2bcba93d1bf328d1f3340bb98c0f1240b413",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/nonlinearity.py": "790b4b85edc0ab1a9eb9cb9fbd58c9ac0232ec25a3d9b4bf7e6635ba2de24097",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/norm.py": "6320c2ed1e61ae9d6611cd9d8e14ab7b080546917c373385884febf009ef316f",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/__init__.py": "7bb5f88b769568fc59fd07d208d44c58d2a3a7e22609da6dcb8de573fe1138e7",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/transformer/blocks.py": "bee5ac02e5b054dbc151ec54658489e9e512d5bba627c31b37f11698663f9540",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/transformer/modulated.py": "7ad71a73e73025a4fc19b215cc028c891f9bb7c3b989842eeba9c4ee4e92e901",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/transformer/__init__.py": "9838f0c93475b59778ff055d21372db80a5307d121b18acc328e25c446e97283",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/full_attn.py": "045aabe973d405cb16f8a1a71c5b4d8f76988c99b4e333c29bbc12d51d0cf4b1",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/modules.py": "2c45267b719b26fbaee6af81b1655b7adfa7a62ba114183ca179a934b5101727",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/proj_attention.py": "bc8000712a1c95f3c2b6fac73f509c3270bac496012edd3948b6f0e2b53f56fd",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/rope.py": "298572025ccd6e711afd1bcd1851145001757937b28cb6cc97a36887ba3ae86b",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/windowed_attn.py": "a886470d299fcfdf7c978c81dae83661ee1498f541165a47165e744202b9aea3",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/attention/__init__.py": "0a6976e9088651452a3518d6865ce48fe9ec311a7e27df1f5221370d9228d34d",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/config.py": "ed6505a70dcc94785ce6d8f2e9d40dff3a0edc39e5d2bceea60128f9ed48332b",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/conv.py": "a1e9f62fdf70f5443967a81b4ca99c0c863d20b063b44ffe264b0fd68bf3e5e3",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/conv_flex_gemm.py": "281fa1c8449732a94d99a24facb437600ab08d8185214d8434008456d56b83d8",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/conv_spconv.py": "a3350f019adb1b0f4d6e36b910837252c277900f0ed85806db42807bf2860202",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/conv_torchsparse.py": "4a75b51a6fef42b740c15767b6b0b3e7e4c292234bb1a8f6147889e294f8e5ca",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/conv/__init__.py": "da50648b5c8975ab8eb9574df2582d5c0dc03ddc102d301052003ef65af399e2",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/spatial/basic.py": "0d3c0720c522a29d48c413c6f4fec91e6387909ca6d5c7d7054e5107678779fe",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/spatial/spatial2channel.py": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/spatial/__init__.py": "088f42726f900354b9fae61b9342a52e4a3ee39ad7cf941d81596d11062957ed",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/transformer/blocks.py": "e8b64d7029fd81e6a291743afd18006dad979fb9dd5740948d59b966214dc626",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/transformer/modulated.py": "68fcb53cde091434e6cce1318fe43a91104bf9c83047b5526e190bbf303e4325",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/transformer/__init__.py": "9838f0c93475b59778ff055d21372db80a5307d121b18acc328e25c446e97283",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/rembg/BiRefNet.py": "ef7f34ac7387af5e6bdc91707b7c6bc203851f8576e8a5e681124918b1db84a8",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/rembg/__init__.py": "141567eceee1c12c9241bcea1cfa5a6c352a888d3e6946405abaa52ed4e4e271",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/samplers/base.py": "10bc216dc255e64746e51d929fc66d88efa7e3763e48a52a4fae3722d1e01869",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/samplers/classifier_free_guidance_mixin.py": "ebc71800c924c339169cdf5710784e0530f2f0893d694a185d7c90ba58ebd15c",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/samplers/flow_euler.py": "03b633044d72c173e3c59d70b39278d4a793b946fb51384ca7c05cfc4f3e52b5",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/samplers/guidance_interval_mixin.py": "0fda15c9f30a8bd6307deeffb53805a570f946b0e461d3629401e805b69092c2",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/samplers/__init__.py": "81174e88221aea4b3d078846cba5c01f45d885ee2ae2240974ec28badc88a076",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/representations/mesh/base.py": "c950a25bb65fc397c815f6739793be8318e00cfe541f6ed83a3ed7e3d5b7a550",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/representations/mesh/__init__.py": "8c029bd5340eccdb86b43df2070e078b80f642177a2134f1b9996f756fe40722",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/representations/voxel/voxel_model.py": "a0fedc3d7f870139236ff17ff8dbf29392dcb006930de7b94a280f6087a6ce37",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/representations/voxel/__init__.py": "f3282f1059f0aa66d8490b7c37b1eef7079c94eef9fbe4c2d8e4ed730ab495dd",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/flow_matching.py": "7819c20703d11d896d8f97eeaa3e7327f8948309def8e9152eda8188a4fff7d3",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/sparse_flow_matching.py": "69bdf8fd517aeaee0a30edc15a6cc41f69050936296da164539a779520f50a70",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/vae/pbr_vae.py": "49750bdbc46a86fcdb13accef548164c4589da3de2fe16d95e5d53df73ed2380",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/vae/shape_vae.py": "7cec7bb181f7508e2ae2b998f3fe649a41812f1852a43c64b97bbcb2fca020a7",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/vae/sparse_structure_vae.py": "a616293d8c1d69646264cd83aba571bbc4087eafaf9193d42adf7dfe1118f518",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/mixins/classifier_free_guidance.py": "5f3a151d76dd37bed3a261aed84a721d99725b6aed7da8206b298c8d52c077b3",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/mixins/image_conditioned.py": "3e87113f2b4802d2547d13d35aa55f04863d255528166f5ad19441d1e4437fed",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/mixins/image_conditioned_proj.py": "79a6104fccb88f850733bd07a5315532c1b6ad9e52ae33ca5afe5d2952694226",
+      "/mnt/d/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/trainers/flow_matching/mixins/text_conditioned.py": "4bd667ff7a2e9930d795900e323114482390b865c919ae3214704f0737f5ded9"
+    },
+    "checkpoint_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "inputs": {
+      "tokens": 4430,
+      "features_shape": [
+        4430,
+        32
+      ],
+      "coordinates_shape": [
+        4430,
+        4
+      ],
+      "coordinate_order": "batch,D,H,W; preserved row order",
+      "bounds": [
+        [
+          4,
+          5,
+          0
+        ],
+        [
+          27,
+          26,
+          31
+        ]
+      ],
+      "payload_sha256": "ca6a479227a06b5b8419a07a01a04ef42e73634a61ae3c7d01d9babe28b2c9b9",
+      "coordinates_payload_sha256": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520",
+      "minimum": -22.984161376953125,
+      "maximum": 25.8400821685791,
+      "mean": -0.059162700779121905,
+      "standard_deviation": 5.668007069183546,
+      "finite": true,
+      "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+      "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+      "input_paths": {
+        "shape-latent-denormalized.npy": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-denormalized.npy",
+        "coords.npy": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-coordinates.npy"
+      },
+      "input_sha256": {
+        "shape-latent-denormalized.npy": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808",
+        "coords.npy": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c"
+      }
+    },
+    "input_file_sha256": {
+      "shape-latent-denormalized.npy": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808",
+      "coords.npy": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c"
+    },
+    "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "native_binary_sha256": "91f66fa2c0f3567cee71246257bea8eb0fe5af9b6c70617d3c5894aa9f103f01",
+    "algorithm": "explicit_gemm",
+    "BF16_policy": "216 body tensors after original strict F16/F32 verification",
+    "runtime": {
+      "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+      "distribution_version": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+      "git_version": "ff65f5bc672795c5e5033900ea0a0c4f8566c8cf",
+      "hip": "7.2.53211-e1a6bc5663",
+      "cuda": null,
+      "python": "3.12.3",
+      "prefix": "/opt/modly-wsl/venv",
+      "gpu_initialized_before": false
+    },
+    "forward_calls": 1,
+    "convolutions": 40,
+    "resolution": 512,
+    "mesh_extraction": false,
+    "final_convolution": {
+      "source_equivalent_row_chunking": true,
+      "rows": 1957891,
+      "tile_rows": 32768,
+      "chunks": 60,
+      "global_native_neighbor_map": true,
+      "global_input_indices_preserved": true
+    },
+    "final_support_profile": "brick-1957891-v1",
+    "large_convolutions": [
+      {
+        "site": "blocks.2.8.conv2",
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 128,
+        "tile_rows": 32768,
+        "chunks": 14,
+        "rows_completed": 438684,
+        "global_map_reused": false,
+        "completed": true
+      },
+      {
+        "site": "blocks.3.0.conv",
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 128,
+        "tile_rows": 32768,
+        "chunks": 14,
+        "rows_completed": 438684,
+        "global_map_reused": true,
+        "completed": true
+      },
+      {
+        "site": "blocks.3.1.conv",
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 128,
+        "tile_rows": 32768,
+        "chunks": 14,
+        "rows_completed": 438684,
+        "global_map_reused": true,
+        "completed": true
+      },
+      {
+        "site": "blocks.3.2.conv",
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 128,
+        "tile_rows": 32768,
+        "chunks": 14,
+        "rows_completed": 438684,
+        "global_map_reused": true,
+        "completed": true
+      },
+      {
+        "site": "blocks.3.3.conv",
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 128,
+        "tile_rows": 32768,
+        "chunks": 14,
+        "rows_completed": 438684,
+        "global_map_reused": true,
+        "completed": true
+      },
+      {
+        "site": "blocks.3.4.conv1",
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 512,
+        "tile_rows": 32768,
+        "chunks": 14,
+        "rows_completed": 438684,
+        "global_map_reused": true,
+        "completed": true
+      }
+    ]
+  },
+  "output": {
+    "rows": 1957891,
+    "features_shape": [
+      1957891,
+      7
+    ],
+    "coordinates_shape": [
+      1957891,
+      4
+    ],
+    "features_dtype": "torch.float32",
+    "coordinate_dtype": "torch.int32",
+    "coordinate_order": "[batch,D,H,W], original C2S parent/child order",
+    "subdivisions": [
+      {
+        "stage": 0,
+        "parents": 4430,
+        "selected_children": 21391,
+        "logits_dtype": "torch.bfloat16"
+      },
+      {
+        "stage": 1,
+        "parents": 21391,
+        "selected_children": 97313,
+        "logits_dtype": "torch.bfloat16"
+      },
+      {
+        "stage": 2,
+        "parents": 97313,
+        "selected_children": 438684,
+        "logits_dtype": "torch.bfloat16"
+      },
+      {
+        "stage": 3,
+        "parents": 438684,
+        "selected_children": 1957891,
+        "logits_dtype": "torch.bfloat16"
+      }
+    ],
+    "payload_bytes": 104125380,
+    "finite": true,
+    "feature_min": -120.37931823730469,
+    "feature_max": 55.420440673828125,
+    "feature_mean": -4.614968681844316,
+    "feature_std": 11.744506074449,
+    "path": "/home/modly/run-brick-final-support-c9447dd/geometry/shape-decoded.safetensors",
+    "verified": true,
+    "bytes": 104148612,
+    "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "tensor_payload_sha256": {
+      "features": "5eedc14f04267303cc9ac344270f7141c2c2d4a94e0c0510585928757a4b0c52",
+      "coordinates": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+      "subdivision_0_logits": "9c31de9c275fa78590743bb9ec7bf0accc3cab7f92e4f3096e99162d8963f07e",
+      "subdivision_0_coordinates": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520",
+      "subdivision_1_logits": "c519845ae44a8e30a83038de03578b7cecd8aaf2fcebdb6c1e437e20208a538a",
+      "subdivision_1_coordinates": "16ecc9780a85d722e83fdf52ed3841e7038a69d203f086a0524094a63f18a594",
+      "subdivision_2_logits": "6f74789f5076a42399ec6cf6048a792d1e4953fac3294597bceb717a74e965ba",
+      "subdivision_2_coordinates": "8f1c7d4bfb4f031965f2e095929fa592b394eb60841d02a786805e08f707d81d",
+      "subdivision_3_logits": "285f0adba1078694c3112a2ef8c0afbeb0779e951f65ffdaf48cd399cc524304",
+      "subdivision_3_coordinates": "ab09fb4a330c0a07aead43193aeec79e6ea9b1efa85c62aeb4ca810a0f79d19e"
+    },
+    "reader": "bounded stdlib tensor header/payload reader",
+    "readback_verified_before_release": true,
+    "host_verification_pending": true
+  },
+  "run_contract": {
+    "schema": "modly.amd.neural-run.v1",
+    "initial_count": 4430,
+    "input_paths": {
+      "shape-latent-denormalized.npy": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-denormalized.npy",
+      "coords.npy": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-coordinates.npy"
+    },
+    "input_sha256": {
+      "shape-latent-denormalized.npy": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808",
+      "coords.npy": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c"
+    },
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "output_directory": "/home/modly/run-brick-final-support-c9447dd/geometry",
+    "scratch_directory": "/home/modly/run-brick-final-support-c9447dd/scratch",
+    "repo_root": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof",
+    "maximum_final_rows": 1957891,
+    "maximum_intermediate_rows": 1000000,
+    "native_stage": "/home/modly/native-decoder-preparation-6dd94a85",
+    "host_evidence_directory": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/final-support-c9447dd/decode/run/guest",
+    "large_convolution_tiling": true,
+    "final_support_profile": "brick-1957891-v1"
+  }
+}

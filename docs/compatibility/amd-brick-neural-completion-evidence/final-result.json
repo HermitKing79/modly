@@ -1,0 +1,50 @@
+{
+  "classification": "PASS",
+  "supervisor": "QUALIFIED",
+  "copy_error": null,
+  "harness_commit": "c9447ddcba283eaa365defc74704a22442906579",
+  "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+  "independent_verification": {
+    "ten_tensors_verified": true,
+    "rows": 1957891,
+    "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "tensor_payload_sha256": {
+      "subdivision_2_logits": "6f74789f5076a42399ec6cf6048a792d1e4953fac3294597bceb717a74e965ba",
+      "coordinates": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+      "subdivision_3_logits": "285f0adba1078694c3112a2ef8c0afbeb0779e951f65ffdaf48cd399cc524304",
+      "subdivision_0_coordinates": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520",
+      "subdivision_1_coordinates": "16ecc9780a85d722e83fdf52ed3841e7038a69d203f086a0524094a63f18a594",
+      "subdivision_1_logits": "c519845ae44a8e30a83038de03578b7cecd8aaf2fcebdb6c1e437e20208a538a",
+      "features": "5eedc14f04267303cc9ac344270f7141c2c2d4a94e0c0510585928757a4b0c52",
+      "subdivision_0_logits": "9c31de9c275fa78590743bb9ec7bf0accc3cab7f92e4f3096e99162d8963f07e",
+      "subdivision_3_coordinates": "ab09fb4a330c0a07aead43193aeec79e6ea9b1efa85c62aeb4ca810a0f79d19e",
+      "subdivision_2_coordinates": "8f1c7d4bfb4f031965f2e095929fa592b394eb60841d02a786805e08f707d81d"
+    },
+    "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "independent_of_worker": true,
+    "model_or_GPU_imported": false
+  },
+  "allowlisted_copy": {
+    "run-contract.json": {
+      "bytes": 1449,
+      "sha256": "4676626d1061e6cd7090b560f952a974a584f8ea9e6218378b7902294b93bd4f"
+    },
+    "phases.jsonl": {
+      "bytes": 265486,
+      "sha256": "ca8d16d1e943ad068cf33fcdd762b6ce3f9e895a1b34a3dbfe83cca170c17b89"
+    },
+    "results.json": {
+      "bytes": 161516,
+      "sha256": "86acd940d7a252f5a1247e12a362c0ae71de9a808dd67ccc837a9ae7fa95fa27"
+    },
+    "provenance.json": {
+      "bytes": 26328,
+      "sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407"
+    },
+    "shape-decoded.safetensors": {
+      "bytes": 104148612,
+      "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861"
+    }
+  }
+}
