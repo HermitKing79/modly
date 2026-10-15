@@ -1,0 +1,49 @@
+{
+  "reviewer": "texture_decode_review independent agent",
+  "reviewed_utc": "2026-10-15T08:18:58.6695221Z",
+  "static_review": "PASS",
+  "execution_disposition": "BLOCKED before WSL",
+  "findings": [],
+  "readiness": {
+    "required_prelaunch_RAM_bytes": 21474836480,
+    "delay_seconds": 120,
+    "window_seconds": 300,
+    "sample_count": 37,
+    "passing_samples": 0,
+    "consecutive_passing_samples": 0,
+    "final_utc": "2026-10-15T09:17:35.000799+01:00",
+    "final_available_RAM_bytes": 20155133952,
+    "final_deficit_bytes": 1319702528,
+    "new_marker_present": false,
+    "new_run_present": false,
+    "permanent_field_entries": 0
+  },
+  "minimal_change_review": [
+    "host_admission now appends, flushes and fsyncs actual RAM and D-free values, both unchanged runtime floors, failed-condition names, stage hint and UTC before raising.",
+    "The stage hint is best effort: malformed or incomplete last guest JSON and a missing phase key fall back to guest-stage-not-yet-durable, preserving resource sampling.",
+    "Runtime floors remain 12 GiB host RAM and 50 GiB D-free. Three 20 GiB readings after the two-minute wait and a fresh 20 GiB pre-marker check add admission requirements.",
+    "New evidence and scratch paths are isolated. Copied artifact_io derives the new attempt marker from its own file location; copied output_owner resolves the identical copied attestation and Windows query script.",
+    "Preflight reuses the original actual CPU qualification and fixture records explicitly and checks their original source manifest. No deterministic changed-path mismatch found.",
+    "Eight preserved computation/writer/ownership files are byte-identical to the qualified owner evidence. Existing native, dtype, guide, tiling, containment and output readback behavior remains unchanged."
+  ],
+  "focused_test_evidence": "Existing resource-tests-green.txt records four passing focused tests for RAM-only, disk-only, both failures and exact unchanged floors. Reviewer did not execute tests.",
+  "disposition": "The recorded five-minute readiness window failed to produce any qualifying sample. No new WSL or GPU launch is authorized by this failed gate; the permanent texture field remains empty.",
+  "reviewer_actions": "Read-only source/result/hash inspection plus this JSON only; no tests, WSL/GPU commands, model imports or implementation edits.",
+  "preserved_sha256": {
+    "neural.py": "5d3301c00fb29a51c86e861e63d097d35096de7d769d4d407e745fd364525647",
+    "runtime.py": "935d431c107ec6ea856bdccff9d1c88298403c7e9afe07232b22e74525bf0e10",
+    "admission.py": "99c1078cbcb4b026feeec3f085976586f1118812bdd3d4b5fbe0e76c47cbbbbe",
+    "chunked_final.py": "707d73d7331a4896bffeb851c2aa144175841cd4752a4497760d9f6a44ea2d39",
+    "artifact_io.py": "4a1d55f77eb3e45e115592e17e0fa4948bb58278fd5a7bf71af561c1ed9543f4",
+    "output_owner.py": "02d862b93ad08edb7830e49169fe6adc9921bebd2755cd94cbce2179e3bf9648",
+    "owner-attestation.json": "f5209e299c5f50d14465269f2b933ea0e5023b4690bf2b9501a29d5931b9a88e",
+    "windows_owner.ps1": "6849a3ac5375cc1693ce306ea28fa4ce9bed32305b8926bc2f5e6034c75f1a94"
+  },
+  "evidence_sha256": {
+    "decode.py": "ad319358673e01165d5680591aeaacbfd667296d02dcd0035d95d8d9ad0042fc",
+    "resource-tests.py": "57cb4e71ef0b780302c8dfd7b0d007fc6d2e97a2e0a5a2b7890ef4ea6f42bd28",
+    "resource-tests-green.txt": "4f7f0f68795c53990489ea983b542863e9f9cf3b3c76564e4bde805f460cc71a",
+    "ram-readiness.json": "3818fe5f0ab6c6b3e90bac823dfc2756ca49f271668da120e0f5ef5dd0d1a35e",
+    "ram-readiness-samples.jsonl": "ef99cb8d0a006f357c4f25271caed2eadda4ee6d07e6401c78aaa83144229a6c"
+  }
+}

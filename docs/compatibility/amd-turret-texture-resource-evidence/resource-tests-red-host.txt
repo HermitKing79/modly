@@ -1,0 +1,57 @@
+test_both_failures_are_durable (__main__.ResourceTests.test_both_failures_are_durable) ... ERROR
+test_disk_failure_is_durable (__main__.ResourceTests.test_disk_failure_is_durable) ... ERROR
+test_exact_runtime_floors_still_pass (__main__.ResourceTests.test_exact_runtime_floors_still_pass) ... ERROR
+test_ram_failure_is_durable (__main__.ResourceTests.test_ram_failure_is_durable) ... ERROR
+
+======================================================================
+ERROR: test_both_failures_are_durable (__main__.ResourceTests.test_both_failures_are_durable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-resource-evidence\resource-tests.py", line 28, in test_both_failures_are_durable
+    def test_both_failures_are_durable(self):self.exercise(12*m.GiB-1,50*m.GiB-1,['available_windows_ram','D_free_space'])
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-resource-evidence\resource-tests.py", line 16, in exercise
+    with self.assertRaisesRegex(RuntimeError,'Host RAM/D-disk floor failed'):m.host_admission('native-qualified-CPU-preparation-entry')
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: host_admission() takes 0 positional arguments but 1 was given
+
+======================================================================
+ERROR: test_disk_failure_is_durable (__main__.ResourceTests.test_disk_failure_is_durable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-resource-evidence\resource-tests.py", line 27, in test_disk_failure_is_durable
+    def test_disk_failure_is_durable(self):self.exercise(12*m.GiB,50*m.GiB-1,['D_free_space'])
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-resource-evidence\resource-tests.py", line 16, in exercise
+    with self.assertRaisesRegex(RuntimeError,'Host RAM/D-disk floor failed'):m.host_admission('native-qualified-CPU-preparation-entry')
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: host_admission() takes 0 positional arguments but 1 was given
+
+======================================================================
+ERROR: test_exact_runtime_floors_still_pass (__main__.ResourceTests.test_exact_runtime_floors_still_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-resource-evidence\resource-tests.py", line 29, in test_exact_runtime_floors_still_pass
+    def test_exact_runtime_floors_still_pass(self):self.exercise(12*m.GiB,50*m.GiB,[])
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-resource-evidence\resource-tests.py", line 17, in exercise
+    else:m.host_admission('pre-marker')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: host_admission() takes 0 positional arguments but 1 was given
+
+======================================================================
+ERROR: test_ram_failure_is_durable (__main__.ResourceTests.test_ram_failure_is_durable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-resource-evidence\resource-tests.py", line 26, in test_ram_failure_is_durable
+    def test_ram_failure_is_durable(self):self.exercise(12*m.GiB-1,50*m.GiB,['available_windows_ram'])
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-resource-evidence\resource-tests.py", line 16, in exercise
+    with self.assertRaisesRegex(RuntimeError,'Host RAM/D-disk floor failed'):m.host_admission('native-qualified-CPU-preparation-entry')
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: host_admission() takes 0 positional arguments but 1 was given
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.006s
+
+FAILED (errors=4)

@@ -1,0 +1,28 @@
+{
+  "classification": "BLOCKED",
+  "cause": "20 GiB prelaunch Windows RAM requirement never met during five-minute window",
+  "samples": 37,
+  "minimum_RAM_bytes": 20155133952,
+  "maximum_RAM_bytes": 20467212288,
+  "final_RAM_bytes": 20155133952,
+  "required_prelaunch_RAM_bytes": 21474836480,
+  "final_shortfall_bytes": 1319702528,
+  "runtime_RAM_minimum_bytes": 12884901888,
+  "D_free_minimum_bytes": 53687091200,
+  "D_free_after_window_bytes": 75137884160,
+  "marker_reserved": false,
+  "production_worker_launched": false,
+  "GPU_forward_calls": 0,
+  "model_loads": 0,
+  "native_imports": 0,
+  "output_directory": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-owner-067f668\\field",
+  "output_directory_empty": true,
+  "checkpoint_SHA256": "97ea69addea2ecd9312910f5f548234665eef51c088386180b7cd5b258645e3c",
+  "computation_unchanged": true,
+  "CPU_tests": {
+    "ran": 4,
+    "passed": 4,
+    "broad_or_WSL_suite_repeated": false
+  },
+  "timestamp_utc": "2026-10-15T08:18:56.358453+00:00"
+}
