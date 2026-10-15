@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "assessment": "Independent static pre-execution review found no open blocking defects in the hash-pinned candidate.",
+  "reviewer": "texture_decode_review independent agent",
+  "reviewed_utc": "2026-10-15T02:26:54.6368640Z",
+  "checkout_head": "c9e4d3b3555fc3f35a998053592e13c476b60463",
+  "branch": "codex/amd-turret-texture-decoder",
+  "review_scope": "Static source review only; the reviewer did not import or execute Torch, model code, GPU/native libraries, WSL commands, or package changes.",
+  "implementation_sha256": {
+    "docs/compatibility/amd-turret-texture-decoder-evidence/decode.py": "e29925e169583dc5e8c9dcd0bd877b7a78ca125d4b0a7c213cee0093a19e9cd9",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/artifact_io.py": "1bffab73670ce95ebab62bcdb2baca4a5fbc7e1f23a13db03e216bc5edcabe8f",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/neural.py": "5d3301c00fb29a51c86e861e63d097d35096de7d769d4d407e745fd364525647",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/runtime.py": "935d431c107ec6ea856bdccff9d1c88298403c7e9afe07232b22e74525bf0e10",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/admission.py": "99c1078cbcb4b026feeec3f085976586f1118812bdd3d4b5fbe0e76c47cbbbbe",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/chunked_final.py": "707d73d7331a4896bffeb851c2aa144175841cd4752a4497760d9f6a44ea2d39",
+    "experimental/extensions/trellis2-amd/texture_decoder_loader.py": "409bf691bb3d7f3638d40cb46f02250111249af31f19a4377345da84ec2fb988",
+    "scripts/compatibility/amd_texture_decoder_inputs.py": "87bd6437412df561100b174e945c2fa040a9c02ee1ac2ea8c70a325b8f1a3d85",
+    "scripts/compatibility/amd_texture_field_artifact.py": "d3b3912ac484f5095e8e1ca287c2e3e3894437aa7ffa94e08f84cfdd9d335c6b",
+    "scripts/compatibility/amd_wsl_rocdxg_smoke.py": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2",
+    "scripts/compatibility/amd_wsl_native_import_policy.py": "8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd",
+    "scripts/compatibility/amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64",
+    "scripts/compatibility/amd_bounded_gpu_proof.py": "8910884b4d4bd433df654a8137586eb43711e37e97acfcf8462392ef4258dff4",
+    "experimental/extensions/trellis2-amd/strict_loader.py": "0a4b2aab6fb34a034be1725d4514d71f17c59376151b549ab631ebc8b5c8fc79"
+  },
+  "findings": [],
+  "resolved_findings": [
+    {
+      "severity": "important",
+      "location": "docs/compatibility/amd-turret-texture-decoder-evidence/decode.py:281",
+      "issue": "TorchVersion must be converted to an exact built-in str before the strict CPU artifact provenance validator.",
+      "resolution": "Current candidate uses str(torch.__version__); existing preflight static test covers the conversion and passed."
+    }
+  ],
+  "checks": [
+    "Launcher remains anchored to the unchanged base.SCRIPT helpers; exact candidate manifest, published commit, GO token, Windows Job attachment and health observations precede worker authorization.",
+    "Native import is byte-pinned before real checkpoint deserialization or GPU model placement; original texture checkpoint, configuration and source identities are selected without shape checkpoint reuse or alternate fallback.",
+    "284 original F16 payloads are strictly checked, followed by exact roundtrip widening of only 76 source F32 norm/projection parameters; the original 208 F16 body parameters remain unchanged.",
+    "Saved denormalized F32[3743,32] latent and original I32 coordinates are used; four original BF16 guides are reconstructed through exact uint16-byte views and strict greater-than-zero masks.",
+    "Production C2S pre/post hooks require exact live parent row order, original mask values, both expansions per stage, no cache bypass, and final geometry row equality for all 1842968 cells.",
+    "Original 40 convolution sites and five native global neighbor maps are retained; final convolution alone tiles 32768 output rows in 57 chunks, preserves full source indices, original weight layout and addmm/mm expression.",
+    "Admission retains the 13 GiB initial GPU floor, 12 GiB Torch allocator ceiling, 2 GiB device-free reserve, 1 GiB opaque headroom, live padded allocation plans, host RAM floor and fixed stage deadlines.",
+    "Output requires finite raw F32[1842968,6], unclamped F32 raw * .5 + .5, exact I32 geometry support, six channel statistics, provenance, payload hashes, standard safetensors roundtrip and independent bounded reader checks.",
+    "Permanent field/probe directory is outside all Git ancestors; actual CPU persistence probe passed. Host receipt is required while the worker is alive, repeated after clean termination, and acceptance also requires zero released Torch allocations and no forced Job cleanup.",
+    "Cleanup removes hooks, restores the original explicit-GEMM descriptor and native call boundary, clears sparse caches, drops guide/input/output references and verifies weakrefs before worker model/component release."
+  ],
+  "evidence_reviewed": {
+    "preflight_tests": "8 passed, returncode 0; reviewer inspected existing logs",
+    "texture_loader_tests": "10 passed, returncode 0; reviewer inspected existing logs",
+    "adjacent_loader_tests": "13 passed, returncode 0; reviewer inspected existing logs",
+    "chunk_tests": "11 passed; F16/F32 CPU comparison max_abs 0.0 on supplied fixtures; reviewer inspected existing evidence",
+    "persistence_preflight": "verified true; actual CPU host write/readback; outside-Git probe artifact SHA256 3440a70ea923641969fe81917b7e358d4e7996ef8d038183c4e45f1b203122ae"
+  },
+  "execution_conditions": [
+    "Coordinator must finish and preserve the focused CPU qualification evidence, including guide and field-writer results.",
+    "Candidate identities at execution must equal these reviewed implementation hashes; any implementation change requires review refresh.",
+    "One genuine guided forward remains conditional on fresh resource admission, unchanged artifact/checkpoint/source identities, exclusive unused attempt marker and all containment gates.",
+    "This pre-execution review establishes no GPU numerical result and no genuine texture-field completion; finite model output and durable independent readback must be established by the single authorized attempt."
+  ]
+}

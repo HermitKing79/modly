@@ -1,0 +1,12 @@
+test_all_eight_real_guided_expansions_with_production_hook_state (__main__.GuideHookTests.test_all_eight_real_guided_expansions_with_production_hook_state) ... ok
+test_exact_f16_and_pred_subdiv_false_are_required (__main__.GuideHookTests.test_exact_f16_and_pred_subdiv_false_are_required) ... ok
+test_memory_rejection_prevents_original_expansion (__main__.GuideHookTests.test_memory_rejection_prevents_original_expansion) ... ok
+test_original_convolution_weight_dtype_check_rejects_bf16_f32_and_wrong_bias (__main__.GuideHookTests.test_original_convolution_weight_dtype_check_rejects_bf16_f32_and_wrong_bias) ... ok
+test_permuted_child_rows_rejected_before_marking_operation_complete (__main__.GuideHookTests.test_permuted_child_rows_rejected_before_marking_operation_complete) ... ok
+test_permuted_parent_rows_and_changed_mask_are_rejected_before_admission (__main__.GuideHookTests.test_permuted_parent_rows_and_changed_mask_are_rejected_before_admission) ... ok
+test_repeated_unpaired_and_third_calls_and_new_second_mask_object_rejected (__main__.GuideHookTests.test_repeated_unpaired_and_third_calls_and_new_second_mask_object_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.444s
+
+OK

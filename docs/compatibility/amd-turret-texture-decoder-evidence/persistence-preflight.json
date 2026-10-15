@@ -1,0 +1,125 @@
+{
+  "verified": true,
+  "artifact_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-decoder-c9e4d3b\\probe\\texture-field.safetensors",
+  "metadata_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-decoder-c9e4d3b\\probe\\texture-field-metadata.json",
+  "metadata": {
+    "artifact_bytes": 880,
+    "artifact_file": "texture-field.safetensors",
+    "artifact_sha256": "3440a70ea923641969fe81917b7e358d4e7996ef8d038183c4e45f1b203122ae",
+    "channel_statistics": {
+      "features": {
+        "alpha": {
+          "max": 2.375,
+          "mean": 1.25,
+          "min": 0.125
+        },
+        "blue": {
+          "max": 2.0,
+          "mean": 0.875,
+          "min": -0.25
+        },
+        "green": {
+          "max": 1.875,
+          "mean": 0.75,
+          "min": -0.375
+        },
+        "metallic": {
+          "max": 2.125,
+          "mean": 1.0,
+          "min": -0.125
+        },
+        "red": {
+          "max": 1.75,
+          "mean": 0.625,
+          "min": -0.5
+        },
+        "roughness": {
+          "max": 2.25,
+          "mean": 1.125,
+          "min": 0.0
+        }
+      },
+      "raw": {
+        "alpha": {
+          "max": 3.75,
+          "mean": 1.5,
+          "min": -0.75
+        },
+        "blue": {
+          "max": 3.0,
+          "mean": 0.75,
+          "min": -1.5
+        },
+        "green": {
+          "max": 2.75,
+          "mean": 0.5,
+          "min": -1.75
+        },
+        "metallic": {
+          "max": 3.25,
+          "mean": 1.0,
+          "min": -1.25
+        },
+        "red": {
+          "max": 2.5,
+          "mean": 0.25,
+          "min": -2.0
+        },
+        "roughness": {
+          "max": 3.5,
+          "mean": 1.25,
+          "min": -1.0
+        }
+      }
+    },
+    "channels": [
+      "red",
+      "green",
+      "blue",
+      "metallic",
+      "roughness",
+      "alpha"
+    ],
+    "format": "modly-amd-texture-field-v1",
+    "payload_bytes": 256,
+    "provenance": {
+      "mode": "fixture",
+      "neural_generation": false,
+      "purpose": "CPU_ONLY_FIELD_PERSISTENCE_PROBE"
+    },
+    "tensors": {
+      "coordinates": {
+        "dtype": "I32",
+        "sha256": "044889f47ebea62f6a14864babefe5ee6352838e783557a14db9915d667bc87e",
+        "shape": [
+          4,
+          4
+        ],
+        "tensor_bytes": 64
+      },
+      "features": {
+        "dtype": "F32",
+        "sha256": "3a65ab77bf6ea66c9500bb3e0a7a275fb3f9efd161a98639504c6356991b53d6",
+        "shape": [
+          4,
+          6
+        ],
+        "tensor_bytes": 96
+      },
+      "raw": {
+        "dtype": "F32",
+        "sha256": "69143f1f9f2ffcf0b24e07c0d2246d629f42580b65cbc1d6dd009795efedcf49",
+        "shape": [
+          4,
+          6
+        ],
+        "tensor_bytes": 96
+      }
+    }
+  },
+  "torch_imported": false,
+  "GPU_initialized": false,
+  "output_root": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-decoder-c9e4d3b",
+  "output_space_bytes": 107634868224,
+  "host_write_and_readback": true
+}

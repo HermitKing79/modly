@@ -8,3 +8,11 @@
 /scripts/compatibility/test_amd_wsl_decoder_admission.py -text whitespace=cr-at-eol
 /scripts/compatibility/test_amd_wsl_native_decoder_preparation.py -text whitespace=cr-at-eol
 /scripts/compatibility/test_amd_wsl_native_import_policy.py -text whitespace=cr-at-eol
+
+# Preserve exact reviewed texture-decoder candidate bytes.
+/experimental/extensions/trellis2-amd/texture_decoder_loader.py -text whitespace=cr-at-eol
+/scripts/compatibility/amd_texture_decoder_inputs.py -text whitespace=cr-at-eol
+/scripts/compatibility/amd_texture_field_artifact.py -text whitespace=cr-at-eol
+/scripts/compatibility/test_amd_texture_decoder_inputs.py -text whitespace=cr-at-eol
+/scripts/compatibility/test_amd_texture_decoder_loader.py -text whitespace=cr-at-eol
+/scripts/compatibility/test_amd_texture_field_artifact.py -text whitespace=cr-at-eol

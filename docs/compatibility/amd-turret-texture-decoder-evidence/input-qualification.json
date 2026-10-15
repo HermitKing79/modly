@@ -1,0 +1,210 @@
+{
+  "verified": true,
+  "cpu_only": true,
+  "parent_rows": [
+    3743,
+    17015,
+    79169,
+    378891
+  ],
+  "child_rows": [
+    17015,
+    79169,
+    378891,
+    1842968
+  ],
+  "texture_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-turret-texture-4f845cd\\latent\\texture-latent.safetensors",
+  "texture_sha256": "5506c4d0199bef64423b41b8bed560e2b7def9d29c5bb1c3072c0ea31ee1ddc4",
+  "texture_sidecar_sha256": "5d1d79c35c8c25e1765cccf4edc678335ad0cde3bd51a68590f7d9412ffae1bc",
+  "geometry_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors",
+  "geometry_sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22",
+  "geometry_sidecar_sha256": "8f428dea1c98ffabbea24a1986d388094a29bb9c9123a3a0dc48a55f9229a625",
+  "sources": {
+    "trellis2/modules/sparse/spatial/spatial2channel.py": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c",
+    "trellis2/models/sc_vaes/sparse_unet_vae.py": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce"
+  },
+  "texture_tensors": {
+    "raw": {
+      "dtype": "F32",
+      "shape": [
+        3743,
+        32
+      ],
+      "tensor_bytes": 479104,
+      "sha256": "02fa82d4d9f34db37ca8b16a7b792216db10a8db9526861edd4c3f8e519ccc6f"
+    },
+    "denormalized": {
+      "dtype": "F32",
+      "shape": [
+        3743,
+        32
+      ],
+      "tensor_bytes": 479104,
+      "sha256": "be5dab9445d8a487d32d2f2f2e9fcd85f2d3514cc5f7474114d455d195314807"
+    },
+    "coords": {
+      "dtype": "I32",
+      "shape": [
+        3743,
+        4
+      ],
+      "tensor_bytes": 59888,
+      "sha256": "860095760acc7914d0378cadfa49ba4c6a368d5a65662061b8e1c4c792f0d7a5"
+    },
+    "noise": {
+      "dtype": "F32",
+      "shape": [
+        3743,
+        32
+      ],
+      "tensor_bytes": 479104,
+      "sha256": "8d08933ef581e63c44ef7f2a9423a4fcb842cab704577b28dfa07d56f344bcff"
+    }
+  },
+  "geometry_tensors": {
+    "features": {
+      "dtype": "F32",
+      "shape": [
+        1842968,
+        7
+      ],
+      "tensor_bytes": 51603104,
+      "sha256": "18b815aa4485eb9bc13c83c978108601f62dd7166179f93b2c6dc32efc1103bb"
+    },
+    "coordinates": {
+      "dtype": "I32",
+      "shape": [
+        1842968,
+        4
+      ],
+      "tensor_bytes": 29487488,
+      "sha256": "c87fa21d6f863aced647b48e0bb2edebe32523d36c742e350d39ccfea3fc0934"
+    },
+    "subdivision_0_coordinates": {
+      "dtype": "I32",
+      "shape": [
+        3743,
+        4
+      ],
+      "tensor_bytes": 59888,
+      "sha256": "860095760acc7914d0378cadfa49ba4c6a368d5a65662061b8e1c4c792f0d7a5"
+    },
+    "subdivision_1_coordinates": {
+      "dtype": "I32",
+      "shape": [
+        17015,
+        4
+      ],
+      "tensor_bytes": 272240,
+      "sha256": "724bebf177aecb3ce53b1aa84361413b026b0b3fe8e21090fe2440e67ae3b80b"
+    },
+    "subdivision_2_coordinates": {
+      "dtype": "I32",
+      "shape": [
+        79169,
+        4
+      ],
+      "tensor_bytes": 1266704,
+      "sha256": "eaedd56743bf2b12a5c601f69965e09411e22e482ed8cafc924a91d0cd5e205d"
+    },
+    "subdivision_3_coordinates": {
+      "dtype": "I32",
+      "shape": [
+        378891,
+        4
+      ],
+      "tensor_bytes": 6062256,
+      "sha256": "5bf32274aea29b704a31bf6c196c6a7c4979ea4f899005d0f4b093ada65f4cb7"
+    },
+    "subdivision_0_logits": {
+      "dtype": "BF16",
+      "shape": [
+        3743,
+        8
+      ],
+      "tensor_bytes": 59888,
+      "sha256": "b92f5e2b558ac8a1887bc3c7e643dad3f097364d8365431e29d5aa240128b1fe"
+    },
+    "subdivision_1_logits": {
+      "dtype": "BF16",
+      "shape": [
+        17015,
+        8
+      ],
+      "tensor_bytes": 272240,
+      "sha256": "afdd3fd7abe9d4b1a63ca8353afdc4885e6ce567f343bf5491c917ca135ffac6"
+    },
+    "subdivision_2_logits": {
+      "dtype": "BF16",
+      "shape": [
+        79169,
+        8
+      ],
+      "tensor_bytes": 1266704,
+      "sha256": "57f7b6e74c2d8482b2a3f2ddcb7be11d004840917ebcd48e1170b1bf760e5e0d"
+    },
+    "subdivision_3_logits": {
+      "dtype": "BF16",
+      "shape": [
+        378891,
+        8
+      ],
+      "tensor_bytes": 6062256,
+      "sha256": "69f9d3a5445f78ce6335f7939b91e916b1727c549dc04df46175be4940477124"
+    }
+  },
+  "guides": [
+    {
+      "stage": 0,
+      "parents": 3743,
+      "selected_children": 17015,
+      "threshold": "strict > 0",
+      "logits_dtype": "BF16",
+      "logits_sha256": "b92f5e2b558ac8a1887bc3c7e643dad3f097364d8365431e29d5aa240128b1fe",
+      "parent_coords_sha256": "860095760acc7914d0378cadfa49ba4c6a368d5a65662061b8e1c4c792f0d7a5",
+      "child_coords_sha256": "724bebf177aecb3ce53b1aa84361413b026b0b3fe8e21090fe2440e67ae3b80b",
+      "child_order_exact": true,
+      "original_bf16_bytes_preserved": true
+    },
+    {
+      "stage": 1,
+      "parents": 17015,
+      "selected_children": 79169,
+      "threshold": "strict > 0",
+      "logits_dtype": "BF16",
+      "logits_sha256": "afdd3fd7abe9d4b1a63ca8353afdc4885e6ce567f343bf5491c917ca135ffac6",
+      "parent_coords_sha256": "724bebf177aecb3ce53b1aa84361413b026b0b3fe8e21090fe2440e67ae3b80b",
+      "child_coords_sha256": "eaedd56743bf2b12a5c601f69965e09411e22e482ed8cafc924a91d0cd5e205d",
+      "child_order_exact": true,
+      "original_bf16_bytes_preserved": true
+    },
+    {
+      "stage": 2,
+      "parents": 79169,
+      "selected_children": 378891,
+      "threshold": "strict > 0",
+      "logits_dtype": "BF16",
+      "logits_sha256": "57f7b6e74c2d8482b2a3f2ddcb7be11d004840917ebcd48e1170b1bf760e5e0d",
+      "parent_coords_sha256": "eaedd56743bf2b12a5c601f69965e09411e22e482ed8cafc924a91d0cd5e205d",
+      "child_coords_sha256": "5bf32274aea29b704a31bf6c196c6a7c4979ea4f899005d0f4b093ada65f4cb7",
+      "child_order_exact": true,
+      "original_bf16_bytes_preserved": true
+    },
+    {
+      "stage": 3,
+      "parents": 378891,
+      "selected_children": 1842968,
+      "threshold": "strict > 0",
+      "logits_dtype": "BF16",
+      "logits_sha256": "69f9d3a5445f78ce6335f7939b91e916b1727c549dc04df46175be4940477124",
+      "parent_coords_sha256": "5bf32274aea29b704a31bf6c196c6a7c4979ea4f899005d0f4b093ada65f4cb7",
+      "child_coords_sha256": "c87fa21d6f863aced647b48e0bb2edebe32523d36c742e350d39ccfea3fc0934",
+      "child_order_exact": true,
+      "original_bf16_bytes_preserved": true
+    }
+  ],
+  "coordinate_order": "original C2S parent-major; child x bit0, y bit1, z bit2",
+  "final_geometry_coordinate_order_exact": true,
+  "model_imported": false,
+  "gpu_initialized": false
+}

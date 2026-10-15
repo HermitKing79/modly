@@ -1,0 +1,13 @@
+test_artifact_bridge_publishes_exclusively_and_rejects_wrong_ack (__main__.TexturePreflightTests.test_artifact_bridge_publishes_exclusively_and_rejects_wrong_ack) ... ok
+test_cold_launcher_and_bridge_are_stdlib_only (__main__.TexturePreflightTests.test_cold_launcher_and_bridge_are_stdlib_only) ... ok
+test_deadlines_and_owned_guest_command_preserve_limits (__main__.TexturePreflightTests.test_deadlines_and_owned_guest_command_preserve_limits) ... ok
+test_host_receipt_and_worker_wait_are_bounded_by_30_seconds (__main__.TexturePreflightTests.test_host_receipt_and_worker_wait_are_bounded_by_30_seconds) ... ok
+test_runtime_version_is_plain_json_string_for_the_strict_writer (__main__.TexturePreflightTests.test_runtime_version_is_plain_json_string_for_the_strict_writer) ... ok
+test_shared_checkpoint_helper_uses_texture_audit_and_rejects_wrong_bytes (__main__.TexturePreflightTests.test_shared_checkpoint_helper_uses_texture_audit_and_rejects_wrong_bytes) ... ok
+test_texture_identity_and_no_shape_inputs_or_bf16_conversion (__main__.TexturePreflightTests.test_texture_identity_and_no_shape_inputs_or_bf16_conversion) ... ok
+test_worker_reads_input_metadata_from_the_actual_dict_api (__main__.TexturePreflightTests.test_worker_reads_input_metadata_from_the_actual_dict_api) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.124s
+
+OK

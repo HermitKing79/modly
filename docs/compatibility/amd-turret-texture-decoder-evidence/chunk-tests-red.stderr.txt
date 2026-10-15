@@ -1,0 +1,65 @@
+test_dense_weights_declared_tolerance (__main__.Equivalence.test_dense_weights_declared_tolerance) ... ERROR
+test_global_reference_bias_sentinels_cross_chunks_short_tail (__main__.Equivalence.test_global_reference_bias_sentinels_cross_chunks_short_tail) ... ERROR
+test_invalid_layout_and_tile_rejected (__main__.Equivalence.test_invalid_layout_and_tile_rejected) ... ok
+test_chunk_and_artifact_formula (__main__.Memory.test_chunk_and_artifact_formula) ... FAIL
+test_exact_final_contract_and_original_cap (__main__.Memory.test_exact_final_contract_and_original_cap) ... ok
+test_final_plan_rejects_non_integer_metadata (__main__.Memory.test_final_plan_rejects_non_integer_metadata) ... ok
+test_live_admission_at_historical_baseline_and_free_reserve_refusal (__main__.Memory.test_live_admission_at_historical_baseline_and_free_reserve_refusal) ... ok
+test_live_memory_rejection_precedes_allocator_callback (__main__.Memory.test_live_memory_rejection_precedes_allocator_callback) ... ok
+test_admission_failure_stops_tile_loop (__main__.PatchLifecycle.test_admission_failure_stops_tile_loop) ... FAIL
+test_foreign_descriptor_and_repeated_lifecycle_rejected (__main__.PatchLifecycle.test_foreign_descriptor_and_repeated_lifecycle_rejected) ... ok
+test_original_unmodified_until_final_scope_and_restored_after_failure (__main__.PatchLifecycle.test_original_unmodified_until_final_scope_and_restored_after_failure) ... ok
+
+======================================================================
+ERROR: test_dense_weights_declared_tolerance (__main__.Equivalence.test_dense_weights_declared_tolerance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decoder-evidence\cpu-tests.py", line 91, in test_dense_weights_declared_tolerance
+    actual=candidate.row_chunked_explicit(torch,f,nm,w,b,3,lambda *args:None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decoder-evidence\chunked_final.py", line 16, in row_chunked_explicit
+    require(feats.dtype in (torch.bfloat16,torch.float32) and weight.dtype==feats.dtype
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decoder-evidence\admission.py", line 25, in require
+    raise AdmissionStop('PARTIAL: ' + reason)
+admission.AdmissionStop: PARTIAL: feature/weight layout/device/dtype differs
+
+======================================================================
+ERROR: test_global_reference_bias_sentinels_cross_chunks_short_tail (__main__.Equivalence.test_global_reference_bias_sentinels_cross_chunks_short_tail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decoder-evidence\cpu-tests.py", line 75, in test_global_reference_bias_sentinels_cross_chunks_short_tail
+    actual=candidate.row_chunked_explicit(torch,f,nm,w,bias,tile,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decoder-evidence\chunked_final.py", line 16, in row_chunked_explicit
+    require(feats.dtype in (torch.bfloat16,torch.float32) and weight.dtype==feats.dtype
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decoder-evidence\admission.py", line 25, in require
+    raise AdmissionStop('PARTIAL: ' + reason)
+admission.AdmissionStop: PARTIAL: feature/weight layout/device/dtype differs
+
+======================================================================
+FAIL: test_chunk_and_artifact_formula (__main__.Memory.test_chunk_and_artifact_formula)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decoder-evidence\cpu-tests.py", line 118, in test_chunk_and_artifact_formula
+    self.assertEqual(admission.output_payload_bytes(),117949952)
+AssertionError: 96412768 != 117949952
+
+======================================================================
+FAIL: test_admission_failure_stops_tile_loop (__main__.PatchLifecycle.test_admission_failure_stops_tile_loop)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-decoder-evidence\cpu-tests.py", line 188, in test_admission_failure_stops_tile_loop
+    self.assertEqual(entries,[0,3])
+AssertionError: Lists differ: [] != [0, 3]
+
+Second list contains 2 additional elements.
+First extra element 0:
+0
+
+- []
++ [0, 3]
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.779s
+
+FAILED (failures=2, errors=2)

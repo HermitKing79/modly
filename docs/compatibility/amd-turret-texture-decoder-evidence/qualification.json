@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "GPU_initialized": false,
+  "weights_loaded": false,
+  "runtime_precision": "208 original F16 body,76 exact F32 restorations; no BF16",
+  "focused_tests": [
+    {
+      "suite": "texture-loader",
+      "tests": 10,
+      "passed": 10
+    },
+    {
+      "suite": "adjacent-strict-loader",
+      "tests": 13,
+      "passed": 13
+    },
+    {
+      "suite": "input-and-source-C2S",
+      "tests": 7,
+      "passed": 7
+    },
+    {
+      "suite": "live-guide-hooks",
+      "tests": 7,
+      "passed": 7
+    },
+    {
+      "suite": "F16-tiling-and-memory",
+      "tests": 11,
+      "passed": 11
+    },
+    {
+      "suite": "six-channel-writer",
+      "tests": 16,
+      "passed": 15,
+      "skipped": 1
+    },
+    {
+      "suite": "launcher-receipt-static",
+      "tests": 8,
+      "passed": 8
+    }
+  ],
+  "unrelated_suite": "A helper started npm test despite the focused scope; it was interrupted, did not complete, and is not claimed as passing. No unrelated fixes. Volume Decoding progress was a literal fixture in api/tests/test_extension_process.py:194.",
+  "persistence": "Actual writer/reader fixture under permanent outside-Git root; allparents andfieldleaf pre-created byhost; no real inference outputs yet.",
+  "total_tests": 72,
+  "total_passed": 71,
+  "total_skipped": 1
+}
