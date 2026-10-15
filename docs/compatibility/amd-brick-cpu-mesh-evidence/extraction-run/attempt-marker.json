@@ -1,0 +1,18 @@
+{
+  "CPU_only": true,
+  "fixture": false,
+  "verify": false,
+  "source_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+  "process_memory_cap_bytes": 6442450944,
+  "deadline_seconds": 180,
+  "initial_resource": {
+    "available_ram_bytes": 20885413888,
+    "disk_free_bytes": 108437024768,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "mesh_host_sha256": "d52aa9cf3aca4bf8c9b02f263689316792cbfb33d02b3cba261742f3c2938a60",
+  "CLI_sha256": "68a5e64bf7ab65c98f9b798e8d81c61c6cb629b1eaaf193637d5e52de0cae8e8",
+  "converter_sha256": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40"
+}

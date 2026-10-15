@@ -1,0 +1,85 @@
+{
+  "schema": "modly.amd.brick-cpu-mesh-preservation-before.v1",
+  "created_utc": "2026-10-15T16:11:50.164492+00:00",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "mission_base": "847357960f72f303e282e95c22666b5fad5f2ac0",
+  "protected_files": {
+    "checked": 100,
+    "unchanged": 100,
+    "changed_or_missing": 0
+  },
+  "source": {
+    "AMD_HEAD": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+    "HEAD_status_nodes_and_backup_match_previous": true,
+    "qualified_source_bindings_match": 21
+  },
+  "environment": {
+    "comparison": {
+      "amd": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      },
+      "modly": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      }
+    },
+    "native_identities": 12,
+    "source_identities": 13,
+    "selected_packages": {
+      "amd": 13,
+      "modly": 15
+    }
+  },
+  "archives_and_local_only": {
+    "archive_hashes_match": 2,
+    "CRC_readback_members": 40,
+    "current_files_unchanged": 20
+  },
+  "saved_brick_inputs": {
+    "rows": 4430,
+    "saved_files_unchanged": 5,
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f"
+  },
+  "older_raw_receipts_unchanged": {
+    "original_C4": 3,
+    "RAM_stopped_tiling": 9,
+    "partial39of40_resume": 11,
+    "completed_neural_attempt": 13
+  },
+  "neural_input": {
+    "artifact_verification_receipt": "docs/compatibility/amd-brick-neural-completion-evidence/artifact-verification.json",
+    "artifact_verification_receipt_sha256": "bd89db799671b8fbde8c4e9e96a39aefab6b984baaa062ccfce199eb16794945",
+    "artifact_alias": "workspace-artifacts/amd-brick-neural-completion-c9447dd/neural-output/shape-decoded.safetensors",
+    "artifact_bytes": 104148612,
+    "artifact_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "rows": 1957891,
+    "bundle_files_verified": 3,
+    "run_contract_and_provenance_match_verification_receipt": true,
+    "canonical_run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+    "profile": "brick-1957891-v1",
+    "plain_single_link_no_reparse": true
+  },
+  "checkpoint": {
+    "metadata_header_configuration_matches": true,
+    "header_bytes_read": 27568,
+    "payload_bytes_read": 0,
+    "authenticated_existing_fresh_hash": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581"
+  },
+  "previous_neural_reports_and_public_evidence_recorded": 21,
+  "private_receipt": {
+    "alias": "workspace-artifacts/amd-brick-cpu-mesh-8473579/preservation-before.json",
+    "sha256": "8c679aafca196045b357b3e34154ebc30230ca11e624ded7cef9daf5256a648f"
+  },
+  "scope_limits": [
+    "Preservation only: no extraction,CPU tests,model/native imports,GPU/WSL starts,network or Git mutation. Root owns the ten-tensor production reader and readiness gates.",
+    "Selected13 AMD/15 Modly distribution metadata,pyvenv.cfg,12 native payload/PE identities and13 historical source identities checked; not exhaustive entire-venv bytes.",
+    "Checkpoint size/mtime/configuration and27568-byte header only were reread; authenticated actual-worker fresh payload hash retained without reading checkpoint weight payload.",
+    "Neural artifact and sidecars were hashed and authenticated against the existing artifact-verification receipt; no tensor mapping or geometry conversion was performed.",
+    "No fresh Linux filesystem inventory. Existing original reports and earlier raw evidence remain unchanged."
+  ],
+  "identity_concerns": [],
+  "GPU_WSL_models_tests_extraction_network_Git_mutations": false
+}

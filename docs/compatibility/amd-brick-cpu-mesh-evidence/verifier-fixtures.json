@@ -1,0 +1,45 @@
+{
+  "schema": "modly.amd.brick-mesh-verifier-fixture-result.v1",
+  "classification": "PASS_CPU_FIXTURES",
+  "execution_evidence": "Previously observed fixture-only tool execution; no actual source/mesh verification performed by this agent.",
+  "executable": "D:/AI/Trellis2AMD/venv/Scripts/python.exe",
+  "command": "D:/AI/Trellis2AMD/venv/Scripts/python.exe -B docs/compatibility/amd-brick-cpu-mesh-evidence/verify_mesh.py --fixture-only",
+  "cwd": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof",
+  "exitcode": 0,
+  "observed_command_wall_seconds": 3.3430113,
+  "stdout": "{\"classification\": \"PASS_CPU_FIXTURES\", \"positive_source_splits\": 2, \"negative_geometry_cases\": 6, \"edge_run_boundary_case\": true, \"model_or_GPU_imported\": false, \"mesh_extraction_executed\": false}\r\n",
+  "stderr": "",
+  "source_sha256": "b90f45ef38177071a846201cb264c0ba084885cb60a0e2f6732c8471e7b7202d",
+  "actual_verification_executed": false,
+  "intended_actual_route": {
+    "command": "D:/AI/Trellis2AMD/venv/Scripts/python.exe -B docs/compatibility/amd-brick-cpu-mesh-evidence/verify_mesh.py",
+    "cwd": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof",
+    "entry": "Direct default host, outside mesh_host.py --verify audit context",
+    "ownership": "Single worker starts before NumPy/artifact IO, receives GO only after owned Job attachment"
+  },
+  "containment_review": {
+    "process_memory_limit_bytes": 6442450944,
+    "worker_analysis_deadline_seconds": 175,
+    "host_worker_wait_timeout_seconds": 180,
+    "owned_job_cleanup_grace_seconds": 5,
+    "available_host_RAM_floor_bytes": 12884901888,
+    "free_disk_floor_bytes": 2147483648,
+    "resource_floor_sampling": "Initial host preflight only; process memory is enforced continuously by Windows Job",
+    "worker_forbids": "Child processes, network and model/GPU imports",
+    "natural_cleanup_required_for_PASS": true,
+    "forced_or_unverified_cleanup_denies_PASS": true,
+    "after_run_evidence": [
+      "independent-mesh-analysis.json",
+      "independent-mesh-analysis-host.json",
+      "independent-mesh-analysis-worker.log"
+    ]
+  },
+  "stdout_result": {
+    "classification": "PASS_CPU_FIXTURES",
+    "positive_source_splits": 2,
+    "negative_geometry_cases": 6,
+    "edge_run_boundary_case": true,
+    "model_or_GPU_imported": false,
+    "mesh_extraction_executed": false
+  }
+}

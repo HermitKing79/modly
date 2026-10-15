@@ -1,0 +1,60 @@
+{
+  "classification": "PASS",
+  "CPU_only": true,
+  "source": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\shape-decoded.safetensors",
+  "source_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+  "source_bytes": 104148612,
+  "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+  "profile": "brick-1957891-v1",
+  "rows": 1957891,
+  "children": [
+    21391,
+    97313,
+    438684,
+    1957891
+  ],
+  "ten_tensor_payload_sha256": {
+    "subdivision_1_coordinates": "16ecc9780a85d722e83fdf52ed3841e7038a69d203f086a0524094a63f18a594",
+    "subdivision_2_logits": "6f74789f5076a42399ec6cf6048a792d1e4953fac3294597bceb717a74e965ba",
+    "subdivision_1_logits": "c519845ae44a8e30a83038de03578b7cecd8aaf2fcebdb6c1e437e20208a538a",
+    "subdivision_0_logits": "9c31de9c275fa78590743bb9ec7bf0accc3cab7f92e4f3096e99162d8963f07e",
+    "subdivision_3_coordinates": "ab09fb4a330c0a07aead43193aeec79e6ea9b1efa85c62aeb4ca810a0f79d19e",
+    "features": "5eedc14f04267303cc9ac344270f7141c2c2d4a94e0c0510585928757a4b0c52",
+    "coordinates": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+    "subdivision_2_coordinates": "8f1c7d4bfb4f031965f2e095929fa592b394eb60841d02a786805e08f707d81d",
+    "subdivision_0_coordinates": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520",
+    "subdivision_3_logits": "285f0adba1078694c3112a2ef8c0afbeb0779e951f65ffdaf48cd399cc524304"
+  },
+  "production_readback": {
+    "verified": true,
+    "bytes": 104148612,
+    "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "payload_bytes": 104125380,
+    "tensor_payload_sha256": {
+      "features": "5eedc14f04267303cc9ac344270f7141c2c2d4a94e0c0510585928757a4b0c52",
+      "coordinates": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+      "subdivision_0_logits": "9c31de9c275fa78590743bb9ec7bf0accc3cab7f92e4f3096e99162d8963f07e",
+      "subdivision_0_coordinates": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520",
+      "subdivision_1_logits": "c519845ae44a8e30a83038de03578b7cecd8aaf2fcebdb6c1e437e20208a538a",
+      "subdivision_1_coordinates": "16ecc9780a85d722e83fdf52ed3841e7038a69d203f086a0524094a63f18a594",
+      "subdivision_2_logits": "6f74789f5076a42399ec6cf6048a792d1e4953fac3294597bceb717a74e965ba",
+      "subdivision_2_coordinates": "8f1c7d4bfb4f031965f2e095929fa592b394eb60841d02a786805e08f707d81d",
+      "subdivision_3_logits": "285f0adba1078694c3112a2ef8c0afbeb0779e951f65ffdaf48cd399cc524304",
+      "subdivision_3_coordinates": "ab09fb4a330c0a07aead43193aeec79e6ea9b1efa85c62aeb4ca810a0f79d19e"
+    },
+    "reader": "bounded stdlib tensor header/payload reader"
+  },
+  "original_coordinate_identity": true,
+  "historical_default_rejected": true,
+  "resources": {
+    "available_ram_bytes": 20990791680,
+    "disk_free_bytes": 108437106688,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "output_absent": true,
+  "elapsed_seconds": 0.9840000000003783,
+  "models_loaded": false,
+  "GPU_execution": false
+}

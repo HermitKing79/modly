@@ -1,0 +1,166 @@
+{
+  "schema": "modly.amd.brick-cpu-mesh-outcome-review.v1",
+  "created_utc": "2026-10-15T16:26:12.9770659Z",
+  "classification": "PASS_CPU_EXTRACTION_WITH_TOPOLOGY_CONCERNS",
+  "scope": "Independent read/hash/arithmetic review of saved extraction and direct CPU verifier results only. Reviewer performed no extraction, verification execution, tests, models, GPU/WSL work, source edits or Git mutation.",
+  "blocking_findings": [],
+  "raw_evidence_sha256": {
+    "extraction-run/attempt-marker.json": {
+      "bytes": 705,
+      "sha256": "4b32fe9c951596af55e6b69264a54dd3c3d9bbf72464994df7f322753f941c07"
+    },
+    "extraction-run/host-result.json": {
+      "bytes": 2362,
+      "sha256": "e350a595d6e3331fa41da3397c767201d743e8d4eb9f915fd21738f501666ad4"
+    },
+    "extraction-run/stdout.txt": {
+      "bytes": 1082,
+      "sha256": "b883364b165c14572a8cfaa5fc9d182631ad8ad6877648c381d6c46d2628f248"
+    },
+    "extraction-run/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "extraction-run/worker-policy.json": {
+      "bytes": 161,
+      "sha256": "7fc03ec2a8561bbe9a47d16021203b4528f35a1b5c642ee46a8ae47ff71a4218"
+    },
+    "independent-mesh-analysis.json": {
+      "bytes": 12312,
+      "sha256": "9fb71cc35af26e4c61b7f6552d082e9aec3c835ea73e48a9927b0a706873dd2e"
+    },
+    "independent-mesh-analysis-host.json": {
+      "bytes": 571,
+      "sha256": "f82eb8a535f4e19d5f5dc81a925bcb0d53da43883502c67c5fdd2edc73176f29"
+    },
+    "independent-mesh-analysis-worker.log": {
+      "bytes": 371,
+      "sha256": "1913551b54a685a39305886a913e8e2d32df592aa0fa034edb81c0765c45a2ee"
+    },
+    "input-preflight.json": {
+      "bytes": 3247,
+      "sha256": "6f9d2db23d9ccec7dbeb9e3d5018b21494f87d9145cc18f86cf19e74a0343a1f"
+    },
+    "preexecution-review.json": {
+      "bytes": 7248,
+      "sha256": "169ff40fd260bd5e0aeb90b0774c74328a7a1743c3f0ec55a07000d8634fd264"
+    },
+    "verifier-preexecution-review.json": {
+      "bytes": 5179,
+      "sha256": "142c7ee839924a7196a91edac5d924445d5085f355167d82fb96becee0f05abc"
+    },
+    "preservation-before.json": {
+      "bytes": 3726,
+      "sha256": "7723460ac1a7e4e88e169edcdbc05cbb35221f15206efacc600803fa4878ae4c"
+    },
+    "preservation-after.json": {
+      "bytes": 4018,
+      "sha256": "39d8d183cbe8c5f9b0f9fe5a4ec0fd08da9745abb7d2468767fc9da2313b6b82"
+    }
+  },
+  "reviewed_source_sha256": {
+    "scripts/compatibility/amd_generation_mesh.py": "68a5e64bf7ab65c98f9b798e8d81c61c6cb629b1eaaf193637d5e52de0cae8e8",
+    "scripts/compatibility/amd_flexible_dual_grid_cpu.py": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40",
+    "docs/compatibility/amd-brick-cpu-mesh-evidence/mesh_host.py": "d52aa9cf3aca4bf8c9b02f263689316792cbfb33d02b3cba261742f3c2938a60",
+    "docs/compatibility/amd-brick-cpu-mesh-evidence/verify_mesh.py": "b90f45ef38177071a846201cb264c0ba084885cb60a0e2f6732c8471e7b7202d"
+  },
+  "mesh_alias": "workspace-artifacts/amd-brick-cpu-mesh-8473579/mesh",
+  "mesh_artifacts": {
+    "mesh.ply": {
+      "bytes": 77751514,
+      "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd"
+    },
+    "vertices.npy": {
+      "bytes": 23494820,
+      "sha256": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252"
+    },
+    "faces.npy": {
+      "bytes": 50083136,
+      "sha256": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d"
+    },
+    "mesh.json": {
+      "bytes": 1346,
+      "sha256": "12810c52c808369f360f8d826eb1f58ec66224d5b520dcf129e0b5a50ff1a37a"
+    }
+  },
+  "source_binding": {
+    "neural_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "profile": "brick-1957891-v1",
+    "all_ten_neural_payload_hashes_verified": true,
+    "original_initial_coordinates_verified": true,
+    "source_inputs_sidecars_and_four_mesh_files_unchanged": true,
+    "fourteen_read_only_mappings_closed": true
+  },
+  "geometry": {
+    "vertices": 1957891,
+    "triangles": 4173584,
+    "valid_quads": 2086792,
+    "flagged_quads": 2086909,
+    "missing_corner_quads": 117,
+    "out_of_grid_quads": 0,
+    "split_1": 1039276,
+    "split_2": 1047516,
+    "index_NPY_PLY_readback_exact": true,
+    "original_F32_vertices_exact": true,
+    "maximum_vertex_error": 0.0,
+    "original_global_index_axis_order_and_winding_verified": true,
+    "every_quad_source_verified": true,
+    "no_omitted_valid_source_quads": true,
+    "zero_area_triangles": 0,
+    "repeated_index_triangles": 0,
+    "duplicate_triangles": 0,
+    "topology_repair": false
+  },
+  "topology": {
+    "unique_edges": 6167053,
+    "boundary_edges": 267652,
+    "two_face_edges": 5512333,
+    "nonmanifold_edges": 387068,
+    "maximum_incidence": 4,
+    "interpretation": "Indexed geometry has open boundaries and nonmanifold edges. Extraction/source fidelity passes; watertightness/manifold quality does not pass. No repair was performed.",
+    "components_measured": false,
+    "self_intersections_measured": false,
+    "outward_orientation_tested": false
+  },
+  "measured_resources": {
+    "extraction_converter_seconds": 2.7189999999973224,
+    "extraction_host_seconds": 4.34400000000096,
+    "extraction_peak_working_set_bytes": 379572224,
+    "extraction_peak_process_committed_bytes": 298770432,
+    "extraction_peak_Job_committed_bytes": 298770432,
+    "verifier_worker_seconds": 5.046999999998661,
+    "verifier_peak_process_committed_bytes": 170868736,
+    "verifier_peak_working_set_measured": false,
+    "process_committed_limit_bytes": 6442450944,
+    "extraction_RAM_disk_live_samples": 4,
+    "extraction_minimum_recorded_available_RAM_bytes": 20573147136,
+    "extraction_minimum_recorded_output_disk_bytes": 108285607936,
+    "verifier_initial_available_RAM_bytes": 20947992576,
+    "verifier_initial_output_disk_bytes": 108284092416,
+    "available_RAM_floor_bytes": 12884901888,
+    "output_disk_floor_bytes": 2147483648,
+    "floor_scope": "Extraction polls both floors live. Direct verifier checks them initially only; its 6GiB per-process committed limit is continuously enforced by the Job. Committed bytes are not RSS; no verifier working-set peak is inferred.",
+    "extraction_hard_child_deadline_seconds": 180,
+    "verifier_worker_deadline_seconds": 175,
+    "verifier_parent_deadline_seconds": 180,
+    "timed_out": false
+  },
+  "cleanup": {
+    "extraction_worker_returncode": 0,
+    "verifier_worker_returncode": 0,
+    "both_Job_trees_naturally_empty": true,
+    "forced_cleanup": false,
+    "owned_exit_verified": true,
+    "AI_GPU_imports_attempted": [],
+    "verification_was_reextraction": false,
+    "used_verifier_route": "Direct tested AMD Python verifier own host; nested mesh_host --verify route was not used."
+  },
+  "limits": [
+    "PASS establishes one source-faithful CPU mesh extraction and exact independent saved-geometry readback, with the explicit topology concerns above.",
+    "No visual inspection has occurred in this outcome; visual fidelity remains unproved.",
+    "No repairs, new inference, GPU/WSL execution, material/texture decoding, GLB conversion or end-to-end Generate UI integration is established."
+  ],
+  "next_step": "Separately bounded visual inspection of the saved unchanged mesh; do not repair or rerun conversion automatically."
+}

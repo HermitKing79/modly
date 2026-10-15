@@ -1,0 +1,88 @@
+{
+  "schema": "modly.amd.brick-cpu-mesh-preexecution-review.v1",
+  "created_utc": "2026-10-15T16:20:13.8487209Z",
+  "classification": "CLEAR_ONE_CPU_EXTRACTION",
+  "scope": "Independent read-only source, memory, containment and saved-CPU-evidence review. No mesh processing, model/native imports, GPU/WSL execution, tests, source edits or Git mutation by reviewer.",
+  "mission_base": "847357960f72f303e282e95c22666b5fad5f2ac0",
+  "blocking_findings": [],
+  "source_sha256": {
+    "scripts/compatibility/amd_generation_mesh.py": "68a5e64bf7ab65c98f9b798e8d81c61c6cb629b1eaaf193637d5e52de0cae8e8",
+    "scripts/compatibility/amd_flexible_dual_grid_cpu.py": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40",
+    "scripts/compatibility/amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "0998c6e0c9a8d5c262b6f258f60fb11d82e8b51aec2c5fd48c771c33ef999f57",
+    "docs/compatibility/amd-brick-cpu-mesh-evidence/mesh_host.py": "d52aa9cf3aca4bf8c9b02f263689316792cbfb33d02b3cba261742f3c2938a60",
+    "docs/compatibility/amd-brick-cpu-mesh-evidence/test_mesh_host.py": "11780a59c964d3bab8046d0ba5eba2101f8700d8ca75fbb016bbac4ac1611882",
+    "docs/compatibility/amd-brick-cpu-mesh-evidence/input_preflight.py": "b881303a78a35f5e0b1f1d6eb6db388bf82758bd1f96e22a9378b9b6172e2079"
+  },
+  "evidence_sha256": {
+    "preexecution-prelim.json": "3b842d82cf4161eab53c62951d10be7c03db372061628466cec7abc54bcddb04",
+    "preservation-before.json": "7723460ac1a7e4e88e169edcdbc05cbb35221f15206efacc600803fa4878ae4c",
+    "input-preflight.json": "6f9d2db23d9ccec7dbeb9e3d5018b21494f87d9145cc18f86cf19e74a0343a1f",
+    "host-tests.stdout.txt": "d97c9469bc69ef2e65e5f4f8d538ed7d5a9d7d8d274bbf46e304f945b856e193",
+    "converter-tests.stdout.txt": "cd830d27c95b0f89ad66f7c6357368b1f61151672bcf32435348c643587ce972"
+  },
+  "input": {
+    "artifact_alias": "workspace-artifacts/amd-brick-neural-completion-c9447dd/neural-output/shape-decoded.safetensors",
+    "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "bytes": 104148612,
+    "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+    "profile": "brick-1957891-v1",
+    "rows": 1957891,
+    "all_ten_payload_hashes_equal_saved_authentic_artifact": true,
+    "actual_production_reader_finite_chain_and_original_coords_PASS": true,
+    "historical_default_rejection_verified": true
+  },
+  "execution_route": {
+    "parent": "docs/compatibility/amd-brick-cpu-mesh-evidence/mesh_host.py",
+    "entry": "Existing amd_generation_mesh.py CLI via runpy, with explicit saved source/hash/run-contract and fresh private mesh leaf.",
+    "output_alias": "workspace-artifacts/amd-brick-cpu-mesh-8473579/mesh",
+    "source_arithmetic": "Unchanged original CPU translation: sigmoid dual vertices, strict flags, F32 softplus/product split/tie rule, global original indices, grid512/AABB transform, vertex order and winding. Pinned original semantics reviewed in preliminary receipt.",
+    "gate": "Exact GO plus EOF is required before the CPU audit guard and NumPy/CLI processing. Parent applies existing OwnedJob/ExtendedLimits then attaches child before GO; no breakaway.",
+    "forbidden": "Torch/Triton/FlexGEMM/O-Voxel/Trellis/CuPy and other listed AI/native imports; child process and network operations are denied before actual CLI execution.",
+    "process_committed_cap_bytes": 6442450944,
+    "separate_aggregate_Job_cap_enforced": false,
+    "memory_cap_scope": "Existing Windows per-process committed-memory cap; file-backed working set is separately observed, not bounded by this counter. One child with further process creation denied.",
+    "live_available_host_RAM_floor_bytes": 12884901888,
+    "live_output_disk_floor_bytes": 2147483648,
+    "hard_child_deadline_seconds": 180,
+    "native_threads": 1,
+    "cleanup": "Up to 5seconds natural Job settlement, then bounded owned Job cleanup if needed; no blanket process/WSL operation. Peak working-set/pagefile/private counters and Job process/aggregate committed peaks are recorded. Cleanup bookkeeping is outside the 180-second child-work bound.",
+    "exclusive": "Absent private output leaf and exclusive extraction-run directory/marker/logs prevent automatic retry; preserve partial evidence on any failure."
+  },
+  "resource_basis": {
+    "maximum_rows": 2000000,
+    "actual_rows": 1957891,
+    "maximum_triangles": 11747346,
+    "face_payload_bytes": 140968152,
+    "face_list_plus_concatenated_bytes": 281936304,
+    "global_key_order_sorted_bytes": 46989384,
+    "maximum_three_mesh_files_bytes": 340673521,
+    "source_visible_extraction_projection_bytes": 1653602537,
+    "projection_scope": "Conservative all-phase source-array overcount and explicit scratch allowances from preliminary receipt; not a measured process peak or library-allocator guarantee. The 6GiB cap plus live RAM/disk gates remain actual guards.",
+    "integer_scope": "Maximum vertex index 1957890 and grid key 134217727 fit existing indices; optional duplicate-face key maximum 7505256340959698970 fits signed 64-bit.",
+    "initial_admission": {
+      "available_ram_bytes": 20990791680,
+      "disk_free_bytes": 108437106688,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    }
+  },
+  "saved_CPU_checks": {
+    "execution_attribution": "Root ran the saved checks; reviewer read the actual logs and source without rerunning.",
+    "host_tests": 4,
+    "host_seconds": 1.524,
+    "converter_reader_tests": 12,
+    "converter_reader_seconds": 1.334,
+    "input_preflight_seconds": 0.984,
+    "covered": "Actual owned GO-gated fixture denied Torch import, process and network; measured Windows working-set and Job-commit APIs; natural Job release; bad/extra/missing GO tokens; threshold equality and just-below resource denial; canonical converter arithmetic/winding/tie/global/boundary behavior and strict source-reader negatives."
+  },
+  "limits": [
+    "This is clearance for one extraction only. Separate verify_mesh.py remains subject to its own review before verification; extraction does not depend on its incomplete review.",
+    "Actual CLI verifies PLY readback exactly and saves/hashes NPY files; full NPY reopening and independent source/quad/triangle diagnostics require the separately bounded verifier.",
+    "Any source-generated zero-area triangle causes fail-closed extraction before output acceptance; do not remove or repair triangles, change arithmetic or retry.",
+    "Actual mesh triangle count, memory peak, topology and visual fidelity remain unmeasured. A completed extraction must have source unchanged, complete outputs, successful readback and natural cleanup before any PASS claim.",
+    "No model forward, GPU/WSL work, textures/materials, GLB conversion or frontend work is covered."
+  ],
+  "decision": "No known prelaunch blocker in the exact contained extraction route. Root retains execution control; stop on any unchanged identity/resource/deadline/numerical/cleanup guard and do not retry."
+}

@@ -1,0 +1,74 @@
+{
+  "schema": "modly.amd.brick-cpu-mesh-preexecution-preliminary.v1",
+  "created_utc": "2026-10-15T16:14:57.0216522Z",
+  "classification": "SOURCE_MEMORY_CLEAR_PENDING_RUNNER_REVIEW",
+  "scope": "Read-only source, pinned-reference semantics, arithmetic and proposed containment review; no mesh processing, tests, model/native imports, GPU/WSL execution or source changes.",
+  "mission_base": "847357960f72f303e282e95c22666b5fad5f2ac0",
+  "source_sha256": {
+    "scripts/compatibility/amd_generation_mesh.py": "68a5e64bf7ab65c98f9b798e8d81c61c6cb629b1eaaf193637d5e52de0cae8e8",
+    "scripts/compatibility/amd_flexible_dual_grid_cpu.py": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40",
+    "scripts/compatibility/amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64",
+    "docs/compatibility/amd-turret-cpu-mesh-extraction-evidence/render_host.py": "f3310b89c1936cfe4713bb190d58eba6ed4973e9c16f478236545cdcb4fcdb9e",
+    "docs/compatibility/amd-turret-cpu-mesh-extraction-evidence/extract.py": "b8d9478ad48e349333a4e108d1fae8a0f290d70b4daabfeee8d016242cddffce",
+    "docs/compatibility/amd-turret-cpu-mesh-extraction-evidence/independent_mesh_check.py": "886d9635eedde263a519533f1bf0b2c7d68a14b5322fab589ef1d1a1d36b54fa",
+    "docs/compatibility/amd-turret-cpu-mesh-extraction-evidence/microsoft-flexible-dual-grid.py.txt": "112bd474d580f279ac196129f7989df6fdafa7ed7e08c350f2b386553e73e17d"
+  },
+  "input": {
+    "artifact_alias": "workspace-artifacts/amd-brick-neural-completion-c9447dd/neural-output/shape-decoded.safetensors",
+    "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "bytes": 104148612,
+    "contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+    "final_profile": "brick-1957891-v1",
+    "all_ten_tensors_verified_receipt": "docs/compatibility/amd-brick-neural-completion-evidence/artifact-verification.json",
+    "verification_sha256": "bd89db799671b8fbde8c4e9e96a39aefab6b984baaa062ccfce199eb16794945"
+  },
+  "semantics": "Unchanged CPU converter preserves original saved coordinate/axis/vertex order, F32 dual sigmoid and softplus transforms, strict positive flags, four-corner membership, supplied-weight q0*q2>q1*q3 split rule, equality-to-split2 and winding. Integer keys sort only membership; returned faces retain original global indices. Original inference grid/AABB branch is (coords+dual)/512-0.5. No clamp, repair, weld, simplification or reorientation is permitted.",
+  "bounds": {
+    "rows": 1957891,
+    "converter_MAX_ROWS": 2000000,
+    "remaining_rows": 42109,
+    "maximum_flagged_quads": 5873673,
+    "maximum_triangles": 11747346,
+    "maximum_vertex_index": 1957890,
+    "largest_512_grid_key": 134217727,
+    "global_int64_keys_order_and_sorted_bytes": 46989384,
+    "full_face_payload_bytes": 140968152,
+    "retained_chunk_faces_plus_concatenated_faces_bytes": 281936304,
+    "vertices_payload_bytes": 23494692,
+    "maximum_PLY_payload_bytes": 176210190,
+    "maximum_PLY_header_bytes_for_these_counts": 231,
+    "maximum_mesh_PLY_plus_two_NPY_files_bytes": 340673521,
+    "largest_32768_row_batch_flagged_quads": 98304,
+    "batch_neighbour_coords_bytes": 4718592,
+    "batch_query_keys_bytes": 3145728,
+    "batch_positions_bytes": 3145728,
+    "batch_face_array_bytes": 2359296,
+    "face_duplicate_int64_key_array_bytes": 93978768,
+    "face_key_maximum": "7505256340959698970",
+    "signed_int64_maximum": "9223372036854775807"
+  },
+  "memory_projection": {
+    "source_arrays_all_phase_overcount_bytes": 1653602537,
+    "includes": "Full 104125380-byte tensor payload mapping; contiguous coordinates/dual/flags/weight/vertices; global key/order/sorted arrays; all face chunks plus concatenation; 128MiB batch scratch, 256MiB transform scratch, 256MiB reader scratch, 16MiB degeneracy scratch; PLY write copy, full PLY mapping/comparison and separate NPY readback maps/comparison.",
+    "scope": "Conservative source-visible projection with explicit scratch allowances, not a measured process/RSS guarantee or exact NumPy allocator proof.",
+    "readback_caution": "Historical independent_mesh_check has additional unbatched omitted-flag query arrays and whole-edge-incidence arrays. Worst omitted-neighbour coordinates 281936304 bytes, query/position arrays 187957536 bytes each; edge array 281936304 bytes plus starts/counts/r_ copies. Do not claim the unchanged whole verifier fits the extraction-only envelope; review its actual bounded adaptation separately.",
+    "map_note": "Windows ProcessMemory limits committed private memory, not RSS or file-backed mapped working set; source and PLY mappings add bounded residency."
+  },
+  "proposed_containment": {
+    "owned_job": "Reuse existing OwnedJob/ExtendedLimits, KILL_ON_JOB_CLOSE with no breakaway.",
+    "process_committed_limit_bytes": 6442450944,
+    "host_available_RAM_floor_bytes": 12884901888,
+    "output_disk_floor_bytes": 2147483648,
+    "hard_child_deadline_seconds": 180,
+    "threads": 1,
+    "launch": "Parent creates exclusive attempt marker/logs after input/path/hash and resource gates; child waits for exact GO plus EOF before imports or processing. Attach Job and apply memory limit before GO; install existing no-AI/child/network audit guard, then invoke actual amd_generation_mesh.py CLI via runpy with explicit source/hash/run-contract/output.",
+    "reuse_caveat": "Legacy render_host.py is hardcoded Blender and has no startup gate; legacy extract.py hardcodes historical source/support/output. Reuse their ownership and gate patterns, not their unchanged entrypoints.",
+    "cleanup": "Query measured peak process/Job committed bytes and natural emptiness; deadline/error closes or terminates only owned Job and preserves failure/partial evidence. No automatic retry."
+  },
+  "acceptance_limits": [
+    "Actual CLI independently rereads all ten source tensors and strict C2S linkage, rejects any zero-area triangles without repair, and verifies PLY readback exactly. Source-generated degeneracy may produce a legitimate fail-closed outcome.",
+    "CLI hashes/saves NPY outputs but does not reopen them; separate bounded CPU verification must reopen vertices.npy/faces.npy and compare to PLY before claiming complete readback.",
+    "Require unchanged source/contract/provenance identities before and after; actual mesh size/topology/visual quality and process peak remain unknown.",
+    "No mathematical support/index/disk blocker found for the proposed 6GiB process/12GiB live host floor/2GiB disk floor/180-second route. Final preexecution clearance depends on exact runner and verifier review, saved positive/denial fixture evidence and live gates."
+  ]
+}

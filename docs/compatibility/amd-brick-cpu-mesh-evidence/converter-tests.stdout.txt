@@ -1,0 +1,17 @@
+test_measured_initial_support_bound_and_rejection (test_amd_generation_mesh.MeshTests.test_measured_initial_support_bound_and_rejection) ... ok
+test_permuted_child_coordinates_rejected_before_output (test_amd_generation_mesh.MeshTests.test_permuted_child_coordinates_rejected_before_output) ... ok
+test_raw_nonbinary_BF16_logits_use_original_strict_positive_rule (test_amd_generation_mesh.MeshTests.test_raw_nonbinary_BF16_logits_use_original_strict_positive_rule) ... ok
+test_refuse_existing_output (test_amd_generation_mesh.MeshTests.test_refuse_existing_output) ... ok
+test_source_derived_converter_and_independent_PLY_readback (test_amd_generation_mesh.MeshTests.test_source_derived_converter_and_independent_PLY_readback) ... ok
+test_wrong_feature_precision_rejected (test_amd_generation_mesh.MeshTests.test_wrong_feature_precision_rejected) ... ok
+test_wrong_hash_rejected_before_output_creation (test_amd_generation_mesh.MeshTests.test_wrong_hash_rejected_before_output_creation) ... ok
+test_exact_axis_order_winding_and_tie (test_amd_flexible_dual_grid_cpu.CanonicalFDG.test_exact_axis_order_winding_and_tie) ... ok
+test_both_splits_global_cross_batch_and_boundaries (test_amd_flexible_dual_grid_cpu.CanonicalFDG.test_both_splits_global_cross_batch_and_boundaries) ... ok
+test_missing_neighbour_and_no_linear_key_wrap (test_amd_flexible_dual_grid_cpu.CanonicalFDG.test_missing_neighbour_and_no_linear_key_wrap) ... ok
+test_transforms_and_scale (test_amd_flexible_dual_grid_cpu.CanonicalFDG.test_transforms_and_scale) ... ok
+test_invalid_inputs_fail (test_amd_flexible_dual_grid_cpu.CanonicalFDG.test_invalid_inputs_fail) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.334s
+
+OK

@@ -1,0 +1,291 @@
+{
+  "classification": "PASS_GEOMETRY_READBACK",
+  "CPU_only": true,
+  "forbidden_imports": [],
+  "mesh_extraction_executed": false,
+  "index_and_PLY_readback": true,
+  "original_vertices_exact": true,
+  "max_vertex_transform_error": 0.0,
+  "every_quad_source_verified": true,
+  "original_winding_verified": true,
+  "no_omitted_valid_quads": true,
+  "valid_quads": 2086792,
+  "split_1": 1039276,
+  "split_2": 1047516,
+  "flagged_quads": 2086909,
+  "omitted_missing_corner_quads": 117,
+  "omitted_out_of_grid_quads": 0,
+  "zero_area_triangles": 0,
+  "repeated_index_triangles": 0,
+  "duplicate_triangles": 0,
+  "edge_incidence": {
+    "unique_edges": 6167053,
+    "boundary_edges": 267652,
+    "two_face_edges": 5512333,
+    "nonmanifold_edges": 387068,
+    "maximum_incidence": 4
+  },
+  "components_measured": false,
+  "self_intersections_measured": false,
+  "topology_repair": false,
+  "edge_incidence_is_diagnostic": true,
+  "source_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\shape-decoded.safetensors",
+  "source_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+  "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+  "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+  "final_support_profile": "brick-1957891-v1",
+  "ten_tensor_payload_sha256": {
+    "subdivision_1_coordinates": "16ecc9780a85d722e83fdf52ed3841e7038a69d203f086a0524094a63f18a594",
+    "features": "5eedc14f04267303cc9ac344270f7141c2c2d4a94e0c0510585928757a4b0c52",
+    "subdivision_2_logits": "6f74789f5076a42399ec6cf6048a792d1e4953fac3294597bceb717a74e965ba",
+    "subdivision_3_coordinates": "ab09fb4a330c0a07aead43193aeec79e6ea9b1efa85c62aeb4ca810a0f79d19e",
+    "coordinates": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+    "subdivision_0_logits": "9c31de9c275fa78590743bb9ec7bf0accc3cab7f92e4f3096e99162d8963f07e",
+    "subdivision_1_logits": "c519845ae44a8e30a83038de03578b7cecd8aaf2fcebdb6c1e437e20208a538a",
+    "subdivision_0_coordinates": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520",
+    "subdivision_2_coordinates": "8f1c7d4bfb4f031965f2e095929fa592b394eb60841d02a786805e08f707d81d",
+    "subdivision_3_logits": "285f0adba1078694c3112a2ef8c0afbeb0779e951f65ffdaf48cd399cc524304"
+  },
+  "vertices": 1957891,
+  "triangles": 4173584,
+  "ply_header": {
+    "bytes": 230,
+    "lines": [
+      "ply",
+      "format binary_little_endian 1.0",
+      "comment original global vertex order; no repairs",
+      "element vertex 1957891",
+      "property float x",
+      "property float y",
+      "property float z",
+      "element face 4173584",
+      "property list uchar int vertex_indices",
+      "end_header"
+    ]
+  },
+  "metadata": {
+    "input_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "vertices": 1957891,
+    "triangles": 4173584,
+    "learned_subdivisions": [
+      21391,
+      97313,
+      438684,
+      1957891
+    ],
+    "PLY_readback_exact": true,
+    "zero_area_triangles": 0,
+    "bounds": {
+      "min": [
+        -0.3468112051486969,
+        -0.32829123735427856,
+        -0.4982968270778656
+      ],
+      "max": [
+        0.3716970682144165,
+        0.3246137499809265,
+        0.499891996383667
+      ]
+    },
+    "conversion": {
+      "flagged_quads": 2086909,
+      "valid_quads": 2086792,
+      "missing_neighbour_quads": 117,
+      "out_of_grid_quads": 0,
+      "split_1": 1039276,
+      "split_2": 1047516,
+      "global_original_indices": true,
+      "batch_rows": 32768
+    },
+    "artifacts": {
+      "mesh.ply": {
+        "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+        "bytes": 77751514
+      },
+      "vertices.npy": {
+        "sha256": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252",
+        "bytes": 23494820
+      },
+      "faces.npy": {
+        "sha256": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d",
+        "bytes": 50083136
+      }
+    },
+    "elapsed_seconds": 2.7189999999973224,
+    "topology_repair": false,
+    "native_extraction": false,
+    "material_decoded": false
+  },
+  "originals_before": {
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\shape-decoded.safetensors": {
+      "bytes": 104148612,
+      "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+      "mtime_ns": 1792079411497276400,
+      "file_id": 5910974512167190,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\run-contract.json": {
+      "bytes": 1449,
+      "sha256": "4676626d1061e6cd7090b560f952a974a584f8ea9e6218378b7902294b93bd4f",
+      "mtime_ns": 1792079411575471000,
+      "file_id": 8162774325852462,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\provenance.json": {
+      "bytes": 26328,
+      "sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407",
+      "mtime_ns": 1792079411586260900,
+      "file_id": 2533274791639350,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-repeatable-generation-v1-evidence\\new-image\\occupancy\\shape\\run\\scratch\\shape-latent-coordinates.npy": {
+      "bytes": 71008,
+      "sha256": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c",
+      "mtime_ns": 1792069723274732100,
+      "file_id": 6192449488965223,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\mesh.ply": {
+      "bytes": 77751514,
+      "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+      "mtime_ns": 1792081285352266400,
+      "file_id": 3096224745327386,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\vertices.npy": {
+      "bytes": 23494820,
+      "sha256": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252",
+      "mtime_ns": 1792081285418897200,
+      "file_id": 3659174698748700,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\faces.npy": {
+      "bytes": 50083136,
+      "sha256": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d",
+      "mtime_ns": 1792081285441919800,
+      "file_id": 2251799815195421,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\mesh.json": {
+      "bytes": 1346,
+      "sha256": "12810c52c808369f360f8d826eb1f58ec66224d5b520dcf129e0b5a50ff1a37a",
+      "mtime_ns": 1792081285610237200,
+      "file_id": 2814749768616735,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-cpu-mesh-evidence\\verify_mesh.py": {
+      "bytes": 21514,
+      "sha256": "b90f45ef38177071a846201cb264c0ba084885cb60a0e2f6732c8471e7b7202d",
+      "mtime_ns": 1792081148211096100,
+      "file_id": 7599824372697857,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_generation_mesh.py": {
+      "bytes": 8298,
+      "sha256": "68a5e64bf7ab65c98f9b798e8d81c61c6cb629b1eaaf193637d5e52de0cae8e8",
+      "mtime_ns": 1792077259989550700,
+      "file_id": 12103423999225065,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_flexible_dual_grid_cpu.py": {
+      "bytes": 5637,
+      "sha256": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40",
+      "mtime_ns": 1792025115363400900,
+      "file_id": 15199648743957066,
+      "links": 1
+    }
+  },
+  "numpy": "2.5.3",
+  "memory_accounting": {
+    "maximum_triangles": 11747346,
+    "face_key_bytes": 33388672,
+    "edge_key_bytes": 100166016,
+    "omitted_query_row_batch": 32768,
+    "edge_run_batch": 32768,
+    "duplicate_face_keys_freed_before_edges": true,
+    "whole_verifier_bound_claimed": false
+  },
+  "originals_after": {
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\shape-decoded.safetensors": {
+      "bytes": 104148612,
+      "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+      "mtime_ns": 1792079411497276400,
+      "file_id": 5910974512167190,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\run-contract.json": {
+      "bytes": 1449,
+      "sha256": "4676626d1061e6cd7090b560f952a974a584f8ea9e6218378b7902294b93bd4f",
+      "mtime_ns": 1792079411575471000,
+      "file_id": 8162774325852462,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\provenance.json": {
+      "bytes": 26328,
+      "sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407",
+      "mtime_ns": 1792079411586260900,
+      "file_id": 2533274791639350,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-repeatable-generation-v1-evidence\\new-image\\occupancy\\shape\\run\\scratch\\shape-latent-coordinates.npy": {
+      "bytes": 71008,
+      "sha256": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c",
+      "mtime_ns": 1792069723274732100,
+      "file_id": 6192449488965223,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\mesh.ply": {
+      "bytes": 77751514,
+      "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+      "mtime_ns": 1792081285352266400,
+      "file_id": 3096224745327386,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\vertices.npy": {
+      "bytes": 23494820,
+      "sha256": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252",
+      "mtime_ns": 1792081285418897200,
+      "file_id": 3659174698748700,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\faces.npy": {
+      "bytes": 50083136,
+      "sha256": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d",
+      "mtime_ns": 1792081285441919800,
+      "file_id": 2251799815195421,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\mesh.json": {
+      "bytes": 1346,
+      "sha256": "12810c52c808369f360f8d826eb1f58ec66224d5b520dcf129e0b5a50ff1a37a",
+      "mtime_ns": 1792081285610237200,
+      "file_id": 2814749768616735,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-cpu-mesh-evidence\\verify_mesh.py": {
+      "bytes": 21514,
+      "sha256": "b90f45ef38177071a846201cb264c0ba084885cb60a0e2f6732c8471e7b7202d",
+      "mtime_ns": 1792081148211096100,
+      "file_id": 7599824372697857,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_generation_mesh.py": {
+      "bytes": 8298,
+      "sha256": "68a5e64bf7ab65c98f9b798e8d81c61c6cb629b1eaaf193637d5e52de0cae8e8",
+      "mtime_ns": 1792077259989550700,
+      "file_id": 12103423999225065,
+      "links": 1
+    },
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_flexible_dual_grid_cpu.py": {
+      "bytes": 5637,
+      "sha256": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40",
+      "mtime_ns": 1792025115363400900,
+      "file_id": 15199648743957066,
+      "links": 1
+    }
+  },
+  "immutability_verified": true,
+  "all_memmaps_closed": true,
+  "mappings_opened": 14,
+  "elapsed_seconds": 5.046999999998661
+}

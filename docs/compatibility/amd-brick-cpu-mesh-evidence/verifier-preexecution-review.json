@@ -1,0 +1,57 @@
+{
+  "schema": "modly.amd.brick-cpu-mesh-verifier-preexecution-review.v1",
+  "created_utc": "2026-10-15T16:24:19.5332535Z",
+  "classification": "CLEAR_DIRECT_CPU_READBACK",
+  "scope": "Read-only source/containment/arithmetic review and saved fixture evidence; reviewer did not execute verification, extraction, tests, models, GPU or WSL.",
+  "source_path": "docs/compatibility/amd-brick-cpu-mesh-evidence/verify_mesh.py",
+  "source_sha256": "b90f45ef38177071a846201cb264c0ba084885cb60a0e2f6732c8471e7b7202d",
+  "fixture_receipt_path": "docs/compatibility/amd-brick-cpu-mesh-evidence/verifier-fixtures.json",
+  "fixture_receipt_sha256": "3c655eabaddad27cfaa0197d88077cd9f7d9ec4cd0922613908c8ed138bb12f2",
+  "fixture_execution_attribution": "Author executed same frozen source with D:/AI/Trellis2AMD/venv/Scripts/python.exe; two positive split cases, six negative geometry cases and edge-run boundary fixture passed. Reviewer did not rerun.",
+  "blocking_findings": [],
+  "approved_route": {
+    "command": [
+      "D:/AI/Trellis2AMD/venv/Scripts/python.exe",
+      "-B",
+      "docs/compatibility/amd-brick-cpu-mesh-evidence/verify_mesh.py"
+    ],
+    "entry": "Verifier own default Windows host, which launches its own --worker and sends exact GO plus EOF after Job attachment.",
+    "execution_control": "Root alone authorises and executes this CPU readback. No automatic retry.",
+    "unsupported_unused_route": "Do not use mesh_host.py --verify: it would nest a subprocess host beneath the outer audit guard after consuming GO. Executed extraction harness is retained unchanged; that unused route is outside clearance.",
+    "runtime_note": "Use the same installed AMD Python executable as the saved fixtures, with NumPy/psutil available; the bundled Python dependency probe did not qualify because psutil was unavailable. No installation or environment write is needed."
+  },
+  "source_witnesses": "All ten genuine input tensors, payload hashes, profile/contract/source-job binding, strict C2S chain and exact original initial coordinates are read. Both NPY outputs and PLY are reopened read-only. Independent F32 vertex formula/order, paired source triangle splits/winding, positive flag, four actual coordinate corners, F32 split-weight products/ties and increasing original anchor/axis order are checked. Batched omitted-flag membership queries prove no valid source quad was omitted. No call constructs or re-extracts faces, and no geometry is changed.",
+  "memory": {
+    "rows": 1957891,
+    "worst_case_triangles": 11747346,
+    "face_key_max_bytes": 93978768,
+    "face_key_freed_before_edges": true,
+    "edge_key_max_bytes": 281936304,
+    "actual_extracted_triangles": 4173584,
+    "actual_face_key_bytes": 33388672,
+    "actual_edge_key_bytes": 100166016,
+    "omitted_query_original_row_batch": 32768,
+    "edge_incidence_key_batch": 32768,
+    "scope": "Whole edge key array is retained and sorted in place; incidence run counts use bounded batches with cross-batch carry. No whole starts/counts arrays. Maximum face key N^3-1 and edge key N^2-1 fit signed 64-bit. No claim whole process fits 2GiB or exact library workspaces is made."
+  },
+  "containment": {
+    "initial_available_RAM_floor_bytes": 12884901888,
+    "initial_output_disk_floor_bytes": 2147483648,
+    "RAM_disk_live_polling": false,
+    "process_committed_cap_bytes": 6442450944,
+    "separate_aggregate_Job_cap": false,
+    "memory_scope": "Windows Job continuously enforces the 6GiB per-process committed cap; it is not an RSS/file-map ceiling. Initial 12GiB/2GiB resource gates are explicit and are not described as live polling.",
+    "worker_cooperative_deadline_seconds": 175,
+    "parent_wait_deadline_seconds": 180,
+    "owned_cleanup_bound_seconds": 5,
+    "gate": "Worker reads exact GO plus EOF before NumPy/artifact I/O; parent attaches existing non-breakaway KILL_ON_JOB_CLOSE Job before GO.",
+    "CPU_guard": "Model/GPU imports, further subprocess and network calls are denied. Single-thread BLAS/OpenMP environment and bytecode-disabled Python are retained.",
+    "failure": "Worker/error/timeout/forced or unverified cleanup cannot PASS; receipts/logs use exclusive creation and no retries."
+  },
+  "acceptance": "Fourteen read-only maps close in finally. Before/after hashes, sizes, mtimes, file IDs and single-link/plain ancestry checks protect neural source, sidecars, original coordinate input and all four mesh files. Complete NPY/PLY index/float equality, nondegenerate/nonduplicate faces, original source witnesses and metadata agreement are mandatory. Edge incidence is diagnostic, with no topology repair.",
+  "limits": [
+    "PASS from this verifier establishes saved geometry readback/source correspondence, not watertightness, outward orientation, connectedness, self-intersection absence or visual fidelity.",
+    "No re-extraction, mesh edits, material/texture work, GLB conversion, model forward, GPU/WSL work or frontend generation is covered."
+  ],
+  "decision": "CLEAR for root to run the exact direct CPU verifier host once under its existing resource, deadline, ownership and immutability guards."
+}

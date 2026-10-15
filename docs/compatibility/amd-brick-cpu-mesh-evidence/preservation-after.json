@@ -1,0 +1,110 @@
+{
+  "schema": "modly.amd.brick-cpu-mesh-preservation-after.v1",
+  "created_utc": "2026-10-15T16:24:56.720089+00:00",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "protected_files": {
+    "checked": 100,
+    "unchanged": 100,
+    "changed_or_missing": 0
+  },
+  "source": {
+    "AMD_HEAD": "3aa728ad71b6f892a4c3074e5a38c17dd9f0eec5",
+    "status_nodes_and_backup_match_before": true,
+    "qualified_source_bindings_unchanged": 21,
+    "production_mesh_CLI_converter_decoder_unchanged": true
+  },
+  "environment": {
+    "comparison": {
+      "amd": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      },
+      "modly": {
+        "pyvenv_cfg": true,
+        "selected_packages": true,
+        "native_PE_and_payload": true
+      }
+    },
+    "native_identities": 12,
+    "source_identities": 13,
+    "selected_packages": {
+      "amd": 13,
+      "modly": 15
+    }
+  },
+  "archives_and_local_only": {
+    "archive_hashes_match": 2,
+    "CRC_readback_members": 40,
+    "current_files_unchanged": 20
+  },
+  "saved_brick_files_unchanged": 5,
+  "historical_raw_unchanged": {
+    "original_C4": 3,
+    "RAM_stopped_tiling": 9,
+    "partial39of40": 11,
+    "completed_neural_attempt": 13
+  },
+  "previous_neural_reports_and_public_evidence_unchanged": 21,
+  "neural_input_bundle": {
+    "files_unchanged": 3,
+    "artifact_bytes": 104148612,
+    "artifact_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "run_contract_provenance_and_verification_receipt_unchanged": true
+  },
+  "checkpoint": {
+    "metadata_header_configuration_matches_before": true,
+    "header_bytes_read": 27568,
+    "weight_payload_bytes_read": 0
+  },
+  "NEW_mesh_outputs": {
+    "directory_alias": "workspace-artifacts/amd-brick-cpu-mesh-8473579/mesh",
+    "files": [
+      {
+        "name": "faces.npy",
+        "bytes": 50083136,
+        "sha256": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d"
+      },
+      {
+        "name": "mesh.json",
+        "bytes": 1346,
+        "sha256": "12810c52c808369f360f8d826eb1f58ec66224d5b520dcf129e0b5a50ff1a37a"
+      },
+      {
+        "name": "mesh.ply",
+        "bytes": 77751514,
+        "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd"
+      },
+      {
+        "name": "vertices.npy",
+        "bytes": 23494820,
+        "sha256": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252"
+      }
+    ],
+    "read_only_hashing": true,
+    "independent_geometry_readback_claimed_by_auditor": false
+  },
+  "NEW_extraction_receipt_observed": {
+    "host": "PASS",
+    "worker_returncode": 0,
+    "CPU_only": true,
+    "fixture": false,
+    "elapsed_seconds": 4.34400000000096,
+    "job_exit_natural": true,
+    "job_active_before_cleanup": 0,
+    "job_active_after_cleanup": 0,
+    "all_host_resource_samples_admitted": true
+  },
+  "private_receipt": {
+    "alias": "workspace-artifacts/amd-brick-cpu-mesh-8473579/preservation-after.json",
+    "sha256": "89f2716f036a9a340350b320aeb5ef1fde2e690a2081074bba55bd8596c031bf"
+  },
+  "scope_limits": [
+    "Preservation auditor ran no extraction,CPU tests,models/native imports,GPU/WSL start,network or Git mutation. Root-owned genuine CPU extraction is recorded separately.",
+    "All4 new mesh outputs were hashed only; this preservation audit does not claim independent geometry/topology readback.",
+    "Environment comparison covers selected13 AMD/15 Modly distribution metadata,pyvenv.cfg,12 native payload/PE identities and13 historical source identities.",
+    "Checkpoint metadata/config/header27568bytes only; no weight payload read or deserialization. No fresh Linux filesystem inventory.",
+    "Original neural3file bundle,36earlier raw files,21neural reports/public evidence and21qualified sources remain unchanged."
+  ],
+  "auditor_GPU_WSL_models_tests_extraction_network_Git_mutations": false
+}

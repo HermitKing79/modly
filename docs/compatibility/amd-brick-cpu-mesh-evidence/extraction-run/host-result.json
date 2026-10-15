@@ -1,0 +1,74 @@
+{
+  "CPU_only": true,
+  "fixture": false,
+  "verify": false,
+  "initial_resource": {
+    "available_ram_bytes": 20885413888,
+    "disk_free_bytes": 108437024768,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "resource_samples": [
+    {
+      "available_ram_bytes": 20888244224,
+      "disk_free_bytes": 108436951040,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 1.2659999999996217
+    },
+    {
+      "available_ram_bytes": 20670119936,
+      "disk_free_bytes": 108436951040,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 2.2809999999990396
+    },
+    {
+      "available_ram_bytes": 20573147136,
+      "disk_free_bytes": 108436951040,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 3.2809999999990396
+    },
+    {
+      "available_ram_bytes": 20718272512,
+      "disk_free_bytes": 108285607936,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 4.297000000002299
+    }
+  ],
+  "timed_out": false,
+  "command": [
+    "C:\\Users\\wattz\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-cpu-mesh-evidence\\mesh_host.py",
+    "--worker",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-cpu-mesh-evidence\\extraction-run"
+  ],
+  "job_attached_before_GO": true,
+  "worker_returncode": 0,
+  "process_memory": {
+    "peak_working_set_bytes": 379572224,
+    "working_set_bytes": 32768,
+    "peak_pagefile_bytes": 298770432,
+    "private_bytes": 77824
+  },
+  "natural_settlement_seconds": 0.0,
+  "peak_process_committed_bytes": 298770432,
+  "peak_job_committed_bytes": 298770432,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 4.34400000000096,
+  "classification": "PASS"
+}
