@@ -1,0 +1,73 @@
+{
+  "scope": "new-image-shape-sampling",
+  "full_generation": false,
+  "classification": "PASS",
+  "harness_commit": "93ce31df21346ce2a5327c2978d4c89f702ec780",
+  "source_sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+  "receipt_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+  "tokens": 4430,
+  "steps": 12,
+  "forwards": 21,
+  "seconds": 9.390999999999622,
+  "peak_allocated_bytes": 2944519680,
+  "peak_reserved_bytes": 3152019456,
+  "minimum_device_free_bytes": 13658554368,
+  "release_allocated_bytes": 0,
+  "release_reserved_bytes": 0,
+  "observer_healthy": true,
+  "natural_job_exit": true,
+  "independent_file_and_payload_hashes_verified": true,
+  "canonical_denormalization_exact": true,
+  "coordinates_equal_current_occupancy": true,
+  "files": {
+    "shape-latent-raw.npy": {
+      "file_bytes": 567168,
+      "sha256": "28ec1d009e88e1c03686b1bd283786dc0bca6f77b37e014088c439b3a2001317",
+      "payload_sha256": "b46254aba84297dec6d704de1e1324556a550ed258438b0d2f773e59f7238893",
+      "shape": [
+        4430,
+        32
+      ],
+      "dtype": "float32",
+      "verified": true
+    },
+    "shape-latent-denormalized.npy": {
+      "file_bytes": 567168,
+      "sha256": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808",
+      "payload_sha256": "ca6a479227a06b5b8419a07a01a04ef42e73634a61ae3c7d01d9babe28b2c9b9",
+      "shape": [
+        4430,
+        32
+      ],
+      "dtype": "float32",
+      "verified": true
+    },
+    "shape-latent-coordinates.npy": {
+      "file_bytes": 71008,
+      "sha256": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c",
+      "payload_sha256": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520",
+      "shape": [
+        4430,
+        4
+      ],
+      "dtype": "int32",
+      "verified": true
+    },
+    "shape-initial-noise.npy": {
+      "file_bytes": 567168,
+      "sha256": "247b5cf76038d0b8fa54ed9cecf88dcab57c5facebbde4ede4066cfb44ce6c15",
+      "payload_sha256": "92bc691783cbd11047e8e29fcd2ae4dd37526b5f64b56f6cb398bd60b3810018",
+      "shape": [
+        4430,
+        32
+      ],
+      "dtype": "float32",
+      "verified": true
+    },
+    "shape-latent-provenance.json": {
+      "file_bytes": 17247,
+      "sha256": "9772ca2b523e324179e260b3fba7c7d61a1519fb923b78651f3c4613b7d08255",
+      "verified": true
+    }
+  }
+}

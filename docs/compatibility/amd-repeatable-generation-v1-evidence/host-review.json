@@ -1,0 +1,36 @@
+{
+  "schema": "modly.amd.repeatable-host-review.v1",
+  "reviewed_utc": "2026-10-15T13:21:24.7245145Z",
+  "classification": "CLEAR",
+  "blocking_findings": [],
+  "scope": "Independent read-only source review of the Windows decode owner and focused CPU tests before publication and one genuine decode attempt.",
+  "source_sha256": {
+    "scripts/compatibility/amd_generation_decode.py": "8b5cbd643f0ce0c7b0368741482807ae390b6ebe9e705d94434090bc2ff56208",
+    "scripts/compatibility/test_amd_generation_decode.py": "e56d25fb08b8184e4f0f9e037241ff01f027b0880923d9b23aa3e1b12a55f130"
+  },
+  "checks": {
+    "exact_head_and_static_dependency_closure_before_attempt_marker": true,
+    "fresh_shape_classification_image_lineage_and_canonical_4430_denormalization": true,
+    "shared_helper_script_anchor_unchanged": true,
+    "job_attachment_and_healthy_observations_before_go_plus_eof": true,
+    "native_cpu_gpu_host_deadlines_seconds": [60, 120, 240, 480],
+    "owned_guest_timeout_seconds": 450,
+    "host_ram_floor_gib": 12,
+    "host_d_disk_floor_gib": 50,
+    "timestamped_pre_marker_and_live_resource_admission": true,
+    "allowlisted_transfer_inside_same_owned_timed_client_after_decoder_child_exit": true,
+    "transfer_checks_file_size_hash_single_link_owner_and_journal_identity": true,
+    "original_job_cleanup_and_named_distro_termination_unchanged": true,
+    "overall_pass_requires_independent_post_exit_ten_tensor_c2s_input_and_metadata_verification": true
+  },
+  "cpu_test_evidence": {
+    "author_reported_passed": 14,
+    "author_reported_skipped": 0,
+    "actual_4430_source_reader_included": true,
+    "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+    "rerun_by_reviewer": false,
+    "whitespace_check_passed": true
+  },
+  "reviewer_executed_wsl_or_gpu": false,
+  "limitations": "Source review and reported CPU qualification do not establish successful neural execution. Publication, fresh runtime admission, containment, monitored execution and post-exit acceptance remain required."
+}
