@@ -1,0 +1,20 @@
+{
+  "classification": "PASS",
+  "scope": "read-only pre-marker host preflight; no model/GPU/WSL start",
+  "harness_commit": "e0388f8e15bdc3355de0505459be1f0bf6742051",
+  "committed_files_verified": 87,
+  "run_contract_sha256": "8f5aa535bd6638ef2f557ff5e0f5af713a1b2d7f65d6117ab5b61c48a9deb17d",
+  "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+  "checkpoint_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+  "host_admission": {
+    "timestamp_utc": "2026-10-15T14:16:21.460150+00:00",
+    "stage": "pre-marker",
+    "available_ram_bytes": 18393276416,
+    "D_free_bytes": 74848477184,
+    "required_ram_bytes": 12884901888,
+    "required_D_free_bytes": 53687091200,
+    "admitted": true
+  },
+  "full_log_sha256": "0e409683558a498a48ce4a5fcc9c4688d487165b99472124da669abdcb75b88b",
+  "full_log_preserved_local": true
+}

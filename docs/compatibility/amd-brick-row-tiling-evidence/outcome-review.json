@@ -1,0 +1,102 @@
+{
+  "schema": "modly.amd.brick-row-tiling-outcome-review.v1",
+  "reviewed_utc": "2026-10-15T14:23:06.503Z",
+  "review_result": "CLEAR",
+  "primary_mission": "BLOCKED",
+  "stop_category": "HOST_RAM_ADMISSION",
+  "scope": "Independent read-only audit of saved raw results, resource rows and mirrored journal. No code changes, tests, GPU, WSL or retry.",
+  "attempt": {
+    "harness_commit": "e0388f8e15bdc3355de0505459be1f0bf6742051",
+    "root": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/row-tiling-ebeb48c/decode",
+    "run_contract_sha256": "8f5aa535bd6638ef2f557ff5e0f5af713a1b2d7f65d6117ab5b61c48a9deb17d",
+    "raw_supervisor_classification": "UNKNOWN",
+    "raw_adapter_classification": "FAIL",
+    "raw_classifications_preserved": true
+  },
+  "terminal_resource_sample": {
+    "timestamp_utc": "2026-10-15T14:20:19.516165+00:00",
+    "stage": "supervised-live",
+    "available_ram_bytes": 12852568064,
+    "required_ram_bytes": 12884901888,
+    "deficit_bytes": 32333824,
+    "D_free_bytes": 74814922752,
+    "required_D_free_bytes": 53687091200,
+    "admitted": false,
+    "total_resource_samples": 37,
+    "rejected_resource_samples": 1,
+    "reporting_note": "The raw host minimum_host_ram_bytes retains 12,921,450,496 from earlier admitted polls and excludes the rejected sample. The full resource log's known minimum is 12,852,568,064."
+  },
+  "mirrored_guest_evidence": {
+    "durable_events": 16,
+    "last_event": {
+      "phase": "native-host-return",
+      "utc": "2026-10-15T14:20:18.298330+00:00",
+      "site": "blocks.0.0.conv",
+      "rows": 4430,
+      "call": 1,
+      "host_return_is_not_sync": true
+    },
+    "neural_forward_entry_events": 1,
+    "convolution_completed_events": 0,
+    "large_tile_events": 0,
+    "neural_forward_synchronized_events": 0,
+    "final_guest_results_present": false,
+    "neural_artifact_present_in_mirror": false,
+    "interpretation": "The mirror establishes entry into the genuine forward and first native host return only. It does not establish synchronized native completion, a completed convolution, execution of the six-site tiler or final geometry."
+  },
+  "containment": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 4,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": true,
+    "natural_exit_proven": false,
+    "worker_returncode": 1,
+    "named_distro_termination_returncode": 0,
+    "observer_healthy": true,
+    "postexit_controller_status": "OK",
+    "recorded_postexit_gpu_events": 0
+  },
+  "unsupported_claims_excluded": [
+    "Successful or failed large-tile GPU arithmetic",
+    "Complete neural forward or usable geometry",
+    "Final or peak VRAM usage",
+    "Measured zero Torch allocated/reserved bytes after release",
+    "Natural worker or Job exit",
+    "New-image CPU mesh, learned materials, GLB or UI success"
+  ],
+  "evidence_sha256": {
+    "resource-admission.jsonl": "1280df07b27a23cd8ac3e53a7212a23bb4fc49d49b285dd19bacda2f8e4e5718",
+    "run/guest/phases.jsonl": "10f0cdc0cd0a41e05f77a59a37661c0a10b7bca5c9a7371d883d1026aa3979cb",
+    "run/results.json": "c65160c7fd66ddb98b0d3a3f5ca84a74b9a87d49f80006926befa018bec7cd56",
+    "final-result.json": "54bf35a127f33cc635ad5ab018bf1e0e8bcf341fbdd54a2ee212b5b94d320f17",
+    "run-contract.json": "6567d311dbed972c8eb96584afa95db06bd4f0b21c47da45ade3d533b10c12ed"
+  },
+  "final_document_review": {
+    "reviewed_utc": "2026-10-15T14:26:02.295Z",
+    "result": "CLEAR",
+    "report": {
+      "path": "docs/compatibility/amd-brick-row-tiling-recovery.md",
+      "sha256": "53d757182fd9c92fa385b39bb9d88dd2ef013e208ec1b7e19460984fd11a812f"
+    },
+    "derived_result": {
+      "path": "docs/compatibility/amd-brick-row-tiling-evidence/execution-result.json",
+      "sha256": "9a2d9deeff1c87adb6d4ba1e84aa9f7305f67661f2919af9d73a9f0a53e91b81"
+    },
+    "checks": [
+      "Report and derived result preserve raw UNKNOWN/FAIL classifications and the BLOCKED resource verdict.",
+      "Output absence is explicitly limited to the host mirror. The report states no complete neural output was verified or delivered; no stopped guest restart or post-containment inspection is implied.",
+      "Sampled GPU memory is distinguished from true peak and release measurements; forced containment is distinguished from natural settlement.",
+      "Published guest journal and resource journal copies match the raw saved files byte-for-byte.",
+      "No complete tiling, neural geometry, mesh, material, GLB or UI success is claimed."
+    ],
+    "resolved_finding": "The report opening's unqualified output-production statement was replaced with the evidence-supported verification/delivery statement.",
+    "tests_run": false,
+    "gpu_execution": false,
+    "wsl_execution": false
+  },
+  "conclusion": "The host safety floor triggered before any large-support tiling evidence. Preserve the raw UNKNOWN/FAIL outcome and classify the mission BLOCKED on host resources. This attempt gives no runtime verdict on the tiling candidate.",
+  "reviewer_tests_run": false,
+  "reviewer_gpu_execution": false,
+  "reviewer_wsl_execution": false,
+  "reviewer_source_edits": false
+}
