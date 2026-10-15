@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "base": "487085651fd0624db7f6168991ad5258bc2d2da2",
+  "candidate_commit": "ad71a21b4f5dbd992a8e75afd529da3cd641cc4f",
+  "CPU_writer_qualified": true,
+  "writer_post_termination_verified": true,
+  "readiness_qualified": true,
+  "real_neural_attempt_reserved": false,
+  "computational_code_unchanged": true,
+  "chunk_equivalence_suite_not_repeated": true,
+  "tests": "four focused stdlib host tests plus one actual CPU WSL writer acceptance",
+  "checks": {
+    "writer-run/results.json": "8d3e0d867e3d970effcc32fc861600c8ddae385115ef1b44f405413405b71637",
+    "writer-post-termination-integrity.json": "9828930cbd9e287ba85f41cce8d8dd5087c1fd9c5d6c3223be30f57bfa079dcc",
+    "readiness-run/results.json": "31a67b4e45b3ee0058adbc4c00e929968d2f6044f4529429f83bbb71b1485996",
+    "final-host-preflight.stdout.txt": "d1701f6de72f14025a85fd8dd791a3cff822552d671a2152b49a8d0b76b253cc",
+    "candidate-identities.json": "a11d0fa43aac96be08fb08a9b1c66d9300625e46e0e91130bf627acdc66ef153"
+  }
+}

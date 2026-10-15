@@ -1,0 +1,64 @@
+{
+  "classification": "QUALIFIED",
+  "GPU_entry_calls": [],
+  "forbidden_imports": [],
+  "neural_generation": false,
+  "checkpoint_loading": false,
+  "artifact_directory": {
+    "parent": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts",
+    "resolved": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts",
+    "leaf": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/cpu-writer-acceptance-4870856",
+    "uid": 0,
+    "gid": 0,
+    "mode": 16895,
+    "WSL_projection_only": true,
+    "Windows_owner_authority": "artifact_parent.ps1",
+    "writable": true,
+    "leaf_absent": true
+  },
+  "policy_sha256": "8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd",
+  "runtime": {
+    "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "distribution_version": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "git_version": "ff65f5bc672795c5e5033900ea0a0c4f8566c8cf",
+    "hip": "7.2.53211-e1a6bc5663",
+    "cuda": null,
+    "python": "3.12.3",
+    "prefix": "/opt/modly-wsl/venv",
+    "gpu_initialized_before": false
+  },
+  "safetensors_version": "0.6.2",
+  "triton_version": "3.5.1+rocm7.2.1.gita272dfa8",
+  "output": {
+    "fixture": true,
+    "rows": 2,
+    "tensor_count": 10,
+    "payload_bytes": 344,
+    "path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/cpu-writer-acceptance-4870856/turret-neural-output.safetensors",
+    "bytes": 1720,
+    "sha256": "3fce376c6f128e5ec407758b1428f0a87259f0860ed44f1013af5a269527a843",
+    "tensor_payload_sha256": {
+      "features": "c7a06f82a4201bf18cf0dec3e2d06f0a948a62d4a71bdfb2fb683236edf12adb",
+      "coordinates": "a524ac0d0dacf565bba3b84015d995202e1f67409d63fe16d442caf5c72c3d3c",
+      "subdivision_0_logits": "56a8f151c347da6f2da036d0eb868d32dcd5caa9f91c8f408ec2e464dddcc5fe",
+      "subdivision_0_coordinates": "a524ac0d0dacf565bba3b84015d995202e1f67409d63fe16d442caf5c72c3d3c",
+      "subdivision_1_logits": "56a8f151c347da6f2da036d0eb868d32dcd5caa9f91c8f408ec2e464dddcc5fe",
+      "subdivision_1_coordinates": "a524ac0d0dacf565bba3b84015d995202e1f67409d63fe16d442caf5c72c3d3c",
+      "subdivision_2_logits": "56a8f151c347da6f2da036d0eb868d32dcd5caa9f91c8f408ec2e464dddcc5fe",
+      "subdivision_2_coordinates": "a524ac0d0dacf565bba3b84015d995202e1f67409d63fe16d442caf5c72c3d3c",
+      "subdivision_3_logits": "56a8f151c347da6f2da036d0eb868d32dcd5caa9f91c8f408ec2e464dddcc5fe",
+      "subdivision_3_coordinates": "a524ac0d0dacf565bba3b84015d995202e1f67409d63fe16d442caf5c72c3d3c"
+    },
+    "verified": true,
+    "independently_verified_before_release": true
+  },
+  "GPU_initialized": false,
+  "policy": {
+    "phase": "cpu_meta",
+    "blocked": {},
+    "tensor_operations_allowed": 194,
+    "native_calls": 0,
+    "rejected_calls": 0
+  },
+  "elapsed_seconds": 6.703964646000001
+}
