@@ -1,0 +1,13 @@
+{
+  "classification": "UNKNOWN",
+  "native_import": "NOT_ATTEMPTED",
+  "decoder_cpu": "NOT_ATTEMPTED",
+  "forward_calls": 0,
+  "started_utc": "2026-10-15T02:32:57.096789+00:00",
+  "gate_authorized": true,
+  "error_type": "ModuleNotFoundError",
+  "error": "No module named 'numpy'",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-turret-texture-decoder-evidence/decode.py\", line 215, in worker\n    record['artifact_directory']=check_directory()\n                                 ^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-turret-texture-decoder-evidence/artifact_io.py\", line 51, in check_directory\n    from amd_texture_field_artifact import approved_root\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_texture_field_artifact.py\", line 14, in <module>\n    import numpy as np\nModuleNotFoundError: No module named 'numpy'\n",
+  "elapsed_seconds": 0.06145264899999958,
+  "finished_utc": "2026-10-15T02:32:58.052587+00:00"
+}

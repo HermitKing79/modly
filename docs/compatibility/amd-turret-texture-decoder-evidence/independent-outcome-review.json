@@ -1,0 +1,56 @@
+{
+  "reviewer": "texture_decode_review independent agent",
+  "reviewed_utc": "2026-10-15T02:35:48.2177357Z",
+  "classification": "UNKNOWN",
+  "assessment": "The single contained launch stopped at a CPU bootstrap import-order defect before worker Torch/native import, checkpoint load, model construction or neural forward. No genuine texture field was produced.",
+  "execution_harness_commit": "d0c3405a573b769d03b50371f4cdc38466cf6144",
+  "observed": {
+    "worker_returncode": 1,
+    "error_type": "ModuleNotFoundError",
+    "error": "No module named 'numpy'",
+    "forward_calls": 0,
+    "native_import": "NOT_ATTEMPTED",
+    "decoder_cpu": "NOT_ATTEMPTED",
+    "worker_elapsed_seconds": 0.06145264899999958,
+    "supervisor_elapsed_seconds": 10.485000000000582,
+    "GO_received": true,
+    "owned_tree_exit_verified": true,
+    "forced_job_cleanup": false,
+    "observer_healthy": true,
+    "named_distro_termination_returncode": 0,
+    "permanent_field_directory_empty": true
+  },
+  "root_cause": {
+    "location": "decode.py:215 -> artifact_io.py:51 -> amd_texture_field_artifact.py:14",
+    "cause": "check_directory imports the NumPy-dependent writer before the worker inserts the already staged dependency site-packages path at decode.py:227-228.",
+    "baseline_evidence": "Historical staging.json baseline_python_packages has 12 distributions including Torch/Triton and no NumPy. Its separate staged_packages records NumPy 2.2.6 at /home/modly/native-decoder-preparation-6dd94a85/site-packages, with baseline_installation=false.",
+    "reference": "Successful shape runner inserts the staged path at decode.py:181-182 before importing NumPy at 212.",
+    "environment_damage_assessment": "The observed missing import is explained by the known baseline/path ordering and does not demonstrate package removal or environmental damage."
+  },
+  "preservation_and_limits": [
+    "Host post-run preservation reports PASS with no unexpected deltas; driver reports OK; both listed WSL distros are stopped. These are existing coordinator evidence, independently inspected here.",
+    "This failed worker did not reach its stage-payload, runtime or checkpoint checks. Current WSL staged-file bytes and baseline package preservation were not freshly established by this run or this reviewer.",
+    "Prior staged-closure records establish historical placement and successful prior use. They cannot prove current staged NumPy import success after the proposed correction.",
+    "The empty field directory was inspected from Windows. No model output exists to verify; numerical validity, full-support texture output and production persistence remain unproved.",
+    "The retained attempt marker records the one launched attempt. No patch, retry, test, WSL command, Torch/model/native import or package change was performed by this reviewer."
+  ],
+  "preexecution_review_correction": "The earlier independent static PASS missed this cold-worker import ordering regression. Windows CPU/preflight success did not cover a baseline WSL environment without NumPy on its default path. The observed outcome supersedes that earlier admission assessment for the executed candidate.",
+  "smallest_corrective_proposal": "Move the existing staged/API/extension sys.path[:0] block from decode.py:227-228 to before the first check_directory call at 215, retaining GO before it. This is a source-order proposal only: use the already staged NumPy, make no package installation or precision change, and do not retry the inference under the consumed attempt marker.",
+  "evidence_sha256": {
+    "docs/compatibility/amd-turret-texture-decoder-evidence/decode.py": "e29925e169583dc5e8c9dcd0bd877b7a78ca125d4b0a7c213cee0093a19e9cd9",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/artifact_io.py": "1bffab73670ce95ebab62bcdb2baca4a5fbc7e1f23a13db03e216bc5edcabe8f",
+    "scripts/compatibility/amd_texture_field_artifact.py": "d3b3912ac484f5095e8e1ca287c2e3e3894437aa7ffa94e08f84cfdd9d335c6b",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/neural-attempt.marker": "e4cb8f42efa0460090be7f986f87fe91324f5ef3468bfdc99fa3e01ef4930764",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/run/results.json": "c105708869ead88b10724c107a6537a74968c7578c6973f71c515f9019b3f9e4",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/run/guest/results.json": "e1c474d2b1ff51075555ede66b01ba8ba4fda13e8bdfe4a79a81d3f72780bb1a",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/run/phases.jsonl": "28972d3a0d3fa9b2479ecb824e94b738772b3b3fa5c4d5fa42897dbdf7ef31e5",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/run/guest/phases.jsonl": "930d6db868a6654e6beb980dec2018dd409c3e0e80bab27a53f2bf4517ef037c",
+    "docs/compatibility/amd-wsl-native-decoder-preparation-evidence/staging.json": "8bfc578bb58e7efd81d2d4fa6baa38ec04ae8ea92379918247494cdbb81babf9",
+    "docs/compatibility/amd-wsl-native-decoder-preparation-evidence/stage-reconciliation-capture.json": "e612d924ac0713f43efd67dee30f4c1cc46f481ef526733a3477ef2b2cbba23d",
+    "docs/compatibility/amd-wsl-packaging-decoder-loading-evidence/linux-preservation-after.json": "bdc7067287a4fe6ec85deb1ffbb979ba1850d8187e557a0800c297984aeb0b72",
+    "docs/compatibility/amd-wsl-packaging-decoder-loading-evidence/dependency-run/guest/results.json": "c8d96bc72b42463fd0966014f7a6d4b53386cc22778406559a9215b1bb99dccf",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/windows-preservation-after.json": "aed205740ea8982f9224191b54d51701b227ee9e1f44f13007d05f85c86fc76c",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/driver-verified-after.json": "8f01eba42eb56649970c201b78a4fbbc8c6f983ee08c272d83c2e59bbb73ae70",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/wsl-after.txt": "18a3e04b3ea0062f72bfc43deabf7d8b57a00b5e51a590b142e6e55455f6e199"
+  }
+}
