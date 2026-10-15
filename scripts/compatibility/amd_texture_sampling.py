@@ -20,12 +20,15 @@ def verify_tunable(torch):
     if environment!=TUNABLE_ENV or any(type(v) is not bool or v for v in flags.values()):raise RuntimeError('Actual TunableOp policy must remain entirely disabled')
     return dict(environment=environment,flags=flags,gpu_initialized=torch.cuda.is_initialized())
 
-def make_provenance(record,sampling,commit):
-    return json.loads(json.dumps(dict(harness_commit=commit,checkpoint=record['provenance'],input=record['input'],parameters=contract.PARAMS,
+def make_provenance(record,sampling,commit,*,runtime=None):
+    local=globals()['local'] if runtime is None else runtime.local
+    result=json.loads(json.dumps(dict(harness_commit=commit,checkpoint=record['provenance'],input=record['input'],parameters=contract.PARAMS,
         sigma_min=contract.SIGMA_MIN,seed=contract.SEED,sampler_sources=local.verify_sampler()['sampler_sources'],shape_normalization=contract.SHAPE_NORMALIZATION,
         texture_normalization=contract.TEXTURE_NORMALIZATION,sampling=sampling.report(),raw_output=record['output'],runtime=record['runtime'],
         measurements={key:record[key] for key in ('forward_seconds','before_placement','after_forward','budget')},
         tunable_import=record['tunable_import'],tunable_before_forward=record['tunable_before_forward'])))
+    if runtime is not None:result['generation_inputs']=record['generation_inputs']
+    return result
 
 def verify_preflight():
     local.verify_sources();teardown.verify_workspace();teardown.verify_binding_evidence()
@@ -48,8 +51,11 @@ def profile():
     p.committed_files += [str(v.relative_to(local.ROOT).as_posix()) for v in (local.PINS,local.AUDIT,local.SOURCE_AUDIT,local.SHAPE_RAW,local.SHAPE_DENORMALIZED,local.COORDS,local.SHAPE_PROVENANCE,local.EVIDENCE/'cpu-qualification.json',local.EVIDENCE/'persistence-preflight.json')]
     return p
 
-def worker(scratch):
-    sampling_factory=lambda torch:TextureSamplingControl(torch,local.import_sampler())
+def worker(scratch,*,runtime=None):
+    local=globals()['local'] if runtime is None else runtime.local
+    artifact=globals()['artifact'] if runtime is None else runtime.artifact
+    ARTIFACT_ROOT=globals()['ARTIFACT_ROOT'] if runtime is None else runtime.artifact_root
+    sampling_factory=(lambda torch:TextureSamplingControl(torch,local.import_sampler())) if runtime is None else runtime.factory
     record=dict(status='FAIL',stage='startup',sdk_discovery=[],calls={},load_calls=0,forward_calls=0)
     component=model=output=cpu_output=cpu_coords=inputs=gpu_inputs=sparse=torch=policy=None
     sampling=sampler_result=original_tensor=None
@@ -74,9 +80,12 @@ def worker(scratch):
             if e=='import' and active_contract.prohibited_import(str(a[0])):return forbidden()
             if e=='open' and isinstance(a[0],(str,bytes)):
                 p=Path(os.fsdecode(a[0]))
-                if p.suffix.lower() in ('.safetensors','.pt','.pth','.bin','.gguf','.ckpt') and p.resolve() not in (checkpoint,local.FEATURE.resolve(),(ARTIFACT_ROOT/'latent/texture-latent.safetensors').resolve(),(ARTIFACT_ROOT/'persistence-probe/texture-latent.safetensors').resolve()):return forbidden()
+                readable=(checkpoint,local.FEATURE.resolve(),(ARTIFACT_ROOT/'latent/texture-latent.safetensors').resolve(),(ARTIFACT_ROOT/'persistence-probe/texture-latent.safetensors').resolve())
+                if runtime is not None:readable+=runtime.readable_tensor_paths
+                if p.suffix.lower() in ('.safetensors','.pt','.pth','.bin','.gguf','.ckpt') and p.resolve() not in readable:return forbidden()
         sys.addaudithook(audit)
-        verified=verify_preflight();record['token_count']=verified['token_count'];stage('runtime-import')
+        verified=verify_preflight() if runtime is None else runtime.verify_preflight()
+        record['token_count']=verified['token_count'];stage('runtime-import')
         import torch
         if torch.cuda.is_initialized():return forbidden()
         record['runtime']=dict(python=sys.version,executable=sys.executable,torch=str(torch.__version__),torch_path=torch.__file__,hip=torch.version.hip,cuda=torch.version.cuda,
@@ -179,6 +188,7 @@ def worker(scratch):
             record['input']={k:{**describe(v),'sha256':hashlib.sha256(v.numpy().tobytes()).hexdigest()} for k,v in inputs.items()}
             if (record['input']['cond']['sha256']!=feature['output_sha256'] or record['input']['coords']['sha256']!=verified['saved_inputs'][local.COORDS.name]['payload_sha256']
                 or record['input']['shape_cond']['sha256']!=verified['shape_condition_sha256']):raise ValueError('Saved conditioning/coordinate identity differs')
+            if runtime is not None:record['generation_inputs']=runtime.validate_inputs(record['input'],feature,shape_normalized,coords)
             record['provenance']=dict(seed=contract.SEED,conditioning=feature,checkpoint_sha256=verified['checkpoint_sha256'],config_sha256=verified['config_sha256'],
                 source_sha256=local.digest(local.SOURCE/'trellis2/models/structured_latent_flow.py'),pipeline_sha256=verified['pipeline_sha256'],saved_inputs=verified['saved_inputs'],
                 shape_provenance_sha256=verified['shape_provenance_sha256'],shape_condition_sha256=verified['shape_condition_sha256'],timestep_schedule=contract.times(),
@@ -242,8 +252,8 @@ def worker(scratch):
                         if not np.array_equal(readback,array):raise ValueError('Output readback differs')
                     record['artifacts']={name:dict(path=str(scratch/name),file_bytes=(scratch/name).stat().st_size,sha256=local.digest(scratch/name)) for name in ('shape-flow-output.npy','shape-flow-coordinates.npy')}
                 else:
-                    normalized=contract.denormalize_texture(values)
-                    provenance=make_provenance(record,sampling,os.environ['MODLY_SAMPLING_HARNESS_COMMIT'])
+                    normalized=contract.denormalize_texture(values) if runtime is None else runtime.denormalize_texture(values)
+                    provenance=make_provenance(record,sampling,os.environ['MODLY_SAMPLING_HARNESS_COMMIT'],runtime=runtime)
                     stage('permanent-artifact-write')
                     record['artifacts']=artifact.write(ARTIFACT_ROOT/'latent',values,normalized,out_coords,provenance,noise=inputs['x'].numpy())
                     record['live_artifact_verification']=artifact.verify(Path(record['artifacts']['artifact_path']),ARTIFACT_ROOT/'latent',record['artifacts']['metadata'])

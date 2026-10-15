@@ -1,0 +1,227 @@
+{
+  "schema": "modly.amd.fresh-neural-result.v1",
+  "classification": "PARTIAL",
+  "primary_mission": "BLOCKED",
+  "full_generation": false,
+  "harness_commit": "d73bc6906e2be1c57c2b5d51d48b921601963adf",
+  "source_image_sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+  "run_contract_sha256": "3c48468c4b580c1ac873bcf759ba33b3b47ae5fcab41574934534ec3e1a0c6db",
+  "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f",
+  "runtime": {
+    "torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "distribution_version": "2.9.1+rocm7.2.1.lw.gitff65f5bc",
+    "git_version": "ff65f5bc672795c5e5033900ea0a0c4f8566c8cf",
+    "hip": "7.2.53211-e1a6bc5663",
+    "cuda": null,
+    "python": "3.12.3",
+    "gpu_initialized_before": false
+  },
+  "gpu": {
+    "name": "AMD Radeon RX 9070 XT",
+    "architecture": "gfx1201",
+    "count": 1,
+    "total_bytes": 16974905344,
+    "free_bytes": 15086424064,
+    "property_total_bytes": 16974905344
+  },
+  "checkpoint": {
+    "bytes": 948490494,
+    "header_sha256": "80dc6403ca284a2361109cde3190bc1b5ea5d30936e8f80625cbbc0827062c83",
+    "freshly_streamed_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581"
+  },
+  "strict_loaded_tensors": 292,
+  "runtime_dtype_counts": {
+    "BF16": 216,
+    "F32": 76
+  },
+  "forward_invocations": 1,
+  "convolutions_completed": 33,
+  "required_convolutions": 40,
+  "subdivision_operations": [
+    {
+      "site": "blocks.0.4.updown",
+      "call": 1,
+      "parents": 4430,
+      "children": 21391,
+      "memory": {
+        "free_bytes": 13284569088,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1106567168,
+        "reserved_bytes": 1650458624
+      }
+    },
+    {
+      "site": "blocks.0.4.updown",
+      "call": 2,
+      "parents": 4430,
+      "children": 21391,
+      "memory": {
+        "free_bytes": 13284831232,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1076095488,
+        "reserved_bytes": 1650458624
+      }
+    },
+    {
+      "site": "blocks.1.16.updown",
+      "call": 1,
+      "parents": 21391,
+      "children": 97313,
+      "memory": {
+        "free_bytes": 12728283136,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1204155904,
+        "reserved_bytes": 2206203904
+      }
+    },
+    {
+      "site": "blocks.1.16.updown",
+      "call": 2,
+      "parents": 21391,
+      "children": 97313,
+      "memory": {
+        "free_bytes": 12728283136,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1130552320,
+        "reserved_bytes": 2206203904
+      }
+    },
+    {
+      "site": "blocks.2.8.updown",
+      "call": 1,
+      "parents": 97313,
+      "children": 438684,
+      "memory": {
+        "free_bytes": 11385540608,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1426099200,
+        "reserved_bytes": 3546284032
+      }
+    },
+    {
+      "site": "blocks.2.8.updown",
+      "call": 2,
+      "parents": 97313,
+      "children": 438684,
+      "memory": {
+        "free_bytes": 11385540608,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1261897216,
+        "reserved_bytes": 3546284032
+      }
+    }
+  ],
+  "support_counts": [
+    4430,
+    21391,
+    97313,
+    438684
+  ],
+  "native_global_map_calls": 3,
+  "final_convolution_chunks": 0,
+  "error_type": "AdmissionStop",
+  "error": "PARTIAL: blocks.2.8.conv2: visible allocation plus reserve/headroom exceeds memory limits",
+  "actual_OOM_or_native_fault_observed": false,
+  "secondary_acceptance_error": "Final run support outside qualified bounds",
+  "failed_admission": {
+    "phase": "admission",
+    "utc": "2026-10-15T13:29:08.237559+00:00",
+    "monotonic_seconds": 46.869566566,
+    "elapsed_gpu_seconds": 16.598681065,
+    "site": "blocks.2.8.conv2",
+    "admitted": false,
+    "rows": 438684,
+    "padded_bytes": 9444318165,
+    "plan": {
+      "im2col_bytes": 3032183808,
+      "gathered_bytes": 3032183808,
+      "neighbor_map_bytes": 47377872,
+      "long_index_bytes": 189511488,
+      "mask_bytes": 11844468,
+      "hash_bytes": 7018944,
+      "output_bytes": 112303104,
+      "block_extra_bytes": 1123031040,
+      "visible_bytes": 7555454532,
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "spatial_volume": 12156928,
+      "cached": false
+    },
+    "memory": {
+      "free_bytes": 11385540608,
+      "total_bytes": 16974905344,
+      "allocated_bytes": 1261897216,
+      "reserved_bytes": 3546284032
+    }
+  },
+  "cpu_decoder_load_seconds": 11.916731075000001,
+  "cpu_high_water_bytes": 2786291712,
+  "last_admission_gpu_elapsed_seconds": 16.598681065,
+  "complete_forward_seconds": null,
+  "worker_elapsed_seconds": 42.934275090999996,
+  "supervisor_elapsed_seconds": 60.5779999999977,
+  "memory_peak": {
+    "allocated": 3354263040,
+    "reserved": 4389339136
+  },
+  "memory_release": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "device_memory_after_release": {
+    "free_bytes": 14935961600,
+    "total_bytes": 16974905344
+  },
+  "GPU_tensors_collected": true,
+  "CPU_model_collected": true,
+  "CPU_parameters_collected": true,
+  "CPU_component_collected": true,
+  "import_policy_rejected_calls": 0,
+  "observer_healthy": true,
+  "minimum_host_ram_bytes": 14604640256,
+  "minimum_D_free_bytes": 74985840640,
+  "process_returncode": 1,
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "windows_job_grace": {
+    "empty": true,
+    "seconds": 0.0,
+    "limit_seconds": 5.0
+  },
+  "named_distro_termination_returncode": 0,
+  "artifact_produced": false,
+  "mesh_material_GLB_UI_tested": false,
+  "raw_local_evidence": {
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/decode/run/guest/results.json": {
+      "bytes": 160635,
+      "sha256": "96c324699907cef998a2fc9b48d29820c04c88ecc6573407b1a811f54e93dc8c",
+      "published": false,
+      "preserved_local": true
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/decode/run/guest/phases.jsonl": {
+      "bytes": 53285,
+      "sha256": "023b43baaf973daf063dec6cffdd1c50f4986a904d12e6d318dbe5ea45dbdd91",
+      "published": false,
+      "preserved_local": true
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/decode/run/guest/run-contract.json": {
+      "bytes": 1322,
+      "sha256": "ffd89b32c6e5a6a48abc1d2b2d3a8781a3d3e5ab717e02493968447ca644b9f3",
+      "published": false,
+      "preserved_local": true
+    },
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/decode/run/results.json": {
+      "bytes": 210698,
+      "sha256": "6f689c5a49ce7202ee032ae0d805cb823e384e14f2127fa4fdd73af65dad9cd9",
+      "published": false,
+      "preserved_local": true
+    }
+  },
+  "decision": "Stop. No second decoder attempt: later required convolution39 cannot meet the unchanged conservative admission predicate even with perfect unused-cache eviction. No observed AMD numerical/native failure."
+}

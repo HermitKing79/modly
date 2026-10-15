@@ -1,0 +1,120 @@
+{
+  "schema": "modly.amd.texture-candidate-cpu-review.v1",
+  "status": "CPU_CANDIDATE_REVIEW_CLEAR_INFERENCE_NOT_EXECUTED",
+  "scope": "Fresh-lineage texture sampling adapter and default-preserving runtime/count seams only; no texture model, GPU, or WSL execution.",
+  "source_sha256": {
+    "scripts/compatibility/amd_generation_texture.py": "7d467ae8dc4e71e93765429436aa54c8a477531591224e757771234ca14507cb",
+    "scripts/compatibility/test_amd_generation_texture.py": "a2fa7b2d9e3ee01c5f7057f554f0bf544b7889e230124c856e6a776803bd08d5",
+    "scripts/compatibility/amd_texture_sampling.py": "1e142952751942dafa3131a42b12db9a480c96e7f8fca2bae2ef467bd5df7adc",
+    "scripts/compatibility/amd_texture_sampling_artifact.py": "5eaf35c08cf2e96f46dfe8bb32fa835c079ef34ce5a322a0afd411ee7cf9474c",
+    "scripts/compatibility/amd_texture_sampling_contract.py": "54d376e91797f55332ac5f58fe57b67c76dce8cdc0cfef1877de24b51b77e1fd",
+    "scripts/compatibility/amd_texture_sampling_control.py": "d6052ecc14e0edb5a87b2cc796c8b623ab85cc7760171c96696a6e5c0941897a",
+    "scripts/compatibility/amd_texture_sampling_local.py": "acccc279ea600f5ae995aa30d9eba07320927acb248aeecf7979a3e074c7e1bc"
+  },
+  "test_environment": {
+    "executable": "D:/AI/Trellis2AMD/venv/Scripts/python.exe",
+    "cwd": "scripts/compatibility",
+    "environment": {
+      "TEMP": "writable visualization root outside Git",
+      "TMP": "same outside-Git root",
+      "MODLY_TEXTURE_TEST_ROOT": "same outside-Git root"
+    },
+    "process_isolation": "Historical artifact and runtime suites ran in separate clean CPU processes."
+  },
+  "completed_checks": [
+    {
+      "command": "-B -m unittest test_amd_generation_texture",
+      "result": "PASS",
+      "tests_run": 12,
+      "skipped": 0,
+      "coverage": [
+        "actual fresh 4430-row shape lineage and coordinate validation",
+        "original F32 denormalization equality, followed by one normalization of saved denormalized shape",
+        "4430-row production artifact writer/reader and 4431 rejection",
+        "clean subprocess CPU preparation with torch_imported=false",
+        "genuine two-token sampler with original worker hooks: 12 positive, zero negative forwards and noise-first concatenation",
+        "duplicate/foreign worker context rejection",
+        "read-only post-run identity and complete static source closure",
+        "unchanged historical defaults and live budgets"
+      ]
+    },
+    {
+      "command": "-B -m unittest test_amd_texture_sampling_contract test_amd_texture_sampling_local test_amd_texture_sampling_result",
+      "result": "PASS",
+      "tests_run": 13,
+      "skipped": 0
+    },
+    {
+      "command": "-B -m unittest test_amd_texture_sampling_runtime",
+      "result": "PASS",
+      "tests_run": 2,
+      "skipped": 0
+    },
+    {
+      "command": "-B -m unittest test_amd_texture_sampling_artifact",
+      "result": "ENVIRONMENT_LIMITATION",
+      "tests_run": 15,
+      "passed": 13,
+      "errors": 1,
+      "skipped": 1,
+      "error": {
+        "test": "test_hardlinked_output_never_modifies_an_existing_file",
+        "reason": "os.link fixture creation was denied by the managed filesystem: PermissionError [WinError 5]. The production hardlink rejection path was therefore not exercised by this test."
+      },
+      "skip": "Existing symlink fixture skipped because link creation was unavailable."
+    },
+    {
+      "command": [
+        "-B",
+        "-c",
+        "import unittest; import test_amd_texture_sampling_artifact as m; tests=unittest.defaultTestLoader.loadTestsFromTestCase(m.ArtifactTests); suite=unittest.TestSuite(t for t in tests if t._testMethodName!=\"test_hardlinked_output_never_modifies_an_existing_file\"); result=unittest.TextTestRunner(verbosity=1).run(suite); raise SystemExit(not result.wasSuccessful())"
+      ],
+      "result": "PASS_WITH_EXISTING_SKIP",
+      "tests_run": 14,
+      "passed": 13,
+      "skipped": 1,
+      "excluded_test": "test_hardlinked_output_never_modifies_an_existing_file",
+      "exclusion_reason": "Only the independently observed filesystem permission failure above; no source/test behavior was weakened."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "notes": "Line-ending notices only."
+    }
+  ],
+  "discarded_combined_run": {
+    "command": "-B -m unittest test_amd_generation_texture test_amd_texture_sampling_artifact test_amd_texture_sampling_contract test_amd_texture_sampling_local test_amd_texture_sampling_result test_amd_texture_sampling_runtime",
+    "tests_run": 37,
+    "errors": 1,
+    "failures": 1,
+    "skipped": 1,
+    "reason": "Loading the synthetic runtime fixture installs a permanent checkpoint-file audit hook and imports Torch. This contaminated the artifact hardlink fixture and its no-Torch assertion. The isolated runs above replaced this combined run as qualification evidence."
+  },
+  "independent_review": {
+    "reviewer": "generation_architecture_audit",
+    "result": "CLEAR",
+    "method": "Read-only source review; reviewer did not rerun reported CPU tests.",
+    "repaired_findings": [
+      "Empty output is now an initial-launch-only guard; repeated post-run identity verification accepts persisted owned output.",
+      "Static closure now reuses the complete fresh shape/prefix computational source closure."
+    ],
+    "verified": [
+      "Immutable checkpoint/config/source pins and genuine strict loader retained",
+      "Fresh DINO, 4430-row shape, provenance and coordinates are revalidated",
+      "Saved denormalized shape normalized exactly once; noise/state precedes shape columns",
+      "12 positive and zero negative forwards; no sampler arithmetic change",
+      "Actual outside-Git production persistence probe",
+      "Historical token default 3743 retained; new adapter cap 4430",
+      "12 GiB allocator, 13 GiB preplacement free, 2+1 GiB live reserve, 180/240/480-second budgets and owned Job containment unchanged"
+    ]
+  },
+  "inference": {
+    "executed": false,
+    "model_weights_loaded_for_tests": false,
+    "gpu_executed": false,
+    "wsl_executed": false,
+    "blocked_by": "Fresh shape neural decoder geometry proof returned PARTIAL after 33/40 convolutions, before blocks.2.8.conv2 at 438684 rows. Texture inference remains unexecuted until an accepted genuine geometry CLI proof.",
+    "neural_cleanup_reported_by_root": "Healthy observers, natural owned Job exit, zero allocated/reserved GPU memory release.",
+    "candidate_state": "Source remains a CPU-qualified candidate; no texture full-generation or material/GLB proof is claimed."
+  }
+}

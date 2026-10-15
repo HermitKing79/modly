@@ -25,6 +25,14 @@ MAX_METADATA_BYTES = 65536
 MAX_FILE_BYTES = 8 + MAX_HEADER_BYTES + PAYLOAD_BYTES
 
 
+def layouts(token_count=3743,*,maximum_tokens=3743):
+    if (type(maximum_tokens) is not int or not 0<maximum_tokens<=4430
+            or type(token_count) is not int or not 0<token_count<=maximum_tokens):
+        raise ValueError('Texture artifact token count exceeds explicit qualified bound')
+    return {'raw':('F32',(token_count,32)),'denormalized':('F32',(token_count,32)),
+            'coords':('I32',(token_count,4)),'noise':('F32',(token_count,32))}
+
+
 def _hash(blob):
     return hashlib.sha256(blob).hexdigest()
 
@@ -124,8 +132,8 @@ def _owned_file(path, root, name, *, must_exist):
     return path
 
 
-def _array(name, array):
-    dtype, shape = LAYOUTS[name]
+def _array(name, array,*,token_count=3743,maximum_tokens=3743):
+    dtype, shape = layouts(token_count,maximum_tokens=maximum_tokens)[name]
     expected_dtype = np.dtype('<i4' if dtype == 'I32' else '<f4')
     if (type(array) is not np.ndarray or array.shape != shape or array.dtype != expected_dtype
             or not array.flags.c_contiguous or array.nbytes != shape[0] * shape[1] * 4):
@@ -165,19 +173,20 @@ def _bounded_read(path, maximum):
     return blob
 
 
-def _container(blob):
-    if not PAYLOAD_BYTES + 8 < len(blob) <= MAX_FILE_BYTES:
+def _container(blob,*,token_count=3743,maximum_tokens=3743):
+    approved=layouts(token_count,maximum_tokens=maximum_tokens);payload_bytes=token_count*400
+    if not payload_bytes + 8 < len(blob) <= 8+MAX_HEADER_BYTES+payload_bytes:
         raise ValueError('Texture container payload/header length mismatch')
     count = struct.unpack('<Q', blob[:8])[0]
-    if not 0 < count <= MAX_HEADER_BYTES or count % 8 or 8 + count + PAYLOAD_BYTES != len(blob):
+    if not 0 < count <= MAX_HEADER_BYTES or count % 8 or 8 + count + payload_bytes != len(blob):
         raise ValueError('Texture safetensors header length mismatch')
     header = _decode(blob[8:8 + count])
-    if type(header) is not dict or set(header) != {'__metadata__', *LAYOUTS}:
+    if type(header) is not dict or set(header) != {'__metadata__', *approved}:
         raise ValueError('Texture container must contain exactly the approved tensors')
     rows = {}
     cursor = 0
     payload = blob[8 + count:]
-    for name, (dtype, shape) in LAYOUTS.items():
+    for name, (dtype, shape) in approved.items():
         size = shape[0] * shape[1] * 4
         expected = {'dtype': dtype, 'shape': list(shape), 'data_offsets': [cursor, cursor + size]}
         # JSON booleans and floats compare equal to Python ints; the format requires ints.
@@ -185,19 +194,20 @@ def _container(blob):
             raise ValueError('Texture tensor layout/offset mismatch: ' + name)
         data = payload[cursor:cursor + size]
         array = np.frombuffer(data, dtype='<i4' if dtype == 'I32' else '<f4').reshape(shape)
-        _array(name, array)
+        _array(name, array,token_count=token_count,maximum_tokens=maximum_tokens)
         rows[name] = dict(dtype=dtype, shape=list(shape), tensor_bytes=size, sha256=_hash(data))
         cursor += size
     return header, rows, payload
 
 
-def verify(path, root, expected_metadata=None):
+def verify(path, root, expected_metadata=None,*,token_count=3743,maximum_tokens=3743):
     """Independently validate bytes and provenance after the producing worker exits."""
     root = approved_root(root)
     path = _owned_file(path, root, ARTIFACT_NAME, must_exist=True)
     sidecar = _owned_file(root / METADATA_NAME, root, METADATA_NAME, must_exist=True)
-    blob = _bounded_read(path, MAX_FILE_BYTES)
-    header, rows, _ = _container(blob)
+    layouts(token_count,maximum_tokens=maximum_tokens)
+    blob = _bounded_read(path, 8+MAX_HEADER_BYTES+token_count*400)
+    header, rows, _ = _container(blob,token_count=token_count,maximum_tokens=maximum_tokens)
     metadata = _decode(_bounded_read(sidecar, MAX_METADATA_BYTES))
     if type(metadata) is not dict or set(metadata) != {
             'format', 'artifact_file', 'artifact_bytes', 'artifact_sha256', 'tensors', 'provenance'}:
@@ -223,21 +233,22 @@ def _exclusive_write(path, blob):
         os.fsync(stream.fileno())
 
 
-def write(scratch, raw, denormalized, coords, provenance, *, noise):
+def write(scratch, raw, denormalized, coords, provenance, *, noise,token_count=3743,maximum_tokens=3743):
     """Exclusively persist the approved four tensors and verify byte-exact readback."""
     root = approved_root(scratch)
+    approved=layouts(token_count,maximum_tokens=maximum_tokens);payload_bytes=token_count*400
     tensors = dict(raw=raw, denormalized=denormalized, coords=coords, noise=noise)
-    data = {name: _array(name, array) for name, array in tensors.items()}
+    data = {name: _array(name, array,token_count=token_count,maximum_tokens=maximum_tokens) for name, array in tensors.items()}
     provenance = _provenance(provenance)
     rows, descriptors, cursor = {}, {}, 0
-    for name, (dtype, shape) in LAYOUTS.items():
+    for name, (dtype, shape) in approved.items():
         size = len(data[name])
         rows[name] = dict(dtype=dtype, shape=list(shape), tensor_bytes=size, sha256=_hash(data[name]))
         descriptors[name] = dict(dtype=dtype, shape=list(shape), data_offsets=[cursor, cursor + size])
         cursor += size
     header = _json_bytes({'__metadata__': _header_metadata(provenance, rows), **descriptors}, MAX_HEADER_BYTES)
     header += b' ' * (-len(header) % 8)
-    if len(header) > MAX_HEADER_BYTES or cursor != PAYLOAD_BYTES:
+    if len(header) > MAX_HEADER_BYTES or cursor != payload_bytes:
         raise ValueError('Texture container exceeds its exact payload/header bound')
     blob = struct.pack('<Q', len(header)) + header + b''.join(data.values())
     metadata = dict(format=FORMAT, artifact_file=ARTIFACT_NAME, artifact_bytes=len(blob),
@@ -252,28 +263,29 @@ def write(scratch, raw, denormalized, coords, provenance, *, noise):
     approved_root(root)
     _exclusive_write(path, blob)
     _exclusive_write(sidecar, metadata_blob)
-    result = verify(path, root, metadata)
-    persisted = _bounded_read(path, MAX_FILE_BYTES)
+    result = verify(path, root, metadata,token_count=token_count,maximum_tokens=maximum_tokens)
+    persisted = _bounded_read(path, 8+MAX_HEADER_BYTES+payload_bytes)
     if persisted != blob or _bounded_read(sidecar, MAX_METADATA_BYTES) != metadata_blob:
         raise ValueError('Texture artifact byte-exact readback differs')
     return result
 
 
-def persistence_probe(root, provenance=None):
+def persistence_probe(root, provenance=None,*,token_count=3743,maximum_tokens=3743):
     """Qualify actual storage using a fresh child and the exact production writer/reader."""
+    layouts(token_count,maximum_tokens=maximum_tokens)
     root = approved_root(root)
     scratch = root / 'persistence-probe'
     scratch.mkdir(exist_ok=False)
-    raw = np.arange(3743 * 32, dtype=np.float32).reshape(3743, 32) / np.float32(128)
+    raw = np.arange(token_count * 32, dtype=np.float32).reshape(token_count, 32) / np.float32(128)
     denormalized = np.ascontiguousarray(raw * np.float32(.25) + np.float32(.5))
     noise = np.ascontiguousarray(-raw - np.float32(1))
-    xyz = np.arange(3743, dtype=np.int32)
-    coords = np.column_stack((np.zeros(3743, np.int32), xyz // 1024, xyz // 32 % 32, xyz % 32)).astype(np.int32)
+    xyz = np.arange(token_count, dtype=np.int32)
+    coords = np.column_stack((np.zeros(token_count, np.int32), xyz // 1024, xyz // 32 % 32, xyz % 32)).astype(np.int32)
     supplied = {'purpose': 'cpu-only-persistence-probe', 'synthetic': True,
                 'noise': {'source': 'synthetic-independent-probe-sequence'}}
     if provenance is not None:
         supplied['caller'] = _provenance(provenance)
-    result = write(scratch, raw, denormalized, coords, supplied, noise=noise)
+    result = write(scratch, raw, denormalized, coords, supplied, noise=noise,token_count=token_count,maximum_tokens=maximum_tokens)
     return {**result, 'synthetic': True, 'torch_imported': 'torch' in sys.modules}
 
 

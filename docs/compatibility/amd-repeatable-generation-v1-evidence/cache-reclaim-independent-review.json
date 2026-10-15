@@ -1,0 +1,108 @@
+{
+  "schema": "modly.amd.independent-cache-admission-review.v1",
+  "reviewed_utc": "2026-10-15T13:41:47.333744+00:00",
+  "patch_review": "CLEAR_FOR_CPU_TESTED_CHANGE",
+  "overall_generation_status": "BLOCKED",
+  "decision": "No additional GPU or WSL attempt. The cache-only change cannot satisfy the complete unchanged admission chain for this fresh shape.",
+  "scope": {
+    "independent_source_review": true,
+    "fresh_independent_cpu_tests": true,
+    "gpu_execution": false,
+    "wsl_execution": false,
+    "model_or_native_imports": false,
+    "historical_or_C4_evidence_modified": false
+  },
+  "reviewed_sources_sha256": {
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "cae2f477d4c4afc91437ba911c00abe328b7858f3e7207b4eefa16b90493a401",
+    "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "7bb005f8ec0dc947cac1a4cb6fe0a8649c6190d424b58e61891dd2eafe262879",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_admission_reclaim.py": "05197951308051f012a969444cd76594a7fdc4305b92c549fefe178b472dd540"
+  },
+  "checks": [
+    "AdmissionHooks defaults to no cache release; only the new run_neural route opts in.",
+    "An otherwise failed pre-operation check with unused reserved memory permits one empty_cache call and one fresh memory sample, with no loop or convolution retry.",
+    "Live allocated bytes must remain equal and reserved bytes must not increase; release or measurement errors stop with PARTIAL evidence.",
+    "The exact original memory plans, 1.25 padding, 12GiB allocator ceiling, 2GiB free reserve and 1GiB opaque headroom remain unchanged.",
+    "No model math, checkpoint, precision, native framework, tiler, GPU deadline, Job ownership or cleanup policy is changed."
+  ],
+  "independent_verification": [
+    {
+      "working_directory": ".",
+      "command": "python -B -m unittest discover -s experimental/extensions/trellis2-amd/inference_decoder -p test_admission_reclaim.py -v",
+      "tests": 10,
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "working_directory": "experimental/extensions/trellis2-amd/inference_decoder",
+      "command": "python -B -m unittest test_decoder.AdmissionTests -v",
+      "tests": 2,
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check -- experimental/extensions/trellis2-amd/inference_decoder/admission.py experimental/extensions/trellis2-amd/inference_decoder/neural.py",
+      "exit_code": 0,
+      "result": "PASS; line-ending notices only"
+    }
+  ],
+  "actual_C4_failure": {
+    "harness_commit": "d73bc6906e2be1c57c2b5d51d48b921601963adf",
+    "classification": "PARTIAL",
+    "failure_type": "AdmissionStop",
+    "site": "blocks.2.8.conv2",
+    "convolutions_completed": 33,
+    "convolutions_required": 40,
+    "rows": 438684,
+    "padded_bytes": 9444318165,
+    "allocated_bytes": 1261897216,
+    "reserved_bytes": 3546284032,
+    "free_bytes": 11385540608,
+    "observed_OOM_or_native_fault": false,
+    "observer_healthy": true,
+    "owned_tree_natural_exit_verified": true,
+    "forced_job_cleanup": false,
+    "released_allocated_bytes": 0,
+    "released_reserved_bytes": 0,
+    "neural_artifact_produced": false
+  },
+  "independent_convolution39_proof": {
+    "site": "blocks.3.4.conv1",
+    "source_alias": "pinned_installed_source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+    "source_sha256": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+    "source_lines_checked": [
+      11,
+      24,
+      336,
+      364,
+      662,
+      705
+    ],
+    "rows": 438684,
+    "input_channels": 128,
+    "output_channels": 512,
+    "cached_minimum_plan_visible_bytes": 8511785652,
+    "padded_bytes": 10639732065,
+    "maximum_permitted_live_bytes": 1171427999,
+    "measured_GPU_parameter_payload_bytes": 948598492,
+    "required_residual_BF16_features_bytes": 112303104,
+    "required_distinct_input_BF16_features_bytes": 112303104,
+    "minimum_live_payload_bytes": 1173204700,
+    "minimum_excess_bytes": 1776701,
+    "liveness": "The pinned C2S block keeps x for the later residual while chunked norm/SiLU creates a distinct full h buffer before conv1. All GPU model parameters remain placed. Fixed-support intermediate convolutions preserve the measured 438684 rows.",
+    "excluded_from_lower_bound": [
+      "coordinates",
+      "neighbor maps",
+      "subdivision logits",
+      "initial inputs",
+      "allocator rounding",
+      "other live buffers"
+    ],
+    "conclusion": "Even zero unused allocator cache cannot admit convolution39 under the unchanged predicate. This is a policy-bound CPU proof, not a new GPU measurement."
+  },
+  "author_cpu_review": {
+    "path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/decode-cpu-admission-review.json",
+    "sha256": "82681af6bdd0614ce04fb559fee119d9d28648fac96cbf4eec259ba38dd7cc02",
+    "independently_checked_against_saved_failure_and_pinned_source": true
+  },
+  "remaining_work_status": "Genuine neural geometry, CPU mesh, texture execution, end-to-end CLI generation and frontend integration are unproven and stopped."
+}

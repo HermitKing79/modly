@@ -9,8 +9,9 @@ class TextureCopyPolicy(CopyPolicy):
         super().__init__(torch,n);self.contract=policy;self.counts.update(shape_cond=0,seqlen=0)
 
 class TextureSamplingControl(ShapeSamplingControl):
-    def __init__(self,torch,sampler_class,*,device='cuda:0'):
-        super().__init__(torch,sampler_class,device=device)
+    def __init__(self,torch,sampler_class,*,device='cuda:0',token_count=policy.TOKEN_COUNT,maximum_tokens=policy.TOKEN_COUNT):
+        if type(maximum_tokens) is not int or not 0<maximum_tokens<=4430:raise ValueError('Texture input bound exceeds qualified4430 maximum')
+        super().__init__(torch,sampler_class,device=device,token_count=token_count,maximum_tokens=maximum_tokens)
         self.policy=policy;self.budget=policy.Budget();self.shape_cond=None;self.concat_calls=0;self.concat_checked=False
     def copy_policy(self,n):return TextureCopyPolicy(self.torch,n)
     def begin_model(self,args,kwargs,copy):
@@ -20,8 +21,8 @@ class TextureSamplingControl(ShapeSamplingControl):
     def validate_concat(self,x):
         if self.budget.active is None or self.concat_checked:raise RuntimeError('Foreign/duplicate texture concatenation')
         from trellis2.modules.sparse import SparseTensor
-        if not isinstance(x,SparseTensor) or list(x.shape)!=[1,64] or x.coords is not self.coords or x.layout!=[slice(0,policy.TOKEN_COUNT)]:raise RuntimeError('Texture64 sparse layout differs')
-        self.tensor_check(x.feats,[policy.TOKEN_COUNT,64])
+        if not isinstance(x,SparseTensor) or list(x.shape)!=[1,64] or x.coords is not self.coords or x.layout!=[slice(0,self.token_count)]:raise RuntimeError('Texture64 sparse layout differs')
+        self.tensor_check(x.feats,[self.token_count,64])
         if not self.torch.equal(x.feats[:,:32],self.step_x.feats) or not self.torch.equal(x.feats[:,32:],self.shape_cond.feats):raise RuntimeError('Texture concat must be exact noise/state BEFORE shape condition')
         self.concat_checked=True;self.concat_calls+=1
     def end_model(self,result,copy):
@@ -35,7 +36,7 @@ class TextureSamplingControl(ShapeSamplingControl):
         self.sequences=1;self.current_x=x;self.coords=x.coords;self.positive=inputs['cond'];self.negative=None;self.shape_cond=inputs['shape_cond']
         self.sparse_check(x);self.sparse_check(self.shape_cond);self.tensor_check(self.positive,[1,1029,1024])
         seqlen=x.get_spatial_cache('seqlen')
-        if (not isinstance(seqlen,self.torch.Tensor) or list(seqlen.shape)!=[1] or seqlen.dtype!=self.torch.int64 or str(seqlen.device)!=self.device or seqlen.item()!=policy.TOKEN_COUNT):raise RuntimeError('Texture sparse sequence cache differs')
+        if (not isinstance(seqlen,self.torch.Tensor) or list(seqlen.shape)!=[1] or seqlen.dtype!=self.torch.int64 or str(seqlen.device)!=self.device or seqlen.item()!=self.token_count):raise RuntimeError('Texture sparse sequence cache differs')
         for value in (x.feats,self.shape_cond.feats,self.positive):
             if not self.torch.isfinite(value).all().item():raise RuntimeError('Nonfinite texture input')
         self.check_memory(memory());sampler=self.sampler_class(sigma_min=policy.SIGMA_MIN);original=sampler.sample_once

@@ -1,0 +1,31 @@
+{
+  "schema": "modly.amd.final-outcome-review.v1",
+  "reviewed_utc": "2026-10-15T13:48:18.661Z",
+  "result": "CLEAR",
+  "primary_mission": "BLOCKED",
+  "findings": [],
+  "reviewed_sha256": {
+    "docs/compatibility/amd-repeatable-generation-v1.md": "17b16b082bbb375bb86beb64fece39f67b00424292f812fdce5771d4813328c0",
+    "docs/superpowers/plans/2026-10-15-repeatable-amd-generation-v1.md": "b0554ea7619cc314e0e298fd45624669871afc462421bd422d0d6670d7420c77",
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image-neural-result.json": "f2f7530fd42d14a17ffa0de89c6089e0ab5de13ec375dbf35d30bd3b83a68a15",
+    "docs/compatibility/amd-repeatable-generation-v1-evidence/texture-candidate-cpu-review.json": "4d0c2d6e92e9d6c22146c914ba84eac996ad6f89e9a2defa5ec8056d6338b90b"
+  },
+  "verified": [
+    "Report and plan distinguish the blocked Generate-button goal from actual prefix and shape PASS results and genuine neural PARTIAL after 33 of 40 convolutions.",
+    "Neural receipt agrees with saved guest/host classification, error, counts, source job, run contract, memory peak/release, observer and process return code; all four raw local evidence byte counts and hashes match.",
+    "Convolution39 CPU lower-bound proof remains consistent: required live payload1173204700 exceeds unchanged ceiling1171427999 by1776701 bytes.",
+    "No new-image mesh, material, GLB, viewport, application end-to-end success or cache-patch GPU execution is claimed.",
+    "All seven texture candidate source hashes match current files. CPU-only status, unexecuted inference, hardlink permission failure and symlink skip are explicit.",
+    "Existing native import policy hash remains8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd; bounded native/allocator policies are retained.",
+    "The linked CPU proof inside ignored new-image is now explicitly staged. Published receipts distinguish large raw local evidence from committed evidence."
+  ],
+  "publication_note": "Reviewed content is staged for final development-branch publication. Commit/push and exact remote-head preservation verification remain root-owned final actions; this receipt does not claim they have occurred.",
+  "scope": {
+    "source_and_saved_evidence_reads_only": true,
+    "tests_run_during_this_final_review": false,
+    "gpu_execution": false,
+    "wsl_execution": false,
+    "source_edits": false,
+    "preservation_audit": "Separate preservation agent owns final protected-source/environment audit."
+  }
+}

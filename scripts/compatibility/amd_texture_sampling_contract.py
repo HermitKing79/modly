@@ -149,9 +149,9 @@ def validate_transfer(key, row, target, phase, n):
     sampling.validate_transfer(key, row, target, phase, n)
 
 
-def validate_latent(x):
+def validate_latent(x,*,maximum_tokens=TOKEN_COUNT):
     from amd_shape_sampling_artifact import validate
-    validate(x)
+    validate(x,maximum_tokens=maximum_tokens)
 
 
 def normalization_arrays(stats, expected):
@@ -160,28 +160,32 @@ def normalization_arrays(stats, expected):
     return np.array(stats['mean'], np.float32), np.array(stats['std'], np.float32)
 
 
-def normalize_shape(x, stats=None):
-    validate_latent(x)
+def normalize_shape(x, stats=None,*,maximum_tokens=TOKEN_COUNT):
+    validate_latent(x,maximum_tokens=maximum_tokens)
     mean, std = normalization_arrays(SHAPE_NORMALIZATION if stats is None else stats, SHAPE_NORMALIZATION)
     result = np.ascontiguousarray((x - mean[None]) / std[None])
-    validate_latent(result)
+    validate_latent(result,maximum_tokens=maximum_tokens)
     return result
 
 
-def denormalize_texture(x, stats=None):
-    validate_latent(x)
+def denormalize_texture(x, stats=None,*,maximum_tokens=TOKEN_COUNT):
+    validate_latent(x,maximum_tokens=maximum_tokens)
     mean, std = normalization_arrays(TEXTURE_NORMALIZATION if stats is None else stats, TEXTURE_NORMALIZATION)
     result = np.ascontiguousarray(x * std[None] + mean[None])
-    validate_latent(result)
+    validate_latent(result,maximum_tokens=maximum_tokens)
     return result
 
 
-def classify(record, process_ok, healthy, preserved):
+def classify(record, process_ok, healthy, preserved,*,token_count=TOKEN_COUNT,maximum_tokens=TOKEN_COUNT,feature_sha256=None):
     """Require the exact sequence and independently verified external artifact row."""
     try:
         import amd_texture_sampling_local as local
         import amd_texture_sampling_artifact as artifact
         from amd_decoder_contract import validate_release
+        if type(maximum_tokens) is not int or not 0<maximum_tokens<=4430 or type(token_count) is not int or not 0<token_count<=maximum_tokens:raise ValueError("Texture token bound differs")
+        layouts=artifact.layouts(token_count,maximum_tokens=maximum_tokens)
+        payload_bytes=token_count*400
+        expected_feature_sha256=local.FEATURE_SHA if feature_sha256 is None else feature_sha256
 
         def seconds(value, limit):
             if type(value) not in (float, int) or not math.isfinite(value) or not 0 <= value <= limit:
@@ -205,9 +209,10 @@ def classify(record, process_ok, healthy, preserved):
                     or any(type(value) is not bool or value for value in tunable['flags'].values())
                     or tunable['gpu_initialized'] is not initialized):
                 raise ValueError('Texture actual TunableOp policy/phase evidence differs')
+        digest(expected_feature_sha256)
         seconds(record['forward_seconds'], GPU_SECONDS)
         seconds(record['cpu_load']['elapsed_seconds'], CPU_SECONDS)
-        validate_output(record['output'], TOKEN_COUNT)
+        validate_output(record['output'], token_count)
         validate_release(record['release'])
         modules = {'<root>': 1, **{f'blocks.{i}': 1 for i in range(30)},
                    **{f'blocks.{i}.{a}': 1 for i in range(30) for a in ('self_attn', 'cross_attn')}}
@@ -246,12 +251,12 @@ def classify(record, process_ok, healthy, preserved):
         metadata = saved['metadata']
         if (metadata['format'] != artifact.FORMAT or metadata['artifact_file'] != artifact.ARTIFACT_NAME
                 or type(metadata['artifact_bytes']) is not int
-                or not artifact.PAYLOAD_BYTES + 8 < metadata['artifact_bytes'] <= artifact.MAX_FILE_BYTES):
+                or not payload_bytes + 8 < metadata['artifact_bytes'] <= 8 + artifact.MAX_HEADER_BYTES + payload_bytes):
             raise ValueError('Texture artifact format/size differs')
         digest(metadata['artifact_sha256'])
-        if set(metadata['tensors']) != set(artifact.LAYOUTS):
+        if set(metadata['tensors']) != set(layouts):
             raise ValueError('Texture artifact tensor set differs')
-        for key, (dtype, layout) in artifact.LAYOUTS.items():
+        for key, (dtype, layout) in layouts.items():
             row = metadata['tensors'][key]
             if row != dict(dtype=dtype, shape=list(layout), tensor_bytes=math.prod(layout) * 4, sha256=row['sha256']):
                 raise ValueError('Texture artifact tensor layout differs')
@@ -275,7 +280,7 @@ def classify(record, process_ok, healthy, preserved):
                 or checkpoint['config_sha256'] != local.CONFIG_SHA
                 or checkpoint['source_sha256'] != '3959f1f36f17ecd59ba06b91c948ac85303a3aab7d572f6248a846bc50f68d0c'
                 or checkpoint['conditioning']['verified'] is not True
-                or checkpoint['conditioning']['file_sha256'] != local.FEATURE_SHA
+                or checkpoint['conditioning']['file_sha256'] != expected_feature_sha256
                 or checkpoint['conditioning']['output_sha256'] != record['input']['cond']['sha256']):
             raise ValueError('Texture checkpoint/source/conditioning provenance differs')
     except (KeyError, ValueError, TypeError, IndexError):

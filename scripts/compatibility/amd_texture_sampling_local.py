@@ -120,7 +120,7 @@ def verify_inputs():
     return result, contract.normalize_shape(denormalized), coords
 
 
-def identity(*, hash_weights=True):
+def identity(*, hash_weights=True, input_verifier=None):
     from services.amd_model_metadata import json_metadata, safetensors_metadata
     assets = pinned_json(AUDIT, AUDIT_SHA)
     audited = assets['model_checkpoints'][PREFIX.name]
@@ -138,14 +138,20 @@ def identity(*, hash_weights=True):
     contract.validate_header(config, current['tensors'])
     verify_sources()
     sampler = verify_sampler()
-    feature, normalized, coords = verify_inputs()
+    if input_verifier is None:
+        feature, normalized, coords = verify_inputs()
+        input_rows,provenance_sha=assets['saved_inputs'],SHAPE_PROVENANCE_SHA
+    else:
+        inputs=input_verifier()
+        feature,normalized,coords=inputs['feature'],inputs['normalized'],inputs['coords']
+        input_rows,provenance_sha=inputs['saved_inputs'],inputs['shape_provenance_sha256']
     checkpoint_sha256 = digest(PREFIX.with_suffix('.safetensors')) if hash_weights else None
     if hash_weights and checkpoint_sha256 != CHECKPOINT_SHA:
         raise ValueError('Complete texture checkpoint hash changed')
     return dict(current, config=config, config_sha256=CONFIG_SHA, checkpoint_sha256=checkpoint_sha256,
                 token_count=len(coords), feature=feature, pipeline_sha256=PIPELINE_SHA,
                 shape_condition_sha256=hashlib.sha256(normalized.tobytes()).hexdigest(),
-                saved_inputs=assets['saved_inputs'], shape_provenance_sha256=SHAPE_PROVENANCE_SHA,
+                saved_inputs=input_rows, shape_provenance_sha256=provenance_sha,
                 shape_normalization=sampler['shape_normalization'], normalization=sampler['normalization'])
 
 
@@ -185,9 +191,9 @@ def factory(config, *, storage=False):
     return model
 
 
-def load_cpu():
+def load_cpu(*,identity_verifier=None):
     from strict_loader import StrictLocalComponent
-    identity(hash_weights=False)
+    (identity if identity_verifier is None else identity_verifier)(hash_weights=False)
     component = StrictLocalComponent(str(PREFIX.with_suffix('.json')), str(PREFIX.with_suffix('.safetensors')),
                                      lambda config: factory(config, storage=True))
     try:

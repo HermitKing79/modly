@@ -1,0 +1,214 @@
+{
+  "schema": "modly.amd.cpu-admission-review.v1",
+  "created_utc": "2026-10-15T13:40:09.022163+00:00",
+  "classification": "BLOCKED",
+  "decision": "No additional GPU or WSL forward. Bounded cache repair is CPU-tested only; cache eviction cannot make the entire unchanged admission chain fit.",
+  "execution_scope": {
+    "cpu_scalar_arithmetic_and_source_reads_only": true,
+    "gpu_execution": false,
+    "wsl_execution": false,
+    "model_imports": false,
+    "old_C4_evidence_modified": false
+  },
+  "actual_C4": {
+    "classification": "PARTIAL",
+    "error_type": "AdmissionStop",
+    "error": "PARTIAL: blocks.2.8.conv2: visible allocation plus reserve/headroom exceeds memory limits",
+    "forward_calls": 1,
+    "convolutions_completed": 33,
+    "native_map_calls": 3,
+    "memory_peak": {
+      "allocated": 3354263040,
+      "reserved": 4389339136
+    },
+    "memory_release": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "evidence": {
+      "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/decode/run/guest/results.json": "96c324699907cef998a2fc9b48d29820c04c88ecc6573407b1a811f54e93dc8c",
+      "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/decode/run/guest/phases.jsonl": "023b43baaf973daf063dec6cffdd1c50f4986a904d12e6d318dbe5ea45dbdd91",
+      "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/decode/run/guest/run-contract.json": "ffd89b32c6e5a6a48abc1d2b2d3a8781a3d3e5ab717e02493968447ca644b9f3"
+    },
+    "failed_admission": {
+      "phase": "admission",
+      "utc": "2026-10-15T13:29:08.237559+00:00",
+      "monotonic_seconds": 46.869566566,
+      "elapsed_gpu_seconds": 16.598681065,
+      "site": "blocks.2.8.conv2",
+      "admitted": false,
+      "rows": 438684,
+      "padded_bytes": 9444318165,
+      "plan": {
+        "im2col_bytes": 3032183808,
+        "gathered_bytes": 3032183808,
+        "neighbor_map_bytes": 47377872,
+        "long_index_bytes": 189511488,
+        "mask_bytes": 11844468,
+        "hash_bytes": 7018944,
+        "output_bytes": 112303104,
+        "block_extra_bytes": 1123031040,
+        "visible_bytes": 7555454532,
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 128,
+        "spatial_volume": 12156928,
+        "cached": false
+      },
+      "memory": {
+        "free_bytes": 11385540608,
+        "total_bytes": 16974905344,
+        "allocated_bytes": 1261897216,
+        "reserved_bytes": 3546284032
+      }
+    },
+    "actual_OOM_or_native_fault_observed": false,
+    "explanation": "AdmissionStop preceded convolution34 and its new native map. This is a conservative memory admission stop, not an observed OOM or native binding failure."
+  },
+  "unchanged_predicate": {
+    "allocator": "max(allocated_bytes,reserved_bytes)+ceil(visible_bytes*1.25)+opaque_headroom_bytes<=allocator_limit_bytes",
+    "free": "free_bytes>=ceil(visible_bytes*1.25)+free_reserve_bytes",
+    "allocator_limit_bytes": 12884901888,
+    "opaque_headroom_bytes": 1073741824,
+    "free_reserve_bytes": 2147483648
+  },
+  "current_stop_cache_analysis": {
+    "unused_reserved_bytes": 2284386816,
+    "minimum_reserved_reduction_for_allocator_predicate_bytes": 1179442133,
+    "minimum_free_increase_bytes": 206261205,
+    "hypothetical_reserved_equals_allocated_total_bytes": 11779957205,
+    "post_eviction_actual_values": "NOT_MEASURED; only live remeasurement could admit the current convolution."
+  },
+  "reachable_full_convolutions": [
+    {
+      "sites": [
+        "blocks.2.8.conv2"
+      ],
+      "plan": {
+        "im2col_bytes": 3032183808,
+        "gathered_bytes": 3032183808,
+        "neighbor_map_bytes": 47377872,
+        "long_index_bytes": 189511488,
+        "mask_bytes": 11844468,
+        "hash_bytes": 7018944,
+        "output_bytes": 112303104,
+        "block_extra_bytes": 1123031040,
+        "visible_bytes": 7555454532,
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 128,
+        "spatial_volume": 12156928,
+        "cached": false
+      },
+      "padded_bytes": 9444318165
+    },
+    {
+      "sites": [
+        "blocks.3.0.conv",
+        "blocks.3.1.conv",
+        "blocks.3.2.conv",
+        "blocks.3.3.conv"
+      ],
+      "plan": {
+        "im2col_bytes": 3032183808,
+        "gathered_bytes": 3032183808,
+        "neighbor_map_bytes": 0,
+        "long_index_bytes": 189511488,
+        "mask_bytes": 11844468,
+        "hash_bytes": 0,
+        "output_bytes": 112303104,
+        "block_extra_bytes": 1796849664,
+        "visible_bytes": 8174876340,
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 128,
+        "spatial_volume": 12156928,
+        "cached": true
+      },
+      "padded_bytes": 10218595425
+    },
+    {
+      "sites": [
+        "blocks.3.4.conv1"
+      ],
+      "plan": {
+        "im2col_bytes": 3032183808,
+        "gathered_bytes": 3032183808,
+        "neighbor_map_bytes": 0,
+        "long_index_bytes": 189511488,
+        "mask_bytes": 11844468,
+        "hash_bytes": 0,
+        "output_bytes": 449212416,
+        "block_extra_bytes": 1796849664,
+        "visible_bytes": 8511785652,
+        "rows": 438684,
+        "in_channels": 128,
+        "out_channels": 512,
+        "spatial_volume": 12156928,
+        "cached": true
+      },
+      "padded_bytes": 10639732065,
+      "baseline_ceiling_bytes": 1171427999
+    }
+  ],
+  "convolution39_lower_bound": {
+    "site": "blocks.3.4.conv1",
+    "rows": 438684,
+    "input_channels": 128,
+    "output_channels": 512,
+    "source_alias": "pinned_installed_source/trellis2/models/sc_vaes/sparse_unet_vae.py",
+    "source_sha256": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+    "source_forward_lines": [
+      336,
+      364
+    ],
+    "chunked_apply_lines": [
+      11,
+      24
+    ],
+    "norm_source_alias": "pinned_installed_source/trellis2/modules/norm.py",
+    "norm_source_sha256": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00",
+    "liveness_reason": "The original C2S block retains x for skip_connection(x). Before conv1, chunked_apply(norm1,x.feats) and chunked_apply(SiLU,h.feats) produce a distinct full BF16[N,128] h through torch.empty; x and h coexist with all unchanged GPU model parameters.",
+    "measured_runtime_parameter_payload_bytes": 948598492,
+    "original_x_feature_bytes": 112303104,
+    "distinct_h_feature_bytes": 112303104,
+    "minimum_live_payload_bytes": 1173204700,
+    "maximum_permitted_baseline_bytes": 1171427999,
+    "minimum_excess_bytes": 1776701,
+    "lower_bound_excludes": [
+      "all sparse coordinates",
+      "all global native neighbor maps",
+      "retained subdivision logits",
+      "initial input",
+      "allocator rounding",
+      "other live buffers"
+    ],
+    "conclusion": "Even zero unused cache cannot satisfy the unchanged convolution39 admission. Cache-only repair is insufficient for full geometry readiness."
+  },
+  "remaining_tail": {
+    "fourth_C2S": "Not reached; genuine selected child count is unknown. Keep <=1842968 final and <=1000000 intermediate caps.",
+    "convolution40": "Existing source-equivalent final64 row tiler remains unchanged. No128 convolution tiler was added.",
+    "nonconvolution_math": "Original low_vram chunk65536 normalization/MLP/SiLU/skip/final output are untouched."
+  },
+  "cpu_patch": {
+    "policy": "DefaultFalse opt-in. At an otherwise failed check with reserved>allocated, exactly one empty_cache then remeasurement; allocated must be unchanged and reserved cannot increase; the exact original predicate must pass. No loop, operation retry, BLAS workspace clearing or limit change.",
+    "files": {
+      "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "cae2f477d4c4afc91437ba911c00abe328b7858f3e7207b4eefa16b90493a401",
+      "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "7bb005f8ec0dc947cac1a4cb6fe0a8649c6190d424b58e61891dd2eafe262879",
+      "experimental/extensions/trellis2-amd/inference_decoder/test_admission_reclaim.py": "05197951308051f012a969444cd76594a7fdc4305b92c549fefe178b472dd540"
+    },
+    "tests": [
+      {
+        "command": "python -B -m unittest discover -s experimental/extensions/trellis2-amd/inference_decoder -p test_admission_reclaim.py -v",
+        "tests": 10,
+        "result": "PASS"
+      },
+      {
+        "working_directory": "experimental/extensions/trellis2-amd/inference_decoder",
+        "command": "python -B -m unittest test_decoder.AdmissionTests -v",
+        "tests": 2,
+        "result": "PASS"
+      }
+    ]
+  }
+}

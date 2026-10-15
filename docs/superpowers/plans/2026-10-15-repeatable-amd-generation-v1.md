@@ -1,26 +1,21 @@
-# Repeatable AMD Generation v1 implementation plan
+# Repeatable AMD Generation v1 — execution record
 
-**Goal:** One new image produces genuine geometry and learned material data, then a verified GLB through Modly's Generate path. Existing turret assets are never substituted.
+Baseline `6ea0abb20b3391ff3dd4daceeb2e1a9db903afa2`; branch `codex/amd-repeatable-generation-v1`.
 
-**Approved intent:** User requested independent execution, preservation, cheapest new-image proof before frontend integration, and a stop on unsupported inference. Architecture discovery found fixture-specific wrappers rather than a connected engine; independent review confirmed their arithmetic is reusable.
+Goal: a new image selected through Generate produces genuine geometry/materials, loads in the viewport and exports verified GLB. **Final status: BLOCKED at real neural inference; UI integration withheld.**
 
-**Preserved baseline:** `6ea0abb20b3391ff3dd4daceeb2e1a9db903afa2`; branch `codex/amd-repeatable-generation-v1`. One hundred protected files verified; twenty local-only files backed up.
+- [x] Discover application/runtime topology; preserve76remote heads,100protected files and20local-only files. Reproduce mock-only rejection without GPU work.
+- [x] Authenticate new brick image and parameterize Windows DINO→sparse sampling→occupancy. Publish189c670 before execution. Actual prefix PASS, healthy/natural exits and zero owned Torch memory.
+- [x] Derive canonical32³ coordinates:4430. CPU-qualify bounded count, preserve historical3743defaults/hard memory caps. Publish93ce31d. Actual shape sampling PASS:12steps/21forwards, finiteF32[4430,32], exact denormalization/readback.
+- [x] Parameterize original WSL neural path, writer/reader and contained transfer. Publish1863027. Git-read timeout stopped before marker; CPU-qualify15-second bounded Git read and publishd73bc69.
+- [x] Execute one real neural decode. PARTIAL:4430→21391→97313→438684,33/40convolutions, then memory admission rejects blocks.2.8.conv2. Healthy monitoring, release0/0, natural Job settlement.
+- [x] CPU-test one opt-in unused-cache release/remeasurement, unchanged predicate. Independent lower-bound proof: laterconv39 still exceeds budget. **No GPU retry; stop applies.**
+- [x] Preserve CPU-only mesh-reader/texture candidate with unexecuted status.
+- [ ] Complete real new-image neural output and CPU dual-grid mesh.
+- [ ] Execute same-lineage learned materials and independently reopen GLB.
+- [ ] Only after CLI proof: connect genuine AMD mode to HTTP/subprocess/viewport; reconcile parameters/timeouts, single-GPU lock, progress/cancellation and sequential jobs.
+- [x] Focused CPU tests, independent review, final evidence/report and development-branch publication. Preserve main/history.
 
-- [x] Discover application/runtime topology and reproduce non-mock admission rejection without GPU work. This is a diagnostic checkpoint, not an inference verdict.
-- [x] Parameterize the existing Windows DINO → sparse sampling → occupancy coordinator with one authenticated new input and exclusive evidence. Published at `189c670cba769ad3274b0a535b761d5873826f51`; genuine new brick-image sequence passed with healthy observation and zero release. This is occupancy only, not full generation.
-- [x] Derive canonical32³ coordinates from those outputs. Measured N=4,430; CPU qualification replaces the historical fixture-derived 3,743 initial bound with an explicit adapter-only 4,430 bound. Historical defaults stay unchanged. Reviewed candidate published at `93ce31df21346ce2a5327c2978d4c89f702ec780`; one genuine12-step/21-forward sequence passed in9.391s, peak reserved3,152,019,456bytes, release0/0. Original memory limits plus adapter-only2GiB free+1GiB opaque live headroom retained. Independent payload/coordinate/denormalization verification passed.
-- [ ] Parameterize the proven WSL shape decoder with authenticated fresh shape arrays, actual learned counts and unchanged math. Early support remains≤1M, final support≤1,842,968, tile32768,40convolutions/eight C2S, same precision/native identities. Retain live memory admission,13GiB initial VRAM,12GiB allocator,2GiB reserve/1GiB opaque headroom and existing deadlines.
-- [ ] Convert genuine saved neural output with the existing CPU flexible dual-grid converter. Validate and preserve mesh before spending on texture stages. An untextured GLB is only intermediate evidence.
-- [ ] Parameterize existing texture sampling and guided decoder using this same job's shape/data/subdivision lineage. Save and independently verify learned material output. Reuse Blender compact learned-colour export; retain raw PBR data separately.
-- [ ] Only after the CLI proof succeeds, add a real experimental AMD runtime mode to the existing Generate HTTP/subprocess lifecycle; reconcile common parameters, stage-aware deadlines, one-GPU-job lock, progress, cancellation and result loading. Use existing viewport/GLB download, not a new application.
-- [ ] Focused CPU tests and independent review for every changed contract. At most the necessary genuine new-image proof and subsequent application-backed validation; stop on any unsupported native/resource failure, without automatic inference retries. Report PASS only for the full button/viewport/export acceptance.
+Next separate milestone: CPU-equivalent bounded row tiling for remaining large-support128→128/128→512 explicit-GEMM convolutions, using existing global-neighbor semantics/final tiler. No cap increases, new GPU attempt or frontend implementation in this stopped run.
 
-## Worker interfaces
-
-Windows occupancy adapter: `amd_generation_occupancy.py --image PATH --evidence DIR --harness-commit SHA`; `--prepare-only` validates/stages source contract without model imports. Fresh outputs keep existing stage receipts and authenticated paths.
-
-Windows shape adapter: `amd_generation_shape.py --occupancy-evidence DIR --evidence DIR --harness-commit SHA`; reads preceding PASS receipts and hashes, derives pooled coordinates and fresh source-faithful noise. Existing proof defaults stay unchanged.
-
-WSL neural adapter: `inference_decoder/decode.py --run-contract PATH`. Schema `modly.amd.neural-run.v1`: initial_count≤4430, input_paths/input_sha256 keyed `shape-latent-denormalized.npy`/`coords.npy`, source_job_sha256, exclusive WSL-owned output_directory and scratch_directory, guest repo_root, native_stage, fixed intermediate/final caps. Host exports only independently verified owned results to the job's Windows directory.
-
-No historical report/receipt is manufactured or rewritten. New run-specific references replace fixture references; source/model audits remain immutable. Reject forged provenance, mismatched coordinates, unsupported counts, ambiguous paths, unsafe allocation plans and incomplete cleanup. CPU tests must establish those boundaries before new GPU work.
+See [final report](../../compatibility/amd-repeatable-generation-v1.md) for exact commits, commands, results and limits.

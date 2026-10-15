@@ -86,7 +86,7 @@ def run_neural(model,torch,cuda,record,output,gpu_started,contract,*,journal=Non
         free,total=torch.cuda.mem_get_info(0)
         return dict(free_bytes=free,total_bytes=total,allocated_bytes=torch.cuda.memory_allocated(0),reserved_bytes=torch.cuda.memory_reserved(0))
     try:
-        hooks=AdmissionHooks(model,torch,emit=event_hook,memory=memory).install()
+        hooks=AdmissionHooks(model,torch,emit=event_hook,memory=memory,reclaim_unused_cache=True).install()
         native=NativeBoundary(cuda,record['bindings'],hooks,torch,conv_config,spconv,emit).install()
         patch=FinalConvolutionPatch(SubMConv3dFunction,model.blocks[3][-1].conv2,hooks,torch,emit).install()
         spconv.set_algorithm('explicit_gemm');spconv.set_hashmap_ratio(2.0)
@@ -145,6 +145,10 @@ def run_neural(model,torch,cuda,record,output,gpu_started,contract,*,journal=Non
         # collection. Those frames otherwise keep the actual sparse tensors alive.
         record['neural_failure'],failure=detach_failure(exc)
     finally:
+        record['admission_cache_reclaims']={'enabled':True,
+            'attempts':len(hooks.cache_reclaims) if hooks else 0,
+            'admitted_after':sum(r['admitted'] for r in hooks.cache_reclaims) if hooks else 0,
+            'records':list(hooks.cache_reclaims) if hooks else []}
         record['convolutions_completed']=hooks.convolution_completed if hooks else 0
         record['subdivision_operations']=list(hooks.subdivision_records) if hooks else []
         record['native_map_calls']=native.calls if native else 0

@@ -99,8 +99,11 @@ def output_payload_bytes(final_rows, parent_rows):
 
 
 class AdmissionHooks:
-    def __init__(self, decoder, torch, emit=None, memory=None):
+    def __init__(self, decoder, torch, emit=None, memory=None, *, reclaim_unused_cache=False):
         self.decoder, self.torch = decoder, torch
+        require(type(reclaim_unused_cache) is bool, 'cache release opt-in must be boolean')
+        self.reclaim_unused_cache = reclaim_unused_cache
+        self.cache_reclaims = []
         self.emit = emit or (lambda event: None)
         self.memory = memory or self._memory
         self.handles, self.sequence, self.up_states = [], [], {}
@@ -117,11 +120,41 @@ class AdmissionHooks:
     def _admit(self, name, plan):
         memory = self.memory()  # Retained caches/model/live buffers are included now.
         padded = (plan['visible_bytes']*5+3)//4
-        allowed = (max(memory['allocated_bytes'], memory['reserved_bytes']) + padded
-                   + OPAQUE_HEADROOM <= ALLOCATOR_LIMIT
-                   and memory['free_bytes'] >= padded+FREE_RESERVE)
+        def fits(values):
+            return (max(values['allocated_bytes'], values['reserved_bytes']) + padded
+                    + OPAQUE_HEADROOM <= ALLOCATOR_LIMIT
+                    and values['free_bytes'] >= padded+FREE_RESERVE)
+        allowed = fits(memory)
         self.emit(dict(event='admission', site=name, admitted=allowed, rows=self.rows,
                        padded_bytes=padded, plan=plan, memory=memory))
+        if (not allowed and self.reclaim_unused_cache
+                and memory['reserved_bytes'] > memory['allocated_bytes']):
+            # One cache release before this operation, never an operation retry.
+            # Original plans, allocator ceiling, padding and reserves are intact.
+            row = dict(site=name, before=dict(memory), after=None, admitted=False,
+                       attempt=len(self.cache_reclaims)+1, padded_bytes=padded)
+            self.cache_reclaims.append(row)
+            self.emit(dict(event='cache-reclaim-entry', **row))
+            try:
+                self.torch.cuda.empty_cache()
+                after = dict(self.memory())
+            except Exception as exc:
+                row['error'] = type(exc).__name__+': '+str(exc)
+                self.emit(dict(event='cache-reclaim-result', **row))
+                raise AdmissionStop(f'PARTIAL: {name}: cache release failed: '+row['error']) from None
+            row['after'] = after
+            stable = (after['allocated_bytes'] == memory['allocated_bytes']
+                      and after['reserved_bytes'] <= memory['reserved_bytes'])
+            allowed = stable and fits(after)
+            row['admitted'] = allowed
+            self.emit(dict(event='cache-reclaim-result', **row))
+            require(after['allocated_bytes'] == memory['allocated_bytes'],
+                    f'{name}: cache release changed live allocation')
+            require(after['reserved_bytes'] <= memory['reserved_bytes'],
+                    f'{name}: cache release increased reserved memory')
+            memory = after
+            self.emit(dict(event='admission', site=name, admitted=allowed, rows=self.rows,
+                           padded_bytes=padded, plan=plan, memory=memory))
         require(allowed, f'{name}: visible allocation plus reserve/headroom exceeds memory limits')
         return memory
 
