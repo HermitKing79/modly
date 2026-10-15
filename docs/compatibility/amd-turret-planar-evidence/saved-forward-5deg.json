@@ -1,0 +1,238 @@
+{
+  "modifier_seconds": 0.0009535999997751787,
+  "polygon_count": 134,
+  "ngons": 38,
+  "effective_triangle_count": 223,
+  "angle_degrees": 5.0,
+  "dissolve_boundaries": false,
+  "delimit": [
+    "NORMAL"
+  ],
+  "input_Blender_XYZ_faces_RGBA_byte_exact": true,
+  "after": {
+    "vertices": 103,
+    "triangles": 223,
+    "nonmanifold_gt2_edges": 61,
+    "boundary_edges": 62,
+    "boundary_length": 0.1420040153846248,
+    "components": 1,
+    "component_areas": [
+      0.0004577017922612287
+    ],
+    "top4_area_fraction": 1.0,
+    "zero_area_triangles": 0,
+    "bounds": {
+      "min": [
+        0.09451127052307129,
+        -0.32324981689453125,
+        0.11741006374359131
+      ],
+      "max": [
+        0.10976660251617432,
+        -0.31127917766571045,
+        0.12623286247253418
+      ]
+    }
+  },
+  "measurements": {
+    "source_diagonal": 0.02131526005731775,
+    "source_to_target": {
+      "complete": true,
+      "samples": {
+        "vertices": 131,
+        "centroids": 239
+      },
+      "matched_samples": 370,
+      "failed_queries": 0,
+      "missing_sheet_ids": [],
+      "lost_sheet_area": 0,
+      "lost_sheet_area_fraction": 0.0,
+      "geometry_normalized": {
+        "rms": 0.0011868049053048082,
+        "p95": 0.0030154016452622534,
+        "max": 0.004355547750699284
+      },
+      "rgb_channel_error": {
+        "rms": 0.00248134399880608,
+        "p95": 0.005704814934630144,
+        "max": 0.016491346610221603
+      },
+      "alpha_error": {
+        "rms": 4.121871569946712e-17,
+        "p95": 0.0,
+        "max": 2.220446049250313e-16
+      },
+      "rgba_rmse_by_channel": [
+        0.0026034425035938074,
+        0.00248734696895749,
+        0.002346571181049496,
+        4.121871569946712e-17
+      ],
+      "matched_sheets_only": {
+        "geometry_normalized": {
+          "rms": 0.0011868049053048082,
+          "p95": 0.0030154016452622534,
+          "max": 0.004355547750699284
+        },
+        "rgb_channel_error": {
+          "rms": 0.00248134399880608,
+          "p95": 0.005704814934630144,
+          "max": 0.016491346610221603
+        },
+        "alpha_error": {
+          "rms": 4.121871569946712e-17,
+          "p95": 0.0,
+          "max": 2.220446049250313e-16
+        },
+        "rgba_rmse_by_channel": [
+          0.0026034425035938074,
+          0.00248734696895749,
+          0.002346571181049496,
+          4.121871569946712e-17
+        ]
+      }
+    },
+    "target_to_source": {
+      "complete": true,
+      "samples": {
+        "vertices": 103,
+        "centroids": 163
+      },
+      "matched_samples": 266,
+      "failed_queries": 0,
+      "missing_sheet_ids": [],
+      "lost_sheet_area": 0,
+      "lost_sheet_area_fraction": 0.0,
+      "geometry_normalized": {
+        "rms": 0.000796955422424123,
+        "p95": 0.0022558842443745216,
+        "max": 0.0037407806968433365
+      },
+      "rgb_channel_error": {
+        "rms": 0.0017429191697750416,
+        "p95": 0.003311607731237366,
+        "max": 0.012074267398987775
+      },
+      "alpha_error": {
+        "rms": 4.7650498839976856e-17,
+        "p95": 1.1102230246251565e-16,
+        "max": 2.220446049250313e-16
+      },
+      "rgba_rmse_by_channel": [
+        0.001863569956983745,
+        0.0017461044083306359,
+        0.001609822383911928,
+        4.7650498839976856e-17
+      ],
+      "matched_sheets_only": {
+        "geometry_normalized": {
+          "rms": 0.000796955422424123,
+          "p95": 0.0022558842443745216,
+          "max": 0.0037407806968433365
+        },
+        "rgb_channel_error": {
+          "rms": 0.0017429191697750416,
+          "p95": 0.003311607731237366,
+          "max": 0.012074267398987775
+        },
+        "alpha_error": {
+          "rms": 4.7650498839976856e-17,
+          "p95": 1.1102230246251565e-16,
+          "max": 2.220446049250313e-16
+        },
+        "rgba_rmse_by_channel": [
+          0.001863569956983745,
+          0.0017461044083306359,
+          0.001609822383911928,
+          4.7650498839976856e-17
+        ]
+      }
+    },
+    "worst_direction_geometry_normalized": {
+      "rms": 0.0011868049053048082,
+      "p95": 0.0030154016452622534,
+      "max": 0.004355547750699284
+    },
+    "source_sheet_areas": {
+      "0": 0.0004578211536252246
+    },
+    "target_sheet_areas": {
+      "0": 0.00045770179226122876
+    },
+    "source_degenerate_faces": 0,
+    "target_degenerate_faces": 0,
+    "silhouettes": {
+      "x": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 13362,
+        "target_pixels": 13348,
+        "intersection_pixels": 13342,
+        "union_pixels": 13368,
+        "iou": 0.9980550568521843,
+        "lost_fraction": 0.00149678191887442,
+        "gained_fraction": 0.000449034575662326,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          -0.31726449728012085,
+          0.12183496356010437
+        ],
+        "original_bounds_span": 0.013167703151702882
+      },
+      "y": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 25374,
+        "target_pixels": 25290,
+        "intersection_pixels": 25289,
+        "union_pixels": 25375,
+        "iou": 0.9966108374384236,
+        "lost_fraction": 0.003349885709781666,
+        "gained_fraction": 3.9410420115078424e-05,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.1021389365196228,
+          0.12183496356010437
+        ],
+        "original_bounds_span": 0.01678086519241333
+      },
+      "z": {
+        "informative": true,
+        "reason": null,
+        "source_pixels": 34338,
+        "target_pixels": 34265,
+        "intersection_pixels": 34253,
+        "union_pixels": 34350,
+        "iou": 0.9971761280931587,
+        "lost_fraction": 0.002475391694332809,
+        "gained_fraction": 0.00034946706272933774,
+        "source_clipped_vertices": 0,
+        "target_clipped_vertices": 0,
+        "original_bounds_center": [
+          0.1021389365196228,
+          -0.31726449728012085
+        ],
+        "original_bounds_span": 0.01678086519241333
+      }
+    },
+    "sampling_limits": [
+      "Fixed seed 0; at most 512 (vertex, sheet) occurrences and 512 unique area-stratified face centroids per direction.",
+      "Finite samples can miss narrow holes, small fragments and unsampled maxima; these are not Hausdorff bounds.",
+      "Centroid strata selecting one face are deduplicated; reported errors are unweighted sample statistics.",
+      "Nearest matches are restricted to the same face sheet; ambiguities within one sheet remain possible.",
+      "Silhouettes use three axis views, 256x256 pixel centers and a fixed source frame with 10% padding; clipping and empty views are explicit.",
+      "Color errors use supplied channel values without color-space conversion; isolated unreferenced vertices are ignored."
+    ]
+  },
+  "quality_pass": true,
+  "quality_failures": [],
+  "triangle_reduction_fraction": 0.18014705882352944,
+  "worthwhile": false,
+  "artifact": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-turret-planar-e32915d\\saved-forward-5deg.npz",
+    "bytes": 7462,
+    "sha256": "c9023ea55b63a4e083cb86010b3850368f790c063328cae459c3ea15692c5c3b"
+  }
+}

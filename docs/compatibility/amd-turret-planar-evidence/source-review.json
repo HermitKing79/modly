@@ -1,0 +1,25 @@
+{
+  "reviewer": "planar_source_review",
+  "installed_binary_sha256": "284f4041f98e113f3dc10654a7193ffaaa9bfdfec8b87fa116620a48b5f6d4cb",
+  "installed_build_from_prior_evidence": "5.2.1 LTS / 9e2066aef7ef",
+  "source_identity_limit": "Decimate C++ source is not bundled with the installed package; official v5.2.1-tagged source was inspected, without claiming byte identity to the compiled binary.",
+  "official_sources": [
+    "https://github.com/blender/blender/blob/v5.2.1/source/blender/bmesh/tools/bmesh_decimate_dissolve.cc#L88-L155",
+    "https://github.com/blender/blender/blob/v5.2.1/source/blender/bmesh/tools/bmesh_decimate_dissolve.cc#L319-L450",
+    "https://github.com/blender/blender/blob/v5.2.1/source/blender/modifiers/intern/MOD_decimate.cc#L159-L194",
+    "https://github.com/blender/blender/blob/v5.2.1/source/blender/blenkernel/intern/mesh_tessellate.cc#L69-L112"
+  ],
+  "findings": [
+    "Planar DISSOLVE invalidates non-manifold edge join candidates and rechecks manifoldness before joining; adjacent manifold edges may still dissolve.",
+    "Subsequent degree-two vertex cleanup can affect junction-adjacent topology even with dissolve_boundaries disabled.",
+    "NORMAL delimiter protects winding discontinuities; there is no learned-colour delimiter. Actual interpolated colour error must be measured.",
+    "Planar polygon counts do not measure triangle reduction. This candidate uses actual calc_loop_triangles tessellation."
+  ],
+  "fixed_probe_settings": {
+    "angles_degrees": [1, 5],
+    "angle_selection": "Fixed before execution; at or below the standard five-degree planar default. These are local operation limits, not global geometry-error guarantees.",
+    "use_dissolve_boundaries": false,
+    "delimit": ["NORMAL"],
+    "attribute_limit": "Disposable patches reconstructed from position/index/learned-RGBA arrays have no original UV, seam, sharp-edge or material-boundary data; absent delimiters provide no protection."
+  }
+}

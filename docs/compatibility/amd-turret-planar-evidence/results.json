@@ -1,0 +1,43 @@
+{
+  "decision": "NO-GO",
+  "blender": {
+    "version": "5.2.1 LTS",
+    "build_hash": "9e2066aef7ef"
+  },
+  "angles_degrees": [
+    1.0,
+    5.0
+  ],
+  "criteria": {
+    "min_triangle_reduction_fraction": 0.2,
+    "geometry_normalized_rms": 0.005,
+    "geometry_normalized_p95": 0.01,
+    "geometry_normalized_max": 0.03,
+    "min_informative_silhouette_iou": 0.98,
+    "max_rgb_rms": 0.02,
+    "max_rgb_p95": 0.05,
+    "no_new_components": true,
+    "no_new_nonmanifold_edges": true,
+    "max_boundary_length_factor": 1.05,
+    "max_patch_triangles": 6000
+  },
+  "cases": [
+    {
+      "name": "saved-forward",
+      "quality_pass": true,
+      "worthwhile": false
+    }
+  ],
+  "panel_selection": {
+    "skipped": "Fixed panel neighborhood is too small or not predominantly flat",
+    "triangles": 80,
+    "axis_X_flat_area_fraction": 0.01974880464281786
+  },
+  "elapsed_seconds": 1.2341081000013219,
+  "full_mesh_modifications": 0,
+  "face_fan_separations": 0,
+  "collapse_calls": 0,
+  "voxel_operations": 0,
+  "GLB_exports": 0,
+  "stop_on_first_patch_quality_failure": true
+}
