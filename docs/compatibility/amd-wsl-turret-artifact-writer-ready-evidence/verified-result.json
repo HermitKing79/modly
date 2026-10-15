@@ -1,0 +1,40 @@
+{
+  "classification": "PASS",
+  "execution_commit": "e48f03a6809ac58d197c27edcd4dce77a45527d2",
+  "exactly_one_CPU_writer_acceptance": true,
+  "exactly_one_genuine_decoder_forward": true,
+  "forward_seconds_synchronized": 11.389517421000004,
+  "output_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\turret-neural-output.safetensors",
+  "output_bytes": 96433760,
+  "output_sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22",
+  "provenance_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-turret-writer-ready-4870856\\provenance.json",
+  "provenance_bytes": 22024,
+  "provenance_sha256": "8f428dea1c98ffabbea24a1986d388094a29bb9c9123a3a0dc48a55f9229a625",
+  "tensors": 10,
+  "rows": 1842968,
+  "all_tensors_finite": true,
+  "independent_before_release_and_after_termination": true,
+  "memory_peak": {
+    "allocated": 5588655616,
+    "reserved": 7291797504
+  },
+  "memory_release": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "healthy_observations": 13,
+  "Windows_five_groups_preserved": true,
+  "Linux_preservation": "PASS",
+  "historical_and_branches_preservation": "PASS",
+  "mesh_extraction": false,
+  "texturing": false,
+  "evidence_sha256": {
+    "run/results.json": "654caa6f23780520a2f17885c5c643a43921f9b510abc59dc5383081eb5e6f34",
+    "run/guest/results.json": "b2ccc8dc33c82a64e8da611a834ae6cc414e7fd65d184ace2e60eb01b53406c6",
+    "neural-post-termination-integrity.json": "864218232220e4fc60aed23b0c0f44a26b4b7dd8f73eb7e9fea466ee80f0ad80",
+    "independent-outcome-review.json": "bafd70bf55ad325a5a6c24cd3d839cf2d5de17c70e5cfad91f3e16ea541a6d4a",
+    "windows-preservation-after.json": "76ab3ffa619574d7de82a89ce6a31795af4dc6adca3e3bb6bcf371e8618ac1ca",
+    "linux-preservation-after.json": "9736cd551a4c2ffe90d790478c232870c4ad9fa019ed7ed24e2e9b71754bac07",
+    "historical-and-Linux-preservation-after.json": "53831670cc2f693bc1d851e85f861b534afe32050ce4c9382df3fb16a2f3ee46"
+  }
+}

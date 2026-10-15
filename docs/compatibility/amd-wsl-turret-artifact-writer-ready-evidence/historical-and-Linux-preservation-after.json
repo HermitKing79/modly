@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "historical_files": 719,
+  "unchanged_control_files": 5,
+  "unchanged_loader_files": 2,
+  "old_remote_branches_unchanged": 59,
+  "old_local_branches_unchanged": 59,
+  "main": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "candidate_hashes_unchanged": true,
+  "driver_unchanged": true,
+  "Linux_stable_inventory_identical": true,
+  "Linux_transient_changes": {
+    "D_free_bytes": [
+      75318239232,
+      75150467072
+    ],
+    "RAM_available_bytes": [
+      15762087936,
+      15868555264
+    ],
+    "guest_free_bytes": [
+      8882380800,
+      8719388672
+    ],
+    "phase": [
+      "before",
+      "after"
+    ]
+  },
+  "host_metadata_check_notes": [
+    "Initial local-head comparison used short refs against full refs; normalized names without changing refs.",
+    "Initial sandbox CIM query denied resource access; escalated read-only driver query confirmed identical values."
+  ]
+}

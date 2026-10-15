@@ -1,0 +1,7 @@
+{"phase": "supervisor-start", "utc": "2026-10-15T00:32:19.213373+00:00", "monotonic_seconds": 86360.89, "gpu_allowed": false}
+{"phase": "wsl-client-started", "utc": "2026-10-15T00:32:24.782086+00:00", "monotonic_seconds": 86366.468, "pid": 10560, "gpu_allowed": false}
+{"phase": "windows-job-attached", "utc": "2026-10-15T00:32:24.782602+00:00", "monotonic_seconds": 86366.468, "gpu_allowed": false}
+{"phase": "go-sent", "utc": "2026-10-15T00:32:29.925514+00:00", "monotonic_seconds": 86371.609, "gpu_allowed": true}
+{"phase": "wsl-client-exited", "utc": "2026-10-15T00:33:13.736438+00:00", "monotonic_seconds": 86415.421, "returncode": 0, "gpu_allowed": false}
+{"phase": "owned-distro-terminated", "utc": "2026-10-15T00:33:15.231358+00:00", "monotonic_seconds": 86416.906, "capture": {"command": ["wsl.exe", "--terminate", "Modly-AMD-Ubuntu-24.04"], "returncode": 0, "stdout": "T\u0000h\u0000e\u0000 \u0000o\u0000p\u0000e\u0000r\u0000a\u0000t\u0000i\u0000o\u0000n\u0000 \u0000c\u0000o\u0000m\u0000p\u0000l\u0000e\u0000t\u0000e\u0000d\u0000 \u0000s\u0000u\u0000c\u0000c\u0000e\u0000s\u0000s\u0000f\u0000u\u0000l\u0000l\u0000y\u0000.\u0000 \u0000\r\u0000\n\u0000", "stderr": ""}}
+{"phase": "supervisor-finished", "utc": "2026-10-15T00:33:19.833341+00:00", "monotonic_seconds": 86421.515, "classification": "QUALIFIED"}
