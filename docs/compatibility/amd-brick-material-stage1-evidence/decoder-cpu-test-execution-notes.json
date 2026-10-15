@@ -1,0 +1,42 @@
+{
+  "schema": "modly.amd.brick-guided-pbr-cpu-test-execution-notes.v1",
+  "scope": "CPU tests only; no GPU, WSL, model load or decoder attempt",
+  "red_before_implementation": {
+    "exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-material-stage1-evidence\\decoder_cpu_tests.py\", line 8, in <module>\n    import decoder_cpu as candidate\nModuleNotFoundError: No module named 'decoder_cpu'\n"
+  },
+  "initial_public_consumer_test_invocation": {
+    "sandbox": "default restricted workspace access",
+    "exec_session_id": 66307,
+    "captured_from_tool_stdout": [
+      "test_exact_f16_lower_bound_blocks_final_only_tiling (__main__.PreparationTests.test_exact_f16_lower_bound_blocks_final_only_tiling) ... ok",
+      "test_exact_optin_and_authenticated_contract_required (__main__.PreparationTests.test_exact_optin_and_authenticated_contract_required) ... ok",
+      "test_genuine_saved_guides_and_texture_order_are_exact (__main__.PreparationTests.test_genuine_saved_guides_and_texture_order_are_exact) ... ok"
+    ],
+    "stderr_returned_by_tool": "",
+    "observation": "Invocation remained running with no further output during subsequent polls. No explicit sandbox-denial message or test traceback was returned; the cause is unproven.",
+    "termination": "Sent Ctrl-C through write_stdin; tool returned final exit_code1 and no further output. This incomplete run is not counted as passing.",
+    "original_partial_log": "The live Tee-Object log was replaced by the complete approved run. Its initial three reported lines are preserved above from the tool capture; original partial-file bytes were not separately retained."
+  },
+  "approved_outside_git_fixture_runs": {
+    "authorization": "Existing user authorization for CPU tests in the owned external test root; require_escalated tool call approved",
+    "first_complete_run": "6tests PASS, exit_code0,1.012s",
+    "final_saved_run": "6tests PASS, exit_code0,1.013s",
+    "log": "decoder-cpu-tests.stdout.txt",
+    "fixture": "Tiny explicitly SYNTHETIC malformed reader header only; no fullsize output serialized. Public writer rejects before creating files.",
+    "fixture_root": "C:/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688-tests",
+    "leftover_SYNTHETIC_pbr_consumer_directories": 0
+  },
+  "final_source_and_log_sha256": {
+    "decoder_cpu.py": "1b154782acf24513c1d5ca9cd73ab0836227bb82bea4e6a936e51aed29949b62",
+    "decoder_cpu_tests.py": "d32183855e0597adcdf8040675010f3be2c83b886d27b598a34c4552409a64b7",
+    "decoder-cpu-tests.stdout.txt": "40d0623477fa0d9222bd092f88e3585a30d136a4ae78d7d75ff9f67371e091e6"
+  },
+  "post_test_process_observation": {
+    "timestamp_utc": "2026-10-15T23:46:54.1773952Z",
+    "method": "Get-Process -Name python*",
+    "python_process_count": 0,
+    "process_ids": [],
+    "earlier_CIM_query": "Get-CimInstance Win32_Process was unavailable: Access to a CIM resource was not available to the client. The successful Get-Process observation is the cleanup evidence."
+  }
+}

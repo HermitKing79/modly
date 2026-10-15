@@ -1,0 +1,15 @@
+Independent read-only review: /root/brick_material_decoder_cpu/brick_decoder_formula_review.
+Disposition: PASS_CPU_INPUTS_AND_PLANNING; execution BLOCKED. No remaining defect found within this CPU preparation scope.
+
+Exact explicit profile and canonical run-contract SHA authenticate one brick run.
+The real saved latent and complete geometry/guides were reopened by existing bounded readers, with full file/tensor hashes, original source pins, all four BF16 masks and exact C2S child order checked. Planning preserves forty convolutions, eight C2S operations and five expected global native maps; historical defaults remain unchanged.
+
+Pinned source establishes the retained lower bound: SparseResBlockC2S3d._forward (sparse_unet_vae.py:336) keeps x for later self.updown(x) while h holds a separately allocated norm/SiLU result at conv1. LayerNorm32 (norm.py:28) restores incoming F16; SparseTensor.replace (basic.py:638) returns a new wrapper without replacing x.feats. Model plus two F16[438684,128] tables therefore requires 1173173656 bytes, exceeding the unchanged formula's 1171427999-byte baseline allowance by 1745657 bytes. This predicts conservative admission refusal, not measured GPU OOM.
+
+Updated negative tests invoke public field.write and field.verify. The writer refuses the new row count before creating files. The independent reader refuses a tiny explicitly SYNTHETIC malformed header outside Git; temporary fixtures are removed. These prove rejection behavior, not fullsize persistence readiness. The complete saved log records six passing focused tests.
+
+Checkpoint inspection reads only the original config and 26800-byte header, never weights or a model constructor. Import/network/subprocess guards preserve CPU-only boundaries. spatial_volume values are explicitly labelled nominal grid upper bounds; the unchanged 32bit hash-key branch makes the current byte plans identical for the actual smaller rectangular shapes.
+
+The existing geometry large-convolution patch is an adaptation reference, not a drop-in F16 runner: its runtime guards require BF16. Future targeted CPU integration should preserve the texture F16 row helper and qualify six-site ordering, global-map/cache provenance, admissions, descriptor restoration, output persistence and independent host acceptance under one authenticated profile. No GPU attempt is justified by this preparation report alone.
+
+This review used reads only; no tests, writes, model/native imports, GPU or WSL execution were performed by the reviewer.
