@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "scope": "Independent review of the one actual WSL CPU ownership/writer acceptance; no genuine texture decode outcome claimed.",
+  "reviewer": "texture_decode_review independent agent",
+  "reviewed_utc": "2026-10-15T07:43:43.1458373Z",
+  "findings": [],
+  "guest_evidence": [
+    "CPU_PASS using Python3.12.3 in /opt/modly-wsl/venv and NumPy2.2.6 from the exact staged site-packages path at index0. Writer and bridge origins match the frozen candidate.",
+    "Actual two-row fixture write, standard safetensors reader, complete verify and bounded readbacks succeeded through the explicit mapped-owner context.",
+    "All four negatives passed: default root UID, default file UID, foreign root context and foreign filename remain rejected.",
+    "Forbidden import attempts empty; excluded AI modules absent; real_weights_loaded=false; forward_calls=0; policy native_calls=0 and rejected_calls=0."
+  ],
+  "independent_saved_probe": {
+    "artifact_path": "C:/Users/wattz/Documents/ModlyArtifacts/amd-turret-texture-owner-067f668/probe/texture-field.safetensors",
+    "artifact_bytes": 736,
+    "artifact_sha256": "92dc27521f2adeb4394e80a6b361b162c3b7aadd9947cb53e66809579f989fe5",
+    "method": "Reviewer directly read the permanent Windows container, parsed bounded LE header/offsets, compared every raw/features/coordinates payload byte with independently encoded fixture values, checked all tensor hashes and whole-file hash, and compared the permanent sidecar with the saved receipt.",
+    "raw_sha256": "ec77d4c9ee3bf8118e1aaebd2fb024531658efe1be524df9762a91ae84c7cd84",
+    "features_sha256": "85c064cd3cb7539a9651d97000a9c5299c5f86ec0477d58e7cd321a4a12f5726",
+    "coordinates_sha256": "ae4b10c03c8353dbf917c1e84887a12712534cd933aa8b7dd894074d7357ef3e",
+    "saved_Windows_SID_ACL_checks": "Recorded live Windows checks before and after its independent reader validate root/parent NTFS identity and SID/ACL plus both saved files under the expected user SID."
+  },
+  "containment": "Worker exit0; observer healthy; grace empty; owned tree verified empty with no forced cleanup; named distro termination returned0; host elapsed15.844seconds.",
+  "manifest": {
+    "files": 28,
+    "current_hash_mismatches": 0,
+    "computational_files": "neural/runtime/admission/chunked_final remain byte-identical to the previously reviewed implementations."
+  },
+  "conditional_decoder_admission": "The actual CPU bootstrap/ownership/persistence gate is satisfied. Conditional one genuine guided decoder route can proceed only with the exact frozen candidate, a fresh published harness identity, fresh resource and Windows ownership admission, unused production marker, unchanged native/model/input gates and existing containment. The production field is currently empty and no production marker/run exists.",
+  "limits": "This is fixture persistence and CPU ownership qualification. Genuine model numerical finiteness, geometry-aligned full field and live/post-exit production artifact verification remain to be established by the separately authorized one decode.",
+  "reviewer_actions": "Read-only result/source/probe/manifest inspection and this review JSON only. No tests, Python/Torch/model/native imports, WSL commands or GPU work.",
+  "evidence_sha256": {
+    "candidate-identities.json": "2ff8c5cedb5dd8b127871a9a5496e84666c199a165024ca0d781440eb802858a",
+    "cold_start.py": "83026e0e197c00587293bcb106eaa6914d7c2c309ea9786505d8af4bcea92a18",
+    "decode.py": "fc02b386519ce3c58e4a0632fef08ce1fe714344586a536f1901dd11aa9f453d",
+    "artifact_io.py": "4a1d55f77eb3e45e115592e17e0fa4948bb58278fd5a7bf71af561c1ed9543f4",
+    "output_owner.py": "02d862b93ad08edb7830e49169fe6adc9921bebd2755cd94cbce2179e3bf9648",
+    "owner-attestation.json": "f5209e299c5f50d14465269f2b933ea0e5023b4690bf2b9501a29d5931b9a88e",
+    "cold-run/CPU-verdict.json": "9ec8dcc4437f8cc4846f2d1fae7c9782542209841d4e65fa8be325fb0daa2f40",
+    "cold-run/results.json": "3104b8351d7751229f0c566e3390722c399a347d7d04eef3f30cbbb41671a042",
+    "cold-run/guest/results.json": "6bceb522407a6badf2c9a9fe566f5d385f68a36a2ac4c9b5735fdc64a41126e6",
+    "persistence-preflight.json": "bd32909708e8774424d5b339496da8c5a2d0da0f52cb2a29122ee43ec8943235"
+  }
+}

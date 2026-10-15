@@ -1,0 +1,119 @@
+test_changed_root_identity_rejected_before_creation (__main__.OwnerTests.test_changed_root_identity_rejected_before_creation) ... ERROR
+test_default_uid_rejection_unchanged (__main__.OwnerTests.test_default_uid_rejection_unchanged) ... ok
+test_explicit_capability_factory_exists (__main__.OwnerTests.test_explicit_capability_factory_exists) ... FAIL
+test_foreign_capability_rejected (__main__.OwnerTests.test_foreign_capability_rejected) ... ERROR
+test_foreign_root_and_filename_rejected (__main__.OwnerTests.test_foreign_root_and_filename_rejected) ... ERROR
+test_unexpected_file_owner_and_unattested_root_rejected (__main__.OwnerTests.test_unexpected_file_owner_and_unattested_root_rejected) ... ERROR
+test_whole_writer_reader_with_mapped_context (__main__.OwnerTests.test_whole_writer_reader_with_mapped_context) ... ERROR
+
+======================================================================
+ERROR: test_changed_root_identity_rejected_before_creation (__main__.OwnerTests.test_changed_root_identity_rejected_before_creation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-owner-evidence\owner_tests.py", line 78, in test_changed_root_identity_rejected_before_creation
+    with self.mapped() as context:
+         ^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-owner-evidence\owner_tests.py", line 37, in mapped
+    stack.enter_context(patch.object(artifact,'_drvfs_mount',return_value='pinned-mount'))
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 526, in enter_context
+    result = _enter(cm)
+             ^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1467, in __enter__
+    original, local = self.get_original()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1437, in get_original
+    raise AttributeError(
+AttributeError: <module 'artifact_before_owner_fix'> does not have the attribute '_drvfs_mount'
+
+======================================================================
+ERROR: test_foreign_capability_rejected (__main__.OwnerTests.test_foreign_capability_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-owner-evidence\owner_tests.py", line 56, in test_foreign_capability_rejected
+    self.write(authority=object())
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-owner-evidence\owner_tests.py", line 43, in write
+    return artifact.write(self.root,self.raw,self.features,self.coords,{'mode':'fixture'},**kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: write() got an unexpected keyword argument 'authority'
+
+======================================================================
+ERROR: test_foreign_root_and_filename_rejected (__main__.OwnerTests.test_foreign_root_and_filename_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-owner-evidence\owner_tests.py", line 69, in test_foreign_root_and_filename_rejected
+    with self.mapped() as context:
+         ^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-owner-evidence\owner_tests.py", line 37, in mapped
+    stack.enter_context(patch.object(artifact,'_drvfs_mount',return_value='pinned-mount'))
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 526, in enter_context
+    result = _enter(cm)
+             ^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1467, in __enter__
+    original, local = self.get_original()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1437, in get_original
+    raise AttributeError(
+AttributeError: <module 'artifact_before_owner_fix'> does not have the attribute '_drvfs_mount'
+
+======================================================================
+ERROR: test_unexpected_file_owner_and_unattested_root_rejected (__main__.OwnerTests.test_unexpected_file_owner_and_unattested_root_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-owner-evidence\owner_tests.py", line 86, in test_unexpected_file_owner_and_unattested_root_rejected
+    with self.mapped() as context:
+         ^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-owner-evidence\owner_tests.py", line 37, in mapped
+    stack.enter_context(patch.object(artifact,'_drvfs_mount',return_value='pinned-mount'))
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 526, in enter_context
+    result = _enter(cm)
+             ^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1467, in __enter__
+    original, local = self.get_original()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1437, in get_original
+    raise AttributeError(
+AttributeError: <module 'artifact_before_owner_fix'> does not have the attribute '_drvfs_mount'
+
+======================================================================
+ERROR: test_whole_writer_reader_with_mapped_context (__main__.OwnerTests.test_whole_writer_reader_with_mapped_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-owner-evidence\owner_tests.py", line 59, in test_whole_writer_reader_with_mapped_context
+    with self.mapped() as context:
+         ^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-owner-evidence\owner_tests.py", line 37, in mapped
+    stack.enter_context(patch.object(artifact,'_drvfs_mount',return_value='pinned-mount'))
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 526, in enter_context
+    result = _enter(cm)
+             ^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1467, in __enter__
+    original, local = self.get_original()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1437, in get_original
+    raise AttributeError(
+AttributeError: <module 'artifact_before_owner_fix'> does not have the attribute '_drvfs_mount'
+
+======================================================================
+FAIL: test_explicit_capability_factory_exists (__main__.OwnerTests.test_explicit_capability_factory_exists)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-turret-texture-owner-evidence\owner_tests.py", line 46, in test_explicit_capability_factory_exists
+    self.assertTrue(callable(getattr(artifact,'drvfs_ownership',None)))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.014s
+
+FAILED (failures=1, errors=5)

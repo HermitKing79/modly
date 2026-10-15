@@ -10,6 +10,7 @@ import os
 from pathlib import Path
 import stat
 import struct
+from dataclasses import dataclass
 
 import numpy as np
 
@@ -81,7 +82,80 @@ def _decode(blob):
         raise ValueError('Invalid artifact JSON') from exc
 
 
-def _plain(path, *, directory=False, owned=True):
+def _drvfs_mount():
+    rows = [line for line in Path('/proc/self/mountinfo').read_text().splitlines()
+            if ' /mnt/c ' in line]
+    if (len(rows) != 1 or ' - 9p ' not in rows[0]
+            or 'aname=drvfs;path=C:\\;' not in rows[0]
+            or ';uid=0;gid=0;' not in rows[0] or 'metadata' in rows[0]):
+        raise ValueError('Exact diagnosed synthetic DrvFS mount required')
+    return rows[0]
+
+
+@dataclass(frozen=True)
+class _DrvfsOwnership:
+    root: Path
+    root_identity: tuple
+    worker_identity: tuple
+    mount: str
+    windows_owner_sid: str
+    attestation_sha256: str
+
+    def check(self, path, info):
+        identity = (os.getuid(), os.geteuid(), os.getgid(), os.getegid())
+        root_info = self.root.lstat()
+        if (identity != self.worker_identity or _drvfs_mount() != self.mount
+                or (root_info.st_dev, root_info.st_ino, root_info.st_uid, root_info.st_gid) != self.root_identity
+                or self.root.resolve(strict=True) != self.root or not stat.S_ISDIR(root_info.st_mode)
+                or root_info.st_uid != 0 or root_info.st_gid != 0):
+            raise ValueError('DrvFS ownership/root identity changed')
+        if path != self.root and (path.parent != self.root or path.name not in (ARTIFACT_NAME, METADATA_NAME)):
+            raise ValueError('DrvFS authority is confined to its exact root and two filenames')
+        if info.st_dev != root_info.st_dev or (info.st_uid, info.st_gid) != (0, 0):
+            raise ValueError('Unexpected DrvFS file ownership/filesystem')
+
+
+def drvfs_ownership(root, attestation, attestation_sha256):
+    """Explicit capability from a hash-pinned trusted Windows attestation.
+
+    Caller authenticates the host record and rechecks Windows SID/ACL/file ID
+    before authorization and independent readback. No ambient/global exception.
+    Device/inode are bound live within this worker; 9p device IDs can change
+    across WSL boots. Windows retains its separate stable NTFS identity checks.
+    """
+    root = Path(root)
+    row = next((x for x in attestation.get('roots', []) if x.get('guest_path') == root.as_posix()), None)
+    worker = tuple(attestation.get('worker_identity', []))
+    sid = attestation.get('windows_owner_sid')
+    if (attestation.get('format') != 'modly-owned-drvfs-v1' or row is None
+            or worker != (1000, 1000, 1000, 1000) or sid != attestation.get('windows_user_sid')
+            or type(sid) is not str or not sid.startswith('S-1-5-21-')
+            or type(attestation_sha256) is not str or len(attestation_sha256) != 64
+            or any(c not in '0123456789abcdef' for c in attestation_sha256)
+            or not root.as_posix().startswith('/mnt/c/Users/wattz/Documents/ModlyArtifacts/')
+            or row.get('windows_path') != 'C:/' + root.relative_to('/mnt/c').as_posix()
+            or row.get('host_owner_verified') is not True):
+        raise ValueError('Invalid exact-root Windows ownership attestation')
+    current = (os.getuid(), os.geteuid(), os.getgid(), os.getegid())
+    if current != worker:
+        raise ValueError('Unexpected WSL worker identity')
+    info = root.lstat()
+    authority = _DrvfsOwnership(root, (info.st_dev, info.st_ino, info.st_uid, info.st_gid),
+                               worker, _drvfs_mount(), sid, attestation_sha256)
+    authority.check(root, info)
+    return authority
+
+
+def _owner(path, info, authority):
+    if authority is not None:
+        if type(authority) is not _DrvfsOwnership:
+            raise ValueError('Foreign artifact ownership capability')
+        authority.check(path, info)
+    elif hasattr(os, 'getuid') and info.st_uid != os.getuid():
+        raise ValueError('Artifact root/files must be owned by the current user')
+
+
+def _plain(path, *, directory=False, owned=True, authority=None):
     info = path.lstat()
     if (stat.S_ISLNK(info.st_mode)
             or getattr(info, 'st_file_attributes', 0) & stat.FILE_ATTRIBUTE_REPARSE_POINT):
@@ -91,12 +165,12 @@ def _plain(path, *, directory=False, owned=True):
             raise ValueError('Artifact root must be an existing directory')
     elif not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
         raise ValueError('Artifact must be a plain file with one link')
-    if owned and hasattr(os, 'getuid') and info.st_uid != os.getuid():
-        raise ValueError('Artifact root/files must be owned by the current user')
+    if owned:
+        _owner(path, info, authority)
     return info
 
 
-def approved_root(root):
+def approved_root(root, *, authority=None):
     """Validate the exact existing caller-approved root, on Windows or /mnt/c.
 
     All ancestors, including the filesystem root, are checked for Git metadata
@@ -111,18 +185,18 @@ def approved_root(root):
     if root != resolved:
         raise ValueError('Artifact root must already be resolved without aliases')
     for ancestor in (root, *root.parents):
-        _plain(ancestor, directory=True, owned=ancestor == root)
+        _plain(ancestor, directory=True, owned=ancestor == root, authority=authority)
         if os.path.lexists(ancestor / '.git'):
             raise ValueError('Permanent texture artifact root must be outside all Git roots')
     return root
 
 
-def _owned_file(path, root, name, *, must_exist):
+def _owned_file(path, root, name, *, must_exist, authority=None):
     path = Path(path)
     if not path.is_absolute() or path != root / name:
         raise ValueError('Artifact path must be the exact approved root filename')
     if os.path.lexists(path):
-        _plain(path)
+        _plain(path, authority=authority)
         if path.resolve(strict=True) != path:
             raise ValueError('Artifact path escaped its approved root')
     elif must_exist:
@@ -183,20 +257,22 @@ def _header_metadata(provenance, rows):
 
 
 def _identity(info):
-    return info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns, info.st_nlink
+    return info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns, info.st_nlink, info.st_uid, info.st_gid
 
 
-def _bounded_read(path, maximum):
-    before = _plain(path)
+def _bounded_read(path, maximum, *, authority=None):
+    before = _plain(path, authority=authority)
     with path.open('rb') as stream:
         opened = os.fstat(stream.fileno())
+        _owner(path, opened, authority)
         if (_identity(before) != _identity(opened) or not stat.S_ISREG(opened.st_mode)
                 or opened.st_nlink != 1 or opened.st_size > maximum):
             raise ValueError('Artifact exceeds byte bound or changed during open')
         blob = stream.read(maximum + 1)
         after = os.fstat(stream.fileno())
+        _owner(path, after, authority)
     if (len(blob) > maximum or len(blob) != before.st_size
-            or _identity(before) != _identity(after) or _identity(before) != _identity(_plain(path))):
+            or _identity(before) != _identity(after) or _identity(before) != _identity(_plain(path, authority=authority))):
         raise ValueError('Artifact exceeds byte bound or changed during read')
     return blob
 
@@ -241,14 +317,14 @@ def _metadata(blob, rows, tensors, provenance, count):
                 channels=list(CHANNELS), channel_statistics=_statistics(tensors), provenance=provenance)
 
 
-def verify(file, root, expected_metadata=None):
+def verify(file, root, expected_metadata=None, *, authority=None):
     """Read and validate every byte independently, with no Torch or AI imports."""
-    root = approved_root(root)
-    path = _owned_file(file, root, ARTIFACT_NAME, must_exist=True)
-    sidecar = _owned_file(root / METADATA_NAME, root, METADATA_NAME, must_exist=True)
-    blob = _bounded_read(path, MAX_FILE_BYTES)
+    root = approved_root(root, authority=authority)
+    path = _owned_file(file, root, ARTIFACT_NAME, must_exist=True, authority=authority)
+    sidecar = _owned_file(root / METADATA_NAME, root, METADATA_NAME, must_exist=True, authority=authority)
+    blob = _bounded_read(path, MAX_FILE_BYTES, authority=authority)
     header, rows, tensors, count = _container(blob)
-    metadata = _decode(_bounded_read(sidecar, MAX_METADATA_BYTES))
+    metadata = _decode(_bounded_read(sidecar, MAX_METADATA_BYTES, authority=authority))
     if type(metadata) is not dict or 'provenance' not in metadata:
         raise ValueError('Texture sidecar fields mismatch')
     provenance = _provenance(metadata['provenance'], count)
@@ -261,19 +337,22 @@ def verify(file, root, expected_metadata=None):
     return dict(verified=True, artifact_path=str(path), metadata_path=str(sidecar), metadata=metadata)
 
 
-def _exclusive_write(path, blob):
+def _exclusive_write(path, blob, *, authority=None):
     with path.open('xb') as stream:
-        if os.fstat(stream.fileno()).st_nlink != 1:
+        opened = os.fstat(stream.fileno())
+        _owner(path, opened, authority)
+        if opened.st_nlink != 1:
             raise ValueError('Artifact exclusive file creation ownership changed')
         if stream.write(blob) != len(blob):
             raise OSError('Incomplete texture field write')
         stream.flush()
         os.fsync(stream.fileno())
+        _owner(path, os.fstat(stream.fileno()), authority)
 
 
-def write(root, raw, features, coordinates, provenance):
+def write(root, raw, features, coordinates, provenance, *, authority=None):
     """Exclusively save CPU arrays, standard-reader roundtrip and byte readback."""
-    root = approved_root(root)
+    root = approved_root(root, authority=authority)
     count = _row_count(raw)
     tensors = dict(raw=raw, features=features, coordinates=coordinates)
     for name, array in tensors.items():
@@ -294,24 +373,24 @@ def write(root, raw, features, coordinates, provenance):
     blob = struct.pack('<Q', len(header)) + header + b''.join(data.values())
     metadata = _metadata(blob, rows, tensors, provenance, count)
     metadata_blob = _json_bytes(metadata)
-    path = _owned_file(root / ARTIFACT_NAME, root, ARTIFACT_NAME, must_exist=False)
-    sidecar = _owned_file(root / METADATA_NAME, root, METADATA_NAME, must_exist=False)
+    path = _owned_file(root / ARTIFACT_NAME, root, ARTIFACT_NAME, must_exist=False, authority=authority)
+    sidecar = _owned_file(root / METADATA_NAME, root, METADATA_NAME, must_exist=False, authority=authority)
     for candidate in (path, sidecar):
         if os.path.lexists(candidate):
             raise FileExistsError(candidate)
     # Fail before publication if the CPU standard reader is unavailable.
     from safetensors.numpy import load_file
-    approved_root(root)
-    _exclusive_write(path, blob)
-    _exclusive_write(sidecar, metadata_blob)
+    approved_root(root, authority=authority)
+    _exclusive_write(path, blob, authority=authority)
+    _exclusive_write(sidecar, metadata_blob, authority=authority)
     restored = load_file(str(path))
     if set(restored) != set(tensors) or any(
             restored[name].dtype != array.dtype or restored[name].shape != array.shape
             or restored[name].tobytes() != data[name] for name, array in tensors.items()):
         raise ValueError('Standard CPU safetensors tensor-byte roundtrip differs')
-    result = verify(path, root, metadata)
-    if (_bounded_read(path, MAX_FILE_BYTES) != blob
-            or _bounded_read(sidecar, MAX_METADATA_BYTES) != metadata_blob):
+    result = verify(path, root, metadata, authority=authority)
+    if (_bounded_read(path, MAX_FILE_BYTES, authority=authority) != blob
+            or _bounded_read(sidecar, MAX_METADATA_BYTES, authority=authority) != metadata_blob):
         raise ValueError('Texture field byte-exact persisted readback differs')
     return result
 

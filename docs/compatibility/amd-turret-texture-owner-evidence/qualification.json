@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "GPU_initialized": false,
+  "weights_loaded": false,
+  "focused_tests": [
+    {
+      "suite": "explicit-owner-context",
+      "tests": 7,
+      "passed": 7
+    },
+    {
+      "suite": "changed-writer-regressions",
+      "tests": 16,
+      "passed": 15,
+      "skipped": 1
+    }
+  ],
+  "old_71_test_suite_rerun": false,
+  "actual_CPU_acceptance_required": true,
+  "source_equivalence": "four computational files byte-identical; only writer ownership and explicit bridge changed",
+  "diagnostic_qualifications": "one standard-library WSL diagnosis passed; numeric UID/mount/SID evidence preserved; no permission changes"
+}
