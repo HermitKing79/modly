@@ -1,0 +1,73 @@
+{
+  "schema": "modly.amd.brick-pbr-gpu-independent-outcome-review.v1",
+  "review_kind": "read-only outcome review with one textual review artifact",
+  "decision": "ACCEPT_BLOCKED_OUTCOME_WITH_EXPLICIT_SCOPE_LIMITS",
+  "reviewed_outcome": "BLOCKED_NO_GPU_FORWARD",
+  "approved_base": "6f0c51eae8d5bf00da7d42078ac6bd32dd19ae75",
+  "observed_local_HEAD": "6f0c51eae8d5bf00da7d42078ac6bd32dd19ae75",
+  "observed_branch": "codex/amd-brick-guided-pbr-gpu-decode",
+  "reviewed_files": [
+    "docs/compatibility/amd-brick-guided-pbr-gpu-decode.md",
+    "docs/compatibility/amd-brick-guided-pbr-gpu-evidence/early-host-admission.json",
+    "scripts/compatibility/amd_generation_texture_decode.py"
+  ],
+  "receipt_sha256": "c4560058a81b098158a59402e70b55cc471ef5af7ef7f5b47865148cf3666b18",
+  "receipt_sha256_matches_report": true,
+  "required": {
+    "available_windows_ram_bytes": 19864223744,
+    "D_free_bytes": 53687091200
+  },
+  "readings_reviewed": [
+    {
+      "timestamp_utc": "2026-10-16T07:44:02.199165+00:00",
+      "available_windows_ram_bytes": 19734081536,
+      "RAM_below_requirement_bytes": 130142208,
+      "D_free_bytes": 74269659136,
+      "RAM_admitted": false,
+      "D_free_admitted": true
+    },
+    {
+      "timestamp_utc": "2026-10-16T07:44:05.199900+00:00",
+      "available_windows_ram_bytes": 19659632640,
+      "RAM_below_requirement_bytes": 204591104,
+      "D_free_bytes": 74269659136,
+      "RAM_admitted": false,
+      "D_free_admitted": true
+    },
+    {
+      "timestamp_utc": "2026-10-16T07:44:08.200353+00:00",
+      "available_windows_ram_bytes": 19704377344,
+      "RAM_below_requirement_bytes": 159846400,
+      "D_free_bytes": 74269659136,
+      "RAM_admitted": false,
+      "D_free_admitted": true
+    }
+  ],
+  "reading_intervals_seconds": [3.000735, 3.000453],
+  "findings": [
+    "The report's exact byte readings, requirements, millisecond-truncated times and receipt hash match the reviewed receipt.",
+    "Every RAM reading is below 18.5 GiB; D: free space exceeds 50 GiB. The blocked prelaunch decision follows from the unchanged RAM requirement.",
+    "Static source inspection confirms read_resources reads available Windows RAM through GlobalMemoryStatusEx and D: free bytes through shutil.disk_usage. The reviewer did not invoke it.",
+    "The report and receipt consistently describe stopping before integration, marker creation, WSL, model loading and GPU execution. They make no measured GPU memory, performance or material-quality claim.",
+    "The tracked diff against the approved base was empty at review. Outcome documentation and receipt were untracked; untracked cache files were also present and were not read, changed or removed."
+  ],
+  "scope_limits": [
+    "The reviewer checked existing records and static source only; the resource measurements and execution-stop flags were not independently reproduced or instrumented.",
+    "The receipt reports that all 16 qualified source hashes match. This reviewer did not repeat the source-closure hashing or CPU tests; the empty tracked diff confirms tracked source is unchanged from the approved base.",
+    "preservation.json was not present when reviewed. The report's linked preservation assertions require that separate audit and are not findings of this review.",
+    "GitHub base verification, remote-head preservation, original status of untracked caches, and preservation of external artifacts or settings were not independently verified here.",
+    "Destination ownership, WSL/runtime/native identity, VRAM admission, supervisor integration, and any GPU forward remain untested by this review."
+  ],
+  "reviewer_actions": {
+    "tests_run": 0,
+    "resource_measurements_run": 0,
+    "WSL_launches": 0,
+    "Torch_imports": 0,
+    "GPU_queries_or_forwards": 0,
+    "network_calls": 0,
+    "retries_authorized": false,
+    "edits": [
+      "docs/compatibility/amd-brick-guided-pbr-gpu-evidence/independent-outcome-review.json"
+    ]
+  }
+}

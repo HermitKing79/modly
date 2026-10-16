@@ -1,0 +1,45 @@
+{
+  "schema": "modly.amd.brick-pbr-gpu-early-host-admission.v1",
+  "harness_commit": "6f0c51eae8d5bf00da7d42078ac6bd32dd19ae75",
+  "classification": "BLOCKED_NO_GPU_FORWARD",
+  "stage": "before-integration-before-marker-before-WSL",
+  "required": {
+    "available_windows_ram_bytes": 19864223744,
+    "D_free_bytes": 53687091200
+  },
+  "readings": [
+    {
+      "available_windows_ram_bytes": 19734081536,
+      "D_free_bytes": 74269659136,
+      "index": 1,
+      "timestamp_utc": "2026-10-16T07:44:02.199165+00:00"
+    },
+    {
+      "available_windows_ram_bytes": 19659632640,
+      "D_free_bytes": 74269659136,
+      "index": 2,
+      "timestamp_utc": "2026-10-16T07:44:05.199900+00:00"
+    },
+    {
+      "available_windows_ram_bytes": 19704377344,
+      "D_free_bytes": 74269659136,
+      "index": 3,
+      "timestamp_utc": "2026-10-16T07:44:08.200353+00:00"
+    }
+  ],
+  "failed": [
+    "prelaunch_available_windows_ram"
+  ],
+  "all_16_qualified_source_hashes_match": true,
+  "inference_marker_created": false,
+  "WSL_launched": false,
+  "Torch_imported": false,
+  "model_loaded": false,
+  "GPU_forward_calls": 0,
+  "remaining_gates_not_tested": [
+    "destination ownership/writable/free space",
+    "actual WSL/runtime/native identity",
+    "initial VRAM and allocator admission",
+    "execution supervisor integration and independent review"
+  ]
+}
