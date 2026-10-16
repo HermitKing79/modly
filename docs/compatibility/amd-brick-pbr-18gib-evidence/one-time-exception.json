@@ -1,0 +1,32 @@
+{
+  "schema": "modly.amd.brick-pbr-single-experiment-RAM-exception.v1",
+  "approved_base": "28ab4c1bdd0342f4d3e57e6c70278319eb475660",
+  "qualified_decoder_commit": "6f0c51eae8d5bf00da7d42078ac6bd32dd19ae75",
+  "scope": "One conditional brick-1957891-v1 guided F16 PBR experiment only",
+  "texture_latent_sha256": "4c74343c961e74bf3cfde4c24bd2a21b23063e17f0468b7f3049311fa9dc4289",
+  "geometry_and_guides_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+  "historical_default_prelaunch_RAM_bytes": 19864223744,
+  "one_time_prelaunch_RAM_bytes": 19327352832,
+  "comparison": "every one of three fresh readings must be strictly greater than18GiB",
+  "unchanged_live_RAM_floor_bytes": 12884901888,
+  "unchanged_limits": {
+    "initial_free_VRAM_bytes": 13958643712,
+    "allocator_bytes": 12884901888,
+    "device_reserve_bytes": 2147483648,
+    "opaque_headroom_bytes": 1073741824,
+    "D_free_bytes": 53687091200,
+    "destination_free_bytes": 2147483648,
+    "tile_rows": 32768,
+    "CPU_seconds": 120,
+    "native_seconds": 60,
+    "GPU_seconds": 240,
+    "host_seconds": 480,
+    "IO_seconds": 30
+  },
+  "threshold_applied_only_to_initial_CPU_reading_comparison": true,
+  "global_or_historical_policy_changed": false,
+  "runtime_override_activated": false,
+  "activation_refused_because": "Independent host-memory adequacy review did not support launch at the measured starting RAM",
+  "inference_marker_created": false,
+  "GPU_forward_calls": 0
+}

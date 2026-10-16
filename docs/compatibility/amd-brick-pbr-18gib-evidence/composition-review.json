@@ -1,0 +1,48 @@
+{
+  "schema": "modly.amd.brick-pbr-composition-review.v1",
+  "head": "28ab4c1bdd0342f4d3e57e6c70278319eb475660",
+  "verdict": "HOLD: host memory adequacy unresolved; composition is feasible but adapters are not execution-qualified",
+  "scope": "Read-only source and historical evidence review. No WSL, GPU, native/model import, installation, or neural forward.",
+  "decisive_stop": "The approved 18.0 GiB prelaunch number is an admission floor, not evidence of fit above the unchanged 12 GiB live floor. Root reports the historical turret whole-host drop was 7.06 GiB, exceeding 6 GiB nominal and approximately 6.48 GiB currently observed headroom. Do not implement or launch until independent host-memory adequacy is cleared.",
+  "smallest_adapters": [
+    "A new experiment-local worker adapter reuses the frozen turret worker control/strict-load/native-policy/cleanup sequence, replacing only saved-input preparation, component/configure/run_neural routing, fresh roots and receipt validation.",
+    "A new experiment-local host adapter privately loads the frozen turret supervisor and supplies exact new preflight, worker_command, reserve_attempt, host_admission, validate_qualified and receipt shim. Preserve OwnedJob, GO/EOF, healthy observation, 60/120/240/480-second limits, 450-second guest timeout and natural settlement.",
+    "A narrow receipt shim implements legacy HostReceipt(output,base) and verify_on_host(receipt_dir) around the new ReceiptBridge. Run potentially long independent readback through base.in_thread and poll its future so health/resource monitoring keeps ticking; receipts.HostReceipt.poll itself is synchronous. Post-exit verification must reopen independently, rather than accept its cached done flag.",
+    "A fresh bounded candidate/source manifest plus CPU-only adapter/refusal tests and independent review. No protected historical module or broad framework needs editing."
+  ],
+  "calls": {
+    "profile": "profile.authenticate(profile.NAME, profile.contracts.load(saved_geometry_run_contract).document())",
+    "inputs": "inputs.prepare(profile, texture_path=None, geometry_path=None); inputs.require_prepared(prepared, profile)",
+    "loader": "runtime.loader.TextureDecoderComponent(config_path,weights_path), load_cpu(), unload(); original meta-construction, strict diagnostics and weakrefs remain caller obligations",
+    "configure": "runtime.configure(model,torch,MIX_PRECISION_MODULES,conv_config,triton_config) -> {}",
+    "neural": "neural.run_neural(model,torch,cuda,record,probe_path,gpu_started,profile=profile,prepared=prepared,write_output=bridge.write_output,emit=event)",
+    "bridge": "ReceiptBridge(field,probe,probe/neural-attempt.marker,marker_sha256,profile=profile,attestation_path=probe/ownership.json,attestation_sha256=sha,cancelled=callable)",
+    "writer": "write_output(raw,features,coords,provenance,output,*,profile)",
+    "result": "runtime.validate_result(record,profile=profile) after outer model/component/parameter collection, synchronization, one workspace clear, empty_cache and measured allocated=reserved=0"
+  },
+  "critical_record_contract": [
+    "Before neural: decoder_cpu=native_import=PASS; bindings=18 original binding names; checkpoint.freshly_streamed_sha256 matches 97ea69addea2ecd9312910f5f548234665eef51c088386180b7cd5b258645e3c; runtime identity/source SHA map; strict 284-entry diagnostics; runtime_dtype_counts F16=208,F32=76; runtime_dtype_changes={}; buffers_count=0; constructed_on_meta=true.",
+    "Neural adds authenticated pbr_profile/profile_sha256/run_contract_sha256; one forward; 40 convolutions; eight C2S records; five original maps; six large-site records/84 tiles; final record/60 tiles/1957891 rows; exact finite F32 raw/features and I32 original coordinates; guide-order completion; production output metadata; restoration/collection evidence.",
+    "Ready/ACK binds kind=brick-pbr-field, Windows artifact/metadata paths, profile/contract/marker/attestation hashes, artifact bytes/hash and canonical metadata hash; ACK additionally status=PASS, independent_of_worker=true and ownership_verified=true. Marker schema=modly.amd.brick-pbr-receipt-marker.v1, mode=production, profile_sha256 and artifact_root."
+  ],
+  "identity_constraints": [
+    "Import one canonical inference_texture package per process: require_authenticated uses exact Profile type; duplicate package loads produce foreign classes. Use the package source-pinned loader/runtime objects consistently.",
+    "Do not overwrite generic admission/runtime/neural/run_contract modules or modify historical globals. _source.load_pinned isolates historical copies and mapped imports.",
+    "Keep the canonical amd_texture_field_artifact ownership factory and _DrvfsOwnership class together. artifact shares that exact class with its private expanded-bound writer/readers; a separately compiled or duck-typed capability is rejected.",
+    "Do not use amd_generation_decode.PendingHostReceipt: geometry intentionally verifies after exit; PBR must receive independent Windows ACK before releasing GPU tensors. Geometry Runtime also hardcodes shape/new-image contracts and is a composition pattern, not a drop-in PBR executor."
+  ],
+  "wsl_authority": [
+    "Fresh sibling field/probe outside Git under C:/Users/wattz/Documents/ModlyArtifacts, actual Windows SID/ACL/reparse/file-ID snapshot and new production ownership.json required. Old turret attestation grants no brick authority.",
+    "Production marker must be exclusive probe/neural-attempt.marker with authenticated new root/profile. Bind exact marker and attestation hashes in both host and guest; no retry or marker reuse.",
+    "Genuine WSL factory must validate UID/EUID/GID/EGID=(1000,1000,1000,1000), exact diagnosed /mnt/c 9p DrvFS mount without metadata and synthetic root uid/gid=0; bind live device/inode roots. Field capabilities remain confined to the field root and its two artifact filenames.",
+    "Control files use bounded plain single-link same-filesystem/same-owner-as-parent checks plus hashes/profile/path bindings, not field-file capability exceptions. Qualify this actual WSL path before neural admission; Windows CPU tests do not establish Linux UID/mount behavior.",
+    "The unchanged ImportPolicy writable roots must include only fresh guest output/scratch, field and probe. Historical worker allows field but not the new sibling probe; missing probe makes receipt publication fail closed.",
+    "Retain destination >=2 GiB free and os.W_OK checks independently of D: >=50 GiB; host rechecks Windows ownership around actual readback."
+  ],
+  "target_source_checks": [
+    "Windows CPU evidence used Python 3.12.10/Torch 2.13 ROCm10; execution target remains pinned WSL Python3.12/Torch2.9.1/ROCm7.2.1/Triton3.5.1. They are different qualifications.",
+    "qualify_function compiles authenticated runtime source under the current interpreter (dont_inherit=True) and compares nested bytecode/defaults; the cache qualifier also compiles original method AST. Windows bytecode success cannot substitute for checks in the target process. Preserve source bytes and native source/wheel hashes, Python minor/optimization and original callable globals; any target mismatch stops before placement/forward.",
+    "New source closure must include experiment adapters and every inference_texture file plus frozen control/runtime/writer/ownership and installed native/source pins. Existing turret candidate manifest intentionally binds the turret, so it cannot be reused unchanged as the brick manifest."
+  ],
+  "next_gate": "Stop now pending host-memory adequacy. If cleared, prepare only new adapters/tests/source closure and independent pre-execution review, then fresh host resource/ownership/readiness admission before any exclusive neural marker or actual forward."
+}

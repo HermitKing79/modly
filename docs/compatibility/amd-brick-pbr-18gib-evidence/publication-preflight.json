@@ -1,0 +1,22 @@
+{
+  "schema": "modly.amd.brick-pbr-18gib-publication-preflight.v1",
+  "classification": "BLOCKED_NO_GPU_FORWARD",
+  "approved_base": "28ab4c1bdd0342f4d3e57e6c70278319eb475660",
+  "numeric_18GiB_comparison_passed": true,
+  "independent_host_memory_adequacy": "BLOCKED",
+  "temporary_exception_scope": "single brick experiment only; CPU admission comparison; worker override not activated",
+  "historical_default_and_all_16_qualified_sources_unchanged": true,
+  "all_100_protected_hashes_unchanged": true,
+  "prior_remote_heads": 79,
+  "tests_rerun": 0,
+  "WSL_launches": 0,
+  "Torch_imports": 0,
+  "model_loads": 0,
+  "GPU_queries": 0,
+  "GPU_forward_calls": 0,
+  "inference_marker_created": false,
+  "output_field": null,
+  "private_model_artifacts_published": false,
+  "host_memory_review_sha256": "fd3e24fa96602fbaaf6679cbecbb9db6669d6456e71f5d68c4ce2f030c6bc63f",
+  "preservation_sha256": "0fab4139a8cbfdc519b88add495c6f128e6bc344e7667db5135d4506f946ad7e"
+}

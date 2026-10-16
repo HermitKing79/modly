@@ -1,0 +1,104 @@
+{
+  "schema": "modly.amd.brick-pbr-18gib-host-memory-review.v1",
+  "approved_base": "28ab4c1bdd0342f4d3e57e6c70278319eb475660",
+  "classification": "BLOCKED",
+  "decision": "Numeric one-run 18 GiB prelaunch exception passes; actual host-memory adequacy is not established. Do not launch WSL, load the model, import the native runtime or run the forward under these readings.",
+  "scope": "Independent read-only review of saved source-safe CPU qualification, actual historical successful WSL worker/supervisor reports and Windows RAM samples. Only this report is written. No tests, WSL, Torch, native runtime, GPU, model payload loading or network operation occurred in this review.",
+  "fixed_limits_bytes": {
+    "one_run_prelaunch_exception": 19327352832,
+    "historical_prelaunch_default_unchanged": 19864223744,
+    "live_available_Windows_RAM_floor": 12884901888,
+    "initial_free_VRAM": 13958643712,
+    "Torch_allocator_cap": 12884901888,
+    "device_free_reserve": 2147483648,
+    "opaque_allowance": 1073741824
+  },
+  "deadlines_seconds_unchanged": {"native": 60, "CPU": 120, "GPU": 240, "host": 480},
+  "current_saved_readings": {
+    "source": "initial-host-readings.json",
+    "available_Windows_RAM_bytes": [19841519616, 19855331328, 19859955712],
+    "headroom_above_live_floor_bytes": [6956617728, 6970429440, 6975053824],
+    "numeric_strict_18GiB_gate_passed": true,
+    "commit_available_bytes": [31976251392, 31997628416, 32003760128],
+    "commit_available_is_not_available_physical_RAM": true
+  },
+  "closest_historical_successful_F16_PBR": {
+    "source": "docs/compatibility/amd-turret-texture-decode-resume-evidence/phases.jsonl",
+    "result_source": "docs/compatibility/amd-turret-texture-decode-resume-evidence/run/results.json",
+    "same_model_contract": "284 parameters, 208 F16 / 76 F32; 948567448 runtime parameter bytes",
+    "turret_support": [3743, 17015, 79169, 378891, 1842968],
+    "actual_Windows_available_RAM_samples": [
+      {"stage": "pre-marker", "host_utc": "2026-10-15T09:41:21.007094+01:00", "bytes": 22434783232},
+      {"stage": "first native-qualified-CPU-preparation-entry sample", "host_utc": "2026-10-15T09:41:41.917651+01:00", "bytes": 17921138688},
+      {"stage": "gpu-stage-entry after CPU strict load", "host_utc": "2026-10-15T09:41:51.941355+01:00", "bytes": 15996715008},
+      {"stage": "lowest whole-attempt sampled Windows availability, while holding output before host readback acknowledgement", "host_utc": "2026-10-15T09:42:14.080128+01:00", "bytes": 14853283840}
+    ],
+    "observed_whole_host_declines_bytes": {
+      "pre_marker_to_CPU_entry_startup_import_period": 4513644544,
+      "CPU_entry_to_GPU_stage_entry_strict_load_period": 1924423680,
+      "pre_marker_to_GPU_stage_entry": 6438068224,
+      "GPU_stage_entry_to_lowest_sample": 1143431168,
+      "pre_marker_to_lowest_sample": 7581499392
+    },
+    "guest_worker_CPU_measurements_bytes": {
+      "before_load_RSS_and_HWM": 858697728,
+      "loaded_RSS": 1869070336,
+      "strict_load_HWM": 2786930688,
+      "guest_MemAvailable_before_load": 15626399744
+    },
+    "measurement_limits": "The Windows declines are measured whole-host changes correlated with stages, not causally isolated WSL consumption. One-second samples are not a continuous physical-memory bound. Worker RSS/HWM measures one guest process; it is neither full process-tree memory nor Windows available RAM. The guest MemAvailable value is not Windows availability. No complete host/guest process-tree peak or vmmem committed baseline is present in these saved reports. No current vmmem commitment measurement was made. No current GPU measurement was made."
+  },
+  "other_actual_successful_WSL_reports": [
+    {
+      "source": "docs/compatibility/amd-wsl-turret-artifact-writer-ready-evidence/run/results.json",
+      "workload": "turret BF16 geometry decoder with saved genuine output",
+      "pre_marker_available_RAM_bytes": 19962277888,
+      "minimum_available_RAM_bytes": 13636390912,
+      "observed_whole_host_decline_bytes": 6325886976,
+      "worker_CPU_HWM_bytes": 2786926592
+    },
+    {
+      "source": "docs/compatibility/amd-brick-neural-completion-evidence/host-results.json",
+      "workload": "brick BF16 geometry decoder with saved genuine output",
+      "pre_marker_available_RAM_bytes": 19535806464,
+      "minimum_available_RAM_bytes": 13792145408,
+      "observed_whole_host_decline_bytes": 5743661056,
+      "worker_CPU_HWM_bytes": 2787229696
+    }
+  ],
+  "brick_visible_payloads_not_a_host_peak_bound": {
+    "support": [4430, 21391, 97313, 438684, 1957891],
+    "contract": "284 parameters, 208 F16 / 76 F32; six large F16 sites, 84 tiles plus 60 final tiles",
+    "runtime_parameter_bytes": 948567448,
+    "geometry_input_tensor_payload_bytes": 104125380,
+    "texture_input_tensor_payload_bytes": 1772000,
+    "four_original_guide_BF16_and_parent_coordinates_bytes": 17978176,
+    "full_raw_transformed_F32_and_I32_coordinates_output_payload_bytes": 125305024,
+    "limitation": "These are intrinsic payload sizes, not additive independent ownership claims or a bound on CPU copies, strict-loader transient RSS, runtime imports, WSL VM/kernel/cache retention, pinned transfers, output serialization or independent Windows readback. The CPU source review's 3230157582-byte retained envelope and 8968476420-byte padded projection concern device-visible tensors and explicitly do not bound host RAM. Brick has larger support and adds six large-site tiling lifecycles; turret host peaks cannot be asserted as upper bounds for it."
+  },
+  "adequacy_arithmetic": {
+    "18GiB_minus_12GiB_bytes": 6442450944,
+    "remaining_above_floor_after_historical_pre_GPU_decline_at_exact_18GiB_bytes": 4382720,
+    "additional_historical_post_GPU_decline_bytes": 1143431168,
+    "current_projected_minima_if_same_whole_host_decline_recurred_bytes": [12260020224, 12273831936, 12278456320],
+    "projected_deficits_below_12GiB_floor_bytes": [624881664, 611069952, 606445568],
+    "interpretation": "This is a counterfactual screen, not a prediction or a causal WSL estimate. Even the best fresh reading would be 606445568 bytes below the unchanged live floor if the closest successful F16 PBR trace's whole-host decline recurred. At exactly 18 GiB the observed pre-GPU decline alone leaves only 4382720 bytes above the floor. The evidence therefore does not justify a conditional launch or a model-load experiment at current headroom. Smaller declines in other successful geometry runs do not establish a material-decoder upper bound."
+  },
+  "precise_evidence_gap": "No measured WSL VM/process-tree commitment baseline and no upper bound on remaining host physical-memory demand for the exact brick F16 loader, guides, tiled forward, output serialization and independent readback. Single-process CPU HWM and device tensor projections cannot close this gap. Monitoring can detect a breach after it happens; it does not establish that the next allocation can preserve the floor.",
+  "minimum_pre_forward_checks_for_any_later_independently_admitted_attempt": [
+    "Start healthy Windows GlobalMemoryStatusEx monitoring before WSL startup; retain actual physical availability and separate commit/process-tree/vmmem observations. Require fresh admission before marker reservation and every stage barrier.",
+    "Place an explicit host-controlled stop barrier after WSL/runtime import and again after strict model/input/guide loading, before GPU placement or forward. Do not proceed if remaining measured headroom cannot cover independently justified remaining host demand; the historical values above are observations, not a new global gate or proven bound.",
+    "Refuse the next stage while a measured downward trend or next known allocation would approach the 12884901888-byte live floor; fail closed on stale/failed monitoring. Keep the existing floor, unchanged VRAM caps/reserves and deadlines. The present evidence does not supply a defensible extra safety buffer, so none is invented here."
+  ],
+  "source_sha256": {
+    "initial-host-readings.json": "8350937c45a0616bbf93fac47dfaec70990bc149d146164033e07e4f9907d619",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/phases.jsonl": "de94ed41b1c55c3f2661b030b70e8b74826063d5a77094de1a6a61e02960fca6",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/run/results.json": "3aa3426b52bfc58e818b9653c6c1649331372b6712eb063112589d4a24adda38",
+    "docs/compatibility/amd-wsl-turret-artifact-writer-ready-evidence/run/results.json": "654caa6f23780520a2f17885c5c643a43921f9b510abc59dc5383081eb5e6f34",
+    "docs/compatibility/amd-brick-neural-completion-evidence/host-results.json": "d09f77f3fc781f3811b0ba39bdda5b25df1cd4f7bd762b94362a77aa2d79af43",
+    "docs/compatibility/amd-brick-guided-pbr-cpu-evidence/independent-memory-review.json": "59f6bdd8d0d99e64c5b35416abf3276598aaefdb8da1fc6ab07e1a23f9914fd9",
+    "docs/compatibility/amd-brick-guided-pbr-cpu-evidence/cpu-preparation-reviewed.json": "010b5241c970832c3a622c267a04350a66baa897c935e73c010539754e8e282b"
+  },
+  "execution": {"WSL_launched": false, "Torch_imported": false, "model_loaded": false, "native_imported": false, "GPU_forward_calls": 0, "tests_run": false},
+  "policy_effect": "None. This report refuses adequacy for the requested one-run exception under current readings; it changes no historical default or source policy."
+}
