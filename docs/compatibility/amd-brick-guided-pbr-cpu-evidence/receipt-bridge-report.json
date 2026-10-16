@@ -1,0 +1,63 @@
+{
+  "schema": "modly.amd.brick-pbr-receipt-bridge-cpu.v1",
+  "classification": "PASS_ACTUAL_CPU_CHILD_WRITER_AND_INDEPENDENT_HOST_ACCEPTANCE",
+  "data_classification": "EXPLICIT_SYNTHETIC_FIXTURE_NOT_MODEL_OUTPUT",
+  "final_review_correction": "receipt-destination-gate-correction.json records the final source/test hashes and scoped verification after restoring the frozen >=2GiB/W_OK destination gate. The source hashes below identify the preserved original three-test receipt snapshot.",
+  "profile": "brick-1957891-v1",
+  "API": {
+    "host_preflight": "mint_host_attestation(fresh_run/field, fresh_run/probe/ownership.json, profile=authenticated_profile, mode='fixture' or 'production') records actual Windows SID, ACL and file IDs for both fresh exact leaves and their parent.",
+    "factory": "ReceiptBridge(root, receipt_dir, marker_path, marker_sha256, *, profile, attestation_path, attestation_sha256, cancelled=None)",
+    "core_callback": "Inject bridge.write_output directly: write_output(raw, features, coords, provenance, output, *, profile). output must be this bridge's exact receipt_dir.",
+    "host_poller": "bridge.host_receipt().poll() performs real independent host verification and publishes the acknowledgement only after successful readback and unchanged host ownership/file identities.",
+    "leaf_names": "Reuse the frozen owner's exact sibling field/probe guard unchanged. field contains the two payload files; probe contains only the attempt's receipt/control files.",
+    "marker": "Fixtures require a separate cpu-only-attempt.marker binding mode, profile hash and canonical artifact root; the unused neural-attempt.marker stays absent. A marker never authorizes inference."
+  },
+  "protocol": {
+    "I_O_deadline_seconds": 30,
+    "writer": "Original exact ownership preflight and actual field writer/readback, exclusive durable artifact-ready.json, wait for independent host-artifact-verified.json, then exact marker/path/profile/contract/attestation/metadata/artifact hash and size checks before returning independently_verified_before_release=True.",
+    "host": "Read bounded plain single-link ready receipt, authenticate its exact identities, check real Windows SID/ACL/file IDs before read, run the actual independent profile-authenticated field reader, check both field/control roots and output file identities again, then exclusively publish a durable matching PASS acknowledgement.",
+    "provenance": "The artifact itself binds ownership_attestation_sha256 and receipt_marker_sha256; ready/ACK also bind the profile, run contract, paths, artifact hash/bytes and complete metadata hash.",
+    "ownership": "The original field capability class and checks remain unchanged and never authorize receipt filenames. Control-file reads preserve exact known paths, plain/single-link/filesystem/parent ownership, bounds and identity checks under the separately host-attested probe leaf. A future WSL worker must still pass the genuine canonical factory's live UID/mount/root checks for both attested roots; no fake credential or UID exception exists.",
+    "future_root": "A separately approved future run must mint a fresh Windows-owner-attested brick field/probe pair. The old fixed turret leaf, old attestation and old fixed-root owner helper are not reused."
+  },
+  "qualification": {
+    "command": "python -B scripts/compatibility/test_amd_brick_pbr_receipts.py",
+    "receipt": "receipt-bridge-tests.stdout.txt",
+    "receipt_sha256": "e2e21e4922e9791d32df7896e93f80721680fd270c23dee7ab306184f07d0bc8",
+    "tests": 3,
+    "passed": 3,
+    "total_suite_seconds": 64.683,
+    "individual_handshake_limit_seconds": 30,
+    "actual_child_writer_parent_host_ack": true,
+    "actual_Windows_SID_ACL_file_ID_attestation": true,
+    "actual_independent_host_reader_before_release": true,
+    "clean_child_exit_and_post_exit_readback": true,
+    "synthetic_payload_bytes": 128,
+    "actual_waiting_child_refuses_wrong_ACK": true,
+    "foreign_root_profile_marker_refused": true,
+    "cancellation_refused_before_any_write": true,
+    "GPU_marker_absent": true,
+    "fixture_root_empty_after_cleanup": true,
+    "TDD": "The initial focused test failed because receipts did not exist. Actual Windows qualification then correctly refused Python TemporaryDirectory's special OWNER RIGHTS ACL. Tests now exclusively create normal inherited-ACL directories with mkdir; no ACL was changed and no ownership check was relaxed. All three actual protocol tests pass.",
+    "fixture_root": "C:/Users/wattz/Documents/ModlyArtifacts/amd-brick-pbr-cpu-3942181-tests"
+  },
+  "source_sha256": {
+    "experimental/extensions/trellis2-amd/inference_texture/receipts.py": "b4eec77e778d9737b0d109b6e6cdefb920ac574edfe50b609beb5a98dd6131a3",
+    "scripts/compatibility/test_amd_brick_pbr_receipts.py": "431bfb39e530bcefd47541502e78416d748faa80bbb73cf2f747e752c9a8fe41"
+  },
+  "unchanged_frozen_source_sha256": {
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/artifact_io.py": "4a1d55f77eb3e45e115592e17e0fa4948bb58278fd5a7bf71af561c1ed9543f4",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/output_owner.py": "02d862b93ad08edb7830e49169fe6adc9921bebd2755cd94cbce2179e3bf9648",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/windows_owner.ps1": "6849a3ac5375cc1693ce306ea28fa4ce9bed32305b8926bc2f5e6034c75f1a94"
+  },
+  "limits": {
+    "Torch_imported": false,
+    "GPU_executed": false,
+    "WSL_executed": false,
+    "native_or_model_imported": false,
+    "packages_installed": false,
+    "real_PBR_forward_or_output": false,
+    "simulated_success_ACK": false,
+    "production_WSL_ownership_execution_qualified": false
+  }
+}

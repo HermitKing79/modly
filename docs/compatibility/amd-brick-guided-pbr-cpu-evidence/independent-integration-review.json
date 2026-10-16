@@ -1,0 +1,78 @@
+{
+  "schema": "modly.amd.brick-guided-pbr-independent-integration-review.v1",
+  "base": "3942181cec1aaac2e38698f08c61a68a69af4851",
+  "branch": "codex/amd-brick-guided-pbr-cpu",
+  "verdict": "BLOCKED",
+  "decision_scope": "CPU qualification for approving one separately authorized controlled future forward; not a GPU compatibility or successful execution guarantee.",
+  "scope": "Independent whole-branch read-only source and existing-receipt review. No tests rerun, Torch/model/native imports, checkpoint tensor reads, WSL/GPU operations, installs, builds or downloads. Only this textual review file was written.",
+  "snapshot": {
+    "package": "../artifacts/amd-brick-pbr-cpu-3942181/branch-review-package.txt",
+    "all_13_package_source_sha256_entries_match_current_files": true,
+    "source_frozen_after_canonical_ownership_correction": true,
+    "tracked_diff_against_base_empty_at_review": true,
+    "full_protected_artifact_environment_after_inventory": "Root-owned final preservation check remains separate; this review does not substitute for it."
+  },
+  "findings": [
+    {
+      "id": "I1",
+      "severity": "Important",
+      "priority": 1,
+      "title": "The production writer and independent host acknowledgement are still an unspecified callback",
+      "locations": [
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/neural.py", "line": 57},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/neural.py", "line": 200},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/artifact.py", "line": 139},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/runtime.py", "line": 160},
+        {"file": "scripts/compatibility/amd_generation_texture_decode.py", "line": 1},
+        {"file": "docs/compatibility/amd-brick-guided-pbr-cpu-evidence/core-integration-report.md", "line": 37}
+      ],
+      "evidence": "run_neural correctly waits for verified and independently_verified_before_release before its ordinary tensor cleanup, but no concrete callback implementing that protocol exists in this branch. artifact.write uses a different argument order, returns ordinary independently implemented reader verification without the host acknowledgement flag, and has no independent Windows host receipt transport. The top-level adapter performs CPU preparation only. The integration report explicitly lists a real durable writer plus independent host acknowledgement callback among the remaining gates.",
+      "impact": "The current pieces cannot yet be invoked as a concrete reviewed end-to-end path satisfying the required persisted-output/independent-reader acknowledgement before GPU tensor release. A caller can only provide a new unreviewed adapter or assert the required booleans. Existing clean-process synthetic readback proves the standalone format consumer, not this pre-release handoff. This is a source/preflight gap before future-forward approval, rather than an expected unknown live GPU measurement.",
+      "required_resolution": "Add a bounded CPU-reviewable bridge wiring the profile-bound artifact writer, exact genuine ownership capability, independent host profile-authenticated reopen, matching artifact/metadata hashes and an acknowledgement received before callback return. Define refusal/cancellation/timeout behavior and the fresh exact brick-leaf Windows SID/ACL/file-ID attestation input. Qualify representative CPU success/failure control paths without running WSL, native code, a model or GPU work. Retain the original worker ownership, deadlines and live admission gates for any later separately authorized execution."
+    },
+    {
+      "id": "I2",
+      "severity": "Important",
+      "priority": 2,
+      "title": "Hashing a callable's filename does not authenticate the executed callable",
+      "locations": [
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/neural.py", "line": 24},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/neural.py", "line": 31},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/tiling.py", "line": 53},
+        {"file": "scripts/compatibility/test_amd_brick_pbr_core.py", "line": 512}
+      ],
+      "evidence": "_validate_dependencies compares the injected forward with model_type.forward, class/function names/modules and the on-disk hash of forward.__code__.co_filename. SparseTensor and the original explicit-GEMM descriptor use the same filename-hash pattern. There is no actual-code comparison to the pinned definitions or canonical dependency qualification at these boundaries. A replacement compiled with the genuine source filename and assigned to the expected class can retain the checked metadata while executing other code. The existing foreign-forward test rejects object()+lambda before exercising this case. admission.qualify_cache_type already demonstrates an AST/code comparison approach without importing native code.",
+      "impact": "The stated guarantee that dependency injection cannot replace the genuine learned parent forward is not established by the current validator. Hooks and receipts constrain shape/order but do not prove the parent computation itself. An immutable separately qualified worker source closure could supply this guarantee, but that concrete worker/bridge is currently absent.",
+      "required_resolution": "Authenticate actual forward/SparseTensor/descriptor code against the exact pinned definitions and relevant canonical dependency identities, or provide the explicit independently qualified immutable worker closure that supplies those guarantees. Add a narrow CPU-only rejection case for a foreign callable carrying the genuine source filename and expected class/module metadata; no model/native import is necessary."
+    }
+  ],
+  "source_review_passes": [
+    "Profile is frozen, contains immutable canonical geometry bytes and fixed tuple supports, and is reauthenticated at consumers. A name or final count alone does not admit the brick path.",
+    "Prepared original denormalized F32 latent, I32 support, all four BF16 guide payloads, exact BF16-to-F32 expansion and geometry coordinates are authenticated by exact shape, dtype, read-only layout and payload hashes. Eight original C2S calls retain mask and coordinate/order checks.",
+    "Original strict F16/F32 model manifest is retained: 284 entries, 208 F16 and 76 F32, 948567448 runtime parameter bytes. No BF16 learned-decoder substitution is introduced.",
+    "The genuine frozen F16 row helper is loaded from exact SHA-verified bytes. It retains original weight view/transpose and addmm/mm behavior, sentinel masking and full global source indices without tile rebasing. Six large sites produce 14 tiles each, total84; final64 produces60 tiles with last24579 rows.",
+    "Native boundary retains exact five-map site/order/coordinate/default-stream/ratio2/algorithm checks and original binding wrappers. All six large sites require the same admitted global native map, coordinate object and genuine original cache object. Final64 requires its own admitted full map.",
+    "Admission preserves max(allocated,reserved)+ceil(5*additional/4)+1GiB<=12GiB and free>=ceil(5*additional/4)+2GiB, with13GiB initial free. Full-output allocation and every tile are admitted before allocation; only already-live map/hash/output terms are removed from later additional plans. Full downstream extras remain charged.",
+    "The independent source-visible retained envelope includes model, all guide/mask/coordinate families, full maps and hashes, primary/secondary feature tables, expanded parents, skip tables, projection/raw/finite buffers and optional sparse metadata. Its3230157582-byte envelope plus the largest padded additional plan and opaque allowance is8968476420 bytes; this arithmetic fit does not bound allocator fragmentation or physical free memory.",
+    "Patch always-call hooks and outer cleanup restore original descriptors after ordinary failure or cancellation, remove hooks and native wrappers, clear retained map/cache/coordinate references and collect tracked input/output tensors. Model/component/parameter and allocator-zero cleanup are explicitly caller-owned and required by validate_result; a future concrete worker must supply them.",
+    "Canonical original public ownership class/factory is shared by both private field copies while historical default globals and limits remain unchanged. No duck-typed authority is admitted. A future brick output must use a fresh exact-leaf host attestation; the old turret leaf and fixed-root output_owner helper cannot authorize it.",
+    "Profile writer and independent reader preserve original confinement, alias/single-link, exclusive-write, ownership, finite-value, unclamped F32 transform, metadata, payload hash and complete-coordinate checks. Production output requires1957891 rows and exact original final coordinate hash. The payload is125305024 bytes. Synthetic fixture mode is explicit and is rejected by neural result acceptance.",
+    "Hash-pinned private source modules avoid replacing generic historical module aliases. Tracked historical files have no diff against the approved base. No new GPU/worker CLI is introduced."
+  ],
+  "existing_receipts_reviewed": {
+    "core-cpu-tests.json": "15 passing focused tests; bounded genuine F16 CPU arithmetic and explicitly simulated native/GPU metadata/lifecycle. Reported maximum absolute error0.0 with/without bias for a small cross-tile/sentinel/tail fixture. Not a GPU numerical result.",
+    "core-cpu-tests.stdout.txt": "Matches15 passing tests,5.958s; native/model/checkpoint/GPU/WSL execution denied or absent.",
+    "profile-input-artifact-report.json": "11 original tests; genuine original inputs and explicit synthetic full-support persistence. Independent reader source/process coverage is distinguished from model output.",
+    "profile-ownership-review-correction.json": "Records the genuine public/private class identity correction and the fresh brick-leaf host-attestation requirement; no WSL run or new attestation was performed.",
+    "profile-input-artifact-post-review-tests.stdout.txt": "13 passing regression tests,7.405s; synthetic full-support payload125305024 bytes and clean independent process reader.",
+    "independent-memory-review.json": "Conditional source-visible fit with explicit unmeasured allocator/native/opaque and host-memory limits; source arithmetic and fixed policy are consistent with reviewed code.",
+    "native-index-payload-review.json": "Full global indices, signed32 products, sentinel distinction and exact field payload arithmetic are consistent with reviewed plans.",
+    "amd-brick-material-stage1-evidence/decoder-cpu-readiness.json": "Original Stage1 blockers correctly identify final-only admission, turret input/hooks/output caps and BF16 geometry mismatch. New code addresses their scoped profile/F16 tiling/persistence portions; the concrete consumer/host handoff remains incomplete."
+  },
+  "future_execution_conditions": [
+    "Resolve I1 and I2 and review their concrete CPU evidence before asking to approve the controlled future forward.",
+    "Retain exact target runtime/native/source/checkpoint qualification, genuine Windows host and WSL worker ownership/Job/natural-exit controls, CPU/native/GPU/host deadlines120/60/240/480 seconds and all unchanged host/resource/live-memory floors.",
+    "Do not treat this review, synthetic persistence, tiny CPU F16 equivalence or static visible-memory fit as successful GPU execution, measured memory, numerical/appearance quality or AMD compatibility evidence.",
+    "Complete the root-owned final protected artifact/environment preservation comparison before publication."
+  ]
+}

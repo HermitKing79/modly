@@ -1,0 +1,47 @@
+test_changed_descriptor_with_genuine_filename_is_refused (__main__.ExecutableSourceIdentity.test_changed_descriptor_with_genuine_filename_is_refused) ... FAIL
+test_changed_forward_with_genuine_filename_is_refused (__main__.ExecutableSourceIdentity.test_changed_forward_with_genuine_filename_is_refused) ... FAIL
+test_changed_sparse_initializer_with_genuine_filename_is_refused (__main__.ExecutableSourceIdentity.test_changed_sparse_initializer_with_genuine_filename_is_refused) ... FAIL
+test_exact_forward_code_with_changed_torch_global_is_refused (__main__.ExecutableSourceIdentity.test_exact_forward_code_with_changed_torch_global_is_refused) ... FAIL
+test_original_executable_sources_pass_without_native_import_or_model_constructor (__main__.ExecutableSourceIdentity.test_original_executable_sources_pass_without_native_import_or_model_constructor) ... ok
+
+======================================================================
+FAIL: test_changed_descriptor_with_genuine_filename_is_refused (__main__.ExecutableSourceIdentity.test_changed_descriptor_with_genuine_filename_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_brick_pbr_core.py", line 626, in test_changed_descriptor_with_genuine_filename_is_refused
+    with self.assertRaises(admission.AdmissionStop):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AdmissionStop not raised
+
+======================================================================
+FAIL: test_changed_forward_with_genuine_filename_is_refused (__main__.ExecutableSourceIdentity.test_changed_forward_with_genuine_filename_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_brick_pbr_core.py", line 596, in test_changed_forward_with_genuine_filename_is_refused
+    with self.assertRaises(admission.AdmissionStop):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AdmissionStop not raised
+
+======================================================================
+FAIL: test_changed_sparse_initializer_with_genuine_filename_is_refused (__main__.ExecutableSourceIdentity.test_changed_sparse_initializer_with_genuine_filename_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_brick_pbr_core.py", line 606, in test_changed_sparse_initializer_with_genuine_filename_is_refused
+    with self.assertRaises(admission.AdmissionStop):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AdmissionStop not raised
+
+======================================================================
+FAIL: test_exact_forward_code_with_changed_torch_global_is_refused (__main__.ExecutableSourceIdentity.test_exact_forward_code_with_changed_torch_global_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_brick_pbr_core.py", line 615, in test_exact_forward_code_with_changed_torch_global_is_refused
+    with self.assertRaises(admission.AdmissionStop):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AdmissionStop not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 3.508s
+
+FAILED (failures=4)
+{"WSL_executed": false, "classification": "FAIL_CPU_CORE_TESTS", "cpu_guard": {"gpu_initialized_after_import": false, "gpu_initialized_after_tests": false, "import_gpu_entries_blocked": 0, "post_import_gpu_entries_blocked": 0}, "errors": 0, "failures": 4, "fixture_scope": "Actual bounded F16 CPU helper arithmetic; cache class compiled from original AST. Native calls, GPU device metadata and full tile lifecycle are explicitly simulated. Handwritten acceptance receipts are TEST-ONLY, never model outputs.", "helper_source_sha256": "707d73d7331a4896bffeb851c2aa144175841cd4752a4497760d9f6a44ea2d39", "initial_incomplete_runs": "Two Torch import attempts failed at local test guard: socket.gethostname, then blocked platform cmd /c ver probing. No native Flex/model/GPU operation ran. Fixed test-only platform cache from sys.getwindowsversion.", "model_imported": false, "native_imported": false, "numerical_observations": [], "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]", "python_executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "schema": "modly.amd.brick-pbr-core-cpu-tests.v1", "source_sha256": "f25296ddef1fc1632d8dff44a19228c0ec095de271545fa107454e37b5939c11", "tests": 5, "torch_runtime_version": "2.12.0+rocm7.14.0", "versions": {"torch": "2.12.0+rocm7.14.0", "triton": null, "triton-windows": null}, "weights_loaded": false}

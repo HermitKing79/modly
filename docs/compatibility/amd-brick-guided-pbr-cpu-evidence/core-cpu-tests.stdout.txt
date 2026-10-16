@@ -1,0 +1,21 @@
+test_authenticated_f16_core_is_present (__main__.CoreAvailability.test_authenticated_f16_core_is_present) ... ok
+test_admission_includes_retained_reserved_and_refuses_before_allocation (__main__.CoreContracts.test_admission_includes_retained_reserved_and_refuses_before_allocation) ... ok
+test_complete_byte_plans_keep_original_limits_and_exact_coverage (__main__.CoreContracts.test_complete_byte_plans_keep_original_limits_and_exact_coverage) ... ok
+test_original_neighbor_cache_class_is_accepted_and_duck_type_is_refused (__main__.CoreContracts.test_original_neighbor_cache_class_is_accepted_and_duck_type_is_refused) ... ok
+test_f16_cancellation_releases_live_output_and_tile_temporaries (__main__.F16Numerics.test_f16_cancellation_releases_live_output_and_tile_temporaries) ... ok
+test_f16_matches_pinned_untiled_with_cross_tile_missing_neighbors_bias_and_tail (__main__.F16Numerics.test_f16_matches_pinned_untiled_with_cross_tile_missing_neighbors_bias_and_tail) ... ok
+test_five_original_maps_order_coordinates_stream_and_restoration_are_simulated (__main__.NativeProvenance.test_five_original_maps_order_coordinates_stream_and_restoration_are_simulated) ... ok
+test_authentic_inputs_low_initial_memory_refuses_before_model_placement_or_writer (__main__.NeuralComposition.test_authentic_inputs_low_initial_memory_refuses_before_model_placement_or_writer) ... ok
+test_foreign_injected_parent_forward_is_refused (__main__.NeuralComposition.test_foreign_injected_parent_forward_is_refused) ... ok
+test_synthetic_field_cannot_qualify_as_genuine_neural_output (__main__.ResultAcceptance.test_synthetic_field_cannot_qualify_as_genuine_neural_output) ... ok
+test_test_only_receipt_acceptance_requires_all_cleanup_lineage_and_profile_fields (__main__.ResultAcceptance.test_test_only_receipt_acceptance_requires_all_cleanup_lineage_and_profile_fields) ... ok
+test_cancel_restores_descriptor_and_clears_map_cache_references (__main__.TiledLifecycle.test_cancel_restores_descriptor_and_clears_map_cache_references) ... ok
+test_changed_retained_feature_allowance_is_refused_before_helper (__main__.TiledLifecycle.test_changed_retained_feature_allowance_is_refused_before_helper) ... ok
+test_final_sixty_tiles_and_real_module_failure_hook_restore_are_simulated (__main__.TiledLifecycle.test_final_sixty_tiles_and_real_module_failure_hook_restore_are_simulated) ... ok
+test_full_six_site_coverage_global_cache_identity_and_allocations_are_simulated (__main__.TiledLifecycle.test_full_six_site_coverage_global_cache_identity_and_allocations_are_simulated) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 5.958s
+
+OK
+{"WSL_executed": false, "classification": "PASS_CPU_CORE_TESTS", "cpu_guard": {"gpu_initialized_after_import": false, "gpu_initialized_after_tests": false, "import_gpu_entries_blocked": 0, "post_import_gpu_entries_blocked": 1}, "errors": 0, "failures": 0, "fixture_scope": "Actual bounded F16 CPU helper arithmetic; cache class compiled from original AST. Native calls, GPU device metadata and full tile lifecycle are explicitly simulated. Handwritten acceptance receipts are TEST-ONLY, never model outputs.", "helper_source_sha256": "707d73d7331a4896bffeb851c2aa144175841cd4752a4497760d9f6a44ea2d39", "initial_incomplete_runs": "Two Torch import attempts failed at local test guard: socket.gethostname, then blocked platform cmd /c ver probing. No native Flex/model/GPU operation ran. Fixed test-only platform cache from sys.getwindowsversion.", "model_imported": false, "native_imported": false, "numerical_observations": [{"atol": 0.002, "bias": false, "dtype": "torch.float16", "maximum_absolute_error": 0.0, "rtol": 0.002}, {"atol": 0.002, "bias": true, "dtype": "torch.float16", "maximum_absolute_error": 0.0, "rtol": 0.002}], "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]", "python_executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe", "schema": "modly.amd.brick-pbr-core-cpu-tests.v1", "source_sha256": "c6c87c02a21c3a2c13df710a91fa362f23390816263bd15c5a092e4647b907b5", "tests": 15, "torch_runtime_version": "2.12.0+rocm7.14.0", "versions": {"torch": "2.12.0+rocm7.14.0", "triton": null, "triton-windows": null}, "weights_loaded": false}

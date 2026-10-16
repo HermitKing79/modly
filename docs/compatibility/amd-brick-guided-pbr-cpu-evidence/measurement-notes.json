@@ -1,0 +1,12 @@
+{
+  "schema": "modly.amd.brick-pbr-measurement-notes.v1",
+  "core_final_tests": {
+    "tests": 22,
+    "unittest_seconds": 5.288,
+    "supervised_command_seconds": 7.421999999991385,
+    "process_exit_code": 0,
+    "gpu_initialized": false
+  },
+  "memory_scope": "core-final-amd213-process.json sampled only launched PID, possibly virtual-environment redirector; its working-set/private values are NOT a complete CPU-process-tree peak and cannot be used as an admission bound. GPU memory was not initialized or measured. Static memory budgets are independently identified as projections.",
+  "original_receipt_sha256": "f26d8dc709e5819061836debfaaa5870e1d6a4877f488ab9b43e20d5223c1d6f"
+}

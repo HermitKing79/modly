@@ -1,0 +1,41 @@
+{
+  "schema": "modly.amd.brick-pbr-final-source-verification.v1",
+  "source_sha256": {
+    "experimental/extensions/trellis2-amd/inference_texture/__init__.py": "26c39bac412ce88a65b9a4003218cf4709f7020dd4b752d520664282ffa5e72e",
+    "experimental/extensions/trellis2-amd/inference_texture/_source.py": "11ae08f720b1f09414bd3ce6ce5fe8ac166f9bc1f712e7768b2db7399652159c",
+    "experimental/extensions/trellis2-amd/inference_texture/admission.py": "9af8bbd6c61f12a2990af5efbae329f231b8fa2eb973be8df799709891dc16c3",
+    "experimental/extensions/trellis2-amd/inference_texture/artifact.py": "1dfebb51dfa03769e1103eddcd0a91d7cc7b8ffa1617c0433cb77d7f48648bdb",
+    "experimental/extensions/trellis2-amd/inference_texture/inputs.py": "603851fd622b4e53d9d484bd0c08d201b4b43b35a3abc1650b38b094a3280ed3",
+    "experimental/extensions/trellis2-amd/inference_texture/neural.py": "d41f6f30d10dc83d94903bb22fd0a8f5c1e928e85d22c62e8a65c8479df91987",
+    "experimental/extensions/trellis2-amd/inference_texture/profile.py": "4cbb0ca7f201201bf8bbd8cd093575eec89868480cb47ed00d4078915bb5b368",
+    "experimental/extensions/trellis2-amd/inference_texture/receipts.py": "70609892ba1b38a0d6f28d0bf0d70afab493f0b7e72899196445d2481ef4757b",
+    "experimental/extensions/trellis2-amd/inference_texture/runtime.py": "9df9c729aa54deac862cf3a9958501ce8e8f5786a445460b1930c89217b6dd4d",
+    "experimental/extensions/trellis2-amd/inference_texture/source_identity.py": "8a0f4f8dbd1df8ceee4ddc745b346431ad169f49e8e6212ddb5220e7b0fe65bd",
+    "experimental/extensions/trellis2-amd/inference_texture/tiling.py": "9f9281618a696e6391f1e4cdf8f77a1153bd8e315ede9e816da7ca533917f5a0",
+    "scripts/compatibility/amd_generation_texture_decode.py": "eb54fff5666641c2f6d01397d12e1a04c3f34c3ae22d88688d7947281d4f25ce",
+    "scripts/compatibility/test_amd_brick_pbr_core.py": "94d75a04338f9497987418c3a97ff4454b36e350184d16d2d758743fa31fbd4f",
+    "scripts/compatibility/test_amd_brick_pbr_inputs_artifact.py": "18404b9de7b754a1eda9e9c12eaf9493bc1d4632b4ab0bdd00521c794ed28aba",
+    "scripts/compatibility/test_amd_brick_pbr_receipts.py": "48e750e49ba154e2c0529cdaec265a5ef2a56a0d09e1675ce99c23d17f90711d",
+    "scripts/compatibility/test_amd_generation_texture_decode.py": "7a0d50a1f7eb26b06ef4bcedc72e9a529b1f33c360b3afd0c9bc52d6736cc544"
+  },
+  "syntax_files": 16,
+  "syntax_pass": true,
+  "prepared_source_closure_matches": true,
+  "tracked_historical_source_diff_against_base": [],
+  "preservation_after_snapshot_precedes_only_scoped_destination_gate_fix": true,
+  "final_new_source_changes_since_preservation_snapshot": {
+    "experimental/extensions/trellis2-amd/inference_texture/receipts.py": {
+      "before": "b4eec77e778d9737b0d109b6e6cdefb920ac574edfe50b609beb5a98dd6131a3",
+      "after": "70609892ba1b38a0d6f28d0bf0d70afab493f0b7e72899196445d2481ef4757b"
+    },
+    "scripts/compatibility/test_amd_brick_pbr_receipts.py": {
+      "before": "431bfb39e530bcefd47541502e78416d748faa80bbb73cf2f747e752c9a8fe41",
+      "after": "48e750e49ba154e2c0529cdaec265a5ef2a56a0d09e1675ce99c23d17f90711d"
+    }
+  },
+  "reviewed_preparation": "cpu-preparation-reviewed.json",
+  "model_loaded": false,
+  "GPU_initialized": false,
+  "WSL_executed": false,
+  "large_artifact_preservation_scope": "See unchanged preservation-after receipt; no historical file or environment edits in the last destination-gate fix or its CPU tests."
+}

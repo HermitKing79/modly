@@ -1,0 +1,8 @@
+test_destination_resources_preserve_original_exact_gate_before_write (__main__.BrickPbrReceiptTests.test_destination_resources_preserve_original_exact_gate_before_write) ... ok
+test_actual_child_writer_waits_for_independent_host_acceptance (__main__.BrickPbrReceiptTests.test_actual_child_writer_waits_for_independent_host_acceptance) ... ok
+{"classification": "PASS_ACTUAL_CPU_CHILD_HOST_ACK_SYNTHETIC_ONLY", "payload_bytes": 128, "actual_windows_owner_attestation": true, "independent_host_reader": true, "before_release_ack": true, "clean_child_exit": true, "post_exit_readback": true, "unused_GPU_marker_absent": true, "torch_imported": false, "WSL_executed": false, "GPU_executed": false}
+
+----------------------------------------------------------------------
+Ran 2 tests in 39.937s
+
+OK

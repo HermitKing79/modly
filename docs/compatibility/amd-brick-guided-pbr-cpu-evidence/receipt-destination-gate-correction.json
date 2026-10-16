@@ -1,0 +1,41 @@
+{
+  "schema": "modly.amd.brick-pbr-receipt-destination-gate-cpu.v1",
+  "classification": "PASS_SCOPED_RESOURCE_GATE_AND_ACTUAL_CHILD_HOST_ACK",
+  "review_finding": "The receipt callback originally preserved empty/owned output checks but omitted frozen artifact_io.check_directory's destination free-space and W_OK admission.",
+  "correction": "Restore the unchanged >=2GiB destination free-space and os.access(root, os.W_OK) rule in constructor preflight and immediately before artifact.write. Windows uses shutil.disk_usage(root).free; Linux uses statvfs.f_bavail * f_frsize, matching the frozen formula. No thresholds, deadlines, ownership checks or historical sources changed.",
+  "qualified_source_sha256": {
+    "experimental/extensions/trellis2-amd/inference_texture/receipts.py": "70609892ba1b38a0d6f28d0bf0d70afab493f0b7e72899196445d2481ef4757b",
+    "scripts/compatibility/test_amd_brick_pbr_receipts.py": "48e750e49ba154e2c0529cdaec265a5ef2a56a0d09e1675ce99c23d17f90711d"
+  },
+  "qualification": {
+    "command": "python -B scripts/compatibility/test_amd_brick_pbr_receipts.py BrickPbrReceiptTests.test_destination_resources_preserve_original_exact_gate_before_write BrickPbrReceiptTests.test_actual_child_writer_waits_for_independent_host_acceptance",
+    "receipt": "receipt-destination-gate-final-tests.stdout.txt",
+    "receipt_sha256": "bb0853c655d00449ffc4f3767c44a1219a0ebac3a2c93ce50ae2f9070bc3cd35",
+    "passed": 2,
+    "seconds": 39.937,
+    "insufficient_disk_refusal_bytes": 2147483647,
+    "unwritable_refusal_with_available_bytes": 2147483648,
+    "exact_boundary_positive_bytes": 2147483648,
+    "artifact_write_not_called_for_refused_cases": true,
+    "no_artifact_or_ready_receipt_created_for_refused_cases": true,
+    "actual_CPU_child_callback_independent_host_ACK_before_release": true,
+    "actual_Windows_SID_ACL_file_ID_attestation": true,
+    "clean_child_exit_and_post_exit_independent_reader": true,
+    "observed_red": "Before implementation, both resource-refusal cases reached the mocked artifact writer rather than raising the original resource admission error; the boundary helper was absent. The same focused regression passes after correction.",
+    "scope": "Only the new resource regression and the affected actual child/host happy path were rerun. Earlier thirteen profile/artifact checks, core checks and the previous three receipt checks were not repeated."
+  },
+  "preserved_previous_receipt": {
+    "path": "receipt-bridge-tests.stdout.txt",
+    "tests_passed": 3,
+    "sha256": "e2e21e4922e9791d32df7896e93f80721680fd270c23dee7ab306184f07d0bc8"
+  },
+  "limits": {
+    "data": "EXPLICIT_SYNTHETIC_CPU_FIXTURE_128_PAYLOAD_BYTES_NOT_MODEL_OUTPUT",
+    "Torch_or_native_imported": false,
+    "GPU_or_WSL_executed": false,
+    "real_PBR_forward_or_output": false,
+    "ownership_or_disk_permissions_changed": false,
+    "fixture_root_empty_after_cleanup": true,
+    "code_frozen_after_tests": true
+  }
+}

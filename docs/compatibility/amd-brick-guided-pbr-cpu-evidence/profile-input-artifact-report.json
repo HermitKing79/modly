@@ -1,0 +1,76 @@
+{
+  "schema": "modly.amd.brick-pbr-profile-input-artifact-cpu.v1",
+  "classification": "PASS_CPU_PROFILE_INPUTS_AND_SYNTHETIC_PERSISTENCE",
+  "execution_readiness": "NOT_GPU_EVIDENCE",
+  "base": "3942181cec1aaac2e38698f08c61a68a69af4851",
+  "profile": "brick-1957891-v1",
+  "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+  "implemented": {
+    "profile": "Immutable exact canonical geometry contract, input/guide file identities, coordinate identities and texture checkpoint/config/source pins; consumers reauthenticate the object rather than trusting a name or row count.",
+    "inputs": "Actual existing latent reader and ten-tensor geometry reader reopen original saved files. Four original BF16 payload views, exact expanded comparison masks and original C2S child order are preserved. Texture decoder source/config/header are inspected without importing the loader or reading tensor weights.",
+    "guide_validator": "Original source-pinned validator runs in its private fixed brick namespace. Exact before/after pairing validates all eight real C2S calls and final coordinate order, refusing cache reuse, mask changes, row changes, stage changes and missing calls.",
+    "private_loader": "Compiles exact SHA-verified source bytes. Explicit per-module import mapping and private registrations preserve any generic admission/run_contract module globals.",
+    "persistence": "The actual unchanged field writer and independent NumPy reader run in separate pinned private modules, with exactly the fixed authenticated brick byte bounds. A canonical profile document string and hash bind both header and sidecar provenance. Production mode requires the complete original coordinate payload hash. Explicit synthetic fixture mode remains separate.",
+    "historical_defaults": "No-profile historical fixture behavior remains unchanged; original sources and original module row constants remain unchanged. Profile-bound artifacts require reader opt-in even for tiny fixture counts.",
+    "filesystem": "Original alias, single-link, ownership capability, outside-Git confinement, exclusive creation, exact payload/hash/statistics, finite-value and unclamped F32 transform checks execute unchanged. No stand-in ownership capability is accepted."
+  },
+  "qualification": {
+    "command": "python -B scripts/compatibility/test_amd_brick_pbr_inputs_artifact.py",
+    "log": "profile-input-artifact-tests.stdout.txt",
+    "tests": 11,
+    "passed": 11,
+    "seconds": 8.193,
+    "AI_native_imports_denied": true,
+    "network_denied": true,
+    "genuine_inputs_and_all_four_guides": true,
+    "eight_C2S_calls": true,
+    "forged_profiles_and_prepared_payloads_refused": true,
+    "changed_masks_cache_order_and_missing_calls_refused": true,
+    "exclusive_hardlink_corrupt_payload_and_foreign_metadata_refused": true,
+    "independent_parent_reader_after_child_writer_exit": true,
+    "clean_independent_reader_reauthenticates_without_writer_state": true,
+    "synthetic_full_support": {
+      "classification": "SYNTHETIC_CPU_FIXTURE_NOT_MODEL_OUTPUT",
+      "raw_shape": [1957891, 6],
+      "features_shape": [1957891, 6],
+      "coordinates_shape": [1957891, 4],
+      "payload_bytes": 125305024,
+      "artifact_bytes": 125310088,
+      "artifact_sha256": "5461b0257611000304b141abbafdfc77047f904e449c76317240471e9351eea4",
+      "original_coordinate_hash": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+      "numeric_payload": "Explicit deterministic finite synthetic raw values, exact unclamped raw * F32(.5) + F32(.5); genuine original coordinate order.",
+      "standard_safetensors_roundtrip": true,
+      "independent_reader": true,
+      "fixture_root": "C:/Users/wattz/Documents/ModlyArtifacts/amd-brick-pbr-cpu-3942181-tests",
+      "fixture_children_removed_after_tests": true
+    },
+    "TDD": {
+      "observed_red": [
+        "The immutable/authenticated profile test initially failed because inference_texture did not exist.",
+        "The genuine input/eight-call test initially failed because inference_texture.inputs did not exist.",
+        "The profile artifact writer/reader test initially failed because inference_texture.artifact did not exist."
+      ],
+      "green": "Each focused missing-layer regression passed after its implementation; final expanded suite passes all eleven tests."
+    },
+    "environment_note": "An initial default temporary-directory fixture write was denied by the filesystem sandbox. The actual qualification used the explicitly approved outside-Git fixture root through reviewed escalation, without changing permissions or weakening any writer checks. No auto-review rejection occurred."
+  },
+  "limits": {
+    "GPU_executed": false,
+    "WSL_executed": false,
+    "model_loaded": false,
+    "model_forward": false,
+    "native_imported": false,
+    "checkpoint_tensor_bytes_read": false,
+    "installs_builds_downloads": false,
+    "real_PBR_output": false,
+    "mesh_extraction_or_baking": false
+  },
+  "unchanged_source_pins": {
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "0998c6e0c9a8d5c262b6f258f60fb11d82e8b51aec2c5fd48c771c33ef999f57",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "10a2792b47ab24ec64cf5d911c37fa12ac789a1d7134c5221d0479ced1bdb989",
+    "scripts/compatibility/amd_texture_decoder_inputs.py": "87bd6437412df561100b174e945c2fa040a9c02ee1ac2ea8c70a325b8f1a3d85",
+    "scripts/compatibility/amd_texture_sampling_artifact.py": "5eaf35c08cf2e96f46dfe8bb32fa835c079ef34ce5a322a0afd411ee7cf9474c",
+    "scripts/compatibility/amd_texture_field_artifact.py": "77d9592662653413e9b40f81741e47e2a23739e9e5d013d48b6cefff1831d3b5",
+    "experimental/extensions/trellis2-amd/texture_decoder_loader.py": "409bf691bb3d7f3638d40cb46f02250111249af31f19a4377345da84ec2fb988"
+  }
+}

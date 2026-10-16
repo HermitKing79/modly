@@ -1,0 +1,41 @@
+{
+  "schema": "modly.amd.brick-pbr-canonical-ownership-cpu.v1",
+  "classification": "PASS_CPU_CLASS_IDENTITY_AND_PERSISTENCE_REGRESSION",
+  "review_finding": "The initial isolated historical copy had its own genuine _DrvfsOwnership class. A non-None capability minted by the separately imported public original module would fail the unchanged exact-type check. Windows tests using authority=None did not expose this WSL-path class identity incompatibility.",
+  "correction": "Authenticate the actual canonical public amd_texture_field_artifact module and preserve its exact original factory/class identity across the private writer and reader. No public globals, limits or ownership implementations are modified. This accepts the exact genuine public class and never broadens acceptance to duck-typed capabilities.",
+  "canonical_source": "scripts/compatibility/amd_texture_field_artifact.py",
+  "canonical_source_sha256": "77d9592662653413e9b40f81741e47e2a23739e9e5d013d48b6cefff1831d3b5",
+  "authentication": [
+    "Canonical source file remains plain, single-link, repository-confined and SHA-pinned.",
+    "The existing public module object is preserved; a foreign existing module is refused, never overwritten or aliased.",
+    "The canonical public origin, exact ownership check bytecode/globals, owner/plain/mount/factory/root callable bytecode/globals, dependency identities and historical constants are authenticated.",
+    "The first authenticated canonical ownership class identity is retained; later substituted classes are refused.",
+    "Separate private reader and writer execute the original owner/plain/check implementations and refer to the exact canonical public class."
+  ],
+  "tests": {
+    "observed_red": "The new identity regression failed because private _historical was not the actual public module; the foreign module validation helper was absent.",
+    "focused_log": "profile-ownership-regression-tests.stdout.txt",
+    "focused_passed": 2,
+    "focused_seconds": 1.251,
+    "full_regression_log": "profile-input-artifact-post-review-tests.stdout.txt",
+    "full_regression_passed": 13,
+    "full_regression_seconds": 7.405,
+    "public_globals_snapshot_identical_after_private_setup": true,
+    "foreign_module_not_rebound": true,
+    "substituted_class_and_duck_type_refused": true,
+    "foreign_check_never_executed": true,
+    "fabricated_attestation_or_authority_accepted": false,
+    "synthetic_full_support_payload_bytes": 125305024,
+    "original_11_test_receipt_preserved": "profile-input-artifact-tests.stdout.txt",
+    "original_11_test_receipt_sha256": "5217e28e7a931d7ddfcaafbff7828065d41984b0d79ac0bdd865846b67844a87"
+  },
+  "future_execution_contract": "Before any separately approved WSL writer, the host must create a fresh exact brick output leaf outside Git and mint a new trusted, SHA-pinned Windows SID/ACL/file-ID attestation for that leaf. The genuine canonical public drvfs_ownership factory, also exported by inference_texture.artifact, must validate it. The same exact capability must be used for approved_root/write/worker readback; the independent Windows host must recheck SID/ACL/file identities and invoke the profile-authenticated reader. The old fixed turret leaf, its old attestation and its fixed-root output_owner helper cannot authorize or be reused for this new brick output.",
+  "limits": {
+    "WSL_executed": false,
+    "GPU_executed": false,
+    "model_or_native_imported": false,
+    "new_attestation_minted": false,
+    "ownership_or_mount_checks_bypassed": false,
+    "historical_source_edited": false
+  }
+}

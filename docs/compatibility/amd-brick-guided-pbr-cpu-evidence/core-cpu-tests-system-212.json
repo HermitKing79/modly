@@ -1,0 +1,45 @@
+{
+  "schema": "modly.amd.brick-pbr-core-cpu-tests.v1",
+  "classification": "PASS_CPU_CORE_TESTS",
+  "tests": 15,
+  "failures": 0,
+  "errors": 0,
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "versions": {
+    "torch": "2.12.0+rocm7.14.0",
+    "triton-windows": null,
+    "triton": null
+  },
+  "torch_runtime_version": "2.12.0+rocm7.14.0",
+  "cpu_guard": {
+    "import_gpu_entries_blocked": 0,
+    "post_import_gpu_entries_blocked": 1,
+    "gpu_initialized_after_import": false,
+    "gpu_initialized_after_tests": false
+  },
+  "numerical_observations": [
+    {
+      "dtype": "torch.float16",
+      "bias": false,
+      "rtol": 0.002,
+      "atol": 0.002,
+      "maximum_absolute_error": 0.0
+    },
+    {
+      "dtype": "torch.float16",
+      "bias": true,
+      "rtol": 0.002,
+      "atol": 0.002,
+      "maximum_absolute_error": 0.0
+    }
+  ],
+  "source_sha256": "c6c87c02a21c3a2c13df710a91fa362f23390816263bd15c5a092e4647b907b5",
+  "helper_source_sha256": "707d73d7331a4896bffeb851c2aa144175841cd4752a4497760d9f6a44ea2d39",
+  "native_imported": false,
+  "model_imported": false,
+  "weights_loaded": false,
+  "WSL_executed": false,
+  "fixture_scope": "Actual bounded F16 CPU helper arithmetic; cache class compiled from original AST. Native calls, GPU device metadata and full tile lifecycle are explicitly simulated. Handwritten acceptance receipts are TEST-ONLY, never model outputs.",
+  "initial_incomplete_runs": "Two Torch import attempts failed at local test guard: socket.gethostname, then blocked platform cmd /c ver probing. No native Flex/model/GPU operation ran. Fixed test-only platform cache from sys.getwindowsversion."
+}

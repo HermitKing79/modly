@@ -1,0 +1,20 @@
+{
+  "schema": "modly.amd.brick-pbr-publication-preflight.v1",
+  "source_files": 16,
+  "all_source_hashes_match": true,
+  "distinct_test_method_counts": {
+    "test_amd_brick_pbr_core.py": 22,
+    "test_amd_brick_pbr_inputs_artifact.py": 13,
+    "test_amd_brick_pbr_receipts.py": 4,
+    "test_amd_generation_texture_decode.py": 4
+  },
+  "source_safe_text_files": 35,
+  "no_binary_or_image_publication": true,
+  "independent_review_sha256": "fd0004cea128faf9d3d9f6ca57784cb6e95b6208a907498a7deb276a12485e8d",
+  "initial_blocked_review_preserved": true,
+  "all_77_preexisting_remote_heads_unchanged_before_publication": true,
+  "main_unchanged": true,
+  "previous_development_branch_unchanged": true,
+  "GPU_attempts": 0,
+  "model_loads": 0
+}

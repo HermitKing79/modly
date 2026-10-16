@@ -1,0 +1,70 @@
+{
+  "schema": "modly.amd.brick-guided-pbr-independent-integration-rereview.v1",
+  "base": "3942181cec1aaac2e38698f08c61a68a69af4851",
+  "branch": "codex/amd-brick-guided-pbr-cpu",
+  "verdict": "PASS",
+  "classification": "PASS_CONDITIONAL_CPU_INTEGRATION_QUALIFICATION",
+  "decision_scope": "The reviewed CPU integration supports requesting separate approval for one controlled future guided forward, subject to unchanged actual runtime, ownership, host/resource, deadline and live-memory gates. This review authorizes no execution and supplies no GPU compatibility or successful-output guarantee.",
+  "scope": "Fix-resolution review of initial I1/I2 and regressions in changed code only. Read source, hashes and existing receipts; no tests rerun, Torch/model/native imports, checkpoint tensor reads, WSL/GPU operations, installs, builds or downloads. Only this new source-safe review file was written.",
+  "snapshot": {
+    "fix_package": "../artifacts/amd-brick-pbr-cpu-3942181/branch-review-fixes.txt",
+    "final_source_manifest": "../artifacts/amd-brick-pbr-cpu-3942181/final-source-manifest.json",
+    "final_source_manifest_sha256": "88e5f4ed69eaefdf7104cdbcaabce7742b3b844edd632bba7fc2dda2dfca04ac",
+    "all_16_final_manifest_entries_match_current_source": true,
+    "initial_blocked_review_preserved": "independent-integration-review.json",
+    "initial_blocked_review_sha256": "599916270331eaf293ec87b5fd784cefc5738ea57ba59f7582083480f06cd908",
+    "final_receipts_source_sha256": "70609892ba1b38a0d6f28d0bf0d70afab493f0b7e72899196445d2481ef4757b",
+    "final_receipt_tests_sha256": "48e750e49ba154e2c0529cdaec265a5ef2a56a0d09e1675ce99c23d17f90711d"
+  },
+  "resolutions": [
+    {
+      "id": "I1",
+      "status": "RESOLVED",
+      "locations": [
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/receipts.py", "line": 126},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/receipts.py", "line": 162},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/receipts.py", "line": 234},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/receipts.py", "line": 279}
+      ],
+      "finding": "A concrete ReceiptBridge.write_output now has the exact neural callback signature. It writes through the genuine profile-bound field serializer, publishes a durable ready receipt, waits under the unchanged30-second I/O contract and returns independently_verified_before_release only after matching independent host acknowledgement. The existing neural finally still follows this synchronous callback.",
+      "ownership_and_binding": "mint_host_attestation records actual Windows SID/ACL/file identities for the fresh exact field/probe leaves and their parent. Private reuse of the frozen two-leaf owner changes only exact-run ROOT/PROOF/hash bindings. Field authority retains the exact genuine canonical class and its original filename scope; receipt controls use the separately attested probe leaf with bounded plain/single-link/identity checks. Artifact provenance, ready and ACK bind the original profile/contract, marker, attestation, exact paths, artifact hash/size and complete canonical metadata hash. HostReceipt performs the real profile-authenticated independent reader and checks Windows ownership/file identities before and after readback before publishing PASS.",
+      "qualification": "Existing receipt-bridge-tests.stdout.txt records3 passing actual CPU protocol tests,64.683s: a NumPy child writer with real independent parent Windows verification before callback return, clean child exit and post-exit readback, wrong-ACK refusal, foreign root/profile/marker refusal and cancellation before writes. The data are explicitly synthetic128-byte fixtures. The affected actual child/host happy path was requalified after the destination-gate correction. No WSL capability or real neural outcome was fabricated.",
+      "limit": "Production ownership execution remains a future live gate: mint a fresh exact production brick leaf/marker, pass actual Windows and genuine WSL UID/mount/root checks and use the independent host poller from the owned supervisor. The unused GPU marker remained absent in CPU qualification."
+    },
+    {
+      "id": "I2",
+      "status": "RESOLVED",
+      "locations": [
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/source_identity.py", "line": 23},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/source_identity.py", "line": 33},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/neural.py", "line": 21},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/tiling.py", "line": 52}
+      ],
+      "finding": "Qualification now hashes the source bytes and compares the actual executable code against code compiled from those bytes without executing source statements. The recursive signature includes nested functions, constants, bytecode, names, arguments, closure metadata and exception tables; defaults are checked. SparseTensor's final real initializer is selected after overload stubs. Decoder forward, its finalization helper, SparseTensor initializer and original explicit-GEMM descriptor are qualified, with the relevant Torch/functional/helper/Fraction/config/spconv/Algorithm identities bound to the admitted dependencies.",
+      "qualification": "Existing core-final-amd213.stdout.txt records22 passing core tests,5.288s, on Python3.12.10/Torch2.13.0+rocm10.0.0 with GPU entries blocked and initialization false. The7 new cases cover genuine code acceptance, foreign forward/initializer/descriptor carrying genuine filenames, changed nested finalizer, changed helper global and changed Torch global. Earlier simulated lifecycle/global-cache tests remain explicitly simulated. No model/native package or constructor was executed by the source-identity fixtures."
+    },
+    {
+      "id": "R1",
+      "status": "RESOLVED",
+      "title": "Restore the frozen destination free-space and writable admission in the new callback",
+      "locations": [
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/receipts.py", "line": 97},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/receipts.py", "line": 166},
+        {"file": "experimental/extensions/trellis2-amd/inference_texture/receipts.py", "line": 252},
+        {"file": "scripts/compatibility/test_amd_brick_pbr_receipts.py", "line": 165}
+      ],
+      "finding": "Scoped review identified that the first bridge omitted the frozen output-leaf >=2GiB free-space and os.access(root,os.W_OK) rule. The corrected helper uses the exact original Windows disk_usage or Linux statvfs arithmetic and runs at construction and immediately before artifact.write. D: free-space admission does not substitute for this C: destination gate.",
+      "qualification": "receipt-destination-gate-final-tests.stdout.txt and receipt-destination-gate-correction.json record2 passing focused cases,39.937s. One byte below2GiB and an unwritable exact-boundary leaf refuse before artifact.write and create no output/ready file; the exact writable boundary passes. The actual NumPy child writer and independent Windows host-ACK happy path passed again under the final changed source. No thresholds, ownership checks or historical sources were altered."
+    }
+  ],
+  "regression_assessment": "No remaining concrete blocker was identified in the scoped I1/I2 fixes and changed-code regressions. The changes do not alter F16 helper mathematics, global indices, support/profile contracts, tile counts, retained-memory plans or fixed VRAM thresholds. The original BLOCKED review remains valid historical evidence of the pre-fix snapshot; this separate report records its resolved findings.",
+  "remaining_blockers_for_requesting_separate_approval": [],
+  "mandatory_future_execution_gates": [
+    "Explicit separate user approval and concrete caller composition with the existing owned supervisor; no worker or GPU CLI is introduced by this CPU work.",
+    "Fresh genuine target-runtime/native/source/checkpoint qualification, strict original208F16/76F32/284-entry schema, exact authenticated original inputs/guides/support and one-forward/no-retry policy.",
+    "Fresh production field/probe pair and hash-pinned Windows SID/ACL/file-ID attestation; original genuine WSL UID/mount/root authority; independent Windows host polling/ACK before callback return and tensor release; unchanged30-second I/O deadline and output destination>=2GiB/W_OK gate.",
+    "Unchanged owned host/worker Job and natural-exit controls, CPU/native/GPU/host deadlines120/60/240/480 seconds, Windows RAM and disk floors, and original live allocator/device-free admission before placement, each original operation, full output and each tile. Current CPU preparation is not future prelaunch admission.",
+    "Caller-owned genuine model/component/parameter collection, original workspace clear, synchronized allocator-zero release and runtime.validate_result acceptance; retain final protected artifact/environment preservation verification before publication."
+  ],
+  "nonclaims": "No real guided model forward, neural field, appearance result, GPU numerical equivalence, measured GPU memory peak, timing capacity, production WSL ownership execution or AMD GPU compatibility was established. Tiny CPU equivalence, synthetic persistence and a static source-visible memory fit remain bounded qualification evidence only."
+}
