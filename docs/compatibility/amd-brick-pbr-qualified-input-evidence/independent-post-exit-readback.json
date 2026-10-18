@@ -1,0 +1,15 @@
+{
+  "schema": "modly.amd.brick-pbr-fresh-postexit-readback.v1",
+  "classification": "PASS",
+  "verified_utc": "2026-10-18T21:05:31.388027+00:00",
+  "reader": "actual production host.verify_after_exit in a fresh CPU process",
+  "artifact_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-pbr-qualified-a064378\\field\\texture-field.safetensors",
+  "Torch_or_GPU_imported": false,
+  "result": {
+    "status": "PASS",
+    "artifact_sha256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394",
+    "artifact_bytes": 125318120,
+    "verified": true,
+    "independent_of_worker": true
+  }
+}

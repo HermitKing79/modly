@@ -1,0 +1,316 @@
+{
+  "schema": "modly.amd.brick-pbr-qualified-input-actual-outcome.v1",
+  "classification": "PASS",
+  "created_utc": "2026-10-18T21:10:05.056245+00:00",
+  "mission_base": "a064378cd9530addc38e8be1688088777881b2fd",
+  "harness_commit": "9924445f0183788dbac4ee928e5207cec3fe7dfd",
+  "branch": "codex/amd-brick-pbr-qualified-input",
+  "one_actual_attempt": true,
+  "automatic_retry": false,
+  "candidate_source_files_rehashed": 123,
+  "CPU_tests_passed": 29,
+  "CPU_WSL_input_route": "actual production prepare_inputs with real UID 1000 and all saved inputs",
+  "CPU_input_security_checks_passed": 16,
+  "complete_stage_counts": {
+    "texture-forward-entry": 1,
+    "conv_completed": 40,
+    "c2s_completed": 8,
+    "native-entry": 5,
+    "native-host-return": 5,
+    "large-tile-entry": 84,
+    "large-tile-return": 84,
+    "final-tile-entry": 60,
+    "final-tile-return": 60,
+    "texture-forward-synchronized": 1,
+    "texture-field-readback-verified": 1,
+    "worker-finished": 1
+  },
+  "final_rows": 1957891,
+  "large_sites": [
+    {
+      "site": "blocks.2.8.conv2",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": false,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.0.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.1.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.2.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.3.conv",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 128,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    },
+    {
+      "site": "blocks.3.4.conv1",
+      "rows": 438684,
+      "in_channels": 128,
+      "out_channels": 512,
+      "tile_rows": 32768,
+      "chunks": 14,
+      "rows_completed": 438684,
+      "global_map_reused": true,
+      "completed": true
+    }
+  ],
+  "final_convolution": {
+    "site": "blocks.3.4.conv2",
+    "rows": 1957891,
+    "in_channels": 64,
+    "out_channels": 64,
+    "tile_rows": 32768,
+    "chunks": 60,
+    "rows_completed": 1957891,
+    "global_map_reused": false,
+    "completed": true,
+    "final_tile_rows": 24579
+  },
+  "strict_checkpoint": {
+    "entries": 284,
+    "dtype_counts": {
+      "F16": 208,
+      "F32": 76
+    },
+    "strict": true,
+    "roundtrip_verified": true,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "constructed_on_meta": true,
+    "evaluation_and_gradients_disabled": true,
+    "buffers_count": 0,
+    "runtime_dtype_changes": {},
+    "fresh_checkpoint_sha256": "97ea69addea2ecd9312910f5f548234665eef51c088386180b7cd5b258645e3c",
+    "parameter_snapshot_cpu_and_gradients_disabled": true,
+    "source_precision_preserved": true
+  },
+  "input_authority": {
+    "actual_production_prepare_inputs_route_verified": true,
+    "saved_input_metadata_exactly_matches_CPU_acceptance": true,
+    "source_manifest_and_adapter_records_exactly_match_123_file_manifest": true,
+    "qualified_policy_sha256": "fe41b6410c8897e4062366457de06c795261c6d19aea059d9f7f9851e5d2d98e",
+    "qualified_input_manifest_sha256": "c3b2b10f5741a5f71957b02f5c0401ab95007336cc6f58f4d6128172fbcff839",
+    "Windows_input_attestation_sha256": "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd",
+    "source_input_profile_and_actual_output_provenance_bindings_verified": true,
+    "full_13_field_execution_plan_marker_commit_and_manifest_chain_verified": true,
+    "genuine_input_security_checks_passed": 16,
+    "writer_capability_in_input_adapter": false,
+    "historical_readers_modified": false
+  },
+  "artifact": {
+    "artifact_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-pbr-qualified-a064378\\field\\texture-field.safetensors",
+    "artifact_bytes": 125318120,
+    "artifact_sha256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394",
+    "metadata_sha256": "4f65c6730f4a8669d9e62ba4f151f15b19f6cfd6b7e7dcd81289ad923bbdd8c2",
+    "tensor_descriptors": {
+      "coordinates": {
+        "dtype": "I32",
+        "sha256": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+        "shape": [
+          1957891,
+          4
+        ],
+        "tensor_bytes": 31326256
+      },
+      "features": {
+        "dtype": "F32",
+        "sha256": "bc562893e0b89b2b53c279ba00240e8d1edb98830c2471a82077e48b24eb0cbf",
+        "shape": [
+          1957891,
+          6
+        ],
+        "tensor_bytes": 46989384
+      },
+      "raw": {
+        "dtype": "F32",
+        "sha256": "a42459df8b4d6b65b49796f842f0e6074c6274b2e7883bf6312ffa0611fe30fa",
+        "shape": [
+          1957891,
+          6
+        ],
+        "tensor_bytes": 46989384
+      }
+    },
+    "complete_finite_raw_and_features": true,
+    "transform": "output * F32(0.5) + F32(0.5), CPU elementwise; no clamp",
+    "original_geometry_coordinate_order_sha256": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+    "production_original_source_provenance_verified": true,
+    "inputs_metadata_matches_saved_inputs_except_profile_embedded_separately": true,
+    "artifact_ready_and_independent_host_ack_match_exact_marker_and_ownership": true,
+    "host_acknowledged_before_tensor_release": true,
+    "host_ownership_before_and_after_ack_identical": true,
+    "host_post_natural_exit_verification": "PASS",
+    "reviewer_independent_CPU_artifact_verify": "PASS",
+    "reviewer_CPU_artifact_verify_seconds": 0.6719999999986612,
+    "reviewer_artifact_verify_forbidden_modules": [],
+    "bytecode_cache_location_not_created": true,
+    "full_tensor_arrays_published": false,
+    "metadata_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-pbr-qualified-a064378\\field\\texture-field-metadata.json",
+    "metadata_bytes": 13493
+  },
+  "measurements": {
+    "forward_synchronized_duration_seconds": 14.059039387000006,
+    "elapsed_GPU_stage_at_synchronized_forward_event_seconds": 14.621497980999997,
+    "GPU_stage_seconds": 27.587835606999995,
+    "worker_seconds": 64.010420516,
+    "host_seconds": 84.01499999999942,
+    "peak_Torch_allocated_bytes": 3367268864,
+    "peak_Torch_reserved_bytes": 4410310656,
+    "initial_device_free_bytes": 15713161216,
+    "device_free_after_release_bytes": 15571345408,
+    "pre_marker_available_Windows_RAM_bytes": 21593247744,
+    "minimum_sampled_available_Windows_RAM_bytes": 14986592256,
+    "minimum_sampled_D_free_bytes": 74230857728,
+    "resource_samples": 84,
+    "minimum_sampled_admission_device_free_bytes": 11826372608,
+    "Windows_host_tree_peak_sampled_working_set_sum_bytes": 294653952,
+    "guest_self_peak_HWM_bytes": 2912833536,
+    "host_invocation_seconds": 155.3313668
+  },
+  "prelaunch": {
+    "classification": "PASS",
+    "readings": [
+      {
+        "timestamp_utc": "2026-10-18T21:00:38.600801+00:00",
+        "available_windows_ram_bytes": 21639503872,
+        "memory_load_percent": 36,
+        "commit_available_bytes": 29705424896,
+        "D_free_bytes": 74230857728,
+        "destination_free_bytes": 113104687104
+      },
+      {
+        "timestamp_utc": "2026-10-18T21:00:42.601754+00:00",
+        "available_windows_ram_bytes": 21642563584,
+        "memory_load_percent": 36,
+        "commit_available_bytes": 29709602816,
+        "D_free_bytes": 74230857728,
+        "destination_free_bytes": 113104687104
+      },
+      {
+        "timestamp_utc": "2026-10-18T21:00:46.602139+00:00",
+        "available_windows_ram_bytes": 21640773632,
+        "memory_load_percent": 36,
+        "commit_available_bytes": 29710180352,
+        "D_free_bytes": 74230857728,
+        "destination_free_bytes": 113104687104
+      }
+    ],
+    "prelaunch_required_bytes": 19864223744,
+    "live_required_bytes": 12884901888,
+    "historical_whole_host_decline_reference_bytes": 7580617277,
+    "remaining_after_historical_reference_bytes": 14058886595,
+    "reference_is_not_a_bound": true
+  },
+  "original_resource_gates": {
+    "prelaunch_Windows_RAM_floor_bytes": 19864223744,
+    "live_Windows_RAM_floor_bytes": 12884901888,
+    "D_free_floor_bytes": 53687091200,
+    "destination_free_floor_bytes": 2147483648,
+    "destination_writable_in_every_sample": true,
+    "initial_free_VRAM_floor_bytes": 13958643712,
+    "allocator_ceiling_bytes": 12884901888,
+    "device_reserve_bytes": 2147483648,
+    "opaque_allowance_bytes": 1073741824,
+    "native_CPU_GPU_host_deadlines_seconds": [
+      60,
+      120,
+      240,
+      480
+    ],
+    "I_O_acknowledgement_deadline_seconds": 30,
+    "stage_acknowledgements_GO": 2,
+    "original_admission_inequalities_pass_all_200_saved_checks": true,
+    "TunableOp_flags_and_environment_remained_disabled": true
+  },
+  "cleanup": {
+    "large_convolution_patch_restored": true,
+    "final_convolution_patch_restored": true,
+    "native_bindings_restored": true,
+    "convolution_hooks_removed": true,
+    "GPU_input_output_tensors_collected": true,
+    "CPU_model_collected": true,
+    "CPU_parameters_collected": true,
+    "CPU_component_collected": true,
+    "CPU_prepared_inputs_collected": true,
+    "memory_release": {
+      "allocated": 0,
+      "reserved": 0
+    },
+    "workspace_clear_calls": 1,
+    "rejected_import_policy_calls": 0,
+    "policy_counter_interpretation": "policy_final.native_calls=0 belongs to the native import/CPU guard restored before the GPU phase. The separate authenticated NativeBoundary records and phase log prove five actual original native-map calls.",
+    "natural_worker_exit": true,
+    "worker_returncode": 0,
+    "owned_tree_exit_verified": true,
+    "forced_job_cleanup": false,
+    "Job_empty": true,
+    "named_distro_termination_returncode": 0,
+    "observer_healthy": true,
+    "healthy_observations_rechecked": 16
+  },
+  "preservation": {
+    "classification": "PASS_WITH_RECORDED_SCOPE",
+    "protected_files": 100,
+    "protected_files_fresh_full_SHA256_checked": 100,
+    "all400_current_identities_match_before": true,
+    "issues": [],
+    "no_installation_environment_driver_or_source_change": true,
+    "remote_heads_before": 84,
+    "remote_heads_final_verification": "Final publication receipt is saved outside Git to avoid a self-referential commit."
+  },
+  "limits_of_result": [
+    "Genuine material fields only; visual quality has not been assessed.",
+    "No texture baking, rendering, mesh change, model regeneration or follow-on execution."
+  ],
+  "evidence_sha256": {
+    "run/guest/results.json": "5d67616ee57fab96b5a61e9d7430696176d78d4f8071f74353eaf10a2e67537f",
+    "run/guest/phases.jsonl": "96cb15abd7b54ebd083092aba6131d2fe0ff384986d42811c9c3a1c1b5a4a9d3",
+    "run/results.json": "8db05fa0c15dc4f01fd9d204c30f2c9a249b2dad2257e06649bb92b47bf19c06",
+    "run/phases.jsonl": "481b6051de97680ff51d9cf99eccbc4c6b822c0f6ffbaab50289c02d32f34635",
+    "independent-post-exit-readback.json": "e93d155b1249462c57122a36ba0460f7f6fb8adc4bc54d105b4f49000a6c08ed",
+    "independent-outcome-review.json": "f963c31c846cf67ed6d46011a58daca4c0b32e897342b0921fa7f9e62556a16e",
+    "preservation-before.json": "0a00df640f8cb1b7398ed00951e01f64d3a05c3252e252f9a45428843c3f75a8",
+    "preservation-after.json": "0bd356f5ecd67c638693ee1891a77fac6252220f9cde1c526e0fd607f3eb3041",
+    "focused-tests.txt": "7f4efdf6c27dc09cc5940736d4cc2d5da950e2cd69f8b0f0c93dfc8ba137112e"
+  }
+}

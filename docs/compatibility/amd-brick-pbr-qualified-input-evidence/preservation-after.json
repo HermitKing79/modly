@@ -1,0 +1,220 @@
+{
+  "schema": "modly.amd.brick-pbr-qualified-input-preservation-after.v1",
+  "created_utc": "2026-10-18T21:04:46.8953714Z",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "mission_base": "a064378cd9530addc38e8be1688088777881b2fd",
+  "previous_public_before_receipt_sha256": "8d2ee098393c76d1722837ab2a071c76cc6df6fb69d70f62f7e148ef92bad90b",
+  "previous_public_after_receipt_sha256": "4c8b8ab94b07bf085fa86f26c3ac8f6e1658c07e81bc7398cecca2c7a9f697f8",
+  "previous_private_after_receipt_sha256": "816e10fb702b870d8dd3851864b3f85c0c83ca1c0e54bd30c4b309708a7d5ac6",
+  "previous_private_receipt_authenticated_against_public_after": true,
+  "private_detail_sha256": "433d6f75fabada03f19fe3317a807efe7aeefd11fccd3bc1f6a262fe36ebc857",
+  "protected_files_checked": 100,
+  "protected_files_fresh_full_SHA256_checked": 100,
+  "protected_files_unchanged": true,
+  "preserved_group_counts": {
+    "local_only20": 20,
+    "original_C4_raw3": 3,
+    "RAM_stopped_tiling_raw9": 9,
+    "partial39of40_raw11": 11,
+    "completed_neural_raw13": 13,
+    "neural_public_and_report21": 21,
+    "qualification_report_review3": 3,
+    "original_mesh4": 4,
+    "CPU_extraction_raw5": 5,
+    "mesh_public_and_report23": 23,
+    "original_source_images2": 2,
+    "private_visual_PNGs12": 12,
+    "private_visual_output_receipts25": 25,
+    "source_image_provenance3": 3,
+    "saved_brick_shape5": 5,
+    "neural_input_bundle3": 3,
+    "neural_artifact_verification1": 1,
+    "source_image_identity1": 1,
+    "brick_DINO_conditioning2": 2,
+    "brick_DINO_receipt1": 1,
+    "latest_visual_public_and_report": 21,
+    "material_stage1_raw18": 18,
+    "material_stage1_private_launch_and_preflight": 4,
+    "material_stage1_latent_and_sidecar2": 2,
+    "material_stage1_public_and_report22": 22,
+    "material_stage1_latest_private_receipts": 8
+  },
+  "bounded_prior_unique_file_identities_checked": 400,
+  "prior_snapshot_superseded_only_by_documented_approved_CPU_finalization_files": 5,
+  "approved_CPU_finalization_delta_matches_mission_base": true,
+  "final16_source_closure_fresh_hashes_match": true,
+  "final16_source_verification_receipt_sha256": "e1640125818f4181bb138ce63d2a07a2246bf9cc43094965c2c8415a7834b0fd",
+  "original_pycache_directories": 4,
+  "original_pycache_files": 20,
+  "original_pycache_entry_sets_and_fresh_file_hashes_unchanged": true,
+  "selected_environment_metadata_native_binary_source_edit_and_backup_unchanged": true,
+  "original_qualification_source_bindings_unchanged": 21,
+  "prior_decoder_CPU_source_bindings_unchanged": 11,
+  "installed_guide_decoder_source_bindings_unchanged": 2,
+  "saved_texture_latent_sha256": "4c74343c961e74bf3cfde4c24bd2a21b23063e17f0468b7f3049311fa9dc4289",
+  "saved_texture_sidecar_sha256": "25adb1a50b8b31900ebc56d87f45b7fe23dee9305d97b458f70a60799d59e2a0",
+  "saved_neural_guide_bundle_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+  "checkpoint_metadata_header_configuration_unchanged": true,
+  "checkpoint_weight_payload_bytes_read_this_audit": 0,
+  "verification_method_unique_file_counts": {
+    "authenticated_previous_full_SHA256_reused_after_exact_size_mtime_match": 6,
+    "fresh_full_SHA256_current": 394
+  },
+  "archive_CRC_decompression_repeated": false,
+  "issues": [],
+  "scope_limits": [
+    "Exact bounded prior preservation inventory plus published final16 CPU source closure only; no broad filesystem scan.",
+    "All100 protected files and original20 cache files freshly SHA256 hashed. All5 original saved inputs freshly hashed, including original texture latent and geometry guide bundle; remaining large inventory identities use authenticated prior full hashes after exact size/mtime checks, individually labeled.",
+    "Five historical CPU finalization deltas are accepted in the authenticated qualified-input BEFORE baseline. Current actual file identities and final16 CPU source closure checked against it; prior receipts remain preserved.",
+    "Selected environment metadata, source, original edits/backups and native binaries checked with text or full hashes; pyvenv.cfg line endings normalized to the prior text-reader convention; no native package was imported.",
+    "Three checkpoints received exact size/mtime, bounded tensor and optional metadata semantic comparisons and configuration checks with authenticated prior full-hash provenance. Absent optional metadata equals historical empty objects; raw headers equal qualified-input BEFORE. Zero checkpoint payload bytes read.",
+    "Two archive identities checked against the authenticated prior receipt; prior CRC readback retained without decompression.",
+    "No GPU, WSL, Torch/AI/native package imports, model loading, tests, RAM sampling, markers, image decoding/copying, package actions, downloads/network or Git/source mutations.",
+    "Root owns actual execution/outcome, branch/HEAD verification and publication; independent reviewer owns new PBR output readback. This AFTER receipt verifies historical preservation scope and makes no GPU/model/PBR output claim.",
+    "All11 prior P/E/destination trees and4 reports compared to authenticated BEFORE using exact entry sets, sizes/mtimes and fresh hashes. Three disposable1.8MB old CPU fixture latent copies remain stat-only; other prior proof files freshly hashed.",
+    "Current task authorized new PBR destination/output, new marker/plan, newE source/evidence and newP logs/readiness are outside the historical comparison and are not treated as changes to preserved originals. No new WSL probe/runtime work by this audit."
+  ],
+  "baseline_summary_sha256": "0a00df640f8cb1b7398ed00951e01f64d3a05c3252e252f9a45428843c3f75a8",
+  "baseline_private_sha256": "50310a09095989c061495e309a35c0e6506d09087026a78063be047e6d88a9db",
+  "baseline_detail_authenticated": true,
+  "comparison_baseline": "Authenticated qualified-input BEFORE actual identities including approved CPU finalization deltas",
+  "current_mission_mismatches_from_baseline": 0,
+  "selected_environment_check_count": 42,
+  "selected_source_edit_backup_check_count": 13,
+  "AI_imports": [],
+  "checkpoint_header_bytes_read_this_audit": 121336.0,
+  "all400_current_identities_match_before": true,
+  "preserved_prior_tree_checks": [
+    {
+      "scope": "old_postrestart_private",
+      "files": 16,
+      "entries": 16,
+      "fresh_full_hashes": 16,
+      "metadata_only_copies": 0,
+      "entry_set_matches_before": true,
+      "all_file_identities_match_before": true
+    },
+    {
+      "scope": "old_postrestart_evidence",
+      "files": 24,
+      "entries": 24,
+      "fresh_full_hashes": 24,
+      "metadata_only_copies": 0,
+      "entry_set_matches_before": true,
+      "all_file_identities_match_before": true
+    },
+    {
+      "scope": "failed_destination",
+      "files": 2,
+      "entries": 4,
+      "fresh_full_hashes": 2,
+      "metadata_only_copies": 0,
+      "entry_set_matches_before": true,
+      "all_file_identities_match_before": true
+    },
+    {
+      "scope": "latest_CPU_repair_private",
+      "files": 14,
+      "entries": 19,
+      "fresh_full_hashes": 14,
+      "metadata_only_copies": 0,
+      "entry_set_matches_before": true,
+      "all_file_identities_match_before": true
+    },
+    {
+      "scope": "latest_CPU_repair_evidence",
+      "files": 15,
+      "entries": 15,
+      "fresh_full_hashes": 15,
+      "metadata_only_copies": 0,
+      "entry_set_matches_before": true,
+      "all_file_identities_match_before": true
+    },
+    {
+      "scope": "latest_CPU_repair_destination",
+      "files": 47,
+      "entries": 104,
+      "fresh_full_hashes": 44,
+      "metadata_only_copies": 3,
+      "entry_set_matches_before": true,
+      "all_file_identities_match_before": true
+    },
+    {
+      "scope": "latest_actual_GPU_private",
+      "files": 13,
+      "entries": 13,
+      "fresh_full_hashes": 13,
+      "metadata_only_copies": 0,
+      "entry_set_matches_before": true,
+      "all_file_identities_match_before": true
+    },
+    {
+      "scope": "latest_actual_GPU_evidence",
+      "files": 27,
+      "entries": 29,
+      "fresh_full_hashes": 27,
+      "metadata_only_copies": 0,
+      "entry_set_matches_before": true,
+      "all_file_identities_match_before": true
+    },
+    {
+      "scope": "latest_actual_GPU_destination",
+      "files": 6,
+      "entries": 10,
+      "fresh_full_hashes": 6,
+      "metadata_only_copies": 0,
+      "entry_set_matches_before": true,
+      "all_file_identities_match_before": true
+    },
+    {
+      "scope": "latest_input_ownership_private",
+      "files": 20,
+      "entries": 20,
+      "fresh_full_hashes": 20,
+      "metadata_only_copies": 0,
+      "entry_set_matches_before": true,
+      "all_file_identities_match_before": true
+    },
+    {
+      "scope": "latest_input_ownership_evidence",
+      "files": 47,
+      "entries": 55,
+      "fresh_full_hashes": 47,
+      "metadata_only_copies": 0,
+      "entry_set_matches_before": true,
+      "all_file_identities_match_before": true
+    }
+  ],
+  "preserved_prior_reports_unchanged": true,
+  "original_CPU_candidate107_unchanged": true,
+  "qualified_input_ownership18_source_bindings_unchanged": true,
+  "original_saved_inputs_fresh_full_hash_count": 5,
+  "original_saved_inputs_unchanged": true,
+  "original_saved_input_sha256": [
+    {
+      "label": "texture",
+      "sha256": "4c74343c961e74bf3cfde4c24bd2a21b23063e17f0468b7f3049311fa9dc4289"
+    },
+    {
+      "label": "texture_metadata",
+      "sha256": "25adb1a50b8b31900ebc56d87f45b7fe23dee9305d97b458f70a60799d59e2a0"
+    },
+    {
+      "label": "geometry",
+      "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861"
+    },
+    {
+      "label": "provenance",
+      "sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407"
+    },
+    {
+      "label": "run_contract",
+      "sha256": "4676626d1061e6cd7090b560f952a974a584f8ea9e6218378b7902294b93bd4f"
+    }
+  ],
+  "historical_production_markers_and_plan_unchanged": true,
+  "postrestart_failed_marker_sha256": "50c8a3a07223c96979ccca30cfb12956f977a3e63d641d6c2758716ff820edcf",
+  "historical_GPU_production_marker_sha256": "02819baae36cda301a19dd822aa5f7acf3ac6db6fd2e1cfdd86c1b8b85037d4f",
+  "historical_GPU_production_plan_sha256": "f66fe54eb98591ec9d785bca088b6ff5c7241f78b1b40a68df6baf9387fce09d",
+  "authorized_current_task_outputs_excluded_from_historical_comparison": true
+}

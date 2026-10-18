@@ -25,13 +25,22 @@ No retry, altered precision, fallback, regeneration, installation or mesh work.
 - [x] CPU-test the actual worker route in genuine WSL UID 1000 with authenticated
   saved inputs. No Torch/model/GPU import or production marker in this acceptance.
 - [x] Independently review the complete frozen candidate and full plan path.
-- [ ] Publish and verify exact source bytes; remeasure fresh RAM/disk/ownership.
+- [x] Publish and verify exact source bytes; remeasure fresh RAM/disk/ownership.
   Reserve a production marker only after every deterministic check and gate passes.
-- [ ] Execute once, or stop BLOCKED before a forward. Require 40 convolutions,
+- [x] Execute once, or stop BLOCKED before a forward. Require 40 convolutions,
   eight C2S calls, five native maps, 84 large tiles and 60 final tiles.
-- [ ] Verify finite complete saved fields independently before GPU release and
+- [x] Verify finite complete saved fields independently before GPU release and
   after natural exit; record actual resource use, zero Torch bytes and clean Job.
-- [ ] Preserve AFTER, review the actual outcome, publish and verify GitHub; stop.
+- [x] Preserve AFTER and independently review the actual outcome: PASS.
+- [x] Prepare the final source-safe result for publication. After push, verify
+  GitHub and old branch heads; save the final publication receipt outside Git
+  to avoid self-reference, then stop.
+
+Execution harness: `9924445f0183788dbac4ee928e5207cec3fe7dfd`, published before the
+single attempt. Actual result: one forward, 40 convolutions, eight C2S operations,
+five native maps, 84 large tiles, 60 final tiles and 1,957,891 output rows. Both
+independent artifact checks passed; natural exit, healthy observation and measured
+zero allocated/reserved Torch bytes were verified. No further execution planned.
 
 Review focus: exact qualified reader selected in the actual worker; fresh Windows
 input proof and output authority; complete source/plan closure; no CPU/GPU route
