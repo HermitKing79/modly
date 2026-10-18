@@ -1,0 +1,477 @@
+{
+  "profile_sha256": "cbad376b38c69943defe59e0273817dad9f8cb044ea9b600768eb62f7e51e5c0",
+  "checkpoint": {
+    "path": "D:\\AI\\Trellis2AMD\\ComfyUI\\models\\microsoft\\TRELLIS.2-4B\\ckpts\\tex_dec_next_dc_f16c32_fp16.safetensors",
+    "bytes": 948458812,
+    "mtime_ns": 1791274770477513600,
+    "sha256": "97ea69addea2ecd9312910f5f548234665eef51c088386180b7cd5b258645e3c",
+    "header_with_8byte_prefix_sha256": "ad3ed458569d937eace6ac42d9b6aa83853d654ebd0847791bbf19e2e31ab02b",
+    "header_bytes": 26792,
+    "tensor_count": 284,
+    "parameter_count": 474216006,
+    "dtypes": {
+      "F16": 284
+    },
+    "payload_layout_valid": true,
+    "matches_prior_header_stat": true,
+    "config": {
+      "name": "SparseUnetVaeDecoder",
+      "args": {
+        "out_channels": 6,
+        "model_channels": [
+          1024,
+          512,
+          256,
+          128,
+          64
+        ],
+        "latent_channels": 32,
+        "num_blocks": [
+          4,
+          16,
+          8,
+          4,
+          0
+        ],
+        "block_type": [
+          "SparseConvNeXtBlock3d",
+          "SparseConvNeXtBlock3d",
+          "SparseConvNeXtBlock3d",
+          "SparseConvNeXtBlock3d",
+          "SparseConvNeXtBlock3d"
+        ],
+        "up_block_type": [
+          "SparseResBlockC2S3d",
+          "SparseResBlockC2S3d",
+          "SparseResBlockC2S3d",
+          "SparseResBlockC2S3d"
+        ],
+        "block_args": [
+          {},
+          {},
+          {},
+          {},
+          {}
+        ],
+        "pred_subdiv": false,
+        "use_fp16": true
+      }
+    },
+    "config_sha256": "22074e4ab5b28e2b72d33a3fe61bf416134b89e12d0fc5c729f37da75da0c4d1",
+    "stream_hash_seconds": 1.9219999999913853,
+    "weights_deserialized": false,
+    "comparison_with_proven_shape_model": {
+      "model": "shape_dec_next_dc_f16c32_fp16",
+      "missing_keys": [
+        "blocks.0.4.to_subdiv.bias",
+        "blocks.0.4.to_subdiv.weight",
+        "blocks.1.16.to_subdiv.bias",
+        "blocks.1.16.to_subdiv.weight",
+        "blocks.2.8.to_subdiv.bias",
+        "blocks.2.8.to_subdiv.weight",
+        "blocks.3.4.to_subdiv.bias",
+        "blocks.3.4.to_subdiv.weight"
+      ],
+      "new_keys": [],
+      "different_shapes": {
+        "output_layer.weight": [
+          [
+            7,
+            64
+          ],
+          [
+            6,
+            64
+          ]
+        ],
+        "output_layer.bias": [
+          [
+            7
+          ],
+          [
+            6
+          ]
+        ]
+      }
+    },
+    "candidate_shape_policy_partition_NOT_validated": {
+      "BF16": 208,
+      "F32": 76,
+      "unclassified": []
+    },
+    "freshly_streamed_sha256": "97ea69addea2ecd9312910f5f548234665eef51c088386180b7cd5b258645e3c"
+  },
+  "inputs": {
+    "verified": true,
+    "cpu_only": true,
+    "profile": {
+      "schema": "modly.amd.brick-guided-pbr-profile.v1",
+      "name": "brick-1957891-v1",
+      "initial_rows": 4430,
+      "parent_rows": [
+        4430,
+        21391,
+        97313,
+        438684
+      ],
+      "child_rows": [
+        21391,
+        97313,
+        438684,
+        1957891
+      ],
+      "final_rows": 1957891,
+      "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+      "geometry_contract": {
+        "final_support_profile": "brick-1957891-v1",
+        "host_evidence_directory": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/final-support-c9447dd/decode/run/guest",
+        "initial_count": 4430,
+        "input_paths": {
+          "coords.npy": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-coordinates.npy",
+          "shape-latent-denormalized.npy": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-denormalized.npy"
+        },
+        "input_sha256": {
+          "coords.npy": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c",
+          "shape-latent-denormalized.npy": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808"
+        },
+        "large_convolution_tiling": true,
+        "maximum_final_rows": 1957891,
+        "maximum_intermediate_rows": 1000000,
+        "native_stage": "/home/modly/native-decoder-preparation-6dd94a85",
+        "output_directory": "/home/modly/run-brick-final-support-c9447dd/geometry",
+        "repo_root": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof",
+        "schema": "modly.amd.neural-run.v1",
+        "scratch_directory": "/home/modly/run-brick-final-support-c9447dd/scratch",
+        "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f"
+      },
+      "texture_sha256": "4c74343c961e74bf3cfde4c24bd2a21b23063e17f0468b7f3049311fa9dc4289",
+      "geometry_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+      "texture_sidecar_sha256": "25adb1a50b8b31900ebc56d87f45b7fe23dee9305d97b458f70a60799d59e2a0",
+      "geometry_sidecar_sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407",
+      "initial_coordinates_sha256": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520",
+      "final_coordinates_sha256": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+      "checkpoint_sha256": "97ea69addea2ecd9312910f5f548234665eef51c088386180b7cd5b258645e3c",
+      "config_sha256": "22074e4ab5b28e2b72d33a3fe61bf416134b89e12d0fc5c729f37da75da0c4d1",
+      "checkpoint_header_sha256": "ad3ed458569d937eace6ac42d9b6aa83853d654ebd0847791bbf19e2e31ab02b",
+      "source_pins": {
+        "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "0998c6e0c9a8d5c262b6f258f60fb11d82e8b51aec2c5fd48c771c33ef999f57",
+        "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "10a2792b47ab24ec64cf5d911c37fa12ac789a1d7134c5221d0479ced1bdb989",
+        "scripts/compatibility/amd_texture_decoder_inputs.py": "87bd6437412df561100b174e945c2fa040a9c02ee1ac2ea8c70a325b8f1a3d85",
+        "scripts/compatibility/amd_texture_sampling_artifact.py": "5eaf35c08cf2e96f46dfe8bb32fa835c079ef34ce5a322a0afd411ee7cf9474c",
+        "scripts/compatibility/amd_texture_field_artifact.py": "77d9592662653413e9b40f81741e47e2a23739e9e5d013d48b6cefff1831d3b5",
+        "experimental/extensions/trellis2-amd/texture_decoder_loader.py": "409bf691bb3d7f3638d40cb46f02250111249af31f19a4377345da84ec2fb988"
+      }
+    },
+    "profile_sha256": "cbad376b38c69943defe59e0273817dad9f8cb044ea9b600768eb62f7e51e5c0",
+    "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+    "parent_rows": [
+      4430,
+      21391,
+      97313,
+      438684
+    ],
+    "child_rows": [
+      21391,
+      97313,
+      438684,
+      1957891
+    ],
+    "texture_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-material-stage1-df41688\\latent\\texture-latent.safetensors",
+    "texture_sha256": "4c74343c961e74bf3cfde4c24bd2a21b23063e17f0468b7f3049311fa9dc4289",
+    "texture_sidecar_sha256": "25adb1a50b8b31900ebc56d87f45b7fe23dee9305d97b458f70a60799d59e2a0",
+    "geometry_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\shape-decoded.safetensors",
+    "geometry_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "geometry_sidecar_sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407",
+    "texture_tensors": {
+      "raw": {
+        "dtype": "F32",
+        "shape": [
+          4430,
+          32
+        ],
+        "tensor_bytes": 567040,
+        "sha256": "f9e95e79027efa9d1317b8d269e951fb71accbe41bf718bf8d333308583ec4a4"
+      },
+      "denormalized": {
+        "dtype": "F32",
+        "shape": [
+          4430,
+          32
+        ],
+        "tensor_bytes": 567040,
+        "sha256": "ad6e31cc89b0b94604aa0a9f61b6034eb00005ec82505e93ca2e16d572642648"
+      },
+      "coords": {
+        "dtype": "I32",
+        "shape": [
+          4430,
+          4
+        ],
+        "tensor_bytes": 70880,
+        "sha256": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520"
+      },
+      "noise": {
+        "dtype": "F32",
+        "shape": [
+          4430,
+          32
+        ],
+        "tensor_bytes": 567040,
+        "sha256": "c0a45ef54c391fb3f05d6137f097e351f97ca135c51deb24f208e1746f3b27e3"
+      }
+    },
+    "geometry_tensors": {
+      "features": {
+        "dtype": "F32",
+        "shape": [
+          1957891,
+          7
+        ],
+        "tensor_bytes": 54820948,
+        "sha256": "5eedc14f04267303cc9ac344270f7141c2c2d4a94e0c0510585928757a4b0c52"
+      },
+      "coordinates": {
+        "dtype": "I32",
+        "shape": [
+          1957891,
+          4
+        ],
+        "tensor_bytes": 31326256,
+        "sha256": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976"
+      },
+      "subdivision_0_coordinates": {
+        "dtype": "I32",
+        "shape": [
+          4430,
+          4
+        ],
+        "tensor_bytes": 70880,
+        "sha256": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520"
+      },
+      "subdivision_1_coordinates": {
+        "dtype": "I32",
+        "shape": [
+          21391,
+          4
+        ],
+        "tensor_bytes": 342256,
+        "sha256": "16ecc9780a85d722e83fdf52ed3841e7038a69d203f086a0524094a63f18a594"
+      },
+      "subdivision_2_coordinates": {
+        "dtype": "I32",
+        "shape": [
+          97313,
+          4
+        ],
+        "tensor_bytes": 1557008,
+        "sha256": "8f1c7d4bfb4f031965f2e095929fa592b394eb60841d02a786805e08f707d81d"
+      },
+      "subdivision_3_coordinates": {
+        "dtype": "I32",
+        "shape": [
+          438684,
+          4
+        ],
+        "tensor_bytes": 7018944,
+        "sha256": "ab09fb4a330c0a07aead43193aeec79e6ea9b1efa85c62aeb4ca810a0f79d19e"
+      },
+      "subdivision_0_logits": {
+        "dtype": "BF16",
+        "shape": [
+          4430,
+          8
+        ],
+        "tensor_bytes": 70880,
+        "sha256": "9c31de9c275fa78590743bb9ec7bf0accc3cab7f92e4f3096e99162d8963f07e"
+      },
+      "subdivision_1_logits": {
+        "dtype": "BF16",
+        "shape": [
+          21391,
+          8
+        ],
+        "tensor_bytes": 342256,
+        "sha256": "c519845ae44a8e30a83038de03578b7cecd8aaf2fcebdb6c1e437e20208a538a"
+      },
+      "subdivision_2_logits": {
+        "dtype": "BF16",
+        "shape": [
+          97313,
+          8
+        ],
+        "tensor_bytes": 1557008,
+        "sha256": "6f74789f5076a42399ec6cf6048a792d1e4953fac3294597bceb717a74e965ba"
+      },
+      "subdivision_3_logits": {
+        "dtype": "BF16",
+        "shape": [
+          438684,
+          8
+        ],
+        "tensor_bytes": 7018944,
+        "sha256": "285f0adba1078694c3112a2ef8c0afbeb0779e951f65ffdaf48cd399cc524304"
+      }
+    },
+    "sources": {
+      "trellis2/modules/sparse/spatial/spatial2channel.py": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c",
+      "trellis2/models/sc_vaes/sparse_unet_vae.py": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce"
+    },
+    "decoder_sources": {
+      "models/sc_vaes/sparse_unet_vae.py": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+      "modules/utils.py": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e",
+      "modules/norm.py": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00",
+      "modules/sparse/basic.py": "e867e429b9c2fe154000725596b626273fb567025b9c232f3cc79140f00605b7",
+      "modules/sparse/linear.py": "05cb619ff9cceb27674fc7bbb5aa2bcba93d1bf328d1f3340bb98c0f1240b413",
+      "modules/sparse/conv/conv.py": "a1e9f62fdf70f5443967a81b4ca99c0c863d20b063b44ffe264b0fd68bf3e5e3",
+      "modules/sparse/conv/conv_flex_gemm.py": "281fa1c8449732a94d99a24facb437600ab08d8185214d8434008456d56b83d8",
+      "modules/sparse/spatial/spatial2channel.py": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c"
+    },
+    "coordinate_order": "original C2S parent-major; child x bit0, y bit1, z bit2",
+    "all_four_masks_and_original_child_orders_verified": true,
+    "guide_BF16_bytes_preserved": true,
+    "final_geometry_coordinate_order_exact": true,
+    "checkpoint_header_only": true,
+    "model_imported": false,
+    "gpu_initialized": false
+  },
+  "source_sha256": {
+    "api/services/amd_geometry_assets.py": "55decd0c0ec9ea24ff914677039db5bd3e98606f18e9d695abca8f0d026aa669",
+    "api/services/amd_model_metadata.py": "ca7b9f01ea09cb1820208e22f9bb5605bf8cf67159ea0dead9be7036eaf2ab96",
+    "api/services/amd_observer.py": "b403b1e00627d4101e7c75d6759079d1ea81748ab3350faea29e7eab9add4f88",
+    "api/services/amd_offline_guard.py": "d874b8cbd0b873a8811c06fc61f28d3c6e36188371c4ab8a0fdc805ee83d6d00",
+    "api/services/amd_runtime.py": "16499c8c8b5ef3f133ee872bade91a4332f4195d757da662022511c5049bf756",
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/host-memory-review.json": "31fd998d263414124741ef5e3bf32e49514460d429723dd9cba6b6f4f93a1a17",
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/host.py": "b299984c6c55ecd0670d0e0a4a79a6672ecdede5d4baf8574d89295ba3fea078",
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/initial-host-admission.json": "d437f3ed364fbe630ad1f279de88433a181daa230ca6a09badcf3fcdf61ef22f",
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/preservation-before.json": "8b6c4858a8c6d918047406e848eced7af9e1ac132c8b0072c14bafd25e73c8e6",
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/worker.py": "f3438ae92dd2e0b7abf8fe0faaa48707614e5bc777bc76c8dd132c19c72bf413",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/admission.py": "99c1078cbcb4b026feeec3f085976586f1118812bdd3d4b5fbe0e76c47cbbbbe",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/artifact_io.py": "4a1d55f77eb3e45e115592e17e0fa4948bb58278fd5a7bf71af561c1ed9543f4",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/chunked_final.py": "707d73d7331a4896bffeb851c2aa144175841cd4752a4497760d9f6a44ea2d39",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/decode.py": "8e6d52b84a4be0aceb57f9b942e6bc83f8998decb931c287f40d2a31263b543d",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/neural.py": "5d3301c00fb29a51c86e861e63d097d35096de7d769d4d407e745fd364525647",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/output_owner.py": "02d862b93ad08edb7830e49169fe6adc9921bebd2755cd94cbce2179e3bf9648",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/owner-attestation.json": "f5209e299c5f50d14465269f2b933ea0e5023b4690bf2b9501a29d5931b9a88e",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/ram-readiness.json": "ef571e553191f4fc238b140138b21f3ab77309649d5e02d7f51a6b21f5c9abec",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/readiness.py": "464b2057d194ebe66ba5a8d488ac912dad8f30cbd9d0a144175f147a07b4e8fe",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/runtime.py": "935d431c107ec6ea856bdccff9d1c88298403c7e9afe07232b22e74525bf0e10",
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/windows_owner.ps1": "6849a3ac5375cc1693ce306ea28fa4ce9bed32305b8926bc2f5e6034c75f1a94",
+    "docs/compatibility/amd-turret-texture-decoder-evidence/qualification.json": "9f616b1f77cb53ba1fed1f43d80ea1c7143c19233eed5a3ef19096f23d9f3137",
+    "docs/compatibility/amd-turret-texture-owner-evidence/admission.py": "99c1078cbcb4b026feeec3f085976586f1118812bdd3d4b5fbe0e76c47cbbbbe",
+    "docs/compatibility/amd-turret-texture-owner-evidence/artifact_io.py": "4a1d55f77eb3e45e115592e17e0fa4948bb58278fd5a7bf71af561c1ed9543f4",
+    "docs/compatibility/amd-turret-texture-owner-evidence/bootstrap-tests.py": "322c1862456b27fb1bf52f62e886fb848d1a5dc55217e857df0a1f54698c57a1",
+    "docs/compatibility/amd-turret-texture-owner-evidence/candidate-identities.json": "2ff8c5cedb5dd8b127871a9a5496e84666c199a165024ca0d781440eb802858a",
+    "docs/compatibility/amd-turret-texture-owner-evidence/chunked_final.py": "707d73d7331a4896bffeb851c2aa144175841cd4752a4497760d9f6a44ea2d39",
+    "docs/compatibility/amd-turret-texture-owner-evidence/cold-run/CPU-verdict.json": "9ec8dcc4437f8cc4846f2d1fae7c9782542209841d4e65fa8be325fb0daa2f40",
+    "docs/compatibility/amd-turret-texture-owner-evidence/cold-run/results.json": "3104b8351d7751229f0c566e3390722c399a347d7d04eef3f30cbbb41671a042",
+    "docs/compatibility/amd-turret-texture-owner-evidence/cold_start.py": "83026e0e197c00587293bcb106eaa6914d7c2c309ea9786505d8af4bcea92a18",
+    "docs/compatibility/amd-turret-texture-owner-evidence/decode.py": "fc02b386519ce3c58e4a0632fef08ce1fe714344586a536f1901dd11aa9f453d",
+    "docs/compatibility/amd-turret-texture-owner-evidence/diagnose.py": "2cc89833687d10f1c40eecb74d4ae508a174eda7074b50a74b957805259e6d1b",
+    "docs/compatibility/amd-turret-texture-owner-evidence/neural.py": "5d3301c00fb29a51c86e861e63d097d35096de7d769d4d407e745fd364525647",
+    "docs/compatibility/amd-turret-texture-owner-evidence/output_owner.py": "02d862b93ad08edb7830e49169fe6adc9921bebd2755cd94cbce2179e3bf9648",
+    "docs/compatibility/amd-turret-texture-owner-evidence/owner-attestation.json": "f5209e299c5f50d14465269f2b933ea0e5023b4690bf2b9501a29d5931b9a88e",
+    "docs/compatibility/amd-turret-texture-owner-evidence/owner_tests.py": "17c6482eb16958cb0580fabccc40978e014a42aae59969884e756d214bb66f95",
+    "docs/compatibility/amd-turret-texture-owner-evidence/persistence-preflight.json": "bd32909708e8774424d5b339496da8c5a2d0da0f52cb2a29122ee43ec8943235",
+    "docs/compatibility/amd-turret-texture-owner-evidence/qualification.json": "b700c5b3edb14e425c4aa74eace03bd8c0e27eb7c82b718ef2f3eb3c710d37d0",
+    "docs/compatibility/amd-turret-texture-owner-evidence/runtime.py": "935d431c107ec6ea856bdccff9d1c88298403c7e9afe07232b22e74525bf0e10",
+    "docs/compatibility/amd-turret-texture-owner-evidence/windows_owner.ps1": "6849a3ac5375cc1693ce306ea28fa4ce9bed32305b8926bc2f5e6034c75f1a94",
+    "docs/compatibility/amd-turret-texture-resource-evidence/admission.py": "99c1078cbcb4b026feeec3f085976586f1118812bdd3d4b5fbe0e76c47cbbbbe",
+    "docs/compatibility/amd-turret-texture-resource-evidence/artifact_io.py": "4a1d55f77eb3e45e115592e17e0fa4948bb58278fd5a7bf71af561c1ed9543f4",
+    "docs/compatibility/amd-turret-texture-resource-evidence/chunked_final.py": "707d73d7331a4896bffeb851c2aa144175841cd4752a4497760d9f6a44ea2d39",
+    "docs/compatibility/amd-turret-texture-resource-evidence/decode.py": "ad319358673e01165d5680591aeaacbfd667296d02dcd0035d95d8d9ad0042fc",
+    "docs/compatibility/amd-turret-texture-resource-evidence/neural.py": "5d3301c00fb29a51c86e861e63d097d35096de7d769d4d407e745fd364525647",
+    "docs/compatibility/amd-turret-texture-resource-evidence/output_owner.py": "02d862b93ad08edb7830e49169fe6adc9921bebd2755cd94cbce2179e3bf9648",
+    "docs/compatibility/amd-turret-texture-resource-evidence/owner-attestation.json": "f5209e299c5f50d14465269f2b933ea0e5023b4690bf2b9501a29d5931b9a88e",
+    "docs/compatibility/amd-turret-texture-resource-evidence/resource-tests.py": "57cb4e71ef0b780302c8dfd7b0d007fc6d2e97a2e0a5a2b7890ef4ea6f42bd28",
+    "docs/compatibility/amd-turret-texture-resource-evidence/runtime.py": "935d431c107ec6ea856bdccff9d1c88298403c7e9afe07232b22e74525bf0e10",
+    "docs/compatibility/amd-turret-texture-resource-evidence/windows_owner.ps1": "6849a3ac5375cc1693ce306ea28fa4ce9bed32305b8926bc2f5e6034c75f1a94",
+    "docs/compatibility/amd-turret-texture-route-evidence/local-assets.json": "9f764cece1ae4630ec437b2a45d8619ff894c3312190e86813350a1490c2d481",
+    "docs/compatibility/amd-wsl-flexgemm-build-evidence/flex_gemm-1.0.0-cp312-cp312-linux_x86_64.whl": "cadaa86c428a93c3aee10c4dd8dfb66604a424c8145670051ca0ce1a0f296285",
+    "docs/compatibility/amd-wsl-flexgemm-build-evidence/static-acceptance.json": "67dd2b44ef3707b7f9eb32b14948698141fffe39549556b2602271c7979c67dc",
+    "docs/compatibility/amd-wsl-native-decoder-preparation-evidence/staging.json": "8bfc578bb58e7efd81d2d4fa6baa38ec04ae8ea92379918247494cdbb81babf9",
+    "docs/compatibility/amd-wsl-packaging-decoder-loading-evidence/packaging-staging.json": "e6cd2cca08b23c6310e5db42080bb07ef7a40e3acadc35bb04dd3d755e1557c8",
+    "experimental/extensions/trellis2-amd/alpha_input.py": "9349d5381273c3d750ba18627b5f2579db23ffbf547dccaa1006c254ac76ba70",
+    "experimental/extensions/trellis2-amd/generator.py": "bb458f0a752f047a550fdb1bc4a3bf5c2b0e2b8f1ad011aca024ff0c41dff71a",
+    "experimental/extensions/trellis2-amd/geometry_preparation.py": "1d2f6d9ba55201b85a8a5340a4352af3c1440ec5eda4c09c75a5d9a50c5fb40d",
+    "experimental/extensions/trellis2-amd/headless.py": "fbdbd36874975d87a4012bd8591339311fef062cd5522fa496735b9626d7a554",
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "6f4831747c6973d860a55c1988af5105f4fadb53b79e50164a86ffe81f73f21a",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "10a2792b47ab24ec64cf5d911c37fa12ac789a1d7134c5221d0479ced1bdb989",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_paths.py": "73a690d8c03e7a4a6f69b07e45ccd92fa08b3d461f1e47841745c1eafa25f441",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py": "6c69e5a1376aae9cd60b9892b2a8f335f1e6cfc61173d55bfa1332c0004bbcfc",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_large.py": "ff1d5727518e79c578206bfbe2af3c6bc4650ad3b2942290a5676fbfc38d7121",
+    "experimental/extensions/trellis2-amd/inference_decoder/decode.py": "d19099e32c51c9cd40fb25068b6bfdba7478fad1f0489bb1bab2fc3e443c5e63",
+    "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "f3d982046ca58fb7a2eb0b49c3d0c89fbcf9aa3189cc86018a3c1749b0c01295",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "0998c6e0c9a8d5c262b6f258f60fb11d82e8b51aec2c5fd48c771c33ef999f57",
+    "experimental/extensions/trellis2-amd/inference_decoder/runtime.py": "ea4199df31941795b7a5a5bb58d0f180f610c6ad17e8358b16393696a30c3c2e",
+    "experimental/extensions/trellis2-amd/inference_decoder/stage_journal.py": "0deada43d569717d57c6835b11be90b55c6685efc733fa8ce07e4c1acb5476e0",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_admission_reclaim.py": "05197951308051f012a969444cd76594a7fdc4305b92c549fefe178b472dd540",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_decoder.py": "51a4815d97a6f5c761a626205706e79dade125566ee1cff1b3e81174f6ef2048",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_final_support.py": "9dbcc872eeba52fe77d2a3450349019dd91d730e7ef53446387ccf6ed66879a1",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_large_tiling.py": "2438dbf64528902cd9faf33034fc36c98c3704ebb9bd2974765ba33e39a92f80",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_tiling_contract.py": "b48261427ef35ab4405a3d6e1868fbff831d9784a530dd6dd3a7c9aa176a20cf",
+    "experimental/extensions/trellis2-amd/inference_texture/__init__.py": "26c39bac412ce88a65b9a4003218cf4709f7020dd4b752d520664282ffa5e72e",
+    "experimental/extensions/trellis2-amd/inference_texture/_source.py": "11ae08f720b1f09414bd3ce6ce5fe8ac166f9bc1f712e7768b2db7399652159c",
+    "experimental/extensions/trellis2-amd/inference_texture/admission.py": "9af8bbd6c61f12a2990af5efbae329f231b8fa2eb973be8df799709891dc16c3",
+    "experimental/extensions/trellis2-amd/inference_texture/artifact.py": "1dfebb51dfa03769e1103eddcd0a91d7cc7b8ffa1617c0433cb77d7f48648bdb",
+    "experimental/extensions/trellis2-amd/inference_texture/inputs.py": "603851fd622b4e53d9d484bd0c08d201b4b43b35a3abc1650b38b094a3280ed3",
+    "experimental/extensions/trellis2-amd/inference_texture/neural.py": "d41f6f30d10dc83d94903bb22fd0a8f5c1e928e85d22c62e8a65c8479df91987",
+    "experimental/extensions/trellis2-amd/inference_texture/profile.py": "4cbb0ca7f201201bf8bbd8cd093575eec89868480cb47ed00d4078915bb5b368",
+    "experimental/extensions/trellis2-amd/inference_texture/receipts.py": "70609892ba1b38a0d6f28d0bf0d70afab493f0b7e72899196445d2481ef4757b",
+    "experimental/extensions/trellis2-amd/inference_texture/runtime.py": "9df9c729aa54deac862cf3a9958501ce8e8f5786a445460b1930c89217b6dd4d",
+    "experimental/extensions/trellis2-amd/inference_texture/source_identity.py": "8a0f4f8dbd1df8ceee4ddc745b346431ad169f49e8e6212ddb5220e7b0fe65bd",
+    "experimental/extensions/trellis2-amd/inference_texture/tiling.py": "9f9281618a696e6391f1e4cdf8f77a1153bd8e315ede9e816da7ca533917f5a0",
+    "experimental/extensions/trellis2-amd/model_assets.py": "0651a3215e17335046a987c7a2ef2212b5e2187f886e7052bc9dbc35066c6f6e",
+    "experimental/extensions/trellis2-amd/preparation_guards.py": "acd18955caf7548d81236249422274426cf73efb994a8643fe8d37a514ec66c6",
+    "experimental/extensions/trellis2-amd/shape_decoder_loader.py": "8fa385af60aff19ddeabc305d01885abd4c4bf3b7a8a0d89d87b9397666bd571",
+    "experimental/extensions/trellis2-amd/strict_loader.py": "0a4b2aab6fb34a034be1725d4514d71f17c59376151b549ab631ebc8b5c8fc79",
+    "experimental/extensions/trellis2-amd/texture_decoder_loader.py": "409bf691bb3d7f3638d40cb46f02250111249af31f19a4377345da84ec2fb988",
+    "scripts/compatibility/amd_bounded_gpu_proof.py": "8910884b4d4bd433df654a8137586eb43711e37e97acfcf8462392ef4258dff4",
+    "scripts/compatibility/amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64",
+    "scripts/compatibility/amd_generation_texture_decode.py": "eb54fff5666641c2f6d01397d12e1a04c3f34c3ae22d88688d7947281d4f25ce",
+    "scripts/compatibility/amd_texture_decoder_inputs.py": "87bd6437412df561100b174e945c2fa040a9c02ee1ac2ea8c70a325b8f1a3d85",
+    "scripts/compatibility/amd_texture_field_artifact.py": "77d9592662653413e9b40f81741e47e2a23739e9e5d013d48b6cefff1831d3b5",
+    "scripts/compatibility/amd_texture_sampling_artifact.py": "5eaf35c08cf2e96f46dfe8bb32fa835c079ef34ce5a322a0afd411ee7cf9474c",
+    "scripts/compatibility/amd_wsl_native_import_policy.py": "8b9207a14757ccda197e11c054d694f9b4ff47006a1cccc46d71f1d494ab96cd",
+    "scripts/compatibility/amd_wsl_rocdxg_smoke.py": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2",
+    "scripts/compatibility/test_amd_brick_pbr_host.py": "632b2869d0b5c8f819b016dffbd13ffc968c10c7bfbfa803717b4dc4e60e8b87",
+    "scripts/compatibility/test_amd_brick_pbr_worker.py": "638ff59ea15c529f238f7d1c38ecb537abae07f255307f95ec79cf274df23c48",
+    "scripts/compatibility/test_amd_texture_decoder_inputs.py": "e3091c701b7e7361245dbcf808b9a2151b9319708629319ef3c5793a809bf436",
+    "scripts/compatibility/test_amd_texture_decoder_loader.py": "5c2ce7040140f23ed4a6790241417d94ff4180d36f31ed8be7847e41b3b5c458",
+    "scripts/compatibility/test_amd_texture_field_artifact.py": "dedaac931cdebc38cd64dec74749af73f1ea80b9b4fee795a533ae863c00bdd2"
+  },
+  "host_admission": {
+    "available_ram_bytes": 22444036096,
+    "D_free_bytes": 74269659136,
+    "required_host_ram_bytes": 12884901888,
+    "required_D_free_bytes": 53687091200,
+    "failed_conditions": [],
+    "execution_stage": "read-only-preflight",
+    "admitted": true,
+    "destination_free_bytes": 112657391616,
+    "destination_writable": true,
+    "monotonic_seconds": 13604.187,
+    "process_memory": {
+      "windows_owned_host_and_descendants": [
+        {
+          "pid": 6112,
+          "ppid": 12036,
+          "name": "python.exe",
+          "rss_bytes": 43077632,
+          "private_bytes": 534700032
+        }
+      ],
+      "working_set_sum_bytes": 43077632,
+      "private_sum_bytes": 534700032,
+      "vmmem_read_only_samples": [],
+      "errors": [],
+      "scope": "Windows host and descendants only; shared pages may be counted repeatedly; Linux guest RSS is separate."
+    }
+  },
+  "weights_loaded": false,
+  "GPU_forward_calls": 0,
+  "classification": "PASS",
+  "harness_commit": "710e995f4ec44f59d6e46525e7fff3bdb6fb3efb",
+  "elapsed_seconds": 22.296000000000276,
+  "WSL_launched": false,
+  "Torch_imported": false
+}

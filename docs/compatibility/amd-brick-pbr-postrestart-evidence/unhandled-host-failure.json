@@ -1,0 +1,66 @@
+{
+  "classification": "BLOCKED",
+  "error_type": "ValueError",
+  "error": "Canonical approved C: path required",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-pbr-postrestart-evidence\\host.py\", line 382, in main\n    try:return run(args.harness_commit)\n               ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-pbr-postrestart-evidence\\host.py\", line 365, in run\n    with binding('artifact_io',shim):code=frozen.supervise(EVIDENCE/'run')\n                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-turret-texture-decode-resume-evidence\\decode.py\", line 485, in supervise\n    reserve_attempt(output)\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-pbr-postrestart-evidence\\host.py\", line 272, in reserve_attempt\n    geometry_contract_path=to_guest(GEOMETRY/'run-contract.json'),geometry_contract_file_sha256=digest(GEOMETRY/'run-contract.json'))\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-pbr-postrestart-evidence\\host.py\", line 72, in to_guest\n    raise ValueError('Canonical approved C: path required')\nValueError: Canonical approved C: path required\n",
+  "resource_samples": [
+    {
+      "available_ram_bytes": 22421811200,
+      "D_free_bytes": 74269659136,
+      "required_host_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200,
+      "failed_conditions": [],
+      "execution_stage": "read-only-preflight",
+      "admitted": true,
+      "destination_free_bytes": 112657211392,
+      "destination_writable": true,
+      "monotonic_seconds": 13646.078,
+      "process_memory": {
+        "windows_owned_host_and_descendants": [
+          {
+            "pid": 15940,
+            "ppid": 15820,
+            "name": "python.exe",
+            "rss_bytes": 44728320,
+            "private_bytes": 536342528
+          }
+        ],
+        "working_set_sum_bytes": 44728320,
+        "private_sum_bytes": 536342528,
+        "vmmem_read_only_samples": [],
+        "errors": [],
+        "scope": "Windows host and descendants only; shared pages may be counted repeatedly; Linux guest RSS is separate."
+      }
+    },
+    {
+      "available_ram_bytes": 22414417920,
+      "D_free_bytes": 74269659136,
+      "required_host_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200,
+      "failed_conditions": [],
+      "execution_stage": "pre-marker",
+      "admitted": true,
+      "destination_free_bytes": 112657211392,
+      "destination_writable": true,
+      "monotonic_seconds": 13650.515,
+      "process_memory": {
+        "windows_owned_host_and_descendants": [
+          {
+            "pid": 15940,
+            "ppid": 15820,
+            "name": "python.exe",
+            "rss_bytes": 45973504,
+            "private_bytes": 538071040
+          }
+        ],
+        "working_set_sum_bytes": 45973504,
+        "private_sum_bytes": 538071040,
+        "vmmem_read_only_samples": [],
+        "errors": [],
+        "scope": "Windows host and descendants only; shared pages may be counted repeatedly; Linux guest RSS is separate."
+      }
+    }
+  ],
+  "genuine_forward_entry_observed": false,
+  "retry": false
+}

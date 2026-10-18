@@ -1,0 +1,9 @@
+{
+  "classification": "SANDBOX_QUERY_BLOCKED",
+  "stage": "read-only-ownership-query",
+  "error": "Access to a CIM resource was not available to the client.",
+  "attempt_marker_reserved": false,
+  "WSL_launched": false,
+  "GPU_forward_calls": 0,
+  "action": "Repeat identical read-only query outside filesystem/process sandbox; no policy or ownership change."
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "modly.amd.brick-pbr-postrestart-independent-outcome-review.v1",
+  "classification": "BLOCKED",
+  "harness_commit": "710e995f4ec44f59d6e46525e7fff3bdb6fb3efb",
+  "decision": "The one actual host invocation stopped during reservation before WSL or worker execution. The saved BLOCKED classification is supported. No genuine brick PBR runtime qualification, artifact acceptance or AMD compatibility conclusion can be claimed from this outcome. Preserve the consumed production marker and stop without retry or code change.",
+  "evidence_sha256": {
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/unhandled-host-failure.json": "bfb8b5b3cc014b9268b9927fc58ee8e7c97e1335b487717b4b62a6e00c140926",
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/phases.jsonl": "a0dfcf86e0dcf8ca5cd38419883f1f8817dcd2a3f5225e6508d0135c62b80774",
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/candidate-identities.json": "0782e0acc565617354f43ee9dd5814cca2d363148be7c3eea12c0e5b1fb0a6b1",
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/cpu-test-summary.json": "52dfcdb34ebc4624724882f398951a33ed6da723b22d3cadd82095953f9a4c70",
+    "C:/Users/wattz/Documents/ModlyArtifacts/amd-brick-pbr-postrestart-4d1af7f/probe/neural-attempt.marker": "50c8a3a07223c96979ccca30cfb12956f977a3e63d641d6c2758716ff820edcf"
+  },
+  "actual_failure": {
+    "error_type": "ValueError",
+    "error": "Canonical approved C: path required",
+    "source": "docs/compatibility/amd-brick-pbr-postrestart-evidence/host.py:272",
+    "operation": "to_guest(GEOMETRY/'run-contract.json') while constructing the execution plan",
+    "cause": "GEOMETRY is ROOT.parent/artifacts/amd-brick-neural-completion-c9447dd/neural-output. The canonical path is outside each of to_guest's ROOT, PRIVATE and DESTINATION allowlisted roots. The production plan therefore cannot be constructed by this published harness.",
+    "sequence": "reserve_attempt first durably publishes PROBE/neural-attempt.marker. The path conversion then raises while evaluating the plan dictionary, before execution-plan publication, evidence marker creation or output.mkdir. In the unchanged frozen supervisor, reserve_attempt precedes HealthMonitor construction, owned Job creation and subprocess.Popen."
+  },
+  "independently_observed_reservation_state": {
+    "production_marker_exists": true,
+    "marker_harness_commit_matches": true,
+    "marker_mode": "production",
+    "marker_profile_sha256": "cbad376b38c69943defe59e0273817dad9f8cb044ea9b600768eb62f7e51e5c0",
+    "probe_entries": ["neural-attempt.marker", "ownership.json"],
+    "execution_plan_exists": false,
+    "evidence_neural_marker_exists": false,
+    "evidence_run_directory_exists": false,
+    "field_entries": 0,
+    "retry_permitted_by_this_review": false
+  },
+  "actual_pre_marker_admission_bytes": {
+    "available_windows_RAM": 22414417920,
+    "original_prelaunch_RAM_required": 19864223744,
+    "D_free": 74269659136,
+    "D_required": 53687091200,
+    "destination_free": 112657211392,
+    "destination_required": 2147483648,
+    "destination_writable": true,
+    "admitted": true,
+    "interpretation": "These saved host-side admissions passed. This failure was the execution-plan path-validation defect, not refusal of the original RAM/disk gates. These readings are not measurements under decoder or WSL load."
+  },
+  "execution_boundary": {
+    "WSL_worker_launched": false,
+    "worker_binary_GO_sent": false,
+    "Torch_model_or_native_runtime_entered": false,
+    "GPU_forward_calls": 0,
+    "stage_barriers_reached": false,
+    "field_written": false,
+    "independent_runtime_artifact_acceptance_reached": false,
+    "worker_natural_settlement_observed": false,
+    "basis": "Saved traceback and durable path state agree with the source ordering before any worker launch. No absent runtime measurement is treated as a successful zero-allocation or cleanup result."
+  },
+  "source_preservation_check": {
+    "HEAD_matches_harness_commit": true,
+    "candidate_manifest_paths_rehashed": 103,
+    "candidate_hash_mismatches": [],
+    "reviewed_adapter_test_core_and_frozen_helper_diff_from_harness": [],
+    "scope": "All 103 manifest-listed current file hashes still match. Read-only git diff against the published harness returned no changes for the reviewed adapters/tests, inference_texture core and frozen supervisor/helpers. This is a source check, not a replacement for the separate full preservation audit."
+  },
+  "review_and_CPU_coverage_gap": {
+    "finding": "The earlier independent preexecution review missed a real production reserve-path incompatibility. Its GO_CONDITIONAL receipt did not establish that the full production plan could be serialized. The actual BLOCKED outcome supersedes any implication that this harness was ready to complete reservation.",
+    "test_evidence": "test_complete_frozen_supervisor_lifecycle_and_forced_cleanup_refusal_are_cpu_simulations replaces frozen.reserve_attempt with a lambda that only creates the output directory. The command-routing test exercises worker_command, not reserve_attempt or the actual GEOMETRY conversion. No supplied test executes the complete production reserve/plan serialization path through the real converter.",
+    "implication": "Passing CPU fixtures supported their tested control boundaries but did not cover this reservation dependency. The defect was deterministic and could have been found before consuming a production marker."
+  },
+  "single_cheapest_future_correction_and_proof": "Only in a separately authorized future change: admit the exact already-approved GEOMETRY/run-contract.json read path without broadening the whole artifact-tree whitelist, and validate/serialize every deterministic production plan path and field before publishing any attempt marker. Add one CPU-only regression that exercises the actual production reserve/plan serialization path through the real to_guest, with only publication/reservation side effects captured; do not mock out reserve_attempt or the converter. Require that proof and renewed exact-candidate review before considering a separately authorized fresh attempt. No correction or execution is performed by this review.",
+  "claims_not_supported": [
+    "A successful genuine guided brick F16 PBR forward or field artifact",
+    "Observed brick decoder whole-host or GPU memory peak, zero-VRAM release, stage timings or natural worker cleanup",
+    "Native/model/driver success or failure, or any new AMD compatibility conclusion"
+  ],
+  "reviewer_execution": {
+    "only_this_report_written": true,
+    "implementation_changed": false,
+    "tests_run": false,
+    "candidate_source_imported": false,
+    "WSL_launched": false,
+    "Torch_imported": false,
+    "model_loaded": false,
+    "native_imported": false,
+    "GPU_forward_calls": 0,
+    "Git_mutated": false,
+    "network_used": false
+  }
+}

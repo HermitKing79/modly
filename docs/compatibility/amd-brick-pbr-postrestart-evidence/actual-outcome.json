@@ -1,0 +1,51 @@
+{
+  "schema": "modly.amd.brick-pbr-postrestart-outcome.v1",
+  "classification": "BLOCKED",
+  "created_utc": "2026-10-18T14:12:38.635101+00:00",
+  "execution_harness_commit": "710e995f4ec44f59d6e46525e7fff3bdb6fb3efb",
+  "host_launcher_invocations": 1,
+  "genuine_parent_forwards": 0,
+  "WSL_worker_launched": false,
+  "Torch_imported_in_worker": false,
+  "models_loaded": 0,
+  "convolutions_completed": 0,
+  "C2S_completed": 0,
+  "large_tiles_completed": 0,
+  "final_tiles_completed": 0,
+  "observed_final_support_rows": null,
+  "authenticated_expected_support_rows": 1957891,
+  "actual_fresh_RAM_readings_bytes": [
+    22494556160,
+    22484410368,
+    22468280320
+  ],
+  "actual_pre_marker_RAM_bytes": 22414417920,
+  "actual_D_free_bytes": 74269659136,
+  "actual_destination_free_bytes": 112657211392,
+  "original_prelaunch_RAM_requirement_bytes": 19864223744,
+  "unchanged_live_RAM_floor_bytes": 12884901888,
+  "failure": {
+    "stage": "production-execution-plan-serialization-after-exclusive-marker",
+    "type": "ValueError",
+    "message": "Canonical approved C: path required",
+    "source": "host.reserve_attempt -> to_guest(GEOMETRY/run-contract.json)",
+    "cause": "The exact authenticated geometry contract is outside the adapter to_guest approved roots. CPU preflight and tests did not call the complete production reserve/plan path."
+  },
+  "preserved_partial_attempt": {
+    "marker_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-pbr-postrestart-4d1af7f\\probe\\neural-attempt.marker",
+    "marker_SHA256": "50c8a3a07223c96979ccca30cfb12956f977a3e63d641d6c2758716ff820edcf",
+    "marker_bytes": 339,
+    "execution_plan_exists": false,
+    "host_attempt_marker_exists": false,
+    "run_directory_exists": false,
+    "field_directory_empty": true
+  },
+  "GPU_runtime_seconds": null,
+  "peak_GPU_allocated_bytes": null,
+  "peak_GPU_reserved_bytes": null,
+  "zero_Torch_release_measured": false,
+  "release_note": "Not applicable: no WSL worker, Torch runtime, model or GPU work was started. No forced process containment was needed; host returned status1.",
+  "new_material_artifact": null,
+  "automatic_retry": false,
+  "next_action": "Qualify the exact authenticated geometry-contract guest path and execute the complete real plan serialization in a disposable CPU fixture before reserving a fresh reviewed attempt; obtain approval before another launch."
+}
