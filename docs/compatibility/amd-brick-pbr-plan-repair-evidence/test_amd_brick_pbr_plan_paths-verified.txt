@@ -1,0 +1,13 @@
+test_exact_original_contract_and_existing_approved_roots_convert (__main__.PlanPathTests.test_exact_original_contract_and_existing_approved_roots_convert) ... ok
+test_exact_original_name_rejects_changed_bytes_without_writing_original (__main__.PlanPathTests.test_exact_original_name_rejects_changed_bytes_without_writing_original) ... ok
+test_geometry_exception_does_not_admit_siblings_or_ancestor_directories (__main__.PlanPathTests.test_geometry_exception_does_not_admit_siblings_or_ancestor_directories) ... ok
+test_owned_links_do_not_become_plain_files_or_canonical_routes (__main__.PlanPathTests.test_owned_links_do_not_become_plain_files_or_canonical_routes) ... 
+  test_owned_links_do_not_become_plain_files_or_canonical_routes (__main__.PlanPathTests.test_owned_links_do_not_become_plain_files_or_canonical_routes) (link='file symlink') ... skipped 'Windows symbolic-link privilege unavailable; reparse metadata tested separately'
+  test_owned_links_do_not_become_plain_files_or_canonical_routes (__main__.PlanPathTests.test_owned_links_do_not_become_plain_files_or_canonical_routes) (link='directory symlink') ... skipped 'Windows symbolic-link privilege unavailable; reparse metadata tested separately'
+test_plain_reader_rejects_reparse_metadata_size_and_changed_open_identity (__main__.PlanPathTests.test_plain_reader_rejects_reparse_metadata_size_and_changed_open_identity) ... ok
+test_raw_relative_traversal_drive_and_noncanonical_aliases_are_rejected (__main__.PlanPathTests.test_raw_relative_traversal_drive_and_noncanonical_aliases_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.353s
+
+OK (skipped=2)

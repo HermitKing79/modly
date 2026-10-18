@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "-B",
+      "scripts/compatibility/test_amd_brick_pbr_plan_paths.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.561999999999898,
+    "WSL_launched": false,
+    "Torch_imported": false,
+    "GPU_forward_calls": 0
+  },
+  {
+    "command": [
+      "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "-B",
+      "scripts/compatibility/test_amd_brick_pbr_plan.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 8.156000000000859,
+    "WSL_launched": false,
+    "Torch_imported": false,
+    "GPU_forward_calls": 0
+  }
+]

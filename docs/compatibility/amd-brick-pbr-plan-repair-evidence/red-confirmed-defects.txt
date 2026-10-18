@@ -1,0 +1,65 @@
+test_complete_actual_reserve_constructs_every_field_and_real_publisher_readback (__main__.CompleteProductionPlanTests.test_complete_actual_reserve_constructs_every_field_and_real_publisher_readback) ... ERROR
+test_exact_original_contract_conversion (__main__.CompleteProductionPlanTests.test_exact_original_contract_conversion) ... ERROR
+test_foreign_last_plan_path_cannot_publish_marker (__main__.CompleteProductionPlanTests.test_foreign_last_plan_path_cannot_publish_marker) ... FAIL
+test_malformed_commit_cannot_publish_marker (__main__.CompleteProductionPlanTests.test_malformed_commit_cannot_publish_marker) ... FAIL
+
+======================================================================
+ERROR: test_complete_actual_reserve_constructs_every_field_and_real_publisher_readback (__main__.CompleteProductionPlanTests.test_complete_actual_reserve_constructs_every_field_and_real_publisher_readback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_brick_pbr_plan.py", line 70, in test_complete_actual_reserve_constructs_every_field_and_real_publisher_readback
+    h.reserve_attempt(h.EVIDENCE/'run')
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-brick-pbr-plan-repair-evidence\host.py", line 272, in reserve_attempt
+    geometry_contract_path=to_guest(GEOMETRY/'run-contract.json'),geometry_contract_file_sha256=digest(GEOMETRY/'run-contract.json'))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-brick-pbr-plan-repair-evidence\host.py", line 72, in to_guest
+    raise ValueError('Canonical approved C: path required')
+ValueError: Canonical approved C: path required
+
+======================================================================
+ERROR: test_exact_original_contract_conversion (__main__.CompleteProductionPlanTests.test_exact_original_contract_conversion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_brick_pbr_plan.py", line 65, in test_exact_original_contract_conversion
+    self.assertEqual(h.to_guest(h.GEOMETRY/'run-contract.json'),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-brick-pbr-plan-repair-evidence\host.py", line 72, in to_guest
+    raise ValueError('Canonical approved C: path required')
+ValueError: Canonical approved C: path required
+
+======================================================================
+FAIL: test_foreign_last_plan_path_cannot_publish_marker (__main__.CompleteProductionPlanTests.test_foreign_last_plan_path_cannot_publish_marker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_brick_pbr_plan.py", line 95, in test_foreign_last_plan_path_cannot_publish_marker
+    self.assertEqual(capture.order,[]);self.assertEqual(capture.mkdir_calls,[])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['neural-attempt.marker'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'neural-attempt.marker'
+
+- ['neural-attempt.marker']
++ []
+
+======================================================================
+FAIL: test_malformed_commit_cannot_publish_marker (__main__.CompleteProductionPlanTests.test_malformed_commit_cannot_publish_marker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\scripts\compatibility\test_amd_brick_pbr_plan.py", line 100, in test_malformed_commit_cannot_publish_marker
+    self.assertEqual(capture.order,[]);self.assertEqual(capture.mkdir_calls,[])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['neural-attempt.marker'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'neural-attempt.marker'
+
+- ['neural-attempt.marker']
++ []
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.037s
+
+FAILED (failures=2, errors=2)
