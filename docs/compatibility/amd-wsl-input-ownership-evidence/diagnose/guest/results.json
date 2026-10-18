@@ -1,0 +1,17 @@
+{
+  "schema": "modly.amd.wsl-input-cpu-worker.v1",
+  "mode": "diagnose",
+  "classification": "CPU_UNKNOWN",
+  "CPU_only": true,
+  "gate_authorized": true,
+  "GPU_authorized": false,
+  "model_authorized": false,
+  "forbidden_import_attempts": [],
+  "started_utc": "2026-10-18T19:16:48.924498+00:00",
+  "error_type": "RuntimeError",
+  "error": "Host-frozen harness source differs",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-input-ownership-evidence/worker.py\", line 204, in worker\n    raise RuntimeError('Host-frozen harness source differs')\nRuntimeError: Host-frozen harness source differs\n",
+  "forbidden_modules": [],
+  "elapsed_seconds": 0.7013970110000001,
+  "finished_utc": "2026-10-18T19:16:49.625892+00:00"
+}

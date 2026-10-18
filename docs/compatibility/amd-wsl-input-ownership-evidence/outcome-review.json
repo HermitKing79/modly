@@ -1,0 +1,647 @@
+{
+  "schema": "modly.amd.wsl-input-ownership-independent-outcome-review.v1",
+  "reviewed_utc": "2026-10-18T19:29:36.927917+00:00",
+  "reviewer": "independent input_ownership_review subagent",
+  "classification": "PASS",
+  "findings": [],
+  "actual_independent_CPU_WSL_rerun_executed_once": true,
+  "frozen_source_manifest_sha256": "c3b2b10f5741a5f71957b02f5c0401ab95007336cc6f58f4d6128172fbcff839",
+  "source_sha256_after_independent": {
+    "docs/compatibility/amd-turret-texture-decode-resume-evidence/windows_owner.ps1": "6849a3ac5375cc1693ce306ea28fa4ce9bed32305b8926bc2f5e6034c75f1a94",
+    "docs/compatibility/amd-wsl-input-ownership-evidence/host.py": "171cf4ad620889dd397c33c9dd9ba0fa2f7643c82bd23707b739caabe60f2e06",
+    "docs/compatibility/amd-wsl-input-ownership-evidence/readonly_input.py": "fe41b6410c8897e4062366457de06c795261c6d19aea059d9f7f9851e5d2d98e",
+    "docs/compatibility/amd-wsl-input-ownership-evidence/test_harness.py": "b53f5abe4755337dbcffd9e8ca471dd7c29c8e9401213cea915a4fd1e695b3e8",
+    "docs/compatibility/amd-wsl-input-ownership-evidence/test_readonly_input.py": "950cf65a1a67f88088de410d561eed77c52dde2296978c01190e05099dc3e076",
+    "docs/compatibility/amd-wsl-input-ownership-evidence/test_windows_attest.py": "8953b2bcfa4d9dd1e2f1d6c92af026dbf20dab1b8ecf1e26ca29c7fd8f0ceb42",
+    "docs/compatibility/amd-wsl-input-ownership-evidence/windows_attest.py": "30ca2eea0aab7365961f602e7f4860a6cfed2ac40d95802e0064aaa101a9a712",
+    "docs/compatibility/amd-wsl-input-ownership-evidence/worker.py": "fd43a772e89582f7abbb5848e24132f4788c16f37dc0882e8aa9ec2cab98e379",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "10a2792b47ab24ec64cf5d911c37fa12ac789a1d7134c5221d0479ced1bdb989",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "0998c6e0c9a8d5c262b6f258f60fb11d82e8b51aec2c5fd48c771c33ef999f57",
+    "experimental/extensions/trellis2-amd/inference_texture/__init__.py": "26c39bac412ce88a65b9a4003218cf4709f7020dd4b752d520664282ffa5e72e",
+    "experimental/extensions/trellis2-amd/inference_texture/_source.py": "11ae08f720b1f09414bd3ce6ce5fe8ac166f9bc1f712e7768b2db7399652159c",
+    "experimental/extensions/trellis2-amd/inference_texture/inputs.py": "603851fd622b4e53d9d484bd0c08d201b4b43b35a3abc1650b38b094a3280ed3",
+    "experimental/extensions/trellis2-amd/inference_texture/profile.py": "4cbb0ca7f201201bf8bbd8cd093575eec89868480cb47ed00d4078915bb5b368",
+    "experimental/extensions/trellis2-amd/texture_decoder_loader.py": "409bf691bb3d7f3638d40cb46f02250111249af31f19a4377345da84ec2fb988",
+    "scripts/compatibility/amd_texture_decoder_inputs.py": "87bd6437412df561100b174e945c2fa040a9c02ee1ac2ea8c70a325b8f1a3d85",
+    "scripts/compatibility/amd_texture_field_artifact.py": "77d9592662653413e9b40f81741e47e2a23739e9e5d013d48b6cefff1831d3b5",
+    "scripts/compatibility/amd_texture_sampling_artifact.py": "5eaf35c08cf2e96f46dfe8bb32fa835c079ef34ce5a322a0afd411ee7cf9474c"
+  },
+  "all_18_source_hashes_unchanged": true,
+  "source_bytes_verified_before_and_after": true,
+  "Windows_attestation_sha256": "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd",
+  "Windows_ownership_before_after": {
+    "before_receipt_sha256": "9d849284b07742667a654135f387b6cb9aa88b93da9e3a47c7a7b759f2c7d9c5",
+    "after_receipt_sha256": "36dcc01c9e00b700c6ac64b2a5dd1abd49208c915f936c8b4b3191fbbf734143",
+    "before": {
+      "schema": "modly.amd.wsl-input-ownership-independent-Windows-check.v1",
+      "phase": "before-independent-CPU",
+      "started_utc": "2026-10-18T19:27:27.278366+00:00",
+      "finished_utc": "2026-10-18T19:27:53.292174+00:00",
+      "helper_sha256": "30ca2eea0aab7365961f602e7f4860a6cfed2ac40d95802e0064aaa101a9a712",
+      "command": [
+        "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-input-ownership-evidence\\windows_attest.py",
+        "check",
+        "--attestation",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-input-ownership-48ad081\\windows-input-attestation.json",
+        "--expected-sha256",
+        "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd"
+      ],
+      "returncode": 0,
+      "result": {
+        "schema": "modly.windows-exact-input-attestation-check.v1",
+        "passed": true,
+        "files": 5,
+        "attestation_sha256": "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd",
+        "current_sid": "S-1-5-21-3582664715-2766927308-497596791-1001"
+      },
+      "stderr": ""
+    },
+    "after": {
+      "schema": "modly.amd.wsl-input-ownership-independent-Windows-check.v1",
+      "phase": "after-independent-CPU",
+      "started_utc": "2026-10-18T19:28:36.609130+00:00",
+      "finished_utc": "2026-10-18T19:29:03.556296+00:00",
+      "helper_sha256": "30ca2eea0aab7365961f602e7f4860a6cfed2ac40d95802e0064aaa101a9a712",
+      "command": [
+        "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-input-ownership-evidence\\windows_attest.py",
+        "check",
+        "--attestation",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-input-ownership-48ad081\\windows-input-attestation.json",
+        "--expected-sha256",
+        "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd"
+      ],
+      "returncode": 0,
+      "result": {
+        "schema": "modly.windows-exact-input-attestation-check.v1",
+        "passed": true,
+        "files": 5,
+        "attestation_sha256": "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd",
+        "current_sid": "S-1-5-21-3582664715-2766927308-497596791-1001"
+      },
+      "stderr": ""
+    }
+  },
+  "CPU_verdict": {
+    "schema": "modly.amd.wsl-input-cpu-verdict.v1",
+    "classification": "PASS",
+    "mode": "independent",
+    "CPU_only": true,
+    "GPU_authorized": false,
+    "model_authorized": false,
+    "owned_containment_verified": true,
+    "worker_classification": "CPU_PREPARED",
+    "production_supervisor_exit": 1,
+    "production_supervisor_classification": "UNKNOWN",
+    "production_GPU_contract_unused": true
+  },
+  "runtime": {
+    "uid": 1000,
+    "euid": 1000,
+    "gid": 1000,
+    "egid": 1000,
+    "groups": [
+      1000
+    ],
+    "executable": "/opt/modly-wsl/venv/bin/python",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "prefix": "/opt/modly-wsl/venv",
+    "isolated": 1,
+    "dont_write_bytecode": true,
+    "pycache_prefix": "/home/modly/input-ownership-forbidden-pyc-independent"
+  },
+  "NumPy": {
+    "version": "2.2.6",
+    "path": "/home/modly/native-decoder-preparation-6dd94a85/site-packages/numpy/__init__.py"
+  },
+  "worker_seconds": 6.005626927999999,
+  "host_seconds": 20.90599999999904,
+  "prepared_metadata_identical_to_root_acceptance": true,
+  "prepared_metadata": {
+    "verified": true,
+    "cpu_only": true,
+    "profile": {
+      "schema": "modly.amd.brick-guided-pbr-profile.v1",
+      "name": "brick-1957891-v1",
+      "initial_rows": 4430,
+      "parent_rows": [
+        4430,
+        21391,
+        97313,
+        438684
+      ],
+      "child_rows": [
+        21391,
+        97313,
+        438684,
+        1957891
+      ],
+      "final_rows": 1957891,
+      "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+      "geometry_contract": {
+        "final_support_profile": "brick-1957891-v1",
+        "host_evidence_directory": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/final-support-c9447dd/decode/run/guest",
+        "initial_count": 4430,
+        "input_paths": {
+          "coords.npy": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-coordinates.npy",
+          "shape-latent-denormalized.npy": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/shape/run/scratch/shape-latent-denormalized.npy"
+        },
+        "input_sha256": {
+          "coords.npy": "17a8ddc94edaa9da5b02834157eef9f8d4f7f99bfa8e2f4d2b5806f1b1cfe93c",
+          "shape-latent-denormalized.npy": "e6a6eec09029db43b7b2356ee71a943ad2f225c45d48a03bfaa519a031b8c808"
+        },
+        "large_convolution_tiling": true,
+        "maximum_final_rows": 1957891,
+        "maximum_intermediate_rows": 1000000,
+        "native_stage": "/home/modly/native-decoder-preparation-6dd94a85",
+        "output_directory": "/home/modly/run-brick-final-support-c9447dd/geometry",
+        "repo_root": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof",
+        "schema": "modly.amd.neural-run.v1",
+        "scratch_directory": "/home/modly/run-brick-final-support-c9447dd/scratch",
+        "source_job_sha256": "b92aade7aca2e832fbf425ec9d4e54d40aa7ffa4b4afdea54c38f71f61b8e62f"
+      },
+      "texture_sha256": "4c74343c961e74bf3cfde4c24bd2a21b23063e17f0468b7f3049311fa9dc4289",
+      "geometry_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+      "texture_sidecar_sha256": "25adb1a50b8b31900ebc56d87f45b7fe23dee9305d97b458f70a60799d59e2a0",
+      "geometry_sidecar_sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407",
+      "initial_coordinates_sha256": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520",
+      "final_coordinates_sha256": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+      "checkpoint_sha256": "97ea69addea2ecd9312910f5f548234665eef51c088386180b7cd5b258645e3c",
+      "config_sha256": "22074e4ab5b28e2b72d33a3fe61bf416134b89e12d0fc5c729f37da75da0c4d1",
+      "checkpoint_header_sha256": "ad3ed458569d937eace6ac42d9b6aa83853d654ebd0847791bbf19e2e31ab02b",
+      "source_pins": {
+        "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "0998c6e0c9a8d5c262b6f258f60fb11d82e8b51aec2c5fd48c771c33ef999f57",
+        "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "10a2792b47ab24ec64cf5d911c37fa12ac789a1d7134c5221d0479ced1bdb989",
+        "scripts/compatibility/amd_texture_decoder_inputs.py": "87bd6437412df561100b174e945c2fa040a9c02ee1ac2ea8c70a325b8f1a3d85",
+        "scripts/compatibility/amd_texture_sampling_artifact.py": "5eaf35c08cf2e96f46dfe8bb32fa835c079ef34ce5a322a0afd411ee7cf9474c",
+        "scripts/compatibility/amd_texture_field_artifact.py": "77d9592662653413e9b40f81741e47e2a23739e9e5d013d48b6cefff1831d3b5",
+        "experimental/extensions/trellis2-amd/texture_decoder_loader.py": "409bf691bb3d7f3638d40cb46f02250111249af31f19a4377345da84ec2fb988"
+      }
+    },
+    "profile_sha256": "cbad376b38c69943defe59e0273817dad9f8cb044ea9b600768eb62f7e51e5c0",
+    "run_contract_sha256": "82bf47920f667a3a445d5e70297a0057fae78a073d7ae9c903f0827319a8dfdd",
+    "parent_rows": [
+      4430,
+      21391,
+      97313,
+      438684
+    ],
+    "child_rows": [
+      21391,
+      97313,
+      438684,
+      1957891
+    ],
+    "texture_path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent.safetensors",
+    "texture_sha256": "4c74343c961e74bf3cfde4c24bd2a21b23063e17f0468b7f3049311fa9dc4289",
+    "texture_sidecar_sha256": "25adb1a50b8b31900ebc56d87f45b7fe23dee9305d97b458f70a60799d59e2a0",
+    "geometry_path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/shape-decoded.safetensors",
+    "geometry_sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "geometry_sidecar_sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407",
+    "texture_tensors": {
+      "raw": {
+        "dtype": "F32",
+        "shape": [
+          4430,
+          32
+        ],
+        "tensor_bytes": 567040,
+        "sha256": "f9e95e79027efa9d1317b8d269e951fb71accbe41bf718bf8d333308583ec4a4"
+      },
+      "denormalized": {
+        "dtype": "F32",
+        "shape": [
+          4430,
+          32
+        ],
+        "tensor_bytes": 567040,
+        "sha256": "ad6e31cc89b0b94604aa0a9f61b6034eb00005ec82505e93ca2e16d572642648"
+      },
+      "coords": {
+        "dtype": "I32",
+        "shape": [
+          4430,
+          4
+        ],
+        "tensor_bytes": 70880,
+        "sha256": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520"
+      },
+      "noise": {
+        "dtype": "F32",
+        "shape": [
+          4430,
+          32
+        ],
+        "tensor_bytes": 567040,
+        "sha256": "c0a45ef54c391fb3f05d6137f097e351f97ca135c51deb24f208e1746f3b27e3"
+      }
+    },
+    "geometry_tensors": {
+      "features": {
+        "dtype": "F32",
+        "shape": [
+          1957891,
+          7
+        ],
+        "tensor_bytes": 54820948,
+        "sha256": "5eedc14f04267303cc9ac344270f7141c2c2d4a94e0c0510585928757a4b0c52"
+      },
+      "coordinates": {
+        "dtype": "I32",
+        "shape": [
+          1957891,
+          4
+        ],
+        "tensor_bytes": 31326256,
+        "sha256": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976"
+      },
+      "subdivision_0_coordinates": {
+        "dtype": "I32",
+        "shape": [
+          4430,
+          4
+        ],
+        "tensor_bytes": 70880,
+        "sha256": "e350ce386f21a9ee8473fda12a8839bf8c37ae0c1375c34c56cea88f81859520"
+      },
+      "subdivision_1_coordinates": {
+        "dtype": "I32",
+        "shape": [
+          21391,
+          4
+        ],
+        "tensor_bytes": 342256,
+        "sha256": "16ecc9780a85d722e83fdf52ed3841e7038a69d203f086a0524094a63f18a594"
+      },
+      "subdivision_2_coordinates": {
+        "dtype": "I32",
+        "shape": [
+          97313,
+          4
+        ],
+        "tensor_bytes": 1557008,
+        "sha256": "8f1c7d4bfb4f031965f2e095929fa592b394eb60841d02a786805e08f707d81d"
+      },
+      "subdivision_3_coordinates": {
+        "dtype": "I32",
+        "shape": [
+          438684,
+          4
+        ],
+        "tensor_bytes": 7018944,
+        "sha256": "ab09fb4a330c0a07aead43193aeec79e6ea9b1efa85c62aeb4ca810a0f79d19e"
+      },
+      "subdivision_0_logits": {
+        "dtype": "BF16",
+        "shape": [
+          4430,
+          8
+        ],
+        "tensor_bytes": 70880,
+        "sha256": "9c31de9c275fa78590743bb9ec7bf0accc3cab7f92e4f3096e99162d8963f07e"
+      },
+      "subdivision_1_logits": {
+        "dtype": "BF16",
+        "shape": [
+          21391,
+          8
+        ],
+        "tensor_bytes": 342256,
+        "sha256": "c519845ae44a8e30a83038de03578b7cecd8aaf2fcebdb6c1e437e20208a538a"
+      },
+      "subdivision_2_logits": {
+        "dtype": "BF16",
+        "shape": [
+          97313,
+          8
+        ],
+        "tensor_bytes": 1557008,
+        "sha256": "6f74789f5076a42399ec6cf6048a792d1e4953fac3294597bceb717a74e965ba"
+      },
+      "subdivision_3_logits": {
+        "dtype": "BF16",
+        "shape": [
+          438684,
+          8
+        ],
+        "tensor_bytes": 7018944,
+        "sha256": "285f0adba1078694c3112a2ef8c0afbeb0779e951f65ffdaf48cd399cc524304"
+      }
+    },
+    "sources": {
+      "trellis2/modules/sparse/spatial/spatial2channel.py": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c",
+      "trellis2/models/sc_vaes/sparse_unet_vae.py": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce"
+    },
+    "decoder_sources": {
+      "models/sc_vaes/sparse_unet_vae.py": "c9ce51db70bb1374c8bdc858129f6ff1170af1447e5210d434b7ebb289dbd2ce",
+      "modules/utils.py": "7e833200485f47e5cb02950f383a3266932cba78fde927cd2f49923220f4058e",
+      "modules/norm.py": "72824f6e9a1df993f42cc999a4e0b214400946606d20120b289d74d10c2afd00",
+      "modules/sparse/basic.py": "e867e429b9c2fe154000725596b626273fb567025b9c232f3cc79140f00605b7",
+      "modules/sparse/linear.py": "05cb619ff9cceb27674fc7bbb5aa2bcba93d1bf328d1f3340bb98c0f1240b413",
+      "modules/sparse/conv/conv.py": "a1e9f62fdf70f5443967a81b4ca99c0c863d20b063b44ffe264b0fd68bf3e5e3",
+      "modules/sparse/conv/conv_flex_gemm.py": "281fa1c8449732a94d99a24facb437600ab08d8185214d8434008456d56b83d8",
+      "modules/sparse/spatial/spatial2channel.py": "f36819339e48a89ed368f45feb0987309de23a4fe1d7d43eb347ab30a0b9f09c"
+    },
+    "coordinate_order": "original C2S parent-major; child x bit0, y bit1, z bit2",
+    "all_four_masks_and_original_child_orders_verified": true,
+    "guide_BF16_bytes_preserved": true,
+    "final_geometry_coordinate_order_exact": true,
+    "checkpoint_header_only": true,
+    "model_imported": false,
+    "gpu_initialized": false
+  },
+  "acceptance_security_results": {
+    "all_passed": true,
+    "tests": [
+      {
+        "name": "altered_hash",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Exact path/hash/size input binding differs"
+      },
+      {
+        "name": "foreign_path",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Exact path/hash/size input binding differs"
+      },
+      {
+        "name": "Windows_owner_mismatch",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Windows input ownership mismatch"
+      },
+      {
+        "name": "Windows_hardlink",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Stable Windows single-link file ID required"
+      },
+      {
+        "name": "Windows_reparse",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Unsafe Windows ancestor ownership/type"
+      },
+      {
+        "name": "foreign_actual_read",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Foreign read-only input path"
+      },
+      {
+        "name": "traversal_actual_reader",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Artifact root must already be resolved without aliases"
+      },
+      {
+        "name": "foreign_actual_reader",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Foreign read-only input path"
+      },
+      {
+        "name": "bounded_read_too_small",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Authenticated input exceeds caller byte bound"
+      },
+      {
+        "name": "read_only_writer",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "This exact input capability is read-only"
+      },
+      {
+        "name": "original_reader_altered_hash",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Pinned input/source SHA256 differs: /mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent.safetensors"
+      },
+      {
+        "name": "descriptor_alias_read",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Foreign read-only input path"
+      },
+      {
+        "name": "guest_ownership_binding_mismatch",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Input ownership/file identity changed"
+      },
+      {
+        "name": "historical_UID_predicate_unchanged",
+        "passed": true,
+        "rejection": "ValueError",
+        "message": "Artifact paths must be owned by the current user"
+      },
+      {
+        "name": "complete_genuine_inputs_prepare",
+        "passed": true
+      },
+      {
+        "name": "independent_original_array_revalidation",
+        "passed": true
+      }
+    ],
+    "bounded_input_reads": [
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent.safetensors",
+        "bytes": 1814784,
+        "sha256": "4c74343c961e74bf3cfde4c24bd2a21b23063e17f0468b7f3049311fa9dc4289"
+      },
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent-metadata.json",
+        "bytes": 39304,
+        "sha256": "25adb1a50b8b31900ebc56d87f45b7fe23dee9305d97b458f70a60799d59e2a0"
+      },
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/shape-decoded.safetensors",
+        "bytes": 104148612,
+        "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861"
+      },
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/provenance.json",
+        "bytes": 26328,
+        "sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407"
+      },
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/run-contract.json",
+        "bytes": 1449,
+        "sha256": "4676626d1061e6cd7090b560f952a974a584f8ea9e6218378b7902294b93bd4f"
+      },
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/run-contract.json",
+        "bytes": 1449,
+        "sha256": "4676626d1061e6cd7090b560f952a974a584f8ea9e6218378b7902294b93bd4f"
+      },
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent-metadata.json",
+        "bytes": 39304,
+        "sha256": "25adb1a50b8b31900ebc56d87f45b7fe23dee9305d97b458f70a60799d59e2a0"
+      },
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/provenance.json",
+        "bytes": 26328,
+        "sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407"
+      },
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent.safetensors",
+        "bytes": 1814784,
+        "sha256": "4c74343c961e74bf3cfde4c24bd2a21b23063e17f0468b7f3049311fa9dc4289"
+      },
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent-metadata.json",
+        "bytes": 39304,
+        "sha256": "25adb1a50b8b31900ebc56d87f45b7fe23dee9305d97b458f70a60799d59e2a0"
+      },
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent.safetensors",
+        "bytes": 1814784,
+        "sha256": "4c74343c961e74bf3cfde4c24bd2a21b23063e17f0468b7f3049311fa9dc4289"
+      },
+      {
+        "path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/shape-decoded.safetensors",
+        "bytes": 104148612,
+        "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861"
+      }
+    ],
+    "genuine_prepare_source_sha256": "603851fd622b4e53d9d484bd0c08d201b4b43b35a3abc1650b38b094a3280ed3",
+    "writer_capability": false,
+    "historical_readers_modified": false,
+    "numpy": {
+      "version": "2.2.6",
+      "path": "/home/modly/native-decoder-preparation-6dd94a85/site-packages/numpy/__init__.py"
+    },
+    "guest_input_identities": {
+      "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent.safetensors": [
+        71,
+        5348024559013360,
+        33279,
+        0,
+        0,
+        1,
+        1814784,
+        1792107304583245900
+      ],
+      "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent-metadata.json": [
+        71,
+        5348024559013366,
+        33279,
+        0,
+        0,
+        1,
+        39304,
+        1792107304584780600
+      ],
+      "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/shape-decoded.safetensors": [
+        71,
+        5910974512167192,
+        33279,
+        0,
+        0,
+        1,
+        104148612,
+        1792079411497276400
+      ],
+      "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/provenance.json": [
+        71,
+        2533274791639352,
+        33279,
+        0,
+        0,
+        1,
+        26328,
+        1792079411586260900
+      ],
+      "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/run-contract.json": [
+        71,
+        8162774325852464,
+        33279,
+        0,
+        0,
+        1,
+        1449,
+        1792079411575471000
+      ]
+    }
+  },
+  "prepared_array_objects_observed": 15,
+  "prepared_arrays_released": true,
+  "original_inputs_prepare_source_sha256": "603851fd622b4e53d9d484bd0c08d201b4b43b35a3abc1650b38b094a3280ed3",
+  "original_inputs_prepare_direct_call": "readonly_input.prepare invokes the source-pinned private inputs.prepare(profile, texture_path=exact saved texture, geometry_path=exact saved geometry); original prepare and require_prepared both completed.",
+  "checkpoint_access": {
+    "header_only": true,
+    "bytes": 26800,
+    "checkpoint_tensor_payload_bytes_read": 0,
+    "configured_header_sha256": "ad3ed458569d937eace6ac42d9b6aa83853d654ebd0847791bbf19e2e31ab02b"
+  },
+  "forbidden_import_attempts": [],
+  "forbidden_modules": [],
+  "GPU_authorized": false,
+  "model_authorized": false,
+  "model_imported": false,
+  "gpu_initialized": false,
+  "containment": {
+    "worker_returncode": 0,
+    "observer_healthy": true,
+    "windows_job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "windows_job_grace": {
+      "empty": true,
+      "seconds": 0.01599999999962165,
+      "limit_seconds": 5.0
+    },
+    "distro_termination_returncode": 0,
+    "host_error_keys": []
+  },
+  "marker_scope": {
+    "CPU_marker": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-input-ownership-evidence\\CPU-independent-attempt-started.json",
+    "production_GPU_contract_unused": true,
+    "production_attempt_marker_not_invoked_by_reviewed_harness": true,
+    "full_protected_tree_preservation_after_audit": "Root-owned follow-up"
+  },
+  "artifact_sha256": {
+    "review.json": "d905e5e481647dcf3d7d9a119d71e81ac3cfc63a2a94f7036d74777e9dcc9283",
+    "candidate-identities.json": "c3b2b10f5741a5f71957b02f5c0401ab95007336cc6f58f4d6128172fbcff839",
+    "CPU-independent-attempt-started.json": "7bd0dafd745583c339163e07f135aeb04ade6ccd41f37ab5cac12ccd47704527",
+    "independent/CPU-verdict.json": "b840ec645ef08949d06dd749a87a2c4261232a3281b4e90c1c12a79db28338f8",
+    "independent/guest/results.json": "ee57ac8ce70063a563e52255314ee90738a8ea4ea88a68c73596fd8a81cce11a",
+    "independent/results.json": "ce11de3e808083b5b5cb141b8000111be520dfb352f4927b31eb3506d912bc9f",
+    "independent/helper-preflight.json": "45a267beb20b56201f3e448560fbe086de7f3f4e8ad4b33933cda0229ec37c1a",
+    "independent/phases.jsonl": "5dfe44f90a95b5ff0d1fde1ad7f95b663796085774e3f4efe6734b6e4ec645a8",
+    "independent/worker.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "independent/worker.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "acceptance/CPU-verdict.json": "04c76a996c5a3a2175c56fb281e9d416c1820af3e238a6031e4907ae94225ac5",
+    "acceptance/guest/results.json": "ccc757849932aae42eb6161bd33bce9fd2fcc7676b620bb643a217c78637c401"
+  },
+  "execution_scope": {
+    "additional_WSL_invocations_by_reviewer": 1,
+    "additional_GPU_or_model_execution": false,
+    "additional_tests_after_static_review": false,
+    "original_or_harness_source_edits": false,
+    "reviewer_created_files": [
+      "private independent-windows-before.json",
+      "private independent-windows-after.json",
+      "public outcome-review.json"
+    ],
+    "standard_host_CPU_independent_evidence_created": true
+  },
+  "scope_limits": [
+    "Confirms CPU saved-input preparation, ownership policy and containment only.",
+    "No GPU/model execution, decoder forward, texture-field production, PBR result or end-to-end performance claim.",
+    "Root owns the final protected artifact preservation audit and publication."
+  ]
+}

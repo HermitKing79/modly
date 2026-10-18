@@ -1,0 +1,13 @@
+{
+  "schema": "modly.amd.wsl-input-cpu-verdict.v1",
+  "classification": "PASS",
+  "mode": "diagnose-confirmation",
+  "CPU_only": true,
+  "GPU_authorized": false,
+  "model_authorized": false,
+  "owned_containment_verified": true,
+  "worker_classification": "CPU_DIAGNOSED",
+  "production_supervisor_exit": 1,
+  "production_supervisor_classification": "UNKNOWN",
+  "production_GPU_contract_unused": true
+}

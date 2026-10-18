@@ -1,0 +1,698 @@
+{
+  "classification": "UNKNOWN",
+  "distro": "Modly-AMD-Ubuntu-24.04",
+  "started_utc": "2026-10-18T19:18:39.614931+00:00",
+  "script_sha256": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2",
+  "containment_scope": "Windows Job: wsl.exe client; Linux: guest timeout and named-distro termination",
+  "observation_before": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":71,\"RecordId\":14603,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792351070797)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 0.922,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 71,
+          "RecordId": 14603,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1792351070797)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "worker_command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/env",
+    "PYTORCH_TUNABLEOP_ENABLED=0",
+    "PYTORCH_TUNABLEOP_TUNING=0",
+    "PYTORCH_TUNABLEOP_RECORD_UNTUNED=0",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "90s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-I",
+    "-B",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-input-ownership-evidence/worker.py",
+    "--worker",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-input-ownership-evidence/diagnose-confirmation/guest",
+    "--mode",
+    "diagnose-confirmation",
+    "--expected-worker-sha256",
+    "48f2c369869a6069834368ad611f55df118333d3a7bc769a497eddebe776a08f",
+    "--expected-host-sha256",
+    "7e2305ace461e37c544e119355410aadc0ea81796c7b31e7f0200a5f1f116209"
+  ],
+  "observation_after_attachment": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":14611,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792351126900)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 1.625,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 291,
+          "RecordId": 14611,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1792351126900)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "worker_returncode": 0,
+  "windows_job_grace": {
+    "empty": true,
+    "seconds": 0.0,
+    "limit_seconds": 5.0
+  },
+  "windows_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "distro_termination": {
+    "command": [
+      "wsl.exe",
+      "--terminate",
+      "Modly-AMD-Ubuntu-24.04"
+    ],
+    "returncode": 0,
+    "stdout": "T\u0000h\u0000e\u0000 \u0000o\u0000p\u0000e\u0000r\u0000a\u0000t\u0000i\u0000o\u0000n\u0000 \u0000c\u0000o\u0000m\u0000p\u0000l\u0000e\u0000t\u0000e\u0000d\u0000 \u0000s\u0000u\u0000c\u0000c\u0000e\u0000s\u0000s\u0000f\u0000u\u0000l\u0000l\u0000y\u0000.\u0000 \u0000\r\u0000\n\u0000",
+    "stderr": ""
+  },
+  "observation_after_exit": {
+    "returncode": 0,
+    "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":14611,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792351126900)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+    "stderr": "",
+    "timed_out": false,
+    "elapsed_seconds": 0.922,
+    "observation": {
+      "controllers": [
+        {
+          "Name": "AMD Radeon RX 9070 XT",
+          "DriverVersion": "32.0.31041.1004",
+          "DriverDate": "/Date(1786924800000)/",
+          "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+          "Status": "OK"
+        }
+      ],
+      "events": [],
+      "observer": {
+        "edition": "Desktop",
+        "system_log_probe": {
+          "Id": 291,
+          "RecordId": 14611,
+          "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+          "TimeCreated": "/Date(1792351126900)/"
+        },
+        "version": "5.1.26100.9711",
+        "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+      }
+    }
+  },
+  "observations": [
+    {
+      "started_monotonic": 32128.296,
+      "ended_monotonic": 32129.234,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":71,\"RecordId\":14603,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792351070797)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.938,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 71,
+              "RecordId": 14603,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792351070797)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 32133.296,
+      "ended_monotonic": 32134.218,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":71,\"RecordId\":14603,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792351070797)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.922,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 71,
+              "RecordId": 14603,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792351070797)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 32138.296,
+      "ended_monotonic": 32139.921,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":14611,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792351126900)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 1.625,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 14611,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792351126900)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    },
+    {
+      "started_monotonic": 32143.312,
+      "ended_monotonic": 32144.234,
+      "capture": {
+        "returncode": 0,
+        "stdout": "{\"controllers\":[{\"Name\":\"AMD Radeon RX 9070 XT\",\"DriverVersion\":\"32.0.31041.1004\",\"DriverDate\":\"\\/Date(1786924800000)\\/\",\"PNPDeviceID\":\"PCI\\\\VEN_1002\\u0026DEV_7550\\u0026SUBSYS_061A1043\\u0026REV_C0\\\\6\\u0026340A6C86\\u00260\\u002600000019\",\"Status\":\"OK\"}],\"events\":[],\"observer\":{\"edition\":\"Desktop\",\"system_log_probe\":{\"Id\":291,\"RecordId\":14611,\"ProviderName\":\"Microsoft-Windows-Hyper-V-VmSwitch\",\"TimeCreated\":\"\\/Date(1792351126900)\\/\"},\"version\":\"5.1.26100.9711\",\"diagnostics_module\":\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\Modules\\\\Microsoft.PowerShell.Diagnostics\\\\Microsoft.PowerShell.Diagnostics.psd1\"}}\r\n",
+        "stderr": "",
+        "timed_out": false,
+        "elapsed_seconds": 0.922,
+        "observation": {
+          "controllers": [
+            {
+              "Name": "AMD Radeon RX 9070 XT",
+              "DriverVersion": "32.0.31041.1004",
+              "DriverDate": "/Date(1786924800000)/",
+              "PNPDeviceID": "PCI\\VEN_1002&DEV_7550&SUBSYS_061A1043&REV_C0\\6&340A6C86&0&00000019",
+              "Status": "OK"
+            }
+          ],
+          "events": [],
+          "observer": {
+            "edition": "Desktop",
+            "system_log_probe": {
+              "Id": 291,
+              "RecordId": 14611,
+              "ProviderName": "Microsoft-Windows-Hyper-V-VmSwitch",
+              "TimeCreated": "/Date(1792351126900)/"
+            },
+            "version": "5.1.26100.9711",
+            "diagnostics_module": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Diagnostics\\Microsoft.PowerShell.Diagnostics.psd1"
+          }
+        }
+      }
+    }
+  ],
+  "observer_healthy": true,
+  "worker": {
+    "schema": "modly.amd.wsl-input-cpu-worker.v1",
+    "mode": "diagnose-confirmation",
+    "classification": "CPU_DIAGNOSED",
+    "CPU_only": true,
+    "gate_authorized": true,
+    "GPU_authorized": false,
+    "model_authorized": false,
+    "forbidden_import_attempts": [],
+    "started_utc": "2026-10-18T19:18:49.261471+00:00",
+    "runtime": {
+      "uid": 1000,
+      "euid": 1000,
+      "gid": 1000,
+      "egid": 1000,
+      "groups": [
+        1000
+      ],
+      "executable": "/opt/modly-wsl/venv/bin/python",
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "prefix": "/opt/modly-wsl/venv",
+      "isolated": 1,
+      "dont_write_bytecode": true
+    },
+    "tunable_environment": {
+      "PYTORCH_TUNABLEOP_ENABLED": "0",
+      "PYTORCH_TUNABLEOP_TUNING": "0",
+      "PYTORCH_TUNABLEOP_RECORD_UNTUNED": "0"
+    },
+    "diagnosis": {
+      "predicate_provenance": {
+        "reader_path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_texture_sampling_artifact.py",
+        "reader_sha256": "5eaf35c08cf2e96f46dfe8bb32fa835c079ef34ce5a322a0afd411ee7cf9474c",
+        "selection": "Exact unmodified source AST FunctionDef bodies; no reader imports executed",
+        "functions": {
+          "_plain": {
+            "line": 92,
+            "end_line": 104,
+            "source_sha256": "d1a84c2ceb906d08f705cb551ce443093605c78a28ebc9095fedd112db11715b"
+          },
+          "approved_root": {
+            "line": 107,
+            "end_line": 119,
+            "source_sha256": "3ce611fb02fdc30dd7f38d23994782f335716c2f740c1e157a3e21563b137f6c"
+          }
+        }
+      },
+      "texture_file": {
+        "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent.safetensors",
+        "uid": 0,
+        "gid": 0,
+        "mode": 33279,
+        "mode_octal": "0o100777",
+        "permissions": "-rwxrwxrwx",
+        "device": 71,
+        "inode": 5348024559013360,
+        "nlink": 1,
+        "size": 1814784,
+        "mtime_ns": 1792107304583245900,
+        "ctime_ns": 1792107304583245900,
+        "type": "regular",
+        "file_attributes": 0,
+        "reparse": false,
+        "canonical_path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent.safetensors",
+        "already_canonical": true,
+        "genuine_plain": "REJECTED",
+        "rejection_type": "ValueError",
+        "rejection": "Artifact paths must be owned by the current user"
+      },
+      "ancestor_order": "artifact root, then parent directories through /",
+      "ancestors": [
+        {
+          "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent",
+          "uid": 0,
+          "gid": 0,
+          "mode": 16895,
+          "mode_octal": "0o40777",
+          "permissions": "drwxrwxrwx",
+          "device": 71,
+          "inode": 5066549582302538,
+          "nlink": 1,
+          "size": 4096,
+          "mtime_ns": 1792107304584780600,
+          "ctime_ns": 1792107304584780600,
+          "type": "directory",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent",
+          "already_canonical": true,
+          "approved_root_order": 0,
+          "genuine_plain": "REJECTED",
+          "rejection_type": "ValueError",
+          "rejection": "Artifact paths must be owned by the current user"
+        },
+        {
+          "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688",
+          "uid": 0,
+          "gid": 0,
+          "mode": 16895,
+          "mode_octal": "0o40777",
+          "permissions": "drwxrwxrwx",
+          "device": 71,
+          "inode": 11821949022095726,
+          "nlink": 1,
+          "size": 4096,
+          "mtime_ns": 1792107267031561500,
+          "ctime_ns": 1792107267031561500,
+          "type": "directory",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688",
+          "already_canonical": true,
+          "approved_root_order": 1,
+          "genuine_plain": "REJECTED",
+          "rejection_type": "ValueError",
+          "rejection": "Artifact paths must be owned by the current user"
+        },
+        {
+          "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts",
+          "uid": 0,
+          "gid": 0,
+          "mode": 16895,
+          "mode_octal": "0o40777",
+          "permissions": "drwxrwxrwx",
+          "device": 71,
+          "inode": 32369622323307765,
+          "nlink": 1,
+          "size": 4096,
+          "mtime_ns": 1792335558380868300,
+          "ctime_ns": 1792335558380868300,
+          "type": "directory",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts",
+          "already_canonical": true,
+          "approved_root_order": 2,
+          "genuine_plain": "REJECTED",
+          "rejection_type": "ValueError",
+          "rejection": "Artifact paths must be owned by the current user"
+        },
+        {
+          "path": "/mnt/c/Users/wattz/Documents",
+          "uid": 0,
+          "gid": 0,
+          "mode": 16895,
+          "mode_octal": "0o40777",
+          "permissions": "drwxrwxrwx",
+          "device": 71,
+          "inode": 24488322973832298,
+          "nlink": 1,
+          "size": 4096,
+          "mtime_ns": 1792028574356277500,
+          "ctime_ns": 1792028574356277500,
+          "type": "directory",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/mnt/c/Users/wattz/Documents",
+          "already_canonical": true,
+          "approved_root_order": 3,
+          "genuine_plain": "REJECTED",
+          "rejection_type": "ValueError",
+          "rejection": "Artifact paths must be owned by the current user"
+        },
+        {
+          "path": "/mnt/c/Users/wattz",
+          "uid": 0,
+          "gid": 0,
+          "mode": 16895,
+          "mode_octal": "0o40777",
+          "permissions": "drwxrwxrwx",
+          "device": 71,
+          "inode": 45598946227131489,
+          "nlink": 1,
+          "size": 4096,
+          "mtime_ns": 1791814675932825500,
+          "ctime_ns": 1791814675932825500,
+          "type": "directory",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/mnt/c/Users/wattz",
+          "already_canonical": true,
+          "approved_root_order": 4,
+          "genuine_plain": "REJECTED",
+          "rejection_type": "ValueError",
+          "rejection": "Artifact paths must be owned by the current user"
+        },
+        {
+          "path": "/mnt/c/Users",
+          "uid": 0,
+          "gid": 0,
+          "mode": 16749,
+          "mode_octal": "0o40555",
+          "permissions": "dr-xr-xr-x",
+          "device": 71,
+          "inode": 562949954609779,
+          "nlink": 1,
+          "size": 4096,
+          "mtime_ns": 1787411994199263100,
+          "ctime_ns": 1787411994199263100,
+          "type": "directory",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/mnt/c/Users",
+          "already_canonical": true,
+          "approved_root_order": 5,
+          "genuine_plain": "REJECTED",
+          "rejection_type": "ValueError",
+          "rejection": "Artifact paths must be owned by the current user"
+        },
+        {
+          "path": "/mnt/c",
+          "uid": 0,
+          "gid": 0,
+          "mode": 16895,
+          "mode_octal": "0o40777",
+          "permissions": "drwxrwxrwx",
+          "device": 71,
+          "inode": 1407374883553287,
+          "nlink": 1,
+          "size": 4096,
+          "mtime_ns": 1792340611561307200,
+          "ctime_ns": 1792340611561307200,
+          "type": "directory",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/mnt/c",
+          "already_canonical": true,
+          "approved_root_order": 6,
+          "genuine_plain": "REJECTED",
+          "rejection_type": "ValueError",
+          "rejection": "Artifact paths must be owned by the current user"
+        },
+        {
+          "path": "/mnt",
+          "uid": 0,
+          "gid": 0,
+          "mode": 16877,
+          "mode_octal": "0o40755",
+          "permissions": "drwxr-xr-x",
+          "device": 2096,
+          "inode": 8198,
+          "nlink": 7,
+          "size": 4096,
+          "mtime_ns": 1791965506045864422,
+          "ctime_ns": 1791965506045864422,
+          "type": "directory",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/mnt",
+          "already_canonical": true,
+          "approved_root_order": 7,
+          "genuine_plain": "REJECTED",
+          "rejection_type": "ValueError",
+          "rejection": "Artifact paths must be owned by the current user"
+        },
+        {
+          "path": "/",
+          "uid": 0,
+          "gid": 0,
+          "mode": 16877,
+          "mode_octal": "0o40755",
+          "permissions": "drwxr-xr-x",
+          "device": 2096,
+          "inode": 2,
+          "nlink": 22,
+          "size": 4096,
+          "mtime_ns": 1792351127582426333,
+          "ctime_ns": 1792351127582426333,
+          "type": "directory",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/",
+          "already_canonical": true,
+          "approved_root_order": 8,
+          "genuine_plain": "REJECTED",
+          "rejection_type": "ValueError",
+          "rejection": "Artifact paths must be owned by the current user"
+        }
+      ],
+      "first_genuine_plain_rejected_directory": {
+        "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent",
+        "index": 0,
+        "error_type": "ValueError",
+        "error": "Artifact paths must be owned by the current user"
+      },
+      "genuine_approved_root": {
+        "outcome": "REJECTED",
+        "error_type": "ValueError",
+        "error": "Artifact paths must be owned by the current user"
+      },
+      "covering_mounts": [
+        {
+          "mountpoint": "/",
+          "filesystem": "ext4",
+          "source": "/dev/sdd",
+          "mount_options": "rw,relatime",
+          "super_options": "rw,discard,errors=remount-ro,data=ordered",
+          "raw": "82 67 8:48 / / rw,relatime - ext4 /dev/sdd rw,discard,errors=remount-ro,data=ordered"
+        },
+        {
+          "mountpoint": "/mnt/c",
+          "filesystem": "9p",
+          "source": "C:\\134",
+          "mount_options": "rw,noatime",
+          "super_options": "rw,aname=drvfs;path=C:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6",
+          "raw": "133 82 0:71 / /mnt/c rw,noatime - 9p C:\\134 rw,aname=drvfs;path=C:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6"
+        }
+      ],
+      "effective_filesystem": {
+        "mountpoint": "/mnt/c",
+        "filesystem": "9p",
+        "source": "C:\\134",
+        "mount_options": "rw,noatime",
+        "super_options": "rw,aname=drvfs;path=C:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6",
+        "raw": "133 82 0:71 / /mnt/c rw,noatime - 9p C:\\134 rw,aname=drvfs;path=C:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6"
+      },
+      "mountinfo": {
+        "path": "/proc/self/mountinfo",
+        "text": "77 82 0:31 / /usr/lib/modules/6.18.33.2-microsoft-standard-WSL2 rw,nosuid,nodev,noatime - overlay none rw,lowerdir=/modules,upperdir=/lib/modules/6.18.33.2-microsoft-standard-WSL2/rw/upper,workdir=/lib/modules/6.18.33.2-microsoft-standard-WSL2/rw/work,uuid=on\n78 82 0:34 / /mnt/wsl rw,relatime shared:1 - tmpfs none rw\n79 82 0:36 / /usr/lib/wsl/drivers ro,nosuid,nodev,noatime - 9p drivers ro,aname=drivers;fmask=222;dmask=222,cache=0x5,access=client,msize=65536,trans=fd,rfd=8,wfd=8\n82 67 8:48 / / rw,relatime - ext4 /dev/sdd rw,discard,errors=remount-ro,data=ordered\n83 82 0:40 / /mnt/wslg rw,relatime shared:2 - tmpfs none rw\n84 83 8:48 / /mnt/wslg/distro ro,relatime shared:3 - ext4 /dev/sdd rw,discard,errors=remount-ro,data=ordered\n109 82 0:57 / /usr/lib/wsl/lib rw,nosuid,nodev,noatime - overlay none rw,lowerdir=/gpu_lib_packaged:/gpu_lib_inbox,upperdir=/gpu_lib/rw/upper,workdir=/gpu_lib/rw/work,uuid=on\n110 82 0:2 /init /init ro - rootfs rootfs rw,size=8159440k,nr_inodes=2039860\n111 82 0:6 / /dev rw,nosuid,relatime shared:13 - devtmpfs none rw,size=8159440k,nr_inodes=2039860,mode=755\n112 82 0:24 / /sys rw,nosuid,nodev,noexec,noatime shared:14 - sysfs sysfs rw\n113 82 0:61 / /proc rw,nosuid,nodev,noexec,noatime shared:15 - proc proc rw\n114 111 0:62 / /dev/pts rw,nosuid,noexec,noatime shared:16 - devpts devpts rw,gid=5,mode=620,ptmxmode=000\n115 82 0:63 / /run rw,nosuid,nodev shared:17 - tmpfs none rw,mode=755\n116 115 0:64 / /run/lock rw,nosuid,nodev,noexec,noatime shared:18 - tmpfs none rw\n117 115 0:65 / /run/shm rw,nosuid,nodev,noatime shared:19 - tmpfs none rw\n118 111 0:65 / /dev/shm rw,nosuid,nodev,noatime shared:19 - tmpfs none rw\n119 115 0:66 / /run/user rw,nosuid,nodev,noexec,noatime shared:20 - tmpfs none rw,mode=755\n120 113 0:35 / /proc/sys/fs/binfmt_misc rw,relatime shared:21 - binfmt_misc binfmt_misc rw\n122 112 0:25 / /sys/fs/cgroup rw,nosuid,nodev,noexec,relatime shared:23 - cgroup2 cgroup2 rw,nsdelegate\n128 83 0:42 /etc/versions.txt /mnt/wslg/versions.txt rw,relatime shared:24 - overlay none rw,lowerdir=/systemvhd,upperdir=/system/rw/upper,workdir=/system/rw/work,uuid=on\n130 83 0:42 /usr/share/doc /mnt/wslg/doc rw,relatime shared:25 - overlay none rw,lowerdir=/systemvhd,upperdir=/system/rw/upper,workdir=/system/rw/work,uuid=on\n132 82 0:40 /.X11-unix /tmp/.X11-unix ro,relatime shared:2 - tmpfs none rw\n133 82 0:71 / /mnt/c rw,noatime - 9p C:\\134 rw,aname=drvfs;path=C:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6\n134 82 0:72 / /mnt/d rw,noatime - 9p D:\\134 rw,aname=drvfs;path=D:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6\n135 82 0:73 / /mnt/e rw,noatime - 9p E:\\134 rw,aname=drvfs;path=E:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6\n136 119 0:40 /run/user /run/user rw,relatime shared:2 - tmpfs none rw\n137 111 0:74 / /dev/hugepages rw,nosuid,nodev,relatime shared:26 - hugetlbfs hugetlbfs rw,pagesize=2M\n138 111 0:39 / /dev/mqueue rw,nosuid,nodev,noexec,relatime shared:27 - mqueue mqueue rw\n139 112 0:8 / /sys/kernel/debug rw,nosuid,nodev,noexec,relatime shared:28 - debugfs debugfs rw\n140 112 0:13 / /sys/kernel/tracing rw,nosuid,nodev,noexec,relatime shared:29 - tracefs tracefs rw\n141 112 0:75 / /sys/fs/fuse/connections rw,nosuid,nodev,noexec,relatime shared:30 - fusectl fusectl rw\n221 112 0:22 / /sys/kernel/config rw,nosuid,nodev,noexec,relatime shared:31 - configfs configfs rw\n269 136 0:85 / /run/user/1000 rw,nosuid,nodev,relatime shared:294 - tmpfs tmpfs rw,size=1633036k,nr_inodes=408259,mode=700,uid=1000,gid=1000\n276 83 0:85 / /mnt/wslg/run/user/1000 rw,nosuid,nodev,relatime shared:294 - tmpfs tmpfs rw,size=1633036k,nr_inodes=408259,mode=700,uid=1000,gid=1000\n",
+        "metadata": {
+          "path": "/proc/self/mountinfo",
+          "uid": 1000,
+          "gid": 1000,
+          "mode": 33060,
+          "mode_octal": "0o100444",
+          "permissions": "-r--r--r--",
+          "device": 61,
+          "inode": 6034,
+          "nlink": 1,
+          "size": 0,
+          "mtime_ns": 1792351130437952781,
+          "ctime_ns": 1792351130437952781,
+          "type": "regular",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/proc/386/mountinfo",
+          "already_canonical": false
+        }
+      },
+      "proc_mounts": {
+        "path": "/proc/mounts",
+        "text": "none /usr/lib/modules/6.18.33.2-microsoft-standard-WSL2 overlay rw,nosuid,nodev,noatime,lowerdir=/modules,upperdir=/lib/modules/6.18.33.2-microsoft-standard-WSL2/rw/upper,workdir=/lib/modules/6.18.33.2-microsoft-standard-WSL2/rw/work,uuid=on 0 0\nnone /mnt/wsl tmpfs rw,relatime 0 0\ndrivers /usr/lib/wsl/drivers 9p ro,nosuid,nodev,noatime,aname=drivers;fmask=222;dmask=222,cache=0x5,access=client,msize=65536,trans=fd,rfd=8,wfd=8 0 0\n/dev/sdd / ext4 rw,relatime,discard,errors=remount-ro,data=ordered 0 0\nnone /mnt/wslg tmpfs rw,relatime 0 0\n/dev/sdd /mnt/wslg/distro ext4 ro,relatime,discard,errors=remount-ro,data=ordered 0 0\nnone /usr/lib/wsl/lib overlay rw,nosuid,nodev,noatime,lowerdir=/gpu_lib_packaged:/gpu_lib_inbox,upperdir=/gpu_lib/rw/upper,workdir=/gpu_lib/rw/work,uuid=on 0 0\nrootfs /init rootfs ro,size=8159440k,nr_inodes=2039860 0 0\nnone /dev devtmpfs rw,nosuid,relatime,size=8159440k,nr_inodes=2039860,mode=755 0 0\nsysfs /sys sysfs rw,nosuid,nodev,noexec,noatime 0 0\nproc /proc proc rw,nosuid,nodev,noexec,noatime 0 0\ndevpts /dev/pts devpts rw,nosuid,noexec,noatime,gid=5,mode=620,ptmxmode=000 0 0\nnone /run tmpfs rw,nosuid,nodev,mode=755 0 0\nnone /run/lock tmpfs rw,nosuid,nodev,noexec,noatime 0 0\nnone /run/shm tmpfs rw,nosuid,nodev,noatime 0 0\nnone /dev/shm tmpfs rw,nosuid,nodev,noatime 0 0\nnone /run/user tmpfs rw,nosuid,nodev,noexec,noatime,mode=755 0 0\nbinfmt_misc /proc/sys/fs/binfmt_misc binfmt_misc rw,relatime 0 0\ncgroup2 /sys/fs/cgroup cgroup2 rw,nosuid,nodev,noexec,relatime,nsdelegate 0 0\nnone /mnt/wslg/versions.txt overlay rw,relatime,lowerdir=/systemvhd,upperdir=/system/rw/upper,workdir=/system/rw/work,uuid=on 0 0\nnone /mnt/wslg/doc overlay rw,relatime,lowerdir=/systemvhd,upperdir=/system/rw/upper,workdir=/system/rw/work,uuid=on 0 0\nnone /tmp/.X11-unix tmpfs ro,relatime 0 0\nC:\\134 /mnt/c 9p rw,noatime,aname=drvfs;path=C:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6 0 0\nD:\\134 /mnt/d 9p rw,noatime,aname=drvfs;path=D:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6 0 0\nE:\\134 /mnt/e 9p rw,noatime,aname=drvfs;path=E:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6 0 0\nnone /run/user tmpfs rw,relatime 0 0\nhugetlbfs /dev/hugepages hugetlbfs rw,nosuid,nodev,relatime,pagesize=2M 0 0\nmqueue /dev/mqueue mqueue rw,nosuid,nodev,noexec,relatime 0 0\ndebugfs /sys/kernel/debug debugfs rw,nosuid,nodev,noexec,relatime 0 0\ntracefs /sys/kernel/tracing tracefs rw,nosuid,nodev,noexec,relatime 0 0\nfusectl /sys/fs/fuse/connections fusectl rw,nosuid,nodev,noexec,relatime 0 0\nconfigfs /sys/kernel/config configfs rw,nosuid,nodev,noexec,relatime 0 0\ntmpfs /run/user/1000 tmpfs rw,nosuid,nodev,relatime,size=1633036k,nr_inodes=408259,mode=700,uid=1000,gid=1000 0 0\ntmpfs /mnt/wslg/run/user/1000 tmpfs rw,nosuid,nodev,relatime,size=1633036k,nr_inodes=408259,mode=700,uid=1000,gid=1000 0 0\n",
+        "metadata": {
+          "path": "/proc/mounts",
+          "uid": 0,
+          "gid": 0,
+          "mode": 41471,
+          "mode_octal": "0o120777",
+          "permissions": "lrwxrwxrwx",
+          "device": 61,
+          "inode": 4026531842,
+          "nlink": 1,
+          "size": 11,
+          "mtime_ns": 1792351127538426332,
+          "ctime_ns": 1792351127538426332,
+          "type": "symlink",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/proc/386/mounts",
+          "already_canonical": false
+        }
+      },
+      "wsl_configuration": {
+        "path": "/etc/wsl.conf",
+        "text": "[boot]\nsystemd=true\n",
+        "metadata": {
+          "path": "/etc/wsl.conf",
+          "uid": 0,
+          "gid": 0,
+          "mode": 33188,
+          "mode_octal": "0o100644",
+          "permissions": "-rw-r--r--",
+          "device": 2096,
+          "inode": 1336,
+          "nlink": 1,
+          "size": 20,
+          "mtime_ns": 1788826509156168297,
+          "ctime_ns": 1791965396472981446,
+          "type": "regular",
+          "file_attributes": 0,
+          "reparse": false,
+          "canonical_path": "/etc/wsl.conf",
+          "already_canonical": true
+        }
+      },
+      "mnt_c": {
+        "path": "/mnt/c",
+        "uid": 0,
+        "gid": 0,
+        "mode": 16895,
+        "mode_octal": "0o40777",
+        "permissions": "drwxrwxrwx",
+        "device": 71,
+        "inode": 1407374883553287,
+        "nlink": 1,
+        "size": 4096,
+        "mtime_ns": 1792340611561307200,
+        "ctime_ns": 1792340611561307200,
+        "type": "directory",
+        "file_attributes": 0,
+        "reparse": false,
+        "canonical_path": "/mnt/c",
+        "already_canonical": true
+      }
+    },
+    "forbidden_modules": [],
+    "elapsed_seconds": 1.1812161729999997,
+    "finished_utc": "2026-10-18T19:18:50.442682+00:00"
+  },
+  "elapsed_seconds": 15.96900000000096,
+  "finished_utc": "2026-10-18T19:18:55.592260+00:00"
+}

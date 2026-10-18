@@ -1,0 +1,3 @@
+# Publish the exact reviewed source and diagnostic bytes.
+* -text whitespace=cr-at-eol,-blank-at-eof
+*.txt -text -whitespace

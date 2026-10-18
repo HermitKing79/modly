@@ -1,0 +1,194 @@
+{
+  "schema": "modly.amd.wsl-input-qualification.v1",
+  "classification": "PASS",
+  "created_utc": "2026-10-18T19:31:25.494689+00:00",
+  "mission_base": "48ad0813d12c2222f97e1357eb7e76503a90d385",
+  "branch": "codex/amd-wsl-input-ownership",
+  "CPU_only": true,
+  "production_markers_reserved": 0,
+  "model_or_GPU_execution": false,
+  "checkpoint_tensor_payload_read": false,
+  "source_manifest_sha256": "c3b2b10f5741a5f71957b02f5c0401ab95007336cc6f58f4d6128172fbcff839",
+  "first_rejected_directory": {
+    "path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent",
+    "index": 0,
+    "error_type": "ValueError",
+    "error": "Artifact paths must be owned by the current user"
+  },
+  "diagnosed_mount": {
+    "mountpoint": "/mnt/c",
+    "filesystem": "9p",
+    "source": "C:\\134",
+    "mount_options": "rw,noatime",
+    "super_options": "rw,aname=drvfs;path=C:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6",
+    "raw": "133 82 0:71 / /mnt/c rw,noatime - 9p C:\\134 rw,aname=drvfs;path=C:\\;uid=0;gid=0;symlinkroot=/mnt/,cache=0x5,access=client,msize=65536,trans=fd,rfd=6,wfd=6"
+  },
+  "Windows_current_sid": "S-1-5-21-3582664715-2766927308-497596791-1001",
+  "Windows_exact_originals": [
+    {
+      "label": "texture",
+      "windows_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-material-stage1-df41688\\latent\\texture-latent.safetensors",
+      "guest_path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent.safetensors",
+      "bytes": 1814784,
+      "sha256": "4c74343c961e74bf3cfde4c24bd2a21b23063e17f0468b7f3049311fa9dc4289",
+      "owner_sid": "S-1-5-21-3582664715-2766927308-497596791-1001",
+      "windows_identity": {
+        "dev": 7709238315105856233,
+        "ino": 5348024559013358,
+        "mtime_ns": 1792107304583245900,
+        "nlink": 1
+      }
+    },
+    {
+      "label": "texture_metadata",
+      "windows_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-material-stage1-df41688\\latent\\texture-latent-metadata.json",
+      "guest_path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-material-stage1-df41688/latent/texture-latent-metadata.json",
+      "bytes": 39304,
+      "sha256": "25adb1a50b8b31900ebc56d87f45b7fe23dee9305d97b458f70a60799d59e2a0",
+      "owner_sid": "S-1-5-21-3582664715-2766927308-497596791-1001",
+      "windows_identity": {
+        "dev": 7709238315105856233,
+        "ino": 5348024559013364,
+        "mtime_ns": 1792107304584780600,
+        "nlink": 1
+      }
+    },
+    {
+      "label": "geometry",
+      "windows_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\shape-decoded.safetensors",
+      "guest_path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/shape-decoded.safetensors",
+      "bytes": 104148612,
+      "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+      "owner_sid": "S-1-5-21-3582664715-2766927308-497596791-1001",
+      "windows_identity": {
+        "dev": 7709238315105856233,
+        "ino": 5910974512167190,
+        "mtime_ns": 1792079411497276400,
+        "nlink": 1
+      }
+    },
+    {
+      "label": "provenance",
+      "windows_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\provenance.json",
+      "guest_path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/provenance.json",
+      "bytes": 26328,
+      "sha256": "a42340cef604134b2866a3556f6d74c5f631073eb908fb60a64d90139fac6407",
+      "owner_sid": "S-1-5-21-3582664715-2766927308-497596791-1001",
+      "windows_identity": {
+        "dev": 7709238315105856233,
+        "ino": 2533274791639350,
+        "mtime_ns": 1792079411586260900,
+        "nlink": 1
+      }
+    },
+    {
+      "label": "run_contract",
+      "windows_path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\run-contract.json",
+      "guest_path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/run-contract.json",
+      "bytes": 1449,
+      "sha256": "4676626d1061e6cd7090b560f952a974a584f8ea9e6218378b7902294b93bd4f",
+      "owner_sid": "S-1-5-21-3582664715-2766927308-497596791-1001",
+      "windows_identity": {
+        "dev": 7709238315105856233,
+        "ino": 8162774325852462,
+        "mtime_ns": 1792079411575471000,
+        "nlink": 1
+      }
+    }
+  ],
+  "Windows_attestation_sha256": "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd",
+  "Windows_before_after_independent": {
+    "before_receipt_sha256": "9d849284b07742667a654135f387b6cb9aa88b93da9e3a47c7a7b759f2c7d9c5",
+    "after_receipt_sha256": "36dcc01c9e00b700c6ac64b2a5dd1abd49208c915f936c8b4b3191fbbf734143",
+    "before": {
+      "schema": "modly.amd.wsl-input-ownership-independent-Windows-check.v1",
+      "phase": "before-independent-CPU",
+      "started_utc": "2026-10-18T19:27:27.278366+00:00",
+      "finished_utc": "2026-10-18T19:27:53.292174+00:00",
+      "helper_sha256": "30ca2eea0aab7365961f602e7f4860a6cfed2ac40d95802e0064aaa101a9a712",
+      "command": [
+        "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-input-ownership-evidence\\windows_attest.py",
+        "check",
+        "--attestation",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-input-ownership-48ad081\\windows-input-attestation.json",
+        "--expected-sha256",
+        "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd"
+      ],
+      "returncode": 0,
+      "result": {
+        "schema": "modly.windows-exact-input-attestation-check.v1",
+        "passed": true,
+        "files": 5,
+        "attestation_sha256": "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd",
+        "current_sid": "S-1-5-21-3582664715-2766927308-497596791-1001"
+      },
+      "stderr": ""
+    },
+    "after": {
+      "schema": "modly.amd.wsl-input-ownership-independent-Windows-check.v1",
+      "phase": "after-independent-CPU",
+      "started_utc": "2026-10-18T19:28:36.609130+00:00",
+      "finished_utc": "2026-10-18T19:29:03.556296+00:00",
+      "helper_sha256": "30ca2eea0aab7365961f602e7f4860a6cfed2ac40d95802e0064aaa101a9a712",
+      "command": [
+        "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-input-ownership-evidence\\windows_attest.py",
+        "check",
+        "--attestation",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-wsl-input-ownership-48ad081\\windows-input-attestation.json",
+        "--expected-sha256",
+        "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd"
+      ],
+      "returncode": 0,
+      "result": {
+        "schema": "modly.windows-exact-input-attestation-check.v1",
+        "passed": true,
+        "files": 5,
+        "attestation_sha256": "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd",
+        "current_sid": "S-1-5-21-3582664715-2766927308-497596791-1001"
+      },
+      "stderr": ""
+    }
+  },
+  "focused_host_tests": 22,
+  "runs": {
+    "acceptance": {
+      "worker_seconds": 6.019516195,
+      "host_seconds": 20.90700000000288,
+      "security_checks": 16,
+      "prepared_arrays_collected": 15,
+      "guest_exit": 0,
+      "active_Job_processes": 0,
+      "forced_cleanup": false,
+      "observer_healthy": true,
+      "metadata_sha256": "2014ed41e5c3361793f6579ce8944d25573c459061e1fb94d5df542217d6cd87",
+      "result_sha256": "ccc757849932aae42eb6161bd33bce9fd2fcc7676b620bb643a217c78637c401",
+      "verdict_sha256": "04c76a996c5a3a2175c56fb281e9d416c1820af3e238a6031e4907ae94225ac5"
+    },
+    "independent": {
+      "worker_seconds": 6.005626927999999,
+      "host_seconds": 20.90599999999904,
+      "security_checks": 16,
+      "prepared_arrays_collected": 15,
+      "guest_exit": 0,
+      "active_Job_processes": 0,
+      "forced_cleanup": false,
+      "observer_healthy": true,
+      "metadata_sha256": "2014ed41e5c3361793f6579ce8944d25573c459061e1fb94d5df542217d6cd87",
+      "result_sha256": "ee57ac8ce70063a563e52255314ee90738a8ea4ea88a68c73596fd8a81cce11a",
+      "verdict_sha256": "b840ec645ef08949d06dd749a87a2c4261232a3281b4e90c1c12a79db28338f8"
+    }
+  },
+  "independent_outcome_review_sha256": "6fe7deca1b0c981f3622d8cc5b5f1c10f6e7f0b9caa3de97d081f0e9f21492d9",
+  "preservation_after_sha256": "39c9e88b524b1ed79f1d3e5504d6723e3c0cc160e2917d4ee9cb5a9f0d071fb9",
+  "protected_files": 100,
+  "bounded_prior_identities": 400,
+  "historical_readers_modified": false,
+  "remote_heads_before": 83,
+  "limitation": "CPU input qualification only. The historical GPU worker is unchanged; a separate approved candidate must explicitly select this read-only adapter and revalidate all live GPU/host/output gates."
+}

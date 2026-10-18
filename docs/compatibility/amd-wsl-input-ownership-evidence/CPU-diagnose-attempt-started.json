@@ -1,0 +1,65 @@
+{
+  "schema": "modly.amd.wsl-input-cpu-preflight.v1",
+  "classification": "PASS",
+  "mode": "diagnose",
+  "distro": "Modly-AMD-Ubuntu-24.04",
+  "identity": {
+    "host.py": "70143ee5bc3f5db9f75a0bfacdd640953f0adc55a21608ca9ca8aec366120087",
+    "worker.py": "8b3ef1637cc83081d5e795cb453805f2f3926e42a6d191ecc28e43089013994f"
+  },
+  "pinned_originals": {
+    "amd_wsl_rocdxg_smoke.py": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_wsl_rocdxg_smoke.py",
+      "sha256": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2"
+    },
+    "amd_bounded_gpu_proof.py": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_bounded_gpu_proof.py",
+      "sha256": "8910884b4d4bd433df654a8137586eb43711e37e97acfcf8462392ef4258dff4"
+    },
+    "amd_forward_owned_job.py": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_forward_owned_job.py",
+      "sha256": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64"
+    },
+    "amd_texture_sampling_artifact.py": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_texture_sampling_artifact.py",
+      "sha256": "5eaf35c08cf2e96f46dfe8bb32fa835c079ef34ce5a322a0afd411ee7cf9474c"
+    }
+  },
+  "worker_command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/env",
+    "PYTORCH_TUNABLEOP_ENABLED=0",
+    "PYTORCH_TUNABLEOP_TUNING=0",
+    "PYTORCH_TUNABLEOP_RECORD_UNTUNED=0",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "90s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-I",
+    "-B",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-input-ownership-evidence/worker.py",
+    "--worker",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-wsl-input-ownership-evidence/diagnose/guest",
+    "--mode",
+    "diagnose",
+    "--expected-worker-sha256",
+    "8b3ef1637cc83081d5e795cb453805f2f3926e42a6d191ecc28e43089013994f",
+    "--expected-host-sha256",
+    "70143ee5bc3f5db9f75a0bfacdd640953f0adc55a21608ca9ca8aec366120087"
+  ],
+  "output": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-input-ownership-evidence\\diagnose",
+  "CPU_marker": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-wsl-input-ownership-evidence\\CPU-diagnose-attempt-started.json",
+  "GPU_authorized": false,
+  "model_authorized": false,
+  "guest_seconds": 90.0,
+  "host_seconds": 120.0,
+  "original_supervisor_SCRIPT": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_wsl_rocdxg_smoke.py",
+  "started_utc": "2026-10-18T19:16:38.156367+00:00",
+  "scope": "CPU input only"
+}

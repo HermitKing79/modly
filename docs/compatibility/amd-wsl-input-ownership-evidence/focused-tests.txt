@@ -1,0 +1,27 @@
+test_ast_extraction_runs_actual_owner_predicate (test_harness.HarnessTests.test_ast_extraction_runs_actual_owner_predicate) ... ok
+test_binary_go_rejects_extra_or_translated_bytes (test_harness.HarnessTests.test_binary_go_rejects_extra_or_translated_bytes) ... ok
+test_diagnosis_command_is_cpu_gated_and_anchored (test_harness.HarnessTests.test_diagnosis_command_is_cpu_gated_and_anchored) ... ok
+test_exact_private_attestation_translation_only (test_harness.HarnessTests.test_exact_private_attestation_translation_only) ... ok
+test_full_mode_requires_hashed_attestation_inputs (test_harness.HarnessTests.test_full_mode_requires_hashed_attestation_inputs) ... ok
+test_readonly_audit_allows_only_exact_exclusive_result_write (test_harness.HarnessTests.test_readonly_audit_allows_only_exact_exclusive_result_write) ... ok
+test_readonly_audit_blocks_network_mutation_and_gpu_but_allows_numpy_loader (test_harness.HarnessTests.test_readonly_audit_blocks_network_mutation_and_gpu_but_allows_numpy_loader) ... ok
+test_security_result_requires_nonempty_passing_checks (test_harness.HarnessTests.test_security_result_requires_nonempty_passing_checks) ... ok
+test_verdict_demands_clean_real_containment (test_harness.HarnessTests.test_verdict_demands_clean_real_containment) ... ok
+test_exact_windows_attestation_and_negative_mutations (test_readonly_input.ReadOnlyInputTests.test_exact_windows_attestation_and_negative_mutations) ... ok
+test_bounded_read_still_accepts_exact_original_fixture (test_windows_attest.WindowsAttestationPolicyTests.test_bounded_read_still_accepts_exact_original_fixture) ... ok
+test_each_foreign_file_mutation_is_rejected (test_windows_attest.WindowsAttestationPolicyTests.test_each_foreign_file_mutation_is_rejected) ... ok
+test_file_owner_must_be_actual_current_user (test_windows_attest.WindowsAttestationPolicyTests.test_file_owner_must_be_actual_current_user) ... ok
+test_foreign_ancestor_delete_or_protection_change_is_rejected (test_windows_attest.WindowsAttestationPolicyTests.test_foreign_ancestor_delete_or_protection_change_is_rejected) ... ok
+test_foreign_read_only_file_acl_is_safe (test_windows_attest.WindowsAttestationPolicyTests.test_foreign_read_only_file_acl_is_safe) ... ok
+test_growth_during_read_consumes_at_most_expected_bytes_plus_one (test_windows_attest.WindowsAttestationPolicyTests.test_growth_during_read_consumes_at_most_expected_bytes_plus_one) ... ok
+test_inherit_only_rule_is_not_applied_to_ancestor (test_windows_attest.WindowsAttestationPolicyTests.test_inherit_only_rule_is_not_applied_to_ancestor) ... ok
+test_missing_or_untyped_acl_evidence_is_rejected (test_windows_attest.WindowsAttestationPolicyTests.test_missing_or_untyped_acl_evidence_is_rejected) ... ok
+test_reparse_and_link_evidence_are_rejected (test_windows_attest.WindowsAttestationPolicyTests.test_reparse_and_link_evidence_are_rejected) ... ok
+test_root_create_directory_grant_cannot_replace_existing_child (test_windows_attest.WindowsAttestationPolicyTests.test_root_create_directory_grant_cannot_replace_existing_child) ... ok
+test_snapshot_output_cannot_escape_private_exact_filename (test_windows_attest.WindowsAttestationPolicyTests.test_snapshot_output_cannot_escape_private_exact_filename) ... ok
+test_windows_system_ancestor_owners_are_allowed (test_windows_attest.WindowsAttestationPolicyTests.test_windows_system_ancestor_owners_are_allowed) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.028s
+
+OK
