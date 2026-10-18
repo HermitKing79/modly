@@ -1,0 +1,33 @@
+{
+  "classification": "PASS",
+  "qualified_source_commit": "791d19b6ee3546489306d5b557b7b9b958187936",
+  "committed_candidate_files_verified": 107,
+  "actual_reserve_attempt_capture_reopened": true,
+  "plan_field_count": 13,
+  "plan": {
+    "schema": "modly.amd.brick-pbr-execution-plan.v1",
+    "harness_commit": "791d19b6ee3546489306d5b557b7b9b958187936",
+    "manifest_path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-brick-pbr-plan-repair-evidence/candidate-identities.json",
+    "manifest_sha256": "6b3916b9a5c94203c5d99e3a59e7b68f0b1c0c300d4dc03b492144ebc0b99781",
+    "scratch": "/home/modly/brick-pbr-plan-repair-375ed55",
+    "field": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-pbr-plan-repair-375ed55/field",
+    "probe": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-pbr-plan-repair-375ed55/probe",
+    "marker_path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-pbr-plan-repair-375ed55/probe/neural-attempt.marker",
+    "marker_sha256": "a569bd7276775f655bc0cc0aa7d99001a63bebfdb44e6ca5746069ca7dccded0",
+    "attestation_path": "/mnt/c/Users/wattz/Documents/ModlyArtifacts/amd-brick-pbr-plan-repair-375ed55/probe/ownership.json",
+    "attestation_sha256": "a3cca2dd71f05295e7748ae4b8404152cb5c6065905db6cb6ad4d1dd3878d647",
+    "geometry_contract_path": "/mnt/c/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-neural-completion-c9447dd/neural-output/run-contract.json",
+    "geometry_contract_file_sha256": "4676626d1061e6cd7090b560f952a974a584f8ea9e6218378b7902294b93bd4f"
+  },
+  "plan_SHA256": "a9dfe823ea17c7c87ff31f12bcd6fe093f3b6b6d88a2d12fcf964b9ef9cda1de",
+  "plan_bytes": 1311,
+  "marker_bytes": 339,
+  "fixture_plan_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-pbr-plan-repair-375ed55\\cpu-fixtures\\plan-opf0uw8e\\cpu-only-execution-plan.json",
+  "fixture_marker_path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-pbr-plan-repair-375ed55\\cpu-fixtures\\plan-opf0uw8e\\cpu-only-neural-attempt.marker",
+  "genuine_marker_created": false,
+  "WSL_launched": false,
+  "Torch_imported": false,
+  "models_loaded": 0,
+  "GPU_forward_calls": 0,
+  "final_source_and_readback_seconds": 15.15599999999904
+}
