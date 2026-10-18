@@ -1,0 +1,26 @@
+{
+  "schema": "modly.amd.brick-pbr-postrestart-independent-final-manifest-review.v1",
+  "classification": "PASS",
+  "manifest_path": "docs/compatibility/amd-brick-pbr-postrestart-evidence/candidate-identities.json",
+  "manifest_sha256": "155e6c8d5b8a57ae66426a622580089c620852148fda4ea6d8d6040aa5ce0c53",
+  "manifest_paths": 103,
+  "independently_reconstructed_required_paths": 41,
+  "coverage": "All 40 paths required by the reviewed worker.required_candidate_paths implementation, including all 11 inference_texture Python files, plus the host CPU test are present. Both adapters, both reviewed tests, the original supervisor, pre-GO observer/owned-Job/helper/policy sources, ownership/persistence sources, checkpoint audit and qualified native staging/acceptance/wheel identities are covered.",
+  "all_listed_hashes_independently_match_current_files": true,
+  "all_listed_paths_pass_relative_path_and_regular_nonreparse_file_checks": true,
+  "reviewed_host_and_worker_bytes_unchanged": true,
+  "preexecution_review_sha256": "bcdce81bc948c3eac54991a0b5bf8f51a34c186a8a96e282e8570ac8e6f0bc37",
+  "issues": [],
+  "method": "Read manifest as JSON data; independently reconstruct required coverage from the static reviewed worker implementation; use PowerShell filesystem metadata and SHA256 hashing to check each of the 103 listed files. No candidate source was imported or executed.",
+  "remaining_conditions": "The GO_CONDITIONAL preexecution review remains controlling. The exact committed-blob/HEAD check, fresh production ownership attestation, exclusive attempt reservation, fresh resource/health gates and actual runtime/cleanup/output acceptance still must pass. This supplemental receipt claims no observed inference outcome.",
+  "reviewer_execution": {
+    "tests_run": false,
+    "WSL_launched": false,
+    "Torch_imported": false,
+    "model_loaded": false,
+    "native_imported": false,
+    "GPU_forward_calls": 0,
+    "installs": false,
+    "network_used": false
+  }
+}

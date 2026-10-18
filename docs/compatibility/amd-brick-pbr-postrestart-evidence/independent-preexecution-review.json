@@ -1,0 +1,57 @@
+{
+  "schema": "modly.amd.brick-pbr-postrestart-independent-preexecution-review.v1",
+  "classification": "GO_CONDITIONAL",
+  "approved_base": "4d1af7f79aee1a40732ccc2d805fc5320416a376",
+  "decision": "No unresolved blocking code or safety defect was found in these exact experiment adapters for the single authorized genuine guided F16 brick PBR attempt. The complete committed source closure, fresh production ownership attestation, original live resource admissions, healthy observations and runtime acceptance gates remain mandatory. This review is not execution evidence or an unconditional launch admission.",
+  "review_scope": "Independent static source and control-flow review only. The reviewer read the adapters, their CPU-only tests, the reused supervisor/helpers, the unchanged inference_texture core and its ownership/persistence/source-identity dependencies. Only this report was written; no implementation or Git state was changed by the reviewer.",
+  "reviewed_sha256": {
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/host.py": "f1e0d4e33e900f1e9257d7c3db9856212f04dbeb98a0e9ad492fb2e377c14bf5",
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/worker.py": "f3438ae92dd2e0b7abf8fe0faaa48707614e5bc777bc76c8dd132c19c72bf413",
+    "scripts/compatibility/test_amd_brick_pbr_host.py": "89524895635c554fc1e6af12018e477df2636de06b0c432901abbb7d2efd57e8",
+    "scripts/compatibility/test_amd_brick_pbr_worker.py": "638ff59ea15c529f238f7d1c38ecb537abae07f255307f95ec79cf274df23c48",
+    "docs/compatibility/amd-brick-pbr-postrestart-evidence/host-memory-review.json": "31fd998d263414124741ef5e3bf32e49514460d429723dd9cba6b6f4f93a1a17"
+  },
+  "protected_source_checks": {
+    "inference_texture_python_files": 11,
+    "inference_texture_differs_from_6f0c51e": false,
+    "tracked_protected_supervisor_helpers_or_core_differs_from_approved_base": false,
+    "method": "Read-only git diff --name-only checks against the approved base and CPU-qualified revision; no diff was returned for the protected paths."
+  },
+  "reviewed_controls": [
+    "The original supervisor retains exact binary GO after owned Windows Job attachment and healthy pre/post-attachment observations; base.SCRIPT remains anchored to the original shared helper. No automatic retry path was found.",
+    "Host and worker use the exact fresh experiment paths. The worker validates canonical output routing before mkdir and authenticates plan, manifest, marker, attestation and geometry-contract identities before admitted work.",
+    "Existing project bytecode caches are bypassed using exclusive nonexistent experiment-local cache prefixes with bytecode writes disabled. Frozen host supervisor and worker control-helper execution compile the same bytes just authenticated. Selected genuine learned functions additionally retain actual executable-code qualification.",
+    "Native and CPU stage ready/GO records bind stage order, profile, run contract, plan, marker and attestation. The host requires a healthy observation started after first seeing the ready record and takes fresh actual Windows RAM/D/destination measurements before release.",
+    "The stage RAM assessment retains the 12 GiB live floor, subtracts the closest historical remaining whole-host decline and the recent maximum measured downward RAM step, and labels the historical value as an empirical reference rather than an upper bound. Windows host/descendant, vmmem and Linux self/descendant measurements remain separately scoped.",
+    "The original 18.5 GiB prelaunch RAM gate, D: 50 GiB and destination 2 GiB/write-access gates, 13 GiB initial free VRAM, 12 GiB allocator cap, 2 GiB device-free reserve, 1 GiB opaque allowance, 32768-row tiles and 60/120/240/480-second stage/host deadlines remain intact."
+  ],
+  "genuine_execution_and_receipts": [
+    "The worker composes the unchanged strict 284-parameter loader with 208 F16 and 76 F32 parameters, original checkpoint/source/native identities, and the actual inference_texture.neural.run_neural call.",
+    "The authenticated support chain remains 4430 -> 21391 -> 97313 -> 438684 -> 1957891 with one learned forward, 40 convolutions, eight guided C2S records, five original global native maps and 84 plus 60 tiles.",
+    "The exact ReceiptBridge.write_output callback retains the genuine canonical ownership factory/class, fresh production field/probe attestation, durable field publication, independent Windows readback before tensor release and a fresh independent readback after worker exit.",
+    "Worker-owned model, parameters, component and prepared arrays are checked through weak references after release. Successful acceptance requires original one-time workspace clearing, measured zero Torch allocated/reserved bytes and restored hooks/native bindings/descriptors.",
+    "Host acceptance retains monitored owned-process settlement, named-distro termination, post-exit observation and the requirement that Job cleanup was unforced. Forced cleanup cannot qualify a successful result."
+  ],
+  "resolved_review_findings": [
+    "Preexisting timestamp-valid bytecode could otherwise differ from hashed source bytes; the experiment-local cache isolation and exact-byte compilation now close that path without changing the qualified core.",
+    "The worker previously created the requested output directory before checking exact routing; validation now precedes that write.",
+    "The host stage assessment now records and reserves the recent maximum downward RAM step alongside the explicitly limited historical remaining reference."
+  ],
+  "conditions_before_execution": [
+    "Generate and verify the complete final candidate manifest before commit: include every worker.required_candidate_paths entry, both reviewed adapters, both reviewed test files and all pre-GO supervisor/observer/owned-Job/policy helpers. Preserve the reviewed adapter bytes or obtain renewed review of changes.",
+    "Commit the complete execution candidate and manifest, then require validate_committed to match HEAD, committed blob bytes and clean candidate paths before the one launch.",
+    "Mint and verify the fresh exact-leaf production Windows ownership attestation, keep field empty, and preserve the exclusive marker/plan/scratch/output rules. Saved readings do not replace fresh live admission.",
+    "Proceed only if the unchanged resource/deadline/health gates and both host release barriers pass. Retain any marker and all failure evidence; do not automatically retry an aborted or failed attempt."
+  ],
+  "limitations": "The exact brick whole-host peak is still unmeasured. Historical decline and recent sample steps do not prove an upper bound; one-second sampling may miss peaks. Device-visible projections do not bound host copies, VM/cache retention, transfers, serialization or independent readback. The reviewer did not execute the supplied CPU tests and makes no runtime-success claim.",
+  "reviewer_execution": {
+    "tests_run": false,
+    "WSL_launched": false,
+    "Torch_imported": false,
+    "model_loaded": false,
+    "native_imported": false,
+    "GPU_forward_calls": 0,
+    "installs": false,
+    "network_used": false
+  }
+}

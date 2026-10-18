@@ -1,0 +1,51 @@
+{
+  "schema": "modly.amd.brick-pbr-postrestart-admission.v1",
+  "base": "4d1af7f79aee1a40732ccc2d805fc5320416a376",
+  "classification": "EARLY_NUMERIC_GATES_PASS_PENDING_INDEPENDENT_REVIEW",
+  "required_prelaunch_RAM_bytes": 19864223744,
+  "live_RAM_floor_bytes": 12884901888,
+  "required_D_free_bytes": 53687091200,
+  "readings": [
+    {
+      "available_windows_ram_bytes": 22647754752,
+      "D_free_bytes": 74269659136,
+      "index": 1,
+      "timestamp_utc": "2026-10-18T13:41:59.895909+00:00",
+      "memory_load_percent": 33,
+      "total_physical_bytes": 34270023680,
+      "commit_available_bytes": 31112982528
+    },
+    {
+      "available_windows_ram_bytes": 22644805632,
+      "D_free_bytes": 74269659136,
+      "index": 2,
+      "timestamp_utc": "2026-10-18T13:42:02.896546+00:00",
+      "memory_load_percent": 33,
+      "total_physical_bytes": 34270023680,
+      "commit_available_bytes": 31118045184
+    },
+    {
+      "available_windows_ram_bytes": 22645833728,
+      "D_free_bytes": 74269659136,
+      "index": 3,
+      "timestamp_utc": "2026-10-18T13:42:05.896781+00:00",
+      "memory_load_percent": 33,
+      "total_physical_bytes": 34270023680,
+      "commit_available_bytes": 31118954496
+    }
+  ],
+  "historical_whole_host_decline_bytes": 7581499392,
+  "counterfactual_remaining_RAM_bytes": [
+    15066255360,
+    15063306240,
+    15064334336
+  ],
+  "counterfactual_is_not_actual_decoder_measurement": true,
+  "failed": [],
+  "all_16_qualified_source_hashes_match": true,
+  "threshold_exception_used": false,
+  "WSL_launched": false,
+  "model_loaded": false,
+  "GPU_forward_calls": 0,
+  "inference_marker_created": false
+}

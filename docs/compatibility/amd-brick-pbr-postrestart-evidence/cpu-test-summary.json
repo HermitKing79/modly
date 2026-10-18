@@ -1,0 +1,23 @@
+[
+  {
+    "command": [
+      "D:/AI/Trellis2AMD/venv/Scripts/python.exe",
+      "-B",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_brick_pbr_host.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.92200000000048,
+    "scope": "CPU-only fixtures; no WSL/Torch/model/native/GPU; lifecycle receipts explicitly simulated",
+    "tests": 12
+  },
+  {
+    "command": [
+      "D:/AI/Trellis2AMD/venv/Scripts/python.exe",
+      "-B",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\test_amd_brick_pbr_worker.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.1090000000003783,
+    "scope": "CPU-only fixtures; no WSL/Torch/model/native/GPU; lifecycle receipts explicitly simulated"
+  }
+]

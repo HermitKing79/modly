@@ -1,0 +1,61 @@
+{
+  "schema": "modly.amd.brick-pbr-postrestart-host-memory-review.v1",
+  "approved_base": "4d1af7f79aee1a40732ccc2d805fc5320416a376",
+  "classification": "GO_CONDITIONAL",
+  "decision": "Post-restart Windows physical-memory headroom supports preparing and admitting the same single bounded brick F16 PBR attempt under the original 18.5 GiB prelaunch gate, subject to actual fresh admission, monitored stage barriers and independent review of the exact integrated candidate. No 18 GiB exception is used. This is not an observed brick runtime peak or unconditional launch admission.",
+  "scope": "Read-only reassessment of the saved original historical review and fresh post-restart host readings. No repeated historical research, tests, WSL, Torch, native import, GPU, model loading or network operation. Only this report is written.",
+  "sources": {
+    "initial-host-admission.json": "d437f3ed364fbe630ad1f279de88433a181daa230ca6a09badcf3fcdf61ef22f",
+    "../amd-brick-pbr-18gib-28ab4c1/host-memory-review.json": "fd3e24fa96602fbaaf6679cbecbb9db6669d6456e71f5d68c4ce2f030c6bc63f"
+  },
+  "actual_saved_Windows_measurements_bytes": {
+    "available_physical_RAM": [22647754752, 22644805632, 22645833728],
+    "D_free": 74269659136,
+    "minimum_available_physical_RAM": 22644805632,
+    "minimum_headroom_above_12GiB_floor": 9759903744,
+    "minimum_margin_above_original_18_5GiB_prelaunch_gate": 2780581888,
+    "minimum_commit_available": 31112982528,
+    "commit_is_not_available_physical_RAM": true
+  },
+  "inherited_actual_historical_F16_PBR_observations_bytes": {
+    "source": "docs/compatibility/amd-turret-texture-decode-resume-evidence/phases.jsonl",
+    "source_sha256": "de94ed41b1c55c3f2661b030b70e8b74826063d5a77094de1a6a61e02960fca6",
+    "pre_marker_available_RAM": 22434783232,
+    "CPU_preparation_entry_available_RAM": 17921138688,
+    "GPU_stage_entry_available_RAM": 15996715008,
+    "lowest_sampled_available_RAM": 14853283840,
+    "startup_import_whole_host_decline": 4513644544,
+    "strict_load_period_whole_host_decline": 1924423680,
+    "whole_host_decline_through_CPU_preparation": 6438068224,
+    "additional_whole_host_decline_after_GPU_stage_entry": 1143431168,
+    "full_observed_whole_host_decline": 7581499392,
+    "worker_loaded_RSS": 1869070336,
+    "worker_strict_load_HWM_RSS": 2786930688
+  },
+  "counterfactual_screen_not_actual_admission_bytes": {
+    "fresh_minimum_above_historical_pre_marker": 210022400,
+    "minimum_fresh_RAM_less_historical_full_whole_host_decline": 15063306240,
+    "resulting_margin_above_12GiB_floor": 2178404352,
+    "minimum_fresh_RAM_less_historical_decline_through_CPU_preparation": 16206737408,
+    "interpretation": "The previous refusal's immediate headroom deficit is absent. Even subtracting the largest inherited successful material-decoder whole-host decline leaves about 2.03 GiB above the unchanged 12 GiB floor. This is an empirical feasibility screen, not a mathematical bound, guaranteed forecast or attribution of whole-host changes to WSL."
+  },
+  "profile_unchanged": {
+    "name": "brick-1957891-v1",
+    "support": [4430, 21391, 97313, 438684, 1957891],
+    "parameters": 284,
+    "F16_parameters": 208,
+    "F32_parameters": 76,
+    "large_site_tiles": 84,
+    "final_tiles": 60
+  },
+  "conditions_before_the_one_forward": [
+    "Recheck actual Windows GlobalMemoryStatusEx availability and D: free space immediately before marker reservation using the original 19864223744-byte prelaunch RAM gate and 53687091200-byte D: floor. Saved initial readings do not replace that admission.",
+    "Start healthy Windows physical-RAM monitoring before WSL startup. Preserve actual stage-associated RAM readings and separate process-tree/guest RSS or vmmem commitment observations where available. Refuse on stale or failed monitoring and retain the original 12884901888-byte live Windows RAM floor.",
+    "Use explicit host-controlled release barriers after WSL/runtime import and after strict model/input/guide preparation, before GPU placement and forward. Review measured remaining headroom, trend and remaining known allocations at those barriers; stop before the next stage if preserving the live floor cannot be justified. The inherited stage declines are empirical comparison points, not new global thresholds or proven upper bounds.",
+    "Retain 13 GiB initial free VRAM, 12 GiB allocator cap, 2 GiB device-free reserve, 1 GiB opaque allowance, 32768-row tiles and native/CPU/GPU/host deadlines of 60/120/240/480 seconds. Actual device admission and candidate integration/ownership/preservation review remain required; this host-only review performs none of them.",
+    "Keep exactly one authorized forward, authenticated original model/guides/profile, independent output readback before release and after exit, natural owned-process settlement and measured zero Torch allocated/reserved memory after release. No automatic retry."
+  ],
+  "remaining_measurement_limits": "The exact brick host peak remains unmeasured. Historical worker RSS is one guest process, not full process-tree or WSL VM memory, and no historical vmmem committed baseline was available. Windows samples are whole-host observations and one-second sampling can miss peaks. Brick has larger support and additional large-site tiling; device-visible source projections do not bound host copies, VM/cache retention, transfers, serialization or independent readback. No current WSL/process-tree/GPU measurement was made in this reassessment. Actual monitored refusal remains authoritative if conditions change.",
+  "policy_effect": "No global limit changes. Original 18.5 GiB prelaunch gate applies; previous 18 GiB exception is not used. The earlier BLOCKED report remains intact and applies to its earlier lower readings.",
+  "execution": {"WSL_launched": false, "Torch_imported": false, "model_loaded": false, "native_imported": false, "GPU_forward_calls": 0, "tests_run": false}
+}
