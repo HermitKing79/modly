@@ -1,0 +1,17 @@
+{
+  "source": "read-only wsl.exe --list --verbose",
+  "default": "docker-desktop",
+  "distributions": [
+    {
+      "name": "docker-desktop",
+      "state": "Stopped",
+      "version": 2
+    },
+    {
+      "name": "Modly-AMD-Ubuntu-24.04",
+      "state": "Stopped",
+      "version": 2
+    }
+  ],
+  "no_distribution_started_by_inventory": true
+}
