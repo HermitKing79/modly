@@ -1,0 +1,12 @@
+{
+  "classification": "PASS",
+  "files": 123,
+  "new_execution_sources_exact_bytes": true,
+  "historical_documented_CRLF_normalization": [
+    "api/services/amd_geometry_assets.py",
+    "api/services/amd_observer.py",
+    "api/services/amd_offline_guard.py",
+    "experimental/extensions/trellis2-amd/model_assets.py"
+  ],
+  "verification": "unchanged production committed_blob_matches policy"
+}

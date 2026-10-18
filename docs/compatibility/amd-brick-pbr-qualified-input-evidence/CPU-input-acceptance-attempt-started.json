@@ -1,0 +1,78 @@
+{
+  "schema": "modly.amd.wsl-input-cpu-preflight.v1",
+  "classification": "PASS",
+  "mode": "cpu-input-acceptance",
+  "distro": "Modly-AMD-Ubuntu-24.04",
+  "identity": {
+    "cpu_acceptance.py": "b0ec7b1f948fd569fbbfee169e8cb2c1d60201e1d5876dcd7e0292c2535a4371",
+    "worker.py": "51e5a30b8a82d682d273cca809ce9e71a715590048224cf75f29afe27f1f608d",
+    "manifest": "26b4954f5e08a7bce6fdc3beea534c19ef7ec86d0dc15d3e4a9af4728328bfe9",
+    "qualified_manifest": "c3b2b10f5741a5f71957b02f5c0401ab95007336cc6f58f4d6128172fbcff839",
+    "attestation": "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd",
+    "readonly_input.py": "fe41b6410c8897e4062366457de06c795261c6d19aea059d9f7f9851e5d2d98e"
+  },
+  "pinned_originals": {
+    "amd_wsl_rocdxg_smoke.py": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_wsl_rocdxg_smoke.py",
+      "sha256": "c10dc0afc08be765bfcfb1ddba6acd1aba22ebdb214da0c82bbdb9e12ae58cc2"
+    },
+    "amd_bounded_gpu_proof.py": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_bounded_gpu_proof.py",
+      "sha256": "8910884b4d4bd433df654a8137586eb43711e37e97acfcf8462392ef4258dff4"
+    },
+    "amd_forward_owned_job.py": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_forward_owned_job.py",
+      "sha256": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64"
+    },
+    "amd_texture_sampling_artifact.py": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_texture_sampling_artifact.py",
+      "sha256": "5eaf35c08cf2e96f46dfe8bb32fa835c079ef34ce5a322a0afd411ee7cf9474c"
+    }
+  },
+  "worker_command": [
+    "wsl.exe",
+    "-d",
+    "Modly-AMD-Ubuntu-24.04",
+    "-u",
+    "modly",
+    "--exec",
+    "/usr/bin/env",
+    "PYTORCH_TUNABLEOP_ENABLED=0",
+    "PYTORCH_TUNABLEOP_TUNING=0",
+    "PYTORCH_TUNABLEOP_RECORD_UNTUNED=0",
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "90s",
+    "/opt/modly-wsl/venv/bin/python",
+    "-I",
+    "-B",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-brick-pbr-qualified-input-evidence/worker.py",
+    "--cpu-input-acceptance",
+    "--worker",
+    "/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-brick-pbr-qualified-input-evidence/cpu-input-acceptance/guest",
+    "--expected-worker-sha256",
+    "51e5a30b8a82d682d273cca809ce9e71a715590048224cf75f29afe27f1f608d",
+    "--expected-host-sha256",
+    "b0ec7b1f948fd569fbbfee169e8cb2c1d60201e1d5876dcd7e0292c2535a4371",
+    "--expected-manifest-sha256",
+    "26b4954f5e08a7bce6fdc3beea534c19ef7ec86d0dc15d3e4a9af4728328bfe9"
+  ],
+  "output": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-pbr-qualified-input-evidence\\cpu-input-acceptance",
+  "CPU_marker": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-pbr-qualified-input-evidence\\CPU-input-acceptance-attempt-started.json",
+  "input_attestation": {
+    "schema": "modly.windows-exact-input-attestation-check.v1",
+    "passed": true,
+    "files": 5,
+    "attestation_sha256": "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd",
+    "current_sid": "S-1-5-21-3582664715-2766927308-497596791-1001"
+  },
+  "input_route": "actual production worker prepare_inputs",
+  "GPU_authorized": false,
+  "model_authorized": false,
+  "guest_seconds": 90.0,
+  "host_seconds": 120.0,
+  "original_supervisor_SCRIPT": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\scripts\\compatibility\\amd_wsl_rocdxg_smoke.py",
+  "started_utc": "2026-10-18T20:55:50.095890+00:00",
+  "scope": "CPU input only"
+}

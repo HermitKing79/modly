@@ -1,0 +1,15 @@
+{
+  "schema": "modly.amd.wsl-input-cpu-verdict.v1",
+  "classification": "PASS",
+  "mode": "cpu-input-acceptance",
+  "CPU_only": true,
+  "GPU_authorized": false,
+  "model_authorized": false,
+  "owned_containment_verified": true,
+  "expected_source_manifest_sha256": "26b4954f5e08a7bce6fdc3beea534c19ef7ec86d0dc15d3e4a9af4728328bfe9",
+  "authenticated_profile_sha256": "cbad376b38c69943defe59e0273817dad9f8cb044ea9b600768eb62f7e51e5c0",
+  "worker_classification": "CPU_PREPARED",
+  "production_supervisor_exit": 1,
+  "production_supervisor_classification": "UNKNOWN",
+  "production_GPU_contract_unused": true
+}

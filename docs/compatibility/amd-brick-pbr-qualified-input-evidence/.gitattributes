@@ -1,0 +1,3 @@
+# Keep published execution identities and evidence byte-exact.
+* -text whitespace=cr-at-eol,-blank-at-eof
+*.txt -text -whitespace

@@ -1,0 +1,120 @@
+{
+  "schema": "modly.amd.brick-pbr-qualified-input-independent-preexecution-review.v1",
+  "mission_base": "a064378cd9530addc38e8be1688088777881b2fd",
+  "source_manifest_sha256": "26b4954f5e08a7bce6fdc3beea534c19ef7ec86d0dc15d3e4a9af4728328bfe9",
+  "candidate_sources_fresh_SHA256_verified": 123,
+  "historical_manifest_members_preserved": 109,
+  "qualified_manifest_members_preserved": 18,
+  "policy_sha256": "fe41b6410c8897e4062366457de06c795261c6d19aea059d9f7f9851e5d2d98e",
+  "input_manifest_sha256": "c3b2b10f5741a5f71957b02f5c0401ab95007336cc6f58f4d6128172fbcff839",
+  "input_attestation_sha256": "0a0bd0cffb12709341276fad3ab8f08fa9b2ed57ef02549b1d40db9c9f37b8cd",
+  "source_hashes": {
+    "worker.py": "51e5a30b8a82d682d273cca809ce9e71a715590048224cf75f29afe27f1f608d",
+    "host.py": "1d0616ec9c4c9e1123be296d445d670f804971f6c7e87bd99607c32bd3d585cf",
+    "cpu_acceptance.py": "b0ec7b1f948fd569fbbfee169e8cb2c1d60201e1d5876dcd7e0292c2535a4371",
+    "test_worker.py": "190684b29c6eeae9ba7d3fb9d364eb9d32903a7a1909f18f56fcf5152962dc8c",
+    "test_host.py": "7f6ef091ebdfea273086525928cc1e584c73a66970f907fc908f8971d7acd6e3"
+  },
+  "reviewer_executed_WSL": false,
+  "reviewer_executed_GPU": false,
+  "reviewer_loaded_checkpoint_weights": false,
+  "reviewer_modified_source": false,
+  "source_findings": [],
+  "notes": [
+    "Statically reviewed both fresh execution adapters, CPU harness, complete plan/schema test, unchanged readonly policy and Windows attestation verifier.",
+    "Production computation, native guards and cleanup are preserved; execute_admitted differs from historical source only at actual saved-input preparation.",
+    "CPU mode now verifies the host-frozen actual candidate manifest and authenticates the exact saved geometry profile before invoking the same prepare_inputs(profile, plan, record) branches.",
+    "Historical plan schema retains exactly 13 fields; focused test exercises actual full builder, Windows serialization and actual guest schema validator before publication.",
+    "Fresh Windows five-file attestation is revalidated on host preflight and before marker reservation.",
+    "No known source-blocking issue; final admission depends on successful actual CPU evidence and current live resource/ownership gates."
+  ],
+  "created_utc": "2026-10-18 20:57:38 UTC",
+  "classification": "GO_FOR_ONE_ATTEMPT_AFTER_FRESH_ADMISSION",
+  "static_AST_verification": {
+    "unchanged_original_definitions": [
+      "read_plain",
+      "digest",
+      "verify_manifest",
+      "control",
+      "isolate_bytecode",
+      "validate_output",
+      "authenticate_plan",
+      "validate_stage_go",
+      "stage_ready",
+      "process_memory",
+      "sample_guest_memory",
+      "WorkerResources",
+      "bootstrap",
+      "qualify_staged_native",
+      "guest_available",
+      "worker"
+    ],
+    "execute_admitted_change": "Exactly one call: inputs.prepare(profile) replaced by prepare_inputs(profile, plan, record); all other AST nodes identical.",
+    "frozen_123_source_hashes_rechecked_after_CPU": true,
+    "production_markers_absent_at_review": true
+  },
+  "actual_CPU_acceptance": {
+    "classification": "PASS",
+    "worker_classification": "CPU_PREPARED",
+    "source_manifest_exactly_matches_frozen_manifest": true,
+    "raw_supervisor_embedded_worker_equals_guest_record": true,
+    "input_route": "Actual new worker prepare_inputs(authenticated_profile, candidate_identities, record)",
+    "supplied_profile_verified": true,
+    "plan_closure_verified": true,
+    "generic_array_revalidation": true,
+    "authenticated_profile_sha256": "cbad376b38c69943defe59e0273817dad9f8cb044ea9b600768eb62f7e51e5c0",
+    "worker_seconds": 7.674588245999999,
+    "host_seconds": 20.875,
+    "security_checks_passed": 16,
+    "prepared_array_objects_observed": 15,
+    "prepared_arrays_released": true,
+    "runtime_uid_euid_gid_egid": [
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "numpy_version": "2.2.6",
+    "forbidden_import_attempts": [],
+    "forbidden_modules": [],
+    "model_imported": false,
+    "GPU_initialized": false,
+    "Windows_five_file_input_check_passed": true,
+    "Windows_current_sid": "S-1-5-21-3582664715-2766927308-497596791-1001",
+    "observer_healthy": true,
+    "worker_returncode": 0,
+    "supervisor_classification": "UNKNOWN",
+    "supervisor_classification_reason": "Unchanged production GPU acceptance contract is deliberately unused in CPU mode; dedicated CPU verdict checks the actual CPU result and containment.",
+    "owned_tree_exit_verified": true,
+    "forced_job_cleanup": false,
+    "job_empty": true,
+    "named_distro_termination_returncode": 0
+  },
+  "evidence_sha256": {
+    "cpu-input-acceptance/guest/results.json": "488f9d690cb0bf4f36fbfa5f779c4e5bff2de2e1121518be3c36537d3d7ca983",
+    "cpu-input-acceptance/results.json": "397e8ed83b2693114efb722bc493a6d888239673bcab2da1c0be7790550ea2b3",
+    "cpu-input-acceptance/CPU-verdict.json": "b300eb19568758c48dc86d04268915f0b6ee0a3ea632806caf9f20d00f6a0290",
+    "cpu-input-acceptance/helper-preflight.json": "510d3c68e1ae39dacd337a3f80653baa74c473b0cadb8a493e1b02ee71e798ff",
+    "focused-tests.txt": "7f4efdf6c27dc09cc5940736d4cc2d5da950e2cd69f8b0f0c93dfc8ba137112e"
+  },
+  "root_fresh_focused_verification": {
+    "tests": 29,
+    "classification": "PASS",
+    "log_reviewed": true,
+    "reviewer_repeated_tests": false
+  },
+  "pre_marker_conditions": [
+    "Publish and verify exact candidate commit; validate_committed must accept the exact 123-file candidate and manifest.",
+    "Execute the actual host preflight and complete nonpublishing prepare_attempt() successfully with the exact production ownership proof and full 13-field plan.",
+    "Require fresh three RAM readings at or above 18.5 GiB and original pre-marker admission, at least 50 GiB D: free, 2 GiB destination free plus write authority, and fresh five-file Windows SID/ACL/file-ID verification.",
+    "Reserve at most one production attempt marker; any later refusal or failure retains evidence and authorizes no retry."
+  ],
+  "live_and_outcome_conditions": [
+    "Maintain 12 GiB live Windows RAM, existing health monitoring, original native/CPU/GPU/host deadlines of 60/120/240/480 seconds and 30-second I/O acknowledgements.",
+    "Admit only the original RX 9070 XT gfx1201, 13 GiB initially free VRAM, 12 GiB allocator ceiling, 2 GiB device reserve, 1 GiB opaque allowance and maximum 32768-row tiles.",
+    "Preserve original F16/F32 runtime and exact genuine inputs: 4430 texture rows, original four guides, original coordinates, 1957891 output rows and 284 checkpoint entries with 208 F16/76 F32 tensors.",
+    "Successful outcome requires exactly one genuine forward, 40 convolutions, eight C2S records, five native maps, 84 large tiles, 60 final tiles, finite complete fields and independent host acknowledgement before tensor release.",
+    "Require independent saved-field readback after natural worker exit, collected model/input references, zero Torch allocated/reserved bytes, clean owned Job and healthy observer.",
+    "This review clears source/input qualification for one gated attempt; it makes no claim that GPU execution or field production has succeeded."
+  ]
+}
