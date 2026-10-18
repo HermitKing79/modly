@@ -1,0 +1,78 @@
+{
+  "schema": "modly.amd.brick-pbr-gpu-attempt-outcome.v1",
+  "classification": "BLOCKED",
+  "execution_harness_commit": "102b8b8ec01385388cc5132ad4176f6cc6a5cbd9",
+  "host_invocations": 1,
+  "WSL_worker_launched": true,
+  "production_plan_accepted": true,
+  "binary_GO_accepted": true,
+  "worker_identity": [
+    1000,
+    1000,
+    1000,
+    1000
+  ],
+  "output_WSL_ownership_factory_qualified": true,
+  "native_import": "NOT_ATTEMPTED",
+  "decoder_cpu": "NOT_ATTEMPTED",
+  "genuine_parent_forwards": 0,
+  "convolutions_completed": 0,
+  "C2S_completed": 0,
+  "native_maps_completed": 0,
+  "large_tiles_completed": 0,
+  "final_tiles_completed": 0,
+  "expected_support_rows": 1957891,
+  "actual_PBR_output": null,
+  "blocker": {
+    "type": "ValueError",
+    "message": "Artifact paths must be owned by the current user",
+    "operation": "inputs.prepare -> texture sampling artifact verify -> approved_root -> _plain(ancestor,directory=True)",
+    "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-brick-pbr-gpu-attempt-evidence/worker.py\", line 577, in worker\n    execute_admitted(plan,record,resources,output)\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-brick-pbr-gpu-attempt-evidence/worker.py\", line 410, in execute_admitted\n    resources.prepared = inputs.prepare(profile)\n                         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/experimental/extensions/trellis2-amd/inference_texture/inputs.py\", line 140, in prepare\n    verified = _latent.verify(texture_path, texture_path.parent, token_count=4430, maximum_tokens=4430)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_texture_sampling_artifact.py\", line 205, in verify\n    root = approved_root(root)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_texture_sampling_artifact.py\", line 116, in approved_root\n    _plain(ancestor, directory=True)\n  File \"/mnt/c/Users/wattz/Documents/ChatGPT/modly/proof/scripts/compatibility/amd_texture_sampling_artifact.py\", line 103, in _plain\n    raise ValueError('Artifact paths must be owned by the current user')\nValueError: Artifact paths must be owned by the current user\n",
+    "offending_ancestor_not_recorded": true,
+    "offending_UID_GID_not_recorded": true,
+    "not_an_AMD_computation_result": true
+  },
+  "timing": {
+    "host_invocation_seconds": 51.85900000000038,
+    "worker_admitted_processing_seconds": 1.2555904,
+    "GPU_forward_seconds": null
+  },
+  "memory": {
+    "pre_marker_Windows_available_bytes": 22135492608,
+    "minimum_sampled_Windows_available_bytes": 19273228288,
+    "unchanged_live_floor_bytes": 12884901888,
+    "minimum_D_free_bytes": 74236104704,
+    "Windows_RAM_samples": 18,
+    "maximum_sampled_Windows_host_descendant_working_set_sum_bytes": 194121728,
+    "maximum_sampled_vmmemWSL_RSS_bytes": 2447282176,
+    "guest_self_peak_HWM_bytes": 82305024,
+    "initial_free_VRAM_bytes": null,
+    "peak_Torch_allocated_bytes": null,
+    "peak_Torch_reserved_bytes": null,
+    "Torch_zero_release_measured": false,
+    "limitation": "Whole-host RAM is not attributable solely to WSL. Working-set sums may double-count shared pages. No Torch/GPU measurement exists because failure preceded import."
+  },
+  "cleanup": {
+    "worker_exit_code": 1,
+    "observer_healthy": true,
+    "windows_job": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "job_grace": {
+      "empty": true,
+      "seconds": 0.0,
+      "limit_seconds": 5.0
+    },
+    "named_distro_termination_returncode": 0,
+    "natural_exit": true
+  },
+  "production_marker_SHA256": "02819baae36cda301a19dd822aa5f7acf3ac6db6fd2e1cfdd86c1b8b85037d4f",
+  "execution_plan_SHA256": "f66fe54eb98591ec9d785bca088b6ff5c7241f78b1b40a68df6baf9387fce09d",
+  "field_empty": true,
+  "automatic_retry": false,
+  "next_step": "A separately approved CPU-only WSL input-reader ownership qualification under the same non-root identity, recording the exact rejected ancestor and UID/GID before any narrowly scoped read-only admission correction. Exercise full inputs.prepare before another GPU attempt."
+}
