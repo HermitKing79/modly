@@ -1,0 +1,63 @@
+{
+  "CPU_only": true,
+  "command": [
+    "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-boundary-feasibility-evidence\\compose.py"
+  ],
+  "memory_cap_bytes": 1073741824,
+  "deadline_seconds": 60,
+  "resource_samples": [
+    {
+      "available_ram_bytes": 20830314496,
+      "disk_free_bytes": 111518633984,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20830560256,
+      "disk_free_bytes": 111518633984,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20836220928,
+      "disk_free_bytes": 111518633984,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20821626880,
+      "disk_free_bytes": 111518633984,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20803694592,
+      "disk_free_bytes": 111518633984,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    }
+  ],
+  "returncode": 0,
+  "process_memory": {
+    "peak_working_set_bytes": 4587520,
+    "peak_pagefile_bytes": 868352
+  },
+  "peak_committed_bytes": 32296960,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 0.7029999999940628,
+  "classification": "PASS"
+}

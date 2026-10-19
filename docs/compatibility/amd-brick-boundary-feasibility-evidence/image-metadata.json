@@ -1,0 +1,71 @@
+{
+  "classification": "PASS_IMAGE_READBACK",
+  "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-boundary-feasibility-677d741\\a1-boundary-closeup.png",
+  "bytes": 64025,
+  "sha256": "fad7a930407e4ec771000e59144f898375ba9810e3b6ba0a03dcbae427c4bb5b",
+  "dimensions": [
+    1160,
+    820
+  ],
+  "source_png_sha256": "74d1655d53d5fe7d262756c7e23c0a695aa42b7ee3c43e075007a59fc3bf7f54",
+  "qualification_sha256": "2b11f15b22ba3c663c68278d585ec53c144a9ca09fae564062e8ab615d55cd6b",
+  "original_crop_box": [
+    514,
+    352,
+    555,
+    393
+  ],
+  "nearest_neighbor_enlargement": 12,
+  "unannotated_crop_pixel_exact": true,
+  "vertex_letters": {
+    "A": 1143327,
+    "B": 1143329,
+    "C": 1143348,
+    "D": 1154379,
+    "E": 1154395
+  },
+  "original_projected_points": {
+    "1143327": [
+      533.7175340446877,
+      372.8913753457738
+    ],
+    "1143329": [
+      535.0590640612138,
+      371.9608598653813
+    ],
+    "1143348": [
+      533.7559689973607,
+      371.5380753859793
+    ],
+    "1154379": [
+      534.4464182210897,
+      372.59777614024495
+    ],
+    "1154395": [
+      534.580879676428,
+      371.6992830227447
+    ]
+  },
+  "original_face": 2369396,
+  "boundary_edges": [
+    [
+      1143327,
+      1143329
+    ],
+    [
+      1143329,
+      1143348
+    ]
+  ],
+  "nonmanifold_edges": [
+    [
+      1143327,
+      1154379
+    ],
+    [
+      1143348,
+      1154395
+    ]
+  ],
+  "repair_approval": false
+}

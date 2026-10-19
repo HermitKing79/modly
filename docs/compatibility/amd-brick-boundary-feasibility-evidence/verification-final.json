@@ -1,0 +1,22 @@
+{
+  "classification": "PASS_EVIDENCE_BOUNDARY_BLOCKED",
+  "boundary_qualification": "BLOCKED",
+  "actual_CPU_tests_passed": 16,
+  "complete_traces": 53,
+  "complete_multihit_rays": 114,
+  "all_rays_hit": true,
+  "source_and_original_input_identities_unchanged": true,
+  "all100_protected_files_preserved": true,
+  "source_manifest": {
+    "compose.py": "7e6d9ef74f0aff8ba3c8d0cf30122d7caf1d99e2f845bbbcbc430ca252f481e9",
+    "compose_host.py": "e6f09b136e369c56241764d39de6c17f640e862c3ff3f431ad2c88ffbcfd2b25",
+    "local_geometry.py": "c3b2e7c7f756b9287df169092e1efca9192e6c74d53585ac6621e84a997e78f8",
+    "qualify.py": "df5ce292b4b5345f9e05f46023b9df87a691565d4842c3a363f9f30d7ba80c46",
+    "run_host.py": "a825cd75bb5f57e8428f650b6ea8bad8f6fd3098a086f23c1b89b0b1d43f0998",
+    "test_local_geometry.py": "413d87052056587d824047e53b40f2d0015c7473081f2e0e6e96e0629b4d13c1",
+    "test_qualify.py": "6457120bfcb9a759ec9c32941bc7981b3671aed3995cea8e72f3286e46e66410"
+  },
+  "initial_failure_preserved": true,
+  "no_geometry_material_repair_or_export": true,
+  "no_Blender_WSL_GPU_or_AI_execution": true
+}

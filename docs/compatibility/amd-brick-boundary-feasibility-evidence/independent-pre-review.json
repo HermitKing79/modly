@@ -1,0 +1,74 @@
+{
+  "schema": "modly.amd.brick-boundary-feasibility-independent-pre-review.v1",
+  "classification": "GO_READ_ONLY_ANALYSIS",
+  "created_utc": "2026-10-19T11:26:57.326935+00:00",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "base": "677d741eba18baa667f726aa38ce2c4f52720a8d",
+  "branch": "codex/amd-brick-boundary-feasibility",
+  "execution_source_SHA256": {
+    "qualify.py": "f152e988c4544552d69ec99e243188866b00086e14ac3f50a0ff66dad060aac3",
+    "local_geometry.py": "d7b70629fdea139a8057ff2ae1da24d38ce1ab285df01726369bb9c9a9c03ce9",
+    "run_host.py": "ec7d036322c68bf4de0858096048cd552b3b3a546f34438a7b28fcb109c0ffa8"
+  },
+  "scope": "Static math/worker/host review and root preflight/synthetic-test evidence. Reviewer did not run original geometry analysis, render, model, WSL or checkpoints.",
+  "reviewed_controls": {
+    "all_original_inputs_and_prior_diagnostic_full_hashes_pinned": true,
+    "original_helper_sources_pinned_not_edited": true,
+    "original_vertex_face_material_arrays_read_only": true,
+    "all_original_edge_incidences_recomputed_without_welding": true,
+    "boundary_components_complete_globally_not_closed_by_ROI_cropping": true,
+    "all_depth_boundary_segment_BBoxes_intersecting_fixed_window_nominated": true,
+    "direct_hit_incidence1_components_included_even_outside_window": true,
+    "all_boundary_component_edges_retained_with_original_IDs": true,
+    "component_degree_histograms_endpoints_branches_and_NM_vertex_touches_recorded": true,
+    "full_hit_face_vertex_star_original_RGB_and_winding_retained": true,
+    "all_hit_rays_keep_ties_both_windings_clip_and_original_face_IDs": true,
+    "hit_budget_overflow_rejected_without_truncation": true,
+    "loop_metric_budget_nonplanarity_degeneracy_and_projected_intersection_limits_explicit": true,
+    "material_mapping_preserved_no_hypothetical_patch_interpolation_claimed_original": true,
+    "A1_primary_A3_secondary_only_after_necessary_A1_geometry_candidates_fail": true,
+    "all_repair_eligible_flags_false_output_pending_independent_review": true,
+    "no_patch_construction_geometry_mutation_export_or_model_work": true,
+    "writes_confined_to_fresh_private_diagnostic_output": true,
+    "full_input_and_source_identity_checks_before_after": true
+  },
+  "finding_resolved": {
+    "issue": "A3 was initially suppressed by graph closure/noNMtouch even when computed geometric metrics failed.",
+    "resolution": "Fallback now uses surviving necessary geometry checks: supported metrics, rank>=2, planarity tolerance, no zero-length segment and no projected self-intersection, in addition to graph closure/noNMtouch. Actual predicate regression passed."
+  },
+  "acceptance_limits": {
+    "graph_cycle_alone_not_repair_certificate": true,
+    "local_manifold_vertex_links_not_certified": true,
+    "sparse_rays_cannot_certify_continuous_foreign_surface_absence": true,
+    "vines_brick_bridging_intent_not_proved_by_RGB_or_connectivity": true,
+    "rear_hit_boundary_not_automatically_nearer_opening_boundary": true,
+    "no_PASS_for_repair_without_all_required_safety_evidence": true
+  },
+  "resource_policy": {
+    "Job_attached_before_GO_and_numerical_imports": true,
+    "per_process_memory_cap_bytes": 6442450944,
+    "host_deadline_seconds": 180,
+    "worker_stage_deadline_seconds": 165,
+    "original_initial_and_live_RAM_floor_bytes": 12884901888,
+    "original_initial_and_live_disk_floor_bytes": 2147483648,
+    "fresh_available_RAM_bytes": 20786814976,
+    "fresh_free_disk_bytes": 111651856384,
+    "preflight_admitted": true,
+    "maximum_image_queries_per_case": 57,
+    "maximum_cases": 2,
+    "maximum_returned_hits_per_ray": 128,
+    "maximum_ROI_candidate_components": 256,
+    "maximum_metric_loop_vertices": 512,
+    "owned_tree_exit_and_kill_on_close_controls_retained": true,
+    "no_marker_consumed_at_final_preflight": true,
+    "assessment": "Feasible under unchanged bounds; actual outcomes and resource use still need review."
+  },
+  "tests": {
+    "root_reported_CPU_synthetic_passes": 11,
+    "seconds": 0.45,
+    "no_original_mesh_in_test_fixtures": true,
+    "reviewer_additional_tests_or_actual_geometry_runs": false
+  },
+  "blockers": [],
+  "required_followup": "Review actual complete component traces and original source preservation before classifying the requested boundary; unsupported spatial/manifold/material checks remain UNPROVEN and do not authorize repair."
+}

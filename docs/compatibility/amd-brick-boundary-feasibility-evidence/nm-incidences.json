@@ -1,0 +1,42 @@
+{
+  "CPU_only": true,
+  "readonly_source": "recovery cache produced from all original triangle-edge occurrences",
+  "source_sha256": {
+    "edge_keys.npy": "528da7b562cfca6d9428182f91a174ffea908f55f6bb3670232d914238d5e489",
+    "incidence.npy": "f83daf0682cc1606b1591a60ebc0d13796a8436eb3e14a1d4a4ce81d0dc1d413"
+  },
+  "edges": [
+    {
+      "vertices": [
+        1143327,
+        1154379
+      ],
+      "incidence": 3,
+      "original_key": 2238510797736
+    },
+    {
+      "vertices": [
+        1143348,
+        1154395
+      ],
+      "incidence": 3,
+      "original_key": 2238551913463
+    },
+    {
+      "vertices": [
+        1418566,
+        1603033
+      ],
+      "incidence": 3,
+      "original_key": 2777399207339
+    },
+    {
+      "vertices": [
+        1603136,
+        1603337
+      ],
+      "incidence": 3,
+      "original_key": 3138767149513
+    }
+  ]
+}

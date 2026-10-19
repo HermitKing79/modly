@@ -1,0 +1,83 @@
+{
+  "CPU_only": true,
+  "command": [
+    "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-boundary-feasibility-evidence\\qualify.py"
+  ],
+  "initial_resources": {
+    "available_ram_bytes": 20822171648,
+    "disk_free_bytes": 111586725888,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "memory_cap_bytes": 6442450944,
+  "deadline_seconds": 180,
+  "resource_samples": [
+    {
+      "available_ram_bytes": 20826284032,
+      "disk_free_bytes": 111586717696,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 0.20300000000861473
+    },
+    {
+      "available_ram_bytes": 20777467904,
+      "disk_free_bytes": 111586717696,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 1.2030000000086147
+    },
+    {
+      "available_ram_bytes": 20597485568,
+      "disk_free_bytes": 111586717696,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 2.2180000000080327
+    },
+    {
+      "available_ram_bytes": 20467040256,
+      "disk_free_bytes": 111523368960,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 3.2180000000080327
+    },
+    {
+      "available_ram_bytes": 20404535296,
+      "disk_free_bytes": 111523368960,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 4.218000000008033
+    },
+    {
+      "available_ram_bytes": 20407558144,
+      "disk_free_bytes": 111522918400,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 5.218000000008033
+    }
+  ],
+  "returncode": 0,
+  "process_memory": {
+    "peak_working_set_bytes": 4599808,
+    "peak_pagefile_bytes": 864256
+  },
+  "peak_process_committed_bytes": 546172928,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 6.125,
+  "classification": "PASS"
+}

@@ -1,0 +1,22 @@
+{
+  "classification": "PASS",
+  "CPU_only": true,
+  "resources": {
+    "available_ram_bytes": 20786814976,
+    "disk_free_bytes": 111651856384,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "source_sha256": {
+    "local_geometry.py": "d7b70629fdea139a8057ff2ae1da24d38ce1ab285df01726369bb9c9a9c03ce9",
+    "qualify.py": "f152e988c4544552d69ec99e243188866b00086e14ac3f50a0ff66dad060aac3",
+    "run_host.py": "ec7d036322c68bf4de0858096048cd552b3b3a546f34438a7b28fcb109c0ffa8",
+    "test_local_geometry.py": "80450dd9198ab835d85c7fd58c3b28bc7b7bf5cd039f04cffd58938feb8f181b",
+    "test_qualify.py": "6457120bfcb9a759ec9c32941bc7981b3671aed3995cea8e72f3286e46e66410"
+  },
+  "tests_passed": 11,
+  "test_seconds": 0.45,
+  "prior_full_input_preflight": "preflight.json",
+  "no_analysis_marker": true
+}

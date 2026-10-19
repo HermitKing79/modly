@@ -1,0 +1,136 @@
+{
+  "schema": "modly.amd.brick-boundary-feasibility-preservation-before.v1",
+  "created_utc": "2026-10-19T11:18:55.829148+00:00",
+  "mission_base": "677d741eba18baa667f726aa38ce2c4f52720a8d",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "authenticated_previous_diagnosis_after_public_sha256": "60409a4397763cfeef40e0b4c7b97ff238f8b7dea90ae74220372489bf516f7e",
+  "authenticated_previous_diagnosis_after_private_sha256": "a281d90c6fe23634e1697cbdea3b52f522c4ab272e4dfb40171efb73b4f83080",
+  "private_detail_sha256": "653f567b201741defd7cb669285bd2aa0f1e3a890f7eceacd7c878dc2454e059",
+  "bounded_prior_unique_file_identities_checked": 400,
+  "all400_fresh_full_SHA256_checked": true,
+  "all400_current_identities_match_authenticated_before": true,
+  "verification_method_unique400_file_counts": {
+    "fresh_full_SHA256_current_no_import": 400
+  },
+  "protected_files_checked": 100,
+  "protected_files_fresh_full_SHA256_checked": 100,
+  "protected_files_unchanged": true,
+  "original_pycache_directories": 4,
+  "original_pycache_files": 20,
+  "original_pycache_entry_sets_and_fresh_file_hashes_unchanged": true,
+  "selected_environment_check_count": 42,
+  "selected_source_edit_backup_check_count": 13,
+  "selected_environment_native_source_edit_backup_checks_unchanged": true,
+  "final16_source_closure_fresh_hashes_match": true,
+  "original_CPU_candidate107_unchanged": true,
+  "qualified_input_ownership18_unchanged": true,
+  "latest_qualified_PBR123_unchanged": true,
+  "checkpoint_stat_and_raw_header_unchanged": true,
+  "checkpoint_configuration_files_bound_by_full_SHA256_in_unique400": true,
+  "checkpoint_weight_payload_bytes_read_this_audit": 0,
+  "checkpoint_header_bytes_read_this_audit": 121336,
+  "prior_tree_count": 18,
+  "prior_tree_file_count": 397,
+  "prior_report_count": 7,
+  "newly_snapshotted_diagnosis_tree_count": 2,
+  "newly_snapshotted_diagnosis_file_count": 62,
+  "newly_snapshotted_diagnosis_report_count": 1,
+  "combined_history_tree_count_for_following_AFTER": 20,
+  "combined_history_file_count_for_following_AFTER": 459,
+  "combined_history_report_count_for_following_AFTER": 8,
+  "all_compared_prior_trees_unchanged": true,
+  "all_compared_prior_reports_unchanged": true,
+  "diagnosis_original_inputs": [
+    {
+      "label": "original_mesh",
+      "bytes": 77751514,
+      "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+      "verification_method": "fresh_full_SHA256_current_no_import",
+      "matches_authenticated_before": true
+    },
+    {
+      "label": "geometry",
+      "bytes": 104148612,
+      "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+      "verification_method": "fresh_full_SHA256_current_no_import",
+      "matches_authenticated_before": true
+    },
+    {
+      "label": "material",
+      "bytes": 125318120,
+      "sha256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394",
+      "verification_method": "fresh_full_SHA256_current_no_import",
+      "matches_authenticated_before": true
+    },
+    {
+      "label": "vertices.npy",
+      "bytes": 23494820,
+      "sha256": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252",
+      "verification_method": "fresh_full_SHA256_current_no_import",
+      "matches_authenticated_before": true
+    },
+    {
+      "label": "faces.npy",
+      "bytes": 50083136,
+      "sha256": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d",
+      "verification_method": "fresh_full_SHA256_current_no_import",
+      "matches_authenticated_before": true
+    }
+  ],
+  "original_saved_five_inputs_fresh_full_SHA256_match": true,
+  "pinned_renderers_unchanged": true,
+  "previous_exposure_images": [
+    {
+      "name": "view-pos-x.png",
+      "bytes": 940451,
+      "sha256": "3233802da22557d0ffdd44b325ce1d6bc83a000628669354468303dae6e47087",
+      "verification_method": "fresh_full_SHA256_current_no_import",
+      "matches_authenticated_before": true
+    },
+    {
+      "name": "view-pos-x-ev1.png",
+      "bytes": 995259,
+      "sha256": "93d3e5c6d8157deb40e79c63c8f21958f08b3c799f3c5f1691fc310d419285fa",
+      "verification_method": "fresh_full_SHA256_current_no_import",
+      "matches_authenticated_before": true
+    },
+    {
+      "name": "view-pos-x-ev2.png",
+      "bytes": 1023455,
+      "sha256": "74d1655d53d5fe7d262756c7e23c0a695aa42b7ee3c43e075007a59fc3bf7f54",
+      "verification_method": "fresh_full_SHA256_current_no_import",
+      "matches_authenticated_before": true
+    },
+    {
+      "name": "exposure-comparison.png",
+      "bytes": 842158,
+      "sha256": "35bebaeaae7281755453351e5c7875a9bd61a50f8a00a1c0f37c319235d499b1",
+      "verification_method": "fresh_full_SHA256_current_no_import",
+      "matches_authenticated_before": true
+    },
+    {
+      "name": "contact-sheet.png",
+      "bytes": 840385,
+      "sha256": "87be0536a1481116c4dac6224fc5daa29951d0226eb58b5219f06d737b2608df",
+      "verification_method": "fresh_full_SHA256_current_no_import",
+      "matches_authenticated_before": true
+    },
+    {
+      "name": "detail-comparison.png",
+      "bytes": 500136,
+      "sha256": "106369af2be4b742eba56de7a06d36cd81d9aa052ea42792a8738649506c9b62",
+      "verification_method": "fresh_full_SHA256_current_no_import",
+      "matches_authenticated_before": true
+    }
+  ],
+  "fresh_full_hash_unique_file_count_all_scopes": 937,
+  "fresh_full_hash_bytes_read_all_scopes": 2275513242,
+  "issues": [],
+  "scope_limits": [
+    "Fresh initial snapshots freeze all previous diagnosis E/P files including diagnostic arrays, NumPy caches, images and receipts, plus its report; these are not claimed to have a pre-existing snapshot comparison.",
+    "All400 baseline identities and protected100/cache20/source/environment/renderer identities freshly hashed. Mission BEFORE and historical baseline descriptors authenticated by SHA256.",
+    "Original mesh, vertices/faces, decoded geometry and material plus original saved inputs now freshly full-SHA256 hashed; exact stat checks also match. Three historical disposable CPU fixture copies retain exact size/mtime checks only.",
+    "Checkpoint weight payloads not read; exact size/mtime and fresh bounded raw-header SHA256 compared directly with authenticated mission BEFORE. Historical checkpoint full hashes are not current payload verification.",
+    "No WSL/Torch/model/GPU/Blender/native extension execution or original/source/cache writes. Previous diagnosis evidence cache is fully included in fresh baseline snapshots, separate from the original four protected cache directories. Root separately verifies Git state, remote heads and publication."
+  ]
+}

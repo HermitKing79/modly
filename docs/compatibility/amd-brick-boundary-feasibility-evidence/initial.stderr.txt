@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-brick-boundary-feasibility-evidence\qualify.py", line 219, in <module>
+    main()
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-brick-boundary-feasibility-evidence\qualify.py", line 195, in main
+    cases.append(analyze_case('A1',[534,372],2369396))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-brick-boundary-feasibility-evidence\qualify.py", line 176, in analyze_case
+    require(len(selected_labels)<=256,'Local boundary component budget exceeded')
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-brick-defect-diagnosis-evidence\diagnose.py", line 47, in require
+    raise ValueError(message)
+ValueError: Local boundary component budget exceeded

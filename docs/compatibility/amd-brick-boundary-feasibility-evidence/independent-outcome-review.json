@@ -1,0 +1,139 @@
+{
+  "schema": "modly.amd.brick-boundary-feasibility-independent-outcome-review.v1",
+  "created_utc": "2026-10-19T11:43:42.119254+00:00",
+  "classification": "BLOCKED",
+  "evidence_and_execution_review": "PASS",
+  "repair_authorized": false,
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "base": "677d741eba18baa667f726aa38ce2c4f52720a8d",
+  "report_SHA256": "3d3fd7852befaab31a9168ea3db0888c6ab301308666a7e4017dc41146080cf2",
+  "execution_source_SHA256": {
+    "qualify.py": "df5ce292b4b5345f9e05f46023b9df87a691565d4842c3a363f9f30d7ba80c46",
+    "local_geometry.py": "c3b2e7c7f756b9287df169092e1efca9192e6c74d53585ac6621e84a997e78f8",
+    "run_host.py": "a825cd75bb5f57e8428f650b6ea8bad8f6fd3098a086f23c1b89b0b1d43f0998",
+    "compose.py": "7e6d9ef74f0aff8ba3c8d0cf30122d7caf1d99e2f845bbbcbc430ca252f481e9",
+    "compose_host.py": "e6f09b136e369c56241764d39de6c17f640e862c3ff3f431ad2c88ffbcfd2b25"
+  },
+  "review_scope": "Source/record consistency, all53 original-ID graph memberships and cycle orders, 114 saved all-hit rays, source-safe summary, actual PNG reopen/pixel comparison/visual inspection and preservation receipts. No reviewer production mesh analysis, render, model, GPU, WSL or checkpoint execution.",
+  "verified_findings": {
+    "A1_direct_boundary": {
+      "component": 1014637,
+      "ordered_original_vertices": [
+        1143327,
+        1143329,
+        1143348
+      ],
+      "edges": 2,
+      "vertices": 3,
+      "endpoint_NM_edge_incidences": [
+        3,
+        3
+      ],
+      "status": "Open chain meeting two nonmanifold edges; no closed rim or opening area."
+    },
+    "A3_secondary_direct_boundary": {
+      "component": 1408151,
+      "edges": 17,
+      "vertices": 18,
+      "endpoints": [
+        1603033,
+        1603136
+      ],
+      "endpoint_NM_edge_incidences": [
+        3,
+        3
+      ],
+      "status": "Open chain meeting two nonmanifold edges; no closed rim or opening area."
+    },
+    "A1_window": {
+      "all_components_screened": 261,
+      "intersecting_boundary_edges": 1274,
+      "open_or_branching": 233,
+      "closed_NM_touching": 1,
+      "closed_no_NM_fully_traced": 27,
+      "projected_bboxes_containing_pixel_center": 0,
+      "nearest_bbox_distance_px": 0.7695469205998506
+    },
+    "A3_window": {
+      "all_components_screened": 198,
+      "intersecting_boundary_edges": 1020,
+      "open_or_branching": 173,
+      "closed_NM_touching": 1,
+      "closed_no_NM_fully_traced": 24,
+      "projected_bboxes_containing_pixel_center": 0,
+      "nearest_bbox_distance_px": 1.0000548228850294
+    },
+    "all53_trace_memberships_and_degrees_independently_consistent": true,
+    "both_trace_sets_exactly_direct_components_union_every_closed_no_NM_candidate": true,
+    "all114_rays_sorted_untruncated_no_empty_or_recorded_ambiguity": true,
+    "six_original_face_hits_on_each_center_ray": true,
+    "all51_no_NM_loop_memberships_and_metrics_match_private_measurement": true,
+    "all51_nonplanar_under_strict_planar_certificate_tolerance": true,
+    "projected_segment_crossings_among_these51": 0,
+    "original_input_and_execution_source_before_after_identities_equal": true,
+    "source_safe_result_counts_ordered_chains_stars_depths_and_metrics_match": true
+  },
+  "figure": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-boundary-feasibility-677d741\\a1-boundary-closeup.png",
+    "sha256": "fad7a930407e4ec771000e59144f898375ba9810e3b6ba0a03dcbae427c4bb5b",
+    "bytes": 64025,
+    "dimensions": [
+      1160,
+      820
+    ],
+    "independent_PIL_reopen": true,
+    "untouched_41x41_source_crop_pixel_exact_at12x_nearest": true,
+    "all_five_projected_original_nodes_and_four_highlighted_edges_match_authenticated_face_star": true,
+    "vertex_labels_legible_no_clipping": true,
+    "uniform_projection_graph_not_surface_or_occlusion_render": true
+  },
+  "resources": {
+    "measurement_host_seconds": 6.125,
+    "measurement_worker_seconds": 5.437000000005355,
+    "measurement_peak_process_committed_bytes": 546172928,
+    "measurement_minimum_sampled_available_RAM_bytes": 20404535296,
+    "measurement_limits_bytes_seconds": [
+      6442450944,
+      180
+    ],
+    "composition_host_seconds": 0.7029999999940628,
+    "composition_peak_process_committed_bytes": 32296960,
+    "composition_limits_bytes_seconds": [
+      1073741824,
+      60
+    ],
+    "both_live12GiB_RAM_2GiB_disk_floors_passed": true,
+    "both_natural_exit0_and_empty_unforced_owned_Job": true,
+    "launcher_process_working_set_not_claimed_as_worker_peak": true
+  },
+  "preservation": {
+    "root_fresh_full_hash_scope400_and_protected100_pass": true,
+    "original_inputs_and_prior_data_sources_unchanged": true,
+    "environment42_edits_backups13_original_cache4trees20files_prior20trees459files8reports_pass": true,
+    "checkpoint_weight_payloads_not_read_by_audit": true,
+    "new_figure_private_outside_repo": true,
+    "root_remote_prepublication_receipt_reviewed": true,
+    "final_postpublication_remote_Git_gate_owned_by_root": true
+  },
+  "interpretation_limits": [
+    "Neither tested direct boundary is a closed isolated opening. No qualifying candidate surrounding either exact pixel center was established.",
+    "Projected bounding-box exclusion is limited to these fully traced no-NM loops and exact centers; it is not a global no-hole proof.",
+    "Failure of the diameter*1e-9 planar certificate does not make a general3D loop unsafe or irreparable.",
+    "Zero projected segment crossings does not certify spatial simplicity, 3D triangle clearance, vertex-link manifoldness or patch safety.",
+    "Depth changes and brown learned material do not uniquely distinguish shadowing, missing nearer sheets, intentional joints or foliage.",
+    "No closing edge, patch, opening area or new-face material interpolation was manufactured or qualified."
+  ],
+  "resolved_wording_finding": "Report now states graph-screen rejections fail the necessary closed/no-junction tests; it does not call all such geometry irreparable.",
+  "review_blockers": [],
+  "receipts_SHA256": {
+    "result.json": "d070ec52df796bad4e12c7c68b6d3e1281aff49a49041e494c72f8d8e0000a4f",
+    "host-result.json": "681744266af5413d6bd7273e8468074a6e05a69ab7929f2bf95390f87487b50b",
+    "composition-host.json": "52a8a829c9fa44acd77f76544cef5a3f816853576530b2e39f1ced6a49a310fd",
+    "image-verification.json": "6d9a7c4e5f04ad8ea28b5d2f013aabf96b57dfa7117ffe329172ef455bc82981",
+    "nm-incidences.json": "ed9372e74cfab59ee63a6642d11daa4862b889c1aa4d0bbaf993c33774ef0622",
+    "preservation-after.json": "5ff063dd023e9f22ecb55fc9151b309a7a124cf4351afe77b0ff23bcf6a3bd1e",
+    "remote-prepublication.json": "b230de3ea5480bf150eaae05d1e8aedd28c9e32cad2489e9696a0b2849d91005",
+    "verification-final.json": "350ba6aa4fa4e2b3164a8ecad50d03804c713636b6890eb56707fea154b78f40"
+  },
+  "conclusion": "Measurement evidence and private diagnostic image pass review. Boundary qualification remains BLOCKED; stop for visual review without geometry or material modification."
+}

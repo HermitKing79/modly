@@ -1,0 +1,100 @@
+{
+  "classification": "PASS",
+  "CPU_only": true,
+  "unchanged_resource_limits": true,
+  "unchanged_maximum_complete_traces": 256,
+  "all_potentially_admissible_cycles_retained": true,
+  "all_window_graph_components_screened_exactly": true,
+  "initial_failure_and_exact_source_preserved": true,
+  "initial_topology_caches_byte_identical_to_authenticated_previous_diagnosis": true,
+  "resources": {
+    "available_ram_bytes": 20772855808,
+    "disk_free_bytes": 111586881536,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "sources": {
+    "local_geometry.py": "c3b2e7c7f756b9287df169092e1efca9192e6c74d53585ac6621e84a997e78f8",
+    "qualify.py": "2e629fc16bf64f4ac31b038697e9c55fa91dfea1d97eda9ce80c589c54caf4c9",
+    "run_host.py": "a825cd75bb5f57e8428f650b6ea8bad8f6fd3098a086f23c1b89b0b1d43f0998",
+    "test_local_geometry.py": "413d87052056587d824047e53b40f2d0015c7473081f2e0e6e96e0629b4d13c1",
+    "test_qualify.py": "6457120bfcb9a759ec9c32941bc7981b3671aed3995cea8e72f3286e46e66410"
+  },
+  "current_tests_passed": 16,
+  "initial_host_result": {
+    "CPU_only": true,
+    "command": [
+      "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "-I",
+      "-B",
+      "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-boundary-feasibility-evidence\\qualify.py"
+    ],
+    "initial_resources": {
+      "available_ram_bytes": 20805500928,
+      "disk_free_bytes": 111651323904,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    "memory_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "resource_samples": [
+      {
+        "available_ram_bytes": 20798169088,
+        "disk_free_bytes": 111651315712,
+        "required_ram_bytes": 12884901888,
+        "required_disk_bytes": 2147483648,
+        "admitted": true,
+        "elapsed_seconds": 0.20299999999406282
+      },
+      {
+        "available_ram_bytes": 20755861504,
+        "disk_free_bytes": 111651315712,
+        "required_ram_bytes": 12884901888,
+        "required_disk_bytes": 2147483648,
+        "admitted": true,
+        "elapsed_seconds": 1.2029999999940628
+      },
+      {
+        "available_ram_bytes": 20570607616,
+        "disk_free_bytes": 111651315712,
+        "required_ram_bytes": 12884901888,
+        "required_disk_bytes": 2147483648,
+        "admitted": true,
+        "elapsed_seconds": 2.202999999994063
+      },
+      {
+        "available_ram_bytes": 20510154752,
+        "disk_free_bytes": 111587966976,
+        "required_ram_bytes": 12884901888,
+        "required_disk_bytes": 2147483648,
+        "admitted": true,
+        "elapsed_seconds": 3.202999999994063
+      },
+      {
+        "available_ram_bytes": 20462125056,
+        "disk_free_bytes": 111587966976,
+        "required_ram_bytes": 12884901888,
+        "required_disk_bytes": 2147483648,
+        "admitted": true,
+        "elapsed_seconds": 4.2189999999973224
+      }
+    ],
+    "returncode": 1,
+    "process_memory": {
+      "peak_working_set_bytes": 4595712,
+      "peak_pagefile_bytes": 856064
+    },
+    "peak_process_committed_bytes": 544935936,
+    "job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "elapsed_seconds": 4.51600000000326,
+    "classification": "BLOCKED"
+  }
+}

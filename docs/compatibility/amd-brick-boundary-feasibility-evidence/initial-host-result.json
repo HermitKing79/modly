@@ -1,0 +1,75 @@
+{
+  "CPU_only": true,
+  "command": [
+    "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-boundary-feasibility-evidence\\qualify.py"
+  ],
+  "initial_resources": {
+    "available_ram_bytes": 20805500928,
+    "disk_free_bytes": 111651323904,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "memory_cap_bytes": 6442450944,
+  "deadline_seconds": 180,
+  "resource_samples": [
+    {
+      "available_ram_bytes": 20798169088,
+      "disk_free_bytes": 111651315712,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 0.20299999999406282
+    },
+    {
+      "available_ram_bytes": 20755861504,
+      "disk_free_bytes": 111651315712,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 1.2029999999940628
+    },
+    {
+      "available_ram_bytes": 20570607616,
+      "disk_free_bytes": 111651315712,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 2.202999999994063
+    },
+    {
+      "available_ram_bytes": 20510154752,
+      "disk_free_bytes": 111587966976,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 3.202999999994063
+    },
+    {
+      "available_ram_bytes": 20462125056,
+      "disk_free_bytes": 111587966976,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 4.2189999999973224
+    }
+  ],
+  "returncode": 1,
+  "process_memory": {
+    "peak_working_set_bytes": 4595712,
+    "peak_pagefile_bytes": 856064
+  },
+  "peak_process_committed_bytes": 544935936,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 4.51600000000326,
+  "classification": "BLOCKED"
+}
