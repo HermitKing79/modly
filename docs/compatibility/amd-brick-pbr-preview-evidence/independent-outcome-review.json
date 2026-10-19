@@ -1,0 +1,444 @@
+{
+  "schema": "modly.amd.brick-pbr-preview-independent-outcome-review.v1",
+  "classification": "PASS",
+  "created_utc": "2026-10-19T09:05:57.528727+00:00",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "new_Blender_model_GPU_or_WSL_execution_by_reviewer": false,
+  "read_raw_actual_private_receipts": true,
+  "checks_passed": 82,
+  "checks": [
+    "Authenticated full correspondence proof",
+    "All actual receipts PASS",
+    "Actual source identities unchanged",
+    "Fresh full identity mapping-verification.json",
+    "Fresh full identity mesh.json",
+    "Fresh full identity vertices.npy",
+    "Fresh full identity render_pbr.py",
+    "Fresh full identity mesh.ply",
+    "Fresh full identity blender.exe",
+    "Fresh full identity texture-field.safetensors",
+    "Fresh full identity texture-field-metadata.json",
+    "Fresh full identity faces.npy",
+    "Reviewed candidate unchanged render_host.py",
+    "Reviewed candidate unchanged render_pbr.py",
+    "Reviewed candidate unchanged verify_mapping.py",
+    "Reviewed candidate unchanged mapping-verification.json",
+    "Reviewed candidate unchanged compose_preview.py",
+    "Reviewed candidate unchanged compose_host.py",
+    "Actual reviewed host and renderer invoked",
+    "Blender actual unchanged cap/time limits",
+    "Blender natural zero exit with empty owned tree",
+    "Blender all original live RAM/disk floors retained",
+    "composition natural zero exit with empty owned tree",
+    "composition all original live RAM/disk floors retained",
+    "Actual owned start and independent first-frame gate",
+    "Composition actual 1 GiB / 60 second limit",
+    "Full original mesh single import no export or blend save",
+    "Complete ordered geometry before/first/final readbacks match proof",
+    "Fresh full original NPY payload vertices.npy",
+    "Fresh full original NPY payload faces.npy",
+    "Full material before/after readbacks match",
+    "Fresh all material coordinate bytes original row order",
+    "Fresh all original material feature bytes",
+    "All original unclamped F32 point values/readbacks red",
+    "Independent complete original statistics red",
+    "All original unclamped F32 point values/readbacks green",
+    "Independent complete original statistics green",
+    "All original unclamped F32 point values/readbacks blue",
+    "Independent complete original statistics blue",
+    "All original unclamped F32 point values/readbacks metallic",
+    "Independent complete original statistics metallic",
+    "All original unclamped F32 point values/readbacks roughness",
+    "Independent complete original statistics roughness",
+    "All original unclamped F32 point values/readbacks alpha",
+    "Independent complete original statistics alpha",
+    "Independent native gamma22 full F32 conversion/readback",
+    "Actual stable Cycles CPU 1024 / 32 samples / four threads",
+    "CPU denoising fixed sampling",
+    "Original display/world values after exact F32 conversion",
+    "Original lights bounds and camera ortho scale after exact F32 conversion",
+    "Exactly three requested views",
+    "All documented actual camera values match prior pos-x",
+    "Independent image full hash view-pos-x.png",
+    "Independent full image decode view-pos-x.png",
+    "Render bytes and composition source pos-x",
+    "All documented actual camera values match prior iso-a",
+    "Independent image full hash view-iso-a.png",
+    "Independent full image decode view-iso-a.png",
+    "Render bytes and composition source iso-a",
+    "All documented actual camera values match prior iso-b",
+    "Independent image full hash view-iso-b.png",
+    "Independent full image decode view-iso-b.png",
+    "Render bytes and composition source iso-b",
+    "Independent image full hash surface-detail.png",
+    "Independent full image decode surface-detail.png",
+    "Derived image byte count surface-detail.png",
+    "Independent image full hash comparison-sheet.png",
+    "Independent full image decode comparison-sheet.png",
+    "Derived image byte count comparison-sheet.png",
+    "Independent image full hash contact-sheet.png",
+    "Independent full image decode contact-sheet.png",
+    "Derived image byte count contact-sheet.png",
+    "Independent image full hash 0e4984a9b3765ce80e9853443f9319ecedf90885c74b56cccfebc09402740f8a.webp",
+    "Independent full image decode 0e4984a9b3765ce80e9853443f9319ecedf90885c74b56cccfebc09402740f8a.webp",
+    "Independent image full hash view-pos-x.png",
+    "Independent full image decode view-pos-x.png",
+    "Authenticated original photo and prior clay",
+    "Actual ordered start/render/continuation markers",
+    "No renderer traceback or composition stderr",
+    "All eight decoded images retained under distinct raw/derived/reference keys",
+    "Actual invocation total 56.109 seconds and no retry independently checked",
+    "New derived camera bytecode retained privately with exact SHA256; historical new cache path absent"
+  ],
+  "fresh_original_input_identities": {
+    "mapping-verification.json": {
+      "bytes": 13297,
+      "sha256": "84912427ddff6d470ce96215344118b057ab357f3a41ff762612a367549d0eb4",
+      "full_current_hash_matches_actual_before_and_after": true
+    },
+    "mesh.json": {
+      "bytes": 1346,
+      "sha256": "12810c52c808369f360f8d826eb1f58ec66224d5b520dcf129e0b5a50ff1a37a",
+      "full_current_hash_matches_actual_before_and_after": true
+    },
+    "vertices.npy": {
+      "bytes": 23494820,
+      "sha256": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252",
+      "full_current_hash_matches_actual_before_and_after": true
+    },
+    "render_pbr.py": {
+      "bytes": 32229,
+      "sha256": "ce4e63f0aec1e0d39fa95e70b7d0551a9d98701e3db9c214e1ce7fef8b939934",
+      "full_current_hash_matches_actual_before_and_after": true
+    },
+    "mesh.ply": {
+      "bytes": 77751514,
+      "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+      "full_current_hash_matches_actual_before_and_after": true
+    },
+    "blender.exe": {
+      "bytes": 113014232,
+      "sha256": "284f4041f98e113f3dc10654a7193ffaaa9bfdfec8b87fa116620a48b5f6d4cb",
+      "full_current_hash_matches_actual_before_and_after": true
+    },
+    "texture-field.safetensors": {
+      "bytes": 125318120,
+      "sha256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394",
+      "full_current_hash_matches_actual_before_and_after": true
+    },
+    "texture-field-metadata.json": {
+      "bytes": 13493,
+      "sha256": "4f65c6730f4a8669d9e62ba4f151f15b19f6cfd6b7e7dcd81289ad923bbdd8c2",
+      "full_current_hash_matches_actual_before_and_after": true
+    },
+    "faces.npy": {
+      "bytes": 50083136,
+      "sha256": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d",
+      "full_current_hash_matches_actual_before_and_after": true
+    }
+  },
+  "original_geometry": {
+    "vertices": 1957891,
+    "triangles": 4173584,
+    "full_payload_SHA256": {
+      "vertices.npy": "bdfcbbe8f251b33daa64c6832c4c1278b3a29600cf825a022478b0b87bb573c3",
+      "faces.npy": "5fa284e1698929f4f0f6c78edc2e26632fcde6e43ad7eb57b36ae6fc9f88d883"
+    },
+    "all_before_first_final_readbacks_match": true
+  },
+  "original_material": {
+    "all_six_original_F32_channels_and_statistics_match_full_Blender_readbacks": true,
+    "channel_readbacks": {
+      "red": {
+        "sha256": "938fcf8bb9a1eedebdd9d0ec02698453200fa61c45e156a4ee52dcd319015472",
+        "min": 0.21756955981254578,
+        "max": 0.8840090036392212,
+        "mean": 0.5060878960642815,
+        "outside_0_1_count": 0,
+        "all_values_match_full_attribute_readbacks": true
+      },
+      "green": {
+        "sha256": "7d8cffa3639fc165f039276f5db75ea9bc9de81e30b3be531daf8fd989269ab8",
+        "min": 0.06547558307647705,
+        "max": 0.7230156660079956,
+        "mean": 0.28629774879023306,
+        "outside_0_1_count": 0,
+        "all_values_match_full_attribute_readbacks": true
+      },
+      "blue": {
+        "sha256": "312b4df2d0f2664140f99044683dfc61d9f6af6cda93b5131ba0a40516be1a5a",
+        "min": 0.01686990261077881,
+        "max": 0.6183264851570129,
+        "mean": 0.15729900598981433,
+        "outside_0_1_count": 0,
+        "all_values_match_full_attribute_readbacks": true
+      },
+      "metallic": {
+        "sha256": "9fe63487c5de4be9d4a38ba2daae11d710ffaf3b3b37a685ce8b8d226ba33c47",
+        "min": -0.00418400764465332,
+        "max": 0.006668657064437866,
+        "mean": 6.666995682234871e-05,
+        "outside_0_1_count": 810749,
+        "all_values_match_full_attribute_readbacks": true
+      },
+      "roughness": {
+        "sha256": "a69274a8ab54b5836792b29785f978842ba6e134feccc42fbe0b2ed9a55bf497",
+        "min": 0.9783090353012085,
+        "max": 1.0025746822357178,
+        "mean": 1.0003827991469503,
+        "outside_0_1_count": 1721533,
+        "all_values_match_full_attribute_readbacks": true
+      },
+      "alpha": {
+        "sha256": "55f9a14e9277e382975f027bf92b12e38f953f12694a9676cd60472fb7a4de02",
+        "min": 0.9980556964874268,
+        "max": 1.0041143894195557,
+        "mean": 1.0001320649589525,
+        "outside_0_1_count": 1433895,
+        "all_values_match_full_attribute_readbacks": true
+      }
+    },
+    "native_gamma22_RGBA_sha256": "7bbb6216da545fdee192e6daae6902a8674dcef302db5fa02f10bbdb1abe7ebd",
+    "alpha_connected_and_shader_only_clamp": true
+  },
+  "actual_CPU_resources": {
+    "renderer_seconds": 48.78242419999151,
+    "host_seconds": 55.469000000011874,
+    "peak_Blender_committed_bytes": 3074342912,
+    "peak_Blender_working_set_bytes": 2875576320,
+    "minimum_sampled_available_RAM_bytes": 18595221504,
+    "minimum_sampled_free_disk_bytes": 112039383040,
+    "sample_count": 55,
+    "first_frame_continuation_host_seconds": 29.297000000005937,
+    "natural_Blender_owned_tree_exit": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "composition_seconds": 0.9530000000086147,
+    "composition_peak_process_committed_bytes_from_job": 57192448,
+    "natural_composition_owned_tree_exit": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "full_invocation_seconds": 56.10900000001129
+  },
+  "original_camera_and_lighting": {
+    "all_documented_prior_camera_and_rig_values_match": true,
+    "authored_decimal_world_and_root_ortho_metadata_compared_after_exact_F32_conversion": true,
+    "baseline_does_not_record_actual_per_view_light_transforms": true,
+    "current_renderer_uses_same_authenticated_camera_relative_rig": true
+  },
+  "independently_reopened_images": {
+    "renders/view-pos-x.png": {
+      "sha256": "a9bc79d78d72c1d08e602910fe5780ccb606f51e8d5b574a8e1b9af78cd90387",
+      "bytes": 940451,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_mean": [
+        63.484188079833984,
+        59.50184154510498,
+        57.07523536682129
+      ],
+      "channel_stddev": [
+        10.871488238228581,
+        13.952306792016527,
+        18.55693840895368
+      ]
+    },
+    "renders/view-iso-a.png": {
+      "sha256": "aa70284d1512d5df88336c9db41e8166afe3682c7a1272a9696eaba1da71051a",
+      "bytes": 951110,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_mean": [
+        63.654775619506836,
+        59.02665424346924,
+        55.88674354553223
+      ],
+      "channel_stddev": [
+        13.111891707341753,
+        14.95515707243263,
+        20.05867314641806
+      ]
+    },
+    "renders/view-iso-b.png": {
+      "sha256": "bda224aa6382e37cb1d09319eb0f70513e6f782370626c4320a8f8bf0650b056",
+      "bytes": 932271,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_mean": [
+        62.65202617645264,
+        58.5143985748291,
+        56.30052852630615
+      ],
+      "channel_stddev": [
+        10.577498102369862,
+        14.979143157688894,
+        19.09918266332838
+      ]
+    },
+    "derived/surface-detail.png": {
+      "sha256": "7fdd033293978c07abd510df2088870e2266d1b640b483bd4dc628aa007cb044",
+      "bytes": 98717,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        800,
+        1000
+      ],
+      "channel_mean": [
+        81.44508125,
+        62.55052125,
+        53.29400125
+      ],
+      "channel_stddev": [
+        61.60602524453999,
+        67.58161745329346,
+        71.08433468082119
+      ]
+    },
+    "derived/comparison-sheet.png": {
+      "sha256": "be60ce233c8990c1c8e8f4509fc7de85a881d5e39c92ce926ca803645d6df5ea",
+      "bytes": 547549,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1500,
+        638
+      ],
+      "channel_mean": [
+        115.03183803552768,
+        111.01485161964472,
+        108.4582789968652
+      ],
+      "channel_stddev": [
+        77.21821515180065,
+        78.26532299562255,
+        79.87656275229764
+      ]
+    },
+    "derived/contact-sheet.png": {
+      "sha256": "e805ba8d15a845e96146b2522d9988b9b83728e50093b35e0c34aaf3a5aadf0f",
+      "bytes": 1021170,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1500,
+        1178
+      ],
+      "channel_mean": [
+        106.38617204301076,
+        100.75038426711941,
+        97.52133729485003
+      ],
+      "channel_stddev": [
+        74.930727394966,
+        77.6037295731036,
+        79.90793304277867
+      ]
+    },
+    "references/original-photo": {
+      "sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+      "bytes": 184424,
+      "format": "WEBP",
+      "mode": "RGBA",
+      "dimensions": [
+        1018,
+        1018
+      ],
+      "channel_mean": [
+        37.53791188855995,
+        24.303501607605345,
+        16.03404630212173
+      ],
+      "channel_stddev": [
+        59.48147437695625,
+        39.978203058224565,
+        27.878649487656492
+      ]
+    },
+    "references/prior-clay-pos-x": {
+      "sha256": "be2454863b66546131a3cc702953de06f8f0f507d0e062a4564c2d2f10f077f2",
+      "bytes": 885588,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_mean": [
+        67.17500972747803,
+        67.2596263885498,
+        67.22579860687256
+      ],
+      "channel_stddev": [
+        13.024779427720043,
+        13.027493594792807,
+        13.016829283733667
+      ]
+    }
+  },
+  "visual_inspection": {
+    "all_three_raw_views_and_three_compositions_viewed": true,
+    "observations": [
+      "Red-brown and gray-brown masonry, ochre leaves and twisting brown vines are visible.",
+      "The surface appearance is matte in these views; no broad metallic highlights are apparent.",
+      "The learned preview is visibly darker than the original reference photograph.",
+      "The sheets show the authenticated original, prior gray clay, learned +X, two isometrics and labeled enlarged crop.",
+      "Object outlines fit inside each render frame with margins; no blank or uniform image was seen."
+    ],
+    "limits": [
+      "These observations apply to these three rendered views only.",
+      "Original photo camera/lighting are not calibrated to the preview; no quantitative photometric match is claimed.",
+      "Direct vertex-row preview is not an original trilinear texture bake or exported material asset.",
+      "The detail is an enlarged existing-image crop, not new geometry detail."
+    ]
+  },
+  "nonfatal_messages": {
+    "optional_CUEW_library_initialization_warning_present": true,
+    "CPU_result": "Actual settings verify Cycles CPU and GPU denoising disabled; zero render exit.",
+    "Blender_6_deprecation_warnings_present": true
+  },
+  "report_review": {
+    "path": "docs/compatibility/amd-brick-pbr-preview.md",
+    "claims_and_measured_render_composition_timings_match_reviewed_evidence": true,
+    "preservation_and_remote_publication_claims_covered_by_separate_audit": true,
+    "incidental_bytecode_disclosure_read_and_matches_verified_receipt": true
+  },
+  "scope_limits": [
+    "Sources freshly full-hashed against actual before/after host identities.",
+    "Broader protected inventory and remote-head preservation are handled by the separate preservation audit.",
+    "Original full coordinate/formula correspondence uses authenticated pre-render proof; reviewer independently rehashed current material coordinates and original geometry payloads.",
+    "New images remain private; this receipt contains source-safe hashes and scalar summaries only."
+  ],
+  "blockers": [],
+  "independent_full_image_reopen_count": 8,
+  "incidental_bytecode": {
+    "classification": "PRESERVED_VERIFIED",
+    "bytes": 30954,
+    "sha256": "4afbfa68e9044eafd069aad7829f7b88caefa94414c3b7520432c2a74f68c1e2",
+    "private_copy_full_hash_verified": true,
+    "new_historical_source_cache_file_and_directory_absent": true,
+    "not_an_original_source_or_preexisting_cache_file": "Blender-created camera helper bytecode, generated during this run",
+    "existing_original_cache_preservation_covered_by_separate_audit": true,
+    "no_code_changes_or_repeat_render_for_cleanup": true
+  }
+}

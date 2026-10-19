@@ -1,0 +1,39 @@
+{
+  "classification": "PASS",
+  "starting_commit": "9755adc6c57624cb81afe2dac2d5fa404b619023",
+  "branch": "codex/amd-brick-pbr-visual-preview",
+  "tests": 15,
+  "resources": {
+    "available_ram_bytes": 21327659008,
+    "disk_free_bytes": 112042663936,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "mapping_receipt_sha256": "84912427ddff6d470ce96215344118b057ab357f3a41ff762612a367549d0eb4",
+  "source_files": {
+    "render_host.py": "21b0f57c33e5379b6fb0f2eaae6d1d871b39fe4eb39004af1fa8fe1c8fa4d606",
+    "render_pbr.py": "ce4e63f0aec1e0d39fa95e70b7d0551a9d98701e3db9c214e1ce7fef8b939934",
+    "compose_preview.py": "461717271d7e4ba89a6bf6b4b1acaabe1ff718dfe128eb901c8d7c58d2bf5b53",
+    "compose_host.py": "ffb44f45bfbeed785a080ce983f0f218ac04e2757cb170af37bd3af21e875bb5",
+    "verify_mapping.py": "525b8c108546811ca003b3bf73f96fee0643b7cce49df99074c4f6b0014f882b"
+  },
+  "renderer_budget": {
+    "maximum_process_committed_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "prior_measured_9view_peak_committed_bytes": 2904969216,
+    "prior_measured_9view_seconds": 107.164,
+    "new_3view_projected_peak_GiB": [
+      3.2,
+      3.7
+    ],
+    "new_3view_projected_seconds": [
+      55,
+      85
+    ],
+    "projection_is_not_measurement": true
+  },
+  "source_and_material_hashes_confirmed": true,
+  "no_WSL_Torch_models_GPU": true,
+  "render_attempt_started": false
+}

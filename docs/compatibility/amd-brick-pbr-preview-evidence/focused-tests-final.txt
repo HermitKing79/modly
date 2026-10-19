@@ -1,0 +1,20 @@
+test_actual_first_frame_accepts_only_verified_material_and_CPU (test_render_host.FirstFrameTests.test_actual_first_frame_accepts_only_verified_material_and_CPU) ... ok
+test_first_frame_gate_matches_the_real_renderer (test_render_host.FirstFrameTests.test_first_frame_gate_matches_the_real_renderer) ... ok
+test_modified_PNG_fails_before_continuation (test_render_host.FirstFrameTests.test_modified_PNG_fails_before_continuation) ... ok
+test_original_resource_limits_are_retained (test_render_host.FirstFrameTests.test_original_resource_limits_are_retained) ... ok
+test_header_maps_exact_rows_and_payload_offsets (test_render_pbr.PreviewContractTests.test_header_maps_exact_rows_and_payload_offsets) ... ok
+test_header_rejects_overlapping_or_out_of_file_tensors (test_render_pbr.PreviewContractTests.test_header_rejects_overlapping_or_out_of_file_tensors) ... ok
+test_header_rejects_wrong_channel_count_and_oversized_length (test_render_pbr.PreviewContractTests.test_header_rejects_wrong_channel_count_and_oversized_length) ... ok
+test_json_writer_is_exclusive_and_rejects_nonfinite_receipts (test_render_pbr.PreviewContractTests.test_json_writer_is_exclusive_and_rejects_nonfinite_receipts) ... ok
+test_material_statistics_retain_out_of_range_values_and_alpha_distribution (test_render_pbr.PreviewContractTests.test_material_statistics_retain_out_of_range_values_and_alpha_distribution) ... ok
+test_native_gamma_transfer_clamps_for_shader_without_byte_quantization (test_render_pbr.PreviewContractTests.test_native_gamma_transfer_clamps_for_shader_without_byte_quantization) ... ok
+test_accepts_same_original_order (test_verify_mapping.CorrespondenceTests.test_accepts_same_original_order) ... ok
+test_header_rejects_payload_gap_before_mapping (test_verify_mapping.CorrespondenceTests.test_header_rejects_payload_gap_before_mapping) ... ok
+test_rejects_reordered_mesh_and_single_bit_change (test_verify_mapping.CorrespondenceTests.test_rejects_reordered_mesh_and_single_bit_change) ... ok
+test_rejects_same_row_count_permuted_material (test_verify_mapping.CorrespondenceTests.test_rejects_same_row_count_permuted_material) ... ok
+test_stats_retain_original_out_of_range_channels (test_verify_mapping.CorrespondenceTests.test_stats_retain_original_out_of_range_channels) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.455s
+
+OK
