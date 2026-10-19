@@ -1,0 +1,91 @@
+{
+  "schema": "modly.amd.brick-uv-bake-independent-nomination-correction-review.v1",
+  "created_utc": "2026-10-19T12:33:13.935600+00:00",
+  "classification": "GO_ONE_CORRECTED_CPU_PREPARATION_THEN_PASS_GATED_EXPORT_COMPARE",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "base": "18c0c92fe348e8a7fc04e9b5c9443423484ee5b6",
+  "supplements_candidate_review_SHA256": "d84c4315c29cb215e70a44663491b4f7b1ce0aafb96a58ee4ddc60a4e72099fa",
+  "execution_source_SHA256": {
+    "sampler.py": "0a330eca2c991d3b7751d3cbbbe94edac317b34b28ce7216d9d3d374ef20b0c6",
+    "patch_math.py": "bad966911d5b428c4cbcc9fd22b50868fcd8a90df79e5b258bdaeb69626c4364",
+    "bake_patch.py": "c0b53da02346b7bd60eaa2fa07b33a1b6573cd8f5e43944d0e9faff20fc1a174",
+    "run_host.py": "59b43429f8cca17768766915c2168a7adfa192d1f0080287505de29d8abd568e",
+    "render_patch.py": "96ad2138bb791b12557c9557348f8ad5a351df026774beea158c8f56924127e3"
+  },
+  "review_scope": "Focused source diff and saved nine-ray/source-preservation/test/host evidence. No reviewer original-asset, bake, Blender, model, GPU or WSL execution.",
+  "measured_cause": {
+    "initial_pixel": [
+      580,
+      558
+    ],
+    "initial_nearest_face": 3843303,
+    "initial_cosX": -0.8913863237041032,
+    "initial_original_positive_X_nomination_excluded_visible_negative_winding": true,
+    "initial_center_also_below_abs0_9_threshold": true,
+    "initial_attempt_stopped_before_UV_or_bake": true,
+    "initial_natural_failure_preserved": true
+  },
+  "qualified_nomination": {
+    "pixel": [
+      580,
+      554
+    ],
+    "nearest_original_face": 3843320,
+    "signed_cosX": -0.9604212844136791,
+    "ROI": [
+      560,
+      540,
+      600,
+      580
+    ],
+    "selection": "cosX<-0.9; same absolute inclination threshold; full original nearest-hit match required",
+    "fresh_private_prefix": "artifacts/amd-brick-uv-bake-18c0c92/qualified"
+  },
+  "delta_verification": {
+    "sampler_source_unchanged": true,
+    "material_features_sampling_and_all_quality_gates_unchanged": true,
+    "original_geometry_positions_triangles_multiplicity_and_winding_preserved": true,
+    "U_mirror_applies_only_to_consistent_negative_UV_orientation": true,
+    "mixed_winding_and_degenerate_UV_still_rejected": true,
+    "analytic_overlap_and_every_face_texel_coverage_gates_retained": true,
+    "all_three_stage_paths_agree_on_fresh_qualified_prefix": true,
+    "initial8_execution_source_copies_byte_exact_against_original_marker_hashes": true,
+    "actual_nomination_host_copy_byte_exact_against_nomination_marker": true,
+    "no_initial_logs_markers_or_assets_overwritten": true,
+    "no_corrected_runtime_marker_at_review_creation": true
+  },
+  "resource_policy": {
+    "unchanged_each_stage_cap_bytes": 6442450944,
+    "unchanged_each_stage_deadline_seconds": 180,
+    "unchanged_initial_live_available_RAM_floor_bytes": 12884901888,
+    "unchanged_initial_live_disk_floor_bytes": 2147483648,
+    "owned_Job_attach_before_GO_preserved": true,
+    "no_new_model_GPU_WSL_or_geometry_repair": true
+  },
+  "tests": {
+    "root_corrected_synthetic_CPU_passes": 29,
+    "seconds": 0.532,
+    "mirror_valid_and_mixed_winding_rejection_fixture_reviewed": true
+  },
+  "receipt_SHA256": {
+    "nomination-correction.json": "67807cee6fe713ac6d4bc5fb003ed129771c008f6627636ed86db361fe2a7e68",
+    "focused-tests-nomination-correction.txt": "b163ed2da8f399f86c20a43c1c5c1fd3f4111626c4370db00f2e24bd3d6e259b",
+    "probe-contract.json": "6f9113b509f39d8354201cc76bbaa727f2b41473303aeec329b833441c50fe59"
+  },
+  "private_evidence_SHA256": {
+    "bake-attempt.json": "2d2b22daff2239acd771507bf8cdaea43d6a4b843c52f746d77907608a1ed3de",
+    "bake-host-result.json": "d9336ea440a424433d06899a2176d50515af73a7ce19cf07e2db865402e6b9ab",
+    "nomination-attempt.json": "73d7305dd95f5a915ec55427ec010446f30d88e348c9541a4c5e76a5a248437b",
+    "nomination-host-result.json": "2bf2a1d205227d55527c041732f0a623ec47f5f5bea859781116dc180182e3d2",
+    "nomination\\nearest-original-rays.json": "46cdcfde112f7bfcba0157f9e3629241c2fabcfe5c9d46a0b0f7281461dd5088"
+  },
+  "limitations": [
+    "The nine rays establish nomination/winding evidence; their absent raw RGB fields do not establish material colour or foliage absence. Visual patch review remains required.",
+    "A UV mirror changes texture coordinates only; original negative source winding is retained with the already approved two-sided opaque material.",
+    "This is one demonstrated nomination correction, not a bake fidelity or native GPU parity success.",
+    "Stop if corrected preparation fails another qualification gate; do not silently relax thresholds or choose further blind alternatives.",
+    "The original probe-contract describes the initial nomination; nomination-correction.json explicitly supplies the qualified pixel/sign/path changes."
+  ],
+  "blockers": [],
+  "conclusion": "The corrected source-sign/pixel nomination is justified by the saved full-original nearest-ray evidence and preserves the approved bake/material/resource policy. GO for one corrected preparation; export/compare remain conditional on its passing result."
+}

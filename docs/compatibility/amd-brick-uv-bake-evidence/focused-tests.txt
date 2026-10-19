@@ -1,0 +1,35 @@
+test_actual_padding_and_png_encoding_preserve_learned_covered_pixels (test_patch_math.ChartTests.test_actual_padding_and_png_encoding_preserve_learned_covered_pixels) ... ok
+test_analytic_shared_edge_contact_allowed (test_patch_math.ChartTests.test_analytic_shared_edge_contact_allowed) ... ok
+test_complete_square_cross_face_centers (test_patch_math.ChartTests.test_complete_square_cross_face_centers) ... ok
+test_linear_image_and_v_orientation (test_patch_math.ChartTests.test_linear_image_and_v_orientation) ... ok
+test_overlap_rejected (test_patch_math.ChartTests.test_overlap_rejected) ... ok
+test_srgb_linear_light_filter_is_not_encoded_filter (test_patch_math.ChartTests.test_srgb_linear_light_filter_is_not_encoded_filter) ... ok
+test_subtexel_overlap_rejected_analytically (test_patch_math.ChartTests.test_subtexel_overlap_rejected_analytically) ... ok
+test_wrong_winding_and_bad_bounds (test_patch_math.ChartTests.test_wrong_winding_and_bad_bounds) ... ok
+test_GLB_embedded_RGB_bytes_UV_winding_and_ignored_encoded_alpha (test_render_patch.RendererParserTests.test_GLB_embedded_RGB_bytes_UV_winding_and_ignored_encoded_alpha) ... ok
+test_GLB_reverse_transformed_and_transparent_material_are_rejected (test_render_patch.RendererParserTests.test_GLB_reverse_transformed_and_transparent_material_are_rejected) ... ok
+test_PNG_bad_CRC_and_truncation_are_rejected (test_render_patch.RendererParserTests.test_PNG_bad_CRC_and_truncation_are_rejected) ... ok
+test_all_five_filters_decode_asymmetric_original_rows (test_render_patch.RendererParserTests.test_all_five_filters_decode_asymmetric_original_rows) ... ok
+test_cyclic_winding_and_duplicate_corner_vertices_are_accepted (test_render_patch.RendererParserTests.test_cyclic_winding_and_duplicate_corner_vertices_are_accepted) ... ok
+test_independent_PIL_RGB_and_RGBA_PNGs_keep_rows_channels_and_alpha (test_render_patch.RendererParserTests.test_independent_PIL_RGB_and_RGBA_PNGs_keep_rows_channels_and_alpha) ... ok
+test_reversed_winding_changed_position_and_UV_are_rejected (test_render_patch.RendererParserTests.test_reversed_winding_changed_position_and_UV_are_rejected) ... ok
+test_wrong_map_RGB_is_rejected (test_render_patch.RendererParserTests.test_wrong_map_RGB_is_rejected) ... ok
+test_asymmetric_eight_neighbours_match_independent_scalar_oracle (test_sampler.SparseSamplerTests.test_asymmetric_eight_neighbours_match_independent_scalar_oracle) ... ok
+test_denominator_floor_is_retained_for_tiny_positive_support (test_sampler.SparseSamplerTests.test_denominator_floor_is_retained_for_tiny_positive_support) ... ok
+test_exact_centres_preserve_all_six_unclamped_channels (test_sampler.SparseSamplerTests.test_exact_centres_preserve_all_six_unclamped_channels) ... ok
+test_missing_support_yields_six_zeros_including_alpha (test_sampler.SparseSamplerTests.test_missing_support_yields_six_zeros_including_alpha) ... ok
+test_native_texture_packing_truncates_and_keeps_channel_semantics (test_sampler.SparseSamplerTests.test_native_texture_packing_truncates_and_keeps_channel_semantics) ... ok
+test_packing_rejects_nonfinite_wrong_schema_and_unbounded_images (test_sampler.SparseSamplerTests.test_packing_rejects_nonfinite_wrong_schema_and_unbounded_images) ... ok
+test_partial_support_renormalizes_instead_of_zero_padding (test_sampler.SparseSamplerTests.test_partial_support_renormalizes_instead_of_zero_padding) ... ok
+test_queries_are_bounded_finite_float32_XYZ_and_allow_empty_batch (test_sampler.SparseSamplerTests.test_queries_are_bounded_finite_float32_XYZ_and_allow_empty_batch) ... ok
+test_random_sparse_positive_and_negative_channels_match_scalar_oracle (test_sampler.SparseSamplerTests.test_random_sparse_positive_and_negative_channels_match_scalar_oracle) ... ok
+test_rejects_duplicate_malformed_out_of_bounds_or_unbounded_support (test_sampler.SparseSamplerTests.test_rejects_duplicate_malformed_out_of_bounds_or_unbounded_support) ... ok
+test_single_found_positive_weight_neighbour_preserves_its_material (test_sampler.SparseSamplerTests.test_single_found_positive_weight_neighbour_preserves_its_material) ... ok
+test_spatial_boundaries_exclude_outside_cells_but_renormalize_inside (test_sampler.SparseSamplerTests.test_spatial_boundaries_exclude_outside_cells_but_renormalize_inside) ... ok
+test_world_transform_uses_original_XYZ_centres_and_preserves_inputs (test_sampler.SparseSamplerTests.test_world_transform_uses_original_XYZ_centres_and_preserves_inputs) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.508s
+
+OK
+{"python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]", "numpy": "2.5.3", "opencv": "5.0.0.93", "tests": 29, "passed": true}

@@ -1,0 +1,11 @@
+{
+  "initial_preparation": "Stopped after 2.282 seconds before UV, sampling or baking; no original changes; natural empty Job",
+  "observation": "One bounded read-only nine-ray check of the full original both-sided surface",
+  "confirmed_cause": "Visible brick sheet has original negative-X face winding. Initial +X normal filter excluded it; center580558 cosine=-0.8913863237041032 also failed the absolute0.9 planar-chart selection. Not a source sampler failure.",
+  "corrected_nomination": {"pixel": [580,554], "actual_nearest_original_face":3843320, "normal_cos_X":-0.9604212844136791,"ROI":[560,540,600,580],"filter":"same observed negative sign; cosX<-0.9; unchanged absolute planarity threshold"},
+  "correction": "Generate mirrored-U UV coordinates on consistent negative-X original faces. Preserve all original face indices, winding and vertex positions. No geometry normal reversal.",
+  "fresh_private_prefix": "artifacts/amd-brick-uv-bake-18c0c92/qualified",
+  "preservation": "Initial marker, logs, resource measurements and exact failed/nominated source copies remain in the original private prefix",
+  "limits": "All original 6GiB/180s CPU, RAM/disk, source-sampling and quality gates unchanged",
+  "stop": "One corrected preparation only; do not continue if it exposes another patch qualification blocker"
+}

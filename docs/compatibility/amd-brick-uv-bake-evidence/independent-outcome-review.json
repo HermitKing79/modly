@@ -1,0 +1,169 @@
+{
+  "schema": "modly.amd.brick-uv-bake-independent-outcome-review.v1",
+  "created_utc": "2026-10-19T12:36:47.793952+00:00",
+  "classification": "BLOCKED",
+  "execution_and_failure_evidence_review": "PASS",
+  "base": "18c0c92fe348e8a7fc04e9b5c9443423484ee5b6",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "scope": "Read-only source, saved markers/logs/resource results, nine-ray diagnosis, test evidence and private output-entry verification. No reviewer geometry analysis, source field sampler, Blender, model, GPU, WSL or checkpoint execution.",
+  "attempts": [
+    {
+      "attempt": "initial_nomination",
+      "status": "BLOCKED",
+      "returncode": 1,
+      "host_seconds": 2.2819999999919673,
+      "peak_process_committed_bytes": 343474176,
+      "minimum_sampled_RAM_bytes": 20669399040,
+      "minimum_sampled_disk_bytes": 111506354176,
+      "owned_Job_natural_empty_unforced": true,
+      "watched_sources_unchanged": true,
+      "executed_or_watched_E_python_SHA256": {
+        "bake_patch.py": "22323abe3bacc09bf36bedc6ac48eb01eea0b5cd2dc084256d974007578cf6fd",
+        "patch_math.py": "bf6859cd08cbc18fa85ce82213f32f337e99c3a41531b856c10ee422fb2e2881",
+        "render_patch.py": "b20b90e8c554941f05c34cac71fe665b37f82a924f3526d42cdbced6aa7eb366",
+        "run_host.py": "bd461a938fe6c57ca1fca5599122628c19693bfa84e52e5bda3a3f99e8af0034",
+        "sampler.py": "0a330eca2c991d3b7751d3cbbbe94edac317b34b28ce7216d9d3d374ef20b0c6",
+        "test_patch_math.py": "f4cba744ad44ddcd3dbf99e4507f75354db5c5d63b5c8a5e764eacbd00d58746",
+        "test_render_patch.py": "3a34e9b77e6dc39ae465e703e323fa65533d38ed858c4b0ea905d487553c3337",
+        "test_sampler.py": "2c08da9baf55b0db092567de9648f961d9389a8d7a49c8380662938bf5b7b82f"
+      },
+      "receipt_SHA256": {
+        "bake-attempt.json": "2d2b22daff2239acd771507bf8cdaea43d6a4b843c52f746d77907608a1ed3de",
+        "bake-host-result.json": "d9336ea440a424433d06899a2176d50515af73a7ce19cf07e2db865402e6b9ab",
+        "bake\\stdout.txt": "95e02344cf8040a216a92eac6cd57cd0a29789163e6d822b0fb8da286cae8ba2",
+        "bake\\stderr.txt": "89ebe7e32bb1918670d7bdfcbbbe6d240888153a256254987e058c0fec1bfd79"
+      }
+    },
+    {
+      "attempt": "read_only_nine_ray_inspection",
+      "status": "PASS",
+      "returncode": 0,
+      "host_seconds": 2.2820000000065193,
+      "peak_process_committed_bytes": 280768512,
+      "minimum_sampled_RAM_bytes": 20588244992,
+      "minimum_sampled_disk_bytes": 111506313216,
+      "owned_Job_natural_empty_unforced": true,
+      "watched_sources_unchanged": true,
+      "executed_or_watched_E_python_SHA256": {
+        "bake_patch.py": "22323abe3bacc09bf36bedc6ac48eb01eea0b5cd2dc084256d974007578cf6fd",
+        "inspect_nomination.py": "2c0f66288ad159dce555101836a61a38c1e6706e022ed7844950fda1673d3639",
+        "patch_math.py": "bf6859cd08cbc18fa85ce82213f32f337e99c3a41531b856c10ee422fb2e2881",
+        "render_patch.py": "b20b90e8c554941f05c34cac71fe665b37f82a924f3526d42cdbced6aa7eb366",
+        "run_host.py": "0709fb7e485bc60459072c64ebef184d2fc65852a4920958a2ea64f2dc9f3292",
+        "sampler.py": "0a330eca2c991d3b7751d3cbbbe94edac317b34b28ce7216d9d3d374ef20b0c6",
+        "test_patch_math.py": "f4cba744ad44ddcd3dbf99e4507f75354db5c5d63b5c8a5e764eacbd00d58746",
+        "test_render_patch.py": "3a34e9b77e6dc39ae465e703e323fa65533d38ed858c4b0ea905d487553c3337",
+        "test_sampler.py": "2c08da9baf55b0db092567de9648f961d9389a8d7a49c8380662938bf5b7b82f"
+      },
+      "receipt_SHA256": {
+        "nomination-attempt.json": "73d7305dd95f5a915ec55427ec010446f30d88e348c9541a4c5e76a5a248437b",
+        "nomination-host-result.json": "2bf2a1d205227d55527c041732f0a623ec47f5f5bea859781116dc180182e3d2",
+        "nomination\\stdout.txt": "f66bc7bdb08620f8f9672ee56183aeae122bd5f5abf06d0f47664ef53bb85563",
+        "nomination\\stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "attempt": "corrected_planar_chart",
+      "status": "BLOCKED",
+      "returncode": 1,
+      "host_seconds": 3.389999999999418,
+      "peak_process_committed_bytes": 413908992,
+      "minimum_sampled_RAM_bytes": 20479639552,
+      "minimum_sampled_disk_bytes": 111505448960,
+      "owned_Job_natural_empty_unforced": true,
+      "watched_sources_unchanged": true,
+      "executed_or_watched_E_python_SHA256": {
+        "bake_patch.py": "c0b53da02346b7bd60eaa2fa07b33a1b6573cd8f5e43944d0e9faff20fc1a174",
+        "finish.py": "2a9d8c3080635d48729a0a0f5e71134c000dfa31f0fded823284d39f9bc2793e",
+        "inspect_nomination.py": "2c0f66288ad159dce555101836a61a38c1e6706e022ed7844950fda1673d3639",
+        "patch_math.py": "bad966911d5b428c4cbcc9fd22b50868fcd8a90df79e5b258bdaeb69626c4364",
+        "preserve_nomination_sources.py": "cad07e0beeb4727e1ea73a25f667e2266837ebf46dd729991372fd0416cd1264",
+        "render_patch.py": "96ad2138bb791b12557c9557348f8ad5a351df026774beea158c8f56924127e3",
+        "run_host.py": "cc2f2e88a693fc6fc24f113450e648224b8d39b157c49dee3b810601062508d4",
+        "sampler.py": "0a330eca2c991d3b7751d3cbbbe94edac317b34b28ce7216d9d3d374ef20b0c6",
+        "test_patch_math.py": "e463895081513daba40011eb5f0c6a2c72b2b626a46cf115412548f466a5c66a",
+        "test_render_patch.py": "3a34e9b77e6dc39ae465e703e323fa65533d38ed858c4b0ea905d487553c3337",
+        "test_sampler.py": "2c08da9baf55b0db092567de9648f961d9389a8d7a49c8380662938bf5b7b82f"
+      },
+      "receipt_SHA256": {
+        "qualified\\bake-attempt.json": "f30578e8251cadc7549c27023e2bd0dd716650ccff02066e41bb8a31ca2be8ff",
+        "qualified\\bake-host-result.json": "1fea67ebcd58f2515c1fbaec9d7f764b3445e541fe051e57e54bd5dc14eabfe6",
+        "qualified\\bake\\stdout.txt": "95e02344cf8040a216a92eac6cd57cd0a29789163e6d822b0fb8da286cae8ba2",
+        "qualified\\bake\\stderr.txt": "0d51f3d0c445bc8cb4c5377d5eaa875af69017254f32646cb28659de054e9cdc"
+      }
+    }
+  ],
+  "verified_failure": {
+    "initial": "Fixed positive-X normal nomination excluded the visible original negative-X-winding sheet and stopped before UV creation.",
+    "read_only_diagnosis": "Nine original nearest rays recorded; corrected pixel580554 has face3843320 and signed normal cosine -0.9604212844136791.",
+    "corrected": "The UV-only mirrored planar chart reached analytic triangle-intersection rejection at bake_patch.py108 / patch_math.py83: Analytic positive-area UV overlap.",
+    "overlap_rejection_UV_area_tolerance": 1e-12,
+    "overlap_pair_and_exact_area_not_saved": true,
+    "meaning": "This fixed single planar projection was not certified injective for the selected original-face subset. It does not establish a geometric self-intersection or a material-quality failure."
+  },
+  "actual_output_status": {
+    "corrected_UV_coordinates_constructed_only_in_memory": true,
+    "UV_rasterization_executed": false,
+    "original_field_sampler_called_on_real_patch": false,
+    "actual_bake_completed": false,
+    "source_texture_maps_created": false,
+    "selected_geometry_UV_arrays_serialized": false,
+    "GLB_export_or_import_executed": false,
+    "Blender_or_render_executed": false,
+    "side_by_side_image_created": false,
+    "real_patch_texture_error_metrics": null,
+    "clipping_or_material_quality_metrics": null,
+    "material_quality_verdict": "UNMEASURED"
+  },
+  "tests": {
+    "synthetic_CPU_tests_passed": 29,
+    "seconds": 0.532,
+    "covers_sampler_chart_PNG_GLB_parser_fixtures": true,
+    "actual_bake_PASS": false,
+    "native_GPU_floating_point_parity": "UNQUALIFIED"
+  },
+  "resource_policy": {
+    "each_worker_memory_cap_bytes": 6442450944,
+    "each_worker_deadline_seconds": 180,
+    "required_initial_and_live_available_RAM_floor_bytes": 12884901888,
+    "required_initial_and_live_disk_floor_bytes": 2147483648,
+    "all_actual_samples_admitted": true,
+    "all_three_Job_trees_naturally_empty_without_force": true,
+    "stop_after_one_corrected_preparation_honored": true,
+    "third_preparation_or_bake_attempt": false
+  },
+  "current_source_SHA256": {
+    "sampler.py": "0a330eca2c991d3b7751d3cbbbe94edac317b34b28ce7216d9d3d374ef20b0c6",
+    "patch_math.py": "bad966911d5b428c4cbcc9fd22b50868fcd8a90df79e5b258bdaeb69626c4364",
+    "bake_patch.py": "c0b53da02346b7bd60eaa2fa07b33a1b6573cd8f5e43944d0e9faff20fc1a174",
+    "run_host.py": "cc2f2e88a693fc6fc24f113450e648224b8d39b157c49dee3b810601062508d4",
+    "render_patch.py": "96ad2138bb791b12557c9557348f8ad5a351df026774beea158c8f56924127e3",
+    "inspect_nomination.py": "2c0f66288ad159dce555101836a61a38c1e6706e022ed7844950fda1673d3639",
+    "finish.py": "2a9d8c3080635d48729a0a0f5e71134c000dfa31f0fded823284d39f9bc2793e"
+  },
+  "source_review_limits": [
+    "The host added a finish command before the corrected attempt; the bake command, resource limits and bake path behavior remain unchanged. Actual marker hashes match current sources.",
+    "render_patch.py and finish.py were not executed; this outcome receipt makes no actual export/import/render/finish readiness or success claim.",
+    "Original source arrays were opened read-only; all watched source identities remained unchanged. Fresh full preservation audit is a separate pending check."
+  ],
+  "interpretation_limits": [
+    "No real baked texture or portable material proof exists from this attempt.",
+    "The stopped planar-chart choice is not a material-quality NO-GO, nor proof that all CPU UV bakes or all UV layouts are impossible.",
+    "The CPU sampler has source-semantic and synthetic evidence only; native GPU bitwise equivalence and real-patch fidelity were not demonstrated.",
+    "The intended brick/no-foliage patch and render quality were not visually qualified because no selection or comparison image was produced.",
+    "No original positions, face winding, topology or materials were repaired or edited."
+  ],
+  "recommendation": "Stop this experiment. If separately pursued, qualify one bounded seam/island-based UV unwrap on the unchanged original-face patch with the same source sampling, overlap, coverage, fidelity and resource gates; its outcome remains unproven. Do not run the excluded GPU stock baker or a third planar-chart probe.",
+  "followup_before_publication": [
+    "Complete fresh protected-source/historical-evidence preservation audit.",
+    "Ensure final documentation leads with BLOCKED and clearly marks unused quality scoring, RGBA/GLB and comparison code as unexecuted."
+  ],
+  "evidence_SHA256": {
+    "independent-candidate-review.json": "d84c4315c29cb215e70a44663491b4f7b1ce0aafb96a58ee4ddc60a4e72099fa",
+    "independent-nomination-correction-review.json": "8406e5b335f2316fe108d56cc62ff5188889d097edad812cc76f4c2ae081977a",
+    "nomination-correction.json": "67807cee6fe713ac6d4bc5fb003ed129771c008f6627636ed86db361fe2a7e68",
+    "source-semantics.json": "094198de62098b413a503f9dae2f81c6de4f9ddc1ebc313d98e49f7f739ee79f",
+    "focused-tests-nomination-correction.txt": "b163ed2da8f399f86c20a43c1c5c1fd3f4111626c4370db00f2e24bd3d6e259b"
+  },
+  "conclusion": "BLOCKED at the planar UV injectivity gate. The contained failures and diagnosis are verified; no source-field bake or material-quality claim is supported."
+}

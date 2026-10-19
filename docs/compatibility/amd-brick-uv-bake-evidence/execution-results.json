@@ -1,0 +1,98 @@
+{
+  "classification": "BLOCKED",
+  "base": "18c0c92fe348e8a7fc04e9b5c9443423484ee5b6",
+  "branch": "codex/amd-brick-uv-bake-proof",
+  "blocker": "Analytic positive-area overlap in the selected unchanged patch planar UV projection",
+  "interpretation": "Preparation/UV parameterization blockage. No completed texture bake or measured visual-detail result; not evidence of bad learned materials or native/GPU incompatibility.",
+  "real_asset_texture_sampling_calls": 0,
+  "real_texture_images_written": 0,
+  "Blender_launches": 0,
+  "model_or_GPU_execution": false,
+  "stages": {
+    "initial_nomination": {
+      "classification": "BLOCKED",
+      "returncode": 1,
+      "elapsed_seconds": 2.2819999999919673,
+      "peak_process_committed_bytes": 343474176,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "watched_sources_unchanged": true,
+      "measurement": "Windows Job peak owned-process committed bytes, not working-set or whole-host peak",
+      "observed_Windows_available_RAM_min_bytes": 20669399040,
+      "observed_destination_free_disk_min_bytes": 111506354176,
+      "samples": 3,
+      "host_result_sha256": "d9336ea440a424433d06899a2176d50515af73a7ce19cf07e2db865402e6b9ab",
+      "attempt_marker_sha256": "2d2b22daff2239acd771507bf8cdaea43d6a4b843c52f746d77907608a1ed3de",
+      "stdout_sha256": "95e02344cf8040a216a92eac6cd57cd0a29789163e6d822b0fb8da286cae8ba2",
+      "stderr_sha256": "89ebe7e32bb1918670d7bdfcbbbe6d240888153a256254987e058c0fec1bfd79",
+      "exact_stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-uv-bake-evidence\\bake_patch.py\", line 188, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-uv-bake-evidence\\bake_patch.py\", line 83, in main\n    auth.require(inside.any(),'Original center ray must hit nominated brick')\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-defect-diagnosis-evidence\\diagnose.py\", line 47, in require\n    raise ValueError(message)\nValueError: Original center ray must hit nominated brick\n"
+    },
+    "read_only_nine_rays": {
+      "classification": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 2.2820000000065193,
+      "peak_process_committed_bytes": 280768512,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "watched_sources_unchanged": true,
+      "measurement": "Windows Job peak owned-process committed bytes, not working-set or whole-host peak",
+      "observed_Windows_available_RAM_min_bytes": 20588244992,
+      "observed_destination_free_disk_min_bytes": 111506313216,
+      "samples": 3,
+      "host_result_sha256": "2bf2a1d205227d55527c041732f0a623ec47f5f5bea859781116dc180182e3d2",
+      "attempt_marker_sha256": "73d7305dd95f5a915ec55427ec010446f30d88e348c9541a4c5e76a5a248437b",
+      "stdout_sha256": "f66bc7bdb08620f8f9672ee56183aeae122bd5f5abf06d0f47664ef53bb85563",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exact_stderr": ""
+    },
+    "corrected_UV_preparation": {
+      "classification": "BLOCKED",
+      "returncode": 1,
+      "elapsed_seconds": 3.389999999999418,
+      "peak_process_committed_bytes": 413908992,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "watched_sources_unchanged": true,
+      "measurement": "Windows Job peak owned-process committed bytes, not working-set or whole-host peak",
+      "observed_Windows_available_RAM_min_bytes": 20479639552,
+      "observed_destination_free_disk_min_bytes": 111505448960,
+      "samples": 4,
+      "host_result_sha256": "1fea67ebcd58f2515c1fbaec9d7f764b3445e541fe051e57e54bd5dc14eabfe6",
+      "attempt_marker_sha256": "f30578e8251cadc7549c27023e2bd0dd716650ccff02066e41bb8a31ca2be8ff",
+      "stdout_sha256": "95e02344cf8040a216a92eac6cd57cd0a29789163e6d822b0fb8da286cae8ba2",
+      "stderr_sha256": "0d51f3d0c445bc8cb4c5377d5eaa875af69017254f32646cb28659de054e9cdc",
+      "exact_stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-uv-bake-evidence\\bake_patch.py\", line 188, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-uv-bake-evidence\\bake_patch.py\", line 108, in main\n    uv=chart(vertices,faces,1024,16);injectivity=assert_injective(uv,faces);ids,bary=rasterize(uv,faces,1024)\n                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-uv-bake-evidence\\patch_math.py\", line 83, in assert_injective\n    if area>area_tolerance:raise ValueError('Analytic positive-area UV overlap')\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Analytic positive-area UV overlap\n"
+    }
+  },
+  "focused_CPU_tests": {
+    "passed": 29,
+    "failed": 0,
+    "seconds": 0.512,
+    "log_sha256": "c1204d3eddb30817ce52afa9a89aaf1ca0a140fc85818482de90bee319b04467"
+  },
+  "source_semantics": "Feasible normalized sparse trilinear CPU port; synthetic tests only; native GPU bitwise parity unqualified",
+  "original_mesh_sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+  "genuine_material_sha256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394",
+  "preservation_after_sha256": "0174f5a3ad6e890904485b1237df35299f3a4554966bd83cbd088eda04aa5889",
+  "no_actual_texture_or_render_quality_claim": true,
+  "missing_observations": [
+    "Exact overlap pair/area and selected face count were not journalled before rejection",
+    "No baked map/GLB/render exists; texture coverage, seams and detail-loss metrics are unmeasured"
+  ],
+  "next_experiment": "One separately approved seam-aware UV unwrap of this same small unchanged patch, preserving every original oriented triangle, then repeat the source-spatial bake and independent comparison. Do not repair geometry or scale to the full model."
+}

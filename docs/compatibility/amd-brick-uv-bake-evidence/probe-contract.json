@@ -1,0 +1,17 @@
+{
+  "scope": "One disposable unchanged original brick surface; CPU only; no full model bake",
+  "approved_base": "18c0c92fe348e8a7fc04e9b5c9443423484ee5b6",
+  "branch": "codex/amd-brick-uv-bake-proof",
+  "nomination": {"original_pos_X_pixel": [580,558], "ROI": [560,540,600,580], "normal_cos_X_min": 0.9, "depth_band": 0.012, "min_triangles": 20, "max_triangles": 6000, "require_true_nearest_original_hit": true, "exclude_A1_A3": true},
+  "geometry": "Select complete connected original triangles; exact source vertex positions/winding/multiplicity, no repair or modified master",
+  "UV": "One YZ planar chart; 1024 square; 16 texel margin; analytic positive-area overlap rejection at 1e-12 UV-square tolerance; every face has covered texel",
+  "source_sampler": "Pinned native eight-neighbour sparse trilinear, renormalize found in-bounds support; no support gives six zero channels",
+  "native_exporter_difference": "No GPU unwrap, simplification, repair or BVH execution. Original selected surface unchanged, so closest-point projection is identity. Native GPU floating-point bitwise equivalence remains untested.",
+  "packing": "Native F32 sample times255, clip0..255, truncate toU8. RGB remains encoded; MR=(unused0,roughness,metallic), alpha retained. Original Telea padding only outside covered raster. PNG rows flip for bottom-up UV V.",
+  "portable_material": "Embedded PNG GLB; RGB sRGB; MR Non-Color; OPAQUE; no AO or invented details",
+  "quality": {"test_points": "Every face centroid plus10000 deterministic area-weighted surface samples", "RGB_RMSE_max": 0.02, "RGB_p95_absolute_max": 0.05, "RGB_absolute_max": 0.15, "scalar_RMSE_max": 0.02, "independent_F64_oracle_max": 0.000002, "zero_unsupported_queries": true, "quantization_max": "<1/255+1e-7 against clipped continuous field", "filter": "Decode sRGB texels tolinear before bilinear; re-encode for encoded-RGB error", "limits_are": "Predeclared proof tolerances, not universal quality criteria or measured GPU parity"},
+  "comparison": "Direct original learned vertex RGB**2.2 before interpolation versus genuine spatial baked field with standard sRGB; separate semantic differences from texture discretization",
+  "limits": {"per_process_GiB": 6, "stage_seconds": 180, "Windows_available_RAM_GiB_floor": 12, "destination_free_disk_GiB_floor": 2, "threads": 4, "Cycles": "CPU", "render_samples": 32, "render_size": [640,640], "denoiser": "CPU OpenImageDenoise"},
+  "stages": ["One exclusive CPU patch/bake", "One small Blender GLB export", "One fresh Blender GLB import plus matched direct/baked renders"],
+  "stop": "No retries of failed resource-heavy stages; no full bake, repair, model execution, environment changes or publication of private assets"
+}

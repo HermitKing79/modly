@@ -1,0 +1,135 @@
+{
+  "schema": "modly.amd.brick-cpu-uv-bake-source-semantics.v1",
+  "classification": "SOURCE_FAITHFUL_CPU_PATCH_TEXTURE_SAMPLING_FEASIBLE_NATIVE_BITWISE_PARITY_UNQUALIFIED",
+  "scope": "Read-only local source and bounded metadata/evidence inspection. No original asset payload read, model or native import, GPU, Blender, WSL, installation, environment change, installed-source edit, bake, mesh repair, or unwrap execution.",
+  "sources": {
+    "pipeline": {
+      "path": "D:/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/pipelines/trellis2_image_to_3d.py",
+      "sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+      "bytes": 164969,
+      "line_references": {"channel_layout": [110,115], "decode_transform": [1276,1280], "mesh_volume_transform": [1339,1346], "alpha_default": [2950,2961], "UV_raster_and_world_position": [3101,3113], "sparse_sample": [3115,3122], "byte_quantization": [3127,3131], "outside_raster_inpaint": [3133,3143], "material_packing_and_factors": [3145,3155], "axis_and_V_conversion": [3158,3161]}
+    },
+    "sparse_tensor": {
+      "path": "D:/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/modules/sparse/basic.py",
+      "sha256": "e867e429b9c2fe154000725596b626273fb567025b9c232f3cc79140f00605b7",
+      "bytes": 32143,
+      "line_references": {"batch_channels_shape": [461,465], "spatial_shape": [473,495]}
+    },
+    "native_grid_wrapper": {
+      "path": "D:/AI/Trellis2AMD/venv/Lib/site-packages/flex_gemm/ops/grid_sample/grid_sample.py",
+      "sha256": "b88c464b225aed7d9dd518ca0455e28bd48e31885a754928a875a8cc60eca4b9",
+      "bytes": 7995,
+      "line_references": {"shape_and_native_map": [96,111], "weighted_sum": [113,117], "public_function": [192,212]}
+    },
+    "native_neighbour_kernel": {
+      "path": "D:/AI/Trellis2AMD/venv/Lib/site-packages/flex_gemm/kernels/cuda/grid_sample/grid_sample.hip",
+      "sha256": "dde32f6d41aa5cbfc2bd9324ed0ad3878844085989f5179547ab0a5005133a94",
+      "bytes": 10939,
+      "line_references": {"F32_query_and_initialization": [163,169], "base_and_neighbour_order": [171,179], "bounds_and_key": [180,183], "found_weight_and_sum": [184,189], "normalization": [192,195], "F32_weights_and_support_insertion": [220,239]}
+    },
+    "native_accumulator": {
+      "path": "D:/AI/Trellis2AMD/venv/Lib/site-packages/flex_gemm/kernels/triton/grid_sample/indice_weighed_sum_fwd.py",
+      "sha256": "5fa745060d0469a6adf74da84ec6dae35413407c15b1dfbf8627d36ac4cc0fc3",
+      "bytes": 3385,
+      "line_references": {"F32_sequential_accumulation": [43,58], "output_dtype": [66,84]}
+    },
+    "torch_alternative_not_selected_by_exporter": {
+      "path": "D:/AI/Trellis2AMD/venv/Lib/site-packages/flex_gemm/ops/grid_sample/grid_sample_torch.py",
+      "sha256": "49aac937ab470c2dfd12b30e957ed1ca0bd2ef47764f8ce2eb68d577371c689f",
+      "bytes": 6862,
+      "line_references": {"alternative_offsets_truncation_and_normalized_sum": [94,121]},
+      "caveat": "Do not use this alternative's z-fast offset list and integer truncation as the exact native algorithm. The selected native HIP kernel uses x-fast bits and floor(q-0.5), including negative-coordinate boundary behaviour."
+    },
+    "hashmap_shape": {
+      "path": "D:/AI/Trellis2AMD/venv/Lib/site-packages/flex_gemm/ops/utils.py",
+      "sha256": "7c837640b3fa53c07549a2a2723fe9902651ffe12de7d8af5b036600b83e743d",
+      "bytes": 790,
+      "line_references": {"N_C_W_H_D": [4,16]}
+    },
+    "hashmap_coordinates": {
+      "path": "D:/AI/Trellis2AMD/venv/Lib/site-packages/flex_gemm/kernels/cuda/hash/hash.hip",
+      "sha256": "80c142bbed696ef8a5dc0c0d587e9aab9ce7b8d87c0d74f4a9005bc897c99a7c",
+      "bytes": 17227,
+      "line_references": {"insert_axis_order_and_flat_key": [191,199], "lookup_axis_order_bounds_and_flat_key": [286,297]}
+    },
+    "native_PBR_renderer": {
+      "path": "D:/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/trellis2/renderers/pbr_mesh_renderer.py",
+      "sha256": "ab33ba6d04b2d1b7e518b90372b242cbe00ad9043be66a22e681261b04de7872",
+      "bytes": 22941,
+      "line_references": {"sample_after_world_interpolation": [323,340], "post_sample_shader_gamma_and_clamps": [430,439]}
+    },
+    "stock_exporter": {
+      "path": "D:/AI/Trellis2AMD/venv/Lib/site-packages/o_voxel/postprocess.py",
+      "sha256": "35b62242503944cb16c25b7a1c8730b632b2f55d7a1f3b0b6dd2051779908e4b",
+      "bytes": 14100,
+      "line_references": {"fixed_grid_from_AABB": [60,87], "unwrap": [195,216], "UV_rasterization_and_BVH_projection": [229,256], "volume_sample": [258,266], "quantization_inpaint_material": [280,304], "axis_V_conversion": [306,322]}
+    },
+    "AMD_node_exporter": {
+      "path": "D:/AI/Trellis2AMD/ComfyUI/custom_nodes/ComfyUI-Trellis2-AMD/nodes.py",
+      "sha256": "d310c97f3f7ff187cd581ed01ea3dbd6217fddb8ad9d59b12bd7c485f93821be",
+      "bytes": 347422,
+      "line_references": {"UV_raster_and_BVH": [1239,1286], "volume_sample": [1290,1298], "quantization_alpha_inpaint_material": [1305,1336]}
+    },
+    "trimesh_GLTF_serializer": {
+      "path": "D:/AI/Trellis2AMD/venv/Lib/site-packages/trimesh/exchange/gltf/__init__.py",
+      "sha256": "0bebabb3a28a9e75773ddf4135a51198dc107ad61bbbcf4de280191417e2159c",
+      "bytes": 79987,
+      "line_references": {"image_saved_as_PNG": [2106,2124], "factor_alpha_and_sidedness": [2174,2209], "optional_texture_attachments": [2211,2239], "PBR_object_layout": [2241,2254]}
+    }
+  },
+  "saved_field_contract_from_prior_verified_evidence": {
+    "evidence": "docs/compatibility/amd-brick-pbr-preview-evidence/mapping-verification.json",
+    "metadata_read": "C:/Users/wattz/Documents/ModlyArtifacts/amd-brick-pbr-qualified-a064378/field/texture-field-metadata.json",
+    "full_asset_hashes_not_recomputed_by_this_source_audit": true,
+    "rows": 1957891,
+    "coordinate_dtype_shape": ["I32",[1957891,4]],
+    "features_dtype_shape": ["F32",[1957891,6]],
+    "coordinate_order": ["batch","x","y","z"],
+    "channels": ["red","green","blue","metallic","roughness","alpha"],
+    "features_transform": "raw*F32(0.5)+F32(0.5); stored features already transformed, no second transform or clamp",
+    "geometry_to_material_row_mapping": "Prior full proof verifies equal original coordinate row bytes/order and original vertex formula for every row; direct-row preview is distinct from spatial trilinear sampling.",
+    "resolution": 512,
+    "origin": [-0.5,-0.5,-0.5],
+    "voxel_size": [0.001953125,0.001953125,0.001953125]
+  },
+  "sampling_contract": {
+    "shape_order": ["batch","channels","W=x","H=y","D=z"],
+    "pipeline_shape": "[batch_count,6,max_x+1,max_y+1,max_z+1] from original support; do not assume spatial_shape equals nominal resolution without measuring it",
+    "stock_ovoxel_shape": "[1,6,512,512,512] for origin [-0.5]*3 and voxel_size1/512; equivalent occupied support under validated original coordinates",
+    "world_to_grid": "F32 q=(F32 world+F32(0.5))*F32(512), without XYZ permutation",
+    "cell_centres": "Original coordinate (x,y,z) is centred at grid (x+0.5,y+0.5,z+0.5), world ((coord+0.5)/512)-0.5",
+    "base": "floor(q-0.5), independently for x/y/z",
+    "neighbour_order": [[0,0,0],[1,0,0],[0,1,0],[1,1,0],[0,0,1],[1,0,1],[0,1,1],[1,1,1]],
+    "lookup": "Only coordinates with 0<=x<W,0<=y<H,0<=z<D and exact sparse support membership contribute; flat key=b*W*H*D+x*H*D+y*D+z",
+    "raw_weights": "For found neighbour index n: wx=1-abs(qx-nx-0.5), similarly y,z; w=(wx*wy)*wz, float32; absent/out-of-bounds weight=0",
+    "normalization": "Accumulate found raw weights in i=0..7 order to F32 w_sum, then divide every weight by max(w_sum,F32(1e-12)) before feature accumulation",
+    "missing_support_policy": "Renormalize partial sparse support. Do not zero-pad partial support, use nearest neighbour, replace absent alpha with one, or invent default material. If all weights are zero, all six output channels are zero. Sums below1e-12 retain the explicit denominator floor.",
+    "output": "For every channel, start F32 accumulator0 and accumulate normalized_weight[i]*F32 features[row[i],channel] in i=0..7 order; no clamp or gamma here",
+    "source_index_initialization_detail": "Native n[8]={UINT_MAX} initializes only first missing index to sentinel and remaining missing indices to0. Their weights remain0; with this finite original field their output contribution is zero. CPU may use explicit missing masks for all8 while preserving finite weighted output semantics.",
+    "source_texture_bake_distinction": "Barycentrically interpolate original XYZ at each covered UV texel, then sample this spatial field. Interpolating row materials, nearest rows, or RGB**2.2 before triangle interpolation does not implement this bake."
+  },
+  "texture_export_contract": {
+    "quantization": "uint8 clip(sample*F32(255),0,255), truncation toward zero after clamp; not round-to-nearest",
+    "base_color_PNG": "RGBA=(quantized sampled R,G,B,alpha); unpremultiplied encoded RGB, no pow2.2 or linear-to-sRGB transform before PNG",
+    "metallic_roughness_PNG": "RGB=(0,quantized roughness,quantized metallic). R is unused by metallicRoughnessTexture; source does not attach occlusionTexture, so do not treat R=0 as learned AO or attach it as an occlusion map.",
+    "material": "baseColorFactor=[1,1,1,1], metallicFactor=1.0, roughnessFactor=1.0; no learned emissive/normal/displacement/AO channel",
+    "alpha": "Keep learned alpha in RGBA even for OPAQUE material. Native pipeline and stock exporter default alphaMode=OPAQUE; AMD exposes chosen mode. An optional alpha-only proof image must derive from sampled channel5 without replacing its values.",
+    "gamma": "The native PBR renderer applies clamp(sampled RGB,0,1)**2.2 after spatial sampling. The PNG export stores encoded RGB directly. Do not apply native gamma then store as a standard baseColorTexture; this would double-decode in an sRGB consumer. Metallic/roughness/alpha are scalar data and must not receive RGB gamma.",
+    "quantization_error": "For finite normalized samples, byte/255 differs from clipped input by less than1/255 except float multiplication boundary rounding; clamp counts and quantization error must be reported separately from interpolation error",
+    "native_uncovered_texels": "Native pipeline inpaints only the inverse UV-raster mask after byte quantization, with OpenCV Telea or NS, colour radius3 and scalar radius1. This is separate from missing sparse support inside a covered texel.",
+    "orientation": "Native exporter subsequently rotates (x,y,z)->(x,z,-y) and flips UV V. A disposable proof can keep original XYZ and explicit consistent UV/image-row convention, but must document that choice and must not claim serialized native-exporter identity."
+  },
+  "CPU_feasibility": {
+    "decision": "No source-semantic blocker to a small disposable CPU patch texture proof using existing stdlib, NumPy and Pillow.",
+    "cheapest_direct_proof": "Extract a bounded subset of original face indices and exact original vertex rows into a fresh private patch, preserving triangle winding/multiplicity; assign deterministic nonoverlapping explicit triangle UV charts or a validated simple planar chart. Rasterize covered texel centres barycentrically on CPU, sample all six original F32 field channels using exact8-neighbour lookup, then save source-packed PNGs plus float/coverage provenance and reopen/read back. No full-mesh UV unwrap, repair, simplification, BVH projection or GPU/native call is needed for unchanged original triangles.",
+    "sparse_lookup": "Sort integer keys with an original-row permutation, assert uniqueness, and use searchsorted/equality for at most8 queries per covered texel; gather only original matched rows. Keep all original field data read-only and retain exact world positions/face IDs/barycentrics in private proof provenance.",
+    "dense_grid_prohibited_as_unnecessary": "No512^3x6 dense allocation; sorting1,957,891 uint64 keys and an int64 row permutation is about31.3MB excluding temporary sort storage and read-only source memmaps.",
+    "arithmetic_and_tolerances": "Use float32 q, raw weights, sequential weight sum and sequential feature sum with native neighbour order. NumPy multiply/add need not fuse like native HIP/Triton; this is a source-faithful semantic implementation, not empirically GPU-bit-exact. Against a separate float64 scalar reference at identical F32 queries, a proposed absolute gate2e-6 for this bounded field (max absolute feature1.0042) is conservative; exact neighbour membership, normalization policy, no-support zero, channel packing and source preservation need exact checks. This proposed gate is not a measured native GPU tolerance. Record actual error before claiming proof PASS.",
+    "minimal_semantic_fixtures": ["exact voxel centre","all8 present with asymmetric values","one neighbour absent with renormalization","only one positive-weight neighbour","all support missing returns six zero","lower/upper spatial boundary exclusion","axis-asymmetric x-fast ordering","quantization truncation and unclamped scalar values"],
+    "limits": ["Not a qualification of full raw nonmanifold mesh UV unwrap or stock to_glb","Not a topology or manifoldness repair","Not an end-to-end native GPU rasterizer or bitwise reproduction","Not a replacement for exact original asset reauthentication and bounded execution admission by the parent task","Explicit UV charts and omitted inpainting must be named as proof design choices"]
+  },
+  "independent_source_contract_review": {
+    "reviewer": "/root/brick_pbr_preview_review",
+    "result": "Reviewer independently read HIP kernel, Triton accumulator and pipeline sampling/PNG/MR packing and confirmed the sampling contract; required explicit CPU/native rounding limit and distinction between native inpainting/V-axis conversion and a bounded disposable proof."
+  }
+}

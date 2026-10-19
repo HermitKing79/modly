@@ -1,0 +1,123 @@
+{
+  "schema": "modly.amd.brick-uv-bake-independent-candidate-review.v1",
+  "created_utc": "2026-10-19T12:27:11.665435+00:00",
+  "classification": "GO_BOUNDED_CPU_PATCH_BAKE_EXPORT_AND_FRESH_IMPORT_COMPARISON",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "base": "18c0c92fe348e8a7fc04e9b5c9443423484ee5b6",
+  "branch": "codex/amd-brick-uv-bake-proof",
+  "execution_source_SHA256": {
+    "sampler.py": "0a330eca2c991d3b7751d3cbbbe94edac317b34b28ce7216d9d3d374ef20b0c6",
+    "patch_math.py": "bf6859cd08cbc18fa85ce82213f32f337e99c3a41531b856c10ee422fb2e2881",
+    "bake_patch.py": "22323abe3bacc09bf36bedc6ac48eb01eea0b5cd2dc084256d974007578cf6fd",
+    "run_host.py": "bd461a938fe6c57ca1fca5599122628c19693bfa84e52e5bda3a3f99e8af0034",
+    "render_patch.py": "b20b90e8c554941f05c34cac71fe665b37f82a924f3526d42cdbced6aa7eb366"
+  },
+  "evidence_SHA256": {
+    "source-semantics.json": "094198de62098b413a503f9dae2f81c6de4f9ddc1ebc313d98e49f7f739ee79f",
+    "probe-contract.json": "6f9113b509f39d8354201cc76bbaa727f2b41473303aeec329b833441c50fe59",
+    "focused-tests.txt": "fcd1819f821677cca33e5a723abe4f7f1df69ccc11aa9112e90eb0de75b42f03",
+    "test_sampler.py": "2c08da9baf55b0db092567de9648f961d9389a8d7a49c8380662938bf5b7b82f",
+    "test_patch_math.py": "f4cba744ad44ddcd3dbf99e4507f75354db5c5d63b5c8a5e764eacbd00d58746",
+    "test_render_patch.py": "3a34e9b77e6dc39ae465e703e323fa65533d38ed858c4b0ea905d487553c3337"
+  },
+  "scope": "Static source/math/colour-space/host review and root29 synthetic CPU fixtures. Reviewer did not run original assets, Blender, native GPU sampler, model, WSL or checkpoints. This approves a bounded proof attempt, not its outcome.",
+  "verified_controls": {
+    "exact_approved_base_branch_and_fresh_exclusive_private_stages": true,
+    "all_original_input_full_hashes_and_complete_coordinate_row_order_authenticated": true,
+    "original_vertex_face_material_arrays_not_mutated": true,
+    "selected_complete_original_triangles_exact_positions_indices_winding_multiplicity_with_original_ID_remap": true,
+    "fixed_front_brick_ROI_nearest_seed_confirmed_against_full_original_center_ray": true,
+    "connected_bounded_original_face_component_no_repair_or_remesh": true,
+    "single_YZ_UV_chart_with16texel_margin_analytic_overlap_rejection_and_every_face_sampled": true,
+    "native_original_XYZ_world_to_grid_F32_transform_and_eight_neighbour_order": true,
+    "partial_sparse_support_renormalized_native_floor_all_missing_six_zeros": true,
+    "all_six_sampled_float_channels_retained_before_display_clamp_and_quantization": true,
+    "source_encoded_RGB_native_F32_times255_clip_and_truncation_RGBA_MR_packing": true,
+    "native_Telea_padding_only_outside_raster_covered_texel_values_asserted_unchanged": true,
+    "explicit_PNG_row_flip_and_standard_bottom_up_UV_V": true,
+    "all_face_centroids_plus10000_area_weighted_holdout_queries_require_nonzero_support": true,
+    "linear_light_sRGB_texel_filter_then_reencode_for_encoded_RGB_error": true,
+    "MR_and_alpha_scalar_filter_no_gamma_quantization_measured_against_clipped_field": true,
+    "independent_F64_reference_uses_original_coordinate_tuples_not_sorted_lookup_rows": true,
+    "GLB_independent_chunk_accessor_oriented_triangle_UV_embedded_PNG_and_material_validation": true,
+    "GLB_opaque_double_sided_unit_factors_no_AO_normal_or_emissive_maps": true,
+    "GLB_linear_magnification_clamp_to_edge_verified_base_level_metric_scope_explicit": true,
+    "fresh_factory_Blender_import_readback_independent_of_exporter": true,
+    "source_triangle_vertex_splits_allowed_only_with_exact_oriented_triangle_positions_and_bounded_UV_roundoff": true,
+    "both_comparison_views_same_geometry_flat_shading_camera_lights_EV2_CPU_settings": true,
+    "direct_vertex_gamma22_preview_distinct_from_spatial_baked_sRGB_map_comparison": true,
+    "private_outputs_only_and_source_before_after_identity_checks": true
+  },
+  "resolved_findings": [
+    {
+      "issue": "Texel-center-only overlap detection could miss subtexel positive-area overlap.",
+      "resolution": "Analytic convex clipping for all bbox-overlapping face pairs; positive intersection area>1e-12 UV-square rejected; shared contacts and subtexel fixture covered."
+    },
+    {
+      "issue": "Nearest nominated frontface might be occluded by another original face.",
+      "resolution": "Full original center ray must identify exactly the nominated seed face."
+    },
+    {
+      "issue": "Pinned legacy modules were executed before their hash checks.",
+      "resolution": "Fixed diagnose.py and projection.py hashes checked before module load."
+    },
+    {
+      "issue": "Holdout queries discarded missing-support diagnostics.",
+      "resolution": "Every centroid/random holdout query must have nonzero support."
+    },
+    {
+      "issue": "GLB metadata initially did not enforce double-sided/no-extra-map/filter contract.",
+      "resolution": "Independent parser now asserts OPAQUE, doubleSided, unit factors, no AO/normal/emission, linear magnification and clamp wrapping."
+    }
+  ],
+  "predeclared_limits": {
+    "selected_faces": [
+      20,
+      6000
+    ],
+    "texture_size": [
+      1024,
+      1024
+    ],
+    "UV_positive_overlap_area_tolerance": 1e-12,
+    "RGB_RMSE": 0.02,
+    "RGB_absolute_p95": 0.05,
+    "RGB_absolute_max": 0.15,
+    "scalar_RMSE": 0.02,
+    "independent_F64_max": 2e-06,
+    "quantization_max": "<1/255+1e-7 against clipped samples",
+    "unsupported_covered_and_holdout_queries": 0
+  },
+  "resource_policy": {
+    "each_stage_memory_cap_bytes": 6442450944,
+    "each_stage_deadline_seconds": 180,
+    "initial_and_live_available_RAM_floor_bytes": 12884901888,
+    "initial_and_live_disk_floor_bytes": 2147483648,
+    "owned_Job_attached_before_exact_GO": true,
+    "CPU_threads": 4,
+    "Cycles_samples": 32,
+    "comparison_resolution": [
+      640,
+      640
+    ],
+    "CPU_OpenImageDenoise": true,
+    "fresh_resource_admission_required_by_host_before_each_stage": true,
+    "no_actual_stage_marker_at_receipt_creation": true,
+    "no_retry_after_resource_heavy_failure": true
+  },
+  "tests": {
+    "root_actual_synthetic_CPU_passes": 29,
+    "seconds": 0.508,
+    "runtime": "D installed Python3.12.10 / NumPy2.5.3 / OpenCV5.0.0.93",
+    "reviewer_additional_production_or_Blender_execution": false
+  },
+  "required_outcome_review": [
+    "Baked stage must pass every frozen gate before GLB export or fresh import.",
+    "Visually confirm selected source patch is brick without foliage before accepting the proof.",
+    "Independently reopen actual maps/comparison images and verify exported GLB geometry/map/material receipts.",
+    "Describe encoded alpha retained in source RGBA/float artifacts separately from OPAQUE GLB, whose exporter may omit unused alpha.",
+    "Report measured texture errors and finite-resolution/LOD0/GPU-rounding limits without claiming complete native exporter or universal viewer parity.",
+    "Freshly verify protected originals and historical evidence preservation before publication."
+  ],
+  "blockers": []
+}
