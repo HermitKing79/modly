@@ -1,0 +1,79 @@
+{
+  "schema": "modly.amd.brick-defect-diagnosis-independent-pre-review.v1",
+  "classification": "GO_PREEXECUTION",
+  "created_utc": "2026-10-19T10:50:05.051223+00:00",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "base": "1d1c1a6b54050200fca870b49c1b26bb51338c6a",
+  "branch": "codex/amd-brick-geometry-defect-diagnosis",
+  "execution_source_SHA256": {
+    "diagnose.py": "79a522039ed8fab6925418ca0053c0370e97af5880e56ddbbd3656088d194f20",
+    "topology.py": "9d6e29e83b35c60f1f9b49192a290069bf867b51493da3cc5ec017525017d561",
+    "projection.py": "0ed20e6d03424404f3b3aebc64cae2825a0d1c8d241fd494ce50e742471eb840",
+    "run_host.py": "07cabe36db7a4c29781ca4d184ce4b0635a949692cd225fae9379e918a193322"
+  },
+  "scope": "Static review of topology, projection, worker and owned CPU host; reviewed root preflight and reported18 synthetic CPU test passes. Reviewer did not load or analyze the real mesh, run Blender, load checkpoints, or start model/WSL/GPU work.",
+  "findings_resolved": [
+    {
+      "finding": "Isolated Python omitted the local module directory while worker used plain local imports.",
+      "resolution": "Exact reviewed E is inserted into sys.path after GO before importing topology/projection."
+    },
+    {
+      "finding": "Exposure render metadata originally lacked an expected SHA256.",
+      "resolution": "Pinned complete metadata SHA2562e09ea2c4ba104f37133e1322759ce9de3fe5e92a5aeac798e379d8bf1685464, including actual clip/camera contract."
+    },
+    {
+      "finding": "Native RGB conversion originally used float64 gamma arithmetic rather than the actual float32 vertex conversion.",
+      "resolution": "Clip/power now use float32 with float32(2.2), followed by float64 barycentric interpolation; nontrivial regression reported passing."
+    }
+  ],
+  "correctness_checks": {
+    "all_three_original_triangle_edge_occurrences_counted_with_multiplicity": true,
+    "edge_keys_preserve_original_indices_without_coordinate_welding": true,
+    "components_include_unused_vertices_separately_from_face_bearing_counts": true,
+    "shared_vertex_point_touch_component_limitation_explicit": true,
+    "zero_area_means_exact_float64_cross_zero_no_epsilon": true,
+    "square_ORTHO_actual_plus_X_axis_order_PNG_downward_Y_and_half_pixel_centers_correct": true,
+    "conservative_outward_rounded_float32_triangle_bounds": true,
+    "float64_barycentrics_nearest_clipped_positive_depth_and_original_face_ids": true,
+    "both_windings_retained_signed_normal_not_silently_flipped": true,
+    "degenerate_candidates_edge_hits_and_depth_ties_remain_explicit": true,
+    "all_original_geometry_material_mapping_image_and_camera_sources_pinned": true,
+    "read_only_memmaps_and_full_input_source_hashes_before_after": true,
+    "CPU_model_process_network_denial_and_writes_restricted_to_owned_P": true,
+    "no_repair_export_welding_or_geometry_mutation": true,
+    "at_most40_image_pixel_center_queries": true,
+    "at_most48_additional_edge_midpoint_queries_from_four_pools": true,
+    "at_most4_visible_midpoint_markers_per_class_per_ROI_no_dense_edge_overlay": true
+  },
+  "numerical_scope": {
+    "barycentric_inside_tolerance": 1e-09,
+    "nearest_depth_tie_tolerance_world_units": 1e-09,
+    "edge_midpoint_front_depth_match_tolerance_world_units": 1e-07,
+    "midpoint_visibility_does_not_establish_full_edge_visibility": true,
+    "hit_proves_some_triangle_on_ray_not_absence_of_a_nearer_sheet_opening": true,
+    "miss_with_neighbor_hits_does_not_prove_closed_repairable_hole": true,
+    "no_shadow_ray_illumination_antialiasing_or_pixel_coverage_reconstruction": true,
+    "incidence1_may_be_intentional_open_sheet_boundary": true,
+    "duplicate_faces_and_edge_connected_face_components_not_assessed": true
+  },
+  "resource_controls": {
+    "owned_job_attached_before_GO_and_large_imports": true,
+    "per_process_memory_cap_bytes": 6442450944,
+    "host_deadline_seconds": 180,
+    "worker_stage_deadline_seconds": 170,
+    "initial_and_live_RAM_floor_bytes": 12884901888,
+    "initial_and_live_disk_floor_bytes": 2147483648,
+    "fresh_preflight_available_RAM_bytes": 20685164544,
+    "fresh_preflight_free_disk_bytes": 111738425344,
+    "preflight_admitted": true,
+    "kill_on_close_no_breakaway_and_owned_tree_exit_verification": true,
+    "private_fresh_marker_and_no_retry": true,
+    "assessment": "Bounded arrays, batched triangle arithmetic and at most88 total center/midpoint queries appear feasible under unchanged limits; actual time/memory remain to be measured."
+  },
+  "tests": {
+    "root_reported_synthetic_tests_passed": 18,
+    "reviewer_real_mesh_or_new_test_execution": false
+  },
+  "blockers": [],
+  "followup": "Verify actual data, sources/resources/cleanup, and sparse legible overlay plus at mosttwo ROI comparisons after the one CPU analysis. Overlay composition and final findings are not yet outcome-reviewed."
+}

@@ -1,0 +1,79 @@
+{
+  "classification": "PASS",
+  "CPU_only": true,
+  "inputs": {
+    "mesh": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\mesh.ply",
+      "bytes": 77751514,
+      "mtime_ns": 1792081285352266400,
+      "inode": 3096224745327386,
+      "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd"
+    },
+    "vertices": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\vertices.npy",
+      "bytes": 23494820,
+      "mtime_ns": 1792081285418897200,
+      "inode": 3659174698748700,
+      "sha256": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252"
+    },
+    "faces": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\faces.npy",
+      "bytes": 50083136,
+      "mtime_ns": 1792081285441919800,
+      "inode": 2251799815195421,
+      "sha256": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d"
+    },
+    "geometry": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\shape-decoded.safetensors",
+      "bytes": 104148612,
+      "mtime_ns": 1792079411497276400,
+      "inode": 5910974512167190,
+      "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861"
+    },
+    "material": {
+      "path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-pbr-qualified-a064378\\field\\texture-field.safetensors",
+      "bytes": 125318120,
+      "mtime_ns": 1792357395398244500,
+      "inode": 3377699722295604,
+      "sha256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394"
+    },
+    "mapping_receipt": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-pbr-preview-evidence\\mapping-verification.json",
+      "bytes": 13297,
+      "mtime_ns": 1792400039426100300,
+      "inode": 5629499535528629,
+      "sha256": "84912427ddff6d470ce96215344118b057ab357f3a41ff762612a367549d0eb4"
+    },
+    "image_ev2": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x-ev2.png",
+      "bytes": 1023455,
+      "mtime_ns": 1792404828370442000,
+      "inode": 3096224745149524,
+      "sha256": "74d1655d53d5fe7d262756c7e23c0a695aa42b7ee3c43e075007a59fc3bf7f54"
+    },
+    "render_metadata": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\render-metadata.json",
+      "bytes": 39909,
+      "mtime_ns": 1792404835003090800,
+      "inode": 2251799815017588,
+      "sha256": "2e09ea2c4ba104f37133e1322759ce9de3fe5e92a5aeac798e379d8bf1685464"
+    }
+  },
+  "resources": {
+    "available_ram_bytes": 20685164544,
+    "disk_free_bytes": 111738425344,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "sources": {
+    "diagnose.py": "79a522039ed8fab6925418ca0053c0370e97af5880e56ddbbd3656088d194f20",
+    "projection.py": "0ed20e6d03424404f3b3aebc64cae2825a0d1c8d241fd494ce50e742471eb840",
+    "run_host.py": "07cabe36db7a4c29781ca4d184ce4b0635a949692cd225fae9379e918a193322",
+    "test_projection.py": "ae014fc7b0d127a175933205dc044e10986ceba599e0eebf45301fbed608eadf",
+    "test_topology.py": "dd6fa6dba4ee40edfbaf981b1e4cf7b8eca19c0b1c6fece84f49a2314cf7db5c",
+    "topology.py": "9d6e29e83b35c60f1f9b49192a290069bf867b51493da3cc5ec017525017d561"
+  },
+  "unconsumed_marker": true,
+  "base": "1d1c1a6b54050200fca870b49c1b26bb51338c6a"
+}

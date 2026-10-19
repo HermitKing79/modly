@@ -1,0 +1,111 @@
+{
+  "classification": "PASS",
+  "all47_raw_edge_probes_preserved": true,
+  "selected_marker_count": 11,
+  "minimum_pairwise_spacing_original_pixels": 12,
+  "markers": [
+    {
+      "roi": "A_brick_detail",
+      "class": "boundary",
+      "midpoint": [
+        559.0480956916681,
+        384.4161993990734
+      ],
+      "incidence": 1
+    },
+    {
+      "roi": "B_vines",
+      "class": "boundary",
+      "midpoint": [
+        339.4530882783794,
+        336.5952040017807
+      ],
+      "incidence": 1
+    },
+    {
+      "roi": "B_vines",
+      "class": "nonmanifold",
+      "midpoint": [
+        401.117799629399,
+        307.86475219069337
+      ],
+      "incidence": 4
+    },
+    {
+      "roi": "A_brick_detail",
+      "class": "nonmanifold",
+      "midpoint": [
+        487.93225180068714,
+        413.5983532225927
+      ],
+      "incidence": 3
+    },
+    {
+      "roi": "B_vines",
+      "class": "boundary",
+      "midpoint": [
+        374.51177184573766,
+        347.4964239919133
+      ],
+      "incidence": 1
+    },
+    {
+      "roi": "B_vines",
+      "class": "nonmanifold",
+      "midpoint": [
+        435.80115391103294,
+        310.98555264830065
+      ],
+      "incidence": 3
+    },
+    {
+      "roi": "A_brick_detail",
+      "class": "nonmanifold",
+      "midpoint": [
+        577.0263593460072,
+        425.31230808841156
+      ],
+      "incidence": 3
+    },
+    {
+      "roi": "B_vines",
+      "class": "boundary",
+      "midpoint": [
+        420.7474066172955,
+        379.41113248922886
+      ],
+      "incidence": 1
+    },
+    {
+      "roi": "B_vines",
+      "class": "nonmanifold",
+      "midpoint": [
+        348.54541003920355,
+        326.60390209132106
+      ],
+      "incidence": 4
+    },
+    {
+      "roi": "A_brick_detail",
+      "class": "nonmanifold",
+      "midpoint": [
+        623.8939284595454,
+        467.49683999852874
+      ],
+      "incidence": 3
+    },
+    {
+      "roi": "B_vines",
+      "class": "boundary",
+      "midpoint": [
+        308.9014812625801,
+        393.0984401020231
+      ],
+      "incidence": 1
+    }
+  ],
+  "sources": {
+    "compose.py": "e7e9db1240c1f5cf8ed33d2b949b059a422fc8b28d59e27de0a9e6a3e196b06e",
+    "compose_host.py": "e6f09b136e369c56241764d39de6c17f640e862c3ff3f431ad2c88ffbcfd2b25"
+  }
+}

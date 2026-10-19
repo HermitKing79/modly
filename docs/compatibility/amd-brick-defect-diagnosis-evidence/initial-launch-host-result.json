@@ -1,0 +1,43 @@
+{
+  "CPU_only": true,
+  "command": [
+    "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-defect-diagnosis-evidence\\diagnose.py"
+  ],
+  "initial_resources": {
+    "available_ram_bytes": 20714692608,
+    "disk_free_bytes": 111737962496,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "memory_cap_bytes": 6442450944,
+  "deadline_seconds": 180,
+  "resource_samples": [
+    {
+      "available_ram_bytes": 20714115072,
+      "disk_free_bytes": 111737958400,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 0.21799999999348074
+    }
+  ],
+  "returncode": 1,
+  "process_memory": {
+    "peak_working_set_bytes": 4603904,
+    "peak_pagefile_bytes": 868352
+  },
+  "peak_process_committed_bytes": 128507904,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 1.014999999999418,
+  "classification": "BLOCKED"
+}

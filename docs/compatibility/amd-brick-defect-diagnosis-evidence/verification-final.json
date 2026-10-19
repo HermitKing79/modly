@@ -1,0 +1,27 @@
+{
+  "classification": "PASS",
+  "created_utc": "2026-10-19T10:59:00.086533+00:00",
+  "analysis_and_composition_originals_unchanged": true,
+  "executed_code_hashes_match_current_source": true,
+  "protected100_and_scoped400_preserved": true,
+  "CPU_fixture_tests_passed": 18,
+  "guarded_installed_import_closure_passed": true,
+  "guard_negative_cases_passed": 5,
+  "all3_private_PNGs_independently_reopened": true,
+  "two_unannotated_crop_panels_pixel_exact": true,
+  "natural_empty_jobs": true,
+  "source_manifest": {
+    "check_imports.py": "d7226975406f0ad2debf505a5186f4f35ef60e6cca8b2385cf87af66f3273f1a",
+    "compose.py": "04928c2a61b739369713d55df68f31cba7ad21012e65ce9969a1fde3a2096077",
+    "compose_host.py": "e6f09b136e369c56241764d39de6c17f640e862c3ff3f431ad2c88ffbcfd2b25",
+    "diagnose.py": "8fa7c617324ba636856b48f47a995ee64cd2a85f3c26d86d8760ec638b163529",
+    "projection.py": "0ed20e6d03424404f3b3aebc64cae2825a0d1c8d241fd494ce50e742471eb840",
+    "run_host.py": "30077790132b3dd4f30f26d00bd461e40c2d5690e7154865b59bb9b08f8862e9",
+    "test_projection.py": "ae014fc7b0d127a175933205dc044e10986ceba599e0eebf45301fbed608eadf",
+    "test_topology.py": "dd6fa6dba4ee40edfbaf981b1e4cf7b8eca19c0b1c6fece84f49a2314cf7db5c",
+    "topology.py": "9d6e29e83b35c60f1f9b49192a290069bf867b51493da3cc5ec017525017d561",
+    "verify_images.py": "ae9a47cbc4bf1fa2f723dd53c952fd949df0414c22f9fe0be9f3c4d3030aae24"
+  },
+  "no_geometry_or_material_change": true,
+  "no_new_Blender_GPU_model_or_WSL_execution": true
+}

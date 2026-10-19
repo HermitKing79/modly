@@ -1,0 +1,60 @@
+{
+  "schema": "modly.amd.brick-defect-diagnosis-independent-pre-review-recovery.v1",
+  "classification": "GO_PREEXECUTION_RECOVERY",
+  "created_utc": "2026-10-19T10:51:55.520418+00:00",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "review_scope": "Focused source delta and preserved failed-launch evidence only; no real-mesh computation, render, model, WSL, or new reviewer tests.",
+  "execution_source_SHA256": {
+    "diagnose.py": "8fa7c617324ba636856b48f47a995ee64cd2a85f3c26d86d8760ec638b163529",
+    "topology.py": "9d6e29e83b35c60f1f9b49192a290069bf867b51493da3cc5ec017525017d561",
+    "projection.py": "0ed20e6d03424404f3b3aebc64cae2825a0d1c8d241fd494ce50e742471eb840",
+    "run_host.py": "30077790132b3dd4f30f26d00bd461e40c2d5690e7154865b59bb9b08f8862e9"
+  },
+  "exact_delta_verified_against_prior_reviewed_bytes": {
+    "diagnose.py": "Only output P gains /analysis and exact socket.gethostname event is exempted from socket-event rejection. Reversing these edits reproduces prior reviewed SHA256.",
+    "run_host.py": "Only output P gains /analysis. Reversing this edit reproduces prior reviewed SHA256.",
+    "topology.py": "Unchanged exact SHA256",
+    "projection.py": "Unchanged exact SHA256"
+  },
+  "initial_failed_launch": {
+    "exit_code": 1,
+    "host_seconds": 1.014999999999418,
+    "peak_process_committed_bytes": 128507904,
+    "natural_empty_owned_job_exit": true,
+    "failure": "Installed SciPy ndimage import reached NumPy testing/platform local socket.gethostname, rejected by the original broad audit guard.",
+    "original_input_identity_reads_and_topology_not_reached": "Verified from preserved traceback and worker import/read ordering; no cache or diagnostics exists at original P.",
+    "preserved_files_fresh_SHA256": {
+      "analysis-attempt.json": {
+        "bytes": 911,
+        "sha256": "9d10f444df93b11c35e4c7e96d0534855f78625370a20b0f054d27d41cb3dd1f"
+      },
+      "analysis.stdout.txt": {
+        "bytes": 28,
+        "sha256": "a672326a0a6f2a6acc02cfa261d9f3b99ac35d473bf47a3c2c4edf1a729630de"
+      },
+      "analysis.stderr.txt": {
+        "bytes": 3706,
+        "sha256": "913a0fc03604131c9a4a1ec5a1169662a4ed18ca69c913084fce9e4b803658d4"
+      },
+      "host-result.json": {
+        "bytes": 1248,
+        "sha256": "3cf444fb9012d74940347109613e77f39e03cebdaa25a2a791b3344bf081336a"
+      }
+    }
+  },
+  "recovery_controls": {
+    "only_exact_local_hostname_event_allowed": true,
+    "socket_construction_connect_DNS_and_other_socket_events_still_rejected": true,
+    "process_GPU_model_and_foreign_write_guards_retained": true,
+    "root_reported_real_installed_guarded_numpy_scipy_ndimage_PIL_local_import_closure_PASS": true,
+    "root_reported_five_network_process_GPU_foreign_write_negative_checks_PASS": true,
+    "guarded_import_regression_source_sha256": "d7226975406f0ad2debf505a5186f4f35ef60e6cca8b2385cf87af66f3273f1a",
+    "fresh_analysis_subdirectory_empty_at_review": true,
+    "previous_failure_marker_stdout_stderr_host_result_retained": true,
+    "all_prior_projection_topology_and_material_correctness_checks_unchanged": true,
+    "all_6GiB_180_second_12GiB_RAM_2GiB_disk_and_owned_GO_controls_unchanged": true,
+    "no_automatic_retry_or_overwrite": true
+  },
+  "blockers": [],
+  "required_followup": "Measure the one fresh read-only analysis and independently review actual outputs, source preservation, resource cleanup and final sparse diagnostic images."
+}

@@ -1,0 +1,23 @@
+{
+  "classification": "PASS",
+  "CPU_only": true,
+  "initial_launch_preserved": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-defect-diagnosis-1d1c1a6\\host-result.json",
+  "initial_failure": "socket.gethostname rejected during scipy.ndimage import, before mesh reads",
+  "corrected_policy": "local hostname query only; all network connection and process events still denied",
+  "guarded_import_closure": "actual numpy scipy.ndimage PIL topology projection PASS",
+  "five_negative_guard_cases": "PASS",
+  "fresh_resources": {
+    "available_ram_bytes": 20678193152,
+    "disk_free_bytes": 111737798656,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "source_sha256": {
+    "diagnose.py": "8fa7c617324ba636856b48f47a995ee64cd2a85f3c26d86d8760ec638b163529",
+    "run_host.py": "30077790132b3dd4f30f26d00bd461e40c2d5690e7154865b59bb9b08f8862e9",
+    "projection.py": "0ed20e6d03424404f3b3aebc64cae2825a0d1c8d241fd494ce50e742471eb840",
+    "topology.py": "9d6e29e83b35c60f1f9b49192a290069bf867b51493da3cc5ec017525017d561",
+    "check_imports.py": "d7226975406f0ad2debf505a5186f4f35ef60e6cca8b2385cf87af66f3273f1a"
+  }
+}

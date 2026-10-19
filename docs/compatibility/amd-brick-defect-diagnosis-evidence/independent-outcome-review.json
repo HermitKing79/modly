@@ -1,0 +1,175 @@
+{
+  "schema": "modly.amd.brick-defect-diagnosis-independent-outcome-review.v1",
+  "classification": "PASS_DIAGNOSTICS_WITH_SCOPE_LIMITS",
+  "created_utc": "2026-10-19T11:00:40.786800+00:00",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "checks_passed": 66,
+  "checks": [
+    "Actual analysis host composition and overlay classifications accepted",
+    "Worker complete input/source before-after identities equal",
+    "Current source stat matches authenticated analysis mesh",
+    "Current source stat matches authenticated analysis vertices",
+    "Current source stat matches authenticated analysis faces",
+    "Current source stat matches authenticated analysis geometry",
+    "Current source stat matches authenticated analysis material",
+    "Current source stat matches authenticated analysis mapping_receipt",
+    "Current source stat matches authenticated analysis image_ev2",
+    "Current source stat matches authenticated analysis render_metadata",
+    "Reviewed execution source still exact diagnose.py",
+    "Reviewed execution source still exact topology.py",
+    "Reviewed execution source still exact projection.py",
+    "Reviewed execution source still exact run_host.py",
+    "Reviewed execution source still exact compose.py",
+    "Reviewed execution source still exact compose_host.py",
+    "Initial failed-launch evidence retained analysis-attempt.json",
+    "Initial failed-launch evidence retained analysis.stdout.txt",
+    "Initial failed-launch evidence retained analysis.stderr.txt",
+    "Initial failed-launch evidence retained host-result.json",
+    "Actual analysis time and Job-recorded memory within bound",
+    "Actual analysis natural empty owned-job exit",
+    "Every analysis original RAM/disk floor passed",
+    "Actual composition time and Job-recorded memory within bound",
+    "Actual composition natural empty owned-job exit",
+    "Every composition original RAM/disk floor passed",
+    "Public diagnostic summary authenticates actual private data",
+    "Public topology equals measured actual topology",
+    "Complete original topology counts",
+    "Edge incidence categories account for every unique edge",
+    "Unused indices separated from face-bearing components",
+    "All40 saved center/neighbor rays hit without recorded ambiguity",
+    "Actual eight cases47probes13depth matches10displayed markers",
+    "Public case values/depth span agree with raw A1",
+    "Public case values/depth span agree with raw A2",
+    "Public case values/depth span agree with raw A3",
+    "Public case values/depth span agree with raw A4",
+    "Public case values/depth span agree with raw B1",
+    "Public case values/depth span agree with raw B2",
+    "Public case values/depth span agree with raw B3",
+    "Public case values/depth span agree with raw B4",
+    "Six center-face signed normals point away from camera without winding diagnosis",
+    "Composition used unchanged actual diagnosis and input image",
+    "Accepted +2EV source PNG unchanged",
+    "Actual composed PNG hash/size diagnosis-overlay.png",
+    "Complete independent PNG decode diagnosis-overlay.png",
+    "Actual overview marker budget",
+    "Actual composed PNG hash/size diagnosis-region-a.png",
+    "Complete independent PNG decode diagnosis-region-a.png",
+    "Unannotated ROI is exact3x original pixels diagnosis-region-a.png",
+    "Enlarged ROI case center remains visible A1",
+    "Enlarged ROI case center remains visible A2",
+    "Enlarged ROI case center remains visible A3",
+    "Enlarged ROI case center remains visible A4",
+    "Actual composed PNG hash/size diagnosis-region-b.png",
+    "Complete independent PNG decode diagnosis-region-b.png",
+    "Unannotated ROI is exact3x original pixels diagnosis-region-b.png",
+    "Enlarged ROI case center remains visible B1",
+    "Enlarged ROI case center remains visible B2",
+    "Enlarged ROI case center remains visible B3",
+    "Enlarged ROI case center remains visible B4",
+    "Exactly one full diagnostic plus two ROI comparisons",
+    "Overview-only B1 label occlusion explicitly bounded to verified caveat",
+    "Separate final preservation audit PASS with recorded scope",
+    "Final preservation audit authenticates mission BEFORE receipt",
+    "Final report retains caveat and bounded hole/repair interpretation"
+  ],
+  "reviewer_geometry_analysis_or_renders_repeated": false,
+  "original_data_verification_scope": "Reviewed actual full SHA256 before/after identities, matched current stat/inode, and authenticated separate fresh full-hash preservation audit. Reviewer did not reread or recompute real geometry.",
+  "actual_diagnostics_sha256": "9a860a852afe7654f1cc1edd4754e01b6ec6c1912847c8b211d2562deca92ed5",
+  "measured_findings": {
+    "vertices": 1957891,
+    "triangles": 4173584,
+    "boundary_incidence1_edges": 267652,
+    "nonmanifold_incidence_gt2_edges": 387068,
+    "face_bearing_original_index_components": 207,
+    "unused_vertex_indices": 5749,
+    "center_and_neighbor_rays": 40,
+    "all_sampled_rays_hit": true,
+    "image_cases": 8,
+    "raw_edge_probes": 47,
+    "front_depth_matched_midpoints": 13,
+    "displayed_midpoint_markers": 10
+  },
+  "actual_resources": {
+    "analysis_host_seconds": 5.3439999999973224,
+    "analysis_Job_peak_process_committed_bytes": 593035264,
+    "analysis_minimum_available_RAM_bytes": 20416552960,
+    "analysis_minimum_free_disk_bytes": 111673679872,
+    "analysis_sample_count": 6,
+    "composition_host_seconds": 0.8910000000032596,
+    "composition_Job_peak_process_committed_bytes": 45019136,
+    "both_jobs_natural_empty_exit": true,
+    "original_limits_and_floors_retained": true,
+    "launcher_working_set_not_misreported_as_worker_peak": true
+  },
+  "independently_reopened_PNGs": {
+    "diagnosis-overlay.png": {
+      "sha256": "23eba0a1afd867ffb5a07d4501fec879c6c16c80ee31db2fcb476cdc8557e2a2",
+      "bytes": 1024939,
+      "dimensions": [
+        1696,
+        1170
+      ],
+      "channel_stddev": [
+        58.50054354875722,
+        63.597287913253446,
+        68.30557366227542
+      ]
+    },
+    "diagnosis-region-a.png": {
+      "sha256": "6208a31405493b14512e2ea1c2a32e772a6b0cf32afad16d1e27ea64709c3cd1",
+      "bytes": 161843,
+      "dimensions": [
+        1220,
+        954
+      ],
+      "channel_stddev": [
+        62.103991664446625,
+        77.55061832918635,
+        87.3651221363557
+      ]
+    },
+    "diagnosis-region-b.png": {
+      "sha256": "8c13b25661b8ab7bcdfeed0c50eeb782f2f91f77aef6bd4cab80d77bd1e6df5a",
+      "bytes": 145317,
+      "dimensions": [
+        1160,
+        864
+      ],
+      "channel_stddev": [
+        63.9789610472201,
+        79.80043030249568,
+        92.83827015350143
+      ]
+    }
+  },
+  "unannotated_ROIs_pixel_exact": {
+    "diagnosis-region-a.png": true,
+    "diagnosis-region-b.png": true
+  },
+  "visual_inspection": {
+    "all_three_images_viewed": true,
+    "legends_and_sidebar_complete_and_readable": true,
+    "ROI_comparisons_allow_clear_original_vs_annotation_inspection": true,
+    "midpoint_symbols_sparse_and_no_full_edge_lines_drawn": true,
+    "nonblocking_caveat": "In the overview, B2 label overlaps B1 and covers its queried center pixel. B1/B2 are separately readable with unobscured centers in enlarged ROI B; the left ROI panel preserves exact original pixels. Final report explicitly discloses this."
+  },
+  "interpretation_review": {
+    "global_topology_counts_are_verified_measurements_not_repair_certificates": true,
+    "ray_hit_can_be_a_rear_surface_through_a_nearer_opening": true,
+    "dark_pixel_not_equated_with_black_learned_RGB": true,
+    "exact_hole_shadow_and_winding_error_causes_remain_unproven": true,
+    "no_closed_loop_local_manifold_interior_or_repair_safety_assessment_claimed": true,
+    "unused_vertices_not_counted_as_visible_detached_faces": true,
+    "shared_vertex_point_touch_and_duplicate_face_scope_limits_preserved": true,
+    "repair_deferred_and_no_unauthorized_geometry_material_or_render_changes": true
+  },
+  "preservation_audit_sha256": "60409a4397763cfeef40e0b4c7b97ff238f8b7dea90ae74220372489bf516f7e",
+  "report_review": {
+    "path": "docs/compatibility/amd-brick-geometry-defect-diagnosis.md",
+    "sha256": "c483bd7ddfe80b60b51607810087af8993ff0947ea66f8babbc6b2c2deed5555",
+    "status": "PASS",
+    "counts_cases_timings_image_claims_and_scope_wording_match_reviewed_evidence": true,
+    "remote_head_publication_preservation_owned_by_root_separate_receipt": true
+  },
+  "blockers": []
+}

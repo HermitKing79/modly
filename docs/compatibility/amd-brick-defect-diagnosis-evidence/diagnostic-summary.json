@@ -1,0 +1,582 @@
+{
+  "classification": "PASS_DIAGNOSTICS_ONLY",
+  "input_identities": {
+    "mesh": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\mesh.ply",
+      "bytes": 77751514,
+      "mtime_ns": 1792081285352266400,
+      "inode": 3096224745327386,
+      "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd"
+    },
+    "vertices": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\vertices.npy",
+      "bytes": 23494820,
+      "mtime_ns": 1792081285418897200,
+      "inode": 3659174698748700,
+      "sha256": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252"
+    },
+    "faces": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\faces.npy",
+      "bytes": 50083136,
+      "mtime_ns": 1792081285441919800,
+      "inode": 2251799815195421,
+      "sha256": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d"
+    },
+    "geometry": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-neural-completion-c9447dd\\neural-output\\shape-decoded.safetensors",
+      "bytes": 104148612,
+      "mtime_ns": 1792079411497276400,
+      "inode": 5910974512167190,
+      "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861"
+    },
+    "material": {
+      "path": "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-pbr-qualified-a064378\\field\\texture-field.safetensors",
+      "bytes": 125318120,
+      "mtime_ns": 1792357395398244500,
+      "inode": 3377699722295604,
+      "sha256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394"
+    },
+    "mapping_receipt": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-pbr-preview-evidence\\mapping-verification.json",
+      "bytes": 13297,
+      "mtime_ns": 1792400039426100300,
+      "inode": 5629499535528629,
+      "sha256": "84912427ddff6d470ce96215344118b057ab357f3a41ff762612a367549d0eb4"
+    },
+    "image_ev2": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x-ev2.png",
+      "bytes": 1023455,
+      "mtime_ns": 1792404828370442000,
+      "inode": 3096224745149524,
+      "sha256": "74d1655d53d5fe7d262756c7e23c0a695aa42b7ee3c43e075007a59fc3bf7f54"
+    },
+    "render_metadata": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\render-metadata.json",
+      "bytes": 39909,
+      "mtime_ns": 1792404835003090800,
+      "inode": 2251799815017588,
+      "sha256": "2e09ea2c4ba104f37133e1322759ce9de3fe5e92a5aeac798e379d8bf1685464"
+    }
+  },
+  "inputs_unchanged": true,
+  "private_full_diagnostics_SHA256": "9a860a852afe7654f1cc1edd4754e01b6ec6c1912847c8b211d2562deca92ed5",
+  "topology": {
+    "input_counts": {
+      "vertices": 1957891,
+      "triangles": 4173584,
+      "triangle_edge_occurrences": 12520752
+    },
+    "edges": {
+      "unique": 6167053,
+      "boundary_incidence_1": 267652,
+      "manifold_incidence_2": 5512333,
+      "nonmanifold_incidence_gt_2": 387068,
+      "max_incidence": 4,
+      "self_edges": 0
+    },
+    "degeneracy": {
+      "repeated_index_faces": 0,
+      "zero_area_faces_float64": 0,
+      "zero_area_definition": "cross(v1-v0,v2-v0) exactly zero in float64; no epsilon",
+      "nonfinite_vertex_rows": 0,
+      "faces_with_nonfinite_coordinates": 0,
+      "duplicate_faces_assessed": false,
+      "duplicate_faces_reason": "Not assessed; independent full face sort omitted to bound CPU and memory."
+    },
+    "components": {
+      "definition": "Connectivity through shared original vertex indices; no coordinate welding. Unused vertices are isolated vertex components.",
+      "face_components_definition": "Face-bearing vertex-index-connected components; excludes all unused vertices.",
+      "face_connectivity_limitation": "Faces meeting only at a shared vertex belong to the same component. Edge-connected face components are not assessed.",
+      "vertex_components_including_unused": 5956,
+      "face_components": 207,
+      "unused_vertices": 5749,
+      "largest_order": "descending vertex count, then ascending component label",
+      "largest": [
+        {
+          "label": 1,
+          "vertices": 1923075,
+          "faces": 4118568
+        },
+        {
+          "label": 77,
+          "vertices": 5381,
+          "faces": 10992
+        },
+        {
+          "label": 451,
+          "vertices": 3205,
+          "faces": 6412
+        },
+        {
+          "label": 3516,
+          "vertices": 2776,
+          "faces": 5636
+        },
+        {
+          "label": 796,
+          "vertices": 2529,
+          "faces": 5002
+        },
+        {
+          "label": 5099,
+          "vertices": 2492,
+          "faces": 4944
+        },
+        {
+          "label": 4343,
+          "vertices": 2338,
+          "faces": 4640
+        },
+        {
+          "label": 1159,
+          "vertices": 708,
+          "faces": 1410
+        },
+        {
+          "label": 16,
+          "vertices": 616,
+          "faces": 1220
+        },
+        {
+          "label": 286,
+          "vertices": 370,
+          "faces": 708
+        },
+        {
+          "label": 795,
+          "vertices": 338,
+          "faces": 624
+        },
+        {
+          "label": 5690,
+          "vertices": 329,
+          "faces": 612
+        },
+        {
+          "label": 4173,
+          "vertices": 327,
+          "faces": 646
+        },
+        {
+          "label": 1151,
+          "vertices": 326,
+          "faces": 638
+        },
+        {
+          "label": 18,
+          "vertices": 309,
+          "faces": 554
+        },
+        {
+          "label": 3959,
+          "vertices": 283,
+          "faces": 550
+        },
+        {
+          "label": 24,
+          "vertices": 282,
+          "faces": 526
+        },
+        {
+          "label": 13,
+          "vertices": 244,
+          "faces": 428
+        },
+        {
+          "label": 5840,
+          "vertices": 233,
+          "faces": 346
+        },
+        {
+          "label": 4859,
+          "vertices": 224,
+          "faces": 400
+        }
+      ],
+      "vertex_size_histogram": {
+        "1": 5749,
+        "2_to_10": 79,
+        "11_to_100": 89,
+        "101_to_1000": 32,
+        "1001_to_10000": 6,
+        "greater_than_10000": 1
+      },
+      "face_size_histogram": {
+        "1": 0,
+        "2_to_10": 75,
+        "11_to_100": 84,
+        "101_to_1000": 39,
+        "1001_to_10000": 7,
+        "greater_than_10000": 2
+      },
+      "tiny_vertex_components_le_10": 5828,
+      "tiny_face_components_le_10": 75,
+      "faces_in_tiny_face_components_le_10": 292,
+      "vertices_in_tiny_vertex_components_le_10": 6204
+    },
+    "execution": {
+      "CPU_only": true,
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "elapsed_seconds": 1.055668,
+      "face_batch_rows": 32768,
+      "source_arrays_mutated": false
+    }
+  },
+  "cases": [
+    {
+      "id": "A1",
+      "pixel": [
+        534,
+        372
+      ],
+      "image_RGB": [
+        0,
+        0,
+        0
+      ],
+      "image_luma": 0.0,
+      "face_id": 2369396,
+      "face_vertex_ids": [
+        1143327,
+        1143329,
+        1154379
+      ],
+      "hit": true,
+      "raw_RGB": [
+        0.5038323613143274,
+        0.2746963230769375,
+        0.14931605532197717
+      ],
+      "native_F32_gamma22_linear_RGB": [
+        0.2216014515215235,
+        0.05871053943470411,
+        0.015576250047659933
+      ],
+      "normal_cos_camera": -0.823772613843753,
+      "opposite_edge_incidence": [
+        2,
+        3,
+        1
+      ],
+      "nearest_edge_distance_px": 0.029165845220921863,
+      "nearest_edge_incidence": 2,
+      "five_ray_depth_span": 0.15048638784191093,
+      "five_rays_hit": 5,
+      "ambiguities": [],
+      "vertex_index_component": 1
+    },
+    {
+      "id": "A2",
+      "pixel": [
+        626,
+        464
+      ],
+      "image_RGB": [
+        38,
+        12,
+        4
+      ],
+      "image_luma": 16.95,
+      "face_id": 2466810,
+      "face_vertex_ids": [
+        1189785,
+        1189786,
+        1189833
+      ],
+      "hit": true,
+      "raw_RGB": [
+        0.4260923636790495,
+        0.22821430849005392,
+        0.13567038254686867
+      ],
+      "native_F32_gamma22_linear_RGB": [
+        0.15333652050446156,
+        0.038853371760798686,
+        0.012370580702482061
+      ],
+      "normal_cos_camera": 0.47193860962498013,
+      "opposite_edge_incidence": [
+        2,
+        2,
+        2
+      ],
+      "nearest_edge_distance_px": 0.01031661244979225,
+      "nearest_edge_incidence": 2,
+      "five_ray_depth_span": 0.2323130680114942,
+      "five_rays_hit": 5,
+      "ambiguities": [],
+      "vertex_index_component": 1
+    },
+    {
+      "id": "A3",
+      "pixel": [
+        538,
+        499
+      ],
+      "image_RGB": [
+        13,
+        2,
+        0
+      ],
+      "image_luma": 4.1942,
+      "face_id": 3356903,
+      "face_vertex_ids": [
+        1603076,
+        1603057,
+        1603077
+      ],
+      "hit": true,
+      "raw_RGB": [
+        0.44588636707072826,
+        0.2444322007295909,
+        0.15297855499063318
+      ],
+      "native_F32_gamma22_linear_RGB": [
+        0.16929595352279553,
+        0.045171572858939586,
+        0.016103498355008523
+      ],
+      "normal_cos_camera": 0.680852832235508,
+      "opposite_edge_incidence": [
+        1,
+        2,
+        2
+      ],
+      "nearest_edge_distance_px": 0.0026438885569467236,
+      "nearest_edge_incidence": 2,
+      "five_ray_depth_span": 0.05466121233795107,
+      "five_rays_hit": 5,
+      "ambiguities": [],
+      "vertex_index_component": 1
+    },
+    {
+      "id": "A4",
+      "pixel": [
+        607,
+        520
+      ],
+      "image_RGB": [
+        29,
+        11,
+        1
+      ],
+      "image_luma": 14.104800000000001,
+      "face_id": 1894944,
+      "face_vertex_ids": [
+        915543,
+        915559,
+        915561
+      ],
+      "hit": true,
+      "raw_RGB": [
+        0.458087177302833,
+        0.3130447509415537,
+        0.12997955595359556
+      ],
+      "native_F32_gamma22_linear_RGB": [
+        0.1796174181999904,
+        0.07769478591727161,
+        0.011310452144413733
+      ],
+      "normal_cos_camera": -0.756257670736941,
+      "opposite_edge_incidence": [
+        2,
+        2,
+        2
+      ],
+      "nearest_edge_distance_px": 0.16770580914995734,
+      "nearest_edge_incidence": 2,
+      "five_ray_depth_span": 0.006509256053076395,
+      "five_rays_hit": 5,
+      "ambiguities": [],
+      "vertex_index_component": 1
+    },
+    {
+      "id": "B1",
+      "pixel": [
+        444,
+        340
+      ],
+      "image_RGB": [
+        33,
+        10,
+        1
+      ],
+      "image_luma": 14.24,
+      "face_id": 3608681,
+      "face_vertex_ids": [
+        1713242,
+        1713292,
+        1713289
+      ],
+      "hit": true,
+      "raw_RGB": [
+        0.47561115640269563,
+        0.26239423958802743,
+        0.1468991322769212
+      ],
+      "native_F32_gamma22_linear_RGB": [
+        0.19521236617032978,
+        0.05278764086465175,
+        0.014719326731779316
+      ],
+      "normal_cos_camera": -0.9020175168171072,
+      "opposite_edge_incidence": [
+        3,
+        3,
+        2
+      ],
+      "nearest_edge_distance_px": 0.08193253236551497,
+      "nearest_edge_incidence": 3,
+      "five_ray_depth_span": 0.013612935268066284,
+      "five_rays_hit": 5,
+      "ambiguities": [],
+      "vertex_index_component": 1
+    },
+    {
+      "id": "B2",
+      "pixel": [
+        426,
+        346
+      ],
+      "image_RGB": [
+        15,
+        3,
+        1
+      ],
+      "image_luma": 5.4068,
+      "face_id": 3134020,
+      "face_vertex_ids": [
+        1502569,
+        1502571,
+        1502572
+      ],
+      "hit": true,
+      "raw_RGB": [
+        0.4235131621729834,
+        0.24249461301835243,
+        0.1638247687629122
+      ],
+      "native_F32_gamma22_linear_RGB": [
+        0.15104928586082841,
+        0.04429616158019621,
+        0.018691560810200264
+      ],
+      "normal_cos_camera": -0.9921166913198809,
+      "opposite_edge_incidence": [
+        2,
+        2,
+        2
+      ],
+      "nearest_edge_distance_px": 0.05321335390837813,
+      "nearest_edge_incidence": 2,
+      "five_ray_depth_span": 0.012772410761498154,
+      "five_rays_hit": 5,
+      "ambiguities": [],
+      "vertex_index_component": 1
+    },
+    {
+      "id": "B3",
+      "pixel": [
+        464,
+        463
+      ],
+      "image_RGB": [
+        2,
+        0,
+        0
+      ],
+      "image_luma": 0.4252,
+      "face_id": 1245036,
+      "face_vertex_ids": [
+        600445,
+        600447,
+        600446
+      ],
+      "hit": true,
+      "raw_RGB": [
+        0.535993844228945,
+        0.3236437282224317,
+        0.19562448785371864
+      ],
+      "native_F32_gamma22_linear_RGB": [
+        0.25360302721408146,
+        0.08359053119326937,
+        0.027615496019135544
+      ],
+      "normal_cos_camera": -0.9596186638432399,
+      "opposite_edge_incidence": [
+        2,
+        1,
+        2
+      ],
+      "nearest_edge_distance_px": 0.031084712972531396,
+      "nearest_edge_incidence": 1,
+      "five_ray_depth_span": 0.2018769248537926,
+      "five_rays_hit": 5,
+      "ambiguities": [],
+      "vertex_index_component": 1
+    },
+    {
+      "id": "B4",
+      "pixel": [
+        453,
+        495
+      ],
+      "image_RGB": [
+        10,
+        2,
+        0
+      ],
+      "image_luma": 3.5564,
+      "face_id": 2580946,
+      "face_vertex_ids": [
+        1242699,
+        1242703,
+        1242701
+      ],
+      "hit": true,
+      "raw_RGB": [
+        0.5294090474162223,
+        0.28979700764601524,
+        0.08116642062322187
+      ],
+      "native_F32_gamma22_linear_RGB": [
+        0.24690447055919915,
+        0.0656543592892452,
+        0.004014466362471363
+      ],
+      "normal_cos_camera": -0.46853971028037616,
+      "opposite_edge_incidence": [
+        2,
+        2,
+        2
+      ],
+      "nearest_edge_distance_px": 0.1185437397314672,
+      "nearest_edge_incidence": 2,
+      "five_ray_depth_span": 0.31764034657736007,
+      "five_rays_hit": 5,
+      "ambiguities": [],
+      "vertex_index_component": 1
+    }
+  ],
+  "selected_center_rays": 40,
+  "selected_hits": 40,
+  "selected_no_hit": 0,
+  "selected_ray_ambiguities": 0,
+  "edge_midpoint_probes": 47,
+  "front_depth_matched_midpoints": 13,
+  "edge_midpoint_tolerance_world_units": 1e-07,
+  "scope_limits": [
+    "Exact center rays against opaque original triangles; no antialiasing or pixel coverage reconstruction.",
+    "Raw and per-vertex gamma22 linear RGB are material evidence, not the shaded/exposed PNG color.",
+    "Normals and depth can support a surface-orientation/occlusion hypothesis; no area-light shadow rays or relighting were performed.",
+    "Empty rays with projected-degenerate candidate ambiguities require caution; no repair eligibility follows from a dark image point or an incidence-1 edge.",
+    "No boundary loop, safe interior, repair, welding, simplification, model execution, mesh export, or mesh mutation was performed.",
+    "A hit may be a rear surface seen through a nearer opening. This diagnosis does not rule out nearer-sheet holes.",
+    "All eight center cases belong to the large original-index-connected component, not detached fragments.",
+    "Negative signed normal-to-camera values are measured orientation, not proof of incorrect winding or a missing face.",
+    "No shadow rays, direct illumination computation, loop closure/manifold patch or repair safety qualification was performed."
+  ]
+}

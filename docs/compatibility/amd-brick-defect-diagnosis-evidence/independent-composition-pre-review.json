@@ -1,0 +1,56 @@
+{
+  "schema": "modly.amd.brick-defect-diagnosis-composition-pre-review.v1",
+  "classification": "GO_COMPOSITION",
+  "created_utc": "2026-10-19T10:56:19.103650+00:00",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "reviewed_source_SHA256": {
+    "compose.py": "04928c2a61b739369713d55df68f31cba7ad21012e65ce9969a1fde3a2096077",
+    "compose_host.py": "e6f09b136e369c56241764d39de6c17f640e862c3ff3f431ad2c88ffbcfd2b25"
+  },
+  "actual_analysis_review": {
+    "diagnostics_sha256": "9a860a852afe7654f1cc1edd4754e01b6ec6c1912847c8b211d2562deca92ed5",
+    "host_result_sha256": "514fe618a35af97c0cd52c4e2f300a481b16f0ed77e865452fe384a5b74c6918",
+    "host_PASS_natural_empty_job": true,
+    "host_seconds": 5.3439999999973224,
+    "peak_process_committed_bytes": 593035264,
+    "boundary_incidence1_edges": 267652,
+    "nonmanifold_incidence_gt2_edges": 387068,
+    "face_bearing_original_index_components": 207,
+    "unused_vertices_separate": 5749,
+    "all40_sampled_image_rays_hit": true,
+    "does_not_prove_absence_of_nearer_sheet_openings": true
+  },
+  "composition_controls": {
+    "only_existing_accepted_image_and_diagnostics_no_geometry_rerun": true,
+    "same_reviewed_owned_job_adapter_1GiB_60seconds_and_original_RAM_disk_floors": true,
+    "GO_before_PIL_import_and_isolated_python": true,
+    "accepted_plus2EV_source_image_pinned": true,
+    "writes_restricted_to_private_P_and_fresh_outputs": true,
+    "inputs_and_composer_full_hashes_before_after": true,
+    "guarded_installed_PIL_and_font_import_checked_without_image_writes": true,
+    "no_new_render_model_GPU_WSL_or_neural_work": true
+  },
+  "layout_and_marker_review": {
+    "actual_cases": 8,
+    "actual_selected_edge_midpoints": 10,
+    "all47_raw_edge_probes_preserved": true,
+    "minimum_selected_midpoint_spacing_original_pixels": 13.509123911945967,
+    "minimum_midpoint_to_case_center_spacing_original_pixels": 27.287447850720127,
+    "full_sidebar_longest_case_line_px": 328.0,
+    "available_sidebar_width_px": 590,
+    "eight_case_text_end_y": 1005,
+    "caution_start_y": 1032,
+    "canvas_height": 1170,
+    "point_markers_only_no_original_edge_lines": true,
+    "open_markers_preserve_queried_center_pixels": true,
+    "one_full_view_and_at_most_two_original_vs_annotated_ROI_comparisons": true,
+    "ROI_crops_true_threefold_nearest_neighbor_enlargement": true,
+    "factual_labels_retain_hit_rear_surface_and_ambiguity_limits": true
+  },
+  "findings_resolved": [
+    "Original subpixel-adjacent boundary/nonmanifold symbols now separated by at least12 original pixels.",
+    "Topology markers now stay at least16 original pixels from case centers, preserving center visibility and label legibility."
+  ],
+  "blockers": [],
+  "required_followup": "Independently reopen and visually inspect the three actual PNGs and review final causal/topology wording, input preservation and composition resource cleanup."
+}

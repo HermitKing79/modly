@@ -1,0 +1,43 @@
+{
+  "classification": "PASS",
+  "CPU_only": true,
+  "original_PNG_unchanged": true,
+  "outputs": [
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-defect-diagnosis-1d1c1a6\\diagnosis-overlay.png",
+      "sha256": "23eba0a1afd867ffb5a07d4501fec879c6c16c80ee31db2fcb476cdc8557e2a2",
+      "bytes": 1024939,
+      "dimensions": [
+        1696,
+        1170
+      ],
+      "independently_reopened": true,
+      "unannotated_crop_pixel_exact": null
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-defect-diagnosis-1d1c1a6\\diagnosis-region-a.png",
+      "sha256": "6208a31405493b14512e2ea1c2a32e772a6b0cf32afad16d1e27ea64709c3cd1",
+      "bytes": 161843,
+      "dimensions": [
+        1220,
+        954
+      ],
+      "independently_reopened": true,
+      "unannotated_crop_pixel_exact": true
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-defect-diagnosis-1d1c1a6\\diagnosis-region-b.png",
+      "sha256": "8c13b25661b8ab7bcdfeed0c50eeb782f2f91f77aef6bd4cab80d77bd1e6df5a",
+      "bytes": 145317,
+      "dimensions": [
+        1160,
+        864
+      ],
+      "independently_reopened": true,
+      "unannotated_crop_pixel_exact": true
+    }
+  ],
+  "actual_overlay_case_markers": 8,
+  "actual_overlay_edge_markers": 10,
+  "scope": "PNG identities/readback and two unchanged nearest-neighbor crop panels; no causal or lighting inference."
+}

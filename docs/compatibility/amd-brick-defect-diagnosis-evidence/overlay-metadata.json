@@ -1,0 +1,661 @@
+{
+  "schema": "modly.amd.brick-defect-diagnosis-overlay.v1",
+  "classification": "PASS",
+  "created_utc": "2026-10-19T10:56:01.462605+00:00",
+  "inputs_before": {
+    "source_png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x-ev2.png",
+      "bytes": 1023455,
+      "mtime_ns": 1792404828370442000,
+      "inode": 3096224745149524,
+      "sha256": "74d1655d53d5fe7d262756c7e23c0a695aa42b7ee3c43e075007a59fc3bf7f54"
+    },
+    "diagnostics": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-defect-diagnosis-1d1c1a6\\analysis\\diagnostics.json",
+      "bytes": 176174,
+      "mtime_ns": 1792407135725198600,
+      "inode": 2251799815278020,
+      "sha256": "9a860a852afe7654f1cc1edd4754e01b6ec6c1912847c8b211d2562deca92ed5"
+    },
+    "composer": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-defect-diagnosis-evidence\\compose.py",
+      "bytes": 17520,
+      "mtime_ns": 1792407320447801100,
+      "inode": 15481123720673123,
+      "sha256": "04928c2a61b739369713d55df68f31cba7ad21012e65ce9969a1fde3a2096077"
+    }
+  },
+  "inputs_after": {
+    "source_png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x-ev2.png",
+      "bytes": 1023455,
+      "mtime_ns": 1792404828370442000,
+      "inode": 3096224745149524,
+      "sha256": "74d1655d53d5fe7d262756c7e23c0a695aa42b7ee3c43e075007a59fc3bf7f54"
+    },
+    "diagnostics": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-defect-diagnosis-1d1c1a6\\analysis\\diagnostics.json",
+      "bytes": 176174,
+      "mtime_ns": 1792407135725198600,
+      "inode": 2251799815278020,
+      "sha256": "9a860a852afe7654f1cc1edd4754e01b6ec6c1912847c8b211d2562deca92ed5"
+    },
+    "composer": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-defect-diagnosis-evidence\\compose.py",
+      "bytes": 17520,
+      "mtime_ns": 1792407320447801100,
+      "inode": 15481123720673123,
+      "sha256": "04928c2a61b739369713d55df68f31cba7ad21012e65ce9969a1fde3a2096077"
+    }
+  },
+  "inputs_unchanged": true,
+  "outputs": [
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-defect-diagnosis-1d1c1a6\\diagnosis-overlay.png",
+      "bytes": 1024939,
+      "sha256": "23eba0a1afd867ffb5a07d4501fec879c6c16c80ee31db2fcb476cdc8557e2a2",
+      "dimensions": [
+        1696,
+        1170
+      ],
+      "readback_verified": true,
+      "channel_stddev": [
+        58.50054354875722,
+        63.597287913253446,
+        68.30557366227542
+      ],
+      "case_markers": [
+        {
+          "id": "A1",
+          "pixel": [
+            534,
+            372
+          ],
+          "sample_xy": [
+            534.5,
+            372.5
+          ]
+        },
+        {
+          "id": "A2",
+          "pixel": [
+            626,
+            464
+          ],
+          "sample_xy": [
+            626.5,
+            464.5
+          ]
+        },
+        {
+          "id": "A3",
+          "pixel": [
+            538,
+            499
+          ],
+          "sample_xy": [
+            538.5,
+            499.5
+          ]
+        },
+        {
+          "id": "A4",
+          "pixel": [
+            607,
+            520
+          ],
+          "sample_xy": [
+            607.5,
+            520.5
+          ]
+        },
+        {
+          "id": "B1",
+          "pixel": [
+            444,
+            340
+          ],
+          "sample_xy": [
+            444.5,
+            340.5
+          ]
+        },
+        {
+          "id": "B2",
+          "pixel": [
+            426,
+            346
+          ],
+          "sample_xy": [
+            426.5,
+            346.5
+          ]
+        },
+        {
+          "id": "B3",
+          "pixel": [
+            464,
+            463
+          ],
+          "sample_xy": [
+            464.5,
+            463.5
+          ]
+        },
+        {
+          "id": "B4",
+          "pixel": [
+            453,
+            495
+          ],
+          "sample_xy": [
+            453.5,
+            495.5
+          ]
+        }
+      ],
+      "case_marker_count": 8,
+      "edge_midpoint_markers": [
+        {
+          "roi": "A_brick_detail",
+          "edge_class": "boundary",
+          "midpoint_xy": [
+            559.0480956916681,
+            384.4161993990734
+          ],
+          "vertices": [
+            1900891,
+            1900916
+          ],
+          "incidence": 1
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "boundary",
+          "midpoint_xy": [
+            339.4530882783794,
+            336.5952040017807
+          ],
+          "vertices": [
+            1830819,
+            1830823
+          ],
+          "incidence": 1
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "nonmanifold",
+          "midpoint_xy": [
+            401.117799629399,
+            307.86475219069337
+          ],
+          "vertices": [
+            20829,
+            20837
+          ],
+          "incidence": 4
+        },
+        {
+          "roi": "A_brick_detail",
+          "edge_class": "nonmanifold",
+          "midpoint_xy": [
+            487.93225180068714,
+            413.5983532225927
+          ],
+          "vertices": [
+            1742133,
+            1742136
+          ],
+          "incidence": 3
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "boundary",
+          "midpoint_xy": [
+            374.51177184573766,
+            347.4964239919133
+          ],
+          "vertices": [
+            1666810,
+            1666812
+          ],
+          "incidence": 1
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "nonmanifold",
+          "midpoint_xy": [
+            435.80115391103294,
+            310.98555264830065
+          ],
+          "vertices": [
+            1520112,
+            1520118
+          ],
+          "incidence": 3
+        },
+        {
+          "roi": "A_brick_detail",
+          "edge_class": "nonmanifold",
+          "midpoint_xy": [
+            577.0263593460072,
+            425.31230808841156
+          ],
+          "vertices": [
+            1618583,
+            1630965
+          ],
+          "incidence": 3
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "boundary",
+          "midpoint_xy": [
+            420.7474066172955,
+            379.41113248922886
+          ],
+          "vertices": [
+            1850310,
+            1850324
+          ],
+          "incidence": 1
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "nonmanifold",
+          "midpoint_xy": [
+            348.54541003920355,
+            326.60390209132106
+          ],
+          "vertices": [
+            1835115,
+            1835122
+          ],
+          "incidence": 4
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "boundary",
+          "midpoint_xy": [
+            308.9014812625801,
+            393.0984401020231
+          ],
+          "vertices": [
+            317681,
+            317685
+          ],
+          "incidence": 1
+        }
+      ],
+      "edge_midpoint_marker_count": 10,
+      "kind": "full_view_plus_evidence_sidebar",
+      "case_evidence_rows": [
+        {
+          "id": "A1",
+          "lines": [
+            "A1  pixel (534, 372)  |  image luma 0.0",
+            "Nearest hit: original face 2369396  |  depth 2.7066",
+            "Raw RGB (0.504, 0.275, 0.149)  |  |n.camera| 0.824",
+            "Edge distance 0.029px; incidences [2, 3, 1]",
+            "Neighbor rays hit 4/4; ambiguities 0"
+          ]
+        },
+        {
+          "id": "A2",
+          "lines": [
+            "A2  pixel (626, 464)  |  image luma 16.9",
+            "Nearest hit: original face 2466810  |  depth 2.7096",
+            "Raw RGB (0.426, 0.228, 0.136)  |  |n.camera| 0.472",
+            "Edge distance 0.010px; incidences [2, 2, 2]",
+            "Neighbor rays hit 4/4; ambiguities 0"
+          ]
+        },
+        {
+          "id": "A3",
+          "lines": [
+            "A3  pixel (538, 499)  |  image luma 4.2",
+            "Nearest hit: original face 3356903  |  depth 2.6331",
+            "Raw RGB (0.446, 0.244, 0.153)  |  |n.camera| 0.681",
+            "Edge distance 0.003px; incidences [1, 2, 2]",
+            "Neighbor rays hit 4/4; ambiguities 0"
+          ]
+        },
+        {
+          "id": "A4",
+          "lines": [
+            "A4  pixel (607, 520)  |  image luma 14.1",
+            "Nearest hit: original face 1894944  |  depth 2.7844",
+            "Raw RGB (0.458, 0.313, 0.130)  |  |n.camera| 0.756",
+            "Edge distance 0.168px; incidences [2, 2, 2]",
+            "Neighbor rays hit 4/4; ambiguities 0"
+          ]
+        },
+        {
+          "id": "B1",
+          "lines": [
+            "B1  pixel (444, 340)  |  image luma 14.2",
+            "Nearest hit: original face 3608681  |  depth 2.5857",
+            "Raw RGB (0.476, 0.262, 0.147)  |  |n.camera| 0.902",
+            "Edge distance 0.082px; incidences [3, 3, 2]",
+            "Neighbor rays hit 4/4; ambiguities 0"
+          ]
+        },
+        {
+          "id": "B2",
+          "lines": [
+            "B2  pixel (426, 346)  |  image luma 5.4",
+            "Nearest hit: original face 3134020  |  depth 2.6358",
+            "Raw RGB (0.424, 0.242, 0.164)  |  |n.camera| 0.992",
+            "Edge distance 0.053px; incidences [2, 2, 2]",
+            "Neighbor rays hit 4/4; ambiguities 0"
+          ]
+        },
+        {
+          "id": "B3",
+          "lines": [
+            "B3  pixel (464, 463)  |  image luma 0.4",
+            "Nearest hit: original face 1245036  |  depth 2.8357",
+            "Raw RGB (0.536, 0.324, 0.196)  |  |n.camera| 0.960",
+            "Edge distance 0.031px; incidences [2, 1, 2]",
+            "Neighbor rays hit 4/4; ambiguities 0"
+          ]
+        },
+        {
+          "id": "B4",
+          "lines": [
+            "B4  pixel (453, 495)  |  image luma 3.6",
+            "Nearest hit: original face 2580946  |  depth 2.6853",
+            "Raw RGB (0.529, 0.290, 0.081)  |  |n.camera| 0.469",
+            "Edge distance 0.119px; incidences [2, 2, 2]",
+            "Neighbor rays hit 4/4; ambiguities 0"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-defect-diagnosis-1d1c1a6\\diagnosis-region-a.png",
+      "bytes": 161843,
+      "sha256": "6208a31405493b14512e2ea1c2a32e772a6b0cf32afad16d1e27ea64709c3cd1",
+      "dimensions": [
+        1220,
+        954
+      ],
+      "readback_verified": true,
+      "channel_stddev": [
+        62.103991664446625,
+        77.55061832918635,
+        87.3651221363557
+      ],
+      "case_markers": [
+        {
+          "id": "A1",
+          "pixel": [
+            534,
+            372
+          ],
+          "sample_xy": [
+            534.5,
+            372.5
+          ]
+        },
+        {
+          "id": "A2",
+          "pixel": [
+            626,
+            464
+          ],
+          "sample_xy": [
+            626.5,
+            464.5
+          ]
+        },
+        {
+          "id": "A3",
+          "pixel": [
+            538,
+            499
+          ],
+          "sample_xy": [
+            538.5,
+            499.5
+          ]
+        },
+        {
+          "id": "A4",
+          "pixel": [
+            607,
+            520
+          ],
+          "sample_xy": [
+            607.5,
+            520.5
+          ]
+        }
+      ],
+      "case_marker_count": 4,
+      "edge_midpoint_markers": [
+        {
+          "roi": "A_brick_detail",
+          "edge_class": "boundary",
+          "midpoint_xy": [
+            559.0480956916681,
+            384.4161993990734
+          ],
+          "vertices": [
+            1900891,
+            1900916
+          ],
+          "incidence": 1
+        },
+        {
+          "roi": "A_brick_detail",
+          "edge_class": "nonmanifold",
+          "midpoint_xy": [
+            487.93225180068714,
+            413.5983532225927
+          ],
+          "vertices": [
+            1742133,
+            1742136
+          ],
+          "incidence": 3
+        },
+        {
+          "roi": "A_brick_detail",
+          "edge_class": "nonmanifold",
+          "midpoint_xy": [
+            577.0263593460072,
+            425.31230808841156
+          ],
+          "vertices": [
+            1618583,
+            1630965
+          ],
+          "incidence": 3
+        }
+      ],
+      "edge_midpoint_marker_count": 3,
+      "kind": "unannotated_and_annotated_crop",
+      "source_box": [
+        470,
+        360,
+        660,
+        590
+      ],
+      "enlargement": 3
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-defect-diagnosis-1d1c1a6\\diagnosis-region-b.png",
+      "bytes": 145317,
+      "sha256": "8c13b25661b8ab7bcdfeed0c50eeb782f2f91f77aef6bd4cab80d77bd1e6df5a",
+      "dimensions": [
+        1160,
+        864
+      ],
+      "readback_verified": true,
+      "channel_stddev": [
+        63.9789610472201,
+        79.80043030249568,
+        92.83827015350143
+      ],
+      "case_markers": [
+        {
+          "id": "B1",
+          "pixel": [
+            444,
+            340
+          ],
+          "sample_xy": [
+            444.5,
+            340.5
+          ]
+        },
+        {
+          "id": "B2",
+          "pixel": [
+            426,
+            346
+          ],
+          "sample_xy": [
+            426.5,
+            346.5
+          ]
+        },
+        {
+          "id": "B3",
+          "pixel": [
+            464,
+            463
+          ],
+          "sample_xy": [
+            464.5,
+            463.5
+          ]
+        },
+        {
+          "id": "B4",
+          "pixel": [
+            453,
+            495
+          ],
+          "sample_xy": [
+            453.5,
+            495.5
+          ]
+        }
+      ],
+      "case_marker_count": 4,
+      "edge_midpoint_markers": [
+        {
+          "roi": "B_vines",
+          "edge_class": "boundary",
+          "midpoint_xy": [
+            339.4530882783794,
+            336.5952040017807
+          ],
+          "vertices": [
+            1830819,
+            1830823
+          ],
+          "incidence": 1
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "nonmanifold",
+          "midpoint_xy": [
+            401.117799629399,
+            307.86475219069337
+          ],
+          "vertices": [
+            20829,
+            20837
+          ],
+          "incidence": 4
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "boundary",
+          "midpoint_xy": [
+            374.51177184573766,
+            347.4964239919133
+          ],
+          "vertices": [
+            1666810,
+            1666812
+          ],
+          "incidence": 1
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "nonmanifold",
+          "midpoint_xy": [
+            435.80115391103294,
+            310.98555264830065
+          ],
+          "vertices": [
+            1520112,
+            1520118
+          ],
+          "incidence": 3
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "boundary",
+          "midpoint_xy": [
+            420.7474066172955,
+            379.41113248922886
+          ],
+          "vertices": [
+            1850310,
+            1850324
+          ],
+          "incidence": 1
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "nonmanifold",
+          "midpoint_xy": [
+            348.54541003920355,
+            326.60390209132106
+          ],
+          "vertices": [
+            1835115,
+            1835122
+          ],
+          "incidence": 4
+        },
+        {
+          "roi": "B_vines",
+          "edge_class": "boundary",
+          "midpoint_xy": [
+            308.9014812625801,
+            393.0984401020231
+          ],
+          "vertices": [
+            317681,
+            317685
+          ],
+          "incidence": 1
+        }
+      ],
+      "edge_midpoint_marker_count": 7,
+      "kind": "unannotated_and_annotated_crop",
+      "source_box": [
+        300,
+        300,
+        480,
+        500
+      ],
+      "enlargement": 3
+    }
+  ],
+  "execution": {
+    "CPU_only": true,
+    "PIL_only_composition": true,
+    "isolated_python": true,
+    "GO_gate_before_PIL_import": true,
+    "writes_restricted_to_private_P": true,
+    "elapsed_seconds": 0.39
+  },
+  "scope": "Existing image pixels plus sparse open markers and factual ray labels; no repair, relighting, dense edge overlay, whole-edge visibility, or causal interpretation."
+}
