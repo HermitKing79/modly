@@ -1,0 +1,35 @@
+{
+  "classification": "PASS",
+  "base": "b0b7be18c492dfbd13aa34a8dd0276027fdcc84a",
+  "tests": 9,
+  "resources": {
+    "available_ram_bytes": 20913487872,
+    "disk_free_bytes": 111748276224,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "source_files": {
+    "render_host.py": "2d98a925a0b97aee29d21d259e40eeb290ab44386ab035e15a3463c5df0c1418",
+    "render_exposure.py": "17af94c180944274c304cd8e034c95e21190fa21ff8434335b48a637fbde27cf",
+    "compose_host.py": "2957f7175d55e30236f1a838384aba9eae26d389a075abba7f996f8b971a9a52",
+    "compose_exposure.py": "7931277bb86e26d9cf24b04caa731eaf545353b771cc48d75fb0e5f8e8defdc3"
+  },
+  "one_variable": "display exposure0/+1/+2 EV; same positive-X camera",
+  "unchanged_process_memory_cap_bytes": 6442450944,
+  "unchanged_deadline_seconds": 180,
+  "previous_same_count_threeview_measured_host_seconds": 55.469,
+  "previous_measured_peak_commit_bytes": 3074342912,
+  "projected_new_seconds": [
+    50,
+    75
+  ],
+  "projected_new_peak_GiB": [
+    2.8,
+    3.7
+  ],
+  "projections_are_not_actual_measurements": true,
+  "original_mesh_and_material_full_hashes_freshly_verified": true,
+  "mapping_receipt_sha256": "84912427ddff6d470ce96215344118b057ab357f3a41ff762612a367549d0eb4",
+  "attempt_started": false
+}

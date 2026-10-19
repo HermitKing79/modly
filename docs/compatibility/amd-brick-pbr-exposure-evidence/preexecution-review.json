@@ -1,0 +1,53 @@
+{
+  "schema": "modly.amd.brick-pbr-exposure-preexecution-review.v1",
+  "classification": "GO_PREEXECUTION",
+  "created_utc": "2026-10-19T10:12:41.188935+00:00",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "base": "b0b7be18c492dfbd13aa34a8dd0276027fdcc84a",
+  "branch": "codex/amd-brick-pbr-exposure-comparison",
+  "scope": "Relevant diff against the independently verified first learned-PBR pipeline, source pins, exposure isolation, bounded composition and existing focused test log. No render/model/GPU/WSL execution or additional tests by reviewer.",
+  "reviewed_source_SHA256": {
+    "render_host.py": "2d98a925a0b97aee29d21d259e40eeb290ab44386ab035e15a3463c5df0c1418",
+    "render_exposure.py": "17af94c180944274c304cd8e034c95e21190fa21ff8434335b48a637fbde27cf",
+    "compose_host.py": "2957f7175d55e30236f1a838384aba9eae26d389a075abba7f996f8b971a9a52",
+    "compose_exposure.py": "a76a3d9710450a6521dca7a1a93d34c112b2c58f7bef6576350d7909bbce5402"
+  },
+  "checks": {
+    "exact_same_positive_X_camera_for_EV0_EV1_EV2": true,
+    "only_display_exposure_changes_in_complete_settings_schema": true,
+    "all_actual_camera_light_and_material_readbacks_match_EV0_per_view": true,
+    "exposure_restored_to_EV0_for_final_validation": true,
+    "same_genuine_full_material_field_original_gamma22_rule_and_all_channel_readbacks": true,
+    "original_1957891_vertices_4173584_triangles_full_ordered_geometry_checks_retained": true,
+    "original_full_correspondence_receipt_authenticated_and_reused": true,
+    "CPU_Cycles_1024_square_32_samples_four_threads_CPU_denoising_retained": true,
+    "first_frame_EV0_host_verification_before_GO_REMAINING": true,
+    "owned_job_start_tokens_cleanup_and_no_retry_retained": true,
+    "unchanged_6GiB_process_cap_180_second_deadline": true,
+    "unchanged_12GiB_RAM_2GiB_disk_initial_and_live_floors": true,
+    "sys_dont_write_bytecode_set_before_old_helper_import": true,
+    "composition_1GiB_60_second_owned_CPU_limit_with_original_floors": true,
+    "comparison_reference_and_three_exposures_only_no_material_or_color_management_variant": true,
+    "composition_helpers_reference_clay_and_old_EV0_pinned": true,
+    "same_fixed_old_clay_contrast_proxy_region_for_all_three_variants": true,
+    "encoded_display_statistics_explicitly_not_radiometry_or_material_fidelity_score": true,
+    "image_outputs_private_only": true
+  },
+  "focused_tests": {
+    "existing_root_log_reviewed": true,
+    "passed": 9,
+    "test_seconds": 0.059,
+    "additional_tests_run_by_reviewer": false
+  },
+  "resources": {
+    "preflight_available_RAM_bytes": 20913487872,
+    "preflight_free_disk_bytes": 111748276224,
+    "original_floors_admitted": true,
+    "previous_same_geometry_three_view_host_seconds": 55.469,
+    "previous_peak_committed_bytes": 3074342912,
+    "assessment": "Feasible within unchanged limits; small extra readbacks and metadata add bounded overhead. Actual limits and outcomes must still be checked after this one attempt."
+  },
+  "nonblocking_findings": [],
+  "blockers": [],
+  "required_followup": "Independently verify actual settings/material/source preservation, all three PNGs, exposure comparison statistics and visual outcome after execution."
+}

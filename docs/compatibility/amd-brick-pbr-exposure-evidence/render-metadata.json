@@ -1,0 +1,1492 @@
+{
+  "classification": "PASS",
+  "source_PLY_sha256_expected": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+  "material_field_sha256_expected": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394",
+  "vertex_count": 1957891,
+  "face_count": 4173584,
+  "views": [
+    {
+      "name": "pos-x",
+      "PNG": "view-pos-x.png",
+      "axis_direction": [
+        1,
+        0,
+        0
+      ],
+      "camera_location": [
+        2.797344923019409,
+        -0.0018387436866760254,
+        0.0007975846529006958
+      ],
+      "camera_quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "camera_right": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "ortho_scale": 1.5038471221923828,
+      "camera_type": "ORTHO",
+      "clip": [
+        0.0006962255574762821,
+        13.924510955810547
+      ],
+      "actual_lights": [
+        {
+          "name": "Key",
+          "location": [
+            2.797344923019409,
+            -1.7424025535583496,
+            2.0894739627838135
+          ],
+          "quaternion": [
+            0.7666620016098022,
+            0.420985609292984,
+            0.23333027958869934,
+            0.42492061853408813
+          ],
+          "energy": 38.77840042114258,
+          "size": 1.7405638694763184,
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "name": "Fill",
+          "location": [
+            1.4048939943313599,
+            2.0868377685546875,
+            0.6970230937004089
+          ],
+          "quaternion": [
+            0.23067083954811096,
+            0.17540188133716583,
+            0.5793130397796631,
+            0.7618540525436401
+          ],
+          "energy": 19.38920021057129,
+          "size": 1.7405638694763184,
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "name": "Rim",
+          "location": [
+            -2.0762336254119873,
+            -0.0018387436866760254,
+            2.0894739627838135
+          ],
+          "quaternion": [
+            0.6532815098762512,
+            0.27059805393218994,
+            -0.27059805393218994,
+            -0.6532815098762512
+          ],
+          "energy": 29.083799362182617,
+          "size": 1.7405638694763184,
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "exposure_EV": 0,
+      "settings_before_render": {
+        "engine": "CYCLES",
+        "device": "CPU",
+        "samples": 32,
+        "threads": 4,
+        "threads_mode": "FIXED",
+        "resolution": [
+          1024,
+          1024,
+          100
+        ],
+        "denoising": true,
+        "denoiser": "OPENIMAGEDENOISE",
+        "denoising_use_gpu": false,
+        "adaptive_sampling": false,
+        "bounces": [
+          2,
+          1,
+          1
+        ],
+        "transparent_max_bounces": 8,
+        "film_transparent": false,
+        "compositing": false,
+        "sequencer": false,
+        "persistent_data": true,
+        "view_transform": "AgX",
+        "look": "None",
+        "exposure": 0.0,
+        "gamma": 1.0,
+        "world_linear_RGBA": [
+          0.11999999731779099,
+          0.11999999731779099,
+          0.11999999731779099,
+          1.0
+        ],
+        "world_strength": 0.5,
+        "material_override": [
+          true
+        ]
+      },
+      "settings_after_render": {
+        "engine": "CYCLES",
+        "device": "CPU",
+        "samples": 32,
+        "threads": 4,
+        "threads_mode": "FIXED",
+        "resolution": [
+          1024,
+          1024,
+          100
+        ],
+        "denoising": true,
+        "denoiser": "OPENIMAGEDENOISE",
+        "denoising_use_gpu": false,
+        "adaptive_sampling": false,
+        "bounces": [
+          2,
+          1,
+          1
+        ],
+        "transparent_max_bounces": 8,
+        "film_transparent": false,
+        "compositing": false,
+        "sequencer": false,
+        "persistent_data": true,
+        "view_transform": "AgX",
+        "look": "None",
+        "exposure": 0.0,
+        "gamma": 1.0,
+        "world_linear_RGBA": [
+          0.11999999731779099,
+          0.11999999731779099,
+          0.11999999731779099,
+          1.0
+        ],
+        "world_strength": 0.5,
+        "material_override": [
+          true
+        ]
+      },
+      "settings_difference_from_EV0": {},
+      "camera_lights_material_identical_to_EV0": true,
+      "material_attribute_sha256": {
+        "Trellis_red_raw": "938fcf8bb9a1eedebdd9d0ec02698453200fa61c45e156a4ee52dcd319015472",
+        "Trellis_green_raw": "7d8cffa3639fc165f039276f5db75ea9bc9de81e30b3be531daf8fd989269ab8",
+        "Trellis_blue_raw": "312b4df2d0f2664140f99044683dfc61d9f6af6cda93b5131ba0a40516be1a5a",
+        "Trellis_metallic_raw": "9fe63487c5de4be9d4a38ba2daae11d710ffaf3b3b37a685ce8b8d226ba33c47",
+        "Trellis_roughness_raw": "a69274a8ab54b5836792b29785f978842ba6e134feccc42fbe0b2ed9a55bf497",
+        "Trellis_alpha_raw": "55f9a14e9277e382975f027bf92b12e38f953f12694a9676cd60472fb7a4de02"
+      },
+      "linear_RGBA_sha256": "7bbb6216da545fdee192e6daae6902a8674dcef302db5fa02f10bbdb1abe7ebd",
+      "filename": "view-pos-x.png",
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x.png",
+      "bytes": 940451,
+      "sha256": "3233802da22557d0ffdd44b325ce1d6bc83a000628669354468303dae6e47087",
+      "width": 1024,
+      "height": 1024,
+      "seconds": 12.893742799991742,
+      "elapsed_seconds": 20.353787100000773
+    },
+    {
+      "name": "pos-x-ev1",
+      "PNG": "view-pos-x-ev1.png",
+      "axis_direction": [
+        1,
+        0,
+        0
+      ],
+      "camera_location": [
+        2.797344923019409,
+        -0.0018387436866760254,
+        0.0007975846529006958
+      ],
+      "camera_quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "camera_right": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "ortho_scale": 1.5038471221923828,
+      "camera_type": "ORTHO",
+      "clip": [
+        0.0006962255574762821,
+        13.924510955810547
+      ],
+      "actual_lights": [
+        {
+          "name": "Key",
+          "location": [
+            2.797344923019409,
+            -1.7424025535583496,
+            2.0894739627838135
+          ],
+          "quaternion": [
+            0.7666620016098022,
+            0.420985609292984,
+            0.23333027958869934,
+            0.42492061853408813
+          ],
+          "energy": 38.77840042114258,
+          "size": 1.7405638694763184,
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "name": "Fill",
+          "location": [
+            1.4048939943313599,
+            2.0868377685546875,
+            0.6970230937004089
+          ],
+          "quaternion": [
+            0.23067083954811096,
+            0.17540188133716583,
+            0.5793130397796631,
+            0.7618540525436401
+          ],
+          "energy": 19.38920021057129,
+          "size": 1.7405638694763184,
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "name": "Rim",
+          "location": [
+            -2.0762336254119873,
+            -0.0018387436866760254,
+            2.0894739627838135
+          ],
+          "quaternion": [
+            0.6532815098762512,
+            0.27059805393218994,
+            -0.27059805393218994,
+            -0.6532815098762512
+          ],
+          "energy": 29.083799362182617,
+          "size": 1.7405638694763184,
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "exposure_EV": 1,
+      "settings_before_render": {
+        "engine": "CYCLES",
+        "device": "CPU",
+        "samples": 32,
+        "threads": 4,
+        "threads_mode": "FIXED",
+        "resolution": [
+          1024,
+          1024,
+          100
+        ],
+        "denoising": true,
+        "denoiser": "OPENIMAGEDENOISE",
+        "denoising_use_gpu": false,
+        "adaptive_sampling": false,
+        "bounces": [
+          2,
+          1,
+          1
+        ],
+        "transparent_max_bounces": 8,
+        "film_transparent": false,
+        "compositing": false,
+        "sequencer": false,
+        "persistent_data": true,
+        "view_transform": "AgX",
+        "look": "None",
+        "exposure": 1.0,
+        "gamma": 1.0,
+        "world_linear_RGBA": [
+          0.11999999731779099,
+          0.11999999731779099,
+          0.11999999731779099,
+          1.0
+        ],
+        "world_strength": 0.5,
+        "material_override": [
+          true
+        ]
+      },
+      "settings_after_render": {
+        "engine": "CYCLES",
+        "device": "CPU",
+        "samples": 32,
+        "threads": 4,
+        "threads_mode": "FIXED",
+        "resolution": [
+          1024,
+          1024,
+          100
+        ],
+        "denoising": true,
+        "denoiser": "OPENIMAGEDENOISE",
+        "denoising_use_gpu": false,
+        "adaptive_sampling": false,
+        "bounces": [
+          2,
+          1,
+          1
+        ],
+        "transparent_max_bounces": 8,
+        "film_transparent": false,
+        "compositing": false,
+        "sequencer": false,
+        "persistent_data": true,
+        "view_transform": "AgX",
+        "look": "None",
+        "exposure": 1.0,
+        "gamma": 1.0,
+        "world_linear_RGBA": [
+          0.11999999731779099,
+          0.11999999731779099,
+          0.11999999731779099,
+          1.0
+        ],
+        "world_strength": 0.5,
+        "material_override": [
+          true
+        ]
+      },
+      "settings_difference_from_EV0": {
+        "exposure": 1
+      },
+      "camera_lights_material_identical_to_EV0": true,
+      "material_attribute_sha256": {
+        "Trellis_red_raw": "938fcf8bb9a1eedebdd9d0ec02698453200fa61c45e156a4ee52dcd319015472",
+        "Trellis_green_raw": "7d8cffa3639fc165f039276f5db75ea9bc9de81e30b3be531daf8fd989269ab8",
+        "Trellis_blue_raw": "312b4df2d0f2664140f99044683dfc61d9f6af6cda93b5131ba0a40516be1a5a",
+        "Trellis_metallic_raw": "9fe63487c5de4be9d4a38ba2daae11d710ffaf3b3b37a685ce8b8d226ba33c47",
+        "Trellis_roughness_raw": "a69274a8ab54b5836792b29785f978842ba6e134feccc42fbe0b2ed9a55bf497",
+        "Trellis_alpha_raw": "55f9a14e9277e382975f027bf92b12e38f953f12694a9676cd60472fb7a4de02"
+      },
+      "linear_RGBA_sha256": "7bbb6216da545fdee192e6daae6902a8674dcef302db5fa02f10bbdb1abe7ebd",
+      "filename": "view-pos-x-ev1.png",
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x-ev1.png",
+      "bytes": 995259,
+      "sha256": "93d3e5c6d8157deb40e79c63c8f21958f08b3c799f3c5f1691fc310d419285fa",
+      "width": 1024,
+      "height": 1024,
+      "seconds": 12.109362399991369,
+      "elapsed_seconds": 37.38870399999723
+    },
+    {
+      "name": "pos-x-ev2",
+      "PNG": "view-pos-x-ev2.png",
+      "axis_direction": [
+        1,
+        0,
+        0
+      ],
+      "camera_location": [
+        2.797344923019409,
+        -0.0018387436866760254,
+        0.0007975846529006958
+      ],
+      "camera_quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "camera_right": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "ortho_scale": 1.5038471221923828,
+      "camera_type": "ORTHO",
+      "clip": [
+        0.0006962255574762821,
+        13.924510955810547
+      ],
+      "actual_lights": [
+        {
+          "name": "Key",
+          "location": [
+            2.797344923019409,
+            -1.7424025535583496,
+            2.0894739627838135
+          ],
+          "quaternion": [
+            0.7666620016098022,
+            0.420985609292984,
+            0.23333027958869934,
+            0.42492061853408813
+          ],
+          "energy": 38.77840042114258,
+          "size": 1.7405638694763184,
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "name": "Fill",
+          "location": [
+            1.4048939943313599,
+            2.0868377685546875,
+            0.6970230937004089
+          ],
+          "quaternion": [
+            0.23067083954811096,
+            0.17540188133716583,
+            0.5793130397796631,
+            0.7618540525436401
+          ],
+          "energy": 19.38920021057129,
+          "size": 1.7405638694763184,
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "name": "Rim",
+          "location": [
+            -2.0762336254119873,
+            -0.0018387436866760254,
+            2.0894739627838135
+          ],
+          "quaternion": [
+            0.6532815098762512,
+            0.27059805393218994,
+            -0.27059805393218994,
+            -0.6532815098762512
+          ],
+          "energy": 29.083799362182617,
+          "size": 1.7405638694763184,
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "exposure_EV": 2,
+      "settings_before_render": {
+        "engine": "CYCLES",
+        "device": "CPU",
+        "samples": 32,
+        "threads": 4,
+        "threads_mode": "FIXED",
+        "resolution": [
+          1024,
+          1024,
+          100
+        ],
+        "denoising": true,
+        "denoiser": "OPENIMAGEDENOISE",
+        "denoising_use_gpu": false,
+        "adaptive_sampling": false,
+        "bounces": [
+          2,
+          1,
+          1
+        ],
+        "transparent_max_bounces": 8,
+        "film_transparent": false,
+        "compositing": false,
+        "sequencer": false,
+        "persistent_data": true,
+        "view_transform": "AgX",
+        "look": "None",
+        "exposure": 2.0,
+        "gamma": 1.0,
+        "world_linear_RGBA": [
+          0.11999999731779099,
+          0.11999999731779099,
+          0.11999999731779099,
+          1.0
+        ],
+        "world_strength": 0.5,
+        "material_override": [
+          true
+        ]
+      },
+      "settings_after_render": {
+        "engine": "CYCLES",
+        "device": "CPU",
+        "samples": 32,
+        "threads": 4,
+        "threads_mode": "FIXED",
+        "resolution": [
+          1024,
+          1024,
+          100
+        ],
+        "denoising": true,
+        "denoiser": "OPENIMAGEDENOISE",
+        "denoising_use_gpu": false,
+        "adaptive_sampling": false,
+        "bounces": [
+          2,
+          1,
+          1
+        ],
+        "transparent_max_bounces": 8,
+        "film_transparent": false,
+        "compositing": false,
+        "sequencer": false,
+        "persistent_data": true,
+        "view_transform": "AgX",
+        "look": "None",
+        "exposure": 2.0,
+        "gamma": 1.0,
+        "world_linear_RGBA": [
+          0.11999999731779099,
+          0.11999999731779099,
+          0.11999999731779099,
+          1.0
+        ],
+        "world_strength": 0.5,
+        "material_override": [
+          true
+        ]
+      },
+      "settings_difference_from_EV0": {
+        "exposure": 2
+      },
+      "camera_lights_material_identical_to_EV0": true,
+      "material_attribute_sha256": {
+        "Trellis_red_raw": "938fcf8bb9a1eedebdd9d0ec02698453200fa61c45e156a4ee52dcd319015472",
+        "Trellis_green_raw": "7d8cffa3639fc165f039276f5db75ea9bc9de81e30b3be531daf8fd989269ab8",
+        "Trellis_blue_raw": "312b4df2d0f2664140f99044683dfc61d9f6af6cda93b5131ba0a40516be1a5a",
+        "Trellis_metallic_raw": "9fe63487c5de4be9d4a38ba2daae11d710ffaf3b3b37a685ce8b8d226ba33c47",
+        "Trellis_roughness_raw": "a69274a8ab54b5836792b29785f978842ba6e134feccc42fbe0b2ed9a55bf497",
+        "Trellis_alpha_raw": "55f9a14e9277e382975f027bf92b12e38f953f12694a9676cd60472fb7a4de02"
+      },
+      "linear_RGBA_sha256": "7bbb6216da545fdee192e6daae6902a8674dcef302db5fa02f10bbdb1abe7ebd",
+      "filename": "view-pos-x-ev2.png",
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x-ev2.png",
+      "bytes": 1023455,
+      "sha256": "74d1655d53d5fe7d262756c7e23c0a695aa42b7ee3c43e075007a59fc3bf7f54",
+      "width": 1024,
+      "height": 1024,
+      "seconds": 12.159472299987101,
+      "elapsed_seconds": 49.54821359999187
+    }
+  ],
+  "engine": "CYCLES",
+  "device": "CPU",
+  "samples": 32,
+  "threads": 4,
+  "resolution": [
+    1024,
+    1024
+  ],
+  "denoising": true,
+  "denoiser": "OPENIMAGEDENOISE",
+  "denoising_use_gpu": false,
+  "geometry_unchanged": true,
+  "mesh_import_count": 1,
+  "flat_shading": true,
+  "saved_blend": false,
+  "mesh_exported": false,
+  "comparison": "Only display exposure EV0/EV1/EV2 changes; all frames use the original positive-X camera",
+  "Blender_version": "5.2.1 LTS",
+  "bbox": [
+    [
+      -0.3468112051486969,
+      -0.32829123735427856,
+      -0.4982968270778656
+    ],
+    [
+      0.3716970682144165,
+      0.3246137499809265,
+      0.499891996383667
+    ]
+  ],
+  "bounding_sphere_center": [
+    0.012442931532859802,
+    -0.0018387436866760254,
+    0.0007975846529006958
+  ],
+  "bounding_sphere_radius": 0.6962255361342949,
+  "shared_ortho_scale": 1.5038471221923828,
+  "framing_margin_fraction": 0.08,
+  "import_settings": {
+    "filepath": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\mesh.ply",
+    "merge_verts": false,
+    "global_scale": 1.0,
+    "use_scene_unit": false,
+    "forward_axis": "Y",
+    "up_axis": "Z"
+  },
+  "geometry_payloads_before": {
+    "vertices.npy": "bdfcbbe8f251b33daa64c6832c4c1278b3a29600cf825a022478b0b87bb573c3",
+    "faces.npy": "5fa284e1698929f4f0f6c78edc2e26632fcde6e43ad7eb57b36ae6fc9f88d883"
+  },
+  "material_before": {
+    "attributes": {
+      "Trellis_red_raw": {
+        "source_tensor": "features",
+        "source_column": 0,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "938fcf8bb9a1eedebdd9d0ec02698453200fa61c45e156a4ee52dcd319015472",
+        "min": 0.21756955981254578,
+        "max": 0.8840090036392212,
+        "mean": 0.5060878960642815,
+        "outside_0_1": 0
+      },
+      "Trellis_green_raw": {
+        "source_tensor": "features",
+        "source_column": 1,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "7d8cffa3639fc165f039276f5db75ea9bc9de81e30b3be531daf8fd989269ab8",
+        "min": 0.06547558307647705,
+        "max": 0.7230156660079956,
+        "mean": 0.28629774879023306,
+        "outside_0_1": 0
+      },
+      "Trellis_blue_raw": {
+        "source_tensor": "features",
+        "source_column": 2,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "312b4df2d0f2664140f99044683dfc61d9f6af6cda93b5131ba0a40516be1a5a",
+        "min": 0.01686990261077881,
+        "max": 0.6183264851570129,
+        "mean": 0.15729900598981433,
+        "outside_0_1": 0
+      },
+      "Trellis_metallic_raw": {
+        "source_tensor": "features",
+        "source_column": 3,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "9fe63487c5de4be9d4a38ba2daae11d710ffaf3b3b37a685ce8b8d226ba33c47",
+        "min": -0.00418400764465332,
+        "max": 0.006668657064437866,
+        "mean": 6.666995682234871e-05,
+        "outside_0_1": 810749
+      },
+      "Trellis_roughness_raw": {
+        "source_tensor": "features",
+        "source_column": 4,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "a69274a8ab54b5836792b29785f978842ba6e134feccc42fbe0b2ed9a55bf497",
+        "min": 0.9783090353012085,
+        "max": 1.0025746822357178,
+        "mean": 1.0003827991469503,
+        "outside_0_1": 1721533
+      },
+      "Trellis_alpha_raw": {
+        "source_tensor": "features",
+        "source_column": 5,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "55f9a14e9277e382975f027bf92b12e38f953f12694a9676cd60472fb7a4de02",
+        "min": 0.9980556964874268,
+        "max": 1.0041143894195557,
+        "mean": 1.0001320649589525,
+        "outside_0_1": 1433895
+      }
+    },
+    "linear_RGBA_sha256": "7bbb6216da545fdee192e6daae6902a8674dcef302db5fa02f10bbdb1abe7ebd",
+    "linear_color_attribute": "Trellis_RGB_linear_native_gamma22",
+    "RGB_conversion": "clamp(original_RGB,0,1)**2.2; authenticated native renderer line 431; F32, no byte quantization",
+    "native_renderer_sha256": "ab33ba6d04b2d1b7e518b90372b242cbe00ad9043be66a22e681261b04de7872",
+    "shader": "ShaderNodeBsdfPrincipled",
+    "connections": {
+      "Base Color": {
+        "node": "ShaderNodeVertexColor",
+        "attribute": "Trellis_RGB_linear_native_gamma22",
+        "output": "Color"
+      },
+      "Metallic": {
+        "node": "ShaderNodeAttribute",
+        "attribute": "Trellis_metallic_raw",
+        "output": "Fac",
+        "shader_clamp": [
+          0,
+          1
+        ]
+      },
+      "Roughness": {
+        "node": "ShaderNodeAttribute",
+        "attribute": "Trellis_roughness_raw",
+        "output": "Fac",
+        "shader_clamp": [
+          0,
+          1
+        ]
+      },
+      "Alpha": {
+        "node": "ShaderNodeAttribute",
+        "attribute": "Trellis_alpha_raw",
+        "output": "Fac",
+        "shader_clamp": [
+          0,
+          1
+        ]
+      }
+    },
+    "Principled_inputs": {
+      "Base Color": {
+        "linked": true,
+        "default_value": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ]
+      },
+      "Metallic": {
+        "linked": true,
+        "default_value": 0.0
+      },
+      "Roughness": {
+        "linked": true,
+        "default_value": 0.5
+      },
+      "IOR": {
+        "linked": false,
+        "default_value": 1.5
+      },
+      "Alpha": {
+        "linked": true,
+        "default_value": 1.0
+      },
+      "Thin Wall": {
+        "linked": false,
+        "default_value": false
+      },
+      "Normal": {
+        "linked": false,
+        "default_value": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Weight": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Diffuse Roughness": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Subsurface Weight": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Subsurface Radius": {
+        "linked": false,
+        "default_value": [
+          1.0,
+          0.20000000298023224,
+          0.10000000149011612
+        ]
+      },
+      "Subsurface Scale": {
+        "linked": false,
+        "default_value": 0.004999999888241291
+      },
+      "Subsurface IOR": {
+        "linked": false,
+        "default_value": 1.399999976158142
+      },
+      "Subsurface Anisotropy": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Specular IOR Level": {
+        "linked": false,
+        "default_value": 0.5
+      },
+      "Specular Tint": {
+        "linked": false,
+        "default_value": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "Anisotropic": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Anisotropic Rotation": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Tangent": {
+        "linked": false,
+        "default_value": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Transmission Weight": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Coat Weight": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Coat Roughness": {
+        "linked": false,
+        "default_value": 0.029999999329447746
+      },
+      "Coat IOR": {
+        "linked": false,
+        "default_value": 1.5
+      },
+      "Coat Tint": {
+        "linked": false,
+        "default_value": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "Coat Normal": {
+        "linked": false,
+        "default_value": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Sheen Weight": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Sheen Roughness": {
+        "linked": false,
+        "default_value": 0.5
+      },
+      "Sheen Tint": {
+        "linked": false,
+        "default_value": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "Emission Color": {
+        "linked": false,
+        "default_value": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "Emission Strength": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Thin Film Thickness": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Thin Film IOR": {
+        "linked": false,
+        "default_value": 1.3300000429153442
+      }
+    },
+    "alpha_linked_from_original": true,
+    "alpha_preview": "shader clamp(original alpha,0,1)",
+    "emission_strength": 0,
+    "normal_or_displacement_links": false,
+    "material_surface_render_method": "DITHERED"
+  },
+  "channel_statistics": {
+    "red": {
+      "min": 0.21756955981254578,
+      "max": 0.8840090036392212,
+      "mean": 0.5060878960642815,
+      "outside_0_1": 0
+    },
+    "green": {
+      "min": 0.06547558307647705,
+      "max": 0.7230156660079956,
+      "mean": 0.28629774879023306,
+      "outside_0_1": 0
+    },
+    "blue": {
+      "min": 0.01686990261077881,
+      "max": 0.6183264851570129,
+      "mean": 0.15729900598981433,
+      "outside_0_1": 0
+    },
+    "metallic": {
+      "min": -0.00418400764465332,
+      "max": 0.006668657064437866,
+      "mean": 6.666995682234871e-05,
+      "outside_0_1": 810749
+    },
+    "roughness": {
+      "min": 0.9783090353012085,
+      "max": 1.0025746822357178,
+      "mean": 1.0003827991469503,
+      "outside_0_1": 1721533
+    },
+    "alpha": {
+      "min": 0.9980556964874268,
+      "max": 1.0041143894195557,
+      "mean": 1.0001320649589525,
+      "outside_0_1": 1433895
+    }
+  },
+  "settings_before": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 32,
+    "threads": 4,
+    "threads_mode": "FIXED",
+    "resolution": [
+      1024,
+      1024,
+      100
+    ],
+    "denoising": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_use_gpu": false,
+    "adaptive_sampling": false,
+    "bounces": [
+      2,
+      1,
+      1
+    ],
+    "transparent_max_bounces": 8,
+    "film_transparent": false,
+    "compositing": false,
+    "sequencer": false,
+    "persistent_data": true,
+    "view_transform": "AgX",
+    "look": "None",
+    "exposure": 0.0,
+    "gamma": 1.0,
+    "world_linear_RGBA": [
+      0.11999999731779099,
+      0.11999999731779099,
+      0.11999999731779099,
+      1.0
+    ],
+    "world_strength": 0.5,
+    "material_override": [
+      true
+    ]
+  },
+  "lights": [
+    {
+      "name": "Key",
+      "camera_relative_radius_offset": [
+        -2.5,
+        3,
+        4
+      ],
+      "energy": 38.77840042114258,
+      "size": 1.7405638694763184,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Fill",
+      "camera_relative_radius_offset": [
+        3,
+        1,
+        2
+      ],
+      "energy": 19.38920021057129,
+      "size": 1.7405638694763184,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Rim",
+      "camera_relative_radius_offset": [
+        0,
+        3,
+        -3
+      ],
+      "energy": 29.083799362182617,
+      "size": 1.7405638694763184,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "material_coordinates_sha256": "690670fe58a7021c51fef9fad6457ad8e66715d13a88239adabdffa8a05d9976",
+  "material_features_sha256": "bc562893e0b89b2b53c279ba00240e8d1edb98830c2471a82077e48b24eb0cbf",
+  "mapping_receipt_sha256": "84912427ddff6d470ce96215344118b057ab357f3a41ff762612a367549d0eb4",
+  "original_direct_row_correspondence_verified": true,
+  "baseline_renderer_sha256": "45a4169bf294241d167858d1f92f440014992c860d0599531faad6e44e527412",
+  "baseline_metadata_sha256": "394b54c5633598d56c8ad38c00b4712481b2405c91e3ae5bcaf91974f974d6ee",
+  "camera_direction_convention": "Named axis is camera position relative to bounds center",
+  "lighting": "Camera-relative soft neutral three-area rig; offsets in right/up/toward-camera radius units",
+  "source_colors_used": false,
+  "learned_colors_used": true,
+  "material_verified": true,
+  "source_PLY_sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+  "material_field_sha256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394",
+  "source_stats_before_and_after": {
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\mesh.ply": [
+      77751514,
+      1792081285352266400
+    ],
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\vertices.npy": [
+      23494820,
+      1792081285418897200
+    ],
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-cpu-mesh-8473579\\mesh\\faces.npy": [
+      50083136,
+      1792081285441919800
+    ],
+    "C:\\Users\\wattz\\Documents\\ModlyArtifacts\\amd-brick-pbr-qualified-a064378\\field\\texture-field.safetensors": [
+      125318120,
+      1792357395398244500
+    ],
+    "D:\\AI\\Trellis2AMD\\ComfyUI\\custom_nodes\\ComfyUI-Trellis2-AMD\\trellis2\\renderers\\pbr_mesh_renderer.py": [
+      22941,
+      1791246067663766300
+    ],
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-pbr-preview-evidence\\mapping-verification.json": [
+      13297,
+      1792400039426100300
+    ],
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-visual-inspection-evidence\\render_views.py": [
+      17791,
+      1792090067281105300
+    ],
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-visual-inspection-evidence\\render-metadata.json": [
+      15341,
+      1792090551972372800
+    ]
+  },
+  "geometry_payloads_after": {
+    "vertices.npy": "bdfcbbe8f251b33daa64c6832c4c1278b3a29600cf825a022478b0b87bb573c3",
+    "faces.npy": "5fa284e1698929f4f0f6c78edc2e26632fcde6e43ad7eb57b36ae6fc9f88d883"
+  },
+  "material_after": {
+    "attributes": {
+      "Trellis_red_raw": {
+        "source_tensor": "features",
+        "source_column": 0,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "938fcf8bb9a1eedebdd9d0ec02698453200fa61c45e156a4ee52dcd319015472",
+        "min": 0.21756955981254578,
+        "max": 0.8840090036392212,
+        "mean": 0.5060878960642815,
+        "outside_0_1": 0
+      },
+      "Trellis_green_raw": {
+        "source_tensor": "features",
+        "source_column": 1,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "7d8cffa3639fc165f039276f5db75ea9bc9de81e30b3be531daf8fd989269ab8",
+        "min": 0.06547558307647705,
+        "max": 0.7230156660079956,
+        "mean": 0.28629774879023306,
+        "outside_0_1": 0
+      },
+      "Trellis_blue_raw": {
+        "source_tensor": "features",
+        "source_column": 2,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "312b4df2d0f2664140f99044683dfc61d9f6af6cda93b5131ba0a40516be1a5a",
+        "min": 0.01686990261077881,
+        "max": 0.6183264851570129,
+        "mean": 0.15729900598981433,
+        "outside_0_1": 0
+      },
+      "Trellis_metallic_raw": {
+        "source_tensor": "features",
+        "source_column": 3,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "9fe63487c5de4be9d4a38ba2daae11d710ffaf3b3b37a685ce8b8d226ba33c47",
+        "min": -0.00418400764465332,
+        "max": 0.006668657064437866,
+        "mean": 6.666995682234871e-05,
+        "outside_0_1": 810749
+      },
+      "Trellis_roughness_raw": {
+        "source_tensor": "features",
+        "source_column": 4,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "a69274a8ab54b5836792b29785f978842ba6e134feccc42fbe0b2ed9a55bf497",
+        "min": 0.9783090353012085,
+        "max": 1.0025746822357178,
+        "mean": 1.0003827991469503,
+        "outside_0_1": 1721533
+      },
+      "Trellis_alpha_raw": {
+        "source_tensor": "features",
+        "source_column": 5,
+        "data_type": "FLOAT",
+        "domain": "POINT",
+        "raw_unclamped": true,
+        "sha256": "55f9a14e9277e382975f027bf92b12e38f953f12694a9676cd60472fb7a4de02",
+        "min": 0.9980556964874268,
+        "max": 1.0041143894195557,
+        "mean": 1.0001320649589525,
+        "outside_0_1": 1433895
+      }
+    },
+    "linear_RGBA_sha256": "7bbb6216da545fdee192e6daae6902a8674dcef302db5fa02f10bbdb1abe7ebd",
+    "linear_color_attribute": "Trellis_RGB_linear_native_gamma22",
+    "RGB_conversion": "clamp(original_RGB,0,1)**2.2; authenticated native renderer line 431; F32, no byte quantization",
+    "native_renderer_sha256": "ab33ba6d04b2d1b7e518b90372b242cbe00ad9043be66a22e681261b04de7872",
+    "shader": "ShaderNodeBsdfPrincipled",
+    "connections": {
+      "Base Color": {
+        "node": "ShaderNodeVertexColor",
+        "attribute": "Trellis_RGB_linear_native_gamma22",
+        "output": "Color"
+      },
+      "Metallic": {
+        "node": "ShaderNodeAttribute",
+        "attribute": "Trellis_metallic_raw",
+        "output": "Fac",
+        "shader_clamp": [
+          0,
+          1
+        ]
+      },
+      "Roughness": {
+        "node": "ShaderNodeAttribute",
+        "attribute": "Trellis_roughness_raw",
+        "output": "Fac",
+        "shader_clamp": [
+          0,
+          1
+        ]
+      },
+      "Alpha": {
+        "node": "ShaderNodeAttribute",
+        "attribute": "Trellis_alpha_raw",
+        "output": "Fac",
+        "shader_clamp": [
+          0,
+          1
+        ]
+      }
+    },
+    "Principled_inputs": {
+      "Base Color": {
+        "linked": true,
+        "default_value": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ]
+      },
+      "Metallic": {
+        "linked": true,
+        "default_value": 0.0
+      },
+      "Roughness": {
+        "linked": true,
+        "default_value": 0.5
+      },
+      "IOR": {
+        "linked": false,
+        "default_value": 1.5
+      },
+      "Alpha": {
+        "linked": true,
+        "default_value": 1.0
+      },
+      "Thin Wall": {
+        "linked": false,
+        "default_value": false
+      },
+      "Normal": {
+        "linked": false,
+        "default_value": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Weight": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Diffuse Roughness": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Subsurface Weight": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Subsurface Radius": {
+        "linked": false,
+        "default_value": [
+          1.0,
+          0.20000000298023224,
+          0.10000000149011612
+        ]
+      },
+      "Subsurface Scale": {
+        "linked": false,
+        "default_value": 0.004999999888241291
+      },
+      "Subsurface IOR": {
+        "linked": false,
+        "default_value": 1.399999976158142
+      },
+      "Subsurface Anisotropy": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Specular IOR Level": {
+        "linked": false,
+        "default_value": 0.5
+      },
+      "Specular Tint": {
+        "linked": false,
+        "default_value": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "Anisotropic": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Anisotropic Rotation": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Tangent": {
+        "linked": false,
+        "default_value": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Transmission Weight": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Coat Weight": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Coat Roughness": {
+        "linked": false,
+        "default_value": 0.029999999329447746
+      },
+      "Coat IOR": {
+        "linked": false,
+        "default_value": 1.5
+      },
+      "Coat Tint": {
+        "linked": false,
+        "default_value": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "Coat Normal": {
+        "linked": false,
+        "default_value": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Sheen Weight": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Sheen Roughness": {
+        "linked": false,
+        "default_value": 0.5
+      },
+      "Sheen Tint": {
+        "linked": false,
+        "default_value": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "Emission Color": {
+        "linked": false,
+        "default_value": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "Emission Strength": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Thin Film Thickness": {
+        "linked": false,
+        "default_value": 0.0
+      },
+      "Thin Film IOR": {
+        "linked": false,
+        "default_value": 1.3300000429153442
+      }
+    },
+    "alpha_linked_from_original": true,
+    "alpha_preview": "shader clamp(original alpha,0,1)",
+    "emission_strength": 0,
+    "normal_or_displacement_links": false,
+    "material_surface_render_method": "DITHERED"
+  },
+  "settings_after": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 32,
+    "threads": 4,
+    "threads_mode": "FIXED",
+    "resolution": [
+      1024,
+      1024,
+      100
+    ],
+    "denoising": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_use_gpu": false,
+    "adaptive_sampling": false,
+    "bounces": [
+      2,
+      1,
+      1
+    ],
+    "transparent_max_bounces": 8,
+    "film_transparent": false,
+    "compositing": false,
+    "sequencer": false,
+    "persistent_data": true,
+    "view_transform": "AgX",
+    "look": "None",
+    "exposure": 0.0,
+    "gamma": 1.0,
+    "world_linear_RGBA": [
+      0.11999999731779099,
+      0.11999999731779099,
+      0.11999999731779099,
+      1.0
+    ],
+    "world_strength": 0.5,
+    "material_override": [
+      true
+    ]
+  },
+  "exposure_restored_to_EV0": true,
+  "outputs": {
+    "pos-x": {
+      "filename": "view-pos-x.png",
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x.png",
+      "bytes": 940451,
+      "sha256": "3233802da22557d0ffdd44b325ce1d6bc83a000628669354468303dae6e47087",
+      "width": 1024,
+      "height": 1024
+    },
+    "pos-x-ev1": {
+      "filename": "view-pos-x-ev1.png",
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x-ev1.png",
+      "bytes": 995259,
+      "sha256": "93d3e5c6d8157deb40e79c63c8f21958f08b3c799f3c5f1691fc310d419285fa",
+      "width": 1024,
+      "height": 1024
+    },
+    "pos-x-ev2": {
+      "filename": "view-pos-x-ev2.png",
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x-ev2.png",
+      "bytes": 1023455,
+      "sha256": "74d1655d53d5fe7d262756c7e23c0a695aa42b7ee3c43e075007a59fc3bf7f54",
+      "width": 1024,
+      "height": 1024
+    }
+  },
+  "elapsed_seconds": 54.88603589999548
+}

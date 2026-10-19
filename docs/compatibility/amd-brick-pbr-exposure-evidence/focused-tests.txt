@@ -1,0 +1,14 @@
+test_actual_first_frame_accepts_only_verified_material_and_CPU (test_render_host.FirstFrameTests.test_actual_first_frame_accepts_only_verified_material_and_CPU) ... ok
+test_first_frame_gate_matches_the_real_renderer (test_render_host.FirstFrameTests.test_first_frame_gate_matches_the_real_renderer) ... ok
+test_modified_PNG_fails_before_continuation (test_render_host.FirstFrameTests.test_modified_PNG_fails_before_continuation) ... ok
+test_original_resource_limits_are_retained (test_render_host.FirstFrameTests.test_original_resource_limits_are_retained) ... ok
+test_any_other_settings_change_missing_field_or_wrong_EV_is_rejected (test_render_exposure.ExposureTests.test_any_other_settings_change_missing_field_or_wrong_EV_is_rejected) ... ok
+test_exposure_is_the_only_permitted_settings_difference_without_mutation (test_render_exposure.ExposureTests.test_exposure_is_the_only_permitted_settings_difference_without_mutation) ... ok
+test_schedule_renders_only_same_positive_x_camera_at_zero_one_two_EV (test_render_exposure.ExposureTests.test_schedule_renders_only_same_positive_x_camera_at_zero_one_two_EV) ... ok
+test_empty_region_rejected (test_statistics.StatisticsTests.test_empty_region_rejected) ... ok
+test_known_fixed_region_clipping_and_dark_counts (test_statistics.StatisticsTests.test_known_fixed_region_clipping_and_dark_counts) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.059s
+
+OK

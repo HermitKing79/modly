@@ -1,0 +1,86 @@
+{
+  "schema": "modly.amd.brick-pbr-exposure-preservation-before.v1",
+  "created_utc": "2026-10-19T10:10:58.3548110Z",
+  "mission_base": "b0b7be18c492dfbd13aa34a8dd0276027fdcc84a",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "baseline_summary_sha256": "cac1c635f82d3983aa7a3d10c235d368926dac3cad6557574b4b09c937497973",
+  "baseline_private_sha256": "7c6784314eb53f74aac2173ec997a964cd1712e7142afbce1293db9aa333eaf7",
+  "baseline_detail_authenticated": true,
+  "private_detail_sha256": "1514d0067c5c9459183ddeabca5e203c77fe560c275b4c2d7213ae39eb1ccd20",
+  "protected_files_checked": 100,
+  "protected_files_fresh_full_SHA256_checked": 100,
+  "protected_files_unchanged": true,
+  "bounded_prior_unique_file_identities_checked": 400,
+  "all400_current_identities_match_authenticated_baseline": true,
+  "verification_method_unique_file_counts": {
+    "authenticated_previous_full_SHA256_reused_after_exact_size_mtime_match": 8,
+    "fresh_full_SHA256_current": 392
+  },
+  "original_pycache_directories": 4,
+  "original_pycache_files": 20,
+  "original_pycache_entry_sets_and_fresh_file_hashes_unchanged": true,
+  "selected_environment_check_count": 42,
+  "selected_source_edit_backup_check_count": 13,
+  "selected_environment_native_source_edit_backup_checks_unchanged": true,
+  "final16_source_closure_fresh_hashes_match": true,
+  "original_CPU_candidate107_unchanged": true,
+  "qualified_input_ownership18_unchanged": true,
+  "latest_qualified_PBR123_unchanged": true,
+  "checkpoint_metadata_header_configuration_unchanged": true,
+  "checkpoint_weight_payload_bytes_read_this_audit": 0,
+  "checkpoint_header_bytes_read_this_audit": 121336.0,
+  "prior_tree_count": 16,
+  "prior_report_count": 6,
+  "all_compared_prior_trees_unchanged": true,
+  "preview_original_inputs": [
+    {
+      "label": "original_mesh",
+      "bytes": 77751514,
+      "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+      "verification_method": "authenticated_previous_full_SHA256_reused_after_exact_size_mtime_match",
+      "matches_authenticated_prior": true
+    },
+    {
+      "label": "geometry",
+      "bytes": 104148612,
+      "sha256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+      "verification_method": "authenticated_previous_full_SHA256_reused_after_exact_size_mtime_match",
+      "matches_authenticated_prior": true
+    },
+    {
+      "label": "material",
+      "bytes": 125318120,
+      "sha256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394",
+      "verification_method": "authenticated_previous_full_SHA256_reused_after_exact_size_mtime_match",
+      "matches_authenticated_prior": true
+    }
+  ],
+  "pinned_renderers": [
+    {
+      "label": "prior_preview_renderer",
+      "sha256": "ce4e63f0aec1e0d39fa95e70b7d0551a9d98701e3db9c214e1ce7fef8b939934",
+      "matches_pinned_identity": true
+    },
+    {
+      "label": "original_clay_renderer",
+      "sha256": "45a4169bf294241d167858d1f92f440014992c860d0599531faad6e44e527412",
+      "matches_pinned_identity": true
+    },
+    {
+      "label": "original_clay_metadata",
+      "sha256": "394b54c5633598d56c8ad38c00b4712481b2405c91e3ae5bcaf91974f974d6ee",
+      "matches_pinned_identity": true
+    },
+    {
+      "label": "native_PBR_renderer_source",
+      "sha256": "ab33ba6d04b2d1b7e518b90372b242cbe00ad9043be66a22e681261b04de7872",
+      "matches_pinned_identity": true
+    }
+  ],
+  "issues": [],
+  "scope_limits": [
+    "Exact previous preservation descriptors reused;100protected/cache20/source/environment/pinned renderer checks freshly hashed. Latest preview private/public evidence and report snapshotted.",
+    "Large mesh/geometry/material use authenticated fresh preview AFTER full hashes after exact size/mtime checks; three disposable CPU fixture copies remain stat-only. Individual methods are recorded in private details.",
+    "Three checkpoints receive bounded stat/header/configuration checks with prior verified full-hash provenance; no checkpoint payload, WSL/runtime/GPU/model/tests/render/imports or source/cache changes. Root handles remote heads/publication."
+  ]
+}

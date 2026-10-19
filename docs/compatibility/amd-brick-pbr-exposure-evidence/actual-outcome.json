@@ -1,0 +1,211 @@
+{
+  "schema": "modly.amd.brick-exposure-outcome.v1",
+  "classification": "PASS",
+  "created_utc": "2026-10-19T10:17:34.227843+00:00",
+  "base": "b0b7be18c492dfbd13aa34a8dd0276027fdcc84a",
+  "branch": "codex/amd-brick-pbr-exposure-comparison",
+  "one_CPU_Blender_session": true,
+  "model_GPU_WSL_or_geometry_work": false,
+  "only_varied_setting": "display exposure EV0/+1/+2; all frames original +X",
+  "new_EV0_pixels_identical_to_original_accepted_preview": true,
+  "source_material_geometry_and_native_gamma22_conversion_unchanged": true,
+  "all_per_frame_settings_verified": true,
+  "images_private_only": true,
+  "images": {
+    "view-pos-x.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x.png",
+      "bytes": 940451,
+      "sha256": "3233802da22557d0ffdd44b325ce1d6bc83a000628669354468303dae6e47087",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_stddev": [
+        10.871488238228581,
+        13.952306792016527,
+        18.55693840895368
+      ]
+    },
+    "view-pos-x-ev1.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x-ev1.png",
+      "bytes": 995259,
+      "sha256": "93d3e5c6d8157deb40e79c63c8f21958f08b3c799f3c5f1691fc310d419285fa",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_stddev": [
+        14.704990007954146,
+        19.49135548879868,
+        25.97127120016943
+      ]
+    },
+    "view-pos-x-ev2.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x-ev2.png",
+      "bytes": 1023455,
+      "sha256": "74d1655d53d5fe7d262756c7e23c0a695aa42b7ee3c43e075007a59fc3bf7f54",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_stddev": [
+        17.982360331403516,
+        25.398369581309545,
+        33.51453918831932
+      ]
+    },
+    "exposure-comparison.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\exposure-comparison.png",
+      "bytes": 842158,
+      "sha256": "35bebaeaae7281755453351e5c7875a9bd61a50f8a00a1c0f37c319235d499b1",
+      "dimensions": [
+        2000,
+        638
+      ],
+      "channel_stddev": [
+        70.94636695683081,
+        73.60094308040152,
+        76.49776342468958
+      ]
+    },
+    "contact-sheet.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\contact-sheet.png",
+      "bytes": 840385,
+      "sha256": "87be0536a1481116c4dac6224fc5daa29951d0226eb58b5219f06d737b2608df",
+      "dimensions": [
+        1000,
+        1178
+      ],
+      "channel_stddev": [
+        66.58321989122443,
+        68.90549404628473,
+        71.78830570877551
+      ]
+    },
+    "detail-comparison.png": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\detail-comparison.png",
+      "bytes": 500136,
+      "sha256": "106369af2be4b742eba56de7a06d36cd81d9aa052ea42792a8738649506c9b62",
+      "dimensions": [
+        1500,
+        638
+      ],
+      "channel_stddev": [
+        78.19414312598947,
+        90.08734610866516,
+        96.76943920960733
+      ]
+    }
+  },
+  "statistics": {
+    "pos-x": {
+      "exposure_EV": 0,
+      "pixels": 148521,
+      "mean_encoded_RGB": [
+        0.2301475291473764,
+        0.12240701156557754,
+        0.058385669630642574
+      ],
+      "mean_encoded_luma": 0.14069030471560698,
+      "encoded_luma_percentiles_5_50_95": [
+        0.016730980392156862,
+        0.1464705882352941,
+        0.2589835294117647
+      ],
+      "any_channel_at_255_count": 0,
+      "any_channel_at_least_250_count": 0,
+      "all_channels_at_most_16_count": 11923,
+      "mean_display_HSV_saturation": 0.7567282781415691
+    },
+    "pos-x-ev1": {
+      "exposure_EV": 1,
+      "pixels": 148521,
+      "mean_encoded_RGB": [
+        0.3410233266017279,
+        0.1927933872428419,
+        0.10408042910960864
+      ],
+      "mean_encoded_luma": 0.2179019967731506,
+      "encoded_luma_percentiles_5_50_95": [
+        0.03664235294117647,
+        0.22761882352941173,
+        0.38089725490196075
+      ],
+      "any_channel_at_255_count": 0,
+      "any_channel_at_least_250_count": 0,
+      "all_channels_at_most_16_count": 4577,
+      "mean_display_HSV_saturation": 0.7093206512119811
+    },
+    "pos-x-ev2": {
+      "exposure_EV": 2,
+      "pixels": 148521,
+      "mean_encoded_RGB": [
+        0.47551854751909667,
+        0.28848076016464047,
+        0.1795922963823765
+      ],
+      "mean_encoded_luma": 0.32038324667099954,
+      "encoded_luma_percentiles_5_50_95": [
+        0.0720078431372549,
+        0.3398203921568627,
+        0.5251709803921568
+      ],
+      "any_channel_at_255_count": 0,
+      "any_channel_at_least_250_count": 0,
+      "all_channels_at_most_16_count": 2009,
+      "mean_display_HSV_saturation": 0.6460457073293334
+    }
+  },
+  "statistic_scope": {
+    "source": "authenticated previous +X clay",
+    "rule": "max(abs(clay_RGB-corner_RGB)) > 3 uint8 code values",
+    "pixels": 148521,
+    "geometric_silhouette_claimed": false
+  },
+  "statistics_are_encoded_display_not_linear_radiance": true,
+  "photograph_comparison_not_calibrated": true,
+  "measurements": {
+    "renderer_seconds": 54.88603589999548,
+    "supervisor_seconds": 57.48400000001129,
+    "full_invocation_seconds": 58.203000000008615,
+    "peak_committed_bytes": 2979557376,
+    "peak_working_set_bytes": 2779996160,
+    "minimum_available_RAM_bytes": 18194538496,
+    "minimum_free_disk_bytes": 111744946176,
+    "resource_samples": 57,
+    "composition_seconds": 1.3910000000032596,
+    "composition_peak_process_commit_bytes": 650489856
+  },
+  "natural_render_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "natural_composition_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "no_automatic_retry": true,
+  "CPU_tests_passed": 9,
+  "interpretation": "Presentation exposure makes existing learned colors/detail much more legible; +2EV retains visible variation without near-white clipping in the fixed proxy region. Exposure alone cannot uniquely distinguish illumination from albedo or prove photo color fidelity. No missing material values were recovered.",
+  "recommended_next_action": "User visual review of +2EV under this rig; no material regeneration or further execution automatically.",
+  "protected_files_unchanged": 100,
+  "remote_heads_before": 86,
+  "final_publication_receipt": "Saved privately after push.",
+  "evidence_sha256": {
+    "preflight-final.json": "85d9e5c46b7e819a4ab777a8df29fa9927d4ee7381ef27d090522f65b9cc10f5",
+    "preexecution-review.json": "18d2c4ae3223242911562bcd3eb494a0901184237996c8312cb44d0b3d44de95",
+    "focused-tests.txt": "6d11fb4281bf23e22c74746e9c376e0295be34e6b5b8af041033adf1156e57b4",
+    "host-result.json": "c0c363dbca25cdbe595a577d2fa22524022d6a9c5924a0b101ce8986cd4b198f",
+    "render-metadata.json": "2e09ea2c4ba104f37133e1322759ce9de3fe5e92a5aeac798e379d8bf1685464",
+    "image-verification.json": "af8eb2e5b8dcd885b0f43df6f4e5201950060c720826759b6b02f420a30f7e4e",
+    "composition-host.json": "5ccccfa47033e127667843e74cbb4956a8b5a7b8df3ae7e13f4ed13ac6021987",
+    "preservation-before.json": "bcaa7bcb45bd5bcce0981984fd142153a950c5b27a642d9d5386790919a41a65",
+    "preservation-after.json": "250e721bda045dcfed26bf312e883a1b775dff7e5b9c1747e9da2f47804a3eb7"
+  }
+}

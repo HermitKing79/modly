@@ -1,0 +1,472 @@
+{
+  "schema": "modly.amd.brick-pbr-exposure-independent-outcome-review.v1",
+  "classification": "PASS",
+  "created_utc": "2026-10-19T10:16:40.721067+00:00",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "new_render_model_GPU_or_WSL_execution_by_reviewer": false,
+  "checks_passed": 77,
+  "checks": [
+    "Actual host renderer composition image and mapping receipts PASS",
+    "Original full-row correspondence proof authenticated",
+    "Reviewed source unchanged render_host.py",
+    "Reviewed source unchanged render_exposure.py",
+    "Reviewed source unchanged compose_host.py",
+    "Reviewed source unchanged compose_exposure.py",
+    "Actual invocation source matches independent preexecution review",
+    "Actual complete input before/after identities unchanged",
+    "Fresh full source identity mesh.ply",
+    "Fresh full source identity blender.exe",
+    "Fresh full source identity texture-field.safetensors",
+    "Fresh full source identity mapping-verification.json",
+    "Fresh full source identity faces.npy",
+    "Fresh full source identity vertices.npy",
+    "Fresh full source identity mesh.json",
+    "Fresh full source identity render_exposure.py",
+    "Fresh full source identity texture-field-metadata.json",
+    "Actual unchanged Blender 6 GiB / 180 second cap respected",
+    "Actual composition 1 GiB / 60 second cap respected",
+    "Blender natural zero exit and empty owned job",
+    "Blender every original RAM/disk live floor respected",
+    "composition natural zero exit and empty owned job",
+    "composition every original RAM/disk live floor respected",
+    "Actual owned start and EV0 host verification before continuation",
+    "One successful invocation with no retry",
+    "Original complete mesh imported once and unchanged",
+    "All before/first/final ordered geometry readbacks match authenticated original payloads",
+    "Whole original material readback including shader bindings unchanged from first preview",
+    "Full genuine original channel values/statistics red",
+    "Full genuine original channel values/statistics green",
+    "Full genuine original channel values/statistics blue",
+    "Full genuine original channel values/statistics metallic",
+    "Full genuine original channel values/statistics roughness",
+    "Full genuine original channel values/statistics alpha",
+    "Actual initial/final settings equal prior EV0 and exposure restored",
+    "Actual Cycles CPU 1024 / 32 samples / four threads and CPU denoising",
+    "Exactly EV0/+1/+2 with original positive-X direction",
+    "Complete settings differ only in scheduled exposure pos-x",
+    "Camera and all actual light transforms identical to original EV0 pos-x",
+    "Full material/linear RGB readback invariant pos-x",
+    "Complete settings differ only in scheduled exposure pos-x-ev1",
+    "Camera and all actual light transforms identical to original EV0 pos-x-ev1",
+    "Full material/linear RGB readback invariant pos-x-ev1",
+    "Complete settings differ only in scheduled exposure pos-x-ev2",
+    "Camera and all actual light transforms identical to original EV0 pos-x-ev2",
+    "Full material/linear RGB readback invariant pos-x-ev2",
+    "Actual full image hash renders/view-pos-x.png",
+    "Actual complete image decode/dimensions renders/view-pos-x.png",
+    "Actual render byte count and composition input pos-x",
+    "Actual full image hash renders/view-pos-x-ev1.png",
+    "Actual complete image decode/dimensions renders/view-pos-x-ev1.png",
+    "Actual render byte count and composition input pos-x-ev1",
+    "Actual full image hash renders/view-pos-x-ev2.png",
+    "Actual complete image decode/dimensions renders/view-pos-x-ev2.png",
+    "Actual render byte count and composition input pos-x-ev2",
+    "Actual full image hash derived/exposure-comparison.png",
+    "Actual complete image decode/dimensions derived/exposure-comparison.png",
+    "Actual full image hash derived/contact-sheet.png",
+    "Actual complete image decode/dimensions derived/contact-sheet.png",
+    "Actual full image hash derived/detail-comparison.png",
+    "Actual complete image decode/dimensions derived/detail-comparison.png",
+    "Actual full image hash references/previous-learned-EV0",
+    "Actual complete image decode/dimensions references/previous-learned-EV0",
+    "Actual full image hash references/previous-clay",
+    "Actual complete image decode/dimensions references/previous-clay",
+    "Actual full image hash references/original-photo",
+    "Actual complete image decode/dimensions references/original-photo",
+    "Independent complete EV0 pixels exactly equal first learned-PBR preview",
+    "Original reference photograph authenticated",
+    "Independent fixed prior-clay contrast proxy mask exactly reproduced",
+    "Independent brightness percentile clipping dark and saturation statistics pos-x",
+    "Independent brightness percentile clipping dark and saturation statistics pos-x-ev1",
+    "Independent brightness percentile clipping dark and saturation statistics pos-x-ev2",
+    "Independent reference foreground statistics context",
+    "No new exposure or historical camera-helper bytecode directory",
+    "No renderer traceback or composition stderr",
+    "Report measured claims and bounded causal interpretation reviewed"
+  ],
+  "fresh_original_source_identities": {
+    "mesh.ply": {
+      "bytes": 77751514,
+      "sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+      "fresh_full_hash_matches_host_before_and_after": true
+    },
+    "blender.exe": {
+      "bytes": 113014232,
+      "sha256": "284f4041f98e113f3dc10654a7193ffaaa9bfdfec8b87fa116620a48b5f6d4cb",
+      "fresh_full_hash_matches_host_before_and_after": true
+    },
+    "texture-field.safetensors": {
+      "bytes": 125318120,
+      "sha256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394",
+      "fresh_full_hash_matches_host_before_and_after": true
+    },
+    "mapping-verification.json": {
+      "bytes": 13297,
+      "sha256": "84912427ddff6d470ce96215344118b057ab357f3a41ff762612a367549d0eb4",
+      "fresh_full_hash_matches_host_before_and_after": true
+    },
+    "faces.npy": {
+      "bytes": 50083136,
+      "sha256": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d",
+      "fresh_full_hash_matches_host_before_and_after": true
+    },
+    "vertices.npy": {
+      "bytes": 23494820,
+      "sha256": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252",
+      "fresh_full_hash_matches_host_before_and_after": true
+    },
+    "mesh.json": {
+      "bytes": 1346,
+      "sha256": "12810c52c808369f360f8d826eb1f58ec66224d5b520dcf129e0b5a50ff1a37a",
+      "fresh_full_hash_matches_host_before_and_after": true
+    },
+    "render_exposure.py": {
+      "bytes": 35078,
+      "sha256": "17af94c180944274c304cd8e034c95e21190fa21ff8434335b48a637fbde27cf",
+      "fresh_full_hash_matches_host_before_and_after": true
+    },
+    "texture-field-metadata.json": {
+      "bytes": 13493,
+      "sha256": "4f65c6730f4a8669d9e62ba4f151f15b19f6cfd6b7e7dcd81289ad923bbdd8c2",
+      "fresh_full_hash_matches_host_before_and_after": true
+    }
+  },
+  "actual_controlled_comparison": {
+    "only_setting_changed": "display exposure EV0/+1/+2",
+    "camera_light_transforms_material_and_original_geometry_invariant": true,
+    "baseline_pixels_equal_previous_preview_exactly": true,
+    "baseline_maximum_channel_code_difference": 0,
+    "PNG_file_hashes_are_distinct_from_decoded_pixel_identity": true,
+    "all_three_per_view_complete_settings_verified": true,
+    "final_EV0_restoration_verified": true,
+    "original_full_material_attributes_and_shader_links_match_first_preview": true
+  },
+  "independently_reopened_images": {
+    "renders/view-pos-x.png": {
+      "sha256": "3233802da22557d0ffdd44b325ce1d6bc83a000628669354468303dae6e47087",
+      "bytes": 940451,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_mean": [
+        63.484188079833984,
+        59.50184154510498,
+        57.07523536682129
+      ],
+      "channel_stddev": [
+        10.871488238228581,
+        13.952306792016527,
+        18.55693840895368
+      ]
+    },
+    "renders/view-pos-x-ev1.png": {
+      "sha256": "93d3e5c6d8157deb40e79c63c8f21958f08b3c799f3c5f1691fc310d419285fa",
+      "bytes": 995259,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_mean": [
+        94.05646705627441,
+        88.57281970977783,
+        85.20208644866943
+      ],
+      "channel_stddev": [
+        14.704990007954146,
+        19.49135548879868,
+        25.97127120016943
+      ]
+    },
+    "renders/view-pos-x-ev2.png": {
+      "sha256": "74d1655d53d5fe7d262756c7e23c0a695aa42b7ee3c43e075007a59fc3bf7f54",
+      "bytes": 1023455,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_mean": [
+        131.3151149749756,
+        124.34187030792236,
+        120.18608474731445
+      ],
+      "channel_stddev": [
+        17.982360331403516,
+        25.398369581309545,
+        33.51453918831932
+      ]
+    },
+    "derived/exposure-comparison.png": {
+      "sha256": "35bebaeaae7281755453351e5c7875a9bd61a50f8a00a1c0f37c319235d499b1",
+      "bytes": 842158,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        2000,
+        638
+      ],
+      "channel_mean": [
+        131.3301763322884,
+        126.0688275862069,
+        122.79358307210032
+      ],
+      "channel_stddev": [
+        70.94636695683081,
+        73.60094308040152,
+        76.49776342468958
+      ]
+    },
+    "derived/contact-sheet.png": {
+      "sha256": "87be0536a1481116c4dac6224fc5daa29951d0226eb58b5219f06d737b2608df",
+      "bytes": 840385,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1000,
+        1178
+      ],
+      "channel_mean": [
+        122.68863837011885,
+        116.9895882852292,
+        113.4418701188455
+      ],
+      "channel_stddev": [
+        66.58321989122443,
+        68.90549404628473,
+        71.78830570877551
+      ]
+    },
+    "derived/detail-comparison.png": {
+      "sha256": "106369af2be4b742eba56de7a06d36cd81d9aa052ea42792a8738649506c9b62",
+      "bytes": 500136,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1500,
+        638
+      ],
+      "channel_mean": [
+        148.83121734587252,
+        130.97452560083593,
+        122.23285684430512
+      ],
+      "channel_stddev": [
+        78.19414312598947,
+        90.08734610866516,
+        96.76943920960733
+      ]
+    },
+    "references/previous-learned-EV0": {
+      "sha256": "a9bc79d78d72c1d08e602910fe5780ccb606f51e8d5b574a8e1b9af78cd90387",
+      "bytes": 940451,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_mean": [
+        63.484188079833984,
+        59.50184154510498,
+        57.07523536682129
+      ],
+      "channel_stddev": [
+        10.871488238228581,
+        13.952306792016527,
+        18.55693840895368
+      ]
+    },
+    "references/previous-clay": {
+      "sha256": "be2454863b66546131a3cc702953de06f8f0f507d0e062a4564c2d2f10f077f2",
+      "bytes": 885588,
+      "format": "PNG",
+      "mode": "RGB",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "channel_mean": [
+        67.17500972747803,
+        67.2596263885498,
+        67.22579860687256
+      ],
+      "channel_stddev": [
+        13.024779427720043,
+        13.027493594792807,
+        13.016829283733667
+      ]
+    },
+    "references/original-photo": {
+      "sha256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+      "bytes": 184424,
+      "format": "WEBP",
+      "mode": "RGBA",
+      "dimensions": [
+        1018,
+        1018
+      ],
+      "channel_mean": [
+        37.53791188855995,
+        24.303501607605345,
+        16.03404630212173
+      ],
+      "channel_stddev": [
+        59.48147437695625,
+        39.978203058224565,
+        27.878649487656492
+      ]
+    }
+  },
+  "independent_exposure_statistics": {
+    "pos-x": {
+      "exposure_EV": 0,
+      "pixels": 148521,
+      "mean_encoded_RGB": [
+        0.23014752914719527,
+        0.12240701156540747,
+        0.05838566963066291
+      ],
+      "mean_encoded_luma": 0.14069030471560698,
+      "encoded_luma_percentiles_5_50_95": [
+        0.016730980392156862,
+        0.14647058823529413,
+        0.2589835294117647
+      ],
+      "any_channel_at_255_count": 0,
+      "any_channel_at_least_250_count": 0,
+      "all_channels_at_most_16_count": 11923,
+      "mean_display_HSV_saturation": 0.7567282781415691
+    },
+    "pos-x-ev1": {
+      "exposure_EV": 1,
+      "pixels": 148521,
+      "mean_encoded_RGB": [
+        0.34102332660159895,
+        0.19279338724265704,
+        0.10408042910945056
+      ],
+      "mean_encoded_luma": 0.21790199677315059,
+      "encoded_luma_percentiles_5_50_95": [
+        0.03664235294117647,
+        0.22761882352941176,
+        0.3808972549019608
+      ],
+      "any_channel_at_255_count": 0,
+      "any_channel_at_least_250_count": 0,
+      "all_channels_at_most_16_count": 4577,
+      "mean_display_HSV_saturation": 0.7093206512119811
+    },
+    "pos-x-ev2": {
+      "exposure_EV": 2,
+      "pixels": 148521,
+      "mean_encoded_RGB": [
+        0.4755185475190608,
+        0.288480760164503,
+        0.17959229638219776
+      ],
+      "mean_encoded_luma": 0.32038324667099954,
+      "encoded_luma_percentiles_5_50_95": [
+        0.0720078431372549,
+        0.33982039215686277,
+        0.5251709803921568
+      ],
+      "any_channel_at_255_count": 0,
+      "any_channel_at_least_250_count": 0,
+      "all_channels_at_most_16_count": 2009,
+      "mean_display_HSV_saturation": 0.6460457073293335
+    }
+  },
+  "independent_reference_foreground_context": {
+    "pixels": 316712,
+    "mean_encoded_RGB": [
+      0.44269266220216646,
+      0.28136015450915014,
+      0.18018589536903448
+    ],
+    "mean_encoded_luma": 0.30835466413476903,
+    "encoded_luma_percentiles_5_50_95": [
+      0.09144078431372549,
+      0.288995294117647,
+      0.5967458823529411
+    ],
+    "any_channel_at_255_count": 568,
+    "any_channel_at_least_250_count": 1263,
+    "all_channels_at_most_16_count": 1280,
+    "mean_display_HSV_saturation": 0.6051245115366695
+  },
+  "statistic_scope": {
+    "fixed_prior_clay_contrast_proxy_pixels": 148521,
+    "geometric_silhouette_claimed": false,
+    "mean_luma_is_Rec709_weighted_encoded_display_code": true,
+    "physical_radiance_or_reflectance_measurement": false,
+    "reference_uses_different_alpha_mask_and_uncalibrated_camera_lighting": true,
+    "colour_fidelity_score_claimed": false
+  },
+  "actual_resources": {
+    "renderer_seconds": 54.88603589999548,
+    "host_seconds": 57.48400000001129,
+    "total_invocation_seconds": 58.203000000008615,
+    "Blender_peak_process_committed_bytes": 2979557376,
+    "Blender_peak_working_set_bytes": 2779996160,
+    "minimum_available_RAM_bytes": 18194538496,
+    "minimum_free_disk_bytes": 111744946176,
+    "Blender_live_sample_count": 57,
+    "first_frame_host_continuation_seconds": 27.312000000005355,
+    "composition_seconds": 1.3910000000032596,
+    "composition_peak_process_committed_bytes_from_Job": 650489856,
+    "Blender_natural_owned_exit": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "composition_natural_owned_exit": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "original_caps_and_floors_retained": true
+  },
+  "visual_and_causal_assessment": {
+    "all_three_raw_views_and_three_comparison_sheets_viewed": true,
+    "observations": [
+      "Increasing exposure progressively makes existing red-brown masonry, ochre foliage and pale brick mottling easier to see in these images.",
+      "At +2 EV the inspected surfaces retain visible color variation and do not appear flattened to white.",
+      "Mean displayed saturation decreases with exposure, consistent with these output-pixel measurements."
+    ],
+    "supported_causal_conclusion": "With learned RGB, material attributes, geometry, camera and lighting held fixed, changing display exposure alone materially changes the visible darkness and detail visibility in this preview setup.",
+    "not_established": [
+      "No hidden learned RGB was recovered or regenerated.",
+      "This does not establish that learned albedo or colors are correct against the photograph.",
+      "This does not identify a unique cause for any photo/model mismatch; reference lighting and camera remain uncalibrated.",
+      "Zero near-clipped pixels is verified in the fixed proxy region, not asserted for every possible surface or future exposure.",
+      "No separate color-management variant was tested."
+    ]
+  },
+  "scope_limits": [
+    "Original full-row geometry/material proof reused from authenticated mapping receipt; no proof regeneration or new neural execution.",
+    "Broader protected inventory and remote-head preservation are covered separately.",
+    "Only this source-safe scalar/hash review is written; PNGs remain private."
+  ],
+  "blockers": [],
+  "report_review": {
+    "path": "docs/compatibility/amd-brick-pbr-exposure.md",
+    "sha256": "77557217c875afbb0242978909054b797def3ce38f89ebb0a5be49c0aa8b82b1",
+    "status": "PASS",
+    "measured_timings_memory_statistics_and_image_claims_match_actual_reviewed_evidence": true,
+    "causal_wording_correctly_limited_to_exposure_effect_under_this_studio_setup": true,
+    "recommendation_plus2_EV_for_this_rig_visual_review_only_not_application_default": true,
+    "no_hidden_RGB_recovery_albedo_accuracy_or_calibrated_photograph_match_claimed": true,
+    "broader_preservation_and_remote_heads_covered_by_separate_audit": true,
+    "publication_wording": "New comparison images remain private and outside Git; no source photographs or model binaries are added to this publication."
+  }
+}

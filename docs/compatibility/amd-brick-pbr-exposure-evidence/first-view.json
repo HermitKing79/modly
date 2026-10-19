@@ -1,0 +1,217 @@
+{
+  "name": "pos-x",
+  "PNG": "view-pos-x.png",
+  "axis_direction": [
+    1,
+    0,
+    0
+  ],
+  "camera_location": [
+    2.797344923019409,
+    -0.0018387436866760254,
+    0.0007975846529006958
+  ],
+  "camera_quaternion": [
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "camera_right": [
+    0.0,
+    1.0,
+    0.0
+  ],
+  "camera_up": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "ortho_scale": 1.5038471221923828,
+  "camera_type": "ORTHO",
+  "clip": [
+    0.0006962255574762821,
+    13.924510955810547
+  ],
+  "actual_lights": [
+    {
+      "name": "Key",
+      "location": [
+        2.797344923019409,
+        -1.7424025535583496,
+        2.0894739627838135
+      ],
+      "quaternion": [
+        0.7666620016098022,
+        0.420985609292984,
+        0.23333027958869934,
+        0.42492061853408813
+      ],
+      "energy": 38.77840042114258,
+      "size": 1.7405638694763184,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Fill",
+      "location": [
+        1.4048939943313599,
+        2.0868377685546875,
+        0.6970230937004089
+      ],
+      "quaternion": [
+        0.23067083954811096,
+        0.17540188133716583,
+        0.5793130397796631,
+        0.7618540525436401
+      ],
+      "energy": 19.38920021057129,
+      "size": 1.7405638694763184,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Rim",
+      "location": [
+        -2.0762336254119873,
+        -0.0018387436866760254,
+        2.0894739627838135
+      ],
+      "quaternion": [
+        0.6532815098762512,
+        0.27059805393218994,
+        -0.27059805393218994,
+        -0.6532815098762512
+      ],
+      "energy": 29.083799362182617,
+      "size": 1.7405638694763184,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "exposure_EV": 0,
+  "settings_before_render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 32,
+    "threads": 4,
+    "threads_mode": "FIXED",
+    "resolution": [
+      1024,
+      1024,
+      100
+    ],
+    "denoising": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_use_gpu": false,
+    "adaptive_sampling": false,
+    "bounces": [
+      2,
+      1,
+      1
+    ],
+    "transparent_max_bounces": 8,
+    "film_transparent": false,
+    "compositing": false,
+    "sequencer": false,
+    "persistent_data": true,
+    "view_transform": "AgX",
+    "look": "None",
+    "exposure": 0.0,
+    "gamma": 1.0,
+    "world_linear_RGBA": [
+      0.11999999731779099,
+      0.11999999731779099,
+      0.11999999731779099,
+      1.0
+    ],
+    "world_strength": 0.5,
+    "material_override": [
+      true
+    ]
+  },
+  "settings_after_render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 32,
+    "threads": 4,
+    "threads_mode": "FIXED",
+    "resolution": [
+      1024,
+      1024,
+      100
+    ],
+    "denoising": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_use_gpu": false,
+    "adaptive_sampling": false,
+    "bounces": [
+      2,
+      1,
+      1
+    ],
+    "transparent_max_bounces": 8,
+    "film_transparent": false,
+    "compositing": false,
+    "sequencer": false,
+    "persistent_data": true,
+    "view_transform": "AgX",
+    "look": "None",
+    "exposure": 0.0,
+    "gamma": 1.0,
+    "world_linear_RGBA": [
+      0.11999999731779099,
+      0.11999999731779099,
+      0.11999999731779099,
+      1.0
+    ],
+    "world_strength": 0.5,
+    "material_override": [
+      true
+    ]
+  },
+  "settings_difference_from_EV0": {},
+  "camera_lights_material_identical_to_EV0": true,
+  "material_attribute_sha256": {
+    "Trellis_red_raw": "938fcf8bb9a1eedebdd9d0ec02698453200fa61c45e156a4ee52dcd319015472",
+    "Trellis_green_raw": "7d8cffa3639fc165f039276f5db75ea9bc9de81e30b3be531daf8fd989269ab8",
+    "Trellis_blue_raw": "312b4df2d0f2664140f99044683dfc61d9f6af6cda93b5131ba0a40516be1a5a",
+    "Trellis_metallic_raw": "9fe63487c5de4be9d4a38ba2daae11d710ffaf3b3b37a685ce8b8d226ba33c47",
+    "Trellis_roughness_raw": "a69274a8ab54b5836792b29785f978842ba6e134feccc42fbe0b2ed9a55bf497",
+    "Trellis_alpha_raw": "55f9a14e9277e382975f027bf92b12e38f953f12694a9676cd60472fb7a4de02"
+  },
+  "linear_RGBA_sha256": "7bbb6216da545fdee192e6daae6902a8674dcef302db5fa02f10bbdb1abe7ebd",
+  "filename": "view-pos-x.png",
+  "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-pbr-exposure-b0b7be1\\renders\\view-pos-x.png",
+  "bytes": 940451,
+  "sha256": "3233802da22557d0ffdd44b325ce1d6bc83a000628669354468303dae6e47087",
+  "width": 1024,
+  "height": 1024,
+  "seconds": 12.893742799991742,
+  "elapsed_seconds": 25.129192199994577,
+  "classification": "FIRST_VIEW_COMPLETE",
+  "device": "CPU",
+  "samples": 32,
+  "threads": 4,
+  "denoising_use_gpu": false,
+  "vertex_count": 1957891,
+  "face_count": 4173584,
+  "source_PLY_sha256": "ec9736e2510c26303196c4e3fc2045a1a1d36401b2576ee68f102ee29b551ffd",
+  "geometry_payloads": {
+    "vertices.npy": "bdfcbbe8f251b33daa64c6832c4c1278b3a29600cf825a022478b0b87bb573c3",
+    "faces.npy": "5fa284e1698929f4f0f6c78edc2e26632fcde6e43ad7eb57b36ae6fc9f88d883"
+  },
+  "geometry_unchanged_after_first_view": true,
+  "material_field_sha256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394",
+  "material_verified_after_first_view": true,
+  "alpha_linked_from_original": true
+}

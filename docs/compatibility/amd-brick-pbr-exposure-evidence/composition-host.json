@@ -1,0 +1,112 @@
+{
+  "CPU_only": true,
+  "command": [
+    "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-pbr-exposure-evidence\\compose_exposure.py"
+  ],
+  "memory_cap_bytes": 1073741824,
+  "deadline_seconds": 60,
+  "resource_samples": [
+    {
+      "available_ram_bytes": 20954943488,
+      "disk_free_bytes": 111744323584,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20955648000,
+      "disk_free_bytes": 111744323584,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20953059328,
+      "disk_free_bytes": 111744323584,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20938043392,
+      "disk_free_bytes": 111744323584,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20929134592,
+      "disk_free_bytes": 111744323584,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20897251328,
+      "disk_free_bytes": 111744319488,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20882554880,
+      "disk_free_bytes": 111744319488,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20867612672,
+      "disk_free_bytes": 111744319488,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20862844928,
+      "disk_free_bytes": 111743475712,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20867858432,
+      "disk_free_bytes": 111742361600,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20859883520,
+      "disk_free_bytes": 111742427136,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    },
+    {
+      "available_ram_bytes": 20884451328,
+      "disk_free_bytes": 111742111744,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    }
+  ],
+  "returncode": 0,
+  "process_memory": {
+    "peak_working_set_bytes": 4591616,
+    "peak_pagefile_bytes": 860160
+  },
+  "peak_committed_bytes": 650489856,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "elapsed_seconds": 1.3910000000032596,
+  "classification": "PASS"
+}
