@@ -1,0 +1,61 @@
+{
+  "schema": "modly.amd.brick-seam-uv-independent-render-startup-review.v1",
+  "created_utc": "2026-10-19T13:21:30.978592+00:00",
+  "classification": "GO",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "scope": "Narrow startup-admission correction and fresh export/compare/finish routing. One fresh export, then conditional compare/finish only; no new bake or further correction loop.",
+  "base": "87f375585ad7ae5538856f9451c3233746e8fc77",
+  "execution_source_SHA256": {
+    "render_adapter.py": "cec541d12d0b91670dfcad4e28a16736f164d00bbbb6becefcb783bdc0ae6432",
+    "run_host.py": "053a017077e693f95ed3a8dfbbf918bf858743bc26b7c87e0e2fb397c83d54c7",
+    "finish.py": "44795b71e09fc25526c05475f296716a8ab8fcc2498e6c83eb455b319ff42365"
+  },
+  "test_source_SHA256": "b6ea757cca80891635c197b47108be179d62a2d7f15e29b5363852984b536a09",
+  "unchanged_qualified_bake_receipt_SHA256": "7f06d75e55c0435bea68539b4b7d10194f0677486839d0cc7960d193a325e481",
+  "verified_controls": {
+    "historical_renderer_source_unchanged_and_pinned": true,
+    "real_historical_binary_GO_consumed_exactly_once_before_live_bpy_tempdir_read": true,
+    "failed_or_repeated_GO_prevents_render_body": true,
+    "only_exact_live_plain_immediate_child_of_this_host_scratch_admitted": true,
+    "live_session_must_be_empty": true,
+    "foreign_entries_multiple_children_prior_outputs_symlinks_reparse_paths_rejected": true,
+    "all_output_ancestors_plain_checked": true,
+    "original_empty_scratch_policy_retained": true,
+    "adapter_PRIVATE_new_render_qualified_subtree_but_BAKE_immutable_original_P_bake": true,
+    "host_commands_outputs_checkpoints_and_receipt_names_use_fresh_qualified_paths": true,
+    "finish_reads_qualified_export_compare_and_writes_fresh_original_P_finish": true,
+    "initial_failed_export_logs_marker_and_byte_exact_adapter_copy_preserved": true,
+    "no_change_to_field_sampler_UV_layout_baked_maps_or_render_material_semantics": true,
+    "CPU_Job_GO_hash_floors_limits_and_no_overwrite_rules_retained": true
+  },
+  "source_preservation": {
+    "initial_adapter_copy_SHA256": "d14e113c782eb638c34d9fc360827ef4c7966497c67d2da41e3fe071b0f68d32",
+    "matches_initial_preexecution_marker": true,
+    "initial_export_host_receipt_SHA256": "ba0bb6e52914aafa7cba709b3ff35dc5965af722f14e386c17fc77d46c254ac2",
+    "numeric_bake_review_SHA256": "c5ad4859c3639910a86a627fb444655c44186ffd43996f9756c20399c7f769be"
+  },
+  "tests": {
+    "root_actual_focused_CPU_passes": 32,
+    "seconds": 0.89,
+    "adapter_tests": 12,
+    "log_SHA256": "94434e43a1381117aac3459de2e56d927f2435f19e3249f007b3e97250f3122b",
+    "reviewer_Blender_export_or_sampler_execution": false
+  },
+  "resource_policy": {
+    "each_process_cap_bytes": 6442450944,
+    "each_stage_deadline_seconds": 180,
+    "initial_and_live_available_RAM_floor_bytes": 12884901888,
+    "initial_and_live_disk_floor_bytes": 2147483648,
+    "owned_Job_attach_before_GO": true,
+    "CPU_only_Cycles_and_denoising": true,
+    "fresh_host_preflight_required_before_actual_launch": true
+  },
+  "required_outcome_checks": [
+    "Export must pass independent GLB geometry/UV/map/material parser before fresh import.",
+    "Compare must pass actual fresh-import readback and both matched CPU renders before finish.",
+    "Independently view actual comparison and source/reference/bake receipts; numeric bake PASS alone does not establish portable or visual success.",
+    "If corrected export still fails, stop; do not broaden startup admission or start a repair loop.",
+    "Global protected-source and historical-evidence preservation remains required before publication."
+  ],
+  "blockers": []
+}

@@ -1,0 +1,592 @@
+{
+  "schema": "modly.amd.brick-seam-uv-bake-execution.v1",
+  "created_utc": "2026-10-19T13:24:39.518490+00:00",
+  "classification": "PASS_EXECUTION_AND_READBACK",
+  "base": "87f375585ad7ae5538856f9451c3233746e8fc77",
+  "branch": "codex/amd-brick-seam-uv-bake",
+  "CPU_only": true,
+  "actual_genuine_spatial_bakes": 1,
+  "neural_or_GPU_inference": false,
+  "source_safe_only": true,
+  "private_artifact_root": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-seam-uv-bake-87f3755",
+  "phase_receipts_SHA256": {
+    "prepare": "b527aee6a88c08f34b32dac755bddadba2f22fc6c32430ef39a134444e788c63",
+    "UV": "86d0c01d54966df891b1ebe027c4bcdbcbc976a3e22bd4411f341e1bc8bd7229",
+    "bake": "7f06d75e55c0435bea68539b4b7d10194f0677486839d0cc7960d193a325e481",
+    "export": "c524ba00feb9b8f7c0a8068fbbaa8af047f90cee5056fc93e679aaa57da9416a",
+    "compare": "f14604156a349ca3b2d609947c00b497429a4dcdf5cfd4c3d0b7567bf1a47cd4",
+    "finish": "a16339b1beee65fcf531382f7ce2f6d8a37464afd491e9b57dbf69dce5d4b667"
+  },
+  "UV_measurements": {
+    "triangles": 781,
+    "original_vertices": 457,
+    "UV_corners": 2343,
+    "islands": 4,
+    "texture_size": [
+      1024,
+      1024
+    ],
+    "old_overlap_original_face_ids": [
+      3809836,
+      3809838
+    ],
+    "old_overlap_normalized_area": 0.00012292821691067823,
+    "newUV_analytic_bbox_pairs_checked": 2716,
+    "minimum_reserved_gutter_pixels": 4.0,
+    "minimum_content_box_separation_pixels": 8,
+    "covered_texels": 586848,
+    "minimum_face_covered_texels": 74,
+    "minimum_triangle_area_texels": 75.14745861260235,
+    "minimum_triangle_altitude_texels": 5.068760995666971,
+    "minimum_actual_3D_tangent_density_texels_per_world_unit": 19333.075801797917,
+    "maximum_independent_barycentric_absolute_error": 2.9802256995559162e-08,
+    "review_seconds": 0.5629999999946449
+  },
+  "bake_metrics": {
+    "texture_size": [
+      1024,
+      1024
+    ],
+    "covered_texels": 586848,
+    "UV_island_count": 4,
+    "minimum_positive_weight_neighbours": 3,
+    "minimum_weight_sum": 0.5291970372200012,
+    "unsupported_queries": 0,
+    "quality_errors": {
+      "surface": {
+        "RGB": {
+          "rmse": 0.0021709091833373843,
+          "p95_absolute": 0.0034433131379561,
+          "max_absolute": 0.0057216937190928685,
+          "mean_absolute": 0.001960208585362695
+        },
+        "scalars": {
+          "rmse": 0.0012717735190329214,
+          "p95_absolute": 0.0038489096019620585,
+          "max_absolute": 0.0052122981287238135,
+          "mean_absolute": 0.0004615710333618047
+        }
+      },
+      "seam_edge": {
+        "RGB": {
+          "rmse": 0.00226060797445621,
+          "p95_absolute": 0.003546337987862358,
+          "max_absolute": 0.007810983820631723,
+          "mean_absolute": 0.0018637208900203423
+        },
+        "scalars": {
+          "rmse": 0.0011056711426091904,
+          "p95_absolute": 0.0038883122158985374,
+          "max_absolute": 0.004674462950845504,
+          "mean_absolute": 0.00033447220719504144
+        }
+      },
+      "seam_near": {
+        "RGB": {
+          "rmse": 0.002215713373240895,
+          "p95_absolute": 0.003365873819600157,
+          "max_absolute": 0.007658801103663793,
+          "mean_absolute": 0.00184731267958508
+        },
+        "scalars": {
+          "rmse": 0.001110057341363145,
+          "p95_absolute": 0.0038894506646137473,
+          "max_absolute": 0.004328200155072182,
+          "mean_absolute": 0.0003370198020364234
+        }
+      },
+      "seam_gap": {
+        "RGB": {
+          "rmse": 0.0031063805355694444,
+          "p95_absolute": 0.005903684593920155,
+          "max_absolute": 0.008753744595865143,
+          "mean_absolute": 0.0022500562393965155
+        },
+        "scalars": {
+          "rmse": 0.00020352702556087962,
+          "p95_absolute": 3.330669073875438e-17,
+          "max_absolute": 0.002210670704659523,
+          "mean_absolute": 2.6573731085414126e-05
+        }
+      }
+    },
+    "quantization_error": {
+      "rmse": 0.0018419655089235538,
+      "p95_absolute": 0.0038169028712253805,
+      "max_absolute": 0.003921556005290899,
+      "mean_absolute": 0.001214150684386731
+    },
+    "independent_F64_oracle": {
+      "rmse": 3.9564777099570995e-08,
+      "p95_absolute": 9.433502401456906e-08,
+      "max_absolute": 1.5661103991426728e-07,
+      "mean_absolute": 2.5198581681295617e-08
+    },
+    "query_counts": {
+      "surface": 10781,
+      "seam_edge": 90,
+      "seam_near": 90
+    },
+    "paired_seam_queries": 45,
+    "all_filter_footprints_in_correct_island": true,
+    "predeclared_limits": {
+      "RGB_RMSE": 0.02,
+      "RGB_p95": 0.05,
+      "RGB_max": 0.15,
+      "scalar_RMSE": 0.02,
+      "oracle_max": 2e-06,
+      "quantization_max": "1/255+1e-7"
+    },
+    "clipping_counts": [
+      0,
+      0,
+      0,
+      192440,
+      551280,
+      424747
+    ],
+    "sampled_channel_ranges": [
+      [
+        0.32996702194213867,
+        0.21572065353393555,
+        0.1943686604499817,
+        -0.0011558907572180033,
+        0.9994922280311584,
+        0.9994591474533081
+      ],
+      [
+        0.5576605796813965,
+        0.46399831771850586,
+        0.40777215361595154,
+        0.0008015971980057657,
+        1.0010548830032349,
+        1.0007632970809937
+      ]
+    ],
+    "padding": "Native quantize-then-Telea operation independently within each disjoint owned island rectangle; covered bytes unchanged; all four LOD0 filtering pixels owned by same island",
+    "reference_scope": "Covered texels exact pre-quantization F32 source samples; derived PNG padding held fixed outside coverage. Same-resolution reference is not a continuous field shader.",
+    "colour_space": "Native encoded RGB PNG with exact glTF sRGB decode for filtering; MR Non-Color G=roughness/B=metallic; alpha retained but OPAQUE material",
+    "UV_orientation": "All NPY/raster/reference arrays V-up; only PNG image rows flipped"
+  },
+  "GLB": {
+    "sha256": "e618af9fea32ce9fedb1e478ca1e0becb7eb55fc9ee4a246bcdf7105a6cf9c21",
+    "bytes": 493124,
+    "geometry": {
+      "triangles": 781,
+      "vertices_in_container": 2343,
+      "cyclic_triangle_positions_exact": true,
+      "reversed_winding_allowed": false,
+      "canonical_positions_sha256": "973f26aaf5f3df97eb4e14fe7c1270fb2cf9af70f3b487c7cd01708ca3e121ca",
+      "canonical_uv_sha256": "5030d741eafa07ba79d4e9e32e9f7434bf8d3866104531bc16bd7c605fa57a38",
+      "maximum_uv_error": 2.9802322387695312e-08
+    },
+    "maps": {
+      "base-color.png": {
+        "embedded_png_sha256": "f294c9006b286747fb76ddb2f637e02ecfb0710410acfc2db68937a741d8891d",
+        "embedded_png_bytes": 396397,
+        "decoded_RGB_sha256": "e062962685369aafe22d9cf7ac3ae1b7878fdd289c5b9f4207e5e5e37f3c8fbc",
+        "decoded_source_RGB_exact": true,
+        "alpha_encoded": {
+          "present": true,
+          "min": 0,
+          "max": 255,
+          "sha256": "c5473a028ce703cc8f9628b4a3e7b13c96150417ed23507ab40800417b0b698f",
+          "used_by_shader": false
+        },
+        "shape": [
+          1024,
+          1024,
+          4
+        ],
+        "sampler": {
+          "magFilter": 9729,
+          "minFilter": 9987,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "CPU_filter_metric": "base-level LOD0; viewer mip minification differs"
+      },
+      "MR.png": {
+        "embedded_png_sha256": "2900c8e6124ffbb992eb863e3a2a10bd337b4851b509645f9a6a266dfc8fea1e",
+        "embedded_png_bytes": 15435,
+        "decoded_RGB_sha256": "2486b216cfb1db9583983462621dcd39083f85808520ea4f1da064422b623c6b",
+        "decoded_source_RGB_exact": true,
+        "alpha_encoded": {
+          "present": false,
+          "min": null,
+          "max": null,
+          "sha256": null,
+          "used_by_shader": false
+        },
+        "shape": [
+          1024,
+          1024,
+          3
+        ],
+        "sampler": {
+          "magFilter": 9729,
+          "minFilter": 9987,
+          "wrapS": 33071,
+          "wrapT": 33071
+        },
+        "CPU_filter_metric": "base-level LOD0; viewer mip minification differs"
+      }
+    },
+    "alpha_mode": "OPAQUE",
+    "double_sided": true,
+    "no_occlusion_normal_or_emissive_maps": true,
+    "no_vertex_colours": true,
+    "standard_glTF2": true
+  },
+  "PNG_comparison_RGB8_full_frame": {
+    "MAE": 0.17803304036458334,
+    "RMSE": 0.42195311776754296,
+    "absolute_p95": 1.0,
+    "absolute_max": 2.0,
+    "exact_equal_pixel_fraction": 0.70198974609375
+  },
+  "render_settings": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 32,
+    "threads": 4,
+    "threads_mode": "FIXED",
+    "resolution": [
+      640,
+      640,
+      100
+    ],
+    "denoising": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_use_gpu": false,
+    "seed": 0,
+    "animated_seed": false,
+    "adaptive_sampling": false,
+    "bounces": [
+      2,
+      1,
+      1
+    ],
+    "view_transform": "AgX",
+    "look": "None",
+    "exposure": 2.0,
+    "gamma": 1.0,
+    "world_RGBA": [
+      0.11999999731779099,
+      0.11999999731779099,
+      0.11999999731779099,
+      1.0
+    ],
+    "world_strength": 0.5,
+    "camera": {
+      "location": [
+        0.30845463275909424,
+        0.08554953336715698,
+        -0.0691702663898468
+      ],
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "type": "ORTHO",
+      "ortho_scale": 0.06238974258303642,
+      "clip": [
+        2.888414019253105e-05,
+        0.5776827931404114
+      ],
+      "right": [
+        0,
+        1,
+        0
+      ],
+      "up": [
+        0,
+        0,
+        1
+      ]
+    },
+    "lights": [
+      {
+        "name": "Key",
+        "location": [
+          0.30845463275909424,
+          0.01333918422460556,
+          0.017482154071331024
+        ],
+        "quaternion": [
+          0.766662061214447,
+          0.42098551988601685,
+          0.23333021998405457,
+          0.42492058873176575
+        ],
+        "energy": 0.06674348562955856,
+        "size": 0.07221034914255142,
+        "color": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Fill",
+        "location": [
+          0.2506863474845886,
+          0.1722019612789154,
+          -0.040286123752593994
+        ],
+        "quaternion": [
+          0.23067080974578857,
+          0.17540186643600464,
+          0.5793130397796631,
+          0.7618540525436401
+        ],
+        "energy": 0.03337174281477928,
+        "size": 0.07221034914255142,
+        "color": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "Rim",
+        "location": [
+          0.10626564174890518,
+          0.08554953336715698,
+          0.017482154071331024
+        ],
+        "quaternion": [
+          0.6532814502716064,
+          0.27059802412986755,
+          -0.27059805393218994,
+          -0.6532814502716064
+        ],
+        "energy": 0.05005761235952377,
+        "size": 0.07221034914255142,
+        "color": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  "geometry_and_material_readback": {
+    "original_vertices_faces_winding_and_order_exact": true,
+    "original_unclamped_direct_six_channels_exact": true,
+    "covered_map_bytes_exact": true,
+    "vertices": 2343,
+    "triangles": 781,
+    "maps": {
+      "base-color.png": {
+        "sha256": "f294c9006b286747fb76ddb2f637e02ecfb0710410acfc2db68937a741d8891d",
+        "bytes": 396397,
+        "dimensions": [
+          1024,
+          1024,
+          4
+        ],
+        "covered_pixels_byte_exact": true
+      },
+      "MR.png": {
+        "sha256": "2900c8e6124ffbb992eb863e3a2a10bd337b4851b509645f9a6a266dfc8fea1e",
+        "bytes": 15435,
+        "dimensions": [
+          1024,
+          1024,
+          3
+        ],
+        "covered_pixels_byte_exact": true
+      }
+    },
+    "images": {
+      "direct": {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-seam-uv-bake-87f3755\\render-qualified\\compare\\direct.png",
+        "sha256": "d6b3971c5de8641d09a04f4f92de56f8f9411ca6ff28d833adb61a5a5775ba87",
+        "bytes": 328455,
+        "dimensions": [
+          640,
+          640
+        ]
+      },
+      "baked": {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-seam-uv-bake-87f3755\\render-qualified\\compare\\baked.png",
+        "sha256": "5f5e55c20dbb15d68e6df947dc0455d62e27d0cd55b7d19e57cc5fde4edd94a2",
+        "bytes": 330590,
+        "dimensions": [
+          640,
+          640
+        ]
+      }
+    },
+    "contact_sheet": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-seam-uv-bake-87f3755\\finish\\comparison.png",
+      "sha256": "e56f74980b3ced18ff64204cba8d290c484d4d5136c59aeffc4dfa349415a7dd",
+      "bytes": 385194,
+      "dimensions": [
+        1280,
+        722
+      ]
+    },
+    "portable_patch": {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-seam-uv-bake-87f3755\\render-qualified\\export\\patch.glb",
+      "sha256": "e618af9fea32ce9fedb1e478ca1e0becb7eb55fc9ee4a246bcdf7105a6cf9c21",
+      "bytes": 493124
+    }
+  },
+  "stages": {
+    "prepare": {
+      "classification": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 4.563000000009197,
+      "peak_process_committed_bytes": 414846976,
+      "watched_sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "minimum_sampled_available_RAM_bytes": 20666908672,
+      "minimum_sampled_destination_free_bytes": 111515959296,
+      "host_receipt_sha256": "c8073e134390b34ce13ff9d96ed7dd93ed3feb68f24afc294c84f39ccdf98073"
+    },
+    "qualify": {
+      "classification": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 3.172000000005937,
+      "peak_process_committed_bytes": 197955584,
+      "watched_sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "minimum_sampled_available_RAM_bytes": 20893786112,
+      "minimum_sampled_destination_free_bytes": 111514890240,
+      "host_receipt_sha256": "f4fa445c2fbd80129d575b0446c6cf08b3f916c00a3d24039e0ae058f679c906"
+    },
+    "bake": {
+      "classification": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 4.7810000000026776,
+      "peak_process_committed_bytes": 495276032,
+      "watched_sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "minimum_sampled_available_RAM_bytes": 20500361216,
+      "minimum_sampled_destination_free_bytes": 111438004224,
+      "host_receipt_sha256": "871ccd86fc062a8083dd2736322202c257bb96463f9414192a56a90b5185ac1e"
+    },
+    "export": {
+      "classification": "BLOCKED",
+      "returncode": 1,
+      "elapsed_seconds": 5.812999999994645,
+      "peak_process_committed_bytes": 265961472,
+      "watched_sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "minimum_sampled_available_RAM_bytes": 20711858176,
+      "minimum_sampled_destination_free_bytes": 111437889536,
+      "host_receipt_sha256": "ba0bb6e52914aafa7cba709b3ff35dc5965af722f14e386c17fc77d46c254ac2"
+    },
+    "export-qualified": {
+      "classification": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 15.639999999999418,
+      "peak_process_committed_bytes": 441303040,
+      "watched_sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "minimum_sampled_available_RAM_bytes": 20593401856,
+      "minimum_sampled_destination_free_bytes": 111434543104,
+      "host_receipt_sha256": "9928d39ec2b0bf3947fadb6bb215d44d6dbe2a0debf6e2c47b4e1461166e0c65"
+    },
+    "compare-qualified": {
+      "classification": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 38.92200000000594,
+      "peak_process_committed_bytes": 978108416,
+      "watched_sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "minimum_sampled_available_RAM_bytes": 19506774016,
+      "minimum_sampled_destination_free_bytes": 111433482240,
+      "host_receipt_sha256": "f8a7e641dd66ff4db6f2e6359e5e7a39ebc9128f7b33612ff94396c4b689e295"
+    },
+    "finish": {
+      "classification": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.2819999999919673,
+      "peak_process_committed_bytes": 205856768,
+      "watched_sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "minimum_sampled_available_RAM_bytes": 20566228992,
+      "minimum_sampled_destination_free_bytes": 111432642560,
+      "host_receipt_sha256": "b8d6c9d18ac8990a0e17e4f639ca74c4942e5d715c9988c0cdff32333c1f9eb5"
+    }
+  },
+  "resource_limits": {
+    "each_process_memory_bytes": 6442450944,
+    "each_process_seconds": 180,
+    "available_RAM_floor_bytes": 12884901888,
+    "destination_free_floor_bytes": 2147483648
+  },
+  "focused_tests": {
+    "passed": 32,
+    "seconds": 0.89,
+    "log_sha256": "94434e43a1381117aac3459de2e56d927f2435f19e3249f007b3e97250f3122b"
+  },
+  "corrected_render_candidate_sources": {
+    "render_adapter.py": "cec541d12d0b91670dfcad4e28a16736f164d00bbbb6becefcb783bdc0ae6432",
+    "test_render_adapter.py": "b6ea757cca80891635c197b47108be179d62a2d7f15e29b5363852984b536a09",
+    "run_host.py": "053a017077e693f95ed3a8dfbbf918bf858743bc26b7c87e0e2fb397c83d54c7",
+    "finish.py": "44795b71e09fc25526c05475f296716a8ab8fcc2498e6c83eb455b319ff42365"
+  },
+  "initial_export_blockage": {
+    "error": "Initial host scratch must be empty",
+    "before_GO_scene_export": true,
+    "preserved": true,
+    "bake_repeated": false,
+    "correction": "Exact live empty bpy.app.tempdir admitted only as sole immediate plain child of assigned scratch, after original exact GO; new render-qualified destinations and markers. Original historical renderer unchanged."
+  },
+  "limitations": [
+    "781-triangle patch proof only, not full-model UV qualification.",
+    "Continuous-source holdout metrics and same-resolution F32-atlas versus GLB renders establish different evidence; reference render is not a continuous field shader.",
+    "Four-pixel gutters qualify the tested LOD0 linear footprints; arbitrary mip-level bleed and other viewers remain unqualified.",
+    "Original alpha is retained in F32/RGBA and embedded GLB base map, but shader is intentionally OPAQUE.",
+    "CPU source-equivalent sparse sampling is qualified here; GPU bitwise parity is not established.",
+    "Original openings/non-manifold geometry are preserved; no geometry quality improvement or repair claimed."
+  ]
+}

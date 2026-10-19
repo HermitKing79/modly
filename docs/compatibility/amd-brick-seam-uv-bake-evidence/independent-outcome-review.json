@@ -1,0 +1,224 @@
+{
+  "schema": "modly.amd.brick-seam-uv-bake-independent-outcome-review.v1",
+  "created_utc": "2026-10-19T13:28:27.007140+00:00",
+  "classification": "PASS_SMALL_PATCH_PROOF_WITH_RECORDED_LIMITS",
+  "base": "87f375585ad7ae5538856f9451c3233746e8fc77",
+  "branch": "codex/amd-brick-seam-uv-bake",
+  "independent_review": true,
+  "source_safe_only": true,
+  "issues": [],
+  "review_method": [
+    "Read frozen execution sources, prior independent gate receipts, actual phase/host receipts, final report and preservation receipt.",
+    "Parsed final 493124-byte GLB independently with Python struct/JSON and NumPy accessors, without Blender or historical GLB parser; compared cyclic oriented triangle positions and UVs against saved authenticated bake arrays.",
+    "Compared both embedded PNG byte payloads directly to saved bake maps, decoded with PIL, and checked core glTF material/texture/sampler bindings.",
+    "Reopened all three actual PNGs with PIL, independently recomputed full-frame image errors and proved both contact-sheet panels are byte-exact source images; visually inspected comparison sheet and both individual renders.",
+    "Bound current execution-source and phase-receipt hashes to the reviewed candidate chain. Readback only; no sampler, bake, Blender, original-asset numerical processing, GPU, WSL, model, or package execution."
+  ],
+  "qualified_patch": {
+    "original_vertices": 457,
+    "original_triangles": 781,
+    "UV_corners": 2343,
+    "UV_islands": 4,
+    "atlas_dimensions": [
+      1024,
+      1024
+    ],
+    "covered_texels": 586848,
+    "minimum_face_covered_texels": 74,
+    "original_face_overlap_witness": [
+      3809836,
+      3809838
+    ],
+    "old_planar_overlap_area": 0.00012292821691067823,
+    "qualified_uv_receipt_sha256": "86d0c01d54966df891b1ebe027c4bcdbcbc976a3e22bd4411f341e1bc8bd7229"
+  },
+  "numeric_bake": {
+    "review_sha256": "c5ad4859c3639910a86a627fb444655c44186ffd43996f9756c20399c7f769be",
+    "actual_genuine_spatial_bakes": 1,
+    "surface_encoded_RGB_RMSE": 0.0021709091833373843,
+    "surface_RGB_p95": 0.0034433131379561,
+    "surface_RGB_max": 0.0057216937190928685,
+    "cross_seam_encoded_RGB_RMSE": 0.0031063805355694444,
+    "cross_seam_RGB_max": 0.008753744595865143,
+    "surface_scalar_RMSE": 0.0012717735190329214,
+    "quantization_max": 0.003921556005290899,
+    "independent_F64_oracle_max": 1.5661103991426728e-07,
+    "unsupported_source_queries": 0,
+    "predeclared_thresholds_unchanged": true,
+    "raw_six_channel_F32_retained": true
+  },
+  "independent_GLB_readback": {
+    "sha256": "e618af9fea32ce9fedb1e478ca1e0becb7eb55fc9ee4a246bcdf7105a6cf9c21",
+    "bytes": 493124,
+    "core_glTF2": true,
+    "triangles": 781,
+    "vertices_in_container": 2343,
+    "exact_oriented_triangle_positions": true,
+    "reversed_winding_allowed": false,
+    "maximum_UV_error": 2.9802322387695312e-08,
+    "single_identity_mesh_node": true,
+    "embedded_base_PNG_bytes_exact": true,
+    "embedded_MR_PNG_bytes_exact": true,
+    "base_map_mode": "RGBA",
+    "MR_map_mode": "RGB",
+    "base_map_sha256": "f294c9006b286747fb76ddb2f637e02ecfb0710410acfc2db68937a741d8891d",
+    "MR_map_sha256": "2900c8e6124ffbb992eb863e3a2a10bd337b4851b509645f9a6a266dfc8fea1e",
+    "alpha_mode": "OPAQUE",
+    "double_sided": true,
+    "material_factors_default_one": true,
+    "no_AO_normal_emission_or_vertex_colours": true,
+    "samplers": {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 33071,
+      "wrapT": 33071
+    }
+  },
+  "fresh_import_and_comparison": {
+    "actual_fresh_Blender_import_receipt_PASS": true,
+    "imported_geometry_material_and_embedded_maps_readback_PASS": true,
+    "settings_identical": true,
+    "settings": {
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 32,
+      "threads": 4,
+      "resolution": [
+        640,
+        640
+      ],
+      "exposure": 2.0,
+      "view_transform": "AgX",
+      "look": "None",
+      "denoiser": "OPENIMAGEDENOISE",
+      "denoising_use_gpu": false
+    },
+    "RGB8_full_frame": {
+      "MAE": 0.17803304036458334,
+      "RMSE": 0.42195311776754296,
+      "absolute_p95": 1.0,
+      "absolute_max": 2.0,
+      "exact_equal_pixel_fraction": 0.70198974609375
+    },
+    "source_files_before_after_equal": true,
+    "images": {
+      "direct": {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-seam-uv-bake-87f3755\\render-qualified\\compare\\direct.png",
+        "sha256": "d6b3971c5de8641d09a04f4f92de56f8f9411ca6ff28d833adb61a5a5775ba87",
+        "bytes": 328455,
+        "dimensions": [
+          640,
+          640
+        ]
+      },
+      "baked": {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-brick-seam-uv-bake-87f3755\\render-qualified\\compare\\baked.png",
+        "sha256": "5f5e55c20dbb15d68e6df947dc0455d62e27d0cd55b7d19e57cc5fde4edd94a2",
+        "bytes": 330590,
+        "dimensions": [
+          640,
+          640
+        ]
+      }
+    },
+    "comparison": {
+      "sha256": "e56f74980b3ced18ff64204cba8d290c484d4d5136c59aeffc4dfa349415a7dd",
+      "bytes": 385194,
+      "dimensions": [
+        1280,
+        722
+      ],
+      "panels_byte_exact": true
+    },
+    "visual_observation": "Both views show the same muted brown mottling, openings and irregular patch boundaries. No obvious added UV seam or lost visible feature appears in this view. Both retain soft, low-frequency source appearance; no detail-recovery or photographic-fidelity claim."
+  },
+  "resources": {
+    "limits": {
+      "each_process_memory_bytes": 6442450944,
+      "each_process_seconds": 180,
+      "available_RAM_floor_bytes": 12884901888,
+      "destination_free_floor_bytes": 2147483648
+    },
+    "minimum_sampled_available_RAM_bytes": 19506774016,
+    "maximum_peak_process_committed_bytes": 978108416,
+    "successful_host_elapsed_seconds": {
+      "prepare": 4.563000000009197,
+      "qualify": 3.172000000005937,
+      "bake": 4.7810000000026776,
+      "export-qualified": 15.639999999999418,
+      "compare-qualified": 38.92200000000594,
+      "finish": 1.2819999999919673
+    },
+    "all_stage_host_receipt_hashes_match": true,
+    "all_stages_natural_empty_unforced_Job": true,
+    "stopped_initial_export": {
+      "preserved": true,
+      "host_elapsed_seconds": 5.812999999994645,
+      "peak_process_committed_bytes": 265961472,
+      "returncode": 1,
+      "before_GO_scene_export": true,
+      "startup_only_correction_reviewed": true,
+      "bake_not_repeated": true
+    }
+  },
+  "preservation_review": {
+    "receipt_sha256": "2faf1f2c0d85f0ab6c9db90af740dee406bdb0b129388d1c0b811234e1658b61",
+    "receipt_classification": "PASS_WITH_RECORDED_SCOPE",
+    "all400_and_protected100_fresh_hashes_match_before_per_receipt": true,
+    "environment_checks": 42,
+    "edit_backup_checks": 13,
+    "original_cache_trees": 4,
+    "original_cache_files": 20,
+    "historical_evidence_trees": 24,
+    "historical_files": 582,
+    "historical_reports": 10,
+    "issues": [],
+    "scope": "Reviewed and bound the independent preservation receipt; did not duplicate its 1062-file audit. Three old disposable copies are explicitly stat-only; checkpoint weight payloads were not read. Git/remote publication remains the root agent responsibility."
+  },
+  "report_review": {
+    "path": "docs/compatibility/amd-brick-seam-uv-bake.md",
+    "sha256": "a05ffb7e5bdc29ebc2da6c7f854bac479d2d4592942a1599dcd5b0b963acce24",
+    "claims_match_actual_measurements": true,
+    "small_patch_and_reference_resolution_limits_explicit": true,
+    "private_new_artifact_scope_accurate": true
+  },
+  "current_execution_sources_sha256": {
+    "common.py": "e239c7e031bfa5a072d0c02b4804d96b73ed8ca7dc55145be46882ca0b02e96b",
+    "prepare.py": "a10fadce8d7649639bf716da76d623de89a7efe3a4e30dddce5aa92852ef8289",
+    "qualify.py": "8d3c3fe7a37f4228d646fcf712173fdc9b08b9620a89023be16742042d8be8fb",
+    "uv_layout.py": "faf43221c182ea0a473423bfdfb1ff90a8fd8b17650b6cbab9d9a325ca5dfaa7",
+    "bake.py": "3adb705ef76960ca619af6a41d9ffb45ea1efe9abde9cadf43409d491fe4ad75",
+    "bake_math.py": "9062a554dbe2b0b9aef1ee08ea81c85513559681587e0d5909a33536e5186084",
+    "run_host.py": "053a017077e693f95ed3a8dfbbf918bf858743bc26b7c87e0e2fb397c83d54c7",
+    "render_adapter.py": "cec541d12d0b91670dfcad4e28a16736f164d00bbbb6becefcb783bdc0ae6432",
+    "finish.py": "44795b71e09fc25526c05475f296716a8ab8fcc2498e6c83eb455b319ff42365"
+  },
+  "review_chain_sha256": {
+    "independent-uv-review.json": "7d9d07b31d015e79fb8128c00ddcd6f2718d0ea042acf21e5e27947b466c15a6",
+    "independent-bake-candidate-review.json": "c7a77cd25ad5a69dde4ed11ab5a9d964f74d6be479042cb25455503f96db2ffc",
+    "independent-bake-outcome-review.json": "c5ad4859c3639910a86a627fb444655c44186ffd43996f9756c20399c7f769be",
+    "independent-render-startup-review.json": "7b73679efc47d7da8964505678bcd6d7161adaa312e5b5d81465b21723e1ed7f"
+  },
+  "phase_receipts_sha256": {
+    "prepare": "b527aee6a88c08f34b32dac755bddadba2f22fc6c32430ef39a134444e788c63",
+    "UV": "86d0c01d54966df891b1ebe027c4bcdbcbc976a3e22bd4411f341e1bc8bd7229",
+    "bake": "7f06d75e55c0435bea68539b4b7d10194f0677486839d0cc7960d193a325e481",
+    "export": "c524ba00feb9b8f7c0a8068fbbaa8af047f90cee5056fc93e679aaa57da9416a",
+    "compare": "f14604156a349ca3b2d609947c00b497429a4dcdf5cfd4c3d0b7567bf1a47cd4",
+    "finish": "a16339b1beee65fcf531382f7ce2f6d8a37464afd491e9b57dbf69dce5d4b667"
+  },
+  "execution_summary_sha256": "73ab4c547da11adaa8c89ddea44af5e6b463516e2a0aa8e95a31d5200e080192",
+  "focused_tests": {
+    "reported_passed": 32,
+    "log_sha256": "94434e43a1381117aac3459de2e56d927f2435f19e3249f007b3e97250f3122b",
+    "independently_rerun_this_outcome_review": false
+  },
+  "limitations": [
+    "Only this unchanged 781-triangle patch is qualified; no full-model bake, geometry repair, foliage qualification or larger UV packing claim.",
+    "Reference render is a same-resolution source-spatial F32 atlas with fixed derived padding, not a continuous-field shader. Saved continuous-surface and seam holdouts are separate evidence for atlas approximation.",
+    "LOD0 bilinear footprints and tested Blender import/render are qualified. Four-pixel gutters do not certify arbitrary mip-level minification or other viewers.",
+    "RGB uses glTF sRGB decoding rather than the historical direct-row pow2.2 preview. Original source-spatial sampling and row preview must not be conflated.",
+    "RGBA alpha and raw out-of-range F32 values are retained; preview material is OPAQUE and derived PNG/shader clipping is intentional.",
+    "CPU semantic sampling is qualified, not GPU FMA/bitwise parity; visual similarity is bounded to this presentation and is not photographic fidelity."
+  ]
+}

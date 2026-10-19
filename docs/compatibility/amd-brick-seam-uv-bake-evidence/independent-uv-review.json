@@ -1,0 +1,67 @@
+{
+  "schema": "modly.amd.brick-seam-uv-independent-UV-review.v1",
+  "created_utc": "2026-10-19T13:04:57.672992+00:00",
+  "classification": "GO",
+  "scope": "UV qualification only; separate bake-source review remains required. No source-spatial sampler, Blender, GPU, model, WSL or checkpoint execution by reviewer.",
+  "qualified_uv_receipt_sha256": "86d0c01d54966df891b1ebe027c4bcdbcbc976a3e22bd4411f341e1bc8bd7229",
+  "prepare_receipt_sha256": "b527aee6a88c08f34b32dac755bddadba2f22fc6c32430ef39a134444e788c63",
+  "verified": {
+    "all6_prepare_and11_UV_artifact_full_hashes_match": true,
+    "all781_oriented_original_triangles_source_IDs_positions_winding_and_multiplicity_preserved": true,
+    "457_original_vertices_duplicated_into2343_UV_corners_without_welding_or_geometry_changes": true,
+    "all6_direct_material_channels_bitwise_preserved_through_corner_splits": true,
+    "read_only_original_vertex_and_face_subset_lookup_matches_every_corner": true,
+    "old_planar_overlap_independently_reproduced": true,
+    "newUV_all_analytic_bbox_pairs_independently_checked": true,
+    "no_positive_area_overlap_above1e_12_UV_square": true,
+    "all4_integer_island_rectangles_disjoint_with4pixel_gutters": true,
+    "full_1024_texel_center_raster_face_assignments_independently_reconstructed": true,
+    "all781_faces_have_positive_coverage_and_barycentrics_match": true,
+    "actual_F32_UV_3D_tangent_density_independently_checked": true,
+    "both_owned_CPU_jobs_exit0_natural_empty_and_resource_floors_pass": true
+  },
+  "measurements": {
+    "triangles": 781,
+    "original_vertices": 457,
+    "UV_corners": 2343,
+    "islands": 4,
+    "texture_size": [
+      1024,
+      1024
+    ],
+    "old_overlap_original_face_ids": [
+      3809836,
+      3809838
+    ],
+    "old_overlap_normalized_area": 0.00012292821691067823,
+    "newUV_analytic_bbox_pairs_checked": 2716,
+    "minimum_reserved_gutter_pixels": 4.0,
+    "minimum_content_box_separation_pixels": 8,
+    "covered_texels": 586848,
+    "minimum_face_covered_texels": 74,
+    "minimum_triangle_area_texels": 75.14745861260235,
+    "minimum_triangle_altitude_texels": 5.068760995666971,
+    "minimum_actual_3D_tangent_density_texels_per_world_unit": 19333.075801797917,
+    "maximum_independent_barycentric_absolute_error": 2.9802256995559162e-08,
+    "review_seconds": 0.5629999999946449
+  },
+  "source_SHA256": {
+    "common.py": "e239c7e031bfa5a072d0c02b4804d96b73ed8ca7dc55145be46882ca0b02e96b",
+    "prepare.py": "a10fadce8d7649639bf716da76d623de89a7efe3a4e30dddce5aa92852ef8289",
+    "qualify.py": "8d3c3fe7a37f4228d646fcf712173fdc9b08b9620a89023be16742042d8be8fb",
+    "uv_layout.py": "faf43221c182ea0a473423bfdfb1ff90a8fd8b17650b6cbab9d9a325ca5dfaa7"
+  },
+  "tests": {
+    "root_synthetic_CPU_tests_passed": 22,
+    "UV_tests": 15,
+    "renderer_adapter_tests": 7,
+    "actual_texture_bake_PASS": false
+  },
+  "limitations": [
+    "This establishes an atlas on the deterministic replayed patch; the earlier failed run did not save an ID list for direct historical subset comparison.",
+    "Four-pixel gutters qualify isolated base-level linear footprints only; they do not certify arbitrary mip levels or all-viewer minification.",
+    "Bake code must pad each island within its own rectangle and verify seam cohorts, continuous-source error and unsupported samples under unchanged thresholds.",
+    "Texture fidelity, source-F32 versus portable-GLB presentation, visual brick/foliage exclusion and final asset portability remain unqualified until their actual stages and independent reviews."
+  ],
+  "blockers": []
+}

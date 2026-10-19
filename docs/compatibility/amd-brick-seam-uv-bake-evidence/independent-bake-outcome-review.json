@@ -1,0 +1,151 @@
+{
+  "schema": "modly.amd.brick-seam-uv-independent-bake-outcome-review.v1",
+  "created_utc": "2026-10-19T13:18:44.511567+00:00",
+  "classification": "PASS_NUMERIC_BAKE_TRANSFER",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "base": "87f375585ad7ae5538856f9451c3233746e8fc77",
+  "qualified_uv_receipt_sha256": "86d0c01d54966df891b1ebe027c4bcdbcbc976a3e22bd4411f341e1bc8bd7229",
+  "bake_receipt_sha256": "7f06d75e55c0435bea68539b4b7d10194f0677486839d0cc7960d193a325e481",
+  "bake_host_receipt_sha256": "871ccd86fc062a8083dd2736322202c257bb96463f9414192a56a90b5185ac1e",
+  "scope": "Independent full-hash/NPY/PNG readback and numerical transfer verification on immutable saved outputs. No original field sampler, original bake, exporter, Blender, model, GPU or WSL execution by reviewer.",
+  "independently_verified": {
+    "all20_artifact_hashes_and_sizes_match": true,
+    "all8_geometry_UV_original_ID_and_direct_row_files_byte_identical_to_UV_stage": true,
+    "all586848_covered_PNG_pixels_exact_native_F32_quantization_packing": true,
+    "all6_raw_source_F32_channels_bit_exact_in_covered_reference": true,
+    "all_uncovered_owned_reference_values_equal_fixed_derived_PNG_padding": true,
+    "all_unowned_reference_values_zero": true,
+    "all10961_actual_PNG_linear_light_filtered_queries_match_saved_baked_values": true,
+    "every_actual_query_filter_footprint_owned_by_expected_island": true,
+    "all45_paired_source_world_points_and_continuous_values_identical": true,
+    "surface_seam_edge_seam_near_and_seam_gap_metrics_recomputed": true,
+    "quantization_errors_and_all6_channel_clipping_counts_ranges_recomputed": true
+  },
+  "metrics": {
+    "surface_RGB": {
+      "rmse": 0.0021709091833373843,
+      "p95_absolute": 0.0034433131379561,
+      "max_absolute": 0.0057216937190928685,
+      "mean_absolute": 0.001960208585362695
+    },
+    "seam_edge_RGB": {
+      "rmse": 0.00226060797445621,
+      "p95_absolute": 0.003546337987862358,
+      "max_absolute": 0.007810983820631723,
+      "mean_absolute": 0.0018637208900203423
+    },
+    "seam_near_RGB": {
+      "rmse": 0.002215713373240895,
+      "p95_absolute": 0.003365873819600157,
+      "max_absolute": 0.007658801103663793,
+      "mean_absolute": 0.00184731267958508
+    },
+    "seam_gap_RGB": {
+      "rmse": 0.0031063805355694444,
+      "p95_absolute": 0.005903684593920155,
+      "max_absolute": 0.008753744595865143,
+      "mean_absolute": 0.0022500562393965155
+    },
+    "scalar_errors": {
+      "surface": {
+        "rmse": 0.0012717735190329214,
+        "p95_absolute": 0.0038489096019620585,
+        "max_absolute": 0.0052122981287238135,
+        "mean_absolute": 0.0004615710333618047
+      },
+      "seam_edge": {
+        "rmse": 0.0011056711426091904,
+        "p95_absolute": 0.0038883122158985374,
+        "max_absolute": 0.004674462950845504,
+        "mean_absolute": 0.00033447220719504144
+      },
+      "seam_near": {
+        "rmse": 0.001110057341363145,
+        "p95_absolute": 0.0038894506646137473,
+        "max_absolute": 0.004328200155072182,
+        "mean_absolute": 0.0003370198020364234
+      },
+      "seam_gap": {
+        "rmse": 0.00020352702556087962,
+        "p95_absolute": 3.330669073875438e-17,
+        "max_absolute": 0.002210670704659523,
+        "mean_absolute": 2.6573731085414126e-05
+      }
+    },
+    "quantization_error_against_clipped_source": {
+      "rmse": 0.0018419655089235538,
+      "p95_absolute": 0.0038169028712253805,
+      "max_absolute": 0.003921556005290899,
+      "mean_absolute": 0.001214150684386731
+    },
+    "query_counts": {
+      "surface": 10781,
+      "seam_edge": 90,
+      "seam_near": 90
+    },
+    "paired_seam_queries": 45,
+    "clipping_counts_RGB_metal_rough_alpha": [
+      0,
+      0,
+      0,
+      192440,
+      551280,
+      424747
+    ],
+    "sampled_channel_ranges": [
+      [
+        0.32996702194213867,
+        0.21572065353393555,
+        0.1943686604499817,
+        -0.0011558907572180033,
+        0.9994922280311584,
+        0.9994591474533081
+      ],
+      [
+        0.5576605796813965,
+        0.46399831771850586,
+        0.40777215361595154,
+        0.0008015971980057657,
+        1.0010548830032349,
+        1.0007632970809937
+      ]
+    ],
+    "unsupported_queries_reported_by_owned_worker": 0
+  },
+  "source_oracle": {
+    "owned_worker_reported_independent_F64_error": {
+      "rmse": 3.9564777099570995e-08,
+      "p95_absolute": 9.433502401456906e-08,
+      "max_absolute": 1.5661103991426728e-07,
+      "mean_absolute": 2.5198581681295617e-08
+    },
+    "original_coordinate_rows": 222,
+    "passes_2e_6_limit": true,
+    "reviewer_reexecuted_source_sampler_or_oracle": false
+  },
+  "resource_outcome": {
+    "worker_seconds": 4.047000000005937,
+    "host_seconds": 4.7810000000026776,
+    "peak_process_committed_bytes": 495276032,
+    "owned_Job_exit0_naturally_empty_unforced": true,
+    "attached_before_GO": true,
+    "all_initial_and_live12GiB_RAM2GiB_disk_samples_admitted": true,
+    "memory_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "watched_sources_unchanged": true,
+    "original_input_before_after_identities_match_reported_by_owned_worker": true
+  },
+  "remaining_qualification": [
+    "Initial Blender export stopped in private_output before GO/mesh/GLB work; no portable asset or comparison render qualified yet.",
+    "Any startup-only correction needs separate review and fresh preserved output paths; no new bake is required or admitted here.",
+    "Same-atlas F32 reference renders, actual GLB import/metadata, visual seams and final source preservation still need outcome review."
+  ],
+  "limits": [
+    "Numeric transfer passes the frozen LOD0 thresholds; it does not establish arbitrary mipmap/viewer behavior.",
+    "The F32 reference preserves real source-covered samples while sharing derived byte padding; it is not a continuous-field shader.",
+    "Native GPU bitwise parity is unqualified.",
+    "No visual texture-detail or final portable-asset PASS is claimed by this receipt."
+  ],
+  "review_blockers": [],
+  "conclusion": "Actual genuine CPU atlas transfer and saved-file numerical metrics pass independent readback. Export/render/final preservation remain separate pending qualifications."
+}

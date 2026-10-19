@@ -1,0 +1,96 @@
+{
+  "schema": "modly.amd.brick-seam-uv-independent-bake-candidate-review.v1",
+  "created_utc": "2026-10-19T13:11:27.469430+00:00",
+  "classification": "GO",
+  "scope": "Preexecution source review for one bounded genuine CPU bake and conditionally admitted export/fresh-import comparison. Actual bake and rendering outcomes are not claimed; finish/composition code is outside this admission.",
+  "reviewer": "independent brick_pbr_preview_review subagent",
+  "base": "87f375585ad7ae5538856f9451c3233746e8fc77",
+  "branch": "codex/amd-brick-seam-uv-bake",
+  "execution_source_SHA256": {
+    "bake.py": "3adb705ef76960ca619af6a41d9ffb45ea1efe9abde9cadf43409d491fe4ad75",
+    "bake_math.py": "9062a554dbe2b0b9aef1ee08ea81c85513559681587e0d5909a33536e5186084",
+    "common.py": "e239c7e031bfa5a072d0c02b4804d96b73ed8ca7dc55145be46882ca0b02e96b",
+    "run_host.py": "e6486e7209ee33b2d609532709bc7400452aee883b82a7e676ff7efdaade4aed",
+    "render_adapter.py": "d14e113c782eb638c34d9fc360827ef4c7966497c67d2da41e3fe071b0f68d32"
+  },
+  "qualified_uv_receipt_sha256": "86d0c01d54966df891b1ebe027c4bcdbcbc976a3e22bd4411f341e1bc8bd7229",
+  "independent_uv_review_SHA256": "7d9d07b31d015e79fb8128c00ddcd6f2718d0ea042acf21e5e27947b466c15a6",
+  "reviewed_controls": {
+    "exact_UV_GO_receipt_and_all_prepared_artifact_hashes_gate_bake": true,
+    "all_original_source_coordinate_rows_and_oriented_triangles_reauthenticated": true,
+    "pinned_native_F32_sparse_8neighbour_sampler_no_full_model_or_GPU_execution": true,
+    "all_covered_and_surface_seam_queries_reject_zero_support": true,
+    "each_island_rectangle_padded_independently_with_pinned_byte_first_Telea": true,
+    "covered_raw_F32_bits_and_packed_native_bytes_preserved": true,
+    "RGBA_MR_PNGs_persisted_and_exactly_reopened_before_metrics": true,
+    "all4_linear_filter_texels_required_to_have_the_same_expected_island_owner": true,
+    "all_face_centroids_plus10000_area_weighted_surface_queries": true,
+    "every_cross_island_shared_original_edge_pair_including_nonmanifold_pairs_tested": true,
+    "edge_near_edge_and_seam_gap_cohorts_gated_separately_under_unchanged_thresholds": true,
+    "exact_sRGB_decode_filter_reencode_and_linear_scalar_semantics": true,
+    "quantization_error_against_clipped_source_values_and_raw_clipping_counts_retained": true,
+    "independent64query_F64_oracle_from_original_coordinate_triples_not_sampler_keys": true,
+    "explicit_manifest_excludes_mutable_stdout_stderr_and_scratch": true,
+    "full_original_input_identity_checks_before_after": true,
+    "F32_reference_exact_covered_source_values_with_common_derived_byte_padding": true,
+    "F32_reference_RGB_decoded_once_to_float_NonColor_images_opaque_MR_linear": true,
+    "pinned_GLTF_parser_export_and_fresh_import_geometry_UV_map_material_checks_retained": true,
+    "both_views_use_same_CPU_EV2_geometry_camera_lights_and_render_settings": true,
+    "reference_receipts_explicitly_same_resolution_atlas_not_continuous_field_shader": true
+  },
+  "bounded_actual_UV_interface_check": {
+    "material_sampling_or_bake_performed": false,
+    "surface_queries": 10781,
+    "seam_edge_queries": 90,
+    "seam_near_queries": 90,
+    "paired_edge_queries": 45,
+    "total_queries": 10961,
+    "below65536_query_cap": true,
+    "every_seam_filter_footprint_owned": true,
+    "paired_source_edge_world_positions_F32_identical": true
+  },
+  "predeclared_quality_limits": {
+    "RGB_RMSE": 0.02,
+    "RGB_absolute_p95": 0.05,
+    "RGB_absolute_max": 0.15,
+    "scalar_RMSE": 0.02,
+    "independent_F64_max": 2e-06,
+    "quantization_max": "<1/255+1e-7",
+    "unsupported_queries": 0,
+    "texture_resolution": [
+      1024,
+      1024
+    ]
+  },
+  "resource_policy": {
+    "each_stage_memory_cap_bytes": 6442450944,
+    "each_stage_deadline_seconds": 180,
+    "initial_and_live_available_RAM_floor_bytes": 12884901888,
+    "initial_and_live_disk_floor_bytes": 2147483648,
+    "owned_Job_attached_before_GO": true,
+    "fresh_initial_and_final_host_admission_required": true,
+    "CPU_threads": 4,
+    "Cycles_samples": 32,
+    "render_resolution": [
+      640,
+      640
+    ],
+    "denoising_GPU": false,
+    "fresh_exclusive_outputs_no_stage_retry": true,
+    "bake_marker_absent_at_review_creation": true
+  },
+  "tests": {
+    "root_focused_synthetic_CPU_passes": 27,
+    "seconds": 0.837,
+    "fixture_log_SHA256": "91dcdc0f3ba1139e7a345892c40cc790d7a609c921f8e4d8afe9a96c36d5a1b4",
+    "reviewer_additional_check": "Read-only seam-query/UV-footprint interface on qualified derived arrays; no original field sampler or Blender execution."
+  },
+  "limitations": [
+    "GO admits an attempt, not a bake fidelity/visual or portable-asset PASS.",
+    "Continuous-source holdouts qualify finite-resolution atlas transfer; F32-atlas versus GLB renders isolate covered-texel quantization/transport with common derived padding.",
+    "Four-pixel gutters and ownership checks cover the LOD0 linear path, not arbitrary mip levels or every external viewer.",
+    "Native GPU bitwise parity, original scene lighting equivalence and full-model portability remain unqualified.",
+    "Actual source patch appearance, seams, clipping, assets and source preservation need independent outcome review."
+  ],
+  "blockers": []
+}
