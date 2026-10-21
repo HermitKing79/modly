@@ -1,0 +1,19 @@
+{
+  "schema": "modly.amd.portable-pbr-foliage-independent-publication-review.v1",
+  "created_utc": "2026-10-21T09:25:47.583736+00:00",
+  "classification": "PASS",
+  "final_report_SHA256": "f42f027f4683b09f2fa6bd75f2a8dcb138131ce3b2d9972168e4d18b72e53f2f",
+  "prior_report_review_SHA256": "a1f237ec0dcc48260b1a992123107faa822f42b280158f976fd96d73331e14f4",
+  "prior_reviewed_report_SHA256": "92660575163ca67d0d4004ce08428e89bea8b992f8ecaa770e75da89f5dfdf61",
+  "added_paragraph_SHA256": "6ea4998304fab91e32dfbf47f6ac193d621d1de705ec724878ce96fb56cdbf5e",
+  "preservation_reconciled_SHA256": "be56a7c558fb36556b155ccff1cc3fdeb2be1a4f781cf356f1459954923876af",
+  "scope": "Only the final preservation paragraph added before the unchanged stop line was reviewed. Removing that paragraph reproduces the previous independently reviewed report byte hash exactly.",
+  "verified": {
+    "no_other_report_changes": true,
+    "scope_counts100_30_828_13_match_reconciled_receipt": true,
+    "root_premove_ledger_distinguished_from_independent_postmove_hash_verification": true,
+    "three_disposable_stat_only_checks_and_not_whole_install_audit_disclosed": true,
+    "initial_FAILED_audit_not_relabelled": true
+  },
+  "blockers": []
+}

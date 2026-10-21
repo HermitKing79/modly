@@ -1,0 +1,567 @@
+{
+  "base": "ecb15aa0a2855b9c4f9d3a45aea4192cd92a3900",
+  "decisions": {
+    "brick_import": "PASS",
+    "foliage_transfer": "BLOCKED"
+  },
+  "brick": {
+    "Blender_version": "5.2.1 LTS",
+    "GLB": {
+      "sha256": "dc772cd55fc523c5427ab4771da27e62cd6905d5109f00b2fca47403704da857",
+      "bytes": 638700,
+      "geometry": {
+        "triangles": 781,
+        "vertices_in_container": 2343,
+        "cyclic_triangle_positions_exact": true,
+        "reversed_winding_allowed": false,
+        "canonical_positions_sha256": "973f26aaf5f3df97eb4e14fe7c1270fb2cf9af70f3b487c7cd01708ca3e121ca",
+        "canonical_uv_sha256": "abaaae028999fc10951202b870b48175c80dd8cf0cc979d46420c2bed84e7a05",
+        "maximum_uv_error": 2.9802322387695312e-08
+      },
+      "maps": {
+        "base-color.png": {
+          "embedded_png_sha256": "0048a6342df959735cb4687dc22c9a1c4f013459bb5ffb93d94d4ed0080652ad",
+          "embedded_png_bytes": 540248,
+          "decoded_RGB_sha256": "631d57558b89b862f57cc2ac009c0fc8aa3d90adcabdc4e98e3624ac2fd8fd98",
+          "decoded_source_RGB_exact": true,
+          "alpha_encoded": {
+            "present": true,
+            "min": 0,
+            "max": 255,
+            "sha256": "14bd16814c88bdefbe2932afbbe2a53868cc69258ed342a2a9bb5d4d97b785e4",
+            "used_by_shader": false
+          },
+          "shape": [
+            1024,
+            1024,
+            4
+          ],
+          "sampler": {
+            "magFilter": 9729,
+            "minFilter": 9987,
+            "wrapS": 33071,
+            "wrapT": 33071
+          },
+          "full_encoded_PNG_bytes_exact": true,
+          "all_decoded_channels_exact": true,
+          "decoded_all_channels_sha256": "81dd5efa7e69d4b3e84ad9619d09c0b3eb45eeade92e27d8f1d95b37a7cc5aef"
+        },
+        "MR.png": {
+          "embedded_png_sha256": "307f5a0c17c974c4fadeac0a2ae16c00bcd0368a666c92313a943282cf05314f",
+          "embedded_png_bytes": 17162,
+          "decoded_RGB_sha256": "12341f4deda2f4c4a246131afe94bf5303d8987d901efd276047e8ed18d718f6",
+          "decoded_source_RGB_exact": true,
+          "alpha_encoded": {
+            "present": false,
+            "min": null,
+            "max": null,
+            "sha256": null,
+            "used_by_shader": false
+          },
+          "shape": [
+            1024,
+            1024,
+            3
+          ],
+          "sampler": {
+            "magFilter": 9729,
+            "minFilter": 9987,
+            "wrapS": 33071,
+            "wrapT": 33071
+          },
+          "full_encoded_PNG_bytes_exact": true,
+          "all_decoded_channels_exact": true,
+          "decoded_all_channels_sha256": "12341f4deda2f4c4a246131afe94bf5303d8987d901efd276047e8ed18d718f6"
+        }
+      },
+      "alpha_mode": "OPAQUE",
+      "double_sided": true,
+      "no_occlusion_normal_or_emissive_maps": true,
+      "no_vertex_colours": true,
+      "standard_glTF2": true,
+      "glTF_sampler_metadata": {
+        "magFilter": 9729,
+        "minFilter": 9987,
+        "wrapS": 33071,
+        "wrapT": 33071
+      },
+      "filtering_scope": "glTF requests LINEAR magnification, LINEAR_MIPMAP_LINEAR minification and CLAMP_TO_EDGE. Actual Blender image-node settings are recorded separately. Cycles filtering is not established as equivalent to the earlier F64 2x2-box mip experiment or a portable viewer's filtering.",
+      "MR_packing": {
+        "red": "unused; no occlusion texture",
+        "green": "roughness",
+        "blue": "metallic"
+      },
+      "embedded_base_alpha_preserved": true,
+      "shader_alpha": "opaque 1"
+    },
+    "imported_geometry": {
+      "triangles": 781,
+      "vertices_in_container": 2343,
+      "cyclic_triangle_positions_exact": true,
+      "reversed_winding_allowed": false,
+      "canonical_positions_sha256": "973f26aaf5f3df97eb4e14fe7c1270fb2cf9af70f3b487c7cd01708ca3e121ca",
+      "canonical_uv_sha256": "abaaae028999fc10951202b870b48175c80dd8cf0cc979d46420c2bed84e7a05",
+      "maximum_uv_error": 2.9802322387695312e-08,
+      "UV_domain": "CORNER",
+      "oriented_triangle_position_bits_exact": true,
+      "cyclic_rotation_allowed": true,
+      "signed_zero_normalized": false,
+      "canonical_position_bits_sha256": "78bafd9917172247607ec2e4280f85397a99c34b8ec8ab34a0663c3ef0096d56"
+    },
+    "imported_material": {
+      "maps": {
+        "base-color.png": {
+          "packed_png_sha256": "0048a6342df959735cb4687dc22c9a1c4f013459bb5ffb93d94d4ed0080652ad",
+          "packed_png_bytes": 540248,
+          "decoded_RGB_sha256": "631d57558b89b862f57cc2ac009c0fc8aa3d90adcabdc4e98e3624ac2fd8fd98",
+          "source_RGB_pixels_exact": true,
+          "Blender_pixels_sha256": "c5b2ef63532585f57d919a94e622feb33ee31d1636d824d4a80a41977f6743a1",
+          "colorspace": "sRGB",
+          "interpolation": "Linear",
+          "extension": "EXTEND",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        "MR.png": {
+          "packed_png_sha256": "307f5a0c17c974c4fadeac0a2ae16c00bcd0368a666c92313a943282cf05314f",
+          "packed_png_bytes": 17162,
+          "decoded_RGB_sha256": "12341f4deda2f4c4a246131afe94bf5303d8987d901efd276047e8ed18d718f6",
+          "source_RGB_pixels_exact": true,
+          "Blender_pixels_sha256": "06102e2e5482381c296039736aa9e30ab4251554526e90d2c63b248bc96b514e",
+          "colorspace": "Non-Color",
+          "interpolation": "Linear",
+          "extension": "EXTEND",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      },
+      "roughness": "G",
+      "metallic": "B",
+      "alpha": "opaque 1",
+      "vertex_colours": false,
+      "actual_Blender_image_node_settings": [
+        {
+          "map": "MR.png",
+          "interpolation": "Linear",
+          "extension": "EXTEND",
+          "projection": "FLAT",
+          "colorspace": "Non-Color",
+          "vector_input": "unlinked; active UV map",
+          "packed_PNG_bytes_exact": true,
+          "all_decoded_channels_exact": true
+        },
+        {
+          "map": "base-color.png",
+          "interpolation": "Linear",
+          "extension": "EXTEND",
+          "projection": "FLAT",
+          "colorspace": "sRGB",
+          "vector_input": "unlinked; active UV map",
+          "packed_PNG_bytes_exact": true,
+          "all_decoded_channels_exact": true
+        }
+      ],
+      "filtering_scope": "glTF requests LINEAR magnification, LINEAR_MIPMAP_LINEAR minification and CLAMP_TO_EDGE. Actual Blender image-node settings are recorded separately. Cycles filtering is not established as equivalent to the earlier F64 2x2-box mip experiment or a portable viewer's filtering.",
+      "glTF_sampler_equivalence_claimed": false
+    },
+    "views": [
+      {
+        "name": "near",
+        "file": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-pbr-foliage-ecb15aa\\brick\\near.png",
+        "sha256": "401eac4c1568497b6e8977a6bff7ed18e43c5a6e29804474722a4011fef9dbfb",
+        "bytes": 330436,
+        "seconds": 14.698808400000416,
+        "settings": {
+          "engine": "CYCLES",
+          "device": "CPU",
+          "samples": 32,
+          "threads": 4,
+          "threads_mode": "FIXED",
+          "resolution": [
+            640,
+            640,
+            100
+          ],
+          "denoising": true,
+          "denoiser": "OPENIMAGEDENOISE",
+          "denoising_use_gpu": false,
+          "seed": 0,
+          "animated_seed": false,
+          "adaptive_sampling": false,
+          "bounces": [
+            2,
+            1,
+            1
+          ],
+          "view_transform": "AgX",
+          "look": "None",
+          "exposure": 2.0,
+          "gamma": 1.0,
+          "world_RGBA": [
+            0.11999999731779099,
+            0.11999999731779099,
+            0.11999999731779099,
+            1.0
+          ],
+          "world_strength": 0.5,
+          "camera": {
+            "location": [
+              0.30845463275909424,
+              0.08554953336715698,
+              -0.0691702663898468
+            ],
+            "quaternion": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "type": "ORTHO",
+            "ortho_scale": 0.06238974258303642,
+            "clip": [
+              2.888414019253105e-05,
+              0.5776827931404114
+            ],
+            "right": [
+              0,
+              1,
+              0
+            ],
+            "up": [
+              0,
+              0,
+              1
+            ]
+          },
+          "lights": [
+            {
+              "name": "Key",
+              "location": [
+                0.30845463275909424,
+                0.01333918422460556,
+                0.017482154071331024
+              ],
+              "quaternion": [
+                0.766662061214447,
+                0.42098551988601685,
+                0.23333021998405457,
+                0.42492058873176575
+              ],
+              "energy": 0.06674348562955856,
+              "size": 0.07221034914255142,
+              "color": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "name": "Fill",
+              "location": [
+                0.2506863474845886,
+                0.1722019612789154,
+                -0.040286123752593994
+              ],
+              "quaternion": [
+                0.23067080974578857,
+                0.17540186643600464,
+                0.5793130397796631,
+                0.7618540525436401
+              ],
+              "energy": 0.03337174281477928,
+              "size": 0.07221034914255142,
+              "color": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "name": "Rim",
+              "location": [
+                0.10626564174890518,
+                0.08554953336715698,
+                0.017482154071331024
+              ],
+              "quaternion": [
+                0.6532814502716064,
+                0.27059802412986755,
+                -0.27059805393218994,
+                -0.6532814502716064
+              ],
+              "energy": 0.05005761235952377,
+              "size": 0.07221034914255142,
+              "color": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "RGB_mean": [
+          131.21433837890626,
+          121.1559326171875,
+          116.89162109375
+        ],
+        "RGB_std": [
+          8.581055053798147,
+          19.741576933588497,
+          25.143306979147706
+        ],
+        "projected_linear_size_relative_to_near": 1.0,
+        "imported_geometry_and_material_unchanged": true
+      },
+      {
+        "name": "far",
+        "file": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-pbr-foliage-ecb15aa\\brick\\far.png",
+        "sha256": "5cb93c8f7b6aba276039cce690c83c02683f13243b080abfe27a632a6c9f0ea2",
+        "bytes": 305247,
+        "seconds": 12.827589800000169,
+        "settings": {
+          "engine": "CYCLES",
+          "device": "CPU",
+          "samples": 32,
+          "threads": 4,
+          "threads_mode": "FIXED",
+          "resolution": [
+            640,
+            640,
+            100
+          ],
+          "denoising": true,
+          "denoiser": "OPENIMAGEDENOISE",
+          "denoising_use_gpu": false,
+          "seed": 0,
+          "animated_seed": false,
+          "adaptive_sampling": false,
+          "bounces": [
+            2,
+            1,
+            1
+          ],
+          "view_transform": "AgX",
+          "look": "None",
+          "exposure": 2.0,
+          "gamma": 1.0,
+          "world_RGBA": [
+            0.11999999731779099,
+            0.11999999731779099,
+            0.11999999731779099,
+            1.0
+          ],
+          "world_strength": 0.5,
+          "camera": {
+            "location": [
+              0.30845463275909424,
+              0.08554953336715698,
+              -0.0691702663898468
+            ],
+            "quaternion": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "type": "ORTHO",
+            "ortho_scale": 0.2495589703321457,
+            "clip": [
+              2.888414019253105e-05,
+              0.5776827931404114
+            ],
+            "right": [
+              0,
+              1,
+              0
+            ],
+            "up": [
+              0,
+              0,
+              1
+            ]
+          },
+          "lights": [
+            {
+              "name": "Key",
+              "location": [
+                0.30845463275909424,
+                0.01333918422460556,
+                0.017482154071331024
+              ],
+              "quaternion": [
+                0.766662061214447,
+                0.42098551988601685,
+                0.23333021998405457,
+                0.42492058873176575
+              ],
+              "energy": 0.06674348562955856,
+              "size": 0.07221034914255142,
+              "color": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "name": "Fill",
+              "location": [
+                0.2506863474845886,
+                0.1722019612789154,
+                -0.040286123752593994
+              ],
+              "quaternion": [
+                0.23067080974578857,
+                0.17540186643600464,
+                0.5793130397796631,
+                0.7618540525436401
+              ],
+              "energy": 0.03337174281477928,
+              "size": 0.07221034914255142,
+              "color": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "name": "Rim",
+              "location": [
+                0.10626564174890518,
+                0.08554953336715698,
+                0.017482154071331024
+              ],
+              "quaternion": [
+                0.6532814502716064,
+                0.27059802412986755,
+                -0.27059805393218994,
+                -0.6532814502716064
+              ],
+              "energy": 0.05005761235952377,
+              "size": 0.07221034914255142,
+              "color": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "RGB_mean": [
+          133.2369580078125,
+          132.728408203125,
+          132.41815673828125
+        ],
+        "RGB_std": [
+          2.2366702206501636,
+          5.741044538043876,
+          7.410242918963251
+        ],
+        "projected_linear_size_relative_to_near": 0.25,
+        "imported_geometry_and_material_unchanged": true
+      }
+    ],
+    "one_fresh_import": 1,
+    "worker_elapsed_seconds": 52.45333610000034,
+    "host": {
+      "CPU_only": true,
+      "stage": "phase1",
+      "initial_resources": {
+        "available_ram_bytes": 18414055424,
+        "disk_free_bytes": 103072382976,
+        "required_ram_bytes": 12884901888,
+        "required_disk_bytes": 2147483648,
+        "admitted": true
+      },
+      "memory_cap_bytes": 6442450944,
+      "job_memory_cap_bytes": 6442450944,
+      "deadline_seconds": 180,
+      "retry": false,
+      "attached_before_GO": true,
+      "exact_binary_GO_sent": true,
+      "returncode": 0,
+      "worker_execution_seconds": 58.40599999999995,
+      "worker_checkpoint": {
+        "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-pbr-foliage-ecb15aa\\brick\\result.json",
+        "sha256": "ade349aefdf87d7cdd5ef6191e83730d1c66d526708ebe57dce4f507d5d70df6",
+        "views": [
+          "near",
+          "far"
+        ]
+      },
+      "worker_checkpoint_verified": true,
+      "peak_process_committed_bytes": 905465856,
+      "peak_job_committed_bytes": 905465856,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "sources_unchanged": true,
+      "elapsed_seconds": 58.53099999999995,
+      "classification": "PASS"
+    },
+    "minimum_available_RAM_bytes": 17183649792,
+    "minimum_destination_disk_bytes": 103062007808
+  },
+  "foliage": {
+    "stage": "visible_faces admission before UV/material-feature loading",
+    "actual_selected_original_faces": 8650,
+    "qualified_maximum_faces": 6000,
+    "no_UVs_created": true,
+    "no_spatial_bake": true,
+    "no_foliage_GLB": true,
+    "no_quality_verdict": true,
+    "no_retry": true,
+    "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-pbr-foliage-evidence\\experiment.py\", line 7, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-pbr-foliage-evidence\\foliage_worker.py\", line 37, in main\n    selected,nomination=visible_faces(v,f,screen)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-pbr-foliage-evidence\\foliage_select.py\", line 41, in visible_faces\n    if not 20<=len(selected)<=max_faces:raise ValueError('Original ROI face budget: '+str(len(selected)))\n                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Original ROI face budget: 8650\n",
+    "host": {
+      "CPU_only": true,
+      "initial_resources": {
+        "available_ram_bytes": 18573537280,
+        "disk_free_bytes": 103082328064,
+        "required_ram_bytes": 12884901888,
+        "required_disk_bytes": 2147483648,
+        "admitted": true
+      },
+      "attached_before_GO": true,
+      "returncode": 1,
+      "peak_process_committed_bytes": 260034560,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "watched_sources_unchanged": true,
+      "elapsed_seconds": 6.905999999999949,
+      "execution_classification": "BLOCKED"
+    },
+    "minimum_available_RAM_bytes": 18403254272,
+    "minimum_destination_disk_bytes": 103081906176
+  },
+  "comparison": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-pbr-foliage-ecb15aa\\foliage\\run\\brick-import-comparison.png",
+    "bytes": 401195,
+    "sha256": "221db77e2896aec3a60f7491e5604d09f1cfa27222478791aa6a7aad271341dd"
+  },
+  "private_receipts_SHA256": {
+    "brick-attempt.json": "72ea449a24eaaada24e1d68016f7fedd2a1bc5666efc516d041d253595baef4e",
+    "brick\\result.json": "ade349aefdf87d7cdd5ef6191e83730d1c66d526708ebe57dce4f507d5d70df6",
+    "brick-host.json": "59ce7f695932b53e2864d5d38df6c1df6f952e30b3382e17c60ef943106003a7",
+    "foliage\\attempt.json": "135cc48a599c6da8c38c147aff271df0d380c0aaa5d1433061bfcab4609f3ada",
+    "foliage\\host-result.json": "97ff2bf90f796c548caadd39c4caaa512d6bbbb65d2c394d0946880cfa16e729",
+    "foliage\\run\\stderr.txt": "c9f1cea772f040f6e9822835674ca913ee26b9d25ee5e046ed383b6c24eddfc2"
+  },
+  "installed_importer": {
+    "path": "C:/Program Files/Blender Foundation/Blender 5.2/5.2/scripts/addons_core/io_scene_gltf2/blender/imp/texture.py",
+    "SHA256": "656b49e03b84f3aac4e829e713d6386d14e63f1c1f7623bb9ddf26a33c810e7d",
+    "explicit_mipmapping_distinction_ignored": true
+  },
+  "incidental_warning": "CUEW initialization failed: Error opening the library; failed device-library probe, actual rendering CPU"
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "modly.amd.portable-pbr-independent-foliage-outcome.v1",
+  "created_utc": "2026-10-21T09:17:49.243208+00:00",
+  "classification": "BLOCKED",
+  "host_result_SHA256": "97ff2bf90f796c548caadd39c4caaa512d6bbbb65d2c394d0946880cfa16e729",
+  "attempt_SHA256": "135cc48a599c6da8c38c147aff271df0d380c0aaa5d1433061bfcab4609f3ada",
+  "stderr_SHA256": "c9f1cea772f040f6e9822835674ca913ee26b9d25ee5e046ed383b6c24eddfc2",
+  "candidate_review_SHA256": "f9611daf87898edcf05bbd25de7bd9a0f9a2921c4899adff5fb3be811dba1e7f",
+  "scope": "Read-only verification of the one actual fixed-ROI CPU qualification. No selection rerun, alternate ROI, UV calculation, sampling, baking or rendering.",
+  "decisive_evidence": {
+    "exact_exception": "ValueError: Original ROI face budget: 8650",
+    "observed_selected_faces": 8650,
+    "unchanged_maximum_faces": 6000,
+    "ROI": [
+      332,
+      384,
+      400,
+      448
+    ],
+    "stage": "visible_faces: after original centre-depth visibility and one original-edge ring; before returned selection, feature-array loading, UV layout and any bake",
+    "count_source": "Exact preserved genuine worker traceback and frozen source; reviewer did not rerun or reconstruct selection."
+  },
+  "verified": {
+    "exact_candidate_and_plan_hashes_match_actual_attempt": true,
+    "all_watched_source_and_input_hashes_still_match": true,
+    "real_named_boundary_rejects_without_geometry_truncation_or_retry": true,
+    "no_geometry_selection_arrays_or_UV_atlas_or_material_samples_written": true,
+    "private_contact_sheet_PNG_reopened_and_both_halves_byte_exact_to_authenticated_Blenderrenders": true,
+    "nonzero_worker_exit_not_mislabelled_as_success": true,
+    "natural_owned_process_settlement_without_forced_cleanup": true,
+    "all_live_resource_floors_pass": true
+  },
+  "contact_sheet": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-pbr-foliage-ecb15aa\\foliage\\run\\brick-import-comparison.png",
+    "sha256": "221db77e2896aec3a60f7491e5604d09f1cfa27222478791aa6a7aad271341dd",
+    "bytes": 401195,
+    "size": [
+      1280,
+      690
+    ]
+  },
+  "measurements": {
+    "host_seconds": 6.905999999999949,
+    "peak_process_committed_bytes": 260034560,
+    "minimum_sampled_available_RAM_bytes": 18403254272,
+    "minimum_sampled_destination_free_bytes": 103081906176
+  },
+  "limitations": [
+    "This is a fixed nomination face-budget blocker, not a result about UV capacity, mip-safe foliage material quality or infeasibility of all foliage layouts.",
+    "Selected face IDs and layout were not saved because admission raised before selection returned; only the real8650 count is observed.",
+    "No structured worker result.json exists; exactstderr and host/attempt receipts provide the preserved blocked outcome.",
+    "Actual Blender brick import/two-view PASS remains valid independently of this blocked foliage stage."
+  ],
+  "recommended_next_action": "Separate approval for one smaller predeclared foliage nomination that meets the existing6000-face budget; do not automatically reduce ROI, truncate faces or repeat this run."
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "modly.amd.portable-pbr-independent-brick-outcome.v1",
+  "created_utc": "2026-10-21T09:12:22.898243+00:00",
+  "classification": "PASS",
+  "result_SHA256": "ade349aefdf87d7cdd5ef6191e83730d1c66d526708ebe57dce4f507d5d70df6",
+  "host_result_SHA256": "59ce7f695932b53e2864d5d38df6c1df6f952e30b3382e17c60ef943106003a7",
+  "attempt_SHA256": "72ea449a24eaaada24e1d68016f7fedd2a1bc5666efc516d041d253595baef4e",
+  "candidate_review_SHA256": "231e86c28b640f5e643e667082afc8482b9b643519276c153161dd418747922c",
+  "scope": "Read-only verification of one completed genuine Blender import/two CPU renders; no new Blender process, filter/bake or foliage experiment.",
+  "verified": {
+    "exact_frozen_production_source_and_input_hashes_match": true,
+    "exactly_one_fresh_real_Blender5_2_1_import": true,
+    "complete781_oriented_triangle_position_bits_and_UV_mapping_verified": true,
+    "source_GLB_and_embedded_PNG_pixel_bytes_unchanged": true,
+    "actual_runtime_sRGB_RGB_and_NonColor_G_roughness_B_metallic_routes_verified": true,
+    "opaque_alpha_genuine_material_no_vertex_colour_substitution": true,
+    "same_scene_CPU32_sample_denoised_two_view_rig_only_scale_changes": true,
+    "all_PNGs_independently_reopened_and_mean_std_hashes_match": true,
+    "natural_empty_Job_no_forced_cleanup": true,
+    "all_live_RAM_disk_and_process_limits_pass": true,
+    "no_GLB_export_no_geometry_rebuild_no_neural_execution": true
+  },
+  "images": {
+    "near": {
+      "sha256": "401eac4c1568497b6e8977a6bff7ed18e43c5a6e29804474722a4011fef9dbfb",
+      "bytes": 330436,
+      "RGB_mean": [
+        131.21433837890626,
+        121.1559326171875,
+        116.89162109375
+      ]
+    },
+    "far": {
+      "sha256": "5cb93c8f7b6aba276039cce690c83c02683f13243b080abfe27a632a6c9f0ea2",
+      "bytes": 305247,
+      "RGB_mean": [
+        133.2369580078125,
+        132.728408203125,
+        132.41815673828125
+      ]
+    }
+  },
+  "measurements": {
+    "worker_measured_seconds": 52.45333610000034,
+    "supervisor_worker_execution_seconds": 58.40599999999995,
+    "host_seconds": 58.53099999999995,
+    "peak_process_committed_bytes": 905465856,
+    "peak_Job_committed_bytes": 905465856,
+    "minimum_sampled_available_RAM_bytes": 17183649792,
+    "minimum_sampled_disk_bytes": 103062007808
+  },
+  "incidental_native_warning": {
+    "exact": "CUEW initialization failed: Error opening the library",
+    "recorded_in_stdout": true,
+    "interpretation": "Failed incidental CUDA-library discovery probe under a verified CyclesCPU render. Not a GPU renderer/model computation; no claim that no GPU library probe occurred."
+  },
+  "limitations": [
+    "One small patch and this Blender CPU rig; not universal viewer compatibility or proof of identical mip-generation kernels.",
+    "GLB requests LINEAR_MIPMAP_LINEAR; Blender image node observes Linear/EXTEND and importer discards explicit mipmapping distinction.",
+    "Full original field/model ancestry is pinned through completed bake receipts, not reloaded."
+  ]
+}

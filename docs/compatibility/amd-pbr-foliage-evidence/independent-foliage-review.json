@@ -1,0 +1,63 @@
+{
+  "schema": "modly.amd.portable-pbr-independent-foliage-candidate.v1",
+  "created_utc": "2026-10-21T09:14:38.547831+00:00",
+  "classification": "GO",
+  "base": "ecb15aa0a2855b9c4f9d3a45aea4192cd92a3900",
+  "scope": "One bounded fixed original foliage ROI selection and source-preserving UV/capacity qualification only. No material spatial sampling, padding, bake, newGLB, render, neural, WSL orGPU execution.",
+  "reviewer": "independent mip_filter_contract_review subagent",
+  "candidate_source_SHA256": {
+    "experiment.py": "eaa2075635da17bf68a8139b45f42120db3fcc50eccc3b2c5fe427270be701c2",
+    "foliage_host.py": "bedbd40e106c2cb79a36138aed4d7e7ea5cacddb8c05cb0adad37be07006ba14",
+    "foliage_layout.py": "de7a04fbb1958207ccfe8eee82fb59aa334beefcbbf012df8268804b9a9cceed",
+    "foliage_select.py": "1e04a68faf7a9e5c23e4f23b1cd5b9b93b6d02b5aee77f89272b403ea358b57a",
+    "foliage_worker.py": "d7f4521ed22fe23b577766619b66deb0c454c2b58ad83f4fcb63d8aa45d3c49d",
+    "phase1_host.py": "39330ea6dc05e59af54fb5a8d5e86a54cb995e309881bf30e107b041d9ab0f8c",
+    "phase1_worker.py": "23c69aebefdd9c8b7ec26a04f5ea8b87679899b029a5d050e7c403c66be519ba",
+    "test_foliage_layout.py": "e777240f2d80154e30d8807cd3827549c6c7f1a7805fea557249e3061e071b58",
+    "test_foliage_select.py": "843763a31fc9985a88b7050ef3b537b23dacfee6c47ea413d753a3444285c2ad",
+    "test_phase1.py": "336afe5a914b55d7d99560547b7f62197fa0162766fee22af093ae7bc669e45a"
+  },
+  "qualification_plan_SHA256": "56a527788bd4f9fb9df2f363414d13fd1f767afe36a09b6c178dbb8e50c591b3",
+  "independent_brick_outcome_SHA256": "9b4eb2b85e471e1669039994f1430461d6d82b5fa659dbc259258358d89842c6",
+  "verified_checks": [
+    "actual genuine Blender PASS and independent exact result/host hash bindings gate worker",
+    "phase1 contact sheet uses authenticated PNG hashes and host watches both originals",
+    "fixed ROI332,384,400,448 nominated before actual geometry measurement",
+    "bounded original-face centre-depth raster frontmost visibility and one original-edge ring",
+    "complete original faces only without clipping/remesh/retessellation",
+    "6000 face and100000 ROI candidate budgets fail closed",
+    "original corner bits winding multiplicity and source-face/vertex IDs preserved",
+    "complete authentic geometry/material coordinate row identity checked",
+    "dominant normal projection has cosine at least1/sqrt3",
+    "fixed4096*sqrt3*(1+1e-6) projected density without parameter search",
+    "source-edge collision seams reuse pinned original implementation",
+    "one32-aligned shelf pass with analytical continuous positive support throughLOD5",
+    "actualF64 and portableF32 tangent density>=4096 overlap and every-face coverage checked",
+    "capacity/zero-coverage/F32 failure stops before any bake",
+    "shelf failure is not claimed as global packing impossibility",
+    "historical sources and all new sources watched",
+    "unchanged6GiB180s ownedJob12GiB RAM2GiBdisk and natural release",
+    "exclusive paths exact binaryGO before worker work"
+  ],
+  "independent_synthetic_tests": {
+    "passed": 11,
+    "seconds": 0.496,
+    "scope": "3 selection and8 chart/geometry/precision/capacity synthetic CPU tests only."
+  },
+  "analytic_contract": {
+    "projected_density": 7094.487202282228,
+    "minimum_3D_tangent_density": 4096,
+    "texture_dimension": 1024,
+    "maximum_faces": 6000,
+    "maximum_islands": 256,
+    "positive_filter_support_through_LOD": 5,
+    "rectangle_dimension_rule": "32*(ceil(content_span/32+0.5+1e-5)+1), content minimum at owner minimum+32; exact clamp and aligned dyadic ancestry independently revalidated."
+  },
+  "limitations": [
+    "GO is one nomination/UV feasibility worker, not foliage material-quality PASS or permission to bake unqualified UVs.",
+    "Visible cropped front surface is not a complete closed leaf/vine or proof of rear coverage.",
+    "One density/island/shelf candidate can fail even if another layout might exist; no global optimality claim.",
+    "Brick mip PASS does not generalise to foliage; actual material sampling/quality gates remain conditional future work."
+  ],
+  "blockers": []
+}

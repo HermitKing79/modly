@@ -1,0 +1,47 @@
+{
+  "schema": "modly.amd.portable-pbr-foliage-independent-brick-candidate.v1",
+  "created_utc": "2026-10-21T09:08:47.845433+00:00",
+  "classification": "GO",
+  "scope": "Exactly one genuine Blender5.2.1 CPU import of the accepted638700-byte brick GLB and two CPU PBR render views from the same scene. No foliage selection or bake approved by this receipt.",
+  "base": "ecb15aa0a2855b9c4f9d3a45aea4192cd92a3900",
+  "reviewer": "independent mip_filter_contract_review subagent",
+  "candidate_source_SHA256": {
+    "phase1_worker.py": "23c69aebefdd9c8b7ec26a04f5ea8b87679899b029a5d050e7c403c66be519ba",
+    "phase1_host.py": "39330ea6dc05e59af54fb5a8d5e86a54cb995e309881bf30e107b041d9ab0f8c",
+    "test_phase1.py": "336afe5a914b55d7d99560547b7f62197fa0162766fee22af093ae7bc669e45a"
+  },
+  "qualification_plan_SHA256": "56a527788bd4f9fb9df2f363414d13fd1f767afe36a09b6c178dbb8e50c591b3",
+  "verified": {
+    "exact_GLB_and_candidate_array_map_bake_outcome_pins_checked_before_marker": true,
+    "pinned_original_renderer_and_studio_inputs_reused": true,
+    "one_import_no_mesh_rebuild_no_export_no_retries": true,
+    "cyclic_oriented_triangle_geometry_bits_and_corner_UVs_checked": true,
+    "embedded_PNG_full_RGBA_and_MR_channel_bytes_checked": true,
+    "RGB_sRGB_and_shared_MR_Non_Color_G_roughness_B_metallic_routes_checked": true,
+    "unit_material_factors_opaque_alpha_no_emission_no_vertex_colour_replacement_checked": true,
+    "actual_imported_nodes_flat_linear_extend_and_active_UV_route_checked": true,
+    "actual_sampler_metadata_unchanged_but_not_claimed_as_Cycles_kernel_equivalence": true,
+    "one_scene_near_far_views_change_only_fourfold_orthographic_scale": true,
+    "explicit_Cycles_CPU32_samples_CPU_denoising_fixed_threads": true,
+    "exclusive_paths_and_exact_binary_GO_after_Job_attachment": true,
+    "per_process_and_owned_Job_six_GiB_limit_180_seconds_live12GiB_RAM2GiB_disk_floors": true,
+    "natural_empty_Job_and_peak_memory_and_worker_deadline_enforced_in_acceptance": true,
+    "original_sources_rehashed_after_worker_exit": true
+  },
+  "independent_focused_tests": {
+    "passed": 9,
+    "seconds": 0.04,
+    "scope": "Admission, GO/attach, natural-cleanup and exact oriented-geometry/two-view rig synthetic tests; no Blender launched."
+  },
+  "other_tests_reviewed": {
+    "passed_by_implementer": 4,
+    "scope": "Actual source-pin/container/PNG-channel tests, full13 tests reportedPASS in24.027s. Source and assertions independently inspected; not unnecessarily rerun."
+  },
+  "limitations": [
+    "Pre-execution GO is not actual Blender compatibility or visual-quality PASS; all runtime nodes/images/render/release assertions must succeed.",
+    "Native Blender render filtering differs from the declared F64 box-mip reference; actual node settings and GLB sampler metadata are recorded separately.",
+    "Source ancestry is authenticated through the completed pinned bake receipt and exact candidate arrays; the full material field or neural models are not reloaded.",
+    "Near/far views are lit PBR evidence for this small patch and rig, not universal engine compatibility or proof of LOD5 filtering."
+  ],
+  "blockers": []
+}
