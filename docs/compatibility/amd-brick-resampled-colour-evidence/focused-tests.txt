@@ -1,0 +1,18 @@
+test_holdout_never_invents_corner_or_centroid_cohorts (test_candidate.CandidateTests.test_holdout_never_invents_corner_or_centroid_cohorts) ... ok
+test_holdout_reports_each_region_and_each_interior_stream (test_candidate.CandidateTests.test_holdout_reports_each_region_and_each_interior_stream) ... ok
+test_missing_unsorted_and_duplicate_source_ids_fail (test_candidate.CandidateTests.test_missing_unsorted_and_duplicate_source_ids_fail) ... ok
+test_original_ids_are_remapped_without_reordering_colours (test_candidate.CandidateTests.test_original_ids_are_remapped_without_reordering_colours) ... ok
+test_unsupported_empty_and_nonfinite_holdout_reject (test_candidate.CandidateTests.test_unsupported_empty_and_nonfinite_holdout_reject) ... ok
+test_area_weighting_includes_dominant_area_face (test_holdout.HoldoutTests.test_area_weighting_includes_dominant_area_face) ... ok
+test_fixed_regions_original_ids_strict_interiors_and_determinism (test_holdout.HoldoutTests.test_fixed_regions_original_ids_strict_interiors_and_determinism) ... ok
+test_region_dictionary_order_cannot_change_frozen_draws (test_holdout.HoldoutTests.test_region_dictionary_order_cannot_change_frozen_draws) ... ok
+test_rejects_bad_types_dimensions_bounds_and_underfilled_regions (test_holdout.HoldoutTests.test_rejects_bad_types_dimensions_bounds_and_underfilled_regions) ... ok
+test_rejects_collision_with_prior_numeric_signed_zero_position (test_holdout.HoldoutTests.test_rejects_collision_with_prior_numeric_signed_zero_position) ... ok
+test_rejects_collisions_after_final_f32_rounding_without_redraw (test_holdout.HoldoutTests.test_rejects_collisions_after_final_f32_rounding_without_redraw) ... ok
+test_rejects_degenerate_pool_face_even_if_it_would_not_be_selected (test_holdout.HoldoutTests.test_rejects_degenerate_pool_face_even_if_it_would_not_be_selected) ... ok
+test_actual_adapter_has_one_cpu_stage_and_original_limits (test_input_route.RouteTests.test_actual_adapter_has_one_cpu_stage_and_original_limits) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.681s
+
+OK

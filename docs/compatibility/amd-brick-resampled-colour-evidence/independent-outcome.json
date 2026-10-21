@@ -1,0 +1,230 @@
+{
+  "schema": "modly.amd.brick-resampled-colour-independent-outcome.v1",
+  "created_utc": "2026-10-21T17:53:43.3437138Z",
+  "classification": "PASS",
+  "reviewer": "/root/full_colour_review",
+  "scope": "One independent owned CPU verification of the single saved source-sampled-vertex feasibility result and final source-safe report. No new query locations, candidate, sample population, SparseSampler calls, full-model colour table or export.",
+  "base": "ad619e54b80aef70d832b488adab41ddf69779d8",
+  "bounded_feasibility": "PASS",
+  "full_export_or_Blender_admitted": false,
+  "candidate_review_SHA256": "1bc144adc39b53cf62ea2b8e5a58669eda9d67aaf4b3142f1e4fea179859ded4",
+  "result_SHA256": "82dadec1650f63858145a8f3dd27fe0da9ffbb36299cbfc4b1c72552c75b516c",
+  "host_result_SHA256": "11f12e7fcecd512277766c375d256998efb451eed237bdf86e0b3a3ccc01fd74",
+  "frozen_holdout_SHA256": "e5fb855a26dd686aeff0539b224221f0092ae828e7fc25a0ff03d586a499b998",
+  "private_cause_SHA256": "666b68b4b7d40c7bcc6f86a2c8d36d32176d24310c6191f5648f0d43d2033a7c",
+  "private_readback_SHA256": "9eac079be11b267810a3ca2f4a20ffb4507994b42bb828ca7bc9fb03cd83b372",
+  "private_verifier_SHA256": "7e6a8f7d5c35d642fdd368b12ee0aa68b2f21814f9eaf89d750f6effa37f6b2b",
+  "private_verification_host_SHA256": "ab4c9473460e479e7a4e00b2e25c9aad01d05c7def259678aec0a8565154607d",
+  "source_vertices": 1957891,
+  "source_triangles": 4173584,
+  "sampled_unique_original_vertices": 25967,
+  "old_frozen_queries": 56910,
+  "holdout_queries": 2048,
+  "old_required_regions": 16,
+  "holdout_required_regions": 16,
+  "independently_recomputed_metric_rows": 112,
+  "new_private_array_count": 19,
+  "new_private_array_files": {
+    "actual-vertex-world.npy": {
+      "bytes": 311732,
+      "sha256": "1889849ab55c943e5828a1d0682627ac0f67de2bfe402efe8d7746b8741d3312"
+    },
+    "corrected_original_prediction.npy": {
+      "bytes": 1365968,
+      "sha256": "b3af767693d9b73f50d8e27486d66547bb9545cd4ba2ac1b56acd6b0056cb071"
+    },
+    "holdout-barycentrics.npy": {
+      "bytes": 49280,
+      "sha256": "e7665624fef0e83f648538da9410497e91d9615921e0429c648b5ff285ce50e2"
+    },
+    "holdout-query-corner-colour-rows.npy": {
+      "bytes": 24704,
+      "sha256": "e44cc339de62e9a3f5f2c48fc281e2dcfbfd38d9e3682f4744c6e2ed2223be49"
+    },
+    "holdout-query-faces.npy": {
+      "bytes": 8320,
+      "sha256": "29b4b828d9b1aa79a227d1a5dc3e40e09becfe5a1a7c7e20d680f50c74cdafe1"
+    },
+    "holdout-query-kinds.npy": {
+      "bytes": 2176,
+      "sha256": "95d245b322e06a0863fda3d7b584909c18af52256aa8f1de01f9afdab514f281"
+    },
+    "holdout-world.npy": {
+      "bytes": 24704,
+      "sha256": "913445762dad5b80d6e7f17e19f0ed01dc2bff96a59338f64e4a89989b98a081"
+    },
+    "holdout_positive_support.npy": {
+      "bytes": 16512,
+      "sha256": "4ab85b67a58e85067b84bb15dad6a2ace5d1794750786d7b5ae5a8b8c1bf0acc"
+    },
+    "holdout_prediction.npy": {
+      "bytes": 49280,
+      "sha256": "c0af57bf79872769bec17adaeff9c8bc90686defde2f1a2b22ba2f958287ff7b"
+    },
+    "holdout_source_spatial.npy": {
+      "bytes": 49280,
+      "sha256": "53e552566e22e3e04b7a65982d4675f697c94173782e3a10888365048e4340d6"
+    },
+    "holdout_weight_sum.npy": {
+      "bytes": 8320,
+      "sha256": "2b277280315385cdf8d0993e763367919278ef62f00c1d7bec92b0d72ab7cbf2"
+    },
+    "old-query-corner-colour-rows.npy": {
+      "bytes": 683048,
+      "sha256": "d1466848025d0dd837cfa11f8da55e63b8c5c0f877fb339c074558ba7375e670"
+    },
+    "sampled-vertex-neighbour-rows.npy": {
+      "bytes": 1662016,
+      "sha256": "750175ceba04db3db759d9d8ac6cf4dd090f5d52ebcc5186d675c44e5cdaaa34"
+    },
+    "sampled-vertex-normalized-weights.npy": {
+      "bytes": 831072,
+      "sha256": "82429825da872e7dcb1931480598372e4b6ccbc955100a066d964c2145cc1941"
+    },
+    "sampled-vertex-positive-support.npy": {
+      "bytes": 207864,
+      "sha256": "70c880d19225c8f1cef6a316d02fc6f6310a9182ce84224643eced14eac5295f"
+    },
+    "sampled-vertex-six-channel.npy": {
+      "bytes": 623336,
+      "sha256": "d536bc7fac9a5b439bd65b619227075518e01a6252e6f644d502bfb9a809f25b"
+    },
+    "sampled-vertex-weight-sum.npy": {
+      "bytes": 103996,
+      "sha256": "f5e8c7195819ab200c4e3c48b68424a96b8f1ffa083338b7ab9e6b2fa9a5572a"
+    },
+    "subset_linear_COLOR0.npy": {
+      "bytes": 311732,
+      "sha256": "56b9901dbf146026ec8a0af58b9c701ad2719925c0649533d4f82cc1ac8ef109"
+    },
+    "unique-original-vertex-ids.npy": {
+      "bytes": 103996,
+      "sha256": "7801091e3fe7523cee5ba767a2adc7fdf96dcf68a7aa6953d4b57c8a30e0ecb8"
+    }
+  },
+  "verified_checks": [
+    "Every new19-array and old24-array byte length and SHA256 checked; exact old result/host/frozen receipt bindings retained. All original input identities freshly match the authenticated result, full coordinate-row order and independent full F32 vertex reconstruction.",
+    "Replayed only the existing fixed seeded holdout draws and verified every stored original face ID, strict-interior barycentric, final F32 world position and numeric old/new and new/new collision test. No alternate seed or new source location was created or evaluated.",
+    "Both original triangle-corner-to-sampled-colour maps match original vertex IDs exactly. Sampled F32 RGB IEC decoding, F32 linear storage, interpolation and encoding independently reproduce every old and holdout prediction exactly.",
+    "Reproduced every old direct-row prediction and every old raw corner reference, plus the original reported query29335 failure. Corrected corner equality is expected causal/mapping evidence, separate from the interior position holdout.",
+    "Independently recomputed every RGB and fixed metallic/roughness/OPAQUE-alpha metric for64 old and48 holdout rows. All match the actual receipt to better than1e-15 and all unchanged gates pass; zero support failures or discarded samples.",
+    "A separate F64 field oracle uses a bounded scan of original coordinate tuples and independent trilinear weights/normalization/accumulation. It verifies all25967 saved vertex samples, all2048 saved holdout references and the existing corrected-worst old query, with no candidate sampler import/call.",
+    "Saved vertex neighbour rows, normalized F32 weights, raw weight sums and positive-support counts independently match; all saved holdout support sums/counts match and remain positive. Freeze-before-measurement chronology is verified.",
+    "Actual and independent verification processes both used the unchanged6GiB process AND Job ceiling,180-second owned deadline and12GiB/2GiB live floors. Both exited naturally with empty Jobs, no forced cleanup; actual watched sources remained unchanged."
+  ],
+  "cause_confirmed": true,
+  "full_original_vertex_reconstruction_exact": true,
+  "cell_centre_controls_and_original_corner_references_exact": true,
+  "compact_maps_and_F32_candidate_exact": true,
+  "holdout_design": {
+    "seed": 20261023,
+    "faces_per_region": 64,
+    "positions_per_face": 2,
+    "scope": "New-position holdout on previously frozen faces; not face-disjoint validation",
+    "geometry_only_selection": true,
+    "seed_draw_replay_exact": true,
+    "F32_numeric_collisions": 0,
+    "no_redraw": true
+  },
+  "all112_metric_rows_match_and_pass": true,
+  "RGB_limits": {
+    "rmse": 0.02,
+    "p95_absolute": 0.05,
+    "maximum_absolute": 0.15
+  },
+  "each_scalar_RMSE_limit": 0.02,
+  "zero_support": 0,
+  "original_corrected_max_RGB_absolute": 0.04752670685421806,
+  "original_corrected_worst_query": 26691,
+  "original_corrected_worst_source_face_id": 251694,
+  "holdout_max_RGB_absolute": 0.02546207431325831,
+  "holdout_worst_query": 778,
+  "holdout_worst_source_face_id": 541475,
+  "previously_failing_query": {
+    "query_index": 29335,
+    "source_face_id": 2045193,
+    "source_vertex_id": 985998,
+    "old_max_absolute": 0.15647428701856536,
+    "corrected_red_absolute": 4.26280821752556E-09,
+    "corrected_RGB_max_absolute": 4.26280821752556E-09
+  },
+  "worst_scalar_RMSE_across112_rows": {
+    "metallic": 0.0001737231720997754,
+    "roughness": 0.00014715943996407863,
+    "alpha": 9.997546627334013E-05
+  },
+  "independent_existing_position_oracle": {
+    "implementation": "Independent needed-coordinate tuple lookup by bounded original-coordinate scan, F64 trilinear weights/normalization and sequential six-channel accumulation at identical saved F32 grid positions; no SparseSampler import/call",
+    "vertex_sample_count": 25967,
+    "vertex_max_absolute_error": 2.8571861454551595E-07,
+    "all_holdout_sample_count": 2048,
+    "holdout_max_absolute_error": 2.418500146816882E-07,
+    "existing_corrected_worst_old_query": 26691,
+    "worst_old_max_absolute_error": 4.6638887196692735E-08,
+    "tolerance": 2E-06
+  },
+  "actual_execution": {
+    "classification": "PASS",
+    "worker_seconds": 2.20299999999952,
+    "owned_seconds": 3.484999999998763,
+    "peak_process_committed_bytes": 193679360,
+    "peak_job_committed_bytes": 194519040,
+    "actual_source_sample_calls": 3,
+    "actual_source_evaluations": 53982,
+    "natural_empty_job": true,
+    "forced_cleanup": false,
+    "all_live_resource_floors_pass": true,
+    "watched_sources_unchanged": true
+  },
+  "independent_saved_data_verification": {
+    "classification": "PASS",
+    "worker_seconds": 1.0,
+    "owned_seconds": 2.1719999999986612,
+    "peak_process_committed_bytes": 189464576,
+    "peak_job_committed_bytes": 190308352,
+    "process_and_job_cap_bytes": 6442450944,
+    "owned_deadline_seconds": 180,
+    "natural_empty_job": true,
+    "forced_cleanup": false,
+    "all_live_resource_floors_pass": true,
+    "existing_oracle_positions": 28016,
+    "new_query_populations": 0,
+    "new_candidate_source_locations": 0,
+    "SparseSampler_calls": 0
+  },
+  "publication_review": {
+    "classification": "PASS_SOURCE_SAFE_REPORT",
+    "report_SHA256": "e787caf5d29493086bb41331b199bbb304eb2a38747dacc3a001f683b0281302",
+    "execution_summary_SHA256": "fd58e869d6c38b8973022cda9d27df245abd331af23208994a199a856a10a425",
+    "report_16_region_rows_match_actual_metrics": true,
+    "summary_old_and_holdout_metrics_and_array_hashes_match_actual_receipt": true,
+    "source_safe": true,
+    "raw_geometry_material_and_oracle_payload_arrays_kept_private": true,
+    "conclusion": "The final report and execution summary accurately describe bounded feasibilityPASS, corrected source-position semantics, separate expected-corner and holdout evidence, and the limits of the proposed full resampling/export. Public evidence retains aggregate statistics, identifiers, hashes and source code; no raw private geometry/material/image/model payload is exposed."
+  },
+  "projection_review": {
+    "classification": "PASS_AS_UNMEASURED_PLANNING_ESTIMATE",
+    "mapped_input_table_bytes": 206714288,
+    "persistent_sampler_index_and_order_bytes": 31326256,
+    "full_F32_RGB_bytes": 23494692,
+    "POSITION_bytes": 23494692,
+    "uint32_triangle_index_bytes": 50083008,
+    "minimum_shared_vertex_GLB_binary_buffer_bytes": 97072392,
+    "estimated_standard_GLB_MB": 97.1,
+    "linear_sampling_extrapolation_seconds": 1.1309879847059867,
+    "proposed_resampling_conversion_readback_budget_seconds": 30,
+    "proposed_working_memory_bytes": 1073741824,
+    "basis": "Byte arithmetic independently checked. The1.13s sampling extrapolation uses a measured15ms interval near timer resolution, so30s is a proposed planning/admission budget rather than a measured full-data duration or guarantee. Streaming32768-row work and1GiB planning allowance remain subject to the existing6GiB/180s runtime limits.",
+    "full_writer_and_Blender_admission_still_required": true
+  },
+  "limitations": [
+    "Only this compact sampled vertex subset and the two retained query populations are qualified. No complete full-model colour table, GLB, Blender import/render or exhaustive surface/visual equivalence is claimed.",
+    "The holdout uses new interior positions on previously frozen faces. Its independence concerns query positions and seed streams; it is not face-disjoint, complete semantic segmentation or an unseen-asset test.",
+    "The F64 oracle confirms CPU source semantics at existing saved positions within the unchanged2e-6 tolerance. It does not establish native GPU bitwise parity.",
+    "The corrected original query29335 error and all sampled corner agreement are causal/transport checks. Interior agreement is separately measured in the old and position-holdout gates.",
+    "Full resampling runtime/memory and approximate97.1MB file size remain projections with explicit assumptions. Full writer, output readback and any large Blender import require separate admission and approval.",
+    "Preservation AFTER and Git/publication checks are separate root-owned evidence."
+  ],
+  "required_next_step": "Stop after this bounded feasibility result. Recommend a separately approved, independently verified full-model source-resampled colour export; do not start it automatically.",
+  "blockers": []
+}

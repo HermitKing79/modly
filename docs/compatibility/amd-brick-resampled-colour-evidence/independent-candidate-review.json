@@ -1,0 +1,66 @@
+{
+  "schema": "modly.amd.brick-resampled-colour-independent-candidate.v1",
+  "classification": "GO",
+  "reviewer": "/root/full_colour_review",
+  "base": "ad619e54b80aef70d832b488adab41ddf69779d8",
+  "branch": "codex/amd-brick-resampled-colour",
+  "scope": "Exactly one bounded CPU source-sampled-vertex feasibility measurement, including the predeclared centre control and position holdout. No full-asset colour creation, export, Blender, render, UV, bake, geometry edit, neural/model/GPU/WSL execution, installation or historical cache write.",
+  "candidate_source_SHA256": {
+    "candidate.py": "eaaa72f23659f2d68da849f56857af2211964eb887f7aed53960932b1b66cf32",
+    "export_worker.py": "0e7b12ab070ab6d9ae845ead9a89cb9d70413c1f2189212594492b44e51c8fef",
+    "holdout.py": "4a3832112d0a87d6e1dc6bd583b59dadeda7d45a3a754a43efebf2b2a989081e",
+    "inputs.py": "495449db3a99dd61496d5a7c1bddd1fc6ed1118acd1da826556984edcad1af40",
+    "run_host.py": "d9ae69cf2ae8c7061b0a7c0ea0ba36934f98cef6ccba734c0b9e6dc314b01959",
+    "test_candidate.py": "13fe3dbb0a4f61b255291c0124802bf372de468d6e4d51aa61f6932167a184b5",
+    "test_holdout.py": "759125b577e9c083c895a8334adbf7ef7682b6e28720ad282f5b60eb9f7dc89a",
+    "test_input_route.py": "f547664c736559f9a0780c7ded48f44e95875f084e7911814223e90be889ec67"
+  },
+  "qualification_plan_SHA256": "14afb3fda2587bc499d2e1ef44532618ccaa277a735dc8a55a46613ae324b767",
+  "focused_tests_SHA256": "0e18de124c1e3781ebfa582c44649689ab0f107e2685ab811d0228eeb9ac5625",
+  "synthetic_test_evidence": {
+    "passed": 13,
+    "seconds": 0.681,
+    "provenance": "Root-produced complete focused-tests.txt independently read in full. All eight Python sources, including all three test modules, independently reviewed. No test rerun or actual asset-array query was performed by this reviewer."
+  },
+  "predeclared_query_budget": {
+    "old_surface_queries_reused_without_resampling": 56910,
+    "old_required_regions": 16,
+    "old_region_subcohort_metric_rows": 64,
+    "maximum_original_face_blocks": 9485,
+    "maximum_unique_original_vertices": 28455,
+    "vertex_source_evaluations": "N, once per unique original vertex",
+    "cell_centre_control_evaluations": "N, distinct predeclared control call",
+    "holdout_source_evaluations": 2048,
+    "holdout_regions": 16,
+    "holdout_faces_per_region": 64,
+    "holdout_points_per_face": 2,
+    "holdout_region_subcohort_metric_rows": 48,
+    "source_sample_calls": 3,
+    "maximum_new_source_evaluations": 58958,
+    "maximum_queries_per_call": 65536
+  },
+  "verified_checks": [
+    "Exact original source/input lineage is reused through pinned adapters. The prior completed result, natural owned-host receipt, frozen sampling receipt, independent outcome and every one of its24 saved arrays are freshly authenticated and watched. Full original geometry/material coordinate-row order remains required.",
+    "The original reconstruction uses geometry features to form dual=F32(2)*sigmoid-F32(.5), then vertex=(F32(coordsXYZ)+dual)*F32(1/512)-F32(.5). Sparse material values occupy cell centres coordsXYZ+.5. The candidate verifies every original vertex bit against the pinned converter in32768-row batches, while sampling the unchanged stored original F32 vertices.",
+    "One source-pinned original SparseSampler index is reused. Vertex sampling retains original XYZ F32 world-to-grid arithmetic, eight-neighbour order, missing-support normalization and raw six-channel features. A separate centre control must reproduce direct material rows exactly, with no default or zero-support substitution.",
+    "All56910 old direct-row predictions, every old corner raw target and the exact reported worst query29335/face2045193/vertex985998 must reproduce. Expected corner equality is explicitly a causal/mapping control, not independent interior validation. Source failure at these controls blocks the run.",
+    "Sorted unique ORIGINAL vertex IDs cover at most28455 rows, derived from9485 six-query face blocks. Explicit original-corner-to-colour-row mappings are frozen and validated; interpolation rejects missing, duplicate or unsorted source IDs. No full-model placeholder colour table is created.",
+    "Sample raw encoded RGB at actual vertex positions first; only then clip derived colour targets, apply the pinned IEC sRGB decode, round linear COLOR_0 toF32, interpolate and IEC encode. Sparse rows are not decoded before source sampling. One immutable compact F32 colour candidate serves both old and holdout populations.",
+    "The holdout selects64 original-area-weighted unique faces from each of the16 previously frozen face selections. Seed20261023 uses separate PCG64 SeedSequence([seed,region_index,0]) face and stream1 interior draws; selected IDs are sorted and the original protocol cohort order is enforced by the worker.",
+    "Two strictly interior uniform-area barycentric points per selected face produce2048 new positions. F64 endpoint guards, area/ID validity and final F32 world positions are checked. Exact numeric collisions with any old location or any new holdout location, including signed-zero equality and F32 rounding collisions, reject the run without redraw or sample deletion.",
+    "Holdout faces, barycentrics, kinds, final world points, compact vertex IDs/positions and both corner maps receive exclusive private NPY save/readback before all new source calls or corrected predictions. Frozen JSON is JSON-safe and records the fixed draw rule, all16 regions, counts, geometry-only selection and same-face position-holdout limitation.",
+    "Old16 regions retain separate all/corners/centroids/interiors gates through the exact pinned decision implementation. Holdout16 regions separately gate all/interior0/interior1. Every RGB row keeps RMSE0.02/p95absolute0.05/maximum0.15, and each scalar separately keeps RMSE0.02 with unchanged fixed metallic, roughness and actual OPAQUEalpha1. No fitting, pooled rescue, unsupported removal or relaxed gate is present.",
+    "The plan counts all three source calls: N actual vertices, N centre controls and2048 holdout locations; total at most58958. Each call remains below the65536 original sampler batch cap, with2M input row cap. Old targets are reused, and no candidate vertex is resampled for a second fit.",
+    "The fixed CLI exposes only the inherited Python measurement stage despite its internal export token. The exact original supervisor/helper retain6GiB process AND owned-Job caps,180-second owned deadline, live12GiB available RAM and2GiB destination-free floors, binaryGO after attachment, exclusive paths, natural empty Job and unchanged watched inputs. Forced cleanup cannot pass.",
+    "New modules suppress bytecode immediately after importing sys; the inherited launch uses Python-I-B, private scratch and the original runtime guard against network/process/model/GPU/renderer execution and writes outside the new artifact root. The final route test exercises the actual unchanged host adapter without launching a worker.",
+    "A completed measurement classificationPASS is explicitly separate from feasibilityPASS orNO-GO. Missing causal/runtime proof isBLOCKED. No export continuation is exposed; subset colours, raw samples, causes and support arrays remain private and cannot be claimed as complete full-model colours."
+  ],
+  "limitations": [
+    "This GO admits one measurement only. Actual cause controls, old and holdout quality gates, resource peaks and preservation remain unmeasured until that run completes.",
+    "The holdout is new-position validation on previously frozen faces. It is not face-disjoint validation, exhaustive full-surface evidence, complete semantic segmentation or arbitrary-viewer qualification.",
+    "Exact source-sampled corner agreement is expected from the construction. Interior agreement remains a separate measured requirement because source-spatial field interpolation and triangle interpolation in linear colour are different operations.",
+    "The under1GiB working-data allowance is a code projection, not a measured peak; unchanged6GiB/180s containment and live floors remain authoritative. Native GPU bitwise parity is not claimed.",
+    "Any quality failure preservesNO-GO without a retry, alternative seed, fitting, new sample population or gate change. A successful feasibility result still requires a separate reviewed/approved full-resampling and export step."
+  ],
+  "blockers": []
+}
