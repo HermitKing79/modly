@@ -1,0 +1,82 @@
+{
+  "schema": "modly.amd.brick-reduction-attribution-preservation-before.v1",
+  "created_utc": "2026-10-21T21:17:28.797871+00:00",
+  "mission_base": "da37443fa7569ee155482c258a705704d78ade1c",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "authenticated_prior_half_poly_after_public_sha256": "f6e164adea2cde8a22a76aebab3cff4a25b39e6a592f7bbf442a2dbc93159294",
+  "authenticated_prior_half_poly_after_private_sha256": "86575c9e521caa8b4921147250f82dec2d508c47a408c325bce6081e02a1be64",
+  "private_detail_sha256": "8f2c03278cc55a266b56ee6fd75c6bfe76a6a503410c830366b3512b2373a772",
+  "authenticated_captured_remote_head_count": 105,
+  "starting_commit_present_in_remote_heads": true,
+  "live_after_remote_check": {
+    "live_after_checked": false
+  },
+  "retained_initial_launch46_fresh_hash_size_match": true,
+  "captured_remote_head_baseline_sha256": "32e095cc50c8803c62fea7edaa3b38757c26c66bd7fbcdbd73296a4507fdaddb",
+  "live_remote_checked_by_this_audit": true,
+  "root_handles_final_publication_checks": true,
+  "bounded_prior_unique_file_identities_checked": 400,
+  "all400_fresh_full_SHA256_checked": true,
+  "all400_current_identities_match_authenticated_before": true,
+  "protected_files_checked": 100,
+  "protected_files_fresh_full_SHA256_checked": 100,
+  "protected_files_unchanged": true,
+  "original_pycache_directories": 4,
+  "original_pycache_files": 20,
+  "original_pycache_entry_sets_and_fresh_file_hashes_unchanged": true,
+  "selected_environment_check_count": 42,
+  "selected_source_edit_backup_check_count": 13,
+  "selected_environment_native_source_edit_backup_checks_unchanged": true,
+  "source_closure_checks": {
+    "final16_source_closure": {
+      "files": 16,
+      "all_fresh_hashes_match": true
+    },
+    "original_CPU_candidate107_source_closure": {
+      "files": 107,
+      "all_fresh_hashes_match": true
+    },
+    "qualified_input_ownership_source_closure": {
+      "files": 18,
+      "all_fresh_hashes_match": true
+    },
+    "latest_qualified_PBR123_source_closure": {
+      "files": 123,
+      "all_fresh_hashes_match": true
+    }
+  },
+  "checkpoint_count": 3,
+  "checkpoint_stat_and_raw_header_unchanged": true,
+  "checkpoint_configuration_files_bound_by_full_SHA256_in_unique400": true,
+  "checkpoint_weight_payload_bytes_read_this_audit": 0,
+  "checkpoint_header_bytes_read_this_audit": 121336,
+  "prior_tree_count": 55,
+  "prior_tree_file_count": 1518,
+  "prior_report_count": 25,
+  "all_compared_prior_trees_unchanged": true,
+  "all_compared_prior_reports_unchanged": true,
+  "newly_snapshotted_completed_half_poly_tree_count": 3,
+  "newly_snapshotted_completed_half_poly_file_count": 152,
+  "newly_snapshotted_completed_half_poly_report_count": 1,
+  "prior_recorded_cache_incident": {
+    "previous_classification": "PASS_RECONCILED_WITH_RECORDED_SIDE_EFFECT",
+    "original_after_remains_FAIL": true,
+    "retained_quarantine_file_count": 5,
+    "all_current_quarantine_hash_size_mtime_match_prior_reconciliation": true,
+    "all_old_source_entries_remain_absent": true,
+    "independent_pre_move_payload_hash_capture": false
+  },
+  "original_saved_five_inputs_fresh_full_SHA256_match": true,
+  "diagnosis_original_five_inputs_fresh_full_SHA256_match": true,
+  "pinned_renderers_unchanged": true,
+  "previous_exposure_images_unchanged": true,
+  "fresh_full_hash_unique_file_count_all_scopes": 2014,
+  "fresh_full_hash_bytes_read_all_scopes": 3476559156,
+  "issues": [],
+  "scope_limits": [
+    "All400/protected100/original cache20/source/environment/renderer identities freshly checked against authenticated prior reconciliation; historical prior trees remain frozen. Public receipt omits private absolute paths.",
+    "Three historical disposable CPU fixture copies retain exact size/mtime checks only. Checkpoint weight payloads not read; exact size/mtime and fresh bounded raw header SHA256 checked. Historical full checkpoint SHA256 is provenance only.",
+    "Previous completed half-poly E/initial-private/corrected-private trees and report, plus earlier generated-cache-quarantine are fresh snapshots in BEFORE and fixed comparison scopes for AFTER; prior original FAIL and reconciled receipts remain retained.",
+    "No WSL, model, GPU, Blender, native extension or install execution; no historical/source/cache writes. Root separately verifies Git state and final publication. This mission verifies its private live before/after remote-head captures."
+  ]
+}

@@ -1,0 +1,416 @@
+{
+  "classification": "PASS",
+  "scope": "Read-only defect attribution; rejected reduction remains NO-GO",
+  "base": "da37443fa7569ee155482c258a705704d78ade1c",
+  "branch": "codex/amd-brick-reduction-defect-attribution",
+  "worker_receipt_SHA256": "573d82e52410e24e44ebf4734e9ca6f4f36ca05d2d70249353cf2b4675388fc3",
+  "host_receipt_SHA256": "e98b748ad31aba05b0dfb75e6515ef6071fd55c87abc39ba570cddd594b284b0",
+  "original_source_and_candidate_read_only": true,
+  "new_simplification_calls": 0,
+  "new_field_samples": 0,
+  "full_quality_reruns": 0,
+  "Blender_or_render_calls": 0,
+  "topology": {
+    "witnesses": [
+      {
+        "witness_number": 0,
+        "saved_edge_rank": 2111685,
+        "source_endpoints": [
+          1456609,
+          1456613
+        ],
+        "original_endpoint_edge_incidence": 4,
+        "candidate_incidence": 9,
+        "distinct_oriented_triangles": 7,
+        "duplicate_groups": [
+          [
+            1411401,
+            1411403
+          ],
+          [
+            1411419,
+            1411421
+          ]
+        ],
+        "endpoint_original_junctions": [
+          {
+            "source_id": 1456609,
+            "original_boundary_edges": 0,
+            "original_nonmanifold_edges": 6
+          },
+          {
+            "source_id": 1456613,
+            "original_boundary_edges": 0,
+            "original_nonmanifold_edges": 5
+          }
+        ],
+        "candidate_normal_pair_angles": {
+          "min_degrees": 0.0,
+          "max_degrees": 89.94870077780001,
+          "opposed_pairs": 0,
+          "pair_count": 36
+        },
+        "new_candidate_triangles": 6
+      },
+      {
+        "witness_number": 1,
+        "saved_edge_rank": 3,
+        "source_endpoints": [
+          2,
+          4
+        ],
+        "original_endpoint_edge_incidence": 2,
+        "candidate_incidence": 3,
+        "distinct_oriented_triangles": 3,
+        "duplicate_groups": [],
+        "endpoint_original_junctions": [
+          {
+            "source_id": 2,
+            "original_boundary_edges": 1,
+            "original_nonmanifold_edges": 1
+          },
+          {
+            "source_id": 4,
+            "original_boundary_edges": 2,
+            "original_nonmanifold_edges": 0
+          }
+        ],
+        "candidate_normal_pair_angles": {
+          "min_degrees": 24.652316639942,
+          "max_degrees": 67.0337393554401,
+          "opposed_pairs": 0,
+          "pair_count": 3
+        },
+        "new_candidate_triangles": 2
+      },
+      {
+        "witness_number": 2,
+        "saved_edge_rank": 614363,
+        "source_endpoints": [
+          444012,
+          559251
+        ],
+        "original_endpoint_edge_incidence": 0,
+        "candidate_incidence": 3,
+        "distinct_oriented_triangles": 3,
+        "duplicate_groups": [],
+        "endpoint_original_junctions": [
+          {
+            "source_id": 444012,
+            "original_boundary_edges": 1,
+            "original_nonmanifold_edges": 1
+          },
+          {
+            "source_id": 559251,
+            "original_boundary_edges": 1,
+            "original_nonmanifold_edges": 1
+          }
+        ],
+        "candidate_normal_pair_angles": {
+          "min_degrees": 9.060580521252529,
+          "max_degrees": 24.800510917562914,
+          "opposed_pairs": 0,
+          "pair_count": 3
+        },
+        "new_candidate_triangles": 3
+      },
+      {
+        "witness_number": 3,
+        "saved_edge_rank": 1177362,
+        "source_endpoints": [
+          831475,
+          832015
+        ],
+        "original_endpoint_edge_incidence": 0,
+        "candidate_incidence": 3,
+        "distinct_oriented_triangles": 3,
+        "duplicate_groups": [],
+        "endpoint_original_junctions": [
+          {
+            "source_id": 831475,
+            "original_boundary_edges": 0,
+            "original_nonmanifold_edges": 2
+          },
+          {
+            "source_id": 832015,
+            "original_boundary_edges": 1,
+            "original_nonmanifold_edges": 1
+          }
+        ],
+        "candidate_normal_pair_angles": {
+          "min_degrees": 28.518596587787137,
+          "max_degrees": 143.60100158439818,
+          "opposed_pairs": 2,
+          "pair_count": 3
+        },
+        "new_candidate_triangles": 3
+      },
+      {
+        "witness_number": 4,
+        "saved_edge_rank": 1715508,
+        "source_endpoints": [
+          1201513,
+          1201846
+        ],
+        "original_endpoint_edge_incidence": 0,
+        "candidate_incidence": 3,
+        "distinct_oriented_triangles": 3,
+        "duplicate_groups": [],
+        "endpoint_original_junctions": [
+          {
+            "source_id": 1201513,
+            "original_boundary_edges": 0,
+            "original_nonmanifold_edges": 4
+          },
+          {
+            "source_id": 1201846,
+            "original_boundary_edges": 1,
+            "original_nonmanifold_edges": 1
+          }
+        ],
+        "candidate_normal_pair_angles": {
+          "min_degrees": 27.87857425599078,
+          "max_degrees": 98.05282227750101,
+          "opposed_pairs": 1,
+          "pair_count": 3
+        },
+        "new_candidate_triangles": 3
+      },
+      {
+        "witness_number": 5,
+        "saved_edge_rank": 2174536,
+        "source_endpoints": [
+          1487384,
+          1487394
+        ],
+        "original_endpoint_edge_incidence": 0,
+        "candidate_incidence": 3,
+        "distinct_oriented_triangles": 3,
+        "duplicate_groups": [],
+        "endpoint_original_junctions": [
+          {
+            "source_id": 1487384,
+            "original_boundary_edges": 1,
+            "original_nonmanifold_edges": 1
+          },
+          {
+            "source_id": 1487394,
+            "original_boundary_edges": 0,
+            "original_nonmanifold_edges": 0
+          }
+        ],
+        "candidate_normal_pair_angles": {
+          "min_degrees": 14.79313120743215,
+          "max_degrees": 97.08347579256805,
+          "opposed_pairs": 1,
+          "pair_count": 3
+        },
+        "new_candidate_triangles": 3
+      },
+      {
+        "witness_number": 6,
+        "saved_edge_rank": 2498428,
+        "source_endpoints": [
+          1660399,
+          1660422
+        ],
+        "original_endpoint_edge_incidence": 2,
+        "candidate_incidence": 4,
+        "distinct_oriented_triangles": 4,
+        "duplicate_groups": [],
+        "endpoint_original_junctions": [
+          {
+            "source_id": 1660399,
+            "original_boundary_edges": 0,
+            "original_nonmanifold_edges": 4
+          },
+          {
+            "source_id": 1660422,
+            "original_boundary_edges": 0,
+            "original_nonmanifold_edges": 6
+          }
+        ],
+        "candidate_normal_pair_angles": {
+          "min_degrees": 2.9479867219942917,
+          "max_degrees": 92.15341112089315,
+          "opposed_pairs": 1,
+          "pair_count": 6
+        },
+        "new_candidate_triangles": 4
+      },
+      {
+        "witness_number": 7,
+        "saved_edge_rank": 2765999,
+        "source_endpoints": [
+          1779170,
+          1792740
+        ],
+        "original_endpoint_edge_incidence": 0,
+        "candidate_incidence": 4,
+        "distinct_oriented_triangles": 4,
+        "duplicate_groups": [],
+        "endpoint_original_junctions": [
+          {
+            "source_id": 1779170,
+            "original_boundary_edges": 1,
+            "original_nonmanifold_edges": 2
+          },
+          {
+            "source_id": 1792740,
+            "original_boundary_edges": 1,
+            "original_nonmanifold_edges": 2
+          }
+        ],
+        "candidate_normal_pair_angles": {
+          "min_degrees": 1.2535083146891017,
+          "max_degrees": 92.60219226733491,
+          "opposed_pairs": 2,
+          "pair_count": 6
+        },
+        "new_candidate_triangles": 4
+      },
+      {
+        "witness_number": 8,
+        "saved_edge_rank": 3095733,
+        "source_endpoints": [
+          1957831,
+          1957834
+        ],
+        "original_endpoint_edge_incidence": 0,
+        "candidate_incidence": 3,
+        "distinct_oriented_triangles": 3,
+        "duplicate_groups": [],
+        "endpoint_original_junctions": [
+          {
+            "source_id": 1957831,
+            "original_boundary_edges": 1,
+            "original_nonmanifold_edges": 1
+          },
+          {
+            "source_id": 1957834,
+            "original_boundary_edges": 1,
+            "original_nonmanifold_edges": 1
+          }
+        ],
+        "candidate_normal_pair_angles": {
+          "min_degrees": 19.132586485084634,
+          "max_degrees": 128.7594851823879,
+          "opposed_pairs": 2,
+          "pair_count": 3
+        },
+        "new_candidate_triangles": 3
+      }
+    ],
+    "duplicate": {
+      "selection": "first duplicate group in primary-then-eight fixed edge witnesses",
+      "edge_witness": 0,
+      "candidate_face_ids": [
+        1411401,
+        1411403
+      ],
+      "matching_original_oriented_face_ids": [],
+      "classification": "same original-ID ordered surface repeated by candidate connectivity"
+    },
+    "sample_is_not_population_causal_proof": true,
+    "collapse_ancestry_available": false
+  },
+  "material_projection": {
+    "classification": "PASS",
+    "candidate_acceptance_remains": "NO-GO",
+    "material": {
+      "region": "octant_2",
+      "saved_query_row": 1404,
+      "candidate_face_id": 855137,
+      "maximum_error_channel": "R",
+      "maximum_absolute_encoded_RGB_error": 0.24299182639571149,
+      "saved_prediction_reproduction_max_abs": 0.0,
+      "original_source_oriented_triple_match_count": 0,
+      "original_source_reverse_triple_match_count": 0,
+      "original_native_colour_source_ID_association_exact": true,
+      "interpolation_classification": "new_candidate_source_ID_triple_interpolation_unpaired_with_original_surface",
+      "same_point_original_surface_material_baseline_available": false,
+      "total_residual_not_attributed_solely_to_collapse": true
+    },
+    "projection": {
+      "view": "pos-y",
+      "original_face_id": 3905033,
+      "candidate_face_id": null,
+      "failure_reason": "missing_candidate_coverage",
+      "failed_saved_foliage_pixels_in_view": 1,
+      "source_and_candidate_local_hits_match_saved_masks_and_depths": true,
+      "original_nearest_hit_is_authenticated_foliage": true,
+      "absolute_depth_difference": null,
+      "frozen_depth_tolerance": 0.006962255361342949,
+      "source_triangle_rows_scanned": 4173584,
+      "candidate_triangle_rows_scanned": 2083776
+    },
+    "source_field_queries": 0,
+    "full_raster_calls": 0,
+    "Blender_calls": 0,
+    "no_new_candidate_or_quality_locations": true,
+    "private_geometry_material_arrays_and_diagnostic_image_not_in_public_summary": true,
+    "files": {
+      "material-witness.json": {
+        "bytes": 13316,
+        "sha256": "3b761d91ccc48ae0ed3223c5347e03d1a9f731560276651cb7862b3e25cc2fc3"
+      },
+      "projection-witness.json": {
+        "bytes": 15644,
+        "sha256": "477f0486390c237878d09dc6d6ac0ea1faa05a5eba2edfa09c7e8934c9832f18"
+      },
+      "projection-witness-mask-crop.png": {
+        "bytes": 6905,
+        "sha256": "3f6807c8bc6fd3e6cd14c2824912517707c4629bda8cc80b11b01d0b44913716"
+      }
+    }
+  },
+  "private_witness_files": {
+    "junction-wireframe.png": {
+      "bytes": 10761,
+      "sha256": "d5ce3bc5a5533fdccc9d7427e518137ff175d8f9cab703ab01cf7dcbce85418d"
+    },
+    "material-witness.json": {
+      "bytes": 13316,
+      "sha256": "3b761d91ccc48ae0ed3223c5347e03d1a9f731560276651cb7862b3e25cc2fc3"
+    },
+    "projection-witness-mask-crop.png": {
+      "bytes": 6905,
+      "sha256": "3f6807c8bc6fd3e6cd14c2824912517707c4629bda8cc80b11b01d0b44913716"
+    },
+    "projection-witness.json": {
+      "bytes": 15644,
+      "sha256": "477f0486390c237878d09dc6d6ac0ea1faa05a5eba2edfa09c7e8934c9832f18"
+    },
+    "topology-witnesses.json": {
+      "bytes": 224584,
+      "sha256": "477a833a2e253214d0641bc4c4c0041bd0401af30e62e4f22edceac947a8aedf"
+    }
+  },
+  "measured": {
+    "worker_seconds": 8.796999999998661,
+    "host_seconds": 11.484000000000378,
+    "peak_process_committed_bytes": 252321792,
+    "peak_job_committed_bytes": 253161472,
+    "minimum_observed_available_RAM_bytes": 19512467456,
+    "minimum_observed_destination_free_bytes": 111638130688,
+    "natural_owned_exit": true,
+    "forced_cleanup": false
+  },
+  "limits": {
+    "process_bytes": 6442450944,
+    "job_bytes": 6442450944,
+    "seconds": 180,
+    "available_RAM_floor_bytes": 12884901888,
+    "disk_floor_bytes": 2147483648
+  },
+  "preservation_after_SHA256": "2c1a33b982fbb9d0149da488db76f89c7eb5f060afb22830bc98f373c28eaf45",
+  "limitations": [
+    "No recorded collapse ancestry",
+    "Nine-face primary is an existing incidence4 pair now incidence9, not a newly non-manifold pair",
+    "Eight additional deterministic pairs do not explain the whole116786 population",
+    "No same-point original-surface material baseline; entire residual is not proved collapse-caused",
+    "A pixel-centre miss does not establish global foliage destruction or continuous visible-hole size",
+    "No semantic part segmentation or manifold-sheet construction was performed"
+  ],
+  "recommendation": "Separately approve one small original real-patch proof with explicit protected junction/interface and crop-boundary rules, manifold-consistent sheet/part membership and colour-aware interior validation; first qualify an installed method that can enforce those constraints. Do not repeat the full stable index-only call."
+}

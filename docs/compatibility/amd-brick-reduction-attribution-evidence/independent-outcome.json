@@ -1,0 +1,131 @@
+{
+  "schema": "modly.amd.brick-reduction-attribution-independent-outcome.v1",
+  "created_utc": "2026-10-21T21:32:21.135412+00:00",
+  "classification": "PASS",
+  "candidate_acceptance_remains": "NO-GO",
+  "publication_review": "PASS",
+  "base": "da37443fa7569ee155482c258a705704d78ade1c",
+  "branch": "codex/amd-brick-reduction-defect-attribution",
+  "conclusion": "Saved local connectivity, material interpolation and one foliage-pixel failure are reproduced. The diagnostic succeeds; it does not qualify the rejected reduction or establish collapse ancestry or full-population causality.",
+  "authorship_disclosure": "Reviewer authored witness_material.py and five appended synthetic tests. Its executable source approval was provided by the separate reviewer. This outcome uses a separate stdlib/struct/math readback rather than calling the authored witness implementation.",
+  "independent_checks": {
+    "all5_private_artifact_hashes_and_sizes_match": true,
+    "unique_original_or_candidate_face_references_checked_directly_against_selected_saved_NPY_rows": 208,
+    "face_normal_and_area_records_recomputed": 216,
+    "maximum_normal_component_difference": 0.0,
+    "maximum_area_difference": 0.0,
+    "local_incidence_cyclic_multiplicity_duplicate_groups_and_original_endpoint_junction_counts_reproduced": true,
+    "primary_original_incidence": 4,
+    "primary_candidate_occurrences": 9,
+    "primary_distinct_oriented_triples": 7,
+    "primary_duplicate_groups": 2,
+    "primary_is_existing_nonmanifold_pair_not_a_newly_bad_pair": true,
+    "additional_pairs": 8,
+    "additional_originally_absent_pairs": 6,
+    "additional_original_incidence2_pairs": 2,
+    "all8_additional_pairs_touch_original_nonmanifold_endpoint": true,
+    "material": {
+      "saved_query_row": 1404,
+      "candidate_face_id": 855137,
+      "independent_stdmath_prediction_max_abs_difference": 0.0,
+      "encoded_RGB_max_abs_error": 0.24299182639571149,
+      "worker_saved_prediction_difference": 0.0,
+      "query_world_F32_reconstructed": true,
+      "same_point_original_surface_baseline_available": false
+    },
+    "pixel": {
+      "view": "pos-y",
+      "saved_row": 260,
+      "saved_column": 221,
+      "original_face": 3905033,
+      "saved_original_foliage_mask_true_and_candidate_mask_false": true,
+      "independent_barycentric_source_depth_difference": 0.0,
+      "minimum_original_barycentric": 0.01300282002646902,
+      "complete_candidate_absence_scan_not_repeated_by_reviewer": true
+    },
+    "both_private_PNGs_independently_reopened_RGB_with_exact_recorded_dimensions_and_hashes": true,
+    "all6_current_source_hashes_match_GO": true
+  },
+  "verification_scope": "Read saved private JSON facetables, selected existing NPY rows with an independent bounded struct reader, and two existing PNGs through Pillow. Recomputed local normal/area/incidence/multiplicity and one byte/F32-decode/F64-barycentric/IEC expression using standard math. No NumPy, sampler, simplifier, full quality suite, full raster or Blender was run for this review.",
+  "independent_readback_execution": "Short exec_command process, not a separately supervised OwnedJob worker. No separate Job memory-cap or peak-memory claim is made for this tiny review. The owned execution measurements below refer only to the actual diagnostic stage.",
+  "limitations": [
+    "Complete all-triangle hit/miss and global membership scans were not repeated; authenticated producer and saved buffers bind those statements.",
+    "No collapse ancestry exists. Local non-manifold endpoint association is not a population causal proof.",
+    "The colour point has no paired original-surface material evaluation; its full residual is not attributable solely to collapse.",
+    "One failed pixel is a pixel-centre diagnostic, not global foliage damage or a raster-bug claim.",
+    "The maximum incidence-nine pair worsens an existing incidence-four pair. The eight separately selected newly bad pairs are a small deterministic sample.",
+    "Three primary candidate face occurrences match original oriented triples; this is not a claim of three distinct original triangles.",
+    "The colour witness has a new source-ID triple, but no paired same-point original-surface material baseline. Its full residual is not proved collapse-caused.",
+    "The proposed small constraint-aware patch experiment is justified for separate approval; no replacement API, sheet/part construction, target reduction or full-model resource outcome is qualified."
+  ],
+  "execution": {
+    "owned_diagnostic_host": "PASS",
+    "actual_worker": "PASS",
+    "worker_seconds": 8.796999999998661,
+    "host_elapsed_seconds": 11.484000000000378,
+    "peak_process_committed_bytes": 252321792,
+    "peak_job_committed_bytes": 253161472,
+    "attached_before_binary_GO": true,
+    "all_live_resource_floors_admitted": true,
+    "natural_empty_Job_without_forced_cleanup": true,
+    "watched_sources_unchanged": true,
+    "new_simplification_calls": 0,
+    "new_field_queries": 0,
+    "full_quality_reruns": 0,
+    "Blender_or_render_calls": 0
+  },
+  "bindings": {
+    "worker_receipt_SHA256": "573d82e52410e24e44ebf4734e9ca6f4f36ca05d2d70249353cf2b4675388fc3",
+    "host_receipt_SHA256": "e98b748ad31aba05b0dfb75e6515ef6071fd55c87abc39ba570cddd594b284b0",
+    "private_witness_artifacts": {
+      "junction-wireframe.png": {
+        "bytes": 10761,
+        "sha256": "d5ce3bc5a5533fdccc9d7427e518137ff175d8f9cab703ab01cf7dcbce85418d"
+      },
+      "material-witness.json": {
+        "bytes": 13316,
+        "sha256": "3b761d91ccc48ae0ed3223c5347e03d1a9f731560276651cb7862b3e25cc2fc3"
+      },
+      "projection-witness-mask-crop.png": {
+        "bytes": 6905,
+        "sha256": "3f6807c8bc6fd3e6cd14c2824912517707c4629bda8cc80b11b01d0b44913716"
+      },
+      "projection-witness.json": {
+        "bytes": 15644,
+        "sha256": "477f0486390c237878d09dc6d6ac0ea1faa05a5eba2edfa09c7e8934c9832f18"
+      },
+      "topology-witnesses.json": {
+        "bytes": 224584,
+        "sha256": "477a833a2e253214d0641bc4c4c0041bd0401af30e62e4f22edceac947a8aedf"
+      }
+    },
+    "independent_private_readback_source_SHA256": "121e0bdd5f6f7843e3cb00d8774dbf33ff5872694568ad1a67e8c26ee2c621a8",
+    "independent_private_readback_result_SHA256": "d8f65870b2e3fda0e3c64ae2fac9fb500be6371b343de80f984741d0657e92f2",
+    "candidate_review_SHA256": "879a0af7c882a70a66b990d878e0d2504fc1ae15d19d8c906b35cc3aeee3d83c",
+    "candidate_source_SHA256": {
+      "common.py": "0ce5f2b8382a062d3679649ea3a1fb3404039a3c56e483e4fe01951809da9c5e",
+      "run_host.py": "2d817f9dcdb5347c0124cbdc20cde096ac8058e78c3edc15072f13fe3dc300c4",
+      "test_local.py": "005bef141f101d91d096486ed6bbe110d802aafff9438f027c281d38ed5b1204",
+      "topology_witness.py": "4fb275ec0245b101f6e2633f94381afbcb014711b0d04a5f01810e65724a0ab8",
+      "witness_material.py": "4dd86e60ee875d623f5582438f27f0c31ddc0531bc37afc7ef0546da0a70d7c4",
+      "worker.py": "30b44ceb5e48cff3375d992be30ba57afad970cd092a5d9dc8873d1896a2901b"
+    },
+    "diagnostic_plan_SHA256": "4e02461bc97a26caed694ab4949c39c7e40791b1b9035964214d3294f04b98c3",
+    "focused_tests_SHA256": "1e4d50d0be3fbbb4eb5233763ae1b4edef6e5b5cc453ea69b5944c68371437b3",
+    "report_SHA256": "3bb483bc63b990e42e775c00a15ffef06d8efa88fd424e6ac54d8e94dad171fa",
+    "outcome_SHA256": "0484547176da902b0372841339750d30241a421b13669ce494ff4c007d6c857f",
+    "preservation_before_SHA256": "697923fb1d800e463c75a071bbc781c10d60c84aefa8a174762d6e84f43d0866",
+    "preservation_after_SHA256": "2c1a33b982fbb9d0149da488db76f89c7eb5f060afb22830bc98f373c28eaf45"
+  },
+  "preservation": {
+    "classification": "PASS_WITH_RECORDED_SCOPE",
+    "original_source_and_rejected_candidate_unchanged": true,
+    "protected100_original400_and_historical55_trees_1518files_25reports_recorded_preserved": true,
+    "checkpoint_weight_payload_reads": 0,
+    "remote_head_preservation": "AFTER audit records105 original heads unchanged; final Git publication remains root responsibility"
+  },
+  "source_safe_publication": "Public report/summary contain witness IDs, counts, errors and hashes. Exact position/material/normal arrays, source values, local detailed geometry and both diagnostic image payloads remain private. Schematics are explicitly not shaded renders.",
+  "recommendation_review": "The limited recommendation for a separately approved original-patch method qualification follows the evidence; it makes no claim that stable0.22 has arbitrary locks/colour weights or that a replacement method is already qualified.",
+  "unresolved_findings": [],
+  "stop": true
+}

@@ -1,0 +1,94 @@
+{
+  "classification": "GO_METHOD_ONLY",
+  "scope": "Read-only attribution design and source review. This is not launch approval, a repair proposal or a new reduction. No asset array, simplifier, sampler, Blender, render or heavy quality evaluation was executed by this reviewer.",
+  "base": "da37443",
+  "reviewer": "full_glb_reader",
+  "source_SHA256": {
+    "installed/meshoptimizer/README.md": "fb6e8186210e13172e79cc426bc628cf2a9a28ab6ef2c362c7fd5bfa4f8fe38a",
+    "installed/meshoptimizer/meshopt_simplifier.js": "5a10a6d6a2c2ab113cfa81be2d31aaf89e46842eedaa1245d266b16e2976dc6b",
+    "installed/meshoptimizer/meshopt_simplifier.module.d.ts": "75bc949852198465c5162d332654e0c4c8083e884160ae51587ed9dc68e2e21d",
+    "amd-brick-half-poly-evidence/reduce.cjs": "8f713faf9d9ded8f9229ecafcaf217c655fa69adb29f0776897548da19c48054",
+    "amd-brick-half-poly-evidence/assess.py": "06b0496c0f31efbc971a02971ad1c41d8389bbc12177554df042994084e5df2f",
+    "amd-brick-half-poly-evidence/outcome.json": "00a87b4d2636370b6861cc6f7d19aa8ead55afd73446d0f41e671c21a4cbbd5a",
+    "amd-brick-half-poly-evidence/independent-outcome.json": "ada53c177c36c91250368da799f3e5a62d2626e291bc1ff61ff65cc85411a30a",
+    "amd-brick-defect-diagnosis-evidence/topology.py": "9d6e29e83b35c60f1f9b49192a290069bf867b51493da3cc5ec017525017d561"
+  },
+  "selected_call": {
+    "API": "MeshoptSimplifier.simplify",
+    "version": "installed0.22",
+    "input_triangles": 4173584,
+    "target_triangles": 2086792,
+    "target_error": 0.005,
+    "flags": [
+      "LockBorder"
+    ],
+    "experimental": false,
+    "attribute_inputs": 0,
+    "actual_prior_simplify_calls": 1,
+    "subsequent_calls_authorized_by_this_review": 0
+  },
+  "algorithm_evidence": {
+    "local": "Installed README lines128-148 documents lossy approximate-error simplification, topology/seam restrictions, use of original vertex streams, no numeric attribute inputs to stable simplify, and topological-border locking. Wrapper lines80-98 and222-253 copies source buffers into WASM and returns a fresh original-ID index array.",
+    "upstream": {
+      "url": "https://github.com/zeux/meshoptimizer/blob/v0.22/src/simplifier.cpp",
+      "lines": [
+        "20-26",
+        "178-209",
+        "261-281",
+        "418-421",
+        "951-978"
+      ],
+      "interpretation": "Version0.22 upstream source credits QEM, ranks edge collapses by quadric error, internally groups identical positions into wedges, and turns border-class vertices into locked vertices for LockBorder. This supports mechanism context, not a replay or binary-to-source proof for this run."
+    },
+    "guarantees_in_this_pipeline": [
+      "Retained position rows and native RGBA bytes can stay exact through original IDs, as independently checked by the prior execution.",
+      "The declared LockBorder option constrains recognized topological border vertices. Target count is best effort under approximate error and topology restrictions."
+    ],
+    "not_guaranteed": [
+      "No documented guarantee that this non-manifold input gains no new high-incidence endpoint pair, duplicate triangle, crossing or orientation defect.",
+      "No guarantee that all original part interfaces, thin foliage, normals, silhouette pixels or source colour gradients survive.",
+      "The approximate QEM error is not a verified Hausdorff, material, silhouette or topology bound. LockBorder does not lock every internal junction or semantic part boundary."
+    ]
+  },
+  "recorded_topology_interpretation": {
+    "original": {
+      "face_bearing_vertex_components": 207,
+      "nonmanifold_pairs": 387068,
+      "maximum_edge_incidence": 4
+    },
+    "candidate": {
+      "face_bearing_vertex_components": 207,
+      "nonmanifold_pairs": 270987,
+      "maximum_edge_incidence": 9,
+      "newly_nonmanifold_endpoint_pairs": 116786,
+      "duplicate_oriented_triangles": 3642,
+      "reverse_preexisting_oriented_triple_matches": 675
+    },
+    "definition": "assess.py lines59-63 maps compact candidate bad-edge endpoints back to exact source IDs, then subtracts the sorted original incidence>2 endpoint-pair set. Thus newly non-manifold includes a pair that was absent, boundary or incidence2 before; it does not mean every pair was a wholly absent original edge.",
+    "limits": "Counts above are prior authenticated/public receipt observations, not recomputed here. Fewer bad pairs globally does not prevent a worse local junction. The675 reverse matches compare oriented ID triples and do not establish parent/child face ancestry. No collapse sequence was recorded.",
+    "attribution_rule": "An inspected witness may demonstrate its own endpoint IDs, full incident face occurrences, original incidence class and output geometry. It cannot alone attribute all116786 pairs to the same mechanism or recover which precise collapses produced them."
+  },
+  "colour_interpolation": {
+    "equation": "At an interior point, C_linear(p)=sum_i bary_i(p)*decode(native_byte[source_id_i]); encoded_RGB=IEC_encode(C_linear(p)).",
+    "reason": "Exact retained bytes fix each retained vertex sample. Changing the triangle's source-ID triple changes the three samples, the spanned surface and the barycentric weights. The resulting interior colour can therefore differ from both the original piecewise-linear surface colour and the genuine spatial source field without any byte having changed.",
+    "controls": "A spatial attribution probe must freeze candidate world positions independently of output colours, evaluate the same genuine original field at those positions, report native-byte interpolation and scalar residuals separately, retain zero-support evidence, and distinguish new-field probes from prior query replay. No colour fitting or material adjustment follows from this diagnostic."
+  },
+  "next_small_patch_constraints": [
+    "Any future reduction needs separate authorization and a frozen part/topology rule, scope, ratio/error, query seeds, acceptance and resource plan. This attribution run authorizes no second candidate.",
+    "Keep the master and rejected candidate immutable. Preserve exact original vertex/face IDs and an explicit compaction map; no coordinate weld, face-fan duplication, pruning or hidden repair may manufacture apparent success.",
+    "A topology witness must count all face occurrences incident to the chosen endpoint pair, including duplicates and winding; show the original incidence category and full bounded local context. A truncated patch boundary must not hide incident faces or be mistaken for a real asset boundary.",
+    "Semantic parts are not established by207 vertex-connected labels. If a later part-aware method separates sheets or materials inside one component, state and test that rule explicitly; preserve true shared interfaces without bridging disconnected source components or erasing selected isolated components.",
+    "Require no new incidence>2 endpoint pair and no local incidence growth at protected existing junctions, no new oriented duplicates or repeated-index/zero-area/nonfinite triangles, and preserve oriented unchanged triples. Check selected component lineage and patch boundaries explicitly.",
+    "Freeze geometry, silhouette and known thin-foliage observations before a future patch candidate. Retain source gates0.005/0.01/0.03 diagonal and0.98 IoU/0.99 depth-aware visible-foliage retention where applicable; disclose excluded parts. A local pass cannot certify the full asset or every leaf.",
+    "Exact native-byte transfer is necessary but insufficient. Validate fixed candidate interior RGB against authentic field values in each included original region using0.02/0.05/0.15 and separate unchanged metallic/roughness/OPAQUE-alpha RMSE0.02; missing support fails. Do not fit colours or loosen a gate after observing output.",
+    "Keep bounded CPU supervision, fixed resource floors, exact GO after owned Job attachment, source preservation, exclusive outputs, natural completion and separate execution/quality verdicts. A failed conservative distance upper bound alone remains BLOCKED rather than proof of actual damage."
+  ],
+  "remaining_review": "Root's topology witness and the separate material worker/host require final independent source and focused-fixture review with exact hashes before any owned attribution execution.",
+  "unsupported_claims_explicitly_excluded": [
+    "Exact collapse ancestry",
+    "Single common cause for all116786 pairs",
+    "Manifold or game-ready output",
+    "Full-asset/unsampled-surface guarantee",
+    "A new repair, alternative simplification or render approval"
+  ]
+}

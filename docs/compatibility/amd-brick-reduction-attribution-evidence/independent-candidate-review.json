@@ -1,0 +1,70 @@
+{
+  "classification": "GO",
+  "scope": "Independent source-only approval for one owned read-only attribution worker on the authenticated rejected candidate. No second simplification, repair, field query, full raster or Blender operation is admitted.",
+  "reviewer": "full_glb_reader",
+  "base": "da37443fa7569ee155482c258a705704d78ade1c",
+  "source_SHA256": {
+    "common.py": "0ce5f2b8382a062d3679649ea3a1fb3404039a3c56e483e4fe01951809da9c5e",
+    "run_host.py": "2d817f9dcdb5347c0124cbdc20cde096ac8058e78c3edc15072f13fe3dc300c4",
+    "test_local.py": "005bef141f101d91d096486ed6bbe110d802aafff9438f027c281d38ed5b1204",
+    "topology_witness.py": "4fb275ec0245b101f6e2633f94381afbcb014711b0d04a5f01810e65724a0ab8",
+    "witness_material.py": "4dd86e60ee875d623f5582438f27f0c31ddc0531bc37afc7ef0546da0a70d7c4",
+    "worker.py": "30b44ceb5e48cff3375d992be30ba57afad970cd092a5d9dc8873d1896a2901b"
+  },
+  "plan_SHA256": "4e02461bc97a26caed694ab4949c39c7e40791b1b9035964214d3294f04b98c3",
+  "focused_tests_SHA256": "1e4d50d0be3fbbb4eb5233763ae1b4edef6e5b5cc453ea69b5944c68371437b3",
+  "attribution_method_review_SHA256": "4cd0223b755a585e9de39fa746e1a181f1640b27ace9f4a1114ee8d471ffa7e3",
+  "verification": {
+    "observed_focused_log": "10 synthetic tests PASS in0.681seconds. Tests cover incidence lookup, cyclic orientation/multiplicity, face normals/source IDs, invalid witness rejection, saved-query tie ordering, byte codec/interpolation, one-pixel two-sided/tie and miss behavior, and original forward/reverse/new triple membership.",
+    "authorship": "This reviewer authored no candidate Python module. This reviewer authored the separate static attribution-method-review.json; it is context, not a self-review of executable witness code.",
+    "actual_model_array_reads_by_reviewer": 0,
+    "actual_worker_executions_by_reviewer": 0,
+    "native_algorithm_or_Blender_calls_by_reviewer": 0
+  },
+  "findings_resolved": [
+    {
+      "finding": "Inherited runtime guard still referenced its historical private P.",
+      "resolution": "common.begin now rebinds auth.P=P before installing the pinned guard, retaining its model/GPU/process/network blacklist and the additional new-output-only write hook."
+    },
+    {
+      "finding": "Direct old input adapter and duplicate-fallback arithmetic source were not in the watched closure.",
+      "resolution": "authenticate now watches the old adapter and pins/watches old reduction_contract.py in addition to the original closure, exact NO-GO receipt, all35 recorded candidate outputs and explicit topology-cache/camera hashes."
+    },
+    {
+      "finding": "Endpoint stars could create unbounded Python detail records.",
+      "resolution": "local_faces hard-fails above32768 collected faces and topology detail hard-fails above4096 faces per witness, without truncating incidence evidence. Material adjacency retains complete counts and explicitly labels capped detail/ID lists."
+    },
+    {
+      "finding": "New-edge wording could misdescribe the116786 set.",
+      "resolution": "Payload now names population_newly_nonmanifold_pairs; comparison remains candidate incidence>2 minus original incidence>2, with original incidence classes and local full-occurrence counts reported."
+    }
+  ],
+  "topology_review": [
+    "Primary selection is the first saved newly non-manifold incidence9 key, with an explicitly declared first-global-incidence9 fallback. Eight additional saved novel-pair ranks are deterministic and exclude the primary.",
+    "Sorted compact source IDs map candidate endpoints back to original indices. Streaming endpoint-star scans reproduce each selected source/candidate cached edge incidence using all face occurrences, including duplicates.",
+    "Cyclic canonical keys preserve winding, retain multiplicity and distinguish reversed original triples. The declared duplicate fallback finds a reproducible least cyclic candidate key; it is a witness lookup rather than a rerun of the topology acceptance suite.",
+    "Original endpoint boundary/non-manifold context, incident faces, flat normals, areas, exact retained native bytes and local angle statistics support local observations. No collapse history or common cause for all116786 pairs is inferred."
+  ],
+  "material_and_projection_review": [
+    "Material selection uses the largest saved channel error in the two fixed128-row high_variation/octant2 populations, with deterministic query/channel ties and original region order.",
+    "Exact source IDs/position bits/native bytes and saved barycentric/world coordinates are checked. Explicit IEC-to-F32 byte decoding and F64 linear interpolation reproduce the saved encoded prediction within the declared arithmetic tolerance; no new genuine-field query is made.",
+    "Original cyclic/reverse/new-triple membership and bounded edge adjacency distinguish pre-existing native-colour triangle interpolation from new connectivity. Without a paired original-surface evaluation at the same point, the total residual is not assigned solely to collapse.",
+    "The first saved failed pos-y/pos-z foliage pixel is chosen lexicographically and its failed-mask count is reconciled with the prior receipt. A bounded32768-face batch scan evaluates only that pixel on original and candidate geometry.",
+    "One-pixel arithmetic matches the prior opaque/two-sided centre, barycentric tolerance and exact-depth/lowest-face tie rules. Nearest original foliage membership and both saved mask/depth values must reproduce.",
+    "Signed depth separates missing coverage, foreground first-hit occlusion and a candidate surface behind the original foliage. Edge proximity is explicitly a pixel-centre limitation, not proof of a raster bug. Private mask crops use declared nearest-neighbour display enlargement, not a new shaded render."
+  ],
+  "host_and_resources": {
+    "command": "D:/AI/Trellis2AMD/venv/Scripts/python.exe -I -B worker.py",
+    "process_cap_bytes": 6442450944,
+    "Job_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "available_RAM_floor_bytes": 12884901888,
+    "destination_free_floor_bytes": 2147483648,
+    "review": "Only the fixed Python attribution worker can launch. Exact current Python source set, plan and focused log are required; original/saved source identities are authenticated and watched. Live resource admission precedes fresh exclusive outputs/attempt marker; owned Job attachment precedes exact GO. Periodic floors, measured peaks, unchanged inputs and natural empty-Job exit without forced cleanup are required for execution PASS.",
+    "memory_limit": "Batch and local-record limits keep diagnostic working sets bounded; Python/native overhead and full historical loading are not independently measured by this review. Actual unchanged hard caps/deadline remain decisive.",
+    "failure_policy": "Failure preserves private evidence and cannot accept the rejected candidate or launch another algorithm/render. Worker diagnostic PASS means all witnesses completed, while prior candidate acceptance remains NO-GO."
+  },
+  "future_patch_API_note": "Installed0.22 stable simplify accepts indices, positions, stride, target, error and flags only; it has no explicit per-vertex lock array or colour-error weights. The separately named simplifyWithAttributes exposes vertex_lock/attribute inputs but is marked experimental and was not selected or authorized here. A future small proof must preserve protected original junction and thin-foliage/interface faces non-reconstructively or separately approve a suitable method, rather than inventing stable API support. Prior face-fan separation fragmentation is evidence against treating it as an automatic fallback. No future candidate is authorized by this receipt.",
+  "remaining_actionable_findings": [],
+  "launch_condition": "GO only for this one authenticated read-only diagnostic after fresh live admission. Actual witness reproduction, source preservation, bounded natural execution and independent completed-evidence review remain required before publication."
+}
