@@ -1,0 +1,43 @@
+{
+  "schema": "modly.amd.bounded-foliage-uv-independent-candidate.v1",
+  "created_utc": "2026-10-21T14:24:00.562765+00:00",
+  "classification": "GO",
+  "base": "64d05aa0d40073778f316e788d5ebe595b44495f",
+  "reviewer": "independent foliage_review subagent",
+  "scope": "One nominated original-face CPU-only selection and unchanged dominant-normal UV qualification; no reselection, bake, GLB, Blender, WSL, model or GPU execution.",
+  "candidate_source_SHA256": {
+    "diagnostics.py": "9c62b2e993dac5fb823b6eee719ace356bb85bbe29ece64d5e126f14afa3c664",
+    "experiment.py": "f5e6ab8cd852f906098b8f3f1e0fce6940ebc1c578d4108fc4b6d646e93672ce",
+    "run_host.py": "78614320bd9de48cfc0d88186c332e502fe98a1c8baaf56d583cf0dd411f710b",
+    "test_diagnostics.py": "08ee9cecf9eb86fa2d30c242af2f8776648743f33adbe4045df35e17d87d5b8d",
+    "test_selection.py": "5803e327cb6c47830c4d19e24d49376167e58100c5a99097aceaab18cd95bc7a"
+  },
+  "qualification_plan_SHA256": "75056262017c77227ff0ce7ac4cdd5c1751658cc8c4f7b70d7a1fd3f94e093d2",
+  "nomination_SHA256": "eecf4d0b880c28aab7fb660a6a573d8498291936ee14ac039e05b09c7572da25",
+  "focused_tests_SHA256": "9fca9e130bf9f0a2e18c34f6569a5c141920ea05a1d027ea107f9edabbd21a5c",
+  "synthetic_tests": {
+    "passed": 25,
+    "seconds": 0.582,
+    "provenance": "Read root-produced focused-tests.txt; reviewer did not rerun tests or any actual source selection."
+  },
+  "verified_checks": [
+    "Exact approved base and isolated branch; every reused source byte-matches Git base.",
+    "Nomination [346,393,393,436] is frozen by exact SHA256 before any new actual geometry count; strictly within prior [332,384,400,448]; no parameter search.",
+    "Historical nearest +X centre-depth selector unchanged except module ROI; selects complete original faces and one original-edge ring among complete same-ROI faces; 6000 admission fails closed without truncation or retry.",
+    "Durable selection admission, exact face/vertex IDs, original corner bits, material coordinate ordering, and NPY byte-exact readback precede the layout gate.",
+    "Topology counts edge and vertex components separately, global original-edge incidence by bounded full-source chunks, and artificial versus natural local boundary edges.",
+    "Leaf/vine window coverage is explicitly a projected footprint proxy, never semantic or nearest-depth segmentation; private visual readback remains required for representation.",
+    "Historical dominant-normal axis projection, fixed 4096*sqrt(3)*(1+1e-6) density and one 32-aligned shelf pass are reused without source edits.",
+    "Bounded 1024 atlas, 6000 faces, 256 islands, 250000 clipping tests and 64Mi raster bbox work per phase remain enforced by pinned primitives.",
+    "F64 and portable F32 positive area, tangent-density floor 4096, analytic overlap, every-face centre coverage and continuous LOD0..5 positive box/trilinear ancestry isolation fail closed; half-LODs add no ancestors beyond their two adjacent integer levels.",
+    "Owned supervisor retains 6GiB process commit, 180s deadline, 12GiB RAM and 2GiB disk floors, exclusive marker/output, attached-before-binary-GO, natural owned Job exit verification and before/after source identity watch.",
+    "Sources compile without execution; all operational Python launches require -I -B and bytecode disabled before subsequent imports."
+  ],
+  "limitations": [
+    "GO authorizes only this one qualification attempt; actual selection representation and UV outcome remain unmeasured.",
+    "Selected visible front crop is not a complete closed anatomical leaf or vine; proxy overlap alone cannot establish visual identity.",
+    "A failed deterministic packing/coverage candidate is not proof that all UV layouts or foliage atlases are infeasible.",
+    "No foliage material-quality result is produced by this selection/UV-only experiment."
+  ],
+  "blockers": []
+}

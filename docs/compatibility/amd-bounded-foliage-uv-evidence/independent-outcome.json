@@ -1,0 +1,104 @@
+{
+  "schema": "modly.amd.bounded-foliage-uv-independent-outcome.v1",
+  "created_utc": "2026-10-21T14:27:51.900587+00:00",
+  "classification": "BLOCKED",
+  "reviewer": "independent foliage_review subagent",
+  "scope": "Read-only independent verification of actual saved output, original source mapping, material correspondence, topology, selected projection and chart report arithmetic. No source reselection, chart rebuild, bake, export or rendering.",
+  "result_SHA256": "8ed7861ef47aeb5e7468eddff1df886286c36c49542a4f61ea48d628e4faede0",
+  "selection_SHA256": "58459ac39b34a203c81fab06635261d0819ff3ddec80d531480e070f343cec7d",
+  "selection_admission_SHA256": "e1edbb0f00e6b7be3c9b4222851c39f7ec26dea976e3aa28a4ed21b36cc4766c",
+  "host_result_SHA256": "626e884aa442675c394ff544c4158700c205858692745b27ac7caa5da6c72c8c",
+  "attempt_SHA256": "286b2976148e472f8f9d312edf4e0144efb95abad0c098e0f44b4b8f78f420ed",
+  "candidate_review_SHA256": "1d5b34057c5bc9aed3a04cee4cde99582cc1f65a39abd9894b2326be2af208f0",
+  "stderr_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_SHA256": "a794555d868f8cd2b98c6a75a2145f52a0bfe098048e5348c2e9735c9ed355f6",
+  "verified": {
+    "exact_candidate_review_plan_nomination_and_actual_attempt_binding": true,
+    "all_attempt_watched_sources_still_match_hash_size_mtime": true,
+    "all_output_file_hashes_and_images_reopened": true,
+    "original_source_face_vertex_mapping_corner_bits_winding_order_multiplicity_exact": true,
+    "material_geometry_entire_coordinate_array_identity": true,
+    "direct_original_material_feature_rows_bit_exact": true,
+    "saved_selected_triangles_complete_inside_fixed_ROI": true,
+    "independent_local_and_global_edge_incidence_and_component_readback": true,
+    "independent_selected_footprint_proxy_count_readback": true,
+    "independent_actual_dominant_projection_axis_readback": true,
+    "saved_chart_rectangle_formula_and_capacity_arithmetic_revalidated": true,
+    "no_UV_or_portable_UV_or_raster_outputs_exist": true,
+    "natural_owned_CPU_completion_and_all_resource_floors": true
+  },
+  "selection": {
+    "ROI": [
+      346,
+      393,
+      393,
+      436
+    ],
+    "candidate_faces": 49171,
+    "complete_ROI_faces": 45828,
+    "visible_complete_faces": 1668,
+    "selected_original_faces": 4531,
+    "selected_original_vertices": 3177,
+    "edge_components": 83,
+    "vertex_components": 34,
+    "edge_incidence_1": 2461,
+    "edge_incidence_2": 5229,
+    "edge_incidence_gt2": 219,
+    "artificial_local_boundary_edges": 2308,
+    "natural_local_boundary_edges": 153,
+    "unmatched_local_boundary_edges": 0,
+    "coverage": {
+      "covered_pixel_count": 1741,
+      "roi_pixel_count": 2021,
+      "proxy_covered_pixel_counts": {
+        "leaf": 685,
+        "vine": 478
+      },
+      "proxies": {
+        "leaf": {
+          "covered_pixels": 685,
+          "pixel_count": 728
+        },
+        "vine": {
+          "covered_pixels": 478,
+          "pixel_count": 480
+        }
+      },
+      "all_proxies_have_coverage": true,
+      "interpretation": "manually nominated image windows; selected projected footprints only; no depth visibility or semantic segmentation claim"
+    }
+  },
+  "representation": {
+    "private_original_and_selection_images_visually_inspected": true,
+    "orange_leaf_surface_and_adjacent_curved_vine_portions_visible_in_selected_overlay": true,
+    "interpretation": "A cropped original front-surface subset intersects both visually nominated features. It is not a complete anatomical leaf or vine and not a single edge-connected patch. Artificial subset boundaries arise from the ROI, centre-ray visibility and one-ring selection; the global-edge test does not attribute each omitted neighbour to one of those causes."
+  },
+  "UV_blocker": {
+    "reason": "Bounded island count or prescribed rectangle capacity exceeded",
+    "island_count": 1127,
+    "maximum_islands": 256,
+    "prescribed_rectangle_area_texels": 6929408,
+    "fixed_atlas_area_texels": 1048576,
+    "area_ratio": 6.6083984375,
+    "projection_axis_face_counts": [
+      2072,
+      778,
+      1681
+    ],
+    "island_construction_clip_tests": 6399,
+    "stage": "After dominant-axis chart construction and prescribed owner rectangle dimensions, before shelf packing, UV construction, F64/F32 verification or rasterization."
+  },
+  "measurements": {
+    "worker_seconds": 6.1720000000000255,
+    "host_seconds": 7.280999999999949,
+    "peak_process_committed_bytes": 244514816,
+    "minimum_sampled_available_RAM_bytes": 20087750656,
+    "minimum_sampled_destination_free_bytes": 105519439872
+  },
+  "limitations": [
+    "Exact membership is authenticated by saved original IDs and reviewed unchanged selector; reviewer deliberately did not rerun source visibility selection.",
+    "Chart membership was not persisted because build_layout returned BLOCKED before producing layout. Revalidated rectangle arithmetic uses actual saved per-chart bounds and exact reviewed implementation, without rebuilding charts.",
+    "No actual foliage UVs, F64/F32 density/coverage/overlap/isolation measurements, material sample accuracy, mip contamination, bake or export result exists.",
+    "This deterministic dominant-axis chart and prescribed rectangle candidate is blocked; no global foliage packing infeasibility or intrinsic resource failure is claimed."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "modly.amd.bounded-foliage-uv-independent-report-review.v1",
+  "created_utc": "2026-10-21T14:29:58.314214+00:00",
+  "classification": "PASS",
+  "reviewer": "independent foliage_review subagent",
+  "report_SHA256": "ea55820c4628c95df2e89bbfcbc2846798fd73c24b389ef44f3524fe54bf108d",
+  "execution_results_SHA256": "f8f64b4a785ad351ffff5041c6c68b2da2b66190da054e75fca846df8e379534",
+  "independent_outcome_SHA256": "101530f8857b89e1fa4c4abe97bcfc06e0d8389a3ef213ef3883601ea2bab441",
+  "preservation_after_SHA256": "cfd40b0215fd9b40c2d10b6c7ac40354e5b617009612ad534f9ee67643642693",
+  "scope": "Final source-safe report and numeric summary review; no source selection, chart construction, arrays recomputation or tests rerun. Publication limited to new experiment evidence and report.",
+  "verified_checks": [
+    "Summary fields agree exactly with actual saved result and independently verified outcome; private receipt hash bindings match.",
+    "Report accurately separates 4531-face selection admission PASS from actual deterministic chart/rectangle BLOCKED.",
+    "No measured final UV, F64/F32 overlap/density/coverage, LOD isolation or foliage material-quality PASS is claimed.",
+    "Actual axis counts, 1127 islands, 6929408 prescribed rectangle texels and pre-shelf failure agree with independent outcome.",
+    "Resource values agree with raw host receipt; 7.281s is correctly labelled supervisor elapsed, not exact child runtime.",
+    "Coverage is labelled projected-footprint proxy and visible features are portions; topology fragmentation/artificial extraction boundaries are reported without repair or anatomical completeness claims.",
+    "Report links resolve, including direct independent outcome review.",
+    "Public evidence contains UTF-8 source/text/JSON only; no PNG, NPY, model, atlas, GLB or geometry coordinate arrays are included.",
+    "Preservation scope and stat/header-only checkpoint limitations agree with published BEFORE/AFTER receipts.",
+    "Exactly one next action is stated: qualify a connected-chart UV candidate for the same frozen saved 4531-face subset under unchanged density, 1024 atlas and LOD5 gates before any bake."
+  ],
+  "blockers": []
+}

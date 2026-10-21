@@ -1,0 +1,36 @@
+{
+  "schema": "modly.amd.bounded-foliage-uv-independent-publication-review.v1",
+  "created_utc": "2026-10-21T14:32:41.082350+00:00",
+  "classification": "GO",
+  "reviewer": "independent foliage_review subagent",
+  "scope": "Read-only staged publication byte-binding review only; no selection, UV, geometry, tests, bake or renderer work.",
+  "candidate_review_SHA256": "1d5b34057c5bc9aed3a04cee4cde99582cc1f65a39abd9894b2326be2af208f0",
+  "report_review_SHA256": "7b8141c0f2bc03690cde086cad1f0f8dc8218c15aaa35549558ca83dad7613db",
+  "staged_report_SHA256": "ea55820c4628c95df2e89bbfcbc2846798fd73c24b389ef44f3524fe54bf108d",
+  "staged_execution_results_SHA256": "f8f64b4a785ad351ffff5041c6c68b2da2b66190da054e75fca846df8e379534",
+  "gitattributes_staged_SHA256": "78a73da3978c84c222dd7c9993cf75bf0dd8e1f417606ab6ad1079c8f1e1c32d",
+  "verified_checks": [
+    "Scoped .gitattributes has only focused-tests.txt -text whitespace=cr-at-eol; no repository-wide normalization change.",
+    "All five executed candidate Python sources, qualification plan, nomination and original test transcript match workspace, staged Git blobs and the original candidate review hashes byte-for-byte.",
+    "Final report, numeric summary, independent outcome and preservation AFTER staged blobs match the report review hashes.",
+    "Original focused-tests.txt is exactly 4066 bytes with 30 CRLF line endings in workspace and Git index; no transcript or reviewed source was edited to repair publication.",
+    "All 16 currently staged files are the new evidence/report only, UTF-8 text/source/JSON; no caches, generated images, geometry/model arrays or unrelated files staged.",
+    "git diff --cached --check passes under the narrowly scoped original transcript line-ending attribute."
+  ],
+  "candidate_bindings": {
+    "diagnostics.py": "9c62b2e993dac5fb823b6eee719ace356bb85bbe29ece64d5e126f14afa3c664",
+    "experiment.py": "f5e6ab8cd852f906098b8f3f1e0fce6940ebc1c578d4108fc4b6d646e93672ce",
+    "run_host.py": "78614320bd9de48cfc0d88186c332e502fe98a1c8baaf56d583cf0dd411f710b",
+    "test_diagnostics.py": "08ee9cecf9eb86fa2d30c242af2f8776648743f33adbe4045df35e17d87d5b8d",
+    "test_selection.py": "5803e327cb6c47830c4d19e24d49376167e58100c5a99097aceaab18cd95bc7a",
+    "qualification-plan.md": "75056262017c77227ff0ce7ac4cdd5c1751658cc8c4f7b70d7a1fd3f94e093d2",
+    "nomination.json": "eecf4d0b880c28aab7fb660a6a573d8498291936ee14ac039e05b09c7572da25",
+    "focused-tests.txt": "9fca9e130bf9f0a2e18c34f6569a5c141920ea05a1d027ea107f9edabbd21a5c",
+    "amd-bounded-foliage-uv.md": "ea55820c4628c95df2e89bbfcbc2846798fd73c24b389ef44f3524fe54bf108d",
+    "execution-results.json": "f8f64b4a785ad351ffff5041c6c68b2da2b66190da054e75fca846df8e379534",
+    "independent-outcome.json": "101530f8857b89e1fa4c4abe97bcfc06e0d8389a3ef213ef3883601ea2bab441",
+    "preservation-after.json": "cfd40b0215fd9b40c2d10b6c7ac40354e5b617009612ad534f9ee67643642693"
+  },
+  "staged_paths_checked": 16,
+  "blockers": []
+}
