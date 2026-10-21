@@ -1,0 +1,100 @@
+{
+  "classification": "GO",
+  "scope": "Read-only method selection and resource review for one bounded direct installed Meshopt simplification attempt, subject to final candidate review and actual live admission. No simplifier, Blender, model array, candidate or native fixture was invoked by this review.",
+  "base": "5705f9d325771b8b2595b6385a630879f9ff700e",
+  "selected_method": {
+    "package": "Installed meshoptimizer0.22.0",
+    "entry": "meshopt_simplifier.js directly; do not import the package index or glTF Transform pipeline",
+    "API": "MeshoptSimplifier.simplify",
+    "source_triangles": 4173584,
+    "source_index_count": 12520752,
+    "target_triangles": 2086792,
+    "target_index_count": 6260376,
+    "relative_target_error": 0.005,
+    "flags": ["LockBorder"],
+    "experimental_features": false,
+    "forbidden": ["weld", "compactMesh", "reorder", "Prune", "simplifyWithAttributes", "sloppy simplification", "glTF Transform", "Blender Collapse", "repair", "automatic fallback or retry"]
+  },
+  "installed_source_SHA256": {
+    "package.json": "559c5fdb441f735c53c84ad7c3d0025420315f891190326853fd423aae138fe6",
+    "README.md": "fb6e8186210e13172e79cc426bc628cf2a9a28ab6ef2c362c7fd5bfa4f8fe38a",
+    "meshopt_simplifier.js": "5a10a6d6a2c2ab113cfa81be2d31aaf89e46842eedaa1245d266b16e2976dc6b",
+    "meshopt_simplifier.module.d.ts": "75bc949852198465c5162d332654e0c4c8083e884160ae51587ed9dc68e2e21d",
+    "existing_meshopt_runner.cjs": "4b09dc03353297fdfa51da153f33034e638bb27412d3c5bec8447d3d56500bc4"
+  },
+  "API_and_topology_review": {
+    "no_automatic_weld_in_selected_wrapper": true,
+    "input_mutation": "The stable wrapper copies source positions and indices into WASM and returns a new index array. It does not copy altered positions or indices back to the source arrays. The documented result uses the original vertex buffers and original IDs.",
+    "colour_semantics": "Original position and colour rows can therefore remain byte-exact and unmodified. New triangle connectivity changes surface interpolation; retained vertex colours are not a proof of reduced-surface colour fidelity. Stable simplify does not optimize an RGB attribute error.",
+    "default_index_semantics": "Installed documentation describes recognition of attribute discontinuities through index data and warns that inconsistent topology or many seams may prevent reaching the requested count.",
+    "nonmanifold_limit": "The installed JS wrapper and tests do not expose the native classifier or establish an exact four-face-junction preservation rule. Do not transfer Blender's protected-face floor to Meshopt or claim that all non-manifold junctions are frozen. LockBorder is the documented border-vertex constraint; topology and geometry must be checked on the actual result.",
+    "error_limit": "0.005 is the library's approximate relative geometric error measure, not a Hausdorff, silhouette or colour guarantee. Target count is best-effort under topology and error restrictions. A failure to meet the frozen target or post-quality gates must be preserved without changing error, flags or method.",
+    "existing_backend_not_selected": "The current application backend skips weld above500K faces but selects error=max(0.001,1-ratio), which is0.5 at this target. The selected narrow direct call fixes0.005 and avoids the document loading/transform/export path."
+  },
+  "static_embedded_WASM_review": {
+    "method": "Decode the module's existing text pack format and inspect the binary memory section only; no compile, instantiate or native call.",
+    "embedded_WASM_bytes": 19267,
+    "embedded_WASM_SHA256": "760ea377d6c9c14b236d2281421f66e0443eb00afa5b51ffc5c9d7542bbe92b6",
+    "memory_count": 1,
+    "memory_flags": 0,
+    "initial_pages": 1,
+    "initial_bytes": 65536,
+    "declared_maximum_pages": null,
+    "memory64": false,
+    "shared": false,
+    "conclusion": "The module does not declare a2GiB maximum. Any2GiB workspace bound must come from the actual validated runtime flag; it is not an intrinsic property of this WASM binary."
+  },
+  "resource_review": {
+    "verdict": "GO for a bounded attempt; completion and50percent attainment are unmeasured",
+    "required_Node_flags": ["--wasm-max-mem-pages=32768", "--max-old-space-size=1536"],
+    "runtime_flag_validation": "Root reports bundled Node24.19.0 and confirms the memory-page flag exists. Final candidate admission must pin the exact Node binary and require these actual command arguments before the one attempt.",
+    "runtime_WASM_cap_bytes": 2147483648,
+    "managed_Node_heap_budget_bytes": 1610612736,
+    "known_caller_buffer_budget_bytes": 200000000,
+    "opaque_Node_runtime_reserve_bytes": 1073741824,
+    "planning_sum_bytes": 5031838208,
+    "process_cap_bytes": 6442450944,
+    "aggregate_Job_cap_bytes": 6442450944,
+    "per_worker_deadline_seconds": 180,
+    "minimum_live_available_RAM_bytes": 12884901888,
+    "minimum_destination_free_bytes": 2147483648,
+    "visible_WASM_wrapper_allocations": {
+      "formula": "4+2*index_count*4+vertex_count*position_stride_bytes, before internal native workspace and alignment",
+      "all1957891_original_rows_bytes": 123660712,
+      "compact1952142_imported_rows_bytes": 123591724,
+      "returned_JS_indices_if_target_met_bytes": 25041504,
+      "returned_JS_indices_maximum_if_no_reduction_bytes": 50083008,
+      "note": "The wrapper reserves destination capacity for the entire input index count, not merely the50percent target. These WASM buffers are within the runtime WASM cap; returned/caller buffers are separate."
+    },
+    "projection_limits": "The planning sum is not a proven process-wide maximum or preallocated reservation. V8 heap limits do not independently cap external buffers, and internal native allocation/time remain opaque. Final code review must account for caller copies and output worst case. The unchanged Windows Process+Job caps, live floors and180second deadline contain the actual attempt; allocation failure or deadline exhaustion must stop without retry.",
+    "preflight_conditions": "Source/runtime/input hashes and frozen plan must match; actual live RAM/disk admission must pass before any production marker or candidate allocation. Attach the worker to the owned Job before exact binary GO, observe resources, and require natural empty-Job exit with no forced cleanup for PASS."
+  },
+  "Blender_alternative_review": {
+    "verdict": "Do not select full Blender Collapse for this attempt",
+    "source_build": "5.2.1 LTS/9e2066aef7ef, installed executable SHA284f4041f98e113f3dc10654a7193ffaaa9bfdfec8b87fa116620a48b5f6d4cb",
+    "implementation": "The build-linked modifier converts the mesh to BMesh, allocates per-vertex quadrics and per-edge heap/table data, then converts back while BMesh still exists. Collapse rejects candidate edges whose endpoint stars touch non-manifold edges. The source-count ledger is useful but does not bound allocator/custom-data/evaluation peaks or full-resolution time.",
+    "source_links": [
+      "https://github.com/blender/blender/blob/9e2066aef7ef/source/blender/modifiers/intern/MOD_decimate.cc#L150-L195",
+      "https://github.com/blender/blender/blob/9e2066aef7ef/source/blender/bmesh/tools/bmesh_decimate_collapse.cc#L788-L820",
+      "https://github.com/blender/blender/blob/9e2066aef7ef/source/blender/bmesh/tools/bmesh_decimate_collapse.cc#L1229-L1289"
+    ],
+    "brick_existing_topology": {
+      "unique_edges": 6167053,
+      "boundary_edges": 267652,
+      "two_face_edges": 5512333,
+      "more_than_two_face_edges": 387068,
+      "maximum_incidence": 4,
+      "brick_protected_face_floor_not_yet_measured": true
+    },
+    "historical_capacity_limit": "No prior full4M-triangle Collapse runtime or committed-memory measurement was found. Current full import/render peaks are not BMesh-decimation capacity measurements."
+  },
+  "historical_method_evidence": {
+    "turret_Collapse": "A132-triangle fixture requested3 and retained4 protected non-manifold faces. A source-only census established1,097,383 protected faces for the different4,012,360-triangle turret, ruling out its100K/30K targets. Whole bounded worker5.140s, peak698236928B,2GiB/60s limits; no full turret Collapse. This lower bound is not a brick result.",
+    "face_fan_separation": "The1024-triangle synthetic case reduced to51 after separation. The real272-triangle patch separated into34 components and reduced to68 with sheet loss and failed geometry/silhouette gates; control retained202. Synthetic/real hosts3.42/4.27s and289189888/692035584B under2GiB. No full scaling was admitted.",
+    "Planar": "The272-triangle real patch retained262 at1degree and223 at5degrees, only3.68/18.01percent reduction. Modifier calls0.000855/0.000954s; host4.656s and301928448B under2GiB/120s. It failed the20percent worthwhile-reduction criterion and does not qualify a50percent fallback."
+  },
+  "required_post_quality_review": "Freeze count, finite/index validity, unchanged original position/colour rows, topology, geometry/silhouette and colour acceptance before the attempt. Measure actual reduced-surface fidelity rather than relying only on retained rows or the library error scalar. Independently read the actual candidate and preserve any failure. Final implementation review remains required.",
+  "actual_candidate_or_Blender_calls": 0,
+  "new_mesh_algorithms_or_source_changes": false,
+  "actionable_conditions_before_launch": ["Exact candidate/source/runtime/input review and hashes", "Actual Node memory flags", "Caller buffer accounting", "Fixed post-quality gates", "Fresh owned-process resource admission"]
+}

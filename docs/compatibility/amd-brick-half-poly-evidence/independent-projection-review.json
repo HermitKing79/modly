@@ -1,0 +1,17 @@
+{
+  "classification": "GO",
+  "scope": "Independent root review of projection_metrics.py authored by full_glb_reader, not a self-review by its author. Read complete source and synthetic tests; no asset computation or Blender launch.",
+  "source_SHA256": "caea273d0720dda886e211c984555e6b95d88ddcceb36a1ba6375be1019f3ff1",
+  "test_source_SHA256": "8d46c514a3969312086cc55b72d444858d02c7a602e661137906465e17006e0b",
+  "combined_focused_test_log_SHA256": "3f307c5c8b8c4f862fde622eaeba3c9d0c55bbcfce763cf449c09e7a9d15fdb0",
+  "checks": [
+    "Original orthographic basis and exact fixed square pixel centres",
+    "3D degeneracy is distinct from edge-on projected triangles",
+    "Complete bbox-event work counted before allocation and limited to16777216; chunks262144",
+    "Correct F64 barycentric depth, two-sided coverage and lowest-index exact depth ties",
+    "Visible foliage uses original nearest face IDs and candidate first-hit depth, so a rear brick fill cannot hide a lost nearer leaf",
+    "All input, index, finite, clipping and work-limit rejection paths remain fail closed",
+    "Four frozen views and known ROI are bounded observations, not global topology or all-tip certification"
+  ],
+  "actionable_findings": []
+}

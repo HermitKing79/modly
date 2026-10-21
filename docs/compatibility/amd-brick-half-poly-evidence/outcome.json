@@ -1,0 +1,127 @@
+{
+  "classification": "NO-GO",
+  "base": "5705f9d325771b8b2595b6385a630879f9ff700e",
+  "branch": "codex/amd-brick-half-poly-proof",
+  "actual_simplification_calls": 1,
+  "Node_launches": 2,
+  "initial_startup_simplification_calls": 0,
+  "algorithm_ratio_error_retries": 0,
+  "method": "Installed meshoptimizer0.22 simplify, LockBorder, target0.5,error0.005",
+  "vertices": 975633,
+  "triangles": 2083776,
+  "triangle_reduction_fraction": 0.5007226403014771,
+  "source_components_retained": 207,
+  "new_nonmanifold_endpoint_pairs": 116786,
+  "maximum_edge_face_incidence_before_after": [
+    4,
+    9
+  ],
+  "duplicate_oriented_candidate_triangles": 3642,
+  "reverse_preexisting_oriented_triple_matches": 675,
+  "ancestry_tracked": false,
+  "zero_area_or_nonfinite_faces": 0,
+  "colour_failure_regions": [
+    "brick",
+    "high_variation",
+    "octant_2"
+  ],
+  "foliage_projection_failure_views": [
+    "pos-y",
+    "pos-z"
+  ],
+  "global_four_silhouette_IoUs": [
+    0.9977579225646689,
+    0.997660205051121,
+    0.9981663685152057,
+    0.9973216928085232
+  ],
+  "all_conservative_distance_upper_bound_gates_pass": true,
+  "all_retained_source_position_bits_and_native_colour_bytes_exact": true,
+  "all_material_scalar_RMSE_gates_pass": true,
+  "model_and_original_assets_changed": false,
+  "candidate_artifact": {
+    "bytes": 41723823,
+    "sha256": "5024daaaa716a1bbf00d316f89ff47e5e6d30653a370b15a9aff7cb4fbf8fc99"
+  },
+  "models_images_and_array_payloads_private": true,
+  "candidate_path": "C:/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-brick-half-poly-5705f9d-corrected/assess/candidate.ply",
+  "Blender_renders": 0,
+  "no_render_or_inspect_attempt_marker": true,
+  "reason_no_render": "Predeclared numerical/topology quality gates rejected the candidate; the render prerequisite remains NO-GO.",
+  "simplifier_call_seconds": 2.5031394000000002,
+  "resources": {
+    "baseline": {
+      "classification": "PASS",
+      "worker_classification": "PASS",
+      "owned_execution_seconds": 6.625,
+      "elapsed_seconds": 7.453000000001339,
+      "peak_process_committed_bytes": 184205312,
+      "peak_job_committed_bytes": 185049088,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "sources_unchanged": true,
+      "worker_receipt_sha256": "7a061a9538ac9a5f1eb9caf6f8479c9606b4fca8bbc88525752a1fd0e05b8cea",
+      "stage_outcome_allows_successor": true
+    },
+    "reduce": {
+      "classification": "PASS",
+      "worker_classification": "PASS",
+      "owned_execution_seconds": 3.985000000000582,
+      "elapsed_seconds": 4.813000000001921,
+      "peak_process_committed_bytes": 1160708096,
+      "peak_job_committed_bytes": 1160708096,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "sources_unchanged": true,
+      "worker_receipt_sha256": "efca86f8713abeda3d37d650acf5bd700d819f71a2d1ae83dd310bd65ef99195",
+      "stage_outcome_allows_successor": true
+    },
+    "assess": {
+      "classification": "PASS",
+      "worker_classification": "NO-GO",
+      "owned_execution_seconds": 21.2970000000023,
+      "elapsed_seconds": 22.1720000000023,
+      "peak_process_committed_bytes": 687964160,
+      "peak_job_committed_bytes": 688803840,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "sources_unchanged": true,
+      "worker_receipt_sha256": "b9eec3be7f05d1d1ba140e5e3931e36d0e47b2388c6df552d985a0e8f96d36f1",
+      "stage_outcome_allows_successor": false
+    },
+    "min_available_RAM_bytes": 19824422912,
+    "min_free_disk_bytes": 112070000640
+  },
+  "receipt_SHA256": {
+    "baseline": "7a061a9538ac9a5f1eb9caf6f8479c9606b4fca8bbc88525752a1fd0e05b8cea",
+    "reduce": "efca86f8713abeda3d37d650acf5bd700d819f71a2d1ae83dd310bd65ef99195",
+    "assess": "b9eec3be7f05d1d1ba140e5e3931e36d0e47b2388c6df552d985a0e8f96d36f1"
+  },
+  "host_SHA256": {
+    "baseline": "fb6ace5cf1f3915deaf601542c1bd24503beeb64064641faf7703420f4ac9a7e",
+    "reduce": "5989b069a9abc45ae681be99b5a5fd125f5accf9dfa358d10f1bb4b1a4ecec17",
+    "assess": "907f6d72aef46066eb5b039665113f86279742d2d12459f2740322148cf4ed36"
+  },
+  "assessment_metrics_SHA256": "e0bd6e0499154f98f3e2660e521ad05a102e91423fcecf9d0e9c7c0cc7a0b4ac",
+  "candidate_review_SHA256": "b48499f7b587f1ad5db3deb0dfc5c633225236c63eb0bab0ad27af444e200d4d",
+  "preservation_after_SHA256": "f6e164adea2cde8a22a76aebab3cff4a25b39e6a592f7bbf442a2dbc93159294",
+  "initial_launch_preservation_after_SHA256": "4bec2078db2829fb7f9a37d64a6d9a0392ebc95bf8770a98ee86a1d32035e49c",
+  "preservation_scope": "PASS_WITH_RECORDED_SCOPE:100 protected files,52 trees1366files24reports,400 original identities and selected environments/source/backups/caches/quarantine; zero checkpoint weight payload reads.104 historical remote heads checked separately at publication.",
+  "next_action": "Keep the master. Separately review one newly formed high-incidence junction in this rejected candidate before choosing any further reduction or part-aware target-mesh approach.",
+  "stop": true
+}

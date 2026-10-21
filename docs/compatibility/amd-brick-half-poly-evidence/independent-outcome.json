@@ -1,0 +1,189 @@
+{
+  "schema": "modly.amd.brick-half-poly-independent-outcome.v1",
+  "created_utc": "2026-10-21T20:59:27.833085+00:00",
+  "classification": "NO-GO",
+  "publication_review": "PASS",
+  "base": "5705f9d325771b8b2595b6385a630879f9ff700e",
+  "branch": "codex/amd-brick-half-poly-proof",
+  "review_scope": "Independent completed-receipt, artifact-hash, source-binding and publication review. No simplifier, sampler, numerical evaluator, Blender, parser, image generation or tests were rerun. Numerical rows are independently checked for consistency with the executed assessment, not recomputed here.",
+  "authorship_disclosure": "Reviewer authored the unexecuted render_worker.py and inspect_worker.py plus method-review.json; this receipt does not independently review those sources. Reducer and fresh CPU assessment were authored by root; projection source was authored by the separate reader agent and reviewed by root. No render was admitted.",
+  "conclusion": "The sole genuine 50%-target candidate achieved the reduction but failed predeclared topology, regional RGB and local foliage-retention gates. Clean CPU execution is separate from asset acceptance. Keep the accepted master; the rejected candidate remains private and must not be promoted.",
+  "source_bindings": {
+    "all13_current_sources_exactly_match_review_and_all3_actual_stage_markers": true,
+    "candidate_source_SHA256": {
+      "assess.py": "06b0496c0f31efbc971a02971ad1c41d8389bbc12177554df042994084e5df2f",
+      "baseline.py": "e8e88544b700cb43ddc463c6893832e3363b7cd2e73e06e22b9a735e8b0bd006",
+      "inputs.py": "a95b01eca1725684aec6233288dff297247e274c7b62641217604ba53cff3b5f",
+      "inspect_worker.py": "0728db9b6625644cef9ff465c3740229134942af0a780c211248fdb11fa22d8d",
+      "projection_metrics.py": "caea273d0720dda886e211c984555e6b95d88ddcceb36a1ba6375be1019f3ff1",
+      "reduce.cjs": "8f713faf9d9ded8f9229ecafcaf217c655fa69adb29f0776897548da19c48054",
+      "reduction_contract.py": "bdf0fa90da2a4b93020dca1ec73423ec5b8b22b48f951460bd4e9d23a5d8babc",
+      "render_worker.py": "738bcee40647134fa6f5d352aed5a10a3706277340016e29b8b4386dd1122d6d",
+      "run_host.py": "0fbd0880adfc16b2450b44a25b040a32e0c0a528fdd5c723c4d0125ada8c3e6f",
+      "test_contract.py": "6a00b5c8e5b75b68472da8cce29463449b57d265bac41cf43611bc18e273e635",
+      "test_host.py": "e8b60b2beb90fda7b707ecd8cc8ba2718c60432dff522a69ea006028a81cc51a",
+      "test_projection_metrics.py": "8d46c514a3969312086cc55b72d444858d02c7a602e661137906465e17006e0b",
+      "test_render_transfer.py": "cce02aa756baac622d6b018c34f6e5efd0582e3a0238454b56e9de6a26ba7d36"
+    },
+    "candidate_review_SHA256": "b48499f7b587f1ad5db3deb0dfc5c633225236c63eb0bab0ad27af444e200d4d",
+    "qualification_plan_SHA256": "9a09f50c097e109535700719cee63bc3cb1708e9961d9ea0d8206740dc76786e",
+    "focused_tests_SHA256": "3f307c5c8b8c4f862fde622eaeba3c9d0c55bbcfce763cf449c09e7a9d15fdb0",
+    "focused_tests_recorded": 21,
+    "method_review_SHA256": "11fda931891144cc8f51edff97fce2d3d524cae11f2c6471f1e3347ba64a2b6a",
+    "independent_projection_review_SHA256": "5f0cd09e851437e94b65045a01d0d2d9a99fd51ecd49bf253f21c57e151d0212"
+  },
+  "recorded_original_source_SHA256": {
+    "vertices.npy": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252",
+    "faces.npy": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d",
+    "oracle-colour-bytes.npy": "efc7c32c7753bb098ecd30f4154a8c9070774f57f261f14ec700a19557907576",
+    "inspected.blend": "67d9a9439417eebfa8ab294d955e8056f413fea28866f6006f8298a105e19588"
+  },
+  "actual_attempts": {
+    "initial_Node_startup": "BLOCKED_STARTUP",
+    "initial_simplification_calls": 0,
+    "corrected_simplification_calls": 1,
+    "algorithm_ratio_error_retries": 0,
+    "initial_failure_SHA256": "304fb82a55529d90524d76ad43ef6e5183a95fa287261e6b7c8b8d72f236074a",
+    "initial_host_SHA256": "2d7c58fe903efdec537fa16437ae0a8e83ebe2ee9b9d9c07a3455e3588764270",
+    "initial_launch_outcome_SHA256": "ee3396ae578d7c921c9711fcd7e0448b828c09598f124ecfcabe760ccf576aa9",
+    "initial46_file_preservation_after_SHA256": "4bec2078db2829fb7f9a37d64a6d9a0392ebc95bf8770a98ee86a1d32035e49c"
+  },
+  "worker_receipt_SHA256": {
+    "baseline": "7a061a9538ac9a5f1eb9caf6f8479c9606b4fca8bbc88525752a1fd0e05b8cea",
+    "reduce": "efca86f8713abeda3d37d650acf5bd700d819f71a2d1ae83dd310bd65ef99195",
+    "assess": "b9eec3be7f05d1d1ba140e5e3931e36d0e47b2388c6df552d985a0e8f96d36f1"
+  },
+  "host_receipt_SHA256": {
+    "baseline": "fb6ace5cf1f3915deaf601542c1bd24503beeb64064641faf7703420f4ac9a7e",
+    "reduce": "5989b069a9abc45ae681be99b5a5fd125f5accf9dfa358d10f1bb4b1a4ecec17",
+    "assess": "907f6d72aef46066eb5b039665113f86279742d2d12459f2740322148cf4ed36"
+  },
+  "execution": {
+    "all3_corrected_owned_hosts": "PASS",
+    "assessment_worker": "NO-GO",
+    "assessment_allows_render": false,
+    "attached_before_exact_GO": true,
+    "all_live_resource_floors_admitted": true,
+    "all_Jobs_natural_empty_without_forced_cleanup": true,
+    "all_watched_sources_unchanged": true,
+    "process_and_Job_cap_bytes": 6442450944,
+    "worker_deadline_seconds": 180,
+    "actual_Node_memory_flags": [
+      "--max-old-space-size=1536",
+      "--wasm-max-mem-pages=32768"
+    ],
+    "simplification_call_seconds": 2.5031394000000002,
+    "resources": {
+      "baseline": {
+        "owned_execution_seconds": 6.625,
+        "peak_process_committed_bytes": 184205312,
+        "peak_job_committed_bytes": 185049088
+      },
+      "reduce": {
+        "owned_execution_seconds": 3.985000000000582,
+        "peak_process_committed_bytes": 1160708096,
+        "peak_job_committed_bytes": 1160708096
+      },
+      "assess": {
+        "owned_execution_seconds": 21.2970000000023,
+        "peak_process_committed_bytes": 687964160,
+        "peak_job_committed_bytes": 688803840
+      }
+    }
+  },
+  "measured_candidate": {
+    "triangles": 2083776,
+    "referenced_vertices": 975633,
+    "triangle_reduction_fraction": 0.5007226403014771,
+    "all207_source_components_retained": true,
+    "all_retained_source_position_and_native_colour_ids_exact": true,
+    "zero_area_faces": 0,
+    "duplicate_oriented_triangles": 3642,
+    "reverse_preexisting_oriented_triple_matches": 675,
+    "collapse_ancestry_tracked": false,
+    "new_nonmanifold_endpoint_pairs": 116786,
+    "nonmanifold_edge_count_before": 387068,
+    "nonmanifold_edge_count_after": 270987,
+    "maximum_edge_face_incidence_before_after": [
+      4,
+      9
+    ],
+    "failed_RGB_regions": {
+      "brick": {
+        "rmse": 0.020099781089219004,
+        "p95": 0.04433512180495605,
+        "maximum": 0.10061221568268819
+      },
+      "high_variation": {
+        "rmse": 0.02857650826811302,
+        "p95": 0.06717735540608605,
+        "maximum": 0.15797151591773
+      },
+      "octant_2": {
+        "rmse": 0.027585075327704597,
+        "p95": 0.05910038811962306,
+        "maximum": 0.24299182639571149
+      }
+    },
+    "failed_foliage_views": {
+      "pos-y": {
+        "foliage_required_pixels": 47,
+        "foliage_retained_pixels": 46,
+        "foliage_visible_pixel_retention": 0.9787234042553191
+      },
+      "pos-z": {
+        "foliage_required_pixels": 200,
+        "foliage_retained_pixels": 197,
+        "foliage_visible_pixel_retention": 0.985
+      }
+    },
+    "all4_overall_silhouette_gates_pass": true,
+    "all_recorded_conservative_distance_upper_bound_gates_pass": true,
+    "all_material_scalar_RMSE_gates_pass": true,
+    "zero_sampled_field_support_missing": true
+  },
+  "artifact_integrity": {
+    "assessment_manifest_files_independently_hash_and_size_checked": 35,
+    "all35_match": true,
+    "baseline_and_reduce_manifest_artifacts_also_hash_and_size_checked": true,
+    "candidate": {
+      "private_relative_path": "amd-brick-half-poly-5705f9d-corrected/assess/candidate.ply",
+      "bytes": 41723823,
+      "sha256": "5024daaaa716a1bbf00d316f89ff47e5e6d30653a370b15a9aff7cb4fbf8fc99"
+    },
+    "private_NPY_or_PLY_payloads_not_loaded_for_this_review": true
+  },
+  "rendering": {
+    "Blender_launches": 0,
+    "GLTF_imports": 0,
+    "renders": 0,
+    "inspections": 0,
+    "no_render_or_inspect_directory_attempt_or_host_receipt_in_either_output_tree": true,
+    "visual_comparison_not_performed": true
+  },
+  "preservation": {
+    "classification": "PASS_WITH_RECORDED_SCOPE",
+    "preservation_before_SHA256": "502e0ebe51e1653fedb352fcb68aeb9e9f84498d2210e25f61e78d5b7a38de0b",
+    "preservation_after_SHA256": "f6e164adea2cde8a22a76aebab3cff4a25b39e6a592f7bbf442a2dbc93159294",
+    "initial46_addendum_classification": "PASS",
+    "original400_and_protected100_fresh_identity_checks_recorded_unchanged": true,
+    "historical_prior_trees_and_reports_recorded_unchanged": true,
+    "remote_heads_and_final_Git_publication": "Handled separately by root; not checked by this reviewer"
+  },
+  "publication": {
+    "report_SHA256": "1d9c1e6952cd7ef900674b037b3a057d15d7ceb45d83324150fdc7b17c9a979e",
+    "outcome_SHA256": "00a87b4d2636370b6861cc6f7d19aa8ead55afd73446d0f41e671c21a4cbbd5a",
+    "assessment_metrics_SHA256": "e0bd6e0499154f98f3e2660e521ad05a102e91423fcecf9d0e9c7c0cc7a0b4ac",
+    "public_metrics_match_private_recorded_rows": true,
+    "private_geometry_bounds_and_material_or_image_payloads_omitted": true,
+    "675_reverse_match_ancestry_limitation_explicit": true,
+    "small_failed_foliage_cohort_limitation_explicit": true,
+    "no_Hausdorff_global_normal_self_intersection_or_game_ready_claim": true,
+    "no_new_experiment_authorized": true
+  },
+  "findings_resolved": [
+    "Removed raw compact candidate coordinate bounds from the public assessment summary; exact bounds remain private."
+  ],
+  "unresolved_findings": [],
+  "stop": true
+}

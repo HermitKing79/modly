@@ -1,0 +1,83 @@
+{
+  "classification": "GO_METHOD_ONLY",
+  "scope": "Predeclared assessment method review, not an independent review of the author's projection implementation and not a candidate/runtime verdict. No full-asset analysis or simplifier/render process was launched.",
+  "four_views": {
+    "names": [
+      "pos-x",
+      "pos-y",
+      "pos-z",
+      "iso-a"
+    ],
+    "size": [
+      640,
+      640
+    ],
+    "camera_metadata": "artifacts/amd-brick-visual-inspection-b536fb6/renders/render-metadata.json",
+    "camera_metadata_SHA256": "394b54c5633598d56c8ad38c00b4712481b2405c91e3ae5bcaf91974f974d6ee",
+    "contract": "Use each authentic view camera location/right/up/outward direction and stored ortho_scale without reframing. Pinned original render_views.py establishes ORTHO and original clip policy. Top-level preassignment shared_ortho_scale is not substituted for per-view stored scale."
+  },
+  "silhouette_and_foliage": {
+    "sampling": "Opaque, two-sided orthographic pixel centres at column+.5,row+.5; top-left image origin. No antialiasing, shaded-image or continuous silhouette claim.",
+    "foreground": "Closest positive in-clip triangle depth; exact depth ties choose lowest original face-row index.",
+    "full_view_IoU_minimum": 0.98,
+    "original_foliage_ROI_faces": 4531,
+    "visible_foliage": "Only pixels whose closest original face belongs to the authentic4531-face ROI are required. Hidden original foliage does not become a visible-retention claim.",
+    "visible_foliage_retention_minimum": 0.99,
+    "candidate_depth_requirement": "Candidate must cover the same original visible-foliage pixel centre and its closest depth must differ by <=0.005*D. A farther brick surface cannot substitute for the removed leaf.",
+    "depth_tolerance_fraction_original_AABB_diagonal": 0.005,
+    "empty_foliage_view": "Explicitly uninformative, never reported as100%retention; aggregate must have at least one informative foliage view.",
+    "empty_full_source_view": "Reject; it cannot establish a required silhouette.",
+    "D_policy": "Use one frozen original AABB diagonal for both geometry and foliage depth gates; never derive or resize D from the candidate."
+  },
+  "bounded_raster_work": {
+    "maximum_pixel_triangle_bbox_events_per_mesh_view": 16777216,
+    "maximum_expanded_events_per_chunk": 262144,
+    "method": "Project vertices once; pre-count clipped pixel-centre bounding-box events per triangle; expand only those events, compute vectorized barycentrics/depth and scatter closest depth. Never form all-triangles by all-pixels arrays or millions of Python triangle objects.",
+    "rejects": "Nonfinite coordinates/projection/depth, invalid indices/dimensions/basis, clipping, world-space zero-area triangles or work-budget excess reject the whole measurement. Valid world triangles with exactly zero projected area are explicitly counted as edge-on.",
+    "private_outputs": "Caller saves full Boolean mask, finite zero-background depth and front-face/visible-foliage arrays under owned private paths; public results contain scalar counts and errors.",
+    "memory_projection": "For original4173584faces, I32 lower/upper boxes plus I64 counts/cumulative arrays total133554688bytes. Original1957891vertex projection is46989384bytes. Bounded event scratch is approximately100MB; extra local-ID scratch may add approximately100MB for long zero-event gaps. These are projections excluding source arrays/allocator overhead, not measured process bounds."
+  },
+  "nearest_referenced_vertex_upper_bound": {
+    "definition": "For sample p and target surface S made from retained triangles, its referenced vertices V are a subset of S. Therefore dist(p,S)<=min(v in V)||p-v||. Pointwise upper bounds also upper-bound the sampled RMS, linear95th percentile and maximum.",
+    "valid_admission": "Passing the nearest-referenced-vertex bounds implies the corresponding true sample-to-surface distances satisfy the same limits. It is conservative and can produce a false NO-GO; it cannot establish a continuous Hausdorff bound.",
+    "tree_inputs": "Only vertex IDs actually referenced by the target faces; original but unreferenced rows must be excluded. Coordinates remain the exact original F32 values promoted to F64 for CPU cKDTree.",
+    "query_policy": "Exact k=1 query with eps=0; no approximate nearest-neighbour allowance, no silent missing/infinite query, bounded thread count.",
+    "forward_samples": [
+      "All2048existing frozen holdout interior positions",
+      "All4531original foliage ROI face centroids",
+      "One deterministic representative face centroid for each207original face-bearing components"
+    ],
+    "reverse_samples": "2048fixed area-stratified candidate face-interior positions to original referenced vertices. Freeze representative/strata rules and tie breaks before candidate results.",
+    "same_limits_each_required_direction_and_protected_cohort": {
+      "RMS_over_D": 0.005,
+      "linear95th_percentile_over_D": 0.01,
+      "maximum_over_D": 0.03
+    },
+    "memory_projection": "Original referenced F64XYZ about47MB plus intp tree indices about16MB and native nodes; two source/target trees are projected around0.3GB, not a measured bound."
+  },
+  "component_certificate": {
+    "expected_source_face_bearing_components": 207,
+    "rule": "Candidate indices retain original vertex IDs. Every candidate triangle must have three equal original component labels and the complete candidate face-bearing label set must equal the207original labels. No missing component or cross-component bridge is rescued by pooled geometry/silhouette statistics. Unused original vertex components do not count as surface components."
+  },
+  "source_faithful_colour_validation": {
+    "representation": "Index-only simplification preserves exact original vertex coordinates/IDs and original native colour bytes; it performs no attribute optimization, interpolation fit, welding or output-driven adjustment. All retained corner RGBA bytes must equal the authenticated original oracle indexed by retained original vertex IDs.",
+    "bounded_field_check": "For each16original frozen region vertex pools, eligible candidate faces contain at least one original vertex from that pool. Freeze128candidate interior query positions per region with seed20261021+i and original region order; no candidate-colour-driven choice.",
+    "authentic_target": "Sample original sparse six-channel material field at those actual candidate world positions using the pinned CPU SparseSampler; positive support is required at every query. Compare actual candidate linear-colour barycentric interpolation after IEC encoding against clipped original sampled RGB, and unchanged actualM/R/OPAQUEalpha against sampled scalar channels.",
+    "unchanged_per_region_gates": {
+      "RGB_RMSE": 0.02,
+      "RGB_linear95th_abs": 0.05,
+      "RGB_max_abs": 0.15,
+      "each_metallic_roughness_opaque_alpha_RMSE": 0.02
+    },
+    "limitations": "This is a predeclared bounded field/interpolation check, not an all-surface or all56910historical-query claim. Original byte identity alone cannot certify interpolated face-interior material quality. No new neural/native model kernel is needed."
+  },
+  "cheapest_reusable_sources": {
+    "docs/compatibility/amd-brick-defect-diagnosis-evidence/projection.py": "Existing authenticated ORTHO basis/PNG-centre convention; its per-ray full-face scans are for a few rays, not a640square mask.",
+    "docs/compatibility/amd-brick-defect-diagnosis-evidence/topology.py": "Exact NumPy edge/component semantics and previously persisted source component cache; reuse authenticated original labels rather than rebuilding source graph in the candidate process.",
+    "docs/compatibility/amd-brick-uv-bake-evidence/sampler.py": "Genuine sparse CPU trilinear sample_world; <=65536queries/batch, F32 arithmetic, native world+0.5 then*512 mapping, explicit support diagnostics.",
+    "docs/compatibility/amd-brick-full-colour-glb-evidence/decision.py": "Unchanged per-region RGB/scalar gates without factor or colour fitting.",
+    "docs/compatibility/amd-turret-planar-evidence/worker.py": "Existing geometry .005/.01/.03, silhouette .98 gate family.",
+    "docs/compatibility/amd-turret-face-fan-evidence/metrics.py": "Useful semantics only; explicit6000-face cap, Python lists/BVH and per-face raster prevent direct full-asset reuse."
+  },
+  "resource_admission": "Each future owned stage retains <=6GiB process AND Job memory,180seconds,12GiB available RAM and2GiB free disk floors, attached-before-exact-GO and natural owned-tree exit. Abort rather than relax work/resource limits or retry another candidate."
+}

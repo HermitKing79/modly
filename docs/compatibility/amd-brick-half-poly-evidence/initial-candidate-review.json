@@ -1,0 +1,83 @@
+{
+  "classification": "GO",
+  "scope": "Source-only independent review for the single frozen half-poly candidate and its staged assessment/render. Actual completion, reduction and fidelity remain unmeasured.",
+  "reviewer": "full_glb_reader",
+  "base": "5705f9d325771b8b2595b6385a630879f9ff700e",
+  "qualification_plan_SHA256": "701623a2ae521fdc8f3af9381d9984b06f1f3d3f3d2c6bb921dd83e4f5e56faf",
+  "focused_tests_SHA256": "f3fe0c1ad25264b880909f108cefc554d14094964aa65bed7488cb97337454ba",
+  "candidate_source_SHA256": {
+    "assess.py": "06b0496c0f31efbc971a02971ad1c41d8389bbc12177554df042994084e5df2f",
+    "baseline.py": "e8e88544b700cb43ddc463c6893832e3363b7cd2e73e06e22b9a735e8b0bd006",
+    "inputs.py": "2a40c2d6f12ba181808cd741fa4e49054f3ecae2fe08b7020f61e1b39bbb4081",
+    "inspect_worker.py": "0728db9b6625644cef9ff465c3740229134942af0a780c211248fdb11fa22d8d",
+    "projection_metrics.py": "caea273d0720dda886e211c984555e6b95d88ddcceb36a1ba6375be1019f3ff1",
+    "reduce.cjs": "5d4b5d00945371873d3a1acc5dd574f823d49c145e24a8007bf43c75924e457b",
+    "reduction_contract.py": "bdf0fa90da2a4b93020dca1ec73423ec5b8b22b48f951460bd4e9d23a5d8babc",
+    "render_worker.py": "738bcee40647134fa6f5d352aed5a10a3706277340016e29b8b4386dd1122d6d",
+    "run_host.py": "0fbd0880adfc16b2450b44a25b040a32e0c0a528fdd5c723c4d0125ada8c3e6f",
+    "test_contract.py": "6a00b5c8e5b75b68472da8cce29463449b57d265bac41cf43611bc18e273e635",
+    "test_host.py": "e8b60b2beb90fda7b707ecd8cc8ba2718c60432dff522a69ea006028a81cc51a",
+    "test_projection_metrics.py": "8d46c514a3969312086cc55b72d444858d02c7a602e661137906465e17006e0b",
+    "test_render_transfer.py": "cce02aa756baac622d6b018c34f6e5efd0582e3a0238454b56e9de6a26ba7d36"
+  },
+  "independent_projection_review": {
+    "path": "independent-projection-review.json",
+    "sha256": "5ed92c3085617384be3f12f2547d17d3adc7f1dc47f719d91a039bed6296ce61",
+    "classification": "GO",
+    "boundary": "projection_metrics.py and its synthetic fixtures were authored by this reviewer. Their independent complete-source/math review was performed by root, separately bound here; this receipt is not an independent self-review of them."
+  },
+  "method_review_SHA256": "11fda931891144cc8f51edff97fce2d3d524cae11f2c6471f1e3347ba64a2b6a",
+  "verification_evidence": {
+    "focused_log": "Observed final 21 focused tests passing in 1.037 seconds; includes deterministic reverse sampling, source correspondence negatives, host commands/caps/admission, and synthetic raster fixtures. Root reports Node syntax check PASS.",
+    "model_array_reads_by_this_review": 0,
+    "candidate_calls_by_this_review": 0,
+    "Blender_launches_by_this_review": 0,
+    "installed_source_edits_by_this_review": 0
+  },
+  "resolved_findings": [
+    {
+      "finding": "Reverse geometry sampling reused region-conditioned colour samples.",
+      "resolution": "Independent deterministic 2048 candidate-area CDF-stratified faces with fixed seed 20261022, strict interior barycentrics, and saved face/barycentric/world/distance evidence; focused deterministic allocation test passes."
+    },
+    {
+      "finding": "All four original-foliage projections could be uninformative.",
+      "resolution": "Assessment requires at least one informative original-foliage view after the four independently gated views; empty source silhouettes also fail in the reviewed raster comparator."
+    },
+    {
+      "finding": "Only direct stage predecessors were watched despite baseline/assessment outputs also being consumed.",
+      "resolution": "Host now verifies and watches the complete earlier-stage closure, including exact worker receipt hashes in owned host receipts; assessment explicitly binds reduced plan SHA256 to baseline private plan SHA256."
+    }
+  ],
+  "classification_correction": "Reviewed final assessment verdict: independently demonstrated acceptance failures yield NO-GO; conservative nearest-referenced-vertex upper-bound failure alone yields BLOCKED because it does not establish actual surface damage; no failures yield PASS. Gates, populations, method and render admission remain unchanged. Frozen plan explicitly states this distinction.",
+  "source_and_math_checks": [
+    "Original source/scene/native-byte/prior qualification/runtime identities remain pinned through the historical authentication closure; current outputs are exclusive and private.",
+    "One direct installed meshoptimizer0.22 stable simplify call uses original full vertex/index rows, target 2086792 triangles, error 0.005 and exactly LockBorder; no weld, prune, reorder, alternate method or retry.",
+    "Compact candidate positions and native RGBA bytes retain exact sorted original vertex IDs; oriented triangle correspondence, invalid/zero-area rejection, cyclic winding keys and original/component lineage are checked.",
+    "All 207 source face-bearing component identities must survive without bridging; candidate topology must retain 207 actual components, add no non-manifold edges and grow boundary length by at most five percent.",
+    "Exact nearest referenced-vertex distances are conservative upper bounds to sampled nearest-surface distances. Original unused vertices cannot rescue either direction; passing remains limited to the declared populations.",
+    "Four frozen orthographic 640-square views use pixel centres, two-sided first-hit depth, 0.98 IoU and 0.99 depth-aware visible-foliage retention; original known foliage ROI is bounded, not an all-leaf guarantee.",
+    "Each of 16 original source-ID regions receives 128 deterministic area-weighted candidate interior samples, without output-colour-dependent selection. Genuine eight-neighbour source field, RGB 0.02/0.05/0.15 and separate scalar RMSE 0.02 gates are applied per region; zero field support fails."
+  ],
+  "render_and_colour_review": {
+    "verdict": "No deterministic source blocker found.",
+    "material_reader": "Pinned existing material_readback is count-generic. The saved original scene lends only its verified unchanged material; its full mesh is removed before candidate allocation.",
+    "geometry": "Bulk candidate construction preserves exact position bits, compact oriented loops, triangle counts and flat shading, with complete before/after readbacks and no repair or smoothing.",
+    "colour": "Exact retained original native bytes are set through color_srgb and every resulting CORNER BYTE_COLOR byte is read back before and after rendering. CPU numeric colour predictions use explicit IEC-decoded F32 native bytes and linear barycentric interpolation, without claiming native .color getter bit equality.",
+    "studio": "One +X Cycles CPU frame uses the authenticated actual camera, lights, world, flat material, 640 square, 32 samples, CPU OIDN, four threads and +2 EV; inspection reopens the original-size PNG and composes it with the existing accepted reference without rerendering the original.",
+    "prior_qualification": "Accepted original native-colour qualification and preview receipts are pinned. Their existence does not certify new reduced connectivity or interpolation; all current numeric gates and independent visual inspection remain required."
+  },
+  "resource_and_lifecycle_review": {
+    "process_memory_cap_bytes": 6442450944,
+    "aggregate_Job_memory_cap_bytes": 6442450944,
+    "deadline_seconds_per_worker": 180,
+    "minimum_live_available_RAM_bytes": 12884901888,
+    "minimum_destination_free_bytes": 2147483648,
+    "Node_WASM_maximum_pages": 32768,
+    "Node_WASM_cap_bytes": 2147483648,
+    "Node_V8_heap_MiB": 1536,
+    "lifecycle": "Exact selected stage only; live admission before exclusive attempt marker, attachment before exact GO, fixed CPU environment, periodic live floors, preserved watched-source identities, measured process/Job peaks and natural empty-Job exit without forced cleanup required for host PASS.",
+    "limits": "Memory ledgers are projections, not measured full-candidate capacity. Actual native workspace/time may fail the unchanged hard limits. A quality NO-GO/BLOCKED assessment is retained as diagnostic evidence and cannot admit render; no automatic retry or alternative follows."
+  },
+  "remaining_actionable_findings": [],
+  "launch_condition": "GO only for the reviewed single bounded staged attempt after actual live admission. Candidate acceptance still requires actual numeric/resource PASS and independent visual inspection; fifty percent is a target and the predeclared meaningful reduction floor is twenty percent."
+}

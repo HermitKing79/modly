@@ -1,0 +1,25 @@
+{
+  "classification": "BLOCKED_STARTUP",
+  "candidate_calls": 0,
+  "error": "TypeError: Cannot read properties of undefined (reading 'ready')",
+  "location": "reduce.cjs direct CommonJS module adapter, before simplify counter/call",
+  "worker_failure_SHA256": "304fb82a55529d90524d76ad43ef6e5183a95fa287261e6b7c8b8d72f236074a",
+  "host_receipt_SHA256": "2d7c58fe903efdec537fa16437ae0a8e83ebe2ee9b9d9c07a3455e3588764270",
+  "initial_candidate_review_SHA256": "0711750f97ce833a5c027fb8be56f86e090c9130d4a33e2329b57c05120cd7d7",
+  "initial_source_snapshot_private": true,
+  "owned_seconds": 0.5,
+  "peak_process_bytes": 95825920,
+  "peak_Job_bytes": 95825920,
+  "returncode": 1,
+  "cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "source_unchanged": true,
+  "original_parameters_unchanged": true,
+  "actual_simplification_not_attempted": true,
+  "correction": "Direct installed module returns the object itself; use direct require plus explicit actual API shape checks. Fresh exclusive corrected paths; no algorithm/ratio/error change."
+}

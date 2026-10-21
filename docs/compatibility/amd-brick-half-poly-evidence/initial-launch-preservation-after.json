@@ -1,0 +1,22 @@
+{
+  "schema": "modly.amd.brick-half-poly-initial-launch-preservation-after.v1",
+  "created_utc": "2026-10-21T20:55:44.246773+00:00",
+  "classification": "PASS",
+  "authenticated_initial_launch_manifest_sha256": "ec2f08d60ad77c713845724faeea17e830583aeb9dd9f92d77fb942b97272a6e",
+  "authenticated_main_preservation_after_public_sha256": "f6e164adea2cde8a22a76aebab3cff4a25b39e6a592f7bbf442a2dbc93159294",
+  "private_detail_sha256": "c87a33920b7538ebe1da204e74398384d4579a60c92f69be1ddff6200622c1c2",
+  "manifest_file_count": 46,
+  "fresh_full_SHA256_checked_files": 46,
+  "all_manifest_entries_present": true,
+  "all_manifest_entry_sizes_and_hashes_unchanged": true,
+  "all_files_stable_during_hash": true,
+  "fresh_full_hash_bytes_read": 1986403,
+  "checkpoint_weight_payload_bytes_read": 0,
+  "corrected_experiment_outputs_not_scanned": true,
+  "issues": [],
+  "scope_limits": [
+    "This addendum verifies exactly46 retained initial-launch manifest members. Full private member paths and hashes remain local; the original manifest and private check receipt are bound by SHA256.",
+    "The main preservation AFTER separately verifies the original52 historical trees/1366files/24reports, protected100, original400, selected environments/backups/caches and quarantine. Root handles live remote heads and publication.",
+    "No model, Blender, WSL, geometry/array computation, source mutation or deletion. Python-I-B and bytecode disabled before non-sys imports."
+  ]
+}
