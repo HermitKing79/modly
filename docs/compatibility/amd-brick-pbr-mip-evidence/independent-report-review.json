@@ -1,0 +1,26 @@
+{
+  "schema": "modly.amd.brick-pbr-mip-independent-report-review.v1",
+  "created_utc": "2026-10-21T08:07:48.147222+00:00",
+  "classification": "PASS_REPORT_ACCURACY",
+  "experiment_classification": "NO-GO",
+  "report_SHA256": "36f8ea82c94c8f1ccf925881abbd271bc728d637973efffc9373a4a9540d8929",
+  "execution_summary_SHA256": "eccfe28e8a6483096480b25ca4042cc44c1ff26bacb23963f199d9cbe3cc491c",
+  "independent_outcome_SHA256": "fe788d44b6dd00266915f6a4965903beca3ccde92796ed06ac242557105d777d",
+  "preservation_after_SHA256": "d0e4b001f0144a8f00bc94378906b1721a06638457c529c3552948a3954fa18d",
+  "actual_worker_receipt_SHA256": "306cb03bf0eaca7384bcbf70a543c7bdb16553b0a326f4238d56bb12a50f0047",
+  "actual_host_receipt_SHA256": "bf7c28657ae7e505326ccc0501930651e7bcdb38d807ab854fcb9c1bee340308",
+  "shared_actual_result_fields_exact": 22,
+  "host_summary_and_minima_exact": true,
+  "verified_claim_scope": [
+    "Verdict is the declared F64 linear-light box/trilinear CPU implementation, not universal game-engine incompatibility.",
+    "LOD0/.5/1 passing, first contamination1.5 and first numerical gate failure2.5 match actual persisted results.",
+    "The roughness witness is a genuine active PBR channel, independently rechecked; alpha is intentionally opaque and is not sole failure evidence.",
+    "UVs, geometry, material field and original PNG/GLB were not regenerated or altered.",
+    "Software pictures are explicitly unlit base-colour at actual projected512/128/32px with derivative LODs, not lit PBR/Blender renders.",
+    "Natural process success/resource measurements are kept distinct from negative material-quality verdict.",
+    "Preservation scope labels three old disposable copies stat-only and does not claim whole-installation hashing.",
+    "Suggested atlas/padding revision is a future separately approved experiment; no automatic repair or new bake claimed."
+  ],
+  "issues": [],
+  "review_activity": "Read-only text/JSON claim comparison only; no further filtering, projection, model or image execution."
+}

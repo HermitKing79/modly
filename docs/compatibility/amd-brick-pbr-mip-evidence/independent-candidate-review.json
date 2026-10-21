@@ -1,0 +1,92 @@
+{
+  "schema": "modly.amd.brick-pbr-mip-independent-candidate-review.v1",
+  "created_utc": "2026-10-21T07:56:46.250836+00:00",
+  "classification": "GO",
+  "base": "0f2fd9250e8a2825df240a1f948afed0b07d31fa",
+  "scope": "Independent source/synthetic acceptance and scalar coverage-support qualification before the one actual CPU material-filter experiment. No original bake, field sample, Blender, neural model, WSL or GPU execution by reviewer.",
+  "reviewer": "independent mip_filter_contract_review subagent",
+  "candidate_source_SHA256": {
+    "assets.py": "6eb87c2796cfdfb0c78c25567bddc2cdbcac8fa25f3343c36d5f1225cb3b09c6",
+    "experiment.py": "262df90daa04421837baf8899e753824d5a919a9058f8ca86f84047a39104abc",
+    "mip_math.py": "966a3e528afbb00bffe38d4e9a9c3a3cfd5b0a6711975edd646463621fe05b70",
+    "mip_view.py": "337e92e0a0e8b2f450d45eae8516d48cad5958b96ffbcabea4eead65760e8397",
+    "run_host.py": "64b4e384bc99aa606bc7dbe844b78985daad1be26da97b2f07ea63759d9b7e5e",
+    "test_asset_reader.py": "be40033fd6c5a634310bebd26e30693d353d52fe4f8f07609718bd85fcfeca6d",
+    "test_mip_math.py": "fe92b8c0c47272e1b898137b2a13e9eab90669568bc57137b7d5a218847e0c32",
+    "test_mip_view.py": "a6600cf373155152657ebf612c6ce2ec06f43ce7f9b4e18ddfe19efd42920e63"
+  },
+  "qualification_plan_SHA256": "a25548d697baaf9123c905a0029733ea4503b5eb76346c190acdd85adba32a7a",
+  "metadata_support_qualification_SHA256": "e3c00ca706a2be38f729c70343a5d5557dc9e6a176eb576ee0916e61fad80ace",
+  "verified": {
+    "all_accepted_GLB_and_prior_producer_hashes_gate_worker": true,
+    "actual_embedded_texture_bytes_and_sampler_identity_required": true,
+    "actual_GLB_UV_roundtrip_oriented_triangle_correspondence_used": true,
+    "six_channel_linear_filter_order_RGB_then_M_R_alpha_correct": true,
+    "F64_two_by_two_linear_box_and_bilinear_trilinear_clamp_contract_explicit": true,
+    "B_and_C_normalize_after_complete_filter_not_per_level": true,
+    "all_original10961_queries_and2343_saved_covered_edge_centres_retained": true,
+    "old_seam_edge_cohort_uses_unique_pair_members_not_first90": true,
+    "all45_seam_pairs_retained": true,
+    "LOD0_point_and_raw_gap_gates_preserved": true,
+    "mip_cohorts_and_per_island_total_errors_use_C_footprints_not_points": true,
+    "mip_seam_error_subtracts_matched_source_footprint_gap": true,
+    "foreign_and_unowned_ownership_contributions_gated_separately": true,
+    "independent_original_base_block_oracle_does_not_reuse_mip_pyramids": true,
+    "source_blur_measure_separate_from_contamination": true,
+    "near_medium_far_projection_uses_actual_screen_size_and_UV_derivatives": true,
+    "software_views_explicitly_unlit_base_colour_not_PBR_renderer": true,
+    "new_display_enlargement_labelled_nearest_only_after_filtering": true,
+    "immutable_original_assets_and_writes_confined_to_exclusive_private_run": true,
+    "Job_attached_before_exact_binary_GO_and_natural_exit_required": true,
+    "six_GiB_180_seconds_and_12GiB_RAM_2GiB_disk_floors_unchanged": true,
+    "completed_negative_quality_NO_GO_kept_distinct_from_host_process_success": true,
+    "no_retry_and_no_padding_repair_path": true
+  },
+  "independent_synthetic_tests": {
+    "passed": 24,
+    "seconds": 0.482,
+    "test_scope": "3 container/UV tests,14 mip math tests,7 projection tests; no private material filtering"
+  },
+  "scalar_metadata_acceptance": {
+    "queries": 13304,
+    "LODs": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0
+    ],
+    "minimum_source_support_mass": 0.028076171875,
+    "zero_support_query_evaluations": 0,
+    "seconds": 0.375,
+    "actual_material_filter_experiment": false,
+    "bounded_RAM_disk_checks_passed": true
+  },
+  "predeclared_quality_limits": {
+    "RGB_RMSE": 0.02,
+    "RGB_absolute_p95": 0.05,
+    "RGB_absolute_max": 0.15,
+    "scalar_RMSE": 0.02,
+    "foreign_or_unowned_weight_tolerance": 1e-07,
+    "direct_block_oracle_max": 2e-12
+  },
+  "primary_spec_sources": [
+    "https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#_filtering",
+    "https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#metallic-roughness-material"
+  ],
+  "limitations": [
+    "GO admits one experiment, not material fidelity PASS. All material results, output hashes and containment outcomes remain to be observed.",
+    "glTF does not prescribe one downsampling kernel or mip storage precision; this is a declared floating-point linear-box implementation, not universal engine compatibility.",
+    "C is a footprint-matched average of previously saved genuine covered F32 samples, not a new continuous-field integral or model evaluation.",
+    "Scalar-only metadata checks cover all13304 fixed query positions at11LODs; projection-derived view queries still retain mandatory runtime positive-support guards.",
+    "The software images show learned base-colour filtering, while metallic/roughness/alpha are evaluated numerically; no physical PBR lighting or BRDF-engine proof is claimed.",
+    "A measured NO-GO does not revoke the accepted original LOD0 portable patch or authorise another UV/bake/padding attempt."
+  ],
+  "blockers": []
+}

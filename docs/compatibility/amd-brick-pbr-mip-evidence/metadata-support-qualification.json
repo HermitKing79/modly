@@ -1,0 +1,353 @@
+{
+  "classification": "PASS_METADATA_REFERENCE_SUPPORT",
+  "scope": "Read-only coverage/ownership scalar-plane qualification only, before any experiment marker or material filtering",
+  "actual_material_filter_experiment": false,
+  "original_RGB_or_material_field_sampled": false,
+  "original_UV_or_bake_modified": false,
+  "GLB_sha256": "e618af9fea32ce9fedb1e478ca1e0becb7eb55fc9ee4a246bcdf7105a6cf9c21",
+  "actual_GLB_UV_roundtrip_error": 2.9802322387695312e-08,
+  "query_count": 13304,
+  "LODs": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0
+  ],
+  "minimum_source_support_mass": 0.028076171875,
+  "zero_support_query_evaluations": 0,
+  "zero_support_unique_queries": 0,
+  "zero_support_details": [],
+  "checks": [
+    {
+      "island": 0,
+      "LOD": 0.0,
+      "query_count": 13142,
+      "zero_count": 0,
+      "minimum_mass": 0.29388492846092973
+    },
+    {
+      "island": 0,
+      "LOD": 0.5,
+      "query_count": 13142,
+      "zero_count": 0,
+      "minimum_mass": 0.3454136963456973
+    },
+    {
+      "island": 0,
+      "LOD": 1.0,
+      "query_count": 13142,
+      "zero_count": 0,
+      "minimum_mass": 0.23437500000001066
+    },
+    {
+      "island": 0,
+      "LOD": 1.5,
+      "query_count": 13142,
+      "zero_count": 0,
+      "minimum_mass": 0.19580078125000921
+    },
+    {
+      "island": 0,
+      "LOD": 2.0,
+      "query_count": 13142,
+      "zero_count": 0,
+      "minimum_mass": 0.15722656250000777
+    },
+    {
+      "island": 0,
+      "LOD": 2.5,
+      "query_count": 13142,
+      "zero_count": 0,
+      "minimum_mass": 0.12158203125000511
+    },
+    {
+      "island": 0,
+      "LOD": 3.0,
+      "query_count": 13142,
+      "zero_count": 0,
+      "minimum_mass": 0.08593750000000244
+    },
+    {
+      "island": 0,
+      "LOD": 3.5,
+      "query_count": 13142,
+      "zero_count": 0,
+      "minimum_mass": 0.07497024536132982
+    },
+    {
+      "island": 0,
+      "LOD": 4.0,
+      "query_count": 13142,
+      "zero_count": 0,
+      "minimum_mass": 0.0640029907226572
+    },
+    {
+      "island": 0,
+      "LOD": 4.5,
+      "query_count": 13142,
+      "zero_count": 0,
+      "minimum_mass": 0.12985038757324338
+    },
+    {
+      "island": 0,
+      "LOD": 5.0,
+      "query_count": 13142,
+      "zero_count": 0,
+      "minimum_mass": 0.12930640262677404
+    },
+    {
+      "island": 1,
+      "LOD": 0.0,
+      "query_count": 53,
+      "zero_count": 0,
+      "minimum_mass": 0.028076171875
+    },
+    {
+      "island": 1,
+      "LOD": 0.5,
+      "query_count": 53,
+      "zero_count": 0,
+      "minimum_mass": 0.08355712890625
+    },
+    {
+      "island": 1,
+      "LOD": 1.0,
+      "query_count": 53,
+      "zero_count": 0,
+      "minimum_mass": 0.1390380859375
+    },
+    {
+      "island": 1,
+      "LOD": 1.5,
+      "query_count": 53,
+      "zero_count": 0,
+      "minimum_mass": 0.1806488037109375
+    },
+    {
+      "island": 1,
+      "LOD": 2.0,
+      "query_count": 53,
+      "zero_count": 0,
+      "minimum_mass": 0.222259521484375
+    },
+    {
+      "island": 1,
+      "LOD": 2.5,
+      "query_count": 53,
+      "zero_count": 0,
+      "minimum_mass": 0.21010208129882812
+    },
+    {
+      "island": 1,
+      "LOD": 3.0,
+      "query_count": 53,
+      "zero_count": 0,
+      "minimum_mass": 0.19794464111328125
+    },
+    {
+      "island": 1,
+      "LOD": 3.5,
+      "query_count": 53,
+      "zero_count": 0,
+      "minimum_mass": 0.26610626991032404
+    },
+    {
+      "island": 1,
+      "LOD": 4.0,
+      "query_count": 53,
+      "zero_count": 0,
+      "minimum_mass": 0.22409224194143462
+    },
+    {
+      "island": 1,
+      "LOD": 4.5,
+      "query_count": 53,
+      "zero_count": 0,
+      "minimum_mass": 0.22756356919569534
+    },
+    {
+      "island": 1,
+      "LOD": 5.0,
+      "query_count": 53,
+      "zero_count": 0,
+      "minimum_mass": 0.15820677026661112
+    },
+    {
+      "island": 2,
+      "LOD": 0.0,
+      "query_count": 79,
+      "zero_count": 0,
+      "minimum_mass": 0.049490343779325485
+    },
+    {
+      "island": 2,
+      "LOD": 0.5,
+      "query_count": 79,
+      "zero_count": 0,
+      "minimum_mass": 0.11565646412782371
+    },
+    {
+      "island": 2,
+      "LOD": 1.0,
+      "query_count": 79,
+      "zero_count": 0,
+      "minimum_mass": 0.18182258447632194
+    },
+    {
+      "island": 2,
+      "LOD": 1.5,
+      "query_count": 79,
+      "zero_count": 0,
+      "minimum_mass": 0.19076924828550545
+    },
+    {
+      "island": 2,
+      "LOD": 2.0,
+      "query_count": 79,
+      "zero_count": 0,
+      "minimum_mass": 0.19971591209468897
+    },
+    {
+      "island": 2,
+      "LOD": 2.5,
+      "query_count": 79,
+      "zero_count": 0,
+      "minimum_mass": 0.20537295512758647
+    },
+    {
+      "island": 2,
+      "LOD": 3.0,
+      "query_count": 79,
+      "zero_count": 0,
+      "minimum_mass": 0.21102999816048396
+    },
+    {
+      "island": 2,
+      "LOD": 3.5,
+      "query_count": 79,
+      "zero_count": 0,
+      "minimum_mass": 0.2051057461042376
+    },
+    {
+      "island": 2,
+      "LOD": 4.0,
+      "query_count": 79,
+      "zero_count": 0,
+      "minimum_mass": 0.19918149404799124
+    },
+    {
+      "island": 2,
+      "LOD": 4.5,
+      "query_count": 79,
+      "zero_count": 0,
+      "minimum_mass": 0.18307291226631683
+    },
+    {
+      "island": 2,
+      "LOD": 5.0,
+      "query_count": 79,
+      "zero_count": 0,
+      "minimum_mass": 0.16696433048464243
+    },
+    {
+      "island": 3,
+      "LOD": 0.0,
+      "query_count": 30,
+      "zero_count": 0,
+      "minimum_mass": 0.12414550781250022
+    },
+    {
+      "island": 3,
+      "LOD": 0.5,
+      "query_count": 30,
+      "zero_count": 0,
+      "minimum_mass": 0.13222503662109392
+    },
+    {
+      "island": 3,
+      "LOD": 1.0,
+      "query_count": 30,
+      "zero_count": 0,
+      "minimum_mass": 0.1403045654296876
+    },
+    {
+      "island": 3,
+      "LOD": 1.5,
+      "query_count": 30,
+      "zero_count": 0,
+      "minimum_mass": 0.17264461517333995
+    },
+    {
+      "island": 3,
+      "LOD": 2.0,
+      "query_count": 30,
+      "zero_count": 0,
+      "minimum_mass": 0.2049846649169923
+    },
+    {
+      "island": 3,
+      "LOD": 2.5,
+      "query_count": 30,
+      "zero_count": 0,
+      "minimum_mass": 0.16742372512817388
+    },
+    {
+      "island": 3,
+      "LOD": 3.0,
+      "query_count": 30,
+      "zero_count": 0,
+      "minimum_mass": 0.1298627853393555
+    },
+    {
+      "island": 3,
+      "LOD": 3.5,
+      "query_count": 30,
+      "zero_count": 0,
+      "minimum_mass": 0.15897196531295776
+    },
+    {
+      "island": 3,
+      "LOD": 4.0,
+      "query_count": 30,
+      "zero_count": 0,
+      "minimum_mass": 0.13731770641349653
+    },
+    {
+      "island": 3,
+      "LOD": 4.5,
+      "query_count": 30,
+      "zero_count": 0,
+      "minimum_mass": 0.1418492102630764
+    },
+    {
+      "island": 3,
+      "LOD": 5.0,
+      "query_count": 30,
+      "zero_count": 0,
+      "minimum_mass": 0.1116943359375
+    }
+  ],
+  "resources_before": {
+    "available_ram_bytes": 18869772288,
+    "disk_free_bytes": 106583601152,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "resources_after": {
+    "available_ram_bytes": 18775941120,
+    "disk_free_bytes": 106583597056,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "maximum_array_bound": "1024-square scalar indicator plane plus its bounded box mip chain;13304UVqueries per call",
+  "elapsed_seconds": 0.375
+}

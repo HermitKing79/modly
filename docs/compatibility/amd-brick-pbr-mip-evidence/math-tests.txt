@@ -1,0 +1,19 @@
+test_bilinear_pixel_centres_V_up_and_outer_edge_clamp (test_mip_math.MipMathTests.test_bilinear_pixel_centres_V_up_and_outer_edge_clamp) ... ok
+test_conditioned_nonfinite_result_is_rejected_instead_of_returned (test_mip_math.MipMathTests.test_conditioned_nonfinite_result_is_rejected_instead_of_returned) ... ok
+test_conditioning_normalizes_after_complete_trilinear_filter (test_mip_math.MipMathTests.test_conditioning_normalizes_after_complete_trilinear_filter) ... ok
+test_each_query_can_have_its_own_fractional_lod (test_mip_math.MipMathTests.test_each_query_can_have_its_own_fractional_lod) ... ok
+test_exact_box_levels_are_independent_hand_averages_and_leave_input_unchanged (test_mip_math.MipMathTests.test_exact_box_levels_are_independent_hand_averages_and_leave_input_unchanged) ... ok
+test_integer_and_half_lod_use_clamped_bilinear_then_level_blend (test_mip_math.MipMathTests.test_integer_and_half_lod_use_clamped_bilinear_then_level_blend) ... ok
+test_linear_light_box_is_not_encoded_rgb_average (test_mip_math.MipMathTests.test_linear_light_box_is_not_encoded_rgb_average) ... ok
+test_ownership_planes_preserve_unit_total_and_expose_foreign_influence (test_mip_math.MipMathTests.test_ownership_planes_preserve_unit_total_and_expose_foreign_influence) ... ok
+test_pyramid_arithmetic_overflow_fails_clearly (test_mip_math.MipMathTests.test_pyramid_arithmetic_overflow_fails_clearly) ... ok
+test_pyramid_rejects_invalid_sizes_types_channels_levels_and_nonfinite (test_mip_math.MipMathTests.test_pyramid_rejects_invalid_sizes_types_channels_levels_and_nonfinite) ... ok
+test_sampling_rejects_malformed_chains_queries_and_lod_without_clamping (test_mip_math.MipMathTests.test_sampling_rejects_malformed_chains_queries_and_lod_without_clamping) ... ok
+test_srgb_known_values_and_clipping (test_mip_math.MipMathTests.test_srgb_known_values_and_clipping) ... ok
+test_srgb_nonfinite_and_non_numeric_inputs_fail_clearly (test_mip_math.MipMathTests.test_srgb_nonfinite_and_non_numeric_inputs_fail_clearly) ... ok
+test_zero_support_negative_or_multichannel_weight_chains_are_rejected (test_mip_math.MipMathTests.test_zero_support_negative_or_multichannel_weight_chains_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.417s
+
+OK

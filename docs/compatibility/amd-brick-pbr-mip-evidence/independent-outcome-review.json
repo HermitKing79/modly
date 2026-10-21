@@ -1,0 +1,316 @@
+{
+  "schema": "modly.amd.brick-pbr-mip-independent-outcome-review.v1",
+  "created_utc": "2026-10-21T08:02:58.160245+00:00",
+  "classification": "NO-GO_VERIFIED",
+  "experiment_classification": "NO-GO",
+  "process_classification": "PASS_NATURAL_CPU_COMPLETION",
+  "reviewer": "independent mip_filter_contract_review subagent",
+  "scope": "Read-only persisted-array/hash/metric/image and small original-base weighted-kernel verification; no second material-filter experiment, pyramid, texture bake, WSL, model or GPU execution.",
+  "result_SHA256": "306cb03bf0eaca7384bcbf70a543c7bdb16553b0a326f4238d56bb12a50f0047",
+  "host_receipt_SHA256": "bf7c28657ae7e505326ccc0501930651e7bcdb38d807ab854fcb9c1bee340308",
+  "candidate_review_SHA256": "a4a872e62e784e25d2e080e5562e1d9bc9a6271a0d803c57eeb801906bdc98b2",
+  "all_verified_output_files": 19,
+  "all19_output_file_hashes_match": true,
+  "PNG_files_fully_decoded_and_reopened": 10,
+  "persisted_evaluations": 304904,
+  "all_evaluations_finite_and_source_supported": true,
+  "maximum_recomputed_numeric_metric_difference": 0.0,
+  "all_cohorts_per_island_seam_residuals_ownership_counts_and_classifications_reproduced": true,
+  "first_accuracy_gate_failure_LOD": 2.5,
+  "LOD_summaries": [
+    {
+      "LOD": 0.0,
+      "classification": "PASS",
+      "accuracy_gates_pass": true,
+      "foreign_queries": 0,
+      "unowned_queries": 0,
+      "foreign_max": 0.0,
+      "unowned_max": 0.0
+    },
+    {
+      "LOD": 0.5,
+      "classification": "PASS",
+      "accuracy_gates_pass": true,
+      "foreign_queries": 0,
+      "unowned_queries": 0,
+      "foreign_max": 0.0,
+      "unowned_max": 0.0
+    },
+    {
+      "LOD": 1.0,
+      "classification": "PASS",
+      "accuracy_gates_pass": true,
+      "foreign_queries": 0,
+      "unowned_queries": 0,
+      "foreign_max": 0.0,
+      "unowned_max": 0.0
+    },
+    {
+      "LOD": 1.5,
+      "classification": "NO-GO",
+      "accuracy_gates_pass": true,
+      "foreign_queries": 4,
+      "unowned_queries": 5,
+      "foreign_max": 0.0138702392578125,
+      "unowned_max": 0.00786590576171875
+    },
+    {
+      "LOD": 2.0,
+      "classification": "NO-GO",
+      "accuracy_gates_pass": true,
+      "foreign_queries": 4,
+      "unowned_queries": 5,
+      "foreign_max": 0.027740478515625,
+      "unowned_max": 0.0157318115234375
+    },
+    {
+      "LOD": 2.5,
+      "classification": "NO-GO",
+      "accuracy_gates_pass": false,
+      "foreign_queries": 31,
+      "unowned_queries": 65,
+      "foreign_max": 0.09375,
+      "unowned_max": 0.10958906564321873
+    },
+    {
+      "LOD": 3.0,
+      "classification": "NO-GO",
+      "accuracy_gates_pass": false,
+      "foreign_queries": 31,
+      "unowned_queries": 65,
+      "foreign_max": 0.1875,
+      "unowned_max": 0.21917813128643746
+    },
+    {
+      "LOD": 3.5,
+      "classification": "NO-GO",
+      "accuracy_gates_pass": false,
+      "foreign_queries": 112,
+      "unowned_queries": 142,
+      "foreign_max": 0.2578125,
+      "unowned_max": 0.2664573103065777
+    },
+    {
+      "LOD": 4.0,
+      "classification": "NO-GO",
+      "accuracy_gates_pass": false,
+      "foreign_queries": 112,
+      "unowned_queries": 142,
+      "foreign_max": 0.328125,
+      "unowned_max": 0.36845825312047964
+    },
+    {
+      "LOD": 4.5,
+      "classification": "NO-GO",
+      "accuracy_gates_pass": false,
+      "foreign_queries": 174,
+      "unowned_queries": 319,
+      "foreign_max": 0.3436603368027136,
+      "unowned_max": 0.4602791265097341
+    },
+    {
+      "LOD": 5.0,
+      "classification": "NO-GO",
+      "accuracy_gates_pass": false,
+      "foreign_queries": 174,
+      "unowned_queries": 319,
+      "foreign_max": 0.47156476974487305,
+      "unowned_max": 0.5520999998989886
+    }
+  ],
+  "largest_fixed_query_roughness_error": {
+    "query_evaluation_index": 143870,
+    "fixed_query_index": 10830,
+    "LOD": 5.0,
+    "island": 2,
+    "local_triangle_id": 496,
+    "original_triangle_id": 3809864,
+    "accepted_roughness": 0.4471383744025186,
+    "source_footprint_roughness": 0.9999886065459127,
+    "absolute_error": 0.5528502321433941,
+    "unowned_weight": 0.5520999998989886,
+    "foreign_weight": 0.0955463399987444
+  },
+  "independent_direct_base_kernel_subset": {
+    "queries": 18,
+    "no_mip_pyramid_or_filter_helper_used": true,
+    "maximum_error": 3.8191672047105385e-14,
+    "checks": [
+      {
+        "index": 0,
+        "LOD": 0.0,
+        "island": 0,
+        "maximum_absolute_error": 0.0
+      },
+      {
+        "index": 19358,
+        "LOD": 0.5,
+        "island": 0,
+        "maximum_absolute_error": 1.1102230246251565e-16
+      },
+      {
+        "index": 38717,
+        "LOD": 1.0,
+        "island": 0,
+        "maximum_absolute_error": 2.0816681711721685e-17
+      },
+      {
+        "index": 58076,
+        "LOD": 2.0,
+        "island": 0,
+        "maximum_absolute_error": 5.551115123125783e-16
+      },
+      {
+        "index": 77435,
+        "LOD": 2.5,
+        "island": 2,
+        "maximum_absolute_error": 1.5543122344752192e-15
+      },
+      {
+        "index": 96794,
+        "LOD": 3.5,
+        "island": 0,
+        "maximum_absolute_error": 1.3100631690576847e-14
+      },
+      {
+        "index": 116153,
+        "LOD": 4.0,
+        "island": 0,
+        "maximum_absolute_error": 1.887379141862766e-14
+      },
+      {
+        "index": 135512,
+        "LOD": 5.0,
+        "island": 0,
+        "maximum_absolute_error": 3.8191672047105385e-14
+      },
+      {
+        "index": 143822,
+        "LOD": 5.0,
+        "island": 1,
+        "maximum_absolute_error": 1.3322676295501878e-15
+      },
+      {
+        "index": 143870,
+        "LOD": 5.0,
+        "island": 2,
+        "maximum_absolute_error": 3.885780586188048e-15
+      },
+      {
+        "index": 154871,
+        "LOD": 0.9886676259153063,
+        "island": 0,
+        "maximum_absolute_error": 2.0816681711721685e-17
+      },
+      {
+        "index": 174230,
+        "LOD": 0.9886672457894403,
+        "island": 0,
+        "maximum_absolute_error": 3.3306690738754696e-16
+      },
+      {
+        "index": 193589,
+        "LOD": 0.9886675847004502,
+        "island": 0,
+        "maximum_absolute_error": 1.1102230246251565e-16
+      },
+      {
+        "index": 212948,
+        "LOD": 0.9886674271474755,
+        "island": 0,
+        "maximum_absolute_error": 1.1102230246251565e-16
+      },
+      {
+        "index": 232307,
+        "LOD": 0.9886682829766054,
+        "island": 0,
+        "maximum_absolute_error": 1.1102230246251565e-16
+      },
+      {
+        "index": 251665,
+        "LOD": 0.9886678580428686,
+        "island": 0,
+        "maximum_absolute_error": 2.220446049250313e-16
+      },
+      {
+        "index": 271024,
+        "LOD": 0.9886681158480473,
+        "island": 0,
+        "maximum_absolute_error": 2.220446049250313e-16
+      },
+      {
+        "index": 290383,
+        "LOD": 0.9886687347294532,
+        "island": 0,
+        "maximum_absolute_error": 3.3306690738754696e-16
+      }
+    ]
+  },
+  "view_and_contact_sheet_readback": {
+    "near": {
+      "actual_projected_height": 512,
+      "query_count": 148667,
+      "UV_LOD_island_arrays_exact": true,
+      "all_source_accepted_heat_pixels_exact": true,
+      "contact_sheet_panels_exact": true,
+      "LOD_range": [
+        0.9886656934782633,
+        0.988671976831546
+      ]
+    },
+    "medium": {
+      "actual_projected_height": 128,
+      "query_count": 9314,
+      "UV_LOD_island_arrays_exact": true,
+      "all_source_accepted_heat_pixels_exact": true,
+      "contact_sheet_panels_exact": true,
+      "LOD_range": [
+        2.988665693478265,
+        2.9886719768315504
+      ]
+    },
+    "far": {
+      "actual_projected_height": 32,
+      "query_count": 579,
+      "UV_LOD_island_arrays_exact": true,
+      "all_source_accepted_heat_pixels_exact": true,
+      "contact_sheet_panels_exact": true,
+      "LOD_range": [
+        4.988665693478234,
+        4.988671852203311
+      ]
+    }
+  },
+  "visual_findings": "Near panels closely match. Medium shows normal blur in both panels plus some accepted-atlas darkening. Far is strongly blurred in both, with additional accepted-atlas darkening; the geometry holes/boundaries remain the same. Images are unlit RGB diagnostics, not physically lit PBR engine renders.",
+  "resource_and_cleanup_acceptance": {
+    "host_elapsed_seconds": 5.655999999999949,
+    "peak_process_committed_bytes": 666103808,
+    "minimum_sampled_available_RAM_bytes": 18070278144,
+    "forced_cleanup": false,
+    "natural_empty_Job_verified": true,
+    "all_resource_floors_passed": true
+  },
+  "review_resources_before": {
+    "available_ram_bytes": 18895900672,
+    "disk_free_bytes": 106510737408,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "review_resources_after": {
+    "available_ram_bytes": 18748645376,
+    "disk_free_bytes": 106510737408,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "review_seconds": 1.280999999999949,
+  "verdict": "Do not qualify current atlas for tested trilinear minification through LOD5. Foreign/unowned sampling begins atLOD1.5, before numerical accuracy fails atLOD2.5; roughness loss demonstrates genuine visible-PBR-channel corruption, not only ignored alpha. Existing acceptedLOD0 patch remains valid. A revised padding/atlas strategy needs separate approval; no automatic repair or retry.",
+  "limitations": [
+    "One explicitly declared F64 linear-light box mip chain, not every glTF engine mip kernel/storage format.",
+    "C is a footprint-matched average of saved genuine covered F32 samples, not a new continuous model integral.",
+    "Unlit base-colour pictures do not demonstrate complete PBR BRDF appearance; metallic/roughness are verified numerically.",
+    "Independent direct-base recalculation is a bounded subset; whole persisted metric arrays were independently re-evaluated."
+  ],
+  "issues": []
+}
