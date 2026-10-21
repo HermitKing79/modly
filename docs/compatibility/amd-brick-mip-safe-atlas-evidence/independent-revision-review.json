@@ -1,0 +1,70 @@
+{
+  "schema": "modly.amd.brick-mip-safe-atlas-independent-revision-review.v1",
+  "created_utc": "2026-10-21T08:33:24.699065+00:00",
+  "classification": "GO",
+  "base": "e8244cb0f5e044c6749c278968da720c9f029942",
+  "scope": "One disposable genuine CPU spatial rebake/isolated padding/known-GLB UV-and-PNG repack, followed by unchanged full mip quality evaluation. No neural, WSL, GPU, full-model bake or retry authorised by this review.",
+  "reviewer": "independent mip_filter_contract_review subagent",
+  "candidate_source_SHA256": {
+    "experiment.py": "71271536f48c4b78a5e10f175937d041128adf1073bff3159d39d26d6cfe87ad",
+    "footprint.py": "ddc49d066465f07a8e561bd85194e9d2768f149e98cc054f4311af3a5a40bdd1",
+    "repack_glb.py": "93898d1eebf1f4eefe5aac007f6cf8b7984899007fc3979bf6d63424b3608606",
+    "revision.py": "c2a8401c5502a2b680d67316b0e153cc99a7c05ae244ff2ce2cf9a3abf911b3f",
+    "revision_setup.py": "288cb8b247db8597158e826a63ebbe6df7216d3d2687371ef3bbf402ad38e998",
+    "run_host.py": "2218bcb0599f1b86a9f5a934ec63d926fd00b93ce1694d92530d8b55962aabfe",
+    "test_footprint.py": "ed67398a7fc12ff00ccf203e7e4f99966b641182a8b7fc40be4b4b2f152c3580",
+    "test_repack_glb.py": "c78a7e29e6a6e0dd6ad9af0be663cf8b80e07f6adefc60fba6da1c29056668b7"
+  },
+  "qualification_plan_SHA256": "c6e0b8fe58055ce7924714c89be04028bfd4cc525fd14c45964357462830849e",
+  "independent_feasibility_outcome_SHA256": "69fc4230b2048c25bd7dc16d66f493b11ce57ca9106d13391cbb8868132a2790",
+  "actual_feasibility_result_SHA256": "b1dc10d9a921ee5887fe04599ebcb13bac27bef208b56058bec461c97e6a1fc2",
+  "verified": {
+    "actual_phase1_support_and_capacity_GO_required": true,
+    "full_original_GLB_and_original_bake_inputs_authenticated": true,
+    "all19_previous_mip_artifact_hashes_reverified_before_review": true,
+    "all_reused_imported_source_paths_pinned_to_approved_Git_commit_before_worker": true,
+    "sequential_original_face_corner_layout_explicitly_checked_before_translation": true,
+    "one_fixed_integer_translation_no_UV_rescale_or_island_search": true,
+    "every_original_triangle_geometry_bits_winding_multiplicity_material_source_validated": true,
+    "all_original_per_face_coverage_counts_and_F32_barycentrics_required_byte_exact_under_translation": true,
+    "positive_area_overlap_and_full_continuous_LOD5_own_footprint_rechecked": true,
+    "original_genuine_sparse_eight_neighbour_sampler_and_world_float_arithmetic_reused": true,
+    "covered_rebaked_genuine_F32_values_required_byte_exact_to_original_bake": true,
+    "native_byte_first_Telea_padding_reused_separately_per_disjoint_owner_rect": true,
+    "F64_exact_translation_preserved_for_raster_then_F32_at_GLB_boundary_only": true,
+    "actual_portable_UV_roundtrip_geometry_and_support_revalidated": true,
+    "GLB_helper_replaces_only_UV_and_two_PNG_views_and_reflows_offsets": true,
+    "position_normal_index_bytes_material_sampler_and_portable_core_structure_preserved": true,
+    "foreign_external_compressed_sparse_aliasing_ambiguous_and_duplicate_key_layouts_rejected": true,
+    "PNG_and_NPY_independent_exact_readback_required": true,
+    "every_original_mip_cohort_query_count_seam_membership_oracle_LOD_and_accuracy_gate_unchanged": true,
+    "actual_GLBUV_face_barycentric_query_route_retained": true,
+    "matched_source_footprints_used_for_mips_not_point_samples": true,
+    "contamination_vs_padding_quantization_vs_ordinary_blur_reported_separately": true,
+    "matched_original_and_revised_projection_panels_no_physical_PBR_render_claim": true,
+    "six_GiB_180_seconds_12GiB_live_RAM_2GiB_disk_unchanged": true,
+    "exclusive_attempt_exact_binary_GO_ownedJob_and_natural_cleanup_required": true,
+    "completed_negative_quality_kept_distinct_from_natural_CPU_process_success": true
+  },
+  "independent_synthetic_tests": {
+    "passed": 10,
+    "seconds": 1.469,
+    "scope": "4 support-proof tests and 6 GLB repack/security groups, synthetic in-memory inputs only. No actual material rebake/filter experiment by reviewer."
+  },
+  "unchanged_quality_gates": {
+    "RGB_RMSE": 0.02,
+    "RGB_p95_absolute": 0.05,
+    "RGB_max_absolute": 0.15,
+    "scalar_RMSE": 0.02,
+    "foreign_or_unowned_weight": 1e-07,
+    "independent_base_block_oracle_max": 2e-12
+  },
+  "limitations": [
+    "GO permits one bounded experiment, not a material-quality PASS; actual extended Telea padding, minification, persistence and cleanup must be observed.",
+    "Portable output is a narrowly validated repack of the previously Blender-exported known GLB; no new Blender export or fresh Blender import is performed by this candidate.",
+    "Uniform integer shift preserves source raster density exactly; F32 portable UV conversion retains the original 2e-7 alignment gate and is separately support-checked.",
+    "Views are unlit base-colour software filter diagnostics; scalar PBR channels are measured numerically, not physically rendered.",
+    "The declared floating-point linear box filter is not universal game-engine compatibility or full-model atlas qualification."
+  ],
+  "blockers": []
+}

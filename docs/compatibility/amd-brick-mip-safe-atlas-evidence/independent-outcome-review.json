@@ -1,0 +1,156 @@
+{
+  "schema": "modly.amd.brick-mip-safe-atlas-independent-outcome.v1",
+  "created_utc": "2026-10-21T08:39:45.715302+00:00",
+  "classification": "PASS",
+  "scope": "Read-only verification of the single completed CPU revision. No new spatial sampling, padding, mip pyramid, bake or rendering experiment.",
+  "result_SHA256": "6906247a3b6f511cf06249d4af3d2c6feee6e4b0f759adde569859cfefb1da53",
+  "host_result_SHA256": "1b1eea5a881c24fc505cccb22bd95c2a80984534c51ae4b7a669b7055cfc9f70",
+  "attempt_SHA256": "e205d046d076ba67d259ff8c2eeb8ad8a87bb9fb56e3136006974062cf4ef569",
+  "candidate_review_SHA256": "39ee66d4791205cf46a328eb79826b597f8b99ead02d3aa3382d8054e34ec53a",
+  "bake_receipt_SHA256": "370ffe817cb7aff3882048f0cf5512f464e8e8cb7df7551cecf323633feeb33c",
+  "GLB_SHA256": "dc772cd55fc523c5427ab4771da27e62cd6905d5109f00b2fca47403704da857",
+  "GLB_bytes": 638700,
+  "verified": {
+    "executed_sources_and_plan_match_frozen_review": true,
+    "all_original_inputs_and_prior19_mip_artifacts_authenticated": true,
+    "original_GLB_hash_unchanged": true,
+    "position_normal_index_buffers_byte_identical": true,
+    "all_other_document_fields_identical_except_buffer_lengths_offsets": true,
+    "all_original_triangle_geometry_winding_multiplicity_source_identity_retained": true,
+    "rebaked_covered_F32_samples_and_F32_barycentrics_byte_exact_under_translation": true,
+    "actual_portable_all_triangle_support_validated_through_continuous_LOD5": true,
+    "all13k_queries45_pairs11_LODs_and3_views_retained": true,
+    "all_LOD0_original_point_and_raw_seam_gates_pass": true,
+    "all_mip_cohort_island_and_seam_metrics_recomputed": true,
+    "all_reported_output_and_bake_hashes_match": true,
+    "all_PNGs_reopen_and_projected_pixels_match_saved_A_C": true,
+    "zero_foreign_unowned_influence": true,
+    "natural_empty_Job_no_forced_cleanup": true,
+    "live_resource_floors_pass": true
+  },
+  "maximum_metric_reconstruction_discrepancy": 0.0,
+  "max_errors_all_LODs_cohorts_islands_seam": {
+    "RGB_RMSE": 0.006932833891954775,
+    "RGB_p95": 0.0146146246539739,
+    "RGB_max": 0.035647057598267806,
+    "scalar_RMSE": 0.0016327513807474837,
+    "roughness_RMSE": 0.002828004329379425
+  },
+  "maximum_foreign_weight": 0.0,
+  "maximum_unowned_weight": 0.0,
+  "minimum_source_coverage_mass": 0.028076171875,
+  "independent_base_block_spot_oracle": {
+    "queries": 16,
+    "max_absolute_error": 2.942091015256665e-15
+  },
+  "portable_UV_tangent_density": {
+    "old_min": 19333.075801797913,
+    "new_min": 19333.075801797913,
+    "maximum_relative_per_triangle_change": 0.0,
+    "old_GLBUV_error": 2.9802322387695312e-08,
+    "new_GLBUV_error": 2.9802322387695312e-08,
+    "exact_bake_integer_translation": true
+  },
+  "support_proof": {
+    "classification": "GO",
+    "size": 1024,
+    "lod_range": [
+      0.0,
+      5.0
+    ],
+    "triangle_count": 781,
+    "all_continuous_triangle_UVs_protected": true,
+    "all_continuous_LODs_protected": true,
+    "islands": [
+      {
+        "id": 0,
+        "rect": [
+          0,
+          0,
+          768,
+          1024
+        ],
+        "triangles": 775,
+        "base_texel_bounds_inclusive": [
+          0,
+          0,
+          735,
+          1023
+        ],
+        "minimum_clearance_texels": 0
+      },
+      {
+        "id": 1,
+        "rect": [
+          800,
+          32,
+          928,
+          160
+        ],
+        "triangles": 2,
+        "base_texel_bounds_inclusive": [
+          800,
+          32,
+          895,
+          127
+        ],
+        "minimum_clearance_texels": 0
+      },
+      {
+        "id": 2,
+        "rect": [
+          800,
+          192,
+          928,
+          320
+        ],
+        "triangles": 3,
+        "base_texel_bounds_inclusive": [
+          800,
+          192,
+          895,
+          287
+        ],
+        "minimum_clearance_texels": 0
+      },
+      {
+        "id": 3,
+        "rect": [
+          800,
+          352,
+          928,
+          480
+        ],
+        "triangles": 1,
+        "base_texel_bounds_inclusive": [
+          800,
+          352,
+          863,
+          447
+        ],
+        "minimum_clearance_texels": 0
+      }
+    ]
+  },
+  "measurements": {
+    "worker_seconds": 7.4220000000000255,
+    "host_seconds": 8.219000000000051,
+    "peak_process_committed_bytes": 672264192,
+    "minimum_sampled_RAM_bytes": 17976848384,
+    "minimum_sampled_disk_bytes": 103653687296,
+    "review_seconds": 1.905999999999949,
+    "review_initial_resources": {
+      "available_ram_bytes": 19420143616,
+      "disk_free_bytes": 103345713152,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true
+    }
+  },
+  "limitations": [
+    "One781-triangle patch, declared F64 linear-box mip generation and LOD0..5, not full-model or universal engine compatibility.",
+    "Unlit base-colour software views; PBR scalar channels verified numerically, not new physical Blender renders.",
+    "New GLB is a known-container UV/PNG repack; no fresh Blender import/export.",
+    "Exact F64 translated bake density; tiny measured F32 portable UV roundoff remains."
+  ]
+}

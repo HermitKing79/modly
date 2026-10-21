@@ -1,0 +1,32 @@
+{
+  "schema": "modly.amd.brick-mip-safe-atlas-independent-feasibility-outcome.v1",
+  "created_utc": "2026-10-21T08:29:54.263554+00:00",
+  "classification": "GO",
+  "scope": "Actual single phase1 metadata/witness/capacity proof only. No revised UVs, atlas, spatial bake, portable GLB or quality outcome inferred.",
+  "result_SHA256": "b1dc10d9a921ee5887fe04599ebcb13bac27bef208b56058bec461c97e6a1fc2",
+  "host_result_SHA256": "ffdfe995857b0dc03ac14f4f67dfb536b3431c2ebf980cb7b6bf94294bd80c2d",
+  "attempt_SHA256": "b8f5f7c1cc8da3575b9d8c461163e2d8f189c65918a9e09ef060dcc035a2a313",
+  "candidate_review_SHA256": "da5211ab6e1c5c703fe6557a33271ceee04d58186b3e417724e9c8b038d12ac0",
+  "verified": {
+    "actual_run_binds_all_four_reviewed_sources_and_plan": true,
+    "all781_triangles_supported_through_continuous_LOD5": true,
+    "exact_original_roughness_failure_reproduced": true,
+    "capacity_and_full_triangle_bound_match_independent_analytic_proof": true,
+    "all19_historical_mip_files_authenticated_by_worker": true,
+    "originals_unchanged": true,
+    "no_UV_or_bake_output": true,
+    "original_resource_limits_and_natural_cleanup_pass": true
+  },
+  "measurements": {
+    "worker_elapsed_seconds": 1.1880000000001019,
+    "host_elapsed_seconds": 1.8429999999998472,
+    "peak_process_committed_bytes": 185479168,
+    "minimum_sampled_available_RAM_bytes": 18438057984,
+    "minimum_sampled_disk_bytes": 102045536256,
+    "forced_cleanup": false
+  },
+  "limitations": [
+    "Capacity GO only; new extended padding and actual material-quality gates require the separately reviewed one revision.",
+    "No universal game-engine mip-compatibility claim."
+  ]
+}

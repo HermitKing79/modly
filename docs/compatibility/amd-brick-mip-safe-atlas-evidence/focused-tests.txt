@@ -1,0 +1,6 @@
+Root verification, installed Windows Python, CPU only:
+D:/AI/Trellis2AMD/venv/Scripts/python.exe -I -B -m unittest discover -s docs/compatibility/amd-brick-mip-safe-atlas-evidence -p test_*.py -v
+10 tests passed in 1.643s; exit0.
+Four analytical footprint/real sampler impulse groups and six strict known-GLB
+repack groups, including exact geometry/UV mapping, PNG encoding, duplicate JSON,
+foreign/ambiguous/aliased paths, malformed data and unsupported storage.

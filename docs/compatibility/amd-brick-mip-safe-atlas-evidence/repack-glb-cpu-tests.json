@@ -1,0 +1,81 @@
+{
+  "classification": "PASS",
+  "utc": "2026-10-21T08:31:18.867251+00:00",
+  "scope": "Synthetic CPU GLB repack tests and existing synthetic reader regression; no accepted-artifact repack, candidate export, bake or render",
+  "test_count": 9,
+  "source_triangle_count": 781,
+  "before": {
+    "proof/docs/compatibility/amd-brick-mip-safe-atlas-evidence/repack_glb.py": {
+      "bytes": 7368,
+      "sha256": "93898d1eebf1f4eefe5aac007f6cf8b7984899007fc3979bf6d63424b3608606"
+    },
+    "proof/docs/compatibility/amd-brick-mip-safe-atlas-evidence/test_repack_glb.py": {
+      "bytes": 9052,
+      "sha256": "c78a7e29e6a6e0dd6ad9af0be663cf8b80e07f6adefc60fba6da1c29056668b7"
+    },
+    "proof/docs/compatibility/amd-brick-pbr-mip-evidence/assets.py": {
+      "bytes": 8705,
+      "sha256": "6eb87c2796cfdfb0c78c25567bddc2cdbcac8fa25f3343c36d5f1225cb3b09c6"
+    },
+    "proof/docs/compatibility/amd-brick-pbr-mip-evidence/test_asset_reader.py": {
+      "bytes": 3400,
+      "sha256": "be40033fd6c5a634310bebd26e30693d353d52fe4f8f07609718bd85fcfeca6d"
+    },
+    "artifacts/amd-brick-seam-uv-bake-87f3755/render-qualified/export/patch.glb": {
+      "bytes": 493124,
+      "sha256": "e618af9fea32ce9fedb1e478ca1e0becb7eb55fc9ee4a246bcdf7105a6cf9c21"
+    }
+  },
+  "after": {
+    "proof/docs/compatibility/amd-brick-mip-safe-atlas-evidence/repack_glb.py": {
+      "bytes": 7368,
+      "sha256": "93898d1eebf1f4eefe5aac007f6cf8b7984899007fc3979bf6d63424b3608606"
+    },
+    "proof/docs/compatibility/amd-brick-mip-safe-atlas-evidence/test_repack_glb.py": {
+      "bytes": 9052,
+      "sha256": "c78a7e29e6a6e0dd6ad9af0be663cf8b80e07f6adefc60fba6da1c29056668b7"
+    },
+    "proof/docs/compatibility/amd-brick-pbr-mip-evidence/assets.py": {
+      "bytes": 8705,
+      "sha256": "6eb87c2796cfdfb0c78c25567bddc2cdbcac8fa25f3343c36d5f1225cb3b09c6"
+    },
+    "proof/docs/compatibility/amd-brick-pbr-mip-evidence/test_asset_reader.py": {
+      "bytes": 3400,
+      "sha256": "be40033fd6c5a634310bebd26e30693d353d52fe4f8f07609718bd85fcfeca6d"
+    },
+    "artifacts/amd-brick-seam-uv-bake-87f3755/render-qualified/export/patch.glb": {
+      "bytes": 493124,
+      "sha256": "e618af9fea32ce9fedb1e478ca1e0becb7eb55fc9ee4a246bcdf7105a6cf9c21"
+    }
+  },
+  "inputs_unchanged": true,
+  "runs": [
+    {
+      "argv": [
+        "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-mip-safe-atlas-evidence\\test_repack_glb.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_changes_only_uv_and_png_views_and_reflows_aligned_container (__main__.RepackTests.test_changes_only_uv_and_png_views_and_reflows_aligned_container) ... ok\ntest_rejects_ambiguous_position_old_uv_to_new_uv_mapping (__main__.RepackTests.test_rejects_ambiguous_position_old_uv_to_new_uv_mapping) ... ok\ntest_rejects_changed_orientation_geometry_and_nonactual_old_uv (__main__.RepackTests.test_rejects_changed_orientation_geometry_and_nonactual_old_uv) ... ok\ntest_rejects_duplicate_json_members (__main__.RepackTests.test_rejects_duplicate_json_members) ... ok\ntest_rejects_external_extensions_sparse_aliasing_and_unsupported_storage (__main__.RepackTests.test_rejects_external_extensions_sparse_aliasing_and_unsupported_storage) ... ok\ntest_rejects_malformed_bytes_invalid_arrays_and_wrong_png (__main__.RepackTests.test_rejects_malformed_bytes_invalid_arrays_and_wrong_png) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 1.424s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\wattz\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-pbr-mip-evidence",
+        "-p",
+        "test_asset_reader.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_actual_container_reader_preserves_png_rows_and_coordinates (test_asset_reader.AssetTests.test_actual_container_reader_preserves_png_rows_and_coordinates) ... ok\ntest_external_map_sampler_change_and_truncated_container_reject (test_asset_reader.AssetTests.test_external_map_sampler_change_and_truncated_container_reject) ... ok\ntest_uv_match_is_oriented_and_multiplicity_preserving (test_asset_reader.AssetTests.test_uv_match_is_oriented_and_multiplicity_preserving) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.357s\n\nOK\n"
+    }
+  ]
+}

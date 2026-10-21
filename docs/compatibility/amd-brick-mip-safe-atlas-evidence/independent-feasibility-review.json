@@ -1,0 +1,128 @@
+{
+  "schema": "modly.amd.brick-mip-safe-atlas-independent-feasibility-review.v1",
+  "created_utc": "2026-10-21T08:28:00.698286+00:00",
+  "classification": "GO",
+  "base": "e8244cb0f5e044c6749c278968da720c9f029942",
+  "scope": "Phase1 feasibility worker only: authenticate/reproduce preserved mip failure and prove the one hypothetical 1024-square capacity layout. No new UV atlas, padding, spatial material sample, bake, GLB export or rendering is approved by this receipt.",
+  "reviewer": "independent mip_filter_contract_review subagent",
+  "candidate_source_SHA256": {
+    "experiment.py": "b29fbbd6bb9844cf3bdeed4552ece0698731e94fcd8a031762e81932895e68ef",
+    "run_host.py": "add8dfe5edb6eab015bf992520efcc890cdca74976d3ef39f1bb84305d21f5fa",
+    "footprint.py": "ddc49d066465f07a8e561bd85194e9d2768f149e98cc054f4311af3a5a40bdd1",
+    "test_footprint.py": "ed67398a7fc12ff00ccf203e7e4f99966b641182a8b7fc40be4b4b2f152c3580"
+  },
+  "qualification_plan_SHA256": "c6e0b8fe58055ce7924714c89be04028bfd4cc525fd14c45964357462830849e",
+  "verified": {
+    "worker_requires_phase_feasibility": true,
+    "actual_accepted_GLB_triangle_UV_mapping_uses_guv_indexed_by_faces": true,
+    "complete_previous_mip_receipt_and_all19_artifacts_authenticated": true,
+    "old_roughness_witness_compared_to_preserved_A_C_with_2e_minus12_gate": true,
+    "source_witness_oracle_uses_original_base_F64_blocks_not_C_pyramid": true,
+    "virtual_translation_only_no_new_atlas_or_bake_persisted": true,
+    "all_triangle_UV_points_and_continuous_LODs_zero_through_five_proved": true,
+    "exact_positive_taps_exclude_zero_weight_neighbour_at_integer_endpoint": true,
+    "outer_CLAMP_TO_EDGE_and_dyadic_box_ancestry_accounted": true,
+    "disjoint_owned_rectangles_fit_1024_squared_without_rescale": true,
+    "integer_translation_preserves_UV_density_and_raster_phase_mathematically": true,
+    "reused_four_runtime_sources_bound_to_exact_Git_base_and_watched": true,
+    "phase_specific_review_path_remap_exact_and_other_plain_checks_unchanged": true,
+    "original_six_GiB_180_seconds_12GiB_RAM_2GiB_disk_owned_Job_contract_reused": true,
+    "exact_binary_GO_and_exclusive_paths_and_natural_process_cleanup_retained": true
+  },
+  "independent_synthetic_tests": {
+    "passed": 4,
+    "seconds": 0.567,
+    "scope": "New pure support helper tested against real old mip sampler, including exact-zero taps, half LOD, outer clamp, full triangle ranges, negative bounds and overlapping owners. No private material-filter execution."
+  },
+  "independent_analytic_capacity": {
+    "owned_area": 835584,
+    "atlas_area": 1048576,
+    "unused_area": 212992,
+    "UV_YZ_density_texels_per_world_unit": 21471.25102517844,
+    "triangle_counts_per_island": [
+      775,
+      2,
+      3,
+      1
+    ],
+    "ownership_rectangles": [
+      [
+        0,
+        0,
+        768,
+        1024
+      ],
+      [
+        800,
+        32,
+        928,
+        160
+      ],
+      [
+        800,
+        192,
+        928,
+        320
+      ],
+      [
+        800,
+        352,
+        928,
+        480
+      ]
+    ],
+    "integer_pixel_translations": [
+      [
+        0,
+        0
+      ],
+      [
+        118,
+        60
+      ],
+      [
+        77,
+        220
+      ],
+      [
+        28,
+        380
+      ]
+    ],
+    "independent_L5_bbox_support_with_roundtrip_margin_half_open": [
+      [
+        0,
+        0,
+        736,
+        1024
+      ],
+      [
+        800,
+        32,
+        896,
+        128
+      ],
+      [
+        800,
+        192,
+        896,
+        288
+      ],
+      [
+        800,
+        352,
+        864,
+        448
+      ]
+    ],
+    "independent_pixel_margin": 6.103515625e-05,
+    "method": "For each interval, q=clamp(p/2**L-0.5,0,1024/2**L-1), support=[floor(q_low)*2**L,(ceil(q_high)+1)*2**L). Full triangle extrema enclose every barycentric point; adjacent-level support unions cover every fractional LOD. Rectangles aligned to32 prevent dyadic boxes crossing owners."
+  },
+  "quality_evidence_limitations": [
+    "This GO establishes one deterministic capacity/support proposal only; it is not a new-padding quality PASS.",
+    "Old B-minus-C per-island conditional errors passed all44 island/LOD numerical cases, but that truncated footprint does not prove quality after changed padding or mip phase.",
+    "The hypothetical layout has not yet produced revised UVs, textures or a portable asset; a separately reviewed phase2 must retain every original accuracy and preservation gate.",
+    "The declared F64 linear-box mip filter is not universal game-engine compatibility."
+  ],
+  "blockers": []
+}

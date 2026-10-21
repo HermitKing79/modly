@@ -1,0 +1,30 @@
+{
+  "schema": "modly.amd.brick-mip-safe-atlas-independent-report-review.v1",
+  "created_utc": "2026-10-21T08:41:16.994900+00:00",
+  "classification": "PASS",
+  "report_SHA256": "8352f69ff86b3b2b0431f8aa583e8b2106687aceea52e6c2b5249f33e02070ef",
+  "execution_summary_SHA256": "d629fd30b10af08f9c8f4ed237d5c4551d0031692686fe564dc303375ed1a5ae",
+  "independent_outcome_SHA256": "d99a01267e0042148618212ef5037edb86cbf791807fae995f48feb904c5053c",
+  "preservation_after_SHA256": "de1252b45cbce5d29011245f1a9a902b6686b618cba95f5632ff265ebea07112",
+  "scope": "Read-only report/receipt consistency and exact phase1-source archive verification. No additional experiment.",
+  "verified": {
+    "report_quality_scope_limited_to_one_patch_declared_filter_LOD0_to5": true,
+    "global_numeric_gates_supported_by_independent_outcome": true,
+    "zero_contamination_distinguished_from_ordinary_source_blur": true,
+    "source_faithful_spatial_bake_distinguished_from_vertex_interpolation": true,
+    "CPU_GLB_repack_not_claimed_as_new_Blender_export_import": true,
+    "unlit_views_not_claimed_as_physical_PBR_engine_proof": true,
+    "private_payloads_images_not_embedded_in_public_report": true,
+    "phase1_four_exact_executed_source_archives_match_frozen_review_and_attempt_hashes": true,
+    "phase2_current_sources_match_actual_frozen_execution_review": true,
+    "preservation_receipt_records100_protected_files_unchanged": true
+  },
+  "phase1_source_archive_SHA256": {
+    "experiment.py": "b29fbbd6bb9844cf3bdeed4552ece0698731e94fcd8a031762e81932895e68ef",
+    "run_host.py": "add8dfe5edb6eab015bf992520efcc890cdca74976d3ef39f1bb84305d21f5fa",
+    "footprint.py": "ddc49d066465f07a8e561bd85194e9d2768f149e98cc054f4311af3a5a40bdd1",
+    "test_footprint.py": "ed67398a7fc12ff00ccf203e7e4f99966b641182a8b7fc40be4b4b2f152c3580"
+  },
+  "visual_review": "Comparison independently opened: near views closely match; medium/far retain ordinary minification blur while avoiding the prior extra atlas darkening. No geometry change or physically lit material-quality claim inferred.",
+  "blockers": []
+}
