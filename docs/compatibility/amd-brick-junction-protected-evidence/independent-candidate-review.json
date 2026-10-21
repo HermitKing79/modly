@@ -1,0 +1,64 @@
+{
+  "classification": "GO",
+  "scope": "Independent source-only review for one bounded original-patch feasibility census. No simplification or candidate is approved by this receipt.",
+  "reviewer": "full_glb_reader",
+  "base": "4a033425d55947e080eee27df2757139ba7bec31",
+  "source_SHA256": {
+    "common.py": "5dc87d3d6a87036a984de5d9792630350178801276a150d972b24da2a921e34c",
+    "patch_contract.py": "336e49bd7836f4a66c02ade831d6b37b66f290cb42e3aa30c72e7a009599d60c",
+    "run_host.py": "fbf4c7c9423a3af69cc7c4d5d16d9f3379a506ec32b95c00bbb9ff2e71f8cf46",
+    "test_patch.py": "5f5fa0e0589aef7ac89533456479489936ef5e94f9c7bd6634fe61833ed8985f",
+    "worker.py": "5b66cd1c31857a73dc9300f55b973653e0d72d747a64b4f0460941f4bcb8f34e"
+  },
+  "plan_SHA256": "19373bfea1db805e7ac9e7b2ab0acb3723428651064963e377e40697f2ce3d74",
+  "focused_tests_SHA256": "020acc9e3ae67654dec3565fbf8ec14e641678d9f0d41ddabeb81e1ed4efe9e9",
+  "api_review_SHA256": "d70c18464b34267d5db80f7a52a452feb11fe56826352ccac9c73692fdd8605c",
+  "verification": {
+    "observed_test_log": "8 focused synthetic tests PASS in0.030seconds, including tetrahedron full-link rejection and local disconnected fans inside one global sheet.",
+    "authorship": "Reviewer authored no current Python module. Reviewer authored the separate static API review and independently reviewed the executable census/host sources.",
+    "actual_original_or_candidate_array_reads_by_reviewer": 0,
+    "worker_or_native_method_calls_by_reviewer": 0
+  },
+  "resolved_findings": [
+    {
+      "finding": "Shared-neighbour equality alone admitted tetrahedron edges despite an additional common link edge.",
+      "resolution": "Eligibility now also rejects the opposite edge shared by both endpoint links. The tetrahedron fixture reports all6 edges rejected by the full link condition."
+    },
+    {
+      "finding": "Global edge-connected sheet labels could conceal multiple local face fans at a pinched vertex.",
+      "resolution": "Independent per-vertex incident-face union-find uses only consistent edges incident to that vertex. Multiple local fans protect all incident faces, even if a distant connection makes the global sheet label identical. A dedicated fixture covers that case; crop ambiguity is conservatively locked."
+    }
+  ],
+  "input_and_selection_review": [
+    "common.load maps only accepted original vertices/faces/native colour rows and authenticated original global edge caches. Prior rejected candidate data are hashed/watched through preservation authentication and are never loaded as the patch geometry.",
+    "Selection starts from complete original endpoint stars of1456609-1456613, verifies the4 original edge-incident faces, then adds exactly3 original edge-adjacent face rings. Every ring addition and original face/vertex ID is retained.",
+    "The6000-original-triangle ceiling fails without truncation, alternate ring count or replacement patch. Compact positions preserve original F32 bits, source-ID corner order and original native byte association; output arrays are private derivative selection evidence."
+  ],
+  "classification_and_protection_review": [
+    "Every patch edge maps back to authenticated global incidence. Cropped two-face adjacency cannot masquerade as a globally manifold edge. Consistency requires exactly2 global and local occurrences with opposite directed winding.",
+    "Global nonmanifold/source-boundary vertices, crop and winding interfaces, multi-sheet vertices, local multi-fans, equal-position interfaces and the outer ring protect all incident patch faces. Exact position grouping conservatively also joins signed-zero aliases; it does not modify source rows or weld geometry.",
+    "Every vertex of a protected face is immutable. All neighbours incident to those protected vertices are additionally locked, and position-class lock closure prevents an alias bypass. This implements the conservative guard prerequisites identified in the API review.",
+    "Strict candidate edges require2 free endpoints, consistent same-sheet adjacency, no protected incident face, shared-link vertex equality and absence of the extra common link edge.",
+    "Greedy non-touching closed-neighbourhood edges are a deterministic admission estimate only. The20percent target denominator is the declared eligible face population, excluding protected faces. This does not prove native geometric error, which collapses would be selected, actual reduction or material fidelity."
+  ],
+  "runtime_and_stop_review": {
+    "command": "D:/AI/Trellis2AMD/venv/Scripts/python.exe -I -B worker.py",
+    "process_cap_bytes": 6442450944,
+    "aggregate_Job_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "live_available_RAM_floor_bytes": 12884901888,
+    "destination_free_floor_bytes": 2147483648,
+    "controls": "Host requires exact reviewed5-source set, plan and focused log, authenticated/watched original and historical source closure, fresh exclusive outputs and marker, resource admission before launch, Job attachment before exact GO, periodic live floors, measured process/Job peaks, source preservation and natural empty-Job settlement without forced cleanup.",
+    "guard": "Inherited read-only guard is correctly rebound to new P before installation, including process/network/model/GPU/Blender import rejection and the additional new-private-output write restriction.",
+    "no_method_path": "The fixed worker contains no Node, WASM, simplify, Blender or renderer execution path. Its only terminal successful-process verdicts are BLOCKED or FEASIBILITY_ONLY, with actual_simplification_calls=0.",
+    "verdict_boundary": "A completed owned census may have execution PASS while feasibility is BLOCKED. Zero/insufficient eligible or certified interior stops Phase2. A positive estimate is FEASIBILITY_ONLY and requires a separate reviewed API/guard implementation, fixed configuration, frozen samples/views, geometry/material contract and candidate review before any call."
+  },
+  "limitations": [
+    "Original sheet labels and local fan checks are topological classifications, not semantic part segmentation.",
+    "Memory/time projections and pure fixtures are not an actual source-asset capacity result; unchanged hard limits and live floors govern the owned census.",
+    "This source review does not establish actual patch counts, sufficient eligible geometry, material correspondence or future candidate acceptance. Master and rejected candidate remain immutable.",
+    "No full-model reduction/export, native build/install, algorithm alternative, parameter search, repair or automatic retry is authorized."
+  ],
+  "remaining_actionable_findings": [],
+  "launch_condition": "GO for this single original-only feasibility worker after fresh live admission. Independently review actual receipts, counts, preservation and natural process settlement before publication; do not infer candidate permission from execution PASS."
+}

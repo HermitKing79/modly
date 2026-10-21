@@ -1,0 +1,191 @@
+{
+  "schema": "modly.amd.brick-junction-protected-independent-outcome.v1",
+  "created_utc": "2026-10-21T22:44:41.118713+00:00",
+  "classification": "BLOCKED",
+  "verification": "PASS",
+  "publication_review": "PASS",
+  "base": "4a033425d55947e080eee27df2757139ba7bec31",
+  "branch": "codex/amd-brick-junction-protected-proof",
+  "conclusion": "The fixed original patch has no mutable eligible interior. All244 faces already touch a global non-manifold vertex before other protection or guard rules. Stopping before simplification is justified; no candidate or algorithm-quality NO-GO is inferred.",
+  "authorship": "Reviewer authored none of the current five Python modules. The independent readback does not import or call the production patch_contract classifier.",
+  "independent_review_execution": "Short selected read-only exec_command process, not an OwnedJob production stage; no separate process/Job cap or peak-memory claim.",
+  "independently_verified": {
+    "all16_saved_patch_artifact_sizes_and_SHA256_match": true,
+    "original_oriented_face_rows_exact": 244,
+    "original_position_F32_and_native_RGBA_source_rows_exact": 115,
+    "complete_original_seed_edge_faces": [
+      3033048,
+      3033067,
+      3033078,
+      3033080
+    ],
+    "seed_endpoint_face_degrees": [
+      15,
+      19
+    ],
+    "complete_seed_endpoint_star_union_faces": 30,
+    "three_ring_expansions": [
+      {
+        "added_faces": 48,
+        "expansion_edges": 49,
+        "complete_by_cached_global_incidence": true
+      },
+      {
+        "added_faces": 65,
+        "expansion_edges": 117,
+        "complete_by_cached_global_incidence": true
+      },
+      {
+        "added_faces": 101,
+        "expansion_edges": 206,
+        "complete_by_cached_global_incidence": true
+      }
+    ],
+    "ring_completeness_certificate": "Within final244 original triangles, every edge expanded at each stage has exactly its authenticated global incidence count. This certifies no omitted outside face at each expansion edge without a repeated full-original-face scan. Seed star completeness uses global incident-edge incidence sums divided by2, with4 common edge faces.",
+    "global_junction_vertices_in_patch": 109,
+    "faces_touching_global_NM_vertices_before_other_protection_or_guard": 244,
+    "faces_not_touching_global_NM_vertices": 0,
+    "global_boundary_vertices": 28,
+    "consistent_two_face_interior_edges": 128,
+    "diagnostic_sheet_components": 116,
+    "multi_sheet_vertices": 73,
+    "multiple_local_fan_vertices": 74,
+    "position_alias_vertices": 0,
+    "protected_faces": 244,
+    "protected_vertices": 115,
+    "guard_locked_vertices": 115,
+    "strict_eligible_edges": 0,
+    "eligible_face_population": 0,
+    "recorded_protection_masks_and_empty_eligible_certified_arrays_match": true
+  },
+  "verification_scope": "Independent selected original-row comparison, small-patch edge/union/fan/protection arithmetic and authenticated global edge-cache incidence checks. Global cached edge/incidence arrays were read and their complete SHA256 checked; no topology cache was rebuilt and the full4,173,584-face original was not rescanned. No quality test, field query, simplifier, WASM/API runtime, Blender, image generation or render was invoked.",
+  "execution": {
+    "production_worker_classification": "BLOCKED",
+    "owned_host_execution_classification": "PASS",
+    "actual_simplification_calls": 0,
+    "candidate_produced": false,
+    "worker_seconds": 3.014999999999418,
+    "supervised_elapsed_seconds": 5.296999999998661,
+    "peak_process_committed_bytes": 166780928,
+    "peak_job_committed_bytes": 167620608,
+    "all_live_resource_floors_admitted": true,
+    "attached_before_exact_binary_GO": true,
+    "natural_empty_Job_without_forced_cleanup": true,
+    "sources_unchanged": true,
+    "owned_limits_apply_to_production_census_not_short_independent_readback": true
+  },
+  "API_and_interpretation_review": {
+    "conditional_enforceable_installed_lock_route_is_distinguished_from_actual_candidate_admission": true,
+    "locked_vertices_alone_do_not_freeze_incident_connectivity": true,
+    "all_faces_immutable_even_before_the_extra_guard": true,
+    "empty_reduction_denominator_not_treated_as_PASS": true,
+    "candidate_geometry_material_colour_projection_or_render_gates_not_reached": true,
+    "sheet_and_fan_counts_not_claimed_semantic_parts": true,
+    "no_failure_of_the_simplifier_or_all_other_model_regions_is_inferred": true
+  },
+  "bindings": {
+    "worker_receipt_SHA256": "7b8f57cc56cbc4216bd8b972dcb9d79a92283a235fb7079c85da0709e5ce01b0",
+    "host_receipt_SHA256": "04bccea717800d20374a7f508169fa6831cf65a21ca5ce38ebe00447867341da",
+    "private_patch_artifacts": {
+      "certified_edge_rows.npy": {
+        "bytes": 128,
+        "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627"
+      },
+      "edge_keys.npy": {
+        "bytes": 2976,
+        "sha256": "fcf927b3932e981d77581c9456e53bab134bb1c73ec02a8138a1abe739c2b459"
+      },
+      "eligible_edge_rows.npy": {
+        "bytes": 128,
+        "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627"
+      },
+      "faces.npy": {
+        "bytes": 3056,
+        "sha256": "d43e14101042573055adcdf057c1d4fcc98f89862b949805aac9d175557f9b0b"
+      },
+      "global_edge_incidence.npy": {
+        "bytes": 484,
+        "sha256": "b1436b347205c4d38a0c5ce8ab1ea22101ad827e1b89028e7ee2716a58ef3f66"
+      },
+      "original_native_RGBA.npy": {
+        "bytes": 588,
+        "sha256": "26a37b3c4696a17cf09c38ac1e715dbca48edc574cf3f7b1c33e3e98b143027c"
+      },
+      "patch_edge_incidence.npy": {
+        "bytes": 2976,
+        "sha256": "dea17beb63cc806fd2140dcd9f3154175b8e5187b5067ffe26841afec77fd053"
+      },
+      "protected_faces.npy": {
+        "bytes": 372,
+        "sha256": "d8c3519792e0592f4641cc67221f8883fa266727cce4e9f4582d7c6d1d9c3452"
+      },
+      "protected_vertices.npy": {
+        "bytes": 243,
+        "sha256": "38897b3f4df89fdb04f36e0c94b4a512d69e958838459db3f4736e2b42de684e"
+      },
+      "selection.json": {
+        "bytes": 9334,
+        "sha256": "b3c5f531084e968e6da6d4bdce158a08c7c62a89fb1a30bb06c942870b5c58da"
+      },
+      "sheet_labels.npy": {
+        "bytes": 1104,
+        "sha256": "9769dcf1fb183db27197349030546494e9582403021ec07e39a4202ce0a1b9cc"
+      },
+      "source_face_ids.npy": {
+        "bytes": 1104,
+        "sha256": "9b0ede20df9e432bde8ebb93be97ef828b4fea26865099a480b9b132c7fa64b2"
+      },
+      "source_faces.npy": {
+        "bytes": 3056,
+        "sha256": "ece8513a89b6aa33d7b6d88827c26d617ab27a0684eeb21218dcf2f260dcb1e3"
+      },
+      "source_vertex_ids.npy": {
+        "bytes": 588,
+        "sha256": "969c2f3d66b28f775228c969454d77945015fa9bc023c7398730ba2216bf3a78"
+      },
+      "vertex_locks.npy": {
+        "bytes": 243,
+        "sha256": "38897b3f4df89fdb04f36e0c94b4a512d69e958838459db3f4736e2b42de684e"
+      },
+      "vertices.npy": {
+        "bytes": 1508,
+        "sha256": "a2b97d423026792c3add1988050befdb15a3ed976a4e043183884ca4b84ea6fc"
+      }
+    },
+    "independent_private_readback_source_SHA256": "281a476e7b018346a668b6d69a49fb2499ff6bd1e3773056b88140c563bf949c",
+    "independent_private_readback_result_SHA256": "4bfc3b29c91dde699b97fbb61ba9f1d492f8e996473285726c048ead1e55cba1",
+    "candidate_source_SHA256": {
+      "common.py": "5dc87d3d6a87036a984de5d9792630350178801276a150d972b24da2a921e34c",
+      "patch_contract.py": "336e49bd7836f4a66c02ade831d6b37b66f290cb42e3aa30c72e7a009599d60c",
+      "run_host.py": "fbf4c7c9423a3af69cc7c4d5d16d9f3379a506ec32b95c00bbb9ff2e71f8cf46",
+      "test_patch.py": "5f5fa0e0589aef7ac89533456479489936ef5e94f9c7bd6634fe61833ed8985f",
+      "worker.py": "5b66cd1c31857a73dc9300f55b973653e0d72d747a64b4f0460941f4bcb8f34e"
+    },
+    "candidate_review_SHA256": "8c4c0d013f32224dbf38dc626ca96ca9c82f9acaab03edfa9aedd7a0de74cdb0",
+    "diagnostic_plan_SHA256": "19373bfea1db805e7ac9e7b2ab0acb3723428651064963e377e40697f2ce3d74",
+    "focused_tests_SHA256": "020acc9e3ae67654dec3565fbf8ec14e641678d9f0d41ddabeb81e1ed4efe9e9",
+    "api_review_SHA256": "d70c18464b34267d5db80f7a52a452feb11fe56826352ccac9c73692fdd8605c",
+    "report_SHA256": "e85fb6e18e3d4e5de346b9cb657e857fa728f49d92cceda8bb6a4c4f536f5c99",
+    "outcome_SHA256": "05849a3004b22cd4e947b7fa447465833770ddc67ae1f5872fcd84964b5c85e5",
+    "preservation_before_SHA256": "57110381fcb2758acd904f804a2d8b8295d5c94ecc54ef4ebbd10b9a46782d92",
+    "preservation_after_SHA256": "17a40ca7f8a6cdc0264639f1f095fe408fd9a4f1ac43d7734f78b281d340896b"
+  },
+  "preservation": {
+    "classification": "PASS_WITH_RECORDED_SCOPE",
+    "original_and_rejected_assets_preserved": true,
+    "protected100_original400_and_recorded_prior_trees_reports_unchanged": true,
+    "106_prior_remote_heads_unchanged_recorded_by_AFTER_audit": true,
+    "final_Git_publication": "Handled separately by root; no Git operation by this reviewer"
+  },
+  "source_safe_publication": "Public evidence contains source IDs, counts, errors and hashes. Exact private positions, native colour arrays and patch payloads remain private; no PNG or reduced model was generated.",
+  "limits": [
+    "Global cached edge/incidence arrays were read to identify actual junction and boundary vertices and seed-star degrees; no topology cache was rebuilt.",
+    "This verifies the fixed three-ring patch and protection census, not all possible patch extents, methods, or later API quality.",
+    "Zero eligible geometry blocks admission before any candidate; it is not a measured simplification failure.",
+    "Ring completeness relies on the authenticated original global incidence cache rather than a repeated full-face scan.",
+    "This does not qualify an alternate patch, topology repair, semantic part method or API simplification result."
+  ],
+  "recommendation_review": "Parking collapse trials at this fully protected junction and separately qualifying a manifold part with nonempty free interior is consistent with the evidence. No new patch search or experiment is authorized by this review.",
+  "unresolved_findings": [],
+  "stop": true
+}

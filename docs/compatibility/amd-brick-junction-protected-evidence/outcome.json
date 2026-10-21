@@ -1,0 +1,161 @@
+{
+  "classification": "BLOCKED",
+  "scope": "Original junction patch feasibility; no candidate executed",
+  "base": "4a033425d55947e080eee27df2757139ba7bec31",
+  "branch": "codex/amd-brick-junction-protected-proof",
+  "reason": "No sufficient strictly eligible interior after complete junction/interface/boundary and one-ring protection",
+  "summary": {
+    "original_patch_triangles": 244,
+    "original_patch_vertices": 115,
+    "sheet_components": 116,
+    "global_nonmanifold_patch_edges": 138,
+    "real_boundary_patch_edges": 5,
+    "artificial_crop_edges": 134,
+    "orientation_inconsistent_two_face_edges": 1,
+    "consistent_two_face_interior_edges": 128,
+    "global_junction_vertices_in_patch": 109,
+    "global_boundary_vertices_in_patch": 28,
+    "multi_sheet_vertices": 73,
+    "local_multiple_fan_vertices": 74,
+    "position_alias_vertices": 0,
+    "protected_faces": 244,
+    "protected_vertices": 115,
+    "guard_locked_vertices": 115,
+    "unlocked_vertices": 0,
+    "unprotected_faces": 0,
+    "strict_eligible_edges": 0,
+    "eligible_face_population": 0,
+    "link_condition_rejected": 0,
+    "non_touching_certified_edges": 0,
+    "collapses_needed_for_20pct_eligible_faces": 0,
+    "eligible_interior_reduction_admission": false
+  },
+  "seed_source_edge": [
+    1456609,
+    1456613
+  ],
+  "seed_endpoint_star_faces": 30,
+  "ring_face_counts": [
+    48,
+    65,
+    101
+  ],
+  "complete_original_edge_face_ids": [
+    3033048,
+    3033067,
+    3033078,
+    3033080
+  ],
+  "actual_simplification_calls": 0,
+  "original_mesh_only": true,
+  "private_patch_files": {
+    "certified_edge_rows.npy": {
+      "bytes": 128,
+      "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627"
+    },
+    "edge_keys.npy": {
+      "bytes": 2976,
+      "sha256": "fcf927b3932e981d77581c9456e53bab134bb1c73ec02a8138a1abe739c2b459"
+    },
+    "eligible_edge_rows.npy": {
+      "bytes": 128,
+      "sha256": "040ce28f7590a34af85fbdb8115c90c9a0529a73b047533889c859c2f2c6e627"
+    },
+    "faces.npy": {
+      "bytes": 3056,
+      "sha256": "d43e14101042573055adcdf057c1d4fcc98f89862b949805aac9d175557f9b0b"
+    },
+    "global_edge_incidence.npy": {
+      "bytes": 484,
+      "sha256": "b1436b347205c4d38a0c5ce8ab1ea22101ad827e1b89028e7ee2716a58ef3f66"
+    },
+    "original_native_RGBA.npy": {
+      "bytes": 588,
+      "sha256": "26a37b3c4696a17cf09c38ac1e715dbca48edc574cf3f7b1c33e3e98b143027c"
+    },
+    "patch_edge_incidence.npy": {
+      "bytes": 2976,
+      "sha256": "dea17beb63cc806fd2140dcd9f3154175b8e5187b5067ffe26841afec77fd053"
+    },
+    "protected_faces.npy": {
+      "bytes": 372,
+      "sha256": "d8c3519792e0592f4641cc67221f8883fa266727cce4e9f4582d7c6d1d9c3452"
+    },
+    "protected_vertices.npy": {
+      "bytes": 243,
+      "sha256": "38897b3f4df89fdb04f36e0c94b4a512d69e958838459db3f4736e2b42de684e"
+    },
+    "selection.json": {
+      "bytes": 9334,
+      "sha256": "b3c5f531084e968e6da6d4bdce158a08c7c62a89fb1a30bb06c942870b5c58da"
+    },
+    "sheet_labels.npy": {
+      "bytes": 1104,
+      "sha256": "9769dcf1fb183db27197349030546494e9582403021ec07e39a4202ce0a1b9cc"
+    },
+    "source_face_ids.npy": {
+      "bytes": 1104,
+      "sha256": "9b0ede20df9e432bde8ebb93be97ef828b4fea26865099a480b9b132c7fa64b2"
+    },
+    "source_faces.npy": {
+      "bytes": 3056,
+      "sha256": "ece8513a89b6aa33d7b6d88827c26d617ab27a0684eeb21218dcf2f260dcb1e3"
+    },
+    "source_vertex_ids.npy": {
+      "bytes": 588,
+      "sha256": "969c2f3d66b28f775228c969454d77945015fa9bc023c7398730ba2216bf3a78"
+    },
+    "vertex_locks.npy": {
+      "bytes": 243,
+      "sha256": "38897b3f4df89fdb04f36e0c94b4a512d69e958838459db3f4736e2b42de684e"
+    },
+    "vertices.npy": {
+      "bytes": 1508,
+      "sha256": "a2b97d423026792c3add1988050befdb15a3ed976a4e043183884ca4b84ea6fc"
+    }
+  },
+  "worker_receipt_SHA256": "7b8f57cc56cbc4216bd8b972dcb9d79a92283a235fb7079c85da0709e5ce01b0",
+  "host_receipt_SHA256": "04bccea717800d20374a7f508169fa6831cf65a21ca5ce38ebe00447867341da",
+  "independent_candidate_review_SHA256": "8c4c0d013f32224dbf38dc626ca96ca9c82f9acaab03edfa9aedd7a0de74cdb0",
+  "api_review_SHA256": "d70c18464b34267d5db80f7a52a452feb11fe56826352ccac9c73692fdd8605c",
+  "measured": {
+    "worker_seconds": 3.014999999999418,
+    "supervised_seconds": 5.296999999998661,
+    "peak_process_committed_bytes": 166780928,
+    "peak_job_committed_bytes": 167620608,
+    "minimum_observed_available_RAM_bytes": 21224292352,
+    "minimum_observed_destination_free_bytes": 111629754368,
+    "natural_owned_exit": true,
+    "forced_cleanup": false
+  },
+  "limits": {
+    "process_bytes": 6442450944,
+    "job_bytes": 6442450944,
+    "seconds": 180,
+    "available_RAM_floor_bytes": 12884901888,
+    "destination_free_floor_bytes": 2147483648,
+    "original_faces": 6000
+  },
+  "preservation_after_SHA256": "17a40ca7f8a6cdc0264639f1f095fe408fd9a4f1ac43d7734f78b281d340896b",
+  "unreached": [
+    "Any simplifier API invocation",
+    "Candidate topology or geometry acceptance",
+    "Frozen candidate material queries and local projection tests",
+    "Colour/scalar fidelity comparison",
+    "Render or export"
+  ],
+  "interpretation": "This frozen original patch has no mutable face population under the required complete-star protection. It is not a demonstrated algorithm failure or proof that every region of the full asset is unsimplifiable.",
+  "next_action": "Stop collapse trials at this fully protected junction. Separately qualify a genuinely manifold part with nonempty free interior, or a disposable part-aware target mesh, before another reduction; do not relax junction protection or repeat the full-model method.",
+  "independently_verified_protection_cause": {
+    "all_patch_faces_incident_to_global_nonmanifold_vertices_before_other_guards": 244,
+    "global_nonmanifold_vertices": 109,
+    "one_ring_or_crop_protection_not_needed_to_explain_zero_eligible_faces": true,
+    "seed_endpoint_incident_face_counts": [
+      15,
+      19
+    ],
+    "seed_common_faces": 4,
+    "seed_union_faces": 30,
+    "verification_scope": "Selected original row readback and authenticated global cache incidence; no additional full-face scan or simplification"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "classification": "GO_API_FEASIBILITY_ONLY",
+  "scope": "Read-only API/source review for the approved original-patch feasibility census. No runtime/API import, WASM instantiation, simplification, Blender launch, build or install occurred. This is not candidate launch approval.",
+  "base": "4a033425d55947e080eee27df2757139ba7bec31",
+  "attachment_SHA256": "80bd66d85ec7f20a0824258d6970c37584ebb69938395af3e15eecdb7970d478",
+  "installed_meshoptimizer_SHA256": {
+    "meshopt_simplifier.js": "5a10a6d6a2c2ab113cfa81be2d31aaf89e46842eedaa1245d266b16e2976dc6b",
+    "meshopt_simplifier.module.d.ts": "75bc949852198465c5162d332654e0c4c8083e884160ae51587ed9dc68e2e21d",
+    "meshopt_simplifier.test.js": "4e3ff1ebdd4f6dd8221278014c03475181ae7c5c688a9f7b05eded88e6647859",
+    "README.md": "fb6e8186210e13172e79cc426bc628cf2a9a28ab6ef2c362c7fd5bfa4f8fe38a"
+  },
+  "decisive_conclusion": "An installed enforceable route exists conditionally: experimental simplifyWithAttributes supplies actual native vertex locks. Bare vertex locks preserve locked source vertices, not their complete incident stars. A conservative closed guard around every protected face/interface/junction can freeze the required connectivity, but the original <=6000-face patch must retain enough certified eligible interior after that guard. Zero/insufficient eligible interior requires BLOCKED before any candidate.",
+  "actual_API": {
+    "signature": "simplifyWithAttributes(indices, positions, position_stride, attributes, attribute_stride, weights, vertex_lock, target_index_count, target_error, flags)",
+    "requirements": "Direct CommonJS require returns the MeshoptSimplifier object. Await ready; set useExperimentalFeatures=true in the disposable runtime. vertex_lock is Uint8Array with exactly one row per input position. Output is an original-ID index array plus approximate error.",
+    "local_source_lines": "meshopt_simplifier.js102-155 copies lock bytes into native memory;258-317 validates and passes them to meshopt_simplifyWithAttributes. module.d.ts23-35 exposes the same API.",
+    "lock_only_configuration": "The installed simplifyLockFlags fixture uses new Float32Array(), attribute_stride1, weights[], a Uint8Array lock mask and no colour optimization. Do not use attribute_stride0: the JS modulo assertion rejects it. Freeze actual settings separately after feasibility.",
+    "not_supplied": "No face-lock mask, arbitrary eligible-edge predicate or user collapse callback is exposed. Attribute weighting is not a colour-fidelity acceptance guarantee. No experimental attribute solve or fitted attributes are needed merely to use locks."
+  },
+  "installed_fixture_evidence": {
+    "name": "meshopt_simplifier.test.js:simplifyLockFlags",
+    "read_only": true,
+    "lock_mask": [
+      1,
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    "observation": "Its declared expected output preserves the original all-locked triangles but replaces faces involving unlocked vertex4 by a new triangle joining locked vertices2,5,3. Therefore a locked vertex can receive an unlocked collapse and its star can change. The fixture was read, not executed."
+  },
+  "native_source_context": {
+    "url": "https://github.com/zeux/meshoptimizer/blob/v0.22/src/simplifier.cpp",
+    "lines": [
+      "178-209",
+      "261-281",
+      "407-421",
+      "1101-1138",
+      "1186-1210"
+    ],
+    "interpretation": "Upstream0.22 propagates locks across identical-position wedges and forbids outgoing locked collapses; incoming collapses remain possible. This is source context, not a traced collapse history or independent binary equivalence proof."
+  },
+  "sufficient_conservative_protection_certificate": [
+    "Extract the original junction's complete original incident faces plus the declared surrounding face rings, keeping original face/vertex IDs. Stop above6000 original triangles; do not truncate a star or silently delete outside context.",
+    "Let S contain every vertex of every face whose connectivity must remain immutable, including complete original junction stars, sheet interfaces, orientation conflicts and crop/boundary rings. Record the exact protected oriented face multiset and original junction incidences.",
+    "Within the actual input position buffer, close S under the native identical-F32-position equivalence. Lock S and every original edge neighbour of those protected position classes; propagate the lock mask across identical-position classes as well. Include all source stars needed to prove this closure.",
+    "Reason: protected vertices cannot be removed, and every possible adjacent source for an incoming collapse is also locked. Every original face incident to protected S therefore keeps its source-ID triple; no new face can arrive at S through an unlocked neighbour. This is a conservative graph argument whose prerequisites must be independently checked in the actual extracted input.",
+    "Mark every interface between separately identified sheets as protected; do not infer sheet identity merely from vertex-connected component labels. Any coincident class spanning sheets must be protected. Exclude crop crossings, nonmanifold edges, inconsistent incidence-two orientation and link-condition failures from eligible interior.",
+    "Only remaining certified within-sheet interior may be considered mutable. LockBorder can add border protection, but cannot replace this explicit guard. Disable Prune, weld, reconstruction, compaction/reordering algorithms and automatic fallback; exact source-ID compaction alone remains permissible."
+  ],
+  "limits_and_admission": [
+    "The method still does not guarantee no new duplicate or nonmanifold edge inside unprotected mutable interior, a chosen reduction count, or geometry/colour fidelity. Independent exact acceptance checks remain mandatory on the single result.",
+    "Count strict eligible interior and protected-face floor before deciding whether approximately20percent eligible-interior reduction is plausible. Positive edge count is necessary, not proof the native method reaches the target/error. Do not count immutable protected faces in the meaningful-reduction denominator.",
+    "Keep retained source positions and native colours exact; newly connected face interiors still need genuine spatial-material and paired/unpaired original-surface analysis, with frozen colour/scalar/silhouette/depth gates. No colour fitting or repair follows a failure.",
+    "Only after independent feasibility and implementation review may the one approved disposable original-patch candidate run under6GiB process+Job/180seconds/live12GiB RAM/2GiB disk. No full mesh reduction, original/rejected asset modification or second candidate is admitted here."
+  ],
+  "Blender_Collapse_alternative": {
+    "installed_build_context": "Previously qualified Blender5.2.1, build9e2066aef7ef, executable SHA256284f4041f98e113f3dc10654a7193ffaaa9bfdfec8b87fa116620a48b5f6d4cb; no launch or fresh binary execution by this review.",
+    "source": [
+      {
+        "url": "https://github.com/blender/blender/blob/9e2066aef7ef/source/blender/modifiers/intern/MOD_decimate.cc",
+        "lines": "125-170"
+      },
+      {
+        "url": "https://github.com/blender/blender/blob/9e2066aef7ef/source/blender/bmesh/tools/bmesh_decimate_collapse.cc",
+        "lines": "216-250,799-820,1118-1128"
+      }
+    ],
+    "finding": "A valid vertex group with positive group factor supplies weights; exact zero on either endpoint excludes an edge. Collapse also rejects endpoint stars touching nonmanifold edges. Ordinary boundaries are not immutable by default.",
+    "limitation": "Free coordinates and CustomData can change, making exact source/colour correspondence less direct than index-only Meshopt. This is a genuine installed alternative, not a selected fallback or candidate authorization."
+  },
+  "reviewer_actions": {
+    "model_array_reads": 0,
+    "algorithm_calls": 0,
+    "WASM_imports_or_instantiations": 0,
+    "Blender_launches": 0,
+    "source_or_package_changes": 0
+  },
+  "next_step": "Independently review the bounded original-only extraction/classification/lock-closure and eligible-interior census. If it proves no sufficient eligible geometry, issue BLOCKED without a simplification. Do not issue BLOCKED merely because stable simplify lacks locks."
+}
