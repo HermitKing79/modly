@@ -1,0 +1,225 @@
+{
+  "classification": "BLOCKED",
+  "blocker": "Stock importer necessarily removes 5749 unreferenced original vertices; exact 1957891-vertex acceptance cannot pass.",
+  "scope": "Read-only installed-source audit and bounded independent GLB index scan; no Blender process or import.",
+  "Blender_imports": 0,
+  "Blender_renders": 0,
+  "installed_sources_modified": false,
+  "candidate_Blender_version_from_parent": "5.2.1; executable not launched by this audit",
+  "installed_source_SHA256": {
+    "blender/imp/mesh.py": "9fbedc0de7e97f0370800b98bfd86f2b53117c72fee59e38a460f08a54fd0f71",
+    "blender/imp/blender_gltf.py": "e1b61c56990c55daa6b742d33a1a4dd54cf1d216a871c599b509492bb5c31dbe",
+    "io/imp/gltf2_io_binary.py": "84efde00511e0a4183c93f71811a2d421afceec0b7e47738e4de0ac055b90937",
+    "io/imp/gltf2_io_gltf.py": "942d8e362665e1cda073c3ab40ea7cd024638ccf67986d38b3bfa3085e7ff612",
+    "__init__.py": "2d7d0b016f750dfd9ddfa3bfceb8cc3f00a955e2611a5fdb53f873e01eb9235e"
+  },
+  "installed_source_root": "C:\\Program Files\\Blender Foundation\\Blender 5.2\\5.2\\scripts\\addons_core\\io_scene_gltf2",
+  "installed_source_line_references": {
+    "blender/imp/mesh.py": {
+      "index_decode": [
+        288,
+        289
+      ],
+      "triangles_route": [
+        295,
+        302,
+        699,
+        705
+      ],
+      "unconditional_unique_sorted_used_vertices": [
+        303,
+        307
+      ],
+      "inverse_index_remap_preserves_corner_sequence": [
+        340,
+        353
+      ],
+      "CORNER_color_domain": [
+        266,
+        270
+      ],
+      "corner_color_expansion": [
+        365,
+        379
+      ],
+      "optional_additional_merge": [
+        396,
+        402
+      ],
+      "vertex_allocation": [
+        429,
+        431
+      ],
+      "BYTE_COLOR_creation_and_linear_set": [
+        457,
+        461
+      ],
+      "edge_calculation_and_validation": [
+        651,
+        655
+      ],
+      "contiguous_numpy_bulk_set": [
+        766,
+        769
+      ],
+      "RGB_to_RGBA_alpha_one": [
+        772,
+        775
+      ]
+    },
+    "blender/imp/blender_gltf.py": {
+      "normal_axis_and_unit_conversion": [
+        66,
+        93
+      ],
+      "debug_100_bypasses_axis_conversion": [
+        103,
+        113
+      ],
+      "unused_materials_scope": [
+        51,
+        57
+      ]
+    },
+    "io/imp/gltf2_io_gltf.py": {
+      "whole_file_memoryview_read": [
+        150,
+        159
+      ],
+      "GLB_buffer_memoryview_slice": [
+        141,
+        148,
+        185,
+        191
+      ]
+    },
+    "io/imp/gltf2_io_binary.py": {
+      "buffer_slice_memoryview": [
+        37,
+        46
+      ],
+      "accessor_frombuffer_dense": [
+        146,
+        175
+      ]
+    },
+    "__init__.py": {
+      "merge_vertices_default_false": [
+        1930,
+        1940
+      ],
+      "unused_materials_images_only": [
+        2001,
+        2006
+      ],
+      "pointcloud_option_POINTS_only": [
+        2032,
+        2036
+      ]
+    }
+  },
+  "independent_GLB_index_observation": {
+    "basename": "brick-source-sampled-colour.glb",
+    "expected_SHA256_from_parent_pin": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+    "full_SHA256_not_recomputed_by_index_scan": true,
+    "bytes": 97073940,
+    "POSITION_count": 1957891,
+    "triangle_count": 4173584,
+    "index_count": 12520752,
+    "component_type": 5125,
+    "index_BIN_relative_byteOffset": 46989384,
+    "index_byteLength": 50083008,
+    "minimum_index": 0,
+    "maximum_index": 1957890,
+    "referenced_vertices": 1952142,
+    "unreferenced_vertices": 5749,
+    "projected_stock_import_vertices": 1952142,
+    "exact_required_vertices": 1957891,
+    "all_indices_scanned": true,
+    "batch_indices": 32768,
+    "membership_bitmap_bytes": 1957891,
+    "before_after_file_stat_unchanged": true,
+    "positions_colours_or_original_source_arrays_not_read_by_this_scan": true
+  },
+  "geometry_semantics": {
+    "sorted_used_source_indices": "np.unique defaults to sorted unique indices; vertex rows are selected from POSITION using those indices.",
+    "unused_vertex_preservation_standard_option": false,
+    "merge_vertices_false_does_not_disable_used_index_compaction": true,
+    "import_unused_materials_does_not_apply_to_vertices": true,
+    "triangles_before_mesh_validate": "For mode 4, triangle index stream is unchanged until it is remapped through inverse unique indices. Face order, corner order and winding are preserved by this NumPy route.",
+    "mesh_validate_caveat": "The stock route subsequently calls mesh.validate(); final face count/order/multiplicity must be checked from the resulting mesh rather than assumed.",
+    "normal_axis_conversion": "With debug_value != 100 and scene scale_length == 1, glTF (gx,gy,gz) becomes Blender (gx,-gz,gy); scale_length affects all positions otherwise.",
+    "bypasses_not_authorized": "Custom extensions, monkeypatches, direct mesh construction, adding orphan vertices, changing debug conversion, modified GLB or relaxed source-count acceptance are outside this audit; none was used.",
+    "decision": "Stop before Blender launch. Any future surface-only acceptance requires explicit approval to change the exact original-vertex-count criterion."
+  },
+  "memory_projection_only": {
+    "cap_bytes": 6442450944,
+    "installed_numpy_version": "2.3.4",
+    "numpy_source_SHA256": {
+      "C:\\Program Files\\Blender Foundation\\Blender 5.2\\5.2\\python\\lib\\site-packages\\numpy\\lib\\_arraysetops_impl.py": "d112be99ab44d57b78642fe4606f8b040022549022d319bcea66a89c1fba5ee6",
+      "C:\\Program Files\\Blender Foundation\\Blender 5.2\\5.2\\python\\lib\\site-packages\\numpy\\version.py": "48f033b0ff937220e39a2d49b2d1b4ffb1f7a0f69296dd5ffab3c0eb917e8a89"
+    },
+    "known_large_arrays_bytes": {
+      "GLB_backing_bytes": 97073940,
+      "used_positions_F32": 23425704,
+      "unique_source_indices_U32": 7808568,
+      "inverse_indices_intp64": 100166016,
+      "primitive_indices_U32": 50083008,
+      "loop_indices_U32": 50083008,
+      "RGBA_corner_array_F32_each": 200332032,
+      "RGB_corner_temporary_F32": 150249024,
+      "loop_starts_intp64": 33388672,
+      "material_indices_I32": 16694336,
+      "polygon_normals_F32": 50083008,
+      "sharp_faces_bool": 4173584
+    },
+    "conservative_python_numpy_visible_array_sum_bytes": 833643908,
+    "visible_sum_GiB": 0.7763913907110691,
+    "unique_sort_temporary_upper_accounting_bytes": 420993384,
+    "native_mesh_attribute_size_upper_accounting_bytes": 311403004,
+    "native_attribute_assumption": "At most 3F generated edges; positions, face offsets, corner vertex/edge indices, edge pairs, BYTE_COLOR RGBA, material indices, sharp-face flags. Allocator overhead excluded.",
+    "additional_all_vertex_face_corner_normal_arrays_reserve_bytes": 223757736,
+    "visible_plus_native_and_normal_arrays_accounting_bytes": 1368804648,
+    "unbounded_from_python_audit": "Startup process, dependency graph, native edge hash/validation temporaries, threading/allocator overhead and serialization/compression are not bounded by these Python sources. The ledger is a planning projection, not an observed RSS/private-bytes result or a proof of a process-wide 6GiB upper bound.",
+    "supported_efficient_future_validation": "Use RNA foreach_get into contiguous NumPy buffers and compare every row in bounded batches; do not materialize millions of Python vertex/polygon/color tuples. Core full geometry readback is ~23.5MB F32 positions + 50.1MB I32 loop indices + 2*16.7MB polygon start/size arrays. Full CORNER RGBA F32 readback is 200332032 bytes.",
+    "future_process_cap_required_if_authorized": true,
+    "process_started_for_measurement": false
+  },
+  "BYTE_COLOR_policy_not_runtime_qualified": {
+    "installed_importer_contract": "For this TRIANGLES primitive, COLOR_0 expands to CORNER RGBA float32, alpha=1, then stock importer creates Color as BYTE_COLOR and writes linear color using foreach_set.",
+    "quantization_expected": "Native linear-RGB-to-sRGB conversion followed by clamped nearest-byte conversion; alpha 1 becomes 255. Exact original float32 RGB bits cannot survive 8-bit storage.",
+    "exactness_rule": "If a future import is authorized, compare all resulting corner bytes exactly with expectations produced through the same installed native BYTE_COLOR color setter. Recover byte values through color_srgb and nearest integer of 255*value; require zero differing RGB/alpha bytes. Do not substitute a floating tolerance or allow one-byte mismatches.",
+    "reason_native_oracle_required": "Release native source has approximate SIMD/non-SIMD RGB conversion. A Python ideal IEC transfer plus rounding is not established as byte-identical at quantization boundaries. No native probe was run.",
+    "color_getter_caution": "color reads decoded scene-linear values; color_srgb exposes stored byte fractions. Verify data_type BYTE_COLOR, domain CORNER, loop count, alpha 255, active/render Color selection and actual vertex-color-to-material linkage separately.",
+    "primary_release_references": [
+      {
+        "url": "https://raw.githubusercontent.com/blender/blender/v5.2.1/source/blender/makesrna/intern/rna_attribute.cc",
+        "one_based_lines": [
+          695,
+          724,
+          1434,
+          1479
+        ],
+        "supports": "BYTE_COLOR color setter/getter and byte-fraction color_srgb accessors."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blender/blender/v5.2.1/source/blender/blenlib/intern/math_color.cc",
+        "one_based_lines": [
+          470,
+          687
+        ],
+        "supports": "Native vector RGB transfer uses approximations, with architecture-dependent SIMD path."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blender/blender/v5.2.1/source/blender/blenlib/intern/math_base_inline.cc",
+        "one_based_lines": [
+          550,
+          579
+        ],
+        "supports": "Unit-float-to-byte clamps and rounds to nearest byte; alpha is not sRGB transformed."
+      }
+    ],
+    "native_release_source_not_binary_equivalence_proof": true,
+    "native_quantization_tested": false
+  }
+}

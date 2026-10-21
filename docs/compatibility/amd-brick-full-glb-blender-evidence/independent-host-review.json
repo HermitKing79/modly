@@ -1,0 +1,22 @@
+{
+  "classification": "GO",
+  "scope": "Independent read-only source review of the CPU preflight supervisor only; Blender import and render remain blocked. No process launched by this reviewer.",
+  "reviewed_source": "run_host.py",
+  "reviewed_source_SHA256": "27d1615b63390b84329e0d6d07fa1ee245292e2c3b106cd0408448da7ed00482",
+  "importer_audit_SHA256": "266d2a9fb761e392ad2e2019c29b87f4c915627eb184e376277390447c470c72",
+  "focused_tests_SHA256": "4a6c22979d36212f52fb6139084ea79f51a0fdb382765dc4ef9e097356aa0dcc",
+  "checks": {
+    "fixed_worker": "D Python with -I -B runs preflight.py; only preflight stage is accepted. No Blender command is reachable.",
+    "identity_binding": "Exact HEAD/branch and helper pins; all candidate Python source names and hashes, plan, focused log, importer audit and installed importer source hashes must match the independent review.",
+    "resources": "Pinned original helper requires available RAM >=12GiB and free disk >=2GiB before marker and during child execution.",
+    "ownership": "Windows JobObject process and aggregate committed-memory caps are both 6GiB; worker receives exact binary GO only after job attachment.",
+    "deadline": "180-second execution bound; owned descendants must settle naturally inside deadline.",
+    "exclusivity": "Output, attempt marker and host receipt must be absent before the one diagnostic attempt; outputs use exclusive creation.",
+    "cleanup": "Job cleanup always runs; PASS requires no forced job cleanup, verified owned-tree exit, zero child return code, unchanged source snapshots and measured memory peaks <=6GiB.",
+    "semantic_receipt": "A successful diagnostic must still report import_verdict=visual_verdict=BLOCKED and Blender_imports=Blender_renders=0."
+  },
+  "actionable_findings": [],
+  "dynamic_execution_verified_by_this_review": false,
+  "Blender_imports": 0,
+  "Blender_renders": 0
+}

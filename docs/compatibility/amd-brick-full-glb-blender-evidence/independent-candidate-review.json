@@ -1,0 +1,53 @@
+{
+  "classification": "GO",
+  "scope": "One bounded CPU pre-import diagnostic only. This does not authorise Blender import, rendering, repair, re-export or relaxed acceptance.",
+  "authorised_stage": "preflight",
+  "import_verdict": "BLOCKED",
+  "visual_verdict": "BLOCKED",
+  "base": "df195c49ae162c9fa9e3a2280608dd37eeeb76f8",
+  "branch": "codex/amd-brick-full-glb-blender",
+  "candidate_source_SHA256": {
+    "candidate.py": "819dc2e78f4090791f30c687ccf081bc8004fa7e256008b6c96fe661324ac19e",
+    "inputs.py": "f9d121c2bf749f864efb5d0ad76bbae2477ff85d00405e1f1545f90ce3cfbc2f",
+    "preflight.py": "13cf540209a15e84a7dd846e559b12a7d91e2a817e05de07fc41253efd871366",
+    "run_host.py": "27d1615b63390b84329e0d6d07fa1ee245292e2c3b106cd0408448da7ed00482",
+    "test_candidate.py": "a10813316c58b2f8cd7224d71fe2ac5c579e07a571cb443e9c52d9c220b78712"
+  },
+  "qualification_plan_SHA256": "228233a6c4f698f6c30982e65fd2401360135d114b4e83d6345162205f370391",
+  "focused_tests_SHA256": "4a6c22979d36212f52fb6139084ea79f51a0fdb382765dc4ef9e097356aa0dcc",
+  "importer_audit_SHA256": "266d2a9fb761e392ad2e2019c29b87f4c915627eb184e376277390447c470c72",
+  "independent_host_review_SHA256": "5c535cce421aa93a3e75fcbb21abb16a21b2df44b8bf477efbc7a4e1c37d1157",
+  "review_independence": {
+    "this_reviewer_authored": ["run_host.py"],
+    "other_candidate_sources_reviewed_independently": true,
+    "host_review": "A separate reviewer inspected the exact run_host.py bytes and recorded GO with no actionable findings in independent-host-review.json."
+  },
+  "focused_test_evidence": {
+    "logged_tests": 7,
+    "logged_failures": 0,
+    "logged_skips": 0,
+    "scope": "Synthetic index accounting, original multiplicity and immutability, malformed/index/batch bounds, actual CPU-only command and rejection of Blender stages.",
+    "additional_source_checks": "All five candidate Python files parse; all five installed importer source hashes match the audit. No actual diagnostic, Blender import or render was launched by this reviewer."
+  },
+  "acceptance_review": {
+    "required_original_vertices": 1957891,
+    "original_oriented_triangles": 4173584,
+    "independent_preliminary_index_observation": {
+      "referenced_vertices": 1952142,
+      "unreferenced_vertices": 5749
+    },
+    "decisive_source_path": "Stock mesh.py unconditionally selects POSITION rows through np.unique(triangle_indices) before its optional merge_vertices operation. merge_vertices=False cannot retain the unreferenced rows, and no stock preservation option was found.",
+    "geometry_limit": "The TRIANGLES route and inverse-index remap preserve the input corner sequence before mesh.validate(). No actual Blender mesh has been produced, so final imported face preservation and visual quality are unmeasured. The unused-row mismatch does not establish surface loss.",
+    "candidate_proof": "The single diagnostic must authenticate the original source closure, freshly verify the entire unchanged GLB against original geometry and F32 colours with the previously qualified independent reader, then count original referenced indices without welding or modifying arrays.",
+    "outcome_separation": "Diagnostic classification PASS means successful bounded verification of the blocker; import and visual acceptance must remain BLOCKED with zero Blender imports and renders."
+  },
+  "resource_review": {
+    "process_cap_bytes": 6442450944,
+    "job_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "minimum_available_RAM_bytes": 12884901888,
+    "minimum_free_disk_bytes": 2147483648,
+    "ownership": "Fresh diagnostic output and marker, reviewed source/audit identity, exact binary GO after Job attachment, live resource checks, unchanged sources, natural owned-tree exit and no forced cleanup are required. No later stage is implemented."
+  },
+  "actionable_findings": []
+}
