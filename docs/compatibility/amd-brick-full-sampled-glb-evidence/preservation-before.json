@@ -1,0 +1,73 @@
+{
+  "schema": "modly.amd.brick-full-sampled-glb-preservation-before.v1",
+  "created_utc": "2026-10-21T18:19:24.172605+00:00",
+  "mission_base": "3db265ca500cfe46909d12f52c151924763cd2f6",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "authenticated_prior_resampled_colour_after_public_sha256": "49707b974084312b2a1260aa5ecc963dab92d5ca09085b0e9b489509bf7c24b0",
+  "authenticated_prior_resampled_colour_after_private_sha256": "58267477423aff85038b1296e5171b959a786f9dc588df6ae1aa9cdec7966d00",
+  "private_detail_sha256": "76163cef97cf37b99901472c28e6cc707b7c3821804695fd41af68e9769983cf",
+  "bounded_prior_unique_file_identities_checked": 400,
+  "all400_fresh_full_SHA256_checked": true,
+  "all400_current_identities_match_authenticated_before": true,
+  "protected_files_checked": 100,
+  "protected_files_fresh_full_SHA256_checked": 100,
+  "protected_files_unchanged": true,
+  "original_pycache_directories": 4,
+  "original_pycache_files": 20,
+  "original_pycache_entry_sets_and_fresh_file_hashes_unchanged": true,
+  "selected_environment_check_count": 42,
+  "selected_source_edit_backup_check_count": 13,
+  "selected_environment_native_source_edit_backup_checks_unchanged": true,
+  "source_closure_checks": {
+    "final16_source_closure": {
+      "files": 16,
+      "all_fresh_hashes_match": true
+    },
+    "original_CPU_candidate107_source_closure": {
+      "files": 107,
+      "all_fresh_hashes_match": true
+    },
+    "qualified_input_ownership_source_closure": {
+      "files": 18,
+      "all_fresh_hashes_match": true
+    },
+    "latest_qualified_PBR123_source_closure": {
+      "files": 123,
+      "all_fresh_hashes_match": true
+    }
+  },
+  "checkpoint_count": 3,
+  "checkpoint_stat_and_raw_header_unchanged": true,
+  "checkpoint_configuration_files_bound_by_full_SHA256_in_unique400": true,
+  "checkpoint_weight_payload_bytes_read_this_audit": 0,
+  "checkpoint_header_bytes_read_this_audit": 121336,
+  "prior_tree_count": 44,
+  "prior_tree_file_count": 1187,
+  "prior_report_count": 20,
+  "all_compared_prior_trees_unchanged": true,
+  "all_compared_prior_reports_unchanged": true,
+  "newly_snapshotted_completed_resampled_colour_tree_count": 2,
+  "newly_snapshotted_completed_resampled_colour_file_count": 55,
+  "newly_snapshotted_completed_resampled_colour_report_count": 1,
+  "prior_recorded_cache_incident": {
+    "previous_classification": "PASS_RECONCILED_WITH_RECORDED_SIDE_EFFECT",
+    "original_after_remains_FAIL": true,
+    "retained_quarantine_file_count": 5,
+    "all_current_quarantine_hash_size_mtime_match_prior_reconciliation": true,
+    "all_old_source_entries_remain_absent": true,
+    "independent_pre_move_payload_hash_capture": false
+  },
+  "original_saved_five_inputs_fresh_full_SHA256_match": true,
+  "diagnosis_original_five_inputs_fresh_full_SHA256_match": true,
+  "pinned_renderers_unchanged": true,
+  "previous_exposure_images_unchanged": true,
+  "fresh_full_hash_unique_file_count_all_scopes": 1677,
+  "fresh_full_hash_bytes_read_all_scopes": 2741080191,
+  "issues": [],
+  "scope_limits": [
+    "All400/protected100/original cache20/source/environment/renderer identities freshly checked against authenticated prior reconciliation; historical prior trees remain frozen. Public receipt omits private absolute paths.",
+    "Three historical disposable CPU fixture copies retain exact size/mtime checks only. Checkpoint weight payloads not read; exact size/mtime and fresh bounded raw header SHA256 checked. Historical full checkpoint SHA256 is provenance only.",
+    "Previous completed resampled-colour E/P and report, plus earlier generated-cache-quarantine are fresh snapshots in BEFORE and fixed comparison scopes for AFTER; prior original FAIL and reconciled receipts remain retained.",
+    "No WSL, model, GPU, Blender, native extension or install execution; no historical/source/cache writes. Root separately verifies Git state, remote heads and publication."
+  ]
+}

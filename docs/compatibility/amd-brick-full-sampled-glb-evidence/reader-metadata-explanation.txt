@@ -1,0 +1,19 @@
+The tiny CPU writer-to-reader integration exposed a Windows metadata API
+difference: path lstat/stat ctime matched birth time, while handle fstat ctime
+matched the later metadata change time. Repeated path calls and reopened handles
+retained their respective values. Device, inode, size, modification time, birth
+time, link count and file attributes agreed. This was a stable cross-API
+semantic difference, not a transient flush/cache effect.
+
+The reader now compares device/inode/size/mtime/birthtime across path and handle
+metadata. It separately compares full stamps, including ctime and birthtime,
+for path before/after and handle before/after. Each side retains regular-file,
+single-link and no-reparse checks. All GLB byte, schema and content checks remain.
+
+A delayed, fsynced independent synthetic fixture reproduced the initial reader
+failure. It now verifies successfully. A real metadata alteration scheduled
+between snapshots remains rejected. The actual tiny writer-to-reader integration
+also passes. No full export or source asset query was performed for this fix.
+
+Exact private scalar observations are preserved in
+reader-metadata-diagnosis.json within the owned run artifact directory.
