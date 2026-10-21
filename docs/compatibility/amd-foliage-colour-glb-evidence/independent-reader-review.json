@@ -1,0 +1,52 @@
+{
+  "classification": "GO",
+  "review_kind": "Independent bounded source review of writer, original-input admission, container reader, saved-query replay and execution host",
+  "base": "cfe852b476725afe9deecb5d9ad44892794ce2e1",
+  "reviewer": "foliage_glb_renderer subagent; author of the renderer, not author of the reviewed writer/reader/host files",
+  "qualification_plan_SHA256": "f230b86dd9655a8a059e485bec34fe817efad321537e9901bd1678c1078568b2",
+  "reviewed_source_SHA256": {
+    "glb_writer.py": "c7321898624a0d150f391ac071b5e6c6d729ef29a5c9df16a43c5b5e4707bf19",
+    "inputs.py": "27d2e8215b58d7a92933647c3748eac31f00e5464833863ff3d065f05e308b26",
+    "export_worker.py": "62f91ec081ab4a79c59481e7d6a6c28cdaf63ef7d433fbd4406f1620e8b0e27d",
+    "run_host.py": "5e1a328fe5dcca3904934da5c16390be1d28a0cb49b4cb14a0e05758e26517be",
+    "inspect_worker.py": "66ce10f41a190cd06af826c524a576b97c984e7131c3168f7899f94c732724a3",
+    "verify_glb.py": "82ff500153f29a7e1412a88c8ce0ab580278616b23d64a5708f5b2a4dda16ce9",
+    "test_verify_glb.py": "97ff881b184d6c195bcfa40e26a0a4ab569c53e48519c4ab701d36a1663c8844",
+    "test_glb_writer.py": "5c46bf7f6cd0d47e42234207726d6e4611e26071644305e392ca4c65505c6e67"
+  },
+  "supporting_source_SHA256": {
+    "docs/compatibility/amd-foliage-export-decision-evidence/admission.py": "eabc7e916a19fce3a7ba3a30c002b2f68b945426e9fab0623b9d074e1e5589ab",
+    "docs/compatibility/amd-connected-foliage-uv-evidence/inputs.py": "77078fbe3a8cf83f84642d604a93dea87ac229c8a9068e0b31d5369553c6b5d4",
+    "docs/compatibility/amd-brick-pbr-mip-evidence/assets.py": "6eb87c2796cfdfb0c78c25567bddc2cdbcac8fa25f3343c36d5f1225cb3b09c6",
+    "docs/compatibility/amd-brick-defect-diagnosis-evidence/diagnose.py": "8fa7c617324ba636856b48f47a995ee64cd2a85f3c26d86d8760ec638b163529",
+    "docs/compatibility/amd-brick-pbr-exposure-evidence/render_host.py": "2d98a925a0b97aee29d21d259e40eeb290ab44386ab035e15a3463c5df0c1418",
+    "scripts/compatibility/amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64"
+  },
+  "issues": [],
+  "resolved_during_review": [
+    "Reader now rejects boolean/float substitutes for JSON integer fields and boolean base-colour factors; the new synthetic cases cover those boundaries.",
+    "Fresh inspection binds both actual imported corner NPY files to the recorded Blender receipt SHA256 and byte length before loading them.",
+    "Every dependent stage now requires the previous owned-host PASS and exact worker receipt SHA256, rather than only the worker classification.",
+    "The natural-empty Job grace is bounded by the original 180-second deadline and cannot produce PASS for an owned process tree settling after it."
+  ],
+  "source_findings": {
+    "coordinates_geometry": "Writer applies original (x,y,z) to glTF (x,z,-y), a proper determinant+1 rotation. Shared original indices and winding remain unchanged. Independent reader inverses the rotation and compares original F32 position bits, ordered indices and multiplicity exactly.",
+    "colours_source_ids": "Saved F32 linear RGB is serialized directly without fitting, gamma change or byte quantisation. Dense VEC3 F32 COLOR_0 and original I64 vertex/I32 face IDs with original NPY digests are independently checked. Writer bounds make U16 indices safe.",
+    "container_material": "Exactly one embedded core glTF2 triangle primitive, identity node and one OPAQUE double-sided material. No UV, NORMAL, texture, image, sampler, extension or external URI. Unit base factor and exact declared metallic/roughness constants are verified.",
+    "source_admission": "Pinned original admission authenticates the fixed selection, original geometry/material correspondence and qualified prior decision arrays. Writer and independent reader do not derive reference colours from imported Blender data.",
+    "saved_queries": "Reader reuses all 58,951 saved locations and source-spatial samples. Centroid, area-weighted, combined-required, seam-edge and seam-near cohorts preserve original RGB RMSE<=0.02, p95<=0.05, maximum<=0.15 and per-scalar RMSE<=0.02, with actual OPAQUE alpha=1. Inspection applies the same cohorts to actual recorded imported corner values.",
+    "render_readback": "Inspection independently reopens the four recorded 640-square RGBA PNGs and verifies SHA256/bytes, whole-image and silhouette-union RGB gates, alpha>=128 silhouette IoU>=0.999, and writes one private labelled contact sheet. This review deliberately excludes the renderer implementation authored by this reviewer.",
+    "execution": "Four sequential exclusive stages, prior worker/host PASS gates, exact binary GO only after owned Job attachment, process and Job memory limits of 6 GiB, 180-second owned execution limit, 12 GiB available-RAM and 2 GiB destination-free floors, live resource checks, unchanged watched sources and naturally empty Job required. Forced cleanup cannot PASS.",
+    "exclusions": "Python numerical workers install the existing source-pinned guard against model/GPU/renderer imports, subprocess/network execution and writes outside the new private artifact root. Native renderer launch is fixed to Blender 5.2 with factory startup and disabled autoexec; host hides CUDA/HIP/ROCm devices and limits CPU threading. No WSL, neural inference, UV solve, bake or full-asset export is launched by reviewed code."
+  },
+  "review_activity": {
+    "source_reads_and_specific_source_hashes_only": true,
+    "actual_experiments_launched": false,
+    "tests_executed_during_this_review": false,
+    "asset_or_preservation_scans_performed": false,
+    "git_commands_executed": false,
+    "historical_files_modified": false,
+    "renderer_self_review_claimed": false
+  },
+  "scope": "GO for the exact frozen reviewed sources against the qualification plan. This is source review only; actual export/import/render outcomes and independent visual inspection remain required and are not asserted here."
+}

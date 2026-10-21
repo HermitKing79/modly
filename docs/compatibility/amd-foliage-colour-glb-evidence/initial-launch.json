@@ -1,0 +1,22 @@
+{
+  "classification": "BLOCKED_BEFORE_IMPORT",
+  "cause": "Host Blender command omitted -- argument separator; script argparse consumed host Blender flags before main/GO/import.",
+  "actual_GLTF_imports": 0,
+  "actual_renders": 0,
+  "original_failed_outputs_preserved": true,
+  "stdout_sha256": "a1038ffca3498c1a2d9495f05a1cb59e0ebd83a7bf72ff19a1e2011782ec8ed5",
+  "stderr_sha256": "4a5177159dbd2f50d7b2c1d5e3f2c88574725ae3cdaa760f74106ca63148998a",
+  "stderr": "usage: blender.exe [-h] [--output OUTPUT]\r\nblender.exe: error: unrecognized arguments: --background --factory-startup --disable-autoexec --threads 4 --python-exit-code 1 --python C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-foliage-colour-glb-evidence\\render_worker.py\r\n",
+  "attempt_sha256": "a7213cbb17b8c9fe8f1388bc839ddcd50bf8ba518ae1813b4aed268a01a2516c",
+  "host_sha256": "0fb26ed162c280ee6b7368b91f77752e9c65d7693d312886e73f51fd201071f1",
+  "owned_execution_seconds": 6.233999999999469,
+  "peak_job_committed_bytes": 272654336,
+  "cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "unchanged_source_pins": true
+}

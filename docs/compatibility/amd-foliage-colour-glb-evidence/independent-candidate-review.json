@@ -1,0 +1,54 @@
+{
+  "schema": "modly.amd.foliage-colour-glb-independent-candidate.v1",
+  "created_utc": "2026-10-21T16:03:31.555189+00:00",
+  "classification": "GO",
+  "reviewer": "foliage_review integration reviewer; independent reader author, separately reviewed by renderer agent/root",
+  "base": "cfe852b476725afe9deecb5d9ad44892794ce2e1",
+  "scope": "One deterministic four-stage CPU proof: one GLB writer, fresh independent byte/query verifier, one actualBlender5.2.1 import/four matchedCPU renders, fresh PNG/import-colour readback. No original spatial query repeats, selection, UV, bake, repair, models, WSL orGPU workloads.",
+  "candidate_source_SHA256": {
+    "export_worker.py": "62f91ec081ab4a79c59481e7d6a6c28cdaf63ef7d433fbd4406f1620e8b0e27d",
+    "glb_writer.py": "c7321898624a0d150f391ac071b5e6c6d729ef29a5c9df16a43c5b5e4707bf19",
+    "inputs.py": "27d2e8215b58d7a92933647c3748eac31f00e5464833863ff3d065f05e308b26",
+    "inspect_worker.py": "66ce10f41a190cd06af826c524a576b97c984e7131c3168f7899f94c732724a3",
+    "render_worker.py": "8d4392aa228dedfcefc94d4f10dead19772df607d87a9da87d3c98bb9381e15c",
+    "run_host.py": "5e1a328fe5dcca3904934da5c16390be1d28a0cb49b4cb14a0e05758e26517be",
+    "test_glb_writer.py": "5c46bf7f6cd0d47e42234207726d6e4611e26071644305e392ca4c65505c6e67",
+    "test_render_contract.py": "b4d64cd3f7951dc5f44d50f0c69010547861d26eba7659e42faba6cd3b69958f",
+    "test_verify_glb.py": "97ff881b184d6c195bcfa40e26a0a4ab569c53e48519c4ab701d36a1663c8844",
+    "verify_glb.py": "82ff500153f29a7e1412a88c8ce0ab580278616b23d64a5708f5b2a4dda16ce9"
+  },
+  "qualification_plan_SHA256": "f230b86dd9655a8a059e485bec34fe817efad321537e9901bd1678c1078568b2",
+  "focused_tests_SHA256": "9a859c67e9b34971cf0c7cfef81c5971c907859d294ae7531dd8901e799311a9",
+  "installed_importer_source_SHA256": {
+    "mesh.py": "9fbedc0de7e97f0370800b98bfd86f2b53117c72fee59e38a460f08a54fd0f71",
+    "material.py": "b81745cff835bcacabe6491fb27e06a3c2446dcea57b158a1168e8ec4f287343",
+    "pbrMetallicRoughness.py": "02eb3d6139fb16036451d113b6ded9a4df24d539a0eca8f058225d7c41c23520"
+  },
+  "synthetic_tests": {
+    "passed": 27,
+    "seconds": 4.921,
+    "provenance": "Root-produced complete focused log. Reader author additionally observedREDbefore implementation and final12 reader/query testsPASS0.556s. Final renderer header-only bytecode ordering fix was compiled without changing tested logic."
+  },
+  "verified_checks": [
+    "Exact starting base/branch and reused original input/CPU containment/studio sources match rawGit base bytes; all ten final new Python sources compile in memory.",
+    "Writer authenticates fixed4531 original triangles/3177 vertices/learned rows and savedF32linearCOLOR_0. Proper sourceXYZ\u2192glTF(x,z,-y) rotation has determinant+1 and preserves winding; sourceIDlists plus originalNPYfileSHA256 remain in mesh extras.",
+    "One GLB2JSON+BIN/oneTRIANGLESprimitive/corePBRmaterial: unitbase factor, exact verifiedM/R,OPAQUE,doubleSided; noNORMAL,UV,textures,images,samplers,externalURIs,extensions or hidden node transforms.",
+    "Fresh parser does not import writer; reauthenticates original inputs and qualified prior decision, validates bounded chunks/schema/types/alignment/accessor ranges and sourceIDlists/hashes, and requires exactF32positions/colours plus ordered originalindices/winding/multiplicity.",
+    "Fresh parser rechecks all58951 saved query predictions against original saved spatial samples with unchangedRGB0.02/0.05/0.15 and per-scalar0.02RMSE; actualOPAQUEalpha1 is checked. No new source samples.",
+    "Known installedBlender importer createsBYTE_COLOR. The candidate leaves imported colours untouched and measures actual attribute/type/domain/scene-linear values separately from exactF32GLBpayload. Authenticated in-memoryreference usesFLOAT_COLOR and never replaces imported storage.",
+    "Actual imported geometry/cornerlineage/flatshading, resolved colour-node link, fixedF32materialfactor sockets, effectivezeroemission,double-sided state and absence of UV/customnormals/images are read back. Zero emission accepts blackcolour or zerostrength without repairing native defaults.",
+    "Exactly one factory-startupBlender5.2.1 import and four matched640square32sampleCyclesCPU/CPUdenoised renders. Only object visibility changes within matchedpairs; only exact4xorthoscale changes near\u2192far. Camera/lights/colourmanagement/seed remain pinned.",
+    "Transparent film/RGBA output diagnoses silhouette only;OPAQUE materialalpha remains1. Both wholeimage and visibleunionRGB use0.02/0.05/0.15 and alpha>=128 silhouetteIoU>=0.999. SourceRGBcorner gates are separate from image gates.",
+    "Freshinspect worker verifies both actual cornerNPYhashes/bytes against Blenderreceipt before loading, checks originalcornerIDs, rechecks imported quantized colours at all original58951queries, independently reopens/compares allfourPNGs and assembles a private labelled contact sheet.",
+    "Each stage requires priorworkerPASS plus priorowned-hostPASS bound to exactworkerreceipt; prior results/assets/hosts are watched. Independent candidate binds exactsource/plan before exclusive stagepaths/attemptmarker.",
+    "Original resource helper floors12GiBRAM/2GiBdisk and ownedJob process+job6GiB/hard180s remain enforced. BinaryGO afterattachment, bounded in-deadline naturalemptyJob and measuredprocess/jobpeaks are required; forcedcleanup/sourcechanges areBLOCKED.",
+    "OperationalPython-I-B and bytecode-first scripts plus launchenvironment suppress bytecode writes; nativeBlender uses factory/disabledautoexec/privateconfigscratch and explicitCPUsettings. NoactualGLB generation/import/render/sourcequery executed before this review."
+  ],
+  "limitations": [
+    "Actual portable asset/import/renders remain unmeasured before execution. Any stage refusal stops; no retry, alternateasset, colourreplacement or parametersearch is authorised.",
+    "The proof concerns this cropped original foliage selection and this fixedvertexcolour/constantPBR approximation, not complete botanical anatomy, continuous-field equality, arbitraryviewers or fullmodel quality.",
+    "BlenderBYTE_COLORrounding and actualviewerappearance can differ from originalF32GLBvalues; both numerical sourcegates and renderedcomparison must pass before declaring this viewerproof.",
+    "Incidental nativeGPUlibrary discovery/warnings may occur insideBlender; only actualconfigured/measuredCPUworkloads are qualified, not an assertion that native discovery never occurs."
+  ],
+  "blockers": []
+}
