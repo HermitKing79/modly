@@ -1,0 +1,22 @@
+{
+  "classification": "GO",
+  "scope": "Independent static review of the four-stage owned supervisor only; worker correctness is reviewed separately. No actual import/render/operation launched by this reviewer.",
+  "reviewed_source": "run_host.py",
+  "reviewed_source_SHA256": "1ba3a07e11abbeb27b6ab877e3b6802ea9e6d446f2a9d51ff4a5171532092cc7",
+  "qualification_plan_SHA256": "af41f25b08719e9d631dc3ea073f13969763179f1e88e102e1e096efb04fc6ec",
+  "focused_tests_SHA256": "00fa90d8c3e87abfb1c6484fd399277b1b90382729d67d1e094c138c3c0b2c7f",
+  "checks": {
+    "fixed_stages": "Only import, verify, render and inspect; fixed Blender command for import/render and fixed D Python -I -B command for verify/inspect. No arbitrary command or stage path.",
+    "identity_and_review": "Exact starting commit/branch, pinned helper, complete candidate Python source-set/hash review, plan/log/prior importer audit binding, installed importer source hashes and Blender binary pins.",
+    "predecessors": "Every required predecessor worker must PASS and its owned host must PASS with the exact worker-receipt digest; direct predecessor files including inspected.blend and host receipts are watched before/after.",
+    "render_headroom": "Before any render marker, measured import process and Job committed-memory peaks must each be <=5GiB, leaving at least1GiB under the unchanged6GiB cap.",
+    "resources": "Original pinned helper enforces available RAM >=12GiB and free disk >=2GiB before marker and live during the worker.",
+    "ownership_and_caps": "JobObject process and aggregate Job memory limits are both6GiB; exact binary GO is sent only after job attachment.",
+    "deadline_and_exit": "180-second execution deadline; owned tree must settle naturally inside it. PASS requires no forced cleanup, verified empty owned tree and measured process/Job peaks <=6GiB.",
+    "exclusive_outputs": "Stage output, attempt marker and host receipt must all be absent; exclusive output creation and no overwrite/retry.",
+    "preservation": "PASS requires unchanged watched source/prior-output byte hashes, sizes and modification times.",
+    "private_runtime": "Private scratch/user paths and CPU device environment; Blender uses background/factory startup/disable-autoexec and four threads."
+  },
+  "actionable_findings": [],
+  "dynamic_process_behavior_verified_by_this_review": false
+}

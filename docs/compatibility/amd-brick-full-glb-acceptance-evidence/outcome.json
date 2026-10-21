@@ -1,0 +1,108 @@
+{
+  "classification": "BLOCKED",
+  "import_qualification": "BLOCKED",
+  "native_import_execution": "PASS",
+  "actual_geometry_and_native_corner_byte_association": "PASS",
+  "independent_production_verifier": "NO-GO",
+  "independent_production_supervisor": "BLOCKED",
+  "visual": "BLOCKED",
+  "fresh_GLTF_imports": 1,
+  "render_count": 0,
+  "images_produced": 0,
+  "base": "a258c4eb97c239e3ec766648e71ca59b51ce1de9",
+  "original_GLB_bytes": 97073940,
+  "original_GLB_SHA256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+  "original_vertices": 1957891,
+  "imported_vertices": 1952142,
+  "approved_unused_vertices_omitted": 5749,
+  "triangles": 4173584,
+  "corners": 12520752,
+  "position_bits_triangle_order_corner_order_winding_multiplicity_exact": true,
+  "every_actual_corner_RGBA_byte_matches_native_setter": true,
+  "unmodified_original_material_readback": true,
+  "original_assets_and_importer_modified": false,
+  "import_result_SHA256": "13ab7159c0db783ffd22404420c19d02d51b678ec5e87e18cf53565ba68ab3a7",
+  "import_host_SHA256": "19c23db0a47c7e3c003013b70dab7b5fc67cc2e1ae8042fb2e621b45f1b6b370",
+  "failed_verifier_SHA256": "eb6c26254d55ca14b5d35dc923ae7146c7569332b63fed6dec1ca779f98db0f6",
+  "failed_verifier_host_SHA256": "b4a52a4bd3b6c66ddbd9363b8ba8be52d1bbf588fe12b235f36699f5ff6dd476",
+  "quantization_diagnostic_SHA256": "721cc985a48ad91c77743f4ea9d115b09b1aca846995bf6c40c5fd896d50a736",
+  "saved_scene": {
+    "sha256": "67d9a9439417eebfa8ab294d955e8056f413fea28866f6006f8298a105e19588",
+    "bytes": 267217765
+  },
+  "private_import_readback_files": {
+    "oracle-colour-bytes.npy": {
+      "sha256": "efc7c32c7753bb098ecd30f4154a8c9070774f57f261f14ec700a19557907576",
+      "bytes": 7831692,
+      "shape": [
+        1957891,
+        4
+      ],
+      "dtype": "uint8"
+    },
+    "actual-vertices.npy": {
+      "sha256": "11c4a26f8d6378be664e09007ea35d331686b76a503b84516e5924ffbaeacdf1",
+      "bytes": 23425832,
+      "shape": [
+        1952142,
+        3
+      ],
+      "dtype": "float32"
+    },
+    "actual-faces.npy": {
+      "sha256": "3370db38e7dd346ad4d03ac6129cba450a802aa05fba17c307a6bfd1071481f1",
+      "bytes": 50083136,
+      "shape": [
+        4173584,
+        3
+      ],
+      "dtype": "int32"
+    },
+    "actual-colour-bytes.npy": {
+      "sha256": "3f9c28918e932c6d0694e23269616271312f31b4514630e415cf4eb59d04b323",
+      "bytes": 50083136,
+      "shape": [
+        12520752,
+        4
+      ],
+      "dtype": "uint8"
+    },
+    "inspected.blend": {
+      "sha256": "67d9a9439417eebfa8ab294d955e8056f413fea28866f6006f8298a105e19588",
+      "bytes": 267217765
+    }
+  },
+  "import_call_including_journal_seconds": 6.620344400002068,
+  "import_worker_seconds": 29.12660820000019,
+  "import_owned_tree_seconds": 31.937000000001717,
+  "import_peak_process_committed_bytes": 1684721664,
+  "import_peak_job_committed_bytes": 1684721664,
+  "verification_owned_tree_seconds": 5.407000000002881,
+  "verification_peak_process_committed_bytes": 170225664,
+  "verification_peak_job_committed_bytes": 171061248,
+  "minimum_measured_available_RAM_bytes": 19137646592,
+  "minimum_measured_destination_free_bytes": 112423342080,
+  "import_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "verification_job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "all_actual_sources_unchanged": true,
+  "failed_gate": "Task-added idealIEC half-byte+2e-6 encoded RGB ceiling, not a user-specified threshold",
+  "failed_ceiling": 0.00196278431372549,
+  "actual_referenced_vertex_max_encoded_RGB_error": 0.002073088847329929,
+  "referenced_vertex_RGB_RMSE": 0.0011318668515622864,
+  "RMSE_scope": "Unique referenced vertices, not corner weighted",
+  "failure_not_evidence_of_AMD_or_GLB_corruption": true,
+  "gate_relaxed_or_retry_performed": false,
+  "next_action": "Separately qualify the observed native BYTE_COLOR conversion from saved data, then render the saved scene without another GLB import."
+}

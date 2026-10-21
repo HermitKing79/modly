@@ -1,0 +1,89 @@
+{
+  "classification": "GO",
+  "scope": "One genuine stock Blender import under the approved unused-point amendment, followed only after PASS by independent full readback and separately admitted one-view CPU rendering and image reopening. This is source review, not an actual import or visual PASS.",
+  "base": "a258c4eb97c239e3ec766648e71ca59b51ce1de9",
+  "branch": "codex/amd-brick-full-glb-acceptance",
+  "candidate_source_SHA256": {
+    "common.py": "3560a3b9db9776b5098dfca479c63d1dcc8a2e09dcedf5bc12074342a4f6b876",
+    "contract.py": "4c2eb28ee14707b90edac7d9ab9882473f3dfcd9e194ddc5d2f7b14c7d68edf5",
+    "import_worker.py": "a553ad7e0ace4f9022d0420cc8d8c6b939dcbbd8496ec0bc0104d59ca934e597",
+    "inputs.py": "77bc4bcdec9003225e52f1acfd75f1031e9c0f6a7bdb15d9ae78135c04d29cd8",
+    "inspect_worker.py": "5a57a3255effb049a2473fab6033d1f51639ed480a7f1cc9510d444ae1a3dac6",
+    "render_worker.py": "16584a9c4b6111849af2880380bb89c01df62905c27326ccefcac19243a834ef",
+    "run_host.py": "1ba3a07e11abbeb27b6ab877e3b6802ea9e6d446f2a9d51ff4a5171532092cc7",
+    "test_contract.py": "58199242b385905342205d64865151e23f98db78edab45933c2e6c5d8ca60917",
+    "test_verify.py": "a580e251bc9a0dcc74b30fadf95605d77e3c5187c21a1bdbc34689c9515286df",
+    "verify_import.py": "0b8700fe7c02c2206efbc0d655147c5971534f4ad78823e39d539f3db8a3f2cb"
+  },
+  "qualification_plan_SHA256": "af41f25b08719e9d631dc3ea073f13969763179f1e88e102e1e096efb04fc6ec",
+  "focused_tests_SHA256": "00fa90d8c3e87abfb1c6484fd399277b1b90382729d67d1e094c138c3c0b2c7f",
+  "importer_audit_SHA256": "266d2a9fb761e392ad2e2019c29b87f4c915627eb184e376277390447c470c72",
+  "independent_host_review_SHA256": "f08280d31e75ccefdd51e0a3b2124a03d302f15c60b677458b5b354b1dc64160",
+  "review_independence": {
+    "this_reviewer_authored": [
+      "run_host.py"
+    ],
+    "host_changes": "Root added the pre-marker measured import process and Job headroom check. A separate reviewer covered the final exact host bytes and recorded GO with no findings.",
+    "other_candidate_sources_reviewed_independently": true
+  },
+  "focused_evidence": {
+    "logged_tests": 11,
+    "logged_failures": 0,
+    "logged_skips": 0,
+    "scope": "Synthetic exact compaction, position/triangle/corner order and multiplicity, malformed bounds, native-oracle association and excess-quantization rejection, plus fixed actual supervisor commands and limits.",
+    "all_ten_candidate_files_parse": true,
+    "actual_Blender_operations_by_this_reviewer": 0
+  },
+  "approved_geometry_contract": {
+    "original_rows": 1957891,
+    "imported_vertices": 1952142,
+    "omitted_only_original_triangle_unreferenced_vertices": 5749,
+    "original_oriented_triangles": 4173584,
+    "corner_count": 12520752,
+    "comparison": "Every referenced source position must retain exact F32 bits in sorted original-index correspondence. Every remapped original triangle retains exact face order, corner order, winding and multiplicity. No welding, repair, extra removal or coordinate alteration.",
+    "original_asset_or_importer_modification_authorised": false
+  },
+  "colour_and_material_review": {
+    "native_oracle": "All original F32 linear RGB rows pass through bounded 32768-row POINT BYTE_COLOR setter batches; imported CORNER values must use the identical ByteColorAttributeValue RNA class. Every actual corner RGBA byte must equal its original-vertex oracle byte exactly, with alpha255.",
+    "one_byte_transport_tolerance": false,
+    "independent_quantization_gate": "Every imported corner is measured against original F32; encoded RGB maximum absolute error must be <=0.5/255+2e-6. Linear and encoded RMSE/max are reported separately; byte storage is not claimed F32 exact.",
+    "material": "Pinned prior reader verifies original constant metallic/roughness, resolved vertex-colour-to-Principled wiring, opaque alpha1, no texture/normal/displacement inputs and double-sided material. Unit glTF base factor remains bound by the prior exact full-file proof.",
+    "native_oracle_replaces_imported_colours": false
+  },
+  "stage_review": {
+    "import_stage": "One stock GLB call only, preceded by a durable exact-input/settings journal and flushed pre-call marker. Read actual geometry and corner bytes, verify them, and save readbacks plus private inspected.blend. No render in this process.",
+    "verify_stage": "A separately authored owned D Python worker authenticates source and all five saved files, compares every row and corner with bounded NumPy batches, verifies exact material/native-oracle evidence and records all output hashes.",
+    "render_stage": "Requires import and independent verify PASS with exact predecessor host/worker receipt binding; opens the saved inspected.blend without GLB reimport, rechecks geometry and material, and renders only one +X view. Imported flat shading and source colours remain unchanged.",
+    "inspect_stage": "Reopens the actual640x640RGB PNG, rejects a blank image and creates a labelled private contextual comparison to the authenticated prior +2EV PBR image. This file check cannot substitute for independent visual inspection."
+  },
+  "render_settings": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_use_gpu": false,
+    "samples": 32,
+    "resolution": [
+      640,
+      640
+    ],
+    "threads": 4,
+    "adaptive_sampling": false,
+    "exposure_EV": 2,
+    "camera_and_lights": "Authenticated original positive-X orthographic camera and neutral studio rig",
+    "optional_second_view_authorised": false,
+    "reference_comparison": "Contextual only: source sampling and gamma/shading semantics differ; no pixel-perfect numerical-equivalence claim."
+  },
+  "resource_and_ownership_review": {
+    "process_cap_bytes": 6442450944,
+    "job_cap_bytes": 6442450944,
+    "deadline_seconds_per_worker": 180,
+    "minimum_available_RAM_bytes": 12884901888,
+    "minimum_free_disk_bytes": 2147483648,
+    "render_admission_maximum_import_process_and_Job_peak_bytes": 5368709120,
+    "render_admission": "Both measured import peaks must leave at least1GiB under unchanged6GiB caps before a render marker is created; current live resource floors must also pass.",
+    "supervision": "Exact HEAD/branch and reviewed source/plan/log/prior-audit pins, fixed commands, fresh exclusive per-stage outputs, predecessor PASS and exact receipt binding, binary GO after Job attachment, periodic health checks, unchanged sources/prior outputs and natural empty owned Job without forced cleanup are required.",
+    "memory_projection_limit": "Prior source allocation ledger and readback estimates inform admission; they are not measured Blender peaks or a proof of a process-wide upper bound. Hard process and Job caps remain enforced."
+  },
+  "stop_rule": "If any stage or its owned host fails, preserve evidence and stop; no automatic retry, second import, extra view, raised limit, geometry repair or importer patch.",
+  "actionable_findings": []
+}

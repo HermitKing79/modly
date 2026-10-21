@@ -1,0 +1,70 @@
+{
+  "classification": "PASS",
+  "scope": "One owned CPU measurement of saved native oracle bytes versus original F32 colours at every referenced source vertex. This diagnostic did not rerun the production verifier, Blender or native setter, create points, change source or relax a gate.",
+  "original_quantization_validator_verdict": "NO-GO",
+  "complete_import_qualification": "BLOCKED",
+  "visual_verdict": "BLOCKED",
+  "policy_origin": "The ideal IEC-sRGB half-bin plus2e-6 ceiling was added by this task harness. It was not a user-specified requirement or a bound established for the installed native BYTE_COLOR setter.",
+  "original_rows": 1957891,
+  "referenced_vertices": 1952142,
+  "excluded_unreferenced_vertices": 5749,
+  "original_triangles": 4173584,
+  "RGB_scalar_count": 5856426,
+  "batch_rows": 32768,
+  "maximum_absolute_encoded_RGB_error": 0.002073088847329929,
+  "original_encoded_ceiling": 0.00196278431372549,
+  "excess_above_original_ceiling": 0.00011030453360443915,
+  "referenced_unique_vertex_RGB_RMSE": 0.0011318668515622864,
+  "above_ceiling_RGB_components": 18128,
+  "above_ceiling_vertices": 18080,
+  "above_ceiling_components_per_RGB_channel": [
+    9576,
+    5780,
+    2772
+  ],
+  "referenced_membership_SHA256": "08ce8c32d53ae77b63a656e07e48786ba58d83085f19537176c90d1e8102ddf8",
+  "metric_scope": "RMSE and exceedance counts weight unique referenced source vertices, not triangle-corner multiplicity. The maximum also equals the imported corner maximum because every referenced vertex occurs in the face table and the completed native-byte association checks require exact oracle bytes at every corner.",
+  "interpretation": "Exact native byte association and source geometry passed before the production verifier reached its final policy assertion. This measurement confirms that the installed native conversion exceeds the additional ideal half-bin assumption. It does not establish an AMD or GLB transport defect and does not convert the failed verifier into PASS.",
+  "original_input_SHA256": {
+    "original_GLB": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+    "original_faces_NPY": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d",
+    "original_linear_COLOR0_NPY": "1240160cefcf961d463d9c06416e0907469c8d80a590fb44f483bb1fc220ea44",
+    "native_oracle_bytes_NPY": "efc7c32c7753bb098ecd30f4154a8c9070774f57f261f14ec700a19557907576",
+    "actual_imported_corner_bytes_NPY": "3f9c28918e932c6d0694e23269616271312f31b4514630e415cf4eb59d04b323"
+  },
+  "production_receipt_SHA256": {
+    "import_worker": "13ab7159c0db783ffd22404420c19d02d51b678ec5e87e18cf53565ba68ab3a7",
+    "import_host": "19c23db0a47c7e3c003013b70dab7b5fc67cc2e1ae8042fb2e621b45f1b6b370",
+    "verifier_failure": "eb6c26254d55ca14b5d35dc923ae7146c7569332b63fed6dec1ca779f98db0f6",
+    "verifier_host": "b4a52a4bd3b6c66ddbd9363b8ba8be52d1bbf588fe12b235f36699f5ff6dd476"
+  },
+  "private_diagnostic_SHA256": {
+    "verify_saved.py": "73c11a7ab774054ceacecf353ec9dc2bc0fcb2db578a2df6c078d6f92fe6c7c3",
+    "host.py": "077ce54aae0eb6396448d4012007a8dfc008e853ca52728a5d1c44d40c897147",
+    "readback.json": "1a4bab4b6e2dd80f499fb4c339207d77a2acc6a38d7862f25ca38fb42c98f2a4",
+    "host.json": "1d9b42182b16b493f0d31fbf639b83453da50dfae4a5456afb44bd8b69374b74"
+  },
+  "diagnostic_owned_execution": {
+    "classification": "PASS",
+    "worker_seconds": 0.5619999999980791,
+    "owned_seconds": 2.2040000000015425,
+    "peak_process_committed_bytes": 129593344,
+    "peak_job_committed_bytes": 130453504,
+    "memory_process_and_Job_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "minimum_measured_available_RAM_bytes": 20634214400,
+    "minimum_measured_free_disk_bytes": 112442556416,
+    "RAM_floor_bytes": 12884901888,
+    "disk_floor_bytes": 2147483648,
+    "all_recorded_samples_admitted": true,
+    "attached_before_GO": true,
+    "natural_empty_Job": true,
+    "forced_cleanup": false,
+    "sources_unchanged": true
+  },
+  "production_verifier_reruns": 0,
+  "additional_Blender_imports": 0,
+  "Blender_renders": 0,
+  "new_points_or_field_queries": 0,
+  "source_safe": "Aggregate metrics and hashes only. Worst source IDs, input/output RGB values, geometry, material arrays and images remain private."
+}
