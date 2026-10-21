@@ -1,0 +1,47 @@
+{
+  "schema": "modly.amd.brick-full-colour-glb-independent-candidate.v1",
+  "created_utc": "2026-10-21T16:53:36+00:00",
+  "classification": "GO",
+  "reviewer": "/root/full_colour_review",
+  "base": "1012a6c04976085c5cf8d4c6911d9010d0e8cc59",
+  "branch": "codex/amd-brick-full-colour-glb",
+  "scope": "One genuine bounded CPU phase-one full-model material-suitability measurement only. No GLB export, Blender, render, model, GPU, WSL, installation, geometry edit or historical cache write is admitted by this review.",
+  "candidate_source_SHA256": {
+    "decision.py": "3c6353b4328879255fae30d9ab115a0b82da3656cf19f847bd618e772e545f3f",
+    "export_worker.py": "faff619e2faedc8a7b66814e6499625ee88b51dd1f11b218df4b648b0ba33c15",
+    "inputs.py": "a7ddabfdf13f24564377bd78cabccfd69679d51579e74a4ec5c35bd20073779f",
+    "run_host.py": "d6b709cc2bbcb5ec3410059f33d427f2d872e427ba805f78ebe4b5548712e7ef",
+    "strata.py": "35e8abd0875c319ff6e2195546bc46c0b6b42f032ecfcbb8f120faaa4520d412",
+    "test_decision.py": "81612031c6e323538a8dbbdd6a0946fe29de3130f54b69861f6ff93893a3f324",
+    "test_input_route.py": "10febc11c3975af3fcfcb2d0d7c377e659e93b49163f518458efcb3bf70df32e",
+    "test_strata.py": "9b4cb2ae5c31d892c7ae5a3c370d2bad159b28d2a8f553ec691402c0a74f8807"
+  },
+  "qualification_plan_SHA256": "c4cfb1bb55028e09d476f54c23003b32f9f131d32fdee3c219dc24037501ee9d",
+  "focused_tests_SHA256": "46e64525c0a4840a56c2931e88b38a2077e3e131892138f81ac54f36ffe8b6f6",
+  "synthetic_test_evidence": {
+    "passed": 15,
+    "seconds": 0.575,
+    "provenance": "Root-produced focused-tests.txt read independently in full; source of all three test modules reviewed. Reviewer did not rerun tests or load source arrays."
+  },
+  "verified_checks": [
+    "All eight new Python sources, the final qualification plan and focused test log were independently read. Final worker uses the actual select() keys query_face and bary; no stale interface remains.",
+    "Pinned existing input adapters authenticate original full geometry/material lineage and mapping receipt. Full-model schema is 1957891 F32 vertices, 4173584 I32 triangles, original six-channel F32 features and complete I32 geometry/material coordinate-row equality checked in 32768-row batches.",
+    "Original brick781 and foliage4531 face-ID arrays have exact pinned hashes and checked schemas, unique IDs and original bounds. All781 brick faces are mandatory and cannot be thinned; foliage is drawn from the unchanged authenticated nomination.",
+    "Sixteen input-only pools cover global surface, brick, foliage, rear-X quartile, negative-X normals below median-X, global incidence-one boundary, global incidence-greater-than-two edges, top ceil(F/100) original clipped RGB corner spans and eight AABB octants. Edge incidence is recomputed from all original index occurrences in memory without using or writing prior topology caches.",
+    "All pools are constructed before any reference query. PCG64 SeedSequence([20261022,cohort_index,0]) area-weighted draws are without replacement, with ascending original IDs and explicit underfill; high-span ties use stable original face IDs, with no observed-error ranking, refill or adaptive search.",
+    "Each selected face supplies original corner0/1/2, centroid and two fixed seeded uniform-area barycentric interiors. Independent interior streams and the F64 endpoint guard are documented and tested. Default nominal count is56910, below the existing65536 hard sampler bound.",
+    "Query faces, barycentrics, kinds and every selected original-face list receive private byte-exact NPY readback before SparseSampler construction or its sole sample_world call. Frozen JSON records seed, draw rule, cohort counts/areas/underfill, derived thresholds, original bounds and independently recomputed edge counts.",
+    "The original pinned SparseSampler preserves originalXYZ F32 world-to-grid arithmetic, x-fast eight-neighbour ordering, found-support renormalization and stored feature semantics. The original IEC conversion clips only derived colour targets, stores linear COLOR_0 as F32, interpolates those saved-precision values and re-encodes to the original encoded-RGB error space.",
+    "Every required region separately gates all/corners/centroids/interiors at RGB RMSE0.02, p95absolute0.05 and maximum0.15. Metallic, roughness and actual OPAQUEalpha1 each receive RMSE0.02 gates using unchanged fixed constants. No factor fit, colour fit, pooled rescue, unsupported removal or relaxed metric is present; empty cohorts and zero reference support block material qualification.",
+    "The worker retains original samples, predictions, positive-neighbour counts and raw weight sums plus file hashes. It saves qualified full F32 linear colours only if material suitability passes. A completed CPU measurement may have classificationPASS while material_suitability isBLOCKED; receipt scope expressly forbids interpreting that as pipeline/exportPASS.",
+    "The adapter exposes only one Python suitability stage despite the inherited internal token export. It reuses the unchanged source-pinned qualified supervisor and resource helper: exact binaryGO after owned Job attachment, process AND job6GiB, owned execution180s, live12GiB availableRAM and2GiB destination-free floors, exclusive output/marker, natural empty Job and watched-source preservation. Forced cleanup cannot pass.",
+    "Bytecode suppression is set immediately after importing sys in new modules and the inherited launch uses Python-I-B with private scratch. The original runtime guard forbids model/GPU/renderer imports, network, subprocesses and writes outside the new private artifact root. No actual source query, array read, test rerun, GLB or Blender execution was performed by the reviewer."
+  ],
+  "limitations": [
+    "GO is for one bounded CPU measurement. Actual material quality, resources and source preservation remain unmeasured until that single run finishes; this is not permission to bypass a failed phase-one result.",
+    "The 1.5GiB working-data allowance is a conservative code allocation projection, not a measured peak. Unchanged supervisor ceilings and live floors remain authoritative.",
+    "Geometric rear-X/negative-X strata do not establish occlusion or visibility; brick and foliage nominations are not full semantic segmentation. Passing bounded samples would not establish exhaustive continuous-field equivalence or arbitrary-viewer quality.",
+    "Any required material failure must classify the missionBLOCKED and stop before full-export admission, export, import or rendering. A passing phase one still requires separately reviewed full-export admission within the authorised mission."
+  ],
+  "blockers": []
+}

@@ -1,0 +1,2890 @@
+{
+  "classification": "BLOCKED",
+  "phase_one_CPU_measurement": "PASS_NATURAL_COMPLETION",
+  "material_suitability": "BLOCKED",
+  "source_vertices": 1957891,
+  "source_triangles": 4173584,
+  "query_count": 56910,
+  "regions": {
+    "global": {
+      "budget": 1024,
+      "pool_count": 4173584,
+      "selected_count": 1024,
+      "underfilled": false,
+      "pool_area": 6.277956729697577,
+      "selected_area": 0.0017281249755656011,
+      "area_fraction": 0.0002752686980766828,
+      "query_start": 0,
+      "query_stop": 6144
+    },
+    "brick": {
+      "budget": 781,
+      "pool_count": 781,
+      "selected_count": 781,
+      "underfilled": false,
+      "pool_area": 0.001292743623559633,
+      "selected_area": 0.001292743623559633,
+      "area_fraction": 1.0,
+      "query_start": 6144,
+      "query_stop": 10830
+    },
+    "foliage": {
+      "budget": 512,
+      "pool_count": 4531,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 0.005950395632805763,
+      "selected_area": 0.0007416219325677864,
+      "area_fraction": 0.12463405432725701,
+      "query_start": 10830,
+      "query_stop": 13902
+    },
+    "rear_x": {
+      "budget": 512,
+      "pool_count": 1043396,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 1.5817782444289905,
+      "selected_area": 0.0008802044745591253,
+      "area_fraction": 0.0005564651541132253,
+      "query_start": 13902,
+      "query_stop": 16974
+    },
+    "backfacing_x": {
+      "budget": 512,
+      "pool_count": 1260529,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 1.8803062563199069,
+      "selected_area": 0.0008662717212096024,
+      "area_fraction": 0.00046070778007464055,
+      "query_start": 16974,
+      "query_stop": 20046
+    },
+    "boundary": {
+      "budget": 512,
+      "pool_count": 250841,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 0.354978831993001,
+      "selected_area": 0.000912184293252726,
+      "area_fraction": 0.0025696864461786026,
+      "query_start": 20046,
+      "query_stop": 23118
+    },
+    "nonmanifold": {
+      "budget": 512,
+      "pool_count": 1043708,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 1.547542897681975,
+      "selected_area": 0.000884109515237259,
+      "area_fraction": 0.000571298874209913,
+      "query_start": 23118,
+      "query_stop": 26190
+    },
+    "high_variation": {
+      "budget": 1024,
+      "pool_count": 41736,
+      "selected_count": 1024,
+      "underfilled": false,
+      "pool_area": 0.05730086429534621,
+      "selected_area": 0.001653950628124942,
+      "area_fraction": 0.02886432252749232,
+      "query_start": 26190,
+      "query_stop": 32334
+    },
+    "octant_0": {
+      "budget": 512,
+      "pool_count": 485877,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 0.724641791162463,
+      "selected_area": 0.0008619760252394396,
+      "area_fraction": 0.0011895201681049426,
+      "query_start": 32334,
+      "query_stop": 35406
+    },
+    "octant_1": {
+      "budget": 512,
+      "pool_count": 699531,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 1.0443385291440135,
+      "selected_area": 0.0008789085085327607,
+      "area_fraction": 0.0008415934910044479,
+      "query_start": 35406,
+      "query_stop": 38478
+    },
+    "octant_2": {
+      "budget": 512,
+      "pool_count": 361269,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 0.5632546068820801,
+      "selected_area": 0.0008710180923711482,
+      "area_fraction": 0.0015464020741751338,
+      "query_start": 38478,
+      "query_stop": 41550
+    },
+    "octant_3": {
+      "budget": 512,
+      "pool_count": 671281,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 1.0307543729374844,
+      "selected_area": 0.0008991589383430822,
+      "area_fraction": 0.0008723309470719233,
+      "query_start": 41550,
+      "query_stop": 44622
+    },
+    "octant_4": {
+      "budget": 512,
+      "pool_count": 521453,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 0.7752595006204318,
+      "selected_area": 0.0008664998869070071,
+      "area_fraction": 0.0011176901233890802,
+      "query_start": 44622,
+      "query_stop": 47694
+    },
+    "octant_5": {
+      "budget": 512,
+      "pool_count": 613703,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 0.8848363340843792,
+      "selected_area": 0.000870987917299794,
+      "area_fraction": 0.000984349177072486,
+      "query_start": 47694,
+      "query_stop": 50766
+    },
+    "octant_6": {
+      "budget": 512,
+      "pool_count": 389547,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 0.5985727537808956,
+      "selected_area": 0.0008669097326960988,
+      "area_fraction": 0.001448294676328396,
+      "query_start": 50766,
+      "query_stop": 53838
+    },
+    "octant_7": {
+      "budget": 512,
+      "pool_count": 430923,
+      "selected_count": 512,
+      "underfilled": false,
+      "pool_area": 0.6562988410858297,
+      "selected_area": 0.0008690072681617445,
+      "area_fraction": 0.001324103005764865,
+      "query_start": 53838,
+      "query_stop": 56910
+    }
+  },
+  "measurements": {
+    "material_suitability": "BLOCKED",
+    "regions": {
+      "global": {
+        "all": {
+          "samples": 6144,
+          "RGB": {
+            "rmse": 0.008063139294580916,
+            "p95_abs": 0.014362164427207808,
+            "max_abs": 0.13502880889757612,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00013970253375508412,
+              "p95_abs": 0.0002806279406490773,
+              "max_abs": 0.0009828465821760744,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.0794794300442196e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0010940235435962231,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.8594487796711406e-05,
+              "p95_abs": 0.00010036230087280247,
+              "max_abs": 0.000686347484588623,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 2588,
+            "original_face_id": 1857110,
+            "kind": 2,
+            "channel": 0,
+            "absolute_error": 0.13502880889757612
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.008855356816289784,
+            "p95_abs": 0.016324970100204672,
+            "max_abs": 0.13502880889757612,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001535278862207552,
+              "p95_abs": 0.0003218176096402145,
+              "max_abs": 0.0009828465821760744,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.0106104072214115e-05,
+              "p95_abs": 1.1305171251252194e-05,
+              "max_abs": 0.0010940235435962231,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.977172882169894e-05,
+              "p95_abs": 0.00013968944549560538,
+              "max_abs": 0.000686347484588623,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 2588,
+            "original_face_id": 1857110,
+            "kind": 2,
+            "channel": 0,
+            "absolute_error": 0.13502880889757612
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.006764876124541397,
+            "p95_abs": 0.011476233022740066,
+            "max_abs": 0.12148404657474593,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001185279418571387,
+              "p95_abs": 0.00023460143476995062,
+              "max_abs": 0.0005923193943294734,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 1.4771125760343142e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.00025777037739749264,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 2.6663100527957956e-05,
+              "p95_abs": 5.642473697662327e-05,
+              "max_abs": 0.00032073259353637695,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 2589,
+            "original_face_id": 1857110,
+            "kind": 3,
+            "channel": 0,
+            "absolute_error": 0.12148404657474593
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 2048,
+          "RGB": {
+            "rmse": 0.007384771820817112,
+            "p95_abs": 0.01260179788335051,
+            "max_abs": 0.12631050150590278,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001271602907404937,
+              "p95_abs": 0.0002448146833762564,
+              "max_abs": 0.0007649263547341377,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 1.7975416938941912e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.00029836114048953366,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.701111884677537e-05,
+              "p95_abs": 7.688701152801479e-05,
+              "max_abs": 0.0005193948745727539,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 2591,
+            "original_face_id": 1857110,
+            "kind": 5,
+            "channel": 0,
+            "absolute_error": 0.12631050150590278
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "brick": {
+        "all": {
+          "samples": 4686,
+          "RGB": {
+            "rmse": 0.0063943454065598735,
+            "p95_abs": 0.013241319719109534,
+            "max_abs": 0.055552834201299306,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00014091896222964456,
+              "p95_abs": 0.0003007325116618574,
+              "max_abs": 0.0006467308680134863,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.839605013871763e-05,
+              "p95_abs": 5.626197457309079e-05,
+              "max_abs": 0.0003649991333484204,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 8.066109559879787e-05,
+              "p95_abs": 0.00019872188568115234,
+              "max_abs": 0.000512242317199707,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 10674,
+            "original_face_id": 3843344,
+            "kind": 0,
+            "channel": 1,
+            "absolute_error": 0.055552834201299306
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 2343,
+          "RGB": {
+            "rmse": 0.007144352685219824,
+            "p95_abs": 0.014355386520972957,
+            "max_abs": 0.055552834201299306,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00015931513605597369,
+              "p95_abs": 0.0003546228230538816,
+              "max_abs": 0.0006467308680134863,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.702167009439796e-05,
+              "p95_abs": 8.694346547122311e-05,
+              "max_abs": 0.0003649991333484204,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 9.997546627334013e-05,
+              "p95_abs": 0.00025997757911682177,
+              "max_abs": 0.000512242317199707,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 10674,
+            "original_face_id": 3843344,
+            "kind": 0,
+            "channel": 1,
+            "absolute_error": 0.055552834201299306
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 781,
+          "RGB": {
+            "rmse": 0.005209012432006726,
+            "p95_abs": 0.011053062516972726,
+            "max_abs": 0.031873682853925445,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00010991032267164084,
+              "p95_abs": 0.0002029900328329802,
+              "max_abs": 0.00042582860389529174,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 1.7434203167234676e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.00021837170720095944,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.9985473603938094e-05,
+              "p95_abs": 0.0001055002212524414,
+              "max_abs": 0.0002664923667907715,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 10215,
+            "original_face_id": 3843169,
+            "kind": 3,
+            "channel": 1,
+            "absolute_error": 0.031873682853925445
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1562,
+          "RGB": {
+            "rmse": 0.005703804987950429,
+            "p95_abs": 0.012045375103880304,
+            "max_abs": 0.04182961372067978,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00012434771155090782,
+              "p95_abs": 0.0002496721708871457,
+              "max_abs": 0.0005114906647781879,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.089074442332116e-05,
+              "p95_abs": 2.0281630754426152e-05,
+              "max_abs": 0.00034300501942630124,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 6.104569759673454e-05,
+              "p95_abs": 0.00014649033546447704,
+              "max_abs": 0.0005108118057250977,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 10709,
+            "original_face_id": 3843349,
+            "kind": 5,
+            "channel": 1,
+            "absolute_error": 0.04182961372067978
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "foliage": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.006590340615519005,
+            "p95_abs": 0.014619633766390583,
+            "max_abs": 0.06687319795402002,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00013238263057252142,
+              "p95_abs": 0.0002589518093577624,
+              "max_abs": 0.0008676302217486352,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.9911779964748926e-05,
+              "p95_abs": 1.4830785989716473e-05,
+              "max_abs": 0.00041912015080447507,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.428557138845778e-05,
+              "p95_abs": 0.00011187195777893064,
+              "max_abs": 0.0006058216094970703,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 13620,
+            "original_face_id": 3906426,
+            "kind": 0,
+            "channel": 0,
+            "absolute_error": 0.06687319795402002
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.007784022765363024,
+            "p95_abs": 0.0172411992772785,
+            "max_abs": 0.06687319795402002,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00014291874944384053,
+              "p95_abs": 0.0002829412891719528,
+              "max_abs": 0.0008676302217486352,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.344787201121869e-05,
+              "p95_abs": 5.118067860598874e-05,
+              "max_abs": 0.00041912015080447507,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 6.094510627217584e-05,
+              "p95_abs": 0.0001254826784133911,
+              "max_abs": 0.0006038546562194824,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 13620,
+            "original_face_id": 3906426,
+            "kind": 0,
+            "channel": 0,
+            "absolute_error": 0.06687319795402002
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.004471694359306339,
+            "p95_abs": 0.009393196159360143,
+            "max_abs": 0.02628951391011758,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00011456166236704982,
+              "p95_abs": 0.000221875019472003,
+              "max_abs": 0.00048052285039602225,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.0414712945714323e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.00035188611149783444,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.1313004333887716e-05,
+              "p95_abs": 7.28785991668701e-05,
+              "max_abs": 0.0004913806915283203,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 13215,
+            "original_face_id": 3905009,
+            "kind": 3,
+            "channel": 1,
+            "absolute_error": 0.02628951391011758
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.005423396301822084,
+            "p95_abs": 0.012329266051615249,
+            "max_abs": 0.036331391320070905,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00012399452397531192,
+              "p95_abs": 0.00022747513923831647,
+              "max_abs": 0.0006108071951734871,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.853241213087548e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.00039772208333010983,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.9152097122889016e-05,
+              "p95_abs": 0.00010048449039459228,
+              "max_abs": 0.0006058216094970703,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 11123,
+            "original_face_id": 1400468,
+            "kind": 5,
+            "channel": 0,
+            "absolute_error": 0.036331391320070905
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "rear_x": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.0092685341291703,
+            "p95_abs": 0.017468807206762735,
+            "max_abs": 0.12247842604128051,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00014072793374757432,
+              "p95_abs": 0.0002864095009704158,
+              "max_abs": 0.0009747461712527126,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.068304074337307e-05,
+              "p95_abs": 2.655799984927485e-05,
+              "max_abs": 0.0006356042206286938,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.261174721220494e-05,
+              "p95_abs": 0.00012307763099670408,
+              "max_abs": 0.0004673004150390625,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 16422,
+            "original_face_id": 883048,
+            "kind": 0,
+            "channel": 1,
+            "absolute_error": 0.12247842604128051
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.009911210384264861,
+            "p95_abs": 0.01886444954215666,
+            "max_abs": 0.12247842604128051,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001566897373824552,
+              "p95_abs": 0.00032967563076680904,
+              "max_abs": 0.0009747461712527126,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.7901385697088336e-05,
+              "p95_abs": 6.578381657595944e-05,
+              "max_abs": 0.0006356042206286938,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 6.23715041601104e-05,
+              "p95_abs": 0.0001535266637802124,
+              "max_abs": 0.0004673004150390625,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 16422,
+            "original_face_id": 883048,
+            "kind": 0,
+            "channel": 1,
+            "absolute_error": 0.12247842604128051
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.00833905260772863,
+            "p95_abs": 0.014912579449489177,
+            "max_abs": 0.0908501302710028,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00011497824186483375,
+              "p95_abs": 0.00022029672311190893,
+              "max_abs": 0.0004932617716099173,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 2.477794612873388e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0002948444664477856,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.779608727735717e-05,
+              "p95_abs": 8.159577846527082e-05,
+              "max_abs": 0.0002778172492980957,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 16005,
+            "original_face_id": 732190,
+            "kind": 3,
+            "channel": 0,
+            "absolute_error": 0.0908501302710028
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.008694776511895612,
+            "p95_abs": 0.01619820471382746,
+            "max_abs": 0.09343305692279052,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00012639440358634048,
+              "p95_abs": 0.00024317112458674615,
+              "max_abs": 0.0005478802317361385,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.487896182012608e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0006136697113513501,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.188566497779469e-05,
+              "p95_abs": 9.963214397430418e-05,
+              "max_abs": 0.000339508056640625,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 16006,
+            "original_face_id": 732190,
+            "kind": 4,
+            "channel": 0,
+            "absolute_error": 0.09343305692279052
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "backfacing_x": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.008902090243424754,
+            "p95_abs": 0.018804674476764593,
+            "max_abs": 0.0922268651125332,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001387354027890681,
+              "p95_abs": 0.00027843258633083106,
+              "max_abs": 0.0007863814075085372,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.279252747423509e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0005268853485583813,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.538863982938988e-05,
+              "p95_abs": 9.028315544128411e-05,
+              "max_abs": 0.0004163980484008789,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 19680,
+            "original_face_id": 1808549,
+            "kind": 0,
+            "channel": 1,
+            "absolute_error": 0.0922268651125332
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.009460381600812353,
+            "p95_abs": 0.01978028578666593,
+            "max_abs": 0.0922268651125332,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00015664241426768086,
+              "p95_abs": 0.00033139446661379566,
+              "max_abs": 0.0007863814075085372,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.009829856657642e-05,
+              "p95_abs": 2.6936489343598602e-05,
+              "max_abs": 0.0005268853485583813,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.6892627177254565e-05,
+              "p95_abs": 0.00013245642185211182,
+              "max_abs": 0.0004163980484008789,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 19680,
+            "original_face_id": 1808549,
+            "kind": 0,
+            "channel": 1,
+            "absolute_error": 0.0922268651125332
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.0077501539039660184,
+            "p95_abs": 0.01666876444016096,
+            "max_abs": 0.06203716985865171,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00011214405192990206,
+              "p95_abs": 0.00021660986005599055,
+              "max_abs": 0.00038274323507948225,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 1.8763361762705858e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0002478760063647778,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 2.502110301832024e-05,
+              "p95_abs": 4.2644143104553185e-05,
+              "max_abs": 0.00023031234741210938,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 18573,
+            "original_face_id": 1077601,
+            "kind": 3,
+            "channel": 0,
+            "absolute_error": 0.06203716985865171
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.008570936896814216,
+            "p95_abs": 0.01844491654080199,
+            "max_abs": 0.06895986506418605,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00012103356083374145,
+              "p95_abs": 0.00022573727967255188,
+              "max_abs": 0.0005549427418577522,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 2.5262766677956028e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0004176300346850903,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.181511492772594e-05,
+              "p95_abs": 6.981492042541494e-05,
+              "max_abs": 0.0004150867462158203,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 19684,
+            "original_face_id": 1808549,
+            "kind": 4,
+            "channel": 1,
+            "absolute_error": 0.06895986506418605
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "boundary": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.007096332977160168,
+            "p95_abs": 0.015369774073785675,
+            "max_abs": 0.07141562487118369,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00013205581451454767,
+              "p95_abs": 0.0002501121465888843,
+              "max_abs": 0.0007100229099000841,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.7350299031707225e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.001684824782609895,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.486712907419808e-05,
+              "p95_abs": 9.767413139343255e-05,
+              "max_abs": 0.0005104541778564453,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 21390,
+            "original_face_id": 2387603,
+            "kind": 0,
+            "channel": 0,
+            "absolute_error": 0.07141562487118369
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.007804935885365663,
+            "p95_abs": 0.017173252611887495,
+            "max_abs": 0.07141562487118369,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00013875644187996035,
+              "p95_abs": 0.0002770289260502011,
+              "max_abs": 0.0007100229099000841,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 5.971158865208183e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.001684824782609895,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.1500906568107705e-05,
+              "p95_abs": 0.00011570751667022705,
+              "max_abs": 0.0005104541778564453,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 21390,
+            "original_face_id": 2387603,
+            "kind": 0,
+            "channel": 0,
+            "absolute_error": 0.07141562487118369
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.006047009296518411,
+            "p95_abs": 0.012193577309090098,
+            "max_abs": 0.06154983018482685,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00011973405529077905,
+              "p95_abs": 0.00021549434952475497,
+              "max_abs": 0.00046451294967709487,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 2.9160180715346142e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.00034938271641726804,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.319822260232528e-05,
+              "p95_abs": 5.110502243041989e-05,
+              "max_abs": 0.0002707839012145996,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 21393,
+            "original_face_id": 2387603,
+            "kind": 3,
+            "channel": 0,
+            "absolute_error": 0.06154983018482685
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.00643545866198359,
+            "p95_abs": 0.013963774758416503,
+            "max_abs": 0.060458731793610276,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00012754633353544105,
+              "p95_abs": 0.00023030236099884276,
+              "max_abs": 0.0006771898892316073,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.086719385475978e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0004114311516284497,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.885359386337438e-05,
+              "p95_abs": 7.99238681793211e-05,
+              "max_abs": 0.00046521425247192383,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 21394,
+            "original_face_id": 2387603,
+            "kind": 4,
+            "channel": 0,
+            "absolute_error": 0.060458731793610276
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "nonmanifold": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.0063723267662523595,
+            "p95_abs": 0.013787615450151211,
+            "max_abs": 0.09848088065719518,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00012684339988105616,
+              "p95_abs": 0.00024057190950997544,
+              "max_abs": 0.0006669599510337263,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.058465708048777e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.000517229396104768,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.686637700765639e-05,
+              "p95_abs": 9.071230888366697e-05,
+              "max_abs": 0.0005997419357299805,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 25609,
+            "original_face_id": 3756966,
+            "kind": 1,
+            "channel": 0,
+            "absolute_error": 0.09848088065719518
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.006818420094610768,
+            "p95_abs": 0.014578926232964196,
+            "max_abs": 0.09848088065719518,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00013961359749442597,
+              "p95_abs": 0.00028190044888332864,
+              "max_abs": 0.0006669599510337263,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.515288560727182e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.000517229396104768,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.7551331324118544e-05,
+              "p95_abs": 0.00012031197547912598,
+              "max_abs": 0.0005997419357299805,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 25609,
+            "original_face_id": 3756966,
+            "kind": 1,
+            "channel": 0,
+            "absolute_error": 0.09848088065719518
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.005602514467949228,
+            "p95_abs": 0.011852045636154718,
+            "max_abs": 0.04488874037924062,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00010593497847080416,
+              "p95_abs": 0.00017760528628286352,
+              "max_abs": 0.00034582333812294906,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 2.3052113228632713e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.00029907639622683835,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 2.555783525895486e-05,
+              "p95_abs": 4.422366619110106e-05,
+              "max_abs": 0.00021326541900634766,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 25611,
+            "original_face_id": 3756966,
+            "kind": 3,
+            "channel": 0,
+            "absolute_error": 0.04488874037924062
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.006032352956020615,
+            "p95_abs": 0.0127594972576932,
+            "max_abs": 0.06772523528777441,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00011583911058165237,
+              "p95_abs": 0.0001974727425681464,
+              "max_abs": 0.0004333747614714355,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 2.6210221942275367e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0005003612816333325,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.597967209608379e-05,
+              "p95_abs": 6.483197212219237e-05,
+              "max_abs": 0.0004941821098327637,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 25612,
+            "original_face_id": 3756966,
+            "kind": 4,
+            "channel": 0,
+            "absolute_error": 0.06772523528777441
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "high_variation": {
+        "all": {
+          "samples": 6144,
+          "RGB": {
+            "rmse": 0.019817114381887806,
+            "p95_abs": 0.04396880908240955,
+            "max_abs": 0.15647428701856536,
+            "pass": false
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001615512483750296,
+              "p95_abs": 0.0003371428325613065,
+              "max_abs": 0.0010492966807055324,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 8.569963534363845e-05,
+              "p95_abs": 0.00016081448197360313,
+              "max_abs": 0.0008978050529956372,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 6.711931280499806e-05,
+              "p95_abs": 0.0001513957977294922,
+              "max_abs": 0.0010671615600585938,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 29335,
+            "original_face_id": 2045193,
+            "kind": 1,
+            "channel": 0,
+            "absolute_error": 0.15647428701856536
+          },
+          "pass_gate": false
+        },
+        "corners": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.02284291417587222,
+            "p95_abs": 0.052302825181868164,
+            "max_abs": 0.15647428701856536,
+            "pass": false
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00017084276602265824,
+              "p95_abs": 0.00036893101116447144,
+              "max_abs": 0.0010492966807055324,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 9.105792112307237e-05,
+              "p95_abs": 0.00017988796830172845,
+              "max_abs": 0.0008863013565539868,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 7.388418512857878e-05,
+              "p95_abs": 0.00016520023345947257,
+              "max_abs": 0.0010671615600585938,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 29335,
+            "original_face_id": 2045193,
+            "kind": 1,
+            "channel": 0,
+            "absolute_error": 0.15647428701856536
+          },
+          "pass_gate": false
+        },
+        "centroids": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.01463427561668388,
+            "p95_abs": 0.03004220770765706,
+            "max_abs": 0.11854749503407658,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00014556536472350339,
+              "p95_abs": 0.00028866520644668864,
+              "max_abs": 0.0007675647333803624,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 7.14984680237401e-05,
+              "p95_abs": 0.00010595734715457196,
+              "max_abs": 0.0007099312126636059,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.177827478045125e-05,
+              "p95_abs": 0.00012851655483245828,
+              "max_abs": 0.0004200935363769531,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 26967,
+            "original_face_id": 476238,
+            "kind": 3,
+            "channel": 0,
+            "absolute_error": 0.11854749503407658
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 2048,
+          "RGB": {
+            "rmse": 0.016981606631663076,
+            "p95_abs": 0.03551464964221384,
+            "max_abs": 0.12844496447365206,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001546638412740324,
+              "p95_abs": 0.0003121471780309488,
+              "max_abs": 0.001002253249155268,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 8.390440709726412e-05,
+              "p95_abs": 0.0001408201038836985,
+              "max_abs": 0.0008978050529956372,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 6.313637910471598e-05,
+              "p95_abs": 0.0001405835151672363,
+              "max_abs": 0.000954747200012207,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 29338,
+            "original_face_id": 2045193,
+            "kind": 4,
+            "channel": 0,
+            "absolute_error": 0.12844496447365206
+          },
+          "pass_gate": true
+        },
+        "pass": false
+      },
+      "octant_0": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.008778964403641159,
+            "p95_abs": 0.016695413277578584,
+            "max_abs": 0.0811410851201089,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00014951905614705532,
+              "p95_abs": 0.00029793529012976574,
+              "max_abs": 0.0010388411878216118,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 5.005430434070822e-05,
+              "p95_abs": 1.3698297738984268e-05,
+              "max_abs": 0.0009802382767200024,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.7644600660548305e-05,
+              "p95_abs": 0.0001103609800338743,
+              "max_abs": 0.0005130171775817871,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 34340,
+            "original_face_id": 998231,
+            "kind": 2,
+            "channel": 1,
+            "absolute_error": 0.0811410851201089
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.009327694707010534,
+            "p95_abs": 0.018606009501652733,
+            "max_abs": 0.0811410851201089,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00016302097960831633,
+              "p95_abs": 0.0003345873241619245,
+              "max_abs": 0.0010388411878216118,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 5.687725809575067e-05,
+              "p95_abs": 5.307312607760739e-05,
+              "max_abs": 0.0009802382767200024,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.5297066336256464e-05,
+              "p95_abs": 0.00013054907321929932,
+              "max_abs": 0.0005130171775817871,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 34340,
+            "original_face_id": 998231,
+            "kind": 2,
+            "channel": 1,
+            "absolute_error": 0.0811410851201089
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.007937627320741816,
+            "p95_abs": 0.014189973062038966,
+            "max_abs": 0.0695130327317362,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00012588933913518246,
+              "p95_abs": 0.00023864940651264417,
+              "max_abs": 0.0008640042337196916,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.557359159472088e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0007443230926990063,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.312705542868862e-05,
+              "p95_abs": 5.588233470916744e-05,
+              "max_abs": 0.0003020167350769043,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 33171,
+            "original_face_id": 314502,
+            "kind": 3,
+            "channel": 1,
+            "absolute_error": 0.0695130327317362
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.008318584701673341,
+            "p95_abs": 0.014752024698522747,
+            "max_abs": 0.06947562456761164,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00013885251856084473,
+              "p95_abs": 0.0002713451196746006,
+              "max_abs": 0.0008477273926678151,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.506690811323507e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0009414952576159985,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.0922789464149854e-05,
+              "p95_abs": 8.809566497802713e-05,
+              "max_abs": 0.00040668249130249023,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 33172,
+            "original_face_id": 314502,
+            "kind": 4,
+            "channel": 1,
+            "absolute_error": 0.06947562456761164
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "octant_1": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.005597958904629396,
+            "p95_abs": 0.011616824773974022,
+            "max_abs": 0.07149344366469057,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00013814745104384792,
+              "p95_abs": 0.0002692180065628179,
+              "max_abs": 0.0009446369780766815,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 2.987568977415786e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0006587308228015454,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.40689273735174e-05,
+              "p95_abs": 0.00010208487510681146,
+              "max_abs": 0.0004309415817260742,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 36361,
+            "original_face_id": 2503803,
+            "kind": 1,
+            "channel": 0,
+            "absolute_error": 0.07149344366469057
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.006440610140276403,
+            "p95_abs": 0.013506195812784564,
+            "max_abs": 0.07149344366469057,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00015052878665209398,
+              "p95_abs": 0.00030860712779257824,
+              "max_abs": 0.0009446369780766815,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.6218490762246025e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0006587308228015454,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.417242632469123e-05,
+              "p95_abs": 0.00012940168380737305,
+              "max_abs": 0.0004309415817260742,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 36361,
+            "original_face_id": 2503803,
+            "kind": 1,
+            "channel": 0,
+            "absolute_error": 0.07149344366469057
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.004233517540341893,
+            "p95_abs": 0.00863572971090329,
+            "max_abs": 0.038548700226127774,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00011337396364937987,
+              "p95_abs": 0.00021838346494632216,
+              "max_abs": 0.0004281528357955665,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 1.3747860647377688e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.00018648322224612546,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 2.583564132450167e-05,
+              "p95_abs": 4.5692920684814434e-05,
+              "max_abs": 0.00019699335098266602,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 37185,
+            "original_face_id": 3174223,
+            "kind": 3,
+            "channel": 0,
+            "absolute_error": 0.038548700226127774
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.004777855988099742,
+            "p95_abs": 0.010007114840906602,
+            "max_abs": 0.03984166181751214,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00012976499318585188,
+              "p95_abs": 0.0002549469607606568,
+              "max_abs": 0.000838668650815174,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 2.480927392353418e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0005522173225879223,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.30226170582641e-05,
+              "p95_abs": 7.58320093154907e-05,
+              "max_abs": 0.00034183263778686523,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 37031,
+            "original_face_id": 3060484,
+            "kind": 5,
+            "channel": 0,
+            "absolute_error": 0.03984166181751214
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "octant_2": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.00931230949103946,
+            "p95_abs": 0.018716843934393698,
+            "max_abs": 0.09764728578266746,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00015649674509519442,
+              "p95_abs": 0.00033379976286823307,
+              "max_abs": 0.001142981445284471,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 5.051621028448795e-05,
+              "p95_abs": 4.7127562761262176e-05,
+              "max_abs": 0.0006695192635058911,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.3146128696848936e-05,
+              "p95_abs": 0.0001194626092910766,
+              "max_abs": 0.0005476474761962891,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 40518,
+            "original_face_id": 1312193,
+            "kind": 0,
+            "channel": 2,
+            "absolute_error": 0.09764728578266746
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.009821084083446978,
+            "p95_abs": 0.02009345914267682,
+            "max_abs": 0.09764728578266746,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001737231720997754,
+              "p95_abs": 0.0003653437501475253,
+              "max_abs": 0.001142981445284471,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 5.7322494206792356e-05,
+              "p95_abs": 8.855279088015866e-05,
+              "max_abs": 0.00066630061268802,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 6.451740836514974e-05,
+              "p95_abs": 0.00015209615230560303,
+              "max_abs": 0.0005476474761962891,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 40518,
+            "original_face_id": 1312193,
+            "kind": 0,
+            "channel": 2,
+            "absolute_error": 0.09764728578266746
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.008569058843732049,
+            "p95_abs": 0.015450407779655118,
+            "max_abs": 0.08107947972867746,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00012918959951397515,
+              "p95_abs": 0.0002556632467735596,
+              "max_abs": 0.0005555531655977517,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.5062082601180904e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0004380148231982739,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.2885627895804857e-05,
+              "p95_abs": 5.438625812530515e-05,
+              "max_abs": 0.0003216266632080078,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 40521,
+            "original_face_id": 1312193,
+            "kind": 3,
+            "channel": 2,
+            "absolute_error": 0.08107947972867746
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.008874818340441471,
+            "p95_abs": 0.016906534861454242,
+            "max_abs": 0.09261504280888339,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00014092234236723372,
+              "p95_abs": 0.00030103195369746865,
+              "max_abs": 0.0007186353736165017,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.5958515785675525e-05,
+              "p95_abs": 7.2490751742870405e-06,
+              "max_abs": 0.0006695192635058911,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.109813562805715e-05,
+              "p95_abs": 7.750093936920152e-05,
+              "max_abs": 0.000370025634765625,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 40522,
+            "original_face_id": 1312193,
+            "kind": 4,
+            "channel": 2,
+            "absolute_error": 0.09261504280888339
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "octant_3": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.006392617060327598,
+            "p95_abs": 0.012748057695737197,
+            "max_abs": 0.09024038759065095,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001405255767021224,
+              "p95_abs": 0.0002711979808941521,
+              "max_abs": 0.0007828165375235528,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.197031594184862e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0005559128105639966,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.141816636740497e-05,
+              "p95_abs": 0.0001172363758087158,
+              "max_abs": 0.0006187558174133301,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 41857,
+            "original_face_id": 2083080,
+            "kind": 1,
+            "channel": 1,
+            "absolute_error": 0.09024038759065095
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.007118455206440115,
+            "p95_abs": 0.01445657856964102,
+            "max_abs": 0.09024038759065095,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00015655368622229432,
+              "p95_abs": 0.00033460947945285966,
+              "max_abs": 0.0007828165375235528,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.0409804167029834e-05,
+              "p95_abs": 1.1886316537812469e-05,
+              "max_abs": 0.0005559128105639966,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 6.348187551112483e-05,
+              "p95_abs": 0.0001487135887145996,
+              "max_abs": 0.0006187558174133301,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 41857,
+            "original_face_id": 2083080,
+            "kind": 1,
+            "channel": 1,
+            "absolute_error": 0.09024038759065095
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.005329307541376449,
+            "p95_abs": 0.010251287138536777,
+            "max_abs": 0.051521379937394085,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001105563099793862,
+              "p95_abs": 0.00019563001171490554,
+              "max_abs": 0.00043771146504013246,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 1.0509181410593154e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.00013647492527957272,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 2.7229101925070817e-05,
+              "p95_abs": 6.920993328094482e-05,
+              "max_abs": 0.00018393993377685547,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 41571,
+            "original_face_id": 1823496,
+            "kind": 3,
+            "channel": 1,
+            "absolute_error": 0.051521379937394085
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.0056909834313189555,
+            "p95_abs": 0.01112296121785255,
+            "max_abs": 0.05351961476541156,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001279350588368189,
+              "p95_abs": 0.00024099612403232976,
+              "max_abs": 0.0007299733528475314,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 2.369922884985774e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.00031952078938479733,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.893390199197268e-05,
+              "p95_abs": 9.345412254333489e-05,
+              "max_abs": 0.0003013014793395996,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 41572,
+            "original_face_id": 1823496,
+            "kind": 4,
+            "channel": 1,
+            "absolute_error": 0.05351961476541156
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "octant_4": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.007228913749857172,
+            "p95_abs": 0.014310266934819349,
+            "max_abs": 0.0837708397744319,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00014229501597482717,
+              "p95_abs": 0.00029206199162444416,
+              "max_abs": 0.0007991703873108178,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.218543458904509e-05,
+              "p95_abs": 1.774545311923327e-05,
+              "max_abs": 0.000657300311326936,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.347857831032919e-05,
+              "p95_abs": 9.327530860900877e-05,
+              "max_abs": 0.0004578232765197754,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 46471,
+            "original_face_id": 972179,
+            "kind": 1,
+            "channel": 0,
+            "absolute_error": 0.0837708397744319
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.007759969500612185,
+            "p95_abs": 0.016138259915714673,
+            "max_abs": 0.0837708397744319,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001585859407607261,
+              "p95_abs": 0.0003205873849060424,
+              "max_abs": 0.0007991703873108178,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.6786616652745504e-05,
+              "p95_abs": 4.5726853609040496e-05,
+              "max_abs": 0.000657300311326936,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.444970174173925e-05,
+              "p95_abs": 0.00013212859630584717,
+              "max_abs": 0.0004578232765197754,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 46471,
+            "original_face_id": 972179,
+            "kind": 1,
+            "channel": 0,
+            "absolute_error": 0.0837708397744319
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.006360545962523088,
+            "p95_abs": 0.011314292199677244,
+            "max_abs": 0.07284507522311967,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00011406231444872676,
+              "p95_abs": 0.00021935915776566045,
+              "max_abs": 0.0004055187868493647,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.356597754161602e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0004323523819446118,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 2.5145500483571247e-05,
+              "p95_abs": 5.2115321159362774e-05,
+              "max_abs": 0.00022906064987182617,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 46473,
+            "original_face_id": 972179,
+            "kind": 3,
+            "channel": 0,
+            "absolute_error": 0.07284507522311967
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.006798354180409469,
+            "p95_abs": 0.012278011895179481,
+            "max_abs": 0.07271811036461062,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001285078130491764,
+              "p95_abs": 0.00025387010739222544,
+              "max_abs": 0.0005695892445351034,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.8626597099941715e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0005622905075549633,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.013066857424671e-05,
+              "p95_abs": 6.87301158905029e-05,
+              "max_abs": 0.00025790929794311523,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 46474,
+            "original_face_id": 972179,
+            "kind": 4,
+            "channel": 0,
+            "absolute_error": 0.07271811036461062
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "octant_5": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.007786353453081262,
+            "p95_abs": 0.014949310826825643,
+            "max_abs": 0.08152430584403508,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00014305703415958077,
+              "p95_abs": 0.0002904325190888754,
+              "max_abs": 0.0008280193846280724,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.294111832448301e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0006427567780017407,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.651586470979258e-05,
+              "p95_abs": 0.00010544061660766602,
+              "max_abs": 0.0005117058753967285,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 48558,
+            "original_face_id": 2349272,
+            "kind": 0,
+            "channel": 0,
+            "absolute_error": 0.08152430584403508
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.008362011779116699,
+            "p95_abs": 0.01638315686483324,
+            "max_abs": 0.08152430584403508,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00015414066036191149,
+              "p95_abs": 0.0003187857632133216,
+              "max_abs": 0.0008280193846280724,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.2842317047980616e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0006427567780017407,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.4468358070514605e-05,
+              "p95_abs": 0.00013141334056854248,
+              "max_abs": 0.0005117058753967285,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 48558,
+            "original_face_id": 2349272,
+            "kind": 0,
+            "channel": 0,
+            "absolute_error": 0.08152430584403508
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.006895792417570872,
+            "p95_abs": 0.011709261684875724,
+            "max_abs": 0.07696586265580796,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00012178938367108657,
+              "p95_abs": 0.0002278845078967549,
+              "max_abs": 0.0004929863329584748,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 9.810085464111852e-06,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0001225870430469067,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 2.9385800754768934e-05,
+              "p95_abs": 5.4183602333068845e-05,
+              "max_abs": 0.00028586387634277344,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 48561,
+            "original_face_id": 2349272,
+            "kind": 3,
+            "channel": 0,
+            "absolute_error": 0.07696586265580796
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.007295276709261125,
+            "p95_abs": 0.013176098527361436,
+            "max_abs": 0.07927226946587734,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001354274836025007,
+              "p95_abs": 0.00028048750302559107,
+              "max_abs": 0.0006436030793543011,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 2.1308138021344005e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0003020566284656079,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.0114976252679014e-05,
+              "p95_abs": 9.526908397674533e-05,
+              "max_abs": 0.0005002021789550781,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 48562,
+            "original_face_id": 2349272,
+            "kind": 4,
+            "channel": 0,
+            "absolute_error": 0.07927226946587734
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "octant_6": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.010942118565458701,
+            "p95_abs": 0.018647841347683075,
+            "max_abs": 0.13191941056397,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001436512766537673,
+              "p95_abs": 0.0002908198328645937,
+              "max_abs": 0.000928755599873051,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.7196500763138245e-05,
+              "p95_abs": 1.0744887590363435e-05,
+              "max_abs": 0.0006826918900012524,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.5425973578118284e-05,
+              "p95_abs": 0.00010694563388824457,
+              "max_abs": 0.00046074390411376953,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 52278,
+            "original_face_id": 891347,
+            "kind": 0,
+            "channel": 0,
+            "absolute_error": 0.13191941056397
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.011469131012768216,
+            "p95_abs": 0.020351944298023526,
+            "max_abs": 0.13191941056397,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.0001586031988387292,
+              "p95_abs": 0.00031889170115618413,
+              "max_abs": 0.000928755599873051,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 5.317078404643222e-05,
+              "p95_abs": 3.6398726701691864e-05,
+              "max_abs": 0.0006826918900012524,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.477525866784253e-05,
+              "p95_abs": 0.00013048946857452393,
+              "max_abs": 0.00046074390411376953,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 52278,
+            "original_face_id": 891347,
+            "kind": 0,
+            "channel": 0,
+            "absolute_error": 0.13191941056397
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.010266581052470532,
+            "p95_abs": 0.014230840056003953,
+            "max_abs": 0.10685792861695359,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00011868670182188537,
+              "p95_abs": 0.00024190230526300525,
+              "max_abs": 0.00042415606496660417,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.510620454713804e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0005064409554004223,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.0554904834244354e-05,
+              "p95_abs": 5.567967891693112e-05,
+              "max_abs": 0.00023692846298217773,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 52167,
+            "original_face_id": 874805,
+            "kind": 3,
+            "channel": 0,
+            "absolute_error": 0.10685792861695359
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.010448783831917089,
+            "p95_abs": 0.016153741740935274,
+            "max_abs": 0.11204945452551196,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00013088674201490688,
+              "p95_abs": 0.00027028612150615454,
+              "max_abs": 0.0005745314241926223,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.272713236145718e-05,
+              "p95_abs": 4.01322245602298e-06,
+              "max_abs": 0.0005566876709460766,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 3.497517231767771e-05,
+              "p95_abs": 7.863640785217275e-05,
+              "max_abs": 0.0002982616424560547,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 52168,
+            "original_face_id": 874805,
+            "kind": 4,
+            "channel": 0,
+            "absolute_error": 0.11204945452551196
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      },
+      "octant_7": {
+        "all": {
+          "samples": 3072,
+          "RGB": {
+            "rmse": 0.01056201253783799,
+            "p95_abs": 0.01953801946693006,
+            "max_abs": 0.10918828664531838,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00013830768862542462,
+              "p95_abs": 0.00028234785042740776,
+              "max_abs": 0.0006508655327911526,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 4.884746058096169e-05,
+              "p95_abs": 4.5214253663972115e-05,
+              "max_abs": 0.0006723206818103344,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.78527197436054e-05,
+              "p95_abs": 9.707808494567865e-05,
+              "max_abs": 0.0005458593368530273,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 54121,
+            "original_face_id": 2087076,
+            "kind": 1,
+            "channel": 0,
+            "absolute_error": 0.10918828664531838
+          },
+          "pass_gate": true
+        },
+        "corners": {
+          "samples": 1536,
+          "RGB": {
+            "rmse": 0.011096059227522373,
+            "p95_abs": 0.02179980539672003,
+            "max_abs": 0.10918828664531838,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00015361605156930395,
+              "p95_abs": 0.0003298130445023105,
+              "max_abs": 0.0006508655327911526,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 5.880708799857869e-05,
+              "p95_abs": 6.629045605655026e-05,
+              "max_abs": 0.0006723206818103344,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 5.6135841127346834e-05,
+              "p95_abs": 0.00011897087097167969,
+              "max_abs": 0.0005458593368530273,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 54121,
+            "original_face_id": 2087076,
+            "kind": 1,
+            "channel": 0,
+            "absolute_error": 0.10918828664531838
+          },
+          "pass_gate": true
+        },
+        "centroids": {
+          "samples": 512,
+          "RGB": {
+            "rmse": 0.00970196682717266,
+            "p95_abs": 0.0166781156758996,
+            "max_abs": 0.09525665327988975,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00011510232688443686,
+              "p95_abs": 0.0002207152449250259,
+              "max_abs": 0.0004179670190046579,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.062531128307959e-05,
+              "p95_abs": 1.9161063432648784e-05,
+              "max_abs": 0.0003005069077014477,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 2.8510322776808763e-05,
+              "p95_abs": 5.460679531097411e-05,
+              "max_abs": 0.00024390220642089844,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 54123,
+            "original_face_id": 2087076,
+            "kind": 3,
+            "channel": 0,
+            "absolute_error": 0.09525665327988975
+          },
+          "pass_gate": true
+        },
+        "interiors": {
+          "samples": 1024,
+          "RGB": {
+            "rmse": 0.010144971701268305,
+            "p95_abs": 0.0171821833525796,
+            "max_abs": 0.09820399246487072,
+            "pass": true
+          },
+          "scalars": {
+            "metallic": {
+              "rmse": 0.00012395943054887662,
+              "p95_abs": 0.00024522843070598694,
+              "max_abs": 0.0006142423202822953,
+              "pass": true
+            },
+            "roughness": {
+              "rmse": 3.875381235084093e-05,
+              "p95_abs": 2.826269268985088e-05,
+              "max_abs": 0.0005085867226123364,
+              "pass": true
+            },
+            "alpha": {
+              "rmse": 4.166989464288493e-05,
+              "p95_abs": 8.099079132080052e-05,
+              "max_abs": 0.0003477334976196289,
+              "pass": true
+            }
+          },
+          "zero_support": 0,
+          "worst_RGB": {
+            "query_index": 54124,
+            "original_face_id": 2087076,
+            "kind": 4,
+            "channel": 0,
+            "absolute_error": 0.09820399246487072
+          },
+          "pass_gate": true
+        },
+        "pass": true
+      }
+    },
+    "failing_regions": [
+      "high_variation"
+    ],
+    "zero_support": 0,
+    "RGB_limits": {
+      "rmse": 0.02,
+      "p95_abs": 0.05,
+      "max_abs": 0.15
+    },
+    "scalar_RMSE_limit": 0.02,
+    "fixed_factors": {
+      "metallic": 0.00011082693761409814,
+      "roughness": 0.999995986777544,
+      "alpha": 1.0
+    },
+    "no_colour_or_factor_fit": true
+  },
+  "zero_support": 0,
+  "minimum_positive_neighbours": 1,
+  "minimum_raw_weight_sum": 0.22857944667339325,
+  "frozen_sampling": {
+    "seed": 20261022,
+    "draw_order": {
+      "generator": "PCG64",
+      "numpy": "2.5.3",
+      "selection_seed": "SeedSequence([seed,cohort_index,0])",
+      "interior_seed": "SeedSequence([seed,cohort_index,1])",
+      "pool_order": "ascending original face ID",
+      "selected_order": "ascending original face ID",
+      "per_face": [
+        "corner0",
+        "corner1",
+        "corner2",
+        "centroid",
+        "interior0",
+        "interior1"
+      ],
+      "interior_uniform_shape": "[selected_face,2_points,2_values], C order",
+      "interior_transform": "(1-sqrt(u),sqrt(u)*(1-v),sqrt(u)*v)",
+      "interior_endpoint_guard": "clip uniforms to [F64 epsilon,1-epsilon]",
+      "high_variation": "ceil(F/100) highest input span, stable original face ID ties",
+      "underfill": "retain available pool; no replacement, deletion or refill"
+    },
+    "thresholds": {
+      "rear_x_q25": -0.07365994900465012,
+      "center_x_median": 0.047806449234485626,
+      "high_variation_pool_count": 41736
+    },
+    "geometry_edge_counts": {
+      "unique": 6167053,
+      "boundary": 267652,
+      "nonmanifold": 387068,
+      "maximum_incidence": 4
+    },
+    "observed_material_errors_before_freeze": false
+  },
+  "private_array_files": {
+    "backfacing_x-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "29b4d460d50a32162fa825379c55f1e9fe32e5c4b0c0ffdc078a7dd73be02cff"
+    },
+    "barycentrics.npy": {
+      "bytes": 1365968,
+      "sha256": "73e68dcc260f01501a4449c24d1fa3869709ab64b64ba03aee1fdd471182cec7"
+    },
+    "boundary-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "d5ac542e5c774b781e4b25173de51faccbd1433275c88dcc195d0b46bc850c58"
+    },
+    "brick-selected-face-ids.npy": {
+      "bytes": 3252,
+      "sha256": "06167754d3c27f8257439f6cb7dc3db4c434ce388d2cb2f17568da2b7d1149ea"
+    },
+    "foliage-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "0159ec935f9eb81c53d206f88648c21606fa81a84beb47de1ecde41d5d5707ac"
+    },
+    "global-selected-face-ids.npy": {
+      "bytes": 4224,
+      "sha256": "2b16493e65dd81400445c9bc0e60f9a2fcd4fa445f78541d0b1aadb8641489c8"
+    },
+    "high_variation-selected-face-ids.npy": {
+      "bytes": 4224,
+      "sha256": "19abc1457020b348161df2182c95dbb1d4390bb527d8dca0ea3d3635aa9d6768"
+    },
+    "nonmanifold-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "86800c17a5bf760f59da0e9cc13db6c2a84a2cd25cefb1d37a4175db684c26ba"
+    },
+    "octant_0-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "c9a37d44150785b15e9939cb28ef494af5596d3d919149669d78fa753505dadf"
+    },
+    "octant_1-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "66fcf3c31242b4060c8d1e8b157cd58e00dde7843faad7f4a617e24215f0144d"
+    },
+    "octant_2-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "a124498120f2430b241ff5370e4fab32ea53e253303be1a55e98c0b18952a62a"
+    },
+    "octant_3-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "5bf42a654deb5b7c993f38a41562773982fb5e449593abd0fad79a7e5698b3ce"
+    },
+    "octant_4-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "374cb317b6a7bb658bd03f6d63b75f82792f9febcf0a0dc079dda10bc277e750"
+    },
+    "octant_5-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "918271d6e99f00db37ad680753a55901d22c73dafc1007c1ed5db832fbb05602"
+    },
+    "octant_6-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "8691acc0446470a8b5548f29db3439c92f52f238131570109b93baab2a88ae12"
+    },
+    "octant_7-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "003e164f54e6a238e4ff6dbdf19ccfd709452d312cee405c7a017e8c7ed73c20"
+    },
+    "positive_neighbours.npy": {
+      "bytes": 455408,
+      "sha256": "5b0455fc65809706e57975b459dab5e5c91a7d00454ce33d24fe4fde4d1a1ec0"
+    },
+    "query-faces.npy": {
+      "bytes": 227768,
+      "sha256": "1592ee652195ca9118f8d7ab29133d9612474b507720c6d9cf179fabc2829d62"
+    },
+    "query-kinds.npy": {
+      "bytes": 57038,
+      "sha256": "f3b26bbd4d86698cca7b8efd72e3570a28f8795b50cac5375f7bd2d17fa73469"
+    },
+    "raw_weight_sum.npy": {
+      "bytes": 227768,
+      "sha256": "9ce8bb26407350c81b0e67666f89ce8b0a014cbd3fead9516a752d488735050a"
+    },
+    "rear_x-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "055e21ed5d74852cf9a7a262da375543a6f1e3bf280853e7b5b552306057edf3"
+    },
+    "source_spatial.npy": {
+      "bytes": 1365968,
+      "sha256": "c10a9aaa2caee48ae13608e5e5a84032c3dcbadb4f93093e0d7094e3ef2bbc71"
+    },
+    "vertex_RGB.npy": {
+      "bytes": 1365968,
+      "sha256": "2f779ad9935d35efbf640fe0920b1f1e616f6ea6b03256c01e71eb068eb49f4d"
+    },
+    "world.npy": {
+      "bytes": 683048,
+      "sha256": "8d491ff7f5eaffe14fefc6de2ef007b24bd01ddb079eaa9c591e3221730e25a3"
+    }
+  },
+  "worker_result_sha256": "11ac45c5132cea9f638c94fbd4a597eaf6f6747520b5d591217a34fba27c6eb0",
+  "host_sha256": "21bfa91ef4263b538838a8c92e2902ffec26896419b2a986243fe90856aa2476",
+  "worker_seconds": 4.92200000000048,
+  "owned_execution_seconds": 6.015999999999622,
+  "host_elapsed_seconds": 6.32799999999952,
+  "peak_process_committed_bytes": 556781568,
+  "peak_job_committed_bytes": 557608960,
+  "resource_samples": [
+    {
+      "available_ram_bytes": 18082471936,
+      "disk_free_bytes": 113545629696,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 0.39099999999962165
+    },
+    {
+      "available_ram_bytes": 18053210112,
+      "disk_free_bytes": 113545629696,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 1.3909999999996217
+    },
+    {
+      "available_ram_bytes": 17865723904,
+      "disk_free_bytes": 113545629696,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 2.3909999999996217
+    },
+    {
+      "available_ram_bytes": 17729110016,
+      "disk_free_bytes": 113545629696,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 3.4069999999992433
+    },
+    {
+      "available_ram_bytes": 17783365632,
+      "disk_free_bytes": 113545629696,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 4.406999999999243
+    },
+    {
+      "available_ram_bytes": 17731276800,
+      "disk_free_bytes": 113543884800,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 5.406999999999243
+    }
+  ],
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "sources_unchanged": true,
+  "no_export_admission_GLB_Blender_or_rendering": true
+}

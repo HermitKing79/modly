@@ -1,0 +1,251 @@
+{
+  "schema": "modly.amd.brick-full-colour-glb-independent-outcome.v1",
+  "created_utc": "2026-10-21T17:00:56.7936784Z",
+  "classification": "BLOCKED",
+  "verification_classification": "PASS",
+  "reviewer": "/root/full_colour_review",
+  "scope": "Read-only verification of the existing phase-one population, results and source lineage, plus an independent F64 tuple oracle at its already saved worst location. Zero new source locations, zero SparseSampler calls, no candidate changes or retry.",
+  "mission_base": "1012a6c04976085c5cf8d4c6911d9010d0e8cc59",
+  "candidate_review_SHA256": "56574ad051f3193b442df4ef94a5a848eb57ab31cfed4c8174e6c47f6b553458",
+  "result_SHA256": "11ac45c5132cea9f638c94fbd4a597eaf6f6747520b5d591217a34fba27c6eb0",
+  "host_result_SHA256": "21bfa91ef4263b538838a8c92e2902ffec26896419b2a986243fe90856aa2476",
+  "frozen_sampling_SHA256": "202c940094796c50b9d1823c4f718fe88d9b116fad136f0774b8652e81c7f69d",
+  "private_readback_SHA256": "ba6b96ce939a9ccc444cfd535aa497f6a50cdf750ef2a7a34311be39493c8b09",
+  "private_verifier_SHA256": "a34128ea2a85878c4e93d2108a494f31ae09d598ef1f0889b823bcad994043f1",
+  "private_verification_host_SHA256": "102e2b16410fe066ad8ccd405b7519726db23e020cfb272be6787fb60f8840c3",
+  "source_vertices": 1957891,
+  "source_triangles": 4173584,
+  "required_regions": 16,
+  "saved_queries": 56910,
+  "saved_array_count": 24,
+  "artifact_files": {
+    "backfacing_x-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "29b4d460d50a32162fa825379c55f1e9fe32e5c4b0c0ffdc078a7dd73be02cff"
+    },
+    "barycentrics.npy": {
+      "bytes": 1365968,
+      "sha256": "73e68dcc260f01501a4449c24d1fa3869709ab64b64ba03aee1fdd471182cec7"
+    },
+    "boundary-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "d5ac542e5c774b781e4b25173de51faccbd1433275c88dcc195d0b46bc850c58"
+    },
+    "brick-selected-face-ids.npy": {
+      "bytes": 3252,
+      "sha256": "06167754d3c27f8257439f6cb7dc3db4c434ce388d2cb2f17568da2b7d1149ea"
+    },
+    "foliage-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "0159ec935f9eb81c53d206f88648c21606fa81a84beb47de1ecde41d5d5707ac"
+    },
+    "global-selected-face-ids.npy": {
+      "bytes": 4224,
+      "sha256": "2b16493e65dd81400445c9bc0e60f9a2fcd4fa445f78541d0b1aadb8641489c8"
+    },
+    "high_variation-selected-face-ids.npy": {
+      "bytes": 4224,
+      "sha256": "19abc1457020b348161df2182c95dbb1d4390bb527d8dca0ea3d3635aa9d6768"
+    },
+    "nonmanifold-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "86800c17a5bf760f59da0e9cc13db6c2a84a2cd25cefb1d37a4175db684c26ba"
+    },
+    "octant_0-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "c9a37d44150785b15e9939cb28ef494af5596d3d919149669d78fa753505dadf"
+    },
+    "octant_1-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "66fcf3c31242b4060c8d1e8b157cd58e00dde7843faad7f4a617e24215f0144d"
+    },
+    "octant_2-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "a124498120f2430b241ff5370e4fab32ea53e253303be1a55e98c0b18952a62a"
+    },
+    "octant_3-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "5bf42a654deb5b7c993f38a41562773982fb5e449593abd0fad79a7e5698b3ce"
+    },
+    "octant_4-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "374cb317b6a7bb658bd03f6d63b75f82792f9febcf0a0dc079dda10bc277e750"
+    },
+    "octant_5-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "918271d6e99f00db37ad680753a55901d22c73dafc1007c1ed5db832fbb05602"
+    },
+    "octant_6-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "8691acc0446470a8b5548f29db3439c92f52f238131570109b93baab2a88ae12"
+    },
+    "octant_7-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "003e164f54e6a238e4ff6dbdf19ccfd709452d312cee405c7a017e8c7ed73c20"
+    },
+    "positive_neighbours.npy": {
+      "bytes": 455408,
+      "sha256": "5b0455fc65809706e57975b459dab5e5c91a7d00454ce33d24fe4fde4d1a1ec0"
+    },
+    "query-faces.npy": {
+      "bytes": 227768,
+      "sha256": "1592ee652195ca9118f8d7ab29133d9612474b507720c6d9cf179fabc2829d62"
+    },
+    "query-kinds.npy": {
+      "bytes": 57038,
+      "sha256": "f3b26bbd4d86698cca7b8efd72e3570a28f8795b50cac5375f7bd2d17fa73469"
+    },
+    "raw_weight_sum.npy": {
+      "bytes": 227768,
+      "sha256": "9ce8bb26407350c81b0e67666f89ce8b0a014cbd3fead9516a752d488735050a"
+    },
+    "rear_x-selected-face-ids.npy": {
+      "bytes": 2176,
+      "sha256": "055e21ed5d74852cf9a7a262da375543a6f1e3bf280853e7b5b552306057edf3"
+    },
+    "source_spatial.npy": {
+      "bytes": 1365968,
+      "sha256": "c10a9aaa2caee48ae13608e5e5a84032c3dcbadb4f93093e0d7094e3ef2bbc71"
+    },
+    "vertex_RGB.npy": {
+      "bytes": 1365968,
+      "sha256": "2f779ad9935d35efbf640fe0920b1f1e616f6ea6b03256c01e71eb068eb49f4d"
+    },
+    "world.npy": {
+      "bytes": 683048,
+      "sha256": "8d491ff7f5eaffe14fefc6de2ef007b24bd01ddb079eaa9c591e3221730e25a3"
+    }
+  },
+  "verified_checks": [
+    "All original input identities freshly match pinned SHA256, size, mtime, inode and actual worker receipt; original mapping lineage and full geometry/material coordinate order independently checked.",
+    "All eight candidate source hashes, qualification-plan hash and focused-test log hash still match the prior independent candidate review.",
+    "All24 saved array sizes/hashes checked; explicit query/world/reference/prediction schemas and positive support-vector shapes checked. All56910 original face/position/barycentric/kind identities retained with exact original world coordinates and separate original region ranges.",
+    "All781 nominated brick faces retained; selected foliage IDs are from the authenticated4531-face nomination. All selected high-variation IDs independently belong to the exact highest41736 input corner-span pool, with stable original-ID ties.",
+    "Frozen cohort/count metadata matches the actual receipt, incidence totals agree with independent historical diagnosis and all16 regions have full declared budgets. Reviewed execution order and fresh file chronology establish query freeze before the saved reference/prediction evidence.",
+    "Original IEC decoding, F32 linear COLOR_0 rounding, linear barycentric interpolation and IEC encoding independently reproduce every saved prediction exactly without importing candidate implementation.",
+    "All64 all/corners/centroids/interiors region metric rows independently recomputed from saved samples. RGB and each fixed scalar metric match to better than1e-15, and all gate decisions agree.",
+    "No missing reference support, no unsupported sample removal, no factor/colour refitting, no pooled rescue, no changed gate, no qualified full colour array, no GLB or render artifact."
+  ],
+  "material_suitability": "BLOCKED",
+  "failing_regions": [
+    "high_variation"
+  ],
+  "passing_region_count": 15,
+  "high_variation": {
+    "all": {
+      "RGB": {
+        "rmse": 0.019817114381887806,
+        "p95_abs": 0.04396880908240955,
+        "max_abs": 0.15647428701856536
+      },
+      "pass": false
+    },
+    "corners": {
+      "RGB": {
+        "rmse": 0.02284291417587222,
+        "p95_abs": 0.052302825181868164,
+        "max_abs": 0.15647428701856536
+      },
+      "pass": false
+    },
+    "centroids": {
+      "RGB": {
+        "rmse": 0.01463427561668388,
+        "p95_abs": 0.03004220770765706,
+        "max_abs": 0.11854749503407658
+      },
+      "pass": true
+    },
+    "interiors": {
+      "RGB": {
+        "rmse": 0.016981606631663076,
+        "p95_abs": 0.03551464964221384,
+        "max_abs": 0.12844496447365206
+      },
+      "pass": true
+    }
+  },
+  "worst_saved_query": {
+    "query_index": 29335,
+    "source_face_id": 2045193,
+    "source_vertex_id": 985998,
+    "kind": "corner1",
+    "channel": "red",
+    "absolute_error": 0.15647428701856536,
+    "in_brick_nomination": false,
+    "in_foliage_nomination": false,
+    "geometric_octant": 1
+  },
+  "high_variation_max_gate_exceedance_queries": [
+    29335
+  ],
+  "high_variation_max_gate_exceedance_original_face_ids": [
+    2045193
+  ],
+  "all_fixed_scalar_channels_pass": true,
+  "worst_scalar_RMSE_by_channel": {
+    "metallic": 0.0001737231720997754,
+    "roughness": 9.105792112307237E-05,
+    "alpha": 9.997546627334013E-05
+  },
+  "zero_support": 0,
+  "independent_existing_query_oracle": {
+    "existing_query_index": 29335,
+    "max_absolute_error_vs_saved_F32": 3.120407093826216E-08,
+    "tolerance": 2E-06,
+    "implementation": "Independent tuple lookup by bounded original-coordinate scans; F64 weights and sequential accumulation at identical F32 grid; no SparseSampler import/call",
+    "private_numeric_payload_retained_in_readback": true
+  },
+  "actual_execution": {
+    "classification": "PASS",
+    "worker_seconds": 4.92200000000048,
+    "owned_seconds": 6.015999999999622,
+    "peak_process_committed_bytes": 556781568,
+    "peak_job_committed_bytes": 557608960,
+    "all_live_resource_floors_pass": true,
+    "natural_empty_job": true,
+    "forced_cleanup": false,
+    "watched_sources_unchanged": true
+  },
+  "independent_saved_data_verification": {
+    "classification": "PASS",
+    "worker_seconds": 1.9530000000013388,
+    "owned_seconds": 3.1090000000003783,
+    "peak_process_committed_bytes": 233164800,
+    "peak_job_committed_bytes": 234004480,
+    "process_and_job_cap_bytes": 6442450944,
+    "owned_deadline_seconds": 180,
+    "all_live_resource_floors_pass": true,
+    "natural_empty_job": true,
+    "forced_cleanup": false,
+    "new_locations": 0,
+    "SparseSampler_calls": 0
+  },
+  "outcome": "The fixed full-model vertex-colour approximation fails the predeclared source-material agreement gates in the input high-variation stratum. This is a measured CPU material-approximation failure, not a neural decoder or GPU fault. The other15 tested strata and all fixed scalar channels pass.",
+  "required_action": "Stop this mission before full-export admission, GLB writer/export, import or Blender rendering. Preserve the failed measurement; no retry, sample deletion, new fitting or gate relaxation.",
+  "limitations": [
+    "The failed high-variation pool is defined by input colour span; it has no complete semantic segmentation. Worst face2045193 belongs to neither nominated brick nor foliage patch, so it is not assigned a semantic surface label.",
+    "An all-cohort RMSE below0.02 cannot rescue the max0.156474287 failure, and its corner cohort independently fails RMSE, p95 and maximum. Other bounded cohorts passing do not establish exhaustive surface quality.",
+    "The F64 tuple oracle confirms the saved sampler result at the existing worst F32 query only; it does not claim measured native GPU bitwise parity.",
+    "Preservation AFTER and Git/publication checks are separate root-owned evidence."
+  ],
+  "blockers": [
+    "High-variation all cohort maximum0.156474287 exceeds0.15; corner cohort RMSE0.022842914 exceeds0.02, p95absolute0.052302825 exceeds0.05 and maximum0.156474287 exceeds0.15."
+  ],
+  "publication_review": {
+    "reviewed_utc": "2026-10-21T17:04:18.7967769Z",
+    "classification": "PASS_SOURCE_SAFE_REPORT_AND_RECEIPT",
+    "report_SHA256": "2d11b41c3a2363d5619c35a721d16988afcf03393785e2fd922c33019a55c52d",
+    "execution_summary_SHA256": "533ab40cd9d995c480846c35bd6ee103a25bf359eed45d932f9a74d51e345c5c",
+    "report_table_all16_rows_match_actual_metrics": true,
+    "execution_summary_measurements_regions_and_array_hashes_match_actual_receipt": true,
+    "source_safe_checks": [
+      "Reviewed all new public evidence JSON structures, report, Python sources and focused-test log. Public files contain source code/synthetic fixtures, counts, aggregate statistics, source/query/vertex IDs, hashes and textual conclusions; no private model, image or full geometry/material arrays.",
+      "Removed raw worst-query world position, original face-vertex payload, corner/material RGB values and complete oracle grid/neighbour/row/weight/value payloads from this public receipt. Original private readback and its recorded hash remain unchanged.",
+      "Execution summary numeric lists are limited to resource-monitor records; its other lists are textual cohort names and query-kind labels. Private array entries publish only basenames, byte lengths and hashes.",
+      "The report preserves the full missionBLOCKED conclusion, fixed gates, all passing regions/scalars, non-semantic geometric octant1 location and the independent oracle error/tolerance without raw private payloads.",
+      "No binary media/NPY/GLB/safetensors file, data URI, base64 payload or raw original geometry/material numeric array is present in this new public evidence directory."
+    ],
+    "conclusion": "PASS for source-safe publication of the reviewed report, execution summary and redacted outcome receipt. The full-model vertex-colour mission remainsBLOCKED at its unchanged material-quality gate; no export/import/render or retry is admitted."
+  }
+}

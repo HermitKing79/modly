@@ -1,0 +1,20 @@
+test_corner_centroid_and_interior_results_remain_separate (test_decision.DecisionTests.test_corner_centroid_and_interior_results_remain_separate) ... ok
+test_each_fixed_scalar_and_opaque_alpha_is_gated_separately (test_decision.DecisionTests.test_each_fixed_scalar_and_opaque_alpha_is_gated_separately) ... ok
+test_exact_case_passes_and_bad_schema_is_rejected (test_decision.DecisionTests.test_exact_case_passes_and_bad_schema_is_rejected) ... ok
+test_region_failure_is_not_hidden_in_successful_global_average (test_decision.DecisionTests.test_region_failure_is_not_hidden_in_successful_global_average) ... ok
+test_unsupported_reference_blocks_without_dropping_measurements (test_decision.DecisionTests.test_unsupported_reference_blocks_without_dropping_measurements) ... ok
+test_real_supervisor_adapter_uses_correct_paths_limits_and_no_renderer_stage (test_input_route.InputRouteTests.test_real_supervisor_adapter_uses_correct_paths_limits_and_no_renderer_stage) ... ok
+test_area_weighted_choice_keeps_dominant_area_face (test_strata.StrataTests.test_area_weighted_choice_keeps_dominant_area_face) ... ok
+test_edge_incidence_is_global_across_geometry_batches (test_strata.StrataTests.test_edge_incidence_is_global_across_geometry_batches) ... ok
+test_geometric_pools_and_area_coverage_are_explicit (test_strata.StrataTests.test_geometric_pools_and_area_coverage_are_explicit) ... ok
+test_high_variation_uses_full_input_rank_with_stable_original_ids (test_strata.StrataTests.test_high_variation_uses_full_input_rank_with_stable_original_ids) ... ok
+test_query_blocks_keep_corner_identity_and_seeded_interior_points (test_strata.StrataTests.test_query_blocks_keep_corner_identity_and_seeded_interior_points) ... ok
+test_refuses_semantic_id_deletion_and_excess_query_budgets (test_strata.StrataTests.test_refuses_semantic_id_deletion_and_excess_query_budgets) ... ok
+test_scan_distinguishes_global_boundary_and_nonmanifold_edges (test_strata.StrataTests.test_scan_distinguishes_global_boundary_and_nonmanifold_edges) ... ok
+test_scan_rejects_invalid_indices_degenerate_or_nonfinite_inputs (test_strata.StrataTests.test_scan_rejects_invalid_indices_degenerate_or_nonfinite_inputs) ... ok
+test_uniform_endpoints_cannot_create_corner_or_edge_probes (test_strata.StrataTests.test_uniform_endpoints_cannot_create_corner_or_edge_probes) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.575s
+
+OK
