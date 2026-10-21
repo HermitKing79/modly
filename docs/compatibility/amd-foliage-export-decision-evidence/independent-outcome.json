@@ -1,0 +1,144 @@
+{
+  "schema": "modly.amd.foliage-export-independent-outcome.v1",
+  "created_utc": "2026-10-21T15:34:00.894400+00:00",
+  "classification": "PASS_SAMPLED_FIXED_VERTEX_COLOUR_DECISION",
+  "reviewer": "independent foliage_review subagent",
+  "scope": "Independent readback of one actual CPU decision worker, all saved arrays, original lineage, declared seeded/seam positions,RGBconversion, fixed-cohort metrics/constants/ranges and64 existing-position source tuple-oracle checks. No new sample positions/adaptive cohorts, source selection, UV, bake, renderer, GPU, model or export.",
+  "result_SHA256": "4bc3e9add407742a78897e4cfb07dbfb059b72deab7d5d33cc5e9cddb4b904c1",
+  "host_result_SHA256": "957babf65853ceae86a2fbc658300fd0caf88f11af921c67fa7348ba761da70e",
+  "attempt_SHA256": "3fc1c34f7839b904491e0527477c2ffb417388db5d3c52053264aedd3cbc3c15",
+  "candidate_review_SHA256": "244c85f9d075e7d185edaf3d140c8195520986815f99b4c5c13e8603ce21db18",
+  "private_oracle_SHA256": "cb5c3ac5f8568aed568fe2019e83a93ebb9f00646c6bf5de25d2846778ce478b",
+  "verified": {
+    "all77_attempt_source_hash_size_mtime_bindings": true,
+    "all9_output_NPY_files_schema_hashes_readback": true,
+    "original_selected_face_vertex_corner_bits_winding_multiplicity_and_material_lineage": true,
+    "exactPCG64seed_draw_order_face_choices_barycentrics_and_existing_world_positions": true,
+    "all2221_cutedge_face_pairs_and44420_seam_queries_preserved": true,
+    "portableF32linearCOLOR0_bits_and_exactIECinterpolation_encode_chain": true,
+    "all_declared_RGB_and_each_scalar_channel_gates_independently_pass": true,
+    "shared_clipped_weighted_mean_constants_and_percohort_optimistic_floors_match": true,
+    "fullfield_selectedvertex_query_raw_clipped_ranges_counts_match": true,
+    "all11105_paired_edge_world_reference_and_vertexRGB_values_bit_exact": true,
+    "no_zero_support_query_and_saved_support_diagnostics_match": true,
+    "bounded_existing_position_independent_source_tuple_oracle_pass": true,
+    "owned_natural_CPU_completion_and_all_live_resource_floors": true
+  },
+  "query_counts": {
+    "centroids": 4531,
+    "area_weighted": 10000,
+    "required_surface": 14531,
+    "seam_edge": 22210,
+    "seam_near": 22210
+  },
+  "total_queries": 58951,
+  "seam_source_face_pairs": 2221,
+  "paired_edge_positions": 11105,
+  "constants": {
+    "metallic": 0.00011082693761409814,
+    "roughness": 0.999995986777544,
+    "alpha": 0.9999866839528084
+  },
+  "cohort_metrics": {
+    "centroids": {
+      "sample_count": 4531,
+      "RGB": {
+        "rmse": 0.004106111333927256,
+        "p95_abs": 0.00892909267115317,
+        "max_abs": 0.034148999625350784,
+        "pass": true
+      },
+      "scalar_RMSE": {
+        "metallic": 0.00011962392536462502,
+        "roughness": 2.6066995450756558e-05,
+        "alpha": 3.958359786139355e-05
+      }
+    },
+    "area_weighted": {
+      "sample_count": 10000,
+      "RGB": {
+        "rmse": 0.005186728553646535,
+        "p95_abs": 0.011366570632250758,
+        "max_abs": 0.04874728233544434,
+        "pass": true
+      },
+      "scalar_RMSE": {
+        "metallic": 0.00012586759047742416,
+        "roughness": 2.7255752751417167e-05,
+        "alpha": 4.671005480300308e-05
+      }
+    },
+    "required_surface": {
+      "sample_count": 14531,
+      "RGB": {
+        "rmse": 0.004875540458833656,
+        "p95_abs": 0.010596329527203008,
+        "max_abs": 0.04874728233544434,
+        "pass": true
+      },
+      "scalar_RMSE": {
+        "metallic": 0.0001239544631560442,
+        "roughness": 2.68907180720388e-05,
+        "alpha": 4.4610226245578724e-05
+      }
+    },
+    "seam_edge": {
+      "sample_count": 22210,
+      "RGB": {
+        "rmse": 0.0068222216988315185,
+        "p95_abs": 0.014918019930442838,
+        "max_abs": 0.06687319795402002,
+        "pass": true
+      },
+      "scalar_RMSE": {
+        "metallic": 0.00013317906772649762,
+        "roughness": 3.31863366663309e-05,
+        "alpha": 4.7368888769342333e-05
+      }
+    },
+    "seam_near": {
+      "sample_count": 22210,
+      "RGB": {
+        "rmse": 0.006756045354749447,
+        "p95_abs": 0.014796996122500556,
+        "max_abs": 0.06592792267215475,
+        "pass": true
+      },
+      "scalar_RMSE": {
+        "metallic": 0.00013310605622778422,
+        "roughness": 3.3115052440622236e-05,
+        "alpha": 4.733699166880437e-05
+      }
+    }
+  },
+  "source_support": {
+    "zero_support": 0,
+    "minimum_positive_neighbours": 1,
+    "minimum_raw_weight_sum": 0.22857944667339325
+  },
+  "independent_source_oracle": {
+    "positions": 64,
+    "position_selection": "evenly spaced indices0..58950 from saved query population, fixed before reading reference error",
+    "new_positions": 0,
+    "original_coordinate_rows_used": 401,
+    "maximum_reference_absolute_error": 2.435202199890796e-07,
+    "maximum_weight_sum_absolute_error": 1.1920928955078125e-07,
+    "tolerance": 2e-06
+  },
+  "measurements": {
+    "worker_seconds": 1.875,
+    "supervisor_seconds": 3.2650000000003274,
+    "peak_process_committed_bytes": 193458176,
+    "minimum_sampled_available_RAM_bytes": 19233742848,
+    "minimum_sampled_destination_free_bytes": 104666472448
+  },
+  "recommendation": "SEPARATE_VERTEX_COLOUR_PORTABLE_PROOF",
+  "limitations": [
+    "PASS applies to this fixed original direct-rowF32COLOR_0 candidate and sampled clipped-field appearance metrics, not visual equivalence, a rendered/exported asset or all possible vertex-colour fits.",
+    "The10000 weighted cohort also fits scalar constants; it is not an independent scalar holdout. Centroid and edge/near-seam cohorts are separately checked.",
+    "SparseSampler values are CPU source-faithful approximations with knownF32 arithmetic; the64-position independentF64 tuple oracle validates this run within2e-6, without GPU/native fusion parity.",
+    "OPAQUE always renders opacity1 and ignores storedalpha. Separate reported opacity-vs-learnedalpha errors do not qualify transparency/cutouts or alphaMode.",
+    "No continuous-surface guarantee, visual/shading comparison, client import, geometry normals, byte quantization, mip/filter/bake/UV/packing/export behavior has been tested in this mission.",
+    "Original raw out-of-range field values remain unchanged; comparison and candidate attributes deliberately clip to legal/display unit ranges, with full raw/clipped counts retained."
+  ]
+}

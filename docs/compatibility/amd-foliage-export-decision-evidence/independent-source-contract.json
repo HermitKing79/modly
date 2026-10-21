@@ -1,0 +1,49 @@
+{
+  "schema": "modly.amd.foliage-export-independent-source-contract.v1",
+  "created_utc": "2026-10-21T15:18:27.856844+00:00",
+  "classification": "SOURCE_CONTRACT_REVIEW_ONLY",
+  "reviewer": "independent foliage_review subagent",
+  "scope": "Read-only source and official glTF specification inspection. No actual sparse query, geometry selection, material calculation, tests, renderer, unwrap, texture or export execution.",
+  "source_SHA256": {
+    "sampler.py": "0a330eca2c991d3b7751d3cbbbe94edac317b34b28ce7216d9d3d374ef20b0c6",
+    "mip_math.py": "966a3e528afbb00bffe38d4e9a9c3a3cfd5b0a6711975edd646463621fe05b70",
+    "source-semantics.json": "094198de62098b413a503f9dae2f81c6de4f9ddc1ebc313d98e49f7f739ee79f",
+    "prior_bake.py": "3adb705ef76960ca619af6a41d9ffb45ea1efe9abde9cadf43409d491fe4ad75"
+  },
+  "primary_reference": {
+    "title": "Khronos glTF2.0 Specification source, Metallic-Roughness Material and Alpha Coverage sections",
+    "url": "https://raw.githubusercontent.com/KhronosGroup/glTF/main/specification/2.0/Specification.adoc",
+    "verified_contract": "COLOR_0 is linear, interpolated and multiplies base color. Unit factors and absent texture yield the vertex-color base color. Metallic/roughness are linear factors. OPAQUE ignores alpha for opacity."
+  },
+  "RGB_comparison_model": {
+    "target": "clip(raw original SparseSampler spatial encodedRGB,0,1)",
+    "candidate": "exact IEC_sRGB_encode(sum_i bary_i * IEC_sRGB_decode(clip(original direct-row encodedRGB_i,0,1)))",
+    "decode": "c/12.92 for c<=0.04045; ((c+0.055)/1.055)^2.4 otherwise",
+    "encode": "12.92*l for l<=0.0031308; 1.055*l^(1/2.4)-0.055 otherwise",
+    "portable_candidate": "If claimingF32COLOR_0 storage, include one F32 rounding of decoded per-vertex values and report that path. No8-bit quantization is implied.",
+    "metrics": "RMSE over all sample\u00d7RGB components, percentile95 of absolute component errors, maximum absolute component error; each predeclared cohort independently checked at0.02/0.05/0.15."
+  },
+  "scalar_contract": {
+    "channels": [
+      "metallic",
+      "roughness",
+      "alpha"
+    ],
+    "target": "clip(raw genuine spatial channel,0,1), without gamma",
+    "candidate_constant_definition": "If following literal clip(mean(raw10000 area-weighted spatial samples),0,1), retain that exact candidate definition. It is not generally the clipped-target optimum.",
+    "optimistic_per_cohort_RMSE_floor": "For clipped targets y, the best legal constant under squared error is mean(y)=mean(clip(raw,0,1)); report each channel separately. This differs in general from clip(mean(raw),0,1).",
+    "gates": "Apply0.02RMSE per scalar channel to each declared centroid/weighted/seam cohort; record p95/max separately rather than pooling all scalar channels.",
+    "alpha_limitation": "Stored-alpha numerical fidelity is distinct from rendered opacity. WithOPAQUE output opacity is1, independent of learned alpha; no cutout/transparency preservation is established."
+  },
+  "sampling_constraints": [
+    "SparseSampler uses original-coordinate F32world\u2192grid q=(world+0.5)*512, exact sparse support lookup and native-order F32 accumulation.",
+    "It interpolates original raw stored six-channel features. Do not clip or decode RGB feature values before spatial source sampling; clip only derived comparison targets afterward.",
+    "Partial support is renormalized over found rows with denominator floor1e-12; zero-support queries must fail or be explicitly blocked, never silently treated as valid black samples.",
+    "The existing seam_queries helper requires island IDs below256 and cannot directly take saved815 forest chart IDs. Seam cohorts must be explicitly declared/bounded without changing historical sources."
+  ],
+  "limitations": [
+    "This is a source/metric contract only, not an actual accuracy result or execution authorization.",
+    "The exact IEC model differs from historical native renderer gamma2.2 preview; no native shaded-image equivalence is implied.",
+    "Finite surface sample success would not prove continuous-field accuracy, shading equivalence, mip behavior or exported-client behavior."
+  ]
+}

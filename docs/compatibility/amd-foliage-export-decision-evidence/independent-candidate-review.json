@@ -1,0 +1,47 @@
+{
+  "schema": "modly.amd.foliage-export-independent-candidate.v1",
+  "created_utc": "2026-10-21T15:29:13.022626+00:00",
+  "classification": "GO",
+  "reviewer": "independent foliage_review subagent",
+  "base": "7f1b1675913dcdd91175caa8169383236f8ed7eb",
+  "scope": "One bounded CPU-only numerical decision worker over the exact saved4531-face selection and58951 predeclared reference positions. No source selection, chart/UV construction, mip/atlas, bake, render, model, WSL, GPU or export execution.",
+  "candidate_source_SHA256": {
+    "admission.py": "eabc7e916a19fce3a7ba3a30c002b2f68b945426e9fab0623b9d074e1e5589ab",
+    "experiment.py": "57ece8e2142b91bde6668db659b1eac745bade26f4028eefef0eb9e764191404",
+    "metrics.py": "7e02dfa43cbf2167e7df44efa0ba1536bb59fdb39ebb0e812bbee61b2a971e20",
+    "run_host.py": "6290564ea11484dd00304ef4149dc0937fdd0544d4fd461954e002b7850a13c5",
+    "test_metrics.py": "7826446f44c1cea018221a0af34ebc3ca79840d06513f28695a64fc6004c169e",
+    "test_seams.py": "4b25f4f4376b026d9fe5204031f6973301f1a29badd3903a6c97b0797549e69e"
+  },
+  "qualification_plan_SHA256": "4eaf8aec7bd8dc37f997722738acc1459b52af1553d023600a436d5a6d7f2cb1",
+  "cost_SHA256": "81ea22685c14fbccec0a174eaa803818753bb6fd9eb5b4e3d85f323dbd1ad575",
+  "source_contract_SHA256": "e3fca4fc765ddee82dcea53c43c687de0727169eaf33ff519dad09acf87d8470",
+  "focused_tests_SHA256": "606a59845d50a07e04072153ecd6743dd1c820ce8544edd091f7f45972b8457a",
+  "synthetic_tests": {
+    "passed": 18,
+    "seconds": 0.609,
+    "provenance": "Read root-produced focused-tests.txt; reviewer did not rerun tests, load actual geometry or execute any spatial source query."
+  },
+  "verified_checks": [
+    "All six current new Python sources compile without execution; exact base and isolated branch match. Reviewed historical sampler/input/tensor/CPU-host/helper/ownedJob sources match rawGit base bytes.",
+    "Exact saved4531 triangles/3177 vertices and815-chart capacity outputs are authenticated without source selection. Original oriented corner bits/source IDs/direct learned rows and full original material\u2194geometry coordinates are admitted by pinned historical input loader.",
+    "Sampler is unchanged, with F32world\u2192grid arithmetic, native eight-neighbour accumulation, found-neighbour renormalization and denominator floor. Raw stored features are sampled before derived clipping.",
+    "One deterministic PCG64 seed20261021 population:4531 centroids,10000 area-weighted points,44420 edge/near-edge samples covering2221 cut source-edge face pairs including forest cycle cuts and nonmanifold multiplicity; total58951<65536 and no dropped pairs.",
+    "Seam diagnostic uses authenticated retained source edges directly, with no widening/reinterpretation of the old256-island guard; paired points use canonical source endpoint order and near samples have positive inward barycentrics.",
+    "Candidate clips derived original encoded per-vertexRGB, exactIECdecodes toF32 linearCOLOR_0, interpolates barycentrically and exactIECencodes for pooled encodedRGB errors. This matches primary glTF linearCOLOR_0 semantics for unit factors/no texture.",
+    "RGB RMSE0.02/p95absolute0.05/maxabsolute0.15 are independently applied to centroid,weighted,combinedsurface,edge and near-seam cohorts.",
+    "Each M/R/alpha shared constant is the clipped-target mean of the10000 weighted reference samples; every cohort applies0.02RMSE to each scalar separately. Per-cohort optimistic mean(clipped) constants and irreducible floors are diagnostics only, never substituted into the fixed candidate.",
+    "Raw/clipped fullfield,selectedvertex and query ranges/clipping counts are recorded. Any zero-support reference remains in saved metrics and forcesBLOCKED_REFERENCE_SUPPORT, so unsupported black is not admitted as valid material evidence.",
+    "OPAQUE actual opacity1 errors are separately reported against learnedalpha; storedconstantalpha quality does not qualify transparency/cutouts or alphaMode. No invented spatial M/R vertex attributes, emission,AO or normals are used.",
+    "All numerical arrays are exclusive private outputs with byte-exact readback; original inputs are rehashed after the worker. Reused host binds candidate/plan before exclusive marker and sends binaryGO only after6GiB/180s ownedJob attachment with12GiB RAM/2GiBdisk live floors and natural tree settlement.",
+    "ClassificationPASS_DECISION means the decision measurement completed with qualified reference support; vertex_colour_candidate separately records quality success/failure. It is not an export or material-qualityPASS by itself.",
+    "Cost evidence is conditional uncompressed pixel arithmetic only, not measured packing, compression, GPU allocation, file size or universal draw-call count."
+  ],
+  "limitations": [
+    "This is the fixed original direct-rowF32COLOR_0 candidate, not an optimized vertex-colour fit or proof that all possible vertex attributes fail if it fails.",
+    "Fitted constants are optimal for the10000 weighted clipped targets; that cohort is fitting data, not an independent constant holdout. Centroid/seam cohorts provide separately reported evaluations.",
+    "Finite sample accuracy does not prove continuous-field/shading/client equivalence, minification, nativeGPU bit parity or exported behavior.",
+    "No actual spatial source samples or accuracy result has been produced before this review; no export/bake permission is included."
+  ],
+  "blockers": []
+}

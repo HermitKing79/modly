@@ -1,0 +1,23 @@
+test_standalone_ranges_reject_wrong_dtype_shape_nonfinite_and_empty (test_metrics.ChannelRangesTests.test_standalone_ranges_reject_wrong_dtype_shape_nonfinite_and_empty) ... ok
+test_standalone_ranges_report_each_raw_clipped_range_and_counts (test_metrics.ChannelRangesTests.test_standalone_ranges_report_each_raw_clipped_range_and_counts) ... ok
+test_black_white_interpolation_occurs_in_portable_linear_colour (test_metrics.ColourPredictionTests.test_black_white_interpolation_occurs_in_portable_linear_colour) ... ok
+test_clipping_and_float32_linear_rounding_precede_interpolation (test_metrics.ColourPredictionTests.test_clipping_and_float32_linear_rounding_precede_interpolation) ... ok
+test_malformed_colour_faces_queries_and_barycentrics_are_rejected (test_metrics.ColourPredictionTests.test_malformed_colour_faces_queries_and_barycentrics_are_rejected) ... ok
+test_all_required_cohorts_use_the_same_fitted_constants (test_metrics.EvaluationTests.test_all_required_cohorts_use_the_same_fitted_constants) ... ok
+test_each_scalar_channel_must_pass_without_pooled_channel_masking (test_metrics.EvaluationTests.test_each_scalar_channel_must_pass_without_pooled_channel_masking) ... ok
+test_invalid_evaluation_shapes_dtypes_and_empty_required_sets_fail (test_metrics.EvaluationTests.test_invalid_evaluation_shapes_dtypes_and_empty_required_sets_fail) ... ok
+test_raw_clipped_ranges_and_clipping_counts_remain_explicit (test_metrics.EvaluationTests.test_raw_clipped_ranges_and_clipping_counts_remain_explicit) ... ok
+test_rgb_maximum_gate_rejects_when_rmse_and_p95_pass (test_metrics.EvaluationTests.test_rgb_maximum_gate_rejects_when_rmse_and_p95_pass) ... ok
+test_rgb_p95_gate_rejects_when_rmse_and_maximum_pass (test_metrics.EvaluationTests.test_rgb_p95_gate_rejects_when_rmse_and_maximum_pass) ... ok
+test_rgb_rmse_pools_components_and_does_not_apply_a_per_channel_rmse_gate (test_metrics.EvaluationTests.test_rgb_rmse_pools_components_and_does_not_apply_a_per_channel_rmse_gate) ... ok
+test_scalar_fit_means_clipped_samples_instead_of_clipping_the_raw_mean (test_metrics.EvaluationTests.test_scalar_fit_means_clipped_samples_instead_of_clipping_the_raw_mean) ... ok
+test_foreign_retained_edge_rejected (test_seams.SeamTests.test_foreign_retained_edge_rejected) ... ok
+test_nonmanifold_multiplicity_is_not_discarded (test_seams.SeamTests.test_nonmanifold_multiplicity_is_not_discarded) ... ok
+test_query_work_budget_raises_without_truncating (test_seams.SeamTests.test_query_work_budget_raises_without_truncating) ... ok
+test_shape_dtype_and_face_limits_fail_closed (test_seams.SeamTests.test_shape_dtype_and_face_limits_fail_closed) ... ok
+test_shared_edge_and_inset_pairs_preserve_canonical_endpoint_order (test_seams.SeamTests.test_shared_edge_and_inset_pairs_preserve_canonical_endpoint_order) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.609s
+
+OK

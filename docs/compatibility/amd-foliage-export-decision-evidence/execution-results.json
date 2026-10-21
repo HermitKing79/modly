@@ -1,0 +1,572 @@
+{
+  "classification": "PASS_DECISION",
+  "vertex_colour_candidate": "PASS",
+  "recommendation": "SEPARATE_VERTEX_COLOUR_PORTABLE_PROOF",
+  "seed": 20261021,
+  "bit_generator": "PCG64",
+  "sampling_order": "10000 uniform pairs for sqrt barycentrics, then 10000 area-weighted face choices",
+  "original_faces": 4531,
+  "original_vertices": 3177,
+  "query_counts": {
+    "centroids": 4531,
+    "area_weighted": 10000,
+    "required_surface": 14531,
+    "seam_edge": 22210,
+    "seam_near": 22210
+  },
+  "total_queries": 58951,
+  "paired_edge_queries": 11105,
+  "zero_support": 0,
+  "minimum_positive_neighbours": 1,
+  "minimum_weight_sum": 0.22857944667339325,
+  "measurements": {
+    "constants": {
+      "metallic": 0.00011082693761409814,
+      "roughness": 0.999995986777544,
+      "alpha": 0.9999866839528084
+    },
+    "fit_sample_count": 10000,
+    "metrics": {
+      "centroids": {
+        "sample_count": 4531,
+        "RGB": {
+          "rmse": 0.004106111333927256,
+          "p95_abs": 0.00892909267115317,
+          "max_abs": 0.034148999625350784,
+          "pass": true
+        },
+        "scalars": {
+          "metallic": {
+            "rmse": 0.00011962392536462502,
+            "p95_abs": 0.00022825748367039865,
+            "max_abs": 0.0005725847853886932,
+            "pass": true
+          },
+          "roughness": {
+            "rmse": 2.6066995450756558e-05,
+            "p95_abs": 4.01322245602298e-06,
+            "max_abs": 0.00043771679997439694,
+            "pass": true
+          },
+          "alpha": {
+            "rmse": 3.958359786139355e-05,
+            "p95_abs": 6.560050249104776e-05,
+            "max_abs": 0.0005031581997871903,
+            "pass": true
+          }
+        },
+        "optimistic_scalar_constants": {
+          "metallic": 0.00010705197181222641,
+          "roughness": 0.9999963928600253,
+          "alpha": 0.9999894181431274
+        },
+        "irreducible_scalar_rmse_floor": {
+          "metallic": 0.00011956434733161919,
+          "roughness": 2.6063832198050046e-05,
+          "alpha": 3.94890544702235e-05
+        },
+        "pass": true
+      },
+      "area_weighted": {
+        "sample_count": 10000,
+        "RGB": {
+          "rmse": 0.005186728553646535,
+          "p95_abs": 0.011366570632250758,
+          "max_abs": 0.04874728233544434,
+          "pass": true
+        },
+        "scalars": {
+          "metallic": {
+            "rmse": 0.00012586759047742416,
+            "p95_abs": 0.0002466333133474961,
+            "max_abs": 0.0006888192560131699,
+            "pass": true
+          },
+          "roughness": {
+            "rmse": 2.7255752751417167e-05,
+            "p95_abs": 4.01322245602298e-06,
+            "max_abs": 0.0005119841873645337,
+            "pass": true
+          },
+          "alpha": {
+            "rmse": 4.671005480300308e-05,
+            "p95_abs": 8.20543646812943e-05,
+            "max_abs": 0.0006125327229500321,
+            "pass": true
+          }
+        },
+        "optimistic_scalar_constants": {
+          "metallic": 0.00011082693761409814,
+          "roughness": 0.999995986777544,
+          "alpha": 0.9999866839528084
+        },
+        "irreducible_scalar_rmse_floor": {
+          "metallic": 0.00012586759047742416,
+          "roughness": 2.7255752751417167e-05,
+          "alpha": 4.671005480300308e-05
+        },
+        "pass": true
+      },
+      "required_surface": {
+        "sample_count": 14531,
+        "RGB": {
+          "rmse": 0.004875540458833656,
+          "p95_abs": 0.010596329527203008,
+          "max_abs": 0.04874728233544434,
+          "pass": true
+        },
+        "scalars": {
+          "metallic": {
+            "rmse": 0.0001239544631560442,
+            "p95_abs": 0.0002409337588892356,
+            "max_abs": 0.0006888192560131699,
+            "pass": true
+          },
+          "roughness": {
+            "rmse": 2.68907180720388e-05,
+            "p95_abs": 4.01322245602298e-06,
+            "max_abs": 0.0005119841873645337,
+            "pass": true
+          },
+          "alpha": {
+            "rmse": 4.4610226245578724e-05,
+            "p95_abs": 7.692538499837198e-05,
+            "max_abs": 0.0006125327229500321,
+            "pass": true
+          }
+        },
+        "optimistic_scalar_constants": {
+          "metallic": 0.00010964984243494455,
+          "roughness": 0.9999961134006067,
+          "alpha": 0.9999875365174176
+        },
+        "irreducible_scalar_rmse_floor": {
+          "metallic": 0.0001239488740700872,
+          "roughness": 2.689041994893123e-05,
+          "alpha": 4.46020786429181e-05
+        },
+        "pass": true
+      },
+      "seam_edge": {
+        "sample_count": 22210,
+        "RGB": {
+          "rmse": 0.0068222216988315185,
+          "p95_abs": 0.014918019930442838,
+          "max_abs": 0.06687319795402002,
+          "pass": true
+        },
+        "scalars": {
+          "metallic": {
+            "rmse": 0.00013317906772649762,
+            "p95_abs": 0.0002645717881227881,
+            "max_abs": 0.0008676302217486352,
+            "pass": true
+          },
+          "roughness": {
+            "rmse": 3.31863366663309e-05,
+            "p95_abs": 4.01322245602298e-06,
+            "max_abs": 0.0004998844444751294,
+            "pass": true
+          },
+          "alpha": {
+            "rmse": 4.7368888769342333e-05,
+            "p95_abs": 8.705817461018839e-05,
+            "max_abs": 0.000590538609027913,
+            "pass": true
+          }
+        },
+        "optimistic_scalar_constants": {
+          "metallic": 0.00011541934170512265,
+          "roughness": 0.9999945830676213,
+          "alpha": 0.9999860888394833
+        },
+        "irreducible_scalar_rmse_floor": {
+          "metallic": 0.0001330998644070075,
+          "roughness": 3.315663643652793e-05,
+          "alpha": 4.7365150304549424e-05
+        },
+        "pass": true
+      },
+      "seam_near": {
+        "sample_count": 22210,
+        "RGB": {
+          "rmse": 0.006756045354749447,
+          "p95_abs": 0.014796996122500556,
+          "max_abs": 0.06592792267215475,
+          "pass": true
+        },
+        "scalars": {
+          "metallic": {
+            "rmse": 0.00013310605622778422,
+            "p95_abs": 0.0002642093246527054,
+            "max_abs": 0.0008761527546289414,
+            "pass": true
+          },
+          "roughness": {
+            "rmse": 3.3115052440622236e-05,
+            "p95_abs": 4.01322245602298e-06,
+            "max_abs": 0.0005004208862781079,
+            "pass": true
+          },
+          "alpha": {
+            "rmse": 4.733699166880437e-05,
+            "p95_abs": 8.71505618095902e-05,
+            "max_abs": 0.0005855914235115556,
+            "pass": true
+          }
+        },
+        "optimistic_scalar_constants": {
+          "metallic": 0.00011534460452123662,
+          "roughness": 0.9999946008470347,
+          "alpha": 0.9999861024994402
+        },
+        "irreducible_scalar_rmse_floor": {
+          "metallic": 0.00013302936852526285,
+          "roughness": 3.308603776170052e-05,
+          "alpha": 4.733342045777975e-05
+        },
+        "pass": true
+      }
+    },
+    "RGB_all_pass": true,
+    "scalars_all_pass": true,
+    "decision_pass": true,
+    "ranges": {
+      "red": {
+        "raw": [
+          0.42402833700180054,
+          0.7943897247314453
+        ],
+        "clipped": [
+          0.42402833700180054,
+          0.7943897247314453
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 0,
+        "clipped_count": 0
+      },
+      "green": {
+        "raw": [
+          0.21367786824703217,
+          0.48595061898231506
+        ],
+        "clipped": [
+          0.21367786824703217,
+          0.48595061898231506
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 0,
+        "clipped_count": 0
+      },
+      "blue": {
+        "raw": [
+          0.03820830583572388,
+          0.24469012022018433
+        ],
+        "clipped": [
+          0.03820830583572388,
+          0.24469012022018433
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 0,
+        "clipped_count": 0
+      },
+      "metallic": {
+        "raw": [
+          -0.0009415906388312578,
+          0.0009869796922430396
+        ],
+        "clipped": [
+          0.0,
+          0.0009869796922430396
+        ],
+        "below_zero_count": 20001,
+        "above_one_count": 0,
+        "clipped_count": 20001
+      },
+      "roughness": {
+        "raw": [
+          0.9994840025901794,
+          1.0014251470565796
+        ],
+        "clipped": [
+          0.9994840025901794,
+          1.0
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 56266,
+        "clipped_count": 56266
+      },
+      "alpha": {
+        "raw": [
+          0.9993741512298584,
+          1.0007435083389282
+        ],
+        "clipped": [
+          0.9993741512298584,
+          1.0
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 49704,
+        "clipped_count": 49704
+      }
+    },
+    "RGB_limits": {
+      "rmse": 0.02,
+      "p95_abs": 0.05,
+      "max_abs": 0.15
+    },
+    "scalar_rmse_limit": 0.02,
+    "required_cohorts": [
+      "centroids",
+      "area_weighted",
+      "required_surface",
+      "seam_edge",
+      "seam_near"
+    ],
+    "target_policy": "clip all six raw target channels to [0,1]",
+    "seam_pair_world_max": 0.0,
+    "seam_pair_reference_max": 0.0,
+    "seam_pair_vertex_RGB_max": 0.0,
+    "opaque_alpha_RMSE_by_cohort": {
+      "centroids": 4.0882283666948904e-05,
+      "area_weighted": 4.857104417766823e-05,
+      "required_surface": 4.631073112522482e-05,
+      "seam_edge": 4.9365755846481635e-05,
+      "seam_near": 4.933146271948707e-05
+    },
+    "material_behaviour_limits": [
+      "OPAQUE ignores stored alpha; these errors compare actual opacity1 with learned alpha.",
+      "A constant alpha/BLEND factor cannot reproduce spatial cutouts or translucency variations. No alphaMode or transparency renderer has been qualified.",
+      "Standard COLOR_0 carries RGB/optional alpha, not spatial metallic or roughness. No invented emissive, AO or normal channel."
+    ],
+    "entire_material_field_ranges": {
+      "red": {
+        "raw": [
+          0.21756955981254578,
+          0.8840090036392212
+        ],
+        "clipped": [
+          0.21756955981254578,
+          0.8840090036392212
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 0,
+        "clipped_count": 0
+      },
+      "green": {
+        "raw": [
+          0.06547558307647705,
+          0.7230156660079956
+        ],
+        "clipped": [
+          0.06547558307647705,
+          0.7230156660079956
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 0,
+        "clipped_count": 0
+      },
+      "blue": {
+        "raw": [
+          0.01686990261077881,
+          0.6183264851570129
+        ],
+        "clipped": [
+          0.01686990261077881,
+          0.6183264851570129
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 0,
+        "clipped_count": 0
+      },
+      "metallic": {
+        "raw": [
+          -0.00418400764465332,
+          0.006668657064437866
+        ],
+        "clipped": [
+          0.0,
+          0.006668657064437866
+        ],
+        "below_zero_count": 810749,
+        "above_one_count": 0,
+        "clipped_count": 810749
+      },
+      "roughness": {
+        "raw": [
+          0.9783090353012085,
+          1.0025746822357178
+        ],
+        "clipped": [
+          0.9783090353012085,
+          1.0
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 1721533,
+        "clipped_count": 1721533
+      },
+      "alpha": {
+        "raw": [
+          0.9980556964874268,
+          1.0041143894195557
+        ],
+        "clipped": [
+          0.9980556964874268,
+          1.0
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 1433895,
+        "clipped_count": 1433895
+      }
+    },
+    "original_selected_vertex_ranges": {
+      "red": {
+        "raw": [
+          0.4141775369644165,
+          0.7960017919540405
+        ],
+        "clipped": [
+          0.4141775369644165,
+          0.7960017919540405
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 0,
+        "clipped_count": 0
+      },
+      "green": {
+        "raw": [
+          0.2040919065475464,
+          0.5048291683197021
+        ],
+        "clipped": [
+          0.2040919065475464,
+          0.5048291683197021
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 0,
+        "clipped_count": 0
+      },
+      "blue": {
+        "raw": [
+          0.03528624773025513,
+          0.25798499584198
+        ],
+        "clipped": [
+          0.03528624773025513,
+          0.25798499584198
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 0,
+        "clipped_count": 0
+      },
+      "metallic": {
+        "raw": [
+          -0.0010548830032348633,
+          0.0011295974254608154
+        ],
+        "clipped": [
+          0.0,
+          0.0011295974254608154
+        ],
+        "below_zero_count": 1275,
+        "above_one_count": 0,
+        "clipped_count": 1275
+      },
+      "roughness": {
+        "raw": [
+          0.9990981221199036,
+          1.0017685890197754
+        ],
+        "clipped": [
+          0.9990981221199036,
+          1.0
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 2685,
+        "clipped_count": 2685
+      },
+      "alpha": {
+        "raw": [
+          0.9989991784095764,
+          1.0010778903961182
+        ],
+        "clipped": [
+          0.9989991784095764,
+          1.0
+        ],
+        "below_zero_count": 0,
+        "above_one_count": 2300,
+        "clipped_count": 2300
+      }
+    }
+  },
+  "files": {
+    "barycentrics.npy": {
+      "bytes": 1414952,
+      "sha256": "03e86e298f1d9759bc65adbcf9de23996b081a95b71b1804cb48e3322cf75746"
+    },
+    "linear-COLOR0.npy": {
+      "bytes": 38252,
+      "sha256": "297d32a9cf0028004e15371a2890bbcf107771c05465ed88346c7e6fbe5d75af"
+    },
+    "positive-neighbour-count.npy": {
+      "bytes": 471736,
+      "sha256": "8a34aa47f72d3796cec9e3d5577d132af78fe9210d2c9881449111972465c0bc"
+    },
+    "query-faces.npy": {
+      "bytes": 235932,
+      "sha256": "f714f836b89e5f7dc5275ebc228fe10918fc8914558f5b800339e6a99feca4bc"
+    },
+    "raw-weight-sum.npy": {
+      "bytes": 235932,
+      "sha256": "de39d4564e576762d1f8bd7997f2169a749d2d66e7fe8365dae35fca7a38452e"
+    },
+    "seam-pairs.npy": {
+      "bytes": 88968,
+      "sha256": "495a5933ffc11db1b283e2d75eee3d010e26876e1db989f10ec17fabb286ea7d"
+    },
+    "source-spatial.npy": {
+      "bytes": 1414952,
+      "sha256": "d8fb8a162640a903842fb8dd3deb193277ffb5fe4672158ee81713b447b1f0fe"
+    },
+    "vertex-RGB.npy": {
+      "bytes": 1414952,
+      "sha256": "991b85202aeb4155f7e3ad37c5730ae41cc8b328cb02b6feadbb79d7a21cbbbf"
+    },
+    "world.npy": {
+      "bytes": 707540,
+      "sha256": "544a52f0ace978412c1a9c7b693cf2b0df1681d017fd50262bce0b67cf16708b"
+    }
+  },
+  "inputs_unchanged": true,
+  "colour_contract": "Original encoded field sampled before clamp; derived glTF COLOR_0 exactIEC sRGBdecode thenF32storage, linear-light barycentric interpolation, exactIECencode for encodedRGB errors. No native2.2gamma or bytequantisation.",
+  "no_geometry_material_or_UV_modification": true,
+  "no_bake_or_export": true,
+  "elapsed_seconds": 1.875,
+  "schema": "modly.foliage-export.actual-decision.v1",
+  "base": "7f1b1675913dcdd91175caa8169383236f8ed7eb",
+  "worker_elapsed_seconds": 1.875,
+  "supervisor_elapsed_seconds": 3.2650000000003274,
+  "peak_process_committed_bytes": 193458176,
+  "minimum_sampled_available_RAM_bytes": 19233742848,
+  "minimum_sampled_destination_free_bytes": 104666472448,
+  "all_live_samples_admitted": true,
+  "resource_samples": 3,
+  "returncode": 0,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "watched_sources_unchanged": true,
+  "raw_private_receipt_SHA256": {
+    "attempt.json": "3fc1c34f7839b904491e0527477c2ffb417388db5d3c52053264aedd3cbc3c15",
+    "host-result.json": "957babf65853ceae86a2fbc658300fd0caf88f11af921c67fa7348ba761da70e",
+    "run/result.json": "4bc3e9add407742a78897e4cfb07dbfb059b72deab7d5d33cc5e9cddb4b904c1",
+    "run/stdout.txt": "871d08872c050d06c16a2d2e2511ad38056fa83707a12aee21589b1619979fdb",
+    "run/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

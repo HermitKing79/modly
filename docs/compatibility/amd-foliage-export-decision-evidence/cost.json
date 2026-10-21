@@ -1,0 +1,87 @@
+{
+  "schema": "modly.foliage-export.texture-cost.v1",
+  "classification": "CPU_ARITHMETIC_ONLY_NOT_EXPORT_QUALIFICATION",
+  "source": {
+    "path": "../amd-connected-foliage-uv-evidence/execution-results.json",
+    "sha256": "14f8e722ce056a593b489a1f50403e04ef5f69239fe5c50c709875f9eb089987",
+    "selection_faces": 4531,
+    "selection_vertices": 3177,
+    "candidate_disk_charts": 815,
+    "candidate_seam_vertices": 6161,
+    "actual_prior_stage": "capacity_only_no_unwrap"
+  },
+  "atlas_lower_bounds": {
+    "atlas_dimensions": [1024, 1024],
+    "base_texels_per_atlas": 1048576,
+    "maximum_charts_per_atlas": 256,
+    "chart_count_bound_formula": "ceil(815/256)",
+    "chart_count_minimum_atlases": 4,
+    "candidate_minimum_owner_dimensions": [64, 64],
+    "conditional_owner_area_floor_texels": 3338240,
+    "owner_area_bound_formula": "ceil((815*64*64)/(1024*1024))",
+    "owner_area_minimum_atlases": 4,
+    "combined_minimum_atlases": 4,
+    "bounds_combination": "maximum, not sum",
+    "conditional_owner_policy": "The nominated candidate requires a distinct minimum 64x64 owner rectangle for each disk chart. This is not a globally minimal UV padding theorem.",
+    "unavoidable_surface_area_floor_texels": 99831.07281703898,
+    "surface_area_floor_interpretation": "Existing surface area times 4096 squared; a floor, not measured occupied texels.",
+    "padding_waste_measured": false,
+    "padding_waste_note": "Do not subtract the surface-area floor from the owner-area floor and describe the difference as measured padding waste.",
+    "actual_fit_proven": false,
+    "actual_uv_distortion_proven": false,
+    "interpretation": "Four atlases are an arithmetic lower bound for these candidate charts and policies. An actual layout may require more, or fail distortion or overlap checks."
+  },
+  "four_atlas_storage": {
+    "atlas_count": 4,
+    "base_texels_all_atlases": 4194304,
+    "full_mip_levels": [0, 10],
+    "full_mip_level_count": 11,
+    "full_mip_texels_per_atlas": 1398101,
+    "full_mip_texels_all_atlases": 5592404,
+    "full_mip_texel_formula_per_atlas": "sum(4^i, i=0..10)=(4^11-1)/3",
+    "MiB_divisor_bytes": 1048576,
+    "conventional_uncompressed_channels": {
+      "base_color_format": "RGBA8",
+      "metallic_roughness_format": "RGB8",
+      "bytes_per_texel_total": 7,
+      "base_bytes": 29360128,
+      "base_MiB": 28.0,
+      "full_mips_bytes": 39146828,
+      "full_mips_MiB": 37.33332443237305
+    },
+    "gpu_storage_model_both_RGBA8": {
+      "base_color_format": "RGBA8",
+      "metallic_roughness_format": "RGBA8",
+      "bytes_per_texel_total": 8,
+      "base_bytes": 33554432,
+      "base_MiB": 32.0,
+      "full_mips_bytes": 44739232,
+      "full_mips_MiB": 42.666656494140625,
+      "interpretation": "Assumed uncompressed GPU pixel storage when both textures use RGBA8; not a measured allocation or universal device format guarantee."
+    },
+    "alpha": "Optional alpha is embedded in the already-budgeted base-color RGBA8 texture; no separate alpha texture is counted.",
+    "learned_AO_included": false,
+    "emissive_texture_included": false,
+    "additional_texture_maps_included": false,
+    "excluded_costs": [
+      "Mesh, UV, vertex-colour and index buffers",
+      "Material and object metadata",
+      "Driver allocation alignment, staging buffers, duplicate CPU copies and loading transients",
+      "Encoded image file sizes or measured download size"
+    ],
+    "compression": "Conventional texture compression could reduce appropriate runtime or delivery costs; no codec, quality, compression ratio or compressed size has been tested here."
+  },
+  "material_and_submission_model": {
+    "theoretical_minimum_atlas_material_groups": 4,
+    "one_primitive_per_group_assumption": true,
+    "nominal_minimum_primitives_under_that_assumption": 4,
+    "nominal_submissions_one_pass_no_batching": 4,
+    "interpretation": "This conventional one-material-per-atlas-group model implies at least four material groups and four primitives for four atlases. It is not a universal engine draw-call lower bound; batching, arrays, shader indirection, passes and renderer behavior can change submissions."
+  },
+  "export_decision_scope": {
+    "high_fidelity_option": "Multiple atlases are a possible optional high-fidelity route, pending actual UV distortion, overlap, packing, mip-owner and material qualification.",
+    "game_ready_default": "The 4531-face patch is already small. This patch-only cost estimate does not make the roughly four-million-face full source a game-ready default; whole-asset geometry, material and texture budgets need separate qualification.",
+    "no_new_geometry_UV_packing_sampling_or_models_executed": true,
+    "no_export_produced": true
+  }
+}
