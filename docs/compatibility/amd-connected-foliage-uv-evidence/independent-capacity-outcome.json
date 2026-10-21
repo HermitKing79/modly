@@ -1,0 +1,59 @@
+{
+  "schema": "modly.amd.connected-foliage-independent-capacity-outcome.v1",
+  "created_utc": "2026-10-21T14:55:23.902555+00:00",
+  "classification": "BLOCKED",
+  "reviewer": "independent foliage_review subagent",
+  "scope": "Independent readback of the single actual capacity worker, selected original mapping/material data, saved disposable seam mesh, graph/disk invariants and conditional graph lower bound. No source selection, alternate forest/unwrap, Blender, rendering, tests or model execution.",
+  "capacity_result_SHA256": "26f3150964f61aa39f623a236b42456da35d94978e8a50049b1d81447cd6cf6c",
+  "host_result_SHA256": "d635955e0fdc5d7c858386e2e14074d573cada47d3a889c0b04568a74662c308",
+  "attempt_SHA256": "566bcbf40f3bb9c41d688a10cf0bc1c694cf4aa7c819a908e88dda70a7daf5bb",
+  "capacity_candidate_review_SHA256": "197cd543779568a50fdd5cb59823270ab61f0c31a9a4883324bc71d8e83b41dc",
+  "chart_lower_bound_proof_SHA256": "cf93ee7b2bb214e20d375ad1ce05bd4d914aca8bfa4ff5cb12dea74ada7f1d04",
+  "verified": {
+    "all_attempt_watched_hashes_sizes_mtimes_match": true,
+    "all_output_and_frozen_input_hashes_match": true,
+    "original_corner_bits_source_face_vertex_mapping_winding_order_multiplicity_preserved": true,
+    "full_material_geometry_coordinate_arrays_and_direct_material_rows_exact": true,
+    "saved_seam_corner_lineage_and_earliest_corner_canonicalization_exact": true,
+    "source_and_eligible_and_retained_graph_component_readback": true,
+    "all815_seam_charts_oriented_manifold_single_boundary_Euler1_disks": true,
+    "capacity_floor_arithmetic_matches": true,
+    "no_unwrap_UV_raster_image_bake_export_or_Blender_stage_exists": true,
+    "owned_natural_CPU_completion_and_resource_floors": true
+  },
+  "actual_metrics": {
+    "selected_faces": 4531,
+    "selected_vertices": 3177,
+    "seam_vertices": 6161,
+    "seam_chart_count": 815,
+    "retained_edges": 3716,
+    "eligible_edges": 4153,
+    "cycle_cut_edges": 437,
+    "same_direction_incidence_two_edges": 1076,
+    "nonmanifold_edges": 219,
+    "nonmanifold_edge_occurrences": 674,
+    "nonmanifold_incidence_histogram": {
+      "3": 202,
+      "4": 17
+    },
+    "source_boundary_edges_local_to_selection": 2461,
+    "surface_area_world2": 0.005950395632805763,
+    "density_content_area_floor_texels": 99831.07281703898,
+    "conditional_owner_area_floor_texels": 3338240,
+    "atlas_area_texels": 1048576,
+    "maximum_islands": 256
+  },
+  "measurements": {
+    "worker_seconds": 1.0779999999999745,
+    "supervisor_seconds": 2.4850000000001273,
+    "peak_process_committed_bytes": 130895872,
+    "minimum_sampled_available_RAM_bytes": 19042652160,
+    "minimum_sampled_destination_free_bytes": 104905805824
+  },
+  "limitations": [
+    "The actual experiment stops at capacity; noBlender unwrap, distortion, finalUV, F64/F32 density/coverage/LOD or material-quality result exists.",
+    "Same selection reused; seam vertices are disposable duplicates for UV topology only and original oriented corner data are bit-exact.",
+    "Local selected source boundaries2461 are not all natural original boundaries: prior independently authenticated split is2308 extraction-induced and153 global natural edges.",
+    "Generalized579-chart theorem has explicit exact-continuity/positive-orientation/no-overlap/chart-count semantics and numerical-overlap-tolerance limitations in its separate proof receipt."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "modly.amd.connected-foliage-independent-capacity.v1",
+  "created_utc": "2026-10-21T14:44:26.794848+00:00",
+  "classification": "ANALYTIC_LOWER_BOUNDS_ONLY",
+  "reviewer": "independent foliage_review subagent",
+  "base": "bad7ba4e9e8c3b14539d02a0c3930080891e0c56",
+  "scope": "Arithmetic and analytic reasoning from authenticated prior selected-patch report only; no original geometry, selection, UV, candidate unwrap, tests or renderer executed.",
+  "prior_execution_results_SHA256": "f8f64b4a785ad351ffff5041c6c68b2da2b66190da054e75fca846df8e379534",
+  "inputs": {
+    "selected_faces": 4531,
+    "triangle_area_world_sum": 0.005950395632805763,
+    "density_floor": 4096,
+    "source_edge_components": 83,
+    "vertex_components": 34,
+    "nonmanifold_selected_edges": 219,
+    "atlas_area_texels": 1048576
+  },
+  "unconditional_for_required_nonoverlapping_density_valid_UVs": {
+    "minimum_sum_UV_triangle_area_texels": 99831.07281703898,
+    "fraction_of_atlas": 0.09520633012489221,
+    "derivation": "For each original 3D triangle, both singular values of its world-tangent-to-texel Jacobian must be at least4096, so its UV area is at least original 3D area times4096 squared. Sum over all4531 preserved triangles; no positive-area UV overlap allows the sum to be compared with atlas area."
+  },
+  "source_connected_chart_count_bound": {
+    "minimum_charts": 83,
+    "assumptions": "Each UV chart is source-edge-connected and may not bridge original edge-components. Mere shared vertex connectivity does not join source-edge components.",
+    "nonmanifold_219_not_additional_chart_count": true,
+    "explanation": "Cuts required at nonmanifold edges may leave face sets connected by other paths, so219 is not a justified count of extra required charts."
+  },
+  "conditional_prior_owner_policy": {
+    "policy": "Reuse previous conservative32-aligned owner rectangle dimension rule with at least64 by64 texels per positive-area chart. This minimum is policy-specific; exact CLAMP ancestry can have atlas-edge cases.",
+    "minimum_chart_owner_area_texels": 339968,
+    "fraction_of_atlas": 0.32421875,
+    "safe_combination_with_density_area_floor": 339968,
+    "not_sum_of_content_and_owner_floors": true
+  },
+  "overhead_reporting": "After actual candidate UVs, report sum(owner rectangle areas) minus sum(nonoverlapping actual UV triangle areas). Prior64 by64 rectangle area already contains content: neither adding the full owner floor to the density area floor nor subtracting those two independent floors proves a universal overhead.",
+  "limitations": [
+    "Necessary lower bounds below1024 squared do not demonstrate that a particular unwrap, owner assignment or shelf packing fits.",
+    "The old1127-island partition and its6929408 rectangle area are a failed candidate, not lower bounds on a new surface-connected unwrap.",
+    "No actual new UV topology, distortions, portableF32 density, overlap, per-face coverage or continuousLOD isolation result exists yet."
+  ]
+}

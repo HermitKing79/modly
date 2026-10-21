@@ -1,0 +1,50 @@
+{
+  "schema": "modly.amd.connected-foliage-independent-chart-lower-bound.v1",
+  "created_utc": "2026-10-21T14:55:23.900979+00:00",
+  "classification": "VALID_UNDER_EXPLICIT_EXACT_CONTINUOUS_CHART_MODEL",
+  "reviewer": "independent foliage_review subagent",
+  "capacity_result_SHA256": "26f3150964f61aa39f623a236b42456da35d94978e8a50049b1d81447cd6cf6c",
+  "frozen_selection_result_SHA256": "8ed7861ef47aeb5e7468eddff1df886286c36c49542a4f61ea48d628e4faede0",
+  "model_assumptions": [
+    "All4531 original triangles remain, with strictly positive nondegenerate affine UV area in the original corner order.",
+    "Charts join only across shared original source edges with source endpoint correspondence and continuous affine UVs; no shared-vertex or nonlocal UV bridges and no disconnected pieces relabelled as one connected chart.",
+    "No positive-area UV overlap is permitted exactly. The chart budget counts source-connected charts, one per owned island, rather than aggregating disconnected pieces under one owner ID."
+  ],
+  "independently_measured_graph": {
+    "faces": 4531,
+    "source_edge_components": 83,
+    "incidence_one_edges": 2461,
+    "incidence_two_edges": 5229,
+    "incidence_two_opposite_direction_edges": 4153,
+    "incidence_two_same_direction_edges": 1076,
+    "nonmanifold_edges": 219,
+    "nonmanifold_edge_occurrences": 674,
+    "nonmanifold_incidence_histogram": {
+      "3": 202,
+      "4": 17
+    },
+    "components_using_all_and_only_opposite_incidence_two_edges": 815,
+    "retained_forest_edges": 3716,
+    "forest_cycle_cuts": 437,
+    "forest_components": 815
+  },
+  "argument": [
+    "Two positive-area affine triangles sharing the same directed UV edge both lie locally to its left. Gluing a same-directed original incidence-two edge therefore creates positive-area overlap, so it cannot connect two valid charts under this model.",
+    "At any one nonmanifold original edge with k face occurrences, each continuous UV edge copy can contain at most one face on either side. Thus at most floor(k/2) disjoint opposite-direction face pairs can be glued.",
+    "Start with all4153 permissible incidence-two edges already joined, giving815 components. Every newly permitted nonmanifold pair adjacency can reduce component count by at most one.",
+    "For k>=3, floor(k/2)<=k-2, so all219 nonmanifold edges permit at most674-2*219=236 additional pair adjacencies, even optimistically.",
+    "Therefore every charting in this exact model has at least815-236=579 connected charts, exceeding256. The forest cycle cuts do not change those815 components."
+  ],
+  "lower_bound_connected_charts": 579,
+  "maximum_allowed_charts": 256,
+  "coarse_nonmanifold_possible_pair_upper_bound": 236,
+  "size_only_pair_upper_bound": 236,
+  "opposite_direction_pair_upper_bound": 236,
+  "limitations": [
+    "This is a conditional exact topological/overlap argument, not an actual unwrap, geometric atlas construction or validation result.",
+    "The proof does not establish a numeric lower bound on the positive overlap area. A validator that tolerates overlaps up to1e-12 square texels cannot be declared to reject every possible tiny-overlap construction from this proof alone.",
+    "Allowing negative per-face UV orientations, source discontinuity, nonlocal bridges, disconnected pieces under one chart ID or different island semantics changes the model.",
+    "The actual tested815-chart conservative candidate is independently BLOCKED by the unchanged256-chart gate and its3338240 prescribed owner-area floor; it does not depend on the generalized579 proof.",
+    "No new foliage material accuracy, distortion, UV density, UV coverage, overlap/raster orLOD isolation measurement is claimed."
+  ]
+}

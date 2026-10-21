@@ -1,0 +1,44 @@
+{
+  "schema": "modly.amd.connected-foliage-independent-capacity-candidate.v1",
+  "created_utc": "2026-10-21T14:49:18.876746+00:00",
+  "classification": "GO",
+  "reviewer": "independent foliage_review subagent",
+  "authorized_stage": "capacity",
+  "base": "bad7ba4e9e8c3b14539d02a0c3930080891e0c56",
+  "scope": "One authenticated capacity worker and deterministic disposable seam-forest construction from the exact saved4531-face selection only. This review neither launches nor approves execution of unfinished unwrap code or Blender.",
+  "candidate_source_SHA256": {
+    "capacity.py": "679fa707d4e6cc392ca7b198eab5c65550da2c668cf58f22a6b08cdcf6747ac3",
+    "chart_forest.py": "c9e413df1e69600d9a26c1b42620914391db42b442a21255e8f324552cd76dc5",
+    "inputs.py": "77078fbe3a8cf83f84642d604a93dea87ac229c8a9068e0b31d5369553c6b5d4",
+    "run_host.py": "3217cb0c61785c2ec400f66c30cf1f463dfecbdfd4e35e69453f41e383606443",
+    "test_chart_forest.py": "a72bb25830005b09c178246c51471ca89b37b4aa435224f88e585d10356b478e"
+  },
+  "qualification_plan_SHA256": "484e501a883455756790278417a43269322fbce3dd249b4245cc8fcfd1b71cbe",
+  "forest_tests_SHA256": "3b9146ffc96e6761937319f362fb6e4b6bd51c45d3acb12ec4e0eb1dbeb23b7a",
+  "prior_independent_capacity_review_SHA256": "f5cbdcf8771cf4ab1c1000bb7c093248cd4ec07f2da5689248017eabecf079d9",
+  "synthetic_tests": {
+    "passed": 8,
+    "seconds": 0.542,
+    "provenance": "Read root-produced forest-tests.txt; reviewer did not rerun tests or execute actual forest/geometry operations."
+  },
+  "verified_checks": [
+    "Exact approved base/branch and all reused historical sources match raw Git base bytes. All current five capacity-stage Python files compile without execution.",
+    "Exact saved prior result SHA256 and all referenced selected NPY/PNG identities are admitted, with no image selection or alternative patch.",
+    "Original face/vertex lineage, corner positions, winding/order/multiplicity and direct learned material rows are checked bit-exactly against unchanged original inputs; entire material/geometry coordinates match.",
+    "Area times4096 squared is a valid unavoidable nonoverlapping UV content-area floor; source-connected chart count is at least83. Nonmanifold219 is not treated as219 extra charts.",
+    "Optimistic source chart-owner floor uses83 times32 squared and max with density content floor, never adds content and owner bounds. A positive-area chart cannot have less than one32 by32LOD5 ancestry block; this bound is deliberately loose.",
+    "Actual deterministic forest chart count and min64 by64 conservative owner dimensions give a separately labelled candidate-conditional necessary bound. Chart count over256 or this policy area over1024 squared stops before unwrap.",
+    "Forest joins only oppositely directed original shared edges with exactly two occurrences. Stable maximum-length dual forest and original edge/face ID tie breaks have no search or UV alternatives.",
+    "Disposable corner gluing only across retained forest edges preserves original source corners and avoids disconnected-component bridges. Per-chart disk edge/vertex/boundary/Euler invariants are checked before reporting.",
+    "Capacity saves seam arrays and original corner lineage with exclusive creation and byte-exact NPY readback; no UV coordinates or atlas are produced.",
+    "Owned Job host retains helper resource floors12GiB RAM/2GiBdisk,6GiB process commit/180s, binaryGO after attachment, private exclusive phase marker, unchanged source identity watch and natural owned process settlement.",
+    "Stage-specific independent review names prevent capacity review from serving as unwrap review. The future unwrap stage additionally requires actual capacityPASS and exact reviewed result/executable hashes."
+  ],
+  "limitations": [
+    "CapacityPASS is necessary admission only, not actual UV/topology distortion/packing/LOD/material-quality success.",
+    "The plan predeclares one futureCONFORMAL candidate and distortion cutoff, but future unwrap implementation and Blender execution require separate exact candidate review.",
+    "No actual capacity forest construction, original geometry load, source selection, UV construction, test rerun or renderer execution was performed by this reviewer.",
+    "Forest original_boundary_edge_count is local to the saved selection; reports must distinguish it from global natural boundary153 and extraction-induced2308."
+  ],
+  "blockers": []
+}

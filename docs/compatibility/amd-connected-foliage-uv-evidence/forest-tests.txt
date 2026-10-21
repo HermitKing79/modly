@@ -1,0 +1,13 @@
+test_closed_tetrahedron_retains_longest_dual_tree_and_becomes_disk (__main__.ForestTests.test_closed_tetrahedron_retains_longest_dual_tree_and_becomes_disk) ... ok
+test_coordinate_signed_zero_bits_are_preserved (__main__.ForestTests.test_coordinate_signed_zero_bits_are_preserved) ... ok
+test_disconnected_and_vertex_touching_triangles_remain_separate (__main__.ForestTests.test_disconnected_and_vertex_touching_triangles_remain_separate) ... ok
+test_equal_length_cycle_ties_use_original_edge_ids_deterministically (__main__.ForestTests.test_equal_length_cycle_ties_use_original_edge_ids_deterministically) ... ok
+test_invalid_dtypes_bounds_ids_and_geometry_are_rejected (__main__.ForestTests.test_invalid_dtypes_bounds_ids_and_geometry_are_rejected) ... ok
+test_nonmanifold_edge_is_never_glued (__main__.ForestTests.test_nonmanifold_edge_is_never_glued) ... ok
+test_opposite_winding_edge_is_retained_without_changing_corners (__main__.ForestTests.test_opposite_winding_edge_is_retained_without_changing_corners) ... ok
+test_same_winding_edge_is_a_seam_and_chart_order_uses_source_face (__main__.ForestTests.test_same_winding_edge_is_a_seam_and_chart_order_uses_source_face) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.542s
+
+OK

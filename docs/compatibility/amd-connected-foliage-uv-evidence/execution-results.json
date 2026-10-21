@@ -1,0 +1,100 @@
+{
+  "classification": "BLOCKED",
+  "stage": "capacity_only_no_unwrap",
+  "selection_faces": 4531,
+  "selection_vertices": 3177,
+  "actual_surface_area_world2": 0.005950395632805763,
+  "minimum_tangent_density": 4096,
+  "unavoidable_surface_area_texels": 99831.07281703898,
+  "original_edge_components": 83,
+  "original_nonmanifold_edges": 219,
+  "original_artificial_boundaries": 2308,
+  "unavoidable_source_connected_chart_floor": 83,
+  "optimistic_area_lower_bound_texels": 99831.07281703898,
+  "combined_lower_bounds_use_max_not_sum": true,
+  "atlas_capacity_texels": 1048576,
+  "prior_dominant_axis_islands": 1127,
+  "prior_rectangle_area_texels": 6929408,
+  "conditional_64x64_owner_lower_bound_texels": 3338240,
+  "policy": "Candidate retains32-aligned rectangles, content minimum32pxinside, dimensions32*(ceil(span/32+.5+1e-5)+1); min64 peraxis. This is conditional, not globally minimal mip packing.",
+  "lower_bound_does_not_guarantee_fit": true,
+  "files": {
+    "face-chart-ids.npy": {
+      "bytes": 18252,
+      "sha256": "ec0de637dd5059b5d6e19e2efbf5ead6f429d9c04b70515d68b180bae0323263"
+    },
+    "retained-source-edges.npy": {
+      "bytes": 59584,
+      "sha256": "6f24ed65064b6574005af6141069bf9fec24ec51be4dabe0979d99fc914a260a"
+    },
+    "seam-faces.npy": {
+      "bytes": 54500,
+      "sha256": "86ec3ec15ab58edc4bef6dc3a7f2a091718a3f0857e6342467d722c77f0f1666"
+    },
+    "seam-source-local-vertices.npy": {
+      "bytes": 24772,
+      "sha256": "94e75a1ba8bc6f89cdb5ffc02e3e50063e5c1cc736074ba424547aeb3aca7d98"
+    },
+    "seam-vertices.npy": {
+      "bytes": 74060,
+      "sha256": "33dbb3481d76f967c3eb4c56619b5bb5f94e591222c5a977261ee0e75c2ad50f"
+    },
+    "source-corner-indices.npy": {
+      "bytes": 49416,
+      "sha256": "9f9f366c2a096fb1a962f719197c2f015d45303b48773831e85d6e59d6227658"
+    }
+  },
+  "elapsed_seconds": 1.0779999999999745,
+  "schema": "modly.connected-foliage.actual-capacity.v1",
+  "base": "bad7ba4e9e8c3b14539d02a0c3930080891e0c56",
+  "candidate_chart_report": {
+    "face_count": 4531,
+    "chart_count": 815,
+    "seam_vertex_count": 6161,
+    "original_boundary_edge_count": 2461,
+    "nonmanifold_edge_count": 219,
+    "orientation_inconsistent_edge_count": 1076,
+    "eligible_edge_count": 4153,
+    "retained_edge_count": 3716,
+    "cycle_cut_edge_count": 437,
+    "seam_edge_count": 4193,
+    "original_oriented_corner_bits_preserved": true
+  },
+  "chart_face_count_summary": {
+    "single_face_charts": 330,
+    "largest_chart_faces": 1516,
+    "chart_face_count_sum": 4531,
+    "all_disks_Euler1_one_boundary": true
+  },
+  "candidate_min_owner_area_ratio": 3.18359375,
+  "capacity_worker_seconds": 1.0779999999999745,
+  "supervisor_elapsed_seconds": 2.4850000000001273,
+  "peak_process_committed_bytes": 130895872,
+  "minimum_sampled_RAM_bytes": 19042652160,
+  "minimum_sampled_destination_free_bytes": 104905805824,
+  "all_live_resource_samples_admitted": true,
+  "resource_sample_count": 2,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "returncode": 0,
+  "watched_sources_unchanged": true,
+  "blender_launched": false,
+  "UVs_created": false,
+  "texture_bake_export": false,
+  "raw_private_receipt_SHA256": {
+    "attempt.json": "566bcbf40f3bb9c41d688a10cf0bc1c694cf4aa7c819a908e88dda70a7daf5bb",
+    "host-result.json": "d635955e0fdc5d7c858386e2e14074d573cada47d3a889c0b04568a74662c308",
+    "run/result.json": "26f3150964f61aa39f623a236b42456da35d94978e8a50049b1d81447cd6cf6c",
+    "run/stdout.txt": "054bffd0f6702e3f747ea335ebc7825d23da1107579e9b228d48d8bd6a5781c8",
+    "run/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "limitations": [
+    "No actual conformal solver, UVs, distortion, overlap, raster, mip filtering, occupied texels or padding-waste measurements exist. Capacity bound is for the deterministic nominated disk charts and fixed conservative owner policy.",
+    "A more general chart-count theorem requires explicit edge-connected charts, source endpoint continuous affine maps, positive signed areas and exact no-overlap, not arbitrary disconnected packing groups."
+  ]
+}
