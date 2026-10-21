@@ -1,0 +1,79 @@
+{
+  "schema": "modly.amd.brick-native-colour-render-preservation-after.v1",
+  "created_utc": "2026-10-21T20:03:37.053957+00:00",
+  "mission_base": "4c38a7a00e2fffa692eb40c4942f786ca5b07bc6",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "authenticated_prior_full_glb_acceptance_after_public_sha256": "004671f6420be0728d7d6558f6ba7f5373a710c60756c7dc1269b8881fb04c13",
+  "authenticated_prior_full_glb_acceptance_after_private_sha256": "38dea63fe969c21034b66279b85a59b69c8b45b6385f4a39d06ae15307c1cb93",
+  "private_detail_sha256": "262d83179185a4cc880b3ce7f1a59ae3757bc4518b16cb2ee7885b569310a217",
+  "authenticated_root_captured_remote_head_count": 103,
+  "root_captured_remote_head_baseline_sha256": "b9562dd54e625af37f227f46f9dbf1eea2818cad3ceddd6cec9c0b182fffd185",
+  "live_remote_checked_by_this_audit": false,
+  "root_handles_live_remote_and_final_publication_checks": true,
+  "bounded_prior_unique_file_identities_checked": 400,
+  "all400_fresh_full_SHA256_checked": true,
+  "all400_current_identities_match_authenticated_before": true,
+  "protected_files_checked": 100,
+  "protected_files_fresh_full_SHA256_checked": 100,
+  "protected_files_unchanged": true,
+  "original_pycache_directories": 4,
+  "original_pycache_files": 20,
+  "original_pycache_entry_sets_and_fresh_file_hashes_unchanged": true,
+  "selected_environment_check_count": 42,
+  "selected_source_edit_backup_check_count": 13,
+  "selected_environment_native_source_edit_backup_checks_unchanged": true,
+  "source_closure_checks": {
+    "final16_source_closure": {
+      "files": 16,
+      "all_fresh_hashes_match": true
+    },
+    "original_CPU_candidate107_source_closure": {
+      "files": 107,
+      "all_fresh_hashes_match": true
+    },
+    "qualified_input_ownership_source_closure": {
+      "files": 18,
+      "all_fresh_hashes_match": true
+    },
+    "latest_qualified_PBR123_source_closure": {
+      "files": 123,
+      "all_fresh_hashes_match": true
+    }
+  },
+  "checkpoint_count": 3,
+  "checkpoint_stat_and_raw_header_unchanged": true,
+  "checkpoint_configuration_files_bound_by_full_SHA256_in_unique400": true,
+  "checkpoint_weight_payload_bytes_read_this_audit": 0,
+  "checkpoint_header_bytes_read_this_audit": 121336,
+  "prior_tree_count": 50,
+  "prior_tree_file_count": 1312,
+  "prior_report_count": 23,
+  "all_compared_prior_trees_unchanged": true,
+  "all_compared_prior_reports_unchanged": true,
+  "newly_snapshotted_completed_full_glb_acceptance_tree_count": 0,
+  "newly_snapshotted_completed_full_glb_acceptance_file_count": 0,
+  "newly_snapshotted_completed_full_glb_acceptance_report_count": 0,
+  "prior_recorded_cache_incident": {
+    "previous_classification": "PASS_RECONCILED_WITH_RECORDED_SIDE_EFFECT",
+    "original_after_remains_FAIL": true,
+    "retained_quarantine_file_count": 5,
+    "all_current_quarantine_hash_size_mtime_match_prior_reconciliation": true,
+    "all_old_source_entries_remain_absent": true,
+    "independent_pre_move_payload_hash_capture": false
+  },
+  "original_saved_five_inputs_fresh_full_SHA256_match": true,
+  "diagnosis_original_five_inputs_fresh_full_SHA256_match": true,
+  "pinned_renderers_unchanged": true,
+  "previous_exposure_images_unchanged": true,
+  "fresh_full_hash_unique_file_count_all_scopes": 1806,
+  "fresh_full_hash_bytes_read_all_scopes": 3279654405,
+  "issues": [],
+  "scope_limits": [
+    "All400/protected100/original cache20/source/environment/renderer identities freshly checked against authenticated prior reconciliation; historical prior trees remain frozen. Public receipt omits private absolute paths.",
+    "Three historical disposable CPU fixture copies retain exact size/mtime checks only. Checkpoint weight payloads not read; exact size/mtime and fresh bounded raw header SHA256 checked. Historical full checkpoint SHA256 is provenance only.",
+    "Previous completed full GLB acceptance E/P and report, plus earlier generated-cache-quarantine are fresh snapshots in BEFORE and fixed comparison scopes for AFTER; prior original FAIL and reconciled receipts remain retained.",
+    "No WSL, model, GPU, Blender, native extension or install execution; no historical/source/cache writes. Root separately verifies Git state, remote heads and publication."
+  ],
+  "authenticated_before_public_sha256": "e72d38fcd33089401b582352c5def2a043bd6b52fd653885588157734838737a",
+  "authenticated_before_private_sha256": "2ea8631315cbcfb81e2738900b51fc39e8bb44cc173fb5444f43ca02ae0a615e"
+}

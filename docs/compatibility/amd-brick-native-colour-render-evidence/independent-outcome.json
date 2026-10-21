@@ -1,0 +1,201 @@
+{
+  "classification": "PASS",
+  "import_qualification": "PASS",
+  "visual": "PASS_SINGLE_POSITIVE_X_VIEW",
+  "base": "4c38a7a00e2fffa692eb40c4942f786ca5b07bc6",
+  "scope": "Final independent saved-JSON/hash consistency and source-safe publication review, incorporating the earlier direct visual inspection. No tests, metric recomputation, source queries, render or Blender operation were rerun for this final review.",
+  "bound_evidence_SHA256": {
+    "report": "83f311ff5cf29c6c6ca2bd70f6454f680ce1dbe837619bc7692740a6fa6d142f",
+    "outcome.json": "0790c05ef040df16039b1525b8dc28999828e3710bc44d0738cd1799ceb60011",
+    "qualification-metrics.json": "7dcddfaa50b42d79a339e0b9437206e1a779f7644495e72dc6053fd0e1066e4a",
+    "actual-native-metrics.json": "4b770d1db1e26e246b26e947c58a83b9fec7412cb0b6b9930aadae0d19968833",
+    "visual-review.json": "0a2f32f8c5247f12e9591a051e12ac08198ce6917276d528d52c3697882b0983",
+    "independent-candidate-review.json": "b32b1e5a65e461187812f968558a163249dde4036452b8a0db4d8d61b3bb0215",
+    "independent-host-review.json": "110427e8fd14454462a7af969edd56ac464f7fdad293307bd607443bd925a020",
+    "qualification-plan.md": "246ad44d2855fedc450856292dad30f7c697757abf91f69d09882f581d2298c1",
+    "focused-tests.txt": "500d8d179de5a3ea5042eed2b842b75f80d2559ff3cf2ea59b8eaa51f330a8a6",
+    "preservation-before.json": "e72d38fcd33089401b582352c5def2a043bd6b52fd653885588157734838737a",
+    "preservation-after.json": "43a796de5c0aaba244d50c58d090021ac27322c02e987d8cc844a9fd305388e9",
+    "qualify/result.json": "7f8abf31e931489692995dfc2feeffce380c207db6728963bd097e6da2beda84",
+    "render/result.json": "e1ff463d8cd7af484fef3c614328e9950a4a69866c2d4bf333719ec4e7d9fbce",
+    "inspect/result.json": "c694ac91022ff38a7967c164704509a8a8fd4d7613bd1b5e2a7e326e6e179d9f",
+    "qualify-host.json": "c7be8020c73e57e746bb7d6822884d5a4cbc83eef2c2f626e2bd0b9e2507fa9d",
+    "render-host.json": "45fcf4a788e51ff7c53c4fc3cc91d4913e5b59b9b8152fd9a7134ec76241c250",
+    "inspect-host.json": "80ee9b357c5724f7b71b5c6a5478a2ae9fc5980c0fc6f901ee34d64c31e5e8c4",
+    "qualify-attempt.json": "46804b2250ba8259df515e756a05f346e16572499dcbb506673bbb56d322b9e7",
+    "render-attempt.json": "2048d746386394b784f27a93f4dd0543c1a3ee6c69db5255d8450986632d2ae0",
+    "inspect-attempt.json": "598eab250bbe8bd9cef496ba640c7404114014de87b2f7621230d260d94e6e3f",
+    "render/native-getter-qualification.json": "92f91ac7ffe08737cd250c35947f26f6187530d4791ab7d6fd69293c01452f2e",
+    "qualify/metric-rows.json": "6e767a80480acfd63fe6bcd4d93bac270cff512cb690a78f7d0a48bb7e6e4d40"
+  },
+  "identity_and_execution_review": {
+    "all_eleven_current_candidate_source_hashes_match_review_and_all_three_actual_attempt_markers": true,
+    "reviewed_plan_and_focused_log_match_all_attempt_markers": true,
+    "all_worker_receipts_exactly_bound_by_PASS_owned_host_receipts": true,
+    "all_public_metric_rows_match_actual_saved_receipts": true,
+    "original_GLB_SHA256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+    "original_linear_COLOUR0_NPY_SHA256": "1240160cefcf961d463d9c06416e0907469c8d80a590fb44f483bb1fc220ea44",
+    "saved_scene_SHA256": "67d9a9439417eebfa8ab294d955e8056f413fea28866f6006f8298a105e19588",
+    "new_GLB_imports": 0,
+    "render_count": 1,
+    "import_stage_or_attempt_present": false
+  },
+  "quality_review": {
+    "original_query_count": 56910,
+    "holdout_query_count": 2048,
+    "original_rows": 64,
+    "holdout_rows": 48,
+    "total_rows": 112,
+    "primary_and_separate_independent_evaluators_all_rows_pass": true,
+    "actual_native_getter_all_rows_pass_before_render": true,
+    "RGB_gates": {
+      "rmse": 0.02,
+      "p95_abs": 0.05,
+      "max_abs": 0.15
+    },
+    "separate_metallic_roughness_and_OPAQUE_alpha_RMSE_gate": 0.02,
+    "all_primary_independent_and_native_RGB_and_scalar_row_decisions_checked": true,
+    "scope": "All frozen original queries and position holdouts on the previously selected faces. Quality evidence is bounded to those cohorts; no new sampling, fitting, masking or metric threshold was introduced.",
+    "representation": "Phase1 uses standard IEC byte decoding rounded to F32; phase2 uses actual native BYTE_COLOR getter F32 RGB and proves repeated-corner source correspondence bit-exactly. The actual getter removes any need to assume native/ideal decoder bit equality.",
+    "historical_half_bin_gate_not_reused": true
+  },
+  "geometry_and_colour_review": {
+    "referenced_imported_vertices": 1952142,
+    "original_oriented_triangles": 4173584,
+    "stored_RGBA_corners": 12520752,
+    "original_position_bits_and_triangle_face_corner_order_winding_multiplicity_exact": true,
+    "approved_original_unreferenced_vertices_omitted": 5749,
+    "all_stored_native_corner_bytes_unchanged_before_and_after_render": true,
+    "original_flat_shading_and_material_unchanged": true,
+    "geometry_repaired": false,
+    "colours_replaced": false,
+    "source_or_importer_modified": false
+  },
+  "render_review": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 32,
+    "resolution": [
+      640,
+      640
+    ],
+    "exposure_EV": 2,
+    "denoising": true,
+    "denoising_use_gpu": false,
+    "denoiser": "OPENIMAGEDENOISE",
+    "threads": 4,
+    "camera_and_lighting": "Authenticated original +X orthographic camera and neutral studio",
+    "settings_match_saved_render_receipt": true,
+    "render_plus_postcheck_seconds": 15.185221200001251,
+    "pure_engine_time_separately_measured": false,
+    "optional_warning": "CUEW optional library probe failed in preserved stdout. Actual configured Cycles CPU and CPU denoising completed successfully; the warning does not establish GPU rendering."
+  },
+  "stage_measurements": {
+    "qualify": {
+      "owned_seconds": 5.796999999998661,
+      "peak_process_committed_bytes": 327467008,
+      "peak_job_committed_bytes": 328318976,
+      "cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "sources_unchanged": true
+    },
+    "render": {
+      "owned_seconds": 69.93799999999828,
+      "peak_process_committed_bytes": 2056413184,
+      "peak_job_committed_bytes": 2056413184,
+      "cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "sources_unchanged": true
+    },
+    "inspect": {
+      "owned_seconds": 2.0160000000032596,
+      "peak_process_committed_bytes": 26398720,
+      "peak_job_committed_bytes": 27246592,
+      "cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "sources_unchanged": true
+    }
+  },
+  "supervision_review": {
+    "process_and_Job_cap_bytes": 6442450944,
+    "deadline_seconds_per_worker": 180,
+    "RAM_floor_bytes": 12884901888,
+    "disk_floor_bytes": 2147483648,
+    "minimum_measured_available_RAM_bytes": 18375901184,
+    "minimum_measured_free_disk_bytes": 112181583872,
+    "all_recorded_resource_samples_admitted": true,
+    "all_attached_before_exact_binary_GO": true,
+    "all_return_codes_zero": true,
+    "all_owned_trees_naturally_empty_before_cleanup": true,
+    "forced_cleanup": false,
+    "retry": false,
+    "sources_and_authenticated_prior_outputs_unchanged": true
+  },
+  "image_files": {
+    "view-pos-x-ev2.png": {
+      "bytes": 416986,
+      "sha256": "cb9b6df90fe9ec1d9dbf7b5b38878776c6b975cb8f6042a1a8d2f6e86e8ad52b"
+    },
+    "comparison-pos-x.png": {
+      "bytes": 701848,
+      "sha256": "8e8485d6dfbcafb19bfcf61b68a786ac6afdfb5e349c156a0df37cb395221f82"
+    }
+  },
+  "visual_review": {
+    "classification": "PASS_SINGLE_POSITIVE_X_VIEW",
+    "images_previously_inspected_with_view_image": true,
+    "final_image_hashes_match_inspected_hashes": true,
+    "observations": "Recognisable brick courses, pale mortar, woody curling vines and leaves with clear depth. Warm colour distribution and silhouette are consistent with the contextual PBR reference; no conspicuous new global colour shift or missing patch was seen.",
+    "existing_defects": "Dark gaps, crowded intersections, ragged leaves and thin stray or apparently disconnected strands remain visible in both panels.",
+    "limits": "One640px +X view. Exact geometry checks support preservation of all original faces, while this image alone does not qualify hidden surfaces, other views, watertightness or game readiness. The prior PBR image uses different sampling, transfer and material semantics; comparison is contextual rather than pixel-exact.",
+    "images_remain_private": true
+  },
+  "historical_failure_preservation": {
+    "previous_verifier": "NO-GO",
+    "previous_supervisor": "BLOCKED",
+    "previous_report_and_outcome": "BLOCKED",
+    "previous_failure_SHA256": "eb6c26254d55ca14b5d35dc923ae7146c7569332b63fed6dec1ca779f98db0f6",
+    "previous_host_SHA256": "b4a52a4bd3b6c66ddbd9363b8ba8be52d1bbf588fe12b235f36699f5ff6dd476",
+    "unchanged_hashes_and_classifications_confirmed": true,
+    "interpretation": "This newly approved source-quality qualification and saved-scene render are separate evidence. They do not rewrite the failed added ideal-rounding policy or retroactively turn the historical verifier into PASS."
+  },
+  "preservation_review": {
+    "classification": "PASS_WITH_RECORDED_SCOPE",
+    "issues": [],
+    "protected_files_unchanged": 100,
+    "authenticated_prior_identities_freshly_checked": 400,
+    "prior_trees_unchanged": 50,
+    "prior_tree_files": 1312,
+    "prior_reports_unchanged": 23,
+    "original_cache_files_unchanged": 20,
+    "selected_environment_source_backup_renderer_and_quarantine_checks_unchanged": true,
+    "checkpoint_weight_payload_bytes_read_by_audit": 0,
+    "limits": "Checkpoint size/mtime and fresh bounded headers were checked without rereading weight payloads. Historical cache-incident and reconciled receipts remain retained. Git heads and final publication are handled separately by the root task."
+  },
+  "publication_review": {
+    "classification": "PASS",
+    "report_and_outcome_consistent_with_actual_receipts": true,
+    "all112_primary_and_actual_native_public_rows_preserved": true,
+    "public_evidence_contains_aggregate_metrics_counts_hashes_and_studio_settings_only": true,
+    "private_model_geometry_colour_prediction_arrays_and_image_payloads_excluded": true,
+    "no_general_asset_quality_or_game_readiness_claim": true,
+    "conclusion": "Publish import qualification PASS and visual PASS for this single +X presentation, with the original saved scene and full geometry/native-byte preservation. Stop for user visual review; no further generation, reimport, export, baking, geometry modification or integration is authorised by this receipt."
+  },
+  "review_independence": "This reviewer authored run_host.py, whose final exact bytes received a separate independent source review. Other candidate semantics, saved outcomes, visual evidence and final publication were reviewed independently here.",
+  "actionable_final_report_findings": []
+}

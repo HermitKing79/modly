@@ -1,0 +1,15 @@
+test_independent_verifier_exists (test_independent.Availability.test_independent_verifier_exists) ... ok
+test_all_original_and_holdout_queries_and_112_rows_are_required (test_independent.NativeQueries.test_all_original_and_holdout_queries_and_112_rows_are_required) ... ok
+test_linear_p95_interpolates_adjacent_order_statistics (test_independent.NativeQueries.test_linear_p95_interpolates_adjacent_order_statistics) ... ok
+test_optional_actual_native_getter_rgb_replaces_the_iec_decode (test_independent.NativeQueries.test_optional_actual_native_getter_rgb_replaces_the_iec_decode) ... ok
+test_queries_cohorts_positive_support_and_oracle_schema_fail_closed (test_independent.NativeQueries.test_queries_cohorts_positive_support_and_oracle_schema_fail_closed) ... ok
+test_rgb_and_each_scalar_gate_cannot_be_hidden_by_other_channels (test_independent.NativeQueries.test_rgb_and_each_scalar_gate_cannot_be_hidden_by_other_channels) ... ok
+test_bad_decode_schema (test_quality.Quality.test_bad_decode_schema) ... ok
+test_byte_decode_endpoints_and_monotonicity (test_quality.Quality.test_byte_decode_endpoints_and_monotonicity) ... ok
+test_exact_original_code_pins_before_any_marker (test_quality.Quality.test_exact_original_code_pins_before_any_marker) ... ok
+test_no_reachable_import_command (test_quality.Quality.test_no_reachable_import_command) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.359s
+
+OK

@@ -1,0 +1,83 @@
+{
+  "classification": "GO",
+  "scope": "One saved-native-byte source-quality qualification; only after PASS, one saved-scene CPU render with native-getter qualification before rendering, followed by image reopening. No GLB import, new source sampling or automatic retry is authorised.",
+  "base": "4c38a7a00e2fffa692eb40c4942f786ca5b07bc6",
+  "branch": "codex/amd-brick-native-colour-render",
+  "candidate_source_SHA256": {
+    "common.py": "3560a3b9db9776b5098dfca479c63d1dcc8a2e09dcedf5bc12074342a4f6b876",
+    "contract.py": "4c2eb28ee14707b90edac7d9ab9882473f3dfcd9e194ddc5d2f7b14c7d68edf5",
+    "independent.py": "6e950b6997389071693b92da4142134ca6487fa1e3c57e016a608e78a0814744",
+    "inputs.py": "a25e1589b891e4b308242de64c879a2eae93e6c8e3589659b3f383f498290564",
+    "inspect_worker.py": "5a57a3255effb049a2473fab6033d1f51639ed480a7f1cc9510d444ae1a3dac6",
+    "qualify.py": "2041ebc686f648c25e37ba022b15de3e5e52ef2bbbcbe575edf52b121dec6727",
+    "quality.py": "6b619aef3176e2d86ac1b71fbfa3369a4c215cee14ca3c59b7f6aeaf481f726a",
+    "render_worker.py": "7c0e33bdd605823eee4ded3c68d943ca2ddbebe9ab9ffa40e3442c313ef424e1",
+    "run_host.py": "73a65815f5969eed14f4c08db57fc4a7ebbe0f82ffc1e34b030b95276f26eaae",
+    "test_independent.py": "80ebdff496ca5039f45ca441543ab44cb2bc137a18db691d085cddbc27a4d02a",
+    "test_quality.py": "611e644afe5297820ced6f856d55096651fa3805c56d9cb17b0bde8bb8bd2995"
+  },
+  "qualification_plan_SHA256": "246ad44d2855fedc450856292dad30f7c697757abf91f69d09882f581d2298c1",
+  "focused_tests_SHA256": "500d8d179de5a3ea5042eed2b842b75f80d2559ff3cf2ea59b8eaa51f330a8a6",
+  "importer_audit_SHA256": "266d2a9fb761e392ad2e2019c29b87f4c915627eb184e376277390447c470c72",
+  "independent_host_review_SHA256": "110427e8fd14454462a7af969edd56ac464f7fdad293307bd607443bd925a020",
+  "review_independence": {
+    "this_reviewer_authored": [
+      "run_host.py"
+    ],
+    "separate_exact_host_review": "GO with no actionable findings; worker semantics reviewed independently here.",
+    "actual_worker_Blender_or_asset_queries_run_by_this_reviewer": 0
+  },
+  "focused_evidence": {
+    "logged_tests": 10,
+    "logged_failures": 0,
+    "logged_skips": 0,
+    "all_eleven_current_sources_parse": true,
+    "scope": "Synthetic complete original/holdout populations and112 rows, independent percentile, RGB and separate scalar rejection, native-getter override, invalid queries/support/cohorts, byte decoding, exact source pins and unreachable import commands. Initial module-resolution failure remains private; final actual modules resolve correctly."
+  },
+  "phase1_review": {
+    "original_query_count": 56910,
+    "holdout_query_count": 2048,
+    "original_regions": 16,
+    "original_metric_rows": 64,
+    "holdout_metric_rows": 48,
+    "total_metric_rows": 112,
+    "RGB_limits": {
+      "rmse": 0.02,
+      "p95_abs": 0.05,
+      "max_abs": 0.15
+    },
+    "separate_scalar_RMSE_limit": 0.02,
+    "reference_policy": "Existing authenticated source-spatial F32 six-channel references, exact original face IDs/barycentrics/kinds and positive support; no new locations, field calls, fitting or observed-error selection.",
+    "representation": "Saved native BYTE_COLOR bytes decoded with F64 IEC sRGB, rounded to F32 linear RGB, then interpolated and re-encoded under the historical original metric semantics. This is not a native getter bit-equality claim.",
+    "independent_check": "A separate evaluator constructs all cohorts, performs independent interpolation/transfer, manual linear p95, RGB statistics and each scalar test. Every query is covered in required disjoint frozen regions; all112 rows must pass. Primary and independent row identities/counts/decisions and numerical statistics must agree within1e-12.",
+    "exact_saved_transport": "All original referenced F32 positions, ordered oriented triangles and12,520,752 actual cornerRGBA bytes are rechecked against the preserved original source/native oracle before quality evaluation.",
+    "failed_evidence": "The old ideal-half-bin verifier NO-GO and supervisor BLOCKED records remain pinned and unchanged. No new rounding ceiling is substituted.",
+    "failure_evidence": "All primary and independent aggregate metric rows are durably saved before any quality-gate rejection. Raw predictions remain private."
+  },
+  "phase2_review": {
+    "scene_SHA256": "67d9a9439417eebfa8ab294d955e8056f413fea28866f6006f8298a105e19588",
+    "fresh_GLTF_imports_authorised": 0,
+    "scene_policy": "Open the existing unchanged saved scene with scripts disabled; no GLB import call exists in the worker. Recheck exact source geometry, imported material and all stored corner bytes.",
+    "actual_getter": "Bulk-read the actual native BYTE_COLOR .color F32 RGBA values. Map them to original source IDs and require repeated corners to retain bit-identical RGB; all112 original material gates are then evaluated on this actual getter representation before the render call. Unreferenced fallback rows never appear in a triangle query.",
+    "getter_failure_evidence": "Save all actual-native-getter aggregate metric rows before rejecting any failed gate.",
+    "render": "Exactly one original +X orthographic640x64032-sample CyclesCPU view, OpenImageDenoiseCPU, four threads, no adaptive sampling, original camera/neutral studio, AgX/None/+2EV.",
+    "postconditions": "Original exact geometry, material wiring/scalars and every stored corner byte must remain unchanged after rendering. No scene save, attribute replacement, geometry repair, export or extra view.",
+    "inspection": "Fresh owned CPU PNG reopening and labelled private contextual comparison. Independent visual review is still required; source/shading differences prohibit a pixel-perfect reference-equivalence claim."
+  },
+  "resource_review": {
+    "process_cap_bytes": 6442450944,
+    "job_cap_bytes": 6442450944,
+    "deadline_seconds_per_worker": 180,
+    "minimum_available_RAM_bytes": 12884901888,
+    "minimum_free_disk_bytes": 2147483648,
+    "render_original_import_peak_ceiling_bytes": 5368709120,
+    "original_import_host_SHA256": "19c23db0a47c7e3c003013b70dab7b5fc67cc2e1ae8042fb2e621b45f1b6b370",
+    "original_import_worker_SHA256": "13ab7159c0db783ffd22404420c19d02d51b678ec5e87e18cf53565ba68ab3a7",
+    "ownership": "Fresh exclusive stage outputs and markers, exact reviewed complete source set/plan/log/audit identities, qualifying worker and owned-host PASS with exact receipt binding, current RAM/disk admission, binary GO after Job attachment, periodic checks, unchanged watched sources/prior outputs and natural empty owned Job without forced cleanup.",
+    "projection_limit": "Prior import/render measurements support planning; the hard caps and live resource floors remain mandatory and are not raised."
+  },
+  "stop_rule": "If qualification, actual native getter gates, render, image reopening or owned supervision fails, preserve all evidence and stop. No GLB reimport, automatic retry, extra view, quality-threshold relaxation, fitting, source modification or native probe.",
+  "actual_outcome_claimed": false,
+  "visual_PASS_claimed": false,
+  "actionable_findings": []
+}

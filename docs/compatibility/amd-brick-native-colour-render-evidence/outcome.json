@@ -1,0 +1,196 @@
+{
+  "classification": "PASS",
+  "import_qualification": "PASS",
+  "visual": "PASS_SINGLE_POSITIVE_X_VIEW",
+  "base": "4c38a7a00e2fffa692eb40c4942f786ca5b07bc6",
+  "GLB_imports": 0,
+  "render_count": 1,
+  "source_vertices": 1957891,
+  "referenced_imported_vertices": 1952142,
+  "original_oriented_triangles": 4173584,
+  "all_original_geometry_and_native_colour_bytes_unchanged": true,
+  "previous_failed_verifier_and_BLOCKED_verdict_unchanged": true,
+  "all112_material_rows_pass_primary_and_independent": true,
+  "actual_native_getter_all112_pass": true,
+  "query_counts": [
+    56910,
+    2048
+  ],
+  "RGB_gates": {
+    "rmse": 0.02,
+    "p95_abs": 0.05,
+    "max_abs": 0.15
+  },
+  "scalar_RMSE_gate": 0.02,
+  "worker_receipt_SHA256": {
+    "qualify": "7f8abf31e931489692995dfc2feeffce380c207db6728963bd097e6da2beda84",
+    "render": "e1ff463d8cd7af484fef3c614328e9950a4a69866c2d4bf333719ec4e7d9fbce",
+    "inspect": "c694ac91022ff38a7967c164704509a8a8fd4d7613bd1b5e2a7e326e6e179d9f"
+  },
+  "host_receipt_SHA256": {
+    "qualify": "c7be8020c73e57e746bb7d6822884d5a4cbc83eef2c2f626e2bd0b9e2507fa9d",
+    "render": "45fcf4a788e51ff7c53c4fc3cc91d4913e5b59b9b8152fd9a7134ec76241c250",
+    "inspect": "80ee9b357c5724f7b71b5c6a5478a2ae9fc5980c0fc6f901ee34d64c31e5e8c4"
+  },
+  "metric_public_SHA256": {
+    "qualification-metrics.json": "7dcddfaa50b42d79a339e0b9437206e1a779f7644495e72dc6053fd0e1066e4a",
+    "actual-native-metrics.json": "4b770d1db1e26e246b26e947c58a83b9fec7412cb0b6b9930aadae0d19968833"
+  },
+  "visual_review_SHA256": "0a2f32f8c5247f12e9591a051e12ac08198ce6917276d528d52c3697882b0983",
+  "actual_native_private_receipt_SHA256": "92f91ac7ffe08737cd250c35947f26f6187530d4791ab7d6fd69293c01452f2e",
+  "scene_SHA256": "67d9a9439417eebfa8ab294d955e8056f413fea28866f6006f8298a105e19588",
+  "image_files": {
+    "view-pos-x-ev2.png": {
+      "bytes": 416986,
+      "sha256": "cb9b6df90fe9ec1d9dbf7b5b38878776c6b975cb8f6042a1a8d2f6e86e8ad52b"
+    },
+    "comparison-pos-x.png": {
+      "bytes": 701848,
+      "sha256": "8e8485d6dfbcafb19bfcf61b68a786ac6afdfb5e349c156a0df37cb395221f82"
+    }
+  },
+  "render_settings": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 32,
+    "denoising": true,
+    "denoising_use_gpu": false,
+    "resolution": [
+      640,
+      640
+    ],
+    "exposure": 2.0,
+    "view_transform": "AgX",
+    "look": "None",
+    "gamma": 1.0,
+    "camera_location": [
+      2.797344923019409,
+      -0.0018387436866760254,
+      0.0007975846529006958
+    ],
+    "camera_quaternion": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "ortho_scale": 1.5038471221923828,
+    "lights": [
+      {
+        "location": [
+          2.797344923019409,
+          -1.7424025535583496,
+          2.0894739627838135
+        ],
+        "quaternion": [
+          0.7666620016098022,
+          0.420985609292984,
+          0.23333027958869934,
+          0.42492061853408813
+        ],
+        "energy": 38.77840042114258,
+        "size": 1.7405638694763184,
+        "color": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "location": [
+          1.4048939943313599,
+          2.0868377685546875,
+          0.6970230937004089
+        ],
+        "quaternion": [
+          0.23067083954811096,
+          0.17540188133716583,
+          0.5793130397796631,
+          0.7618540525436401
+        ],
+        "energy": 19.38920021057129,
+        "size": 1.7405638694763184,
+        "color": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "location": [
+          -2.0762336254119873,
+          -0.0018387436866760254,
+          2.0894739627838135
+        ],
+        "quaternion": [
+          0.6532815098762512,
+          0.27059805393218994,
+          -0.27059805393218994,
+          -0.6532815098762512
+        ],
+        "energy": 29.083799362182617,
+        "size": 1.7405638694763184,
+        "color": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  "stage_measurements": {
+    "qualify": {
+      "owned_seconds": 5.796999999998661,
+      "peak_process_committed_bytes": 327467008,
+      "peak_job_committed_bytes": 328318976,
+      "cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "sources_unchanged": true
+    },
+    "render": {
+      "owned_seconds": 69.93799999999828,
+      "peak_process_committed_bytes": 2056413184,
+      "peak_job_committed_bytes": 2056413184,
+      "cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "sources_unchanged": true
+    },
+    "inspect": {
+      "owned_seconds": 2.0160000000032596,
+      "peak_process_committed_bytes": 26398720,
+      "peak_job_committed_bytes": 27246592,
+      "cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "sources_unchanged": true
+    }
+  },
+  "render_plus_postcheck_seconds": 15.185221200001251,
+  "minimum_measured_available_RAM_bytes": 18375901184,
+  "minimum_measured_free_disk_bytes": 112181583872,
+  "CPU_only": true,
+  "images_models_and_prediction_arrays_private": true,
+  "limits": {
+    "process_and_job_cap_bytes": 6442450944,
+    "per_worker_deadline_seconds": 180,
+    "available_RAM_floor_bytes": 12884901888,
+    "disk_floor_bytes": 2147483648
+  },
+  "no_retry_or_new_positions_or_colour_fitting": true,
+  "warning": "Optional CUEW library probe failed; actual Cycles CPU/OIDN CPU render completed",
+  "next_step": "Stop for user visual review; no further generation, baking, export or geometry modification approved."
+}

@@ -1,0 +1,39 @@
+{
+  "classification": "PASS",
+  "scope": "Independent visual inspection of the actual single +X orthographic CPU render and its labelled contextual comparison. No additional render, numerical rerun or image modification was performed.",
+  "reviewed_private_images": {
+    "view-pos-x-ev2.png": {
+      "sha256": "cb9b6df90fe9ec1d9dbf7b5b38878776c6b975cb8f6042a1a8d2f6e86e8ad52b",
+      "bytes": 416986,
+      "dimensions": [640, 640]
+    },
+    "comparison-pos-x.png": {
+      "sha256": "8e8485d6dfbcafb19bfcf61b68a786ac6afdfb5e349c156a0df37cb395221f82",
+      "bytes": 701848,
+      "dimensions": [1280, 720]
+    }
+  },
+  "reference_preview_SHA256": "74d1655d53d5fe7d262756c7e23c0a695aa42b7ee3c43e075007a59fc3bf7f54",
+  "observations": {
+    "recognition": "Individual brick courses, pale mortar, wrapping woody tendrils and curled leaves are clearly recognisable.",
+    "colour": "Red-brown and grey brick variation and the warm brown/orange foliage distribution are consistent with the contextual reference. No conspicuous unintended global hue shift is visible.",
+    "depth": "Occlusion, contact shadows and overlapping vines give clear depth around the brick column. Mortar separations and dark recesses remain visible.",
+    "transport": "The framing and main silhouette agree closely with the reference. No obvious newly missing surface patch, back-face loss or broad colour substitution is visible in this view.",
+    "existing_defects": "Dark gaps, crowded intersections, ragged leaf edges and thin stray or apparently disconnected strands remain visible in both panels. They are not newly established transport defects.",
+    "shading": "Some foliage surfaces remain angular or creased. Similar features are visible in the reference; this view does not reveal a conspicuous new shading failure attributable to absent exported normals."
+  },
+  "supporting_saved_evidence_SHA256": {
+    "render/result.json": "e1ff463d8cd7af484fef3c614328e9950a4a69866c2d4bf333719ec4e7d9fbce",
+    "render-host.json": "45fcf4a788e51ff7c53c4fc3cc91d4913e5b59b9b8152fd9a7134ec76241c250",
+    "render/native-getter-qualification.json": "92f91ac7ffe08737cd250c35947f26f6187530d4791ab7d6fd69293c01452f2e",
+    "inspect/result.json": "c694ac91022ff38a7967c164704509a8a8fd4d7613bd1b5e2a7e326e6e179d9f"
+  },
+  "numerical_evidence_boundary": "Saved receipts report exact original geometry/material preservation, unchanged native corner bytes, and all112 original quality rows passing on the actual native getter before rendering. Those exact checks support the absence of geometry loss; one image alone cannot prove every hidden face.",
+  "presentation": "Cycles CPU, OpenImageDenoise with GPU denoising disabled,32 samples,640x640 and labelled +2EV. This presentation setting is not a universal material correction.",
+  "warning_review": "The preserved stdout warning says CUEW initialization failed while opening an optional library. The actual recorded render device is CPU and GPU denoising is disabled; the warning does not establish GPU rendering.",
+  "limits": "One +X view at640px. The prior PBR panel uses different source-colour sampling, transfer and material semantics, so comparison is contextual rather than pixel-exact. Hidden surfaces and other views are not visually qualified here.",
+  "conclusion": "No unacceptable new visible export/import defect was found in this view. Existing generated geometry defects remain; this is not a game-ready or general asset-quality certification.",
+  "images_remain_private": true,
+  "additional_GLTF_imports": 0,
+  "additional_renders": 0
+}

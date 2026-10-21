@@ -1,0 +1,22 @@
+{
+  "classification": "GO",
+  "scope": "Independent static source review of the owned three-stage host only; no operation launched by this reviewer. Worker semantics are reviewed separately.",
+  "reviewed_source": "run_host.py",
+  "reviewed_source_SHA256": "73a65815f5969eed14f4c08db57fc4a7ebbe0f82ffc1e34b030b95276f26eaae",
+  "qualification_plan_SHA256": "246ad44d2855fedc450856292dad30f7c697757abf91f69d09882f581d2298c1",
+  "focused_tests_SHA256": "500d8d179de5a3ea5042eed2b842b75f80d2559ff3cf2ea59b8eaa51f330a8a6",
+  "checks": {
+    "no_import_command": "Fixed stages are qualify, render and inspect only. Only render can launch Blender; qualify/inspect use fixed D Python -I -B scripts. GLB import stage/command is unreachable.",
+    "review_binding": "Exact commit/branch/helper pins, reviewed complete candidate Python source set and hashes, plan/test log/prior importer audit binding and installed importer source pins.",
+    "predecessor_closure": "Render requires fresh qualifying worker PASS plus owned qualifying host PASS with exact result hash; inspect similarly requires qualify/render. Previous direct output files and host receipts are watched.",
+    "original_import_binding": "Before render marker, exact original import-host SHA19c23db0a47c7e3c003013b70dab7b5fc67cc2e1ae8042fb2e621b45f1b6b370 must PASS and bind exact original worker receipt13ab7159c0db783ffd22404420c19d02d51b678ec5e87e18cf53565ba68ab3a7.",
+    "render_headroom": "Original measured import process and Job committed-memory peaks must each be <=5GiB before render admission.",
+    "caps_and_floors": "Unchanged6GiB process and aggregate Job caps;180-second execution bound; original pinned helper enforces12GiB available RAM and2GiB free disk before marker and live.",
+    "ownership": "Exact binary GO only after JobObject attachment; PASS needs owned tree naturally empty within180seconds, verified exit and no forced cleanup.",
+    "exclusivity": "Output folder, attempt marker and host receipt must all be absent; outputs use exclusive creation; no retry/overwrite.",
+    "preservation": "All watched source/prior-output sizes, modification times and byte hashes must remain unchanged; source watches come from authenticated closure.",
+    "runtime": "Private scratch and Blender user paths, CPU device environment, Blender background/factory-startup/disable-autoexec and4threads."
+  },
+  "actionable_findings": [],
+  "dynamic_execution_verified_by_this_review": false
+}
