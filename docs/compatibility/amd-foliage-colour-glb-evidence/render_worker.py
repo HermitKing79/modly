@@ -20,7 +20,7 @@ import time
 E = Path(__file__).resolve().parent
 ROOT = E.parents[2]
 P = ROOT.parent / "artifacts/amd-foliage-colour-glb-cfe852b"
-OUT = P / "render"
+OUT = P / "render-qualified"
 EXPORT = P / "export"
 GLB = EXPORT / "foliage-learned-colour.glb"
 SELECTION = ROOT.parent / "artifacts/amd-bounded-foliage-64d05aa/run"
@@ -454,8 +454,11 @@ def main(output):
         raise
 
 
-if __name__ == "__main__":
+def script_args(argv=None):
+    argv=sys.argv if argv is None else argv
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=OUT)
-    arguments = parser.parse_args(sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:])
-    main(arguments.output)
+    return parser.parse_args(argv[argv.index("--") + 1:] if "--" in argv else argv[1:])
+
+
+if __name__ == "__main__":main(script_args().output)

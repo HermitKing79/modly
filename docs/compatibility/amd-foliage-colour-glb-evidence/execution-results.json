@@ -1,0 +1,417 @@
+{
+  "classification": "PASS",
+  "base": "cfe852b476725afe9deecb5d9ad44892794ce2e1",
+  "vertices": 3177,
+  "triangles": 4531,
+  "GLB": {
+    "bytes": 165848,
+    "sha256": "c24055f7ef2fbe144c1a73ba46242cbeb6b2a2c27397440be13a3d56b8f6fe73"
+  },
+  "files": {
+    "export/foliage-learned-colour.glb": {
+      "bytes": 165848,
+      "sha256": "c24055f7ef2fbe144c1a73ba46242cbeb6b2a2c27397440be13a3d56b8f6fe73"
+    },
+    "render-qualified/reference-near.png": {
+      "bytes": 118925,
+      "sha256": "8b2983915efe7d529528a5f7ecda832d9cc88df5e579a77b295fea1c4632c969"
+    },
+    "render-qualified/imported-near.png": {
+      "bytes": 119089,
+      "sha256": "4bde9df24692acea34e6d5d5267a5380d6df0bd2d70315a74422b8ee01bac040"
+    },
+    "render-qualified/reference-far.png": {
+      "bytes": 93104,
+      "sha256": "2c6eac5e7517fc5b8a2b78ba5be0fb9a297e9a29af729479dfbe2ceeb4f81381"
+    },
+    "render-qualified/imported-far.png": {
+      "bytes": 93120,
+      "sha256": "ba049200d38e0d1a77e468f54684dea029d1b49d8820fa3918056152e04dd683"
+    },
+    "inspect/comparison.png": {
+      "bytes": 42500,
+      "sha256": "52c043dd6076d451477e3ddc449e376defa5d736b71b5e945d1359df7b93c8e2"
+    }
+  },
+  "container": {
+    "vertices": 3177,
+    "triangles": 4531,
+    "POSITION_dtype": "float32",
+    "COLOR_0_dtype": "float32",
+    "index_component_type": 5123,
+    "original_XYZ_corner_bits_indices_winding_multiplicity_exact": true,
+    "F32_linear_COLOR0_bits_exact": true,
+    "source_ID_lists_and_NPY_hashes_exact": true,
+    "axis_conversion": "source Blender XYZ\u2192glTF (x,z,-y), determinant+1; inverse (gx,-gz,gy)",
+    "metallicFactor": 0.00011082693761409814,
+    "roughnessFactor": 0.999995986777544,
+    "alphaMode": "OPAQUE",
+    "doubleSided": true,
+    "no_UV_NORMAL_textures_images_samplers_external_URI_or_extensions": true
+  },
+  "exported_saved_query_measurements": {
+    "cohorts": {
+      "centroids": {
+        "count": 4531,
+        "RGB": {
+          "rmse": 0.004106111333927256,
+          "p95_abs": 0.00892909267115317,
+          "max_abs": 0.034148999625350784,
+          "pass": true
+        },
+        "scalars": {
+          "metallic": {
+            "rmse": 0.00011962392536462502,
+            "p95_abs": 0.00022825748367039865,
+            "max_abs": 0.0005725847853886932,
+            "pass": true
+          },
+          "roughness": {
+            "rmse": 2.6066995450756558e-05,
+            "p95_abs": 4.01322245602298e-06,
+            "max_abs": 0.00043771679997439694,
+            "pass": true
+          },
+          "alpha": {
+            "rmse": 4.0882283666948904e-05,
+            "p95_abs": 7.891654968261719e-05,
+            "max_abs": 0.0005164742469787598,
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      "area_weighted": {
+        "count": 10000,
+        "RGB": {
+          "rmse": 0.005186728553646535,
+          "p95_abs": 0.011366570632250758,
+          "max_abs": 0.04874728233544434,
+          "pass": true
+        },
+        "scalars": {
+          "metallic": {
+            "rmse": 0.00012586759047742416,
+            "p95_abs": 0.0002466333133474961,
+            "max_abs": 0.0006888192560131699,
+            "pass": true
+          },
+          "roughness": {
+            "rmse": 2.7255752751417167e-05,
+            "p95_abs": 4.01322245602298e-06,
+            "max_abs": 0.0005119841873645337,
+            "pass": true
+          },
+          "alpha": {
+            "rmse": 4.857104417766823e-05,
+            "p95_abs": 9.537041187286373e-05,
+            "max_abs": 0.0006258487701416016,
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      "required_surface": {
+        "count": 14531,
+        "RGB": {
+          "rmse": 0.004875540458833656,
+          "p95_abs": 0.010596329527203008,
+          "max_abs": 0.04874728233544434,
+          "pass": true
+        },
+        "scalars": {
+          "metallic": {
+            "rmse": 0.0001239544631560442,
+            "p95_abs": 0.0002409337588892356,
+            "max_abs": 0.0006888192560131699,
+            "pass": true
+          },
+          "roughness": {
+            "rmse": 2.68907180720388e-05,
+            "p95_abs": 4.01322245602298e-06,
+            "max_abs": 0.0005119841873645337,
+            "pass": true
+          },
+          "alpha": {
+            "rmse": 4.631073112522482e-05,
+            "p95_abs": 9.02414321899414e-05,
+            "max_abs": 0.0006258487701416016,
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      "seam_edge": {
+        "count": 22210,
+        "RGB": {
+          "rmse": 0.0068222216988315185,
+          "p95_abs": 0.014918019930442838,
+          "max_abs": 0.06687319795402002,
+          "pass": true
+        },
+        "scalars": {
+          "metallic": {
+            "rmse": 0.00013317906772649762,
+            "p95_abs": 0.0002645717881227881,
+            "max_abs": 0.0008676302217486352,
+            "pass": true
+          },
+          "roughness": {
+            "rmse": 3.31863366663309e-05,
+            "p95_abs": 4.01322245602298e-06,
+            "max_abs": 0.0004998844444751294,
+            "pass": true
+          },
+          "alpha": {
+            "rmse": 4.9365755846481635e-05,
+            "p95_abs": 0.00010037422180175781,
+            "max_abs": 0.0006038546562194824,
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      "seam_near": {
+        "count": 22210,
+        "RGB": {
+          "rmse": 0.006756045354749447,
+          "p95_abs": 0.014796996122500556,
+          "max_abs": 0.06592792267215475,
+          "pass": true
+        },
+        "scalars": {
+          "metallic": {
+            "rmse": 0.00013310605622778422,
+            "p95_abs": 0.0002642093246527054,
+            "max_abs": 0.0008761527546289414,
+            "pass": true
+          },
+          "roughness": {
+            "rmse": 3.3115052440622236e-05,
+            "p95_abs": 4.01322245602298e-06,
+            "max_abs": 0.0005004208862781079,
+            "pass": true
+          },
+          "alpha": {
+            "rmse": 4.933146271948707e-05,
+            "p95_abs": 0.00010046660900115962,
+            "max_abs": 0.000598907470703125,
+            "pass": true
+          }
+        },
+        "pass": true
+      }
+    },
+    "all_gates_pass": true,
+    "prior_prediction_max_error": 0.0,
+    "actual_scalar_factors": {
+      "metallic": 0.00011082693761409814,
+      "roughness": 0.999995986777544,
+      "opaque_alpha": 1.0
+    },
+    "scope": "Existing58951 saved samples only; no new spatial source sampling, no viewer or renderer equivalence."
+  },
+  "actual_Blender_version": "5.2.1 LTS",
+  "actual_GLTF_imports": 1,
+  "actual_renders": 4,
+  "actual_imported": {
+    "vertices": 3177,
+    "triangles": 4531,
+    "oriented_triangle_position_bits_exact": true,
+    "attribute_type": "BYTE_COLOR",
+    "attribute_domain": "CORNER",
+    "linear_RGB_exact": false,
+    "linear_RGB_max_abs": 0.0030214786529541016,
+    "encoded_RGB_import_residual": {
+      "rmse": 0.0011358810921023544,
+      "p95_abs": 0.0018627850312057381,
+      "max_abs": 0.0020171338119040483,
+      "pass": true
+    }
+  },
+  "imported_saved_query_measurements": {
+    "centroids": {
+      "rmse": 0.004152568008673906,
+      "p95_abs": 0.008999247305372758,
+      "max_abs": 0.033805106997709444,
+      "pass": true
+    },
+    "area_weighted": {
+      "rmse": 0.005246060969248781,
+      "p95_abs": 0.011421429892391354,
+      "max_abs": 0.04901965172780465,
+      "pass": true
+    },
+    "required_surface": {
+      "rmse": 0.004931178065535486,
+      "p95_abs": 0.010669749912112416,
+      "max_abs": 0.04901965172780465,
+      "pass": true
+    },
+    "seam_edge": {
+      "rmse": 0.006884149615062526,
+      "p95_abs": 0.01505870710945546,
+      "max_abs": 0.06669772917515349,
+      "pass": true
+    },
+    "seam_near": {
+      "rmse": 0.006817668233414979,
+      "p95_abs": 0.014932182467118605,
+      "max_abs": 0.06576155053864452,
+      "pass": true
+    }
+  },
+  "actual_OPAQUE_scalar_RMSE": {
+    "centroids": [
+      0.00011962392536462643,
+      2.6066995450755894e-05,
+      4.0882283666948904e-05
+    ],
+    "area_weighted": [
+      0.00012586759047742612,
+      2.725575275142072e-05,
+      4.857104417766823e-05
+    ],
+    "required_surface": [
+      0.00012395446315604941,
+      2.6890718072038274e-05,
+      4.631073112522482e-05
+    ],
+    "seam_edge": [
+      0.00013317906772650556,
+      3.3186336666324705e-05,
+      4.9365755846481635e-05
+    ],
+    "seam_near": [
+      0.00013310605622779222,
+      3.3115052440616056e-05,
+      4.933146271948707e-05
+    ]
+  },
+  "PNG_differences": {
+    "near": {
+      "rmse": 0.00017688427364878238,
+      "p95_abs": 0.0,
+      "max_abs": 0.00784313725490196,
+      "silhouette_IoU": 1.0,
+      "visible_RGB": {
+        "rmse": 0.0013004882034613507,
+        "p95_abs": 0.00392156862745098,
+        "max_abs": 0.00392156862745098
+      }
+    },
+    "far": {
+      "rmse": 3.710355826099867e-05,
+      "p95_abs": 0.0,
+      "max_abs": 0.00392156862745098,
+      "silhouette_IoU": 1.0,
+      "visible_RGB": {
+        "rmse": 0.0008778875699152932,
+        "p95_abs": 0.0007843137254903744,
+        "max_abs": 0.00392156862745098
+      }
+    }
+  },
+  "render_settings_and_shader_links_receipt_sha256": "38dae92545b28fc9ed13512f1d1291397983489363c4ab2aab764617ed38ed9d",
+  "successful_stages": {
+    "export": {
+      "classification": "PASS",
+      "owned_execution_seconds": 3.0,
+      "elapsed_seconds": 3.311999999999898,
+      "peak_process_committed_bytes": 130691072,
+      "peak_job_committed_bytes": 131526656,
+      "sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "worker_seconds": 1.844000000000051,
+      "minimum_sampled_RAM_bytes": 18564694016,
+      "minimum_sampled_disk_free_bytes": 113572876288,
+      "resource_sample_count": 3
+    },
+    "verify": {
+      "classification": "PASS",
+      "owned_execution_seconds": 2.6090000000003783,
+      "elapsed_seconds": 2.92200000000048,
+      "peak_process_committed_bytes": 137945088,
+      "peak_job_committed_bytes": 138784768,
+      "sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "worker_seconds": 1.625,
+      "minimum_sampled_RAM_bytes": 18501574656,
+      "minimum_sampled_disk_free_bytes": 113570844672,
+      "resource_sample_count": 3
+    },
+    "render-qualified": {
+      "classification": "PASS",
+      "owned_execution_seconds": 21.563000000000102,
+      "elapsed_seconds": 21.938000000000102,
+      "peak_process_committed_bytes": 894861312,
+      "peak_job_committed_bytes": 894861312,
+      "sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "worker_seconds": 18.884000600000036,
+      "minimum_sampled_RAM_bytes": 17901940736,
+      "minimum_sampled_disk_free_bytes": 113567739904,
+      "resource_sample_count": 22
+    },
+    "inspect": {
+      "classification": "PASS",
+      "owned_execution_seconds": 3.110000000000582,
+      "elapsed_seconds": 3.42200000000048,
+      "peak_process_committed_bytes": 175968256,
+      "peak_job_committed_bytes": 176807936,
+      "sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "worker_seconds": 1.9530000000004293,
+      "minimum_sampled_RAM_bytes": 18517184512,
+      "minimum_sampled_disk_free_bytes": 113567629312,
+      "resource_sample_count": 3
+    }
+  },
+  "preserved_initial_startup_failure": {
+    "classification": "BLOCKED_BEFORE_IMPORT",
+    "cause": "Host Blender command omitted -- argument separator; script argparse consumed host Blender flags before main/GO/import.",
+    "actual_GLTF_imports": 0,
+    "actual_renders": 0,
+    "original_failed_outputs_preserved": true,
+    "stdout_sha256": "a1038ffca3498c1a2d9495f05a1cb59e0ebd83a7bf72ff19a1e2011782ec8ed5",
+    "stderr_sha256": "4a5177159dbd2f50d7b2c1d5e3f2c88574725ae3cdaa760f74106ca63148998a",
+    "stderr": "usage: blender.exe [-h] [--output OUTPUT]\r\nblender.exe: error: unrecognized arguments: --background --factory-startup --disable-autoexec --threads 4 --python-exit-code 1 --python C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-foliage-colour-glb-evidence\\render_worker.py\r\n",
+    "attempt_sha256": "a7213cbb17b8c9fe8f1388bc839ddcd50bf8ba518ae1813b4aed268a01a2516c",
+    "host_sha256": "0fb26ed162c280ee6b7368b91f77752e9c65d7693d312886e73f51fd201071f1",
+    "owned_execution_seconds": 6.233999999999469,
+    "peak_job_committed_bytes": 272654336,
+    "cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "unchanged_source_pins": true
+  },
+  "scope": "Exact GLB transport plus this Blender viewer proof; original source-spatial approximation and byte-colour import quantisation measured separately. No baked textures or geometry modification."
+}

@@ -5,11 +5,16 @@ import argparse,ctypes,hashlib,importlib.util,json,os,subprocess,time,traceback
 from pathlib import Path
 E=Path(__file__).resolve().parent;sys.path.insert(0,str(E))
 from inputs import ROOT,P,authenticate,plain,digest,save,require
-BASE='cfe852b476725afe9deecb5d9ad44892794ce2e1'
+BASE='75498ad65482d36f86e2b4778a7d2cf5e7bbb06f'
 BRANCH='codex/amd-foliage-colour-glb'
 HELPER=ROOT/'docs/compatibility/amd-brick-pbr-exposure-evidence/render_host.py'
 BLENDER=Path('C:/Program Files/Blender Foundation/Blender 5.2/blender.exe')
 CAP=6*1024**3;DEADLINE=180
+FOLDERS=dict(export='export',verify='verify',render='render-qualified',inspect='inspect')
+
+
+def render_command(output):
+    return [str(BLENDER),'--background','--factory-startup','--disable-autoexec','--threads','4','--python-exit-code','1','--python',str(E/'render_worker.py'),'--','--output',str(output)]
 
 
 def main(stage,preflight=False):
@@ -20,15 +25,15 @@ def main(stage,preflight=False):
     initial=helper.resources();require(initial['admitted'],'Pre-marker resource floor: '+json.dumps(initial))
     _,_,watched,_=authenticate()
     watched += list(E.glob('*.py'))+[E/'qualification-plan.md',HELPER,ROOT/'scripts/compatibility/amd_forward_owned_job.py']
-    review=plain(E/'independent-candidate-review.json');r=json.loads(review.read_text())
+    review=plain(E/'independent-launch-correction-review.json');r=json.loads(review.read_text())
     require(r['classification']=='GO' and digest(E/'qualification-plan.md')==r['qualification_plan_SHA256'],'Reviewed candidate and criteria')
     for name,sha in r['candidate_source_SHA256'].items():require(digest(plain(E/name))==sha,'Reviewed source changed: '+name)
     watched.append(review)
     for source in E.glob('*.py'):compile(source.read_bytes(),str(source),'exec')
     for previous in {'export':(), 'verify':('export',), 'render':('export','verify'), 'inspect':('export','verify','render')}[stage]:
-        folder=plain(P/previous);result=plain(folder/'result.json')
+        folder=plain(P/FOLDERS[previous]);result=plain(folder/'result.json')
         require(json.loads(result.read_text())['classification']=='PASS','Previous stage PASS required: '+previous)
-        receipt=plain(P/(previous+'-host.json'));prior_host=json.loads(receipt.read_text())
+        receipt=plain(P/(FOLDERS[previous]+'-host.json'));prior_host=json.loads(receipt.read_text())
         require(prior_host['classification']=='PASS' and prior_host['worker_receipt_sha256']==digest(result),'Previous owned execution and exact receipt must PASS: '+previous)
         watched.append(receipt)
         watched.extend(path for path in folder.iterdir() if path.is_file() and path.suffix in ('.npy','.glb','.png','.json'))
@@ -36,9 +41,9 @@ def main(stage,preflight=False):
     if stage=='render':
         require(digest(plain(BLENDER))=='284f4041f98e113f3dc10654a7193ffaaa9bfdfec8b87fa116620a48b5f6d4cb','Installed Blender binary identity')
         watched.append(BLENDER)
-        command=[str(BLENDER),'--background','--factory-startup','--disable-autoexec','--threads','4','--python-exit-code','1','--python',str(script)]
+        command=render_command(P/FOLDERS[stage])
     else:command=['D:/AI/Trellis2AMD/venv/Scripts/python.exe','-I','-B',str(script)]
-    out=P/stage;marker=P/(stage+'-attempt.json');host_result=P/(stage+'-host.json')
+    out=P/FOLDERS[stage];marker=P/(FOLDERS[stage]+'-attempt.json');host_result=P/(FOLDERS[stage]+'-host.json')
     require(not any(x.exists() for x in (out,marker,host_result)),'Exclusive stage; no overwrite/retry')
     paths=list(dict.fromkeys(watched));before={str(x):dict(sha256=digest(plain(x)),bytes=x.stat().st_size,mtime_ns=x.stat().st_mtime_ns) for x in paths}
     if preflight:

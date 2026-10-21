@@ -19,7 +19,7 @@ def main():
     from PIL import Image,ImageDraw
     began=time.monotonic();data,identities,watched=load(np)
     before={str(p):digest(p) for p in watched}
-    render=P/'render';out=plain(P/'inspect')
+    render=P/'render-qualified';out=plain(P/'inspect')
     result=json.loads(plain(render/'result.json').read_text())
     require(result['classification']=='PASS','Genuine Blender comparison required')
     for name in ('imported-corner-linear-COLOR0.npy','imported-corner-source-vertex-ids.npy'):

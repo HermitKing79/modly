@@ -1,0 +1,52 @@
+{
+  "schema": "modly.amd.foliage-colour-glb-independent-launch-correction.v1",
+  "created_utc": "2026-10-21T16:09:51.919406+00:00",
+  "classification": "GO",
+  "reviewer": "independent foliage_review subagent",
+  "base": "75498ad65482d36f86e2b4778a7d2cf5e7bbb06f",
+  "scope": "Focused read-only source/diff/log review of one command separator correction and exclusive render-qualified output path. Allows the one intended actualGLTFimport/fourCPUviews, theninspect only afterPASS; noGLBreexport, repeated source query, alternate numerical candidate or further correction loop.",
+  "candidate_source_SHA256": {
+    "export_worker.py": "62f91ec081ab4a79c59481e7d6a6c28cdaf63ef7d433fbd4406f1620e8b0e27d",
+    "glb_writer.py": "c7321898624a0d150f391ac071b5e6c6d729ef29a5c9df16a43c5b5e4707bf19",
+    "inputs.py": "27d2e8215b58d7a92933647c3748eac31f00e5464833863ff3d065f05e308b26",
+    "inspect_worker.py": "0fc67d2bad7db6af6a42c165e72e090e45d2e2897ef872330bb023ee3e685080",
+    "render_worker.py": "a4754f1c8643c17e368edf121e870d43960bb1459a1fd29e2d8b8c0e8098f03e",
+    "run_host.py": "ce49d185ec23ca89a034eb6dda41d654cf97ca508501736c76029cf28397c475",
+    "test_glb_writer.py": "5c46bf7f6cd0d47e42234207726d6e4611e26071644305e392ca4c65505c6e67",
+    "test_launch_contract.py": "cdbdec1d17a470e28044964e2da30bdaa848c49869d6f3a0e2125998baa62dea",
+    "test_render_contract.py": "b4d64cd3f7951dc5f44d50f0c69010547861d26eba7659e42faba6cd3b69958f",
+    "test_verify_glb.py": "97ff881b184d6c195bcfa40e26a0a4ab569c53e48519c4ab701d36a1663c8844",
+    "verify_glb.py": "82ff500153f29a7e1412a88c8ce0ab580278616b23d64a5708f5b2a4dda16ce9"
+  },
+  "qualification_plan_SHA256": "f0f8c5dfc8482b4642d9e96d49b72afe1bf36e913bea7b9638124fe22248fec5",
+  "original_27_test_log_SHA256": "9a859c67e9b34971cf0c7cfef81c5971c907859d294ae7531dd8901e799311a9",
+  "launch_3_test_log_SHA256": "f70ca561f32d660a064b74a663b80fa93efeddbb84d9312c01cf1938b67823af",
+  "preserved_initial_candidate_review_SHA256": "5384037e462f89f2d6a185218f570e1915a281ff03b4400c837ce0d6bc23228e",
+  "independent_startup_failure_SHA256": "9dca80d0dab8b71b6049deb5a48a9a3af27a45a6432f36eeedf4b727478ed94d",
+  "completed_prior_stages": {
+    "export": {
+      "result_SHA256": "3517d3a7b02e39a89cb0488b3ffb65b34ae7414d9f7c7f045cd5b59eb9fd0bbb",
+      "host_SHA256": "cbad415cd29e66e7b3d47528f26ea80986ea8695938007e3d2c28ccad486c5d0"
+    },
+    "verify": {
+      "result_SHA256": "6b4571f0eeb63e21b0781905b739a56141fdf761f98590b8227ba57d45d16789",
+      "host_SHA256": "5a97d06c6266301f4656ff51f11111fb6ff2b02cb5fc04e16bf420264be0dc7b"
+    }
+  },
+  "verified_checks": [
+    "Read exactdiff from preserved75498ad source. Only hostcommand/productionhelper, argparsehelper, render-qualified folder/marker/inspect pointers and observedfailure plan appendix change; numerical/render/material/geometry logic is unchanged.",
+    "Productionrender_command now emits nativeBlender flags then explicit-- --output <render-qualified>, and actualscript_args consumes only guestarguments afterthatseparator.",
+    "Three recorded CPU tests exercise the actualhostcommand\u2192realparser, reproduce oldmissingseparatorSystemExit2, and run corrected script under standardPython withNO token to reachREADY_GO thenstrictlyreject beforebpy/source/legacywork. Reviewer did not rerun tests or launchanyprocess.",
+    "Original27-test log retains its initially reviewed hash. New3test logPASS is preserved separately. All11currentPython sources and updatedplan are hash-bound.",
+    "Original failedrender attempt/host/stdout/stderr still match independentfailure hashes and remainBLOCKED; there were0actualGLTFimports and0renders before correction.",
+    "New render-qualified directory/attempt/host paths are absent and distinct from retained failedrender paths. Export/verifyexistingresults and naturalowned-host receipts arePASS with exactworkerreceipt bindings; their assets are reused.",
+    "Hoststage mappings and freshinspect worker consistently target render-qualified. ExistingexactGO, freshfactoryBlender5.2.1, readonlysource, CPU,6GiBprocess+job,180s,12GiBRAM/2GiBdisk and naturalexit requirements remain unchanged.",
+    "Exactly one actualimport and four matchedCPUviews remain intended. Any actualimport/render failure stops with no additionallaunch, reexport, colourrepair, sourcequery or numerical retry."
+  ],
+  "limitations": [
+    "ThisGOcorrects transport startup only; it does not claim an actualimport, renderedcomparison or portableviewer result.",
+    "The original launch failure and missedargument-boundary review remain explicitly retained; they are not relabelled asPASS.",
+    "BlenderBYTE_COLORquantization remains actual and unchanged; F32GLB/source identity, importedcolour sourcegates and matchedimagegates still require real results."
+  ],
+  "blockers": []
+}

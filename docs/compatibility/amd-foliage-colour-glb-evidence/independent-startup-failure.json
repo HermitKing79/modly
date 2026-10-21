@@ -1,0 +1,40 @@
+{
+  "schema": "modly.amd.foliage-colour-glb-independent-startup-failure.v1",
+  "created_utc": "2026-10-21T16:08:11.677848+00:00",
+  "classification": "BLOCKED_PRE_MAIN_PRE_GLTF_IMPORT",
+  "reviewer": "independent foliage_review subagent",
+  "scope": "Bounded read-only verification of the preserved first nativeBlender startup failure. No launch, render, GLB generation, source query or tests.",
+  "attempt_SHA256": "a7213cbb17b8c9fe8f1388bc839ddcd50bf8ba518ae1813b4aed268a01a2516c",
+  "host_SHA256": "0fb26ed162c280ee6b7368b91f77752e9c65d7693d312886e73f51fd201071f1",
+  "stdout_SHA256": "a1038ffca3498c1a2d9495f05a1cb59e0ebd83a7bf72ff19a1e2011782ec8ed5",
+  "stderr_SHA256": "4a5177159dbd2f50d7b2c1d5e3f2c88574725ae3cdaa760f74106ca63148998a",
+  "candidate_review_SHA256": "5384037e462f89f2d6a185218f570e1915a281ff03b4400c837ce0d6bc23228e",
+  "decisive_evidence": {
+    "exitcode": 2,
+    "command_missing_script_argument_separator": true,
+    "stdout_only_Blender_banner": true,
+    "stderr_argparse_rejected_native_Blender_flags": true,
+    "render_output_entries": [
+      "scratch",
+      "stderr.txt",
+      "stdout.txt"
+    ],
+    "READY_GO_import_checkpoint_arrays_images_absent": true,
+    "source_ordering": "The__main__ block parses argv before calling main(output); await_host and the freshGLTF import/render operators are inside main. Native flags were passed to argparse because no--separator existed.",
+    "host_attached_and_sent_binary_GO": true,
+    "worker_reached_or_consumed_GO_gate": false,
+    "actual_GLTF_imports": 0,
+    "actual_renders": 0
+  },
+  "containment": {
+    "owned_execution_seconds": 6.233999999999469,
+    "supervisor_seconds": 6.608999999999469,
+    "peak_process_committed_bytes": 265723904,
+    "peak_job_committed_bytes": 272654336,
+    "natural_empty_owned_Job": true,
+    "forced_cleanup": false,
+    "watched_sources_unchanged": true
+  },
+  "reviewer_correction": "The integration review missed the mismatch between nativeBlender command construction and worker argparse dispatch. This receipt preserves the failure; it does not relabel startup as success.",
+  "next_scope": "Review one surgical command--separator correction and new exclusive output/marker leaf. Originalfailedrenderattempt/logs remain untouched. No GLB reexport or repeated actualGLTF import/render is justified because no prior operator ran."
+}

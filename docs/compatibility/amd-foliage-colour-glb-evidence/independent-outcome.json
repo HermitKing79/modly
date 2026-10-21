@@ -1,0 +1,298 @@
+{
+  "schema": "modly.amd.foliage-colour-glb.independent-outcome.v1",
+  "classification": "PASS",
+  "reviewer": "Independent integration and saved-output reviewer; independent reader author. The separate independent-reader review covers that implementation.",
+  "scope": "Exact saved 4531-triangle patch transport and this Blender 5.2.1 CPU viewer only; no full-model, universal-viewer or continuous-field equivalence.",
+  "GLB": {
+    "sha256": "c24055f7ef2fbe144c1a73ba46242cbeb6b2a2c27397440be13a3d56b8f6fe73",
+    "bytes": 165848
+  },
+  "original_source_XYZ_F32_bits_ordered_indices_winding_source_IDs_and_saved_F32_linear_COLOR0_exact": true,
+  "copied_five_NPY_files_match_original_pins": true,
+  "actual_imported_corner_NPY_hashes_dtypes_shapes_and_source_ID_order_verified": true,
+  "actual_Blender_imports": 1,
+  "actual_CPU_renders": 4,
+  "imported_colour_attribute_repaired": false,
+  "actual_imported_attribute": {
+    "type": "BYTE_COLOR",
+    "domain": "CORNER",
+    "linear_residual": {
+      "rmse": 0.0008701898345902024,
+      "p95_abs": 0.0019703805446624756,
+      "max_abs": 0.0030214786529541016
+    },
+    "encoded_residual": {
+      "rmse": 0.0011358810921023544,
+      "p95_abs": 0.0018627850312057381,
+      "max_abs": 0.0020171338119040483
+    }
+  },
+  "existing_query_count": 58951,
+  "export_prediction_max_error": 0.0,
+  "query_metrics": {
+    "centroids": {
+      "count": 4531,
+      "export_RGB": {
+        "rmse": 0.004106111333927256,
+        "p95_abs": 0.00892909267115317,
+        "max_abs": 0.034148999625350784
+      },
+      "actual_imported_RGB": {
+        "rmse": 0.004152568008673906,
+        "p95_abs": 0.008999247305372758,
+        "max_abs": 0.033805106997709444
+      }
+    },
+    "area_weighted": {
+      "count": 10000,
+      "export_RGB": {
+        "rmse": 0.005186728553646535,
+        "p95_abs": 0.011366570632250758,
+        "max_abs": 0.04874728233544434
+      },
+      "actual_imported_RGB": {
+        "rmse": 0.005246060969248781,
+        "p95_abs": 0.011421429892391354,
+        "max_abs": 0.04901965172780465
+      }
+    },
+    "required_surface": {
+      "count": 14531,
+      "export_RGB": {
+        "rmse": 0.004875540458833656,
+        "p95_abs": 0.010596329527203008,
+        "max_abs": 0.04874728233544434
+      },
+      "actual_imported_RGB": {
+        "rmse": 0.004931178065535486,
+        "p95_abs": 0.010669749912112416,
+        "max_abs": 0.04901965172780465
+      }
+    },
+    "seam_edge": {
+      "count": 22210,
+      "export_RGB": {
+        "rmse": 0.0068222216988315185,
+        "p95_abs": 0.014918019930442838,
+        "max_abs": 0.06687319795402002
+      },
+      "actual_imported_RGB": {
+        "rmse": 0.006884149615062526,
+        "p95_abs": 0.01505870710945546,
+        "max_abs": 0.06669772917515349
+      }
+    },
+    "seam_near": {
+      "count": 22210,
+      "export_RGB": {
+        "rmse": 0.006756045354749447,
+        "p95_abs": 0.014796996122500556,
+        "max_abs": 0.06592792267215475
+      },
+      "actual_imported_RGB": {
+        "rmse": 0.006817668233414979,
+        "p95_abs": 0.014932182467118605,
+        "max_abs": 0.06576155053864452
+      }
+    }
+  },
+  "declared_RGB_limits": {
+    "rmse": 0.02,
+    "p95_abs": 0.05,
+    "max_abs": 0.15
+  },
+  "all_export_and_imported_RGB_cohorts_pass": true,
+  "declared_scalar_RMSE_limit": 0.02,
+  "all_fixed_factors_and_actual_F32_shader_factors_pass": true,
+  "actual_F32_shader_scalar_RMSE": {
+    "centroids": [
+      0.00011962392529064845,
+      2.606669583149784e-05,
+      4.0882283666948904e-05
+    ],
+    "area_weighted": [
+      0.00012586759047742896,
+      2.7255759878968677e-05,
+      4.857104417766823e-05
+    ],
+    "required_surface": [
+      0.0001239544631337918,
+      2.6890632479810975e-05,
+      4.631073112522482e-05
+    ],
+    "seam_edge": [
+      0.00013317906780734663,
+      3.318717625282613e-05,
+      4.9365755846481635e-05
+    ],
+    "seam_near": [
+      0.0001331060563073609,
+      3.311588325171334e-05,
+      4.933146271948707e-05
+    ]
+  },
+  "PNG_metrics": {
+    "near": {
+      "all_pixels": {
+        "rmse": 0.00017688427364878238,
+        "p95_abs": 0.0,
+        "max_abs": 0.00784313725490196
+      },
+      "visible_RGB": {
+        "rmse": 0.0013004882034613507,
+        "p95_abs": 0.00392156862745098,
+        "max_abs": 0.00392156862745098
+      },
+      "silhouette_IoU": 1.0,
+      "alpha_max_abs": 0
+    },
+    "far": {
+      "all_pixels": {
+        "rmse": 3.710355826099867e-05,
+        "p95_abs": 0.0,
+        "max_abs": 0.00392156862745098
+      },
+      "visible_RGB": {
+        "rmse": 0.0008778875699152932,
+        "p95_abs": 0.0007843137254903744,
+        "max_abs": 0.00392156862745098
+      },
+      "silhouette_IoU": 1.0,
+      "alpha_max_abs": 0
+    }
+  },
+  "framing": {
+    "near": {
+      "visible_pixels": 6747,
+      "alpha_threshold": 128,
+      "bbox_xyxy": [
+        272,
+        276,
+        368,
+        364
+      ],
+      "bbox_size": [
+        96,
+        88
+      ]
+    },
+    "far": {
+      "visible_pixels": 439,
+      "alpha_threshold": 128,
+      "bbox_xyxy": [
+        308,
+        309,
+        332,
+        331
+      ],
+      "bbox_size": [
+        24,
+        22
+      ]
+    }
+  },
+  "comparison_sheet_viewed": true,
+  "comparison_sheet": {
+    "sha256": "52c043dd6076d451477e3ddc449e376defa5d736b71b5e945d1359df7b93c8e2",
+    "bytes": 42500
+  },
+  "visual_review": "Reference/imported surfaces, visible gaps and colours correspond in the saved four-panel comparison. Existing cut boundaries, thin fragments, holes and faceting remain. No added missing/back-facing surface is apparent at this resolution.",
+  "limitations": [
+    "Near opaque silhouette is 96 by 88 pixels (6747 pixels at alpha>=128); far is 24 by 22 (439 pixels). Native full-frame rendering does not establish fine-detail or all-viewer appearance.",
+    "RGB source comparison uses original clipped encoded spatial targets and the existing deterministic cohorts only; OPAQUE represents this nearly opaque measured patch and cannot represent arbitrary cutouts/translucency.",
+    "Actual BYTE_COLOR conversion is measured, not assumed to equal mathematically exact nearest-sRGB8 rounding. An extra reviewer-helper nearest-rounding tolerance failed; it was not a predeclared candidate gate. The unsupported helper admission was removed, with its observed residual retained privately. No artifact, candidate gate or candidate source changed.",
+    "Preservation claims use the separately reviewed AFTER receipt and its recorded checkpoint/stat-header and historical fixture limitations; no new preservation scan was performed by this reviewer."
+  ],
+  "successful_receipts": {
+    "export": {
+      "worker": {
+        "sha256": "3517d3a7b02e39a89cb0488b3ffb65b34ae7414d9f7c7f045cd5b59eb9fd0bbb",
+        "bytes": 3982
+      },
+      "host": {
+        "sha256": "cbad415cd29e66e7b3d47528f26ea80986ea8695938007e3d2c28ccad486c5d0",
+        "bytes": 1865
+      },
+      "owned_execution_seconds": 3.0
+    },
+    "verify": {
+      "worker": {
+        "sha256": "6b4571f0eeb63e21b0781905b739a56141fdf761f98590b8227ba57d45d16789",
+        "bytes": 8477
+      },
+      "host": {
+        "sha256": "5a97d06c6266301f4656ff51f11111fb6ff2b02cb5fc04e16bf420264be0dc7b",
+        "bytes": 1878
+      },
+      "owned_execution_seconds": 2.6090000000003783
+    },
+    "render-qualified": {
+      "worker": {
+        "sha256": "38dae92545b28fc9ed13512f1d1291397983489363c4ab2aab764617ed38ed9d",
+        "bytes": 40767
+      },
+      "host": {
+        "sha256": "7a9ae3aa34feb0dcd0b190023a1f59d733468928993ab9bb4e89686355a9e55f",
+        "bytes": 6795
+      },
+      "owned_execution_seconds": 21.563000000000102
+    },
+    "inspect": {
+      "worker": {
+        "sha256": "4c5d6d2d4b8c6c9350dd910ac3ea2ed1f9c1d8848259bebcb9b972d8c0a4f845",
+        "bytes": 3080
+      },
+      "host": {
+        "sha256": "a35588a888a01117ed936296d2fd2284435e290c55cb64d0496fba1492e1b45e",
+        "bytes": 1882
+      },
+      "owned_execution_seconds": 3.110000000000582
+    }
+  },
+  "all_successful_owned_jobs_naturally_empty_no_forced_cleanup": true,
+  "peak_process_or_job_committed_bytes": 894861312,
+  "minimum_sampled_available_RAM_bytes": 17901940736,
+  "minimum_sampled_disk_free_bytes": 113567629312,
+  "preserved_initial_launch": {
+    "classification": "BLOCKED_PRE_MAIN_PRE_GLTF_IMPORT",
+    "actual_imports": 0,
+    "actual_renders": 0,
+    "old_failure_evidence_unchanged": true,
+    "receipt": {
+      "sha256": "9dca80d0dab8b71b6049deb5a48a9a3af27a45a6432f36eeedf4b727478ed94d",
+      "bytes": 2359
+    }
+  },
+  "candidate_review": {
+    "sha256": "26c3fa2129fd4c339b09620c69287bfd746403d8e7cfc902c345670427ebba84",
+    "bytes": 4812
+  },
+  "private_independent_readback": {
+    "sha256": "22acbf845c5639a02abe5cd721e8dca2760b61d82327c0d79da1310bf7c7ff6a",
+    "bytes": 8540
+  },
+  "private_readback_source": {
+    "sha256": "4d3bdde3b0badf6c4fc1f9277daeb29fdfebd0e81aea4d659943c989f8860437",
+    "bytes": 12992
+  },
+  "reviewed_public_report": {
+    "sha256": "7c25f3a9f43e713f1185f9b69e27a108e72a3120f5b85d581725451f35d7269a",
+    "bytes": 5865
+  },
+  "reviewed_execution_summary": {
+    "sha256": "99b68e22f96c8fa743656ceb5c1c9eef1ff1f59fc714d4eff345bb177ed8bf8a",
+    "bytes": 14005
+  },
+  "reviewed_preservation_AFTER": {
+    "sha256": "07f9ac5dd68ea81d4f307ede3df917da038f0570ab320f199b7609ef745846d3",
+    "bytes": 4124
+  },
+  "publication": {
+    "classification": "PASS",
+    "all_index_source_bytes_equal_workspace": true,
+    "reviewed_index_text_file_count": 24,
+    "all_links_resolve": true,
+    "no_binary_asset_image_or_model_array_in_reviewed_public_paths": true
+  },
+  "no_new_native_execution_export_render_spatial_samples_or_broad_tests": true
+}

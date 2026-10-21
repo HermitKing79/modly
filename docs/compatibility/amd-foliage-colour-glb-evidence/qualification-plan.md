@@ -45,3 +45,18 @@ Independent source/outcome review and before/after preservation. Only source,
 tests, textual metrics and hashes enter public Git; GLB/arrays/images remain
 under the new private artifact directory. Stop for visual review after proof;
 no general asset-quality, client-universal or full-model claim.
+
+## Preserved pre-import launch correction
+
+Initial native Blender startup exited at argparse before the GO-consuming main,
+GLB import or any render. Commit 75498ad preserves that complete candidate and
+its initial review; private render/, render-attempt.json and render-host.json
+remain unchanged. No GLB export or numerical comparison is repeated.
+
+The corrected command explicitly separates Blender flags with `-- --output`.
+Three focused CPU tests exercise the actual command/parser and reject the old
+missing-separator route without starting Blender. The one intended fresh import
+uses an exclusive render-qualified/ leaf and marker, with identical rendering,
+resource and numerical contracts. A new focused independent review binds the
+corrected candidate. If this genuine import/render fails, stop without another
+launch or correction loop.
