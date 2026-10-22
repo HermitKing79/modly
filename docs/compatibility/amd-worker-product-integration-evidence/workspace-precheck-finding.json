@@ -1,0 +1,8 @@
+{
+  "classification": "TEST_EXPECTATION_CORRECTED",
+  "first_check": "The promoted GLBs were discovered and their existing viewer URLs matched; the extra assertion that ordinary model.json is included in listWorkspaceAssetLibrary failed.",
+  "demonstrated_cause": "Existing classifyAssetLibraryCandidate intentionally marks ordinary JSON as unsupported and listWorkspaceAssetLibrary filters it. readWorkspaceAssetLibraryEntry parses its metadata and the job API returns complete result_metadata.",
+  "correction": "Verify GLB discovery/opening via the existing list/open/project APIs and verify sidecar metadata via the existing read API. Do not add or misclassify a public asset capability.",
+  "production_source_change": false,
+  "GPU_or_desktop_run": false
+}

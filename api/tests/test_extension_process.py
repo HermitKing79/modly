@@ -110,6 +110,180 @@ class ExtensionProcessTests(unittest.TestCase):
         self.assertFalse(proc._loaded)
 
 
+class CompletedResultProtocolTests(unittest.TestCase):
+    def _proc(self):
+        from services.amd_completed_result import CONTRACT
+        return ExtensionProcess(Path("unused"), {
+            "id": "demo/generate", "completed_output_contract": CONTRACT,
+        })
+
+    def test_completion_requires_manifest_and_explicit_host_verifier(self):
+        proc = _make_proc()
+        self.assertFalse(getattr(proc, "completed_results_enabled", True))
+        with self.assertRaises(ValueError):
+            proc.configure_completion_verifier(lambda context, candidate: None)
+
+    def test_manifest_alone_cannot_enable_completed_generation(self):
+        proc = self._proc()
+        self.assertFalse(proc.completed_results_enabled)
+        with self.assertRaisesRegex(ValueError, "verifier"):
+            proc.generate_completed(b"image", {}, "job-1")
+
+    def test_correlated_completion_uses_host_authority_and_no_legacy_path(self):
+        from services.amd_completed_result import CompletedWorkerOutput
+        proc = self._proc()
+        candidate = CompletedWorkerOutput(str(Path("receipt.json").resolve()), "a" * 64)
+        sent, progress, verified = [], [], []
+        authority, authenticated = object(), object()
+
+        def verifier(context, output):
+            verified.append((context, output))
+            return authority
+
+        def send(message):
+            sent.append(message)
+            rid = message["id"]
+            for kind in ("progress", "done", "error", "cancelled"):
+                proc._queue.put({"type": kind, "id": "stale", "pct": 99, "output_path": "wrong.glb"})
+            proc._queue.put({"type": "progress", "id": rid, "pct": 42, "step": "Verifying"})
+            proc._queue.put({"type": "done", "id": rid, "completion": candidate.to_dict()})
+
+        proc._send = send
+        proc.configure_completion_verifier(verifier)
+        with patch("services.amd_completed_result.authenticate_completion", return_value=authenticated) as authenticate:
+            result = proc.generate_completed(b"image", {"quality": "high"}, "job-1", lambda *v: progress.append(v))
+        self.assertIs(result, authenticated)
+        self.assertEqual(progress, [(42, "Verifying")])
+        self.assertEqual(len(verified), 1)
+        context, output = verified[0]
+        self.assertEqual(output, candidate)
+        self.assertEqual(context.job_id, "job-1")
+        self.assertEqual(context.model_id, "demo/generate")
+        self.assertEqual(sent[0]["id"], context.request_id)
+        self.assertEqual(sent[0]["completed_result_context"], context.to_dict())
+        self.assertEqual(sent[0]["params"], {"quality": "high"})
+        authenticate.assert_called_once_with(context, candidate, authority, None)
+
+    def test_matching_done_without_descriptor_cannot_fall_back_to_path(self):
+        proc = self._proc()
+        proc.configure_completion_verifier(lambda context, candidate: self.fail("malformed output reached authority"))
+        proc._send = lambda message: proc._queue.put({
+            "type": "done", "id": message["id"], "output_path": "legacy.glb",
+        })
+        with self.assertRaises(ValueError):
+            proc.generate_completed(b"image", {}, "job-1")
+
+    def test_replay_mode_requires_explicit_experimental_manifest(self):
+        proc = self._proc()
+        with self.assertRaises(ValueError):
+            proc.configure_completion_verifier(lambda *args: None, mode="replay_fixture")
+        proc.manifest["completed_result_mode"] = "replay_fixture"
+        with self.assertRaises(ValueError):
+            proc.configure_completion_verifier(lambda *args: None, mode="replay_fixture")
+        proc.manifest["experimental"] = True
+        proc.configure_completion_verifier(lambda *args: None, mode="replay_fixture")
+        self.assertTrue(proc.completed_results_enabled)
+
+    def test_cancel_after_dequeue_wins_over_completed_result(self):
+        import threading
+        from services.amd_completed_result import CompletedWorkerOutput
+        from services.generators.base import GenerationCancelled
+        proc = self._proc()
+        cancel = threading.Event()
+        candidate = CompletedWorkerOutput(str(Path("receipt.json").resolve()), "a" * 64)
+
+        class CancellingQueue(queue.Queue):
+            def get(self, *args, **kwargs):
+                value = super().get(*args, **kwargs)
+                cancel.set()
+                return value
+
+        proc._queue = CancellingQueue()
+        proc._send = lambda message: proc._queue.put({
+            "type": "done", "id": message["id"], "completion": candidate.to_dict(),
+        })
+        proc.configure_completion_verifier(lambda context, output: self.fail("cancelled output reached authority"))
+        with self.assertRaises(GenerationCancelled):
+            proc.generate_completed(b"image", {}, "job-1", cancel_event=cancel)
+
+    def test_cancelled_completed_generation_stops_and_reaps_its_child(self):
+        import threading
+        from services.generators.base import GenerationCancelled
+        proc = self._proc()
+        cancel = threading.Event()
+
+        class Child:
+            alive = True
+            reaped = False
+            def poll(self): return None if self.alive else -9
+            def kill(self): self.alive = False
+            def wait(self, timeout): self.reaped = True; return -9
+
+        class CancellingQueue(queue.Queue):
+            def get(self, *args, **kwargs):
+                value = super().get(*args, **kwargs)
+                cancel.set()
+                return value
+
+        child = Child()
+        proc._proc = child
+        proc._loaded = True
+        proc._queue = CancellingQueue()
+        proc._send = lambda message: proc._queue.put({"type": "progress", "id": message["id"], "pct": 10})
+        proc.configure_completion_verifier(lambda *args: self.fail("cancelled result reached verifier"))
+        with self.assertRaises(GenerationCancelled):
+            proc.generate_completed(b"image", {}, "job-1", cancel_event=cancel)
+        self.assertFalse(child.alive)
+        self.assertTrue(child.reaped)
+        self.assertIsNone(proc._proc)
+        self.assertFalse(proc._loaded)
+
+    def test_cancel_during_authentication_wins_over_completed_result(self):
+        import threading
+        from services.amd_completed_result import CompletedWorkerOutput
+        from services.generators.base import GenerationCancelled
+        proc = self._proc()
+        cancel = threading.Event()
+        candidate = CompletedWorkerOutput(str(Path("receipt.json").resolve()), "a" * 64)
+        proc._send = lambda message: proc._queue.put({
+            "type": "done", "id": message["id"], "completion": candidate.to_dict(),
+        })
+        proc.configure_completion_verifier(lambda *args: object())
+
+        def authenticate(*args):
+            cancel.set()
+            return object()
+
+        with patch("services.amd_completed_result.authenticate_completion", side_effect=authenticate):
+            with self.assertRaises(GenerationCancelled):
+                proc.generate_completed(b"image", {}, "job-1", cancel_event=cancel)
+
+    def test_authentication_cancellation_uses_generator_cancel_protocol(self):
+        import threading
+        from services.amd_completed_result import CompletedWorkerOutput
+        from services.generators.base import GenerationCancelled
+        proc = self._proc()
+        cancel = threading.Event()
+        candidate = CompletedWorkerOutput(str(Path("receipt.json").resolve()), "a" * 64)
+        proc._send = lambda message: proc._queue.put({
+            "type": "done", "id": message["id"], "completion": candidate.to_dict(),
+        })
+        proc.configure_completion_verifier(lambda *args: object())
+
+        def authenticate(*args):
+            cancel.set()
+            raise InterruptedError("cancelled during receipt verification")
+
+        with patch("services.amd_completed_result.authenticate_completion", side_effect=authenticate):
+            with self.assertRaises(GenerationCancelled):
+                proc.generate_completed(b"image", {}, "job-1", cancel_event=cancel)
+
+    def test_legacy_generation_still_returns_path(self):
+        proc = _make_proc()
+        proc._queue.put({"type": "done", "output_path": "legacy.glb"})
+        self.assertEqual(proc._receive_generation("legacy", None, None), Path("legacy.glb"))
+
+
 class VenvPythonTests(unittest.TestCase):
     def test_resolves_interpreter_path_for_current_platform(self) -> None:
         result = _venv_python(Path("/tmp/ext"))

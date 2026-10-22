@@ -277,6 +277,21 @@ def main() -> None:
                 _cancel[rid] = cancel_evt
                 model_input  = decode_model_input(msg)
                 params       = msg.get("params", {})
+                completion_context = None
+                if "completed_result_context" in msg:
+                    from services.amd_completed_result import CONTRACT, CompletionContext
+                    if manifest.get("completed_output_contract") != CONTRACT:
+                        raise ValueError("Worker does not declare the completed output contract")
+                    completion_context = CompletionContext.from_dict(msg["completed_result_context"])
+                    declared_mode = manifest.get("completed_result_mode", "generated")
+                    if declared_mode not in ("generated", "replay_fixture") or completion_context.mode != declared_mode:
+                        raise ValueError("Completion mode does not match the worker manifest")
+                    if declared_mode == "replay_fixture" and manifest.get("experimental") is not True:
+                        raise ValueError("Fixture replay requires an explicit experimental worker")
+                    if completion_context.request_id != rid:
+                        raise ValueError("Completion request identity does not match its envelope")
+                    validate_requested_model({"model_id": completion_context.model_id}, manifest, node)
+                    completion_context.validate_request(model_input, params)
                 if hasattr(model_input, "kind"):
                     if not isinstance(params, dict):
                         raise ValueError("Model params must be an object")
@@ -292,6 +307,8 @@ def main() -> None:
                     send({"type": "progress", "id": rid, "pct": pct, "step": step})
 
                 try:
+                    if completion_context is not None:
+                        gen.completed_result_context = completion_context
                     if _ensure_model_loaded(gen):
                         send({"type": "log", "level": "warning",
                               "message": ("Model was not loaded (earlier setup failure?); "
@@ -302,6 +319,14 @@ def main() -> None:
                         )
                     else:
                         output_path = gen.generate(model_input, params, progress_cb, cancel_evt)
+                    from services.amd_completed_result import CompletedWorkerOutput
+                    if completion_context is not None:
+                        if not isinstance(output_path, CompletedWorkerOutput):
+                            raise ValueError("Completed worker must return a typed completion descriptor")
+                        send({"type": "done", "id": rid, "completion": output_path.to_dict()})
+                        continue
+                    if isinstance(output_path, CompletedWorkerOutput):
+                        raise ValueError("Completion descriptor requires a negotiated result context")
                     if node.get("output") == "scene":
                         from services.scene_input import validate_scene_input
                         resolved_output = Path(output_path).resolve(strict=True)
@@ -324,6 +349,8 @@ def main() -> None:
                               "traceback": traceback.format_exc(),
                               "loaded": _generator_is_loaded(gen)})
                 finally:
+                    if completion_context is not None:
+                        gen.completed_result_context = None
                     _cancel.pop(rid, None)
 
             # ---- cancel ----------------------------------------------

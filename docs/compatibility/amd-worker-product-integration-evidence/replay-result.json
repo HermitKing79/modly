@@ -1,0 +1,51 @@
+{
+  "classification": "PASS",
+  "test_kind": "historical completed-artifact replay/integration only",
+  "fresh_inference": false,
+  "desktop_viewer_session": false,
+  "elapsed_seconds": 3.625,
+  "peak_process_committed_bytes": 45494272,
+  "peak_job_committed_bytes": 46317568,
+  "process_memory": {
+    "peak_working_set_bytes": 4653056,
+    "peak_pagefile_bytes": 843776
+  },
+  "minimum_observed_available_RAM_bytes": 17152692224,
+  "minimum_observed_destination_free_bytes": 135501705216,
+  "cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "independent_post_exit_full_file_readback": true,
+  "private_host_receipt_sha256": "97ca17c53f138bf44fcc1b4ce32b17bc4b092817ff5a4525c83f724204eeafac",
+  "private_worker_receipt_sha256": "31a5e2be86c6b4137d44b96ee94ff6f58db7f1a9f098cb2c8c03e9e288c61883",
+  "cases": [
+    {
+      "case": "tiny-control",
+      "classification": "PASS",
+      "bytes": 1108,
+      "sha256": "a4fe7dd08d3fd6c9f14d53c1be09f1b2a3b4ab134c4100aee381602f7a6826f1",
+      "job_id": "3dbc1ed6-5a9d-4e1a-8b01-777eb59ff7d6",
+      "status": "done",
+      "result_origin": "amd-replay",
+      "output_url": "/workspace/Workflows/Replay/amd-3dbc1ed6-5a9d-4e1a-8b01-777eb59ff7d6/model.glb",
+      "elapsed_seconds": 0.09399999999732245,
+      "source_and_output_exact": true
+    },
+    {
+      "case": "historical-master",
+      "classification": "PASS",
+      "bytes": 97073940,
+      "sha256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+      "job_id": "22d0fb7b-9479-4cd7-8dff-84abec955448",
+      "status": "done",
+      "result_origin": "amd-replay",
+      "output_url": "/workspace/Workflows/Replay/amd-22d0fb7b-9479-4cd7-8dff-84abec955448/model.glb",
+      "elapsed_seconds": 0.6869999999908032,
+      "source_and_output_exact": true
+    }
+  ]
+}

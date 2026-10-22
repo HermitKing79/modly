@@ -1,0 +1,113 @@
+{
+  "schema": "modly.independent-outcome-review.v1",
+  "reviewer": "product_flow_audit",
+  "reviewed_at_utc": "2026-10-22T21:43:26.957775+00:00",
+  "classification": "PASS_FOR_COMPLETED_ARTIFACT_REPLAY",
+  "findings_remaining": [],
+  "replay_or_desktop_rerun": false,
+  "evidence_sha256": {
+    "replay-result.json": "4b74bbe75f15cc3401ade1f4eda6877e31fe722476eee6f593a0f8e7c1f3ea6d",
+    "workspace-result.json": "54debc70cf189bd983bf9cde4796098ade8279a6b2cd66bb7f312216fc9db397",
+    "workspace-precheck-finding.json": "198cd9ca88b75c536e54af1620182334475f624c8128f10bbd9d4cba28d475b9",
+    "workspace_check.mjs": "4ffbdbbb8795b82942d0f4295292bea5a4de5aa00f09b992f3dc0f82135c2e5d",
+    "replay_check.py": "e8c10dd8b11bbc3ac6b088beaa0e4a3f3bb7fed594505263d348c4402581374c",
+    "focused-tests.json": "df442bc623eb2412bf4c7b037e8818893e37d644d531a0801865c50d51558abe",
+    "core-final-tests.json": "78cb180c879adc3b46c61c13e2320d6cbceb306a8dbcd3a11e735ceb02070ad1",
+    "route-final-tests.json": "4aaeebe47296c9bcf760b0cf8a40a89bf795e7d7fc4a3d9644c72c87fdbf2fb5",
+    "workspace-tests.json": "43bdc4fb6a748735a14afa0aefe62e5583c322c4a3fdca9fe94ea990b58aefbb"
+  },
+  "private_receipt_sha256": {
+    "host": "97ca17c53f138bf44fcc1b4ce32b17bc4b092817ff5a4525c83f724204eeafac",
+    "worker": "31a5e2be86c6b4137d44b96ee94ff6f58db7f1a9f098cb2c8c03e9e288c61883",
+    "stdout": "1b7f7c7acd6222014939c2580731362cee5bbbd7fd3c741dba25df03632e5765",
+    "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "cases": [
+    {
+      "case": "tiny-control",
+      "bytes": 1108,
+      "sha256": "a4fe7dd08d3fd6c9f14d53c1be09f1b2a3b4ab134c4100aee381602f7a6826f1",
+      "source_staged_and_published_hashes_independently_match": true,
+      "sidecar_equals_API_metadata_independently_verified": true,
+      "origin": "amd-replay"
+    },
+    {
+      "case": "historical-master",
+      "bytes": 97073940,
+      "sha256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+      "source_staged_and_published_hashes_independently_match": true,
+      "sidecar_equals_API_metadata_independently_verified": true,
+      "origin": "amd-replay"
+    }
+  ],
+  "resources_and_cleanup": {
+    "elapsed_seconds": 3.625,
+    "peak_process_committed_bytes": 45494272,
+    "peak_job_committed_bytes": 46317568,
+    "all_resource_samples_admitted": true,
+    "natural_owned_tree_exit": true,
+    "active_processes_after_cleanup": 0,
+    "forced_cleanup": false,
+    "stderr_empty": true,
+    "source_safe_summary_matches_private_receipts": true
+  },
+  "verification": {
+    "combined_tests": {
+      "tests": 154,
+      "passed": 152,
+      "failed": 0,
+      "skips": [
+        {
+          "reason": "POSIX mode-bit enforcement is not applicable on Windows",
+          "kind": "platform-specific"
+        },
+        {
+          "reason": "Symlink creation privilege unavailable",
+          "kind": "privilege-unavailable"
+        }
+      ],
+      "timing": "Before final staging ownership correction"
+    },
+    "final_core_tests": {
+      "tests": 18,
+      "passed": 18,
+      "skips": 0,
+      "root_elapsed_seconds": 1.406,
+      "independent_reviewer_elapsed_seconds": 1.303
+    },
+    "final_route_tests": {
+      "tests": 6,
+      "passed": 6,
+      "skips": 0,
+      "elapsed_seconds": 0.703,
+      "supplemental_test_sha256": "40a123abbc719382c6f9d5573c4d21c40b5d715b1352349aba1ce65075da0393",
+      "reviewed_added_assertions": "Calls actual workflow_runs.get_run and checks done status, identical output URL, relative scene_candidate path and explicit replay step; production source unchanged."
+    },
+    "node_workspace_compatibility_tests": {
+      "tests": 21,
+      "passed": 21,
+      "failed": 0,
+      "skips": 0
+    }
+  },
+  "workspace_test_correction": {
+    "preserved_finding": "workspace-precheck-finding.json",
+    "cause": "An extra assertion incorrectly expected ordinary JSON sidecars in the existing library list; existing code deliberately filters unsupported JSON.",
+    "correction": "Existing list/open/Generate projection verifies each GLB and URL; existing read API verifies sidecar artifact ID and source link.",
+    "node_sidecar_readback_exact_scope": "Only the asserted artifactId/sourceWorkspacePath correspondence, not every metadata field.",
+    "full_sidecar_equality_evidence": "Replay worker compares complete sidecar to API result_metadata; this review independently reread both sidecars and confirmed full equality.",
+    "production_changed": false,
+    "CPU_replay_rerun": false
+  },
+  "faithful_claims": [
+    "Actual image-job API, completed host receiver/authentication, workspace publication and existing library/viewer URL projection were exercised.",
+    "Tiny transport control is explicitly synthetic fixture evidence; historical master retains the four pinned historical proof identities.",
+    "Both jobs and persisted metadata explicitly identify completed-artifact replay; no newly submitted image inference is claimed."
+  ],
+  "limits": [
+    "Saved-reply injection substitutes the producer send operation; this is not a real AMD producer/stdin-stdout inference run.",
+    "No model was loaded and no GPU inference or desktop viewer rendering was exercised.",
+    "Existing GLB discovery/openability and exact viewer URL projection do not independently establish visual rendering or live viewer resource disposal."
+  ],
+  "independent_scope_exclusion": "This outcome review does not independently review its author's earlier IPC implementation; the separate independent IPC review covers that source."
+}

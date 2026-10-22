@@ -34,6 +34,9 @@ _cancelled: set = set()
 _cancel_events: Dict[str, threading.Event] = {}
 _completed_at: Dict[str, float] = {}
 _job_generators: Dict[str, object] = {}
+# Serializes the completed-result commit with cancellation. Long verification
+# and copying happen outside this lock; only the terminal transition is sealed.
+_result_commit_lock = threading.Lock()
 # A pinned generation owns the complete switch/load/generate lifecycle.  Keeping
 # that lifecycle on one dedicated worker provides process-wide serialization
 # without parking default-executor workers on a blocking lock acquisition.
@@ -198,12 +201,13 @@ async def cancel_job(job_id: str):
     job = _jobs.get(job_id)
     if not job:
         raise HTTPException(404, f"Job {job_id} not found")
-    _cancelled.add(job_id)
-    if job_id in _cancel_events:
-        _cancel_events[job_id].set()
-    if job.status in ("pending", "running"):
-        job.status = "cancelled"
-        _completed_at[job_id] = time.monotonic()
+    with _result_commit_lock:
+        _cancelled.add(job_id)
+        if job_id in _cancel_events:
+            _cancel_events[job_id].set()
+        if job.status in ("pending", "running"):
+            job.status = "cancelled"
+            _completed_at[job_id] = time.monotonic()
     # Kill only the subprocess bound to this job. A queued cancellation must not
     # terminate whichever earlier job currently owns the active generator.
     try:
@@ -253,14 +257,15 @@ async def _run_generation(
     except asyncio.CancelledError:
         # asyncio cancellation attempts to cancel a queued concurrent future.
         # If it has already begun, the event lets the generator stop safely.
-        _cancelled.add(job_id)
-        cancel_event = _cancel_events.get(job_id)
-        if cancel_event is not None:
-            cancel_event.set()
-        job = _jobs.get(job_id)
-        if job is not None and job.status in ("pending", "running"):
-            job.status = "cancelled"
-            _completed_at[job_id] = time.monotonic()
+        with _result_commit_lock:
+            job = _jobs.get(job_id)
+            if job is not None and job.status in ("pending", "running"):
+                _cancelled.add(job_id)
+                cancel_event = _cancel_events.get(job_id)
+                if cancel_event is not None:
+                    cancel_event.set()
+                job.status = "cancelled"
+                _completed_at[job_id] = time.monotonic()
         raise
 
 
@@ -277,6 +282,7 @@ def _run_generation_impl(
     job = _jobs[job_id]
     job.status = "running"
     job.step = None
+    published_completion = None
 
     def progress_cb(pct: int, step: str = "") -> None:
         # Monotonic: the loading phase walks the bar up on a background thread and
@@ -312,7 +318,11 @@ def _run_generation_impl(
                 args=(progress_cb, 0, 9, init_label, stop_load_evt, 4.0),
                 daemon=True,
             )
-            load_thread.start()
+            # Completed-result adapters must report actual stages, rather
+            # than using legacy time-based progress during preparation.
+            completed_adapter = bool(getattr(_job_generators.get(job_id), "completed_results_enabled", False))
+            if not completed_adapter:
+                load_thread.start()
             try:
                 gen = get_generator()
             finally:
@@ -330,7 +340,12 @@ def _run_generation_impl(
         gen.outputs_dir = coll_dir
 
         cancel_event = _cancel_events.get(job_id)
-        if isinstance(model_input, TypedArtifactInput):
+        completed_adapter = bool(getattr(gen, "completed_results_enabled", False))
+        if completed_adapter:
+            if not isinstance(model_input, bytes) or output_kind != "mesh":
+                raise ValueError("Completed AMD results require the exact image/mesh job contract")
+            output_path = gen.generate_completed(model_input, params, job_id, progress_cb, cancel_event)
+        elif isinstance(model_input, TypedArtifactInput):
             # Revalidate just before crossing the inference boundary. The
             # subprocess runner repeats this check inside the worker.
             from services.artifact_input import revalidate_artifact_input
@@ -350,6 +365,35 @@ def _run_generation_impl(
                 if supports_cancel
                 else gen.generate(model_input, params, progress_cb)
             )
+
+        from services.amd_completed_result import AuthenticatedCompletion
+        if completed_adapter:
+            if not isinstance(output_path, AuthenticatedCompletion):
+                raise ValueError("AMD worker did not return an authenticated completed result")
+            context = output_path.context
+            if context.job_id != job_id or context.model_id != model_id:
+                raise ValueError("Completed AMD result belongs to another product job or model")
+            context.validate_request(model_input, params)
+            if job_id in _cancelled or (cancel_event is not None and cancel_event.is_set()):
+                raise GenerationCancelled()
+            from services.amd_completed_result import promote_completion
+            published_completion = promote_completion(
+                output_path, registry.WORKSPACE_DIR, collection, cancel_event=cancel_event,
+            )
+            with _result_commit_lock:
+                if job_id in _cancelled or (cancel_event is not None and cancel_event.is_set()):
+                    raise GenerationCancelled()
+                relative = published_completion.path.relative_to(registry.WORKSPACE_DIR.resolve(strict=True))
+                job.output_url = f"/workspace/{relative.as_posix()}"
+                job.result_origin = "amd-replay" if context.mode == "replay_fixture" else "amd-worker"
+                job.result_metadata = published_completion.metadata
+                job.step = "Completed-artifact replay; no inference" if context.mode == "replay_fixture" else "AMD result independently verified"
+                job.progress = 100
+                job.status = "done"
+                _completed_at[job_id] = time.monotonic()
+            return
+        if isinstance(output_path, AuthenticatedCompletion):
+            raise ValueError("Completed AMD result returned without a negotiated host verifier")
 
         if job_id in _cancelled:
             return
@@ -373,11 +417,21 @@ def _run_generation_impl(
             job.output_url = f"/workspace/{collection}/{output_path.name}"
 
     except GenerationCancelled:
+        if published_completion is not None:
+            published_completion.discard()
         job.status = "cancelled"
         _completed_at[job_id] = time.monotonic()
     except Exception as exc:
+        if published_completion is not None:
+            published_completion.discard()
         if job_id in _cancelled:
             return
+        if bool(getattr(_job_generators.get(job_id), "completed_results_enabled", False)):
+            event = _cancel_events.get(job_id)
+            if event is not None and event.is_set():
+                job.status = "cancelled"
+                _completed_at[job_id] = time.monotonic()
+                return
         tb = traceback.format_exc()
         msg = f"[Generation ERROR] {exc}\n{tb}"
         try:

@@ -292,6 +292,121 @@ class RuntimeIdentityTests(unittest.TestCase):
         self.assertEqual(gen.model_dir.name, "unrelated-storage")
 
 
+class CompletedResultRunnerTests(unittest.TestCase):
+    def test_unadvertised_completion_context_is_rejected_before_generation(self):
+        driver = _RunnerDriver(_FAKE_TEXGEN_GENERATOR, "FakeTexGen")
+        messages = driver.run([{
+            "action": "generate", "id": "request-1", "model_id": "demo-ext",
+            "image_b64": "aW1hZ2U=", "params": {}, "completed_result_context": {},
+        }])
+        self.assertFalse(any(message["type"] == "done" for message in messages))
+        self.assertTrue(any(message["type"] == "error" for message in messages))
+        self.assertEqual(driver.generator_module.INSTANCES[0].load_calls, 0)
+
+    def _driver(self, *, typed=True, advertised=True):
+        from services.amd_completed_result import CONTRACT
+        source = '''
+from pathlib import Path
+from services.amd_completed_result import CompletedWorkerOutput
+INSTANCES = []
+class CompletedGenerator:
+    def __init__(self, model_dir, outputs_dir):
+        self.loaded = False
+        self.calls = []
+        INSTANCES.append(self)
+    def is_loaded(self): return self.loaded
+    def load(self): self.loaded = True
+    def unload(self): self.loaded = False
+    def generate(self, image, params, progress_cb, cancel_event):
+        self.calls.append((image, params, getattr(self, "completed_result_context", None)))
+        progress_cb(50, "Ready")
+        return RETURN_VALUE
+'''.replace("RETURN_VALUE", 'CompletedWorkerOutput(str(Path("receipt.json").resolve()), "a" * 64)' if typed else 'Path("legacy.glb")')
+        driver = _RunnerDriver(source, "CompletedGenerator")
+        manifest = {"id": "demo-ext", "generator_class": "CompletedGenerator"}
+        if advertised:
+            manifest["completed_output_contract"] = CONTRACT
+        (driver.ext_dir / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+        return driver
+
+    def _request(self):
+        from services.amd_completed_result import CompletionContext
+        context = CompletionContext.new("job-1", b"image", {"quality": "high"}, model_id="demo-ext")
+        return context, {
+            "action": "generate", "id": context.request_id, "model_id": "demo-ext",
+            "image_b64": "aW1hZ2U=", "params": {"quality": "high"},
+            "completed_result_context": context.to_dict(),
+        }
+
+    def test_context_is_separate_from_model_params_and_only_typed_descriptor_is_sent(self):
+        context, request = self._request()
+        driver = self._driver()
+        messages = driver.run([request])
+        done = next(message for message in messages if message["type"] == "done")
+        self.assertEqual(done["id"], context.request_id)
+        self.assertEqual(set(done), {"type", "id", "completion"})
+        self.assertEqual(done["completion"]["receipt_sha256"], "a" * 64)
+        image, params, received = driver.generator_module.INSTANCES[0].calls[0]
+        self.assertEqual((image, params, received), (b"image", {"quality": "high"}, context))
+        self.assertIsNone(driver.generator_module.INSTANCES[0].completed_result_context)
+
+    def test_context_rejects_changed_input_params_request_id_and_mode(self):
+        for field, value in (("image_b64", "b3RoZXI="), ("params", {}), ("id", "other")):
+            with self.subTest(field=field):
+                _, request = self._request()
+                request[field] = value
+                driver = self._driver()
+                messages = driver.run([request])
+                self.assertFalse(any(message["type"] == "done" for message in messages))
+                self.assertEqual(driver.generator_module.INSTANCES[0].calls, [])
+        _, request = self._request()
+        request["completed_result_context"]["mode"] = "mock"
+        driver = self._driver()
+        messages = driver.run([request])
+        self.assertFalse(any(message["type"] == "done" for message in messages))
+        self.assertEqual(driver.generator_module.INSTANCES[0].calls, [])
+
+    def test_context_rejects_cross_model_binding_and_malformed_fields(self):
+        for field, value in (("model_id", "other-ext"), ("nonce", "../escape"), ("input_sha256", "bad")):
+            with self.subTest(field=field):
+                _, request = self._request()
+                request["completed_result_context"][field] = value
+                driver = self._driver()
+                messages = driver.run([request])
+                self.assertFalse(any(message["type"] == "done" for message in messages))
+                self.assertEqual(driver.generator_module.INSTANCES[0].calls, [])
+
+    def test_fixture_replay_requires_matching_experimental_manifest(self):
+        from services.amd_completed_result import CompletionContext
+        context = CompletionContext.new("job-1", b"image", {"quality": "high"}, mode="replay_fixture", model_id="demo-ext")
+        _, request = self._request()
+        request.update(id=context.request_id, completed_result_context=context.to_dict())
+        for declared, experimental, want_done in ((False, True, False), (True, False, False), (True, True, True)):
+            with self.subTest(declared=declared, experimental=experimental):
+                driver = self._driver()
+                manifest_path = driver.ext_dir / "manifest.json"
+                manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                if declared:
+                    manifest["completed_result_mode"] = "replay_fixture"
+                manifest["experimental"] = experimental
+                manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+                messages = driver.run([request])
+                self.assertEqual(any(message["type"] == "done" for message in messages), want_done)
+
+    def test_completion_request_cannot_accept_legacy_path(self):
+        _, request = self._request()
+        messages = self._driver(typed=False).run([request])
+        self.assertFalse(any(message["type"] == "done" for message in messages))
+        self.assertTrue(any(message["type"] == "error" for message in messages))
+
+    def test_unsolicited_typed_result_cannot_enter_legacy_path(self):
+        _, request = self._request()
+        request.pop("completed_result_context")
+        messages = self._driver().run([request])
+        self.assertFalse(any(message["type"] == "done" for message in messages))
+        self.assertTrue(any(message["type"] == "error" for message in messages))
+
+
 class GeneratorLoadedStateTests(unittest.TestCase):
     def test_reports_loaded_state(self) -> None:
         gen = type("Gen", (), {"is_loaded": lambda self: True})()

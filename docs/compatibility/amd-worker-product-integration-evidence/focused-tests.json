@@ -1,0 +1,23 @@
+{
+  "classification": "PASS",
+  "tests": 154,
+  "failures": 0,
+  "errors": 0,
+  "skips": 2,
+  "elapsed_seconds": 83.95299999999406,
+  "modules": [
+    "test_amd_completed_result",
+    "test_amd_generation_result",
+    "test_extension_process",
+    "test_runner",
+    "test_generation_router",
+    "test_workflow_runs_lifecycle",
+    "test_workflow_runs_router",
+    "test_scene_generation",
+    "test_amd_scaffold",
+    "test_generator_registry"
+  ],
+  "log_sha256": "423bc07a3efa55c4b5a20424317ba0446d6ef9e10ec76f0d3838cc69686af445",
+  "GPU_inference": false,
+  "real_model_load": false
+}

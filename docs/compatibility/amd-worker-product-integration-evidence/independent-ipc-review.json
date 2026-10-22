@@ -1,0 +1,86 @@
+{
+  "schema": "modly.amd.worker-product-independent-ipc-review.v1",
+  "created_utc": "2026-10-22T21:38:00.1715134Z",
+  "classification": "PASS",
+  "reviewer": "/root/amd_proof_contract_audit",
+  "base_commit": "279f8c0925a951ca85255fb7774b9bc72487818b",
+  "scope": "Independent review of product_flow_audit's runner and ExtensionProcess IPC changes and their associated CPU tests. The review excludes the reviewer's own completed-result authenticator/publisher implementation and excludes the API route implementation authored by the parent.",
+  "source_bindings": {
+    "api/runner.py": {
+      "sha256": "36c7cf3bef48dcc9f07f8117fb2bf69ec7d30eadca5833882d23fa555df60c47",
+      "lines": 379
+    },
+    "api/services/extension_process.py": {
+      "sha256": "76643abbc764dedaeab6ae650c425791745ac2072e40a4325d5ba8799898eb13",
+      "lines": 733
+    },
+    "api/tests/test_runner.py": {
+      "sha256": "26efdb2e74602e7bfb9a272268ddc3c53dcaad9561f7b20779be257ef5665155",
+      "lines": 530
+    },
+    "api/tests/test_extension_process.py": {
+      "sha256": "cc1cdccd39b62c7e776d04f84462a354033ca125a8fd8f891b4560c3dea3045e",
+      "lines": 442
+    },
+    "experimental/extensions/trellis2-amd/manifest.json": {
+      "sha256": "c9c9c79009f3cb45cdfcf5fb25dd764b2c3e73965a122a1b9af51aed98c42bd2",
+      "lines": 14
+    }
+  },
+  "verified_gates": {
+    "host_authority_configuration": "A manifest contract alone does not enable completed results. configure_completion_verifier requires the explicit completed-output contract, a callable trusted host verifier and matching declared mode. No production API call site configures this verifier in the reviewed source.",
+    "ordinary_AMD_UI": "The existing trellis2-amd manifest remains amd-offline-scaffold-v1 with mock-only nodes and no completed_output_contract. The ordinary AMD selection cannot negotiate completed results or select a fixture through request parameters.",
+    "explicit_fixture_mode": "Both host configuration and runner require mode replay_fixture to match an explicitly declared completed_result_mode and require experimental=true. Generated and replay modes cannot be interchanged by changing model params.",
+    "request_and_model_identity": "The host creates the context from exact image bytes, canonical params, selected MODEL_ID and product job ID. The runner checks the context request_id against the IPC envelope, validates the context model_id against the selected manifest/node, and validates exact image/parameter digests before model loading or generation.",
+    "context_transport": "Completion context travels in a dedicated envelope field and is supplied on gen.completed_result_context only for the request. The runner clears that property in its generation finally block.",
+    "typed_completion_only": "A negotiated completion accepts only CompletedWorkerOutput. The runner sends only type/id/completion. The host rejects a matching done message with a legacy output_path or additional fields, parses the strict typed descriptor and obtains authority exclusively from its configured host callback.",
+    "stale_IPC_messages": "For a negotiated request the host ignores progress, done, error and cancelled messages whose request ID does not match. A stale done path cannot satisfy the current request.",
+    "authentication_and_error_paths": "The host calls authenticate_completion with the original context, typed descriptor, trusted callback authority and cancellation event. Authentication errors propagate without a legacy path fallback. Matching worker errors retain existing loaded-state invalidation and original error propagation.",
+    "cancellation": "Cancellation before request dispatch is rejected. Cancellation after dequeue, during the host callback, during authentication and after authentication cannot return an accepted result. generate_completed catches GenerationCancelled from receive/authentication, calls the existing verified stop/reap path and rethrows. A stop failure preserves the live process reference and raises under the existing lifecycle contract.",
+    "legacy_compatibility": "Ordinary legacy done/output_path responses remain Path results. Existing typed scene input, explicit node identity, readiness metadata, failed-model reload and loaded-state recovery tests remain passing. The 30-second AMD mock deadline remains for non-negotiated AMD requests. No new genuine inference worker or generation deadline policy is enabled by this change."
+  },
+  "review_findings_resolved": [
+    {
+      "priority": "P2",
+      "finding": "The first matching-context cancellation check could raise immediately after queued progress without entering the existing cancellation grace/teardown path, leaving a live worker when the public generate_completed(cancel_event=...) method was called outside the API's separate cancellation handler.",
+      "resolution": "The IPC author wrapped the receive/authentication lifecycle in generate_completed with GenerationCancelled handling that invokes verified stop() before rethrowing.",
+      "regression": "CompletedResultProtocolTests.test_cancelled_completed_generation_stops_and_reaps_its_child",
+      "independent_verification": "The corrected regression and the complete 34-test ExtensionProcess suite passed in the reviewer's fresh run. Source review confirms kill/wait/loaded-state teardown and preservation of a live reference on stop failure."
+    }
+  ],
+  "independent_test_runs": [
+    {
+      "cwd": "api",
+      "command": "python -B -m unittest discover -s tests -p test_extension_process.py -v",
+      "tests": 34,
+      "seconds": 0.983,
+      "exit_code": 0,
+      "result": "PASS",
+      "scope": "CPU fake worker queues and mocked lifecycle behavior; normal Windows temporary-directory ACLs"
+    },
+    {
+      "cwd": "api",
+      "command": "python -B -m unittest discover -s tests -p test_runner.py -v",
+      "tests": 31,
+      "seconds": 0.159,
+      "exit_code": 0,
+      "result": "PASS",
+      "scope": "CPU fake generator modules and IPC envelopes; no actual model loading"
+    }
+  ],
+  "total_independent_tests": 65,
+  "outstanding_blocking_findings": [],
+  "original_brick_input_identity": {
+    "path_relative_to_checkout": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/occupancy/source-image.webp",
+    "bytes": 184424,
+    "freshly_verified_full_SHA256": "a31ba3b084757faa66e4bb91a85bd956fcc1eaaaf298a091fd08044351cd0293",
+    "purpose": "Exact original input for a separately labelled historical completed-artifact replay; this review does not execute that replay."
+  },
+  "limitations": [
+    "These are source review and CPU protocol tests, not genuine AMD inference, UI generation, viewport or export execution evidence.",
+    "Future real generated-mode workers still require their own supervised stage deadlines, ownership, runtime/resource admission and complete authenticated production receipts.",
+    "The independent review does not claim correctness of the separate authenticator/publisher or API route beyond checking their IPC interfaces."
+  ],
+  "no_GPU_model_native_runtime_installation_or_protected_reader_change": true,
+  "git_diff_check": "PASS"
+}

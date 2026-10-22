@@ -9,6 +9,10 @@ class JobStatus(BaseModel):
     step: Optional[str] = None    # Human-readable current step
     output_url: Optional[str] = None
     error: Optional[str] = None
+    # Only authenticated completed AMD results set these. Replay is explicit
+    # and must never be presented as inference from a newly submitted image.
+    result_origin: Optional[Literal["amd-worker", "amd-replay"]] = None
+    result_metadata: Optional[dict[str, Any]] = None
 
 
 class GenerateFromArtifactRequest(BaseModel):

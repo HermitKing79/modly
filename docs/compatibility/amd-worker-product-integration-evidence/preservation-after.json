@@ -1,0 +1,204 @@
+{
+  "schema": "modly.amd.worker-product-integration-preservation-after.v1",
+  "created_utc": "2026-10-22T21:42:25.043414+00:00",
+  "mission_base": "279f8c0925a951ca85255fb7774b9bc72487818b",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "authenticated_prior_cleanup_after_public_sha256": "3b8321017d88fe55a0177b7ac19537c96b06bd2b3b66bfb12b1f05ea62a1908d",
+  "authenticated_prior_cleanup_after_private_sha256": "3638c043c9edd7c0c6e65871a10a7facb280a4e26ed6ce00656b7c30f0b1a20b",
+  "authenticated_prior_reconciled_public_sha256": "43df9a19b6633efe31e7285edbd1207d9398fa9c6a4a49ec6205e80e20fd6488",
+  "authenticated_protected100_descriptor_sha256": "cfa46e64a2a36d8f6eab34f344c7d6b02a99e2996c6365d3132ecced406781d2",
+  "authenticated_app_input_manifest_sha256": "5544282d6f85bd434773c631320cfc08ec1d00d502e9aa145cec480952a9f236",
+  "authenticated_original_profile_manifest_sha256": "99f93a8633e3e15fccb6a38d23be3dbfd61ced35b2ceb9eac028459a7d556151",
+  "private_detail_sha256": "8e6911b29ff4e1d913cc2d5ba932cc053d64c5519963c8b287da4469ed7f70c2",
+  "protected_files_fresh_full_SHA256_checked": 100,
+  "protected_files_hash_size_mtime_match": true,
+  "accepted_master_bytes": 97073940,
+  "accepted_master_sha256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+  "accepted_master_fresh_hash_size_mtime_match": true,
+  "installed_app_inputs_checked": 12,
+  "installed_app_inputs_hash_size_mtime_match": true,
+  "original_profile_file_count": 2103,
+  "original_profile_normalized_file_set_match": true,
+  "original_profile_hash_size_mtime_match": true,
+  "selected_environment_check_count": 42,
+  "selected_environment_checks_match": true,
+  "selected_source_backup_check_count": 13,
+  "selected_source_backup_hash_size_mtime_match": true,
+  "authorized_product_path_count_checked_not_protected": 9,
+  "authorized_product_path_protected_overlap_count": 0,
+  "remote_head_count": 117,
+  "remote_capture_sha256": "58b08f07825120f1b612f19c4e2524243b605af0588cba1788f32e6ac9aaef83",
+  "main_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "prior_remote_heads_match": true,
+  "remote_baseline_heads_checked": 117,
+  "added_remote_head_count": 0,
+  "authenticated_prior_viewer_receipts": {
+    "preservation_before_public_sha256": "2433fb8e6be24fd898e4c8fa447eb6e337e98d5e0c0028ff1d891cdb9c30a491",
+    "preservation_after_public_sha256": "8f287c5b4bf510e3f55a89f11f3a184d0b866bffd4c18efd5c258f21b9358108",
+    "outcome_review_sha256": "49613fad5e34eee0d6ca3ef2354e9c4ea81f996ffe421e1a410899ea43d585f0",
+    "host_receipt_sha256": "4be7b10d0a027258ebd5ee08ff3a8cf7b7e98e1481923ff3c082a2952de2b891",
+    "classification": "BLOCKED",
+    "elapsed_seconds": 480.75,
+    "forced_job_cleanup": true,
+    "active_before_cleanup": 7,
+    "active_after_cleanup": 0,
+    "full_milestone_complete": false,
+    "natural_exit_verified": false,
+    "limits": "Authenticated saved receipts only; no repetition or acceptance upgrade."
+  },
+  "authenticated_prior_cleanup_result": {
+    "authenticated_saved_receipt_sha256": {
+      "app-host.json": "a4d2747b62ae75be8f22f2b19cec45f58179fce729b09b66d82515767dda0747",
+      "runtime-gate-failure.json": "0faaebe91e6bdc5066daf34e91bd682a4e4ae54c3799a8ea330a1d8af0f7432d",
+      "controlled-quit.json": "c28e058e8edff5308e144961c00847ed8069e02992241e0fbc7be3880c9d064f",
+      "observer-restoration.json": "6850de0ce25e8da3e670d91bc2f312515dd91965e8869119b6c627c533561cc8",
+      "shutdown-request.json": "13fc89accf01fdf7580386744e79d4f073bcbdd04c7ca985c204f9456751495f",
+      "app-before-quit.json": "ffabc18bb71ed13ae4c3f1a1532f0920ccbbf80430931358cc78704e11c3a3b1",
+      "app-will-quit.json": "54c56695bcbc6e62303fa141ab6b48f114dd00ce0ff38e78c59263fe7b6d096c"
+    },
+    "qualification_classification": "BLOCKED",
+    "host_classification": "PASS",
+    "host_elapsed_seconds": 76.28100000000268,
+    "host_returncode": 0,
+    "host_input_sources_unchanged": true,
+    "job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "natural_owned_app_exit_verified": true,
+    "shutdown_mechanism": "Electron app.quit",
+    "observer_restoration_verified": true,
+    "blocking_stage": "install-cleanup before any asset loading",
+    "blocking_error": "Error: Missing installed closure attributes",
+    "tiny_imports": 0,
+    "master_imports": 0,
+    "alternate_capture_attempts": 0,
+    "limits": "Identity preservation and natural shutdown do not qualify model cleanup: mandatory empty-viewer observer gate failed before any asset import. Prior viewer BLOCKED outcome is unchanged."
+  },
+  "prior_cleanup_all_identities_match": true,
+  "mission_before_after_all_identities_match": true,
+  "checkpoint_or_model_payload_bytes_read": 0,
+  "checkpoint_header_bytes_read": 0,
+  "fresh_full_hash_unique_file_count": 2280,
+  "fresh_full_hash_bytes_read": 2283191348,
+  "elapsed_seconds": 8.234,
+  "issues": [],
+  "scope_limits": [
+    "Fresh scope is protected100 plus accepted master/app12, original profile2103 with normalized relative-name set, selected installed environment42 descriptors/native byte identities and installed source/backup13. Shared files are read once per phase. Raw GLB bytes are hashed without geometry parsing or correspondence recomputation.",
+    "2280 unique files are freshly hashed. Prior authenticated receipts provide provenance for old unique400, historical trees/reports, checkpoint metadata and SDK78; those historical scopes are not freshly enumerated or rehashed.",
+    "No checkpoint/model payload or header is read. No native library, app, model, GPU, WSL, Blender, installer or historical code is executed. This stdlib audit writes only new mission E/P receipts.",
+    "This CPU-only product integration has no app session. No settings, launch directories or markers are created. Original installed app/profile/environment identities are checked directly; authorized checkout product code edits are outside that installed-file preservation scope.",
+    "Prior viewer remains BLOCKED at480.75seconds with forced owned-job cleanup7to0. Prior cleanup remains BLOCKED at mandatory empty-viewer observer gate before any tiny/master asset import, despite naturally exiting with return0, no active owned processes and no forced cleanup. Saved observations are not upgraded.",
+    "BEFORE captures117 remote heads including main and the mission base. One requested AFTER capture compares every one of those117 identities before publication; added heads are reported separately. Publication is outside this audit."
+  ],
+  "checkout_product_diff_allowlist": {
+    "baseline_commit": "279f8c0925a951ca85255fb7774b9bc72487818b",
+    "classification": "PASS",
+    "authorized_product_paths": [
+      "api/routers/generation.py",
+      "api/runner.py",
+      "api/schemas/generation.py",
+      "api/services/amd_completed_result.py",
+      "api/services/extension_process.py",
+      "api/tests/test_amd_completed_result.py",
+      "api/tests/test_amd_generation_result.py",
+      "api/tests/test_extension_process.py",
+      "api/tests/test_runner.py"
+    ],
+    "protected100_overlap_count": 0,
+    "modified_tracked_count": 6,
+    "new_api_source_test_count": 3,
+    "modified_tracked_paths": [
+      "api/routers/generation.py",
+      "api/runner.py",
+      "api/schemas/generation.py",
+      "api/services/extension_process.py",
+      "api/tests/test_extension_process.py",
+      "api/tests/test_runner.py"
+    ],
+    "new_api_source_test_paths": [
+      "api/services/amd_completed_result.py",
+      "api/tests/test_amd_completed_result.py",
+      "api/tests/test_amd_generation_result.py"
+    ],
+    "source_current_sha256": [
+      {
+        "path": "api/routers/generation.py",
+        "status": "modified",
+        "bytes": 19432,
+        "sha256": "2e8ce6c3d976a8d98f4efd3e87c31f42c82d83287ded3045e31404fec432cde4"
+      },
+      {
+        "path": "api/runner.py",
+        "status": "modified",
+        "bytes": 17934,
+        "sha256": "36c7cf3bef48dcc9f07f8117fb2bf69ec7d30eadca5833882d23fa555df60c47"
+      },
+      {
+        "path": "api/schemas/generation.py",
+        "status": "modified",
+        "bytes": 969,
+        "sha256": "febcdd2999693d068dd75b800ba2e1d21d3d7e58953e23c9173813c84dc57a78"
+      },
+      {
+        "path": "api/services/amd_completed_result.py",
+        "status": "added",
+        "bytes": 20857,
+        "sha256": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44"
+      },
+      {
+        "path": "api/services/extension_process.py",
+        "status": "modified",
+        "bytes": 34450,
+        "sha256": "76643abbc764dedaeab6ae650c425791745ac2072e40a4325d5ba8799898eb13"
+      },
+      {
+        "path": "api/tests/test_amd_completed_result.py",
+        "status": "added",
+        "bytes": 18843,
+        "sha256": "4b8fc4776a3f14471586eb33b60dd7583bf7ae11da67eaf3d8bee1da5353b1da"
+      },
+      {
+        "path": "api/tests/test_amd_generation_result.py",
+        "status": "added",
+        "bytes": 10495,
+        "sha256": "40a123abbc719382c6f9d5573c4d21c40b5d715b1352349aba1ce65075da0393"
+      },
+      {
+        "path": "api/tests/test_extension_process.py",
+        "status": "modified",
+        "bytes": 18704,
+        "sha256": "cc1cdccd39b62c7e776d04f84462a354033ca125a8fd8f891b4560c3dea3045e"
+      },
+      {
+        "path": "api/tests/test_runner.py",
+        "status": "modified",
+        "bytes": 22406,
+        "sha256": "26efdb2e74602e7bfb9a272268ddc3c53dcaad9561f7b20779be257ef5665155"
+      }
+    ],
+    "new_mission_evidence_files": [
+      "core-final-tests.json",
+      "focused-tests.json",
+      "independent-boundary-review.json",
+      "independent-ipc-review.json",
+      "preservation-before.json",
+      "replay-result.json",
+      "replay_check.py",
+      "route-final-tests.json",
+      "workspace-precheck-finding.json",
+      "workspace-result.json",
+      "workspace-tests.json",
+      "workspace_check.mjs"
+    ],
+    "new_report_path": "docs/compatibility/amd-worker-product-integration.md",
+    "unexpected_tracked_count": 0,
+    "unexpected_untracked_count": 0,
+    "limits": "Source checkout allowlist inspected separately from2280 installed/profile/asset file identity preservation; prior four untracked cache directories retained and excluded from new-source attribution. No original extension readers/manifests or installed environment changes are present in the tracked diff."
+  },
+  "authenticated_before_public_sha256": "76425c6d49a3ec86e2a09023228dac2f57edf2c0cc9cb94e915732f0a503477c",
+  "authenticated_before_private_sha256": "c7062fb5d484e81a12788d170317783d3f6127d5bf25849b3fbb413acba9b3dd"
+}

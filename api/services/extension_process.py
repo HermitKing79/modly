@@ -57,6 +57,8 @@ class ExtensionProcess:
         self._amd = amd_runtime.is_amd(manifest)
         self._amd_config = None
         self.runtime_identity = None
+        self._completion_verifier = None
+        self._completion_mode = None
         self.model_dir     = None   # set by registry after init
         self.outputs_dir   = None   # set by registry after init
         self.shared_model_dirs: dict[str, Path] = {}
@@ -412,6 +414,52 @@ class ExtensionProcess:
             params, progress_cb, cancel_event,
         )
 
+    def configure_completion_verifier(self, verifier, mode="generated") -> None:
+        """Enable the declared completion contract using a trusted host callback."""
+        from services.amd_completed_result import CONTRACT
+        if self.manifest.get("completed_output_contract") != CONTRACT:
+            raise ValueError("Worker does not declare the completed output contract")
+        declared_mode = self.manifest.get("completed_result_mode", "generated")
+        if mode != declared_mode or mode not in ("generated", "replay_fixture"):
+            raise ValueError("Completion mode does not match the worker manifest")
+        if mode == "replay_fixture" and self.manifest.get("experimental") is not True:
+            raise ValueError("Fixture replay requires an explicit experimental worker")
+        if not callable(verifier):
+            raise TypeError("Completion verifier must be a trusted host callback")
+        self._completion_verifier = verifier
+        self._completion_mode = mode
+
+    @property
+    def completed_results_enabled(self) -> bool:
+        return self._completion_verifier is not None
+
+    def generate_completed(
+        self, image_bytes, params, job_id, progress_cb=None, cancel_event=None,
+    ):
+        """Request a bound completion descriptor; authority stays in the host."""
+        from services.amd_completed_result import CompletionContext
+        from services.generators.base import GenerationCancelled
+        if not self.completed_results_enabled:
+            raise ValueError("Completed generation requires a configured host verifier")
+        if cancel_event and cancel_event.is_set():
+            raise GenerationCancelled()
+        context = CompletionContext.new(
+            job_id, image_bytes, params, mode=self._completion_mode, model_id=self.MODEL_ID,
+        )
+        self._send({
+            "action": "generate", "id": context.request_id, "model_id": self.MODEL_ID,
+            "image_b64": base64.b64encode(image_bytes).decode(), "params": params,
+            "outputs_dir": str(self.outputs_dir) if self.outputs_dir else None,
+            "completed_result_context": context.to_dict(),
+        })
+        try:
+            return self._receive_generation(
+                context.request_id, progress_cb, cancel_event, completion_context=context,
+            )
+        except GenerationCancelled:
+            self.stop()
+            raise
+
     def prepare_geometry(self, image_bytes, params=None, cancel_event=None):
         """Explicit alpha-only configuration preparation; returns diagnostics, no asset."""
         from services import amd_observer
@@ -487,6 +535,7 @@ class ExtensionProcess:
         req_id: str,
         progress_cb: Optional[Callable[[int, str], None]],
         cancel_event: Optional[threading.Event],
+        completion_context=None,
     ) -> Path:
         from services.generators.base import GenerationCancelled
 
@@ -498,7 +547,7 @@ class ExtensionProcess:
         CANCEL_GRACE_SECONDS = 3.0
 
         cancel_sent_at: Optional[float] = None
-        deadline = time.monotonic() + 30.0 if self._amd else None
+        deadline = time.monotonic() + 30.0 if self._amd and completion_context is None else None
         while True:
             if deadline is not None and time.monotonic() >= deadline:
                 self.stop()
@@ -546,12 +595,38 @@ class ExtensionProcess:
                 raise RuntimeError(f"[{self.MODEL_ID}] Subprocess died during generation")
 
             t = msg.get("type")
+            if completion_context is not None:
+                if msg.get("id") != completion_context.request_id:
+                    continue
+                if cancel_event and cancel_event.is_set():
+                    raise GenerationCancelled()
 
             if t == "progress":
                 if progress_cb:
                     progress_cb(msg.get("pct", 0), msg.get("step", ""))
 
             elif t == "done":
+                if completion_context is not None:
+                    from services.amd_completed_result import (
+                        CompletedWorkerOutput, authenticate_completion,
+                    )
+                    if set(msg) != {"type", "id", "completion"}:
+                        raise ValueError("Completed worker must return only a completion descriptor")
+                    candidate = CompletedWorkerOutput.from_dict(msg["completion"])
+                    if not self.completed_results_enabled:
+                        raise ValueError("Completed generation requires a configured host verifier")
+                    try:
+                        authority = self._completion_verifier(completion_context, candidate)
+                        if cancel_event and cancel_event.is_set():
+                            raise GenerationCancelled()
+                        authenticated = authenticate_completion(completion_context, candidate, authority, cancel_event)
+                    except InterruptedError as exc:
+                        if cancel_event and cancel_event.is_set():
+                            raise GenerationCancelled() from exc
+                        raise
+                    if cancel_event and cancel_event.is_set():
+                        raise GenerationCancelled()
+                    return authenticated
                 return Path(msg["output_path"])
 
             elif t == "error":
