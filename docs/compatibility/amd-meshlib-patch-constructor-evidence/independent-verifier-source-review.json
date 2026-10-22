@@ -1,0 +1,43 @@
+{
+  "classification": "GO",
+  "review_scope": "Independent source review of the separately authored saved-data verifier and its synthetic tests; no native execution or real-array loading by this reviewer.",
+  "reviewed_source_SHA256": {
+    "verify_saved.py": "e5ce2da73bbece4aa448fe2a2bd1eaa17a5d2ed156860461179beac7c9f6034d",
+    "test_verify_saved.py": "23e5faf23a0a7ba0e5f0dde09d8e6e3e992436d6487e718db7f2515005c0c729"
+  },
+  "candidate_source_SHA256": {
+    "common.py": "650a7b05ec705227d0c19f09f387ff3c344eeb53ce2e1b5085e317f0543150cb",
+    "import_probe.py": "5388138ddaab8d1dd40bf27e56604adf2d3755c2b2b3f2f3a3f6cae6c201626a",
+    "run_host.py": "3f166a20b3ee882e9d036be620b8555b1cde9e0138384f7916000c9e3d3c1a2c",
+    "test_counter.py": "c4352d766c3007051fdceb0e7472280a1f19c2fde08270175f05a7d3e2107cfb",
+    "test_probe.py": "97fb177b67bab00b81fc467c228ec70d42222d77cac78a61796b410a57c1a75a",
+    "test_verify_saved.py": "23e5faf23a0a7ba0e5f0dde09d8e6e3e992436d6487e718db7f2515005c0c729",
+    "verify_saved.py": "e5ce2da73bbece4aa448fe2a2bd1eaa17a5d2ed156860461179beac7c9f6034d"
+  },
+  "qualification_plan_SHA256": "9d669c6fecd085e649064ee57d9d5a6449df98dc94fc7f9729b03ec8fbf9a220",
+  "focused_tests_SHA256": "df405d1b2299f0e4ce088c223850c385aa563acf1f7b37712570fa7e2384f2c5",
+  "focused_test_evidence": {
+    "classification": "PASS",
+    "tests": 32,
+    "seconds": 0.872,
+    "skipped": 0,
+    "reviewer_reran_tests": false
+  },
+  "findings": [],
+  "source_review": [
+    "The verifier is independent of producer helpers and imports NumPy only after its verify-stage GO/authentication; it does not import or call MeshLib.",
+    "Actual producer NPY basenames, dtypes, counter-holder journals, before/after region records, patch ordering and predecessor receipt bindings match the verifier handoff.",
+    "Checks independently cover dense source IDs, exact F32 or exact promoted-F64 position bits including signed zero, immutable input copies, cyclic oriented-face correspondence and triangle multiplicity.",
+    "Native edge grouping checks endpoint ownership, unique halfedges, one-or-two face incidence, opposite directions and reciprocal left/right faces, and rejects merges across original edge-connected components.",
+    "The canonical POSIX manifest-name guard rejects Windows drive or backslash paths and traversal before resolving authenticated artifacts.",
+    "Native junction pairing is observed without asserting intended semantic sheet correspondence; remeshing remains unauthorised."
+  ],
+  "authorship_boundary": "This reviewer authored import_probe.py. This GO reviews the other author's verify_saved.py and test_verify_saved.py, with common.py/plan handoff reviewed for integration; it is not an independent approval of the producer. The complete source-hash map identifies the frozen integration only.",
+  "execution_authorisation_limit": "Source GO for one bounded saved-data verification after the required actual constructor worker and host PASS receipts. It does not authorise another constructor, remesh, repair, target, GPU or rendering operation.",
+  "limits": [
+    "This is source and frozen synthetic-test-evidence review, not an actual saved-array outcome verification.",
+    "Exact native adjacency does not establish an authenticated intended pairing at original non-manifold junctions.",
+    "External material association is checked through authenticated unchanged source IDs and historical lineage; no new native colour attribute or appearance fit is claimed."
+  ],
+  "source_safe_publication": "PASS: this receipt contains code hashes, aggregate test evidence and review conclusions only; no private geometry, source IDs, colour arrays or images."
+}

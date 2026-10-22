@@ -1,0 +1,181 @@
+test_actual_zero_output_overwrites_nonzero (__main__.CounterTests.test_actual_zero_output_overwrites_nonzero) ... FAIL
+test_bad_failed_IDs (__main__.CounterTests.test_bad_failed_IDs) ... FAIL
+test_boolean_counts (__main__.CounterTests.test_boolean_counts) ... FAIL
+test_detached_settings_after (__main__.CounterTests.test_detached_settings_after) ... FAIL
+test_detached_settings_before (__main__.CounterTests.test_detached_settings_before) ... FAIL
+test_duplicate_failed_IDs (__main__.CounterTests.test_duplicate_failed_IDs) ... FAIL
+test_empty_before (__main__.CounterTests.test_empty_before) ... FAIL
+test_failed_region_disagreement (__main__.CounterTests.test_failed_region_disagreement) ... FAIL
+test_false_getter (__main__.CounterTests.test_false_getter) ... FAIL
+test_float_counts (__main__.CounterTests.test_float_counts) ... FAIL
+test_incoherent_storage (__main__.CounterTests.test_incoherent_storage) ... FAIL
+test_multiple_after (__main__.CounterTests.test_multiple_after) ... FAIL
+test_negative_output (__main__.CounterTests.test_negative_output) ... FAIL
+test_nonzero_output_semantics_not_transport_permission (__main__.CounterTests.test_nonzero_output_semantics_not_transport_permission) ... FAIL
+test_unchanged_holder (__main__.CounterTests.test_unchanged_holder) ... FAIL
+test_wrong_sentinel (__main__.CounterTests.test_wrong_sentinel) ... FAIL
+
+======================================================================
+FAIL: test_actual_zero_output_overwrites_nonzero (__main__.CounterTests.test_actual_zero_output_overwrites_nonzero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 22, in test_actual_zero_output_overwrites_nonzero
+    self.check(state(-23456),-23456,state(0),0,[])
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_bad_failed_IDs (__main__.CounterTests.test_bad_failed_IDs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 55, in test_bad_failed_IDs
+    self.check(state(-23456),-23456,state(1),1,[value],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_boolean_counts (__main__.CounterTests.test_boolean_counts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 44, in test_boolean_counts
+    self.check(state(-23456),-23456,state(False),False,[],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_detached_settings_after (__main__.CounterTests.test_detached_settings_after)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 32, in test_detached_settings_after
+    self.check(state(-23456),-23456,state(0),-23456,[],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_detached_settings_before (__main__.CounterTests.test_detached_settings_before)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 30, in test_detached_settings_before
+    self.check(state(-23456),0,state(0),0,[],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_duplicate_failed_IDs (__main__.CounterTests.test_duplicate_failed_IDs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 52, in test_duplicate_failed_IDs
+    self.check(state(-23456),-23456,state(2),2,[4,4],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_empty_before (__main__.CounterTests.test_empty_before)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 34, in test_empty_before
+    self.check(dict(length=0,values=[],getter=dict(ok=False)), -23456,state(0),0,[],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_failed_region_disagreement (__main__.CounterTests.test_failed_region_disagreement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 50, in test_failed_region_disagreement
+    self.check(state(-23456),-23456,state(0),0,[4],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_false_getter (__main__.CounterTests.test_false_getter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 39, in test_false_getter
+    self.check(state(-23456),-23456,row,0,[],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_float_counts (__main__.CounterTests.test_float_counts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 46, in test_float_counts
+    self.check(state(-23456),-23456,state(0.0),0.0,[],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_incoherent_storage (__main__.CounterTests.test_incoherent_storage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 42, in test_incoherent_storage
+    self.check(state(-23456),-23456,row,0,[],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_multiple_after (__main__.CounterTests.test_multiple_after)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 36, in test_multiple_after
+    self.check(state(-23456),-23456,dict(length=2,values=[0,0],getter=dict(ok=False)),0,[],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_negative_output (__main__.CounterTests.test_negative_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 48, in test_negative_output
+    self.check(state(-23456),-23456,state(-1),-1,[],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_nonzero_output_semantics_not_transport_permission (__main__.CounterTests.test_nonzero_output_semantics_not_transport_permission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 24, in test_nonzero_output_semantics_not_transport_permission
+    self.check(state(-23456),-23456,state(2),2,[4,7])
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_unchanged_holder (__main__.CounterTests.test_unchanged_holder)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 28, in test_unchanged_holder
+    self.check(state(-23456),-23456,state(-23456),-23456,[],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+======================================================================
+FAIL: test_wrong_sentinel (__main__.CounterTests.test_wrong_sentinel)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 26, in test_wrong_sentinel
+    self.check(state(0),0,state(0),0,[],reject=True)
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-patch-constructor-evidence\test_counter.py", line 17, in check
+    self.assertIsNotNone(module,'Corrected counter validator is not implemented')
+AssertionError: unexpectedly None : Corrected counter validator is not implemented
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.006s
+
+FAILED (failures=16)

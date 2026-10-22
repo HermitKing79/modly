@@ -1,0 +1,70 @@
+{
+  "classification": "PASS",
+  "verification_completed": true,
+  "brick_input_transport": "NO-GO",
+  "foliage_input_transport": "NOT RUN",
+  "sheet_correspondence": "FAILED",
+  "remeshing_admission": "NOT AUTHORISED",
+  "verification_constructor_calls": 0,
+  "semantic_sheet_pairing": "UNRESOLVED",
+  "original_vertices": 457,
+  "original_triangles": 781,
+  "allocated_position_rows": 457,
+  "native_valid_vertices": 456,
+  "native_valid_faces": 777,
+  "missing_original_faces": 4,
+  "missing_valid_original_vertices": 1,
+  "observed_skipped_count": 4,
+  "both_failed_regions_equal_missing_original_faces": true,
+  "all_allocated_original_position_bits_exact": true,
+  "all_original_heap_and_source_ID_copies_exact": true,
+  "retained_original_FaceId_orientation_and_multiplicity_exact": true,
+  "cyclic_rotation_counts": {
+    "0": 777,
+    "1": 0,
+    "2": 0
+  },
+  "original_topology": {
+    "unique_source_edges": 1243,
+    "boundary_source_edges": 147,
+    "nonmanifold_source_edges": 4,
+    "maximum_source_edge_incidence": 3,
+    "edge_connected_face_components": 1,
+    "vertex_connected_face_components": 1
+  },
+  "retained_endpoint_topology": {
+    "unique_source_edges": 1239,
+    "boundary_source_edges": 148,
+    "nonmanifold_source_edges": 1,
+    "maximum_source_edge_incidence": 3,
+    "edge_connected_face_components": 1,
+    "vertex_connected_face_components": 1
+  },
+  "native_topology": {
+    "undirected_edges": 1241,
+    "boundary_edges": 151,
+    "paired_edges": 1090,
+    "source_endpoint_pairs_split": 2,
+    "edge_connected_face_components": 2,
+    "cross_original_component_merges": 0
+  },
+  "rejection_incidence": {
+    "rejected_faces_touching_original_nonmanifold_edges": 3,
+    "original_nonmanifold_edges_touching_rejected_faces": 3,
+    "rejected_faces_not_touching_original_nonmanifold_edges": 1
+  },
+  "interpretation": "The zero-loss transport contract fails on actual face/valid-vertex deletion. Junction incidence overlap is descriptive, not proof of why MeshLib rejected a face or of an original semantic sheet pairing.",
+  "constructor_result_SHA256": "6a47a4df80fc32610bbb2ff2072d15c38f635c621de92d8dab684d766e55ed1f",
+  "constructor_host_SHA256": "68b0a00f6e0740b1ec72d620cacb29f018ffeed9d7eaa0722fc02d1602650a1d",
+  "original_input_manifest_SHA256": "aeb98fd9411ab718d7fd439f6345ad2e10927f55371a4d3c6bce4f22b39204bb",
+  "library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "observed_constructor_calls": 1,
+  "verification_scope": "PASS means the saved native rejection was independently reproduced, not that transport passed. No new constructor, repair, method, sample or appearance operation ran.",
+  "elapsed_seconds": 1.264999999999418,
+  "files": {
+    "brick-rejected-source-memberships.json": {
+      "bytes": 3701,
+      "sha256": "d8bbf36aa4d3083a2d6fb7fd875f683f8749be2c52f58d537f8128640d0fef80"
+    }
+  }
+}

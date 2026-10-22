@@ -1,0 +1,15 @@
+test_counter_cannot_be_stale_or_wrong (__main__.FailureReadback.test_counter_cannot_be_stale_or_wrong) ... ok
+test_left_uses_real_noncontiguous_FaceIds (__main__.FailureReadback.test_left_uses_real_noncontiguous_FaceIds) ... ok
+test_missing_faces_equal_both_failed_regions (__main__.FailureReadback.test_missing_faces_equal_both_failed_regions) ... ok
+test_noncontiguous_original_FaceIds_and_allocated_invalid_point (__main__.FailureReadback.test_noncontiguous_original_FaceIds_and_allocated_invalid_point) ... ok
+test_omitted_allocated_point_bits_still_required (__main__.FailureReadback.test_omitted_allocated_point_bits_still_required) ... ok
+test_original_heap_and_ID_copies_required (__main__.FailureReadback.test_original_heap_and_ID_copies_required) ... ok
+test_retained_face_cyclic_orientation (__main__.FailureReadback.test_retained_face_cyclic_orientation) ... ok
+test_right_adjacency_cannot_reference_rejected_face (__main__.FailureReadback.test_right_adjacency_cannot_reference_rejected_face) ... ok
+test_valid_vertices_equal_retained_references (__main__.FailureReadback.test_valid_vertices_equal_retained_references) ... ok
+test_wrong_retained_row_or_winding_rejects (__main__.FailureReadback.test_wrong_retained_row_or_winding_rejects) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.011s
+
+OK

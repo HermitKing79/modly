@@ -1,0 +1,58 @@
+{
+  "classification": "GO",
+  "scope": "Source-only independent review for one bounded saved-array reproduction of the sole failed brick constructor; no new constructor or native operation.",
+  "source_SHA256": {
+    "common.py": "650a7b05ec705227d0c19f09f387ff3c344eeb53ce2e1b5085e317f0543150cb",
+    "import_probe.py": "5388138ddaab8d1dd40bf27e56604adf2d3755c2b2b3f2f3a3f6cae6c201626a",
+    "run_failure_host.py": "78c4aa6ba254b232d27d5d0ab9a80c69d0b1f3109437f145e9453cc547a8a6d5",
+    "run_host.py": "3f166a20b3ee882e9d036be620b8555b1cde9e0138384f7916000c9e3d3c1a2c",
+    "test_counter.py": "c4352d766c3007051fdceb0e7472280a1f19c2fde08270175f05a7d3e2107cfb",
+    "test_probe.py": "97fb177b67bab00b81fc467c228ec70d42222d77cac78a61796b410a57c1a75a",
+    "test_verify_failure.py": "3bddb71763f2ee09b1f85f69a628ab16503e2275c3c282b0ed0212a9a1ebecd1",
+    "test_verify_saved.py": "23e5faf23a0a7ba0e5f0dde09d8e6e3e992436d6487e718db7f2515005c0c729",
+    "verify_failure.py": "88996862bd5f5d415d3273388cb09a7db64754b00a4b4efb6433509549aef185",
+    "verify_saved.py": "e5ce2da73bbece4aa448fe2a2bd1eaa17a5d2ed156860461179beac7c9f6034d"
+  },
+  "reviewed_new_source_SHA256": {
+    "verify_failure.py": "88996862bd5f5d415d3273388cb09a7db64754b00a4b4efb6433509549aef185",
+    "test_verify_failure.py": "3bddb71763f2ee09b1f85f69a628ab16503e2275c3c282b0ed0212a9a1ebecd1",
+    "run_failure_host.py": "78c4aa6ba254b232d27d5d0ab9a80c69d0b1f3109437f145e9453cc547a8a6d5"
+  },
+  "plan_SHA256": "9d669c6fecd085e649064ee57d9d5a6449df98dc94fc7f9729b03ec8fbf9a220",
+  "focused_tests_SHA256": "df405d1b2299f0e4ce088c223850c385aa563acf1f7b37712570fa7e2384f2c5",
+  "failure_tests_SHA256": "e0fae62597e96184f44f1772f73828d91d535ee1fbb1cafc3c33ebf1feb72ba8",
+  "library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "input_manifest_SHA256": "aeb98fd9411ab718d7fd439f6345ad2e10927f55371a4d3c6bce4f22b39204bb",
+  "failed_constructor_result_SHA256": "6a47a4df80fc32610bbb2ff2072d15c38f635c621de92d8dab684d766e55ed1f",
+  "findings": [],
+  "review_conclusions": [
+    "The new host selects only verify_failure.py with isolated Python and the verify stage. It cannot select an import, remesh, render or alternate candidate.",
+    "All ten Python files, original plan and logs, failure-test log, exact SDK and input manifest are bound before the fresh marker. The original seven executed sources remain byte-identical.",
+    "The prior failed worker and host are bound and watched. The verifier uses the actual13 failure-path arrays and does not invent the unwritten success-only cyclic-rotation file.",
+    "Retained readback rows are matched to actual noncontiguous original FaceIds. Exact allocated F32-to-F64 positions, input/source-ID copies, surviving oriented faces, actual valid vertices and both failed-region complements are independently checked.",
+    "The overwritten live counter must equal the missing original face count and both failed regions. Every actual before/after holder and settings journal matches the preserved producer schema.",
+    "Actual native left/right FaceIds, endpoint ownership, unique halfedges and reciprocal oppositely oriented pairings are checked independently of producer comparison helpers. Original semantic sheet pairing remains unresolved.",
+    "The host retains6GiB process and Job caps,180-second deadline,12GiB RAM and2GiB disk admission/live floors, attachment before binary GO, exclusive paths and natural empty-Job exit. NumPy work follows GO; MeshLib imports are denied in verify."
+  ],
+  "classification_semantics": {
+    "saved_failure_verification": "May PASS only when the exact saved rejection is reproduced.",
+    "brick_input_transport": "NO-GO",
+    "foliage_input_transport": "NOT RUN",
+    "remeshing_admission": "NOT AUTHORISED"
+  },
+  "test_evidence": {
+    "original_focused_tests": 32,
+    "new_failure_tests": 10,
+    "new_failure_tests_seconds": 0.011,
+    "skipped": 0,
+    "classification": "PASS",
+    "reviewer_reran_tests": false
+  },
+  "authorship_boundary": "The new failure verifier and its tests were authored by the other reviewer. This reviewer independently reviewed those files and the root-authored new host. This reviewer authored the frozen producer; this receipt does not independently reapprove that producer.",
+  "review_limits": [
+    "No actual arrays were loaded, no native library was imported and no worker was launched by this reviewer. Only source, text logs and file hashes were read.",
+    "Actual native face rejection is not attributed to a specific internal MeshLib cause. Native observed adjacency does not establish intended original junction pairing.",
+    "This source GO permits the bounded readback only; it does not change the original failed verdict or authorise a retry, fix, foliage constructor, remesh or target."
+  ],
+  "public_source_safety": "PASS: aggregate/source review only; no private geometry, original source IDs, counter-region ID lists, material arrays or images."
+}

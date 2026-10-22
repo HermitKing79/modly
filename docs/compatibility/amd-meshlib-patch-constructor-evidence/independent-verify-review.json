@@ -1,0 +1,54 @@
+{
+  "schema": "modly.meshlib.patch-constructor-source-review.v1",
+  "classification": "GO",
+  "source_SHA256": {
+    "common.py": "650a7b05ec705227d0c19f09f387ff3c344eeb53ce2e1b5085e317f0543150cb",
+    "import_probe.py": "5388138ddaab8d1dd40bf27e56604adf2d3755c2b2b3f2f3a3f6cae6c201626a",
+    "run_host.py": "3f166a20b3ee882e9d036be620b8555b1cde9e0138384f7916000c9e3d3c1a2c",
+    "test_counter.py": "c4352d766c3007051fdceb0e7472280a1f19c2fde08270175f05a7d3e2107cfb",
+    "test_probe.py": "97fb177b67bab00b81fc467c228ec70d42222d77cac78a61796b410a57c1a75a",
+    "test_verify_saved.py": "23e5faf23a0a7ba0e5f0dde09d8e6e3e992436d6487e718db7f2515005c0c729",
+    "verify_saved.py": "e5ce2da73bbece4aa448fe2a2bd1eaa17a5d2ed156860461179beac7c9f6034d"
+  },
+  "plan_SHA256": "9d669c6fecd085e649064ee57d9d5a6449df98dc94fc7f9729b03ec8fbf9a220",
+  "focused_tests_SHA256": "df405d1b2299f0e4ce088c223850c385aa563acf1f7b37712570fa7e2384f2c5",
+  "library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "input_manifest_SHA256": "aeb98fd9411ab718d7fd439f6345ad2e10927f55371a4d3c6bce4f22b39204bb",
+  "lineage_manifest_SHA256": "333d0028af652fced2049f5a9c8dce78ed4d7bc1f0d40f910c6cdf7bdaf82c52",
+  "authorship_and_review": {
+    "reviewer": "full_glb_reader",
+    "producer_common_host_and_original_tests_authored_by_reviewer": false,
+    "verify_saved_and_its_test_authored_by_reviewer": true,
+    "independent_review_of_verifier": "Root independently read the whole verifier, identified Windows backslash traversal in a POSIX-only manifest check, then reviewed the canonical-path correction and final passing suite. This receipt does not label verifier authorship as independent self-review."
+  },
+  "verification": {
+    "fresh_reviewer_synthetic_tests": 32,
+    "fresh_reviewer_test_result": "PASS",
+    "fresh_reviewer_elapsed_seconds": 0.862,
+    "native_imports_or_calls_by_reviewer": 0,
+    "actual_patch_arrays_decoded_by_reviewer": 0,
+    "attempt_paths_absent_at_review": true
+  },
+  "reviewed_contract": [
+    "Common authenticates the frozen four-array original patch manifest, bounded accepted colour/material lineage, original failure, successful counter microproof and SDK78. No full-model array or source-field sampling is admitted.",
+    "The producer is a narrow copy retaining original comparison/topology helpers and tests. It uses a named explicit one-slot counter with -23456 sentinel, same live settings binding, no post-binding resize and observed post-call scalar agreement with both failed-face regions.",
+    "Exactly one brick constructor is attempted; every brick failure stops before foliage. One foliage constructor is conditional on complete brick transport PASS. No alternative constructor, retry, remesher, target, renderer or export exists.",
+    "Each successful patch retains every original F32 position bit, dense native IDs and per-original-FaceId oriented triangle multiplicity, allowing only recorded cyclic rotations, with unchanged heap copies/source IDs. Actual aligned undirected/halfedge IDs and actual left/right FaceIds are saved without normalising invalid IDs.",
+    "The independently authored saved-data checker imports NumPy only after owned GO and blocks MeshLib imports. It reopens all bounded arrays with allow_pickle=False, checks file manifests/counter journals/source IDs, recomputes original incidence/components and validates actual native endpoint ownership, face-left identity, reciprocal opposite-direction pairing and no cross-original-component merges.",
+    "Saved verification keeps original colour/material rows associated through exact original vertex IDs. It creates no native colour attribute, fit, new-position sample or appearance claim. Private junction memberships and source-ID maps stay private; public result is scalar only.",
+    "Original semantic sheet pairing remains UNRESOLVED without authenticated original junction partitions. Native adjacency observations and geometric transport PASS cannot authorise remeshing.",
+    "The owned host has fixed import/verify commands, binary GO after Job attachment, separate process/Job6GiB caps,180s wall/150s cooperative budgets,12GiB RAM/2GiB disk floors, private CWD/TEMP, exclusive phase paths, exact source/SDK/input watches and natural unforced empty-Job settlement."
+  ],
+  "resolved_findings": [
+    "Saved-artifact names now reject Windows separators/drive colons and require exact canonical relative POSIX spelling; regression observed failing before the fix and passing afterwards."
+  ],
+  "scope_limits": [
+    "Source GO is not an observed input-transport PASS.",
+    "Original sheet/interface correspondence is not supplied by counts or source-ID matching.",
+    "No remeshing or appearance transfer is authorised.",
+    "Static PE pins do not measure dynamic plugin/driver behavior; Python audit guards are not a native binary sandbox."
+  ],
+  "blocking_findings": [],
+  "phase": "verify",
+  "scope": "One bounded saved-data-only verification after the sole constructor attempt; no MeshLib import or native constructor."
+}

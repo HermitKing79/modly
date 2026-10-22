@@ -1,0 +1,37 @@
+test_actual_zero_output_overwrites_nonzero (test_counter.CounterTests.test_actual_zero_output_overwrites_nonzero) ... ok
+test_bad_failed_IDs (test_counter.CounterTests.test_bad_failed_IDs) ... ok
+test_boolean_counts (test_counter.CounterTests.test_boolean_counts) ... ok
+test_detached_settings_after (test_counter.CounterTests.test_detached_settings_after) ... ok
+test_detached_settings_before (test_counter.CounterTests.test_detached_settings_before) ... ok
+test_duplicate_failed_IDs (test_counter.CounterTests.test_duplicate_failed_IDs) ... ok
+test_empty_before (test_counter.CounterTests.test_empty_before) ... ok
+test_failed_region_disagreement (test_counter.CounterTests.test_failed_region_disagreement) ... ok
+test_false_getter (test_counter.CounterTests.test_false_getter) ... ok
+test_float_counts (test_counter.CounterTests.test_float_counts) ... ok
+test_incoherent_storage (test_counter.CounterTests.test_incoherent_storage) ... ok
+test_multiple_after (test_counter.CounterTests.test_multiple_after) ... ok
+test_negative_output (test_counter.CounterTests.test_negative_output) ... ok
+test_nonzero_output_semantics_not_transport_permission (test_counter.CounterTests.test_nonzero_output_semantics_not_transport_permission) ... ok
+test_unchanged_holder (test_counter.CounterTests.test_unchanged_holder) ... ok
+test_wrong_sentinel (test_counter.CounterTests.test_wrong_sentinel) ... ok
+test_exact_and_cyclic_oriented_correspondence (test_probe.RoundtripTests.test_exact_and_cyclic_oriented_correspondence) ... ok
+test_position_signed_zero_nonfinite_and_sub_F32_change_reject (test_probe.RoundtripTests.test_position_signed_zero_nonfinite_and_sub_F32_change_reject) ... ok
+test_reversed_winding_and_reordered_face_IDs_reject (test_probe.RoundtripTests.test_reversed_winding_and_reordered_face_IDs_reject) ... ok
+test_skipped_faces_or_merged_vertices_reject (test_probe.RoundtripTests.test_skipped_faces_or_merged_vertices_reject) ... ok
+test_source_alias_or_wrong_input_dimension_reject (test_probe.RoundtripTests.test_source_alias_or_wrong_input_dimension_reject) ... ok
+test_actual_left_face_and_halfedge_identity (test_verify_saved.SavedVerification.test_actual_left_face_and_halfedge_identity) ... ok
+test_counter_observed_write_and_failed_count (test_verify_saved.SavedVerification.test_counter_observed_write_and_failed_count) ... ok
+test_cyclic_corners_and_metadata_alignment (test_verify_saved.SavedVerification.test_cyclic_corners_and_metadata_alignment) ... ok
+test_dense_IDs_and_failed_region_reject (test_verify_saved.SavedVerification.test_dense_IDs_and_failed_region_reject) ... ok
+test_exact_roundtrip_and_native_split (test_verify_saved.SavedVerification.test_exact_roundtrip_and_native_split) ... ok
+test_native_edge_cannot_alias_other_endpoints (test_verify_saved.SavedVerification.test_native_edge_cannot_alias_other_endpoints) ... ok
+test_native_pairing_requires_reciprocal_faces (test_verify_saved.SavedVerification.test_native_pairing_requires_reciprocal_faces) ... ok
+test_only_canonical_relative_POSIX_manifest_names (test_verify_saved.SavedVerification.test_only_canonical_relative_POSIX_manifest_names) ... ok
+test_reversed_winding_rejects (test_verify_saved.SavedVerification.test_reversed_winding_rejects) ... ok
+test_signed_zero_and_sub_F32_change_reject (test_verify_saved.SavedVerification.test_signed_zero_and_sub_F32_change_reject) ... ok
+test_source_ID_copy_or_heap_mutation_rejects (test_verify_saved.SavedVerification.test_source_ID_copy_or_heap_mutation_rejects) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.872s
+
+OK
