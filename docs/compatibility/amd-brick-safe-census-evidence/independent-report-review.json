@@ -1,0 +1,28 @@
+{
+  "schema": "modly.original-safe-census.independent-report-review.v1",
+  "created_utc": "2026-10-22T08:02:28.059363+00:00",
+  "classification": "BLOCKED",
+  "report_review": "PASS",
+  "scope": "Final claim and source-safe publication review of the report, outcome.json and independent-outcome.json only. No data worker, metric recount, source correction, test, patch selection or implementation was performed.",
+  "decision": "Mandatory independent global readback remains incomplete. Positive census-reported counts do not qualify a patch or authorize reduction.",
+  "reviewed_claims": {
+    "758314_initial_edges_and571541_touched_faces_labelled_census_reported_not_independently_qualified": true,
+    "initial_edge_count_not_a_simultaneous_collapse_or_reduction_guarantee": true,
+    "verifier_summary_key_failure_preserved_and_identified_as_harness_metadata_defect": true,
+    "completed_and_unreached_checks_distinguished_with_control_flow_inference_limit_recorded": true,
+    "host_PASS_distinguished_from_verifier_and_mission_BLOCKED": true,
+    "no_correction_retry_or_replacement_verification_used_to_bypass_failure": true,
+    "no_patch_geometry_diagnostic_image_or_reduction_claim": true,
+    "no_global_unreducibility_or_candidate_geometry_material_qualification_claim": true,
+    "future_summary_key_correction_and_saved_census_readback_require_separate_approval": true,
+    "three_reviewed_documents_omit_private_geometry_material_and_image_payloads": true
+  },
+  "bindings": {
+    "report_SHA256": "2e5f3ca98d97c992fe1f37ce4996692483a0cf024deaf9aa03f765fc38bb2f31",
+    "outcome_SHA256": "1bbfbfb65ae5e83b738a47c8a747eeec036fd74e4af608a175b58dba9bfc826b",
+    "independent_outcome_SHA256": "62446f9b68f0a348931723b81370b1c6758ec3953aa222b792401ea3faf010eb"
+  },
+  "limits": "This review checks documentary consistency and decision wording; it does not independently qualify global masks, full-link results or distributions. The historical failed verifier remains BLOCKED.",
+  "unresolved_findings": [],
+  "stop": true
+}

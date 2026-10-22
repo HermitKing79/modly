@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "classification": "GO",
+  "scope": "Original-only read-only full-mesh topology census followed by a separately owned bounded durable readback. No simplifier, candidate creation, material query, Blender, render, or method retry is authorized by this receipt.",
+  "source_SHA256": {
+    "census_core.py": "622b3c2c6b05e7ac24e34a9460397a7dc2a41cd98fc2ee44e95dca4df03a381b",
+    "common.py": "d48ac1e63f7d089fdc7dd95f57470a6b8c3381437e2b3b9cae0493715a55baaa",
+    "run_host.py": "c0bcc1d211f742b045f1015f1535abbf5a6b4234dcc16631e93c905b0b979755",
+    "test_census.py": "2ff0bd67b5c1e9d152d7626c86addbd4e79afffe3781af462f147899c13734bb",
+    "test_verify.py": "040cb09f249a1a289d119988fcab8b36e5345f0adbff93a0a2533557965385b4",
+    "verify_worker.py": "791db95dfcf2a0a725e48c49260abed2c8e098c3cffc5dc6056b6e9eb45e00bb",
+    "worker.py": "b7164d0c4d921ad841e2db8efcf765a914ff7611a63d6e245e6afd87b4a5ea13"
+  },
+  "plan_SHA256": "b0f1cc0d0c583cb54b7988e683ecaa60dc9e339453383220e52dbf44a58e4b78",
+  "focused_tests_SHA256": "5d1ceca15655a12d4af7b3f3865b2b1421f96197fc73ca5a8af7d40c9619a4a2",
+  "review": {
+    "original_identity": "Pinned original vertices/faces/native-byte source and authenticated historical edge/component cache only. Rejected candidate artifacts are authenticated preservation, never geometry input. Occurrence-to-cache equality, exact multiplicities, source index bounds, and unused-vertex semantics are explicit.",
+    "topology": "Reviewed consistent opposite-direction two-face adjacency; distinct global sheets and per-original-vertex corner fans; complete junction, boundary, winding, fan, sheet, and positional-alias protection; complete one-ring guard and position-class closure. Full simplicial link checks require exactly the two opposite neighbors and reject shared opposite link edges, including tetrahedra.",
+    "work_bounds": "Free-edge degree <=128 and padded comparison work <=4e9 are admission gates; incomplete work is BLOCKED without silently dropping edges. Equality-table batches are <=8MiB. Saved face/vertex/edge component and octant distributions use their stated distinct denominators.",
+    "host": "Fixed CPU Python -I -B workers; original base/branch and exact source/plan/log review binding; exclusive phase output; binary GO after owned Job attachment; both process and Job 6GiB, 180s, 12GiB free RAM and 2GiB free disk floors; natural empty Job, measured peaks, source stability and exact worker receipt required. Verification additionally binds and watches the completed owned census host/result and every durable manifest file before its source snapshot.",
+    "durable_readback": "Independent chunked index/permutation/key/multiplicity and stage-mask/count/distribution replay; all eligible endpoint/protected-face constraints; bounded complete-star full-link witnesses for positive populations. Zero eligibility is accepted only with the explicit locked/protected endpoint certificate or exhaustive bounded link witnesses. No second global fan graph or historical cache is rebuilt.",
+    "independence": "Reviewer authored verify_worker.py and its initial six synthetic tests, and independently reviewed common.py, census_core.py, worker.py, run_host.py and test_census.py. Root separately reviewed verify_worker.py and test_verify.py and reported no blocking defect; root authored the isolated-entry correction and regression. This is an aggregate receipt with that disclosed authorship boundary, not a claim of self-independent verifier review.",
+    "tests": "Frozen focused log: 17 synthetic tests PASS in 2.672s, including pinned local protection parity, fan/sheet pinch, alias/signed-zero, tetrahedral link, unused vertices, cache and mask corruption, distributions, cancellation and isolated -I helper resolution. No actual census or data worker was executed by this reviewer."
+  },
+  "resolved_findings": [
+    "Face-stage masks were renamed fully_unlocked_interior_faces and guard_affected_interior_faces, with the endpoint-versus-face cohort caveat stated in source and plan.",
+    "The redundant comparison mask was removed so the padded equality table remains a single <=8MiB allocation.",
+    "Verification host now authenticates and watches its exact completed owned predecessor and full durable manifest before snapshot and launch.",
+    "Before any worker launch, verify_worker.py was corrected to insert its resolved evidence directory under Python -I; an isolated non-main load regression now checks exact common.py resolution."
+  ],
+  "limitations": [
+    "Memory is a staged projection, not an actual measured census peak. NumPy intp sorting, SciPy float64 validation/undirected transpose and graph-label buffers are included in the conservative ledger; runtime process and Job caps remain decisive.",
+    "The 150s cooperative checks occur between bounded phases/chunks; native sort and sparse-component calls cannot be interrupted mid-call, so the outer 180s owned Job deadline is decisive.",
+    "Durable readback authenticates census fan/alias outputs and independently replays their protection closure; it does not independently regenerate those full global classifications. Positive link populations receive all-endpoint checks plus bounded full-link witnesses, not a second full link census.",
+    "A host PASS records completed bounded execution, including a worker BLOCKED outcome. No simplification safety, target reduction, visual preservation or surface-quality result is claimed."
+  ]
+}
