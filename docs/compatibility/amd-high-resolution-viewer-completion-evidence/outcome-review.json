@@ -1,0 +1,511 @@
+{
+  "schema": "modly.installed-app.viewer-completion-independent-outcome-review.v1",
+  "classification": "BLOCKED",
+  "created_utc": "2026-10-22T20:35:14.444998+00:00",
+  "scope": "Saved-evidence-only independent review of the single approved 480-second installed Modly 0.4.3 session. No app, native input, asset decode, worker, retry, geometry operation or production modification performed by this reviewer.",
+  "full_milestone_complete": false,
+  "blocking_observation": "The host hit the 480-second deadline before orderly application close. app-host.json records Bounded8minute UI session, elapsed 480.75 seconds and forced owned Job cleanup from 7 active processes to 0. This session cannot receive full acceptance.",
+  "host": {
+    "classification": "BLOCKED",
+    "session_deadline_seconds": 480,
+    "elapsed_seconds": 480.75,
+    "peak_process_committed_bytes": 715317248,
+    "peak_job_committed_bytes": 1896833024,
+    "input_sources_unchanged": true,
+    "job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 7,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": true,
+      "cleanup_seconds": 0.0
+    }
+  },
+  "resource_samples": {
+    "count": 480,
+    "all_admitted": true,
+    "minimum_available_ram_bytes": 16595570688,
+    "minimum_destination_free_bytes": 136204550144,
+    "process_and_job_cap_bytes": 6442450944
+  },
+  "observed_camera_facts": {
+    "classification": "OBSERVED_CAMERA_CRITERIA_MET_WITH_TIMING_SCOPE_LIMITS",
+    "horizontal_orbit": {
+      "quaternion_delta_radians": 1.4002686338055215,
+      "minimum_required": 0.03,
+      "visible_orientation_change": true
+    },
+    "vertical_orbit": {
+      "quaternion_delta_radians": 0.5601181580315232,
+      "minimum_required": 0.03,
+      "visible_orientation_change": true
+    },
+    "native_pan": {
+      "right_button_trusted_move_rows": 121,
+      "target_displacement": 1.115487626277584,
+      "minimum_required": 0.0001,
+      "visible_image_position_change": true,
+      "basis": "Source filters isTrusted input; all 121 retained pan rows have buttons=2. Parent records human assistance for this native right-drag."
+    },
+    "zoom_in_and_back_out": {
+      "inward_wheel_rows": 5,
+      "outward_wheel_rows": 5,
+      "original_radius": 4.272001872658765,
+      "useful_radius": 3.3055936140276536,
+      "cumulative_radius_reduction_fraction": 0.22621906250000035,
+      "returned_radius": 4.272001872658763,
+      "absolute_return_radius_difference": 1.7763568394002505e-15,
+      "useful_projected_height_fraction": 0.5356292178017588,
+      "useful_bounds_inside_frustum": true,
+      "visible_scale_change": true
+    },
+    "object_transform_unchanged_in_all_six_gesture_windows": true,
+    "framing_limit": "The useful-zoom checkpoint meets 35-85% conservative height and inside-frustum criteria. Pan moves conservative bounds beyond the left frustum (pan allCornersInside=false); subsequent zoom-out has all corners inside. No universal unclipped-framing claim is made."
+  },
+  "phase_measurements": {
+    "orbit-horizontal": {
+      "window_seconds": 10.69690000000596,
+      "trusted_input_rows": 2,
+      "matched_rows": 2,
+      "unmatched_ids": [],
+      "input_types": [
+        "pointermove"
+      ],
+      "buttons": [
+        1
+      ],
+      "main_frame_ticks": 642,
+      "main_render_calls": 642,
+      "rendered_frame_ticks": 642,
+      "frame_intervals_count": 641,
+      "frame_interval_p95_ms": 16.899999991059303,
+      "frame_interval_max_ms": 17.599999994039536,
+      "matched_input_to_main_render_return_p95_ms": 12.400000005960464,
+      "matched_input_to_main_render_return_max_ms": 12.400000005960464,
+      "camera_quaternion_delta_radians": 1.4002686338055215,
+      "controls_target_displacement": 0.0,
+      "camera_target_radius_before": 4.272001872658765,
+      "camera_target_radius_after": 4.272001872658765,
+      "object_transform_unchanged": true,
+      "conservative_projected_height_fraction": 0.3470144716943694,
+      "conservative_bounds_all_inside_frustum": true,
+      "truncated": false
+    },
+    "orbit-vertical": {
+      "window_seconds": 22.4645,
+      "trusted_input_rows": 2,
+      "matched_rows": 2,
+      "unmatched_ids": [],
+      "input_types": [
+        "pointermove"
+      ],
+      "buttons": [
+        1
+      ],
+      "main_frame_ticks": 1347,
+      "main_render_calls": 1347,
+      "rendered_frame_ticks": 1347,
+      "frame_intervals_count": 1346,
+      "frame_interval_p95_ms": 16.80000001192093,
+      "frame_interval_max_ms": 17.299999997019768,
+      "matched_input_to_main_render_return_p95_ms": 12.5,
+      "matched_input_to_main_render_return_max_ms": 12.5,
+      "camera_quaternion_delta_radians": 0.5601181580315232,
+      "controls_target_displacement": 0.0,
+      "camera_target_radius_before": 4.272001872658765,
+      "camera_target_radius_after": 4.272001872658765,
+      "object_transform_unchanged": true,
+      "conservative_projected_height_fraction": 0.39919504733059585,
+      "conservative_bounds_all_inside_frustum": true,
+      "truncated": false
+    },
+    "zoom-in": {
+      "window_seconds": 15.81690000000596,
+      "trusted_input_rows": 1,
+      "matched_rows": 1,
+      "unmatched_ids": [],
+      "input_types": [
+        "wheel"
+      ],
+      "buttons": [
+        0
+      ],
+      "main_frame_ticks": 949,
+      "main_render_calls": 949,
+      "rendered_frame_ticks": 949,
+      "frame_intervals_count": 948,
+      "frame_interval_p95_ms": 16.80000001192093,
+      "frame_interval_max_ms": 17.299999997019768,
+      "matched_input_to_main_render_return_p95_ms": 0.3999999910593033,
+      "matched_input_to_main_render_return_max_ms": 0.3999999910593033,
+      "camera_quaternion_delta_radians": 3.452053315614351e-05,
+      "controls_target_displacement": 0.0,
+      "camera_target_radius_before": 4.272001872658765,
+      "camera_target_radius_after": 4.058401779025827,
+      "object_transform_unchanged": true,
+      "conservative_projected_height_fraction": 0.42300131144601505,
+      "conservative_bounds_all_inside_frustum": true,
+      "truncated": false
+    },
+    "zoom-useful": {
+      "window_seconds": 37.43,
+      "trusted_input_rows": 4,
+      "matched_rows": 4,
+      "unmatched_ids": [],
+      "input_types": [
+        "wheel"
+      ],
+      "buttons": [
+        0
+      ],
+      "main_frame_ticks": 2246,
+      "main_render_calls": 2246,
+      "rendered_frame_ticks": 2246,
+      "frame_intervals_count": 2245,
+      "frame_interval_p95_ms": 16.80000001192093,
+      "frame_interval_max_ms": 17.30000001192093,
+      "matched_input_to_main_render_return_p95_ms": 0.29999999701976776,
+      "matched_input_to_main_render_return_max_ms": 0.29999999701976776,
+      "camera_quaternion_delta_radians": 0.0,
+      "controls_target_displacement": 0.0,
+      "camera_target_radius_before": 4.058401779025827,
+      "camera_target_radius_after": 3.3055936140276536,
+      "object_transform_unchanged": true,
+      "conservative_projected_height_fraction": 0.5356292178017588,
+      "conservative_bounds_all_inside_frustum": true,
+      "truncated": false
+    },
+    "pan": {
+      "window_seconds": 62.06160000000894,
+      "trusted_input_rows": 121,
+      "matched_rows": 115,
+      "unmatched_ids": [
+        10,
+        11,
+        13,
+        99,
+        100,
+        101
+      ],
+      "input_types": [
+        "pointermove"
+      ],
+      "buttons": [
+        2
+      ],
+      "main_frame_ticks": 3724,
+      "main_render_calls": 3724,
+      "rendered_frame_ticks": 3724,
+      "frame_intervals_count": 3723,
+      "frame_interval_p95_ms": 16.899999991059303,
+      "frame_interval_max_ms": 17.200000002980232,
+      "matched_input_to_main_render_return_p95_ms": 0.29999999701976776,
+      "matched_input_to_main_render_return_max_ms": 66.70000000298023,
+      "camera_quaternion_delta_radians": 0.0,
+      "controls_target_displacement": 1.115487626277584,
+      "camera_target_radius_before": 3.3055936140276536,
+      "camera_target_radius_after": 3.3055936140276536,
+      "object_transform_unchanged": true,
+      "conservative_projected_height_fraction": 0.5313111457092443,
+      "conservative_bounds_all_inside_frustum": false,
+      "truncated": false
+    },
+    "zoom-out": {
+      "window_seconds": 62.46719999998808,
+      "trusted_input_rows": 5,
+      "matched_rows": 5,
+      "unmatched_ids": [],
+      "input_types": [
+        "wheel"
+      ],
+      "buttons": [
+        0
+      ],
+      "main_frame_ticks": 3748,
+      "main_render_calls": 3748,
+      "rendered_frame_ticks": 3748,
+      "frame_intervals_count": 3747,
+      "frame_interval_p95_ms": 16.80000001192093,
+      "frame_interval_max_ms": 17.700000002980232,
+      "matched_input_to_main_render_return_p95_ms": 0.29999999701976776,
+      "matched_input_to_main_render_return_max_ms": 0.29999999701976776,
+      "camera_quaternion_delta_radians": 0.0,
+      "controls_target_displacement": 0.0,
+      "camera_target_radius_before": 3.3055936140276536,
+      "camera_target_radius_after": 4.272001872658763,
+      "object_transform_unchanged": true,
+      "conservative_projected_height_fraction": 0.396763257092677,
+      "conservative_bounds_all_inside_frustum": true,
+      "truncated": false
+    }
+  },
+  "responsiveness_assessment": {
+    "orbit_and_zoom_predeclared_cpu_observation_thresholds_met": true,
+    "basis": "Horizontal/vertical orbit and both zoom phases retain matched trusted events, frame p95 <=16.9 ms, maximum frame interval <=17.7 ms, and matched event-to-successful-main-render-return maximum <=12.5 ms. Every retained orbit/zoom event is matched.",
+    "pan_correction": "Pan has 115 matched and 6 unmatched rows. Matched p95 is about 0.3 ms and maximum 66.7 ms; a claim that every phase latency is below13 ms would be false.",
+    "timing_limit": "These are renderer CPU observations from trusted event receipt to pose change and successful exact-main scene/camera render return, with actual R3F frame ticks. No GPU/display presentation, OS glass-to-glass latency, unseen input-event completeness or observer-overhead correction is proved. Pan unmatched rows remain explicit."
+  },
+  "replacement_and_delete_observations": {
+    "normal_import_posts_in_stdout": 2,
+    "saved_response_paths": "One successful served-file GET identifies the accepted master and one identifies the tiny fixture. No export/download is recorded by the session ledger.",
+    "master_screenshot_displayed_stats": {
+      "vertices": 1957891,
+      "triangles": 4173584
+    },
+    "tiny_screenshot_displayed_stats": {
+      "vertices": 4,
+      "triangles": 3
+    },
+    "sequence_basis": "Parent records one normal native UI master import, one normal UI tiny replacement, mesh selection and Delete. Two import POSTs, path-specific GETs, screenshots and master/tiny/empty snapshots are consistent with this sequence.",
+    "master_detached_after_tiny": true,
+    "tiny_active_after_replacement": true,
+    "no_active_scene_mesh_model_after_delete": true,
+    "both_models_detached_at_final_empty": true,
+    "final_tracked_resources": [
+      {
+        "label": "master",
+        "kind": "geometry",
+        "uuid": "1cb6e0cb-4fca-451a-a3f6-dbc0bf723746",
+        "alive": true,
+        "disposals": 1,
+        "lastDisposeAt": 348178.1999999881,
+        "bvhPresent": false
+      },
+      {
+        "label": "master",
+        "kind": "material",
+        "uuid": "bcffd5a1-7211-45f0-8875-98a98edcd460",
+        "alive": true,
+        "disposals": 1,
+        "lastDisposeAt": 348178.299999997,
+        "bvhPresent": null
+      },
+      {
+        "label": "tiny",
+        "kind": "geometry",
+        "uuid": "c9d48f26-5ebe-4571-b11e-e5efc4012c9c",
+        "alive": true,
+        "disposals": 1,
+        "lastDisposeAt": 399139.799999997,
+        "bvhPresent": false
+      },
+      {
+        "label": "tiny",
+        "kind": "material",
+        "uuid": "1c4c50a7-e6a7-4a4d-9b50-a95c092df391",
+        "alive": true,
+        "disposals": 1,
+        "lastDisposeAt": 399139.799999997,
+        "bvhPresent": null
+      }
+    ],
+    "final_weak_models": [
+      {
+        "label": "master",
+        "uuid": "fffc70fd-b66a-4cde-886c-10dd55ae6899",
+        "alive": true,
+        "attachedToMainScene": false
+      },
+      {
+        "label": "tiny",
+        "uuid": "d1c10e96-e212-40a6-974b-e326c8bc99e5",
+        "alive": true,
+        "attachedToMainScene": false
+      }
+    ],
+    "geometry_and_material_dispose_count_each": 1,
+    "both_tracked_geometry_bvhs_present": false,
+    "observer_stop_recorded": true
+  },
+  "cleanup_and_memory_assessment": {
+    "classification": "DISPOSAL_AND_DETACHMENT_OBSERVED_FULL_RELEASE_UNPROVED",
+    "renderer_checkpoint_counts": {
+      "empty-baseline.json": {
+        "geometries": 8,
+        "textures": 4,
+        "programs": 4,
+        "current_models": 0
+      },
+      "master-loaded.json": {
+        "geometries": 21,
+        "textures": 10,
+        "programs": 11,
+        "current_models": 1
+      },
+      "tiny-replacement.json": {
+        "geometries": 21,
+        "textures": 10,
+        "programs": 11,
+        "current_models": 1
+      },
+      "tiny-settled-2.json": {
+        "geometries": 21,
+        "textures": 10,
+        "programs": 11,
+        "current_models": 1
+      },
+      "tiny-settled-5.json": {
+        "geometries": 21,
+        "textures": 10,
+        "programs": 11,
+        "current_models": 1
+      },
+      "empty-settled-2.json": {
+        "geometries": 20,
+        "textures": 7,
+        "programs": 10,
+        "current_models": 0
+      },
+      "empty-settled-5.json": {
+        "geometries": 20,
+        "textures": 7,
+        "programs": 10,
+        "current_models": 0
+      },
+      "empty-final.json": {
+        "geometries": 20,
+        "textures": 7,
+        "programs": 10,
+        "current_models": 0
+      },
+      "observer-restored.json": {
+        "geometries": 20,
+        "textures": 7,
+        "programs": 10,
+        "current_models": 0
+      }
+    },
+    "electron_process_memory_raw_fields": {
+      "master-process-memory.json": {
+        "Browser": {
+          "workingSetSize": 162136,
+          "privateBytes": 99752
+        },
+        "GPU": {
+          "workingSetSize": 245232,
+          "privateBytes": 390584
+        },
+        "Utility": {
+          "workingSetSize": 61212,
+          "privateBytes": 12896
+        },
+        "Tab": {
+          "workingSetSize": 395928,
+          "privateBytes": 308100
+        }
+      },
+      "tiny-process-memory.json": {
+        "Browser": {
+          "workingSetSize": 164428,
+          "privateBytes": 101332
+        },
+        "GPU": {
+          "workingSetSize": 159980,
+          "privateBytes": 231288
+        },
+        "Utility": {
+          "workingSetSize": 61360,
+          "privateBytes": 12864
+        },
+        "Tab": {
+          "workingSetSize": 413472,
+          "privateBytes": 326620
+        }
+      },
+      "empty-process-memory.json": {
+        "Browser": {
+          "workingSetSize": 164540,
+          "privateBytes": 101292
+        },
+        "GPU": {
+          "workingSetSize": 166248,
+          "privateBytes": 203600
+        },
+        "Utility": {
+          "workingSetSize": 61336,
+          "privateBytes": 12828
+        },
+        "Tab": {
+          "workingSetSize": 334584,
+          "privateBytes": 246260
+        }
+      }
+    },
+    "loader_cache": "Installed source calls useGLTF.clear(url) on unmount; direct cache enumeration was unavailable. Both model and geometry/material WeakRefs remain alive at final empty. Natural collection did not corroborate cache release in this session.",
+    "resource_limit": "Initial renderer counts 8 geometries/4 textures/4 programs expand to21/10/11 with master; tiny remains21/10/11; empty settles20/7/10. Do not claim all renderer resources returned to the initial baseline. Shared/helper resources and retained allocators are not exhaustively attributed.",
+    "memory_limit": "Electron appMetrics values are process CPU-memory fields, including the GPU process, and do not measure dedicated VRAM. Full CPU/renderer/cache release is unproved. WeakRef survival and nonzero residual counters alone do not establish a leak or its cause.",
+    "shutdown_limit": "Orderly close/no-host-forced-cleanup acceptance fails. The host explicitly forced cleanup; this cannot be relabelled as stock PythonBridge shutdown."
+  },
+  "visual_review": {
+    "screenshots_viewed": [
+      "master-initial.jpg",
+      "orbit-horizontal.jpg",
+      "orbit-vertical.jpg",
+      "zoom-useful.jpg",
+      "pan.jpg",
+      "zoom-out.jpg",
+      "tiny-replacement.jpg",
+      "empty.jpg"
+    ],
+    "findings": "Visible master orientation changes match the two orbit records; useful zoom is larger, native pan shifts the model left, zoom-out reduces scale, tiny screenshot shows3 tri/4 verts and empty screenshot shows no model."
+  },
+  "source_bindings": {
+    "app_host.py": "437b65c500886c3b02f90dfbaddddbb84d208725300f1e02c518837102ed0ced",
+    "startup_probe.js": "892fc427a3b63c0f16bae4f695a1558fcf87cef0dc98f30db5a8c49d80c34410",
+    "renderer_observer.js": "44e6acf63044fd16000a11a06acedd8f39d6d4ca01a60655b758186219b8d6b1",
+    "inspect_app.mjs": "352cdd68339f7887c5110e759ce182e7cd956cdb8a38b19ec6144de88972bf8b",
+    "viewer_observation.js": "f6216384ba782488f4a1bd951499dcf1ac1509cafc7c14c6a0defe4a0896d706"
+  },
+  "public_control_hashes": {
+    "acceptance-plan.md": "15222417db9bf53c98a3951c7ea3f802c603951a0cccb2424835ce38a2a67ea9",
+    "session-review.json": "dd6cef1f2c9ce1dbc339bf7c445c6451852dc3f17d7945cdfef21dbbdc6946e7",
+    "viewer_observation.js": "f6216384ba782488f4a1bd951499dcf1ac1509cafc7c14c6a0defe4a0896d706",
+    "viewer_observation.test.cjs": "019ae7bea9cece492d2b9c7e15b96a069b44088f98cd6424af49cec34414da98"
+  },
+  "private_evidence_sha256": {
+    "app-host.json": "4be7b10d0a027258ebd5ee08ff3a8cf7b7e98e1481923ff3c082a2952de2b891",
+    "app-inputs.json": "5544282d6f85bd434773c631320cfc08ec1d00d502e9aa145cec480952a9f236",
+    "app-session-attempt.json": "dacea7cec879d7a0a1f09c0cd5615b8cdfb3c07c76063d5938b5fdf8a1962e53",
+    "bootstrap-before-resume.json": "bd59d8f0aba14f22b7c4f2e689a44b125e7333c378602dcf672d8b684ef3c454",
+    "known-blank-bootstrap.json": "02d6819c5a4150d8a80e05fb9739ebe8bacbf4ed0f6b1a6125bd42ed553f2373",
+    "startup-ready.json": "9f3cfdb56f06ee51892f484e666ab8e3608b6873bef2565e87ab78f28b111615",
+    "session-final.json": "806642090c0bb95709bfa6825979134e53bf70c7c5109d61bbdc22e8c78ba9c9",
+    "app.stdout.txt": "f102f6e02713a0cca1f626fcd25a184b0c84ab27715daea6468b5a6e2ac61a3f",
+    "app.stderr.txt": "dd06b3b0a1ccffe8d6bc2efa060158c6b1639355c6210c951f57983a5a34ed1b",
+    "empty-baseline.json": "2ac338d8ec5fba4151de2fb89e0f299d60517247b289f1b23d7ed5d071e30456",
+    "master-loaded.json": "0aad6d96c14ed236c71326bdcc79748efb675da3859f7f82c708e02c12d3043e",
+    "tiny-replacement.json": "99c747c73ef6b91c2b54fcc6646584cc594a7f9e4a83aa572dcdc2b32dc6882b",
+    "tiny-settled-2.json": "e9346c5d6c1c3c59143d729e4a2a00d931da209c1f34e9ab0adad165e5deaf01",
+    "tiny-settled-5.json": "a7270b4303cd07e82fab082ddd430e3eee1dd750cf2de6c327767c1af5ae54fe",
+    "empty-settled-2.json": "a006ad0a74dc9cbcc9733d231f4cd9b38625c25b514130a63f9421624f556d6b",
+    "empty-settled-5.json": "d743450f8f7791047a0e70b890c27b58f46d136c4c607faa9c8b91bcaf6cda5d",
+    "empty-final.json": "ac1d107d384b85eebb747b42325fa4b91bdf0bf5eab7b4ae8d22af033652724c",
+    "observer-restored.json": "0b332126205e8df0bd90fc459f7bf1ff7234d113010b37e85caeb4aa9c92c9b6",
+    "master-before-replacement.json": "1b04b5933ec757f74f0483cfd76683a3ad6598af054d73b2aa0c2633253e78b1",
+    "master-process-memory.json": "447a97f3f360e94bdf72abacff6876d46478c0d1be8ad567573caca65b3111e9",
+    "tiny-process-memory.json": "40a7816bb964e643e338e63ba059b4af6cb2438da415eb5dcde42ac6dca9ee6e",
+    "empty-process-memory.json": "f1e5d232259cf2a070dbc33c42db7bfd1f7031997d81128edc3272815e4f4ba1",
+    "orbit-horizontal-before.json": "e47e34359723990343f61a4fa9408b833866298f6d598a96ff8a370a15e50fd6",
+    "orbit-horizontal.json": "fd85bba4ab1b6f76e6bc7b94cd9d562981f10cc8806024ce29543f1a7b629609",
+    "orbit-vertical-before.json": "2536dc394b727412c325a955d2b0e452c3ef6554aee16bebb3ff8644dc6bfbc9",
+    "orbit-vertical.json": "73945990a22cc38dbd21f04351298ca5577a6831722ee9eb47e25fd17b5c15eb",
+    "zoom-in-before.json": "706a6ad971cdd0997a64ef9d586ef0efc540cf5deae0e6c9abc6acab75149c5d",
+    "zoom-in.json": "4c82bea4c1251a575c4a747f00c10f4bb31d4643d14e2171fb3d9db78da264d3",
+    "zoom-useful-before.json": "28e4f1ae5b33208f7ff7b81755e96f452c5b33bade0872cae52c0ac02b5f9f32",
+    "zoom-useful.json": "5fd1b314d2685f5b11c54d80e5331b396a111ac7bf96467cb43826b1a7ac8b42",
+    "pan-before.json": "fa6be06f9e19db35ab25d46d20ff966d418e3aa2f468cdf1f254cfd83010b662",
+    "pan.json": "0e58c3c56dcee129ad5bedbbacb9b8141f6107d388ff99e0401c2f4ded9231fe",
+    "zoom-out-before.json": "e4b0ec1d77c58d695ca5aa5612d2e638d8ea96aba2e1e83b7f476be8d2fc72ce",
+    "zoom-out.json": "84489f13e9df4ca7c3ce01f70c1689476a57443c87669182afbe2529d18498c4"
+  },
+  "private_screenshot_sha256": {
+    "master-initial.jpg": "53ae157a199d62998e6bf8f4cde4128be613969d8dc3789312549a78c30f821a",
+    "orbit-horizontal.jpg": "5fe3a02c53a365e13b98c857d948a9442381cfc47283ca5ee10dc1cddc4eb22b",
+    "orbit-vertical.jpg": "c3932f96fc7dbc7bfd9a6ec4c837f26e637f298cab9d6ab17b6a80824cc56bb4",
+    "zoom-useful.jpg": "fd31d23bc23ee1520b5ff8bf904dd29f56a57721c4dab270b7190b38d7c7d530",
+    "pan.jpg": "5aa6541f51f79b19cf5c5467cfe74083ae9218d5ab6b2bf415e4ccdc9721ce89",
+    "zoom-out.jpg": "076474142c4b84064180eb7b7bc021817b2489301f45af0efa8403bbd67780b2",
+    "tiny-replacement.jpg": "12ef83475b95306bd1486ff986af93544f9224aac3c9f6cc76cf84eb7ee024ed",
+    "empty.jpg": "5ec0f8d727f11ba0709ffcd21a6aa4d4e0735bd5d1f9999dacb72b09c50f5663"
+  },
+  "recommendation": "Retain these observed camera/disposal facts and the deadline failure. Report overall BLOCKED and incomplete release evidence. No automatic retry or production repair is justified by this review."
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "modly.viewer-completion.saved-evidence-verification.v1",
+  "created_utc": "2026-10-22T20:38:50.129143+00:00",
+  "classification": "PASS_FOR_SAVED_EVIDENCE_AUTHENTICATION_ONLY",
+  "session_classification": "BLOCKED",
+  "full_milestone_complete": false,
+  "outcome_review_sha256": "49613fad5e34eee0d6ca3ef2354e9c4ea81f996ffe421e1a410899ea43d585f0",
+  "checked_hash_entries": {
+    "source_bindings": 5,
+    "public_control_hashes": 4,
+    "private_evidence_sha256": 34,
+    "private_screenshot_sha256": 8
+  },
+  "host_receipt_sha256": "4be7b10d0a027258ebd5ee08ff3a8cf7b7e98e1481923ff3c082a2952de2b891",
+  "focused_mock_tests": {
+    "command": "node --test docs/compatibility/amd-high-resolution-viewer-completion-evidence/viewer_observation.test.cjs",
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "duration_ms": 79.6831
+  },
+  "checks": [
+    "Saved reviewed control, trace and screenshot identities match",
+    "Host retains deadline failure and forced7to0 cleanup",
+    "480 live resource samples admitted; exact minimum RAM/disk preserved",
+    "Preservation receipts confirm scoped identities, protected100 and115 old remote heads",
+    "Evidence JSON and Python AST parse without executing app/native code",
+    "Human-pan115 matched/6 unmatched and unchanged model transforms retained"
+  ],
+  "first_reporting_check": {
+    "completed": false,
+    "exception": "KeyError: free_disk_bytes",
+    "actual_saved_field": "disk_free_bytes",
+    "receipt_written": false,
+    "effect": "Reporting-field spelling corrected after inspecting the actual saved sample. No app/native execution or original evidence changed."
+  },
+  "limits": "No app launch, input, import, retry, GPU operation, cache/GC operation or natural-release claim. Independent outcome metrics are authenticated saved calculations; this check does not repeat the UI experiment."
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "modly.installed-app.viewer-completion-independent-source-review.v1",
+  "classification": "GO",
+  "created_utc": "2026-10-22T20:23:06.333979+00:00",
+  "approved_source_base": "3cdcaa97d528ea1fe334b91bd695dd13a2e33712",
+  "approved_branch": "codex/amd-high-resolution-viewer-completion",
+  "sources": {
+    "app_host.py": "437b65c500886c3b02f90dfbaddddbb84d208725300f1e02c518837102ed0ced",
+    "startup_probe.js": "892fc427a3b63c0f16bae4f695a1558fcf87cef0dc98f30db5a8c49d80c34410",
+    "renderer_observer.js": "44e6acf63044fd16000a11a06acedd8f39d6d4ca01a60655b758186219b8d6b1",
+    "inspect_app.mjs": "352cdd68339f7887c5110e759ce182e7cd956cdb8a38b19ec6144de88972bf8b",
+    "viewer_observation.js": "f6216384ba782488f4a1bd951499dcf1ac1509cafc7c14c6a0defe4a0896d706"
+  },
+  "acceptance_plan_sha256": "15222417db9bf53c98a3951c7ea3f802c603951a0cccb2424835ce38a2a67ea9",
+  "preservation_before_sha256": "2433fb8e6be24fd898e4c8fa447eb6e337e98d5e0c0028ff1d891cdb9c30a491",
+  "prior_session_review_sha256": "a33f8df2cc717c33167fe7f8fe576866f0c1f61bdb5ee7879af082dfc33b4431",
+  "prior_one_blank_continuation_review_sha256": "096838cd40c96d7a4e53f9373d88163cbc581b17dd8d4db220b0638e95c60e70",
+  "scope": "Pre-execution source admission for one owned installed Modly 0.4.3 viewer-completion session, maximum 480 seconds: one normal UI master import, native camera controls, one normal UI tiny replacement, mesh selection and Delete, settled empty checkpoint. No export, neural/model execution, geometry edit, installation or production modification. GO is not an observed runtime acceptance result.",
+  "findings": [],
+  "source_review": [
+    "Host retains exact base/branch and twelve-file input gates, exclusive session markers, local-debug ports, process AND Job 6 GiB caps, live 12 GiB available RAM and 2 GiB destination floors, 180-second import epochs, 480-second session ceiling, watched-input identities and no forced Job-cleanup success.",
+    "startup_probe.js and renderer_observer.js are byte-identical to prior reviewed sources. Host changes are fresh mission identities/path, shorter session bound and fifth source binding; inspect_app.mjs changes only its private mission path.",
+    "Viewer discovery checks CanvasCapture canvas, Provider store, camera/control identity, event input, makeDefault controls primitive and SceneMeshModel scene.__r3f.root. Helper camera stores are rejected before wrapping rendering.",
+    "The priority-zero subscription observes actual R3F ticks without taking over rendering. Render wrapper preserves receiver, arguments, return and thrown errors, counts only successful exact-main scene/camera calls and distinguishes duplicate passes from frame ticks.",
+    "Trusted native events are correlated with changed controls pose and successful subsequent main-render CPU return. Unmatched/missed events and overhead remain reportable; this does not measure GPU/display or OS input latency.",
+    "Resource/model histories hold WeakRefs, scalar identities and dispose listeners, with deduplication and BVH presence observations. No old model/resource object is stored in telemetry; stop unsubscribes and restores its owned render wrapper/listeners.",
+    "Framing reads existing geometry boxes and matrices, reports conservative projected world AABB corners, and performs no scene/matrix/bounds writes. No cache clear, input synthesis or forced GC is present in the viewer observer.",
+    "Final additive currentModels.transform copies only model position/quaternion/scale scalar arrays. The mock uses identity TRS and asserts exact serialized values. This gives direct object-transform checkpoint evidence alongside conservative bounds."
+  ],
+  "installed_equivalence": {
+    "inspection": "Fresh read-only ASAR header and selected JavaScript bytes; no installed JavaScript executed.",
+    "package_version": "0.4.3",
+    "package_json_sha256": "6496b6fbce3c7a6e3cd4eda2aef992cc80178337ae7b78513a87b3e60552541d",
+    "renderer_entry": "out/renderer/assets/GeneratePage-pYB45BAo.js",
+    "renderer_entry_bytes": 2844579,
+    "renderer_entry_sha256": "4d87e2a24b88510a55689f40755adb21e73cffd0499f5365d9510d12d80536fa",
+    "verified_signatures": [
+      "CanvasCapture uses gl.domElement",
+      "Provider memoized props include store",
+      "Default OrbitControls uses events.connected or canvas, exact state.camera, makeDefault state.controls and primitive object",
+      "OrbitControls useFrame priority -1; R3F internal.subscribe(ref,priority,store) and subscriber callback invocation match probe",
+      "SceneMeshModel useGLTF.clear(url), geometry/material dispose and disposeBoundsTree cleanup",
+      "Viewer default OrbitControls enables pan/zoom/rotate with minDistance 0.5 and maxDistance 20"
+    ],
+    "limit": "Selected installed runtime interfaces match the observer assumptions. This is not a claim that all installed code is built from this checkout or that runtime discovery is already proven."
+  },
+  "mock_verification": {
+    "command": "node --test docs/compatibility/amd-high-resolution-viewer-completion-evidence/viewer_observation.test.cjs",
+    "source_sha256": "019ae7bea9cece492d2b9c7e15b96a069b44088f98cd6424af49cec34414da98",
+    "probe_sha256": "f6216384ba782488f4a1bd951499dcf1ac1509cafc7c14c6a0defe4a0896d706",
+    "tests": 6,
+    "pass": 6,
+    "fail": 0,
+    "skipped": 0,
+    "independent_run_duration_ms": 81.3503,
+    "additional_cpu_checks": "Node syntax checks on viewer_observation.js and inspect_app.mjs; Python ast.parse on app_host.py.",
+    "final_trs_amendment": "Final independent run also 6/6 PASS, 0 fail, 0 skipped. Parent recorded expected 5/6 RED then 6/6 GREEN before this review."
+  },
+  "binding_runtime_conditions": [
+    "Use only the previously proven one about:blank initialization on the existing hidden empty WebContents after reviewed bootstrap/resume. Require observer ready=true, calls=1, restored=true, no errors, original installed app URL and actual committed roots before UI. No restart, extra blank initialization, alternative startup technique or second master attempt.",
+    "Run exactly the accepted normal UI sequence. Keep bounded loading stage epochs and the existing host resource monitor active; close before the original 480-second deadline.",
+    "Human assistance for native right-drag pan is confirmed available by parent. Use that genuine native gesture when ready; if it cannot be completed, report pan BLOCKED. Do not remap controls or synthesize renderer events.",
+    "Apply predeclared orbit, pan, zoom/framing, responsiveness and cleanup thresholds to observed data and visible screenshots. Preserve missing events and failures rather than infer a PASS.",
+    "Do not directly enumerate or clear the loader cache or force GC. Report source-level useGLTF.clear separately; natural weak collection can corroborate release, and survival alone does not establish a leak."
+  ],
+  "limits": [
+    "Six tests exercise pure mocked VM objects, not an actual Electron/R3F session or the real asset.",
+    "CPU submission timing is distinct from display presentation; Electron process CPU memory is not dedicated VRAM.",
+    "Shared renderer resources and retained allocators need not settle to zero. App PythonBridge shutdown behavior remains separately labelled from host-forced Job cleanup.",
+    "Preservation-before is bound as the fresh independent audit receipt; this reviewer did not rerun the full preservation audit or parse/load either GLB."
+  ],
+  "reviewer_app_UI_asset_native_execution_count": 0
+}
