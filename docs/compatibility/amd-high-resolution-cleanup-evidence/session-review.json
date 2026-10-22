@@ -1,0 +1,71 @@
+{
+  "schema": "modly.installed-app.high-resolution-cleanup-independent-session-source-review.v1",
+  "created_utc": "2026-10-22T20:58:08.869501+00:00",
+  "classification": "GO",
+  "approved_source_base": "bc9515fbbdc8e28cdc58b47bc1b32f4ed3369ad4",
+  "approved_branch": "codex/amd-high-resolution-cleanup-qualification",
+  "sources": {
+    "app_host.py": "6271e5caebf7c9e9d02d047ec4af8e114d4c6018b40397ab73cb57de7abed889",
+    "startup_probe.js": "892fc427a3b63c0f16bae4f695a1558fcf87cef0dc98f30db5a8c49d80c34410",
+    "renderer_observer.js": "51d2afa76d77d67c59f77613776293141ff7d730b6ced881fa7555ed6344daa8",
+    "inspect_app.mjs": "1d24386d957b5821fe0e3d68f84f695e7ef11e02c4f16886ea42218763506de7",
+    "cleanup_observer.js": "509c837ade41ce568af7fd3166a7ffbc71a7554fd8f65699fe3bfbac8a5148cd",
+    "shutdown_control.js": "5cc4b68686919c5e6ea00037499168ba1a917c3f4aa934dffb238033a0f866fc"
+  },
+  "acceptance_plan_sha256": "2b1676de9b76bd6705c635aba7a6ff063443b0067ebbeaed137802bb55ad7623",
+  "preservation_before_sha256": "93cdcdae93e68591c461f38aee2462a357b4cd9483dd4265f905dc681abaa45c",
+  "source_review_sha256": "370a0e13b7dc27575cea5a1d5996d959aec429166a7ac74c1e97e9e67bba0ca2",
+  "scope": "Independent pre-execution source admission for exactly one installed Modly 0.4.3 cleanup qualification session. No application, Electron, native input, model decode, asset import, GPU, install or production edit executed by reviewer. GO permits the bounded runtime gates; it is not a runtime cleanup, collection, GPU-memory or shutdown acceptance result.",
+  "findings": [],
+  "resolved_findings": [
+    "Root replaced nested template construction with a normal installCleanup(source) function injected through installCleanup.toString(); exact current file parses. Scope-list numeric regex is the literal /^\\d+$/ in that function body, not an escaped nested-template form.",
+    "Restoration validates the recorded renderer webContentsId against the sole current window before removing the saved registration or detaching its debugger."
+  ],
+  "review": [
+    "app_host.py retains approved base/branch gates, exact pinned helper and input identities, plain-path checks, exclusive session receipts, original isolated launch, local-only debugging, port8765 vacancy, process AND aggregate Job6GiB caps, live12GiB Windows available RAM/2GiB disk admission,180s import bounds and360s hard maximum. At240s absent shutdown-request is a failure. It records Job force and never labels it a normal exit.",
+    "startup_probe.js remains byte-identical to prior reviewed source. It is evaluated before installed main readiness, redirects userData/sessionData/downloads into distinct precreated isolated directories, suppresses bytecode and denies updater install/download/check paths with autoInstallOnAppQuit false. Startup paths and actual binary/source identities remain parent preservation gates.",
+    "renderer_observer.js restores its owned loadFile wrapper before original navigation, installs one Page new-document script through its own renderer debugger and records exact registration/webContents identity. Root registry contains WeakRefs and a WeakMap, avoiding observer-created strong FiberRoot history. Actual committed viewer roots must still be observed.",
+    "inspect_app.mjs obtains handles from the actual installed Viewer3D Module scope (globalCache and GLTFLoader) and actual renderer.renderBufferDirect constructor Closure (attributes), before asset loads. It does not import another cache/module or inspect loaded response objects through CDP. Dedicated objectGroup release is in finally, so released CDP handles cannot retain later GLTF responses. Module/Closure availability is a runtime gate, not established by static review.",
+    "The helper finds the main renderer from CanvasCapture canvas and controls/camera identity; cleanup_observer independently authenticates exact store/control/input/primitive/model root relationships before returning useful telemetry. Duplicate/ambiguous/missing handles fail closed. Runtime installation and actual empty snapshot must precede every asset load.",
+    "cleanup_observer stores only WeakRef model/mesh/resource/attribute/WebGLBuffer histories, scalar IDs/URLs, counters and listeners whose records refer weakly to resources. The cache and WebGLAttributes containers are already live production owners; retaining each container does not retain entries after production removal. Discovery and census strong locals do not escape. stop removes owned dispose listeners and releases cache/constructor/attributes/store/root/model/resource handles.",
+    "Geometry/material disposal, BVH nulling, exact live cache URL/constructor membership, nonallocating gl.properties.has, WebGLAttributes.get and context.isBuffer checks offer separate falsifiable ownership evidence. Positive loaded calibration is mandatory before any absent/deleted result can pass. Actual imported CPU arrays are not read or serialized. Observation performs no cache clear, scene writes, dispose calls, forced GC, input synthesis, render wrapper or frame subscription.",
+    "Known-reference census is bounded and distinguishes current props/hooks from alternate props/hooks. It does not claim complete closure/heap reachability, exhaustive R3F event-map enumeration or garbage collection. App-state snapshot is optional and explicitly unavailable when its exact source-pinned shape is not uniquely found. These limits must remain in final verdicts.",
+    "shutdown_control.js is installed at the paused original main before resume. It arms normal app.quit using absolute220s epoch, writes a request before restoration and bounds restoration wait to1s before scheduling normal quit50ms later. It stops diagnostic observer, clears/removes owned renderer globals, disables captured hook callbacks, removes exact new-document registration, releases diagnostic objectGroup and detaches owned renderer debugger; then records restoration and normal quit lifecycle events. Restoration failure stays explicit and does not prevent the normal quit request.",
+    "Shutdown timer does not wait for telemetry completion. Combined220s normal reserve,240s host request guard and360s hardcap leave ordinary backend process settlement time. Source cannot establish normal process settlement; app-before-quit/will-quit, exit code, tree settlement and forced Job state must be reconciled after execution.",
+    "Installed package/bundle ownership and shared/lazy-resource semantics remain pinned by source-review.json. No already demonstrated reproducible high-resolution model-specific production leak was found. Missing EffectComposer.dispose remains separately scoped source concern, not a proven model leak or automatic repair authorization."
+  ],
+  "verification": {
+    "command": "node --test shutdown_control.test.cjs cleanup_observer.test.cjs",
+    "tests": 13,
+    "pass": 13,
+    "fail": 0,
+    "skipped": 0,
+    "duration_ms": 86.9241,
+    "test_sources": {
+      "shutdown_control.test.cjs": "2cfb9cccb8dd19a98f8a1fa6f8a89a3ccd82964d7bb4e5ed041fbdbee165f790",
+      "cleanup_observer.test.cjs": "b670780b01910558669027914db413a3efec542074e01f9d107db0c7756ec6ca"
+    },
+    "shutdown_mock_coverage": [
+      "220s timer before readiness",
+      "owned observer stop, registration removal, objectgroup release and debugger detach before app.quit",
+      "exclusive request/restoration/lifecycle receipts",
+      "idempotent manual finish",
+      "foreign-hook restoration failure remains honest and normal quit still follows",
+      "hanging renderer restore1s bound and quit before240s",
+      "overlong reserve/ready application rejected"
+    ],
+    "additional_checks": "Node --check for inspect_app.mjs, cleanup_observer.js, shutdown_control.js, renderer_observer.js and startup_probe.js; Python ast.parse for app_host.py. No modules imported or application executed by those checks.",
+    "test_limits": "Pure Node VM mocks are CPU-only safety/logic checks; no real Electron debugger scopes, Windows Job, native input, application shutdown, model or GPU behavior is exercised."
+  },
+  "binding_runtime_conditions": [
+    "Run one preflight without marker reservation, then at most one owned application session. Confirm exact input/control/preservation identities before launch. No retry or second master load.",
+    "Confirm initial pause is exact installed main before its first statement, app readiness false, effective isolation/updater denials and scheduled shutdown220s epoch before main resume. Use only the previously admitted one about:blank bootstrap on the existing hidden WebContents if needed; never restart or substitute navigation.",
+    "Require actual committed installed viewer, no observer errors, exact cache/constructor/attributes scope access, cleanup-installed snapshot currentModels.length===0 and successful objectGroup release BEFORE importing tiny or master. If scope access/empty discovery fails, stop diagnostic collection and perform normal shutdown; report BLOCKED without a master load.",
+    "Use normal UI for tiny warming/removal, exactly one master import, tiny replacement and tiny Delete. CDP executes observation/isolation/restoration/shutdown controls only; do not synthesize UI events or change app/model state through it.",
+    "Require loaded cache response scene UUID, material property presence and each actual attribute buffer mapping/isBuffer calibration before interpreting post-cleanup absence. Uncalibrated/unobservable ownership remains UNVERIFIED, including collected weak buffer wrappers without a deletion witness.",
+    "Use bounded settling and retain exact current-vs-alternate/reference-census completeness. Do not claim exhaustive heap collection, GPU byte release or cold-counter recovery. Dedicated GPU memory remains UNVERIFIED unless reliably measured.",
+    "Begin normal finish promptly when the short sequence ends;220s scheduled finish is a fail-safe reserve, never a target for collecting more telemetry. Confirm observer-restoration success, normal app lifecycle receipts, process exit and zero owned tree without Job force; otherwise report exact failures separately.",
+    "If an actual model-specific defect is demonstrated, document the smallest proposed production fix and stop. No automatic production changes, repeat full-model test, stress loop or unrelated development."
+  ],
+  "reviewer_application_UI_native_asset_execution_count": 0
+}

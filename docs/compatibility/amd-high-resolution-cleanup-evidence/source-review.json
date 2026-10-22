@@ -1,0 +1,242 @@
+{
+  "schema": "modly.high-resolution-cleanup.source-review.v1",
+  "created_utc": "2026-10-22T20:51:45.250323+00:00",
+  "classification": "USEFUL_FALSIFIABLE_CHECKS_IDENTIFIED_RUNTIME_NOT_EXECUTED",
+  "approved_source_base": "bc9515fbbdc8e28cdc58b47bc1b32f4ed3369ad4",
+  "scope": "Independent bounded read-only review of accepted receipts, current Viewer3D, installed ASAR package/source bytes and exact installed renderer bundle. No application/native/UI execution, model decode, install, production edit or tests.",
+  "installed": {
+    "package_version": "0.4.3",
+    "package_json_sha256": "6496b6fbce3c7a6e3cd4eda2aef992cc80178337ae7b78513a87b3e60552541d",
+    "renderer_entry": "out/renderer/assets/GeneratePage-pYB45BAo.js",
+    "renderer_bytes": 2844579,
+    "renderer_sha256": "4d87e2a24b88510a55689f40755adb21e73cffd0499f5365d9510d12d80536fa",
+    "packages": {
+      "@react-three/drei": {
+        "version": "9.122.0",
+        "package_json_sha256": "52cc26e6b308f62648c76d358a05a118933e3385aac56ecce897c4c1e21a62c8"
+      },
+      "@react-three/fiber": {
+        "version": "8.18.0",
+        "package_json_sha256": "efdbdad673657a135f98728c1a0f11313b51987db00cfdfa287c3b8925fb4bdb"
+      },
+      "three": {
+        "version": "0.171.0",
+        "package_json_sha256": "093f728cf4af71eee6588b4452222312ee2cd7837435fd4244e2ac991298cd27"
+      },
+      "three-mesh-bvh": {
+        "version": "0.9.9",
+        "package_json_sha256": "8d02a764d0abea467024df9636103e5f432cbc03e42f9cd6c651d3f81a79602f"
+      },
+      "suspend-react": {
+        "version": "0.1.3",
+        "package_json_sha256": "fe161b6cdaf2cd9808b6d1d9e46a2eaf1762803d307c906128d17f3c8eba485a"
+      },
+      "@react-three/postprocessing": {
+        "version": "2.19.1",
+        "package_json_sha256": "408f6d17eed3c7efa3f067664b1e5bd23b5be321f11713c260c8de6bb1f3fe60"
+      },
+      "postprocessing": {
+        "version": "6.39.0",
+        "package_json_sha256": "80770411282e6ef37d3dc86e6361e8ef26220da7aa86e687a7ad24ab4bec7904"
+      },
+      "react": {
+        "version": "18.3.1",
+        "package_json_sha256": "9a394ce4f81b3df64aedfc9ee91eb7f3fc02063c5a52ad4161170d3b55b76ac1"
+      }
+    },
+    "source_files": {
+      "node_modules/@react-three/drei/core/Gltf.js": {
+        "bytes": 1625,
+        "sha256": "2f4e4415df8d1b48c3b607682d149af655d0e6597dd8d7e76e9598fd6b26590f"
+      },
+      "node_modules/@react-three/fiber/dist/events-776716bd.esm.js": {
+        "bytes": 86489,
+        "sha256": "0de0d2d1c2180ba144a11482f3385b822d5d26a7bc20cdf94cadc928cd82f7d6"
+      },
+      "node_modules/suspend-react/index.js": {
+        "bytes": 2895,
+        "sha256": "12b503b08c451b0f378d547b960399517da189f3d565ac8d0c909714b4d4bb4e"
+      },
+      "node_modules/three/src/renderers/WebGLRenderer.js": {
+        "bytes": 79037,
+        "sha256": "a0f03db5363edbb540de230828d7cf21d3b9e1ce69ef033784baf4cf7c6db4cf"
+      },
+      "node_modules/three/src/renderers/webgl/WebGLAttributes.js": {
+        "bytes": 4973,
+        "sha256": "4ba113c4b8ccd25377c833a79912b3f403d39cb61c860638790d4f36a9024c73"
+      },
+      "node_modules/three/src/renderers/webgl/WebGLProperties.js": {
+        "bytes": 639,
+        "sha256": "fefb713d30e2df865b867e725592e8949c5735805a7d8963b98eb471c06c1589"
+      },
+      "node_modules/three/src/renderers/webgl/WebGLGeometries.js": {
+        "bytes": 3405,
+        "sha256": "eccc56454c15928169c19dde94c13ae4ea2db8711d2f074a14b0fa41ddcd8992"
+      },
+      "node_modules/three/src/renderers/webgl/WebGLRenderLists.js": {
+        "bytes": 4054,
+        "sha256": "60355cfaded59c50e2a846eb30702b80bf1b84ae201300685a0889411b032f73"
+      },
+      "node_modules/three/src/renderers/webgl/WebGLPrograms.js": {
+        "bytes": 21380,
+        "sha256": "12dc838343016dae7879242537fefb547b2d822c25ad1e794ecc76570b6bba3b"
+      },
+      "node_modules/three/src/renderers/webgl/WebGLCubeUVMaps.js": {
+        "bytes": 2938,
+        "sha256": "19f5f08fef7331e808826afc68ce445b8799036c84c4d49938f0f85629dfc999"
+      },
+      "node_modules/three/src/loaders/Cache.js": {
+        "bytes": 503,
+        "sha256": "a026daf2c844563e190bd04fac5f0e55a9d30f9e92408f2aee0b9b19efbaf077"
+      },
+      "node_modules/three/src/loaders/FileLoader.js": {
+        "bytes": 5610,
+        "sha256": "56f5b799e98abd87e85fdf7404a07cf896f75fb45f08723ab6ba57f15386da8c"
+      },
+      "node_modules/three/src/core/BufferGeometry.js": {
+        "bytes": 21434,
+        "sha256": "1862a1ba6155e9469dbe432de7fa5dc6c1fb71a283d8729e50a98639eefa3bbc"
+      },
+      "node_modules/three/src/materials/Material.js": {
+        "bytes": 16287,
+        "sha256": "3dd8006cd35880c8665c5425ea65997364c1dc9f55d1e35afba063722202ea78"
+      },
+      "node_modules/three-mesh-bvh/src/utils/ExtensionUtilities.js": {
+        "bytes": 4872,
+        "sha256": "be7ef93432b3ffb231a89ed31f9ae18f7a4344d96317008f1a109336e9cd4844"
+      },
+      "node_modules/@react-three/drei/core/Environment.js": {
+        "bytes": 6776,
+        "sha256": "cba8b7760adf70e4741183f0989aa7938616c2b93bd29a249f14e170152280ee"
+      },
+      "node_modules/@react-three/postprocessing/dist/EffectComposer.js": {
+        "bytes": 5230,
+        "sha256": "61c632668a7c65744be46dddd84acaefa170660c6bd6c2c170773b34a7d7aadf"
+      },
+      "node_modules/@react-three/postprocessing/dist/effects/Outline.js": {
+        "bytes": 2502,
+        "sha256": "8cace42b7179567a21887155d1376e8a823a3d4dfc57b8d56d184354e9e495ab"
+      }
+    },
+    "identity_limit": "Installed manifests and selected bundled interfaces are pinned. This does not claim that every installed file was built from the current checkout. Drei nested BVH is 0.7.8; top-level application BVH is 0.9.9."
+  },
+  "checkout_sources": {
+    "src/areas/generate/components/Viewer3D.tsx": "dc17a4f3393b5a340276e7f0dd87db2434856f4fb2510951c46cf6e94bb82898",
+    "src/shared/stores/appStore.ts": "bb4129663df9257d922d0e132a5af1a7e389ff182c3f642dae204dd29caac938",
+    "docs/compatibility/amd-high-resolution-viewer-completion-evidence/renderer_observer.js": "44e6acf63044fd16000a11a06acedd8f39d6d4ca01a60655b758186219b8d6b1",
+    "docs/compatibility/amd-high-resolution-viewer-completion-evidence/viewer_observation.js": "f6216384ba782488f4a1bd951499dcf1ac1509cafc7c14c6a0defe4a0896d706",
+    "docs/compatibility/amd-high-resolution-viewer-completion-evidence/outcome-review.json": "49613fad5e34eee0d6ca3ef2354e9c4ea81f996ffe421e1a410899ea43d585f0",
+    "docs/compatibility/amd-high-resolution-viewer-completion-evidence/saved-evidence-verification.json": "3c531120a36f34cedcf99b7cd1e378cbc229ad4f26145c40c0031602ab01932d"
+  },
+  "source_snippets": [
+    {
+      "label": "suspend_cache_and_clear",
+      "source": "out/renderer/assets/GeneratePage-pYB45BAo.js",
+      "utf8_decoded_character_start": 1261425,
+      "utf8_decoded_character_end_exclusive": 1263437,
+      "sha256_utf8": "02712c74a29f8927cbb5c3db5366b718f703036d60e9f01b3fda4e451d803ae0",
+      "excerpt": "const globalCache = [];\nfunction shallowEqualArrays(arrA, arrB, equal = (a, b) => a === b) {\n  if (arrA === arrB) return true;\n  if (!arrA || !arrB) return false;\n  const len = arrA.length;\n  if (arrB.length !== len) return false;\n  for (let i2 = 0; i2 < len; i2++) if (!equal(arrA[i2], arrB[i2])) return false;\n  return true;\n}\nfunction query(fn, keys = null, preload2 = false, config = {}) {\n  if (keys === null) keys = [fn];\n  for (const entry2 of globalCache) {\n    if (shallowEqualArrays(keys, entry2.keys, entry2.equal)) {\n      if (preload2) return void 0;\n      if (Object.prototype.hasOwnProperty.call(entry2, \"error\")) throw entry2.error;\n      if (Object.prototype.hasOwnProperty.call(entry2, \"response\")) {\n        if (config.lifespan && config.lifespan > 0) {\n          if (entry2.timeout) clearTimeout(entry2.timeout);\n          entry2.timeout = setTimeout(entry2.remove, config.lifespan);\n        }\n        return entry2.response;\n      }\n      if (!preload2) throw entry2.promise;\n    }\n  }\n  const entry = {\n    keys,\n    equal: config.equal,\n    remove: () => {\n      const index = globalCache.indexOf(entry);\n      if (index !== -1) globalCache.splice(index, 1);\n    },\n    promise: (\n      // Execute the promise\n      (isPromise(fn) ? fn : fn(...keys)).then((response) => {\n        entry.response = response;\n        if (config.lifespan && config.lifespan > 0) {\n          entry.timeout = setTimeout(entry.remove, config.lifespan);\n        }\n      }).catch((error2) => entry.error = error2)\n    )\n  };\n  globalCache.push(entry);\n  if (!preload2) throw entry.promise;\n  return void 0;\n}\nconst suspend = (fn, keys, config) => query(fn, keys, false, config);\nconst preload = (fn, keys, config) => void query(fn, keys, true, config);\nconst clear = (keys) => {\n  if (keys === void 0 || keys.length === 0) globalCache.splice(0, globalCache.length);\n  else {\n    const entry = globalCache.find((entry2) => shallowEqualArrays(keys, entry2.keys, entry2.equal));\n    if (entry) entry.remove();\n  }\n};\n"
+    },
+    {
+      "label": "R3F_loader_identity_cache",
+      "source": "out/renderer/assets/GeneratePage-pYB45BAo.js",
+      "utf8_decoded_character_start": 1476689,
+      "utf8_decoded_character_end_exclusive": 1477921,
+      "sha256_utf8": "de5d72394991a8e15f23cd09de700c7754a656f68d3388fae190c7b45993359c",
+      "excerpt": "const memoizedLoaders = /* @__PURE__ */ new WeakMap();\nfunction loadingFn(extensions2, onProgress) {\n  return function(Proto, ...input) {\n    let loader = memoizedLoaders.get(Proto);\n    if (!loader) {\n      loader = new Proto();\n      memoizedLoaders.set(Proto, loader);\n    }\n    if (extensions2) extensions2(loader);\n    return Promise.all(input.map((input2) => new Promise((res, reject) => loader.load(input2, (data) => {\n      if (data.scene) Object.assign(data, buildGraph(data.scene));\n      res(data);\n    }, onProgress, (error2) => reject(new Error(`Could not load ${input2}: ${error2 == null ? void 0 : error2.message}`))))));\n  };\n}\nfunction useLoader(Proto, input, extensions2, onProgress) {\n  const keys = Array.isArray(input) ? input : [input];\n  const results = suspend(loadingFn(extensions2, onProgress), [Proto, ...keys], {\n    equal: is.equ\n  });\n  return Array.isArray(input) ? results : results[0];\n}\nuseLoader.preload = function(Proto, input, extensions2) {\n  const keys = Array.isArray(input) ? input : [input];\n  return preload(loadingFn(extensions2), [Proto, ...keys]);\n};\nuseLoader.clear = function(Proto, input) {\n  const keys = Array.isArray(input) ? input : [input];\n  return clear([Proto, ...keys]);\n};\n"
+    },
+    {
+      "label": "useGLTF_cache_chain",
+      "source": "out/renderer/assets/GeneratePage-pYB45BAo.js",
+      "utf8_decoded_character_start": 1748312,
+      "utf8_decoded_character_end_exclusive": 1748661,
+      "sha256_utf8": "825cab1f11f515b568d32001f0483be3681ac1023044aeb33fb1a55b06553df6",
+      "excerpt": "const useGLTF = (path, useDraco, useMeshopt, extendLoader) => useLoader(GLTFLoader, path, extensions(useDraco, useMeshopt, extendLoader));\nuseGLTF.preload = (path, useDraco, useMeshopt, extendLoader) => useLoader.preload(GLTFLoader, path, extensions(useDraco, useMeshopt, extendLoader));\nuseGLTF.clear = (path) => useLoader.clear(GLTFLoader, path);\n"
+    },
+    {
+      "label": "WebGLAttributes_read_and_remove",
+      "source": "out/renderer/assets/GeneratePage-pYB45BAo.js",
+      "utf8_decoded_character_start": 708780,
+      "utf8_decoded_character_end_exclusive": 709166,
+      "sha256_utf8": "f787f326365261b9ddab3c1c917cd9eb2dc8a9b39465f72d4d0c75b72a7cbe20",
+      "excerpt": "  function get(attribute) {\n    if (attribute.isInterleavedBufferAttribute) attribute = attribute.data;\n    return buffers.get(attribute);\n  }\n  function remove(attribute) {\n    if (attribute.isInterleavedBufferAttribute) attribute = attribute.data;\n    const data = buffers.get(attribute);\n    if (data) {\n      gl.deleteBuffer(data.buffer);\n      buffers.delete(attribute);\n    }\n  }\n"
+    },
+    {
+      "label": "WebGLProperties_has_does_not_allocate",
+      "source": "out/renderer/assets/GeneratePage-pYB45BAo.js",
+      "utf8_decoded_character_start": 1003823,
+      "utf8_decoded_character_end_exclusive": 1004438,
+      "sha256_utf8": "e3e368a1bd7468402038ca68c14f08104f9e9cc06f518c83126bbab621bdb4d5",
+      "excerpt": "function WebGLProperties() {\n  let properties = /* @__PURE__ */ new WeakMap();\n  function has(object) {\n    return properties.has(object);\n  }\n  function get(object) {\n    let map = properties.get(object);\n    if (map === void 0) {\n      map = {};\n      properties.set(object, map);\n    }\n    return map;\n  }\n  function remove(object) {\n    properties.delete(object);\n  }\n  function update(object, key, value) {\n    properties.get(object)[key] = value;\n  }\n  function dispose2() {\n    properties = /* @__PURE__ */ new WeakMap();\n  }\n  return {\n    has,\n    get,\n    remove,\n    update,\n    dispose: dispose2\n  };\n}\n"
+    },
+    {
+      "label": "model_detach_and_explicit_resource_cleanup",
+      "source": "out/renderer/assets/GeneratePage-pYB45BAo.js",
+      "utf8_decoded_character_start": 2668945,
+      "utf8_decoded_character_end_exclusive": 2670259,
+      "sha256_utf8": "8157ff4c9f60c14a5db7327d98541a038c54df897a73ef6e992f1b332a57e676",
+      "excerpt": "function SceneMeshModel({\n  url,\n  viewMode,\n  selected,\n  onStats,\n  onSelect,\n  onObject,\n  scene,\n  loaderType\n}) {\n  const captured = reactExports.useRef(false);\n  const edgeHelpers = reactExports.useRef([]);\n  reactExports.useEffect(() => {\n    onObject(scene);\n    return () => onObject(null);\n  }, [scene, onObject]);\n  reactExports.useEffect(() => {\n    return () => {\n      if (loaderType === \"obj\") {\n        useLoader.clear(OBJLoader, url);\n      } else {\n        useGLTF.clear(url);\n      }\n      scene.traverse((child) => {\n        if (child instanceof Mesh) {\n          child.geometry.dispose();\n          const materials = Array.isArray(child.material) ? child.material : [child.material];\n          materials.forEach((m) => m.dispose());\n        }\n      });\n    };\n  }, [loaderType, scene, url]);\n  reactExports.useEffect(() => {\n    scene.traverse((child) => {\n      if (child instanceof Mesh) {\n        child.geometry.computeBoundsTree();\n        const mats = Array.isArray(child.material) ? child.material : [child.material];\n        mats.forEach((m) => {\n          m.side = DoubleSide;\n        });\n      }\n    });\n    return () => {\n      scene.traverse((child) => {\n        if (child instanceof Mesh) {\n          child.geometry.disposeBoundsTree?.();\n        }\n      });\n    };\n  }, [scene]);\n"
+    },
+    {
+      "label": "renderer_constructor_shared_ownership",
+      "source": "out/renderer/assets/GeneratePage-pYB45BAo.js",
+      "utf8_decoded_character_start": 1179970,
+      "utf8_decoded_character_end_exclusive": 1180299,
+      "sha256_utf8": "de70f601b2be499fd6a7a0cf54807c1e0d3e74590a051c550382667eb721bd49",
+      "excerpt": "let extensions2, capabilities, state, info;\n    let properties, textures, cubemaps, cubeuvmaps, attributes, geometries, objects;\n    let programCache, materials, renderLists, renderStates, clipping, shadowMap;\n    let background, morphtargets, bufferRenderer, indexedBufferRenderer;\n    let utils, bindingStates, uniformsGroups;\n"
+    },
+    {
+      "label": "material_renderer_cleanup",
+      "source": "out/renderer/assets/GeneratePage-pYB45BAo.js",
+      "utf8_decoded_character_start": 1189493,
+      "utf8_decoded_character_end_exclusive": 1190185,
+      "sha256_utf8": "081d6d7bceafa900fd3d126d1cd2bbcf259dbe60a7abe120ee2f4307f393db98",
+      "excerpt": "    function onMaterialDispose(event) {\n      const material = event.target;\n      material.removeEventListener(\"dispose\", onMaterialDispose);\n      deallocateMaterial(material);\n    }\n    function deallocateMaterial(material) {\n      releaseMaterialProgramReferences(material);\n      properties.remove(material);\n    }\n    function releaseMaterialProgramReferences(material) {\n      const programs = properties.get(material).programs;\n      if (programs !== void 0) {\n        programs.forEach(function(program) {\n          programCache.releaseProgram(program);\n        });\n        if (material.isShaderMaterial) {\n          programCache.releaseShaderCache(material);\n        }\n      }\n    }\n"
+    }
+  ],
+  "findings": [
+    "Viewer3D SceneMeshModel exposes its scene through onObject and on unmount calls onObject(null), clears the exact loader URL key, traverses Mesh geometry/current materials for dispose, and separately sets geometry.boundsTree null through installed disposeBoundsTree. R3F removes primitive from its parent and clears interactivity/__r3f but intentionally does not recursively dispose primitive-owned assets. Explicit application cleanup is therefore necessary.",
+    "useGLTF.clear delegates to useLoader.clear(GLTFLoader,path), which clears suspend-react key [GLTFLoader,url]. The matching entry is spliced from globalCache; this is cache-reference release, not geometry, material, texture or CPU-array destruction. useLoader memoizes loader instances in a WeakMap keyed by constructor; this is distinct from cached GLTF responses.",
+    "suspend-react 0.1.3 exports peek in its installed source, but peek is absent from the authenticated renderer bundle because it was unused. Importing another module copy would not prove membership of the live bundle cache. The exact live globalCache must be independently witnessed, or cache release remains UNVERIFIED.",
+    "Three Cache is disabled by default; its FileLoader cache is separate from suspend-react. Do not equate useGLTF.clear with Three.Cache.clear or mutate either during qualification.",
+    "Three disposal emits a dispose event; renderer geometry listener deletes all uploaded index/attribute buffers and binding states, then decrements geometry count. Renderer material listener releases program references and removes material properties. Disposal leaves CPU attribute arrays intact and does not prove collection.",
+    "WebGLProperties.has is nonallocating. get creates an entry when absent and must not be used as a membership test. WebGLAttributes.get is nonallocating and can resolve an uploaded attribute to its actual WebGLBuffer for independent isBuffer checks.",
+    "Viewer resources include persistent grid, orientation-gizmo geometry/material/textures, procedural Environment cube target and lightformers, lazy PMREM generator/derived targets, conditional postprocessing targets/passes and selected-mesh transform gizmos. They do not share model ownership; warmed baseline and scalar identity attribution are more useful than requiring a return to cold counters.",
+    "Existing observer resource/model histories use WeakRef plus scalar fields, WeakMap deduplication and listeners whose record contains only WeakRef. No explicit saved old-model strong reference was identified. It retains current mounted root handles and the live renderer for observation. A snapshot deref keeps the referent alive for its current JavaScript job; frequent sampling and natural-GC absence prevent collection inference.",
+    "Installed @react-three/postprocessing EffectComposer creates its composer with useMemo and never calls composer.dispose on unmount; dynamic pass removal and toneMapping restoration do occur. Outline has its own effect.dispose cleanup. This is a source-identified fixed-size viewer-resource lifecycle concern that should be independently attributed, not automatically described as an AMD model-specific leak.",
+    "No already demonstrated reproducible high-resolution model-specific retained-resource production defect was established by the authenticated prior observations plus source review. One narrowly bounded qualification can add useful ownership evidence; do not load again if a separate pre-execution gate fails."
+  ],
+  "recommended_runtime_checks": {
+    "cache_access_before_any_asset_load": [
+      "From current Viewer3D function (available in the empty viewer), Runtime.getProperties internal [[Scopes]], then the Module scope, may expose globalCache, GLTFLoader and useGLTF. All are literal names in the pinned bundle. Runtime scope visibility is not proven by this source-only review.",
+      "Capture only the already-live cache array and loader constructor handles in a dedicated CDP objectGroup. Do not enumerate loaded cache entries with Runtime.getProperties, return response/parser/scene objects, log live objects, or retain entry handles. Runtime.callFunctionOn the cache with [constructor,url] and return only exact matching entry count, hasOwnProperty(response), response length, matching scene UUID and scalar status; returnByValue=true.",
+      "Require absent-before, present-with-correct-scene while loaded, and absent-after normal replacement/removal. If a thin wrapper is used to observe production useGLTF.clear, preserve receiver/arguments/return/throw, query membership before and after, never call clear independently, and restore only its own wrapper. Release all diagnostic CDP groups."
+    ],
+    "renderer_geometry_ownership": [
+      "Original renderer.render and renderBufferDirect are constructor closures; constructor declares and initializes attributes = new WebGLAttributes(_gl). A [[Scopes]] constructor Closure may expose attributes before loading. Runtime scope availability remains a gate.",
+      "For each unique model geometry index/attribute while loaded, use attributes.get(attribute), capture only WeakRef(actual data.buffer) and scalar role/identity, record context.isBuffer(buffer) true. After normal cleanup, attributes.get(attribute) must be absent and surviving captured buffer wrappers should report isBuffer false. No gl.properties.get, direct dispose, render-list clear, cache clear or forced GC.",
+      "Track exact geometry/material dispose events and geometry.boundsTree null; record material gl.properties.has true while loaded -> false after disposal. If imported textures exist, track them separately; material.dispose does not dispose textures. Accepted prior master and tiny observer lists contain geometry/material resources and no imported textures."
+    ],
+    "active_application_references": [
+      "Check detached scene parent chain, current SceneMeshModel/primitive props, Viewer3D meshObject hook state, current gizmo object props, Selection selected object set, active Outline selection, R3F interaction/initialHits/hovered/capturedMap and exact rendered-list object/geometry/material UUID intersections after a subsequent main render.",
+      "Return only scalar counts/UUID matches. Do not traverse or serialize geometry arrays. A React alternate or stale renderer item outside the active lists must be distinguished from active app state; do not equate any surviving WeakRef with a leak. State the bounded reference locations checked; unmeasured ownership remains UNVERIFIED."
+    ],
+    "shared_and_lazy_resources": [
+      "Record scene.environment identity and helper resource UUIDs once. Establish tiny-warmed empty baseline if inexpensive. For the active conditional composer capture inputBuffer/outputBuffer/depthTexture identities and dispose events if cheaply accessible through EffectComposer context/fiber state; report missing-dispose concern separately from model ownership.",
+      "Record CPU process memory as CPU memory only. Do not call GPU-process working set dedicated VRAM. Dedicated GPU memory is UNVERIFIED unless a reliable independent source exists."
+    ]
+  },
+  "ownership_pass_criterion": [
+    "Each tracked accepted-model scene detaches and no matching scene/mesh remains in the specifically checked active app/viewer references after bounded settlement.",
+    "Every unique imported geometry/current-and-original material that actually belonged to the accepted solid model has exactly one application cleanup disposal; all model BVHs are null; uploaded model buffers/material renderer records demonstrably release where independently observable.",
+    "Exact live suspend-react [GLTFLoader,url] response is present while loaded and absent after normal replacement/removal, without diagnostic cache mutation. Otherwise cache/reference release is BLOCKED rather than inferred.",
+    "Shared/lazy counter residuals and CPU allocator high-water marks are reported with their limits; they are not a failure threshold by themselves. WeakRef disappearance and total cold-baseline memory return are not requirements.",
+    "Orderly normal app close and stock backend settlement are separately established within the owned session bounds; any supervisor-forced termination is a distinct failure, never a clean shutdown."
+  ],
+  "production_defect_classification": {
+    "demonstrated_model_specific_leak": false,
+    "effect_composer_disposal": "SOURCE_CONCERN_NOT_DEMONSTRATED_REPRODUCIBLE_MODEL_SPECIFIC_LEAK",
+    "smallest_possible_followup": "If runtime attribution confirms composer-owned targets remain allocated after unmount, separately propose a lifecycle cleanup that disposes the created composer; do not implement automatically or perform another full-model run."
+  },
+  "reviewer_application_native_UI_asset_execution_count": 0
+}

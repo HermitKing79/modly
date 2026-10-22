@@ -1,0 +1,195 @@
+{
+  "schema": "modly.installed-app.high-resolution-cleanup-independent-saved-outcome-review.v1",
+  "created_utc": "2026-10-22T21:02:14.520121+00:00",
+  "classification": "PARTIAL_ACCEPTANCE_RETAINED",
+  "full_high_resolution_cleanup_qualification_complete": false,
+  "scope": "Independent saved-evidence/source-byte review only of the single owned empty-viewer Modly0.4.3 session. No application, diagnostic, UI/native, model, import, GPU, retry, new test or production execution performed by this reviewer. No asset was loaded in the reviewed session.",
+  "authentication": {
+    "six_current_control_hashes_match_session_review_and_attempt": true,
+    "session_review_sha256": "bdc1f63acf7497e4cc61fff9fa68e18c046151acadf30a6b8df42ff8a3f3a592",
+    "attempt_review_hash_matches": true,
+    "input_manifest_hash_matches_attempt": true,
+    "host_reports_watched_input_sources_unchanged": true,
+    "source_bindings": {
+      "app_host.py": "6271e5caebf7c9e9d02d047ec4af8e114d4c6018b40397ab73cb57de7abed889",
+      "startup_probe.js": "892fc427a3b63c0f16bae4f695a1558fcf87cef0dc98f30db5a8c49d80c34410",
+      "renderer_observer.js": "51d2afa76d77d67c59f77613776293141ff7d730b6ced881fa7555ed6344daa8",
+      "inspect_app.mjs": "1d24386d957b5821fe0e3d68f84f695e7ef11e02c4f16886ea42218763506de7",
+      "cleanup_observer.js": "509c837ade41ce568af7fd3166a7ffbc71a7554fd8f65699fe3bfbac8a5148cd",
+      "shutdown_control.js": "5cc4b68686919c5e6ea00037499168ba1a917c3f4aa934dffb238033a0f866fc"
+    },
+    "public_control_hashes": {
+      "acceptance-plan.md": "2b1676de9b76bd6705c635aba7a6ff063443b0067ebbeaed137802bb55ad7623",
+      "preservation-before.json": "93cdcdae93e68591c461f38aee2462a357b4cd9483dd4265f905dc681abaa45c",
+      "source-review.json": "370a0e13b7dc27575cea5a1d5996d959aec429166a7ac74c1e97e9e67bba0ca2",
+      "session-review.json": "bdc1f63acf7497e4cc61fff9fa68e18c046151acadf30a6b8df42ff8a3f3a592"
+    },
+    "private_evidence_sha256": {
+      "app-host.json": "a4d2747b62ae75be8f22f2b19cec45f58179fce729b09b66d82515767dda0747",
+      "app-inputs.json": "5544282d6f85bd434773c631320cfc08ec1d00d502e9aa145cec480952a9f236",
+      "app-running.json": "4fbf69943370ff300ce903c0d3f489ea8de238eec3ef5ff012adfa7536b4612a",
+      "app-session-attempt.json": "873fef5e1042163dea15646c15c01c39120574baa3ab5193be498aa699f07c38",
+      "runtime-gate-failure.json": "0faaebe91e6bdc5066daf34e91bd682a4e4ae54c3799a8ea330a1d8af0f7432d",
+      "bootstrap-before-resume.json": "ef6356c88b19337ddafd87b6febc78f6565716ee1df30164ad3feadbac7bd906",
+      "known-blank-bootstrap.json": "74ddd40f2da50670c800ffc4f6f5df331bb1fae4806397c7702fdf60d8c67db0",
+      "startup-ready.json": "fb85204ab747b7532bddd74f75732ce53c216c3da732daa6715f6624a084fea7",
+      "controlled-quit.json": "c28e058e8edff5308e144961c00847ed8069e02992241e0fbc7be3880c9d064f",
+      "shutdown-request.json": "13fc89accf01fdf7580386744e79d4f073bcbdd04c7ca985c204f9456751495f",
+      "observer-restoration.json": "6850de0ce25e8da3e670d91bc2f312515dd91965e8869119b6c627c533561cc8",
+      "app-before-quit.json": "ffabc18bb71ed13ae4c3f1a1532f0920ccbbf80430931358cc78704e11c3a3b1",
+      "app-will-quit.json": "54c56695bcbc6e62303fa141ab6b48f114dd00ce0ff38e78c59263fe7b6d096c",
+      "app.stdout.txt": "25d8b5b6d85dd3f49b15d9d5895e910847ac68ccdba03ef010ee0f605de52c5d",
+      "app.stderr.txt": "952d007e469774e4cb8cc7daa6b915489c92501bba63418f3d2e22c2e8668b1c"
+    }
+  },
+  "runtime_gate": {
+    "classification": "BLOCKED",
+    "stage": "install-cleanup before any asset loading",
+    "exact_error": "Error: Missing installed closure attributes",
+    "location": "scopeNames -> installCleanup -> renderer WebGLRenderer.renderBufferDirect [[Scopes]] lookup",
+    "original_installed_app_ready": true,
+    "cleanup_observer_installed": false,
+    "tiny_imports": 0,
+    "master_imports": 0,
+    "alternate_capture_attempts": 0,
+    "interpretation": "Prepared scopeNames lookup could not obtain constructor-owned WebGLAttributes from the installed renderBufferDirect function scopes. Static source existence did not guarantee V8 runtime scope exposure. This is an instrumentation gate failure and establishes no production model cleanup defect. The reviewed admission plan stopped before the first asset and no alternate capture or second session was attempted."
+  },
+  "zero_import_evidence": {
+    "gate_receipt_reports_zero_tiny_and_master_imports": true,
+    "cleanup_installed_receipt_absent": true,
+    "logged_HTTP_request_count": 1,
+    "logged_HTTP_request_methods_and_paths": [
+      {
+        "method": "GET",
+        "path": "/health"
+      }
+    ],
+    "logged_import_or_asset_requests": 0,
+    "model_loaded_checkpoint_receipts": 0,
+    "limit": "Logs contain one GET/health and no import/asset request. This corroborates the recorded zero-load stopped sequence; access logs are not an exhaustive independent network trace."
+  },
+  "independent_verdicts": [
+    {
+      "criterion": "High-resolution model-specific cleanup",
+      "verdict": "BLOCKED",
+      "scope": "No master loaded; no new high-resolution model-owned measurements."
+    },
+    {
+      "criterion": "Tiny-fixture cleanup",
+      "verdict": "BLOCKED",
+      "scope": "No tiny fixture loaded; no warm baseline or tiny cleanup measurements."
+    },
+    {
+      "criterion": "Cache/reference release",
+      "verdict": "BLOCKED",
+      "scope": "Required live WebGLAttributes ownership gate failed before observer installation. No model URL cache membership, active references or buffer/material release was measured."
+    },
+    {
+      "criterion": "Orderly application shutdown",
+      "verdict": "PASS",
+      "qualification": "EMPTY_SESSION_ONLY",
+      "scope": "Normal Electron app.quit, observer restoration, main exit0 and zero owned Job processes without supervisor force demonstrated in this empty session. Post-master-load shutdown remains unverified."
+    },
+    {
+      "criterion": "High-Resolution Original Mesh workflow",
+      "verdict": "PARTIAL_ACCEPTANCE_RETAINED",
+      "scope": "Prior orbit/pan/zoom, practical framing, measured CPU responsiveness and master-to-small replacement acceptance is retained. Final model-specific/cache/reference cleanup qualification remains blocked; no prior unsupported claim is upgraded."
+    }
+  ],
+  "resource_interpretation": {
+    "model_scene_detachment": {
+      "status": "UNVERIFIED",
+      "reason": "No model scene created in this session."
+    },
+    "model_geometry_material_disposal": {
+      "status": "UNVERIFIED",
+      "reason": "No imported geometry or material observed."
+    },
+    "model_BVH_release": {
+      "status": "UNVERIFIED",
+      "reason": "No model BVH observed."
+    },
+    "GLTF_cache_invalidation": {
+      "status": "UNVERIFIED",
+      "reason": "No model URL loaded or tracked; ownership observer not installed."
+    },
+    "active_application_references_to_old_model": {
+      "status": "UNVERIFIED",
+      "reason": "No model object or reference census; no heap-collection conclusion."
+    },
+    "renderer_counters_and_shared_lazy_ownership": {
+      "status": "UNVERIFIED",
+      "reason": "Prepared ownership capture failed before an empty baseline receipt. Source-identified shared/lazy resources and missing-composer-disposal concern remain separately documented, without new runtime attribution."
+    },
+    "CPU_process_memory": {
+      "status": "MEASURED_EMPTY_SESSION_PEAKS_ONLY",
+      "peak_process_committed_bytes": 560934912,
+      "peak_job_committed_bytes": 971251712,
+      "limit": "These empty-session Windows Job/process committed-memory peaks are CPU/process measurements; no model CPU release or dedicated VRAM quantity follows."
+    },
+    "dedicated_GPU_memory": {
+      "status": "UNVERIFIED",
+      "reason": "No reliable dedicated-GPU-memory-byte measurement available in the saved session."
+    },
+    "garbage_collection": {
+      "status": "UNVERIFIED",
+      "reason": "No forced/proven collection and no model WeakRef history. Disposal and cache invalidation would not by themselves prove total collection."
+    }
+  },
+  "shutdown": {
+    "classification": "PASS_EMPTY_SESSION_ONLY",
+    "request_reason": "empty-viewer-ownership-gate-blocked",
+    "mechanism": "Electron app.quit",
+    "normal_request_elapsed_seconds": 70.71181964874268,
+    "observer_restored_elapsed_seconds": 70.71381950378418,
+    "before_quit_elapsed_seconds": 70.77081966400146,
+    "will_quit_elapsed_seconds": 71.55581951141357,
+    "host_elapsed_seconds": 76.28100000000268,
+    "main_process_exit_code": 0,
+    "owned_tree_exit_verified": true,
+    "active_before_Job_cleanup": 0,
+    "active_after_Job_cleanup": 0,
+    "supervisor_forced_Job_cleanup": false,
+    "restoration": {
+      "cleanup_observer": "notInstalled, so no model observer/listeners existed to stop",
+      "renderer_globals_removed": true,
+      "new_document_script_registration_removed": true,
+      "renderer_debugger_detached": true,
+      "loadFile_wrapper_restored": true,
+      "restoration_preceded_before_quit": true
+    },
+    "stock_backend": {
+      "source": "installed ASAR out/main/index.js",
+      "source_sha256": "b4be1acb38015aac55edb9459efebea886cf96406ecf05abe84e329341b44250",
+      "stop_excerpt_sha256_utf8": "9eb9c98dc00fb1f32bdd304ce818182de09ee6d9619754725e66bc6debdf844d",
+      "windows_stop_mechanism": "PythonBridge.stop invokes taskkill /PID <owned backend pid> /T /F, then logs Stopped. This belongs to the installed application shutdown path.",
+      "stdout_stopped_observed": true,
+      "stdout_backend_exit_code_1_observed": true,
+      "interpretation": "Normal application quit completed using the stock backend force-stop behavior. Backend code1 is reported explicitly; the session does not demonstrate graceful FastAPI termination. Stock backend taskkill is distinct from supervisor Job termination, which did not occur."
+    }
+  },
+  "resource_controls": {
+    "sample_count": 76,
+    "all_samples_admitted": true,
+    "minimum_available_windows_ram_bytes": 17236537344,
+    "minimum_destination_free_bytes": 135822696448,
+    "process_and_aggregate_job_cap_bytes": 6442450944,
+    "normal_shutdown_request_before_220_second_reserve": true,
+    "normal_shutdown_request_before_240_second_requirement": true,
+    "host_duration_below_360_second_cap": true
+  },
+  "retained_prior_evidence": {
+    "saved_viewer_outcome_sha256": "49613fad5e34eee0d6ca3ef2354e9c4ea81f996ffe421e1a410899ea43d585f0",
+    "accepted_operational_items": [
+      "orbit",
+      "pan",
+      "zoom",
+      "practical framing",
+      "measured CPU responsiveness",
+      "master-to-small replacement"
+    ],
+    "retained_cleanup_observations": "Prior geometry/material dispose events, BVH removal and detachment remain limited saved observations. Prior residual renderer counts/WeakRefs did not prove a leak. The earlier480s supervisor-forced exit remains blocked and is not relabelled by this separate empty-session normal quit."
+  },
+  "next_action_boundary": "Stop after this qualification publication. No automatic new application session, alternate capture, full-model reimport, production fix or acceptance research. Carry the blocked noncritical ownership-observation concern separately while prioritising the already verified AMD generation/colour/export workflow integration.",
+  "reviewer_application_diagnostic_UI_native_asset_execution_count": 0
+}

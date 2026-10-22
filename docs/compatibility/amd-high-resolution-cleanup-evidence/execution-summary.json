@@ -1,0 +1,131 @@
+{
+  "schema": "modly.high-resolution-cleanup.execution-summary.v1",
+  "created_utc": "2026-10-22T21:02:21.325919+00:00",
+  "classification": "BLOCKED",
+  "source_base": "bc9515fbbdc8e28cdc58b47bc1b32f4ed3369ad4",
+  "branch": "codex/amd-high-resolution-cleanup-qualification",
+  "single_app_session": true,
+  "master_imports": 0,
+  "tiny_imports": 0,
+  "normal_ui_input_actions": 0,
+  "runtime_blocker": {
+    "schema": "modly.cleanup.empty-viewer-gate-failure.v1",
+    "created_utc": "2026-10-22T20:59:55.907251+00:00",
+    "classification": "BLOCKED",
+    "stage": "install-cleanup before any asset loading",
+    "exact_error": "Error: Missing installed closure attributes",
+    "location": "scopeNames -> installCleanup -> renderer WebGLRenderer.renderBufferDirect [[Scopes]] lookup",
+    "bootstrap_completed": true,
+    "original_app_page_ready": true,
+    "installed_observer": false,
+    "tiny_imports": 0,
+    "master_imports": 0,
+    "alternate_capture_attempts": 0,
+    "notes": [
+      "Installed source established attributes exists as a constructor variable; this does not guarantee V8 exposes it in this function scope.",
+      "No production leak or model cleanup conclusion follows from this observer gate failure.",
+      "Initial local helper bootstrap fetch was blocked by sandbox EACCES127.0.0.1 before attachment; the same paused owned process was then attached in the authorized desktop context. No second app was started."
+    ]
+  },
+  "independent_verdicts": {
+    "high_resolution_model_specific_cleanup": "BLOCKED_NOT_EXERCISED",
+    "tiny_fixture_cleanup": "BLOCKED_NOT_EXERCISED",
+    "cache_and_known_active_reference_release": "BLOCKED_NOT_EXERCISED",
+    "orderly_app_shutdown": "PASS_EMPTY_PREFLIGHT_SESSION_ONLY",
+    "high_resolution_original_mesh_workflow": "PREVIOUS_PARTIAL_ACCEPTANCE_RETAINED"
+  },
+  "model_owned_resource_observations": "UNVERIFIED: failed mandatory empty-viewer capture before asset load",
+  "host": {
+    "classification": "PASS",
+    "returncode": 0,
+    "elapsed_seconds": 76.28100000000268,
+    "memory_cap_bytes": 6442450944,
+    "session_deadline_seconds": 360,
+    "per_import_deadline_seconds": 180,
+    "peak_process_committed_bytes": 560934912,
+    "peak_job_committed_bytes": 971251712,
+    "job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "input_sources_unchanged": true
+  },
+  "monitoring": {
+    "samples": 76,
+    "all_admitted": true,
+    "minimum_available_ram_bytes": 17236537344,
+    "minimum_free_disk_bytes": 135822696448
+  },
+  "normal_shutdown": {
+    "request": {
+      "at": "2026-10-22T20:59:52.427Z",
+      "elapsedSeconds": 70.71181964874268,
+      "reason": "empty-viewer-ownership-gate-blocked",
+      "mechanism": "Electron app.quit",
+      "supervisorForce": false
+    },
+    "observer_restoration": {
+      "at": "2026-10-22T20:59:52.429Z",
+      "elapsedSeconds": 70.71381950378418,
+      "restored": true,
+      "renderer": {
+        "stopped": {
+          "notInstalled": true
+        },
+        "globalsRemoved": true
+      },
+      "registrationRemoved": true,
+      "rendererDebuggerDetached": true,
+      "loadFileWrapperRestored": true
+    },
+    "before_quit": {
+      "at": "2026-10-22T20:59:52.486Z",
+      "elapsedSeconds": 70.77081966400146,
+      "requested": true,
+      "restored": true
+    },
+    "will_quit": {
+      "at": "2026-10-22T20:59:53.271Z",
+      "elapsedSeconds": 71.55581951141357,
+      "requested": true,
+      "restored": true
+    },
+    "backend_note": "Installed stock PythonBridge logs Stopped and Process exited with code1. Prior pinned source uses taskkill/T/F for backend shutdown. This differs from supervisor-forced Job cleanup, which did not occur. No claim all backend children exited gracefully."
+  },
+  "dedicated_gpu_memory": "UNVERIFIED_NOT_MEASURED",
+  "source_bindings_verified": {
+    "app_host.py": "6271e5caebf7c9e9d02d047ec4af8e114d4c6018b40397ab73cb57de7abed889",
+    "startup_probe.js": "892fc427a3b63c0f16bae4f695a1558fcf87cef0dc98f30db5a8c49d80c34410",
+    "renderer_observer.js": "51d2afa76d77d67c59f77613776293141ff7d730b6ced881fa7555ed6344daa8",
+    "inspect_app.mjs": "1d24386d957b5821fe0e3d68f84f695e7ef11e02c4f16886ea42218763506de7",
+    "cleanup_observer.js": "509c837ade41ce568af7fd3166a7ffbc71a7554fd8f65699fe3bfbac8a5148cd",
+    "shutdown_control.js": "5cc4b68686919c5e6ea00037499168ba1a917c3f4aa934dffb238033a0f866fc"
+  },
+  "focused_mock_tests": {
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "limit": "CPU fixtures; V8 scope accessibility was unproved and genuinely failed."
+  },
+  "private_sha256": {
+    "app-host.json": "a4d2747b62ae75be8f22f2b19cec45f58179fce729b09b66d82515767dda0747",
+    "app-inputs.json": "5544282d6f85bd434773c631320cfc08ec1d00d502e9aa145cec480952a9f236",
+    "app-session-attempt.json": "873fef5e1042163dea15646c15c01c39120574baa3ab5193be498aa699f07c38",
+    "bootstrap-before-resume.json": "ef6356c88b19337ddafd87b6febc78f6565716ee1df30164ad3feadbac7bd906",
+    "known-blank-bootstrap.json": "74ddd40f2da50670c800ffc4f6f5df331bb1fae4806397c7702fdf60d8c67db0",
+    "startup-ready.json": "fb85204ab747b7532bddd74f75732ce53c216c3da732daa6715f6624a084fea7",
+    "runtime-gate-failure.json": "0faaebe91e6bdc5066daf34e91bd682a4e4ae54c3799a8ea330a1d8af0f7432d",
+    "controlled-quit.json": "c28e058e8edff5308e144961c00847ed8069e02992241e0fbc7be3880c9d064f",
+    "shutdown-request.json": "13fc89accf01fdf7580386744e79d4f073bcbdd04c7ca985c204f9456751495f",
+    "observer-restoration.json": "6850de0ce25e8da3e670d91bc2f312515dd91965e8869119b6c627c533561cc8",
+    "app-before-quit.json": "ffabc18bb71ed13ae4c3f1a1532f0920ccbbf80430931358cc78704e11c3a3b1",
+    "app-will-quit.json": "54c56695bcbc6e62303fa141ab6b48f114dd00ce0ff38e78c59263fe7b6d096c",
+    "app.stdout.txt": "25d8b5b6d85dd3f49b15d9d5895e910847ac68ccdba03ef010ee0f605de52c5d",
+    "app.stderr.txt": "952d007e469774e4cb8cc7daa6b915489c92501bba63418f3d2e22c2e8668b1c",
+    "screenshots/initial-empty.jpg": "7c22e4040bab760a35a90882080af4c571b2202b3979276e7b4f57613d562826"
+  },
+  "recommendation": "No automatic new application test. Carry the unverified noncritical resource concern separately; next separately approved product work should prioritize integrating the already verified AMD generation/colour/export pipeline."
+}
