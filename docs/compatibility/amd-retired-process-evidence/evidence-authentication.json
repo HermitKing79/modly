@@ -1,0 +1,195 @@
+{
+  "schema": "modly.amd.retired-process-evidence-authentication.v1",
+  "classification": "PASS_AUTHENTICATED_SAVED_FAILURE_ONLY",
+  "base_commit": "060d560e00d52d4e7ffbe2a4ef190cc1ccb37007",
+  "reviewed_utc": "2026-10-22T23:11:41.638654+00:00",
+  "scope": "Independent read-only saved-data and exact committed-source review. Original API Python -B ran stdlib file, hash and JSON checks only; no worker, Windows process API probe, WSL, GPU, model load, repair or retry.",
+  "prior_committed_report": "docs/compatibility/amd-sentinel-winerror-evidence/independent-outcome-review.json",
+  "prior_committed_report_sha256": "33d1900863d2c52e49ef7830977df7cd518c316146ea4a73b9036127a6c5441c",
+  "prior_committed_source": "api/services/amd_stage_process.py",
+  "prior_committed_source_blob_sha256": "15bc59807af9e17ed44b53a72fe895ff40ffce5dfeb4f4c374fa07109af560ba",
+  "private_raw_root": "artifacts/amd-sentinel-winerror-20e79f4/cpu-once",
+  "raw_integrity": {
+    "expected_count": 33,
+    "actual_count": 33,
+    "total_bytes": 19842689,
+    "missing_extra_size_or_sha256_mismatches": 0,
+    "raw_read_only": true
+  },
+  "authenticated_failure": {
+    "api": "QueryFullProcessImageNameW",
+    "immediate_winerror": 5,
+    "stage_phase": "host.observe",
+    "before_shutdown": true,
+    "limited_open_mask": "0x1000",
+    "current_handle_open_succeeded": true,
+    "same_held_handle_and_private_job_for_membership_creation_image_query": true,
+    "membership_call_succeeded": true,
+    "member_true_in_current_creation_receipt": true,
+    "creation_time_call_succeeded": true,
+    "current_identity_from_held_handle": true,
+    "before_exit_code": 0,
+    "after_exit_code": 0,
+    "exit_probes_successful": true,
+    "exact_prior_outer_image_count": 1,
+    "prior_image_nonempty": true,
+    "prior_successful_native_query_for_exact_pid_creation_job_count_in_recent_trace": 4,
+    "prior_image_receipt_predates_failure": true,
+    "exact_sentinel_identity_matches": 1,
+    "exact_target_identity_matches": 0,
+    "raw_identity_values_published": false
+  },
+  "settlement": {
+    "target_terminal": "cancelled",
+    "target_returncode": 0,
+    "target_natural": true,
+    "target_forced": false,
+    "target_final_active": 0,
+    "sentinel_natural": false,
+    "sentinel_final_active": 0,
+    "sentinel_qualification": "BLOCKED",
+    "outer_classification": "BLOCKED",
+    "outer_forced_cleanup": true,
+    "outer_final_active": 0
+  },
+  "interpretation_limits": [
+    "The failing observation is against an already terminated identity authenticated previously in the exact outer Job.",
+    "The evidence does not establish the Windows internal reason for denying the image-name query.",
+    "The older pre-diagnostic failure remains unproven; this authenticates only the saved diagnostic attempt.",
+    "A zero final active count after forced cleanup does not qualify natural settlement."
+  ],
+  "raw_file_sha256": {
+    "attempt.json": {
+      "bytes": 1411,
+      "sha256": "72c6de6c9034011b04b9a9a401d34de2f5ca4fc2fc21b93c5a7f8f7e34d28c61"
+    },
+    "host-cancel.json": {
+      "bytes": 117,
+      "sha256": "d08a129636c25579406fb242e3815afb76a7fc0e8b05aa74407d65715c6175a7"
+    },
+    "host-result.json": {
+      "bytes": 393888,
+      "sha256": "69a872c3fcaca9ec5ebe4dfda349dce84c12c865eb53db34f95b30ed8d9a1468"
+    },
+    "host-trace.jsonl": {
+      "bytes": 235500,
+      "sha256": "08aed29f2fd025f47b50fa78fbb16d1bad866bde7e8825abc6dac43dec6f1dbb"
+    },
+    "sentinel-receipt.json": {
+      "bytes": 2300229,
+      "sha256": "04422b85b35c8d5afc346aec6c7955cc171a3a4bade865eb4572305cc93838d2"
+    },
+    "target-receipt.json": {
+      "bytes": 1932967,
+      "sha256": "81f8436b6bbf34676a951ae2f49ad35397ce4a6eba10c7798becd43592ac594c"
+    },
+    "windows-controls.json": {
+      "bytes": 10175431,
+      "sha256": "c07b9e0fcd0d9424f9d7f554b1f92d0841cdfbfe78e26b214f6cd8bba0e6a921"
+    },
+    "worker-ready.json": {
+      "bytes": 22,
+      "sha256": "17d2077c2c0d2f22e72b47c9a8e188d7d0ad86b23aaf284c4dfeee43657b6fd9"
+    },
+    "worker-trace.jsonl": {
+      "bytes": 517989,
+      "sha256": "69417c1a3a11578b8874c3457924a6d9a7919ad5e1546e03a15cf4bbac3d51c3"
+    },
+    "worker.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sentinel-process/independent-sentinel/bootstrap.stderr.txt": {
+      "bytes": 1004,
+      "sha256": "16a8571b903a57a69eac93346bd05173034462720402f69a258b0182090097d3"
+    },
+    "sentinel-process/independent-sentinel/launch.json": {
+      "bytes": 1336,
+      "sha256": "617cccb363b29e1a2c03df691830489154e91a6d8da93f20a7726612da198c29"
+    },
+    "sentinel-process/independent-sentinel/protocol.jsonl": {
+      "bytes": 22904,
+      "sha256": "1ca22a63fc46daa25af721f400dbfc8ae1ab30e8fdf515aff9285933e73b9d78"
+    },
+    "sentinel-process/independent-sentinel/receipt.json": {
+      "bytes": 2300227,
+      "sha256": "346a39a68a4145b23f9ddf1296aee85a22f700d8b3a7f9446dacde3e373911b4"
+    },
+    "sentinel-process/independent-sentinel/stage.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sentinel-process/independent-sentinel/stage.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-process/cancel-target/bootstrap.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-process/cancel-target/cancel-ack.json": {
+      "bytes": 545,
+      "sha256": "325837d017fd26475bffc09b4d0bc181d90cc28af7c07bb8913e56cd401321f4"
+    },
+    "target-process/cancel-target/launch.json": {
+      "bytes": 1298,
+      "sha256": "2b34160a1656a817fab46e151779953171ec04933e6180b0a07b23a2dcf1a01b"
+    },
+    "target-process/cancel-target/protocol.jsonl": {
+      "bytes": 19437,
+      "sha256": "256dd697baac688ca6c6a9242ec7152b6ba9a89a5f78a7032cb598fa10f7d671"
+    },
+    "target-process/cancel-target/receipt.json": {
+      "bytes": 1932965,
+      "sha256": "ce1d4cd0ed18983a58db7832a988dbc4c878f9ca7fd96008a73a1385082f2557"
+    },
+    "target-process/cancel-target/stage.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-process/cancel-target/stage.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "windows-controls/cancel-target/child-ready.json": {
+      "bytes": 481,
+      "sha256": "936fb0f1e23c04deaec9d323e75bb15ecfb66cfbfc406f5c816c13e47d9980d4"
+    },
+    "windows-controls/cancel-target/grandchild-ready.json": {
+      "bytes": 460,
+      "sha256": "4f082399608b3eb355afb5697d0b2f4224fdd26f39a887c8646d3d057f37d636"
+    },
+    "windows-controls/cancel-target/ready.json": {
+      "bytes": 1011,
+      "sha256": "4ca60aa77d215d765802d9fb5c750a665f09d0f49a45c0bf18a391aeeb0d0518"
+    },
+    "windows-controls/cancel-target/stop.json": {
+      "bytes": 475,
+      "sha256": "0fd36b41bbd9df2066d529d09fe8ee08c7b87d7f527650505173a2dc80c43c0d"
+    },
+    "windows-controls/independent-sentinel/child-ready.json": {
+      "bytes": 482,
+      "sha256": "38567f0f79b2d3d6218557a12ce85bb6300a6ff78bef3d6b3a287c89e486b3cd"
+    },
+    "windows-controls/independent-sentinel/grandchild-ready.json": {
+      "bytes": 461,
+      "sha256": "792d80367b22a7b952174983f95e801facfa3f4f6b768384fc16bc30a3f2ed51"
+    },
+    "windows-controls/independent-sentinel/ready.json": {
+      "bytes": 1020,
+      "sha256": "54787ac7d79821f2cb172142dc33af3f1c8c03b05c33cdca72d7be6dfdbf88ff"
+    },
+    "windows-controls/independent-sentinel/sentinel-release.json": {
+      "bytes": 545,
+      "sha256": "e9819836ab6805595a78a0753ba03cca09d07afd9c6010f4fe76a1fefc7d202c"
+    },
+    "windows-controls/independent-sentinel/stop.json": {
+      "bytes": 484,
+      "sha256": "348174bc0d553481b0493c03982ed87a0b1f41ed9dbe7b93445c79f3df784e20"
+    }
+  }
+}

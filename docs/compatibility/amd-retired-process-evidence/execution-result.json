@@ -1,0 +1,77 @@
+{
+  "schema": "modly.retired-process-execution.v1",
+  "overall": "BLOCKED",
+  "actual_control_pairs": 1,
+  "verdicts": {
+    "terminated_process_observation": "PASS",
+    "Windows_target_cancellation": "BLOCKED",
+    "independent_sentinel_natural_completion": "BLOCKED",
+    "complete_Windows_control_pair": "BLOCKED",
+    "full_AMD_orchestrator": "NOT_QUALIFIED",
+    "WSL": "NOT_RUN",
+    "fresh_GPU_generation": "NOT_RUN"
+  },
+  "failure": {
+    "worker": "Original fixtures not authenticated ready",
+    "both_fixture_stderr": "TimeoutError: Fixture descendants did not start",
+    "fixture_source": "docs/compatibility/amd-job-stage-orchestrator-evidence/cpu_stage_fixture.py",
+    "fixture_source_line": 50,
+    "original_descendant_readiness_deadline_seconds": 5,
+    "both_parent_ready_files_absent": true,
+    "child_and_grandchild_ready_files_present_after_exit": true,
+    "underlying_startup_delay_cause": "UNPROVEN",
+    "native_error_records": 0,
+    "normal_target_cancellation_or_sentinel_release_admission_reached": false
+  },
+  "measurements": {
+    "elapsed_seconds": 24.375,
+    "peak_owned_process_bytes": 73998336,
+    "peak_Job_bytes": 114720768,
+    "minimum_available_RAM_bytes": 17455673344,
+    "minimum_destination_free_bytes": 135188844544,
+    "owned_processes_accounted": 23,
+    "final_active": 0,
+    "forced_outer_cleanup": false
+  },
+  "inner": {
+    "target": {
+      "terminal": "cancelled",
+      "natural": false,
+      "forced": true,
+      "windows_settled": true,
+      "returncode": 1,
+      "bootstrap_returncode": 0,
+      "elapsed_s": 18.781999999991967
+    },
+    "sentinel": {
+      "terminal": "cancelled",
+      "natural": false,
+      "forced": true,
+      "windows_settled": true,
+      "returncode": 1,
+      "bootstrap_returncode": 0,
+      "elapsed_s": 17.89100000000326
+    }
+  },
+  "sources_unchanged": true,
+  "admission_unchanged": true,
+  "interpreter_unchanged": true,
+  "raw_controls_bytes": 27416752,
+  "control_verdict_sha256": "9f92d72101631b6f3ebe5a08d4e5644f4959523b437161672f5df27422ef01fc",
+  "raw_sha256": {
+    "attempt.json": "99f57dc26b894bf1825ad033b320318efe062d71b1bd61168a4fdf338d7f0943",
+    "host-result.json": "bf552263fc1e69372e41f3f106e524d84875fb40c9a968e344f698a34bb5eaf3",
+    "windows-controls.json": "68b739b5b5b3272d563cb250d45c0b434679473be4d06c716845033d8a53504e",
+    "control-verdict.json": "9f92d72101631b6f3ebe5a08d4e5644f4959523b437161672f5df27422ef01fc",
+    "host-trace.jsonl": "990d1ffeda5f5d3c8c3637069e0c26cc0b227c5e8da03e7da59c1930a9e5b38c",
+    "worker-trace.jsonl": "0bc12ad36799689a311d12fb35ad5d9025dcdc866c46af5e8c92bc0c4a600ee7"
+  },
+  "no_fix_or_retry_after_execution": true,
+  "correction_verification": {
+    "scope": "Reviewed source,53 mocked checks and saved native retired-identity observations; not a complete lifecycle PASS",
+    "unique_Job_scoped_retired_identities": 19,
+    "physical_process_count_claim": false,
+    "invalid_provenance_or_259_reuse": 0,
+    "independent_evidence": "independent-outcome-review.json"
+  }
+}

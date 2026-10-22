@@ -164,6 +164,8 @@ class _OwnedJob:
         self._identity(proc.pid, int(proc._handle))
 
     def _identity(self, pid, handle):
+        if not self.handle or not handle:
+            raise RuntimeError('Current process and exact private Job handles are required')
         member = wt.BOOL()
         self._call('IsProcessInJob', handle, self.handle, ctypes.byref(member), pid=pid, process_handle=handle)
         if not member.value:
@@ -173,12 +175,47 @@ class _OwnedJob:
         created = values[0].dwLowDateTime | values[0].dwHighDateTime << 32
         self.creation_identities[pid] = {'pid': pid, 'creation_filetime': created, 'job_membership_verified': True,
                                          'observed_utc': _utc(), 'queried_process_handle': int(handle)}
+        status = wt.DWORD()
+        self._call('GetExitCodeProcess', handle, ctypes.byref(status), pid=pid, process_handle=handle, identity_current=True)
+        observed = _utc()
+        exit_observation = {'api': 'GetExitCodeProcess', 'succeeded': True, 'exit_code': status.value,
+                            'termination_verified': status.value != 259, 'observed_utc': observed,
+                            'process_handle': int(handle)}
+        if status.value != 259:
+            cached = self.identities.get((pid, created), {})
+            source = cached.get('image_authentication', {})
+            if not (cached.get('pid') == pid and cached.get('creation_filetime') == created
+                    and cached.get('job_membership_verified') is True
+                    and cached.get('job_owner') == self.job_owner and cached.get('job_handle') == int(self.handle)
+                    and isinstance(cached.get('image'), str) and cached['image']
+                    and source.get('api') == 'QueryFullProcessImageNameW' and source.get('succeeded') is True
+                    and source.get('pid') == pid and source.get('creation_filetime') == created
+                    and source.get('job_owner') == self.job_owner and source.get('job_handle') == int(self.handle)
+                    and source.get('image') == cached['image'] and isinstance(source.get('observed_utc'), str)
+                    and source['observed_utc']):
+                raise RuntimeError('Terminated member lacks prior native image authentication for this exact Job and creation identity')
+            self.identities[(pid, created)] = dict(cached, observed_utc=observed,
+                observed_alive={'alive': False, 'exit_code': status.value, 'probe_winerror': None},
+                exit_observation=exit_observation, identity_source='verified-retired-cache',
+                retired_identity_reuse={'job_owner': self.job_owner, 'job_handle': int(self.handle),
+                    'pid': pid, 'creation_filetime': created, 'process_handle': int(handle),
+                    'source_query_utc': source['observed_utc'], 'observed_utc': observed})
+            return
+        # 259 is ambiguous and never authorizes cache reuse. Native image
+        # authentication remains mandatory; any failure is retained unchanged.
         size = wt.DWORD(32768)
         image = ctypes.create_unicode_buffer(size.value)
         self._call('QueryFullProcessImageNameW', handle, 0, image, ctypes.byref(size), pid=pid, process_handle=handle, identity_current=True)
+        authenticated = _utc()
         self.identities[(pid, created)] = {"pid": pid, "creation_filetime": created,
                                           "image": image.value, "job_membership_verified": True,
-                                          'observed_utc': _utc(), 'observed_alive': self._alive(handle)}
+            'job_owner': self.job_owner, 'job_handle': int(self.handle), 'identity_source': 'native-image-query',
+            'image_authentication': {'api': 'QueryFullProcessImageNameW', 'succeeded': True,
+                'pid': pid, 'creation_filetime': created, 'image': image.value,
+                'job_owner': self.job_owner, 'job_handle': int(self.handle),
+                'process_handle': int(handle), 'observed_utc': authenticated},
+            'exit_observation': exit_observation, 'retired_identity_reuse': None,
+            'observed_utc': authenticated, 'observed_alive': self._alive(handle)}
 
     def snapshot(self):
         accounting, limits = _Accounting(), _Limits()

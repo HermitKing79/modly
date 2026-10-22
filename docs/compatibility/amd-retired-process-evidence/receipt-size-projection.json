@@ -1,0 +1,9 @@
+{
+  "scope": "CPU serialization size projection using prior saved observations; NOT a new native run or actual future memory measurement",
+  "previous_raw_bytes": 10175431,
+  "image_identity_occurrences": 16827,
+  "projected_native_provenance_bytes": 27573739,
+  "old_JSON_read_cap_bytes": 16777216,
+  "exceeds_old_read_cap": true,
+  "selected_correction": "Keep original bounded JSON reader. New copied harness writes a tiny verdict receipt bound to complete raw-controls bytes and streamed SHA256; host authenticates that receipt and streamed file identity. Independent post-exit review reads full private raw observations. No acceptance criteria or memory caps increased."
+}

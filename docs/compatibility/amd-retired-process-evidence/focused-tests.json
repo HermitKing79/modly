@@ -1,0 +1,13 @@
+{
+  "schema": "modly.retired-identity-tests.v1",
+  "os_boundaries": "MOCKED; no native Windows Job, worker or WSL launch",
+  "initial_RED": "Original code:12 new retired tests produced1failure+10errors;3 bounded-verdict tests subsequently failed before helper existed",
+  "tests": 53,
+  "returncode": 0,
+  "log_sha256": "0b6a677b8e5960e2ddbb6d6e81de54627e552617dc34e4ba837cd90c6a349370",
+  "source_sha256": {
+    "api/services/amd_stage_process.py": "60815a03ad3d24bd01e8ed6b936f31b2d37a0fc38b1e099a6f44257a1dfeadf6",
+    "api/tests/test_amd_stage_diagnostics.py": "46fbf64240a27b7fe09e69f15ca5c4923611ab3c4c5faca1a77b2dae0932a478",
+    "docs/compatibility/amd-retired-process-evidence/windows_qualification.py": "49e9be974dec4b96b4cf24a7ddc90baedaffe83bcb11203f2051d94e1a736110"
+  }
+}
