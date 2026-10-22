@@ -1,0 +1,147 @@
+{
+  "schema": "modly.clean-target.independent-constructor-outcome.v1",
+  "classification": "BLOCKED",
+  "verdicts": {
+    "clean_geometry_feasibility": "BLOCKED: exact native input transport was not qualified; no clean target was generated.",
+    "brick_control_quality": "NOT_RUN",
+    "foliage_stress_quality": "NOT_RUN",
+    "source_appearance_transfer": "NOT_RUN",
+    "runtime_memory_safety": {
+      "constructor_probe_containment": "PASS",
+      "target_runtime": "UNQUALIFIED: no target operation ran."
+    }
+  },
+  "evidence_SHA256": {
+    "private_import_result": "06c6277e175e534996b738c552d69783960d105a676330214c6b867b5f9b966e",
+    "private_import_host": "305cf4de32c08ceab8b907fac4ac49ce4899886973d3191a166fc523050ea038",
+    "private_import_attempt": "634b9b018a038950627ce28dd9996133772682a467a78af0ad14d61b1368e45f",
+    "private_brick_before_constructor": "c7a0f1f0ac870faddd38409c68b0c2c63f3fb76f3ef60be65834363db07b0434",
+    "private_brick_result": "52fb8391626b704a82cec821703dd3b3406bf3e1663b03e812af610cd17620ca",
+    "independent_import_review": "a512e1d2fb8c8e1ee679903e240acf6462f96fc4ce4ce67c7b0f8bc14d74bf39",
+    "constructor_plan": "0643d465f71e9c667c35b875b2d09591a4ec9582791b99d1a3c67a81d2ba0629",
+    "focused_tests": "6022dc0938d41f040ac1dab3f0626e82073f9f153739c879b1edea0fb160355a",
+    "input_manifest": "aeb98fd9411ab718d7fd439f6345ad2e10927f55371a4d3c6bce4f22b39204bb",
+    "constructor_library_pins": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+    "installed_method_audit": "4efe429133d05c5fd609c26d368316babaae80d06a684a80988cc9b961b0b50b",
+    "patch_authentication": "d77e46df7dfc163a8d6b08153ae5a059b7625a3b04eead89b4c0e9d09bceea2e"
+  },
+  "source_SHA256": {
+    "common.py": "96a7cac519ce4a0f57307672ae1895b33b5eb1d0fc581dc9f3d1e3202c45b77d",
+    "import_probe.py": "14a88253ff5764df843467a415375562fbc010785bbb74451d64ee4fcb1656e7",
+    "run_host.py": "7f2716291b73bf8539d1bffb7fab3c2357d421f4e5ca37c87149321ef9ab991c",
+    "test_probe.py": "97fb177b67bab00b81fc467c228ec70d42222d77cac78a61796b410a57c1a75a"
+  },
+  "observed_execution": {
+    "worker_classification": "BLOCKED",
+    "host_classification": "BLOCKED",
+    "constructor_attempts": {
+      "total": 1,
+      "brick": 1,
+      "foliage": 0
+    },
+    "remesh_calls": 0,
+    "target_generation_calls": 0,
+    "brick_constructor_returned": true,
+    "native_geometry_readback_arrays_saved": 0,
+    "foliage_output_directory_created": false,
+    "constructors_completed": false,
+    "worker_elapsed_seconds": 0.9369999999908032,
+    "host_elapsed_seconds": 3.125
+  },
+  "failure": {
+    "classification": "Unexpected harness/API scalar-output readback fault; input admission incomplete.",
+    "source": "import_probe.py:125",
+    "expression": "int(skipped.value)",
+    "exception_type": "RuntimeError",
+    "message": "Expected exactly one value.",
+    "installed_API_contract": "mrmeshpy.pyi int_output.value returns a scalar only when its internal scalar list contains exactly one value; otherwise it throws.",
+    "interpretation": "The saved traceback establishes that the required one-value counter readback was unavailable. The constructor call returned before this getter failed. No exact native geometry or topology qualification was reached.",
+    "limitation": "No further native observation established the internal counter container contents or the constructor-overload cause. No numeric/topology method failure, remesh quality result or general method impossibility is inferred."
+  },
+  "checks_reached": [
+    "Owned binary GO, pinned CPU guard installation, authenticated bounded patch and library inputs, then NumPy/MeshLib imports.",
+    "Brick input schema, finite positions, triangle-index bounds and unique original source IDs; bounded original source incidence/component statistics.",
+    "Exclusive pre-constructor journal and the single explicit nonduplicating brick constructor call.",
+    "Constructor returned; failed-face bitset conversion and equality against the settings region preceded the failing skipped-counter getter."
+  ],
+  "checks_not_completed": [
+    "Zero skipped/failed native faces, dense unchanged valid native vertex/face IDs, and actual native point/triangle readbacks.",
+    "Exact native position bits, per-FaceId oriented triangle multiplicity, source correspondence, native input immutability and durable geometry-array readback.",
+    "Foliage constructor admission, original non-manifold sheet pairing, remesh admission, target construction and every target geometry/appearance quality gate."
+  ],
+  "brick_original_patch_statistics": {
+    "vertices": 457,
+    "triangles": 781,
+    "unique_source_edges": 1243,
+    "boundary_source_edges": 147,
+    "nonmanifold_source_edges": 4,
+    "maximum_source_edge_incidence": 3,
+    "edge_connected_face_components": 1,
+    "vertex_connected_face_components": 1
+  },
+  "runtime_probe": {
+    "classification": "PASS",
+    "scope": "Containment and observed resource health for this stopped constructor probe only.",
+    "attached_before_GO": true,
+    "exact_binary_GO_sent": true,
+    "returncode": 0,
+    "memory_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "peak_process_committed_bytes": 168378368,
+    "peak_job_committed_bytes": 169218048,
+    "minimum_observed_available_RAM_bytes": 19382935552,
+    "minimum_observed_destination_free_bytes": 107415007232,
+    "all_observed_resource_floors_admitted": true,
+    "sources_unchanged": true,
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "host_classification_explanation": "Host correctly remained BLOCKED because worker PASS is mandatory, despite healthy containment and natural returncode zero."
+  },
+  "independent_audit": {
+    "saved_top_manifest_entries_hashed": 2,
+    "nested_private_manifest_entries_hashed": 1,
+    "review_source_plan_log_input_and_library_manifest_bindings_match": true,
+    "new_patch_array_reads": 0,
+    "native_imports_or_calls": 0,
+    "worker_reruns": 0,
+    "source_edits": 0,
+    "raw_geometry_in_this_receipt": false,
+    "blocking_evidence_consistency_findings": []
+  },
+  "disposition": "Stop all native calls under this mission. Preserve the original source, failed worker/host receipts and private artifacts. No repair, retry, alternate constructor, alternative method or target operation is authorised by this outcome.",
+  "publication_review": {
+    "classification": "PASS_WITH_RECORDED_SCOPE",
+    "prior_outcome_SHA256": "9306dc514942e4bde26ee00be3d4ed0cd176a0cbe2922aff1914cf0781c0945f",
+    "report_SHA256": "db02666a03efc536702f8818cbf47cf0d85dda86b4c6fb34b6fc7e21c7369c5f",
+    "public_constructor_result_SHA256": "06c6277e175e534996b738c552d69783960d105a676330214c6b867b5f9b966e",
+    "public_constructor_host_SHA256": "305cf4de32c08ceab8b907fac4ac49ce4899886973d3191a166fc523050ea038",
+    "execution_evidence_SHA256": "4974bc5fa1e25dce0ba242b4d62ecd39b2c836131c461195592966b562b6ac93",
+    "preservation_before_SHA256": "2183260491c0c8b3db02ba5c5aee6980cfb9bcf65f5fd9630e13208b1b27c096",
+    "preservation_after_SHA256": "9baf211577162a53a9048dc1cfb42aec7654e17f584f3949d05bf3c4cf85d1bd",
+    "evidence_local_attributes_SHA256": "83929f3c90240e2e2c6804a97c1a85888cedf6b93353304751f3750e4f566e29",
+    "public_result_and_host_byte_exact_private_copies": true,
+    "source_hashes_still_match_pre_execution_review": true,
+    "public_scalar_resources_and_counters_match_saved_host_and_worker": true,
+    "execution_RAM_minimum_includes_initial_admission": true,
+    "report_consistency": "Report distinguishes the unexpected counter adapter failure from an untested method or geometry result, marks all target/appearance quality as not run, separates probe containment PASS from target runtime, and retains no retry/fallback disposition.",
+    "source_safety": "Reviewed report and public evidence contain source/API text, synthetic fixtures, hashes, provenance references, scalar measurements and the exact failure traceback. No actual source/target geometry arrays, models, images or private geometry payloads are present in the publication directory.",
+    "preservation_receipt_review": {
+      "classification": "PASS_WITH_RECORDED_SCOPE",
+      "protected_files": 100,
+      "prior_tree_count": 65,
+      "prior_tree_file_count": 1882,
+      "prior_report_count": 30,
+      "remote_heads": 110,
+      "reported_preservation_checks_pass": true,
+      "public_to_private_detail_hashes_match": true,
+      "scope": "Independent review verifies the saved preservation receipts and their private detail identities, not a second preservation/data audit. Recorded scope limits remain: selected SDK size/SHA checks have no mtime baseline, checkpoint payloads were not reread, and the historical cache incident retains its original and reconciled evidence. The preservation audit no-native-execution statement applies to that audit, not the separately recorded constructor worker."
+    },
+    "attribute_scope": "Evidence-local .gitattributes applies only within this evidence tree and disables text normalization so reviewed source/log/receipt bytes can be preserved in Git. Final staging/blob identity checks remain root-owned.",
+    "resolved_publication_scalar_finding": "Execution evidence now includes initial admission when computing observed minimum available RAM; this corrects only a public scalar summary and changes no worker, gate or verdict.",
+    "worker_reruns_or_native_calls_during_publication_review": 0,
+    "source_edits_during_publication_review": 0,
+    "unresolved_findings": []
+  }
+}

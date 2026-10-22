@@ -1,0 +1,51 @@
+{
+  "schema": "modly.clean-target.independent-constructor-source-review.v1",
+  "classification": "GO",
+  "scope": "One owned bounded CPU constructor-only lossless roundtrip per exact saved brick and foliage patch, with no retry, repair, alternate constructor or target generation.",
+  "source_SHA256": {
+    "common.py": "96a7cac519ce4a0f57307672ae1895b33b5eb1d0fc581dc9f3d1e3202c45b77d",
+    "import_probe.py": "14a88253ff5764df843467a415375562fbc010785bbb74451d64ee4fcb1656e7",
+    "run_host.py": "7f2716291b73bf8539d1bffb7fab3c2357d421f4e5ca37c87149321ef9ab991c",
+    "test_probe.py": "97fb177b67bab00b81fc467c228ec70d42222d77cac78a61796b410a57c1a75a"
+  },
+  "plan_SHA256": "0643d465f71e9c667c35b875b2d09591a4ec9582791b99d1a3c67a81d2ba0629",
+  "focused_tests_SHA256": "6022dc0938d41f040ac1dab3f0626e82073f9f153739c879b1edea0fb160355a",
+  "input_manifest_SHA256": "aeb98fd9411ab718d7fd439f6345ad2e10927f55371a4d3c6bce4f22b39204bb",
+  "library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "installed_method_audit_SHA256": "4efe429133d05c5fd609c26d368316babaae80d06a684a80988cc9b961b0b50b",
+  "patch_authentication_SHA256": "d77e46df7dfc163a8d6b08153ae5a059b7625a3b04eead89b4c0e9d09bceea2e",
+  "static_PE_closure_SHA256": "8687f30a413b99c8b4e27d789f3af4240f70684cbe7d63d71ee4ea09cc7beef5",
+  "independence": {
+    "reviewer": "full_glb_reader",
+    "producer_host_common_or_tests_authored_by_reviewer": false,
+    "patch_authentication_authored_by_reviewer": true,
+    "native_import_or_call_by_reviewer": false,
+    "actual_patch_array_analysis_by_reviewer": false
+  },
+  "reviewed_contract": [
+    "Only the two hash-pinned accepted patch vertex, local-triangle and original-ID arrays are inputs; no full-model array, neural field, remesher or viewer is loaded.",
+    "Explicit allowNonManifoldEdge=True, duplicateNonManifoldVertices=False and shiftFaceId=0 match installed API stubs. Heap copies preserve independent expected inputs. Zero skipped/failed faces and dense unchanged valid native IDs are required.",
+    "Readback uses original native FaceId values, exact promoted F32 position bits including signed zero, and per-face original oriented triples allowing only recorded cyclic corner rotation. Added/dropped/merged/duplicated vertices or triangles, changed winding/order/multiplicity, input mutation and nonfinite data reject admission.",
+    "Private native readbacks are saved and reopened exactly. Observed native edge pairing is reported without asserting original sheet correspondence.",
+    "Fixed installed Python -I -B blocks on binary GO before numerical/native imports. Host attaches its unnamed owned Job before GO; process and Job limits are both 6 GiB, with 180-second host and 150-second cooperative budgets, 12 GiB RAM and 2 GiB disk floors, private CWD/TEMP, exact source/manifest watches and natural unforced empty-Job requirement.",
+    "Pinned historical CPU audit guard plus additional CUDA/viewer import and mutation guards are installed before NumPy/MeshLib imports. Unexpected native/API/runtime faults preserve their row then stop the whole worker; only intentional measured AdmissionError contract rejections can proceed to the other fixed patch."
+  ],
+  "verification": {
+    "command": "D:/AI/Trellis2AMD/venv/Scripts/python.exe -I -B test_probe.py",
+    "fresh_reviewer_synthetic_tests": 5,
+    "fresh_reviewer_result": "PASS",
+    "native_modules_imported_by_test": false,
+    "library_pin_files_freshly_hashed": 78,
+    "library_pin_bytes_freshly_hashed": 125790173,
+    "library_pin_mismatches": 0,
+    "static_PE_images_crosschecked": 72,
+    "static_PE_mapping_mismatches": 0,
+    "attempt_paths_absent_at_review": true
+  },
+  "limitations": [
+    "GO qualifies this source and bounded constructor experiment only. Actual native transport is not yet measured; remeshing, clean target geometry, appearance transfer and exports remain unqualified.",
+    "Lossless construction does not establish trusted original pairing at non-manifold junctions, or certify that subsequent remeshing preserves sheets, thin features, gaps or boundaries.",
+    "PE review covers declared normal/delay dependencies. Dynamic LoadLibrary/plugin behavior and runtime driver activity have not been measured; Python audit hooks are not a native binary sandbox."
+  ],
+  "blocking_findings": []
+}

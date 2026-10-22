@@ -1,0 +1,48 @@
+{
+  "classification": "BLOCKED",
+  "constructor_calls": 1,
+  "remesh_calls": 0,
+  "target_generation_calls": 0,
+  "patches": [
+    {
+      "name": "brick",
+      "classification": "BLOCKED",
+      "constructor_calls": 1,
+      "remesh_calls": 0,
+      "original_topology": {
+        "unique_source_edges": 1243,
+        "boundary_source_edges": 147,
+        "nonmanifold_source_edges": 4,
+        "maximum_source_edge_incidence": 3,
+        "edge_connected_face_components": 1,
+        "vertex_connected_face_components": 1
+      },
+      "constructor_elapsed_seconds": 0.0,
+      "error": "Expected exactly one value.",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-clean-target-feasibility-evidence\\import_probe.py\", line 125, in main\n    skipped_count=int(skipped.value);row.update(skipped_face_count=skipped_count,failed_face_count=len(failed))\n                      ^^^^^^^^^^^^^\nRuntimeError: Expected exactly one value.\n",
+      "files": {
+        "before-constructor.json": {
+          "bytes": 1287,
+          "sha256": "c7a0f1f0ac870faddd38409c68b0c2c63f3fb76f3ef60be65834363db07b0434"
+        }
+      }
+    }
+  ],
+  "interpretation": "Constructor transport only; no original junction/sheet pairing or remesh admission is established.",
+  "input_manifest_SHA256": "aeb98fd9411ab718d7fd439f6345ad2e10927f55371a4d3c6bce4f22b39204bb",
+  "library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "constructors_completed": false,
+  "error": "Expected exactly one value.",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-clean-target-feasibility-evidence\\import_probe.py\", line 125, in main\n    skipped_count=int(skipped.value);row.update(skipped_face_count=skipped_count,failed_face_count=len(failed))\n                      ^^^^^^^^^^^^^\nRuntimeError: Expected exactly one value.\n",
+  "elapsed_seconds": 0.9369999999908032,
+  "files": {
+    "brick/before-constructor.json": {
+      "bytes": 1287,
+      "sha256": "c7a0f1f0ac870faddd38409c68b0c2c63f3fb76f3ef60be65834363db07b0434"
+    },
+    "brick/result.json": {
+      "bytes": 1026,
+      "sha256": "52fb8391626b704a82cec821703dd3b3406bf3e1663b03e812af610cd17620ca"
+    }
+  }
+}

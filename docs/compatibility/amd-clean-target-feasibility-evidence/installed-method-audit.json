@@ -1,0 +1,153 @@
+{
+  "schema": "modly.clean-target.installed-method-audit.v1",
+  "classification": "PASS",
+  "scope": "Read-only installed metadata/source/API audit. This is not a clean-geometry or runtime qualification.",
+  "base": "d10c18ee7b97c3e48c2d0f0dcfd93c480640ec05",
+  "method_admission": "BLOCKED",
+  "method_admission_reason": "A controlled MeshLib surface-remesh route is plausible, but exact original patch/junction/sheet input correspondence has not been established. Remeshing remains blocked; one separately source-reviewed constructor-only roundtrip per patch can test the input-admission contract without generating a target.",
+  "sole_detailed_method": {
+    "package": "meshlib",
+    "version": "3.1.4.297",
+    "API": "mrmeshpy.remesh(mesh, RemeshSettings) -> bool",
+    "operation": "Splits long edges and eliminates short edges, with flip/relax controls; no voxel solidification required."
+  },
+  "installed_inventory_metadata_only": {
+    "pymeshlab": "2025.7.post1",
+    "open3d": "0.20.0",
+    "trimesh": "5.1.1",
+    "scikit-image": "0.26.0",
+    "pyfqmr": "0.5.0"
+  },
+  "source_SHA256": {
+    "meshlib/METADATA": "180855ca6cc40e0bd0b5014196cc54e2b499d92ca4f468276c58e918e0cbb8ae",
+    "meshlib/mrmeshpy.pyi": "0405c0d8f5fdc39f81c00e1d1f4252ccd28735881e195379cdf9b09bf39d1e1d",
+    "meshlib/mrmeshnumpy.pyi": "4cc71fe332a4686fbc9f63e326df8cc29e3ebbefaf710f02c167331cdaa4c7c3",
+    "meshlib/mrmeshpy.pyd": "fa740539411a5eca3b4bbc3994bc6c0d484d36fd079d583baca0673adbe436c7",
+    "meshlib/mrmeshnumpy.pyd": "2e585bac5124902d41fa9952ac6e802fdf1275fddfbcb63fe69ab9638ff03ebd",
+    "pymeshlab/METADATA": "a7ee5a6de47651f32cff34f3497cc895bad31c18b4ef6f69bff510c8845a3dff",
+    "pymeshlab/keys.txt": "0abe5d14fda8723a61754aa13e78b1daf3b6477c2fad05a6a59a9e1f8305017c",
+    "open3d/METADATA": "f7da35b82eb756b83bfd07d65d6bbebc59a3afad77dcf65d9921c5bb68e3b979",
+    "open3d/t/geometry.pyi": "ca8a432ae2212f077e5631bab820b294bfbd8efbc7606786258d04efbf633f72",
+    "trimesh/METADATA": "83ff5dabdef64a3ee82e560f419c06c7d5d40704e3cefe1807ea136db79b01b7",
+    "scikit-image/METADATA": "cf5dcb3e5b9a815b4327c02225afcd85edd56b90fbbddde5be944352a5986571",
+    "pyfqmr/METADATA": "f2306d28e7efb8eab0c89717ae08975f5be1654be39e862768d53a88b438cc06",
+    "trellis2/models/sc_vaes/fdg_vae.py": "1d267cdca119eb619674dc87bfccd8c5a1d90288739e2b8e08e6f497ac14ce9c",
+    "trellis2/pipelines/trellis2_image_to_3d.py": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+    "original_cpu_dual_grid_converter": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40",
+    "probe-contract.json": "056de8c75c7c09f1627ba9221b5174dc4b28b8e42c6a80a21bc40a620ac8da30"
+  },
+  "private_detail_SHA256": "dc2d552cefc422b636a66db00b52f7900843b3f755a1003987d58c27b82a4b19",
+  "API_evidence": [
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "lines": [
+        52680,
+        52868
+      ],
+      "finding": "RemeshSettings exposes frozenBoundary, notFlippable, preCollapse veto, region, maximum edge splits and progress callback. notFlippable edges cannot be flipped/collapsed; incident vertices are excluded from relaxation. These are real controls for open-surface/feature protection, not proof of an actual target quality result."
+    },
+    {
+      "source": "meshlib/mrmeshnumpy.pyi",
+      "lines": [
+        47,
+        50
+      ],
+      "finding": "meshFromFacesVerts(faces, verts, settings, duplicateNonManifoldVertices=True) has an explicit false option to disable default non-manifold vertex duplication."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "lines": [
+        31956,
+        31971
+      ],
+      "finding": "Mesh.fromTriangles is the nonduplicating triangle-ID constructor; the separate duplicating variant resolves non-manifold vertices by duplication and can choose among possible triangle continuations."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "lines": [
+        32643,
+        32707
+      ],
+      "finding": "BuildSettings exposes allowNonManifoldEdge, an input/output face region whose output records faces failed to add, and skippedFaceCount. Permitting non-manifold edges does not document original source-sheet pairing."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "lines": [
+        33122,
+        33181
+      ],
+      "finding": "Triangle/topology construction can leave triangles unadded. The duplicating route modifies triangulation and chooses continuations; it is not an established semantic leaf/sheet partition."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "lines": [
+        52734,
+        52843
+      ],
+      "finding": "Final relaxation may deviate from the original surface. projectOnOriginalMesh applies to subdivision-created vertices before smoothing and explicitly does not cover moved vertices at other processing stages. This limitation alone is not a method blocker: independent point-to-triangle/feature checks can reject drift."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "lines": [
+        107212,
+        107215
+      ],
+      "finding": "remesh is declared as splitting long and eliminating short edges; no installed native C++ implementation was found in the inspected meshlib and meshlib_core.libs wheel directories."
+    }
+  ],
+  "input_admission_required_before_any_remesh": [
+    "Authenticate exact original reference face/vertex/source identities, boundaries and source sheet/junction relationships.",
+    "Use an explicitly nonduplicating constructor path; do not invoke position welding or the automatic continuation/duplication route.",
+    "Establish zero skipped faces plus exact oriented source triangle IDs/multiplicity and positions through the constructed topology, or stop. Merely setting allowNonManifoldEdge does not establish that condition.",
+    "Establish how original junctions and distinct sheets map to internal topology; do not treat arbitrary input-order pairing or duplicate resolution as a trustworthy semantic partition.",
+    "Only if the complete input/protection/correspondence contract is independently admitted, freeze one explicit remesh configuration and one candidate per admitted patch. This audit performs none."
+  ],
+  "original_field_semantics": [
+    "The accepted CPU flexible-dual-grid converter interprets7 geometry channels as3 sigmoid-derived dual offsets,3 sign-thresholded intersection flags and a softplus split weight. These are not a supplied signed-distance field.",
+    "The installed sparse-structure pipeline thresholds decoder(z_s)>0 and pools/resizes the resulting coarse mask. This establishes occupancy/structure-selection semantics, not a validated fine-resolution inside/outside oracle for leaves, gaps or separate sheets.",
+    "Installed Open3D compute_occupancy/compute_signed_distance documentation assumes watertight, nonintersecting meshes. Applying that assumption blindly to the open/non-manifold source is not admitted.",
+    "Absence of an established SDF is not an impossibility proof for controlled direct-surface methods."
+  ],
+  "stopped_operations": {
+    "geometry_native_imports": 0,
+    "constructors": 0,
+    "remesh_calls": 0,
+    "candidate_generations": 0,
+    "model_calls": 0,
+    "Blender_calls": 0,
+    "GPU_calls": 0,
+    "installs": 0,
+    "web_or_cloud_calls": 0
+  },
+  "limits": [
+    "No actual patch arrays, topology roundtrip, geometry distances or resource peaks were measured by this audit.",
+    "Metadata/API stubs and native binary hashes establish installed identity and declarations, not binary runtime behavior or a process-wide memory bound.",
+    "Only the named known Windows environment and relevant installed declarations were inspected; this is not a global claim that no possible method exists.",
+    "Phase1 is not fully admitted at this point because source-input correspondence remains unresolved, not because a geometry-quality guarantee is required before candidates."
+  ],
+  "controlled_surface_route_plausible": true,
+  "constructor_only_API_admission": "GO for independent review of one bounded no-duplication constructor roundtrip per authenticated patch; not a GO for actual source execution or remeshing.",
+  "constructor_only_settings": {
+    "API": "mrmeshnumpy.meshFromFacesVerts(faces_copy,vertices_copy,settings,duplicateNonManifoldVertices=False)",
+    "allowNonManifoldEdge": true,
+    "shiftFaceId": 0,
+    "region": "FaceBitSet(original_face_count,True): output failed source face IDs",
+    "skippedFaceCount": "mr.int_output(0); inspect .value",
+    "triangle_readback": "topology.getTriVerts(mr.FaceId(row)), VertId.get(); compare each original face ID with only recorded cyclic corner rotation allowed",
+    "valid_ID_readback": "getValidFaces/getValidVerts -> getNumpyBitSet -> exact dense original ID sets",
+    "repair_or_fallback_allowed": false
+  },
+  "native_import_closure": {
+    "private_receipt_SHA256": "8687f30a413b99c8b4e27d789f3af4240f70684cbe7d63d71ee4ea09cc7beef5",
+    "root_native_modules": [
+      "mrmeshpy.pyd",
+      "mrmeshnumpy.pyd"
+    ],
+    "resolved_packaged_PE_images": 72,
+    "MRCuda_MRViewer_glfw_OpenGL_packaged_dependencies_found": false,
+    "static_only": true,
+    "runtime_dynamic_loading_not_proven": true
+  },
+  "implementation_requirement": "No heavy/native numerical module imports before owned binary GO. Import only meshlib.mrmeshpy and meshlib.mrmeshnumpy; reject observed mrcudapy/mrviewerpy/torch/bpy Python modules. Preserve heap-copy input mutation checks and complete per-patch error evidence; stop that patch on any failure, with no alternate constructor.",
+  "constructor_library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b"
+}

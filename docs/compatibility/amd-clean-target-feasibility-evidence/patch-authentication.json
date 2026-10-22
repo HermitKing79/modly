@@ -1,0 +1,99 @@
+{
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "scope": "Read-only exact existing patch/receipt authentication and saved-source semantic audit. No full-model processing, array decoding, new selection, target generation, package/native import, GPU or Blender execution.",
+  "probe_contract_SHA256": "056de8c75c7c09f1627ba9221b5174dc4b28b8e42c6a80a21bc40a620ac8da30",
+  "private_manifest_reference_SHA256": "333d0028af652fced2049f5a9c8dce78ed4d7bc1f0d40f910c6cdf7bdaf82c52",
+  "patches": {
+    "brick": {
+      "receipt_sha256": "b527aee6a88c08f34b32dac755bddadba2f22fc6c32430ef39a134444e788c63",
+      "all_manifest_files_fresh_hash_size_match": true,
+      "file_count": 6,
+      "geometry_and_lineage": {
+        "vertices": "ec72963b458f3d823a7196a6c2b7110b7a4ff2ca54c99941b0c0c0148b11187a",
+        "faces": "ebe6c24cf93f474ad0fcf381411c06a0fd31c4c9fff8498901cfdfad90afbf49",
+        "source_face_ids": "06167754d3c27f8257439f6cb7dc3db4c434ce388d2cb2f17568da2b7d1149ea",
+        "source_vertex_ids": "71b9c5859fe39d6b6f1677f184c546c32319d6097bfd6f4639372526e83a71c8",
+        "direct_material_rows": "5e0a1578b98e414a6c51bb8118fc781378c1fde156538058114098deb3267281"
+      },
+      "triangles": 781,
+      "original_vertices": 457
+    },
+    "foliage": {
+      "receipt_sha256": "8ed7861ef47aeb5e7468eddff1df886286c36c49542a4f61ea48d628e4faede0",
+      "all_manifest_files_fresh_hash_size_match": true,
+      "file_count": 7,
+      "geometry_and_lineage": {
+        "vertices": "93482834078c23d6eab392fbaa200e6fc472073d06b4939b98baaf2f02ef794a",
+        "faces": "0c9b3148b7183ea4e3544a465e8599dba92a9efcbcec3d33c438d2806cbda448",
+        "source_face_ids": "dc0677bf75cb4206c68726ea5165f11e935578b54497ebf2fe06184d7206b9d1",
+        "source_vertex_ids": "2889c0031c0e9aa7d07e2697b050fed17f1a68dd93aa4f9248c1e1679e13e2b2",
+        "direct_material_rows": "2a83e7333c691e4866f97ad7860aa6b53a0a12bbe5da6ace8dba78ad45e71fa3"
+      },
+      "triangles": 4531,
+      "original_vertices": 3177
+    }
+  },
+  "fresh_bounded_artifact_bytes_hashed": 2100687,
+  "accepted_patch_GLB_SHA256": {
+    "brick": "e618af9fea32ce9fedb1e478ca1e0becb7eb55fc9ee4a246bcdf7105a6cf9c21",
+    "foliage": "c24055f7ef2fbe144c1a73ba46242cbeb6b2a2c27397440be13a3d56b8f6fe73"
+  },
+  "foliage_linear_RGB_SHA256": "297d32a9cf0028004e15371a2890bbcf107771c05465ed88346c7e6fbe5d75af",
+  "material_lineage": {
+    "original_geometry_SHA256": "d4de05fc82315e44a739c9815a07a531555e108af05c619ea0426d0c630ef861",
+    "original_vertices_NPY_SHA256": "018edd85646f9b504ec52ceb311f69e0c7610e4d1ab306f41c7e73a7a77d3252",
+    "original_faces_NPY_SHA256": "9314a921741bab5c3d87348b4ea26488ee1ab13201b33d67252d6d272997ab1d",
+    "original_material_SHA256": "8cd735630149e28829efe686d30f1c7c255dde76748dc3d525236fb5c2c81394",
+    "historical_not_fresh_full_payload_hashes": true,
+    "brick": "Pinned selector recovered457original vertices/781faces; historical independent reader matched every original corner/position and all6material channels through later2343UV corners.",
+    "foliage": "Historical independent reader matched source_vertex_ids[faces] to original_faces[source_face_ids], F32 position bytes, all6direct material rows and complete geometry/material coordinate order. Accepted F32 linearRGB remains source-linked.",
+    "displaced_target_vertices": "Require genuine source-spatial eight-neighbour sampling, not original row-ID reuse."
+  },
+  "saved_topology": {
+    "brick": {
+      "basis": "Pinned original selector takes one original edge-connected component. Four UV islands are chart partitions, not a four-component surface claim.",
+      "self_intersections": "Not established. Historical projected UV overlap is not proof of physical3D intersection.",
+      "edge_connected_components": 1,
+      "surface_scope": "Image/normal/depth/ROI selected sheet portion; no watertight-solid or closed-volume qualification.",
+      "exact_edge_incidence_counts": "Not found in reviewed existing patch receipts; not newly measured here."
+    },
+    "foliage": {
+      "original_boundary_edges": 153,
+      "incidence2_edges": 5229,
+      "edge_connected_components": 83,
+      "incidence1_edges": 2461,
+      "extraction_induced_boundary_edges": 2308,
+      "unmatched_edges": 0,
+      "incidence_gt2_edges": 219,
+      "vertex_connected_face_components": 34,
+      "surface_scope": "Visible leaf/vine portions, not closed botanical parts. No intended-fragment or semantic segmentation claim.",
+      "unique_edges": 7909
+    }
+  },
+  "inside_outside": {
+    "qualified_signed_distance_or_solid_classification_available": false,
+    "final_neural_schema": "Sparse I32 coordinates and F32[N,7]:3dual-vertex offset logits,3positive quad flags,1softplus split weight. No metric signed or unsigned distance channel is saved in this accepted conversion schema.",
+    "subdivision_logits": "Strict positive BF16 logits choose8child support coordinates per parent, not a qualified continuous inside/outside classifier.",
+    "missing_support": "Missing neighbours omit incomplete quads; sparse absence is not an authenticated exterior label.",
+    "conclusion": "Do not treat triangle soup, quad flags or neural support as an SDF/watertight occupancy oracle. Nonvoxel open-surface methods may be assessed independently."
+  },
+  "evidence_SHA256": {
+    "docs/compatibility/amd-brick-seam-uv-bake-evidence/independent-uv-review.json": "7d9d07b31d015e79fb8128c00ddcd6f2718d0ea042acf21e5e27947b466c15a6",
+    "docs/compatibility/amd-brick-seam-uv-bake-evidence/independent-outcome-review.json": "205d545a3563606ea5435755e49698b9a7eb2286baad285ef5d9ac4ea2919a2d",
+    "docs/compatibility/amd-bounded-foliage-uv-evidence/execution-results.json": "f8f64b4a785ad351ffff5041c6c68b2da2b66190da054e75fca846df8e379534",
+    "docs/compatibility/amd-bounded-foliage-uv-evidence/independent-outcome.json": "101530f8857b89e1fa4c4abe97bcfc06e0d8389a3ef213ef3883601ea2bab441",
+    "docs/compatibility/amd-foliage-colour-glb-evidence/execution-results.json": "99b68e22f96c8fa743656ceb5c1c9eef1ff1f59fc714d4eff345bb177ed8bf8a",
+    "docs/compatibility/amd-foliage-colour-glb-evidence/independent-outcome.json": "3d13340a5c312668e1da6809e83f87da0e6ad8f1919c7bff8d03d9fe89c93400",
+    "docs/compatibility/amd-brick-uv-bake-evidence/source-semantics.json": "094198de62098b413a503f9dae2f81c6de4f9ddc1ebc313d98e49f7f739ee79f",
+    "docs/compatibility/amd-brick-uv-bake-evidence/bake_patch.py": "c0b53da02346b7bd60eaa2fa07b33a1b6573cd8f5e43944d0e9faff20fc1a174",
+    "docs/compatibility/amd-connected-foliage-uv-evidence/inputs.py": "77078fbe3a8cf83f84642d604a93dea87ac229c8a9068e0b31d5369553c6b5d4",
+    "scripts/compatibility/amd_generation_mesh.py": "68a5e64bf7ab65c98f9b798e8d81c61c6cb629b1eaaf193637d5e52de0cae8e8",
+    "scripts/compatibility/amd_flexible_dual_grid_cpu.py": "744e44768a48603e4f6d68e8dc4ae0e1f8ce78b16c2efd73b511a2a309562b40"
+  },
+  "limitations": [
+    "Fresh checks cover bounded patch artifacts/accepted patch GLBs/saved linearRGB and receipt/source text. Full original geometry/material payload hashes and source correspondence rely on historical independent evidence; original full arrays were not reprocessed.",
+    "This authenticates source inputs only. Installed method admission, new geometry quality and appearance transfer remain separately untested."
+  ],
+  "actual_candidate_calls": 0,
+  "actual_neural_or_native_calls": 0
+}

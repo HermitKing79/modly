@@ -1,0 +1,404 @@
+{
+  "schema": "modly.clean-target.constructor-library-pins.v1",
+  "CPU_import_admitted": true,
+  "package": "meshlib",
+  "version": "3.1.4.297",
+  "admission_scope": "Static source/PE review permits only the reviewed CPU constructor module imports after ownedGO; no native process was run by the audit and no remesh is admitted.",
+  "static_PE_closure_SHA256": "8687f30a413b99c8b4e27d789f3af4240f70684cbe7d63d71ee4ea09cc7beef5",
+  "resolved_PE_images": 72,
+  "files": {
+    "native/mrmeshpy.pyd": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib\\mrmeshpy.pyd",
+      "bytes": 56477184,
+      "sha256": "fa740539411a5eca3b4bbc3994bc6c0d484d36fd079d583baca0673adbe436c7"
+    },
+    "native/mrmeshnumpy.pyd": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib\\mrmeshnumpy.pyd",
+      "bytes": 152064,
+      "sha256": "2e585bac5124902d41fa9952ac6e802fdf1275fddfbcb63fe69ab9638ff03ebd"
+    },
+    "native/mrpython-31a195d3a3cd6e5c326cdaa17a028132.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\MRPython-31a195d3a3cd6e5c326cdaa17a028132.dll",
+      "bytes": 98816,
+      "sha256": "a1f15319479cd9b3db65dd32da855241efb11f87451104788e4cbe448b4510b3"
+    },
+    "native/openvdb-ecf60b1fde1eac34ec166af124476e29.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\openvdb-ecf60b1fde1eac34ec166af124476e29.dll",
+      "bytes": 3368960,
+      "sha256": "c5c710ee15e43eb83275a72b132a7a2848cced50e785421a4c89f447e40af09e"
+    },
+    "native/tbb12-4b13044b196af68de3e293708e28f927.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\tbb12-4b13044b196af68de3e293708e28f927.dll",
+      "bytes": 349696,
+      "sha256": "fb46d743de35f68343f57afc880b38f5688594853ad733238682b2c230c68012"
+    },
+    "native/mrmesh-83a9e581e42340d94558d5803099737c.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\MRMesh-83a9e581e42340d94558d5803099737c.dll",
+      "bytes": 5702656,
+      "sha256": "df39548e61192af2a1b593c7e9af687ea5537ec0fad60e3938a8a6003a319f68"
+    },
+    "native/mrioextras-359cbbb3c7f2c106fc8d939ee1155619.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\MRIOExtras-359cbbb3c7f2c106fc8d939ee1155619.dll",
+      "bytes": 1252864,
+      "sha256": "2a1f2dc14277194de9c752d04f0b51b44c4f90750b721540468b678c4908d95c"
+    },
+    "native/mrsymbolmesh-b45d997c2a84368aa07d8dae1476b6a9.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\MRSymbolMesh-b45d997c2a84368aa07d8dae1476b6a9.dll",
+      "bytes": 115712,
+      "sha256": "9f67458556995109fe0cb3ad237bb4e68715d593e7e60ab2363146e7f0e3aeac"
+    },
+    "native/mrvoxels-702793d8be43af317336ddd7682cdd22.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\MRVoxels-702793d8be43af317336ddd7682cdd22.dll",
+      "bytes": 4083200,
+      "sha256": "7766195afdb9de7efeeaebfc9601d82e7233c126fa9460de2867e31df951ac7a"
+    },
+    "native/pybind11nonlimitedapi_stubs-459806a6e7b0c39b8468da9602bc4bef.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\pybind11nonlimitedapi_stubs-459806a6e7b0c39b8468da9602bc4bef.dll",
+      "bytes": 69120,
+      "sha256": "7ea4e23b0de08c9cf8305024b58cb0be30911cc2dd2c46e29c8908f0c3bd5d8e"
+    },
+    "native/msvcp140-823644d262bbd65f8b26a2a9e24bee2b.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\msvcp140-823644d262bbd65f8b26a2a9e24bee2b.dll",
+      "bytes": 554496,
+      "sha256": "994ae84dc63090423aaaf67c3efa2b812aeddf499275082d22e6edff37fc8d22"
+    },
+    "native/vcruntime140-02c6aa0e6e624411a9f19b0360a7865a.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\vcruntime140-02c6aa0e6e624411a9f19b0360a7865a.dll",
+      "bytes": 119888,
+      "sha256": "02c6aa0e6e624411a9f19b0360a7865ab15908e26024510e5c38a9c08362c35a"
+    },
+    "native/vcruntime140_1-d59b3d8dbfa8ac3402b2e02cc5447c42.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\vcruntime140_1-d59b3d8dbfa8ac3402b2e02cc5447c42.dll",
+      "bytes": 29184,
+      "sha256": "10f480880277864daa54c50218cf8f3067520783e6899fafce3516d1697c6e72"
+    },
+    "native/imath-3_2-5b707851f6fb36828bb294cd3d63ef49.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\Imath-3_2-5b707851f6fb36828bb294cd3d63ef49.dll",
+      "bytes": 337408,
+      "sha256": "f5213e4c9b4508cb70fcf5416d87c878205b9d277ceb6d85051b1f7cafc26f5f"
+    },
+    "native/blosc-2e7fc503a88fb0990f0909347d71061e.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\blosc-2e7fc503a88fb0990f0909347d71061e.dll",
+      "bytes": 70144,
+      "sha256": "c3bd34f0298e05ef5f56f3a45584d127479989f5d62819b9f164525bb399a848"
+    },
+    "native/z-73cf1b379805180939317bfdab114d43.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\z-73cf1b379805180939317bfdab114d43.dll",
+      "bytes": 91648,
+      "sha256": "ae5d1d904661417d8290a76ac41e98fb871bb984d1030cf1f0d134976dd710f9"
+    },
+    "native/fmt-450cb758114ce857a00a619d174671f2.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\fmt-450cb758114ce857a00a619d174671f2.dll",
+      "bytes": 130048,
+      "sha256": "b5c68faa5ac44ee628a8a8a909c9fcb918ef1a9fb2ace594c2e259f54228ad5a"
+    },
+    "native/jsoncpp-1c4748d1bac19219beef0dcc82579fae.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\jsoncpp-1c4748d1bac19219beef0dcc82579fae.dll",
+      "bytes": 205312,
+      "sha256": "81e80de7d2b1422cbe6c7fc08c62180c1a078a2b7b5f5276db1cc5179dc8d931"
+    },
+    "native/spdlog-cd8a1de3eb2d72376e1efeccdaf0bd4f.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\spdlog-cd8a1de3eb2d72376e1efeccdaf0bd4f.dll",
+      "bytes": 281600,
+      "sha256": "2b1adbdbc2f6df36c67c3e0dee378b0676cb53967a6ebceac6527d85ab49ae29"
+    },
+    "native/tiff-3d2cba17641522a744c1380386e1c4f3.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\tiff-3d2cba17641522a744c1380386e1c4f3.dll",
+      "bytes": 495104,
+      "sha256": "db8a02f4313f36fe18c3ccefe2a092ec0bfa4389c9795faf3902e57ae5af0d34"
+    },
+    "native/zip-af8ccdbecfd8343762e4a27fefa1cb81.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\zip-af8ccdbecfd8343762e4a27fefa1cb81.dll",
+      "bytes": 114688,
+      "sha256": "ecd2565b24d67bfbbf95f2b9739d780e51333c0788afd54b07dbe260eb707c39"
+    },
+    "native/zlib-ng2-73addc0284781b1bf87a747ec3115a4d.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\zlib-ng2-73addc0284781b1bf87a747ec3115a4d.dll",
+      "bytes": 334336,
+      "sha256": "a83deba7afdb51c4a3a91df2f863c5a4f37ddd914b36d67a5d79fa35ceba07c3"
+    },
+    "native/e57format-48c9bbc9bfd2be690c90f29f20991b5b.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\E57Format-48c9bbc9bfd2be690c90f29f20991b5b.dll",
+      "bytes": 594432,
+      "sha256": "f2d7fc450997be2dae7c112add25414cb0ceeb0f1e0ac8a79ba6d69e74a80857"
+    },
+    "native/hpdf-c1c2f79d01f5fd256eb63cba780736b1.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\hpdf-c1c2f79d01f5fd256eb63cba780736b1.dll",
+      "bytes": 740864,
+      "sha256": "e1aae0d9f1b805443a39499e53892f007b9f2b97477c6abef4659a8dfbf259f2"
+    },
+    "native/lazperf-170ed1e29970f39ccc5005cfc0ac47cd.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\lazperf-170ed1e29970f39ccc5005cfc0ac47cd.dll",
+      "bytes": 211456,
+      "sha256": "b064fcb439ed27b783816da0f9f31a2af7772332546a9b4e55bdf5811e7c659f"
+    },
+    "native/libpng16-b7132c9e49d218072e54a949407aac81.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\libpng16-b7132c9e49d218072e54a949407aac81.dll",
+      "bytes": 197632,
+      "sha256": "a108ab503607b556509488eee3fe15ce0154ecf98d67828bd520d4d07eaf97c8"
+    },
+    "native/openctm-e91e7ca63de93721d02f41048c1815bf.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\OpenCTM-e91e7ca63de93721d02f41048c1815bf.dll",
+      "bytes": 74240,
+      "sha256": "6f6dbe6f3165126338ee4b439fb70918fbc5747b5a4e05e9ceee6ee2a3236ecf"
+    },
+    "native/tinyxml2-0850f433d0661ff8d27e3b3fd7b80eaa.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\tinyxml2-0850f433d0661ff8d27e3b3fd7b80eaa.dll",
+      "bytes": 93184,
+      "sha256": "33730a1b72fec74f250cc7c8e36ef3a6b868ec1f64be9565eca4254e115dd1f5"
+    },
+    "native/tkbrep-b05c422efbfa4740a68cf387081d12c9.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKBRep-b05c422efbfa4740a68cf387081d12c9.dll",
+      "bytes": 828416,
+      "sha256": "0bfba95bd919dffc10ba7b8f43b2cfa41b49e1f3d84e30ae018fe7726db141f3"
+    },
+    "native/tkdestep-7e24e34b7dc743d85de2d032c1bdb74c.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKDESTEP-7e24e34b7dc743d85de2d032c1bdb74c.dll",
+      "bytes": 5267456,
+      "sha256": "0fbd153666510cd0c5398ece65e2443479aff455fb6d002b4f85607b39ff7e7e"
+    },
+    "native/tkernel-a705450c9d03b4ba1efdbbf62edbdb5c.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKernel-a705450c9d03b4ba1efdbbf62edbdb5c.dll",
+      "bytes": 1592320,
+      "sha256": "a40b765832d798e55ca321ca3b0e4d55087b27d9b6116775ba128aab8e9b938a"
+    },
+    "native/tklcaf-220387e27bd5b6eefd2e43facd338961.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKLCAF-220387e27bd5b6eefd2e43facd338961.dll",
+      "bytes": 622080,
+      "sha256": "32a9af67fbd34073947c0f64013187202a9610497583905e3bb1c94fcc93a550"
+    },
+    "native/tkmath-219bee54369ad23a177841abbe5fad13.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKMath-219bee54369ad23a177841abbe5fad13.dll",
+      "bytes": 1308672,
+      "sha256": "945a2163a9ee76435b9a7b519061b4ac35ba79a1c2c713d46deeb67602a4a511"
+    },
+    "native/tkmesh-a829683a6d8b142ccfa2d711076e16a9.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKMesh-a829683a6d8b142ccfa2d711076e16a9.dll",
+      "bytes": 578048,
+      "sha256": "fc4201ca07529f593bcc848282e0240b4272c60c0744bddf62bc837b684eb230"
+    },
+    "native/tktopalgo-bedd69bff141ad2ee67c35f1f6bb3c1f.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKTopAlgo-bedd69bff141ad2ee67c35f1f6bb3c1f.dll",
+      "bytes": 2229760,
+      "sha256": "8ce305df67df5a2e1160935b67fb675a3fb6ab5da6e5efa65137a5653677a975"
+    },
+    "native/tkxcaf-9c55010812a7d1ce127faf4576cfab16.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKXCAF-9c55010812a7d1ce127faf4576cfab16.dll",
+      "bytes": 778752,
+      "sha256": "27a905b59cba0a4a3a73701e227ea3dfa8df1b6bc10237b849bc6fc737df9049"
+    },
+    "native/tkxsbase-b4dfc4ee4ec8018a5eb478a5f607c0d1.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKXSBase-b4dfc4ee4ec8018a5eb478a5f607c0d1.dll",
+      "bytes": 1498624,
+      "sha256": "5871fe5932c5afb34401de232aefab2113da2938881e1bbc6d167ad17f4ce309"
+    },
+    "native/turbojpeg-55b8406ce60baae3921d0b0c4f23657d.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\turbojpeg-55b8406ce60baae3921d0b0c4f23657d.dll",
+      "bytes": 1023488,
+      "sha256": "2467f63f225a67a10b67467ca861b925968a8ffd1b599a175de1daa4ab58f6b5"
+    },
+    "native/freetype-46c9cde143f7a309162ba1c2523ce346.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\freetype-46c9cde143f7a309162ba1c2523ce346.dll",
+      "bytes": 707072,
+      "sha256": "be5c957bb28bc96c4e11a873de5bbc181c5609d65cc3911ae20ba32e8bfaa0dc"
+    },
+    "native/gdcmcommon-36c57b12b99937df262a6f3f2cc19f13.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\gdcmCommon-36c57b12b99937df262a6f3f2cc19f13.dll",
+      "bytes": 126976,
+      "sha256": "76880162695cb9333f37c67f2a075653de577c17f4f1f1c75fc17081686d3c09"
+    },
+    "native/gdcmdict-7a7e7e5e9e5ff138224ec28a35de63f4.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\gdcmDICT-7a7e7e5e9e5ff138224ec28a35de63f4.dll",
+      "bytes": 1949696,
+      "sha256": "55bdba18a5f6631114a7bbf1631d7cae513983f1161168fdb8b4ce78e18fa65f"
+    },
+    "native/gdcmdsed-0015a888566cc9d01ca3c4b94210b3a8.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\gdcmDSED-0015a888566cc9d01ca3c4b94210b3a8.dll",
+      "bytes": 582656,
+      "sha256": "e6ab1ae976be5c4abbdea575472125228ea6b15f3a6033f8088e8014f13cb74a"
+    },
+    "native/gdcmmsff-ef30b485d038542564ccc835898ac103.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\gdcmMSFF-ef30b485d038542564ccc835898ac103.dll",
+      "bytes": 1650688,
+      "sha256": "1fe17446dabc8884d609e76632b77d7488f7b15ca9a22e89a01a5fc4f0e924ab"
+    },
+    "native/zstd-ac8c898869ac1abdd24aa70c7d5c482a.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\zstd-ac8c898869ac1abdd24aa70c7d5c482a.dll",
+      "bytes": 657920,
+      "sha256": "9fd766283e2c0d08f7895afc97eac4ff142c9068e0757413930b12466ce3e4c3"
+    },
+    "native/lz4-073ac096bd2dc2bca932497b0d4431c7.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\lz4-073ac096bd2dc2bca932497b0d4431c7.dll",
+      "bytes": 130048,
+      "sha256": "6728905eb070435bdeb18c15974d88440b7ff884442893617146d1319d694d48"
+    },
+    "native/jpeg62-dc6ee217969f2db2c57881c8ab515c35.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\jpeg62-dc6ee217969f2db2c57881c8ab515c35.dll",
+      "bytes": 723456,
+      "sha256": "12076021b10b61c5b377a5197a682cd01b5a775783018ecd812ad107b9048103"
+    },
+    "native/liblzma-6faa29663a70d0856ba354c784a5dcf3.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\liblzma-6faa29663a70d0856ba354c784a5dcf3.dll",
+      "bytes": 189952,
+      "sha256": "6b1d7d560c5736a0b3ec3c13137d2dc68bfa853db59e9ecfa0c8159e58d2a8cb"
+    },
+    "native/bz2-e901747f900a31f02e74d2de8ab7cdf4.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\bz2-e901747f900a31f02e74d2de8ab7cdf4.dll",
+      "bytes": 75776,
+      "sha256": "980a3309f33b8ac428cb39d82fa7f3f9881e44c71dccb9f236acc997228b851c"
+    },
+    "native/xerces-c_3_3-bc360d20cf5fab728e00a7e2d87df8c1.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\xerces-c_3_3-bc360d20cf5fab728e00a7e2d87df8c1.dll",
+      "bytes": 2786304,
+      "sha256": "5fd7712455f888ee37f2542c22663dc0d7c84b57539b472df728a7c98e0e7b82"
+    },
+    "native/tkgeombase-0ea2d39d148cd815c4fa88b2fb2fe769.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKGeomBase-0ea2d39d148cd815c4fa88b2fb2fe769.dll",
+      "bytes": 3817472,
+      "sha256": "6e3e634472225e634e99842edc3752dcf311605bfe6afe6edfd6ab0a65756199"
+    },
+    "native/tkg3d-75ea60528be02669807a4dcdba90ff95.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKG3d-75ea60528be02669807a4dcdba90ff95.dll",
+      "bytes": 854016,
+      "sha256": "719c98a273c36a9cc93747da0efaf9e5664b44d7b16d13b681a3f532f2a485ae"
+    },
+    "native/tkg2d-3cd55b14accc0e7524dbbb0a4b180141.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKG2d-3cd55b14accc0e7524dbbb0a4b180141.dll",
+      "bytes": 266240,
+      "sha256": "51bccda40fc074ac7b55094412c05d1a1250151f80866ec0bb742d1807eda546"
+    },
+    "native/tkde-36218b500a11338ad967f1c69dbc4341.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKDE-36218b500a11338ad967f1c69dbc4341.dll",
+      "bytes": 134144,
+      "sha256": "c0edff51d9c01471add8ba8f88c509dde415b6776d3a14f241fd0c59105e322c"
+    },
+    "native/tkshhealing-cbdbc90b50ca4b73a3e25659dbeb7327.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKShHealing-cbdbc90b50ca4b73a3e25659dbeb7327.dll",
+      "bytes": 2403840,
+      "sha256": "bc7b3e80e0160d52b6e2c363275abf4ec0fe05a8cc64daac6aaf6bb26d794c3e"
+    },
+    "native/tkcdf-9674b53eddf3c2ddfa4ffb03f974d160.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKCDF-9674b53eddf3c2ddfa4ffb03f974d160.dll",
+      "bytes": 258560,
+      "sha256": "093287b3dacd935ff4a994286496ccbdfc6490086be37d051668413e56b307a1"
+    },
+    "native/tkgeomalgo-2b723ed2824a1f501ad452d6e3beebf0.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKGeomAlgo-2b723ed2824a1f501ad452d6e3beebf0.dll",
+      "bytes": 3745280,
+      "sha256": "922e6a74e75d7eb20ee3abf428dc7852612f348816953485d9a07dc3b1e21764"
+    },
+    "native/tkvcaf-840d6ed8545d7a9c6e511697cb681f20.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKVCAF-840d6ed8545d7a9c6e511697cb681f20.dll",
+      "bytes": 182272,
+      "sha256": "fbb59386163f2b16ad06a4792b41d5e03a5b1cbe0cfa9a789fcebba9a43c2e43"
+    },
+    "native/tkv3d-738fb5c7efaab125185d715863ebc679.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKV3d-738fb5c7efaab125185d715863ebc679.dll",
+      "bytes": 2379776,
+      "sha256": "4c4af1b6483402c2a21fa2292e7f18eef755efd7ddf9e4f497cea457f423a29d"
+    },
+    "native/tkservice-9cdade15e9d66d296e874f4c32be2c36.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKService-9cdade15e9d66d296e874f4c32be2c36.dll",
+      "bytes": 954368,
+      "sha256": "f76c1e52ba53d6ab34d13ce07b9a92b4a1b851a9766556656f09eb4620dbb719"
+    },
+    "native/tkcaf-8e2cac31734502321fb18294d5274a80.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKCAF-8e2cac31734502321fb18294d5274a80.dll",
+      "bytes": 489472,
+      "sha256": "da2cdd64ebfb2fcf19eeeae90f88aa9742afd7a894c3ad4181d91a4ac7490a89"
+    },
+    "native/brotlidec-80ec1ad9e086648a8fd06ade9ceac0b8.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\brotlidec-80ec1ad9e086648a8fd06ade9ceac0b8.dll",
+      "bytes": 52224,
+      "sha256": "6d8b595bc2ad90f8299a8e0872c30c5341490758f46a8d42c8dc64b819b40a91"
+    },
+    "native/gdcmiod-20a198cb07e6cb84758f9cfdb3d02d67.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\gdcmIOD-20a198cb07e6cb84758f9cfdb3d02d67.dll",
+      "bytes": 172032,
+      "sha256": "04ba8972be5e585c161a1b4a33f43088e86d16c1d1ee98622554ce0d0d8135b5"
+    },
+    "native/gdcmjpeg8-296e330b684b2269523e9ba8629b7123.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\gdcmjpeg8-296e330b684b2269523e9ba8629b7123.dll",
+      "bytes": 175616,
+      "sha256": "9adec8785237922bcd0bb04a931056f6f12442fb16740319599ec72599fdbc89"
+    },
+    "native/gdcmjpeg12-ccf7eb834f35006052c60b2c5789a59f.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\gdcmjpeg12-ccf7eb834f35006052c60b2c5789a59f.dll",
+      "bytes": 175616,
+      "sha256": "9668bbba0cca072c72641885daf7a5f08feda0fc2d7153bdf0de873e3b91ad6b"
+    },
+    "native/gdcmjpeg16-3b49042ca15246ccde29c0ad830c33c2.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\gdcmjpeg16-3b49042ca15246ccde29c0ad830c33c2.dll",
+      "bytes": 176128,
+      "sha256": "02c43d14ea6f227e0980eafa3353749b0ddc6fdf79a7092683325eda482752d3"
+    },
+    "native/openjp2-31b58fedf3c0500ae29c311298b704c2.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\openjp2-31b58fedf3c0500ae29c311298b704c2.dll",
+      "bytes": 367616,
+      "sha256": "02b40da647f22cc152c06021470e7eac55cd10c81cb89756191666ae11b5d9e8"
+    },
+    "native/gdcmcharls-e1268823df6c0388f9df6b018665fd2e.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\gdcmcharls-e1268823df6c0388f9df6b018665fd2e.dll",
+      "bytes": 183808,
+      "sha256": "29b84bc2e19e504a4f45dce80de592f69d3b2c2d409d5f56791ae518396089a6"
+    },
+    "native/tkhlr-1d00e9c237ea987cf94875ec755ada1e.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKHLR-1d00e9c237ea987cf94875ec755ada1e.dll",
+      "bytes": 881152,
+      "sha256": "256e189eaee72aa5cd7d221b983b6b3c938be3e315f07734db0b52c93ef14ec4"
+    },
+    "native/tkbo-8f36a9c7fbdbee679075584bab6c0eb4.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKBO-8f36a9c7fbdbee679075584bab6c0eb4.dll",
+      "bytes": 1931264,
+      "sha256": "5f3de03ea5a0625868726a090243e9834bea7c29d2fbeece0879c555bc7f287f"
+    },
+    "native/brotlicommon-c71915bb0131540e4bc939f7ca75a9cb.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\brotlicommon-c71915bb0131540e4bc939f7ca75a9cb.dll",
+      "bytes": 137728,
+      "sha256": "4b6c6cfa8360dda418fc6aaa5353df78e2f877100b51b47dce04231d092a6d28"
+    },
+    "native/libexpat-ea373de9df14da2a9fb8829420365607.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\libexpat-ea373de9df14da2a9fb8829420365607.dll",
+      "bytes": 166400,
+      "sha256": "b40942ba9496854ecd298870801862543122d2dbd2307621adab732848e82abf"
+    },
+    "native/tkprim-5d1803f590ce9e4291444120bae1a2be.dll": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\TKPrim-5d1803f590ce9e4291444120bae1a2be.dll",
+      "bytes": 280576,
+      "sha256": "5b4459276d79e280b5c3b998859873f73f32ae474f4248875094e9e0f97d1298"
+    },
+    "source/meshlib_init.py": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib\\__init__.py",
+      "bytes": 2313,
+      "sha256": "8cfb59111dc46cebd317035c3e827e466b4a811e5b956973368455cac1f39849"
+    },
+    "source/mrmeshpy.pyi": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib\\mrmeshpy.pyi",
+      "bytes": 3914324,
+      "sha256": "0405c0d8f5fdc39f81c00e1d1f4252ccd28735881e195379cdf9b09bf39d1e1d"
+    },
+    "source/mrmeshnumpy.pyi": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib\\mrmeshnumpy.pyi",
+      "bytes": 4555,
+      "sha256": "4cc71fe332a4686fbc9f63e326df8cc29e3ebbefaf710f02c167331cdaa4c7c3"
+    },
+    "metadata/meshlib": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib-3.1.4.297.dist-info\\METADATA",
+      "bytes": 13029,
+      "sha256": "180855ca6cc40e0bd0b5014196cc54e2b499d92ca4f468276c58e918e0cbb8ae"
+    },
+    "metadata/meshlib_core": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core-3.1.4.297.dist-info\\METADATA",
+      "bytes": 13026,
+      "sha256": "b829d611038e97029ddeaf3049f78633b436e9f6268b14850ea289279cb54e23"
+    },
+    "source/delvewheel-load-order": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib_core.libs\\.load-order-meshlib_core-3.1.4.297",
+      "bytes": 3230,
+      "sha256": "0fee075484b0fdb28d5b942f9d0873082b2a99cfc138b9c8ebb2561e753a5762"
+    }
+  },
+  "limitations": [
+    "No dynamic LoadLibrary behavior or runtime module/driver activity was measured. Worker audit guards forbid CUDA/viewer/model imports and call only the no-duplication CPU constructor."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "classification": "BLOCKED",
+  "cause": "Unqualified MeshLib int_output counter readback in harness, not a demonstrated constructor/topology/numerical failure",
+  "worker_result_SHA256": "06c6277e175e534996b738c552d69783960d105a676330214c6b867b5f9b966e",
+  "host_result_SHA256": "305cf4de32c08ceab8b907fac4ac49ce4899886973d3191a166fc523050ea038",
+  "attempt_SHA256": "634b9b018a038950627ce28dd9996133772682a467a78af0ad14d61b1368e45f",
+  "constructor_calls": 1,
+  "brick_constructor_calls": 1,
+  "foliage_constructor_calls": 0,
+  "remesh_calls": 0,
+  "target_generation_calls": 0,
+  "appearance_transfer_calls": 0,
+  "readback_array_count": 0,
+  "worker_elapsed_seconds": 0.9369999999908032,
+  "host_elapsed_seconds": 3.125,
+  "peak_process_committed_bytes": 168378368,
+  "peak_job_committed_bytes": 169218048,
+  "minimum_observed_available_RAM_bytes": 19382935552,
+  "minimum_RAM_includes_initial_admission": true,
+  "minimum_observed_destination_free_bytes": 107415007232,
+  "all_monitor_samples_admitted": true,
+  "sources_unchanged": true,
+  "natural_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "verdicts": {
+    "clean_geometry_feasibility": "BLOCKED: source transport and sheet correspondence unqualified",
+    "brick_control_quality": "NOT RUN: no target",
+    "foliage_stress_quality": "NOT RUN: no constructor or target",
+    "source_appearance_transfer": "NOT RUN: no geometry admission",
+    "runtime_memory_safety": "PASS for observed constructor-probe containment only; target/remesh runtime unqualified"
+  }
+}

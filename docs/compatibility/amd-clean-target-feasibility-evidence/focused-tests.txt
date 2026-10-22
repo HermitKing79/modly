@@ -1,0 +1,22 @@
+test_exact_and_cyclic_oriented_correspondence (__main__.RoundtripTests.test_exact_and_cyclic_oriented_correspondence) ... ok
+test_position_signed_zero_nonfinite_and_sub_F32_change_reject (__main__.RoundtripTests.test_position_signed_zero_nonfinite_and_sub_F32_change_reject) ... ok
+test_reversed_winding_and_reordered_face_IDs_reject (__main__.RoundtripTests.test_reversed_winding_and_reordered_face_IDs_reject) ... ok
+test_skipped_faces_or_merged_vertices_reject (__main__.RoundtripTests.test_skipped_faces_or_merged_vertices_reject) ... ok
+test_source_alias_or_wrong_input_dimension_reject (__main__.RoundtripTests.test_source_alias_or_wrong_input_dimension_reject) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.732s
+
+OK
+
+Final source acceptance after fail-closed unexpected-exception handling correction:
+test_exact_and_cyclic_oriented_correspondence (__main__.RoundtripTests.test_exact_and_cyclic_oriented_correspondence) ... ok
+test_position_signed_zero_nonfinite_and_sub_F32_change_reject (__main__.RoundtripTests.test_position_signed_zero_nonfinite_and_sub_F32_change_reject) ... ok
+test_reversed_winding_and_reordered_face_IDs_reject (__main__.RoundtripTests.test_reversed_winding_and_reordered_face_IDs_reject) ... ok
+test_skipped_faces_or_merged_vertices_reject (__main__.RoundtripTests.test_skipped_faces_or_merged_vertices_reject) ... ok
+test_source_alias_or_wrong_input_dimension_reject (__main__.RoundtripTests.test_source_alias_or_wrong_input_dimension_reject) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.731s
+
+OK
