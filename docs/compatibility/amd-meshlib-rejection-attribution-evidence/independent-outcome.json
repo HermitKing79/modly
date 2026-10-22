@@ -1,0 +1,215 @@
+{
+  "schema": "modly.meshlib.rejection-attribution.independent-outcome.v1",
+  "classification": "PASS",
+  "publication_review": "GO",
+  "decision": "CAUSE_UNRESOLVED",
+  "recommendation": "PARK MESHLIB unless version-matched implementation/rejection-state evidence supports one specific lossless falsifiable correction.",
+  "historical_brick_lossless_transport": "NO-GO",
+  "historical_foliage_transport": "NOT RUN",
+  "original_semantic_sheet_pairing": "UNRESOLVED",
+  "remeshing_admission": "NOT AUTHORISED",
+  "analysis": "PASS",
+  "independent_saved_data_verification": "PASS",
+  "new_MeshLib_imports_or_calls": 0,
+  "new_constructor_calls": 0,
+  "new_simplification_remeshing_repair_calls": 0,
+  "findings": [],
+  "facts_checked": {
+    "witnesses": 4,
+    "all_distinct_finite_positive_area": true,
+    "all_twelve_original_vertex_links_connected": true,
+    "three_distinct_incidence3_witness_edges": true,
+    "W2_complete_vertex_star_sizes": [
+      5,
+      3,
+      5
+    ],
+    "W2_original_link_maximum_degrees": [
+      3,
+      2,
+      2
+    ],
+    "W2_first_vertex_touches_incidence3_edge_outside_witness": true,
+    "W2_no_own_codirected_edge_conflict": true,
+    "W2_prefix_edge_incident_faces": 0,
+    "W2_prefix_vertex_incident_faces": 4,
+    "S1_all_three_source_faces_retained_in_one_pair_and_one_singleton": true,
+    "S2_two_retained_uses_codirected_and_separate_boundary_singletons": true,
+    "S2_omitted_source_face_is_W3": true,
+    "W4_third_vertex_original_star_contains_only_W4": true,
+    "lost_valid_vertex_matches_W4_third_vertex": true,
+    "complete_private_context_faces": 28
+  },
+  "historical_verified_global_facts": {
+    "retained_faces": 777,
+    "valid_referenced_vertices": 456,
+    "unchanged_allocated_positions": 457,
+    "native_face_adjacency_components": 2,
+    "native_boundary_edges": 151,
+    "retained_source_endpoint_components": 1
+  },
+  "resource_verdict": "Both owned hosts PASS, no errors or monitoring failures, natural empty unforced Jobs, binary GO after attachment, unchanged watched sources, 6GiB process AND Job ceilings/180s hard and150s cooperative deadlines/12GiB availableRAM and2GiB disk floors retained.",
+  "measured": {
+    "analysis": {
+      "classification": "PASS",
+      "returncode": 0,
+      "peak_process_committed_bytes": 125198336,
+      "peak_job_committed_bytes": 126038016,
+      "memory_cap_bytes": 6442450944,
+      "deadline_seconds": 180,
+      "sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "attached_before_GO": true,
+      "exact_binary_GO_sent": true,
+      "host_elapsed_seconds": 5.23399999999674,
+      "worker_elapsed_seconds": 1.2029999999940628,
+      "minimum_available_ram_bytes": 17822011392,
+      "minimum_disk_free_bytes": 106596511744,
+      "live_samples": 3,
+      "private_host_receipt_SHA256": "000d0339e541698a524bc95b69ef16ed80b7b600b5f9a81891a1f6e23ed44f9f",
+      "private_worker_receipt_SHA256": "f8d5ae17aa8bad1cf5b5843d8b473e2670465a279141af91b6474e6a06a89ab2",
+      "private_attempt_marker_SHA256": "8881ccd49d377a14dea51db296f1d3558ae6c133ed0d3daa104e3c84d3a8bf8d"
+    },
+    "verify": {
+      "classification": "PASS",
+      "returncode": 0,
+      "peak_process_committed_bytes": 126578688,
+      "peak_job_committed_bytes": 127418368,
+      "memory_cap_bytes": 6442450944,
+      "deadline_seconds": 180,
+      "sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "attached_before_GO": true,
+      "exact_binary_GO_sent": true,
+      "host_elapsed_seconds": 3.452999999994063,
+      "worker_elapsed_seconds": 1.1719999999913853,
+      "minimum_available_ram_bytes": 18544951296,
+      "minimum_disk_free_bytes": 106596384768,
+      "live_samples": 3,
+      "private_host_receipt_SHA256": "1e610a79d4455b68027fd49cff1a81c907ee4c90c5afa08d5f9614a5044d7dc1",
+      "private_worker_receipt_SHA256": "946763a8de958d80c46cbfa9655d628db001f6c791bc5bf4ef7e64c2d91d311e",
+      "private_attempt_marker_SHA256": "f5ad188e032d80168b67c6f4964771ec6184b68e93a9b41c833104daab3fa5ac"
+    }
+  },
+  "source_SHA256": {
+    "analyze.py": "f7e271a2386bb7f38529d6e4fc89e14e8cfe875ebbb043081b9c1dd542c50248",
+    "check.py": "9fbe393d0e3b862bc10547bf6ce85384c6e547dc65e79c57ecba9ccc0ae6e0e0",
+    "common.py": "3b8ca1b64d181480f585aca73e517f89621809a7ed5a99d796e4ac3a2135f85d",
+    "run_host.py": "3f24bb75778849d6700b4f47f0c77afddc6136438d72982efe25c9729ca98040",
+    "test_analyze.py": "637dfec3e8aff2ab56072c1679e2ed6824db42aa4556c872dfbf8cbdd7ef54ce",
+    "test_check.py": "1f66522c1199c29431b332f187956517a51182cbae8582fb061a3f2c9e078af8"
+  },
+  "plan_SHA256": "47d7f36d61389258dc74b5b630436086970dbf10d1f5751f5c1cfd28dc0f4272",
+  "focused_tests_SHA256": "399d5eadeb11ad498d5d155687fa6dc26053b30ea1df6bea9064af672eb7d55c",
+  "source_constraints_SHA256": "7c4f3c13edaa2c03b5dc495547d25388bc49470dd56cfec8ad2f4bc8738d15ff",
+  "library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "input_manifest_SHA256": "aeb98fd9411ab718d7fd439f6345ad2e10927f55371a4d3c6bce4f22b39204bb",
+  "report": {
+    "path": "docs/compatibility/amd-meshlib-rejection-attribution.md",
+    "bytes": 7832,
+    "sha256": "648a746e1aff55be58e9efa3c434727cb418012f5d38bdf134276f8af8ad117f",
+    "factual_consistency": "PASS",
+    "source_safety": "PASS"
+  },
+  "public_evidence": {
+    ".gitattributes": {
+      "bytes": 131,
+      "sha256": "dc9a160dbe39a355a325f480b56d5277bf9b51de08b14c45d5337038bfd99d00"
+    },
+    "analysis-plan.md": {
+      "bytes": 3630,
+      "sha256": "47d7f36d61389258dc74b5b630436086970dbf10d1f5751f5c1cfd28dc0f4272"
+    },
+    "source-constraints.json": {
+      "bytes": 7714,
+      "sha256": "7c4f3c13edaa2c03b5dc495547d25388bc49470dd56cfec8ad2f4bc8738d15ff"
+    },
+    "focused-tests.txt": {
+      "bytes": 2812,
+      "sha256": "399d5eadeb11ad498d5d155687fa6dc26053b30ea1df6bea9064af672eb7d55c"
+    },
+    "independent-analysis-review.json": {
+      "bytes": 3486,
+      "sha256": "e4576274704d677ffa539e85b725b07e683f828d78eb1e436d9d2326d9b35ce4"
+    },
+    "independent-verify-review.json": {
+      "bytes": 4545,
+      "sha256": "f6589cfde17360bf1ab49f42e1ee88a2ceda28af34979dfcc200bce033399aa6"
+    },
+    "analysis-result.json": {
+      "bytes": 5530,
+      "sha256": "f8d5ae17aa8bad1cf5b5843d8b473e2670465a279141af91b6474e6a06a89ab2"
+    },
+    "verification-result.json": {
+      "bytes": 893,
+      "sha256": "946763a8de958d80c46cbfa9655d628db001f6c791bc5bf4ef7e64c2d91d311e"
+    },
+    "execution-summary.json": {
+      "bytes": 3759,
+      "sha256": "94f086ae405c78d645b467fffb98a168330f9c100926733a15e033ef081fcf9c"
+    },
+    "preservation-before.json": {
+      "bytes": 6508,
+      "sha256": "2564817e7d933e12fd7ab2496fdb91e8c87124dbc725c05a538e65282c5342c7"
+    },
+    "preservation-after.json": {
+      "bytes": 6803,
+      "sha256": "d3e396502c0ee1a9a4fa94f1de8877a6f1f51a921bba7cbae089099beefe9cee"
+    }
+  },
+  "private_evidence": {
+    "analysis/result.json": {
+      "bytes": 5530,
+      "sha256": "f8d5ae17aa8bad1cf5b5843d8b473e2670465a279141af91b6474e6a06a89ab2"
+    },
+    "analysis/witnesses.json": {
+      "bytes": 134904,
+      "sha256": "d9945d0779cab5cb73d180f4a8c805780c1ec066fba17b4b5eb24ac33e14bf28"
+    },
+    "analysis-host.json": {
+      "bytes": 1882,
+      "sha256": "000d0339e541698a524bc95b69ef16ed80b7b600b5f9a81891a1f6e23ed44f9f"
+    },
+    "analysis-attempt.json": {
+      "bytes": 47318,
+      "sha256": "8881ccd49d377a14dea51db296f1d3558ae6c133ed0d3daa104e3c84d3a8bf8d"
+    },
+    "verify/result.json": {
+      "bytes": 893,
+      "sha256": "946763a8de958d80c46cbfa9655d628db001f6c791bc5bf4ef7e64c2d91d311e"
+    },
+    "verify-host.json": {
+      "bytes": 1911,
+      "sha256": "1e610a79d4455b68027fd49cff1a81c907ee4c90c5afa08d5f9614a5044d7dc1"
+    },
+    "verify-attempt.json": {
+      "bytes": 48457,
+      "sha256": "f5ad188e032d80168b67c6f4964771ec6184b68e93a9b41c833104daab3fa5ac"
+    }
+  },
+  "preservation_review": {
+    "classification": "PASS_WITH_RECORDED_SCOPE",
+    "public_before_after_identities_bound": true,
+    "protected100_original400_SDK78_partial13_unchanged": true,
+    "prior71trees_2037files_33reports_unchanged": true,
+    "all113_original_remote_heads_unchanged": true,
+    "weight_payload_bytes_read_by_preservation_audit": 0,
+    "scope": "Reviewed root-authored preservation receipts and their recorded scope; did not repeat the preservation audit or independently rehash historical arrays/assets in this review."
+  },
+  "publication_scope": "Only new source-safe evidence and report; .gitattributes is scoped to this evidence directory and preserves reviewed bytes. Root separately verifies staged byte identity, new-branch commit/push and prior remote-head preservation.",
+  "review_scope": "Read current frozen source/reviews, all saved private witness JSON, both phase results/hosts/attempt markers and public report/evidence. Independently checked complete W2 context, S1/S2 direction and retained groups, W4 sole-vertex relation, source/receipt/hash bindings and resource minima using stdlib-only saved-JSON checks. No NPY loaded, no worker or tests rerun, no native import/call.",
+  "independence": "This reviewer authored check.py/test_check.py and the source-constraint audit; root and producer peer independently reviewed that checker before execution. The other agent authored analyze.py; root authored common/host. This final receipt reviews observed saved results and publication facts; it does not self-upgrade algorithm correctness beyond the independently reviewed and executed checker.",
+  "causal_limit": "Original/prefix/retained incidence and actual native pairings are demonstrated observations. Neither descriptive link graphs nor strict source-order prefixes prove native internal chain classification, insertion scheduling or the exact rejection predicate. No repair, retry, reorder, omission, duplication, welding or fallback is supported or authorised."
+}

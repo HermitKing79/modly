@@ -1,0 +1,36 @@
+{
+  "schema": "modly.meshlib.rejection-attribution.source-review.v1",
+  "classification": "GO",
+  "author": "independent producer/host/source-constraint reviewer; checker author",
+  "approved_scope": "One owned read-only saved-data analysis; no native import/call, constructor, model query, geometry change or retry.",
+  "source_SHA256": {
+    "analyze.py": "f7e271a2386bb7f38529d6e4fc89e14e8cfe875ebbb043081b9c1dd542c50248",
+    "check.py": "9fbe393d0e3b862bc10547bf6ce85384c6e547dc65e79c57ecba9ccc0ae6e0e0",
+    "common.py": "3b8ca1b64d181480f585aca73e517f89621809a7ed5a99d796e4ac3a2135f85d",
+    "run_host.py": "3f24bb75778849d6700b4f47f0c77afddc6136438d72982efe25c9729ca98040",
+    "test_analyze.py": "637dfec3e8aff2ab56072c1679e2ed6824db42aa4556c872dfbf8cbdd7ef54ce",
+    "test_check.py": "1f66522c1199c29431b332f187956517a51182cbae8582fb061a3f2c9e078af8"
+  },
+  "plan_SHA256": "47d7f36d61389258dc74b5b630436086970dbf10d1f5751f5c1cfd28dc0f4272",
+  "focused_tests_SHA256": "399d5eadeb11ad498d5d155687fa6dc26053b30ea1df6bea9064af672eb7d55c",
+  "source_constraints_SHA256": "7c4f3c13edaa2c03b5dc495547d25388bc49470dd56cfec8ad2f4bc8738d15ff",
+  "library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "input_manifest_SHA256": "aeb98fd9411ab718d7fd439f6345ad2e10927f55371a4d3c6bce4f22b39204bb",
+  "findings": [],
+  "review_notes": [
+    "Producer reconstructs all rejected-face source IDs, complete original/prefix/retained vertex stars, oriented edge usage, actual noncontiguous native FaceId pairings, split endpoint groups, lost references and complete private context; public records contain stable W/S labels and scalar diagnostics.",
+    "Common pins original bounded arrays, thirteen saved readbacks, prior counter/readback/host receipts and installed SDK without loading MeshLib. Failed FaceIds remain authenticated I32 arrays; the pre-execution list/I32 handoff mismatch was corrected and has a focused regression.",
+    "Installed declarations admit two open chains as well as single chains/rings; source-order prefixes and descriptive link graphs are explicitly not native insertion state or internal VertInfo classifications. No exact matching C++ implementation or rejection trace was available in the scoped source inventory.",
+    "Host permits only fixed analysis/check scripts after exact source/plan/log/audit/SDK/input review binding, binary GO, exclusive phases and predecessor watches; preserves process AND Job 6GiB caps, 180s deadline, 12GiB RAM/2GiB disk floors and natural unforced settlement.",
+    "Frozen focused log records19 passing synthetic checks, including complete JSON producer/checker handoffs and source-ID, link, context, split-summary and native-reciprocity corruption rejection. Float64 measurements use the declared NumPy cross/norm/dot arithmetic; saved-record comparison is typed and bit-exact, including signed zero."
+  ],
+  "independence": {
+    "producer_common_host_authored_by_other_agents": true,
+    "checker_and_checker_tests_authored_by_this_reviewer": true,
+    "checker_independently_reviewed_by_root": true,
+    "verification_review_receipt_to_be_authored_by_producer_peer": true
+  },
+  "outcome_boundary": "Source GO is not an actual analysis/verification PASS and does not upgrade the preserved brick zero-loss NO-GO, qualify original sheet identity or support a native correction.",
+  "native_imports_or_calls": 0,
+  "actual_patch_arrays_processed": 0
+}

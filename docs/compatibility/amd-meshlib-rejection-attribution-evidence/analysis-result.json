@@ -1,0 +1,136 @@
+{
+  "classification": "PASS",
+  "analysis_completed": true,
+  "native_constructor_calls": 0,
+  "remesh_calls": 0,
+  "conclusion": "CAUSE_UNRESOLVED_PARK",
+  "failed_face_count": 4,
+  "witnesses": [
+    {
+      "label": "W1",
+      "distinct_vertices": true,
+      "finite_positions": true,
+      "positive_area": true,
+      "original_edge_class_counts": {
+        "boundary": 0,
+        "manifold": 2,
+        "nonmanifold": 1
+      },
+      "co_directed_original_edge_conflicts": 1,
+      "earlier_same_direction_edge_competitors": 0,
+      "earlier_edge_incident_faces": 3,
+      "earlier_vertex_incident_faces": 11,
+      "prefix_is_native_insertion_state": false,
+      "original_vertices_with_multiple_link_components": 0,
+      "original_vertices_with_branching_links": 2,
+      "prefix_vertices_with_multiple_link_components": 2,
+      "prefix_vertices_with_branching_links": 1,
+      "retained_vertices_with_multiple_link_components": 1,
+      "retained_vertices_with_branching_links": 1
+    },
+    {
+      "label": "W2",
+      "distinct_vertices": true,
+      "finite_positions": true,
+      "positive_area": true,
+      "original_edge_class_counts": {
+        "boundary": 1,
+        "manifold": 2,
+        "nonmanifold": 0
+      },
+      "co_directed_original_edge_conflicts": 0,
+      "earlier_same_direction_edge_competitors": 0,
+      "earlier_edge_incident_faces": 0,
+      "earlier_vertex_incident_faces": 4,
+      "prefix_is_native_insertion_state": false,
+      "original_vertices_with_multiple_link_components": 0,
+      "original_vertices_with_branching_links": 1,
+      "prefix_vertices_with_multiple_link_components": 0,
+      "prefix_vertices_with_branching_links": 0,
+      "retained_vertices_with_multiple_link_components": 0,
+      "retained_vertices_with_branching_links": 0
+    },
+    {
+      "label": "W3",
+      "distinct_vertices": true,
+      "finite_positions": true,
+      "positive_area": true,
+      "original_edge_class_counts": {
+        "boundary": 0,
+        "manifold": 2,
+        "nonmanifold": 1
+      },
+      "co_directed_original_edge_conflicts": 1,
+      "earlier_same_direction_edge_competitors": 0,
+      "earlier_edge_incident_faces": 4,
+      "earlier_vertex_incident_faces": 11,
+      "prefix_is_native_insertion_state": false,
+      "original_vertices_with_multiple_link_components": 0,
+      "original_vertices_with_branching_links": 2,
+      "prefix_vertices_with_multiple_link_components": 2,
+      "prefix_vertices_with_branching_links": 1,
+      "retained_vertices_with_multiple_link_components": 0,
+      "retained_vertices_with_branching_links": 0
+    },
+    {
+      "label": "W4",
+      "distinct_vertices": true,
+      "finite_positions": true,
+      "positive_area": true,
+      "original_edge_class_counts": {
+        "boundary": 2,
+        "manifold": 0,
+        "nonmanifold": 1
+      },
+      "co_directed_original_edge_conflicts": 1,
+      "earlier_same_direction_edge_competitors": 1,
+      "earlier_edge_incident_faces": 2,
+      "earlier_vertex_incident_faces": 7,
+      "prefix_is_native_insertion_state": false,
+      "original_vertices_with_multiple_link_components": 0,
+      "original_vertices_with_branching_links": 2,
+      "prefix_vertices_with_multiple_link_components": 0,
+      "prefix_vertices_with_branching_links": 0,
+      "retained_vertices_with_multiple_link_components": 0,
+      "retained_vertices_with_branching_links": 0
+    }
+  ],
+  "lost_valid_vertex_count": 1,
+  "split_endpoint_pair_count": 2,
+  "split_pairs": [
+    {
+      "label": "S1",
+      "original_incidence": 3,
+      "retained_incidence": 3,
+      "native_edge_count": 2,
+      "native_singleton_edges": 1,
+      "native_paired_edges": 1,
+      "original_co_directed_conflict": true
+    },
+    {
+      "label": "S2",
+      "original_incidence": 3,
+      "retained_incidence": 2,
+      "native_edge_count": 2,
+      "native_singleton_edges": 2,
+      "native_paired_edges": 0,
+      "original_co_directed_conflict": true
+    }
+  ],
+  "native_rejection_cause_proven": false,
+  "minimal_nondestructive_fix_supported": false,
+  "interpretation": "Saved local incidence and actual native adjacency observations only; no insertion trace or scheduling is available. No repair, duplication, welding, reordering or fallback is supported.",
+  "constraint_caveat": "MeshBuilder documents acceptance of a single chain/ring, no triangles, OR two open chains. Descriptive link components are not its internal chains/triangle-pairs, and do not implement duplicationNeeded or hasRepeatedVerts.",
+  "prefix_caveat": "Prefix means original input FaceIds strictly below this witness, including any earlier rejected faces; it is not observed native insertion state.",
+  "edge_class_caveat": "Boundary/manifold/nonmanifold labels here mean only undirected source-endpoint incidence1/2/>2; they do not certify an oriented sheet partition.",
+  "elapsed_seconds": 1.2029999999940628,
+  "previous_constructor_result_SHA256": "6a47a4df80fc32610bbb2ff2072d15c38f635c621de92d8dab684d766e55ed1f",
+  "previous_independent_readback_SHA256": "433d37573237a001b0f6ca5f1f2c1bfe77dfbf533fc6396c34566669ef630aab",
+  "previous_private_witness_SHA256": "d8bbf36aa4d3083a2d6fb7fd875f683f8749be2c52f58d537f8128640d0fef80",
+  "files": {
+    "witnesses.json": {
+      "bytes": 134904,
+      "sha256": "d9945d0779cab5cb73d180f4a8c805780c1ec066fba17b4b5eb24ac33e14bf28"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+test_actual_split_endpoint_pair_and_lost_vertex_context (__main__.SavedAttribution.test_actual_split_endpoint_pair_and_lost_vertex_context) ... FAIL
+test_co_directed_manifold_count_edge_and_earlier_competitor (__main__.SavedAttribution.test_co_directed_manifold_count_edge_and_earlier_competitor) ... FAIL
+test_complete_vertex_stars_and_two_open_link_components_are_descriptive (__main__.SavedAttribution.test_complete_vertex_stars_and_two_open_link_components_are_descriptive) ... FAIL
+test_inconsistent_failed_partition_rejects (__main__.SavedAttribution.test_inconsistent_failed_partition_rejects) ... FAIL
+test_manifold_face_loss_is_described_without_a_causal_claim (__main__.SavedAttribution.test_manifold_face_loss_is_described_without_a_causal_claim) ... FAIL
+test_multiple_failed_faces_have_stable_source_order_labels (__main__.SavedAttribution.test_multiple_failed_faces_have_stable_source_order_labels) ... FAIL
+test_public_output_has_no_private_geometry_or_ids_and_inputs_unchanged (__main__.SavedAttribution.test_public_output_has_no_private_geometry_or_ids_and_inputs_unchanged) ... FAIL
+test_zero_area_is_recorded_without_fix_or_native_cause (__main__.SavedAttribution.test_zero_area_is_recorded_without_fix_or_native_cause) ... FAIL
+
+======================================================================
+FAIL: test_actual_split_endpoint_pair_and_lost_vertex_context (__main__.SavedAttribution.test_actual_split_endpoint_pair_and_lost_vertex_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-rejection-attribution-evidence\test_analyze.py", line 49, in setUp
+    def setUp(self): self.assertIsNotNone(analyze_arrays, 'Attribution helper is not implemented')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Attribution helper is not implemented
+
+======================================================================
+FAIL: test_co_directed_manifold_count_edge_and_earlier_competitor (__main__.SavedAttribution.test_co_directed_manifold_count_edge_and_earlier_competitor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-rejection-attribution-evidence\test_analyze.py", line 49, in setUp
+    def setUp(self): self.assertIsNotNone(analyze_arrays, 'Attribution helper is not implemented')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Attribution helper is not implemented
+
+======================================================================
+FAIL: test_complete_vertex_stars_and_two_open_link_components_are_descriptive (__main__.SavedAttribution.test_complete_vertex_stars_and_two_open_link_components_are_descriptive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-rejection-attribution-evidence\test_analyze.py", line 49, in setUp
+    def setUp(self): self.assertIsNotNone(analyze_arrays, 'Attribution helper is not implemented')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Attribution helper is not implemented
+
+======================================================================
+FAIL: test_inconsistent_failed_partition_rejects (__main__.SavedAttribution.test_inconsistent_failed_partition_rejects)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-rejection-attribution-evidence\test_analyze.py", line 49, in setUp
+    def setUp(self): self.assertIsNotNone(analyze_arrays, 'Attribution helper is not implemented')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Attribution helper is not implemented
+
+======================================================================
+FAIL: test_manifold_face_loss_is_described_without_a_causal_claim (__main__.SavedAttribution.test_manifold_face_loss_is_described_without_a_causal_claim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-rejection-attribution-evidence\test_analyze.py", line 49, in setUp
+    def setUp(self): self.assertIsNotNone(analyze_arrays, 'Attribution helper is not implemented')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Attribution helper is not implemented
+
+======================================================================
+FAIL: test_multiple_failed_faces_have_stable_source_order_labels (__main__.SavedAttribution.test_multiple_failed_faces_have_stable_source_order_labels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-rejection-attribution-evidence\test_analyze.py", line 49, in setUp
+    def setUp(self): self.assertIsNotNone(analyze_arrays, 'Attribution helper is not implemented')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Attribution helper is not implemented
+
+======================================================================
+FAIL: test_public_output_has_no_private_geometry_or_ids_and_inputs_unchanged (__main__.SavedAttribution.test_public_output_has_no_private_geometry_or_ids_and_inputs_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-rejection-attribution-evidence\test_analyze.py", line 49, in setUp
+    def setUp(self): self.assertIsNotNone(analyze_arrays, 'Attribution helper is not implemented')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Attribution helper is not implemented
+
+======================================================================
+FAIL: test_zero_area_is_recorded_without_fix_or_native_cause (__main__.SavedAttribution.test_zero_area_is_recorded_without_fix_or_native_cause)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-meshlib-rejection-attribution-evidence\test_analyze.py", line 49, in setUp
+    def setUp(self): self.assertIsNotNone(analyze_arrays, 'Attribution helper is not implemented')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Attribution helper is not implemented
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.003s
+
+FAILED (failures=8)

@@ -1,0 +1,102 @@
+{
+  "schema": "modly.amd.meshlib-rejection-attribution-preservation-after.v1",
+  "created_utc": "2026-10-22T16:16:31.906816+00:00",
+  "mission_base": "b0d6fcf9adf92152c4c3784fa9e9abbbd782817f",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "authenticated_prior_patch_constructor_after_public_sha256": "db93c232afa7cb9067343be1f107863739c930880017adcecd05c0bc0c70fe3f",
+  "authenticated_prior_patch_constructor_after_private_sha256": "270dd04bd2fe74682f6503c348272c38a6c80fa3e751922e248e2982042b9b13",
+  "private_detail_sha256": "2da393f6b78fb824ff652b05dbe34789a4f91c812d8553b7241882b2dacf890c",
+  "prior_partial_brick_artifact_file_count": 13,
+  "prior_partial_brick_artifact_hashes_and_sizes_match": true,
+  "authenticated_prior_partial_private_witness_sha256": "d8bbf36aa4d3083a2d6fb7fd875f683f8749be2c52f58d537f8128640d0fef80",
+  "original_constructor_recorded_watch_file_count": 131,
+  "original_constructor_recorded_watch_files_unchanged": true,
+  "selected_original_patch_lineage_identity_count": 30,
+  "selected_original_patch_lineage_identities_match": true,
+  "authenticated_original_patch_input_manifest_sha256": "aeb98fd9411ab718d7fd439f6345ad2e10927f55371a4d3c6bce4f22b39204bb",
+  "authenticated_original_patch_private_auth_sha256": "333d0028af652fced2049f5a9c8dce78ed4d7bc1f0d40f910c6cdf7bdaf82c52",
+  "additional_selected_installed_sdk_file_count": 78,
+  "additional_selected_installed_sdk_fresh_hash_size_match": true,
+  "authenticated_selected_sdk_manifest_sha256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "authenticated_selected_sdk_owned_receipt_sha256": "06c6277e175e534996b738c552d69783960d105a676330214c6b867b5f9b966e",
+  "authenticated_captured_remote_head_count": 113,
+  "starting_commit_present_in_remote_heads": true,
+  "live_after_remote_check": {
+    "live_after_checked": true,
+    "after_head_count": 113,
+    "all113_original_remote_heads_unchanged": true
+  },
+  "retained_initial_launch46_fresh_hash_size_match": true,
+  "captured_remote_head_baseline_sha256": "f74d3bc0db804d79aae0d08302b34c82174eebb1a9c14ae288089f172761b46e",
+  "live_remote_checked_by_this_audit": true,
+  "root_handles_final_publication_checks": true,
+  "bounded_prior_unique_file_identities_checked": 400,
+  "all400_fresh_full_SHA256_checked": true,
+  "all400_current_identities_match_authenticated_before": true,
+  "protected_files_checked": 100,
+  "protected_files_fresh_full_SHA256_checked": 100,
+  "protected_files_unchanged": true,
+  "original_pycache_directories": 4,
+  "original_pycache_files": 20,
+  "original_pycache_entry_sets_and_fresh_file_hashes_unchanged": true,
+  "selected_environment_check_count": 42,
+  "selected_source_edit_backup_check_count": 13,
+  "selected_environment_native_source_edit_backup_checks_unchanged": true,
+  "source_closure_checks": {
+    "final16_source_closure": {
+      "files": 16,
+      "all_fresh_hashes_match": true
+    },
+    "original_CPU_candidate107_source_closure": {
+      "files": 107,
+      "all_fresh_hashes_match": true
+    },
+    "qualified_input_ownership_source_closure": {
+      "files": 18,
+      "all_fresh_hashes_match": true
+    },
+    "latest_qualified_PBR123_source_closure": {
+      "files": 123,
+      "all_fresh_hashes_match": true
+    }
+  },
+  "checkpoint_count": 3,
+  "checkpoint_stat_and_raw_header_unchanged": true,
+  "checkpoint_configuration_files_bound_by_full_SHA256_in_unique400": true,
+  "checkpoint_weight_payload_bytes_read_this_audit": 0,
+  "checkpoint_header_bytes_read_this_audit": 121336,
+  "prior_tree_count": 71,
+  "prior_tree_file_count": 2037,
+  "prior_report_count": 33,
+  "all_compared_prior_trees_unchanged": true,
+  "all_compared_prior_reports_unchanged": true,
+  "newly_snapshotted_completed_patch_constructor_tree_count": 0,
+  "newly_snapshotted_completed_patch_constructor_file_count": 0,
+  "newly_snapshotted_completed_patch_constructor_report_count": 0,
+  "prior_recorded_cache_incident": {
+    "previous_classification": "PASS_RECONCILED_WITH_RECORDED_SIDE_EFFECT",
+    "original_after_remains_FAIL": true,
+    "retained_quarantine_file_count": 5,
+    "all_current_quarantine_hash_size_mtime_match_prior_reconciliation": true,
+    "all_old_source_entries_remain_absent": true,
+    "independent_pre_move_payload_hash_capture": false
+  },
+  "original_saved_five_inputs_fresh_full_SHA256_match": true,
+  "diagnosis_original_five_inputs_fresh_full_SHA256_match": true,
+  "pinned_renderers_unchanged": true,
+  "previous_exposure_images_unchanged": true,
+  "fresh_full_hash_unique_file_count_all_scopes": 2620,
+  "fresh_full_hash_bytes_read_all_scopes": 3795937269,
+  "issues": [],
+  "scope_limits": [
+    "All13 saved partial brick NPYs are verified by raw full SHA256/size against the authenticated original constructor manifest. The independent verifier and private d8bbf36a witness are authenticated without decoding arrays or recomputing relationships. The historical import-attempt records131 watched files; their exact hashes/stats are checked separately.",
+    "Original patch lineage checks authenticate the old input manifest/private patch-auth record, thirteen saved patch files, accepted GLBs/COLOR0 and source receipts/evidence by full SHA256. This is identity/receipt preservation only: no array decoding or correspondence recomputation.",
+    "Selected SDK78 scope: installed files freshly checked against authenticated original constructor size/SHA256 pins in both phases. This mission AFTER also checks exact SDK size/mtime against authenticated mission BEFORE. The original failed constructor probe supplied no older SDK mtime baseline; no native execution occurs in this audit.",
+    "All400/protected100/original cache20/source/environment/renderer identities freshly checked against authenticated prior reconciliation; historical prior trees remain frozen. Public receipt omits private absolute paths.",
+    "Three historical disposable CPU fixture copies retain exact size/mtime checks only. Checkpoint weight payloads not read; exact size/mtime and fresh bounded raw header SHA256 checked. Historical full checkpoint SHA256 is provenance only.",
+    "Previous completed real-patch constructor E/P trees and report, plus earlier generated-cache-quarantine are fresh snapshots in BEFORE and fixed comparison scopes for AFTER; prior original FAIL and reconciled receipts remain retained.",
+    "No WSL, model, GPU, Blender, native extension or install execution; no historical/source/cache writes. Root separately verifies Git state and final publication. This mission verifies its private live before/after remote-head captures."
+  ],
+  "authenticated_before_public_sha256": "2564817e7d933e12fd7ab2496fdb91e8c87124dbc725c05a538e65282c5342c7",
+  "authenticated_before_private_sha256": "52b16a204372bedbedd39466a9f9cd2759e6a5177305b1715d0d9ae60980a990"
+}

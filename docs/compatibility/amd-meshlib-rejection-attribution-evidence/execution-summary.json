@@ -1,0 +1,87 @@
+{
+  "classification": "VERIFIED_DIAGNOSTIC_PASS",
+  "decision": "CAUSE UNRESOLVED",
+  "recommendation": "PARK MESHLIB unless matching implementation/rejection-state evidence appears",
+  "historical_lossless_transport": "NO-GO",
+  "new_native_imports": 0,
+  "new_native_constructor_calls": 0,
+  "new_simplification_remeshing_repair_calls": 0,
+  "original_vertices": 457,
+  "original_faces": 781,
+  "retained_original_faces": 777,
+  "native_valid_vertices": 456,
+  "allocated_position_rows": 457,
+  "rejected_faces": 4,
+  "independent_context_faces_verified": 28,
+  "observed_skipped_counter": 4,
+  "all13_saved_readbacks_authenticated": true,
+  "measured": {
+    "analysis": {
+      "classification": "PASS",
+      "returncode": 0,
+      "peak_process_committed_bytes": 125198336,
+      "peak_job_committed_bytes": 126038016,
+      "memory_cap_bytes": 6442450944,
+      "deadline_seconds": 180,
+      "sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "attached_before_GO": true,
+      "exact_binary_GO_sent": true,
+      "host_elapsed_seconds": 5.23399999999674,
+      "worker_elapsed_seconds": 1.2029999999940628,
+      "minimum_available_ram_bytes": 17822011392,
+      "minimum_disk_free_bytes": 106596511744,
+      "live_samples": 3,
+      "private_host_receipt_SHA256": "000d0339e541698a524bc95b69ef16ed80b7b600b5f9a81891a1f6e23ed44f9f",
+      "private_worker_receipt_SHA256": "f8d5ae17aa8bad1cf5b5843d8b473e2670465a279141af91b6474e6a06a89ab2",
+      "private_attempt_marker_SHA256": "8881ccd49d377a14dea51db296f1d3558ae6c133ed0d3daa104e3c84d3a8bf8d"
+    },
+    "verify": {
+      "classification": "PASS",
+      "returncode": 0,
+      "peak_process_committed_bytes": 126578688,
+      "peak_job_committed_bytes": 127418368,
+      "memory_cap_bytes": 6442450944,
+      "deadline_seconds": 180,
+      "sources_unchanged": true,
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "attached_before_GO": true,
+      "exact_binary_GO_sent": true,
+      "host_elapsed_seconds": 3.452999999994063,
+      "worker_elapsed_seconds": 1.1719999999913853,
+      "minimum_available_ram_bytes": 18544951296,
+      "minimum_disk_free_bytes": 106596384768,
+      "live_samples": 3,
+      "private_host_receipt_SHA256": "1e610a79d4455b68027fd49cff1a81c907ee4c90c5afa08d5f9614a5044d7dc1",
+      "private_worker_receipt_SHA256": "946763a8de958d80c46cbfa9655d628db001f6c791bc5bf4ef7e64c2d91d311e",
+      "private_attempt_marker_SHA256": "f5ad188e032d80168b67c6f4964771ec6184b68e93a9b41c833104daab3fa5ac"
+    }
+  },
+  "private_witness": {
+    "bytes": 134904,
+    "sha256": "d9945d0779cab5cb73d180f4a8c805780c1ec066fba17b4b5eb24ac33e14bf28"
+  },
+  "source_SHA256": {
+    "analyze.py": "f7e271a2386bb7f38529d6e4fc89e14e8cfe875ebbb043081b9c1dd542c50248",
+    "check.py": "9fbe393d0e3b862bc10547bf6ce85384c6e547dc65e79c57ecba9ccc0ae6e0e0",
+    "common.py": "3b8ca1b64d181480f585aca73e517f89621809a7ed5a99d796e4ac3a2135f85d",
+    "run_host.py": "3f24bb75778849d6700b4f47f0c77afddc6136438d72982efe25c9729ca98040",
+    "test_analyze.py": "637dfec3e8aff2ab56072c1679e2ed6824db42aa4556c872dfbf8cbdd7ef54ce",
+    "test_check.py": "1f66522c1199c29431b332f187956517a51182cbae8582fb061a3f2c9e078af8"
+  },
+  "focused_tests_count": 19,
+  "focused_tests_SHA256": "399d5eadeb11ad498d5d155687fa6dc26053b30ea1df6bea9064af672eb7d55c",
+  "source_constraints_SHA256": "7c4f3c13edaa2c03b5dc495547d25388bc49470dd56cfec8ad2f4bc8738d15ff"
+}

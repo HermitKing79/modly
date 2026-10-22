@@ -1,0 +1,43 @@
+{
+  "classification": "GO",
+  "scope": "Independent source review of the separately authored saved-data checker and focused tests, plus root common/host integration, for one bounded verification of the sole read-only attribution analysis.",
+  "source_SHA256": {
+    "analyze.py": "f7e271a2386bb7f38529d6e4fc89e14e8cfe875ebbb043081b9c1dd542c50248",
+    "check.py": "9fbe393d0e3b862bc10547bf6ce85384c6e547dc65e79c57ecba9ccc0ae6e0e0",
+    "common.py": "3b8ca1b64d181480f585aca73e517f89621809a7ed5a99d796e4ac3a2135f85d",
+    "run_host.py": "3f24bb75778849d6700b4f47f0c77afddc6136438d72982efe25c9729ca98040",
+    "test_analyze.py": "637dfec3e8aff2ab56072c1679e2ed6824db42aa4556c872dfbf8cbdd7ef54ce",
+    "test_check.py": "1f66522c1199c29431b332f187956517a51182cbae8582fb061a3f2c9e078af8"
+  },
+  "reviewed_checker_SHA256": {
+    "check.py": "9fbe393d0e3b862bc10547bf6ce85384c6e547dc65e79c57ecba9ccc0ae6e0e0",
+    "test_check.py": "1f66522c1199c29431b332f187956517a51182cbae8582fb061a3f2c9e078af8"
+  },
+  "plan_SHA256": "47d7f36d61389258dc74b5b630436086970dbf10d1f5751f5c1cfd28dc0f4272",
+  "focused_tests_SHA256": "399d5eadeb11ad498d5d155687fa6dc26053b30ea1df6bea9064af672eb7d55c",
+  "source_constraints_SHA256": "7c4f3c13edaa2c03b5dc495547d25388bc49470dd56cfec8ad2f4bc8738d15ff",
+  "library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "input_manifest_SHA256": "aeb98fd9411ab718d7fd439f6345ad2e10927f55371a4d3c6bce4f22b39204bb",
+  "findings": [],
+  "review_conclusions": [
+    "Production check.py imports no analysis helper or MeshLib. Common admission is standard-library only and NumPy import follows verify-stage binary GO, authentication and exact owned-analysis predecessor binding.",
+    "The original4 and saved13-array schemas, exact source-ID/heap/allocated-position bytes, noncontiguous surviving FaceIds, failed complement, cyclic original winding and actual native halfedge ownership/reciprocity are independently checked.",
+    "Separate disjoint-set and degree-counter reconstruction checks every original, strict source-prefix and retained link multigraph, complete edge/vertex stars, full context-face table, lost-vertex context and actual split endpoint pairs.",
+    "All W and S labels, public aggregate fields and complete private record schemas match the producer handoff. Typed JSON equality checks Float64 bits and signed zero rather than accepting tolerance or unknown fields.",
+    "The checker authenticates the analysis PASS/host receipt, all predecessor result/witness hashes and private witness bytes/hash before checking. Complete current6-source and reviewed plan/test/source-constraint pins are required by the unchanged bounded host.",
+    "No single-fan/manifold-only rejection predicate is invented. The declarations allow two open chains, native triangle-pair classification is not inferred from raw links, and original source-order prefix is explicitly not an insertion trace.",
+    "The new host selects only analyze.py or check.py, retains6GiB process and Job caps,180-second deadline,12GiB RAM and2GiB disk floors, attach-before-GO and natural empty-Job cleanup. MeshLib imports and new native geometry operations remain prohibited."
+  ],
+  "focused_test_evidence": {
+    "classification": "PASS",
+    "tests": 19,
+    "seconds": 0.195,
+    "skipped": 0,
+    "reviewer_reran_combined_suite": false,
+    "synthetic_handoff_cases": 5
+  },
+  "authorship_boundary": "This reviewer authored analyze.py and test_analyze.py, which are independently reviewed by the other reviewer/root. This receipt independently reviews the other author's check.py and test_check.py and root-owned common/host integration. The full source map identifies the frozen integration without claiming independent self-review of the producer.",
+  "execution_scope": "GO only for the planned single saved-data verification after its actual owned analysis PASS and bound host receipt. No actual arrays were loaded, native library imported or data worker launched during this source review.",
+  "outcome_limit": "This source GO is not an attribution result. It does not change the original brick transport NO-GO or foliage NOT RUN, prove an internal native rejection cause, authenticate intended semantic sheet pairing, or authorise a retry/repair/reorder/duplication/weld/remesh/target.",
+  "source_safe_publication": "PASS: this review receipt publishes code/evidence hashes and aggregate source-review conclusions only; exact geometry, source IDs, normals and native edge memberships remain private."
+}

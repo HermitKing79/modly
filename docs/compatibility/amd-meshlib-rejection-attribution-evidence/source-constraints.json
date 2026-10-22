@@ -1,0 +1,134 @@
+{
+  "schema": "modly.meshlib.installed-source-constraints.v1",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "rejection_cause_status": "CAUSE_UNRESOLVED",
+  "scope": "Primary installed MeshLib3.1.4.297 declarations and focused local-source inventory only. No native import/call, actual patch array processing, insertion simulation or geometry change.",
+  "library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "installed_source_and_binary_SHA256": {
+    "source/mrmeshpy.pyi": {
+      "bytes": 3914324,
+      "sha256": "0405c0d8f5fdc39f81c00e1d1f4252ccd28735881e195379cdf9b09bf39d1e1d"
+    },
+    "source/mrmeshnumpy.pyi": {
+      "bytes": 4555,
+      "sha256": "4cc71fe332a4686fbc9f63e326df8cc29e3ebbefaf710f02c167331cdaa4c7c3"
+    },
+    "native/mrmeshpy.pyd": {
+      "bytes": 56477184,
+      "sha256": "fa740539411a5eca3b4bbc3994bc6c0d484d36fd079d583baca0673adbe436c7"
+    },
+    "native/mrmeshnumpy.pyd": {
+      "bytes": 152064,
+      "sha256": "2e585bac5124902d41fa9952ac6e802fdf1275fddfbcb63fe69ab9638ff03ebd"
+    }
+  },
+  "declarations": [
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 31961,
+      "symbol": "Mesh.fromTriangles",
+      "declared": "Constructs a mesh from vertex coordinates and triangles with given IDs. Its installed docstring does not state a sufficient condition guaranteeing that every arbitrary input face will be admitted."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 32643,
+      "symbol": "MeshBuilder.BuildSettings",
+      "declared": "allowNonManifoldEdge permits non-manifold edges in resulting topology; region is input faces to add and output faces that failed; shiftFaceId offsets included face IDs; skippedFaceCount is the optional output skipped-face counter. The flag is not documented as disabling every orientation or vertex-fan constraint."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 33122,
+      "symbol": "MeshBuilder.addTriangles",
+      "declared": "Requested face indices must be free. The output region may contain faces that cannot be added at present but might be added after other triangles appear. Returns total faces added.",
+      "limit": "This documents possible insertion-state dependence; it does not prove strict input-order processing, a single pass, retry order or the actual state at any rejection in the saved run."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 33170,
+      "symbol": "MeshBuilder.fromTriangles",
+      "declared": "Builds topology from triangles with supplied IDs and mentions skipped triangles in its docstring.",
+      "limit": "The docstring names skippedTris but the actual installed signature takes t, settings and progressCb, not a separate skippedTris argument. Observed region/counter outputs, not an invented argument, are the actual failure evidence."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 32892,
+      "symbol": "MeshBuilder.VertInfo",
+      "declared": "Classifies triangles around a vertex using a repeated-neighbour flag or open/closed chain counts."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 32931,
+      "symbol": "MeshBuilder.VertInfo.duplicationNeeded",
+      "declared": "Its acceptance-as-is list includes a single chain or ring, no triangles, or two open chains; other configurations are described as needing vertex duplication.",
+      "limit": "This explicit list is richer than a blanket single-fan/manifold-only rule. The stub does not show whether or when this helper is called by the nonduplicating constructor."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 32936,
+      "symbol": "MeshBuilder.VertInfo.hasRepeatedVerts",
+      "declared": "Describes a neighbour vertex appearing in more than one triangle-pair around the central vertex. Chain counts are documented as zero when this flag is set.",
+      "limit": "An independently computed link multigraph is a geometric/topological witness; it must not be claimed identical to this internal pairing-based classification without its implementation."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 31966,
+      "symbol": "Mesh.fromTrianglesDuplicatingNonManifoldVertices",
+      "declared": "A separate constructor tries resolving non-manifold vertices by duplication; betterCont can choose among possible continuations. MeshBuilder.duplicateNonManifoldVertices likewise modifies triangulation.",
+      "limit": "The saved worker explicitly disabled duplication. The alternative route was not run and is not authorised as a repair; possible continuation choices do not authenticate an original semantic sheet partition."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 36861,
+      "symbol": "MeshTopology.getTriEdges / left / right",
+      "declared": "Triangle edges are oriented with their face on the left; left and right return the actual face on each halfedge side. These declarations support reading the saved native pairings, not identifying why an omitted face was rejected."
+    },
+    {
+      "source": "meshlib/mrmeshnumpy.pyi",
+      "line": 47,
+      "symbol": "meshFromFacesVerts",
+      "declared": "Takes faces, vertices, BuildSettings and duplicateNonManifoldVertices (default True). Its stub contains no C++ delegation body or detailed rejection predicate."
+    },
+    {
+      "source": "meshlib/mrmeshnumpy.pyi",
+      "line": 43,
+      "symbol": "getNumpyVerts",
+      "declared": "Returns all point-storage coordinates, including invalid ones. Full allocated position storage is distinct from valid vertex IDs."
+    }
+  ],
+  "local_Cpp_source_inventory": {
+    "searched_installed_roots": [
+      "meshlib",
+      "meshlib_core.libs",
+      "meshlib-3.1.4.297.dist-info",
+      "meshlib_core-3.1.4.297.dist-info"
+    ],
+    "searched_extensions": [
+      ".h",
+      ".hpp",
+      ".cpp",
+      ".cxx",
+      ".inl"
+    ],
+    "C_or_Cpp_files_found": 0,
+    "wheel_RECORD_Cpp_source_entries_found": 0,
+    "focused_workspace_filename_search": [
+      "*MRMeshBuilder*",
+      "*MRMeshTopology*",
+      "*MeshLib*cpp",
+      "*MeshLib*hpp"
+    ],
+    "focused_workspace_matches": 0,
+    "scope_limit": "These focused package/workspace searches do not claim no source exists anywhere on the computer. No separate matching source checkout was supplied or located.",
+    "implementation_trace_available": false
+  },
+  "constraint_review": [
+    "Same-direction shared edges, branching/disconnected vertex links and repeated-neighbour configurations can be reported as exact local source witnesses. Their presence alone does not identify the executing rejection condition.",
+    "A strict source-order prefix is a defined comparison context, not a recovered native insertion state; the documented addTriangles behavior prevents treating prefix reconstruction as a trace.",
+    "All four failed source-face memberships and saved retained native pairings may be independently reproduced, while separating correlation, declared constraints and exact implementation causality.",
+    "The saved constructor already failed the mandatory zero-loss contract. This audit neither upgrades it nor authorises a retry, alternate constructor, fan splitting, repair, remesh or target."
+  ],
+  "exact_gap": "Matching installed C++ constructor implementation and a recorded rejection branch/state are unavailable. The installed declarations do not map the four observed rejected faces to a unique predicate. Final attribution may therefore remain CAUSE_UNRESOLVED and the route parked.",
+  "native_imports_or_calls": 0,
+  "actual_patch_arrays_processed": 0,
+  "installed_or_historical_sources_modified": false
+}
