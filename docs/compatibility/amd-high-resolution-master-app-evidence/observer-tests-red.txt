@@ -1,0 +1,84 @@
+✖ one-shot wrapper awaits registration and preserves receiver, arguments and return value (0.9936ms)
+✖ injected production-compatible hook tracks only live roots and releases unmounted roots (0.3332ms)
+✖ registration failure restores loadFile, detaches only owned debugger and never navigates (0.2839ms)
+✖ preexisting debugger is not detached and failed attachment never navigates (0.315ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 72.6008
+
+✖ failing tests:
+
+test at docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:36:1
+✖ one-shot wrapper awaits registration and preserves receiver, arguments and return value (0.9936ms)
+  Error: ENOENT: no such file or directory, open 'C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.js'
+      at Object.readFileSync (node:fs:484:20)
+      at fixture (C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:32:49)
+      at TestContext.<anonymous> (C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:37:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-high-resolution-master-app-evidence\\renderer_observer.js'
+  }
+
+test at docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:54:1
+✖ injected production-compatible hook tracks only live roots and releases unmounted roots (0.3332ms)
+  Error: ENOENT: no such file or directory, open 'C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.js'
+      at Object.readFileSync (node:fs:484:20)
+      at fixture (C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:32:49)
+      at TestContext.<anonymous> (C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:55:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-high-resolution-master-app-evidence\\renderer_observer.js'
+  }
+
+test at docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:76:1
+✖ registration failure restores loadFile, detaches only owned debugger and never navigates (0.2839ms)
+  Error: ENOENT: no such file or directory, open 'C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.js'
+      at Object.readFileSync (node:fs:484:20)
+      at fixture (C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:32:49)
+      at TestContext.<anonymous> (C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:77:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-high-resolution-master-app-evidence\\renderer_observer.js'
+  }
+
+test at docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:87:1
+✖ preexisting debugger is not detached and failed attachment never navigates (0.315ms)
+  Error: ENOENT: no such file or directory, open 'C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.js'
+      at Object.readFileSync (node:fs:484:20)
+      at fixture (C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:32:49)
+      at TestContext.<anonymous> (C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-high-resolution-master-app-evidence\renderer_observer.test.cjs:89:15)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-high-resolution-master-app-evidence\\renderer_observer.js'
+  }

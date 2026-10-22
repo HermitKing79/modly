@@ -1,0 +1,142 @@
+{
+  "classification": "BLOCKED",
+  "reason": "Five acceptance areas pass; camera and in-session cleanup remain unverified.",
+  "installed_app_version": "0.4.3",
+  "exact_checkout_build": false,
+  "verdicts": {
+    "import_glb": "PASS",
+    "full_resolution_viewport": "PASS",
+    "vertex_colour_fidelity": "PASS",
+    "camera_interaction_responsiveness": "BLOCKED",
+    "triangle_count_reporting": "PASS",
+    "original_byte_glb_export": "PASS",
+    "model_unload_resource_cleanup": "BLOCKED"
+  },
+  "actual_ui_imports": {
+    "tiny": 1,
+    "full_master": 1
+  },
+  "production_source_changes": false,
+  "vertices": 1957891,
+  "triangles": 4173584,
+  "live_mesh": {
+    "vertices": 1957891,
+    "triangles": 4173584,
+    "positionSHA": "688de41c46daeaac404f44b5c7304ba71c9adf52fd5846cd2edbc4bb6b096c72",
+    "colourSHA": "b8134eac3f81d14529bfd2f308a5fef352923152df0c15b64ffbf2880e98cfa0",
+    "colourType": "Float32Array",
+    "indexCount": 12520752,
+    "drawRange": {
+      "start": 0,
+      "count": null
+    },
+    "groups": [],
+    "bvh": true,
+    "material": {
+      "type": "MeshStandardMaterial",
+      "vertexColors": true,
+      "color": [
+        1,
+        1,
+        1
+      ],
+      "metalness": 0.00011082693761409814,
+      "roughness": 0.999995986777544,
+      "flatShading": true,
+      "side": 2
+    }
+  },
+  "export": {
+    "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-high-resolution-master-app-64d07f5\\desktop-session\\exports\\modly-original-master.glb",
+    "bytes": 97073940,
+    "sha256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae"
+  },
+  "resource_summary": {
+    "samples": 896,
+    "all_admitted": true,
+    "minimum_available_ram_bytes": 16604430336,
+    "minimum_destination_free_bytes": 136734617600,
+    "peak_process_committed_bytes": 725319680,
+    "peak_job_committed_bytes": 1929433088,
+    "elapsed_seconds": 896.8909999999887,
+    "deadline_seconds": 900,
+    "memory_cap_bytes": 6442450944,
+    "dedicated_gpu_memory_measured": false
+  },
+  "cleanup": {
+    "app_exit_code": 0,
+    "job": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "caveat": "Stock PythonBridge shutdown uses taskkill /T /F; backend exit 1 is logged. This is not proof of graceful backend exit or in-session model disposal."
+  },
+  "limitations": [
+    "Installed app, not an exact build of source checkout; lineage audit is separate.",
+    "Restricted-context startup exited 0x80000003 before any asset import; cause unproven.",
+    "Diagnostic observer awaited a renderer before original loadFile. One reviewed about:blank bootstrap unblocked it; no unassisted startup claim.",
+    "Mock observer tests did not establish cold-renderer startup behavior.",
+    "Saved master-orbit.jpg depicts the export dialog, not an orbit; excluded as camera evidence.",
+    "Renderer query selected a helper/postpass root; its triangle counter is not the master draw count.",
+    "No per-import precise timing, FPS, dedicated VRAM, pan/zoom, model replacement or WebGL resource-release proof.",
+    "Final export independently hashed after exit; last download ledger was still progressing."
+  ],
+  "receipts": {
+    "app-host.json": {
+      "bytes": 224812,
+      "sha256": "41cac9a1958da3c9a3801479d66922004ed9f728c2e9c7aa583d227412b15b49"
+    },
+    "app-session-attempt.json": {
+      "bytes": 942,
+      "sha256": "b9447c984bfa42e87a75ee3d3731b4a613917ee7363eeb344b29acf9b0699305"
+    },
+    "master-buffer-material.json": {
+      "bytes": 1452,
+      "sha256": "bd0c7d02d633850fe9078c86fc68bdc15236c083aff29ed6c8d863ef3a187270"
+    },
+    "tiny-buffer-material.json": {
+      "bytes": 643,
+      "sha256": "6e5c3b6ddf082ebcae8a46f7390fcdef9af5376265bf4b5e5d520ecceaa23c16"
+    },
+    "master-app-metrics.json": {
+      "bytes": 3253,
+      "sha256": "4dca313dfc5ff40ced0289f9a0d1e56e08a7d5b7aef0ef236ee9ade80423310a"
+    },
+    "post-blank-state.json": {
+      "bytes": 3414,
+      "sha256": "8724899534ab09d15f48c5cd63e10ba1d8e26305f22dfcf71f11a6ff49bb8a91"
+    },
+    "original-app-root.json": {
+      "bytes": 368,
+      "sha256": "c7def299f4be90846b9ddc037f56cc9e40339250160e56940bddf7229cdca356"
+    },
+    "app.stdout.txt": {
+      "bytes": 1881,
+      "sha256": "8776798ee37a6a2d9c64d4067203f5b6b93180b17298351371fa36e918bac1a9"
+    },
+    "app.stderr.txt": {
+      "bytes": 2283,
+      "sha256": "7271cdfb22f120ddac57ceec4ffa0173ea0950dc741c73af67b8cd2dbf97d24c"
+    }
+  },
+  "screenshots": [
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-high-resolution-master-app-64d07f5\\desktop-session\\screenshots\\master-orbit.jpg",
+      "bytes": 82132,
+      "sha256": "35079ed6cfdc41700add65354242673f1a2a9e97cc64380f519375112b7412d9"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-high-resolution-master-app-64d07f5\\desktop-session\\screenshots\\master.jpg",
+      "bytes": 61311,
+      "sha256": "e8d6ab0f554665ab1ec34b27660d8b61fc2be2da56cc4bba1a1e368a87e3b0fc"
+    },
+    {
+      "path": "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\artifacts\\amd-high-resolution-master-app-64d07f5\\desktop-session\\screenshots\\tiny.jpg",
+      "bytes": 56693,
+      "sha256": "ac4455998e764632a3083299a7f55a56e5e1bec4b14eef0e1134a26e1f494c8e"
+    }
+  ]
+}

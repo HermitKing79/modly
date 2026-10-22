@@ -1,0 +1,12 @@
+✔ one-shot wrapper awaits registration and preserves receiver, arguments and return value (4.4109ms)
+✔ injected production-compatible hook tracks only live roots and releases unmounted roots (2.0625ms)
+✔ registration failure restores loadFile, detaches only owned debugger and never navigates (0.9415ms)
+✔ preexisting debugger is not detached and failed attachment never navigates (1.4319ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 77.5361

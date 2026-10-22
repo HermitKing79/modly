@@ -1,0 +1,237 @@
+{
+  "schema": "modly.installed-app.static-runtime-audit.v1",
+  "classification": "STATIC_AUDIT_WITH_EXPLICIT_STARTUP_CONDITIONS",
+  "scope": "Read-only installed package and checkout audit. No app/UI/model/native geometry/inference execution, installation, dependency change, bundle modification or asset parsing. Only pure mocked startup-probe JavaScript tests ran.",
+  "approved_source_base": "64d07f5c5a10a48a1cbff028cb6143d2a444ae89",
+  "installed_application": {
+    "name": "modly",
+    "version": "0.4.3",
+    "main": "./out/main/index.js",
+    "executable": {
+      "relative_install_path": "Modly.exe",
+      "bytes": 235133440,
+      "sha256": "14110dbec79a17649baa29ddd232cb3ea1f20d3a456a755243ab12720d2888c6"
+    },
+    "asar": {
+      "relative_install_path": "resources/app.asar",
+      "bytes": 200141050,
+      "sha256": "717050d9e9c445963ef30e061522c3020fc13a074236b209e850c231af3cc6f1",
+      "header_words": [
+        4,
+        2043720,
+        2043716,
+        2043711
+      ],
+      "payload_offset": 2043728
+    },
+    "selected_asar_entries": {
+      "package.json": {
+        "bytes": 735,
+        "sha256": "6496b6fbce3c7a6e3cd4eda2aef992cc80178337ae7b78513a87b3e60552541d"
+      },
+      "out/main/index.js": {
+        "bytes": 211870,
+        "sha256": "b4be1acb38015aac55edb9459efebea886cf96406ecf05abe84e329341b44250"
+      },
+      "out/preload/index.js": {
+        "bytes": 10101,
+        "sha256": "dce19c05778821332f77acc6ff1399b0a449e4a7ebf69379648a0581a3d8634d"
+      },
+      "out/renderer/index.html": {
+        "bytes": 780,
+        "sha256": "4d74649f78d384d4b9f95f3edc763259aee3cba32ccb15acfcb5a38f655816c5"
+      },
+      "out/renderer/assets/GeneratePage-pYB45BAo.js": {
+        "bytes": 2844579,
+        "sha256": "4d87e2a24b88510a55689f40755adb21e73cffd0499f5365d9510d12d80536fa"
+      },
+      "out/renderer/assets/index-Bp94UMDG.js": {
+        "bytes": 288607,
+        "sha256": "af78a79c5bc772f7acaaf2b2fc76439df396044657043ab8fb9c50bce46190f0"
+      },
+      "out/renderer/assets/index-DGlP_t4m.css": {
+        "bytes": 89985,
+        "sha256": "43a8e9ac173b16a056bcd70c437aa524a297285edfb5a66dbe1aafbe068b6346"
+      },
+      "node_modules/electron-updater/out/main.js": {
+        "bytes": 4494,
+        "sha256": "c0f5cc41a2ef973672066222109850ac22fc70bcca1880e5c3cb8311f7ab05e5"
+      },
+      "node_modules/electron-updater/out/AppUpdater.js": {
+        "bytes": 33190,
+        "sha256": "99921022d181fbd0637878fdebc74177be167d4d56a92c9a87d828f89ab67344"
+      },
+      "node_modules/electron-updater/out/BaseUpdater.js": {
+        "bytes": 6035,
+        "sha256": "9cff8b894ed709f6d9a5b938614fc377be89e1ea5bd1cc1f4cd6143048d918a3"
+      },
+      "node_modules/three-stdlib/loaders/GLTFLoader.js": {
+        "bytes": 99777,
+        "sha256": "2799720aedc03a4e3436ab37ffdd6b0246d874ed412a945b31d04d9da23f4078"
+      },
+      "node_modules/three-mesh-bvh/src/core/Constants.js": {
+        "bytes": 1333,
+        "sha256": "3baba89905e74869552748a8a6a0018444ddc99ad96566591d383a9fb1571989"
+      },
+      "node_modules/three-mesh-bvh/src/core/GeometryBVH.js": {
+        "bytes": 3737,
+        "sha256": "98d7f430c540f269e8cacf185a1f32db459f7be97e0a7a665fb75a2192f64641"
+      },
+      "node_modules/three-mesh-bvh/src/core/build/sortUtils.js": {
+        "bytes": 1761,
+        "sha256": "54923f99e4d5e779943b0c211b12a2c65b3a9f5579da6e1d589b1088128a3add"
+      }
+    },
+    "dependency_versions": {
+      "three": "0.171.0",
+      "three-mesh-bvh": "0.9.9",
+      "esbuild": "0.28.2",
+      "electron-updater": "6.8.9"
+    }
+  },
+  "reviewed_checkout_source_SHA256": {
+    "src/areas/generate/GeneratePage.tsx": "30a0d03ccdedd0afe0f5040a86feabc47feb7614387af46d2dba04a0a0f01325",
+    "src/shared/hooks/useApi.ts": "e196585433ab66f07162e4756eb98010dc9e73f4672b4a1aa91a4d7b07ca5746",
+    "src/areas/generate/components/Viewer3D.tsx": "dc17a4f3393b5a340276e7f0dd87db2434856f4fb2510951c46cf6e94bb82898",
+    "src/shared/stores/appStore.ts": "bb4129663df9257d922d0e132a5af1a7e389ff182c3f642dae204dd29caac938",
+    "src/App.tsx": "7ceb003197563370bfeb75df9b76f66c0d61f00510569a692d5953e3e7c9132a",
+    "electron/main/index.ts": "5ac9b24c89f7c54fa82891a6298a6db01c3d2f4a213e9caa09e22b0eeba005a9",
+    "electron/main/ipc-handlers.ts": "f22aeb9dd1a3d0d6a756115839c0deeeee1df799007e27b70e36e745c1a09794",
+    "electron/preload/electron-api.ts": "63d740047300e0326f177ac71ff043fbb68ae957571eb0088241506e5ad3615c",
+    "electron/main/python-bridge.ts": "379598a0c621e4a8dcc4a26a143ab2772cb2df808ed0c6e9a5e3e20b4deb993a",
+    "electron/main/python-setup.ts": "e034c2cfdd495b1779662d0766351754e8d84fa66c001bf0793d88c5a0ed2556",
+    "electron/main/builtin-sync.ts": "5cdae68d14b1dd01669baf139fa4f8e7e778d72f6ce8a7cc4f3f17b6a66bf25a",
+    "electron/main/updater.ts": "f93fdc0d520c60b8ada380df151642b0a766403ea6745267e1ac4386fc039d18",
+    "api/main.py": "1d2fd66363f2a462a2b79ba4db2e644669649848e7b9f2ab4a14eaf2b10ef9c3",
+    "api/routers/optimize.py": "57f28c7bcafae46e8ac5bd0687b31678485607cba0b61ea6e7986cf297c04968",
+    "api/routers/export.py": "75b82c7ebc72d985a6522476610297a22aff11f626b45827f2c0d33afb0193da",
+    "api/services/generator_registry.py": "2dca1963a370180f3ef9c3b24a8430b97936abaaa5f31bc2f31a72e294e7ef3c",
+    "api/services/imported_sources.py": "c9efdd38ed516068212eb7431242fccc09dcce98c57cc0499cdd539bd5ec7eec",
+    "api/requirements.txt": "a89ea6dc7014a36f38a35c995df8427a1d69afbb10a5ad5ee11bb148b56d03a0"
+  },
+  "installed_backend_comparison": {
+    "api/main.py": {
+      "installed_SHA256": "1d2fd66363f2a462a2b79ba4db2e644669649848e7b9f2ab4a14eaf2b10ef9c3",
+      "reviewed_checkout_SHA256": "1d2fd66363f2a462a2b79ba4db2e644669649848e7b9f2ab4a14eaf2b10ef9c3",
+      "byte_identical": true
+    },
+    "api/routers/optimize.py": {
+      "installed_SHA256": "57f28c7bcafae46e8ac5bd0687b31678485607cba0b61ea6e7986cf297c04968",
+      "reviewed_checkout_SHA256": "57f28c7bcafae46e8ac5bd0687b31678485607cba0b61ea6e7986cf297c04968",
+      "byte_identical": true
+    },
+    "api/services/generator_registry.py": {
+      "installed_SHA256": "e0242bc8707e1a0335ebd8f58af8d0d240427ff7f97c65062072c7075eaeca6c",
+      "reviewed_checkout_SHA256": "2dca1963a370180f3ef9c3b24a8430b97936abaaa5f31bc2f31a72e294e7ef3c",
+      "byte_identical": false
+    },
+    "api/requirements.txt": {
+      "installed_SHA256": "a89ea6dc7014a36f38a35c995df8427a1d69afbb10a5ad5ee11bb148b56d03a0",
+      "reviewed_checkout_SHA256": "a89ea6dc7014a36f38a35c995df8427a1d69afbb10a5ad5ee11bb148b56d03a0",
+      "byte_identical": true
+    }
+  },
+  "provenance_limit": "The installed v0.4.3 package and selected flow signatures are authenticated; this does not assert that its compiled renderer/main were built from current HEAD. Installed generator_registry.py differs from the reviewed checkout.",
+  "normal_GLB_flow": [
+    {
+      "source": "src/areas/generate/GeneratePage.tsx",
+      "line": 804,
+      "fact": "Normal Import calls Electron selectMeshFile then useApi.importMesh; stores returned URL as current and original output, with no generation request."
+    },
+    {
+      "source": "electron/main/ipc-handlers.ts",
+      "line": 363,
+      "fact": "Single-file native picker accepts glb/obj/stl/ply/splat and returns the selected path."
+    },
+    {
+      "source": "src/shared/hooks/useApi.ts",
+      "line": 109,
+      "fact": "POST /optimize/import-by-path sends only the selected path; no renderer base64/full-file copy."
+    },
+    {
+      "source": "api/routers/optimize.py",
+      "line": 345,
+      "fact": "GLB registers the original path and returns serve-file URL without trimesh decoding or conversion."
+    },
+    {
+      "source": "api/routers/optimize.py",
+      "line": 369,
+      "fact": "FileResponse serves the original GLB bytes with model/gltf-binary media type."
+    },
+    {
+      "source": "src/areas/generate/GeneratePage.tsx",
+      "line": 765,
+      "fact": "GLB Export creates an anchor to apiUrl plus current output URL; no renderer mesh serialization or conversion."
+    }
+  ],
+  "viewer_and_material_observations": [
+    {
+      "source": "src/areas/generate/components/Viewer3D.tsx",
+      "line": 208,
+      "fact": "useGLTF loads the scene; solid mode restores its original material."
+    },
+    {
+      "source": "src/areas/generate/components/Viewer3D.tsx",
+      "line": 260,
+      "fact": "Every geometry receives a synchronous BVH, and every material is made DoubleSide in memory."
+    },
+    {
+      "source": "node_modules/three-mesh-bvh/src/core/Constants.js",
+      "line": 42,
+      "fact": "Installed BVH defaults indirect=false; GeometryBVH primitiveBuffer is the geometry index array and sortUtils partitions/swaps its entries. Viewer face order can change without touching the source file."
+    },
+    {
+      "source": "src/areas/generate/components/Viewer3D.tsx",
+      "line": 279,
+      "fact": "Scene is centered on the display grid; stats use position accessor and index counts. This display transform is not serialized by direct GLB export."
+    },
+    {
+      "source": "src/areas/generate/components/Viewer3D.tsx",
+      "line": 1029,
+      "fact": "Gizmo drag commits only local pose history; transformMesh has no callers outside its hook definition. Direct GLB export therefore does not export that displayed pose."
+    },
+    {
+      "source": "node_modules/three-stdlib/loaders/GLTFLoader.js",
+      "line": 1682,
+      "fact": "Accessor component type chooses the typed array and BufferAttribute; an F32 COLOR_0 is not converted to BYTE_COLOR by this loader."
+    },
+    {
+      "source": "node_modules/three-stdlib/loaders/GLTFLoader.js",
+      "line": 1890,
+      "fact": "Color attribute enables vertexColors; missing normals enable flat shading."
+    },
+    {
+      "source": "node_modules/three-stdlib/loaders/GLTFLoader.js",
+      "line": 1969,
+      "fact": "Base RGB factors are read as LinearSRGB; metallic and roughness scalar factors are retained. GPU shading and viewer lighting do not prove numerical appearance equality to prior Blender renders."
+    }
+  ],
+  "startup_review": {
+    "classification": "CONDITIONALLY_FEASIBLE_BEFORE_ACTUAL_RESUME",
+    "installed_main_pause": "out/main/index.js:2, before first require and before app readiness; electron-updater require is line6. Verify exact __filename and app.isReady false.",
+    "order": "Installed main5085 whenReady then log/cache5086-5089, builtin sync5093, recovery5094-5098, updater5103, window5104.",
+    "official_no_update_switch": "No app-level CLI/environment disable was found in the reviewed app code. Installed updater suppresses checks only for unpackaged apps unless forceDevUpdateConfig; packaged startup otherwise auto-downloads same-major/minor patches.",
+    "isolation": "Set precreated plain userData/sessionData/downloads under new private root while paused. Keep profile settings models/workspace/workflows/extensions/agent private and empty; reuse existing dependency venv read-only. Matching setup version3/requirements hash avoids installer. Inherit PYTHONDONTWRITEBYTECODE=1.",
+    "updater_controls": "Cache the same installed electron-updater singleton; deny checkForUpdates/downloadUpdate/quitAndInstall/install and keep autoInstallOnAppQuit false via accessor. BaseUpdater autoquit calls install directly. Record controls before resume.",
+    "no_model_execution_basis": "Empty private extensions prevent legacy generator.py import/constructor side effects. Registry.initialize only discovers/instantiates adapters and does not call load. Do not run generation, model download/load, chat or extension setup.",
+    "port": "Verify8765 unused; PythonBridge otherwise kills processes using that port before starting its backend.",
+    "identity": "Preserve installed executable/ASAR and original app/render/import/export code. Report installed provenance and in-memory isolation rather than claiming exact HEAD build."
+  },
+  "runtime_unknowns": [
+    "Observe real download activation, save path/filename and SHA256. Cross-origin anchor download has no serve-file Content-Disposition and no app will-download handler; this is a runtime check, not an observed failure.",
+    "Synchronous multi-million-triangle BVH may cause delay/memory pressure; no actual full import has been run by this audit.",
+    "NonGLB import/export and smooth/decimate/transform reserialization are outside the original-binary preservation guarantee."
+  ],
+  "existing_focused_tests": [
+    "api/tests/test_mesh_routers_workspace.py",
+    "api/tests/test_optimize_mesh_ops.py",
+    "api/tests/test_export_router.py",
+    "src/areas/generate/orcaSlicerLink.test.ts"
+  ],
+  "test_scope": "Existing tests cover workspace paths, operation routing, conversion/slicer helpers, not native picker to large GLB download. They were inspected, not executed by this audit. New startup_probe.js saw expected missing-file RED then pure mocked VM GREEN for isolation/denials/path rejection/console-load-download ledger; no Electron module was loaded.",
+  "startup_probe": {
+    "sha256": "892fc427a3b63c0f16bae4f695a1558fcf87cef0dc98f30db5a8c49d80c34410",
+    "lines": 73,
+    "interface": "Function expression evaluated on paused main call frame as (source)(CONFIG), CONFIG exact keys mainFile/privateRoot/profileDir/sessionDir. Precreate root/exports; root controls and reviews config. No automatic download save-path override."
+  }
+}

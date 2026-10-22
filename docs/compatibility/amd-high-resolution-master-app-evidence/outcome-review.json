@@ -1,0 +1,187 @@
+{
+  "schema": "modly.high-resolution-master-app.independent-outcome-review.v1",
+  "classification": "PASS_WITH_EXPLICIT_LIMITATIONS",
+  "independent_review": "PASS",
+  "overall_workflow_qualification": "BLOCKED",
+  "verdicts": {
+    "import_glb": "PASS",
+    "full_resolution_viewport": "PASS",
+    "vertex_colour_fidelity": "PASS",
+    "camera_interaction_responsiveness": "BLOCKED",
+    "triangle_count_reporting": "PASS",
+    "original_byte_glb_export": "PASS",
+    "model_unload_resource_cleanup": "BLOCKED"
+  },
+  "findings": [],
+  "installed_application_version": "0.4.3",
+  "exact_HEAD_build_claim": false,
+  "actual_import_counts": {
+    "small": 1,
+    "master": 1
+  },
+  "production_changes_justified": false,
+  "actual_asset_or_model_operations_by_reviewer": 0,
+  "postexit_review_operations": "Read frozen source/JSON/log/screenshot evidence and independently streamed final exported-file SHA256; no asset decode, UI action, app/worker/test restart or native geometry/model call.",
+  "confirmed_facts": {
+    "master_vertices": 1957891,
+    "master_triangles": 4173584,
+    "master_index_count": 12520752,
+    "master_POSITION_SHA256": "688de41c46daeaac404f44b5c7304ba71c9adf52fd5846cd2edbc4bb6b096c72",
+    "master_linear_COLOR0_SHA256": "b8134eac3f81d14529bfd2f308a5fef352923152df0c15b64ffbf2880e98cfa0",
+    "COLOR0_type": "Float32Array",
+    "original_material_RGB_factors_and_flags": {
+      "type": "MeshStandardMaterial",
+      "vertexColors": true,
+      "color": [
+        1,
+        1,
+        1
+      ],
+      "metalness": 0.00011082693761409814,
+      "roughness": 0.999995986777544,
+      "flatShading": true,
+      "side": 2
+    },
+    "master_visible_in_original_viewer": true,
+    "UI_statistics_match_geometry_counts": true,
+    "final_export_bytes": 97073940,
+    "final_export_SHA256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+    "final_export_matches_original_contract": true,
+    "two_normal_import_route_requests_and_three_source_fetches": true,
+    "no_mesh_edit_or_generation_route_in_saved_logs": true
+  },
+  "reviewed_visual_evidence": {
+    "master.jpg": "Visible original colored brick-and-foliage object and full-resolution UI counts; small in frame, not a detailed multi-angle or pixel-equivalence test.",
+    "master-orbit.jpg": "Native Save As dialog overlays viewer; rejected as orbit evidence.",
+    "images_published_in_Git": false
+  },
+  "resource_summary": {
+    "samples": 896,
+    "all_admitted": true,
+    "minimum_available_ram_bytes": 16604430336,
+    "minimum_destination_free_bytes": 136734617600,
+    "peak_process_committed_bytes": 725319680,
+    "peak_job_committed_bytes": 1929433088,
+    "elapsed_seconds": 896.8909999999887,
+    "deadline_seconds": 900,
+    "memory_cap_bytes": 6442450944,
+    "dedicated_gpu_memory_measured": false
+  },
+  "app_session_containment": "PASS: app return0, empty ownedJob, no supervisor forced cleanup, recorded input/control hashes unchanged. Existing app shutdown taskkills Python and logs backend exit1, so graceful child termination is not asserted.",
+  "startup_scope": "Restricted-context early exit remains preserved with unproved cause. Trusted-context launch passed actual pre-main/profile/updater gates; original page loaded only after one separately reviewed blank initialization resolved the diagnostic observer cold-renderer dependency. No unassisted-startup or production-fix claim.",
+  "limitations": [
+    "No verified orbit/pan/zoom, frame rate, latency or camera-pose change. The attempted drag was over the Save As dialog.",
+    "No in-session unload/replacement or WebGL resource-release baseline/comparison. EmptyJob after app close does not prove model disposal.",
+    "No dedicated VRAM measurement or authenticated GPU adapter identity. Electron GPU-process private memory is CPU committed/working-set memory.",
+    "Live index order/multiplicity was not independently compared after BVH; source GLB and final exported complete bytes are exact.",
+    "The saved helper/postpass triangle counter42 is not the master geometry count. Saved drawRange.count=null is a JSON serialization fact; it is not treated as a numeric range measurement.",
+    "No renderer opacity/transparent getter measurement; source OPAQUE metadata and unchanged export do not substitute for an actual getter record.",
+    "Last persisted download ledger is progressing. Completed output is established independently by final file size/full SHA256, not a fabricated completed ledger state.",
+    "Precise per-import load durations were not saved. Host reports no recorded resource/deadline breach;896.891s is the entire graphics session, not asset-load time."
+  ],
+  "additional_reviewer_checklist_note": "The consumed source-review checklist included a tiny-export precheck beyond the acceptance plan's tiny-import prerequisite. No tiny-export evidence was saved. This is an unverified extra reviewer checklist item, not a user/plan violation or a new asset-failure verdict. The actual small-import prerequisite is evidenced.",
+  "sources": {
+    "app_host.py": "99b21bbd14bc4e676ceaf672d3aac31770c63e5e6e56a39fb410ce57caaca00e",
+    "startup_probe.js": "892fc427a3b63c0f16bae4f695a1558fcf87cef0dc98f30db5a8c49d80c34410",
+    "renderer_observer.js": "44e6acf63044fd16000a11a06acedd8f39d6d4ca01a60655b758186219b8d6b1",
+    "inspect_app.mjs": "2c8ea8ba60c7d901de288e1147e9cf7cce7297254d0e7d8b8a9c4e2ed125f247"
+  },
+  "postexit_summary_source_review": {
+    "sha256": "965e04966b0056042d5e497fd4fe1e851d2153fe31b99288903fc25e3915e2f6",
+    "finding": "No actionable source finding. Reads saved receipts, checks observed hashes/material fields/finalexport and emits overallBLOCKED; no app or asset parsing/operation. This reviewer independently validated its saved-summary relationships rather than rerunning it."
+  },
+  "report_review": {
+    "path": "docs/compatibility/amd-high-resolution-master-app.md",
+    "sha256": "9493da5b59aff023e8e62cf91857ee25e15e2d885967dd6752cde95317f88a61",
+    "factual_scope": "PASS for reviewed draft and split verdicts; any final preservation paragraph change requires hash refresh.",
+    "source_safety": "No geometry/colour arrays, actual source vertex/face IDs or private images are published. Private evidence locations and scalar hashes are disclosed."
+  },
+  "public_evidence_SHA256": {
+    "acceptance-plan.md": "d8b728604e27aba0a55bb424b0988674b7318bd369d8f57f56d34ed215b9eec1",
+    "asset-contract.json": "797a3c44554393c1d43d384e91fb415f610b02e2f58b22bde1f8d50531e7517b",
+    "installed-runtime-audit.json": "bf4b032b22f4adc0690774a05484a73cfa58f529c31efd6d437cf416bf22aeca",
+    "inspector-admission.json": "c49ee096da810080838918d053d9ed348e035f4fb235114899dcadc711e2d385",
+    "session-review-initial.json": "d00cd9d35b3430f4194a3b52c29349634623258cdc7e8b3f26a2a42e49ace087",
+    "session-review-restricted-launch.json": "c5c6a72113fad93c3877b67104e6ad371bb4a7f764c213163d541ed7bea56efc",
+    "session-review.json": "a33f8df2cc717c33167fe7f8fe576866f0c1f61bdb5ee7879af082dfc33b4431",
+    "startup-observer-continuation-review.json": "096838cd40c96d7a4e53f9373d88163cbc581b17dd8d4db220b0638e95c60e70",
+    "observer-tests.txt": "a6fdf3847bc91d4a9b55497d0387ca92eca6f94978f9abe2b42e43a81136f3c4",
+    "renderer_observer.test.cjs": "1c3777e47d0d5c52be767dc4d3ab1ee6fc005e4d0ad22d068efae9eec3a85fb3",
+    "execution-summary.json": "bbeec626ad6fe6dcef345c6513c3ce25ba495f33a28ae087f074a1d5d41a62a5",
+    "summarize_session.py": "965e04966b0056042d5e497fd4fe1e851d2153fe31b99288903fc25e3915e2f6",
+    "preservation-before.json": "bf6591092f73d338b216aa604494159f005207db0b4760e3d232ed784214432a"
+  },
+  "private_evidence": {
+    "app-host.json": {
+      "bytes": 224812,
+      "sha256": "41cac9a1958da3c9a3801479d66922004ed9f728c2e9c7aa583d227412b15b49"
+    },
+    "app-session-attempt.json": {
+      "bytes": 942,
+      "sha256": "b9447c984bfa42e87a75ee3d3731b4a613917ee7363eeb344b29acf9b0699305"
+    },
+    "app-running.json": {
+      "bytes": 121,
+      "sha256": "6aa976f71d394e093d923e3e7ba220b6d398647ab74d5b2ba4ef952f8bf2594f"
+    },
+    "bootstrap-before-resume.json": {
+      "bytes": 1163,
+      "sha256": "1649da0ca079d55d34ea3b7713154f57ffe5ec4404b2dce5d51f3cb98320d309"
+    },
+    "observer-startup-state.json": {
+      "bytes": 257,
+      "sha256": "cf28bfcbf5e73ab18dcc753cd4eee76a77ef4ee8b248d6f4a3b1dc9d7700824b"
+    },
+    "blank-initialization.json": {
+      "bytes": 206,
+      "sha256": "001202032af3f504cfa64547eca8c9d6086d56b9694a9f212ac2c84bfe71a2b8"
+    },
+    "post-blank-state.json": {
+      "bytes": 3414,
+      "sha256": "8724899534ab09d15f48c5cd63e10ba1d8e26305f22dfcf71f11a6ff49bb8a91"
+    },
+    "original-app-root.json": {
+      "bytes": 368,
+      "sha256": "c7def299f4be90846b9ddc037f56cc9e40339250160e56940bddf7229cdca356"
+    },
+    "ready-app.json": {
+      "bytes": 2391,
+      "sha256": "d3ff783c9c20f8b76665c8be6b8f7826310aaaa75c1bf0106578b501487bfd71"
+    },
+    "tiny-first-state.json": {
+      "bytes": 579,
+      "sha256": "fa060f464d49f888a06323a9e57d0280c8d82ef1fb060828c545afd382dd64d2"
+    },
+    "tiny-buffer-material.json": {
+      "bytes": 643,
+      "sha256": "6e5c3b6ddf082ebcae8a46f7390fcdef9af5376265bf4b5e5d520ecceaa23c16"
+    },
+    "master-buffer-material.json": {
+      "bytes": 1452,
+      "sha256": "bd0c7d02d633850fe9078c86fc68bdc15236c083aff29ed6c8d863ef3a187270"
+    },
+    "master-app-metrics.json": {
+      "bytes": 3253,
+      "sha256": "4dca313dfc5ff40ced0289f9a0d1e56e08a7d5b7aef0ef236ee9ade80423310a"
+    },
+    "stage.json": {
+      "bytes": 19,
+      "sha256": "fabc42b09b87dc8e6eeadd5c1e08c4f91619258e80f702e9fab8c58ae1726ba9"
+    },
+    "app.stdout.txt": {
+      "bytes": 1881,
+      "sha256": "8776798ee37a6a2d9c64d4067203f5b6b93180b17298351371fa36e918bac1a9"
+    },
+    "app.stderr.txt": {
+      "bytes": 2283,
+      "sha256": "7271cdfb22f120ddac57ceec4ffa0173ea0950dc741c73af67b8cd2dbf97d24c"
+    }
+  },
+  "private_screenshot_SHA256": {
+    "master-orbit.jpg": "35079ed6cfdc41700add65354242673f1a2a9e97cc64380f519375112b7412d9",
+    "master.jpg": "e8d6ab0f554665ab1ec34b27660d8b61fc2be2da56cc4bba1a1e368a87e3b0fc",
+    "tiny.jpg": "ac4455998e764632a3083299a7f55a56e5e1bec4b14eef0e1134a26e1f494c8e"
+  },
+  "preservation_and_publication": "PreservationBEFORE bound. Final preservationAFTER/report binding remains pending; root handles Git staged-byte/commit/push/head-preservation checks separately. No further app execution is requested by this review.",
+  "next_action_boundary": "Any camera/unload follow-up requires separately approved narrow work. This partial result does not qualify the complete original-mesh workflow or generation integration."
+}

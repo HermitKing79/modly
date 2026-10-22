@@ -1,0 +1,58 @@
+{
+  "schema": "modly.installed-app.isolated-session-source-review.v1",
+  "classification": "GO",
+  "sources": {
+    "app_host.py": "d0c72d8d433a4d645c304dc6b420c300883ed98c8c27f718d8da97db1bf7b950",
+    "startup_probe.js": "892fc427a3b63c0f16bae4f695a1558fcf87cef0dc98f30db5a8c49d80c34410",
+    "renderer_observer.js": "44e6acf63044fd16000a11a06acedd8f39d6d4ca01a60655b758186219b8d6b1"
+  },
+  "app_inputs_SHA256": "5544282d6f85bd434773c631320cfc08ec1d00d502e9aa145cec480952a9f236",
+  "asset_contract_SHA256": "797a3c44554393c1d43d384e91fb415f610b02e2f58b22bde1f8d50531e7517b",
+  "installed_runtime_audit_SHA256": "bf4b032b22f4adc0690774a05484a73cfa58f529c31efd6d437cf416bf22aeca",
+  "preservation_before_SHA256": "bf6591092f73d338b216aa604494159f005207db0b4760e3d232ed784214432a",
+  "observer_tests_SHA256": "a6fdf3847bc91d4a9b55497d0387ca92eca6f94978f9abe2b42e43a81136f3c4",
+  "observer_test_source_SHA256": "1c3777e47d0d5c52be767dc4d3ab1ee6fc005e4d0ad22d068efae9eec3a85fb3",
+  "scope": "One owned installed-v0.4.3 graphics acceptance session: pre-main isolation, small normal Import/view/GLB Export first, then one conditional full master import/export after small-case acceptance. No build/install/update, neural/native geometry/model execution, geometry repair or alternative asset. This is source admission, not an observed runtime PASS.",
+  "findings": [],
+  "resolved_findings": [
+    "Host now fails closed on Job memory measurement error, requires measured peaks within cap and compares all watched input/control bytes/mtime/SHA through settlement.",
+    "Startup controls redirect userData, sessionData and downloads to distinct precreated plain paths inside the private root, inherit PYTHONDONTWRITEBYTECODE=1, deny both explicit and automatic updater install paths and keep autoInstallOnAppQuit false."
+  ],
+  "resource_controls": {
+    "process_AND_Job_committed_cap_bytes": 6442450944,
+    "available_Windows_RAM_floor_bytes": 12884901888,
+    "destination_free_floor_bytes": 2147483648,
+    "interactive_session_deadline_seconds": 900,
+    "per_import_deadline_seconds": 180,
+    "exclusive_marker_and_output": true,
+    "port8765_must_be_unused": true,
+    "actual_application_graphics_session_not_CPU_worker": true
+  },
+  "mandatory_observed_admission": [
+    "Confirm Debugger.paused is in the exact pinned installed main before its first require, app.isReady is false and no prior isolation exists. Do not resume on failed probe.",
+    "Invoke the reviewed startup function on that paused main call frame with root-reviewed CONFIG. Confirm actual userData/sessionData/downloads paths, immutable four-method updater denials, false autoInstall setting and unchanged installed app/render files before resume.",
+    "Use private empty models/extensions/workspace/workflows/agent directories and the existing dependency venv with matching setup marker. Do not enter setup, generation/model load/download/chat or extension operations.",
+    "Install reviewed one-shot renderer observer before original loadFile; registration-ready is not actual hook success. Observe committed production ReactDOM/R3F roots and no observer errors after normal navigation.",
+    "Keep normal native picker, renderer import and GLB export path. Observe actual small-case load/counts/material/download/SHA before admitting the full master. Retain original master; never invoke mesh edits or format conversion.",
+    "Root records bounded stage.json loading epochs for each import and keeps app/Job/resource monitoring active. Stop on errors, unexpected paths/updater calls, resource or time breaches; no success inferred from static code."
+  ],
+  "observer_review": "The wrapper restores BrowserWindow.loadFile before awaiting debugger setup, rejects a preexisting attachment, awaits Page.enable and new-document registration, then passes unchanged receiver/arguments to original loadFile. Failed registration does not navigate and detaches only its owned debugger. Injected hook stores mounted Fiber roots only, with no geometry/material writes or scene history. Installed DOM and R3F production bundles explicitly inject and commit through this hook; actual rooted objects must still be observed.",
+  "test_evidence": {
+    "startup_probe": "Expected absent-file RED followed by pure mocked VM GREEN covering isolation, four updater denials/false install property, repeated/config/main/ready/path/link rejection and error/download ledger. No Electron module loaded.",
+    "observer": "Frozen source-author log:4 pure mocked tests PASS,0fail,0skip,77.5361ms. Includes unchanged normal load receiver/args/return, live-root removal, fail-closed setup and existing-debugger ownership."
+  },
+  "independence": {
+    "startup_probe_authored_by_this_reviewer": true,
+    "startup_probe_independently_reviewed_by_root": true,
+    "host_authored_by_root_and_reviewed_by_this_reviewer": true,
+    "observer_authored_by_other_agent_and_reviewed_by_this_reviewer": true
+  },
+  "input_review_limit": "Bound the12-file manifest, independently root-parsed scalar/accessor contract and installed binary/source audit. This source reviewer did not parse or load either real GLB, run the app, execute inference or repeat asset processing.",
+  "provenance_limit": "Installed v0.4.3 binaries are authenticated; their build is not claimed exact current HEAD. Installed registry differs, while selected API import path and renderer flow signatures match audited behavior. Diagnostic changes are in-memory profile/update/observer controls only; installed bundles remain intact.",
+  "runtime_unknowns": [
+    "Cross-origin anchor download activation/name/path require actual small-case observation and byte hash; serving original bytes is not by itself proof the UI saved them.",
+    "Large synchronous BVH can change in-memory face order and consume time/memory; exact source disk/direct-download bytes remain independently checked.",
+    "Normal app shutdown itself taskkills its Python child on Windows; report no HOST forced Job cleanup separately from this existing application behavior."
+  ],
+  "actual_app_UI_or_native_calls_by_reviewer": 0
+}

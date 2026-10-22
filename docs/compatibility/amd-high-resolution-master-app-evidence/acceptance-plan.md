@@ -1,0 +1,17 @@
+# High-resolution original mesh acceptance
+
+Base64d07f5c5a10a48a1cbff028cb6143d2a444ae89; isolated branch codex/amd-high-resolution-master-app. Use the installed Modly0.4.3 application and its authenticated original bundles/API, not an unbuilt claim of HEAD binary equivalence. No production behaviour changes are presently justified by actual acceptance.
+
+Authenticate the accepted97073940-byte GLB and original POSITION/COLOR_0/index contracts. First open the existing4-vertex/3-triangle fixture through the real Electron file picker and Import Mesh path. Only if that works, import the original master once. Never touch Generate, optimize, smooth, remesh, model setup or installation controls.
+
+Startup isolation is diagnostic-only: pause the installed main before its first statement, require exact module and app-not-ready state, set fresh owned userData/sessionData/downloads paths, reuse the existing API Python environment without writes/bytecode, keep models/extensions/workspace/agent private and empty, and deny updater check/download/install methods in memory. Preserve disk bundles and existing app profile. Check8765 is unused before the stock backend can run its port-cleanup routine. Resume only after actual isolation observations succeed.
+
+A one-shot read-only React-root observer runs before the original first page load, allowing scalar renderer/camera/resource observations. It neither replaces the renderer nor changes geometry/materials or holds old scene lists. Use sky for all normal desktop input. Record diagnostic controls separately from the import/view/export behaviour under test.
+
+The owned application Job enforces separate6GiB process AND Job caps,12GiB live Windows available-RAM and2GiB destination-free floors. Graphics acceptance is a bounded900-second interactive session with180-second maximum per import. This is not a180-second CPU-worker result or a Torch/VRAM allocation contract. Record Electron browser/renderer/GPU process CPU memory separately, actual WebGL device/resource data where obtainable, loading intervals and observed interaction responsiveness. Preserve failures; no automatic large-import retry.
+
+After the single master load, verify allocated vertices/triangles, F32 position/linear-colour hashes, material colour flags/factors, actual visible learned colours and no deliberate simplification. BVH can reorder index triples in memory; do not equate that with source-file modification. Read-only observations must not assume frame render triangle counters equal mesh statistics, because helpers/postprocessing exist.
+
+Use real orbit, pan and zoom. Export via the normal GLB export control into the private downloads directory and independently compare complete bytes/SHA256 to the original. Replace/unload the master without reimporting it; compare GPU resource counts against the small/empty baseline and distinguish garbage-collection timing, app-held history and observer references. Do not claim cleanup solely from an app close.
+
+Capture private screenshots and exact measurements. Return separate verdicts for import, full-resolution rendering, vertex-colour fidelity, interaction, triangle statistics, original-byte export and unload/cleanup. If actual defects occur, make only focused independently tested production corrections; do not manufacture changes from static risks. Preserve100protected, accepted/private assets, old failures, environments and114existing remote heads. Publish source-safe code/tests/text only, then stop.

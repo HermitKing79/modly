@@ -1,0 +1,36 @@
+{
+  "schema": "modly.installed-app.one-blank-startup-continuation-review.v1",
+  "classification": "CONDITIONAL_GO",
+  "created_utc": "2026-10-22T19:24:24.968963+00:00",
+  "consumed_session_review_SHA256": "a33f8df2cc717c33167fe7f8fe576866f0c1f61bdb5ee7879af082dfc33b4431",
+  "sources": {
+    "app_host.py": "99b21bbd14bc4e676ceaf672d3aac31770c63e5e6e56a39fb410ce57caaca00e",
+    "startup_probe.js": "892fc427a3b63c0f16bae4f695a1558fcf87cef0dc98f30db5a8c49d80c34410",
+    "renderer_observer.js": "44e6acf63044fd16000a11a06acedd8f39d6d4ca01a60655b758186219b8d6b1",
+    "inspect_app.mjs": "2c8ea8ba60c7d901de288e1147e9cf7cce7297254d0e7d8b8a9c4e2ed125f247"
+  },
+  "scope": "Exactly one nonnetwork about:blank initialization on the existing hidden empty WebContents in the same currently owned trusted-context process. No app restart, source/bundle change, asset import or navigation directly to replacement app HTML. Existing900s/session,180s/import,6GiB process AND Job and liveRAM/disk controls remain binding.",
+  "root_reported_state": {
+    "trusted_main_pause_and_profile_updater_guards": "PASS",
+    "window_visible": false,
+    "webContents_URL": "",
+    "webContents_loading": false,
+    "debugger_attached": true,
+    "observer_calls": 1,
+    "observer_ready": false,
+    "observer_errors": [],
+    "normal_app_document_or_asset_import_loaded": false
+  },
+  "source_basis": "Reviewed observer awaits Page.enable and new-document registration before invoking original loadFile. A blank initialization can create the initial renderer required by those pending commands; this is a bounded diagnostic hypothesis, not a proven application/core defect. The observer will invoke the original installed app loadFile once after successful registration.",
+  "permitted_action": "Call loadURL(about:blank) once on that same existing hidden WebContents; do not call the wrapped loadFile again or manually load the app document.",
+  "required_observation_afterward": [
+    "The existing observer reaches ready=true with calls=1, restored=true and no errors.",
+    "The original installed loadFile continuation navigates to the pinned installed renderer document; independently observe actual committed ReactDOM/R3F roots.",
+    "No asset/import/model/install/update operation occurs during initialization. Only then continue the previously reviewed small fixture and conditional single master workflow through normal UI.",
+    "Record the observer pending-initial-renderer condition and blank initialization separately from actual app import/view/export results."
+  ],
+  "failure_stop": "If this one initialization fails or leaves the original app continuation incomplete, stopBLOCKED; no additional startup workaround/restart/asset attempt is admitted by this receipt. The original session deadline is not extended.",
+  "promise_caveat": "Automatic original app navigation may supersede or abort the blank-navigation promise. An aborted blank promise alone does not establish success or failure; accept only the required observer/app-document/committed-root observations.",
+  "preservation": "The consumed session review and all four watched controls remain unchanged; this additional receipt records the bounded diagnostic continuation without invalidating their captured identities.",
+  "reviewer_execution": "Source review and receipt only; no app/debugger/navigation/asset/native operation performed by this reviewer."
+}

@@ -1,0 +1,88 @@
+{
+  "small": {
+    "bytes": 1108,
+    "sha256": "a4fe7dd08d3fd6c9f14d53c1be09f1b2a3b4ab134c4100aee381602f7a6826f1",
+    "accessors": {
+      "POSITION": {
+        "componentType": 5126,
+        "type": "VEC3",
+        "count": 4,
+        "bytes": 48,
+        "normalized": false,
+        "sha256": "abc54e60482df9d069391fe05cc1a4a39f97f050694d9d7a529a24f46430a5c8"
+      },
+      "COLOR_0": {
+        "componentType": 5126,
+        "type": "VEC3",
+        "count": 4,
+        "bytes": 48,
+        "normalized": false,
+        "sha256": "41a7de7e8fa00dc80ed44191103a2964f6294e824c7b01ff6cd433b2f2cf8052"
+      },
+      "INDICES": {
+        "componentType": 5123,
+        "type": "SCALAR",
+        "count": 9,
+        "bytes": 18,
+        "normalized": false,
+        "sha256": "870746020634d5e25c840d922ed388d304270181e1bf19c2fc2c553fdb56415f"
+      }
+    },
+    "triangles": 3,
+    "material": {
+      "doubleSided": true,
+      "name": "Original supported RGB node connection",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 0.800000011920929
+      }
+    },
+    "mesh_count": 1
+  },
+  "master": {
+    "bytes": 97073940,
+    "sha256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+    "accessors": {
+      "POSITION": {
+        "componentType": 5126,
+        "type": "VEC3",
+        "count": 1957891,
+        "bytes": 23494692,
+        "normalized": false,
+        "sha256": "688de41c46daeaac404f44b5c7304ba71c9adf52fd5846cd2edbc4bb6b096c72"
+      },
+      "COLOR_0": {
+        "componentType": 5126,
+        "type": "VEC3",
+        "count": 1957891,
+        "bytes": 23494692,
+        "normalized": false,
+        "sha256": "b8134eac3f81d14529bfd2f308a5fef352923152df0c15b64ffbf2880e98cfa0"
+      },
+      "INDICES": {
+        "componentType": 5125,
+        "type": "SCALAR",
+        "count": 12520752,
+        "bytes": 50083008,
+        "normalized": false,
+        "sha256": "5fa284e1698929f4f0f6c78edc2e26632fcde6e43ad7eb57b36ae6fc9f88d883"
+      }
+    },
+    "triangles": 4173584,
+    "material": {
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 0.00011082693761409814,
+        "roughnessFactor": 0.999995986777544
+      }
+    },
+    "mesh_count": 1
+  }
+}

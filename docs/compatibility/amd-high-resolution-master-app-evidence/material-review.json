@@ -1,0 +1,68 @@
+{
+  "classification": "PASS_WITH_RECORDED_LIMITS",
+  "complete_workflow_qualification": "BLOCKED",
+  "review_scope": "Saved actual-app material/buffer evidence, private captured viewport, source semantics and final draft report text only. No application execution, extra asset import, renderer operation or geometry processing by this reviewer.",
+  "reviewed_report_SHA256": "c273cf106af0b4215ceec41c43ca558633fcfa5318d5defed6993d889bf3c9a3",
+  "asset_contract_SHA256": "797a3c44554393c1d43d384e91fb415f610b02e2f58b22bde1f8d50531e7517b",
+  "private_master_buffer_material_SHA256": "bd0c7d02d633850fe9078c86fc68bdc15236c083aff29ed6c8d863ef3a187270",
+  "private_master_screenshot_SHA256": "e8d6ab0f554665ab1ec34b27660d8b61fc2be2da56cc4bba1a1e368a87e3b0fc",
+  "private_application_host_SHA256": "41cac9a1958da3c9a3801479d66922004ed9f728c2e9c7aa583d227412b15b49",
+  "observed_material_and_buffers": {
+    "classification": "PASS",
+    "mesh_count": 1,
+    "allocated_position_rows": 1957891,
+    "triangles": 4173584,
+    "indices": 12520752,
+    "position_payload_SHA256": "688de41c46daeaac404f44b5c7304ba71c9adf52fd5846cd2edbc4bb6b096c72",
+    "linear_COLOR_0_payload_SHA256": "b8134eac3f81d14529bfd2f308a5fef352923152df0c15b64ffbf2880e98cfa0",
+    "both_payload_hashes_match_original_contract": true,
+    "colour_array_type": "Float32Array",
+    "material_type": "MeshStandardMaterial",
+    "vertexColours_enabled": true,
+    "white_base_colour_multiplier": true,
+    "metalness": 0.00011082693761409814,
+    "roughness": 0.999995986777544,
+    "fixed_PBR_factors_match_original_contract": true,
+    "double_sided": true,
+    "flat_shading": true,
+    "BVH_present": true,
+    "viewer_overlay_matches_allocated_position_and_triangle_counts": true
+  },
+  "visual_review": {
+    "classification": "PASS_FOR_CAPTURED_VIEW",
+    "image_independently_viewed": true,
+    "observations": "The actual Modly desktop viewport frames a recognizable upright brick-and-foliage object. Brown brick courses, dark gaps and irregular surrounding brown foliage are visible under the existing dim viewer lighting.",
+    "limits": "The object occupies a small portion of the capture. This is one framed view, not detailed inspection of every surface, an all-faces visibility proof, or pixel equivalence to the earlier Blender studio render. Exact colour-buffer identity and active original material routing support transport fidelity."
+  },
+  "acceptance_limits": {
+    "orbit_pan_zoom_and_latency": "BLOCKED_NOT_ESTABLISHED",
+    "attempted_drag_during_Save_As": "NOT_CAMERA_ACCEPTANCE",
+    "in_session_model_unload_and_GPU_disposal": "BLOCKED_NOT_ESTABLISHED",
+    "master_specific_renderer_draw_and_resource_counters": "UNVERIFIED_WRONG_R3F_ROOT",
+    "runtime_index_order_identity": "NOT_MEASURED_BVH_MAY_REORDER_TRIPLES",
+    "dedicated_GPU_memory_and_device_identity": "NOT_ESTABLISHED_BY_THIS_REVIEW",
+    "full_resolution_load_and_visible_viewport": "SUPPORTED",
+    "all_surface_visual_quality": "NOT_ESTABLISHED"
+  },
+  "export_semantics": {
+    "observed_export_file_bytes": 97073940,
+    "original_GLB_SHA256_reported_by_separate_post_exit_verification": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+    "interpretation": "The normal GLB export downloads the original served asset bytes. This does not demonstrate serialization of live BVH index order, edited materials or gizmo transforms.",
+    "reviewer_rehashed_export_payload": false,
+    "completion_limit": "The earlier download-progress snapshot alone is not final completion evidence; the report relies on separate completed-file verification."
+  },
+  "session_scope": {
+    "owned_application_host_classification": "PASS",
+    "application_returncode": 0,
+    "peak_process_committed_bytes": 725319680,
+    "peak_Job_committed_bytes": 1929433088,
+    "entire_graphics_session_seconds": 896.891,
+    "owned_Job_empty_without_supervisor_force": true,
+    "limits": "These are whole-session CPU committed-memory and containment observations, not asset-import timing, a 180-second CPU-worker result, dedicated VRAM, model-level disposal proof or graceful termination of every backend child."
+  },
+  "startup_and_authorship": "This reviewer authored the temporary observer and its mocked tests. Those tests missed the cold-renderer Page.enable/navigation dependency. The recorded blank-page recovery is a diagnostic startup intervention, not unassisted-startup acceptance or a demonstrated product defect. This material review assesses saved actual observations and does not independently reapprove its own observer source.",
+  "draft_report_review": "PASS: the reviewed text retains overall BLOCKED, separates the five observed acceptance passes from camera/unload gaps, describes a whole object framed in one view without all-surface claims, distinguishes source-byte export from live index-order preservation, and accurately records startup limitations. Minor wording findings were applied before this hash was bound.",
+  "production_change_recommendation": "No production correction is established by the material/readback observations. Static disposal risks remain untested rather than demonstrated failures.",
+  "source_safe_publication": "PASS: only hashes, scalar material/count facts and conclusions are published here. Actual geometry, colour arrays, private screenshots and exported GLB remain outside Git.",
+  "findings": []
+}

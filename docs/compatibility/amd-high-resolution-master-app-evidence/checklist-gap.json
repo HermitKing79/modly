@@ -1,0 +1,10 @@
+{
+  "classification": "INCOMPLETE_REVIEW_CHECKLIST",
+  "user_small_import_and_view_requirement": "Observed before the single master import",
+  "extra_source_review_item": "Small-case load/counts/material/download/SHA before admitting full master",
+  "unverified_part": "No tiny-fixture export/download SHA was observed before the master import",
+  "master_export": "Actual normal UI export was independently stream-hashed after app exit and matches the original exactly",
+  "effect": "Observed five PASS facts remain; complete reviewed-sequence acceptance is not claimed",
+  "action": "Preserve omission and stop without retry",
+  "review_reference": "session-review.json mandatory_observed_admission"
+}
