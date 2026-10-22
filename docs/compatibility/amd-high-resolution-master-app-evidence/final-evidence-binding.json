@@ -1,0 +1,19 @@
+{
+  "classification": "PARTIAL_ACCEPTANCE_BOUND_BY_ROOT",
+  "complete_workflow": "BLOCKED",
+  "author": "root agent, final evidence binding; not a new independent review",
+  "report_sha256": "625ca7c702faa1d68d66e2fe875660a6419c633f6deecbfb0ca78b07abc53eaf",
+  "bound_files": {
+    "execution-summary.json": "bbeec626ad6fe6dcef345c6513c3ce25ba495f33a28ae087f074a1d5d41a62a5",
+    "checklist-gap.json": "f8025315e7624ba8bd92ddacf744c4f311fc195ad7db9d64b6cd3fd05ad43a09",
+    "material-review.json": "bae41c29eb01906a857e1d7b8f4c467bb312e1a16108c9c5de5fd3511870d24f",
+    "outcome-review.json": "bbef237214fa099eb256501ff80e937d6c1789c31e2ec09aa36db6f6951e8c1f",
+    "preservation-before.json": "bf6591092f73d338b216aa604494159f005207db0b4760e3d232ed784214432a",
+    "preservation-after.json": "8f0f21c52a1c068c9f540b21fa86ac59312951b13970f54c013386c8453cbdd4",
+    "preservation-path-format-attribution.json": "43df9a19b6633efe31e7285edbd1207d9398fa9c6a4a49ec6205e80e20fd6488",
+    "summarize_session.py": "965e04966b0056042d5e497fd4fe1e851d2153fe31b99288903fc25e3915e2f6"
+  },
+  "independent_review_scope": "Existing independent material and outcome reviews support the five observed PASS facts and two BLOCKED areas. The independent preservation audit plus separate saved-path attribution preserve the original FAIL receipt. Root checked all 2096 normalized pairs and staged bytes.",
+  "limits": "No additional app or asset execution, no camera/unload qualification, no all-review-checklist-completed claim. Historical pending-review text is preserved; this final binding does not overwrite it.",
+  "publication": "Root separately performs commit/push and full prior-head comparison."
+}
