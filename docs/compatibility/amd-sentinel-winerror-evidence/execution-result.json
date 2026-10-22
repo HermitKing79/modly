@@ -1,0 +1,86 @@
+{
+  "schema": "modly.sentinel-attribution-execution.v1",
+  "overall": "BLOCKED",
+  "reproduced_native_call_attribution": "PASS_FOR_NEW_OUTER_OBSERVER_FAILURE_ONLY",
+  "original_sentinel_cause": "UNPROVEN_NO_PRIOR_TRACEBACK",
+  "windows_controls": "BLOCKED",
+  "actual_control_pairs": 1,
+  "WSL": "NOT_RUN",
+  "orchestrator_chain": "NOT_RUN",
+  "GPU_or_models": "NOT_RUN",
+  "source_pins_unchanged": true,
+  "admission_unchanged": true,
+  "interpreter_unchanged": true,
+  "failure": {
+    "exception_type": "PermissionError",
+    "phase": "host.observe",
+    "api": "QueryFullProcessImageNameW",
+    "winerror": 5,
+    "captured_immediately": true,
+    "caller_function": "_identity",
+    "source_line": 178,
+    "source_path": "api/services/amd_stage_process.py",
+    "current_held_handle_creation_and_membership_verified": true,
+    "observed_exit_code_before": 0,
+    "observed_exit_code_after": 0,
+    "process_matches_inner_job_roles": [
+      "sentinel"
+    ],
+    "precise_descendant_role": "UNPROVEN",
+    "full_private_traceback_frames": 5,
+    "limit": "Exact operation and terminated-process state demonstrated for NEW failure; exact exit instant relative to Job enumeration and old sentinel failure operation not established."
+  },
+  "measurements": {
+    "elapsed_seconds": 19.389999999999418,
+    "peak_process_bytes": 42532864,
+    "peak_Job_bytes": 113909760,
+    "owned_processes_accounted": 23,
+    "final_active": 0,
+    "forced_outer_cleanup": true,
+    "minimum_available_RAM_bytes": 18017431552,
+    "minimum_destination_free_bytes": 135250321408
+  },
+  "isolation_evidence": {
+    "pre_cancel_own_Job_proof": true,
+    "during_cancel_samples": 80,
+    "post_target_settlement_sentinel_live_proof": true,
+    "limit": "Positive pre/during/post observations do not override final sentinel non-natural status or forced outer containment."
+  },
+  "inner": {
+    "target": {
+      "terminal": "cancelled",
+      "natural": true,
+      "forced": false,
+      "windows_settled": true,
+      "returncode": 0,
+      "bootstrap_returncode": 0,
+      "elapsed_s": 14.531000000002678
+    },
+    "sentinel": {
+      "terminal": "cancelled",
+      "natural": false,
+      "forced": false,
+      "windows_settled": true,
+      "returncode": 0,
+      "bootstrap_returncode": 0,
+      "elapsed_s": 17.093999999997322
+    }
+  },
+  "unchanged_limits": {
+    "process_and_Job_bytes": 6442450944,
+    "overall_deadline_seconds": 90,
+    "stage_deadline_seconds": 25,
+    "available_RAM_floor_bytes": 12884901888,
+    "destination_free_floor_bytes": 2147483648
+  },
+  "raw_hashes": {
+    "attempt.json": "72c6de6c9034011b04b9a9a401d34de2f5ca4fc2fc21b93c5a7f8f7e34d28c61",
+    "host-result.json": "69a872c3fcaca9ec5ebe4dfda349dce84c12c865eb53db34f95b30ed8d9a1468",
+    "windows-controls.json": "c07b9e0fcd0d9424f9d7f554b1f92d0841cdfbfe78e26b214f6cd8bba0e6a921",
+    "worker-trace.jsonl": "69417c1a3a11578b8874c3457924a6d9a7919ad5e1546e03a15cf4bbac3d51c3",
+    "host-trace.jsonl": "08aed29f2fd025f47b50fa78fbb16d1bad866bde7e8825abc6dac43dec6f1dbb",
+    "worker.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "worker.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "next_action": "Separately review a same-held-handle, exact-creation-identity retired-process observation rule using previously authenticated image identity; live or unknown process failures remain fail-closed. Do not fix or rerun during this task."
+}

@@ -1,0 +1,357 @@
+{
+  "schema": "modly.amd.sentinel-winerror-independent-outcome-review.v1",
+  "classification": "BLOCKED",
+  "scope": "Independent saved-data review after exactly one root-executed native Windows CPU target/sentinel pair. This reviewer launched no worker, native process API probe, WSL, GPU, model, repair or retry.",
+  "private_raw_root": "artifacts/amd-sentinel-winerror-20e79f4/cpu-once",
+  "verdicts": {
+    "new_attempt_exact_native_api_attribution": "PASS_IDENTIFIED_FOR_THIS_NEW_OUTER_HOST_FAILURE",
+    "new_attempt_windows_controls": "BLOCKED",
+    "target_cooperative_cancellation": "PASS_FOR_THIS_STDLIB_WINDOWS_TREE_ONLY",
+    "sentinel_survival_before_during_after_target_cancellation": "OBSERVED_FOR_THIS_ATTEMPT",
+    "sentinel_independent_natural_completion": "NOT_QUALIFIED",
+    "original_saved_sentinel_failing_operation": "UNPROVEN",
+    "full_orchestrator_chain": "NOT_RUN",
+    "wsl_descendant_cancellation": "NOT_RUN_NOT_QUALIFIED",
+    "model_or_gpu_generation": "NOT_RUN_NOT_QUALIFIED",
+    "new_glb_or_publication": "NONE"
+  },
+  "actual_failure": {
+    "exception_type": "PermissionError",
+    "errno": 13,
+    "winerror": 5,
+    "stage_id": "windows-controls-supervisor",
+    "phase": "host.observe",
+    "during_shutdown": false,
+    "api": "QueryFullProcessImageNameW",
+    "api_source": {
+      "file": "api/services/amd_stage_process.py",
+      "line": 178,
+      "function": "_identity"
+    },
+    "immediate_native_error_verified": true,
+    "utc": "2026-10-22T22:53:30.802021+00:00",
+    "monotonic_s": 118302.156,
+    "preceding_open_process": {
+      "succeeded": true,
+      "access_mask_decimal": 4096,
+      "access_mask_hex": "0x1000"
+    },
+    "preceding_same_handle_membership_check_succeeded": true,
+    "preceding_same_handle_creation_time_check_succeeded": true,
+    "identity_from_current_held_handle": true,
+    "current_identity_matches_exactly_one_saved_sentinel_member": true,
+    "current_identity_matches_saved_target_member": false,
+    "current_identity_matches_exactly_one_outer_prior_image_record": true,
+    "outer_prior_image_record_utc": "2026-10-22T22:53:30.750077+00:00",
+    "finer_runtime_or_fixture_role": "UNPROVEN; do not infer a finer role from basename or cumulative identities.",
+    "before_probe": {
+      "alive": false,
+      "exit_code": 0,
+      "probe_winerror": null
+    },
+    "after_probe": {
+      "alive": false,
+      "exit_code": 0,
+      "probe_winerror": null
+    },
+    "traceback_frame_count": 5,
+    "traceback_frames": [
+      {
+        "file": "docs/compatibility/amd-sentinel-winerror-evidence/sentinel_diagnostic.py",
+        "line": 245,
+        "function": "host"
+      },
+      {
+        "file": "docs/compatibility/amd-sentinel-winerror-evidence/sentinel_diagnostic.py",
+        "line": 224,
+        "function": "snapshot"
+      },
+      {
+        "file": "api/services/amd_stage_process.py",
+        "line": 197,
+        "function": "snapshot"
+      },
+      {
+        "file": "api/services/amd_stage_process.py",
+        "line": 178,
+        "function": "_identity"
+      },
+      {
+        "file": "api/services/amd_stage_process.py",
+        "line": 159,
+        "function": "_call"
+      }
+    ],
+    "primary_error_count": 1,
+    "outer_cleanup_error_count": 0,
+    "interpretation": "The new attempt identifies an image-name query returning native error5 on a currently authenticated sentinel-owned process handle whose exit-code probes both returned0. This is a host observation failure during sentinel shutdown; it is not evidence that target cancellation signalled a foreign process.",
+    "causal_limit": "The exact reason Windows denied this query is not established beyond the captured operation and state. Do not assign it to PID reuse, nested Job compatibility, sandbox policy, cross-job signalling or a runtime implementation.",
+    "original_failure_limit": "The earlier sentinel receipt lacks failing-call and handle identity evidence. A corresponding failure mechanism is now observed, but the original failing operation remains unproven."
+  },
+  "target": {
+    "terminal": "cancelled",
+    "returncode": 0,
+    "bootstrap_returncode": 0,
+    "natural": true,
+    "forced": false,
+    "windows_settled": true,
+    "final_active_processes": 0,
+    "total_owned_processes": 10,
+    "peak_process_bytes": 9842688,
+    "peak_job_bytes": 42188800,
+    "elapsed_seconds": 14.531000000002678,
+    "resource_observations": 511,
+    "windows_history_snapshots": 510,
+    "minimum_observed_available_ram_bytes": 18017636352,
+    "minimum_observed_free_disk_bytes": 135269269504,
+    "diagnostic_error_count": 0,
+    "cooperative_ack_exact": true,
+    "protocol_terminal": {
+      "terminal": "cancelled",
+      "returncode": 0,
+      "natural": true,
+      "forced": false,
+      "cooperative_cancelled": true
+    },
+    "limit": "This qualifies only the executed stdlib Windows fixture tree, not model/GPU, Linux or product orchestration behavior."
+  },
+  "sentinel": {
+    "terminal": "cancelled",
+    "returncode": 0,
+    "bootstrap_returncode": 0,
+    "natural": false,
+    "forced": false,
+    "windows_settled": true,
+    "final_active_processes": 0,
+    "total_owned_processes": 10,
+    "peak_process_bytes": 9719808,
+    "peak_job_bytes": 42221568,
+    "elapsed_seconds": 17.093999999997322,
+    "resource_observations": 582,
+    "windows_history_snapshots": 581,
+    "minimum_observed_available_ram_bytes": 18017431552,
+    "minimum_observed_free_disk_bytes": 135265067008,
+    "diagnostic_error_count": 0,
+    "protocol_terminal": {
+      "terminal": "cancelled",
+      "returncode": 0,
+      "natural": false,
+      "forced": false,
+      "cooperative_cancelled": false
+    },
+    "cancel_ack_exists": false,
+    "bootstrap_stderr": {
+      "type": "FileNotFoundError",
+      "operation": "cancel-ack.read_json",
+      "winerror5": false,
+      "bytes": 1004
+    },
+    "interpretation": "The sentinel survived the target cancellation and was released after target natural settlement. The outer host observation exception then triggered context-bound cancellation before the sentinel bootstrap completed. Its cancelled/0 terminal without a cooperative acknowledgement cannot establish natural independent success."
+  },
+  "independence_observations": {
+    "distinct_private_jobs_and_contexts": true,
+    "observed_pid_creation_identity_sets_disjoint": true,
+    "pre_target_snapshot_monotonic_s": 118298.968,
+    "pre_sentinel_snapshot_monotonic_s": 118298.984,
+    "target_cancel_interval_start_monotonic_s": 118299,
+    "target_wrapper_finished_monotonic_s": 118301.218,
+    "during_cancel_snapshot_count": 80,
+    "during_cancel_proof_violations": 0,
+    "first_during_snapshot_monotonic_s": 118299.015,
+    "last_during_snapshot_monotonic_s": 118301.14,
+    "fresh_post_target_snapshot_monotonic_s": 118301.296,
+    "sentinel_release_utc": "2026-10-22T22:53:29.948736+00:00",
+    "outer_error_utc": "2026-10-22T22:53:30.802021+00:00",
+    "outer_cooperative_cancel_trace_utc": "2026-10-22T22:53:30.808077+00:00",
+    "worker_outer_cancel_accepted_utc": "2026-10-22T22:53:30.841678+00:00",
+    "sentinel_cancel_received_unix_ns": "1792709610858118800",
+    "sentinel_child_exit_unix_ns": "1792709611434298500",
+    "sentinel_terminal_unix_ns": "1792709611447462400",
+    "limit": "These are observed fixture independence and timing facts. They do not qualify overall cross-job isolation after an outer abort or prove the original failure's cause."
+  },
+  "outer": {
+    "classification": "BLOCKED",
+    "worker_returncode": 1,
+    "elapsed_seconds": 19.389999999999418,
+    "forced_outer_cleanup": true,
+    "owned_force_trace_utc": "2026-10-22T22:53:32.985504+00:00",
+    "final_active_processes": 0,
+    "total_owned_processes": 23,
+    "peak_process_bytes": 42532864,
+    "peak_job_bytes": 113909760,
+    "resource_samples": 301,
+    "initial_available_ram_bytes": 18130497536,
+    "initial_free_disk_bytes": 135270285312,
+    "minimum_sampled_available_ram_bytes": 18017435648,
+    "minimum_sampled_free_disk_bytes": 135265292288,
+    "final_available_ram_bytes": 18104135680,
+    "final_free_disk_bytes": 135250321408,
+    "minimum_all_saved_available_ram_bytes": 18017431552,
+    "minimum_all_saved_free_disk_bytes": 135250321408,
+    "original_process_and_job_cap_bytes": 6442450944,
+    "overall_deadline_seconds": 90,
+    "available_ram_floor_bytes": 12884901888,
+    "free_disk_floor_bytes": 2147483648,
+    "all_saved_resource_observations_above_floors": true,
+    "runner_threads_left_alive": 0,
+    "force_limit": "Final zero active counts are settlement after forced outer cleanup, not proof of natural outer completion. The saved trace does not identify the exact remaining process that required force."
+  },
+  "integrity": {
+    "actual_attempts": 1,
+    "actual_control_pairs": 1,
+    "new_raw_file_count": 33,
+    "new_raw_total_bytes": 19842689,
+    "prior_raw_file_count": 27,
+    "prior_raw_size_and_sha256_mismatches": 0,
+    "attempt_source_pin_count": 5,
+    "source_pin_mismatch_count": 0,
+    "attempt_pins_match_admission": true,
+    "admission_sha256": "d7ada9ee04e8564cea7523f1c585f309a0f425c2e2fdb052979c9ce648c2750d",
+    "admission_hash_matches": true,
+    "source_and_admission_and_interpreter_unchanged": true,
+    "target_wrapper_and_pair_receipts_equal_original": true,
+    "sentinel_wrapper_and_pair_receipts_equal_original": true,
+    "target_protocol_events": 31,
+    "sentinel_protocol_events": 36,
+    "protocol_foreign_stage_nonce_context_events": 0,
+    "target_ack_matches_entire_context": true,
+    "host_cancel_marker_matches_attempt_hash": true,
+    "no_new_glb": true,
+    "private_identity_and_full_trace_policy": "Raw PIDs, handles, creation identities, complete contexts and full traceback remain only in private raw artifacts. This report retains aggregate checks, relative source frames and content hashes."
+  },
+  "stopping_rule": "The sole diagnostic attempt is complete and BLOCKED. No correction, additional native probe, WSL operation, repair or retry follows. Further execution requires separate human authorization.",
+  "raw_file_sha256": {
+    "attempt.json": {
+      "bytes": 1411,
+      "sha256": "72c6de6c9034011b04b9a9a401d34de2f5ca4fc2fc21b93c5a7f8f7e34d28c61"
+    },
+    "host-cancel.json": {
+      "bytes": 117,
+      "sha256": "d08a129636c25579406fb242e3815afb76a7fc0e8b05aa74407d65715c6175a7"
+    },
+    "host-result.json": {
+      "bytes": 393888,
+      "sha256": "69a872c3fcaca9ec5ebe4dfda349dce84c12c865eb53db34f95b30ed8d9a1468"
+    },
+    "host-trace.jsonl": {
+      "bytes": 235500,
+      "sha256": "08aed29f2fd025f47b50fa78fbb16d1bad866bde7e8825abc6dac43dec6f1dbb"
+    },
+    "sentinel-process/independent-sentinel/bootstrap.stderr.txt": {
+      "bytes": 1004,
+      "sha256": "16a8571b903a57a69eac93346bd05173034462720402f69a258b0182090097d3"
+    },
+    "sentinel-process/independent-sentinel/launch.json": {
+      "bytes": 1336,
+      "sha256": "617cccb363b29e1a2c03df691830489154e91a6d8da93f20a7726612da198c29"
+    },
+    "sentinel-process/independent-sentinel/protocol.jsonl": {
+      "bytes": 22904,
+      "sha256": "1ca22a63fc46daa25af721f400dbfc8ae1ab30e8fdf515aff9285933e73b9d78"
+    },
+    "sentinel-process/independent-sentinel/receipt.json": {
+      "bytes": 2300227,
+      "sha256": "346a39a68a4145b23f9ddf1296aee85a22f700d8b3a7f9446dacde3e373911b4"
+    },
+    "sentinel-process/independent-sentinel/stage.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sentinel-process/independent-sentinel/stage.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sentinel-receipt.json": {
+      "bytes": 2300229,
+      "sha256": "04422b85b35c8d5afc346aec6c7955cc171a3a4bade865eb4572305cc93838d2"
+    },
+    "target-process/cancel-target/bootstrap.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-process/cancel-target/cancel-ack.json": {
+      "bytes": 545,
+      "sha256": "325837d017fd26475bffc09b4d0bc181d90cc28af7c07bb8913e56cd401321f4"
+    },
+    "target-process/cancel-target/launch.json": {
+      "bytes": 1298,
+      "sha256": "2b34160a1656a817fab46e151779953171ec04933e6180b0a07b23a2dcf1a01b"
+    },
+    "target-process/cancel-target/protocol.jsonl": {
+      "bytes": 19437,
+      "sha256": "256dd697baac688ca6c6a9242ec7152b6ba9a89a5f78a7032cb598fa10f7d671"
+    },
+    "target-process/cancel-target/receipt.json": {
+      "bytes": 1932965,
+      "sha256": "ce1d4cd0ed18983a58db7832a988dbc4c878f9ca7fd96008a73a1385082f2557"
+    },
+    "target-process/cancel-target/stage.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-process/cancel-target/stage.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-receipt.json": {
+      "bytes": 1932967,
+      "sha256": "81f8436b6bbf34676a951ae2f49ad35397ce4a6eba10c7798becd43592ac594c"
+    },
+    "windows-controls.json": {
+      "bytes": 10175431,
+      "sha256": "c07b9e0fcd0d9424f9d7f554b1f92d0841cdfbfe78e26b214f6cd8bba0e6a921"
+    },
+    "windows-controls/cancel-target/child-ready.json": {
+      "bytes": 481,
+      "sha256": "936fb0f1e23c04deaec9d323e75bb15ecfb66cfbfc406f5c816c13e47d9980d4"
+    },
+    "windows-controls/cancel-target/grandchild-ready.json": {
+      "bytes": 460,
+      "sha256": "4f082399608b3eb355afb5697d0b2f4224fdd26f39a887c8646d3d057f37d636"
+    },
+    "windows-controls/cancel-target/ready.json": {
+      "bytes": 1011,
+      "sha256": "4ca60aa77d215d765802d9fb5c750a665f09d0f49a45c0bf18a391aeeb0d0518"
+    },
+    "windows-controls/cancel-target/stop.json": {
+      "bytes": 475,
+      "sha256": "0fd36b41bbd9df2066d529d09fe8ee08c7b87d7f527650505173a2dc80c43c0d"
+    },
+    "windows-controls/independent-sentinel/child-ready.json": {
+      "bytes": 482,
+      "sha256": "38567f0f79b2d3d6218557a12ce85bb6300a6ff78bef3d6b3a287c89e486b3cd"
+    },
+    "windows-controls/independent-sentinel/grandchild-ready.json": {
+      "bytes": 461,
+      "sha256": "792d80367b22a7b952174983f95e801facfa3f4f6b768384fc16bc30a3f2ed51"
+    },
+    "windows-controls/independent-sentinel/ready.json": {
+      "bytes": 1020,
+      "sha256": "54787ac7d79821f2cb172142dc33af3f1c8c03b05c33cdca72d7be6dfdbf88ff"
+    },
+    "windows-controls/independent-sentinel/sentinel-release.json": {
+      "bytes": 545,
+      "sha256": "e9819836ab6805595a78a0753ba03cca09d07afd9c6010f4fe76a1fefc7d202c"
+    },
+    "windows-controls/independent-sentinel/stop.json": {
+      "bytes": 484,
+      "sha256": "348174bc0d553481b0493c03982ed87a0b1f41ed9dbe7b93445c79f3df784e20"
+    },
+    "worker-ready.json": {
+      "bytes": 22,
+      "sha256": "17d2077c2c0d2f22e72b47c9a8e188d7d0ad86b23aaf284c4dfeee43657b6fd9"
+    },
+    "worker-trace.jsonl": {
+      "bytes": 517989,
+      "sha256": "69417c1a3a11578b8874c3457924a6d9a7919ad5e1546e03a15cf4bbac3d51c3"
+    },
+    "worker.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "worker.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

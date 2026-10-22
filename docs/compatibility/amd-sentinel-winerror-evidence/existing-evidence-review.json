@@ -1,0 +1,139 @@
+{
+  "schema": "modly.amd.sentinel-existing-evidence-review.v1",
+  "classification": "AUTHENTICATED_PRIOR_FAILURE_CAUSE_UNPROVEN",
+  "mission_base": "20e79f4586491e8168e9f29c5dee52142c175e17",
+  "scope": "Independent read-only audit of the sole prior CPU attempt. No worker, native API experiment, WSL, GPU, model, repair or retry was launched.",
+  "prior_raw_root": "artifacts/amd-job-stage-orchestrator-c5f7ccd/cpu-once",
+  "authenticated_against": "docs/compatibility/amd-job-stage-orchestrator-evidence/independent-outcome-review.json",
+  "integrity": {
+    "raw_file_count": 27,
+    "raw_size_and_sha256_matches": 27,
+    "raw_mismatch_count": 0,
+    "saved_attempt_source_pins": 7,
+    "source_pins_matched_before_current_diagnostic_edits": 7,
+    "source_pin_limit": "The seven source matches were observed at the mission base before the current diagnostic edits. This does not claim modified candidate bytes equal prior attempt pins.",
+    "individual_receipts_equal_windows_controls_summary": true,
+    "observed_target_sentinel_pid_creation_sets_disjoint": true,
+    "disjoint_identity_limit": "The observed sets do not establish causal isolation or identify the failing operation."
+  },
+  "target": {
+    "terminal": "cancelled",
+    "returncode": 0,
+    "bootstrap_returncode": 0,
+    "natural": true,
+    "forced": false,
+    "windows_settled": true,
+    "final_active_processes": 0,
+    "total_processes": 10,
+    "resource_observations": 385,
+    "elapsed_seconds": 10.609000000011292,
+    "last_resource_observation": {
+      "elapsed_seconds": 10.359000000011292,
+      "available_ram_bytes": 18795753472,
+      "free_disk_bytes": 135281213440
+    },
+    "protocol_terminal": {
+      "terminal": "cancelled",
+      "returncode": 0,
+      "natural": true,
+      "forced": false,
+      "cooperative_cancelled": true
+    },
+    "cancellation_ack_matches_stage_nonce_entire_context": true,
+    "limit": "One stdlib Windows fixture tree only; no model, GPU, WSL or full orchestrator qualification."
+  },
+  "sentinel": {
+    "terminal": "failed",
+    "returncode": null,
+    "bootstrap_returncode_recorded": false,
+    "error": {
+      "type": "PermissionError",
+      "message": "[WinError 5] Access is denied."
+    },
+    "natural": false,
+    "forced": false,
+    "windows_settled": true,
+    "final_active_processes": 0,
+    "total_processes": 10,
+    "resource_observations": 439,
+    "elapsed_seconds": 12.389999999999418,
+    "last_resource_observation": {
+      "elapsed_seconds": 12.172000000005937,
+      "available_ram_bytes": 18828128256,
+      "free_disk_bytes": 135280578560
+    },
+    "protocol_terminal": {
+      "terminal": "cancelled",
+      "returncode": 0,
+      "natural": false,
+      "forced": false,
+      "cooperative_cancelled": false
+    },
+    "cause": "Unproven. The prior host error has no traceback, failing native API, access mask, affected PID, native last-error capture or error timestamp."
+  },
+  "outer": {
+    "classification": "BLOCKED",
+    "worker_returncode": 1,
+    "elapsed_seconds": 13.843999999997322,
+    "final_active_processes": 0,
+    "total_processes": 22,
+    "forced_outer_cleanup_recorded": false,
+    "sources_unchanged": true,
+    "actual_orchestrated_chains": 0,
+    "wsl_stage_launched": false
+  },
+  "chronological_observations_utc": [
+    {
+      "event": "target cancellation acknowledgement file last-write",
+      "utc": "2026-10-22T22:16:47.5832558Z",
+      "basis": "filesystem metadata"
+    },
+    {
+      "event": "target terminal protocol event",
+      "unix_timestamp_ns": "1792707408092272000",
+      "basis": "saved protocol"
+    },
+    {
+      "event": "target receipt finished",
+      "utc": "2026-10-22T22:16:48.835771+00:00",
+      "basis": "saved receipt"
+    },
+    {
+      "event": "sentinel release file last-write",
+      "utc": "2026-10-22T22:16:48.8382879Z",
+      "basis": "filesystem metadata"
+    },
+    {
+      "event": "sentinel stop file last-write",
+      "utc": "2026-10-22T22:16:48.8559119Z",
+      "basis": "filesystem metadata"
+    },
+    {
+      "event": "sentinel terminal protocol event",
+      "unix_timestamp_ns": "1792707409970134100",
+      "basis": "saved protocol"
+    },
+    {
+      "event": "sentinel receipt finished",
+      "utc": "2026-10-22T22:16:50.619482+00:00",
+      "basis": "saved receipt"
+    }
+  ],
+  "timeline_limits": [
+    "Filesystem timestamps are corroborating metadata; their values are not part of the committed content hashes.",
+    "Resource observations include cleanup. The final resource sample is not the timestamp of the original exception.",
+    "The prior windows field was overwritten by each successful snapshot and final settlement; it is not a per-call or per-snapshot identity history.",
+    "Saved cumulative identities show membership when observed, not continued liveness at the failing operation.",
+    "No saved record identifies when host cleanup CANCEL was sent or received relative to sentinel natural finish.",
+    "Empty stage/bootstrap stderr cannot identify the host-side failing operation.",
+    "PowerShell JSON parsing may display date values in local timezone; the recorded UTC strings here were verified against raw JSON text."
+  ],
+  "source_findings": [
+    "The originating error field is written by OwnedStageRunner.run's normal-phase exception handler. Cleanup failures have distinct fields.",
+    "The successful stage-started and readiness records exclude initial constructor, launch and attach as the original failing operation.",
+    "Prior OpenProcess failures were silently skipped and could not by themselves surface the saved PermissionError.",
+    "Prior IsProcessInJob native failure was converted to RuntimeError and therefore did not by itself yield the saved PermissionError.",
+    "Possible later host failures include checked Job/process queries, host memory/disk observation, protocol file operations, subprocess polling, host control pipe operations and transport-file close."
+  ],
+  "new_execution_authorized_by_this_review": false
+}

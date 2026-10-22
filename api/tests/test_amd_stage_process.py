@@ -172,6 +172,18 @@ class StageOwnershipTests(unittest.TestCase):
         self.assertEqual(result["terminal"], "failed")
         self.assertFalse(FakeProcess.instances[0].go)
 
+    def test_python_observer_permission_failure_has_private_phase_and_traceback(self):
+        with patch.object(stage, '_host_health', side_effect=PermissionError('actual diagnostic fixture error')):
+            result = stage.OwnedStageRunner(self.root / 'evidence').run(self.command(), threading.Event())
+        detail = result['diagnostic_errors'][0]
+        self.assertEqual(detail['stage_id'], 'prepare')
+        self.assertEqual(detail['phase'], 'normal.observe')
+        self.assertFalse(detail['during_shutdown'])
+        self.assertIsNone(detail['native'])
+        self.assertIsNone(detail['winerror'])
+        self.assertIn('_host_health', detail['traceback'])
+        self.assertTrue(detail['python_frames'])
+
     def test_wsl_client_exit_without_linux_ack_blocks(self):
         FakeProcess.linux_ack = False
         result = stage.OwnedStageRunner(self.root / "evidence").run(self.command("wsl"), threading.Event())
@@ -310,6 +322,7 @@ class BootstrapOwnershipTests(unittest.TestCase):
     def test_native_daemon_reader_uses_raw_stdin_without_shutdown_buffer_lock(self):
         with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[2]) as name:
             child = Mock(pid=123)
+            child.returncode = 0
             child.stdin = io.BytesIO()
             child.poll.return_value = child.wait.return_value = 0
             raw = io.BytesIO()
@@ -330,6 +343,7 @@ class BootstrapOwnershipTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[2]) as name:
             child = Mock()
             child.pid = 123
+            child.returncode = 0
             child.stdin = io.BytesIO()
             child.poll.side_effect = [None, None, 0]
             child.wait.return_value = 0

@@ -16,6 +16,9 @@ import shutil
 import subprocess
 import sys
 import time
+import threading
+import traceback
+import uuid
 
 MEMORY_LIMIT = 6 * 1024**3
 RAM_FLOOR = 12 * 1024**3
@@ -80,6 +83,10 @@ class _OwnedJob:
         self.api = ctypes.WinDLL("kernel32", use_last_error=True)
         self.handle = None
         self.identities = {}
+        self.creation_identities = {}
+        self.job_owner = uuid.uuid4().hex
+        self.phase = 'job-create'
+        self.native_events = []
         definitions = {
             "CreateJobObjectW": ([ctypes.c_void_p, wt.LPCWSTR], wt.HANDLE),
             "SetInformationJobObject": ([wt.HANDLE, ctypes.c_int, ctypes.c_void_p, wt.DWORD], wt.BOOL),
@@ -91,73 +98,139 @@ class _OwnedJob:
             "GetProcessTimes": ([wt.HANDLE] + [ctypes.POINTER(wt.FILETIME)] * 4, wt.BOOL),
             "QueryFullProcessImageNameW": ([wt.HANDLE, wt.DWORD, wt.LPWSTR, ctypes.POINTER(wt.DWORD)], wt.BOOL),
             "IsProcessInJob": ([wt.HANDLE, wt.HANDLE, ctypes.POINTER(wt.BOOL)], wt.BOOL),
+            "GetExitCodeProcess": ([wt.HANDLE, ctypes.POINTER(wt.DWORD)], wt.BOOL),
         }
         for name, (arguments, result) in definitions.items():
             function = getattr(self.api, name)
             function.argtypes, function.restype = arguments, result
-        self.handle = self.api.CreateJobObjectW(None, None)
-        if not self.handle:
-            raise ctypes.WinError(ctypes.get_last_error())
+        self.handle = self._call('CreateJobObjectW', None, None)
         limits = _Limits()
         limits.Basic.Flags = 0x2000 | 0x100 | 0x200  # kill-on-close, process + job memory.
         limits.ProcessMemory = limits.JobMemory = MEMORY_LIMIT
-        if not self.api.SetInformationJobObject(self.handle, 9, ctypes.byref(limits), ctypes.sizeof(limits)):
-            error = ctypes.WinError(ctypes.get_last_error())
-            self.close()
+        try:
+            self._call('SetInformationJobObject', self.handle, 9, ctypes.byref(limits), ctypes.sizeof(limits), category=9)
+        except BaseException as error:
+            try:
+                self.close()
+            except BaseException as cleanup:
+                error.amd_creation_cleanup = _error_detail(cleanup, 'cleanup.job-create')
+            raise
+
+    def _alive(self, handle):
+        # Diagnostic only: never substitutes for membership or creation checks.
+        if handle is None:
+            return {'alive': None, 'reason': 'no process handle'}
+        value = wt.DWORD()
+        try:
+            ctypes.set_last_error(0)
+            ok = self.api.GetExitCodeProcess(handle, ctypes.byref(value))
+            code = ctypes.get_last_error() if not ok else None
+        except Exception as error:
+            return {'alive': None, 'probe_exception': repr(error)}
+        return {'alive': value.value == 259 if ok else None,
+                'exit_code': value.value if ok else None, 'probe_winerror': code}
+
+    def _call(self, name, *args, pid=None, process_handle=None, category=None, identity_current=False):
+        before = self._alive(process_handle)
+        caller = sys._getframe(1)
+        row = {'api': name, 'phase': self.phase, 'job_owner': self.job_owner,
+               'job_handle': self.handle, 'pid': pid, 'category': category,
+               'process_handle': process_handle, 'closing_handle': args[0] if name == 'CloseHandle' else None,
+               'access_mask': args[0] if name == 'OpenProcess' else None,
+               'last_authenticated_identity': self.creation_identities.get(pid),
+               'authenticated_identity': self.creation_identities.get(pid) if identity_current else None,
+               'identity_from_current_handle': identity_current,
+               'python_caller': {'file': caller.f_code.co_filename, 'function': caller.f_code.co_name,
+                                 'line': caller.f_lineno},
+               'alive_before': before, 'utc': _utc(), 'monotonic_s': time.monotonic(),
+               'thread_id': threading.get_ident()}
+        ctypes.set_last_error(0)
+        value = getattr(self.api, name)(*args)
+        code = ctypes.get_last_error() if not value else None  # Before ANY other API/probe.
+        verified = type(code) is int and code > 0
+        row.update(ok=bool(value), winerror=code, native_error_verified=verified)
+        self.native_events.append(row)
+        del self.native_events[:-256]
+        if not value:
+            row['alive_after'] = self._alive(process_handle)
+            error = ctypes.WinError(code) if verified else RuntimeError(name + ' failed without a Windows error code')
+            error.amd_native_failure = row
+            error.amd_recent_native_events = list(self.native_events)
             raise error
+        return value
 
     def attach(self, proc):
-        if not self.api.AssignProcessToJobObject(self.handle, int(proc._handle)):
-            raise ctypes.WinError(ctypes.get_last_error())
+        self._call('AssignProcessToJobObject', self.handle, int(proc._handle), pid=proc.pid, process_handle=int(proc._handle))
         self._identity(proc.pid, int(proc._handle))
 
     def _identity(self, pid, handle):
         member = wt.BOOL()
-        if not self.api.IsProcessInJob(handle, self.handle, ctypes.byref(member)) or not member.value:
+        self._call('IsProcessInJob', handle, self.handle, ctypes.byref(member), pid=pid, process_handle=handle)
+        if not member.value:
             raise RuntimeError("Process membership in private Job could not be verified")
         values = [wt.FILETIME() for _ in range(4)]
-        if not self.api.GetProcessTimes(handle, *(ctypes.byref(value) for value in values)):
-            raise ctypes.WinError(ctypes.get_last_error())
+        self._call('GetProcessTimes', handle, *(ctypes.byref(value) for value in values), pid=pid, process_handle=handle)
         created = values[0].dwLowDateTime | values[0].dwHighDateTime << 32
+        self.creation_identities[pid] = {'pid': pid, 'creation_filetime': created, 'job_membership_verified': True,
+                                         'observed_utc': _utc(), 'queried_process_handle': int(handle)}
         size = wt.DWORD(32768)
         image = ctypes.create_unicode_buffer(size.value)
-        if not self.api.QueryFullProcessImageNameW(handle, 0, image, ctypes.byref(size)):
-            raise ctypes.WinError(ctypes.get_last_error())
+        self._call('QueryFullProcessImageNameW', handle, 0, image, ctypes.byref(size), pid=pid, process_handle=handle, identity_current=True)
         self.identities[(pid, created)] = {"pid": pid, "creation_filetime": created,
-                                          "image": image.value, "job_membership_verified": True}
+                                          "image": image.value, "job_membership_verified": True,
+                                          'observed_utc': _utc(), 'observed_alive': self._alive(handle)}
 
     def snapshot(self):
         accounting, limits = _Accounting(), _Limits()
         for category, value in ((1, accounting), (9, limits)):
-            if not self.api.QueryInformationJobObject(self.handle, category, ctypes.byref(value), ctypes.sizeof(value), None):
-                raise ctypes.WinError(ctypes.get_last_error())
+            self._call('QueryInformationJobObject', self.handle, category, ctypes.byref(value), ctypes.sizeof(value), None, category=category)
         # A bounded list is sufficient for this small, pinned stage chain. Overflow blocks it.
         class Pids(ctypes.Structure):
             _fields_ = [("Assigned", wt.DWORD), ("Count", wt.DWORD), ("Pids", ctypes.c_size_t * 256)]
         ids = Pids()
-        if not self.api.QueryInformationJobObject(self.handle, 3, ctypes.byref(ids), ctypes.sizeof(ids), None):
-            raise ctypes.WinError(ctypes.get_last_error())
+        self._call('QueryInformationJobObject', self.handle, 3, ctypes.byref(ids), ctypes.sizeof(ids), None, category=3)
         for pid in ids.Pids[:ids.Count]:
-            handle = self.api.OpenProcess(0x1000, False, pid)
-            if not handle:  # A member may have exited between the two native queries.
-                continue
+            # A failed open is not proof of exit. Retain the same limited mask,
+            # attribute the failure, and fail closed instead of silently skipping it.
+            handle = self._call('OpenProcess', 0x1000, False, pid, pid=pid)
             try:
                 self._identity(pid, handle)
             finally:
-                self.api.CloseHandle(handle)
+                primary = sys.exc_info()[1]
+                try:
+                    self._call('CloseHandle', handle, pid=pid)
+                except BaseException as cleanup:
+                    if primary is not None:
+                        primary.amd_handle_cleanup = _error_detail(cleanup, 'cleanup.process-handle')
+                    else:
+                        raise
         return {"active": accounting.Active, "total_processes": accounting.Total,
                 "peak_process_bytes": limits.PeakProcessMemory, "peak_job_bytes": limits.PeakJobMemory,
-                "process_identities": list(self.identities.values())}
+                "process_identities": list(self.identities.values()), "job_owner": self.job_owner,
+                "enumerated_pids": list(ids.Pids[:ids.Count])}
 
     def terminate(self):
-        if not self.api.TerminateJobObject(self.handle, 1):
-            raise ctypes.WinError(ctypes.get_last_error())
+        self._call('TerminateJobObject', self.handle, 1)
 
     def close(self):
         if self.handle is not None:
             handle, self.handle = self.handle, None
-            if not self.api.CloseHandle(handle):
-                raise ctypes.WinError(ctypes.get_last_error())
+            self._call('CloseHandle', handle)
+
+
+def _error_detail(error, phase):
+    """Private evidence only. Never infer native last-error from a Python error."""
+    return {'type': type(error).__name__, 'message': str(error), 'repr': repr(error),
+            'errno': getattr(error, 'errno', None), 'winerror': getattr(error, 'winerror', None),
+            'filename': getattr(error, 'filename', None), 'filename2': getattr(error, 'filename2', None),
+            'phase': phase, 'utc': _utc(), 'monotonic_s': time.monotonic(),
+            'traceback': ''.join(traceback.format_exception(type(error), error, error.__traceback__)),
+            'python_frames': [{'file': row.filename, 'line': row.lineno, 'function': row.name}
+                              for row in traceback.extract_tb(error.__traceback__)],
+            'native': getattr(error, 'amd_native_failure', None),
+            'recent_native_events': getattr(error, 'amd_recent_native_events', []),
+            'creation_cleanup': getattr(error, 'amd_creation_cleanup', None),
+            'handle_cleanup': getattr(error, 'amd_handle_cleanup', None)}
 
 
 def _require_windows():
@@ -182,8 +255,13 @@ def _host_health(path):
     api = ctypes.WinDLL("kernel32", use_last_error=True)
     api.GlobalMemoryStatusEx.argtypes = [ctypes.POINTER(Memory)]
     api.GlobalMemoryStatusEx.restype = wt.BOOL
+    ctypes.set_last_error(0)
     if not api.GlobalMemoryStatusEx(ctypes.byref(memory)):
-        raise ctypes.WinError(ctypes.get_last_error())
+        code = ctypes.get_last_error()
+        error = ctypes.WinError(code) if code else RuntimeError('GlobalMemoryStatusEx failed without a Windows error code')
+        error.amd_native_failure = {'api': 'GlobalMemoryStatusEx', 'winerror': code,
+                                    'native_error_verified': bool(code), 'pid': None}
+        raise error
     observation = {"available_ram_bytes": memory.available, "free_disk_bytes": shutil.disk_usage(path).free}
     if observation["available_ram_bytes"] < RAM_FLOOR or observation["free_disk_bytes"] < DISK_FLOOR:
         raise _HostResourceError(observation)
@@ -226,6 +304,7 @@ class OwnedStageRunner:
     def __init__(self, evidence_dir: Path):
         self.evidence_dir = Path(evidence_dir)
         self.unsettled = False
+        self.last_windows_observation = None
 
     def run(self, command: StageCommand, cancel_event, tick=None):
         if self.unsettled:
@@ -250,14 +329,27 @@ class OwnedStageRunner:
                   "logs": {"stdout": spec["stdout_file"], "stderr": spec["stderr_file"],
                            "protocol": str(protocol_path)}, "receipt_file": str(receipt_path),
                   "observations": [], "windows": {}}
+        result.update(windows_history=[], control_messages=[], diagnostic_errors=[])
         proc = job = None
         attached = cancelled = gate_open = False
         terminal = None
         linux_ready = None
         deadline = began + command.timeout_s
         cursor = 0
+        phase = 'normal.initial-admission'
+        shutdown = False
+
+        def capture(exc):
+            detail = _error_detail(exc, phase)
+            detail.update(stage_id=command.stage_id, context=spec['context'],
+                          supervisor_job_owner=getattr(job, 'job_owner', None),
+                          bootstrap_pid=getattr(proc, 'pid', None), during_shutdown=shutdown)
+            result['diagnostic_errors'].append(detail)
+            return detail
 
         def observe():
+            nonlocal phase
+            phase = ('cleanup' if shutdown else 'normal') + '.observe'
             if tick is not None:
                 tick()
             try:
@@ -268,15 +360,26 @@ class OwnedStageRunner:
                 raise
             result["observations"].append({"elapsed_s": time.monotonic() - began, **health})
             if job is not None:
+                job.phase = phase
                 result["windows"] = job.snapshot()
+                snapshot = {'utc': _utc(), 'monotonic_s': time.monotonic(), 'elapsed_s': time.monotonic() - began,
+                            'phase': phase, **result['windows']}
+                self.last_windows_observation = snapshot
+                result['windows_history'].append(snapshot)
 
         def control(action):
+            nonlocal phase
+            phase = ('cleanup' if shutdown else 'normal') + '.control.' + action
+            entry = {'action': action, 'phase': phase, 'utc': _utc(), 'monotonic_s': time.monotonic(), 'flushed': False}
+            result['control_messages'].append(entry)
             proc.stdin.write((json.dumps({"action": action, "stage_id": command.stage_id,
                                           "nonce": spec["nonce"]}) + "\n").encode())
             proc.stdin.flush()
+            entry['flushed'] = True
 
         def read_events():
-            nonlocal cursor, terminal, linux_ready
+            nonlocal cursor, terminal, linux_ready, phase
+            phase = ('cleanup' if shutdown else 'normal') + '.read-protocol'
             if protocol_path.stat().st_size > 1024 * 1024:
                 raise RuntimeError("Stage protocol exceeded bounded size")
             with protocol_path.open("rb") as stream:
@@ -318,15 +421,21 @@ class OwnedStageRunner:
                 result.update(terminal="cancelled", natural=True, no_stage_launched=True)
                 return result
             observe()
+            phase = 'normal.write-launch'
             spec_path = directory / "launch.json"
             spec_path.write_text(json.dumps(spec), encoding="utf-8")
+            phase = 'normal.job-create'
             job = _OwnedJob()
+            phase = 'normal.open-transport-files'
             with protocol_path.open("xb", buffering=0) as protocol, (directory / "bootstrap.stderr.txt").open("xb") as errors:
+                phase = 'normal.subprocess.Popen'
                 proc = subprocess.Popen([sys.executable, "-B", "-I", "-S", str(_HERE / "amd_stage_bootstrap.py"), str(spec_path)],
                                         stdin=subprocess.PIPE, stdout=protocol, stderr=errors,
                                         cwd=str(command.cwd) if command.kind == "windows" else None,
                                         creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
                 result["windows_settled"] = False
+                phase = 'normal.job-attach'
+                job.phase = phase
                 job.attach(proc)
                 attached = True
                 observe()
@@ -339,6 +448,7 @@ class OwnedStageRunner:
                 last_ping = time.monotonic()
                 cancel_sent = None
                 while True:
+                    phase = 'normal.subprocess.poll'
                     exited = proc.poll() is not None
                     read_events()
                     if exited:
@@ -375,11 +485,15 @@ class OwnedStageRunner:
                     and result.get("linux_client_returncode", 0) == 0 and result["natural"] else "failed")
         except Exception as exc:
             result["error"] = {"type": type(exc).__name__, "message": str(exc)}
+            capture(exc)
             if isinstance(exc, _HostResourceError):
                 result["terminal"] = "blocked"
         finally:
+            shutdown = True
+            phase = 'cleanup.begin'
             if proc is not None and proc.stdin is not None and not proc.stdin.closed:
                 try:
+                    phase = 'cleanup.subprocess.poll'
                     if proc.poll() is None:
                         control("CANCEL")
                         # Linux owns its cancellation deadline. Keep its broker alive for acknowledgement.
@@ -389,15 +503,25 @@ class OwnedStageRunner:
                             try:
                                 observe()
                             except Exception as exc:
+                                capture(exc)
                                 result.setdefault("cleanup_observer_error", str(exc))
                             time.sleep(.025)
                         read_events()
                 except Exception as exc:
+                    capture(exc)
                     result["cleanup_control_error"] = str(exc)
                 finally:
-                    proc.stdin.close()
+                    phase = 'cleanup.stdin.close'
+                    try:
+                        proc.stdin.close()
+                    except Exception as exc:
+                        capture(exc)
+                        result['terminal'] = 'failed'
+                        result['cleanup_stdin_close_error'] = str(exc)
             if job is not None:
                 try:
+                    phase = 'cleanup.job-settle'
+                    job.phase = phase
                     grace_end = time.monotonic() + 1
                     while job.snapshot()["active"] and time.monotonic() < grace_end:
                         time.sleep(.025)
@@ -414,21 +538,27 @@ class OwnedStageRunner:
                             break
                         time.sleep(.025)
                 except Exception as exc:
+                    capture(exc)
                     result["windows_settlement_error"] = str(exc)
                 finally:
                     try:
+                        phase = 'cleanup.job-close'
+                        job.phase = phase
                         job.close()
                     except Exception as exc:
+                        capture(exc)
                         result["windows_close_error"] = str(exc)
                         result["windows_settled"] = False
             if proc is not None and not attached:
                 # This bootstrap has never received GO, so it cannot own stage descendants.
                 try:
+                    phase = 'cleanup.unattached-bootstrap'
                     if proc.poll() is None:
                         proc.kill()
                     proc.wait(timeout=2)
                     result["windows_settled"] = True
                 except Exception as exc:
+                    capture(exc)
                     result["bootstrap_settlement_error"] = str(exc)
             if command.kind == "wsl" and terminal is not None:
                 result["linux"] = terminal

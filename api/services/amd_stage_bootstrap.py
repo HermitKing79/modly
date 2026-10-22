@@ -7,6 +7,7 @@ import subprocess
 import sys
 import threading
 import time
+import traceback
 
 
 def guest_path(value):
@@ -71,6 +72,7 @@ def native_stage(spec):
             except queue.Empty:
                 action = None
             if action is not None:
+                emit(spec, event='control-received', action=action, child_pid=child.pid, timestamp_ns=time.time_ns())
                 last_host = now
             if now >= deadline or now - last_host > 15:
                 action = "CANCEL"
@@ -80,12 +82,17 @@ def native_stage(spec):
                     child.stdin.write((json.dumps({"action": "CANCEL", "stage_id": spec["stage_id"],
                                                   "nonce": spec["nonce"]}) + "\n").encode())
                     child.stdin.flush()
-                except (BrokenPipeError, OSError):
-                    pass
+                except (BrokenPipeError, OSError) as error:
+                    # Private stderr/protocol, without hiding the primary error.
+                    traceback.print_exc()
+                    emit(spec, event='control-error', operation='child.stdin.CANCEL.write_flush',
+                         child_pid=child.pid, winerror=getattr(error, 'winerror', None), timestamp_ns=time.time_ns())
             if cancel_at is not None and now - cancel_at >= 3:
                 forced = True
                 child.kill()
                 child.wait(timeout=2)
+        emit(spec, event='child-exited', child_pid=child.pid, returncode=child.returncode,
+             cancellation_sent=cancelled, forced=forced, timestamp_ns=time.time_ns())
         child.stdin.close()
         returncode = child.wait(timeout=2)
     cooperative = False
@@ -94,8 +101,11 @@ def native_stage(spec):
             ack = json.loads(Path(cancel_ack).read_text(encoding="utf-8"))
             cooperative = (ack.get("terminal") == "cancelled" and ack.get("context") == spec["context"]
                            and ack.get("stage_id") == spec["stage_id"] and ack.get("nonce") == spec["nonce"])
-        except (OSError, ValueError):
-            pass
+        except (OSError, ValueError) as error:
+            traceback.print_exc()
+            emit(spec, event='ack-error', operation='cancel-ack.read_json',
+                 winerror=getattr(error, 'winerror', None), timestamp_ns=time.time_ns())
+        emit(spec, event='ack-checked', cooperative=cooperative, timestamp_ns=time.time_ns())
     emit(spec, event="terminal", terminal="cancelled" if cancelled else "succeeded" if returncode == 0 else "failed",
          returncode=returncode, forced=forced, natural=not forced and (not cancelled or cooperative),
          cooperative_cancelled=cooperative, timestamp_ns=time.time_ns())
@@ -105,6 +115,7 @@ def native_stage(spec):
 def main(spec_path):
     spec = json.loads(Path(spec_path).read_text(encoding="utf-8"))
     action = read_control(sys.stdin.buffer.raw, spec)
+    emit(spec, event='control-received', action=action, timestamp_ns=time.time_ns())
     if action != "GO":
         emit(spec, event="terminal", terminal="cancelled", returncode=None, forced=False, natural=True,
              linux_settled=True, reaped_all=True, owned_remaining=[], no_stage_launched=True)

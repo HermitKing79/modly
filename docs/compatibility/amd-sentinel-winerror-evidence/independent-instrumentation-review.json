@@ -1,0 +1,61 @@
+{
+  "schema": "modly.amd.sentinel-instrumentation-independent-review.v1",
+  "classification": "GO_SOURCE_AND_MOCK_CONTRACTS_COMPLETE_CANDIDATE_SEPARATELY_REVIEWED",
+  "mission_base": "20e79f4586491e8168e9f29c5dee52142c175e17",
+  "scope": "Independent source review and focused fully mocked tests only. No native process API, worker, WSL, GPU or model execution.",
+  "source_sha256": {
+    "api/services/amd_stage_process.py": "15bc59807af9e17ed44b53a72fe895ff40ffce5dfeb4f4c374fa07109af560ba",
+    "api/services/amd_stage_bootstrap.py": "590c683e36589f4c9c14a4cde2edb544536a1611d35b5ed60d3a91a23d39cb90",
+    "api/tests/test_amd_stage_diagnostics.py": "1481e6024590308e6b87c042dffc051546996393e1d7db14751eb398ef0c644b",
+    "api/tests/test_amd_stage_process.py": "e1e90f30eead3f2e21cf4830741ea260c509d4b6aee3fb647a596715aafb2452"
+  },
+  "findings": [
+    {
+      "id": "CACHED_PID_IDENTITY_PROVENANCE",
+      "status": "FIXED_SOURCE_AND_NEGATIVE_MOCK_REVIEWED",
+      "before": "The initial candidate labeled cached PID identity as authenticated for a newly failed OpenProcess, membership query or creation query.",
+      "after": "last_authenticated_identity is explicitly historical, with observation time and queried handle. authenticated_identity is supplied only after membership and creation time succeed on the current held process handle. A failed PID open cannot claim current identity."
+    },
+    {
+      "id": "NATIVE_LAST_ERROR_BEFORE_PROBES",
+      "status": "PASS",
+      "evidence": "Checked native failure captures ctypes.get_last_error immediately after the failed call, before the after-liveness probe, WinError construction or cleanup. Tests deliberately clobber probe last-error and retain the primary code."
+    },
+    {
+      "id": "PRIMARY_AND_CLEANUP_ERRORS",
+      "status": "PASS",
+      "evidence": "Original errors retain full traceback, exception errno/winerror and Python operation phase. Native errors retain API, category, limited access mask when applicable, handle and historical/current identity provenance. Process-handle close and Job-creation cleanup attach distinct details without replacing the primary error."
+    },
+    {
+      "id": "LIMITS_AND_OWNERSHIP_AUTHORITY",
+      "status": "PASS_SOURCE_REVIEW",
+      "evidence": "OpenProcess remains mask0x1000. Job process and Job memory caps, kill-on-close flag, no-breakaway behavior, gate ordering, stage deadline, heartbeat and cooperative settlement rules retain the reviewed values. Diagnostic GetExitCodeProcess probes never authorize ownership or cleanup."
+    }
+  ],
+  "deliberate_diagnostic_semantic_difference": {
+    "operation": "OpenProcess in Job snapshot",
+    "prior_behavior": "All failed process opens were silently skipped.",
+    "candidate_behavior": "Any failed process open is recorded and fails closed.",
+    "reason": "The diagnostic must not hide access denied or assert that an unknown failed open proves process exit.",
+    "interpretation": "Any newly exposed OpenProcess failure, including code5, does not itself identify the cause of the prior surfaced PermissionError because the prior path skipped this boundary. Code87 or another error is recorded exactly and cannot be relabeled as code5 or a proved exit race.",
+    "qualification_limit": "This is a stricter diagnostic gate, not a claim of identical scheduling or a proof that the previous failure was repaired."
+  },
+  "probe_limits": [
+    "GetExitCodeProcess status259 is advisory. A program may terminate with259; the diagnostic liveness field alone does not prove continued liveness.",
+    "Cached creation identity is historical until current held-handle membership and creation queries authenticate it.",
+    "Added diagnostic calls and logging can change timing; a clean sole attempt cannot establish the prior cause."
+  ],
+  "independent_verification": {
+    "command": "python.exe -B -m unittest tests.test_amd_stage_diagnostics tests.test_amd_stage_process",
+    "cwd": "proof/api",
+    "runtime": "Existing API virtual environment; no installation",
+    "tests": 35,
+    "failures": 0,
+    "errors": 0,
+    "elapsed_seconds": 0.311,
+    "all_native_and_process_boundaries_mocked": true
+  },
+  "harness_review": "Complete final harness and admission reviewed in independent-candidate-review.json before the root's sole authorized native pair.",
+  "prior_failure_cause": "UNPROVEN",
+  "native_execution_authorized_by_this_source_review": false
+}

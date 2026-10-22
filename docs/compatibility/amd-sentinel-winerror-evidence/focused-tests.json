@@ -1,0 +1,14 @@
+{
+  "schema": "modly.sentinel-diagnostic-tests.v1",
+  "os_boundaries": "MOCKED; no native Job/worker/WSL execution",
+  "initial_RED": "6/6 failed before _OwnedJob._call existed",
+  "final_test_count": 35,
+  "returncode": 0,
+  "log_sha256": "c3a386145aad48f65356b1eebdb2fc626904f231abe3917c0b9d05e3f98ca181",
+  "sources": {
+    "api/services/amd_stage_process.py": "15bc59807af9e17ed44b53a72fe895ff40ffce5dfeb4f4c374fa07109af560ba",
+    "api/services/amd_stage_bootstrap.py": "590c683e36589f4c9c14a4cde2edb544536a1611d35b5ed60d3a91a23d39cb90",
+    "api/tests/test_amd_stage_diagnostics.py": "1481e6024590308e6b87c042dffc051546996393e1d7db14751eb398ef0c644b",
+    "api/tests/test_amd_stage_process.py": "e1e90f30eead3f2e21cf4830741ea260c509d4b6aee3fb647a596715aafb2452"
+  }
+}

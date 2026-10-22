@@ -1,0 +1,33 @@
+{
+  "schema": "modly.amd.sentinel-winerror-saved-preservation-review.v1",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "review_method": "Saved-receipt hash linkage and identity-table comparison; fresh product source hashes checked against AFTER. No second BEFORE or AFTER identity pass, no native execution or remote request.",
+  "before_public_sha256": "49394e152f9ce3c17f70d8383678c320a09bfeb63081fb2745637528c44a8878",
+  "after_public_sha256": "e828d1d74f21693c72dfb2fade133f257491a2d531e92307833afb5a414c4916",
+  "before_private_sha256": "44d2c54e4f7c609663309e5d94fc1b1b6e7b66a252922b30d6d146af596fb682",
+  "after_private_sha256": "cf5d45aa794fed46f80f7126ee146c97433114d15661f4b9237c52642d9ae29e",
+  "adapted_private_audit_source_unchanged_sha256": "ab7b6a838c83721e411ebf6426233863b7606391b783ffea379b461397633b82",
+  "protected100_hash_size_mtime_match": true,
+  "all_2280_identity_tables_equal": true,
+  "all_nine_original_failed_raw_identity_tables_equal": true,
+  "remote_baseline_head_count": 119,
+  "all_119_remote_head_identities_unchanged": true,
+  "remote_before_after_sha256": "b6c09b59eb7216c056facfbe94996f498ff555f1b3d46d661a7659d38797ba15",
+  "authorized_product_source_files_unchanged_since_AFTER": 4,
+  "protected100_product_source_overlap_count": 0,
+  "checkpoint_or_model_payload_bytes_read_by_identity_phases": 0,
+  "checkpoint_header_bytes_read_by_identity_phases": 0,
+  "diagnostic_outcome_separate_from_preservation": {
+    "classification": "BLOCKED",
+    "host_receipt_sha256": "69a872c3fcaca9ec5ebe4dfda349dce84c12c865eb53db34f95b30ed8d9a1468",
+    "actual_elapsed_seconds": 19.39,
+    "returncode": 1,
+    "forced_outer_cleanup": true,
+    "windows_active_after_cleanup": 0,
+    "windows_total_processes": 23,
+    "peak_process_bytes": 42532864,
+    "peak_job_bytes": 113909760,
+    "limits": "A successful identity-preservation audit does not qualify lifecycle, cancellation, ownership, WSL or AMD inference. The native attempt remains BLOCKED with forced outer cleanup."
+  },
+  "issues": []
+}
