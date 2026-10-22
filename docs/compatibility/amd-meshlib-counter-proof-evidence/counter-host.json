@@ -1,0 +1,61 @@
+{
+  "CPU_only": true,
+  "command": [
+    "D:/AI/Trellis2AMD/venv/Scripts/python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-meshlib-counter-proof-evidence\\counter_probe.py"
+  ],
+  "resource_samples": [
+    {
+      "available_ram_bytes": 18326347776,
+      "disk_free_bytes": 107339350016,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 0.6880000000091968
+    },
+    {
+      "available_ram_bytes": 18304430080,
+      "disk_free_bytes": 107339284480,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 1.6880000000091968
+    },
+    {
+      "available_ram_bytes": 18248466432,
+      "disk_free_bytes": 107339198464,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 2.688000000009197
+    }
+  ],
+  "initial_resources": {
+    "available_ram_bytes": 18293792768,
+    "disk_free_bytes": 107339378688,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "memory_cap_bytes": 6442450944,
+  "deadline_seconds": 180,
+  "attached_before_GO": true,
+  "exact_binary_GO_sent": true,
+  "returncode": 0,
+  "worker_classification": "PASS",
+  "worker_receipt_sha256": "81755459b9f13e8dbc586ef3d0b3908d4acdccb2854ad67e6dde9928c4966c9e",
+  "peak_process_committed_bytes": 168603648,
+  "peak_job_committed_bytes": 169439232,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "sources_unchanged": true,
+  "elapsed_seconds": 3.172000000005937,
+  "classification": "PASS"
+}

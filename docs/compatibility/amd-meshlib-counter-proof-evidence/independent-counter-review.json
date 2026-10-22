@@ -1,0 +1,46 @@
+{
+  "schema": "modly.meshlib.independent-counter-source-review.v1",
+  "classification": "GO",
+  "scope": "One owned SDK-only counter binding microproof and at most one conditional 3-vertex/1-face synthetic mesh constructor. No real patch/model input, production code fix, remesh or retry is admitted.",
+  "source_SHA256": {
+    "common.py": "b64483f0dce88932a1a025e17dded03d34ddedb4495b974050daa96fc188f675",
+    "counter_probe.py": "c58d5ea0df31a909ec47f577e0c0698b2920f638b2eb29d458dfb16a6911d25a",
+    "run_host.py": "105301d04df47c66a4007bf9e03066e4f05ef921667e52d2401899a67604b3d0",
+    "test_counter.py": "77fa62155f7bd2ee5fd0a8ba446e96a96b9ddd7560ae537f9386263efe1ebed7"
+  },
+  "plan_SHA256": "483eac9148e858f6744f6568bfefee5d1ecd259f0db7d05bed3958b0d356c16a",
+  "focused_tests_SHA256": "c2e5a6fb4160b28ddb08fcd2383b06b12360428498f5cde7472612906fc51b01",
+  "library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "installed_counter_audit_SHA256": "11b73d6aa588c468d1f4f9c748a3b72aa7efb49361462567d8156b8ee4b25168",
+  "reviewer_independence": {
+    "reviewer": "full_glb_reader",
+    "authored_worker_common_host_or_tests": false,
+    "authored_installed_counter_source_audit": true,
+    "native_imports_or_calls": 0,
+    "real_patch_or_model_array_reads": 0
+  },
+  "reviewed_contract": [
+    "Only the fixed installed SDK/source closure and small immutable previous failure receipts are authenticated. Common and worker top-level imports are stdlib only; numerical/native imports occur after binary GO, guard installation and authentication.",
+    "The five frozen int_output forms record bounded actual vector storage and getter success/error without assigning unnamed constructor arguments a meaning. Explicit length0/length2 controls require getter rejection; one-element storage requires coherent native integer storage/getter.",
+    "The selected no-argument holder is explicitly resized once to one element, initialized through .value to -12345, attached to BuildSettings, kept alive and mutated through its existing values[0] to -23456. The settings getter must follow that mutation; no resize occurs after binding.",
+    "Exactly one fixed synthetic constructor is reachable after all matrix, control, storage, mutable-alias and pre-call checks. The same live holder and both actual failed-region handles are observed before and after the call. Post-holder state is durably recorded before attempting the settings getter.",
+    "PASS requires empirical replacement of the nonzero sentinel with zero, coherent post-settings counter, empty agreeing failed-region outputs, dense valid3V/1F IDs, exact promoted original coordinates including zero signs, original oriented cyclic triangle, and unchanged heap inputs. Ambiguous counter output is BLOCKED; measured synthetic geometry contradiction is NO-GO. Any failure stops without another geometry call.",
+    "Worker saves incremental scalar and tiny synthetic readback JSON; final result manifests worker-owned JSON without self-hashing or mutable host logs. No real mesh arrays or neural material/geometry data are loaded.",
+    "Fixed Python -I -B waits for exact GO after attachment to the unnamed owned Job. Both process and Job are capped at6GiB, host wall deadline180s, cooperative worker150s, available RAM floor12GiB and destination floor2GiB. Private output/CWD/TEMP, exclusive attempt/output/receipt, watched source/SDK identities, monitored floors and natural unforced empty Job settlement are required."
+  ],
+  "verification": {
+    "fresh_reviewer_pure_tests": 30,
+    "fresh_reviewer_result": "PASS",
+    "command": "D:/AI/Trellis2AMD/venv/Scripts/python.exe -I -B test_counter.py",
+    "test_import_scope": "stdlib only; MeshLib and NumPy remain inside main after GO",
+    "fresh_installed_source_audit_files": 78,
+    "fresh_installed_source_audit_mismatches": 0,
+    "attempt_paths_absent": true
+  },
+  "limitations": [
+    "This GO is pre-execution source admission. Native constructor semantics, binding aliasing and output reset behavior are not yet runtime-qualified.",
+    "A future PASS qualifies only this explicit storage path and synthetic fixture. It does not authorise a real-patch constructor, production repair, remesh, sheet pairing, target quality or appearance transfer.",
+    "The declaration-only PE closure does not measure dynamic LoadLibrary/plugin or driver behavior. Python audit hooks do not constitute a native binary sandbox."
+  ],
+  "blocking_findings": []
+}

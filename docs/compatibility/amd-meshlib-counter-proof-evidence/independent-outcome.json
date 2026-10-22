@@ -1,0 +1,201 @@
+{
+  "schema": "modly.meshlib.independent-counter-outcome.v1",
+  "classification": "PASS",
+  "scope": "Only the installed explicit single-scalar counter binding and one exact synthetic3V/1F fixture are qualified. No real-patch constructor, production change, remesh, target geometry or appearance transfer is admitted.",
+  "evidence_SHA256": {
+    "private_counter_result": "81755459b9f13e8dbc586ef3d0b3908d4acdccb2854ad67e6dde9928c4966c9e",
+    "private_counter_host": "74ddae60f738fab8fe04b46febcf42ee676e6517b376ccc41473cb3055095889",
+    "private_counter_attempt": "bf314cabdd653f61e5580cacdeb381cb59f6e1adf3c2b0ed5adb6cd596fcefe7",
+    "public_counter_result": "81755459b9f13e8dbc586ef3d0b3908d4acdccb2854ad67e6dde9928c4966c9e",
+    "public_counter_host": "74ddae60f738fab8fe04b46febcf42ee676e6517b376ccc41473cb3055095889",
+    "independent_counter_review": "b279c31fee558b610e0e5ae1f4f93899893b45cd92ed8cd261676ba1a68ee9bf",
+    "installed_counter_audit": "11b73d6aa588c468d1f4f9c748a3b72aa7efb49361462567d8156b8ee4b25168",
+    "probe_plan": "483eac9148e858f6744f6568bfefee5d1ecd259f0db7d05bed3958b0d356c16a",
+    "focused_tests": "c2e5a6fb4160b28ddb08fcd2383b06b12360428498f5cde7472612906fc51b01",
+    "original_library_pins": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+    "preservation_after": "e2c6cca9049e7d894f68681981ca69a080c8e7fc3a7a0af2a369187147c794a2",
+    "preserved_prior_failed_worker": "06c6277e175e534996b738c552d69783960d105a676330214c6b867b5f9b966e",
+    "preserved_prior_failed_host": "305cf4de32c08ceab8b907fac4ac49ce4899886973d3191a166fc523050ea038"
+  },
+  "source_SHA256": {
+    "common.py": "b64483f0dce88932a1a025e17dded03d34ddedb4495b974050daa96fc188f675",
+    "counter_probe.py": "c58d5ea0df31a909ec47f577e0c0698b2920f638b2eb29d458dfb16a6911d25a",
+    "run_host.py": "105301d04df47c66a4007bf9e03066e4f05ef921667e52d2401899a67604b3d0",
+    "test_counter.py": "77fa62155f7bd2ee5fd0a8ba446e96a96b9ddd7560ae537f9386263efe1ebed7"
+  },
+  "independent_readback": {
+    "classification": "PASS",
+    "method": "Separate stdlib-only strict JSON/manifest/source checks and direct scalar/index/IEEE754 coordinate comparisons; no import or invocation of worker validator functions.",
+    "all_private_snapshot_JSONs_reopened": 17,
+    "all_snapshot_manifest_hashes_sizes_match": true,
+    "all_marker_watched_files_fresh_size_mtime_SHA256_match": 92,
+    "review_source_plan_log_library_identities_match": true,
+    "loaded_wrapper_and_extension_identities_match_SDK": true,
+    "public_result_host_are_byte_exact_private_copies": true,
+    "unexpected_or_missing_worker_JSONs": 0,
+    "duplicate_JSON_keys_or_nonfinite_JSON_rejected": true,
+    "native_imports_or_calls_by_reviewer": 0,
+    "worker_reruns_by_reviewer": 0,
+    "test_reruns_during_outcome_review": 0,
+    "real_patch_or_model_arrays_read": 0
+  },
+  "observed_helper_constructors": [
+    {
+      "form": "int_output()",
+      "storage": [
+        0
+      ],
+      "getter_value": 0
+    },
+    {
+      "form": "int_output(0)",
+      "storage": [],
+      "getter_error_type": "RuntimeError",
+      "getter_error": "Expected exactly one value."
+    },
+    {
+      "form": "int_output(1)",
+      "storage": [
+        0
+      ],
+      "getter_value": 0
+    },
+    {
+      "form": "int_output(2)",
+      "storage": [
+        0,
+        0
+      ],
+      "getter_error_type": "RuntimeError",
+      "getter_error": "Expected exactly one value."
+    },
+    {
+      "form": "int_output(1,7)",
+      "storage": [
+        7
+      ],
+      "getter_value": 7
+    }
+  ],
+  "explicit_controls": {
+    "resized_empty_getter_rejected": true,
+    "resized_two_element_getter_rejected": true,
+    "observed_error_type": "RuntimeError",
+    "observed_error": "Expected exactly one value."
+  },
+  "selected_binding": {
+    "initialisation": "No-argument holder; values.resize(1); value=-12345 before binding.",
+    "selected_resized_storage": [
+      0
+    ],
+    "selected_initial_storage": [
+      -12345
+    ],
+    "settings_before_mutation": -12345,
+    "holder_after_in_place_mutation": -23456,
+    "settings_after_mutation": -23456,
+    "holder_kept_alive_and_not_resized_after_binding": true,
+    "precall_holder_value": -23456,
+    "precall_settings_value": -23456,
+    "postcall_holder_storage": [
+      0
+    ],
+    "postcall_holder_value": 0,
+    "postcall_settings_value": 0,
+    "native_API_call_overwrite_observed": true,
+    "interpretation": "The reviewed source has no Python counter reset between its saved nonzero pre-call state and saved zero post-call state. The same live bound holder therefore demonstrably changed across the sole constructor API call; zero is not an untouched default.",
+    "limit": "This records behavior of the installed build and frozen successful synthetic fixture, not a guarantee for every constructor input or future version."
+  },
+  "synthetic_transport": {
+    "classification": "PASS",
+    "constructor_calls": 1,
+    "constructor_returned": true,
+    "vertices": 3,
+    "triangles": 1,
+    "precall_region_face_IDs": [
+      0
+    ],
+    "precall_settings_region_face_IDs": [
+      0
+    ],
+    "postcall_region_face_IDs": [],
+    "postcall_settings_region_face_IDs": [],
+    "valid_vertex_IDs": [
+      0,
+      1,
+      2
+    ],
+    "valid_face_IDs": [
+      0
+    ],
+    "exact_original_coordinate_bits_including_zero_signs": true,
+    "original_oriented_triangle_exact": true,
+    "oriented_triangle_rotation_observed": 0,
+    "heap_input_immutability_scope": "Enforced by the reviewed PASS worker; post-call heap arrays were not saved separately for independent rereading."
+  },
+  "actual_scope_counters": {
+    "geometry_constructor_calls": 1,
+    "real_patch_reads": 0,
+    "model_calls": 0,
+    "remesh_calls": 0,
+    "production_code_changes": 0,
+    "target_generation_calls": 0,
+    "alternative_or_retry_geometry_calls": 0
+  },
+  "runtime_probe": {
+    "classification": "PASS",
+    "worker_elapsed_seconds": 1.2660000000032596,
+    "host_elapsed_seconds": 3.172000000005937,
+    "memory_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "peak_process_committed_bytes": 168603648,
+    "peak_job_committed_bytes": 169439232,
+    "minimum_observed_available_RAM_bytes": 18248466432,
+    "minimum_observed_destination_free_bytes": 107339198464,
+    "minima_include_initial_admission": true,
+    "all_initial_and_live_floors_admitted": true,
+    "attached_before_GO": true,
+    "exact_binary_GO_sent": true,
+    "sources_unchanged": true,
+    "returncode": 0,
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "limit": "These measurements qualify the scalar microproof only; real-patch and remesher resource behavior remain unqualified."
+  },
+  "prior_failure_interpretation": "The same installed build now demonstrably constructs empty storage for int_output(0), whose getter rejects. This supports the counter-initialisation explanation of the preserved prior failure. The original process did not save its helper storage length, so no new observation is retroactively attributed to that run; its original BLOCKED outcome remains unchanged.",
+  "minimal_future_patch_description_only": {
+    "description": "A future separately reviewed production patch could replace the old int_output(0) expression with a named no-argument holder, explicitly resize its values to one element, initialise its scalar to zero before assigning settings.skippedFaceCount, keep that holder alive without resizing through construction/readback, and preserve every existing skipped/failed-face, geometry and source-correspondence rejection.",
+    "implemented": false,
+    "authorised_by_this_outcome": false,
+    "limit": "No production source was changed and no real-patch constructor was rerun. Any future production change and real-patch admission requires separate approval and exact review."
+  },
+  "preservation_receipt_scope": {
+    "classification": "PASS_WITH_RECORDED_SCOPE",
+    "issues": [],
+    "review_method": "Read saved AFTER receipt only; no repeat preservation audit or new full-model processing."
+  },
+  "unresolved_findings": [],
+  "disposition": "Microproof complete. Stop native execution here. This result does not resume the prior real-patch mission or authorise remeshing, new targets, appearance work or exports.",
+  "publication_review": {
+    "classification": "PASS_WITH_RECORDED_SCOPE",
+    "prior_outcome_SHA256": "f9cec5b1daca6edcd44edc132f110c0b9bc5bfc1887151dfe1f3f40f9a6ddc32",
+    "report_SHA256": "c05ce8dbcd8c774609be8d16f92cdea826e1d203b570c3a5783b4d8592462496",
+    "public_counter_result_SHA256": "81755459b9f13e8dbc586ef3d0b3908d4acdccb2854ad67e6dde9928c4966c9e",
+    "public_counter_host_SHA256": "74ddae60f738fab8fe04b46febcf42ee676e6517b376ccc41473cb3055095889",
+    "preservation_before_SHA256": "7c4f4d8e99e0781a5b1c41d26156ac797cc90e7ef1b29419f98838e81f7147ec",
+    "preservation_after_SHA256": "e2c6cca9049e7d894f68681981ca69a080c8e7fc3a7a0af2a369187147c794a2",
+    "evidence_local_attributes_SHA256": "3b76f34be9894517ffe4423b3851e90896a34635802dd9b60be74fd14b65adb6",
+    "public_result_host_are_byte_exact_private_copies": true,
+    "reviewed_sources_still_match_exact_GO": true,
+    "report_matrix_alias_native_write_fixture_and_resource_claims_match": true,
+    "stdout_stderr_empty_independently_confirmed": true,
+    "report_scope": "PASS is limited to the installed counter binding and one synthetic fixture. It distinguishes new observed helper storage from unrecorded old-process storage and retains the old BLOCKED result. The future int_output(1) proposal is a minimal candidate description grounded in its observed one-element storage, not an executed production patch; native write was demonstrated on the explicit resize/set path.",
+    "preservation_scope": "Reviewed saved AFTER receipt only: protected100, historical67 trees/1921 files/31 reports, SDK78 and111 prior heads are reported unchanged; existing recorded scope limits remain. No repeat preservation audit or new model processing occurred.",
+    "source_safety": "Public files contain reviewed source/tests, text/hashes/scalars and the declared synthetic numerical fixture; no real asset geometry, model payload, image, texture or generated target file is present in E.",
+    "attribute_scope": "Evidence-local -text preserves exact source/log/receipt bytes in this tree. Final Git staging/blob and remote-publication checks remain root-owned.",
+    "additional_native_execution_or_worker_reruns": 0,
+    "unresolved_findings": []
+  }
+}

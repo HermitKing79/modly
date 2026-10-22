@@ -1,0 +1,317 @@
+{
+  "classification": "PASS",
+  "constructor_calls": 1,
+  "remesh_calls": 0,
+  "real_patch_reads": 0,
+  "model_calls": 0,
+  "matrix": [
+    {
+      "case": "default",
+      "state": {
+        "length": 1,
+        "values": [
+          0
+        ],
+        "getter": {
+          "ok": true,
+          "value": 0
+        }
+      }
+    },
+    {
+      "case": "int0",
+      "state": {
+        "length": 0,
+        "values": [],
+        "getter": {
+          "ok": false,
+          "error_type": "RuntimeError",
+          "error": "Expected exactly one value."
+        }
+      }
+    },
+    {
+      "case": "int1",
+      "state": {
+        "length": 1,
+        "values": [
+          0
+        ],
+        "getter": {
+          "ok": true,
+          "value": 0
+        }
+      }
+    },
+    {
+      "case": "int2",
+      "state": {
+        "length": 2,
+        "values": [
+          0,
+          0
+        ],
+        "getter": {
+          "ok": false,
+          "error_type": "RuntimeError",
+          "error": "Expected exactly one value."
+        }
+      }
+    },
+    {
+      "case": "int1_7",
+      "state": {
+        "length": 1,
+        "values": [
+          7
+        ],
+        "getter": {
+          "ok": true,
+          "value": 7
+        }
+      }
+    }
+  ],
+  "controls": [
+    {
+      "explicit_length": 0,
+      "state": {
+        "length": 0,
+        "values": [],
+        "getter": {
+          "ok": false,
+          "error_type": "RuntimeError",
+          "error": "Expected exactly one value."
+        }
+      }
+    },
+    {
+      "explicit_length": 2,
+      "state": {
+        "length": 2,
+        "values": [
+          0,
+          0
+        ],
+        "getter": {
+          "ok": false,
+          "error_type": "RuntimeError",
+          "error": "Expected exactly one value."
+        }
+      }
+    }
+  ],
+  "stage": "complete",
+  "loaded_modules": {
+    "meshlib": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib\\__init__.py",
+      "bytes": 2313,
+      "sha256": "8cfb59111dc46cebd317035c3e827e466b4a811e5b956973368455cac1f39849"
+    },
+    "mrmeshpy": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib\\mrmeshpy.pyd",
+      "bytes": 56477184,
+      "sha256": "fa740539411a5eca3b4bbc3994bc6c0d484d36fd079d583baca0673adbe436c7"
+    },
+    "mrmeshnumpy": {
+      "path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\meshlib\\mrmeshnumpy.pyd",
+      "bytes": 152064,
+      "sha256": "2e585bac5124902d41fa9952ac6e802fdf1275fddfbcb63fe69ab9638ff03ebd"
+    }
+  },
+  "package_initialization": "Pinned wrapper adds reviewed DLL search directories and imports CPU mrmeshpy to set package resource/font directories; no viewer/CUDA module is requested.",
+  "selected_resized": {
+    "length": 1,
+    "values": [
+      0
+    ],
+    "getter": {
+      "ok": true,
+      "value": 0
+    }
+  },
+  "selected_initial": {
+    "length": 1,
+    "values": [
+      -12345
+    ],
+    "getter": {
+      "ok": true,
+      "value": -12345
+    }
+  },
+  "binding": {
+    "initial_sentinel": -12345,
+    "mutated_sentinel": -23456,
+    "holder_state": {
+      "length": 1,
+      "values": [
+        -23456
+      ],
+      "getter": {
+        "ok": true,
+        "value": -23456
+      }
+    },
+    "settings_before": -12345,
+    "settings_after": -23456
+  },
+  "prechecks_passed": true,
+  "region_before": {
+    "region_before": [
+      0
+    ],
+    "settings_region_before": [
+      0
+    ]
+  },
+  "constructor_elapsed_seconds": 0.0,
+  "constructor_returned": true,
+  "post_counter": {
+    "holder_after": {
+      "length": 1,
+      "values": [
+        0
+      ],
+      "getter": {
+        "ok": true,
+        "value": 0
+      }
+    },
+    "settings_after": 0
+  },
+  "native_validity": {
+    "failed_faces": [],
+    "settings_failed_faces": [],
+    "valid_faces": [
+      0
+    ],
+    "valid_vertices": [
+      0,
+      1,
+      2
+    ]
+  },
+  "output": {
+    "before": -23456,
+    "after": {
+      "length": 1,
+      "values": [
+        0
+      ],
+      "getter": {
+        "ok": true,
+        "value": 0
+      }
+    },
+    "settings_after": 0,
+    "failed_faces": [],
+    "settings_failed_faces": [],
+    "valid_faces": [
+      0
+    ],
+    "valid_vertices": [
+      0,
+      1,
+      2
+    ],
+    "vertices": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "faces": [
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "constructor_calls": 1
+  },
+  "CPU_only_modules_observed": true,
+  "interpretation": "Only this explicit storage/binding and one synthetic fixture qualify; no real-patch constructor or production patch is authorised.",
+  "files": {
+    "before-constructor.json": {
+      "bytes": 630,
+      "sha256": "a3041e4f485a10e45921bdd7d7ec57c0c2ae778b7dc44baa45f953784afd040c"
+    },
+    "binding.json": {
+      "bytes": 276,
+      "sha256": "1349cb5a46b6bfeb599da51fbd90158ac66c7525c5f289a91991133b13a54bfa"
+    },
+    "control-0.json": {
+      "bytes": 214,
+      "sha256": "14c1c4ab3faf71b831851a2a8d30a9143178a4d894d394679a396b683077d700"
+    },
+    "control-2.json": {
+      "bytes": 239,
+      "sha256": "da1b83de0ee01fef16fab683daa4561ea3063f081f1da8dd13d824fc1d342b5d"
+    },
+    "matrix-00.json": {
+      "bytes": 160,
+      "sha256": "cf7db9b4e9609c7ad869bbfdd18ca8abff212b4ebb65ef45f2da060fb644ab9a"
+    },
+    "matrix-01.json": {
+      "bytes": 208,
+      "sha256": "fea1d69af3381efb76640d5c3c8191db801812fe6fd9d9cf2da167df2a8201d4"
+    },
+    "matrix-02.json": {
+      "bytes": 157,
+      "sha256": "62c83db5fa3d48be35d6d0ac903bdc11678b3d8030bad2eabd1adff35b03d3bc"
+    },
+    "matrix-03.json": {
+      "bytes": 233,
+      "sha256": "45156c2e3d73c4616369ede2adad6aa3ce0eace71e86472c98279413ca8675b6"
+    },
+    "matrix-04.json": {
+      "bytes": 159,
+      "sha256": "19372371119aecd6093ff3703320b8287ae634066315d147c97461e0f0729b4c"
+    },
+    "module-identities.json": {
+      "bytes": 645,
+      "sha256": "8d19c117c21d03cf00c5d3a9157b79623bd44b18738b27ff475dbfafe562d8f3"
+    },
+    "native-validity.json": {
+      "bytes": 145,
+      "sha256": "428e6e5c8c7e0c8fbc4bdfce3ec366a1d8d806f05f982aab40e7d408d6d05f84"
+    },
+    "post-counter.json": {
+      "bytes": 169,
+      "sha256": "d74efc289ffdd390716e48cab6e1ff0f436abbc1ce5dde39208f4beaea236a1a"
+    },
+    "post-holder.json": {
+      "bytes": 103,
+      "sha256": "cc23e65de08564b9f4a5f30f0d762579a8643c47b3b63e69f9b3837d8dc47519"
+    },
+    "region-before.json": {
+      "bytes": 84,
+      "sha256": "9521dcc077fab5a96dcdba7fb148fa6543873e15e57af4ab0ac74064baf082cd"
+    },
+    "selected-initial.json": {
+      "bytes": 113,
+      "sha256": "066e372977103a1bae1f9e560d455c34103cb3bd4557008c35fdc41ed642fa6c"
+    },
+    "selected-resized.json": {
+      "bytes": 103,
+      "sha256": "cc23e65de08564b9f4a5f30f0d762579a8643c47b3b63e69f9b3837d8dc47519"
+    },
+    "synthetic-readback.json": {
+      "bytes": 585,
+      "sha256": "e0575003d224e8d5a2234cc016b725a8656d7e978710f8d497789071c7432920"
+    }
+  },
+  "elapsed_seconds": 1.2660000000032596
+}

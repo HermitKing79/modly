@@ -1,0 +1,94 @@
+{
+  "schema": "modly.meshlib.counter-source-audit.v1",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "scope": "Installed declarations and immutable CPU library identities only; native behavior remains unmeasured by this audit.",
+  "package": "meshlib",
+  "version": "3.1.4.297",
+  "library_pins_SHA256": "1d9a31b199aae661f5333a6cf482c20986a3578e7d6d73185646e8e87a70267b",
+  "installed_API_and_native_SHA256": {
+    "source/mrmeshpy.pyi": {
+      "bytes": 3914324,
+      "sha256": "0405c0d8f5fdc39f81c00e1d1f4252ccd28735881e195379cdf9b09bf39d1e1d"
+    },
+    "source/mrmeshnumpy.pyi": {
+      "bytes": 4555,
+      "sha256": "4cc71fe332a4686fbc9f63e326df8cc29e3ebbefaf710f02c167331cdaa4c7c3"
+    },
+    "source/meshlib_init.py": {
+      "bytes": 2313,
+      "sha256": "8cfb59111dc46cebd317035c3e827e466b4a811e5b956973368455cac1f39849"
+    },
+    "native/mrmeshpy.pyd": {
+      "bytes": 56477184,
+      "sha256": "fa740539411a5eca3b4bbc3994bc6c0d484d36fd079d583baca0673adbe436c7"
+    },
+    "native/mrmeshnumpy.pyd": {
+      "bytes": 152064,
+      "sha256": "2e585bac5124902d41fa9952ac6e802fdf1275fddfbcb63fe69ab9638ff03ebd"
+    }
+  },
+  "fresh_identity_check": {
+    "files": 78,
+    "bytes": 125790173,
+    "size_SHA256_mismatches": 0,
+    "native_code_executed": false
+  },
+  "declarations": [
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 81629,
+      "symbol": "int_output",
+      "contract": "Contains a list of scalar outputs. Declares no-argument, one unnamed integer, and two unnamed integer constructors; the argument meaning is unspecified in the installed stub."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 81634,
+      "symbol": "int_output.values",
+      "contract": "Exposes a std_vector_int container. Its current storage must be observed before relying on a scalar getter."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 81647,
+      "symbol": "int_output.value",
+      "contract": "Getter returns only when exactly one scalar is stored, otherwise throws. A setter taking an integer is declared; the stub does not describe whether it changes storage size."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 95528,
+      "symbol": "std_vector_int",
+      "contract": "Declares len, indexed get/set, iteration and resize(n) plus resize(n,value), sufficient to explicitly establish one-element storage and inspect coherence."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 32701,
+      "symbol": "MeshBuilder.BuildSettings.skippedFaceCount",
+      "contract": "Getter returns an integer; setter accepts int_output. Described as an optional output counter of skipped faces. Lifetime, pointer aliasing and overwrite-versus-increment behavior are not established by these declarations."
+    },
+    {
+      "source": "meshlib/mrmeshpy.pyi",
+      "line": 32685,
+      "symbol": "MeshBuilder.BuildSettings.region",
+      "contract": "On input identifies faces to add, on output the faces that failed to be added; exact output still requires the single admitted runtime observation."
+    },
+    {
+      "source": "meshlib/mrmeshnumpy.pyi",
+      "line": 47,
+      "symbol": "meshFromFacesVerts",
+      "contract": "Accepts faces, vertices, BuildSettings and duplicateNonManifoldVertices defaulting True. The frozen probe must explicitly set False, allowNonManifoldEdge=True and shiftFaceId=0."
+    }
+  ],
+  "microproof_review": [
+    "Record actual bounded storage/getter behavior for the five frozen helper-constructor forms without assigning meaning to unnamed arguments.",
+    "Explicit length-zero and length-two controls must demonstrate getter rejection. The chosen no-argument holder must be resized to exactly one element and show scalar/storage coherence.",
+    "Bind only the single-element holder. Keep it alive, mutate its existing scalar in place, and require the settings getter to track the changed nonzero sentinel. Never resize after binding.",
+    "Only after all preconditions pass may the one frozen 3-vertex/1-face constructor run with that same live holder. Require an observed sentinel-to-zero result, empty failed region, dense valid IDs and exact oriented fixture readback.",
+    "The sentinel-to-zero gate is an empirical overwrite qualification, not a source-guaranteed API behavior. Unchanged/ambiguous accumulation requires BLOCKED and preserved evidence, with no zero-initialised retry or alternate constructor."
+  ],
+  "limits": [
+    "This source audit does not qualify any native helper behavior, geometry transport, sheet pairing, remesher, real patch, target generation or appearance transfer.",
+    "Static library pins retain the earlier PE declaration-only limitation: dynamic plugin/LoadLibrary and driver activity were not measured."
+  ],
+  "native_imports_or_calls": 0,
+  "real_model_or_patch_arrays_read": 0,
+  "installed_sources_modified": false
+}

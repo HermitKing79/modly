@@ -1,0 +1,17 @@
+# Installed counter-binding microproof
+
+Base8ff054951fc02f1d56de375c3ee9949379611036; branchcodex/amd-meshlib-counter-proof. One disposable CPU-only native worker; no real patch/model arrays and no changes to the previous real-patch worker or installed library.
+
+Authenticate the existing78-file MeshLib3.1.4.297 CPU/source/PE closure and installed int_output/BuildSettings declarations. Before native execution, test the pure observation verifier against positive and negative scalar/storage/alias/output/geometry records.
+
+Freeze helper-construction observations: no-argument, int(0), int(1), int(2), two arguments(1,7). Record actual storage length/list and getter result/error without assuming unnamed argument semantics. Separately create explicit length0 and length2 controls through the declared vector.resize API; require getter rejection when length is not1. Bound all helper storage observations to at most8 integers. Never bind empty or multiple-element controls into a native geometry call.
+
+Selected holder: no-argument construction, values.resize(1), then value=-12345. Prove value/storage coherence. After final resize, assign settings.skippedFaceCount=holder. Keep holder alive; mutate its existing values[0] in place to-23456 without resizing. Require the settings getter to track that exact new sentinel as a real mutable binding, not a detached Python scalar. Do not resize the bound vector or use an alternate initialisation path if admission fails.
+
+Only if every precondition passes, invoke exactly one meshFromFacesVerts on synthetic F32 vertices[[0,0,0],[1,0,0],[0,1,0]] and I32 face[[0,1,2]], allowNonManifoldEdge=True, duplicateNonManifoldVertices=False, shiftFaceId=0, failed-face region initially containing face0, same live selected output holder. No remesh/decimation/repair/viewer/GPU operation, alternative constructor, geometry case or retry.
+
+Record pre-call and post-call holder storage/value, settings getter, failed-face region, valid face/vertex IDs and exact oriented synthetic readback. PASS requires the nonzero sentinel to become0, empty failed region and unchanged3V/1F: zero must be an observed native write, not an untouched default. Count mismatch/ambiguous accumulation or other unqualified execution means BLOCKED, with actual observations preserved. A contradiction of the documented scalar contract or verified synthetic geometry can be NO-GO; a source declaration alone is not proof of overwrite semantics. Never run a second geometry call to resolve ambiguity.
+
+Independent review must bind exact source/plan/test/library identities before the worker. Afterwards independently reopen all saved scalar observations and the tiny geometry, verify source identities, comparisons, native call count and healthy natural cleanup. A PASS qualifies only this binding/fixture. It does not authorise a real-patch constructor or production-code patch.
+
+Use the existing binaryGO/owned Windows Job, both process and Job6GiB,180s wall deadline and150s cooperative work budget,12GiB available-RAM/2GiB destination floors, monitored health, exclusive marker/output and natural empty-Job settlement. Heavy imports follow GO; CWD/TEMP are owned scratch/output. The original CPU guard plus CUDA/viewer import denial confine this worker; no network, process spawn, model/renderer import or historical writes. Preserve all originals, protected100, failed probe, environments, caches/quarantine and previous remote heads. Publish only source-safe code/tests/numeric text; actual private arrays remain outside Git.
