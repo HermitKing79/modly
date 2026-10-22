@@ -1,0 +1,30 @@
+{
+  "classification": "GO",
+  "scope": "One corrected bounded readback of the immutable saved positive census only. This receipt does not admit patch execution, regenerate a census or authorise any simplification.",
+  "source_SHA256": {
+    "common.py": "1fcd5d8aa601b14c8baccd621fca85c7ee85c850fc5957658b1666383b84abb6",
+    "run_host.py": "9e49fd0fc630e7819097f5d5dc13e6d5759cdf952d5281327e2e8b6a61fb5ea3",
+    "summary_contract.py": "3b055290bb49892c33f21094c71a8092990fe6c58da695cca8fe54a886aa24fb",
+    "test_summary.py": "73f2d65a4706325e46eaa62b4312558d41a673e707d981280ee3d155e9a2a6a2",
+    "test_verify.py": "040cb09f249a1a289d119988fcab8b36e5345f0adbff93a0a2533557965385b4",
+    "verify_worker.py": "b50d28d17a948b81ef0e27056a276faded02235d56070c2267f7230d4c7c37ea"
+  },
+  "plan_SHA256": "dd18b238c421086b99f85d5cec6089af2094d12a7de8ee6ac333ad9f3400c706",
+  "focused_tests_SHA256": "2fcc869a08f3919b11d4956758506ed8b7162700116c70378996a2fcd03e6297",
+  "schema_red_SHA256": "e1dc0b367a5ed51cb7f287f405dcf0840fdde5c9af8d1aadce69fc552b000d47",
+  "review": {
+    "complete_handoff": "All34 keys in the authenticated completed-positive producer summary were audited. Exactly15 one-to-one mask mappings are explicit; only certified_edge_touch_faces differs from its producer count name certified_edge_face_population. All other mask and subsequent source/stat/distribution lookup names agree. The producer zero-prelink schema is explicitly outside this sealed positive-census mission; no defaults or missing-field skipping.",
+    "fail_closed": "Strict JSON parsing rejects duplicate keys and nonfinite constants before dictionary collapse; the fixed full producer SHA256 rejects any byte/scalar alteration. Summary validation rejects unknown/missing keys, non-genuine/nonnegative integer values, duplicate/incorrect mappings, and inconsistent source, face-stage, positive-link and padded-work arithmetic. Every mask count is compared through the complete mapping.",
+    "unchanged_math": "Reviewed source comparison with preserved verify_worker.py: occurrence, cache-key/permutation/incidence/winding, saved sheet consistency, protection and one-ring mask logic, all-eligible endpoint constraints, bounded full-link witnesses, source arithmetic and component/octant recount remain unchanged. New executable differences are schema validation/count mapping, authenticated old-census versus fresh-output paths and explicit recovery receipt fields.",
+    "preservation": "Common pins the complete old source set, old independent review/outcomes, old producer and failed-readback worker/host receipts and every original manifest artifact. The finding concerning old census-plan.md and focused-tests.txt was resolved by validating and watching both against the pinned historical review digests. New outputs use an exclusive recovery directory; old evidence is read-only.",
+    "host": "Fixed CPU Python -I -B verify_worker entry; no producer/census execution route. All six new sources, plan, focused log and this review are exact-bound. The owned Job attaches before binary GO; both process and Job caps6GiB, deadline180s, available RAM12GiB/disk2GiB floors, source stability and naturally empty owned Job are retained. Host PASS now additionally requires explicit worker PASS. A future patch requires its separate exact review plus explicit qualified readback worker and host identities; no patch code is admitted here.",
+    "tests": "Read frozen production-loop RED evidence and complete14-test PASS log (2.583s): exact positive schema and all15 mappings, every unknown/missing/bad-type field, sealed alterations to all34 values, duplicate JSON/mappings, partitions/work arithmetic, old focused index/mask/link/distribution negatives and isolated -I helper resolution. Reviewer did not run an actual data worker.",
+    "independence": "This reviewer independently audited the root-authored repair, summary contract, current common/host wiring and tests. The original readback mathematical helpers and original test_verify.py were previously authored by this reviewer and separately reviewed by root; this receipt discloses that reused authorship rather than claiming new independent authorship of those unchanged algorithms."
+  },
+  "limitations": [
+    "No census graph is recomputed: saved fan/alias classifications and recorded corner-fan/free-degree quantities remain authenticated, source-reviewed producer outputs. Boolean closure, source counts, component/octant recount and bounded link witnesses retain their original stated scope.",
+    "Positive link populations receive all-endpoint checks and up to32 complete-star full-link witnesses, not a second full link census. This is unchanged.",
+    "Projected resource fit is not a measured new-run peak. Runtime caps, floors and natural cleanup remain decisive; a worker failure or disagreement must be preserved and stop the chain.",
+    "Historical failed readback and BLOCKED outcome remain immutable; this is a newly approved recovery attempt, and no PASS is claimed before its actual explicit receipt."
+  ]
+}

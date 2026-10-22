@@ -1,0 +1,38 @@
+{
+  "classification": "GO",
+  "scope": "One deterministic original-only patch selection and bounded topology qualification after the accepted corrected census readback. No simplification, alternative selection, model/material query, render, export or census regeneration.",
+  "source_SHA256": {
+    "common.py": "1fcd5d8aa601b14c8baccd621fca85c7ee85c850fc5957658b1666383b84abb6",
+    "patch_contract.py": "94080df52f5f61084ac304e14d3c499ba02bd805d0f72fbe3592673bba8e34f7",
+    "patch_worker.py": "136be90778c80c1a2b8369aad64aea38a83c4ce93e976fd4b108e2f2e1258fdb",
+    "run_host.py": "9e49fd0fc630e7819097f5d5dc13e6d5759cdf952d5281327e2e8b6a61fb5ea3",
+    "summary_contract.py": "3b055290bb49892c33f21094c71a8092990fe6c58da695cca8fe54a886aa24fb",
+    "test_patch_integration.py": "6326e6f0bf650e325ec081f0534965eb9577849bacf4fd012ceca76464680413",
+    "test_patch.py": "f028b331f7f2c69c27644e2a36c606f05f54a4402b7031cf8baeacd14bc74767",
+    "test_summary.py": "73f2d65a4706325e46eaa62b4312558d41a673e707d981280ee3d155e9a2a6a2",
+    "test_verify.py": "040cb09f249a1a289d119988fcab8b36e5345f0adbff93a0a2533557965385b4",
+    "verify_worker.py": "b50d28d17a948b81ef0e27056a276faded02235d56070c2267f7230d4c7c37ea"
+  },
+  "plan_SHA256": "dd18b238c421086b99f85d5cec6089af2094d12a7de8ee6ac333ad9f3400c706",
+  "focused_tests_SHA256": "ef8390825617114ebc93f0af8e693d14ee6bf588b6f61e0bfe517e291358215d",
+  "qualified_readback_sha256": "cd11a416d1d3a54187530e9990b838373af1d73bae2cc5ee2d375c7e6e7ba221",
+  "qualified_readback_host_sha256": "d02b6d8e4a6211bf2977ecdf7eaf57e437ecd37853f66b678204c852e289a365",
+  "independent_readback_outcome_SHA256": "c6cacaa43046e95860910995f14e01155db034136615078db095eadf85ec0c41",
+  "review": {
+    "deterministic_selection": "Certified-edge-only original face graph; largest face-count component, ties lowest original faceID; lower-median sorted source edge key. No alternate component/seed. Complete seed endpoint stars followed by exactly3 synchronous all-incidence edge-face rings, each cumulative set hard-capped6000 without truncation. Raw original edge-connected patch count must equal1, separately from source vertex-component and oriented sheet labels.",
+    "correspondence": "Sorted original face/vertex IDs, original oriented triangles and multiplicity, F32 position bits, accepted nativeRGBA and source component correspondence are retained. No new geometry or colour interpolation. Worker writes exclusive arrays and checks exact readback; private PNG is a labelled world-axis wire diagnostic with no shaded visibility claim.",
+    "protection": "Genuine pinned prior local classifier independently classifies actual crop/outer-ring/junction/boundary/fan/sheet/position interfaces. Its immutable faces, protected vertices and guard locks are unioned with the authenticated global masks, full one-ring guard recomputed and same-position classes closed. Final eligible keys must be a subset of the prior local classifier eligible keys.",
+    "full_global_links": "Selected unique original faces plus equality to independently verified global face_degree certify complete endpoint stars; incomplete stars never qualify. Every retained edge rechecks both original faces, incidence2, actual opposite winding, saved global sheet identity and full simplicial link from complete original source stars, including shared opposite-edge rejection. Saved stars and exact original IDs support bounded result review.",
+    "opportunity": "Greedy source-key ordering selects disjoint complete original closed neighbourhoods. Require a nonempty eligible face population and at least1 initial opportunity. The2*K face estimate is bounded by mutable eligible/unprotected populations, with entire-patch fractions, immutable floor and optimistic ceiling separately reported. It is not an achievable geometry/material reduction guarantee.",
+    "host_and_preservation": "Reviewed unchanged host: exact current10-source/plan/patch-test review binding; exact qualified worker+host PASS predecessor bound and watched; exclusive output/marker; fixed CPU Python -I -B patch_worker only; owned attachment before binaryGO; process AND Job6GiB,180s,12GiB available RAM and2GiB disk floors; explicit workerPASS, source stability, measured peaks and natural emptyJob required. Common authenticates old evidence and original manifest. Prior6sources, verification log and plan remain hash-identical to the verification review.",
+    "focused_tests": "Frozen24tests PASS3.108s. Coverage includes face-count versus edge-count selection, deterministic tie/lower median, complete stars, exactly3 rings and cap failure, global off-crop link rejection, tetrahedra, closed-neighbourhood independence, raw edge versus vertex-only connectivity, and full real pinned-classifier integration with source-bit/native-byte correspondence and inherited all-locks rejection. Existing schema/readback negatives remain included.",
+    "independence": "This reviewer did not author the new patch contract, worker or patch tests and independently read them plus the genuine pinned classifier and host. Previously authored readback helpers are unchanged and were separately reviewed by root; their original scope and authorship boundary remain recorded in the prior review. No actual patch/data worker was executed by this reviewer."
+  },
+  "limitations": [
+    "A source GO is not a selected-patch PASS. The actual one fixed patch may fail admission and must then remain BLOCKED without another seed or relaxed guard.",
+    "Complete global fan/alias outputs retain the authenticated/source-reviewed scope of the accepted census readback; no new global census is performed.",
+    "Projection<2GiB known buffers/5GiB padded admission is not a measured peak. Runtime caps/floors and natural cleanup remain decisive.",
+    "Saved patch correspondence/protection/link certificates and private diagnostic still need independent outcome review after the single owned run. No automatic simplification follows qualification."
+  ],
+  "remaining_actionable_findings": []
+}

@@ -1,0 +1,63 @@
+{
+  "classification": "PASS",
+  "scope": "Accepted corrected readback of the already-saved census within the explicit reviewed scope. This is not simplification permission or a qualified patch result.",
+  "evidence_SHA256": {
+    "verify/result.json": "cd11a416d1d3a54187530e9990b838373af1d73bae2cc5ee2d375c7e6e7ba221",
+    "verify-host.json": "d02b6d8e4a6211bf2977ecdf7eaf57e437ecd37853f66b678204c852e289a365",
+    "verify-attempt.json": "4bb7619fa1f964ab8fdd7daabd565f83a1cfb69888d7cf4ba568016ffdf6d3f7"
+  },
+  "independent_verify_review_SHA256": "4cc54c7cc069fe153e111b130ff90e49c9aaadad73a179a8fc886bce035accad",
+  "source_SHA256": {
+    "common.py": "1fcd5d8aa601b14c8baccd621fca85c7ee85c850fc5957658b1666383b84abb6",
+    "run_host.py": "9e49fd0fc630e7819097f5d5dc13e6d5759cdf952d5281327e2e8b6a61fb5ea3",
+    "summary_contract.py": "3b055290bb49892c33f21094c71a8092990fe6c58da695cca8fe54a886aa24fb",
+    "test_summary.py": "73f2d65a4706325e46eaa62b4312558d41a673e707d981280ee3d155e9a2a6a2",
+    "test_verify.py": "040cb09f249a1a289d119988fcab8b36e5345f0adbff93a0a2533557965385b4",
+    "verify_worker.py": "b50d28d17a948b81ef0e27056a276faded02235d56070c2267f7230d4c7c37ea"
+  },
+  "plan_SHA256": "dd18b238c421086b99f85d5cec6089af2094d12a7de8ee6ac333ad9f3400c706",
+  "focused_tests_SHA256": "2fcc869a08f3919b11d4956758506ed8b7162700116c70378996a2fcd03e6297",
+  "verified": {
+    "original_manifest_files": 29,
+    "summary_fields": 34,
+    "explicit_mask_mappings": 15,
+    "original_occurrences": 12520752,
+    "eligible_edges_all_endpoint_conditions": 758314,
+    "independent_complete_star_full_link_witnesses": 32,
+    "all_witnesses_pass": true,
+    "component_and_octant_recount": true,
+    "mask_boolean_relations_and_counts": true
+  },
+  "execution": {
+    "host_classification": "PASS",
+    "worker_classification": "PASS",
+    "worker_elapsed_seconds": 9.406000000002678,
+    "host_elapsed_seconds": 12.39100000000326,
+    "peak_process_committed_bytes": 201289728,
+    "peak_job_committed_bytes": 202129408,
+    "memory_cap_bytes": 6442450944,
+    "deadline_seconds": 180,
+    "RAM_floor_bytes": 12884901888,
+    "disk_floor_bytes": 2147483648,
+    "all_recorded_resource_samples_admitted": true,
+    "attached_before_GO": true,
+    "exact_binary_GO_sent": true,
+    "sources_unchanged": true,
+    "natural_empty_Job": true,
+    "forced_cleanup": false
+  },
+  "limitations": [
+    "Saved global fan/alias classifications and recorded global degree/fan quantities remain authenticated, source-reviewed census outputs; no global census graph was recomputed.",
+    "All eligible edges received endpoint/protection checks; complete independent full-link replay covered32 fixed witnesses, not the full758314 population.",
+    "This outcome reviews exact receipts, frozen source and run bindings; no data worker was rerun and no private arrays rehashed outside the completed owned worker."
+  ],
+  "preserved_historical_failure": {
+    "classification": "BLOCKED",
+    "worker_receipt_SHA256": "1e278c38d9fc9b4642f2eae7323ee1860991e1772410f0fb9f48fc2b2f770dd7",
+    "unchanged": true,
+    "interpretation": "The earlier failed verifier and historical BLOCKED outcome are retained. This distinct user-approved recovery does not rewrite them."
+  },
+  "selected_patch_qualification": "NOT RUN",
+  "actual_simplification_calls": 0,
+  "reviewer_data_worker_reruns": 0
+}

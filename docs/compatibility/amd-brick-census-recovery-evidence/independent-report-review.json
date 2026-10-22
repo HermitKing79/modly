@@ -1,0 +1,35 @@
+{
+  "schema": "modly.census-recovery-patch.independent-report-review.v1",
+  "classification": "PASS",
+  "scope": "Claims-only review of final report/outcome and saved JSON receipts; no data worker, array reconstruction, test, selection, model/material query, simplification or render was run for this review.",
+  "census_verification": "PASS",
+  "selected_patch_qualification": "BLOCKED",
+  "publication_review": "PASS",
+  "bindings_SHA256": {
+    "report": "2c399b04f67d31791816f4c6c850b06a7c4e7fc2d1f8202cca474c73bfc65801",
+    "outcome": "a10c50642e062bb92da861bd6a1570b7bd83d10bc8aede3c3c671a1b3af7a3a9",
+    "corrected_readback_result": "cd11a416d1d3a54187530e9990b838373af1d73bae2cc5ee2d375c7e6e7ba221",
+    "corrected_readback_host": "d02b6d8e4a6211bf2977ecdf7eaf57e437ecd37853f66b678204c852e289a365",
+    "patch_result": "f1a3dbe764f73757153edacbe2e782c99426870798d2b9f79c2985b81a8a7865",
+    "patch_host": "2f0becee8407ac2c0bbb822846f0f403bcbb719f0faa9946eb9a648148cc8547",
+    "patch_selection": "b6f3a4d0e556989c8848a547d75927e30f82b3390e89790a510a8f20696f19a9",
+    "independent_readback_outcome": "c6cacaa43046e95860910995f14e01155db034136615078db095eadf85ec0c41",
+    "independent_patch_source_review": "78904c9fc3ec1b1ded614b0f17ecfe5e64871d187d388f5d66af547aedd93865",
+    "preservation_after": "0b753ad1eff02b140cb8e35565b4fd0c32bda3aab73083eb976fd70a52a67463"
+  },
+  "confirmed_claims": [
+    "Corrected readback PASS is distinct from the preserved historical verifier BLOCKED; the earlier failed receipt is not rewritten.",
+    "The one frozen original-only patch has44 faces/34 vertices. Saved eligibility stages77 touching,55 both original faces,23 complete endpoint-star contexts,0 surviving crop/inherited guards agree with the public outcome.",
+    "All34 vertices are guard locked, so strict eligible edges, initial opportunities and allowed fixed-lock collapse capacity are0. The28-face unprotected bookkeeping ceiling is explicitly loose and not admissible or achievable reduction.",
+    "Worker and host patch classificationBLOCKED reflects qualification failure with natural exit, unchanged watched sources, empty owned Job and no forced cleanup; it is not a timeout or containment failure.",
+    "The report does not generalize this one crop to other regions, claim reduction, or claim a guard-aware continuation already occurred. It requires separate approval around the same seed.",
+    "The reviewed public report/outcome contain aggregate counts, source IDs and hashes, with no raw position, face, colour, material or image arrays."
+  ],
+  "independence_and_limits": [
+    "This reviewer authored the patch contract/worker and is reviewing publication claims only, not providing independent source or numeric revalidation of that implementation. Separate source and patch-outcome reviews retain those scopes.",
+    "This short stdlib JSON/hash check was an ordinary shell process, not a separately owned Job measurement. All reported production resource observations come from the saved owned-host receipts.",
+    "No private NPY or original full-mesh population was reprocessed; the accepted readback scope and its global-fan/full-link limitations remain explicit.",
+    "A separately approved guard-aware same-seed context qualification is a proposed next task only; no alternate patch or collapse was executed here."
+  ],
+  "remaining_actionable_findings": []
+}

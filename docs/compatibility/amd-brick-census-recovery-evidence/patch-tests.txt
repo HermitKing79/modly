@@ -1,0 +1,91 @@
+Synthetic patch contract TDD evidence
+
+Initial RED command (before patch_contract.py implementation):
+& 'D:/AI/Trellis2AMD/venv/Scripts/python.exe' -I -B 'C:/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-brick-census-recovery-evidence/test_patch.py'
+
+Expected initial RED: ModuleNotFoundError: No module named 'patch_contract'.
+Only tiny synthetic NumPy arrays are used. No actual model arrays or data workers are opened.
+
+Observed initial RED, exit code 1:
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-brick-census-recovery-evidence\test_patch.py", line 11, in <module>
+    from patch_contract import choose_component, complete_stars, extract, full_link, greedy_capacity
+ModuleNotFoundError: No module named 'patch_contract'
+
+The eight test methods were written before this run. No implementation was present.
+Implementation owner notified after recording this RED; no second test run yet.
+
+GREEN command after implementation owner's code-ready notification:
+& 'D:/AI/Trellis2AMD/venv/Scripts/python.exe' -I -B 'C:/Users/wattz/Documents/ChatGPT/modly/proof/docs/compatibility/amd-brick-census-recovery-evidence/test_patch.py'
+
+Observed GREEN, exit code 0:
+test_complete_stars_preserve_original_face_ids_and_exclude_incomplete_vertex (__main__.PatchContractTests.test_complete_stars_preserve_original_face_ids_and_exclude_incomplete_vertex) ... ok
+test_equal_face_count_tie_uses_original_face_id_and_ignores_ineligible_links (__main__.PatchContractTests.test_equal_face_count_tie_uses_original_face_id_and_ignores_ineligible_links) ... ok
+test_extract_fails_on_seed_or_later_cumulative_limit_instead_of_truncating (__main__.PatchContractTests.test_extract_fails_on_seed_or_later_cumulative_limit_instead_of_truncating) ... ok
+test_extract_uses_complete_endpoint_stars_then_exactly_three_synchronous_edge_rings (__main__.PatchContractTests.test_extract_uses_complete_endpoint_stars_then_exactly_three_synchronous_edge_rings) ... ok
+test_full_link_accepts_open_pair_but_rejects_tetrahedron_common_opposite_edge (__main__.PatchContractTests.test_full_link_accepts_open_pair_but_rejects_tetrahedron_common_opposite_edge) ... ok
+test_full_link_uses_global_original_stars_to_reject_off_crop_common_neighbour (__main__.PatchContractTests.test_full_link_uses_global_original_stars_to_reject_off_crop_common_neighbour) ... ok
+test_greedy_capacity_orders_source_keys_and_requires_disjoint_closed_neighbourhoods (__main__.PatchContractTests.test_greedy_capacity_orders_source_keys_and_requires_disjoint_closed_neighbourhoods) ... ok
+test_largest_eligible_face_component_beats_more_edges_and_uses_lower_median (__main__.PatchContractTests.test_largest_eligible_face_component_beats_more_edges_and_uses_lower_median) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 3.893s
+
+OK
+
+Test semantics and test_patch.py were unchanged for this GREEN run.
+
+FINAL GREEN after requested raw-edge connectivity, subset and whole-patch bound checks:
+test_complete_stars_preserve_original_face_ids_and_exclude_incomplete_vertex (__main__.PatchContractTests.test_complete_stars_preserve_original_face_ids_and_exclude_incomplete_vertex) ... ok
+test_equal_face_count_tie_uses_original_face_id_and_ignores_ineligible_links (__main__.PatchContractTests.test_equal_face_count_tie_uses_original_face_id_and_ignores_ineligible_links) ... ok
+test_extract_fails_on_seed_or_later_cumulative_limit_instead_of_truncating (__main__.PatchContractTests.test_extract_fails_on_seed_or_later_cumulative_limit_instead_of_truncating) ... ok
+test_extract_uses_complete_endpoint_stars_then_exactly_three_synchronous_edge_rings (__main__.PatchContractTests.test_extract_uses_complete_endpoint_stars_then_exactly_three_synchronous_edge_rings) ... ok
+test_full_link_accepts_open_pair_but_rejects_tetrahedron_common_opposite_edge (__main__.PatchContractTests.test_full_link_accepts_open_pair_but_rejects_tetrahedron_common_opposite_edge) ... ok
+test_full_link_uses_global_original_stars_to_reject_off_crop_common_neighbour (__main__.PatchContractTests.test_full_link_uses_global_original_stars_to_reject_off_crop_common_neighbour) ... ok
+test_greedy_capacity_orders_source_keys_and_requires_disjoint_closed_neighbourhoods (__main__.PatchContractTests.test_greedy_capacity_orders_source_keys_and_requires_disjoint_closed_neighbourhoods) ... ok
+test_largest_eligible_face_component_beats_more_edges_and_uses_lower_median (__main__.PatchContractTests.test_largest_eligible_face_component_beats_more_edges_and_uses_lower_median) ... ok
+test_raw_edge_components_do_not_join_vertex_only_contacts (__main__.PatchContractTests.test_raw_edge_components_do_not_join_vertex_only_contacts) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.966s
+
+OK
+
+INTEGRATION GREEN: real pinned old classifier, choose/extract/qualify, positive interior and inherited-lock negative
+test_real_classifier_and_inherited_guard_complete_handoff (__main__.IntegrationTests.test_real_classifier_and_inherited_guard_complete_handoff) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.252s
+
+OK
+
+FINAL COMPLETE FOCUSED SUITE: python -I -B -m unittest discover -s docs/compatibility/amd-brick-census-recovery-evidence -p test_*.py -v
+test_complete_stars_preserve_original_face_ids_and_exclude_incomplete_vertex (test_patch.PatchContractTests.test_complete_stars_preserve_original_face_ids_and_exclude_incomplete_vertex) ... ok
+test_equal_face_count_tie_uses_original_face_id_and_ignores_ineligible_links (test_patch.PatchContractTests.test_equal_face_count_tie_uses_original_face_id_and_ignores_ineligible_links) ... ok
+test_extract_fails_on_seed_or_later_cumulative_limit_instead_of_truncating (test_patch.PatchContractTests.test_extract_fails_on_seed_or_later_cumulative_limit_instead_of_truncating) ... ok
+test_extract_uses_complete_endpoint_stars_then_exactly_three_synchronous_edge_rings (test_patch.PatchContractTests.test_extract_uses_complete_endpoint_stars_then_exactly_three_synchronous_edge_rings) ... ok
+test_full_link_accepts_open_pair_but_rejects_tetrahedron_common_opposite_edge (test_patch.PatchContractTests.test_full_link_accepts_open_pair_but_rejects_tetrahedron_common_opposite_edge) ... ok
+test_full_link_uses_global_original_stars_to_reject_off_crop_common_neighbour (test_patch.PatchContractTests.test_full_link_uses_global_original_stars_to_reject_off_crop_common_neighbour) ... ok
+test_greedy_capacity_orders_source_keys_and_requires_disjoint_closed_neighbourhoods (test_patch.PatchContractTests.test_greedy_capacity_orders_source_keys_and_requires_disjoint_closed_neighbourhoods) ... ok
+test_largest_eligible_face_component_beats_more_edges_and_uses_lower_median (test_patch.PatchContractTests.test_largest_eligible_face_component_beats_more_edges_and_uses_lower_median) ... ok
+test_raw_edge_components_do_not_join_vertex_only_contacts (test_patch.PatchContractTests.test_raw_edge_components_do_not_join_vertex_only_contacts) ... ok
+test_real_classifier_and_inherited_guard_complete_handoff (test_patch_integration.IntegrationTests.test_real_classifier_and_inherited_guard_complete_handoff) ... ok
+test_actual_complete_mask_count_handoff (test_summary.SummaryTests.test_actual_complete_mask_count_handoff) ... ok
+test_all_34_changed_values_fail_sealed_producer_identity (test_summary.SummaryTests.test_all_34_changed_values_fail_sealed_producer_identity) ... ok
+test_complete_authentic_34_field_schema (test_summary.SummaryTests.test_complete_authentic_34_field_schema) ... ok
+test_duplicate_json_keys_fail_before_dictionary_collapse (test_summary.SummaryTests.test_duplicate_json_keys_fail_before_dictionary_collapse) ... ok
+test_every_unknown_missing_and_bad_type_field_fails (test_summary.SummaryTests.test_every_unknown_missing_and_bad_type_field_fails) ... ok
+test_incorrect_population_or_work_arithmetic_fails (test_summary.SummaryTests.test_incorrect_population_or_work_arithmetic_fails) ... ok
+test_mapping_duplicates_unknown_and_wrong_target_fail (test_summary.SummaryTests.test_mapping_duplicates_unknown_and_wrong_target_fail) ... ok
+test_cancellation_is_not_a_completed_verification (test_verify.ReadbackTests.test_cancellation_is_not_a_completed_verification) ... ok
+test_changed_protection_or_lock_is_rejected (test_verify.ReadbackTests.test_changed_protection_or_lock_is_rejected) ... ok
+test_component_and_octant_denominators_recount_and_reject_change (test_verify.ReadbackTests.test_component_and_octant_denominators_recount_and_reject_change) ... ok
+test_duplicate_permutation_offsets_and_winding_corruption_fail (test_verify.ReadbackTests.test_duplicate_permutation_offsets_and_winding_corruption_fail) ... ok
+test_exact_permutation_keys_and_zero_endpoint_certificate (test_verify.ReadbackTests.test_exact_permutation_keys_and_zero_endpoint_certificate) ... ok
+test_full_link_distinguishes_open_pair_from_tetrahedron (test_verify.ReadbackTests.test_full_link_distinguishes_open_pair_from_tetrahedron) ... ok
+test_isolated_direct_module_resolves_exact_helper_without_running_main (test_verify.ReadbackTests.test_isolated_direct_module_resolves_exact_helper_without_running_main) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 3.108s
+
+OK
