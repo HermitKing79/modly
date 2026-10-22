@@ -1,0 +1,38 @@
+{
+  "classification": "PASS",
+  "context_qualification": "BLOCKED",
+  "context_result_SHA256": "315c70ea8af0c9cec27bc18dfd6e680343eb7f5fa126033bb306a31a48d856f1",
+  "context_host_SHA256": "bc72a4d3b5e744e0b9d8d063b969e50b9e37092d45bef4f65e4cd4f32e41e7e9",
+  "baseline_requalified": false,
+  "census_reruns": 0,
+  "verified_new_contexts": [
+    {
+      "depth": 8,
+      "faces": 152,
+      "meaningful_pass": false
+    },
+    {
+      "depth": 17,
+      "faces": 518,
+      "meaningful_pass": false
+    },
+    {
+      "depth": 37,
+      "faces": 2127,
+      "meaningful_pass": false
+    },
+    {
+      "depth": 62,
+      "faces": 5880,
+      "meaningful_pass": false
+    }
+  ],
+  "selected_depth": null,
+  "all_context_arrays_and_summary_values_exact": true,
+  "all_protected_masks_and_complete_stars_replayed": true,
+  "all_strict_global_links_and_disjoint_certificates_replayed": true,
+  "all_checkpoint_and_earliest_screening_exact": true,
+  "scope": "All new fixed snapshots independently replayed against authenticated original data using the pinned local classifier and separate ring/protection/link/greedy logic. Global census fan/alias outputs remain authenticated source-reviewed inputs. Old44-face baseline authenticated only, never requalified.",
+  "actual_simplification_calls": 0,
+  "elapsed_seconds": 12.422000000005937
+}

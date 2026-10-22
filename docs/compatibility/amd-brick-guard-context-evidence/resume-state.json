@@ -1,0 +1,18 @@
+{
+  "classification": "PASS",
+  "resume_only": true,
+  "base": "94456bf366bf02936ad911808661be77f2a86a7a",
+  "context_result_SHA256": "315c70ea8af0c9cec27bc18dfd6e680343eb7f5fa126033bb306a31a48d856f1",
+  "context_host_SHA256": "bc72a4d3b5e744e0b9d8d063b969e50b9e37092d45bef4f65e4cd4f32e41e7e9",
+  "independent_verify_review_SHA256": "4cbc93a933fa429cc7e735985b66cd74c42a5b40a8ba0176fc85b5ad7d40ddd4",
+  "source_plan_and_tests_exact": true,
+  "saved_context_manifest_files_checked": 102,
+  "verification_attempt_paths_absent": [
+    "verify",
+    "verify-attempt.json",
+    "verify-host.json"
+  ],
+  "previous_verification_preflight": "Command invocation began before interruption; completion not durably recorded. It was --preflight only and cannot launch a worker. Fresh read-only preflight is required.",
+  "actual_verification_worker_started": false,
+  "context_worker_rerun": false
+}

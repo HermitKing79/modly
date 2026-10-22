@@ -1,0 +1,28 @@
+{
+  "classification": "GO",
+  "reviewer": "root; independent of checker implementation",
+  "source_SHA256": {
+    "common.py": "b1379b1124029e945d47e7fb9c6c55387773db482173252b2d55c90c0035c816",
+    "context_worker.py": "68cc4953fc2192204dfbf5efc69feb8712c7eb29c1946958aac898b39864a874",
+    "progress_contract.py": "4ee5001bf3b9a581a2e6292a4eaf937cca74c55f26465a63d78c852896f9d179",
+    "qualification.py": "e63af4a32a619c920f03d3769be47181b2d972c4d228132e42fbfc68f4684594",
+    "run_host.py": "b8ae227a61736edb8e26a4d7796a01872f5ce6e64c92fa8486b2e34a606bb184",
+    "test_progress.py": "f2bad3e86ff5ae1d87751924ec52bdd02c69af2d9166294b7bf4a7f85181d932",
+    "test_qualification.py": "840fc3b2e3ef5a671580ca9625fc855bab284385f74a7620d0a6d198ebeeebb6",
+    "test_verify.py": "6f8dce69adeb35c29671320c2916491662109efe8de1d511b7cc5fa8602d629e",
+    "verify_worker.py": "d273d44563e2b3090caee6e584cea281ceefabf1991fa8a29bb8a8dffff8eb8d"
+  },
+  "plan_SHA256": "3e966b5be6be43caa0ef290d548172c17106d28e156648369d76f8fb67c50a20",
+  "focused_tests_SHA256": "c099d6fff9422d5004a45f87ca67af7f2ee7afbf5a21ae1106979b7daea1e34f",
+  "context_result_sha256": "315c70ea8af0c9cec27bc18dfd6e680343eb7f5fa126033bb306a31a48d856f1",
+  "context_host_sha256": "bc72a4d3b5e744e0b9d8d063b969e50b9e37092d45bef4f65e4cd4f32e41e7e9",
+  "checks": [
+    "Complete normal BLOCKED screening observations, four prescribed snapshots, unchanged44-face baseline referenced only",
+    "Exact original seed, integer screens and prospective6091-face ring stops before geometry processing",
+    "All source pins and ownedGO/6GiB process+Job/180s/floors/natural settlement remain unchanged",
+    "Independent checker source separately reviewed by root and producer author; frozen14test suite includes real pinned classifier/producer all-array handoff",
+    "Verification covers all nonqualifying contexts and their full masks/stars/links/disjoint certificates; no new context search or old census replay"
+  ],
+  "findings": [],
+  "scope": "One independent CPU saved-context verification; a successful verification does not change qualification BLOCKED"
+}

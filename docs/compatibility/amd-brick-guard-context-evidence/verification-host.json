@@ -1,0 +1,149 @@
+{
+  "CPU_only": true,
+  "command": [
+    "D:/AI/Trellis2AMD/venv/Scripts/python.exe",
+    "-I",
+    "-B",
+    "C:\\Users\\wattz\\Documents\\ChatGPT\\modly\\proof\\docs\\compatibility\\amd-brick-guard-context-evidence\\verify_worker.py"
+  ],
+  "resource_samples": [
+    {
+      "available_ram_bytes": 18757259264,
+      "disk_free_bytes": 107429728256,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 0.875
+    },
+    {
+      "available_ram_bytes": 18740539392,
+      "disk_free_bytes": 107429646336,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 1.875
+    },
+    {
+      "available_ram_bytes": 18716319744,
+      "disk_free_bytes": 107429511168,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 2.875
+    },
+    {
+      "available_ram_bytes": 18732220416,
+      "disk_free_bytes": 107429511168,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 3.8910000000032596
+    },
+    {
+      "available_ram_bytes": 18725068800,
+      "disk_free_bytes": 107429457920,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 4.89100000000326
+    },
+    {
+      "available_ram_bytes": 18648633344,
+      "disk_free_bytes": 107429457920,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 5.89100000000326
+    },
+    {
+      "available_ram_bytes": 18663485440,
+      "disk_free_bytes": 107429457920,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 6.89100000000326
+    },
+    {
+      "available_ram_bytes": 18651844608,
+      "disk_free_bytes": 107429457920,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 7.89100000000326
+    },
+    {
+      "available_ram_bytes": 18655461376,
+      "disk_free_bytes": 107429523456,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 8.906999999991967
+    },
+    {
+      "available_ram_bytes": 18655854592,
+      "disk_free_bytes": 107429523456,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 9.906999999991967
+    },
+    {
+      "available_ram_bytes": 18677833728,
+      "disk_free_bytes": 107429523456,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 10.906999999991967
+    },
+    {
+      "available_ram_bytes": 18676957184,
+      "disk_free_bytes": 107429523456,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 11.906999999991967
+    },
+    {
+      "available_ram_bytes": 18669756416,
+      "disk_free_bytes": 107429523456,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 12.921999999991385
+    },
+    {
+      "available_ram_bytes": 18673360896,
+      "disk_free_bytes": 107429523456,
+      "required_ram_bytes": 12884901888,
+      "required_disk_bytes": 2147483648,
+      "admitted": true,
+      "elapsed_seconds": 13.921999999991385
+    }
+  ],
+  "initial_resources": {
+    "available_ram_bytes": 18784030720,
+    "disk_free_bytes": 107430002688,
+    "required_ram_bytes": 12884901888,
+    "required_disk_bytes": 2147483648,
+    "admitted": true
+  },
+  "memory_cap_bytes": 6442450944,
+  "deadline_seconds": 180,
+  "attached_before_GO": true,
+  "exact_binary_GO_sent": true,
+  "returncode": 0,
+  "worker_classification": "PASS",
+  "worker_receipt_sha256": "ea0f95a0efa3d31660e03f019ac7690a45e6d35141b3838054b83f5fda296785",
+  "peak_process_committed_bytes": 169697280,
+  "peak_job_committed_bytes": 170532864,
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "sources_unchanged": true,
+  "elapsed_seconds": 15.578999999997905,
+  "classification": "PASS"
+}

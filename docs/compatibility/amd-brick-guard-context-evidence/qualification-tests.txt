@@ -1,0 +1,27 @@
+test_only_three_frozen_choice_metadata_expressions_change (__main__.QualificationSourceTests.test_only_three_frozen_choice_metadata_expressions_change) ... FAIL
+
+======================================================================
+FAIL: test_only_three_frozen_choice_metadata_expressions_change (__main__.QualificationSourceTests.test_only_three_frozen_choice_metadata_expressions_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\docs\compatibility\amd-brick-guard-context-evidence\test_qualification.py", line 11, in test_only_three_frozen_choice_metadata_expressions_change
+    self.assertTrue((E/'qualification.py').is_file(),'Qualification adapter implementation is missing')
+AssertionError: False is not true : Qualification adapter implementation is missing
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+test_only_three_frozen_choice_metadata_expressions_change (__main__.QualificationSourceTests.test_only_three_frozen_choice_metadata_expressions_change) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.028s
+
+OK
+test_only_three_frozen_choice_metadata_expressions_change (__main__.QualificationSourceTests.test_only_three_frozen_choice_metadata_expressions_change) ... ok
+test_real_classifier_adapter_handoff_preserves_math_and_locks (__main__.QualificationSourceTests.test_real_classifier_adapter_handoff_preserves_math_and_locks) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.178s
+
+OK

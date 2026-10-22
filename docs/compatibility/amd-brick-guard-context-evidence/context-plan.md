@@ -1,0 +1,15 @@
+# Frozen guard-aware context plan
+
+Approved base 94456bf366bf02936ad911808661be77f2a86a7a. Branch codex/amd-brick-guard-context. This is one CPU-only read-only diagnostic and one independent saved-result verification. No simplifier, alternative seed, census rebuild, model, material sampling, Blender or export.
+
+Authenticate the accepted census/readback and unchanged prior 44-face depth-3 BLOCKED receipt. Start from its saved original face IDs and third outer ring, retaining edge 1889720, vertices 612841–612852 and seed faces 1270262/1270266. Do not reconstruct or requalify the baseline.
+
+Expand complete synchronous original all-incidence edge-face rings. Never truncate an incidence group. Observe the first complete rings crossing 128, 512 and 2048 faces and the largest complete ring at most 6000. Deduplicate coincident snapshots. An oversized prospective ring is counted as IDs only, never geometry-processed. Stop at fixed point, exact cap, or first complete ring over cap. Process every prescribed snapshot before choosing.
+
+Reuse the exact pinned local junction/interface classifier and prior qualification arithmetic. Only three unavailable large-component-array length metadata expressions become authenticated frozen scalar counts, with AST-equivalence regression. Preserve inherited global masks, crop and entire outer-ring protection, winding/sheet/fan/junction/position protections, one-ring and alias closure, complete global endpoint stars and full simplicial links. Greedy sorted-source-key opportunities use disjoint complete closed neighborhoods.
+
+Frozen meaningful screen: old qualified flag true, K >= 10; 2K >= 20% of eligible faces E (10K >= E); 2K >= 5% of all context faces F (40K >= F). Select earliest depth passing all. The two-face-per-initial-edge estimate is optimistic, not achievable reduction or visual-quality proof. If none passes, BLOCKED and recommend a separately approved clean target-mesh approach, not more context/seed search.
+
+Save all original correspondence arrays, inherited/local/final masks, full-star certificates, eligible IDs and selected disjoint IDs, including all negative snapshots. Only a selected passing context gets a private 2D diagnostic diagram. Independently replay complete-ring progression and verify every saved context against original arrays, classifier/protection/link/disjoint arithmetic. A complete, naturally settled negative observation is eligible for verification; runtime failure is not.
+
+Both workers: fixed installed Windows Python -I -B; heavy numerical imports only after owned binary GO; process AND Job caps 6 GiB; wall deadline 180 seconds, internal work budget 150 seconds; live available RAM >=12 GiB and destination free >=2 GiB; no retries. Preserve source hashes/mtime, explicit reviewed source/plan/test binding, exclusive markers and directories. Natural empty Job, measured peaks, unchanged source and healthy monitoring are mandatory. Write only private diagnostic output, source-safe code/tests/text to Git. Preserve all historical evidence and remote heads; no merge or force push.

@@ -1,0 +1,20 @@
+{
+  "classification": "GO",
+  "reviewer": "root; independent of verify_worker and its tests",
+  "scope": "Pre-execution source review of the independent checker, with no original context results read",
+  "source_SHA256": {
+    "verify_worker.py": "d273d44563e2b3090caee6e584cea281ceefabf1991fa8a29bb8a8dffff8eb8d",
+    "test_verify.py": "6f8dce69adeb35c29671320c2916491662109efe8de1d511b7cc5fa8602d629e"
+  },
+  "findings": [],
+  "checks": [
+    "Independent set-based complete-ring replay, fixed checkpoints, largest complete ring and exact outer-ring comparison",
+    "Independent one-ring/alias protection reconstruction and original full-star face-degree certificates",
+    "Independent simplicial link and disjoint closed-neighborhood enumeration; exact per-array shape/dtype/value/position-bit and summary checks",
+    "All saved negative and positive contexts, integer gates and earliest qualifying selection checked; no producer qualifier invocation",
+    "Source-pinned local classifier retained as shared approved input; no new global fan/alias census claimed",
+    "Synthetic real-classifier/producer-schema handoff and negative mutation/cancellation tests pass in frozen 14-test combined suite"
+  ],
+  "focused_tests_SHA256": "c099d6fff9422d5004a45f87ca67af7f2ee7afbf5a21ae1106979b7daea1e34f",
+  "limits": "Owned binary GO; 6 GiB process and Job caps, 180s wall/150s work, live12GiB RAM and2GiB disk; no simplifier or model imports"
+}

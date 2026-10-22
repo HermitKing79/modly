@@ -1,0 +1,195 @@
+{
+  "classification": "BLOCKED",
+  "saved_data_verification": "PASS",
+  "context_qualification": "BLOCKED",
+  "future_simplification_quality": "NOT RUN",
+  "decision": "Stop. None of the four predeclared contexts meets all frozen screens. Do not simplify, extend the context, change the seed or run another experiment without separate approval.",
+  "evidence_SHA256": {
+    "context/result.json": "315c70ea8af0c9cec27bc18dfd6e680343eb7f5fa126033bb306a31a48d856f1",
+    "context-host.json": "bc72a4d3b5e744e0b9d8d063b969e50b9e37092d45bef4f65e4cd4f32e41e7e9",
+    "context-attempt.json": "641070b124325051f0c4a5b11cacfa1a9c53f5f2e41aaac5f5c73bf0fee2d2fb",
+    "verify/result.json": "ea0f95a0efa3d31660e03f019ac7690a45e6d35141b3838054b83f5fda296785",
+    "verify-host.json": "3a765a1b80adc516711b4f2ccccb9f7db3bda2868cdb848d057a8b18341fe319",
+    "verify-attempt.json": "086f9db091cc51baf09d9f657d5f09c3bfd9c473a93186cbed1a1a81b0140091"
+  },
+  "independent_context_review_SHA256": "ab587b7296ec322051b00e30f2f090db838df76d3abc7eb44abd52aa41037f2a",
+  "independent_verify_review_SHA256": "4cbc93a933fa429cc7e735985b66cd74c42a5b40a8ba0176fc85b5ad7d40ddd4",
+  "checker_source_review_SHA256": "707471fdc759d0c5d7e14420c5dd554ede24ee2c355deee07b7c547b948df5b9",
+  "source_SHA256": {
+    "common.py": "b1379b1124029e945d47e7fb9c6c55387773db482173252b2d55c90c0035c816",
+    "context_worker.py": "68cc4953fc2192204dfbf5efc69feb8712c7eb29c1946958aac898b39864a874",
+    "progress_contract.py": "4ee5001bf3b9a581a2e6292a4eaf937cca74c55f26465a63d78c852896f9d179",
+    "qualification.py": "e63af4a32a619c920f03d3769be47181b2d972c4d228132e42fbfc68f4684594",
+    "run_host.py": "b8ae227a61736edb8e26a4d7796a01872f5ce6e64c92fa8486b2e34a606bb184",
+    "test_progress.py": "f2bad3e86ff5ae1d87751924ec52bdd02c69af2d9166294b7bf4a7f85181d932",
+    "test_qualification.py": "840fc3b2e3ef5a671580ca9625fc855bab284385f74a7620d0a6d198ebeeebb6",
+    "test_verify.py": "6f8dce69adeb35c29671320c2916491662109efe8de1d511b7cc5fa8602d629e",
+    "verify_worker.py": "d273d44563e2b3090caee6e584cea281ceefabf1991fa8a29bb8a8dffff8eb8d"
+  },
+  "plan_SHA256": "3e966b5be6be43caa0ef290d548172c17106d28e156648369d76f8fb67c50a20",
+  "focused_tests_SHA256": "c099d6fff9422d5004a45f87ca67af7f2ee7afbf5a21ae1106979b7daea1e34f",
+  "audit": {
+    "fresh_saved_manifest_files_verified": 102,
+    "fresh_saved_artifact_bytes": 675908,
+    "exact9source_and_both_run_snapshot_bindings": true,
+    "all_new_contexts_recomputed": 4,
+    "all24_arrays_per_context_exact": true,
+    "all_protected_masks_complete_stars_strict_links_disjoint_certificates_and_screening_replayed": true,
+    "old44face_baseline_authenticated_not_requalified": true,
+    "global_census_reruns": 0,
+    "selected_depth": null,
+    "private_diagram_produced": false
+  },
+  "observations": [
+    {
+      "depth": 8,
+      "checkpoint_labels": [
+        "128"
+      ],
+      "faces": 152,
+      "vertices": 96,
+      "strict_eligible_edges": 45,
+      "eligible_faces": 42,
+      "non_touching_opportunities": 2,
+      "estimated_removed_faces": 4,
+      "eligible_face_fraction": 0.09523809523809523,
+      "whole_context_fraction": 0.02631578947368421,
+      "passes_10_disjoint": false,
+      "passes_20pct_eligible": false,
+      "passes_5pct_context": false,
+      "meaningful_pass": false
+    },
+    {
+      "depth": 17,
+      "checkpoint_labels": [
+        "512"
+      ],
+      "faces": 518,
+      "vertices": 300,
+      "strict_eligible_edges": 356,
+      "eligible_faces": 274,
+      "non_touching_opportunities": 12,
+      "estimated_removed_faces": 24,
+      "eligible_face_fraction": 0.08759124087591241,
+      "whole_context_fraction": 0.04633204633204633,
+      "passes_10_disjoint": true,
+      "passes_20pct_eligible": false,
+      "passes_5pct_context": false,
+      "meaningful_pass": false
+    },
+    {
+      "depth": 37,
+      "checkpoint_labels": [
+        "2048"
+      ],
+      "faces": 2127,
+      "vertices": 1140,
+      "strict_eligible_edges": 2244,
+      "eligible_faces": 1586,
+      "non_touching_opportunities": 63,
+      "estimated_removed_faces": 126,
+      "eligible_face_fraction": 0.07944514501891552,
+      "whole_context_fraction": 0.05923836389280677,
+      "passes_10_disjoint": true,
+      "passes_20pct_eligible": false,
+      "passes_5pct_context": true,
+      "meaningful_pass": false
+    },
+    {
+      "depth": 62,
+      "checkpoint_labels": [
+        "max"
+      ],
+      "faces": 5880,
+      "vertices": 3078,
+      "strict_eligible_edges": 6788,
+      "eligible_faces": 4676,
+      "non_touching_opportunities": 191,
+      "estimated_removed_faces": 382,
+      "eligible_face_fraction": 0.08169375534644996,
+      "whole_context_fraction": 0.06496598639455782,
+      "passes_10_disjoint": true,
+      "passes_20pct_eligible": false,
+      "passes_5pct_context": true,
+      "meaningful_pass": false
+    }
+  ],
+  "terminal": {
+    "reason": "next_complete_ring_over_cap",
+    "largest_depth": 62,
+    "largest_face_count": 5880,
+    "prospective_depth": 63,
+    "prospective_face_count": 6091
+  },
+  "interpretation": "More context exposes strict eligible edges and non-touching initial opportunities, but the frozen20percent eligible-interior screen fails at every prescribed snapshot. The5880-face maximum has191 opportunities, optimistic382-face initial removal (8.169percent of4676 eligible faces;6.497percent of whole context). The next complete ring6091 exceeds6000 and was not geometry-qualified. This is not a visual-quality test or a proof that no other method/region can work.",
+  "execution": {
+    "context": {
+      "host_classification": "BLOCKED",
+      "worker_classification": "BLOCKED",
+      "elapsed_seconds": 14.73399999999674,
+      "peak_process_committed_bytes": 169246720,
+      "peak_job_committed_bytes": 170090496,
+      "source_unchanged": true,
+      "all_recorded_floors_passed": true,
+      "natural_empty_Job": true,
+      "forced_cleanup": false
+    },
+    "verify": {
+      "host_classification": "PASS",
+      "worker_classification": "PASS",
+      "elapsed_seconds": 15.578999999997905,
+      "peak_process_committed_bytes": 169697280,
+      "peak_job_committed_bytes": 170532864,
+      "source_unchanged": true,
+      "all_recorded_floors_passed": true,
+      "natural_empty_Job": true,
+      "forced_cleanup": false
+    }
+  },
+  "limits": {
+    "process_and_Job_cap_bytes": 6442450944,
+    "wall_deadline_seconds": 180,
+    "work_budget_seconds": 150,
+    "available_RAM_floor_bytes": 12884901888,
+    "disk_floor_bytes": 2147483648
+  },
+  "interruption_recovery": "Saved context315c70ea... remained unchanged. Independent resume audit observed no verify directory/attempt/host; only the already-reviewed saved-data checker ran after resumption. No context worker, baseline qualification or census was rerun.",
+  "independence": "Reviewer authored the separate saved-context checker and its tests; root and producer author independently reviewed that source before execution. Reviewer independently audited producer source and now exact receipts, source bindings and all saved artifact hashes. No additional data worker or geometric search was run by reviewer.",
+  "limitations": [
+    "All new contexts were replayed using the shared explicitly pinned local classifier plus separate progression/protection/link/greedy logic. Authenticated global census fan/alias classifications retain their prior source-reviewed scope; no new global census was built.",
+    "The2K estimate covers initial disjoint topological opportunities only; it does not guarantee achievable simplification, geometric deviation, silhouette, material or colour quality."
+  ],
+  "recommendation": "As predeclared for no qualifying context within6000faces, consider a clean target-mesh approach only under separate approval. No further context or seed search is recommended under this mission.",
+  "findings": [],
+  "actual_simplification_calls": 0,
+  "reviewer_data_worker_runs": 0,
+  "publication_review": {
+    "classification": "PASS",
+    "report_SHA256": "708559bdfaa975ff70fc99015bf7d36eff2c377aecdcbe357df1a3a1e6b8c3ef",
+    "public_evidence_SHA256": {
+      "observations.json": "3c9ba94bcb6b52098292990c73cc022e1d9130c9622be809d29b5672bc958330",
+      "context-host.json": "bc72a4d3b5e744e0b9d8d063b969e50b9e37092d45bef4f65e4cd4f32e41e7e9",
+      "verification-host.json": "3a765a1b80adc516711b4f2ccccb9f7db3bda2868cdb848d057a8b18341fe319",
+      "verification-result.json": "ea0f95a0efa3d31660e03f019ac7690a45e6d35141b3838054b83f5fda296785",
+      "execution-evidence.json": "2e86ca4bafdfbdc112e9a86308cf823da66b1f013da532828edc1a2814c8b8d6",
+      "preservation-after.json": "dc5ae5c5e514f697d65aaed0f496a3b3ff775f3288e50f4f7e88d9f20f0999a3",
+      "resume-state.json": "8001301fb1675d7db28c7dec4098282a405a6a70dfafb6fdd14d4d0548ea9b19"
+    },
+    "consistency": "Report tables, losses, thresholds, prospective6091-face stop, explicit BLOCKED qualification/PASS verification, measured peaks/timings and no-rerun resume account match saved receipts. The older nonempty summary.qualified flag is explicitly distinguished from meaningful screening. The20percent failure is not presented as global algorithm or packing impossibility.",
+    "source_safety": "Reviewed public observations are scalar metadata/counts and original provenance IDs only; host/result copies are exact receipts. No original vertex/triangle/colour arrays, model payloads or private diagram are included. Source-only code and tests refer to private artifacts without embedding their geometry.",
+    "public_copies_byte_identical": true,
+    "preservation_scope": "Reviewed AFTER receipt reports unchanged protected100,63 prior trees/1732files,29 prior reports and109 original remote heads, with no issues. Its historical checkpoint/header/cache-reconciliation limitations remain explicit. Reviewer checked the public receipt and its binding, not another full preservation/data audit.",
+    "resolved_wording": "Draft first paragraph changed geometry/material operation to geometry/material change to describe the read-only diagnostic precisely.",
+    "findings": [],
+    "git_attributes_SHA256": "14eca51db66c7e4f4fddbc2e0bb8340fbe064dcbf427c4acc762f7dbc31812dc",
+    "newline_preservation_review": {
+      "classification": "PASS",
+      "rule": "* -text",
+      "scope": "Evidence-local .gitattributes applies only beneath amd-brick-guard-context-evidence. It unsets Git text conversion so exact reviewed source/log/receipt bytes survive indexing and checkout; it changes no Python behavior, numerical result, runtime guard, historical evidence or repository-wide attribute.",
+      "reason": "Root detected CRLF normalization in staged receipt blobs before commit. This publication-only rule preserves raw SHA256 identities instead of changing any reviewed file or digest.",
+      "existing_source_review_plan_test_hashes_unchanged": true,
+      "result_classifications_unchanged": true,
+      "final_staged_blob_proof": "Root will restage/renormalize only this evidence folder and compare all31 staged publication files against their working originals before commit. This receipt does not claim that pending index comparison was independently performed."
+    }
+  }
+}
