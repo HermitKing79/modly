@@ -1,0 +1,17 @@
+{
+  "schema": "modly.amd.job-stage-orchestrator-preservation-prerequisite-review.v1",
+  "classification": "PASS_RECONCILED_CRLF_ONLY_GIT_BLOB",
+  "created_utc": "2026-10-22T21:55:21.115287+00:00",
+  "mission_base": "c5f7ccd3cdb3de371405c09856a356ebc41a6ba3",
+  "authenticated_public_path": "docs/compatibility/amd-worker-product-integration-evidence/preservation-after.json",
+  "working_bytes": 10919,
+  "working_sha256": "536c17c663ea585c92bd00d36f94170688df8aa8412f7cfa89bc1cbcf0fc4af5",
+  "git_blob_bytes": 10715,
+  "git_blob_sha256": "2bf583ab6a0765d2439a2b048bcc9431c63ca31ea1b15b04fbad323047616e07",
+  "CRLF_count": 204,
+  "working_CRLF_to_LF_bytes_exactly_equal_git_blob": true,
+  "fresh_scope_hashes_before_failed_prerequisite": 0,
+  "preservation_phase_receipts_written_before_failed_prerequisite": 0,
+  "historical_files_modified": false,
+  "limits": "Initial prerequisite required identical physical newline encoding and stopped before fresh hashing. Narrow correction authenticates exact working bytes and exact base git blob separately, and verifies only CRLF-to-LF normalization. No prior receipt content or protected identity acceptance changes."
+}

@@ -1,0 +1,221 @@
+{
+  "schema": "modly.amd.job-stage-orchestrator-preservation-after.v1",
+  "created_utc": "2026-10-22T22:19:11.904831+00:00",
+  "mission_base": "c5f7ccd3cdb3de371405c09856a356ebc41a6ba3",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "authenticated_prior_cleanup_after_public_sha256": "3b8321017d88fe55a0177b7ac19537c96b06bd2b3b66bfb12b1f05ea62a1908d",
+  "authenticated_prior_cleanup_after_private_sha256": "3638c043c9edd7c0c6e65871a10a7facb280a4e26ed6ce00656b7c30f0b1a20b",
+  "authenticated_prior_reconciled_public_sha256": "43df9a19b6633efe31e7285edbd1207d9398fa9c6a4a49ec6205e80e20fd6488",
+  "authenticated_prior_integration_after_public_sha256": "536c17c663ea585c92bd00d36f94170688df8aa8412f7cfa89bc1cbcf0fc4af5",
+  "authenticated_prior_integration_after_git_blob_sha256": "2bf583ab6a0765d2439a2b048bcc9431c63ca31ea1b15b04fbad323047616e07",
+  "prior_integration_public_git_working_CRLF_only_match": true,
+  "authenticated_prior_integration_after_private_sha256": "8e6911b29ff4e1d913cc2d5ba932cc053d64c5519963c8b287da4469ed7f70c2",
+  "authenticated_original_audit_sha256": "2dcb76285e27f385ace4bebb2f3d2afd7c36953887b3bb905930778b37e5159e",
+  "authenticated_protected100_descriptor_sha256": "cfa46e64a2a36d8f6eab34f344c7d6b02a99e2996c6365d3132ecced406781d2",
+  "authenticated_app_input_manifest_sha256": "5544282d6f85bd434773c631320cfc08ec1d00d502e9aa145cec480952a9f236",
+  "authenticated_original_profile_manifest_sha256": "99f93a8633e3e15fccb6a38d23be3dbfd61ced35b2ceb9eac028459a7d556151",
+  "private_detail_sha256": "dd700cd5c256344c5deb8c03cd49492c9edc72491a3752f41071aa2161aaaae1",
+  "protected_files_fresh_full_SHA256_checked": 100,
+  "protected_files_hash_size_mtime_match": true,
+  "accepted_master_bytes": 97073940,
+  "accepted_master_sha256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+  "accepted_master_fresh_hash_size_mtime_match": true,
+  "installed_app_inputs_checked": 12,
+  "installed_app_inputs_hash_size_mtime_match": true,
+  "original_profile_file_count": 2103,
+  "original_profile_normalized_file_set_match": true,
+  "original_profile_hash_size_mtime_match": true,
+  "selected_environment_check_count": 42,
+  "selected_environment_checks_match": true,
+  "selected_source_backup_check_count": 13,
+  "selected_source_backup_hash_size_mtime_match": true,
+  "source_allowlist_sha256": "0265bb24d0202ac17757ebf6a6bfb061869580e4300ba5f39d2ba673116a5013",
+  "source_allowlist_selection_status": "Parent final actual production allowlist: exactly8 new paths and2 modified existing paths; optional WSL helper is present. Source and test changes final before single AFTER.",
+  "authorized_product_path_count_checked_not_protected": 10,
+  "authorized_product_path_protected_overlap_count": 0,
+  "remote_head_count": 118,
+  "remote_capture_sha256": "368694efc3096d7bcbf9133da897e557e8646a09b89204e880418f2357bd690c",
+  "main_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "prior_remote_heads_match": true,
+  "remote_baseline_heads_checked": 118,
+  "added_remote_head_count": 0,
+  "authenticated_prior_viewer_receipts": {
+    "preservation_before_public_sha256": "2433fb8e6be24fd898e4c8fa447eb6e337e98d5e0c0028ff1d891cdb9c30a491",
+    "preservation_after_public_sha256": "8f287c5b4bf510e3f55a89f11f3a184d0b866bffd4c18efd5c258f21b9358108",
+    "outcome_review_sha256": "49613fad5e34eee0d6ca3ef2354e9c4ea81f996ffe421e1a410899ea43d585f0",
+    "host_receipt_sha256": "4be7b10d0a027258ebd5ee08ff3a8cf7b7e98e1481923ff3c082a2952de2b891",
+    "classification": "BLOCKED",
+    "elapsed_seconds": 480.75,
+    "forced_job_cleanup": true,
+    "active_before_cleanup": 7,
+    "active_after_cleanup": 0,
+    "full_milestone_complete": false,
+    "natural_exit_verified": false,
+    "limits": "Authenticated saved receipts only; no repetition or acceptance upgrade."
+  },
+  "authenticated_prior_cleanup_result": {
+    "authenticated_saved_receipt_sha256": {
+      "app-host.json": "a4d2747b62ae75be8f22f2b19cec45f58179fce729b09b66d82515767dda0747",
+      "runtime-gate-failure.json": "0faaebe91e6bdc5066daf34e91bd682a4e4ae54c3799a8ea330a1d8af0f7432d",
+      "controlled-quit.json": "c28e058e8edff5308e144961c00847ed8069e02992241e0fbc7be3880c9d064f",
+      "observer-restoration.json": "6850de0ce25e8da3e670d91bc2f312515dd91965e8869119b6c627c533561cc8",
+      "shutdown-request.json": "13fc89accf01fdf7580386744e79d4f073bcbdd04c7ca985c204f9456751495f",
+      "app-before-quit.json": "ffabc18bb71ed13ae4c3f1a1532f0920ccbbf80430931358cc78704e11c3a3b1",
+      "app-will-quit.json": "54c56695bcbc6e62303fa141ab6b48f114dd00ce0ff38e78c59263fe7b6d096c"
+    },
+    "qualification_classification": "BLOCKED",
+    "host_classification": "PASS",
+    "host_elapsed_seconds": 76.28100000000268,
+    "host_returncode": 0,
+    "host_input_sources_unchanged": true,
+    "job_cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "natural_owned_app_exit_verified": true,
+    "shutdown_mechanism": "Electron app.quit",
+    "observer_restoration_verified": true,
+    "blocking_stage": "install-cleanup before any asset loading",
+    "blocking_error": "Error: Missing installed closure attributes",
+    "tiny_imports": 0,
+    "master_imports": 0,
+    "alternate_capture_attempts": 0,
+    "limits": "Identity preservation and natural shutdown do not qualify model cleanup: mandatory empty-viewer observer gate failed before any asset import. Prior viewer BLOCKED outcome is unchanged."
+  },
+  "prior_cleanup_all_identities_match": true,
+  "prior_integration_all_identities_match": true,
+  "mission_before_after_all_identities_match": true,
+  "checkpoint_or_model_payload_bytes_read": 0,
+  "checkpoint_header_bytes_read": 0,
+  "fresh_full_hash_unique_file_count": 2280,
+  "fresh_full_hash_bytes_read": 2283191348,
+  "elapsed_seconds": 7.453,
+  "issues": [],
+  "scope_limits": [
+    "Fresh scope is protected100 plus accepted master/app12, original profile2103 with normalized relative-name set, selected installed environment42 descriptors/native byte identities and installed source/backup13. Shared files are read once per phase. Raw GLB bytes are hashed without geometry parsing or correspondence recomputation.",
+    "2280 unique files are freshly hashed. Prior authenticated receipts provide provenance for old unique400, historical trees/reports, checkpoint metadata and SDK78; those historical scopes are not freshly enumerated or rehashed.",
+    "No checkpoint/model payload or header is read. No native library, app, model, GPU, WSL, Blender, installer or historical code is executed. This stdlib audit writes only new mission E/P receipts.",
+    "This CPU-only stage orchestrator audit has no app session. No settings, launch directories or markers are created. Original installed app/profile/environment identities are checked directly; authorized checkout product code edits are outside that installed-file preservation scope.",
+    "Prior viewer remains BLOCKED at480.75seconds with forced owned-job cleanup7to0. Prior cleanup remains BLOCKED at mandatory empty-viewer observer gate before any tiny/master asset import, despite naturally exiting with return0, no active owned processes and no forced cleanup. Saved observations are not upgraded.",
+    "BEFORE captures118 remote heads including main and the mission base, and authenticates all117 historical head identities unchanged. One requested AFTER capture compares every one of those118 identities before publication; added heads are reported separately. Publication is outside this audit."
+  ],
+  "checkout_product_diff_allowlist": {
+    "baseline_commit": "c5f7ccd3cdb3de371405c09856a356ebc41a6ba3",
+    "classification": "PASS",
+    "authorized_product_paths": [
+      "api/routers/generation.py",
+      "api/services/amd_stage_bootstrap.py",
+      "api/services/amd_stage_contract.py",
+      "api/services/amd_stage_orchestrator.py",
+      "api/services/amd_stage_process.py",
+      "api/services/amd_wsl_session.py",
+      "api/tests/test_amd_generation_result.py",
+      "api/tests/test_amd_stage_contract.py",
+      "api/tests/test_amd_stage_orchestrator.py",
+      "api/tests/test_amd_stage_process.py"
+    ],
+    "protected100_overlap_count": 0,
+    "modified_tracked_count": 2,
+    "new_api_source_test_count": 8,
+    "modified_tracked_paths": [
+      "api/routers/generation.py",
+      "api/tests/test_amd_generation_result.py"
+    ],
+    "new_api_source_test_paths": [
+      "api/services/amd_stage_bootstrap.py",
+      "api/services/amd_stage_contract.py",
+      "api/services/amd_stage_orchestrator.py",
+      "api/services/amd_stage_process.py",
+      "api/services/amd_wsl_session.py",
+      "api/tests/test_amd_stage_contract.py",
+      "api/tests/test_amd_stage_orchestrator.py",
+      "api/tests/test_amd_stage_process.py"
+    ],
+    "source_current_sha256": [
+      {
+        "path": "api/routers/generation.py",
+        "status": "modified",
+        "bytes": 20542,
+        "sha256": "e9372b3cb19e50e70a94795c2b202ef98c6a7586312d6f9f75c24e332f634d70"
+      },
+      {
+        "path": "api/services/amd_stage_bootstrap.py",
+        "status": "added",
+        "bytes": 5809,
+        "sha256": "84f6e40dc43bb9b72441ab375dd474d429c8fb1933e07cfe9af86be1b6727df7"
+      },
+      {
+        "path": "api/services/amd_stage_contract.py",
+        "status": "added",
+        "bytes": 11571,
+        "sha256": "dc90e9a4f480ddfd44f72276dc2e18c4df6228dc0265234895756360ee145536"
+      },
+      {
+        "path": "api/services/amd_stage_orchestrator.py",
+        "status": "added",
+        "bytes": 15480,
+        "sha256": "3b14a2fe179d94523236b8b487e8e2a6fbb9997d9785f52a64705a73ef3eb18a"
+      },
+      {
+        "path": "api/services/amd_stage_process.py",
+        "status": "added",
+        "bytes": 22523,
+        "sha256": "2cbde7239dc0d952233e3f00d269a32bdcdd5266492f476f260f4f9ddc78f7a7"
+      },
+      {
+        "path": "api/services/amd_wsl_session.py",
+        "status": "added",
+        "bytes": 16611,
+        "sha256": "21a00add603990daab78b869ae75ab28c2aa0718578c2f9def49c995d13bb9ad"
+      },
+      {
+        "path": "api/tests/test_amd_generation_result.py",
+        "status": "modified",
+        "bytes": 12181,
+        "sha256": "ab4419bb7941665d1502c31ae0caaa5c9ab92bc6d250af28f98342a0a2350eca"
+      },
+      {
+        "path": "api/tests/test_amd_stage_contract.py",
+        "status": "added",
+        "bytes": 9351,
+        "sha256": "53243e73609a986eabcb4d3e64c4ecbd533dd84b3108fc0ffd7a57186bc0d25a"
+      },
+      {
+        "path": "api/tests/test_amd_stage_orchestrator.py",
+        "status": "added",
+        "bytes": 10441,
+        "sha256": "6ac152d2c9264c52ae4d4b64db346b49e81d08428b249394de756cbb02464d4c"
+      },
+      {
+        "path": "api/tests/test_amd_stage_process.py",
+        "status": "added",
+        "bytes": 18772,
+        "sha256": "42893fac33c584c2ae91ffc71ad9648686c7653b500fcce6c294ab526aa474ed"
+      }
+    ],
+    "new_mission_evidence_files": [
+      "cpu-execution-admission.json",
+      "cpu_qualification.py",
+      "cpu_stage_fixture.py",
+      "design-plan.md",
+      "execution-result.json",
+      "focused-tests.json",
+      "image-artifact-tests.json",
+      "independent-contract-review.json",
+      "independent-process-review.json",
+      "pipeline-audit.json",
+      "preservation-before.json",
+      "preservation-prerequisite-review.json",
+      "stage-contract-tests.json"
+    ],
+    "new_report_path": "docs/compatibility/amd-job-stage-orchestrator.md",
+    "unexpected_tracked_count": 0,
+    "unexpected_untracked_count": 0,
+    "limits": "Source checkout allowlist inspected separately from2280 installed/profile/asset file identity preservation; prior four untracked cache directories retained and excluded from new-source attribution. No original extension readers/manifests or installed environment changes are present in the tracked diff."
+  },
+  "authenticated_before_public_sha256": "18cc60864a701f8d094c881d3b1e20d308df54b872f516fbc4895b3305073b15",
+  "authenticated_before_private_sha256": "6fe45cb142894496010ea68d3709584b1ad35d999b7317c3735e48277d3857f4"
+}

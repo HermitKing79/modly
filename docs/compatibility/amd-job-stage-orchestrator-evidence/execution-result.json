@@ -1,0 +1,70 @@
+{
+  "classification": "BLOCKED",
+  "CPU_only": true,
+  "fresh_GPU_inference": "NOT RUN",
+  "actual_harness_attempts": 1,
+  "actual_orchestrated_chains": 0,
+  "WSL_launched": false,
+  "stop_stage": "standalone Windows controls; before orchestrator or WSL dispatch",
+  "target": {
+    "terminal": "cancelled",
+    "returncode": 0,
+    "bootstrap_returncode": 0,
+    "windows_settled": true,
+    "linux_settled": null,
+    "natural": true,
+    "forced": false,
+    "error": null,
+    "elapsed_s": 10.609000000011292
+  },
+  "sentinel": {
+    "terminal": "failed",
+    "returncode": null,
+    "bootstrap_returncode": null,
+    "windows_settled": true,
+    "linux_settled": null,
+    "natural": false,
+    "forced": false,
+    "error": {
+      "type": "PermissionError",
+      "message": "[WinError 5] Access is denied."
+    },
+    "elapsed_s": 12.389999999999418
+  },
+  "exact_failure_origin": "PermissionError WinError5 recorded by sentinel supervisor; exact native call and PID not captured, not attributed",
+  "outer": {
+    "elapsed_s": 13.843999999997322,
+    "returncode": 1,
+    "windows_active_after": 0,
+    "windows_total_processes": 22,
+    "peak_process_bytes": 21905408,
+    "peak_job_bytes": 102535168,
+    "forced_outer_cleanup": false,
+    "sources_unchanged": true,
+    "minimum_observed_available_RAM_bytes": 18769424384,
+    "minimum_observed_free_disk_bytes": 135280381952
+  },
+  "verdicts": {
+    "windows_stage_ownership": "BLOCKED; isolated target proof passed, full controls failed",
+    "WSL_stage_ownership": "BLOCKED; NOT RUN",
+    "input_derived_admission": "BLOCKED for genuine chain; CPU contracts passed, API Pillow unavailable and neural profiles not generalized",
+    "process_tree_cancellation": "BLOCKED; target natural cancellation passed, sentinel isolation not qualified",
+    "job_status_and_progress": "PASS in CPU contract tests only",
+    "completed_result_boundary_compatibility": "PASS in focused existing tiny control/negative tests; no master replay",
+    "fresh_AMD_GPU_inference": "NOT RUN"
+  },
+  "private_evidence_sha256": {
+    "attempt.json": "4f02ed7802c87371d38d961936dcead71e50a33480faac092675a4f66318cced",
+    "host-result.json": "84d8ccaae32f7006b138e2a342570bea5cf38874e5b55b4168f309cffc92f10e",
+    "windows-controls.json": "56a8285b87a8ef111d297559ffb0d04220e54d3917203d824a6a6d638c936931",
+    "stderr.txt": "87315d925c6cc235b3ca1a2dc09bbc80363a88b73dde9a72fffe6b329a62ecaf",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target-process/cancel-target/receipt.json": "34c7f40ec773a5c6a6c7a0626a58057c2af3efa3d30a3ddd874c885cc720a714",
+    "target-process/cancel-target/protocol.jsonl": "fd1f95ad4d0d794b84fd662a01d5a35150fffe773297250e1d6ce7d60ca08af3",
+    "sentinel-process/unrelated-sentinel/receipt.json": "e12fb49a4178bd0aeb78679ee8fe7abaa69bf19353931ad3bbe9556aeb909eca",
+    "sentinel-process/unrelated-sentinel/protocol.jsonl": "6ab181df7cc414400ef9a2b2bc5adcf1136ee0fcd8792daab6c1b6a02ae36670"
+  },
+  "no_repair_or_retry_after_execution": true,
+  "no_GLBS": true,
+  "chain_directories_absent": true
+}

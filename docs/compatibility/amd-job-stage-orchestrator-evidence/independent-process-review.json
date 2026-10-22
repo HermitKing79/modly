@@ -1,0 +1,71 @@
+{
+  "schema": "modly.amd.independent-process-review.v1",
+  "classification": "GO_SOURCE_AND_MOCK_CONTRACTS_FOR_BOUNDED_CPU_CONTROLS",
+  "scope": "Independent source review and mocked OS-boundary tests only; no real worker, native API, WSL launch, GPU, model import, environment change or historical file mutation.",
+  "source_sha256": {
+    "api/services/amd_stage_process.py": "2cbde7239dc0d952233e3f00d269a32bdcdd5266492f476f260f4f9ddc78f7a7",
+    "api/services/amd_stage_bootstrap.py": "84f6e40dc43bb9b72441ab375dd474d429c8fb1933e07cfe9af86be1b6727df7",
+    "api/services/amd_wsl_session.py": "21a00add603990daab78b869ae75ab28c2aa0718578c2f9def49c995d13bb9ad",
+    "api/tests/test_amd_stage_process.py": "42893fac33c584c2ae91ffc71ad9648686c7653b500fcce6c294ab526aa474ed"
+  },
+  "findings": [
+    {
+      "id": "R1_LINUX_SAMPLED_ANCESTRY_PID_REUSE",
+      "priority": 1,
+      "status": "FIXED_SOURCE_REVIEWED_REGRESSION_PASS",
+      "before": "Non-atomic procfs snapshots authorized descendants through numeric PPID links. Intermediate PID reuse could join a foreign same-UID process to stale owned ancestry; target-only PID/start/UID and pidfd checks did not authenticate its ownership.",
+      "after": "Signalling opens target and ancestor pidfds, verifies actual current parent/start identities, walks to unchanged original live broker identity and rechecks a coherent live chain with handles held before sending. Numeric session IDs never grant authority. Failure refuses signalling; ECHILD and a postscan remain terminal settlement requirements.",
+      "regression": "test_stale_numeric_parent_link_cannot_authorize_a_foreign_child"
+    },
+    {
+      "id": "R2_WINDOWS_MISSING_HOST_HEARTBEAT_WATCHDOG",
+      "priority": 1,
+      "status": "FIXED_SOURCE_REVIEWED_REGRESSION_PASS",
+      "before": "The native Windows bootstrap ignored absence of PING. A stalled but still-live host monitor could leave its worker running without host resource observation until the full stage deadline.",
+      "after": "The native bootstrap records valid host controls and cancels after 15 seconds without heartbeat, preserving the three-second cooperative cancellation window and explicit forced-kill/natural=false result if it does not settle.",
+      "regression": "BootstrapOwnershipTests.test_native_stage_cancels_when_host_heartbeat_stalls"
+    },
+    {
+      "id": "R3_BOOTSTRAP_TRANSPORT_FAILURE_HIDDEN_BY_WORKER_RECEIPT",
+      "priority": 1,
+      "status": "FIXED_SOURCE_REVIEWED_REGRESSION_PASS",
+      "before": "The runner overwrote actual bootstrap returncode with the worker terminal code. An independent mock-only reproduction showed actual bootstrap exit 1 becoming reported succeeded/0 after a successful terminal record.",
+      "after": "The runner retains bootstrap_returncode and linux_client_returncode separately and requires zero transport exits for successful settlement, in addition to worker success, natural exit and independent Linux ownership acknowledgement.",
+      "regression": "test_successful_terminal_cannot_hide_failed_bootstrap_transport"
+    }
+  ],
+  "additional_candidate_corrections": [
+    "Explicit -B on isolated bootstrap and WSL-broker interpreter argv; -I ignores PYTHONDONTWRITEBYTECODE environment settings. A harmless interpreter-flags probe independently confirmed the distinction without launching a stage worker.",
+    "Daemon native control reader uses raw stdin, avoiding a blocked BufferedReader lock during interpreter shutdown while the host pipe remains open; mocked regression covers this boundary.",
+    "Host resource exceptions retain failing RAM/disk observations and original floors in the blocked receipt, rather than losing the admission measurements."
+  ],
+  "reviewed_gates": [
+    "Windows bootstrap cannot receive GO until private unnamed Job attachment and live host observation; failure before attachment never opens stage gate",
+    "Private Windows Job has kill-on-close, both process and Job 6GiB committed-memory limits and no breakaway flags; ABI/flags are checked by mocked constructor contract",
+    "Windows Job active-process settlement and Linux broker settlement are distinct; a Windows wsl.exe client return does not prove Linux cleanup",
+    "Linux broker qualifies UID1000, pidfd support, subreaper status and inherited RLIMIT_AS before gated child exec; genuine session ready proof is required before START",
+    "Current stage, nonce and entire context bind protocol events; Linux terminal leader/broker/boot identity must equal its ready event",
+    "Broker tracks changed-session and daemonized descendants through ancestry/subreaper reaping, not numeric session authority",
+    "Cancellation acknowledgement is context-bound; forced exit or racing natural exit without cooperative acknowledgement cannot claim clean cancellation",
+    "Resource/observer/protocol errors fail closed; incomplete Linux settlement blocks reuse of the runner",
+    "Log/protocol ownership and explicit stage paths are host-selected; source pins and command admission belong to the calling orchestration boundary"
+  ],
+  "independent_verification": {
+    "command": "python -B -m unittest tests.test_amd_stage_process",
+    "cwd": "proof/api",
+    "runtime": "Existing system Python3.12; no packages installed",
+    "tests": 23,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "elapsed_seconds": 0.286,
+    "all_process_and_native_boundaries_mocked": true
+  },
+  "limits": [
+    "This source/mock verdict does not qualify actual Windows Job APIs, WSL process lifecycle, live pidfds or cooperative cancellation. The separately authorized bounded CPU controls must measure those OS boundaries before any live inference claim.",
+    "Linux uses per-process inherited 6GiB RLIMIT_AS and sampled aggregate RSS, not an atomic aggregate cgroup memory cap. Windows Job memory limits explicitly do not cap Linux memory.",
+    "The ownership design is for source-pinned non-adversarial stage programs. It is not a sandbox against same-UID malicious code, external service spawning or privilege changes.",
+    "Fresh model/GPU execution, new-image support/profile admission, original GPU I/O acknowledgement and GPU resource release remain independently blocked; these CPU controls cannot upgrade their verdicts."
+  ],
+  "unresolved_source_blockers_in_reviewed_scope": []
+}

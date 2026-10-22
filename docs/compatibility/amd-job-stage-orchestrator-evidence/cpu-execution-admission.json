@@ -1,0 +1,68 @@
+{
+  "schema": "modly.amd.independent-cpu-execution-admission.v1",
+  "classification": "GO_ONE_BOUNDED_CPU_QUALIFICATION_SUBJECT_TO_FRESH_ADMISSION",
+  "base_commit": "c5f7ccd3cdb3de371405c09856a356ebc41a6ba3",
+  "branch": "codex/amd-job-stage-orchestrator-v1",
+  "review_scope": "Independent source review, existing mocked backend tests and harmless interpreter-flags probe only. Reviewer did not execute the fixture, qualification harness, native process APIs, stage subprocesses or WSL.",
+  "source_sha256": {
+    "api/services/amd_stage_contract.py": "dc90e9a4f480ddfd44f72276dc2e18c4df6228dc0265234895756360ee145536",
+    "api/services/amd_stage_orchestrator.py": "3b14a2fe179d94523236b8b487e8e2a6fbb9997d9785f52a64705a73ef3eb18a",
+    "api/services/amd_stage_process.py": "2cbde7239dc0d952233e3f00d269a32bdcdd5266492f476f260f4f9ddc78f7a7",
+    "api/services/amd_stage_bootstrap.py": "84f6e40dc43bb9b72441ab375dd474d429c8fb1933e07cfe9af86be1b6727df7",
+    "api/services/amd_wsl_session.py": "21a00add603990daab78b869ae75ab28c2aa0718578c2f9def49c995d13bb9ad",
+    "api/tests/test_amd_stage_process.py": "42893fac33c584c2ae91ffc71ad9648686c7653b500fcce6c294ab526aa474ed",
+    "docs/compatibility/amd-job-stage-orchestrator-evidence/cpu_qualification.py": "5a8753f05b93615a26244171ca6dbb89cd7a2cc4b8b49543fb30f2eb8fa81c5c",
+    "docs/compatibility/amd-job-stage-orchestrator-evidence/cpu_stage_fixture.py": "cb808b5993c859a0ed62120109550059d267b1df2c47191d53a9753535c4b3f1"
+  },
+  "admitted_attempt": {
+    "private_output": "C:/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-job-stage-orchestrator-c5f7ccd/cpu-once",
+    "maximum_harness_attempts": 1,
+    "maximum_actual_orchestrated_chains": 1,
+    "standalone_controls": ["Windows cancelled target with its descendants", "Independent Windows sentinel released only after target cancellation and settlement receipt"],
+    "single_chain": ["Windows synthetic contextual JSON stage completes", "Named WSL synthetic stage receives cancellation after both child and new-session grandchild are ready"],
+    "failure_policy": "Stop after any failed case or admission. No retry, replacement case, GPU follow-on or distro termination.",
+    "outer_deadline_seconds": 180,
+    "windows_process_and_job_ceiling_bytes": 6442450944,
+    "windows_available_ram_floor_bytes": 12884901888,
+    "private_destination_free_floor_bytes": 2147483648,
+    "native_control_deadline_seconds": 25,
+    "wsl_stage_deadline_seconds": 45,
+    "git_read_deadline_seconds": 15,
+    "outer_cooperative_cancellation_grace_seconds": 8
+  },
+  "corrections_reviewed": [
+    "Fixture and qualification JSON publish only after exclusive staging-file fsync and no-overwrite hardlink publication; readers no longer treat a partly written final filename as readiness.",
+    "Fixture waits for both child-ready and grandchild-ready before reading descendant identity and publishing leader readiness.",
+    "Sentinel is explicitly released after target cancellation settles and is rejected if it exits early, so isolation is observed across the cancellation itself.",
+    "All isolated interpreter launches explicitly pass -B with -I/-S. -I ignores PYTHONDONTWRITEBYTECODE, so the environment setting alone was insufficient.",
+    "Daemon stdin readers use raw input, avoiding a held BufferedReader lock at interpreter shutdown.",
+    "On outer resource/deadline failure, an attempt-SHA-bound atomic cancellation marker sets active events and gives owned stage supervisors an eight-second settlement grace.",
+    "Any outer forced containment records Linux settlement as UNVERIFIED and classification BLOCKED; empty Windows Job never authenticates Linux cleanup.",
+    "Linux live broker-anchored ancestry/pidfd signalling, native host-heartbeat watchdog and independent bootstrap transport exits remain enforced as documented in the backend review."
+  ],
+  "verification": {
+    "command": "python -B -m unittest tests.test_amd_stage_process",
+    "cwd": "proof/api",
+    "tests": 23,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "elapsed_seconds": 0.286,
+    "all_native_and_process_boundaries_mocked": true
+  },
+  "fresh_prelaunch_requirements": [
+    "Executor compares all reviewed hashes above immediately before the single invocation; any mismatch invalidates this admission.",
+    "Approved base and isolated branch checks pass; original tracked sources and preserved historical inputs remain unchanged.",
+    "Private cpu-once leaf does not exist; initial actual Windows RAM and destination free space pass unchanged floors before the exclusive attempt marker.",
+    "Named Modly-AMD-Ubuntu-24.04 uses existing modly UID1000 and /usr/bin/python3 only; broker capability/session/identity admission passes before START.",
+    "Every case requires natural Windows settlement; WSL case additionally requires the same ready broker/leader/boot identity, ECHILD, complete reaping, empty postscan and contextual cancellation acknowledgement.",
+    "Actual failure, forced containment or unverified settlement remains BLOCKED with no subsequent dispatch."
+  ],
+  "limits": [
+    "This is pre-execution admission, not a measured OS-lifecycle PASS. Actual receipts, process identities, peak memory, resources, descendant reaping and source preservation must be reviewed after the one attempt.",
+    "Linux memory protection is inherited per-process 6GiB RLIMIT_AS plus sampled aggregate RSS, not an atomic aggregate cgroup cap. Windows Job caps do not cap Linux memory.",
+    "Natural cooperative cancellation does not qualify forced real pidfd signalling. Mock contracts cover that source path; the fixture does not intentionally force it.",
+    "No Torch/model/GPU import, native neural operation, original GLB read, image preprocessing inference, generated completion or public AMD producer is authorized by this CPU test."
+  ],
+  "unresolved_source_blockers_for_this_exact_cpu_attempt": []
+}

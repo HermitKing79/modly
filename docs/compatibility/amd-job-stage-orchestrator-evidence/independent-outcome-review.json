@@ -1,0 +1,211 @@
+{
+  "schema": "modly.amd.independent-cpu-outcome-review.v1",
+  "classification": "BLOCKED",
+  "scope": "Independent read-only saved-data outcome review. No new worker launch, native API/process experiment, WSL command, GPU/model test, repair or rerun was performed.",
+  "private_raw_root": "artifacts/amd-job-stage-orchestrator-c5f7ccd/cpu-once",
+  "verdicts": {
+    "overall_cpu_qualification": "BLOCKED",
+    "windows_target_cooperative_cancellation": "PASS_FOR_THIS_STDLIB_FIXTURE_TREE_ONLY",
+    "independent_sentinel_clean_completion": "FAILED",
+    "cross_job_isolation_qualification": "BLOCKED_CAUSE_UNPROVEN",
+    "actual_orchestrated_chain": "NOT_LAUNCHED",
+    "actual_wsl_broker_descendant_cancellation": "NOT_LAUNCHED_NOT_QUALIFIED",
+    "fresh_gpu_generation": "NOT_RUN_NOT_QUALIFIED",
+    "current_image_preprocess_or_inference": "NOT_RUN",
+    "new_glb_or_generated_publication": "NONE"
+  },
+  "target": {
+    "terminal": "cancelled",
+    "returncode": 0,
+    "bootstrap_returncode": 0,
+    "natural": true,
+    "forced": false,
+    "windows_settled": true,
+    "final_active_processes": 0,
+    "owned_total_processes": 10,
+    "peak_process_bytes": 9048064,
+    "peak_job_bytes": 41402368,
+    "elapsed_seconds": 10.609000000011292,
+    "saved_protocol_and_ack": "Raw terminal is cancelled/0, natural=true, forced=false, cooperative_cancelled=true. Saved cancel-ack matches this stage, nonce and entire context exactly; both bootstrap and stage return 0. All observed process identities have verified private Job membership and final active=0.",
+    "limit": "One actual Windows stdlib fixture family with child and grandchild. This does not qualify model/GPU cancellation, tensor release, WSL ownership or the complete product orchestration path."
+  },
+  "sentinel": {
+    "host_terminal": "failed",
+    "host_returncode": null,
+    "host_error": {
+      "type": "PermissionError",
+      "message": "[WinError 5] Access is denied."
+    },
+    "natural": false,
+    "forced": false,
+    "windows_settled": true,
+    "final_active_processes": 0,
+    "owned_total_processes": 10,
+    "peak_process_bytes": 8900608,
+    "peak_job_bytes": 40624128,
+    "elapsed_seconds": 12.389999999999418,
+    "raw_terminal": {
+      "terminal": "cancelled",
+      "returncode": 0,
+      "natural": false,
+      "forced": false,
+      "cooperative_cancelled": false
+    },
+    "interpretation": "The backend exception initiated cleanup. A raw cancelled/0 terminal without cooperative acknowledgement or natural=true cannot override the failed host receipt or establish a clean independent sentinel result.",
+    "cause": "UNPROVEN: saved error identifies PermissionError/WinError5 Access denied, but no failing native call, access mask or affected PID is traced. Do not attribute the failure to cross-job cancellation, PID reuse, nested Job compatibility, sandbox policy or a specific runtime/API without new separately authorized evidence."
+  },
+  "outer": {
+    "classification": "BLOCKED",
+    "worker_returncode": 1,
+    "elapsed_seconds": 13.843999999997322,
+    "final_active_processes": 0,
+    "owned_total_processes": 22,
+    "peak_process_bytes": 21905408,
+    "peak_job_bytes": 102535168,
+    "forced_outer_cleanup_recorded": false,
+    "sources_unchanged": true,
+    "initial_resources": {
+      "available_ram_bytes": 18868088832,
+      "free_disk_bytes": 135281823744
+    },
+    "minimum_outer_observed_ram_bytes": 18769846272,
+    "minimum_outer_observed_disk_bytes": 135280381952,
+    "minimum_all_saved_observed_ram_bytes": 18769424384,
+    "minimum_all_saved_observed_disk_bytes": 135280381952,
+    "original_caps": {
+      "process_and_job_bytes": 6442450944,
+      "deadline_seconds": 180,
+      "windows_ram_floor_bytes": 12884901888,
+      "destination_free_floor_bytes": 2147483648
+    },
+    "interpretation": "Outer Windows Job was empty at exit, no forced outer cleanup was recorded, and all saved resource samples stayed above original floors. This is containment/resource evidence for the executed Windows controls; the blocked sentinel gate remains decisive."
+  },
+  "lineage_and_integrity": {
+    "controls_summary_equals_both_individual_receipts": true,
+    "protocol_event_stage_nonce_context_matches_receipts": true,
+    "target_ack_context_exact": true,
+    "target_and_sentinel_job_and_nonce_distinct": true,
+    "observed_target_and_sentinel_pid_creation_sets_disjoint": true,
+    "disjoint_sets_limit": "Observed identities alone do not establish causal isolation or explain the sentinel PermissionError.",
+    "attempt_source_pin_count": 7,
+    "attempt_source_pins_match_independent_admission": true,
+    "current_source_bytes_match_saved_attempt_pins": true,
+    "actual_harness_attempts": 1,
+    "actual_orchestrated_chains": 0,
+    "runs_directory_exists": false,
+    "chain_processes_directory_exists": false,
+    "private_glb_count": 0,
+    "launch_boundary": "The worker raised Windows native tree settlement failed after the two control receipts. Source ordering and absent run/chain directories confirm the planned StageOrchestrator chain and WSL stage were never dispatched."
+  },
+  "stopping_rule": "The sole attempt is complete and BLOCKED. No fix, automatic repair, additional native/WSL probe or retry follows this review. Diagnosis and any later execution require separate authorization.",
+  "raw_file_sha256": {
+    "attempt.json": {
+      "bytes": 1638,
+      "sha256": "4f02ed7802c87371d38d961936dcead71e50a33480faac092675a4f66318cced"
+    },
+    "host-result.json": {
+      "bytes": 23349,
+      "sha256": "84d8ccaae32f7006b138e2a342570bea5cf38874e5b55b4168f309cffc92f10e"
+    },
+    "sentinel-process/unrelated-sentinel/bootstrap.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sentinel-process/unrelated-sentinel/launch.json": {
+      "bytes": 1343,
+      "sha256": "ac2d085ee08f064d935f1c1f908f31683c92c0c645cf5b3cd6917609da39993e"
+    },
+    "sentinel-process/unrelated-sentinel/protocol.jsonl": {
+      "bytes": 1302,
+      "sha256": "6ab181df7cc414400ef9a2b2bc5adcf1136ee0fcd8792daab6c1b6a02ae36670"
+    },
+    "sentinel-process/unrelated-sentinel/receipt.json": {
+      "bytes": 63602,
+      "sha256": "e12fb49a4178bd0aeb78679ee8fe7abaa69bf19353931ad3bbe9556aeb909eca"
+    },
+    "sentinel-process/unrelated-sentinel/stage.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sentinel-process/unrelated-sentinel/stage.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr.txt": {
+      "bytes": 553,
+      "sha256": "87315d925c6cc235b3ca1a2dc09bbc80363a88b73dde9a72fffe6b329a62ecaf"
+    },
+    "stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-process/cancel-target/bootstrap.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-process/cancel-target/cancel-ack.json": {
+      "bytes": 545,
+      "sha256": "a3de172e6d110a9a05272063fd9ee938f43b4473ab69824154f25fec28595f58"
+    },
+    "target-process/cancel-target/launch.json": {
+      "bytes": 1313,
+      "sha256": "6e8ee501107e27f8d6d521f3f3a80a93e0df35336e5cb8d6d86abe3d96e3e5f6"
+    },
+    "target-process/cancel-target/protocol.jsonl": {
+      "bytes": 1286,
+      "sha256": "fd1f95ad4d0d794b84fd662a01d5a35150fffe773297250e1d6ce7d60ca08af3"
+    },
+    "target-process/cancel-target/receipt.json": {
+      "bytes": 56160,
+      "sha256": "34c7f40ec773a5c6a6c7a0626a58057c2af3efa3d30a3ddd874c885cc720a714"
+    },
+    "target-process/cancel-target/stage.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-process/cancel-target/stage.stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "windows-controls/cancel-target/child-ready.json": {
+      "bytes": 481,
+      "sha256": "8355d831651c01dd78d4bf7cd5967fad1a9a742cfc7850f509459b127be31b64"
+    },
+    "windows-controls/cancel-target/grandchild-ready.json": {
+      "bytes": 460,
+      "sha256": "cff16f9a3de2a2fa66770327579469a3046293f8e2d339b31f4b4c279d18d2a9"
+    },
+    "windows-controls/cancel-target/ready.json": {
+      "bytes": 1011,
+      "sha256": "8e183b475401ee979e06116acceea492bb681feb9e2c2b112b7d32620ce652cd"
+    },
+    "windows-controls/cancel-target/stop.json": {
+      "bytes": 475,
+      "sha256": "45c195efa58267493418f9e5ca0744071fe34cd619669084cadd8476b46a9717"
+    },
+    "windows-controls/unrelated-sentinel/child-ready.json": {
+      "bytes": 483,
+      "sha256": "343f5388ca8f00a57d1bf34b194bbc8db0559ff879669c7f9351d85217ad36d9"
+    },
+    "windows-controls/unrelated-sentinel/grandchild-ready.json": {
+      "bytes": 462,
+      "sha256": "c92a5236047d137b92f5d50a2ed9fd63d95d16e83b75a21645d033730da0886f"
+    },
+    "windows-controls/unrelated-sentinel/ready.json": {
+      "bytes": 1020,
+      "sha256": "46804455d1846443a3e052840f85a189d8797f44631b951b6186182d094aef53"
+    },
+    "windows-controls/unrelated-sentinel/sentinel-release.json": {
+      "bytes": 543,
+      "sha256": "9f26c181fc6c4b119a6c3dd7fce9507348f64e87bfdad8b5a3ef7552e46c1433"
+    },
+    "windows-controls/unrelated-sentinel/stop.json": {
+      "bytes": 482,
+      "sha256": "42b99e85e1ed1df63c26f94bdb2c43a1872f102fa94d750732305debb840bd42"
+    },
+    "windows-controls.json": {
+      "bytes": 128477,
+      "sha256": "56a8285b87a8ef111d297559ffb0d04220e54d3917203d824a6a6d638c936931"
+    }
+  }
+}

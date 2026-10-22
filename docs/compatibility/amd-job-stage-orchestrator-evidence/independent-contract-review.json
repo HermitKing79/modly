@@ -1,0 +1,73 @@
+{
+  "schema": "modly.amd.job-stage-orchestrator-independent-contract-review.v1",
+  "created_utc": "2026-10-22T22:09:47.926521+00:00",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "mission_base": "c5f7ccd3cdb3de371405c09856a356ebc41a6ba3",
+  "reviewed_source_sha256": {
+    "api/services/amd_stage_orchestrator.py": "3b14a2fe179d94523236b8b487e8e2a6fbb9997d9785f52a64705a73ef3eb18a",
+    "api/tests/test_amd_stage_orchestrator.py": "6ac152d2c9264c52ae4d4b64db346b49e81d08428b249394de756cbb02464d4c",
+    "api/services/amd_stage_contract.py": "dc90e9a4f480ddfd44f72276dc2e18c4df6228dc0265234895756360ee145536",
+    "api/tests/test_amd_stage_contract.py": "53243e73609a986eabcb4d3e64c4ecbd533dd84b3108fc0ffd7a57186bc0d25a",
+    "api/routers/generation.py": "e9372b3cb19e50e70a94795c2b202ef98c6a7586312d6f9f75c24e332f634d70",
+    "api/tests/test_amd_generation_result.py": "ab4419bb7941665d1502c31ae0caaa5c9ab92bc6d250af28f98342a0a2350eca"
+  },
+  "sources_unchanged_during_tests_and_at_review": true,
+  "review_scope": [
+    "Current image/parameter/model/job/nonce lineage and source pin admission",
+    "Confined private roots and artifact descriptor/schema/hash/byte identities",
+    "Predecessor receipt and payload integrity before and after each mocked stage",
+    "Plan identity revalidation after execution and before final acceptance",
+    "Cancellation before dispatch, between stages, after final stage notification, and forced/unverified settlement classification",
+    "Duplicate-key and recursively nonfinite JSON including exponent overflow; bounded exact safetensor layout, dtype, finite payloads, coordinate identity/order",
+    "Owned-stage API cancellation request retains running state until generator settlement; synthetic adapter cannot return generated completion"
+  ],
+  "findings": [],
+  "initial_mock_only_findings_resolved": [
+    "post_stage_predecessor_bytes",
+    "json_numeric_exponent_overflow",
+    "precancel_after_progress",
+    "mutable_final_stage_source_pins",
+    "cancel_at_final_stage_progress"
+  ],
+  "private_initial_findings_sha256": "bc479f91a6395302080294ec33e4aa7a462357f3ccd6bf9ffc4d58355e3f88e8",
+  "focused_verification": {
+    "contract_and_orchestrator": {
+      "tests_passed": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 3.203,
+      "private_log_sha256": "229f75ba6da3ee135a8c035a24d289dd8b36600c35683a2e7be8524c70571f6d",
+      "runtime": "System Python 3.12; Pillow available; OS runner mocked"
+    },
+    "generation_routes": {
+      "tests_passed": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 0.688,
+      "private_log_sha256": "a437a4c9bfffae36a3f7bc3c9417da79d05f3f5994021f7204ac988e1691ebf8",
+      "runtime": "Pinned installed API venv; generator fixtures mocked"
+    }
+  },
+  "api_runtime_preprocessing": {
+    "classification": "BLOCKED",
+    "Pillow_available": false,
+    "observed_exception": "RuntimeError: Pillow is unavailable; actual image preprocessing is blocked in this runtime",
+    "system_runtime_decode_unit_tests_do_not_qualify_API_preprocessing": true
+  },
+  "existing_completed_result_service_and_runner_diff_unchanged": true,
+  "native_workers_executed": 0,
+  "WSL_distros_started": 0,
+  "app_or_neural_or_GPU_execution": false,
+  "existing_model_payload_or_header_bytes_read": 0,
+  "generated_asset_published": false,
+  "full_milestone_complete": false,
+  "scope_limits": [
+    "This is source review plus in-process mocked OS-boundary unit verification; it does not qualify native process ownership, Linux settlement, resource enforcement or real inference.",
+    "Generated stage mode remains explicitly BLOCKED. Synthetic plans accept contextual JSON only and the unregistered job adapter always refuses a generated result.",
+    "Actual API image decoding/preprocessing remains BLOCKED by missing Pillow; the source-specific neural support/guide profiles remain unqualified for arbitrary current inputs.",
+    "System Python route import failed because FastAPI is absent; that dependency observation is preserved privately. The independent route verdict uses the existing pinned API runtime, without installing or altering dependencies.",
+    "CPU harness review and its at-most-one authorized native execution are separate subsequent gates; preservation AFTER is not performed by this review."
+  ]
+}

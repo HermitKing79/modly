@@ -1,0 +1,23 @@
+{
+  "classification": "PASS",
+  "tests": 152,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "elapsed_s": 4.171999999991385,
+  "modules": [
+    "test_amd_stage_orchestrator",
+    "test_amd_stage_process",
+    "test_amd_generation_result",
+    "test_generation_router",
+    "test_workflow_runs_lifecycle",
+    "test_workflow_runs_router",
+    "test_scene_generation",
+    "test_amd_completed_result",
+    "test_extension_process",
+    "test_runner"
+  ],
+  "log_sha256": "11ddbc3abc8efbf49c4aa15224b5efb0cadfe066749120928247aa9cedd5a277",
+  "native_stage_executions": 0,
+  "GPU_inference": false
+}

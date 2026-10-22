@@ -210,6 +210,39 @@ class CompletedGenerationTests(unittest.TestCase):
             self.assertNotIn(job_id, generation._cancelled)
         asyncio.run(scenario())
 
+    def test_owned_stage_cancel_waits_for_settlement_and_never_kills_only_client(self):
+        self.generator.job_owned_stages = True
+        calls = []
+        self.generator.request_cancel = lambda job_id: calls.append(job_id)
+        class Client:
+            def poll(self): return None
+            def kill(self): raise AssertionError('Direct client termination is not stage settlement')
+        self.generator._proc = Client()
+        job_id = 'owned-running'
+        generation._jobs[job_id] = JobStatus(job_id=job_id, status='running')
+        generation._job_generators[job_id] = self.generator
+        generation._cancel_events[job_id] = threading.Event()
+        result = asyncio.run(generation.cancel_job(job_id))
+        self.assertEqual(calls, [job_id])
+        self.assertEqual(generation._jobs[job_id].status, 'running')
+        self.assertIn('settlement', generation._jobs[job_id].step)
+        self.assertTrue(generation._cancel_events[job_id].is_set())
+        self.assertNotIn(job_id, generation._cancelled)
+        self.assertTrue(result['cancellation_requested'])
+        self.assertFalse(result['settlement_verified'])
+
+    def test_owned_stage_forced_or_unverified_cleanup_is_error_not_clean_cancel(self):
+        from services.amd_stage_orchestrator import StageBlocked
+        self.generator.job_owned_stages = True
+        def reject(*args):
+            args[-1].set()
+            raise StageBlocked('Linux settlement unverified')
+        self.generator.generate_completed = reject
+        job = self.run_job()
+        self.assertEqual(job.status, 'error')
+        self.assertIn('settlement unverified', job.error)
+        self.assertIsNone(job.output_url)
+
 
 if __name__ == '__main__':
     unittest.main()

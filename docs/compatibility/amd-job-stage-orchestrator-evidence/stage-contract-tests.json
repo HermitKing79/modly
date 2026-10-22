@@ -1,0 +1,45 @@
+{
+  "schema": "modly.amd.stage-contract-cpu-tests.v1",
+  "classification": "FOCUSED_HELPER_PASS_RELATED_COMPLETION_SANDBOX_BLOCKED",
+  "runtime": "Existing system Python 3.12 at C:/Users/wattz/AppData/Local/Programs/Python/Python312/python.exe; pre-existing Pillow; no installs or environment files modified",
+  "command": "python -B -m unittest tests.test_amd_stage_contract",
+  "cwd": "proof/api",
+  "temporary_environment": "TEMP and TMP pointed at new mission evidence/test-temp for this process only; sandbox default Temp gave WinError5",
+  "tdd": {
+    "initial_red": "7 explicit failures: CPU stage artifact contract is not implemented",
+    "additional_red": "Header boolean shape type-confusion accepted; missing-Pillow boundary raised raw ModuleNotFoundError; independent review found nested JSON 1e999 exponent overflow accepted as infinity",
+    "final_tests": 10,
+    "final_failures": 0,
+    "final_errors": 0,
+    "final_skips": 0,
+    "final_elapsed_seconds": 0.528
+  },
+  "behavior_covered": [
+    "Actual full-file SHA256, fresh bounded regular single-link file opening and exact host tensor name/shape/dtype schemas",
+    "Finite F32, F16 and BF16 payload bits, including infinity after first 1MiB stream chunk",
+    "Payload gaps, overlap, oversized offsets, malformed schema, unsupported dtype, truncation and trailing bytes",
+    "Unique original I32 batch-zero coordinates within readable spatial bounds and exact expected coordinate payload/order hash",
+    "Host max_rows bound and boolean shape type confusion",
+    "Current product context, confined canonical paths and strict artifact envelope",
+    "Bounded JSON duplicate-key/nonfinite rejection, including recursive numeric exponent overflow",
+    "Real Pillow RGBA decoding and source/pixel/alpha metadata; unknown preprocessing request rejection; explicit no-conditioning claim",
+    "Clear preprocessing dependency blocker when Pillow is absent"
+  ],
+  "related_completion_run": {
+    "command": "python -B -m unittest tests.test_amd_stage_contract tests.test_amd_completed_result",
+    "tests_run": 27,
+    "errors": 9,
+    "cause": "Existing completion tests require os.link; sandbox returned WinError5 Access denied. No completion publisher changes made. This is not a green related suite.",
+    "affected_existing_tests": [
+      "test_authenticate_and_publish_original_bytes_with_library_metadata",
+      "test_cancellation_during_copy_and_discard_preserve_foreign_files",
+      "test_discard_preserves_a_replaced_foreign_directory",
+      "test_existing_legal_collection_with_spaces_is_preserved",
+      "test_glb_commit_is_last_and_metadata_fault_never_exposes_mesh",
+      "test_rejects_paths_hardlinks_and_stale_sources",
+      "test_replaced_final_after_commit_is_rejected_and_preserved_on_cancel (cancel=False and cancel=True)",
+      "test_staging_replacement_after_handle_close_is_never_adopted_for_cleanup (model.json.part)"
+    ]
+  },
+  "limitations": "No model/runtime/native imports or execution, GPU/WSL launches, private model output inspection, fresh generation or API-host Pillow integration. Source-specific neural admission remains blocked."
+}

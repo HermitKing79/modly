@@ -201,6 +201,19 @@ async def cancel_job(job_id: str):
     job = _jobs.get(job_id)
     if not job:
         raise HTTPException(404, f"Job {job_id} not found")
+    owner = _job_generators.get(job_id)
+    if bool(getattr(owner, "job_owned_stages", False)):
+        # This owner must settle both native trees before reporting cancellation.
+        # Killing only its Windows client would orphan the Linux stage.
+        with _result_commit_lock:
+            if job.status not in ("pending", "running"):
+                return {"cancelled": False, "cancellation_requested": False, "settlement_verified": False}
+            event = _cancel_events.get(job_id)
+            if event is not None:
+                event.set()
+            job.step = "Cancellation requested; waiting for owned-stage settlement"
+        owner.request_cancel(job_id)
+        return {"cancelled": False, "cancellation_requested": True, "settlement_verified": False}
     with _result_commit_lock:
         _cancelled.add(job_id)
         if job_id in _cancel_events:
@@ -260,12 +273,15 @@ async def _run_generation(
         with _result_commit_lock:
             job = _jobs.get(job_id)
             if job is not None and job.status in ("pending", "running"):
-                _cancelled.add(job_id)
                 cancel_event = _cancel_events.get(job_id)
                 if cancel_event is not None:
                     cancel_event.set()
-                job.status = "cancelled"
-                _completed_at[job_id] = time.monotonic()
+                if bool(getattr(_job_generators.get(job_id), "job_owned_stages", False)):
+                    job.step = "Cancellation requested; waiting for owned-stage settlement"
+                else:
+                    _cancelled.add(job_id)
+                    job.status = "cancelled"
+                    _completed_at[job_id] = time.monotonic()
         raise
 
 
@@ -426,7 +442,9 @@ def _run_generation_impl(
             published_completion.discard()
         if job_id in _cancelled:
             return
-        if bool(getattr(_job_generators.get(job_id), "completed_results_enabled", False)):
+        if bool(getattr(_job_generators.get(job_id), "completed_results_enabled", False)) and not bool(
+            getattr(_job_generators.get(job_id), "job_owned_stages", False)
+        ):
             event = _cancel_events.get(job_id)
             if event is not None and event.is_set():
                 job.status = "cancelled"
