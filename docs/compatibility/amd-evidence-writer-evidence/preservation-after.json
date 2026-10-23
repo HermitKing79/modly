@@ -1,0 +1,87 @@
+{
+  "schema": "modly.amd.evidence-writer-preservation.v1",
+  "phase": "after",
+  "created_utc": "2026-10-23T09:19:11.228082+00:00",
+  "mission_base": "d784e4b89e0a05096d2503755c7e931895895d45",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "private_detail_sha256": "769c392996f1c0d426a1dcc87fce030f38784547f4a34ba4084ad360e07839c4",
+  "capture_source_sha256": "0ab7c12f768047be52495e7e506ef79bd8ded42992a18cbc6a8f16ea268b64a9",
+  "authenticated_prior_2280_identity_closure": true,
+  "prior_private_table_hashes": {
+    "before": "0cbd0bf9b300fa6796306de2cf96f2ebc0b9225fce696829ccbcf0d79c3a63c7",
+    "after": "710e334566fc73f09f84486fcf339a663aeb9aac15b122c8a7c832189d252215"
+  },
+  "prior_public_authentication": {
+    "preservation-before.json": {
+      "working_sha256": "8b5a5665b865a99f761f4fd50efbaa04b0d19760fdcf42354b3389e794c6c6a4",
+      "git_blob_sha256": "72de0526ce96a0b77c23f0a4bb38a6531b85273d51b186108c2eb4d3137149f0",
+      "CRLF_only_normalization_match": true
+    },
+    "preservation-after.json": {
+      "working_sha256": "e0082e02ecfbb85103c0a6970b58a04cb5990ad64e97dbd22e04750ea85ef293",
+      "git_blob_sha256": "5e5ab49ec9d7aa974d623c72484d7d523c1e5eae48e9ca025adf7ad490bc2655",
+      "CRLF_only_normalization_match": true
+    },
+    "preservation-review.json": {
+      "working_sha256": "efd6d94e5928e8a986b78a5def3c347f983a4e61a345b1f79a5568fef90af558",
+      "git_blob_sha256": "5a57ca7959ae0b930d29cc122d4fc27c3a8daf47a678aff418b122dea39e884a",
+      "CRLF_only_normalization_match": true
+    },
+    "preservation-accounting-note.json": {
+      "working_sha256": "621f114c4f1381da2fe888c8963ef9364ab72230e68a25850d4cb4ab7c74a06d",
+      "git_blob_sha256": "aef87402458a8153e957eaf1a8a969b99cb9e6e153e4f6389302857378b76847",
+      "CRLF_only_normalization_match": true
+    },
+    "attempt-staging-preservation.json": {
+      "working_sha256": "2b5fe1bdbdcd7f7e8dca6a57fe860d4f86c61eedccb2f276ae2a9121a04ed8bc",
+      "git_blob_sha256": "4360d892b43cc3cf1f17602e9a9fa380c21f161a3b818a020bee640dd20d9f49",
+      "CRLF_only_normalization_match": true
+    },
+    "independent-outcome-review.json": {
+      "working_sha256": "ef5fb27a5f1004432c0f3cc7357f9b6d3b24c1378cc54d51e4f21b666bdf4609",
+      "git_blob_sha256": "d50175a5feaf7925dbdf14e3a3826bcb760a6ab87a110f9f8094a85e000da63b",
+      "CRLF_only_normalization_match": true
+    },
+    "independent-final-review.json": {
+      "working_sha256": "31b7988f05adf825f865f5bea0f563e598c8e7f3cccf670b2f360e2d67ad4208",
+      "git_blob_sha256": "9deeb51729c295ff7e0fd2102c65de4ef2f9b5e5f33bbc61fd59c154cb72ce73",
+      "CRLF_only_normalization_match": true
+    },
+    "admission.json": {
+      "working_sha256": "74e2256a5f747a3bfeef673a98fe4a11798dbbac912f335099b29603d6768b9d",
+      "git_blob_sha256": "b9677935ab605761770812ca5575baecd1c207ac78bfdc5106a5b2a44fb17580",
+      "CRLF_only_normalization_match": true
+    }
+  },
+  "fresh_protected_metadata_count": 100,
+  "protected_metadata_matches_prior": true,
+  "efficient_protected_hash_count": 78,
+  "efficient_protected_bytes_hashed": 8265983,
+  "original_API_python_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+  "old_private_tree_file_count": 23,
+  "historical_cache_directory_count": 4,
+  "historical_cache_file_count": 20,
+  "partial_attempt_file_count": 1,
+  "partial_attempt_bytes": 1991,
+  "partial_attempt_sha256": "25ebe42f554489a23815c0e37ba09eae4dd143428481ce3344527cbf384fe6bd",
+  "partial_attempt_has_file_identity": true,
+  "remote_head_count": 123,
+  "remote_capture_sha256": "8b41439e555934e711d6ed54904cfa4bcaf7a10cb1baf67491645d7e082bce87",
+  "prior_122_remote_heads_preserved": true,
+  "main_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "preserved_before_after_identities_equal": true,
+  "authorized_source_base_git_blob_sha256": "94b31197ed1032580cf97d69b79509b4627a2573af049307a4493061fd00fa9a",
+  "execution_accounting": {
+    "full_2280_rehash_passes": 0,
+    "before_successful_remote_reads": 2,
+    "before_remote_reason": "Initial elevated stdout listing followed by elevated persisted listing.",
+    "failed_remote_requests": 0,
+    "after_successful_remote_reads": 1,
+    "filesystem_contract_probes_by_preservation": 0,
+    "native_fixture_pairs_by_preservation": 0
+  },
+  "scope_limits": "Saved 2280-file closure authenticated through base Git public receipts and hashed private tables; only protected100 metadata and <=1MiB protected files freshly checked. Historical private evidence tree and four cache trees checked by name, size, mtime and file identity; the exact 1991-byte partial is freshly hashed. API executable is hash-only. No environment/profile bulk reads, historical raw rehash, model/checkpoint read, filesystem probe, Job, worker, application, WSL, GPU, permissions change or historical script execution. The authorized diagnostic source is the sole exclusion from old public-tree equality. Prior BLOCKED outcomes remain unchanged.",
+  "issues": [],
+  "authenticated_before_public_sha256": "5403af5439bc3c241b1726fbbff1b55327ec97908455b165e9f797571571964d",
+  "authenticated_before_private_sha256": "2cb627e736d8bd83bf2c657be158dea9048b9c8f13448e95641c0987e6eafc01"
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "modly.evidence-writer.independent-preprobe-review.v1",
+  "reviewed_utc": "2026-10-23T09:14:12Z",
+  "reviewer": "independent writer_review subagent",
+  "classification": "PASS_FOR_ONE_FILESYSTEM_PROBE_ONLY",
+  "base_commit": "d784e4b89e0a05096d2503755c7e931895895d45",
+  "findings": [],
+  "reviewed_sha256": {
+    "docs/compatibility/amd-fixture-timing-evidence/windows_qualification.py": "01cc5cc396943aa028a58b9ed32779bbb17c1cbecc1cd13f4ffb761cabc931db",
+    "docs/compatibility/amd-evidence-writer-evidence/writer_probe.py": "08769da0449f6b82a2db8e18619cf7b78147e028bab09842782366b1c157622e",
+    "docs/compatibility/amd-evidence-writer-evidence/test_writer_probe.py": "0496ada4f50463ddf4e8a7d05e3e28a5f7a31d5a842b03bb6cadd68d7574343b",
+    "docs/compatibility/amd-evidence-writer-evidence/test_prelaunch_errors.py": "4f723e3f4b9c39faa348bf79e33df53153fb57f39069f71bd0cb92d91218d13c",
+    "docs/compatibility/amd-evidence-writer-evidence/cpu-tests.json": "d4407c16f4e51007d7670177c01ecec70bd28c89c20d08f06e6730ebb6f72ef5"
+  },
+  "independent_cpu_verification": {
+    "command": "& 'C:/Users/wattz/Documents/Modly/dependencies/venv/Scripts/python.exe' -B -I -S -m unittest discover -s docs/compatibility/amd-evidence-writer-evidence -p 'test_*.py' -v",
+    "python_executable_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+    "tests": 20,
+    "test_runner_reported_elapsed_s": 0.044,
+    "returncode": 0,
+    "classification": "PASS_MOCKED_CPU_ONLY"
+  },
+  "review_basis": [
+    "Exclusive staging creation, indent=2/allow_nan=False JSON, platform newline handling, flush, fsync, close, no-overwrite os.link, and staging unlink remain the publication mechanism.",
+    "Publisher and read-only preflight filesystem errors retain operation attribution, original errno/winerror, traceback, and separate attempted-publication versus operation-path state.",
+    "Early failures after output reservation reach independent exclusive ordinary diagnostics; failed delivery falls back to full stderr and original exceptions are re-raised.",
+    "Secondary close failures preserve primary publication and probe errors.",
+    "Probe has eight separately measured boundaries with perf_counter_ns durations, immediate throwing-API metadata, and explicit guard-inclusive measurement scope.",
+    "Probe reserves a unique scratch directory, rejects redirected or changed identities, and unlinks only verified owned files without recursive removal.",
+    "Mocked tests cover publication failures, post-reservation reporting, explicit preflight errors, no-clobber behavior, cleanup aliases, diagnostic fallback, and newline/readback parity.",
+    "Existing lifecycle/admission conditions and worker execution body were reviewed unchanged in the diff; no Job, lifecycle, WSL, or GPU execution was performed by this reviewer."
+  ],
+  "reviewer_execution_counts": {
+    "real_filesystem_probes": 0,
+    "Jobs": 0,
+    "lifecycle_pairs": 0,
+    "WSL": 0,
+    "GPU": 0
+  },
+  "qualification_limit": "This receipt covers source review and mocked CPU tests. The root agent may run the single authorized filesystem probe under the same default sandbox context and original API interpreter; this is not lifecycle qualification."
+}

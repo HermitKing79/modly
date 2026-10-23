@@ -1,0 +1,21 @@
+{
+  "schema": "modly.evidence-writer.cpu.v1",
+  "classification": "PASS_MOCKED_CPU_ONLY",
+  "tests": 20,
+  "failures": 0,
+  "returncode": 0,
+  "elapsed_ns": 1861327700,
+  "log_sha256": "de309f0c4a71a3bb285c3b033c77ba3ff8a7edf4bd624862110a8dab3465e617",
+  "interpreter_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+  "source_sha256": {
+    "docs/compatibility/amd-fixture-timing-evidence/windows_qualification.py": "01cc5cc396943aa028a58b9ed32779bbb17c1cbecc1cd13f4ffb761cabc931db",
+    "docs/compatibility/amd-evidence-writer-evidence/writer_probe.py": "08769da0449f6b82a2db8e18619cf7b78147e028bab09842782366b1c157622e",
+    "docs/compatibility/amd-evidence-writer-evidence/test_writer_probe.py": "0496ada4f50463ddf4e8a7d05e3e28a5f7a31d5a842b03bb6cadd68d7574343b",
+    "docs/compatibility/amd-evidence-writer-evidence/test_prelaunch_errors.py": "4f723e3f4b9c39faa348bf79e33df53153fb57f39069f71bd0cb92d91218d13c"
+  },
+  "real_filesystem_probes": 0,
+  "Jobs": 0,
+  "lifecycle_pairs": 0,
+  "WSL": 0,
+  "GPU": 0
+}

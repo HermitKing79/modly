@@ -1,0 +1,107 @@
+{
+  "schema": "modly.evidence-writer.independent-outcome-review.v1",
+  "reviewed_utc": "2026-10-23T09:20:27Z",
+  "reviewer": "independent writer_review subagent",
+  "classification": "PASS_REVIEW_OF_BLOCKED_FILESYSTEM_PROBE",
+  "base_commit": "d784e4b89e0a05096d2503755c7e931895895d45",
+  "findings": [],
+  "authenticated_sha256": {
+    "probe_report": "d657489a9510e324380c90f425c517b8ebd46760baff0c572f67f4639bfe8a0e",
+    "probe_console": "d15b78d1fa73a11c7a00e4df9a3ec33a7fb6c298ee7a22e7cf488f2e9e7f2efd",
+    "probe_launch_record": "de75e961b616f66ba4ba319c9bc16c911a7bfb61cad1483977f46f62cedaa914",
+    "probe_result_record": "3898adeaf2c186255b9efbc9134f945f4cc8f1d6be2b74825325f8f484242db3",
+    "preprobe_review": "412d40eb1922d8179d1c1ece4deb775d368923504bac1511e6a60bd8f5f36097",
+    "probe_source": "08769da0449f6b82a2db8e18619cf7b78147e028bab09842782366b1c157622e",
+    "original_API_python": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+    "reporting_repair_source": "01cc5cc396943aa028a58b9ed32779bbb17c1cbecc1cd13f4ffb761cabc931db",
+    "test_probe_source": "0496ada4f50463ddf4e8a7d05e3e28a5f7a31d5a842b03bb6cadd68d7574343b",
+    "test_prelaunch_source": "4f723e3f4b9c39faa348bf79e33df53153fb57f39069f71bd0cb92d91218d13c",
+    "preservation_before_public": "5403af5439bc3c241b1726fbbff1b55327ec97908455b165e9f797571571964d",
+    "preservation_after_public": "edd97af0d930cf76d416838c1d77bd2b0359e4d903e170645209a3663aabd5c5",
+    "preservation_before_private_table": "2cb627e736d8bd83bf2c657be158dea9048b9c8f13448e95641c0987e6eafc01",
+    "preservation_after_private_table": "769c392996f1c0d426a1dcc87fce030f38784547f4a34ba4084ad360e07839c4"
+  },
+  "actual_probe": {
+    "token": "36fc408e1fc945f59e00b36d81a1f8c9",
+    "recorded_real_probe_invocations": 1,
+    "recorded_context": "same default tool sandbox; -B -I -S",
+    "returncode": 1,
+    "probe_classification": "BLOCKED",
+    "whole_invocation_elapsed_ns": 1594967000,
+    "report_size_bytes": 13530,
+    "ordinary_report_write_succeeded_per_console": true,
+    "report_outside_scratch": true,
+    "report_source_and_interpreter_hashes_match_preprobe_review": true,
+    "operations": [
+      {"operation": "exclusive_staging_open", "classification": "PASS", "duration_ns": 388600},
+      {"operation": "json_write", "classification": "PASS", "duration_ns": 26500},
+      {"operation": "flush", "classification": "PASS", "duration_ns": 58500},
+      {"operation": "fsync", "classification": "PASS", "duration_ns": 515100},
+      {"operation": "close", "classification": "PASS", "duration_ns": 55300},
+      {"operation": "link_no_overwrite", "classification": "FAIL", "duration_ns": 7235800},
+      {"operation": "final_readback", "classification": "NOT_RUN", "duration_ns": null},
+      {"operation": "cleanup", "classification": "PASS", "duration_ns": 3084000}
+    ],
+    "first_failure": {
+      "boundary": "link_no_overwrite",
+      "primary_api_attempted": true,
+      "actual_api": "os.link",
+      "last_suboperation": "os.link",
+      "type": "PermissionError",
+      "errno": 13,
+      "winerror": 5,
+      "message": "Access is denied",
+      "full_traceback_retained": true
+    },
+    "timing_limit": "Boundary durations include ownership guards. The 7.2358 ms link boundary is not an isolated os.link syscall duration.",
+    "cleanup": {
+      "errors": [],
+      "removed_file_count": 1,
+      "removed_basename": "attempt.json.writing",
+      "removed_file_was_new_owned_staging": true,
+      "staging_size_bytes": 151,
+      "retained_unverified": [],
+      "directory_removal_attempted": false,
+      "final_readback_performed": false
+    }
+  },
+  "preservation_review": {
+    "classification": "PASS_WITH_RECORDED_SCOPE",
+    "independently_compared_saved_private_fields_equal": [
+      "old_private_tree",
+      "old_public_tree_except_authorized_source",
+      "historical_cache_metadata",
+      "protected100",
+      "partial_attempt",
+      "api_python_identity",
+      "remote_heads",
+      "prior_public_authentication"
+    ],
+    "old_private_tree_file_count": 23,
+    "historical_cache_directory_count": 4,
+    "historical_cache_file_count": 20,
+    "partial_attempt_bytes": 1991,
+    "partial_attempt_sha256": "25ebe42f554489a23815c0e37ba09eae4dd143428481ce3344527cbf384fe6bd",
+    "partial_attempt_file_identity_and_namespace_equal": true,
+    "remote_head_count": 123,
+    "main_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+    "scope_limit": "Authenticated saved 2280-file closure plus fresh protected100 metadata and 78 small-file hashes; historical private/cache trees were checked by name, size, mtime and file identity, and the exact 1991-byte partial was freshly hashed. This reviewer compared saved capture tables and did not perform another historical tree read or bulk rehash. The authorized diagnostic source remains the sole public-tree exclusion."
+  },
+  "assessment": {
+    "proved": "The single current-context probe reached os.link after successful exclusive creation, JSON write, flush, fsync and close; os.link returned access denied. Its raw exception and ordinary report survived cleanup.",
+    "not_proved": "The evidence does not distinguish filesystem ACLs, a restricted token, the tool sandbox, or another policy as the root cause. No alternate execution context was compared.",
+    "historical_limit": "The historical lost exception and exact failing operation remain unknown. The present probe establishes its own os.link failure without recovering or relabeling the old failure.",
+    "future_context_test": "Any outside-sandbox qualification would require separate authorization and review; it is a proposed comparison, not a demonstrated fix.",
+    "previous_blocked_outcomes_preserved": true,
+    "lifecycle_qualification": false
+  },
+  "reviewer_execution_counts": {
+    "additional_real_filesystem_probes": 0,
+    "Jobs": 0,
+    "lifecycle_pairs": 0,
+    "WSL": 0,
+    "GPU": 0,
+    "permissions_changes": 0,
+    "source_changes": 0
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "schema": "amd-evidence-writer-saved-probe-summary-v1",
+  "base_commit": "d784e4b89e0a05096d2503755c7e931895895d45",
+  "classification": "BLOCKED",
+  "scope": "One tiny stdlib filesystem writer probe only; no Job, child process, WSL, GPU, package change, or native lifecycle qualification.",
+  "real_probe_invocations": 1,
+  "execution_context": {
+    "context": "default tool sandbox",
+    "python_flags": [
+      "-B",
+      "-I",
+      "-S"
+    ],
+    "interpreter": "original API Python",
+    "working_directory_alias": "proof repository",
+    "destination_alias": "new private P",
+    "other_execution_context_tested": false,
+    "outside_sandbox_access_proved": false
+  },
+  "saved_raw_report": {
+    "alias": "P/private full probe report",
+    "sha256": "d657489a9510e324380c90f425c517b8ebd46760baff0c572f67f4639bfe8a0e",
+    "size_bytes": 13530,
+    "full_trace_location": "private only",
+    "ordinary_exclusive_report_write_completed": true
+  },
+  "launch_receipt_sha256": "de75e961b616f66ba4ba319c9bc16c911a7bfb61cad1483977f46f62cedaa914",
+  "result_receipt_sha256": "3898adeaf2c186255b9efbc9134f945f4cc8f1d6be2b74825325f8f484242db3",
+  "console_sha256": "d15b78d1fa73a11c7a00e4df9a3ec33a7fb6c298ee7a22e7cf488f2e9e7f2efd",
+  "process_returncode": 1,
+  "controller_elapsed_ns_including_interpreter_startup": 1594967000,
+  "source_identity": {
+    "probe": {
+      "alias": "E/writer_probe.py",
+      "size_bytes": 18240,
+      "sha256": "08769da0449f6b82a2db8e18619cf7b78147e028bab09842782366b1c157622e"
+    },
+    "python_executable": {
+      "alias": "API Python executable",
+      "size_bytes": 257024,
+      "sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3"
+    }
+  },
+  "clocks": {
+    "monotonic": {
+      "implementation": "GetTickCount64()",
+      "resolution": 0.015625,
+      "monotonic": true,
+      "adjustable": false
+    },
+    "perf_counter": {
+      "implementation": "QueryPerformanceCounter()",
+      "resolution": 1e-07,
+      "monotonic": true,
+      "adjustable": false
+    }
+  },
+  "timing_scope": "perf_counter_ns end minus start within the one probe process; operation boundary timings include ownership guards and wrapper overhead. They are not isolated syscall latency. Exception formatting is outside the measured interval.",
+  "operations": [
+    {
+      "operation": "exclusive_staging_open",
+      "ok": true,
+      "start_monotonic_ns": 155639921000000,
+      "end_monotonic_ns": 155639921000000,
+      "start_perf_counter_ns": 155639950148300,
+      "end_perf_counter_ns": 155639950536900,
+      "duration_ns": 388600,
+      "primary_api_attempted": true,
+      "last_suboperation": "staging.lstat"
+    },
+    {
+      "operation": "json_write",
+      "ok": true,
+      "start_monotonic_ns": 155639921000000,
+      "end_monotonic_ns": 155639921000000,
+      "start_perf_counter_ns": 155639950539800,
+      "end_perf_counter_ns": 155639950566300,
+      "duration_ns": 26500,
+      "primary_api_attempted": true,
+      "last_suboperation": "trailing_newline.write"
+    },
+    {
+      "operation": "flush",
+      "ok": true,
+      "start_monotonic_ns": 155639921000000,
+      "end_monotonic_ns": 155639921000000,
+      "start_perf_counter_ns": 155639950568100,
+      "end_perf_counter_ns": 155639950626600,
+      "duration_ns": 58500,
+      "primary_api_attempted": true,
+      "last_suboperation": "staging.flush"
+    },
+    {
+      "operation": "fsync",
+      "ok": true,
+      "start_monotonic_ns": 155639921000000,
+      "end_monotonic_ns": 155639921000000,
+      "start_perf_counter_ns": 155639950629000,
+      "end_perf_counter_ns": 155639951144100,
+      "duration_ns": 515100,
+      "primary_api_attempted": true,
+      "last_suboperation": "os.fsync"
+    },
+    {
+      "operation": "close",
+      "ok": true,
+      "start_monotonic_ns": 155639921000000,
+      "end_monotonic_ns": 155639921000000,
+      "start_perf_counter_ns": 155639951150900,
+      "end_perf_counter_ns": 155639951206200,
+      "duration_ns": 55300,
+      "primary_api_attempted": true,
+      "last_suboperation": "staging.close"
+    },
+    {
+      "operation": "link_no_overwrite",
+      "ok": false,
+      "start_monotonic_ns": 155639921000000,
+      "end_monotonic_ns": 155639937000000,
+      "start_perf_counter_ns": 155639951208900,
+      "end_perf_counter_ns": 155639958444700,
+      "duration_ns": 7235800,
+      "primary_api_attempted": true,
+      "last_suboperation": "os.link"
+    },
+    {
+      "operation": "cleanup",
+      "ok": true,
+      "start_monotonic_ns": 155639937000000,
+      "end_monotonic_ns": 155639937000000,
+      "start_perf_counter_ns": 155639962169700,
+      "end_perf_counter_ns": 155639965253700,
+      "duration_ns": 3084000
+    }
+  ],
+  "first_failure": {
+    "operation": "link_no_overwrite",
+    "suboperation": "os.link",
+    "actual_api": {
+      "name": "os.link",
+      "arguments": [
+        "P/scratch/attempt.json.writing",
+        "P/scratch/attempt.json"
+      ]
+    },
+    "primary_api_attempted": true,
+    "type": "PermissionError",
+    "errno": 13,
+    "winerror": 5,
+    "message": "Access is denied; private paths redacted.",
+    "full_exception_and_trace": "retained privately in the hashed raw report"
+  },
+  "final_readback": {
+    "status": "SKIPPED",
+    "reason": "Forward pipeline stopped at the first failure."
+  },
+  "cleanup": {
+    "ok": true,
+    "removed_owned_files": [
+      "P/scratch/attempt.json.writing"
+    ],
+    "removed_file_count": 1,
+    "retained_unverified_file_count": 0,
+    "error_count": 0,
+    "identity_and_hardlink_count_checks_passed": true,
+    "scratch_directory_retained": true,
+    "scratch_empty": true,
+    "empty_verification": "Read-only inventory of the saved scratch directory after the single probe.",
+    "actions": [
+      {
+        "operation": "cleanup.directory_identity",
+        "ok": true,
+        "start_monotonic_ns": 155639937000000,
+        "end_monotonic_ns": 155639937000000,
+        "start_perf_counter_ns": 155639962172700,
+        "end_perf_counter_ns": 155639963250600,
+        "duration_ns": 1077900
+      },
+      {
+        "operation": "cleanup.verify.attempt.json.writing",
+        "ok": true,
+        "start_monotonic_ns": 155639937000000,
+        "end_monotonic_ns": 155639937000000,
+        "start_perf_counter_ns": 155639963256200,
+        "end_perf_counter_ns": 155639963589000,
+        "duration_ns": 332800
+      },
+      {
+        "operation": "cleanup.unlink.attempt.json.writing",
+        "ok": true,
+        "start_monotonic_ns": 155639937000000,
+        "end_monotonic_ns": 155639937000000,
+        "start_perf_counter_ns": 155639963594300,
+        "end_perf_counter_ns": 155639965249400,
+        "duration_ns": 1655100
+      }
+    ]
+  },
+  "observed_conclusion": "The actual os.link call failed with PermissionError, errno 13, WinError 5 in the tested default execution context after open, JSON write, flush, fsync, and close passed.",
+  "underlying_cause": {
+    "classification": "UNPROVED",
+    "statement": "The report does not establish which ACL, process token, sandbox policy, or other access-control mechanism caused the denial; no other execution context was tested."
+  },
+  "historical_failure_attribution": "Unresolved: the earlier publication failure lost its exact exception. This separate probe does not recover that exception or prove the earlier failing operation.",
+  "limits": [
+    "No final publication or readback passed.",
+    "No native lifecycle or readiness timing conclusion follows.",
+    "No retry or comparison execution was performed."
+  ]
+}

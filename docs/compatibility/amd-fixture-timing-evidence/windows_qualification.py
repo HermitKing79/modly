@@ -13,6 +13,7 @@ import sys
 import threading
 import time
 import traceback
+import uuid
 import zlib
 
 E = Path(__file__).resolve().parent
@@ -30,18 +31,145 @@ PINS = ('api/services/amd_stage_process.py', 'api/services/amd_stage_bootstrap.p
         'docs/compatibility/amd-fixture-timing-evidence/diagnostic_bootstrap.py',
         'docs/compatibility/amd-fixture-timing-evidence/windows_qualification.py')
 _lock = threading.Lock()
+_PRELAUNCH_PHASE = 'not-entered'
+# Independently selected private diagnostics, never the consumed attempt leaf.
+ERROR_ROOT = ROOT.parent / 'artifacts/amd-evidence-writer-d784e4b/diagnostics'
 
 def sha(path):
-    with Path(path).open('rb') as stream: return hashlib.file_digest(stream, 'sha256').hexdigest()
+    path = Path(path)
+    stream = _publication_call('sha.open-read', lambda: path.open('rb'), None, path)
+    try:
+        value = _publication_call('sha.read-digest',
+            lambda: hashlib.file_digest(stream, 'sha256').hexdigest(), None, path)
+    except BaseException as original:
+        _close_after_error(stream, original)
+        raise
+    _publication_call('sha.close', stream.close, None, path)
+    return value
+
+def _publication_call(operation, callback, staging, final):
+    try:
+        return callback()
+    except BaseException as error:
+        # Attach attribution to the original object; never wrap or replace it.
+        try:
+            error.modly_publication = dict(operation=operation, phase=operation,
+                staging=None if staging is None else str(staging), final=str(final))
+        except BaseException:
+            pass
+        raise
+
+
+def _close_after_error(stream, original):
+    try:
+        stream.close()
+    except BaseException as secondary:
+        try:
+            original.modly_publication['close_error'] = dict(type=type(secondary).__name__,
+                message=str(secondary), errno=getattr(secondary, 'errno', None),
+                winerror=getattr(secondary, 'winerror', None))
+        except BaseException:
+            pass
+
 
 def save(path, row):
     path = Path(path); staging = path.with_name(path.name + '.writing')
-    with staging.open('x', encoding='utf-8') as stream:
-        json.dump(row, stream, indent=2, allow_nan=False); stream.write('\n'); stream.flush(); os.fsync(stream.fileno())
-    os.link(staging, path); staging.unlink()
+    stream = _publication_call('staging.open-exclusive',
+        lambda: staging.open('x', encoding='utf-8'), staging, path)
+    try:
+        def write_json():
+            json.dump(row, stream, indent=2, allow_nan=False); stream.write('\n')
+        _publication_call('json.write', write_json, staging, path)
+        _publication_call('flush', stream.flush, staging, path)
+        _publication_call('os.fsync', lambda: os.fsync(stream.fileno()), staging, path)
+    except BaseException as original:
+        _close_after_error(stream, original)
+        raise
+    _publication_call('close', stream.close, staging, path)
+    _publication_call('os.link', lambda: os.link(staging, path), staging, path)
+    _publication_call('staging.unlink', staging.unlink, staging, path)
+
+
+def _path_snapshot(path):
+    if path is None:
+        return dict(path=None, exists=None)
+    try:
+        info = os.lstat(path)
+        return dict(path=str(path), exists=True, device=info.st_dev, inode=info.st_ino,
+                    mode=info.st_mode)
+    except FileNotFoundError:
+        return dict(path=str(path), exists=False)
+    except BaseException as error:
+        return dict(path=str(path), exists=None, state_error=dict(type=type(error).__name__,
+            message=str(error), errno=getattr(error, 'errno', None), winerror=getattr(error, 'winerror', None)))
+
+
+def _write_error_row(row):
+    location = ERROR_ROOT.resolve()
+    if location == OUT.resolve() or OUT.resolve() in location.parents:
+        raise ValueError('Error location must be independent of attempted output')
+    location.mkdir(parents=True, exist_ok=True)
+    path = location / ('prelaunch-' + uuid.uuid4().hex + '.json')
+    # Ordinary exclusive write avoids recursively depending on failed publication.
+    with path.open('x', encoding='utf-8') as stream:
+        json.dump(row, stream, indent=2, allow_nan=False)
+        stream.write('\n'); stream.flush(); os.fsync(stream.fileno())
+    return path
+
+
+def report_prelaunch_failure(error):
+    """Best-effort diagnostic delivery; callers always re-raise their original."""
+    row = None
+    try:
+        publication = getattr(error, 'modly_publication', {})
+        writing = publication.get('staging')
+        staged_path = writing if writing is not None else OUT / 'attempt.json.writing'
+        final_path = publication.get('final') if writing is not None else OUT / 'attempt.json'
+        row = dict(schema='modly.prelaunch-error.v1', type=type(error).__name__, message=str(error),
+            errno=getattr(error, 'errno', None), winerror=getattr(error, 'winerror', None),
+            traceback=''.join(traceback.format_exception(type(error), error, error.__traceback__)),
+            prelaunch_phase=_PRELAUNCH_PHASE, publication_phase=publication.get('phase'),
+            filesystem_operation=publication.get('operation'), publication=publication,
+            staging=_path_snapshot(staged_path), final=_path_snapshot(final_path),
+            operation_paths=dict(staging=_path_snapshot(publication.get('staging')),
+                                 final=_path_snapshot(publication.get('final'))))
+        return _write_error_row(row)
+    except BaseException as diagnostic_error:
+        # No diagnostic failure may replace or conceal the primary exception.
+        try:
+            if row is None:
+                row = dict(type=type(error).__name__, message=str(error),
+                    traceback=''.join(traceback.format_exception(type(error), error, error.__traceback__)))
+            row['diagnostic_delivery_error'] = dict(type=type(diagnostic_error).__name__,
+                message=str(diagnostic_error), errno=getattr(diagnostic_error, 'errno', None),
+                winerror=getattr(diagnostic_error, 'winerror', None))
+            print(json.dumps(row, indent=2, allow_nan=False), file=sys.stderr, flush=True)
+        except BaseException:
+            # If stderr itself is broken, host_entry still raises the original.
+            pass
+        return None
+
+
+def host_entry():
+    try:
+        return host()
+    except Exception as error:
+        report_prelaunch_failure(error)
+        raise
+
+def preflight_entry():
+    global _PRELAUNCH_PHASE
+    _PRELAUNCH_PHASE = 'host.preflight'
+    try:
+        return preflight()
+    except Exception as error:
+        report_prelaunch_failure(error)
+        raise
+
 
 def read(path):
-    data = Path(path).read_bytes()
+    path = Path(path)
+    data = _publication_call('Path.read_bytes', path.read_bytes, None, path)
     if len(data) > 16 * 1024**2: raise ValueError('Private JSON exceeded bounded size')
     return json.loads(data)
 
@@ -57,15 +185,18 @@ def preflight():
     if sys.platform != 'win32': raise RuntimeError('Windows-only diagnostic')
     admission = read(E / 'admission.json'); pins = source_pins()
     ref = 'refs/heads/' + BRANCH
-    if (ROOT / '.git/HEAD').read_text().strip() != 'ref: ' + ref: raise RuntimeError('Reviewed isolated branch required')
-    if (ROOT / '.git' / ref).read_text().strip() != BASE: raise RuntimeError('Reviewed base required')
+    head_path, ref_path = ROOT / '.git/HEAD', ROOT / '.git' / ref
+    if _publication_call('Path.read_text', head_path.read_text, None, head_path).strip() != 'ref: ' + ref: raise RuntimeError('Reviewed isolated branch required')
+    if _publication_call('Path.read_text', ref_path.read_text, None, ref_path).strip() != BASE: raise RuntimeError('Reviewed base required')
     if admission.get('base_commit') != BASE or admission.get('branch') != BRANCH: raise RuntimeError('Exact base/branch admission required')
     if admission.get('source_pins') != pins: raise RuntimeError('Exact reviewed source pin map required')
     executable = admission.get('python_executable')
     if not isinstance(executable, str) or not Path(executable).is_absolute(): raise RuntimeError('Reviewed original API interpreter path required')
-    if Path(sys.executable).resolve() != Path(executable).resolve(): raise RuntimeError('Original API interpreter required')
+    current = _publication_call('Path.resolve', lambda: Path(sys.executable).resolve(), None, sys.executable)
+    expected = _publication_call('Path.resolve', lambda: Path(executable).resolve(), None, executable)
+    if current != expected: raise RuntimeError('Original API interpreter required')
     if sha(sys.executable) != admission.get('python_executable_sha256'): raise RuntimeError('API interpreter hash differs')
-    if OUT.exists() or not P.is_dir(): raise RuntimeError('Fresh exclusive attempt and existing private parent required')
+    if _publication_call('Path.exists', OUT.exists, None, OUT) or not _publication_call('Path.is_dir', P.is_dir, None, P): raise RuntimeError('Fresh exclusive attempt and existing private parent required')
     return admission, pins
 
 def image_bytes():
@@ -225,19 +356,26 @@ def worker():
     return 0 if pair['classification'] == 'PASS' else 1
 
 def host():
+    global _PRELAUNCH_PHASE
+    _PRELAUNCH_PHASE = 'host.preflight'
     began = time.monotonic(); admission, pins = preflight()
     sys.path.insert(0, str(ROOT / 'api'))
     sys.path.insert(0, str(E))
     from diagnostic_process import _OwnedJob, _host_health, _error_detail, _timing_record
+    _PRELAUNCH_PHASE = 'host.initial-resources'
     initial = _host_health(P)
     if time.monotonic() - began > 5 or pins != source_pins(): raise RuntimeError('Fresh prelaunch pins/admission budget failed')
-    OUT.mkdir(exist_ok=False)
+    _PRELAUNCH_PHASE = 'host.reserve-output'
+    _publication_call('output.mkdir-exclusive', lambda: OUT.mkdir(exist_ok=False), None, OUT)
     attempt = dict(CPU_only=True, maximum_control_pairs=1, base_commit=BASE, branch=BRANCH, source_pins=pins,
                    admission_sha256=sha(E / 'admission.json'), python_executable_sha256=admission['python_executable_sha256'],
                    initial_resources=initial, deadline_seconds=90, process_and_job_bytes=6 * 1024**3,
                    ram_floor_bytes=12 * 1024**3, disk_floor_bytes=2 * 1024**3, stage_timeout_s=25,
                    active_end=began + 72, grace_end=began + 80, force_end=began + 85, hard_end=began + 90)
-    save(OUT / 'attempt.json', attempt); finished = threading.Event()
+    _PRELAUNCH_PHASE = 'host.attempt-publication'
+    save(OUT / 'attempt.json', attempt)
+    _PRELAUNCH_PHASE = 'host.execution'
+    finished = threading.Event()
     def hard_stop():
         if not finished.wait(max(0, attempt['hard_end'] - time.monotonic())): os._exit(124)
     threading.Thread(target=hard_stop, daemon=True).start()  # Own kill-on-close Job enforces final containment.
@@ -333,11 +471,7 @@ def host():
 if __name__ == '__main__':
     if sys.argv[1:] == ['--worker']: raise SystemExit(worker())
     elif sys.argv[1:] == ['--preflight']:
-        preflight(); print(json.dumps({'classification': 'STATIC_PREFLIGHT_PASS', 'maximum_control_pairs': 1}))
+        preflight_entry(); print(json.dumps({'classification': 'STATIC_PREFLIGHT_PASS', 'maximum_control_pairs': 1}))
     elif not sys.argv[1:]:
-        try: raise SystemExit(host())
-        except Exception as exc:
-            if P.is_dir() and not OUT.exists():
-                save(P / 'preflight-error.json', {'type': type(exc).__name__, 'message': str(exc), 'winerror': getattr(exc, 'winerror', None), 'native': getattr(exc, 'amd_native_failure', None), 'traceback': traceback.format_exc()})
-            print(json.dumps({'classification': 'BLOCKED'})); raise SystemExit(1)
+        raise SystemExit(host_entry())
     else: raise SystemExit('Unsupported Windows diagnostic invocation')
