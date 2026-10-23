@@ -1,0 +1,123 @@
+{
+  "schema": "modly.amd.windows-upstream-authority.outcome-review.v1",
+  "base": "7400e8c8b72e9e0984aa8e9b33619405be17b445",
+  "classification": "BLOCKED_NATIVE_AUTHORITY_BRIDGE",
+  "reviewer": "independent-production-authority-audit-agent",
+  "verdicts": {
+    "native_fixture_context_control_and_identity_binding": "PASS_RECORDED_SYNTHETIC_EXECUTION_ONLY",
+    "native_worker_zero_exit_and_success_terminal": "PASS_TRUSTED_BOOTSTRAP_PROTOCOL",
+    "native_job_empty_unforced_cleanup": "PASS_RECORDED_ACCOUNTING",
+    "native_completion_authority_issuance": "BLOCKED_NOT_ISSUED",
+    "upstream_ticket_acceptance": "BLOCKED_NOT_RUN",
+    "native_copy_replay_checks": "NOT_RUN",
+    "CPU_one_use_copy_cancellation_and_deadline_contract": "PASS_MOCKED_ONLY",
+    "complete_upstream_or_shape_job": "NOT_RUN",
+    "WSL": "NOT_RUN",
+    "GPU_neural_or_Generate": "NOT_RUN"
+  },
+  "first_failure": {
+    "type": "ValueError",
+    "message": "Bound Windows completion: invalid heartbeat phase",
+    "phase": "normal.control.PING",
+    "source": "api/services/amd_stage_process.py",
+    "source_lines": [
+      705,
+      588,
+      402,
+      362
+    ],
+    "native_Win32_API_error": false
+  },
+  "cause": "The bound loop observed proc.poll()==None, consumed trusted terminal success, then sent/flushed a due PING. The new _WindowsCompletion.control rejects heartbeat after terminal. This is the first recorded validation failure, not a captured Win32 API failure.",
+  "secondary_failure": "Cleanup sent/flushed CANCEL; the success-only facts validator rejected cancellation/control. This secondary error does not replace the PING failure.",
+  "metrics": {
+    "native_attempts": 1,
+    "host_elapsed_s": 11.85899999999856,
+    "shell_host_process_elapsed_s": 14.7828319,
+    "coordinator_elapsed_s": 7.485000000000582,
+    "runner_elapsed_s": 7.2039999999997235,
+    "native_identity_readiness_elapsed_s": 6.235000000000582,
+    "health_records": 269,
+    "minimum_available_ram_bytes": 19180949504,
+    "minimum_free_disk_bytes": 136122306560,
+    "outer_peak_job_bytes": 41369600,
+    "outer_peak_process_bytes": 26144768,
+    "stage_peak_job_bytes": 21663744,
+    "stage_peak_process_bytes": 9846784,
+    "outer_total_processes": 9,
+    "stage_total_processes": 6,
+    "outer_final_active": 0,
+    "stage_final_active": 0,
+    "forced_cleanup": false,
+    "protocol_records": 14,
+    "received_PING_count": 10,
+    "sent_PING_count": 11,
+    "unique_focused_cpu_tests": 70,
+    "independent_mocked_tests": 37
+  },
+  "source_pins": {
+    "api/services/amd_stage_process.py": "c2596071d68d27a5f50a413ca8f783752addfe2fae30b498fefecc6c32e7502a",
+    "api/services/amd_stage_bootstrap.py": "2ee86de9ce5b4749c12561d87ffeaecaa35b050c25255158a99c08e0ebd414ea",
+    "api/services/amd_completed_result.py": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+    "api/services/amd_upstream_job.py": "a507dc6a3c4691cc07e67bec4ca5b11ddda27c93209a7c61e228b67b1ef534f7",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/windows_qualification.py": "741585c25995ee64ec79790d0fb6c6d77e175150a58cc7e2d35553dbf55ae029",
+    "api/services/amd_windows_authority.py": "5b708973d612b6c538a8f40c6b43a7be8c335ea690b550fedd9b93c7286dffb8",
+    "api/tests/test_amd_windows_lifecycle_authority.py": "4c170c8a7b7cfe224ae1dffd2290e9c4ff6cec7a0bd654d7ef947c76b43eb6e8",
+    "api/tests/test_amd_windows_authority.py": "77d11ebfe25bbad5941e39b621640c2639da4117648a150e64c8372a0716d99e",
+    "docs/compatibility/amd-windows-upstream-authority-evidence/qualification.py": "b6e86b233dff6d5d34492ef42ee6e464fe29d85d2ba19bb9136025598433981b",
+    "docs/compatibility/amd-windows-upstream-authority-evidence/coordinator.py": "135d70212d1431912dc376844d605d3c7a9b4e8c1147a850084c31e05ff4316c",
+    "docs/compatibility/amd-windows-upstream-authority-evidence/fixture.py": "e9a5412ee71dc4f1a6ed1806b4b87bf0c838b94463983d3faac4ffdaa9df0810",
+    "docs/compatibility/amd-windows-upstream-authority-evidence/test_qualification.py": "2fa956999967500c1eb8a3df89d4752b71b45e8ddd9e6b892f8f0587ee2df920",
+    "docs/compatibility/amd-windows-upstream-authority-evidence/outside_command.ps1": "02f46bf3dd32f0fe2081caa65cc33197f4e299fc96141f6b4332fb9ac352d158"
+  },
+  "private_verification_sha256": "23f138c924c148a5cc56a4e3d6fefc0e0b7a4f6a118338e3cd5d7d1e4fe1bd94",
+  "public_receipt_sha256": {
+    "admission.json": "41e387a5f1d50cae1a3e64c466b6572df18e8e0def844bc5882bd232b9edb729",
+    "preexecution-review.json": "acb67fcfe353e885f56f00c88fa60f7f7942082e3d94f4f390b2d9ec28e2dadd",
+    "tests.json": "8b01add7bbfaf88e7a7eb51e7f29c81208cf3f75519f5395db358eee30b62471",
+    "independent-cpu-tests.json": "5e0a29b2eae85676b9ea6024ec8fb93ca5df01397a16c5355bb8fc680bc5dff2",
+    "preservation-before.json": "bfb846e2e330b0350f12971eb83307d9273b4dc66e931674a4746960b4b8b34b",
+    "preservation-after.json": "64df44ef08542e602e6be82fd557d2b9be2bf4a97a4e56b496a02ccd160a07a5",
+    "execution-summary.json": "877da0d202bbca3728a3dd534e5abc5a6ecd2b7139bddc031cb7e4d009fcef5c"
+  },
+  "raw_evidence_sha256": {
+    "attempt": "276d7c19bb653f0368ad0939cb652dd8a1462a5e2eba1194cabcb7e925aac686",
+    "outer_result": "e8ffb206169c56573b59bb0ec5b9d55836708b29314b2444437857394185c865",
+    "coordinator_result": "c108ee11fb9d08a3696d2ea4d8033201748cadac7a137ee02958aa6eb5fa0ade",
+    "runner_receipt": "22b150a02d7228cf2c8eb5a8b54a4869e9b484084a676e25a6169de496cf651f",
+    "bootstrap_protocol": "e737237062efd558a77cefada1ca84f9b2e8de1d0dbab5954945aff5099ff0af",
+    "launch_spec": "bf33873d99cc0d50fa9e77ce215c08a79ccb379c972d101e60940abe2775f0ef",
+    "fixture_ready": "09d166471f646caa18801da712ad8ef52ddeaed124f23e45aaa3f18a8c05423c",
+    "fixture_release": "f36cf19949f90f4bcf72b0fe3b6266dd1d74a81e1d63421d6e69e329d67e58d6",
+    "synthetic_output": "6b2a0d41ab57a860296113352794889170d6c0bddc16fadb2f9053a9073ec340",
+    "host_request": "b57957916f551ad503a965b44bd85d612faf33db8ef7f004889742b2bbff70ce",
+    "outside_context": "7338ff0c41fbcd57256bc992fa6c9540d8d765e28a31a9097b49cd3b3b4f2fe8",
+    "outside_result": "820c8240f7f088611072d473a359ce94481ed83feb9502f5772d984d482bb650"
+  },
+  "checks": [
+    "All13 frozen source pins and interpreter/admission/review/expected-user hashes match actual attempt and current sources.",
+    "Actual same-shell name/SID match expected and earlier accepted context; admin role disabled, SYSTEM/anonymous false, no RunAs, require_escalated value recorded. Supported mode additionally relies on parent tool transcript.",
+    "Submitted synthetic bytes/input-contract, complete original context, separate control nonce, exact command/stage/deadline and current native membership/image/creation identity match actual saved request, launch and readiness.",
+    "Exact labelled synthetic output exists. Trusted bootstrap protocol reports child.wait exit0 without child cancellation/force, then natural succeeded terminal.",
+    "Sticky post-terminal PING failure prevented issuance; coordinator stopped on authority=None. Copied/replayed native probes and acceptance were not reached; no conditioning/shape completion receipt exists.",
+    "Final stage and outer Jobs are empty without forced cleanup. Runner remains failed/natural=false, returncode=null, with bootstrap_returncode absent because assignment was never reached.",
+    "269 health records meet RAM/disk floors; OS peaks and25s/90s bounds hold. Retained259/live samples can be stale and do not establish surviving processes.",
+    "70 distinct focused CPU tests include37 independently repeated mocks; overlap is not added as new coverage. Reviewer reran no tests or native execution.",
+    "Private preservation before/after state equal; public/private hashes match and100protected identities/78small hashes, old native PASS evidence, caches and130prior heads remain preserved within scope."
+  ],
+  "limits": [
+    "Sole recorded native attempt is BLOCKED. No code correction, retry, alternate native run or further execution occurred.",
+    "No completion authority was issued or accepted natively. One-use/copy/replay proof remains CPU-only.",
+    "Trusted host interpreter and ordinary private IPC are assumed; no general hostile same-user-process isolation claim.",
+    "Native evidence is one synthetic conditioning worker, not semantic/model/checkpoint closure, complete upstream job, WSL, GPU or Generate.",
+    "Final Job accounting proves emptiness; no all-process exit0, unsaved parent graph or zero-byte allocator release is inferred.",
+    "The preservation receipts no-execution flag describes only the read-only preservation checker. The overall mission separately recorded exactly one native attempt, which was BLOCKED."
+  ],
+  "findings": [
+    {
+      "severity": "BLOCKING_NATIVE_OUTCOME",
+      "title": "Post-terminal heartbeat rejected by completion validator",
+      "resolved": false
+    }
+  ]
+}

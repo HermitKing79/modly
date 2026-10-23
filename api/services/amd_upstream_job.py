@@ -103,6 +103,7 @@ class UpstreamJob:
         self._blocked = False
         self._cancel_event = cancel_event
         self._pending = self._completion = None
+        self._bound_ticket = None
         self._accepted, self._outputs = [], []
         self._check()
         self._context = CompletionContext.from_dict(context.to_dict())
@@ -206,6 +207,7 @@ class UpstreamJob:
     def accept(self, ticket, observation):
         try:
             self._check()
+            _need(self._bound_ticket is None, 'Windows-bound tickets require original runner authority')
             _need(ticket is self._pending and ticket is not None and type(observation) is HostStageObservation
                   and observation.ticket is ticket and observation.stage_id == ticket.stage_id
                   and observation.nonce == ticket.nonce and dict(observation.product_context) == self._context.to_dict(),
@@ -213,23 +215,74 @@ class UpstreamJob:
             _need(type(observation.returncode) is int and observation.returncode == 0
                   and observation.natural is True and observation.settled is True and observation.forced is False,
                   'Naturally settled successful host stage observation required')
-            self._pending = None
-            self._reauthenticate()
-            stage = self._stages[len(self._accepted)]
-            outputs = tuple(_snapshot(spec.path, spec.maximum_bytes, ticket.created_ns) for spec in stage.outputs)
-            receipt = _save(self._directory / (stage.stage_id + '.json'), {
-                'schema': 'modly.amd.upstream-stage.v1', 'qualification': 'CPU_CONTRACT_ONLY',
-                'product_context': self._context.to_dict(), 'stage_id': ticket.stage_id, 'nonce': ticket.nonce,
-                'predecessor_sha256': ticket.predecessor_sha256, 'natural': True, 'settled': True, 'forced': False,
-                'outputs': [row.document() for row in outputs]}, self._context.created_ns)
-            self._outputs.extend(outputs)
-            self._accepted.append(receipt)
-            self._reauthenticate()
-            self._check()
-            return FilePin(receipt.path, receipt.sha256)
+            return self._accept_outputs(ticket, 'CPU_CONTRACT_ONLY')
         except BaseException:
             self._blocked = True
             raise
+
+    def bind_windows(self, ticket, runner, command):
+        """Bind one host ticket to the original Windows runner; launches nothing."""
+        try:
+            self._check()
+            _need(ticket is self._pending and ticket is not None and self._bound_ticket is None,
+                  'One exact unbound pending upstream ticket required')
+            from services.amd_windows_authority import bind
+            token = bind(self, ticket, runner, command)
+            self._bound_ticket = ticket
+            return token
+        except BaseException:
+            self._blocked = True
+            raise
+
+    def accept_windows(self, ticket, runner, authority):
+        """Consume runner-issued lifecycle authority, never a worker/result dict."""
+        try:
+            self._check()
+            _need(ticket is self._pending and ticket is self._bound_ticket and ticket is not None,
+                  'Exact pending Windows-bound upstream ticket required')
+            from services.amd_windows_authority import consume, document
+            summary, runner_pin = consume(authority, self, ticket, runner)
+            summary = document(summary)
+            runner_receipt = _snapshot(runner_pin.path, 4*1024**2, ticket.created_ns, runner_pin.sha256)
+            fixed = tuple(_snapshot(Path(row['path']), 64*1024**2, expected=row['sha256'])
+                          for row in summary['binding']['sources'])
+            _need([row.document() for row in fixed] == summary['binding']['sources'],
+                  'Original Windows source identity changed during acceptance')
+
+            def validate():
+                self._check()
+                _need(time.monotonic() < summary['binding']['deadline_monotonic_s'],
+                      'Windows authority expired during acceptance')
+                for row in (*fixed, runner_receipt):
+                    row.recheck()
+
+            return self._accept_outputs(ticket, 'WINDOWS_CPU_SUPERVISED',
+                extra=dict(genuine_execution_qualified=False, windows_supervision=summary,
+                           runner_receipt=runner_receipt.document()),
+                witnesses=(*fixed, runner_receipt), validate=validate)
+        except BaseException:
+            self._blocked = True
+            raise
+
+    def _accept_outputs(self, ticket, qualification, *, extra=None, witnesses=(), validate=None):
+        self._reauthenticate()
+        if validate is not None:
+            validate()
+        stage = self._stages[len(self._accepted)]
+        outputs = tuple(_snapshot(spec.path, spec.maximum_bytes, ticket.created_ns) for spec in stage.outputs)
+        receipt = _save(self._directory / (stage.stage_id + '.json'), {
+            'schema': 'modly.amd.upstream-stage.v1', 'qualification': qualification,
+            'product_context': self._context.to_dict(), 'stage_id': ticket.stage_id, 'nonce': ticket.nonce,
+            'predecessor_sha256': ticket.predecessor_sha256, 'natural': True, 'settled': True, 'forced': False,
+            'outputs': [row.document() for row in outputs], **(extra or {})}, self._context.created_ns)
+        self._outputs.extend((*outputs, *witnesses))
+        self._accepted.append(receipt)
+        self._reauthenticate()
+        if validate is not None:
+            validate()
+        self._check()
+        self._pending = self._bound_ticket = None
+        return FilePin(receipt.path, receipt.sha256)
 
     def complete(self):
         try:

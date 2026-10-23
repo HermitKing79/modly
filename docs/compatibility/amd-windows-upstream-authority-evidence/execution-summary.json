@@ -1,0 +1,72 @@
+{
+  "schema": "modly.windows-upstream-authority-result.v1",
+  "verdict": "BLOCKED",
+  "native_attempts": 1,
+  "retries": 0,
+  "outside_context": {
+    "supported_tool_override": "require_escalated",
+    "administrator_role_enabled": false,
+    "windows_runas_used": false,
+    "same_user_attestation": true
+  },
+  "authority_issued": false,
+  "accepted_stage_receipt": false,
+  "native_negative_checks_reached": false,
+  "first_error": {
+    "type": "ValueError",
+    "message": "Bound Windows completion: invalid heartbeat phase",
+    "phase": "normal.control.PING",
+    "native_api_error": false
+  },
+  "secondary_error": {
+    "type": "ValueError",
+    "message": "Bound Windows completion: cancellation/control forbids success",
+    "phase": "cleanup.control.CANCEL"
+  },
+  "protocol_child_exit_code": 0,
+  "protocol_terminal": "succeeded",
+  "runner_terminal": "failed",
+  "runner_natural": false,
+  "runner_returncode": null,
+  "runner_bootstrap_returncode": null,
+  "stage_job": {
+    "active": 0,
+    "total_processes": 6,
+    "authenticated_identities": 6,
+    "peak_process_bytes": 9846784,
+    "peak_job_bytes": 21663744,
+    "forced": false
+  },
+  "outer_job": {
+    "active": 0,
+    "total_processes": 9,
+    "peak_process_bytes": 26144768,
+    "peak_job_bytes": 41369600,
+    "forced": false
+  },
+  "host_elapsed_s": 11.85899999999856,
+  "stage_elapsed_s": 7.2039999999997235,
+  "wrapper_elapsed_s": 14.7828319,
+  "health_readings": 269,
+  "minimum_available_ram_bytes": 19180949504,
+  "minimum_free_disk_bytes": 136122306560,
+  "sources_unchanged": true,
+  "admission_unchanged": true,
+  "review_unchanged": true,
+  "interpreter_unchanged": true,
+  "genuine_neural": "NOT QUALIFIED",
+  "WSL": "NOT RUN",
+  "fresh_AMD_generation": "NOT RUN",
+  "generated_dispatch": "CLOSED",
+  "evidence_sha256": {
+    "outside-result.json": "820c8240f7f088611072d473a359ce94481ed83feb9502f5772d984d482bb650",
+    "outside-context.json": "7338ff0c41fbcd57256bc992fa6c9540d8d765e28a31a9097b49cd3b3b4f2fe8",
+    "cpu-once/attempt.json": "276d7c19bb653f0368ad0939cb652dd8a1462a5e2eba1194cabcb7e925aac686",
+    "cpu-once/host-result.json": "e8ffb206169c56573b59bb0ec5b9d55836708b29314b2444437857394185c865",
+    "cpu-once/pair-result.json": "c108ee11fb9d08a3696d2ea4d8033201748cadac7a137ee02958aa6eb5fa0ade",
+    "cpu-once/runner/conditioning/receipt.json": "22b150a02d7228cf2c8eb5a8b54a4869e9b484084a676e25a6169de496cf651f",
+    "cpu-once/runner/conditioning/protocol.jsonl": "e737237062efd558a77cefada1ca84f9b2e8de1d0dbab5954945aff5099ff0af",
+    "cpu-once/synthetic-evidence/conditioning/synthetic-output.json": "6b2a0d41ab57a860296113352794889170d6c0bddc16fadb2f9053a9073ec340"
+  },
+  "runner_bootstrap_returncode_recorded": false
+}

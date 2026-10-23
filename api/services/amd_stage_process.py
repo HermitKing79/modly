@@ -12,6 +12,7 @@ import json
 import os
 from pathlib import Path
 import re
+import queue
 import shutil
 import subprocess
 import sys
@@ -36,6 +37,7 @@ class StageCommand:
     cwd: Path
     context: dict
     timeout_s: float = 180.0
+    control_nonce: str | None = None
 
     def __post_init__(self):
         if not isinstance(self.stage_id, str) or not _NAME.fullmatch(self.stage_id):
@@ -49,6 +51,8 @@ class StageCommand:
             raise ValueError("A completion context with nonce is required")
         if isinstance(self.timeout_s, bool) or not 0 < self.timeout_s <= 180:
             raise ValueError("Stage deadline must be within 180 seconds")
+        if self.control_nonce is not None and not re.fullmatch(r'[a-f0-9]{32}', self.control_nonce):
+            raise ValueError('Host ticket control nonce must be 32 lowercase hex characters')
 
 
 class _Basic(ctypes.Structure):
@@ -337,13 +341,138 @@ def _linux_settled(terminal):
             )
 
 
+class _WindowsCompletion:
+    """Local native facts, captured before mutable diagnostic snapshots escape.
+
+    This validator alone is not an authority issuer. Only the runner's registered
+    invocation can seal after actual lifecycle, closure and receipt publication.
+    """
+    def __init__(self, bootstrap_pid, owner, handle, expected_image=None):
+        self.bootstrap_pid, self.owner, self.handle = bootstrap_pid, owner, int(handle)
+        self.expected_image = expected_image
+        self.identities = {}
+        self.go = self.go_received = self.exited = self.terminal = False
+        self.child = None
+        self.active = self.total = None
+        self.peak_process = self.peak_job = 0
+
+    @staticmethod
+    def need(value, message):
+        if not value:
+            raise ValueError('Bound Windows completion: ' + message)
+
+    def observe(self, snapshot):
+        self.need(snapshot.get('job_owner') == self.owner, 'foreign private Job')
+        for row in snapshot.get('process_identities', []):
+            native = row.get('image_authentication', {})
+            self.need(row.get('job_membership_verified') is True
+                and type(row.get('creation_filetime')) is int and row['creation_filetime'] > 0
+                and row.get('job_owner') == self.owner and row.get('job_handle') == self.handle
+                and row.get('image') and native.get('api') == 'QueryFullProcessImageNameW'
+                and native.get('succeeded') is True and native.get('observed_utc')
+                and all(native.get(k) == row.get(k) for k in
+                        ('pid', 'creation_filetime', 'job_owner', 'job_handle', 'image')),
+                'unqualified process membership/creation/image')
+            key = (row['pid'], row['creation_filetime'])
+            # Freeze primitives now; no reference to result/last_windows_observation.
+            self.identities[key] = json.dumps(row, sort_keys=True)
+        self.active, self.total = snapshot['active'], snapshot['total_processes']
+        self.peak_process = max(self.peak_process, snapshot['peak_process_bytes'])
+        self.peak_job = max(self.peak_job, snapshot['peak_job_bytes'])
+        self.need(self.peak_process <= MEMORY_LIMIT and self.peak_job <= MEMORY_LIMIT,
+                  'native memory cap exceeded')
+
+    def identity(self, pid):
+        rows = [json.loads(value) for (known, _), value in self.identities.items() if known == pid]
+        self.need(len(rows) == 1, 'missing or reused process identity')
+        if self.expected_image is not None:
+            self.need(os.path.normcase(rows[0]['image']) == os.path.normcase(self.expected_image),
+                      'launched executable image differs from bound interpreter')
+        return rows[0]
+
+    def control(self, action):
+        self.need(action in ('GO', 'PING'), 'cancellation/control forbids success')
+        if action == 'GO':
+            self.need(not self.go, 'duplicate GO')
+            row = self.identity(self.bootstrap_pid)
+            self.need(row.get('observed_alive', {}).get('alive') is True
+                      and row.get('identity_source') == 'native-image-query', 'bootstrap not live before GO')
+            self.go = True
+        else:
+            self.need(self.go and not self.terminal, 'invalid heartbeat phase')
+
+    def event(self, event):
+        kind = event.get('event')
+        self.need(not self.terminal, 'protocol after terminal')
+        if kind == 'control-received':
+            action = event.get('action')
+            self.need(self.go and action in ('GO', 'PING'), 'unapproved received control')
+            if action == 'GO':
+                self.need(not self.go_received and self.child is None, 'duplicate/out-of-order received GO')
+                self.go_received = True
+            else:
+                self.need(self.go_received, 'heartbeat before GO')
+        elif kind == 'stage-started':
+            self.need(self.go_received and self.child is None and type(event.get('pid')) is int
+                      and event['pid'] > 0 and event['pid'] != self.bootstrap_pid, 'invalid child launch')
+            self.child = event['pid']
+        elif kind == 'child-exited':
+            self.need(self.child is not None and not self.exited and event.get('child_pid') == self.child
+                      and type(event.get('returncode')) is int and event['returncode'] == 0
+                      and event.get('cancellation_sent') is False and event.get('forced') is False,
+                      'unsuccessful child exit')
+            self.identity(self.child)
+            self.exited = True
+        elif kind == 'terminal':
+            self.need(self.exited and event.get('terminal') == 'succeeded'
+                      and type(event.get('returncode')) is int and event['returncode'] == 0
+                      and event.get('natural') is True and event.get('forced') is False
+                      and event.get('cooperative_cancelled') is False, 'unsuccessful terminal')
+            self.terminal = True
+        else:
+            raise ValueError('Bound Windows completion: unexpected/error protocol event: ' + str(kind))
+
+    def finish(self, bootstrap_returncode, closed):
+        self.need(self.terminal and self.go and self.go_received and self.exited and closed
+                  and type(bootstrap_returncode) is int and bootstrap_returncode == 0
+                  and self.active == 0 and self.total == len(self.identities),
+                  'incomplete natural settlement or unobserved descendant identity')
+        return dict(terminal='succeeded', returncode=0, bootstrap_returncode=0,
+                    natural=True, settled=True, forced=False, diagnostic_errors=0,
+                    owned_remaining=0, total_processes=self.total,
+                    bootstrap_identity=self.identity(self.bootstrap_pid), child_identity=self.identity(self.child),
+                    peak_process_bytes=self.peak_process, peak_job_bytes=self.peak_job,
+                    descendant_ownership='all-accounted-process-identities-in-private-Windows-Job')
+
+
 class OwnedStageRunner:
     def __init__(self, evidence_dir: Path):
         self.evidence_dir = Path(evidence_dir)
         self.unsettled = False
         self.last_windows_observation = None
+        self._bindings = {}
 
     def run(self, command: StageCommand, cancel_event, tick=None):
+        return self._run(command, cancel_event, tick)
+
+    def run_bound(self, binding, tick=None):
+        from services.amd_windows_authority import _Invocation
+        invocation = self._bindings.get(binding)
+        if type(invocation) is not _Invocation:
+            raise ValueError('Exact unused host-owned Windows invocation required')
+        try:
+            command, cancel_event = invocation.start(self)
+            self._bindings.pop(binding, None)
+            result = self._run(command, cancel_event, tick, _bound=invocation)
+            if invocation.authority is None:
+                invocation.fail()
+            return result, invocation.authority
+        except BaseException:
+            self._bindings.pop(binding, None)
+            invocation.fail()
+            raise
+
+    def _run(self, command: StageCommand, cancel_event, tick=None, *, _bound=None):
         if self.unsettled:
             raise RuntimeError("Prior owned stage settlement is unverified; runner is blocked")
         began = time.monotonic()
@@ -353,9 +482,11 @@ class OwnedStageRunner:
         protocol_path = directory / "protocol.jsonl"
         spec = {"stage_id": command.stage_id, "kind": command.kind, "argv": list(command.argv),
                 "cwd": str(command.cwd), "context": json.loads(json.dumps(command.context)),
-                "nonce": command.context["nonce"], "timeout_s": command.timeout_s,
+                "nonce": command.control_nonce or command.context["nonce"], "timeout_s": command.timeout_s,
                 "memory_limit": MEMORY_LIMIT, "stdout_file": str(directory / "stage.stdout.txt"),
                 "stderr_file": str(directory / "stage.stderr.txt")}
+        if _bound is not None:
+            spec['upstream_ticket_bound'] = True
         result = {"stage_id": command.stage_id, "context": spec["context"], "nonce": spec["nonce"],
                   "terminal": "failed", "returncode": None, "windows_settled": True,
                   "linux_settled": None if command.kind == "windows" else False,
@@ -375,8 +506,44 @@ class OwnedStageRunner:
         cursor = 0
         phase = 'normal.initial-admission'
         shutdown = False
+        facts = None
+        failed = False
+        closed = False
+        protocol_thread = None
+        protocol_queue = queue.Queue(maxsize=16384)
+        protocol_done = threading.Event()
+        protocol_errors = []
+
+        def receive_private_protocol(stream, diagnostic):
+            """Bootstrap-only pipe; the worker receives separate stdout/stderr.
+
+            The saved protocol file is evidence, never a bound-path input.
+            """
+            total = 0
+            try:
+                while True:
+                    line = stream.readline(65537)
+                    if not line:
+                        break
+                    total += len(line)
+                    if len(line) > 65536 or not line.endswith(b'\n') or total > 1024*1024:
+                        raise ValueError('Private bootstrap protocol exceeded size or has partial record')
+                    if diagnostic.write(line) != len(line):
+                        raise OSError('Short private bootstrap diagnostic write')
+                    protocol_queue.put_nowait(line)
+            except BaseException as exc:
+                protocol_errors.append(exc)
+            finally:
+                try:
+                    stream.close()
+                except BaseException as exc:
+                    protocol_errors.append(exc)
+                finally:
+                    protocol_done.set()
 
         def capture(exc):
+            nonlocal failed
+            failed = True
             detail = _error_detail(exc, phase)
             detail.update(stage_id=command.stage_id, context=spec['context'],
                           supervisor_job_owner=getattr(job, 'job_owner', None),
@@ -389,6 +556,8 @@ class OwnedStageRunner:
             phase = ('cleanup' if shutdown else 'normal') + '.observe'
             if tick is not None:
                 tick()
+            if _bound is not None:
+                _bound.check_cancel()
             try:
                 health = _host_health(directory)
             except _HostResourceError as exc:
@@ -399,6 +568,8 @@ class OwnedStageRunner:
             if job is not None:
                 job.phase = phase
                 result["windows"] = job.snapshot()
+                if facts is not None:
+                    facts.observe(result['windows'])
                 snapshot = {'utc': _utc(), 'monotonic_s': time.monotonic(), 'elapsed_s': time.monotonic() - began,
                             'phase': phase, **result['windows']}
                 self.last_windows_observation = snapshot
@@ -413,25 +584,42 @@ class OwnedStageRunner:
                                           "nonce": spec["nonce"]}) + "\n").encode())
             proc.stdin.flush()
             entry['flushed'] = True
+            if facts is not None:
+                facts.control(action)
 
         def read_events():
             nonlocal cursor, terminal, linux_ready, phase
             phase = ('cleanup' if shutdown else 'normal') + '.read-protocol'
-            if protocol_path.stat().st_size > 1024 * 1024:
-                raise RuntimeError("Stage protocol exceeded bounded size")
-            with protocol_path.open("rb") as stream:
-                stream.seek(cursor)
+            if _bound is not None:
+                if protocol_errors:
+                    raise RuntimeError('Private bootstrap transport failed') from protocol_errors[0]
+                lines = []
                 while True:
-                    line = stream.readline(65537)
-                    if not line or not line.endswith(b"\n"):
+                    try:
+                        lines.append(protocol_queue.get_nowait())
+                    except queue.Empty:
                         break
-                    if len(line) > 65536:
-                        raise RuntimeError("Oversized stage protocol record")
-                    cursor = stream.tell()
+            else:
+                if protocol_path.stat().st_size > 1024 * 1024:
+                    raise RuntimeError("Stage protocol exceeded bounded size")
+                lines = []
+                with protocol_path.open('rb') as stream:
+                    stream.seek(cursor)
+                    while True:
+                        line = stream.readline(65537)
+                        if not line or not line.endswith(b'\n'):
+                            break
+                        if len(line) > 65536:
+                            raise RuntimeError('Oversized stage protocol record')
+                        cursor = stream.tell()
+                        lines.append(line)
+            for line in lines:
                     event = json.loads(line)
                     if (event.get("stage_id"), event.get("nonce"), event.get("context")) != (
                             command.stage_id, spec["nonce"], spec["context"]):
                         raise RuntimeError("Stage protocol context/nonce mismatch")
+                    if facts is not None:
+                        facts.event(event)
                     if event.get("event") == "ready" and command.kind == "wsl":
                         if not attached or not _linux_ready(event) or linux_ready is not None:
                             raise RuntimeError("Unverified Linux launch identity")
@@ -467,15 +655,23 @@ class OwnedStageRunner:
             with protocol_path.open("xb", buffering=0) as protocol, (directory / "bootstrap.stderr.txt").open("xb") as errors:
                 phase = 'normal.subprocess.Popen'
                 proc = subprocess.Popen([sys.executable, "-B", "-I", "-S", str(_HERE / "amd_stage_bootstrap.py"), str(spec_path)],
-                                        stdin=subprocess.PIPE, stdout=protocol, stderr=errors,
+                                        stdin=subprocess.PIPE, stdout=subprocess.PIPE if _bound is not None else protocol, stderr=errors,
                                         cwd=str(command.cwd) if command.kind == "windows" else None,
                                         creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+                if _bound is not None:
+                    protocol_thread = threading.Thread(target=receive_private_protocol,
+                        args=(proc.stdout, protocol), daemon=True)
+                    protocol_thread.start()
                 result["windows_settled"] = False
                 phase = 'normal.job-attach'
                 job.phase = phase
                 job.attach(proc)
                 attached = True
+                if _bound is not None:
+                    facts = _WindowsCompletion(proc.pid, job.job_owner, job.handle, sys.executable)
                 observe()
+                if _bound is not None:
+                    _bound.recheck()
                 if cancel_event.is_set():
                     cancelled = True
                     control("CANCEL")
@@ -487,8 +683,14 @@ class OwnedStageRunner:
                 while True:
                     phase = 'normal.subprocess.poll'
                     exited = proc.poll() is not None
+                    if exited and protocol_thread is not None:
+                        protocol_thread.join(timeout=min(2, max(0, deadline-time.monotonic())))
+                        if not protocol_done.is_set():
+                            raise TimeoutError('Private bootstrap protocol EOF unverified')
                     read_events()
                     if exited:
+                        if _bound is not None and time.monotonic() >= deadline:
+                            raise TimeoutError('Bound Windows stage exceeded deadline before exit observation')
                         break
                     now = time.monotonic()
                     if cancel_event.is_set() and cancel_sent is None:
@@ -563,11 +765,14 @@ class OwnedStageRunner:
                     while job.snapshot()["active"] and time.monotonic() < grace_end:
                         time.sleep(.025)
                     if job.snapshot()["active"]:
+                        failed = True
                         result.update(forced=True, natural=False)
                         job.terminate()
                     settle_end = time.monotonic() + 4
                     while True:
                         result["windows"] = job.snapshot()
+                        if facts is not None:
+                            facts.observe(result['windows'])
                         if result["windows"]["active"] == 0:
                             result["windows_settled"] = True
                             break
@@ -582,6 +787,7 @@ class OwnedStageRunner:
                         phase = 'cleanup.job-close'
                         job.phase = phase
                         job.close()
+                        closed = True
                     except Exception as exc:
                         capture(exc)
                         result["windows_close_error"] = str(exc)
@@ -611,5 +817,38 @@ class OwnedStageRunner:
             if result["forced"]:
                 result["natural"] = False
             result.update(finished_utc=_utc(), elapsed_s=time.monotonic() - began)
+            if protocol_thread is not None:
+                protocol_thread.join(timeout=2)
+                if protocol_thread.is_alive() or protocol_errors:
+                    capture(RuntimeError('Private bootstrap protocol reader did not settle cleanly'))
+            # This path uses local native/control facts, never result status fields.
+            success_evidence = None
+            if _bound is not None and not failed and facts is not None:
+                try:
+                    if not protocol_done.is_set() or protocol_errors or not protocol_queue.empty():
+                        raise ValueError('Private bootstrap transport incomplete')
+                    if tick is not None:
+                        tick()
+                    health = _host_health(directory)
+                    result['observations'].append({'elapsed_s': time.monotonic()-began, **health})
+                except Exception as exc:
+                    capture(exc)
+            if _bound is not None and not failed and facts is not None:
+                try:
+                    if cancelled or cancel_event.is_set() or time.monotonic() >= deadline:
+                        raise ValueError('Bound completion cancelled or stale')
+                    _bound.recheck()
+                    success_evidence = facts.finish(proc.returncode, closed)
+                    success_evidence.update(receipt_path=str(receipt_path), elapsed_s=time.monotonic()-began,
+                                            control_provenance='private-bootstrap-stdout-pipe', protocol_eof=True)
+                except Exception as exc:
+                    capture(exc)
             receipt_path.write_text(json.dumps(result, indent=2), encoding="utf-8")
+            if success_evidence is not None:
+                try:
+                    _bound.seal(success_evidence)
+                except Exception as exc:
+                    _bound.fail()
+                    capture(exc)
+                    receipt_path.write_text(json.dumps(result, indent=2), encoding='utf-8')
         return result

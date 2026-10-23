@@ -1,0 +1,41 @@
+{
+  "schema": "modly.amd.windows-upstream-authority.final-report-review.v1",
+  "base": "7400e8c8b72e9e0984aa8e9b33619405be17b445",
+  "verdict": "ACCEPT_REPORT_OF_BLOCKED_NATIVE_OUTCOME",
+  "native_authority_result": "BLOCKED",
+  "report_sha256": "99503368e81cb34c92e413e744771f97c64eb00058a46e0a697cfeceaa13f948",
+  "receipt_sha256": {
+    "outcome-review.json": "6d1f7803108f2885d90a3c62d32f37382271d379c9f425c074864dc060ec4af5",
+    "execution-summary.json": "877da0d202bbca3728a3dd534e5abc5a6ecd2b7139bddc031cb7e4d009fcef5c",
+    "tests.json": "8b01add7bbfaf88e7a7eb51e7f29c81208cf3f75519f5395db358eee30b62471",
+    "independent-cpu-tests.json": "5e0a29b2eae85676b9ea6024ec8fb93ca5df01397a16c5355bb8fc680bc5dff2",
+    "preexecution-review.json": "acb67fcfe353e885f56f00c88fa60f7f7942082e3d94f4f390b2d9ec28e2dadd",
+    "admission.json": "41e387a5f1d50cae1a3e64c466b6572df18e8e0def844bc5882bd232b9edb729",
+    "preservation-before.json": "bfb846e2e330b0350f12971eb83307d9273b4dc66e931674a4746960b4b8b34b",
+    "preservation-after.json": "64df44ef08542e602e6be82fd557d2b9be2bf4a97a4e56b496a02ccd160a07a5"
+  },
+  "private_outcome_verification_sha256": "23f138c924c148a5cc56a4e3d6fefc0e0b7a4f6a118338e3cd5d7d1e4fe1bd94",
+  "checks": [
+    "Final report/summary match the independently inspected sole native attempt and frozen source hashes.",
+    "First PING-after-terminal validation failure and secondary cleanup rejection are distinguished from a Win32 API fault.",
+    "Synthetic output/native identity/child0 protocol are separated from absent completion authority, absent acceptance receipt and unreached native copy/replay tests.",
+    "Runner returncode is null; bootstrap_returncode was absent because assignment was not reached. Summary explicitly records this absence.",
+    "Timings,269resource samples, peaks,130prior-head preservation and100protected/78hash scope match saved evidence.",
+    "Native Jobs ended empty without force; runner natural=false/failure contract remains BLOCKED. No successful issuer/shape/WSL/GPU/Generate claim.",
+    "Public text/outcome contain no actual username/SID, product/control nonces or raw process-identity trace."
+  ],
+  "preservation_scope_note": "The preservation receipts no-execution flag describes only the read-only preservation checker. The overall mission separately recorded exactly one native attempt, which was BLOCKED.",
+  "findings_in_report": [],
+  "unresolved_native_findings": [
+    {
+      "severity": "BLOCKING_NATIVE_OUTCOME",
+      "title": "Post-terminal heartbeat rejected by completion validator",
+      "resolved": false
+    }
+  ],
+  "limits": [
+    "Saved evidence/source/hash review only. No tests, native query, worker, Job, WSL, GPU or retry performed by reviewer.",
+    "No production correction was made after the sole native attempt. Any terminal-wait correction/regression and later native attempt require separate authorization.",
+    "Publication remains to be verified; all130previous ref identities and main must remain unchanged."
+  ]
+}

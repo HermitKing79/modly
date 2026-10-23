@@ -55,6 +55,9 @@ def native_stage(spec):
                PYTHONDONTWRITEBYTECODE="1", PYTHONUTF8="1", PYTHONIOENCODING="utf-8")
     cancel_ack = str(Path(spec["stdout_file"]).with_name("cancel-ack.json"))
     env["MODLY_STAGE_CANCEL_ACK"] = cancel_ack
+    # Separate ticket control nonce; the complete product context is unchanged.
+    if spec.get('upstream_ticket_bound') is True:
+        env['MODLY_STAGE_CONTROL_NONCE'] = spec['nonce']
     forced = cancelled = False
     cancel_at = None
     last_host = time.monotonic()
