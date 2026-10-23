@@ -1,0 +1,98 @@
+{
+  "schema": "modly-standalone-dino-pre-execution-review-v1",
+  "reviewer": "independent-host-and-teardown-subagent",
+  "reviewed_utc": "2026-10-23T22:36:22.9439497Z",
+  "approval": "PASS",
+  "blockers": [],
+  "base_commit": "b8afdd58c3d01af264b92af5f4406fc8096dfb6d",
+  "reviewed_file_sha256": {
+    "scripts/compatibility/amd_zombie_dinov3.py": "63a6814dbe66e309d6d9e9bb142d437d1b1d7a3174edf99cdb3625fbbdd8bf36",
+    "scripts/compatibility/test_amd_zombie_dinov3.py": "002db5a84eecd91b951303777eee5d49ad0f84868d7e88fa805a2b80518cf5c0"
+  },
+  "original_files_unchanged_from_base": true,
+  "original_source_diff_exit_code": 0,
+  "original_file_sha256": {
+    "scripts/compatibility/amd_sparse_decoder_forward.py": "7d0d44e49aee42dc6154df9ae392d5df219a580dd87b214bc47d2f2331999fa8",
+    "scripts/compatibility/amd_dinov3_conditioning.py": "980f1e4576fabaab85c86eefb97b9050882e2f65096e8d63cd3e4eb4a9694e68",
+    "scripts/compatibility/amd_blaslt_teardown.py": "ac8456c29291f5ee0bc567086b152f7013f502996179e408577f5806ca3310dd",
+    "scripts/compatibility/amd_forward_owned_job.py": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64",
+    "scripts/compatibility/amd_forward_windows_monitor.py": "d7c7596bff6962ab0df695b03588316495dba5f8e7992866f70d9578f1ce6c90",
+    "scripts/compatibility/amd_forward_diagnostics.py": "468b325ed0f69f738b8d48173340f838b3e461bb2a72b4f994946dbe43fba4a9",
+    "scripts/compatibility/amd_feature_checkpoint.py": "f055eef51f9675a5cf61c8c404c39a1db6a5ac2197cce21da3c44d19a4df50e7",
+    "api/services/amd_offline_guard.py": "d874b8cbd0b873a8811c06fc61f28d3c6e36188371c4ab8a0fdc805ee83d6d00",
+    "api/services/amd_observer.py": "b403b1e00627d4101e7c75d6759079d1ea81748ab3350faea29e7eab9add4f88",
+    "scripts/compatibility/amd_object_occupancy.py": "56776c53e5e4f58f73e01c94696f4bc616f45d4e951b797c39525f92b39be1e5",
+    "scripts/compatibility/amd_sparse_sampling.py": "3f7fd4e01ed3c2fb69829e74290a4db5615541ac7cb572ae9e845e5e0595dc86",
+    "scripts/compatibility/amd_sparse_occupancy.py": "0bb248a66e28697d28dd659a5077098bc75cf0ecc7c6b54c5a4b616eba410e78",
+    "scripts/compatibility/amd_sparse_flow_forward.py": "66547b4c18120816d10a3a3606325b52eb430f59b8caf8a2b88d7d21d4e9af2a",
+    "scripts/compatibility/amd_sparse_flow_local.py": "7ff1e9ccd196d4168273e56542ed41de5714b54445a9020828700cc0475b3fcd",
+    "scripts/compatibility/amd_sparse_flow_contract.py": "b9e8fedcb949ddb8f9f9ace4d879392068238cfa25959e220de4f5ae29f7e9cc",
+    "scripts/compatibility/amd_sparse_sampling_contract.py": "3b6c69f8df5d4c24005203e9d171b098c880094a81850b913a60336fbdf025aa",
+    "scripts/compatibility/amd_sparse_sampling_control.py": "b647cdec29b27072e3a8c0d75c9b21990e5280bc985ecb3bc4259f880d615e7f",
+    "scripts/compatibility/amd_sparse_occupancy_contract.py": "ab14765c6fff7eb26da689d035645d84000980e1759ab66802f2bd0b018e71d7",
+    "scripts/compatibility/amd_sparse_occupancy_data.py": "78a4e01c227e2dd1d76ce8a6230ee985985572c9bae70362508e97888112869a",
+    "scripts/compatibility/amd_sparse_latent_checkpoint.py": "eb8a9461391b24d94413c7e4bb6548bd9282bb561525826d48a48bf3d66ffa05"
+  },
+  "cpu_admission": {
+    "tensor_count": 415,
+    "header_hash_domain": "8-byte length prefix plus padded JSON header",
+    "header_sha256": "3495b172735ff88c94b28a3257614f51764abfd7879b1498ec71abf855f259d3",
+    "available_ram_bytes": 17536045056,
+    "torch_imported": false,
+    "weights_loaded": false,
+    "parameter_bytes": 1212518400,
+    "required_ram_bytes": 5923815424,
+    "pixel_sha256": "e958193cad52cb3b15efd69410c3727853df61fd35310468d1b4540284ea2fb5",
+    "receipt": "artifacts/amd-zombie-dinov3-b8afdd5/dino/cpu-admission.json",
+    "receipt_sha256": "972640bacf884fad6c87a940f2c97f4426088f316b2f8bd69fb41f391365457d",
+    "config_sha256": "135ecd23e34a70b6fbed8b083fdecb319b7e3a54e3d849258bbe4ddcf1783bb5",
+    "checkpoint_sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+    "source_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+    "destination_free_bytes": 135439704064
+  },
+  "primary_focused_tests": {
+    "observed_passes": 20,
+    "elapsed_seconds": 4.242,
+    "status": "OK; complete stdout inspected independently",
+    "capture_sha256": "0c5bc1e5a8b5586254e8895e710150a20036dd0118b2da8f9b7f41be681da2d2",
+    "observed_tests": 20
+  },
+  "independent_focused_tests": {
+    "excluded_test": "test_plain_path_rejects_unc_aliases_and_hardlinked_files; positive native hardlink fixture was inspected in the primary 20-test capture and intentionally not rerun by reviewer",
+    "exit_code": 0,
+    "capture": "docs/compatibility/amd-zombie-dinov3-evidence/pre-execution-independent-cpu-tests.txt",
+    "capture_sha256": "6e5273c469912c50e5c31678623b644d01b34cf79c1ba33cce625f5d56a7e699",
+    "observed_passes": 19,
+    "observed_tests": 19,
+    "elapsed_seconds": 4.588,
+    "model_and_gpu_imports": "Denied by the test NoModels import finder"
+  },
+  "safeguards": {
+    "teardown": "Reviewed native binding/source hashes before GPU initialization; release references and RoPE cache; GC and synchronization; exactly one workspace clear; empty_cache and synchronization; zero allocated/reserved Torch bytes required",
+    "native_memory": "Original RAM margin, zero owned baseline Torch allocation/reservation, original free-device margin, allocation diagnostics and zero-release acceptance preserved. Original standalone DINO has no Job/process memory cap or allocator fraction cap; no such cap is claimed.",
+    "persistence": "Original exclusive conditioning.safetensors writer; fresh private scratch; bounded original post-exit reader; independently derived exact input/checkpoint/config/source/commit/runtime provenance",
+    "source_closure": "Added transitive pure-Python preprocessing import closure is included in committed_files; dynamic CPU-only census found only an inherited empty api/services/__init__.py outside the declared closure",
+    "original_profile": "amd_blaslt_teardown.profile and classify; unchanged",
+    "original_supervisor": "amd_sparse_decoder_forward.supervise; unchanged",
+    "ownership": "Private unnamed non-inheritable Job; KILL_ON_JOB_CLOSE; no breakaway; forced cleanup or unverified settlement cannot pass",
+    "acceptance": "Exact worker command, original recorded deadlines, genuine operation counts, healthy observers/journals/readers, zero release, zero active Job processes and no forced cleanup required",
+    "deadlines_seconds": {
+      "cpu": 120,
+      "overall": 360,
+      "gpu": 180
+    },
+    "real_handshake": "Owned Job attachment precedes OWNED_JOB_ATTACHED; actual strict CPU-ready gate and healthy monitors precede EXECUTE_ONE_DINOV3_CONDITIONING"
+  },
+  "routing_scope": {
+    "native_worker_executed_by_reviewer": false,
+    "gpu_or_wsl_launched_by_reviewer": false,
+    "attempt_marker_present_at_review": false,
+    "output": "Fresh private evidence leaf under the proof checkout so unchanged offline guard containment applies",
+    "input": "Existing exact private CPU-validated archive; original PNG copied byte-exactly and exclusively; no reserialization or replacement image",
+    "production_job_integration": "NOT QUALIFIED",
+    "computational_stage": "Exactly one standalone genuine DINOv3 conditioning stage",
+    "full_image_to_3d": "NOT RUN",
+    "downstream_entrypoints": "Object/generation main, profiles and three-stage loops are not called"
+  },
+  "qualification": "Pre-execution source and CPU admission PASS only. The authorized single GPU attempt must still satisfy all unchanged live gates, natural settlement and independent post-exit readback. Publish and verify the exact reviewed candidate commit before the exclusive attempt."
+}

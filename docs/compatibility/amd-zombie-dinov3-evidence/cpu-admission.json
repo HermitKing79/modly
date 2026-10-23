@@ -1,0 +1,69 @@
+{
+  "input": {
+    "source_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+    "source_bytes": 642414,
+    "pixel_sha256": "e958193cad52cb3b15efd69410c3727853df61fd35310468d1b4540284ea2fb5",
+    "source_size": [
+      1216,
+      1294
+    ],
+    "source_mode": "RGBA",
+    "input_png_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+    "crop_size": [
+      980,
+      980
+    ],
+    "crop_mode": "RGB",
+    "crop_pixel_sha256": "655ef5f8144975213ba5ce41e684473b9c0690f4b661561b74282c7ba949f92e",
+    "alpha": {
+      "mode": "alpha-only",
+      "size": [
+        1216,
+        1294
+      ],
+      "foreground_bbox": [
+        12,
+        12,
+        1197,
+        1251
+      ],
+      "resized_foreground_bbox": [
+        10,
+        10,
+        946,
+        990
+      ],
+      "rembg_required": false
+    },
+    "weights_loaded": false,
+    "gpu_initialized": false
+  },
+  "checkpoint_sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+  "config_sha256": "135ecd23e34a70b6fbed8b083fdecb319b7e3a54e3d849258bbe4ddcf1783bb5",
+  "header_sha256": "3495b172735ff88c94b28a3257614f51764abfd7879b1498ec71abf855f259d3",
+  "header_hash_domain": "8-byte length prefix plus padded JSON header",
+  "tensor_count": 415,
+  "parameter_bytes": 1212518400,
+  "dependencies": {
+    "torch": "2.13.0+rocm10.0.0",
+    "torchvision": "0.28.0+rocm10.0.0",
+    "transformers": "4.56.0",
+    "numpy": "2.5.3",
+    "pillow": "12.3.0",
+    "safetensors": "0.8.0",
+    "psutil": "7.2.2"
+  },
+  "available_ram_bytes": 17536045056,
+  "required_ram_bytes": 5923815424,
+  "destination_free_bytes": 135439704064,
+  "extra_destination_floor_bytes": 2147483648,
+  "original_initial_device_free_bytes": 3360002048,
+  "deadlines_seconds": {
+    "cpu": 120,
+    "gpu": 180,
+    "overall": 360
+  },
+  "torch_imported": false,
+  "weights_loaded": false,
+  "scope": "standalone conditioning only; no production authority or downstream execution"
+}

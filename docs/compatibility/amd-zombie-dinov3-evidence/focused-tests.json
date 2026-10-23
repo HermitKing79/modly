@@ -1,0 +1,20 @@
+{
+  "classification": "PASS",
+  "tests": 20,
+  "elapsed_seconds": 4.242,
+  "model_imports_blocked": true,
+  "native_or_gpu_execution": false,
+  "real_CPU_safetensors_roundtrip_bytes": 4214784,
+  "execution_context": "Supported outside-sandbox normal Windows user; administrator role disabled. CPU tests only.",
+  "stdout_sha256": "0c5bc1e5a8b5586254e8895e710150a20036dd0118b2da8f9b7f41be681da2d2",
+  "red_captures": {
+    "cpu-readback-tests-red.txt": "4fc607d3d1904129832c87a3d1fcd7ced5b268fe51a21c7f38a49c4e4d380bd6",
+    "cpu-tests-readback-red.txt": "0ac0217b0d281664c6234cc6da718a80edf735b02bbff5480eab69dda9049120",
+    "cpu-tests-red.txt": "b844f310dfd71f9b6e8ed55a3c705be3fe618dab9dd520608961dc168be3e67d"
+  },
+  "corrections": [
+    "New post-exit reader rejects altered command and deadline contracts.",
+    "Test initially rejected inherited historical run-proof paths; constrained restriction to newly added dependencies."
+  ],
+  "historical_suites_not_repeated": true
+}
