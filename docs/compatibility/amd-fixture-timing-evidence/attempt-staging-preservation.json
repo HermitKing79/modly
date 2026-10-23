@@ -1,0 +1,17 @@
+{
+  "schema": "modly.amd.fixture-timing.attempt-staging-preservation.v1",
+  "created_utc": "2026-10-23T08:42:15.235348+00:00",
+  "classification": "PASS_ARTIFACT_PRESERVED_ONLY",
+  "private_before_sha256": "35e32fa291f1a3ac3788ae0345252ceb3042d0c7da7a919c8cf81afa4334bcfe",
+  "private_after_sha256": "ead1fff888b718bb187805d9a0c45222c1c0aabc2c815412937be1101737725f",
+  "private_partial_file_count": 1,
+  "private_partial_file_bytes": 1991,
+  "all_names_sizes_mtimes_sha256_equal": true,
+  "complete_attempt_manifest_present": false,
+  "host_invocations_reported_by_coordinator": 1,
+  "new_control_pairs": 0,
+  "native_lifecycle_success": false,
+  "native_outcome_basis": "Coordinator reports the sole host invocation was BLOCKED before Job/worker launch; this preservation audit confirms only the incomplete manifest staging artifact and invokes no native process/Job probe.",
+  "historical_raw27_payload_bytes_read_for_staging_preservation": 0,
+  "scope_limit": "Artifact integrity and zero new control pairs do not qualify Windows readiness, lifecycle, cancellation or natural settlement."
+}

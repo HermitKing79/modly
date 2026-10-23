@@ -1,0 +1,118 @@
+{
+  "schema": "modly.fixture-timing.independent-outcome-review.v1",
+  "reviewed_utc": "2026-10-23T08:41:04.112227+00:00",
+  "classification": "BLOCKED_PRELAUNCH_NATIVE_QUALIFICATION_NOT_RUN",
+  "review_checks_pass": true,
+  "checks": {
+    "attempt_directory_has_only_staged_attempt": true,
+    "staging_is_valid_complete_json": true,
+    "staging_bytes_1991": true,
+    "published_attempt_absent": true,
+    "host_result_absent": true,
+    "worker_protocol_stage_evidence_absent": true,
+    "console_generic_blocked": true,
+    "launch_returncode_1": true,
+    "console_hash_bound": true,
+    "preexecution_review_hash_bound": true,
+    "preexecution_review_was_pass": true,
+    "cpu_review_remains_pass_26": true,
+    "staging_source_pins_equal_admission": true,
+    "sources_and_tests_still_match_review": true,
+    "admission_still_matches_review": true,
+    "interpreter_hash_label_matches_admission": true,
+    "attempt_publication_precedes_try_and_Job_creation": true,
+    "staged_resource_labels_above_floors": true
+  },
+  "preexecution_review": {
+    "classification": "PASS_REVIEW_ONE_WINDOWS_CPU_PAIR",
+    "sha256": "4557b796d9f0c1839d1f1043c96c79c706299a0a91a35621f26c5960484c0138",
+    "cpu_tests": 26,
+    "independent_failures": 0,
+    "independent_errors": 0,
+    "limit": "Mocked CPU/source review remains valid; it does not establish native lifecycle success"
+  },
+  "execution": {
+    "host_controller_invocations_recorded": 1,
+    "reported_returncode": 1,
+    "reported_controller_wall_ns": 2219000000,
+    "controller_timing_limit": "Launcher receipt measurement; not per-call latency or precise host failure time",
+    "actual_windows_target_sentinel_pairs": 0,
+    "worker_launched": false,
+    "owned_job_created": false,
+    "native_qualification": "NOT_RUN",
+    "host_outcome": "BLOCKED",
+    "fixture_readiness_timer_entered": false,
+    "stage_deadline_entered": false,
+    "outer_watchdog_thread_started": false,
+    "owned_cleanup": "NOT_APPLICABLE_NO_JOB_OR_WORKER_REACHED",
+    "automatic_retry_performed": false
+  },
+  "authenticated_private_files": [
+    {
+      "private_relative_name": "cpu-once/attempt.json.writing",
+      "bytes": 1991,
+      "sha256": "25ebe42f554489a23815c0e37ba09eae4dd143428481ce3344527cbf384fe6bd",
+      "filesystem_last_write_utc": "2026-10-23T08:36:36.530533+00:00",
+      "filesystem_creation_utc": "2026-10-23T08:36:36.530533+00:00",
+      "metadata_limit": "Current filesystem metadata; not instrumentation of publication or failure calls"
+    },
+    {
+      "private_relative_name": "native-host-console.txt",
+      "bytes": 31,
+      "sha256": "b3769906d0811049628690bbfae6bafcfebb4a84d25886b0fe5e74a38121fcd7",
+      "filesystem_last_write_utc": "2026-10-23T08:36:36.532043+00:00",
+      "filesystem_creation_utc": "2026-10-23T08:36:34.312274+00:00",
+      "metadata_limit": "Current filesystem metadata; not instrumentation of publication or failure calls"
+    },
+    {
+      "private_relative_name": "native-launch-result.json",
+      "bytes": 186,
+      "sha256": "67aefcc6f6b4d046927b63b963d601fefad8fb899ad3114702639431e4c2fb9c",
+      "filesystem_last_write_utc": "2026-10-23T08:36:36.546370+00:00",
+      "filesystem_creation_utc": "2026-10-23T08:36:36.546370+00:00",
+      "metadata_limit": "Current filesystem metadata; not instrumentation of publication or failure calls"
+    },
+    {
+      "private_relative_name": "execution-review-receipt.json",
+      "bytes": 132,
+      "sha256": "b72587f27557006a2b510e3f5946f56f26dee07dca283f18a55826df1e06e7d5",
+      "filesystem_last_write_utc": "2026-10-23T08:36:34.312274+00:00",
+      "filesystem_creation_utc": "2026-10-23T08:36:34.312274+00:00",
+      "metadata_limit": "Current filesystem metadata; not instrumentation of publication or failure calls"
+    }
+  ],
+  "private_attempt_inventory": [
+    "attempt.json.writing"
+  ],
+  "source_boundaries": {
+    "qualification_source_relative_path": "docs/compatibility/amd-fixture-timing-evidence/windows_qualification.py",
+    "qualification_sha256": "94b31197ed1032580cf97d69b79509b4627a2573af049307a4493061fd00fa9a",
+    "save_attempt_line": 240,
+    "host_try_line": 261,
+    "Job_creation_line": 262,
+    "worker_Popen_line": 265,
+    "save_function_line": 37
+  },
+  "established_bounds": [
+    "The API host reached and reserved the exclusive OUT directory, constructed an attempt object, and wrote a 1991-byte parseable JSON staging file. The staged source/admission/interpreter hash labels match the reviewed candidate.",
+    "The public attempt.json is absent; only attempt.json.writing exists under OUT. There is no host result, worker stream, worker readiness, protocol, stage directory, fixture timing, runner timing or control verdict.",
+    "In the pinned source, save(attempt.json) occurs before creation of the watchdog, before the guarded Job creation, and before worker Popen. A normal return from save would publish attempt.json and remove its staging name. The observed state and generic caught-exception console therefore locate this abort at the attempt-publication boundary before Job/worker/pair execution, assuming no unrecorded external deletion.",
+    "The top-level Exception handler only writes detailed preflight-error evidence when OUT does not exist. OUT already existed, so the precise exception was discarded and only generic BLOCKED was printed.",
+    "The controller receipt records return code 1 and 2.219 seconds. This is an aborted host invocation, not a fixture readiness timeout or lifecycle control failure.",
+    "Initial resource labels in the staged attempt exceed the original floors. No ownership, cancellation, sentinel, settlement or native readiness behavior was exercised."
+  ],
+  "unknowns": [
+    "Exact exception type, message, traceback and native error code are unavailable. No WinError 5 claim is supported.",
+    "The complete staged JSON bytes do not establish successful flush, fsync, stream close or hardlink publication. Failure could lie within that save boundary; individual operations were not instrumented.",
+    "The evidence does not establish a filesystem-permission, launcher-permission, fsync, hardlink, security-scanning or scheduling root cause.",
+    "No new descendant startup, instrumentation-causality or deadline-adequacy conclusion follows because the fixture pair did not run."
+  ],
+  "decision": {
+    "current_attempt": "Stop and preserve every artifact; no retry under the current authorization.",
+    "native_lifecycle_pass": false,
+    "fixture_timing_attribution": "UNRESOLVED_NO_NEW_NATIVE_TIMING",
+    "next_execution": "Only a fresh, separately approved execution after publication and launcher permissions have been verified with a tiny CPU contract. This review did not execute that contract or any probe.",
+    "unchanged_constraints": "Original 5-second readiness, 25-second stage, 90-second outer, 6 GiB process/Job caps, 12 GiB RAM floor, 2 GiB disk floor, exact nonce/ownership/cancel checks; no WSL, GPU or full orchestrator."
+  },
+  "privacy": "Only source-safe hashes, sizes, source locations and bounded metadata are published here. Raw private process identities/handles/tracebacks are not included."
+}

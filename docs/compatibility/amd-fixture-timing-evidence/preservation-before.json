@@ -1,0 +1,159 @@
+{
+  "schema": "modly.amd.fixture-timing-preservation-before.v1",
+  "created_utc": "2026-10-23T08:23:38.948371+00:00",
+  "mission_base": "0c031befef0483f4ac3bed05fa35c3546166f255",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "private_detail_sha256": "0cbd0bf9b300fa6796306de2cf96f2ebc0b9225fce696829ccbcf0d79c3a63c7",
+  "audit_source_sha256": "a1ba3d7fb3fbc2fd41357ae707602ea32b901715a463133f004be75b90cb8fc8",
+  "authenticated_prior_startup": {
+    "public_git_blob_authentication": {
+      "preservation-before.json": {
+        "working_sha256": "140eea4f38f20be26ebc60a247a9bf63a492759204250bc3ef6973cbcfb11bcf",
+        "git_blob_sha256": "d1bba6b812e4cbf592bdb414935e12b8881527032e732f3731cd3aa6ecb8010f",
+        "CRLF_only_normalization_match": true
+      },
+      "preservation-after.json": {
+        "working_sha256": "103a61559c0002b6e451f9d0bbe5035ecd902d6c3f8e23770585e271abe3a2ff",
+        "git_blob_sha256": "92e01172bc7d2cafc15c39fbde7e0e3b5f8f36ecd0c91af8af077b1907e2e85e",
+        "CRLF_only_normalization_match": true
+      },
+      "preservation-review.json": {
+        "working_sha256": "fa00113d9e94b6845260cd30be865243b82b9439d13c50f55c81d054728d65ef",
+        "git_blob_sha256": "5cd1589ba4e176ea22cabade56a9d60f5105bcabcd931ca3a5e475a0df6e60cd",
+        "CRLF_only_normalization_match": true
+      },
+      "timeline-evidence.json": {
+        "working_sha256": "faefa6f266c45404ab8d96623c8252447202f7e4ef00f51f34daf05bb32d05ef",
+        "git_blob_sha256": "b8df4bd2584b3756cbdfc9e3cb7798d204fcd664a3ac07408a0ddcd6fb62cf1f",
+        "CRLF_only_normalization_match": true
+      },
+      "independent-review-timeline.json": {
+        "working_sha256": "83f8b0797d926f6ba079afc4125db26ce880b49db3008ba2607c44919c1e386e",
+        "git_blob_sha256": "8b5cc53e675f488a77811af5d318fdc07086f98bdee7139121f710cddcd21600",
+        "CRLF_only_normalization_match": true
+      }
+    },
+    "after_private_sha256": "c224db5b3e242f1b80f137a2e0611b5e7af70876889c31128308ccd2edef8f37",
+    "source_audit_sha256": "04581a66c1114906f8cd434107e3b6c79d1b1876d5574b68e5e946388f504442",
+    "classification": "PASS_WITH_RECORDED_SCOPE",
+    "all_2280_old_before_after_identities_equal": true,
+    "raw33_saved_authentication_sha256": "1bbf8a5d1d180e5e5d49422a3d2f37d0f455ae8f20a6fc9d946b5b466bd17d29",
+    "raw33_count": 33,
+    "raw33_payloads_rehashed_by_this_audit": 0,
+    "prior_diagnostic_outcome": {
+      "classification": "BLOCKED",
+      "actual_control_pairs": 1,
+      "host_receipt_sha256": "bf552263fc1e69372e41f3f106e524d84875fb40c9a968e344f698a34bb5eaf3",
+      "windows_controls_receipt_sha256": "68b739b5b5b3272d563cb250d45c0b434679473be4d06c716845033d8a53504e",
+      "actual_elapsed_seconds": 24.375,
+      "returncode": 1,
+      "outer_windows_active_after_cleanup": 0,
+      "target_natural": false,
+      "target_forced_cleanup": true,
+      "sentinel_natural": false,
+      "sentinel_forced_cleanup": true,
+      "limits": "Identity preservation does not qualify the Windows controls or prove natural target/sentinel settlement. Both inner controls required forced cleanup after readiness failure. Prior BLOCKED outcomes remain unchanged; WSL, GPU and model execution are outside this audit."
+    },
+    "reviewed_timeline_sha256": "faefa6f266c45404ab8d96623c8252447202f7e4ef00f51f34daf05bb32d05ef",
+    "five_source_pins": [
+      {
+        "source": "api/services/amd_stage_process.py",
+        "sha256": "60815a03ad3d24bd01e8ed6b936f31b2d37a0fc38b1e099a6f44257a1dfeadf6",
+        "base_and_checkout_match": true
+      },
+      {
+        "source": "api/services/amd_stage_bootstrap.py",
+        "sha256": "590c683e36589f4c9c14a4cde2edb544536a1611d35b5ed60d3a91a23d39cb90",
+        "base_and_checkout_match": true
+      },
+      {
+        "source": "api/services/amd_completed_result.py",
+        "sha256": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+        "base_and_checkout_match": true
+      },
+      {
+        "source": "docs/compatibility/amd-job-stage-orchestrator-evidence/cpu_stage_fixture.py",
+        "sha256": "cb808b5993c859a0ed62120109550059d267b1df2c47191d53a9753535c4b3f1",
+        "base_and_checkout_match": true
+      },
+      {
+        "source": "docs/compatibility/amd-retired-process-evidence/windows_qualification.py",
+        "sha256": "49e9be974dec4b96b4cf24a7ddc90baedaffe83bcb11203f2051d94e1a736110",
+        "base_and_checkout_match": true
+      }
+    ],
+    "historical_raw27_authentication_private_sha256": "02098d7bed85a3e7eb2438a3e37db3365df02669ea12e4b8a73736eb5e79d070"
+  },
+  "execution_accounting": {
+    "completed_before_phase_count": 1,
+    "completed_after_phase_count": 0,
+    "interrupted_hash_attempt_count": 0,
+    "before_successful_remote_reads": 2,
+    "before_remote_read_reason": "Initial elevated read returned stdout; a second elevated read saved the required capture before any scoped identity hashing.",
+    "after_successful_remote_reads": 0,
+    "failed_remote_requests": 0,
+    "historical_raw27_full_hash_phase_count": 1
+  },
+  "protected_files_fresh_full_SHA256_checked": 100,
+  "protected_files_hash_size_mtime_match": true,
+  "accepted_master_bytes": 97073940,
+  "accepted_master_sha256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+  "accepted_master_fresh_hash_size_mtime_match": true,
+  "installed_app_inputs_checked": 12,
+  "installed_app_inputs_hash_size_mtime_match": true,
+  "original_profile_file_count": 2103,
+  "original_profile_normalized_file_set_match": true,
+  "original_profile_hash_size_mtime_match": true,
+  "selected_environment_check_count": 42,
+  "selected_environment_checks_match": true,
+  "selected_source_backup_check_count": 13,
+  "selected_source_backup_hash_size_mtime_match": true,
+  "fresh_full_hash_unique_file_count": 2280,
+  "fresh_full_hash_bytes_read": 2283191348,
+  "prior_startup_all_identities_match": true,
+  "mission_before_after_all_identities_match": null,
+  "original_raw33_and_immediate_raw27_name_size_mtime_preserved": null,
+  "historical_cache_name_size_mtime_preserved": null,
+  "historical_raw_metadata_counts": {
+    "original_raw33": 33,
+    "immediate_raw27": 27
+  },
+  "historical_cache_metadata_file_count": 20,
+  "historical_raw_payload_bytes_read_by_this_audit": 0,
+  "checkpoint_or_model_payload_bytes_read": 0,
+  "checkpoint_header_bytes_read": 0,
+  "remote_head_count": 122,
+  "remote_baseline_heads_checked": 121,
+  "prior_remote_heads_match": true,
+  "added_remote_head_count": 1,
+  "main_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "remote_capture_sha256": "008eb54684fd586905877be35eeb4653ff8f646dfdb1f87edb57bae2e1b53594",
+  "checkout_evidence_only_guard": {
+    "classification": "PASS",
+    "baseline_commit": "0c031befef0483f4ac3bed05fa35c3546166f255",
+    "allowed_report": "docs/compatibility/amd-fixture-timing.md",
+    "allowed_evidence_prefix": "docs/compatibility/amd-fixture-timing-evidence/",
+    "modified_or_added_production_path_count": 0,
+    "mission_evidence_files_observed": [
+      "diagnostic_bootstrap.py",
+      "diagnostic_process.py",
+      "historical-raw27-authentication.json",
+      "preservation_audit.py",
+      "test_diagnostic_fixture.py",
+      "test_observer_timing.py",
+      "windows_qualification.py"
+    ],
+    "preserved_historical_cache_directory_count": 4,
+    "unexpected_paths": []
+  },
+  "issues": [],
+  "scope_limits": [
+    "One fresh hash per unique scoped file per phase: protected100, app/master12, original profile2103 with normalized name-set check, selected environment42 descriptors/native bytes and installed source/backups13; 2280 unique files. No application code is executed.",
+    "The immediate startup closed preservation pair and committed public receipts authenticate the expected scope. Older trees/reports, original unique400, checkpoint metadata and SDK78 are linked through those receipts rather than freshly enumerated or rehashed.",
+    "Three explicitly protected generated safetensors outputs are byte-hashed; no checkpoint/model payload or header is read. No native process-control probe, application, worker, WSL, GPU, Blender, installer, model or historical script is executed.",
+    "Historical raw33/raw27 and the four existing cache directories receive name/size/mtime snapshots only in this audit. Raw33 saved authentication remains linked; this audit owns one separate BEFORE full raw27 authentication receipt, using the original committed outcome manifest. No raw payload is read here.",
+    "BEFORE captures122 remote heads and checks all121 prior identities. AFTER checks all122 BEFORE identities including main before publication. Publication is outside this audit.",
+    "The checkout permits only new JSON/Python/Markdown evidence in this mission directory and its report. Preservation does not upgrade prior BLOCKED Windows controls, viewer outcomes, or startup/runtime qualification."
+  ],
+  "elapsed_seconds": 28.453
+}

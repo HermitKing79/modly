@@ -1,0 +1,16 @@
+{
+  "schema": "modly.amd.fixture-timing.preservation-accounting-note.v1",
+  "classification": "SCOPE_CLARIFICATION",
+  "frozen_audit_source_sha256": "a1ba3d7fb3fbc2fd41357ae707602ea32b901715a463133f004be75b90cb8fc8",
+  "before_public_sha256": "8b5a5665b865a99f761f4fd50efbaa04b0d19760fdcf42354b3389e794c6c6a4",
+  "historical_raw27_authentication_public_sha256": "bc749289f77c1f67426c06c16259dd6a45043539e2173f4ac5b68754e9346c85",
+  "historical_raw27_authentication_private_sha256": "02098d7bed85a3e7eb2438a3e37db3365df02669ea12e4b8a73736eb5e79d070",
+  "clarification": "The inherited field historical_raw_payload_bytes_read_by_this_audit=0 counts only the2280-file preservation identity loop. The separate authenticate_raw27_once function in the same new script read27 historical raw files once, totaling52,436,620bytes, as explicitly recorded in its separate authentication receipt. Total historical raw payload bytes read by this script across both functions are52,436,620. AFTER uses metadata and saved receipt tables only; it never repeats the raw27hash pass.",
+  "preservation_identity_loop_historical_raw_bytes_read": 0,
+  "historical_raw27_authentication_bytes_read": 52436620,
+  "historical_raw27_full_hash_passes": 1,
+  "new_script_total_historical_raw_payload_bytes_read": 52436620,
+  "audit_and_before_receipt_rewritten": false,
+  "identity_phase_repeated_for_this_note": false,
+  "historical_raw_payload_reopened_for_this_note": false
+}
