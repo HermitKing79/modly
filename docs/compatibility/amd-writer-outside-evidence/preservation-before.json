@@ -1,0 +1,78 @@
+{
+  "schema": "modly.amd.writer-outside-preservation.v1",
+  "phase": "before",
+  "created_utc": "2026-10-23T09:56:38.577802+00:00",
+  "mission_base": "e971fbca9e06c81648ade22270777c8ec5289c2c",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "private_detail_sha256": "ffad0e34eb5b56b7234bc8056962311f44fb66b07003ebce78c654becca2d582",
+  "private_controller_sha256": "a2d4ef83011709f23ded55a8bc9dce975441a8c6114a86b48268c78677586762",
+  "authenticated_previous_public_receipts": {
+    "preservation-before.json": {
+      "working_sha256": "5403af5439bc3c241b1726fbbff1b55327ec97908455b165e9f797571571964d",
+      "git_blob_sha256": "5403af5439bc3c241b1726fbbff1b55327ec97908455b165e9f797571571964d",
+      "CRLF_only_normalization_match": true
+    },
+    "preservation-after.json": {
+      "working_sha256": "edd97af0d930cf76d416838c1d77bd2b0359e4d903e170645209a3663aabd5c5",
+      "git_blob_sha256": "edd97af0d930cf76d416838c1d77bd2b0359e4d903e170645209a3663aabd5c5",
+      "CRLF_only_normalization_match": true
+    },
+    "preservation-review.json": {
+      "working_sha256": "0234bcbe8bf76eff35ef7a8d658916a26f7ef4f99c516c7633bd266bbcdca1e6",
+      "git_blob_sha256": "0234bcbe8bf76eff35ef7a8d658916a26f7ef4f99c516c7633bd266bbcdca1e6",
+      "CRLF_only_normalization_match": true
+    },
+    "independent-outcome-review.json": {
+      "working_sha256": "47aa6fd946004abb677dfa7e36dc2fe1b82c6ce7b7dfdcfeff2c60f8d1f5e596",
+      "git_blob_sha256": "47aa6fd946004abb677dfa7e36dc2fe1b82c6ce7b7dfdcfeff2c60f8d1f5e596",
+      "CRLF_only_normalization_match": true
+    },
+    "independent-final-review.json": {
+      "working_sha256": "2f40ba3958e92fc599b2504e12f46e4a32a39ea4ce1f2b4bc529b36883930d63",
+      "git_blob_sha256": "2f40ba3958e92fc599b2504e12f46e4a32a39ea4ce1f2b4bc529b36883930d63",
+      "CRLF_only_normalization_match": true
+    }
+  },
+  "prior_saved_2280_closure_linked_and_previous_narrow_pair_authenticated": true,
+  "previous_publication_receipt_sha256": "bb97780261fed6be138a23cc6937e853181f1372fa2a5d870704db548ee52170",
+  "full_2280_rehash_passes": 0,
+  "fresh_protected_metadata_count": 100,
+  "efficient_protected_hash_count": 78,
+  "efficient_protected_bytes_hashed": 8265983,
+  "original_API_python_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+  "frozen_source_sha256": {
+    "probe_source": "08769da0449f6b82a2db8e18619cf7b78147e028bab09842782366b1c157622e",
+    "test_probe_source": "0496ada4f50463ddf4e8a7d05e3e28a5f7a31d5a842b03bb6cadd68d7574343b",
+    "test_prelaunch_source": "4f723e3f4b9c39faa348bf79e33df53153fb57f39069f71bd0cb92d91218d13c",
+    "reporting_repair_source": "01cc5cc396943aa028a58b9ed32779bbb17c1cbecc1cd13f4ffb761cabc931db"
+  },
+  "original_partial_file_count": 1,
+  "original_partial_bytes": 1991,
+  "original_partial_sha256": "25ebe42f554489a23815c0e37ba09eae4dd143428481ce3344527cbf384fe6bd",
+  "original_partial_namespace_size_mtime_file_identity_preserved": true,
+  "original_failed_probe_authenticated_file_count": 4,
+  "original_failed_probe_report_sha256": "d657489a9510e324380c90f425c517b8ebd46760baff0c572f67f4639bfe8a0e",
+  "legacy_private_tree_file_count": 23,
+  "previous_writer_private_tree_file_count": 16,
+  "previous_writer_private_tree_directory_count": 1,
+  "historical_cache_directory_count": 4,
+  "historical_cache_file_count": 20,
+  "remote_head_count": 124,
+  "remote_capture_sha256": "e9356eb9f7699af4e2dfe6a78a2224a8523efffb48035b39a1e41abbd13bc2ad",
+  "all_124_previous_head_identities_preserved": true,
+  "main_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "existing_tracked_files_changed": 0,
+  "preserved_before_after_state_equal": null,
+  "execution_accounting": {
+    "completed_before_phases": 1,
+    "completed_after_phases": 0,
+    "preparatory_authentication_failures_before_identity_reads": 1,
+    "preparatory_failure_reason": "One-sided CRLF comparison rejected exact committed bytes before any protected metadata/hash loop; corrected to exact-byte or symmetric CRLF comparison. No receipt or probe was produced by that preparation.",
+    "preservation_remote_reads_before": 1,
+    "preservation_remote_reads_after": 0,
+    "failed_preservation_remote_requests": 0,
+    "real_probes_by_preservation": 0
+  },
+  "limits": "Narrow preservation only: saved prior 2280-file closure and previous narrow pair authenticated via committed public receipts/private-table hashes. Protected100 metadata and78 previously selected small hashes are freshly checked; API executable, four frozen sources, exact historical partial and four failed-probe records are hash-only. Historical public/private trees and four cache trees receive name/size/mtime/file-identity snapshots, including old empty scratch directory identity. No environment/profile bulk rehash, model/checkpoint read, probe, Job, fixture, application import, WSL, GPU, permission change, branch change or push. Prior BLOCKED outcomes remain unchanged.",
+  "issues": []
+}

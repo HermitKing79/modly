@@ -1,0 +1,152 @@
+{
+  "schema": "modly.writer-outside-resultsummary.v1",
+  "classification": "PASS",
+  "scope": "One filesystem-only contextual comparison; no lifecycle qualification",
+  "launch": {
+    "supported_tool_override": "require_escalated",
+    "accepted_and_returned": true,
+    "probe_invocations": 1,
+    "exit_code": 0,
+    "probe_process_elapsed_seconds": 1.8248196,
+    "tool_wall_time_seconds": 2.0810882,
+    "no_fallback": true,
+    "no_retry": true
+  },
+  "context": {
+    "saved_baseline_user_matches": true,
+    "administrator_role_enabled": false,
+    "system_or_anonymous": false,
+    "same_c_volume_recorded": true,
+    "source_and_interpreter_hashes_match": true,
+    "baseline_launch_metadata_flags": "-B -I -S"
+  },
+  "payload": {
+    "size_bytes": 151,
+    "sha256": "cdab4d6ba143e10fe8fd7bfb11c7127332720031cdeb5a89de5013ac9903b30c",
+    "reconstructed_expected_bytes_sha256_matches": true,
+    "exact_final_readback_pass": true
+  },
+  "cleanup": {
+    "ownership_and_link_count_guards_passed": true,
+    "owned_names_removed": 2,
+    "errors": 0,
+    "retained_unverified": 0,
+    "scratch_retained": true,
+    "scratch_empty_observed": true
+  },
+  "timing_scope": "Boundary durations include ownership checks and Python work; process interval excludes pre-launch guards and receipt writes; single observations are not syscall benchmarks",
+  "boundary_timings": [
+    {
+      "operation": "setup",
+      "outside_ok": true,
+      "outside_duration_ns": 1272700,
+      "outside_duration_ms": 1.2727,
+      "baseline_attempted": true,
+      "baseline_ok": true,
+      "baseline_duration_ns": 2081200
+    },
+    {
+      "operation": "exclusive_staging_open",
+      "outside_ok": true,
+      "outside_duration_ns": 302000,
+      "outside_duration_ms": 0.302,
+      "baseline_attempted": true,
+      "baseline_ok": true,
+      "baseline_duration_ns": 388600
+    },
+    {
+      "operation": "json_write",
+      "outside_ok": true,
+      "outside_duration_ns": 23200,
+      "outside_duration_ms": 0.0232,
+      "baseline_attempted": true,
+      "baseline_ok": true,
+      "baseline_duration_ns": 26500
+    },
+    {
+      "operation": "flush",
+      "outside_ok": true,
+      "outside_duration_ns": 58900,
+      "outside_duration_ms": 0.0589,
+      "baseline_attempted": true,
+      "baseline_ok": true,
+      "baseline_duration_ns": 58500
+    },
+    {
+      "operation": "fsync",
+      "outside_ok": true,
+      "outside_duration_ns": 571600,
+      "outside_duration_ms": 0.5716,
+      "baseline_attempted": true,
+      "baseline_ok": true,
+      "baseline_duration_ns": 515100
+    },
+    {
+      "operation": "close",
+      "outside_ok": true,
+      "outside_duration_ns": 64200,
+      "outside_duration_ms": 0.0642,
+      "baseline_attempted": true,
+      "baseline_ok": true,
+      "baseline_duration_ns": 55300
+    },
+    {
+      "operation": "link_no_overwrite",
+      "outside_ok": true,
+      "outside_duration_ns": 6947800,
+      "outside_duration_ms": 6.9478,
+      "baseline_attempted": true,
+      "baseline_ok": false,
+      "baseline_duration_ns": 7235800
+    },
+    {
+      "operation": "final_readback",
+      "outside_ok": true,
+      "outside_duration_ns": 900400,
+      "outside_duration_ms": 0.9004,
+      "baseline_attempted": false,
+      "baseline_ok": null,
+      "baseline_duration_ns": null
+    },
+    {
+      "operation": "cleanup",
+      "outside_ok": true,
+      "outside_duration_ns": 2486600,
+      "outside_duration_ms": 2.4866,
+      "baseline_attempted": true,
+      "baseline_ok": true,
+      "baseline_duration_ns": 3084000
+    }
+  ],
+  "comparison": {
+    "baseline_classification": "BLOCKED",
+    "baseline_first_actual_api": "os.link",
+    "baseline_errno": 13,
+    "baseline_winerror": 5,
+    "outside_classification": "PASS",
+    "exact_policy_cause": "unknown",
+    "general_filesystem_or_native_lifecycle_qualification": false
+  },
+  "evidence_sha256": {
+    "outside_raw_report": "48468f2003f5314e1e1e5fa2326f7ca5fe5fb925ab12c2dac4d9acab8723972b",
+    "baseline_raw_report": "d657489a9510e324380c90f425c517b8ebd46760baff0c572f67f4639bfe8a0e",
+    "outside_command": "c0f1cde961ef5edbb0ee556ab30e3de01ab49f22a9079a696df4c562a1da7eda",
+    "unchanged_probe_source": "08769da0449f6b82a2db8e18619cf7b78147e028bab09842782366b1c157622e",
+    "original_api_interpreter": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+    "private_expected_context": "6d09f51fbe911a113e145469065dd433a49fe95b6590070aca0cc498cbed9fce",
+    "private_actual_context": "481db417a91199ec2b54d1cdc42d7b0cc79975f091e8f74079f1bbc61e8d0c5b",
+    "private_execution_result": "854b379cd60517f214564e1285fb24bfb27fdd734f998db8afbdca88487e4dff",
+    "private_console": "1976c55eb1f9eb8300e6a0554a99dad381c5aed2b4c8a653007c917ede8606e4",
+    "private_supported_tool_request": "de96287e9e21d8640b230e16c2e35999b5ea5a8d3437e937db4c64e865c08964",
+    "private_supported_tool_response": "f472d910dc2829483fd7214635349a427f80710122ebf0b0a73ddb9ded80307e",
+    "baseline_launch_metadata": "de75e961b616f66ba4ba319c9bc16c911a7bfb61cad1483977f46f62cedaa914",
+    "independent_preexecution_review": "b96f29c4f493e4c2e859297aa3345aa68130fab28d472b3cb3a2ad50b29af682",
+    "public_report": "f8b67509c249f41c014e40b151b52b66f3aa795909f072bab9480d900813fb04"
+  },
+  "limitations": [
+    "Mode provenance is the supported tool request and returned execution; probe has no independent sandbox detector",
+    "Administrator role disabled does not prove absence of administrator account membership; child token was not independently queried",
+    "Readback bytes were verified by the unchanged probe and then removed by verified cleanup; reviewer independently reconstructed the expected payload hash",
+    "Preservation inventories beyond the original blocked report are outside this focused outcome review"
+  ]
+}

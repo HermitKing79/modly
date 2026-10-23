@@ -1,0 +1,29 @@
+{
+  "schema": "modly.writer-outside-independent-preexecution-review.v1",
+  "utc": "2026-10-23T09:56:35.3696192Z",
+  "disposition": "QUALIFIED_FOR_ONE_AUTHORIZED_ATTEMPT_PENDING_TOOL_ACCEPTANCE",
+  "method": "Read-only source and saved baseline inspection; no probe, native test, Job, or other native process launched by reviewer; review receipt only was created",
+  "source_sha256": {
+    "outside_command_ps1": "c0f1cde961ef5edbb0ee556ab30e3de01ab49f22a9079a696df4c562a1da7eda",
+    "unchanged_writer_probe_py": "08769da0449f6b82a2db8e18619cf7b78147e028bab09842782366b1c157622e",
+    "original_api_python_exe": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+    "private_expected_context_json": "6d09f51fbe911a113e145469065dd433a49fe95b6590070aca0cc498cbed9fce",
+    "original_failed_report_json": "d657489a9510e324380c90f425c517b8ebd46760baff0c572f67f4639bfe8a0e"
+  },
+  "findings": [
+    "Exactly one direct Python invocation in reviewed command; no retry, RunAs, Start-Process, Job, fixture, WSL, or GPU route",
+    "Before Python: same-shell WindowsIdentity and Administrator-enabled-role check rejects administrator-enabled, SYSTEM, or anonymous token; name/SID must match private baseline",
+    "Unchanged probe and original API executable SHA256 are asserted before launch; C: root and fresh probe-* namespace required",
+    "Context, console, and result use CreateNew exclusive writes; raw user SID remains only in private context evidence",
+    "Process timer explicitly covers Python launch through captured process result; guard and receipt writes are outside this interval",
+    "Probe performs filesystem-only operations under the new private root and uses fresh scratch with verified bounded cleanup; script contains one invocation code path",
+    "Prior saved failure reached actual os.link with primary_api_attempted true and last_suboperation os.link; WinError 5; cleanup succeeded"
+  ],
+  "limitations": [
+    "Accepted sandbox override must be evidenced separately by actual exec_command request and tool response; hardcoded requested_tool_override alone is not runtime attestation",
+    "Administrator role false supports a non-elevated token; it does not prove account lacks administrator membership or independently query child token",
+    "Probe has no independent sandbox detector; direct Python launch normally inherits shell process token without RunAs",
+    "Single controlled observation cannot establish general filesystem or native-lifecycle qualification",
+    "Root reports private baseline real-probe-launch.json confirms matching -B -I -S interpreter flags; new private-root is deliberate comparison difference"
+  ]
+}
