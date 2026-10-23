@@ -1,0 +1,52 @@
+{
+  "schema": "modly.amd.wsl-upstream-authority.prior-PASS-authentication.v1",
+  "base": "7152764593b17c338b907698abb80e2b18542797",
+  "classification": "PASS_PRESERVED_PREVIOUS_QUALIFICATION_SCOPES",
+  "previous": {
+    "Windows": {
+      "classification": "PASS_SINGLE_SYNTHETIC_WINDOWS_TICKET",
+      "outcome_sha256": "ef17cda8e338d5c4afff9649fb454aff020a5261296aca83cf3a5d7c40d2b02b",
+      "final_review_sha256": "5a35e19d2b073c36944f93b933c64a8086abf945efe00515b5bbf7649f339c0d",
+      "publication_receipt_sha256": "1dc93b6d0849f92a0e7c971fd1fb8ad29a821ca94d39e1a39b96e2e87333a9ce",
+      "private_verification_sha256": "5dfd35c464c46f3bf28a6b074b5bed517e0aad467e2cdeacdf67265138ae0123",
+      "source_pin_comparisons": 13,
+      "raw_hashes_checked": 27,
+      "public_receipt_hashes_checked": 8
+    },
+    "WSL_CPU": {
+      "classification": "PASS_SINGLE_NONRECURSIVE_WSL_CPU_PAIR",
+      "outcome_sha256": "c2511a8e69436ad8f01bd51ec8e4124c1bd26f16229d8da52950bc7446aab7bd",
+      "final_review_sha256": "4e25b6249899926fd098b33349060b6e83522f2681f75485aaacc520844059e6",
+      "publication_receipt_sha256": "fe877e2f5c580247dc101189b6a31687168572a6a8a70e4346aa094c5c28b7d5",
+      "private_verification_sha256": "16bf342be0f5f07090cc894207d527b56a463d942e897520456dc19789a058a6",
+      "source_pin_comparisons": 15,
+      "raw_hashes_checked": 34,
+      "public_receipt_hashes_checked": 8
+    }
+  },
+  "unique_source_pins_checked": 20,
+  "source_pins": {
+    "api/services/amd_stage_process.py": "4175bf4735700299dcc0e50d6fc0f603dfaad5ae3da2bba10f22d752eceadb4d",
+    "api/services/amd_stage_bootstrap.py": "2ee86de9ce5b4749c12561d87ffeaecaa35b050c25255158a99c08e0ebd414ea",
+    "api/services/amd_completed_result.py": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+    "api/services/amd_upstream_job.py": "a507dc6a3c4691cc07e67bec4ca5b11ddda27c93209a7c61e228b67b1ef534f7",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/windows_qualification.py": "741585c25995ee64ec79790d0fb6c6d77e175150a58cc7e2d35553dbf55ae029",
+    "api/services/amd_windows_authority.py": "5b708973d612b6c538a8f40c6b43a7be8c335ea690b550fedd9b93c7286dffb8",
+    "api/tests/test_amd_windows_lifecycle_authority.py": "4c170c8a7b7cfe224ae1dffd2290e9c4ff6cec7a0bd654d7ef947c76b43eb6e8",
+    "api/tests/test_amd_windows_authority.py": "a404843a8db9d627ccd4f50b6e76171f0eebc87d9d9e2dd00a84f8226031a017",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/qualification.py": "4f02e170139334f4a9c9ce3252eb714b8855feffab543246c0d2099df05fe685",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/coordinator.py": "135d70212d1431912dc376844d605d3c7a9b4e8c1147a850084c31e05ff4316c",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/fixture.py": "e9a5412ee71dc4f1a6ed1806b4b87bf0c838b94463983d3faac4ffdaa9df0810",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/test_qualification.py": "2fa956999967500c1eb8a3df89d4752b71b45e8ddd9e6b892f8f0587ee2df920",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/outside_command.ps1": "0238c8ae7faf2fa9602623b396975d2c8199154402d347b5bf8a6fd15965ce00",
+    "api/services/amd_wsl_session.py": "21a00add603990daab78b869ae75ab28c2aa0718578c2f9def49c995d13bb9ad",
+    "docs/compatibility/amd-wsl-cpu-lifecycle-evidence/qualification.py": "cb0e413619dde3b35918e2d647b5b723276c73ae383053cac8179daac6adb817",
+    "docs/compatibility/amd-wsl-cpu-lifecycle-evidence/coordinator.py": "6656df1e057a9724df5c3b672701d22b9193384d8ae3758bc239cf3690184819",
+    "docs/compatibility/amd-wsl-cpu-lifecycle-evidence/fixture.py": "31211b857ec0e216c7009fae9af6919814bf69ad20a754ff1ac931baba36e6ef",
+    "docs/compatibility/amd-wsl-cpu-lifecycle-evidence/test_fixture.py": "63a3926a72784b396511a1da271d7bef795c8db3003b395bf84dac5d5ee88c5b",
+    "docs/compatibility/amd-wsl-cpu-lifecycle-evidence/test_qualification.py": "38a5d5169f77f5a90e4d0d7161198caa5366d974434aa51e1f5d88f0a7af6f53",
+    "docs/compatibility/amd-wsl-cpu-lifecycle-evidence/outside_command.ps1": "021d2dc45e1aa7faa3140ac9c435fa641b4fae7302318273accde83ebb6a2a28"
+  },
+  "no_WSL_native_query_or_worker_execution": true,
+  "scope": "Authenticates previous Windows synthetic exact-ticket PASS and previous nonrecursive WSL CPU pair PASS only. No new WSL UpstreamJob authority qualification."
+}

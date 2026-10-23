@@ -25,6 +25,8 @@ MEMORY_LIMIT = 6 * 1024**3
 RAM_FLOOR = 12 * 1024**3
 DISK_FLOOR = 2 * 1024**3
 DISTRO = "Modly-AMD-Ubuntu-24.04"
+WSL_EXECUTABLE = '/usr/bin/python3'
+WSL_REAL_EXECUTABLE = '/usr/bin/python3.12'
 _HERE = Path(__file__).resolve().parent
 _NAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,95}\Z")
 
@@ -445,6 +447,139 @@ class _WindowsCompletion:
                     descendant_ownership='all-accounted-process-identities-in-private-Windows-Job')
 
 
+class _WSLCompletion(_WindowsCompletion):
+    """Private WSL lifecycle facts; reuse native Job accounting, not Windows events."""
+    def __init__(self, bootstrap_pid, owner, handle, expected_image, argv, client_image=None):
+        super().__init__(bootstrap_pid, owner, handle, expected_image)
+        self.argv = tuple(argv)
+        self.ready = self.guest = self.linux = None
+        self.started = self.start_received = self.client_exited = False
+        self.client = None
+        self.current_pids = set()
+        self.pings_sent = self.pings_received = 0
+        expected_client = client_image if client_image is not None else Path(os.environ.get('SystemRoot','C:/Windows'))/'System32/wsl.exe'
+        self.client_image = os.path.normcase(str(expected_client))
+
+    @staticmethod
+    def need(value, message):
+        if not value:
+            raise ValueError('Bound WSL completion: ' + message)
+
+    def observe(self, snapshot):
+        super().observe(snapshot)
+        self.current_pids = set(snapshot.get('enumerated_pids', []))
+
+    def client_identity(self, pid):
+        rows = [json.loads(value) for (known, _), value in self.identities.items() if known == pid]
+        self.need(len(rows) == 1 and os.path.normcase(rows[0]['image']) == self.client_image,
+                  'missing/reused/or foreign WSL client identity')
+        return rows[0]
+
+    def control(self, action):
+        if action == 'START':
+            self.need(self.go_received and self.ready is not None and not self.started and not self.terminal,
+                      'invalid START phase')
+            clients = [json.loads(value) for value in self.identities.values()]
+            clients = [r for r in clients if os.path.normcase(r['image']) == self.client_image
+                       and r['pid'] in self.current_pids
+                       and r.get('observed_alive', {}).get('alive') is True
+                       and r.get('identity_source') == 'native-image-query'
+                       and r.get('exit_observation', {}).get('api') == 'GetExitCodeProcess'
+                       and r['exit_observation'].get('succeeded') is True
+                       and r['exit_observation'].get('exit_code') == 259]
+            self.need(len(clients) == 1, 'original WSL client not natively live before START')
+            self.client = clients[0]['pid']
+            self.client_identity(self.client)  # Reject same-PID creation reuse before transmission.
+            self.started = True
+        else:
+            super().control(action)
+            if action == 'PING':
+                self.pings_sent += 1
+
+    def event(self, event):
+        kind = event.get('event')
+        self.need(not self.client_exited, 'protocol after client exit')
+        if kind == 'linux-client-exited':
+            self.need(self.terminal and event.get('pid') == self.client
+                      and type(event.get('returncode')) is int and event['returncode'] == 0,
+                      'unsuccessful or premature WSL client exit')
+            self.client_identity(self.client)
+            self.client_exited = True
+            return
+        self.need(not self.terminal, 'protocol after Linux terminal')
+        if kind == 'control-received':
+            action = event.get('action')
+            if action == 'GO':
+                self.need(self.go and not self.go_received and self.ready is None, 'invalid received GO')
+                self.go_received = True
+            elif action == 'START':
+                self.need(self.started and not self.start_received and self.ready is not None, 'invalid received START')
+                self.start_received = True
+            elif action == 'PING':
+                self.need(self.go_received and self.pings_received < self.pings_sent, 'unapproved received PING')
+                self.pings_received += 1
+            else:
+                self.need(False, 'cancellation/foreign control forbids success')
+        elif kind == 'ready':
+            self.need(self.go_received and self.ready is None and _linux_ready(event), 'invalid broker readiness')
+            b, l, m = event['broker'], event['leader'], event['memory']
+            self.need(l.get('ppid') == b['pid'] and type(b.get('start_ticks')) is int
+                      and type(l.get('start_ticks')) is int and b['start_ticks'] <= l['start_ticks']
+                      and re.fullmatch(r'[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}',event.get('boot_id',''))
+                      and m.get('aggregate_rss_limit_bytes') == MEMORY_LIMIT and m.get('atomic_cgroup_limit') is False,
+                      'broker ownership or memory policy mismatch')
+            self.ready = json.loads(json.dumps(event))
+        elif kind == 'leader-executed':
+            self.need(self.start_received and self.guest is None and self.ready is not None,
+                      'invalid guest execution phase')
+            self.need(event.get('executable') == WSL_REAL_EXECUTABLE and event.get('argv') == list(self.argv)
+                      and event.get('rlimit_as_bytes') == [MEMORY_LIMIT,MEMORY_LIMIT]
+                      and all(event.get('leader', {}).get(k) == self.ready['leader'].get(k)
+                              for k in ('pid','ppid','uid','start_ticks','session','pgrp')),
+                      'guest executable/arguments/identity/limit mismatch')
+            self.guest = json.loads(json.dumps(event))
+        elif kind == 'terminal':
+            self.need(self.guest is not None and _linux_settled(event)
+                      and all(event.get(k) == self.ready.get(k) for k in ('broker','leader','boot_id'))
+                      and event.get('terminal') == 'succeeded' and type(event.get('returncode')) is int
+                      and event['returncode'] == 0 and event.get('natural') is True and event.get('forced') is False
+                      and event.get('cooperative_cancelled') is False and event.get('errors') == [],
+                      'unsuccessful/unverified Linux settlement')
+            reaped = event.get('reaped', [])
+            self.need(any(r.get('pid') == self.ready['leader']['pid'] and r.get('status') == 0 for r in reaped)
+                      and len({r.get('pid') for r in reaped}) == len(reaped)
+                      and all(type(r.get('status')) is int and r['status'] == 0 for r in reaped),
+                      'Linux leader/descendant reaping unverified')
+            seen = event.get('process_identities', [])
+            self.need(any(all(r.get(k) == self.ready['leader'].get(k)
+                              for k in ('pid','ppid','uid','start_ticks','session','pgrp')) for r in seen)
+                      and len({r.get('pid') for r in seen}) == len(seen)
+                      and {r.get('pid') for r in seen} == {r.get('pid') for r in reaped}
+                      and all(r.get('uid') == 1000 and type(r.get('start_ticks')) is int
+                              and r['start_ticks'] > 0 for r in seen), 'Linux owned identities unverified')
+            m = event.get('memory', {})
+            self.need(m.get('rlimit_as_bytes') == m.get('aggregate_rss_limit_bytes') == MEMORY_LIMIT
+                      and m.get('atomic_cgroup_limit') is False
+                      and type(m.get('aggregate_rss_peak_bytes')) is int
+                      and 0 < m['aggregate_rss_peak_bytes'] <= MEMORY_LIMIT, 'Linux resource policy failed')
+            self.linux = json.loads(json.dumps(event))
+            self.terminal = True
+        else:
+            self.need(False, 'unexpected/error broker protocol: ' + str(kind))
+
+    def finish(self, bootstrap_returncode, closed):
+        self.need(self.terminal and self.client_exited and self.start_received and closed
+                  and type(bootstrap_returncode) is int and bootstrap_returncode == 0
+                  and self.active == 0 and self.total == len(self.identities), 'incomplete natural settlement')
+        return dict(backendkind='wsl',terminal='succeeded',returncode=0,bootstrap_returncode=0,
+                    linux_client_returncode=0,linux_settled=True,natural=True,settled=True,forced=False,
+                    diagnostic_errors=0,owned_remaining=0,total_processes=self.total,
+                    bootstrap_identity=self.identity(self.bootstrap_pid),client_identity=self.client_identity(self.client),
+                    broker_ready=self.ready,guest_execution=self.guest,linux_terminal=self.linux,
+                    distro=DISTRO,uid=1000,peak_process_bytes=self.peak_process,peak_job_bytes=self.peak_job,
+                    descendant_ownership='private-Windows-Job-and-original-Linux-subreaper-pidfd-broker')
+
+
 class OwnedStageRunner:
     def __init__(self, evidence_dir: Path):
         self.evidence_dir = Path(evidence_dir)
@@ -513,6 +648,9 @@ class OwnedStageRunner:
         protocol_queue = queue.Queue(maxsize=16384)
         protocol_done = threading.Event()
         protocol_errors = []
+        # Retain every observation within the original bounded receipt reader.
+        # Only the new bound WSL route uses compact, lossless JSON formatting.
+        receipt_options = {'separators':(',',':')} if _bound is not None and command.kind == 'wsl' else {'indent':2}
 
         def receive_private_protocol(stream, diagnostic):
             """Bootstrap-only pipe; the worker receives separate stdout/stderr.
@@ -580,11 +718,15 @@ class OwnedStageRunner:
             phase = ('cleanup' if shutdown else 'normal') + '.control.' + action
             entry = {'action': action, 'phase': phase, 'utc': _utc(), 'monotonic_s': time.monotonic(), 'flushed': False}
             result['control_messages'].append(entry)
+            checked_start = isinstance(facts, _WSLCompletion) and action == 'START'
+            if checked_start:
+                # Refuse the launch gate before transmission, not merely seal.
+                facts.control(action)
             proc.stdin.write((json.dumps({"action": action, "stage_id": command.stage_id,
                                           "nonce": spec["nonce"]}) + "\n").encode())
             proc.stdin.flush()
             entry['flushed'] = True
-            if facts is not None:
+            if facts is not None and not checked_start:
                 facts.control(action)
 
         def read_events():
@@ -624,6 +766,10 @@ class OwnedStageRunner:
                         if not attached or not _linux_ready(event) or linux_ready is not None:
                             raise RuntimeError("Unverified Linux launch identity")
                         linux_ready = event
+                        if _bound is not None:
+                            # The WSL client may have launched since the last
+                            # snapshot. Authenticate it before opening START.
+                            observe()
                         if cancel_event.is_set():
                             control("CANCEL")
                         else:
@@ -668,7 +814,9 @@ class OwnedStageRunner:
                 job.attach(proc)
                 attached = True
                 if _bound is not None:
-                    facts = _WindowsCompletion(proc.pid, job.job_owner, job.handle, sys.executable)
+                    facts = (_WSLCompletion(proc.pid,job.job_owner,job.handle,sys.executable,command.argv,_bound.wsl_client_path)
+                             if command.kind == 'wsl' else
+                             _WindowsCompletion(proc.pid,job.job_owner,job.handle,sys.executable))
                 observe()
                 if _bound is not None:
                     _bound.recheck()
@@ -844,12 +992,12 @@ class OwnedStageRunner:
                                             control_provenance='private-bootstrap-stdout-pipe', protocol_eof=True)
                 except Exception as exc:
                     capture(exc)
-            receipt_path.write_text(json.dumps(result, indent=2), encoding="utf-8")
+            receipt_path.write_text(json.dumps(result, **receipt_options), encoding="utf-8")
             if success_evidence is not None:
                 try:
                     _bound.seal(success_evidence)
                 except Exception as exc:
                     _bound.fail()
                     capture(exc)
-                    receipt_path.write_text(json.dumps(result, indent=2), encoding='utf-8')
+                    receipt_path.write_text(json.dumps(result, **receipt_options), encoding='utf-8')
         return result

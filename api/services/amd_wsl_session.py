@@ -155,16 +155,52 @@ def _emit(spec, **fields):
                       "context": spec["context"], **fields}), flush=True)
 
 
+def _execution_observation(spec, leader):
+    """One coherent native exec observation for a bound leader; never worker JSON."""
+    handle = None
+    try:
+        handle = os.pidfd_open(leader['pid'], 0)
+        current = _read_identity(leader['pid'])
+        stable = ('pid','ppid','uid','start_ticks','session','pgrp')
+        if any(current.get(k) != leader.get(k) for k in stable):
+            raise RuntimeError('Bound Linux leader identity changed before exec observation')
+        base = Path('/proc')/str(leader['pid'])
+        executable = os.readlink(base/'exe')
+        argv = (base/'cmdline').read_bytes().split(b'\0')
+        if argv and argv[-1] == b'':
+            argv.pop()
+        expected = [x.encode() for x in spec['argv']]
+        if executable != os.path.realpath(spec['argv'][0]) or argv != expected:
+            return None  # Still waiting behind START or inside exec startup.
+        limits = [line.split()[3:5] for line in (base/'limits').read_text().splitlines()
+                  if line.startswith('Max address space')]
+        if limits != [[str(MEMORY_LIMIT),str(MEMORY_LIMIT)]]:
+            raise RuntimeError('Bound Linux leader address-space policy changed')
+        again = _read_identity(leader['pid'])
+        if any(again.get(k) != leader.get(k) for k in stable) or select.select([handle],[],[],0)[0]:
+            return None
+        return dict(leader=current,executable=executable,argv=list(spec['argv']),
+                    rlimit_as_bytes=[MEMORY_LIMIT,MEMORY_LIMIT])
+    except (FileNotFoundError,ProcessLookupError):
+        return None
+    finally:
+        if handle is not None:
+            os.close(handle)
+
+
 def run(spec):
     _configure()  # No child exists if capability qualification fails.
     broker = _read_identity(os.getpid())
     boot_id = Path("/proc/sys/kernel/random/boot_id").read_text().strip()
     stdout_path, stderr_path = _guest_path(spec["stdout_file"]), _guest_path(spec["stderr_file"])
+    bound = spec.get('upstream_ticket_bound') is True
     cancel_ack = str(Path(stdout_path).with_name("cancel-ack.json"))
     env = os.environ.copy()
     env.update(MODLY_COMPLETION_CONTEXT_JSON=json.dumps(spec["context"]), MODLY_STAGE_ID=spec["stage_id"],
                MODLY_STAGE_CANCEL_ACK=cancel_ack, PYTHONDONTWRITEBYTECODE="1",
                PYTHONUTF8="1", PYTHONIOENCODING="utf-8")
+    if bound:
+        env['MODLY_STAGE_CONTROL_NONCE'] = spec['nonce']
     gate_r, gate_w = os.pipe()
     stdin_r, stdin_w = os.pipe()
     began = time.monotonic()
@@ -208,6 +244,7 @@ def run(spec):
         last_host = time.monotonic()
         buffer = b""
         gate_open = False
+        execution_seen = False
         cancelled = forced = reaped_all = False
         cancel_at = leader_exit_at = None
         returncode = None
@@ -246,6 +283,11 @@ def run(spec):
                     cancelled = True
                 if reaped_all and not remaining:
                     break
+                if bound and gate_open and not execution_seen and not cancelled:
+                    execution = _execution_observation(spec,leader)
+                    if execution is not None:
+                        _emit(spec,event='leader-executed',**execution,timestamp_ns=time.time_ns())
+                        execution_seen = True
                 if now >= deadline or now - last_host > 15:
                     cancelled = True
                 if leader_exit_at is not None and remaining and now - leader_exit_at > .25:
@@ -270,8 +312,16 @@ def run(spec):
                             os.close(gate_w)
                             gate_w = None
                             gate_open = True
+                            if bound:
+                                _emit(spec,event='control-received',action='START',timestamp_ns=time.time_ns())
                         elif action == "CANCEL":
                             cancelled = True
+                            if bound:
+                                _emit(spec,event='control-received',action='CANCEL',timestamp_ns=time.time_ns())
+                        elif action == 'START' and bound:
+                            raise RuntimeError('Repeated bound Linux START')
+                        elif action == 'PING' and bound:
+                            _emit(spec,event='control-received',action='PING',timestamp_ns=time.time_ns())
                         elif action not in ("PING", "START"):
                             raise RuntimeError("Unexpected Linux control action")
                 if cancelled and cancel_at is None:

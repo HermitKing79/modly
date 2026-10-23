@@ -1,0 +1,23 @@
+{
+  "original_acceptance_limit_bytes": 4194304,
+  "policy_changed": false,
+  "retained_observations": "ALL",
+  "format_scope": "New bound WSL receipts only; Windows/unbound formatting unchanged",
+  "historical_CPU_measurements": [
+    {
+      "historical_stage": "target",
+      "original_sha256": "fa542923df4019cba6efb561395fe181a9957eb859ef92064870be9885e41216",
+      "original_bytes": 3955142,
+      "lossless_compact_bytes": 2581624,
+      "exact_readback": true
+    },
+    {
+      "historical_stage": "sentinel",
+      "original_sha256": "887c446397d8641c76ed675589c1cb0bd896fefa4471b1f72edc3ae8872e74ec",
+      "original_bytes": 4665712,
+      "lossless_compact_bytes": 3044729,
+      "exact_readback": true
+    }
+  ],
+  "future_receipt_rule": "Actual file must still fit original bound; no retry or automatic increase"
+}

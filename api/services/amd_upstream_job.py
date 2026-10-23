@@ -222,12 +222,19 @@ class UpstreamJob:
 
     def bind_windows(self, ticket, runner, command):
         """Bind one host ticket to the original Windows runner; launches nothing."""
+        return self._bind_supervised(ticket, runner, command, 'windows')
+
+    def bind_wsl(self, ticket, runner, command):
+        """Bind one host ticket to the original WSL broker route; launches nothing."""
+        return self._bind_supervised(ticket, runner, command, 'wsl')
+
+    def _bind_supervised(self, ticket, runner, command, backendkind):
         try:
             self._check()
             _need(ticket is self._pending and ticket is not None and self._bound_ticket is None,
                   'One exact unbound pending upstream ticket required')
             from services.amd_windows_authority import bind
-            token = bind(self, ticket, runner, command)
+            token = bind(self, ticket, runner, command, backendkind=backendkind)
             self._bound_ticket = ticket
             return token
         except BaseException:
@@ -236,18 +243,22 @@ class UpstreamJob:
 
     def accept_windows(self, ticket, runner, authority):
         """Consume runner-issued lifecycle authority, never a worker/result dict."""
+        return self._accept_supervised(ticket, runner, authority, 'windows')
+
+    def accept_wsl(self, ticket, runner, authority):
+        """Consume original WSL broker and Windows client lifecycle authority."""
+        return self._accept_supervised(ticket, runner, authority, 'wsl')
+
+    def _accept_supervised(self, ticket, runner, authority, backendkind):
         try:
             self._check()
             _need(ticket is self._pending and ticket is self._bound_ticket and ticket is not None,
                   'Exact pending Windows-bound upstream ticket required')
-            from services.amd_windows_authority import consume, document
-            summary, runner_pin = consume(authority, self, ticket, runner)
+            from services.amd_windows_authority import consume, document, reopen_sources
+            summary, runner_pin = consume(authority, self, ticket, runner, backendkind=backendkind)
             summary = document(summary)
             runner_receipt = _snapshot(runner_pin.path, 4*1024**2, ticket.created_ns, runner_pin.sha256)
-            fixed = tuple(_snapshot(Path(row['path']), 64*1024**2, expected=row['sha256'])
-                          for row in summary['binding']['sources'])
-            _need([row.document() for row in fixed] == summary['binding']['sources'],
-                  'Original Windows source identity changed during acceptance')
+            fixed = reopen_sources(summary['binding'])
 
             def validate():
                 self._check()
@@ -256,9 +267,9 @@ class UpstreamJob:
                 for row in (*fixed, runner_receipt):
                     row.recheck()
 
-            return self._accept_outputs(ticket, 'WINDOWS_CPU_SUPERVISED',
-                extra=dict(genuine_execution_qualified=False, windows_supervision=summary,
-                           runner_receipt=runner_receipt.document()),
+            return self._accept_outputs(ticket, backendkind.upper() + '_CPU_SUPERVISED',
+                extra={'genuine_execution_qualified': False, backendkind + '_supervision': summary,
+                       'runner_receipt': runner_receipt.document()},
                 witnesses=(*fixed, runner_receipt), validate=validate)
         except BaseException:
             self._blocked = True

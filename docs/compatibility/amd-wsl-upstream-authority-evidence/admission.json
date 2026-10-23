@@ -1,0 +1,38 @@
+{
+  "base": "7152764593b17c338b907698abb80e2b18542797",
+  "branch": "codex/amd-wsl-upstream-authority",
+  "python_executable": "C:\\Users\\wattz\\Documents\\Modly\\dependencies\\venv\\Scripts\\python.exe",
+  "python_executable_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+  "source_pins": {
+    "api/services/amd_stage_process.py": "0317a8b847fe75eb8ba74264dc30b46a079c06474911bd59f923040c3969ad6f",
+    "api/services/amd_stage_bootstrap.py": "2ee86de9ce5b4749c12561d87ffeaecaa35b050c25255158a99c08e0ebd414ea",
+    "api/services/amd_completed_result.py": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+    "api/services/amd_upstream_job.py": "8d787aee7ccb2d358bb4ecf0a8764ad793cfa238c1b5f01cc80407cce8b228c9",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/windows_qualification.py": "741585c25995ee64ec79790d0fb6c6d77e175150a58cc7e2d35553dbf55ae029",
+    "api/services/amd_windows_authority.py": "2aae888012627cc0f8d5a217f857190516170e2ccd388b7033019f1f1d10df3a",
+    "api/tests/test_amd_windows_lifecycle_authority.py": "4c170c8a7b7cfe224ae1dffd2290e9c4ff6cec7a0bd654d7ef947c76b43eb6e8",
+    "api/tests/test_amd_windows_authority.py": "a404843a8db9d627ccd4f50b6e76171f0eebc87d9d9e2dd00a84f8226031a017",
+    "api/services/amd_wsl_session.py": "adb0d87fcb2c5a5d1888901c28ac93b830a6e5d2791534c15e709d6705fdc932",
+    "api/tests/test_amd_wsl_authority.py": "319382f7f63076baa163a3e807737818d52b1c93182e2950239326caee654a91",
+    "api/tests/test_amd_wsl_runner_authority.py": "29597ed30ce12746d170b1f17e09f92451fd8f291bb9d2e8719dce5d308c9db9",
+    "api/tests/test_amd_wsl_bound_lifecycle.py": "e525e07e08742a6a5e1a65590d4341f5c05357337e5d9bf348e684518f245026",
+    "docs/compatibility/amd-wsl-upstream-authority-evidence/qualification.py": "9622728c19ef02e0a952f593aac6873bfb75fcd0696e70e67a7795124c0d6f31",
+    "docs/compatibility/amd-wsl-upstream-authority-evidence/coordinator.py": "286b1c23dfbe6675c3023f0f0300142660e40ae0909eac31f89cbb9a6cb4d2f1",
+    "docs/compatibility/amd-wsl-upstream-authority-evidence/fixture.py": "9505caa389f9fe3db3ae039eb275c40456ab2797292769ebb9e006c77cd3b329",
+    "docs/compatibility/amd-wsl-upstream-authority-evidence/test_qualification.py": "cffc65c533c05efc30f043e4093bcf5b5840e33e670fd80102197f225926b030",
+    "docs/compatibility/amd-wsl-upstream-authority-evidence/outside_command.ps1": "f255099f3a443eb559a68e03110ea91ebca7ae9c9634210a63861360b0f7bd7c"
+  },
+  "expected_context_sha256": "43f35a892fe11203b7dbddec576d632f5f6ecbb10f93192b433e3b759be896f8",
+  "scope": "One synthetic WSL conditioning invocation with original private supervisor authority; not neural computation",
+  "limits": {
+    "process_bytes": 6442450944,
+    "job_bytes": 6442450944,
+    "ram_floor_bytes": 12884901888,
+    "disk_floor_bytes": 2147483648,
+    "stage_s": 25,
+    "outer_s": 90
+  },
+  "registration_before_sha256": "0dd45800e19e7c5f0d4ab026bc9bd6835fa5838587d130bf914966f099247246",
+  "wsl_executable_sha256": "fcd08205b608b5c4831e0dcb1801dd274436cd2c8420815f18ae58a085891a18",
+  "registration_baseline": "Prior authenticated receipt reused; actual live registry and original executable are rechecked at preflight, before GO and finally"
+}

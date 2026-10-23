@@ -1,0 +1,90 @@
+{
+  "schema": "modly.amd.wsl-upstream-authority.execution-summary.v1",
+  "base": "7152764593b17c338b907698abb80e2b18542797",
+  "branch": "codex/amd-wsl-upstream-authority",
+  "scope": "One explicitly synthetic nonrecursive stdlib-only conditioning ticket; no genuine neural or model/config evidence qualification.",
+  "host_reported_classification": "PASS",
+  "native_stage_invocations": 1,
+  "accepted_tickets": 1,
+  "execution_context": {
+    "supported_tool_override": "require_escalated",
+    "normal_previous_user_identity_matched": true,
+    "administrator_role_enabled": false,
+    "windows_runas_used": false,
+    "host_exit_code": 0,
+    "outside_context_sha256": "22457bba849c04fdbdd035c26b6cc5bf2930eeee4a872f3a7f3a89efaa26ff28"
+  },
+  "one_use_rejections": {
+    "copied-authority": true,
+    "copied-ticket": true,
+    "worker-PASS": true,
+    "replay": true,
+    "repeated-invocation": true
+  },
+  "accepted_qualification": "WSL_CPU_SUPERVISED",
+  "genuine_execution_qualified": false,
+  "complete_shape_job": false,
+  "settlement": {
+    "linux_natural": true,
+    "linux_reaped_all": true,
+    "linux_owned_remaining": 0,
+    "linux_broker_errors": [],
+    "linux_client_exit_code": 0,
+    "windows_bootstrap_exit_code": 0,
+    "runner_windows_job_active": 0,
+    "outer_windows_job_active": 0,
+    "forced_stage_cleanup": false,
+    "forced_outer_cleanup": false,
+    "diagnostic_errors": [],
+    "outer_errors": [],
+    "outer_cleanup_errors": []
+  },
+  "measured": {
+    "outer_elapsed_s": 10.328000000001339,
+    "runner_receipt_elapsed_s": 6.764999999999418,
+    "linux_broker_stage_elapsed_s": 0.1262085660000003,
+    "windows_outer_peak_process_bytes": 25182208,
+    "windows_outer_peak_job_bytes": 43040768,
+    "windows_stage_peak_process_bytes": 9682944,
+    "windows_stage_peak_job_bytes": 21098496,
+    "linux_sampled_aggregate_rss_peak_bytes": 28467200,
+    "windows_initial_available_ram_bytes": 19687133184,
+    "windows_minimum_outer_available_ram_bytes": 17060290560,
+    "windows_minimum_stage_available_ram_bytes": 17278164992,
+    "minimum_outer_destination_free_bytes": 135617024000
+  },
+  "unchanged_limits": {
+    "stage_deadline_s": 25,
+    "outer_deadline_s": 90,
+    "windows_process_and_job_bytes": 6442450944,
+    "linux_rlimit_as_bytes": 6442450944,
+    "linux_sampled_aggregate_rss_limit_bytes": 6442450944,
+    "windows_available_ram_floor_bytes": 12884901888,
+    "destination_disk_floor_bytes": 2147483648,
+    "linux_atomic_cgroup_limit": false
+  },
+  "identity_checks": {
+    "sources_unchanged": true,
+    "admission_unchanged": true,
+    "review_unchanged": true,
+    "interpreter_unchanged": true,
+    "wsl_registration_and_executable_unchanged": true
+  },
+  "private_evidence_sha256": {
+    "outside-context.json": "22457bba849c04fdbdd035c26b6cc5bf2930eeee4a872f3a7f3a89efaa26ff28",
+    "outside-result.json": "718d135cf1ea5550a3b008f90a8a36508b629d47a773968f6b9df4d00b7690e7",
+    "cpu-once/attempt.json": "9af7c84d11cc1a99f9a73a934bb8c475cfa5b0ac7ee596a950f80cc6ebde1147",
+    "cpu-once/host-result.json": "bfda1173dba1ea2896963bfe9a5bc3f2465cae42b8e47f51fc01c7813766a5b7",
+    "cpu-once/pair-result.json": "a1b3eb2928d7a58cea89820c9908b7616c12a2e11457b5e51b620827d00a4bf8",
+    "cpu-once/runner/conditioning/receipt.json": "0e8c6541274ee180d8e43cd3915bc7bb9d3ce1028e14894d079b153fe0a35a77",
+    "cpu-once/runner/conditioning/protocol.jsonl": "3546b014368bbbba0c693e1e44192db1d5d884c0ddd8a3cff1bc4c091f7a7a80",
+    "cpu-once/synthetic-evidence/conditioning/synthetic-output.json": "e2c362d04e7ab17580900405332d0e0d6621c5a5f010489646ef37ea5476a893"
+  },
+  "synthetic_output_sha256": "e2c362d04e7ab17580900405332d0e0d6621c5a5f010489646ef37ea5476a893",
+  "limitations": [
+    "Private diagnostic protocol file is a timing mirror, not completion authority; trusted private bootstrap/broker pipe and sealed original runner facts are required.",
+    "Non-adversarial trusted host/same-user Linux broker assumptions; not a hostile-code sandbox.",
+    "Linux aggregate RSS is sampled, not atomic cgroup containment; Windows Job memory does not cap guest memory.",
+    "One nonrecursive stage only; no neural inference, GPU initialization, full upstream completion or Generate qualification."
+  ]
+}

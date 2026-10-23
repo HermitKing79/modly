@@ -1,0 +1,63 @@
+{
+  "schema": "modly.amd.wsl-upstream-authority.preexecution-review.v1",
+  "base": "7152764593b17c338b907698abb80e2b18542797",
+  "branch": "codex/amd-wsl-upstream-authority",
+  "verdict": "PASS",
+  "source_pins": {
+    "api/services/amd_stage_process.py": "0317a8b847fe75eb8ba74264dc30b46a079c06474911bd59f923040c3969ad6f",
+    "api/services/amd_stage_bootstrap.py": "2ee86de9ce5b4749c12561d87ffeaecaa35b050c25255158a99c08e0ebd414ea",
+    "api/services/amd_completed_result.py": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+    "api/services/amd_upstream_job.py": "8d787aee7ccb2d358bb4ecf0a8764ad793cfa238c1b5f01cc80407cce8b228c9",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/windows_qualification.py": "741585c25995ee64ec79790d0fb6c6d77e175150a58cc7e2d35553dbf55ae029",
+    "api/services/amd_windows_authority.py": "2aae888012627cc0f8d5a217f857190516170e2ccd388b7033019f1f1d10df3a",
+    "api/tests/test_amd_windows_lifecycle_authority.py": "4c170c8a7b7cfe224ae1dffd2290e9c4ff6cec7a0bd654d7ef947c76b43eb6e8",
+    "api/tests/test_amd_windows_authority.py": "a404843a8db9d627ccd4f50b6e76171f0eebc87d9d9e2dd00a84f8226031a017",
+    "api/services/amd_wsl_session.py": "adb0d87fcb2c5a5d1888901c28ac93b830a6e5d2791534c15e709d6705fdc932",
+    "api/tests/test_amd_wsl_authority.py": "319382f7f63076baa163a3e807737818d52b1c93182e2950239326caee654a91",
+    "api/tests/test_amd_wsl_runner_authority.py": "29597ed30ce12746d170b1f17e09f92451fd8f291bb9d2e8719dce5d308c9db9",
+    "api/tests/test_amd_wsl_bound_lifecycle.py": "e525e07e08742a6a5e1a65590d4341f5c05357337e5d9bf348e684518f245026",
+    "docs/compatibility/amd-wsl-upstream-authority-evidence/qualification.py": "9622728c19ef02e0a952f593aac6873bfb75fcd0696e70e67a7795124c0d6f31",
+    "docs/compatibility/amd-wsl-upstream-authority-evidence/coordinator.py": "286b1c23dfbe6675c3023f0f0300142660e40ae0909eac31f89cbb9a6cb4d2f1",
+    "docs/compatibility/amd-wsl-upstream-authority-evidence/fixture.py": "9505caa389f9fe3db3ae039eb275c40456ab2797292769ebb9e006c77cd3b329",
+    "docs/compatibility/amd-wsl-upstream-authority-evidence/test_qualification.py": "cffc65c533c05efc30f043e4093bcf5b5840e33e670fd80102197f225926b030",
+    "docs/compatibility/amd-wsl-upstream-authority-evidence/outside_command.ps1": "f255099f3a443eb559a68e03110ea91ebca7ae9c9634210a63861360b0f7bd7c"
+  },
+  "expected_context_sha256": "43f35a892fe11203b7dbddec576d632f5f6ecbb10f93192b433e3b759be896f8",
+  "registration_before_sha256": "0dd45800e19e7c5f0d4ab026bc9bd6835fa5838587d130bf914966f099247246",
+  "wsl_executable_sha256": "fcd08205b608b5c4831e0dcb1801dd274436cd2c8420815f18ae58a085891a18",
+  "admission_sha256": "5a73b5f84941455b8739847a4b79020b35fcf596cdc30469d5907d676d5cff4a",
+  "cpu_tests_sha256": "566f533df05fa8c986e12f0503af729c05f00fb80251439b045d77892ea9095b",
+  "public_cpu_log_sha256": {
+    "focused-core-tests.txt": "729b3025837c28068d001961bda5637ef54e768b52c4b57ef086e3b394110cd0",
+    "runner-tests.txt": "5a023bcbe394efab89646add19ccd89d1f356260c2879a84cbb378d4ec66eba4"
+  },
+  "independent_cpu_tests_sha256": "a0db32067435f6a49bfb4a162f5e88294068d67f190865b55426ee1215511e07",
+  "independent_cpu_log_sha256": "80cc0464a22bdfbbe2022eff155e728b46cb08fa8b4ef0e03d7ac5a39470a5b3",
+  "historical_authentication_sha256": "ee49e5618bccfde5bce227068679833c939e35d84bcf8db1f7a70972d36e3875",
+  "independent_test_methods": 31,
+  "independent_actual_bound_runner_scenarios": 40,
+  "independent_failures": 0,
+  "independent_errors": 0,
+  "findings_closed": [
+    "Current native WSL client enumeration/live image/exit259 and unique creation identity are required before START transmission; cached absent/reused PID regressions prove no gate release.",
+    "Host BASE corrected to7152764; ticket nonce environment and control acknowledgements are bound-only.",
+    "Bound WSL alone uses compact lossless receipt JSON; every history/health field and existing4MiB reader cap retained. Ordinary single-link artifact readers remain strict; only exact System32/wsl.exe permits its original identity/hash-stable OS link count.",
+    "Public CPU text logs hash-match original log-labelled digests; explicit actual public filenames are bound above."
+  ],
+  "checks": [
+    "Read complete user attachment and actual production runner/bootstrap/Linux broker/registry/UpstreamJob plus accepted Windows and WSL lifecycle evidence. Only four approved production modules changed; bootstrap remains byte-identical. Root117methods include38Windows authority actual-runner and18UpstreamJob regressions.",
+    "Existing private one-use registry binds exact original ticket/full product context/independent control nonce/backend/argv/cwd/source/config/predecessor/interpreter/evidence directory/cancellation/resource policy/deadline. Backend mismatch/copies/replay/stale/cancelled/changed-source paths refuse. Synthetic acceptance remains WSL_CPU_SUPERVISED and genuine_execution_qualified=false.",
+    "WSL-specific validator reuses suitable native Job observations and GO infrastructure; trusted original bootstrap/broker private stdout pipe independently supplies START/control/ready/leader-executed/terminal/client-exit evidence. Worker fd1/fd2 remain separate and writable diagnostic mirror/result JSON cannot mint authority.",
+    "Broker pidfd/coherent procfs observation proves exact guest executable path, argv, leader identity and inherited RLIMIT. Final authority requires matching broker/boot/session/start identity, successful leader/all reported reaping, empty second postscan, no force/error/RSS violation, actual client/bootstrap0, complete empty Windows Job and successful close, bounded private pipe EOF/drain, final cancellation/deadline/source checks.",
+    "Routine bound PING stops after authenticated terminal; actual exit/deadline/cancellation/resource observation remains active. Stage25s/outer90s,6GiB policies,12GiB RAM/2GiB disk floors and exclusive single native reservation remain unchanged.",
+    "One nonrecursive stdlib fixture waits for execution-observation mirror before host release; mirror is timing only and private validator remains independent. Coordinator accepts one conditioning ticket and checks five copies/replay/invocation refusals without another worker or full shape completion.",
+    "Independent31methods, including40actual bound-runner scenarios, passed once with real process/Job/WinDLL/drive/Linux/pidfd/hardlink/registry boundaries guarded or mocked. No reviewer native preflight/registry/WSL query or launch."
+  ],
+  "limits": [
+    "Preexecution source/mock approval only; native WSL authority/acceptance remains NOT RUN until the sole authorized attempt is independently reviewed. Native qualification is one25s synthetic nonrecursive conditioning stage; production StageCommand<=180s remains unchanged.",
+    "Trusted host interpreter/private IPC and non-adversarial same-user Linux broker assumptions remain. No hostile same-user sandbox, serialized issuer, broader-descendant native qualification, neural/current-model semantics, GPU or Generate qualification.",
+    "Broker native procfs observes Linux executable path/argv/RLIMIT; it does not hash the Linux interpreter binary. Aggregate Linux RSS is sampled, not atomic cgroup containment; Windows Job memory does not cap guest memory.",
+    "Historical authentication records original saved/Git identities from before extension. Four current approved production files intentionally changed; protected100 and all prior saved evidence remain preserved. Preservation no-native field scopes checker only."
+  ],
+  "findings": []
+}

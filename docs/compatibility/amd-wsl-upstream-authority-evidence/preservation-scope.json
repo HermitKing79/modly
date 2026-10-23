@@ -1,0 +1,11 @@
+{
+  "schema": "modly.amd.wsl-upstream-authority.preservation-scope.v1",
+  "preservation_before_sha256": "42b7e35eda7e34cb3ffd1fe8d0c421469edccd5b7289129f63514b3cfacddb5e",
+  "preservation_after_sha256": "7b6bbc816d0a1f1b0da3bcdae2325a74573211b3f28b55c5d0ae9651833684e3",
+  "checker_only_field": "no_native_worker_Job_WSL_GPU_model_or_geometry_execution",
+  "checker_field_value": true,
+  "meaning": "The preservation controller itself ran no native worker/Job/WSL/GPU/model/geometry execution or extra native query. This is not a whole-mission NOT RUN claim.",
+  "mission_native_invocations": 1,
+  "mission_native_stage": "One separately recorded approved synthetic WSL conditioning invocation",
+  "receipt_and_controller_bytes_preserved": true
+}
