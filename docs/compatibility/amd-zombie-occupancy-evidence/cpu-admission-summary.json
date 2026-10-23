@@ -1,0 +1,59 @@
+{
+  "private_cpu_admission_sha256": "49abb484395e979ce8e6f06e4c0dce377a388b7d291887e9b45f84ed9ab42b45",
+  "feature_file_sha256": "e5659b1842509e73ec496ef90bf95fae86c93ddf5ee73fba8015822982a3cb60",
+  "dino_execution_commit": "93269412602a338acd9fbde41798901ddb5f707d",
+  "source_image_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+  "source_pixel_sha256": "e958193cad52cb3b15efd69410c3727853df61fd35310468d1b4540284ea2fb5",
+  "original_dino_checkpoint_sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+  "sampler_checkpoint_sha256": "ca01377c485bec418076d38ee80166d32dc776d744f2553b835cba1e97a7abf6",
+  "sampler_config_sha256": "6cdfb636854f60ffcadd8c49244169cd449f34c5ccdb55b5ff7c04678f9c399e",
+  "sampler_header_sha256": "512d8dd48a9219d0f30b3435019ba797abbff6d67e421bc9adf7f8435d99f692",
+  "sampler_parameter_bytes": 2584359952,
+  "decoder_checkpoint_sha256": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a",
+  "decoder_config_sha256": "646781293f1cda74720de85d1cef50a957fb4aebd9a4bd014e454e32f2330ac5",
+  "decoder_header_sha256": "fb31e5d5ff5d51b91bdab639fa919853e9aaaaf06e4a4e69a918af2799c64b94",
+  "decoder_parameter_bytes": 147585412,
+  "sampler_ram": {
+    "timestamp_utc": "2026-10-23T23:05:38.374069+00:00",
+    "available_bytes": 18124574720,
+    "required_bytes": 11411181632,
+    "admitted": true,
+    "torch_imported": false
+  },
+  "decoder_ram": {
+    "available_bytes": 18124574720,
+    "required_bytes": 4294967296,
+    "admitted": true
+  },
+  "destination_free_bytes": 134740406272,
+  "sampling_params": {
+    "steps": 12,
+    "rescale_t": 5.0,
+    "guidance_strength": 7.5,
+    "guidance_rescale": 0.7,
+    "guidance_interval": [
+      0.6,
+      1.0
+    ],
+    "dino_lock": 0.0
+  },
+  "seed": 20261013,
+  "sigma_min": 1e-05,
+  "deadlines": {
+    "sampling": [
+      180,
+      240,
+      480
+    ],
+    "decoder": [
+      120,
+      180,
+      360
+    ]
+  },
+  "gpu_memory_limit": 12884901888,
+  "initial_gpu_free_required": 13958643712,
+  "header_hash_domain": "8-byte length prefix plus full padded JSON header",
+  "no_torch_import": true,
+  "weights_loaded": false
+}

@@ -1,0 +1,266 @@
+{
+  "base": "c570c2e3141e7371b24943fa9de65e16c5d8e429",
+  "files": {
+    "api/services/amd_model_metadata.py": {
+      "bytes": 4023,
+      "sha256": "ca7b9f01ea09cb1820208e22f9bb5605bf8cf67159ea0dead9be7036eaf2ab96"
+    },
+    "api/services/amd_observer.py": {
+      "bytes": 3632,
+      "sha256": "b403b1e00627d4101e7c75d6759079d1ea81748ab3350faea29e7eab9add4f88"
+    },
+    "api/services/amd_offline_guard.py": {
+      "bytes": 7731,
+      "sha256": "d874b8cbd0b873a8811c06fc61f28d3c6e36188371c4ab8a0fdc805ee83d6d00"
+    },
+    "api/services/amd_runtime.py": {
+      "bytes": 13984,
+      "sha256": "16499c8c8b5ef3f133ee872bade91a4332f4195d757da662022511c5049bf756"
+    },
+    "docs/compatibility/amd-blaslt-teardown-evidence/binary-review.json": {
+      "bytes": 11477,
+      "sha256": "e27920546e1081c0070ce3350a199a98b74ca9f33317dd588d159685febae04a"
+    },
+    "docs/compatibility/amd-blaslt-teardown-evidence/binding-contract.json": {
+      "bytes": 2664,
+      "sha256": "a2664fd511e77d171e70892607b0eaf65045703977f07dd6673797aa1710b2cf"
+    },
+    "docs/compatibility/amd-blaslt-teardown-evidence/cpu-binding.json": {
+      "bytes": 936,
+      "sha256": "7454b4ef8ac37f2d57e5a0b7006e866f08624cfd719307496c595cdd19c12922"
+    },
+    "docs/compatibility/amd-dinov3-allocation-evidence/conditioning.safetensors": {
+      "bytes": 4215800,
+      "sha256": "3f444d42191df07415a8877a3d8d3706cf1b129bedbbb2dfcc0221d5571be56a"
+    },
+    "docs/compatibility/amd-dinov3-allocation-evidence/run/results.json": {
+      "bytes": 154879,
+      "sha256": "b834d7199db2e18abbd4011007b077e359e95931d643db3c852df778af7cc82b"
+    },
+    "docs/compatibility/amd-dinov3-conditioning-evidence/cpu-metadata/results.json": {
+      "bytes": 77072,
+      "sha256": "c2c16935a8bb2803c29ed4732db02d2751ae607d9247a2bfca92f72f86ce4b73"
+    },
+    "docs/compatibility/amd-dinov3-conditioning-evidence/source-contract.json": {
+      "bytes": 2351,
+      "sha256": "f31cb704d3ff52f1a71bc38ff2acd5c852d8784bfe309860ef24b1c6c7505c38"
+    },
+    "docs/compatibility/amd-instrumented-forward-resume-evidence/cache-plan.json": {
+      "bytes": 179074,
+      "sha256": "d9fd5c8324c99d335fe615e974016b9c0dc4baca77bf3e5f51929e2dd6c26ec2"
+    },
+    "docs/compatibility/amd-offline-model-audit-evidence/final-assets/dinov3.metadata.json": {
+      "bytes": 80682,
+      "sha256": "d3144512f2e6733666f4d6e2420ea5de06d69d02f93efe6faf8240b1b457740d"
+    },
+    "docs/compatibility/amd-offline-model-audit-evidence/final-assets/ss_dec_conv3d_16l8_fp16.metadata.json": {
+      "bytes": 14811,
+      "sha256": "3589979a622262b71580437df2a534e51df1b270dd82ded8859263431bc79246"
+    },
+    "docs/compatibility/amd-offline-model-audit-evidence/final-assets/ss_flow_img_dit_1_3B_64_bf16.metadata.json": {
+      "bytes": 126728,
+      "sha256": "f9aa6fd9dc3b86a0ea2e2a943a4c74cf24eb2aeab5353eaaa1e880d2c0792d1b"
+    },
+    "docs/compatibility/amd-sparse-decoder-loading-evidence/run/results.json": {
+      "bytes": 55657,
+      "sha256": "04c1334130138dd3b17294b5b73aeb6fb35638d2eefce64b9c9986875ebe2407"
+    },
+    "docs/compatibility/amd-sparse-flow-evidence/cpu-metadata-final-candidate/results.json": {
+      "bytes": 124982,
+      "sha256": "2553590e4ab2b0f74077ff05fc973663abd00e681c9c63f949eaab364591747c"
+    },
+    "docs/compatibility/amd-sparse-flow-evidence/source-contract.json": {
+      "bytes": 143840,
+      "sha256": "ad5ec7aa639cb9d45fd69c05161246800f61fefcd6198e70ecf4c2fd8d82f6b9"
+    },
+    "docs/compatibility/amd-sparse-structure-sampling-evidence/resume-result-analysis.json": {
+      "bytes": 7925,
+      "sha256": "4c119230f2ef17ca81582945455d32068b27da731747f0c2952abf3206cea479"
+    },
+    "docs/compatibility/amd-sparse-structure-sampling-evidence/source-contract.json": {
+      "bytes": 1759,
+      "sha256": "975f88bd76418ddf00dcb8cac93d664a8481a13bfe45019a709ea8603c472fed"
+    },
+    "docs/compatibility/amd-sparse-structure-sampling-evidence/sparse-structure-latent.safetensors": {
+      "bytes": 134688,
+      "sha256": "8a4da87ae1bbc2d5e5186f300adf11597bf986cb58dfb24a564a2eec287b44f2"
+    },
+    "docs/compatibility/amd-zombie-dinov3-evidence/candidate-source-manifest.json": {
+      "bytes": 8267,
+      "sha256": "84b4077334ea337ce836af162c755e8ecb7146a48640e6da68cb94c58b4b3d43"
+    },
+    "docs/compatibility/amd-zombie-dinov3-evidence/outcome-review.json": {
+      "bytes": 9688,
+      "sha256": "d1f832ef4dd79a9b265c689ccf46afa181e21780798ff7f4dd970ec3eb9bb8db"
+    },
+    "docs/compatibility/amd-zombie-dinov3-evidence/private-evidence-hashes.json": {
+      "bytes": 2275,
+      "sha256": "dd79e169cd88cfb1753612d11f11141411fcae44e7a47ef6cf1d37e321ef06f2"
+    },
+    "docs/compatibility/amd-zombie-dinov3-evidence/result.json": {
+      "bytes": 2103,
+      "sha256": "b0f49438d8d360568e525e5a657baa7d1cc4eaf73de9b2877480606256020b4e"
+    },
+    "docs/compatibility/amd-zombie-occupancy-evidence/cpu-admission-summary.json": {
+      "bytes": 2223,
+      "sha256": "0bd194a92e18ca62ff82809208016892ba5b059a19304d4ebedae73d88ad35fd"
+    },
+    "experimental/extensions/trellis2-amd/alpha_input.py": {
+      "bytes": 3468,
+      "sha256": "9349d5381273c3d750ba18627b5f2579db23ffbf547dccaa1006c254ac76ba70"
+    },
+    "experimental/extensions/trellis2-amd/strict_loader.py": {
+      "bytes": 4586,
+      "sha256": "0a4b2aab6fb34a034be1725d4514d71f17c59376151b549ab631ebc8b5c8fc79"
+    },
+    "scripts/compatibility/amd_blaslt_teardown.py": {
+      "bytes": 4054,
+      "sha256": "ac8456c29291f5ee0bc567086b152f7013f502996179e408577f5806ca3310dd"
+    },
+    "scripts/compatibility/amd_bounded_gpu_proof.py": {
+      "bytes": 19533,
+      "sha256": "8910884b4d4bd433df654a8137586eb43711e37e97acfcf8462392ef4258dff4"
+    },
+    "scripts/compatibility/amd_decoder_contract.py": {
+      "bytes": 2928,
+      "sha256": "20d9def94b5965131346f25383a72cb0d8ddc4435a2d2f8c7ebec5d2eff9279a"
+    },
+    "scripts/compatibility/amd_decoder_forward_contract.py": {
+      "bytes": 6303,
+      "sha256": "e30b74ca21a3c47fc8150352fab729f54e050ddaac0ea4660b02c284b062a77c"
+    },
+    "scripts/compatibility/amd_dinov3_allocation.py": {
+      "bytes": 7409,
+      "sha256": "8b7eb5edd95d5f97aafafe64f86c0f1dc5cdb7e315075f2321a42532c5b3eda4"
+    },
+    "scripts/compatibility/amd_dinov3_conditioning.py": {
+      "bytes": 28345,
+      "sha256": "980f1e4576fabaab85c86eefb97b9050882e2f65096e8d63cd3e4eb4a9694e68"
+    },
+    "scripts/compatibility/amd_dinov3_contract.py": {
+      "bytes": 3443,
+      "sha256": "e6a09b4528798f399aef140f90a17b225aec66210a91ea0cf6771e80e01c11e4"
+    },
+    "scripts/compatibility/amd_dinov3_local.py": {
+      "bytes": 6510,
+      "sha256": "9692bd1b08b4fb0508f0a7cb826e3b635744420ec6d6a523629577e55f96a44b"
+    },
+    "scripts/compatibility/amd_dinov3_metadata_probe.py": {
+      "bytes": 6387,
+      "sha256": "4f0e215bc64a53aaf080beee93723b985a994905ca2f1bb66f5638305420720a"
+    },
+    "scripts/compatibility/amd_feature_checkpoint.py": {
+      "bytes": 4003,
+      "sha256": "f055eef51f9675a5cf61c8c404c39a1db6a5ac2197cce21da3c44d19a4df50e7"
+    },
+    "scripts/compatibility/amd_forward_cache_reuse.py": {
+      "bytes": 9467,
+      "sha256": "742b7a07b814bfa0f5d9ff55b47262735d51930bbc5c211995b1d770144cfdc3"
+    },
+    "scripts/compatibility/amd_forward_diagnostics.py": {
+      "bytes": 9413,
+      "sha256": "468b325ed0f69f738b8d48173340f838b3e461bb2a72b4f994946dbe43fba4a9"
+    },
+    "scripts/compatibility/amd_forward_owned_job.py": {
+      "bytes": 3908,
+      "sha256": "19632bab033e8caaafb2bbfcddf002024ff1a57105224a30c4fd6a2242cccb64"
+    },
+    "scripts/compatibility/amd_forward_windows_monitor.py": {
+      "bytes": 2230,
+      "sha256": "d7c7596bff6962ab0df695b03588316495dba5f8e7992866f70d9578f1ce6c90"
+    },
+    "scripts/compatibility/amd_model_metadata.py": {
+      "bytes": 4183,
+      "sha256": "4e618330bcb784371f57f751097db67299a307d40ad763c46b49f4f7d5f3b775"
+    },
+    "scripts/compatibility/amd_native_import_preflight.py": {
+      "bytes": 8345,
+      "sha256": "3e66543bfdb81e5ed87d328b68729621433bf2925018e376031abb65621bbdde"
+    },
+    "scripts/compatibility/amd_object_occupancy.py": {
+      "bytes": 11832,
+      "sha256": "56776c53e5e4f58f73e01c94696f4bc616f45d4e951b797c39525f92b39be1e5"
+    },
+    "scripts/compatibility/amd_sparse_decoder_forward.py": {
+      "bytes": 35453,
+      "sha256": "7d0d44e49aee42dc6154df9ae392d5df219a580dd87b214bc47d2f2331999fa8"
+    },
+    "scripts/compatibility/amd_sparse_decoder_loading.py": {
+      "bytes": 22138,
+      "sha256": "26a9ccc06e2beb171479368563f084982ec1678508eb50692c78fad7138bed62"
+    },
+    "scripts/compatibility/amd_sparse_flow_contract.py": {
+      "bytes": 5738,
+      "sha256": "b9e8fedcb949ddb8f9f9ace4d879392068238cfa25959e220de4f5ae29f7e9cc"
+    },
+    "scripts/compatibility/amd_sparse_flow_forward.py": {
+      "bytes": 28666,
+      "sha256": "66547b4c18120816d10a3a3606325b52eb430f59b8caf8a2b88d7d21d4e9af2a"
+    },
+    "scripts/compatibility/amd_sparse_flow_local.py": {
+      "bytes": 8245,
+      "sha256": "7ff1e9ccd196d4168273e56542ed41de5714b54445a9020828700cc0475b3fcd"
+    },
+    "scripts/compatibility/amd_sparse_flow_probe.py": {
+      "bytes": 11061,
+      "sha256": "3550d26963b8769488e05cb79e2e75fc08b5b5605f34769f1017d2e17ee53d8e"
+    },
+    "scripts/compatibility/amd_sparse_latent_checkpoint.py": {
+      "bytes": 3934,
+      "sha256": "eb8a9461391b24d94413c7e4bb6548bd9282bb561525826d48a48bf3d66ffa05"
+    },
+    "scripts/compatibility/amd_sparse_occupancy.py": {
+      "bytes": 5658,
+      "sha256": "0bb248a66e28697d28dd659a5077098bc75cf0ecc7c6b54c5a4b616eba410e78"
+    },
+    "scripts/compatibility/amd_sparse_occupancy_contract.py": {
+      "bytes": 2429,
+      "sha256": "ab14765c6fff7eb26da689d035645d84000980e1759ab66802f2bd0b018e71d7"
+    },
+    "scripts/compatibility/amd_sparse_occupancy_data.py": {
+      "bytes": 8174,
+      "sha256": "78a4e01c227e2dd1d76ce8a6230ee985985572c9bae70362508e97888112869a"
+    },
+    "scripts/compatibility/amd_sparse_sampling.py": {
+      "bytes": 4167,
+      "sha256": "3f7fd4e01ed3c2fb69829e74290a4db5615541ac7cb572ae9e845e5e0595dc86"
+    },
+    "scripts/compatibility/amd_sparse_sampling_contract.py": {
+      "bytes": 5852,
+      "sha256": "3b6c69f8df5d4c24005203e9d171b098c880094a81850b913a60336fbdf025aa"
+    },
+    "scripts/compatibility/amd_sparse_sampling_control.py": {
+      "bytes": 7264,
+      "sha256": "b647cdec29b27072e3a8c0d75c9b21990e5280bc985ecb3bc4259f880d615e7f"
+    },
+    "scripts/compatibility/amd_zombie_dinov3.py": {
+      "bytes": 13397,
+      "sha256": "63a6814dbe66e309d6d9e9bb142d437d1b1d7a3174edf99cdb3625fbbdd8bf36"
+    },
+    "scripts/compatibility/amd_zombie_occupancy.py": {
+      "bytes": 23153,
+      "sha256": "669fb7a725a03823767a07acff3e8a0e78fa18b5a92fd913c731f46ba48d3628"
+    },
+    "scripts/compatibility/amd_zombie_voxel_preview.py": {
+      "bytes": 7134,
+      "sha256": "266de0498c00917fffdc0c1a356d7a848e08186f6bb8891cb3b23c2cb91ab62a"
+    },
+    "scripts/compatibility/test_amd_zombie_dinov3.py": {
+      "bytes": 21052,
+      "sha256": "002db5a84eecd91b951303777eee5d49ad0f84868d7e88fa805a2b80518cf5c0"
+    },
+    "scripts/compatibility/test_amd_zombie_occupancy.py": {
+      "bytes": 15449,
+      "sha256": "5d1f7638ab9746b8ee021ae2e1b2172fbcbee2155bb36ffcb7caedba9271d39e"
+    },
+    "scripts/compatibility/test_amd_zombie_occupancy_acceptance.py": {
+      "bytes": 9579,
+      "sha256": "2338e8e99940740fb3826b5649f63aed8f932312f27d7dcbe26c04bfd94a2d8b"
+    },
+    "scripts/compatibility/test_amd_zombie_voxel_preview.py": {
+      "bytes": 7892,
+      "sha256": "8b1729491d89e86f59b0bfdaef7f403f0ea066b7ace5415e9e51ea8263b9c343"
+    }
+  },
+  "private_inputs_not_git_dependencies": true
+}

@@ -1,0 +1,106 @@
+{
+  "schema": "modly-zombie-sparse-occupancy-pre-execution-review-v1",
+  "reviewer": "independent-host-and-teardown-subagent",
+  "reviewed_utc": "2026-10-23T23:13:56.9328263Z",
+  "approval": "PASS",
+  "blockers": [],
+  "base_commit": "c570c2e3141e7371b24943fa9de65e16c5d8e429",
+  "reviewed_file_sha256": {
+    "scripts/compatibility/amd_zombie_occupancy.py": "669fb7a725a03823767a07acff3e8a0e78fa18b5a92fd913c731f46ba48d3628",
+    "scripts/compatibility/test_amd_zombie_occupancy.py": "5d1f7638ab9746b8ee021ae2e1b2172fbcbee2155bb36ffcb7caedba9271d39e",
+    "scripts/compatibility/test_amd_zombie_occupancy_acceptance.py": "2338e8e99940740fb3826b5649f63aed8f932312f27d7dcbe26c04bfd94a2d8b",
+    "scripts/compatibility/amd_zombie_voxel_preview.py": "266de0498c00917fffdc0c1a356d7a848e08186f6bb8891cb3b23c2cb91ab62a",
+    "scripts/compatibility/test_amd_zombie_voxel_preview.py": "8b1729491d89e86f59b0bfdaef7f403f0ea066b7ace5415e9e51ea8263b9c343",
+    "docs/compatibility/amd-zombie-occupancy-evidence/cpu-admission-summary.json": "0bd194a92e18ca62ff82809208016892ba5b059a19304d4ebedae73d88ad35fd"
+  },
+  "original_neural_host_and_resource_sources_unchanged": true,
+  "original_source_diff_exit_code": 0,
+  "historical_feature": {
+    "file_sha256": "e5659b1842509e73ec496ef90bf95fae86c93ddf5ee73fba8015822982a3cb60",
+    "payload_sha256": "da13f1a6415db96cba44aaa807c94265995afbb13ef7e69c66911ede2bc6ee0e",
+    "reauthenticated_actual_artifact_and_original_success_receipts": true,
+    "source_image_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+    "dtype": "F32",
+    "dino_rerun": false,
+    "shape": [
+      1,
+      1029,
+      1024
+    ],
+    "source_pixel_sha256": "e958193cad52cb3b15efd69410c3727853df61fd35310468d1b4540284ea2fb5",
+    "dino_execution_commit": "93269412602a338acd9fbde41798901ddb5f707d"
+  },
+  "cpu_admission": {
+    "sampler_checkpoint_sha256": "ca01377c485bec418076d38ee80166d32dc776d744f2553b835cba1e97a7abf6",
+    "decoder_available_ram_bytes": 18124574720,
+    "private_receipt_sha256": "49abb484395e979ce8e6f06e4c0dce377a388b7d291887e9b45f84ed9ab42b45",
+    "header_hash_domain": "8-byte length prefix plus full padded JSON header",
+    "decoder_header_sha256": "fb31e5d5ff5d51b91bdab639fa919853e9aaaaf06e4a4e69a918af2799c64b94",
+    "public_summary_sha256": "0bd194a92e18ca62ff82809208016892ba5b059a19304d4ebedae73d88ad35fd",
+    "sampler_available_ram_bytes": 18124574720,
+    "decoder_checkpoint_sha256": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a",
+    "sampler_required_ram_bytes": 11411181632,
+    "decoder_config_sha256": "646781293f1cda74720de85d1cef50a957fb4aebd9a4bd014e454e32f2330ac5",
+    "decoder_required_ram_bytes": 4294967296,
+    "destination_free_bytes": 134740406272,
+    "weights_loaded": false,
+    "torch_imported": false,
+    "sampler_header_sha256": "512d8dd48a9219d0f30b3435019ba797abbff6d67e421bc9adf7f8435d99f692",
+    "sampler_config_sha256": "6cdfb636854f60ffcadd8c49244169cd449f34c5ccdb55b5ff7c04678f9c399e"
+  },
+  "tests": {
+    "independent_final_acceptance": {
+      "tests": 5,
+      "seconds": 20.618,
+      "exit_code": 0,
+      "scope": "Labelled historical JSON fixtures in fresh temporary CPU directories; no new neural result is fabricated or accepted",
+      "passed": 5,
+      "capture_sha256": "40a24ac0add0f384fa97050d499672cbcf61421b7f2b7da3c2fa1769d8b71e68"
+    },
+    "regression_red": {
+      "capture_sha256": "e12e5ec62efbb78cddf7098b52c2a1c5264e96d07780206a03d965399b0a3f77",
+      "reason": "Consistently changed strict/assign/GPU-initialized fields in both gate and worker were initially accepted; original authorization validators now reject all six cases",
+      "tests": 1,
+      "exit_code": 1,
+      "failed_subcases": 6
+    },
+    "primary_focused": {
+      "capture_sha256": "5d4619698c474f4038f6a4e7c18f139b4480c86ab7b416e0f6293464869565e9",
+      "seconds": 23.381,
+      "tests": 25,
+      "scope": "Only the three new CPU modules; final capture independently inspected",
+      "passed": 25
+    },
+    "independent_final_routing": {
+      "capture_sha256": "f459dc2b91c7266725802b87774ed5c9256596f81b13816a65e23131c6fda401",
+      "seconds": 1.677,
+      "tests": 15,
+      "exit_code": 0,
+      "passed": 15
+    },
+    "neural_imports": "Denied by test NoModels import finders"
+  },
+  "accepted_controls": [
+    "Original profiles are frozen before private input rebinding. Their numerical workers, authorization validators, classification and supervised Windows Job host are unchanged.",
+    "OwnedInput consumes the authentic first OWNED_JOB_ATTACHED line before substantive worker configuration, replays only that exact received line once, and passes subsequent reads to the real host stream. No GPU authorization is fabricated.",
+    "Sampler retains 12 Euler steps, 22 model forwards, seed 20261013, sigma minimum 1e-5, guidance 7.5/rescale0.7/interval0.6..1.0, timestep rescale5 and dino_lock0.",
+    "Historical DINO feature provenance remains at execution commit 93269412602a338acd9fbde41798901ddb5f707d. A distinct new sampler commit is required and is recorded outside the unchanged nested feature provenance.",
+    "Sampler limits remain CPU180/GPU240/overall480, RAM11411181632 bytes, initial free GPU13958643712 bytes and native Torch allocator12884901888 bytes.",
+    "Decoder limits remain CPU120/GPU180/overall360, RAM4294967296 bytes, initial free GPU13958643712 bytes and native Torch allocator12884901888 bytes.",
+    "Original strict checkpoint precision, reversible source-faithful flow widenings and procedural RoPE are retained; decoder checkpoint precision is unchanged.",
+    "Independent stage acceptance anchors full checkpoint identity to the CPU admission receipt hash committed through the public summary; exact source closure hashes, runtime, budgets, original strict CPU-ready authorization, zero baseline and RAM gates are checked.",
+    "Decoder launch requires a separate post-exit sampler receipt matching its genuine stage result and the actual freshly reopened latent, full provenance and original natural Job/observer/release criteria.",
+    "Original approved synchronized BLAS workspace teardown, zero allocated/reserved Torch bytes, natural empty owned Job and fail-closed forced-cleanup/deadline policies remain required.",
+    "Only the two exact owned scratch routes are admitted. Original source/input receipts and caches are preserved; current stage scratch stays under WORKSPACE_DIR.",
+    "Preview first invokes the unchanged original bounded writer. Its refusal prevents additional views. Extra CPU views use the same exposed faces and unchanged occupancy; no shape, threshold, smoothing, detailed reconstruction or neural stage is added."
+  ],
+  "qualification": "Source and CPU admission PASS before execution only. Publish and verify the exact reviewed candidate commit. At most one sampler sequence is authorized; decoder remains conditional on independent post-exit sampler PASS. Later live monitoring, natural settlement and artifact readback must pass independently.",
+  "limitations": [
+    "CPU admission is a snapshot; no continuous host RAM minimum or aggregate Job byte cap is claimed.",
+    "The Torch allocator ceiling is distinct from all driver/context memory. No live GPU allocation or release result exists at this review.",
+    "Preview quality is observational. Source-safe publication excludes original images, learned features/latents, occupancy arrays, previews and process identities."
+  ],
+  "sampling_attempt_marker_present": false,
+  "decoder_attempt_marker_present": false,
+  "reviewer_gpu_wsl_job_or_neural_worker_execution": false
+}

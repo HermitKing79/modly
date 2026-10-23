@@ -1,0 +1,19 @@
+{
+  "classification": "PASS",
+  "tests": 25,
+  "seconds": 23.381,
+  "stdout_sha256": "5d4619698c474f4038f6a4e7c18f139b4480c86ab7b416e0f6293464869565e9",
+  "model_imports_blocked": true,
+  "scope": "15 lineage/routing,5hostacceptance,5boundedpreviewCPUtests; no neural execution",
+  "pre_execution_findings_addressed": [
+    "Independent model/runtime acceptance anchored to hash-pinned trusted CPU contract.",
+    "Original strict CPU placement authorization reused in post-exit verification.",
+    "Actual first owned-Job line read before preparation; only that received line replayed once to unchanged worker; original second GPUauthorization remains real."
+  ],
+  "preserved_failed_test_captures": {
+    "cpu-acceptance-paired-gate-red.txt": "e12e5ec62efbb78cddf7098b52c2a1c5264e96d07780206a03d965399b0a3f77",
+    "cpu-tests-red.txt": "ca67e80b00334a36fa34d04215c3a07c20cdfc5c70ec7b99ef3b4e7c82e0eff1",
+    "voxel-preview-tests-red.txt": "271cb4d752392c67a7b90eafef12d88e0c6da18ff54ce4b24adb96e1b853fe2d"
+  },
+  "extra_test_discovery_note": "An initial overbroad glob also selected20historicalDINOCPUtests:19passed; realos.linkpositivehitknownsandboxWinError5. Capturepreserved. Finaltargeted25newtestsaboveallpass; no neural retry or historicalsourcechange."
+}
