@@ -1,0 +1,91 @@
+{
+  "schema": "modly.amd.image-test-preview-ui.v1",
+  "classification": "PASS",
+  "corrected_run": {
+    "status": "NORMAL_APP_CLOSE",
+    "source_commit": "63332ca5d415de8eaaff15fdaf193bc7d9935a72",
+    "initial_resources": {
+      "available_ram_bytes": 19022606336,
+      "disk_free_bytes": 139455373312
+    },
+    "app_launches": 1,
+    "resource_sample_count": 112,
+    "minimum_available_ram_bytes": 18615406592,
+    "minimum_free_disk_bytes": 139435016192,
+    "generation_enabled": false,
+    "process_and_Job_cap_bytes": 6442450944,
+    "user_session_has_deadline": true,
+    "app_returncode": 0,
+    "owned_processes_before_cleanup": 0,
+    "peak_process_bytes": 112033792,
+    "peak_Job_bytes": 310435840,
+    "cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 0,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": false,
+      "cleanup_seconds": 0.0
+    },
+    "final_returncode": 0,
+    "elapsed_seconds": 112.1400000000001
+  },
+  "corrected_result_sha256": "a8c0f8900acf6a6ec538db698097b05d627f049b53800ac1abf7ad6edbc4e6e5",
+  "first_run": {
+    "status": "BLOCKED",
+    "error": "Explicit UI smoke deadline reached",
+    "elapsed_seconds": 180.28199999999993,
+    "cleanup": {
+      "owned_tree_exit_verified": true,
+      "active_before_cleanup": 7,
+      "active_after_cleanup": 0,
+      "forced_job_cleanup": true,
+      "cleanup_seconds": 0.0
+    },
+    "result_sha256": "115a66a1ce4654ca2b99797333f3108d08541d1ca67d8cf026121286f2c7a76b",
+    "preserved": true
+  },
+  "actual_application_checks": [
+    "Original native image picker: no missing Desktop dialog after correction",
+    "RGBA PNG eligible with decoded320x240 and211x171 foreground",
+    "RGB JPEG rejected with corrective guidance and no conversion",
+    "Replacement back to RGBA updated result and preview",
+    "Three original CPU validator HTTP200 responses",
+    "Window X closed app; Job empty without forced containment"
+  ],
+  "private_ui_files": {
+    "fixed-eligible-details.jpg": {
+      "bytes": 87139,
+      "sha256": "32fbd626a876d3088240994cde0d4aff9d5877e33f049857e75c59749af53079"
+    },
+    "fixed-jpeg.jpg": {
+      "bytes": 85506,
+      "sha256": "db6f9f3b0eb8eab3bd465280e10fac602049370dd25e27938ff1d424f9d2734a"
+    },
+    "fixed-jpeg.txt": {
+      "bytes": 1272,
+      "sha256": "04ac96cd35a613d06e5513a8e65d47fb7e2182d9fd5811b6872ab16e9bc2afbe"
+    },
+    "fixed-replacement.txt": {
+      "bytes": 1220,
+      "sha256": "cd6671cdb83ec153c153719ff296c57df7ea2da35484237836feee6106147933"
+    },
+    "fixed-valid.jpg": {
+      "bytes": 86848,
+      "sha256": "d4fe0f9b403d8956211fabc8bd3e40a416e27f5db8707eb5d5e3278d0d1d3001"
+    },
+    "fixed-valid.txt": {
+      "bytes": 1220,
+      "sha256": "cd6671cdb83ec153c153719ff296c57df7ea2da35484237836feee6106147933"
+    },
+    "private-desktop-missing.jpg": {
+      "bytes": 90127,
+      "sha256": "2f41d3525794cbbc1dffe1cc21e6bec6af8b5055ea463933f2de05d32f2a7eff"
+    }
+  },
+  "runtime_tree_sha256": "245c65e116aea2d4dd8ec66a1848cde975972a84051ba12dd9ff945656cb2e1a",
+  "runtime_file_count": 6113,
+  "renderer_preload_css_files_preserved": 11,
+  "build_receipt_sha256": "ca5cd9602fbfcc6a96668b5bbc46cc9dbc56b3c42a19c5b3d8a464a2d840484a",
+  "copied_config_sha256": "61e0539e8c5fad92b3250dbe8aed6d53fe29c38d2a44659130abc68231d328cb",
+  "scope": "CPU-only local image eligibility; not generation, full preprocessing, WSL or GPU qualification. API owned child is intentionally stopped on window close; no claim of graceful ASGI exit."
+}

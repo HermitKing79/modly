@@ -1,0 +1,64 @@
+{
+  "schema": "modly.amd.image-test-preview-independent-prelaunch-review.v1",
+  "classification": "GO_FOR_BOUNDED_USER_LAUNCHER_UI_SMOKE",
+  "source_commit": "63332ca5d415de8eaaff15fdaf193bc7d9935a72",
+  "created_utc": "2026-10-23T21:12:14.7276835Z",
+  "private_pins_receipt_sha256": "b95c1c844ce2ecd691d06ca83d7ba1eb6a3249398315868eba0bcdb2f0c75a7a",
+  "source_sha256": {
+    "experimental/amd-image-test-preview/build_preview.mjs": "ed1efb4ff3eb9bd4fa98d6ce79bb37574449cd1935539d6815f0e48d72d3565f",
+    "experimental/amd-image-test-preview/preview-bootstrap.cjs": "ce3f5de208f13fa496bb1d4823131b6cde8284564bfedfae4bf3ecfd379fe547",
+    "experimental/amd-image-test-preview/launch_preview.py": "46b7a384a133d7771270d469a233f78ead5d3d2116d81df05e8482dc9ae5d874",
+    "experimental/amd-image-test-preview/runtime_probe.py": "18cf7f3f41f46b8767c475ae6ef6bee78af93ae8bbce6ae09b0b805e1d9a6363",
+    "experimental/amd-image-test-preview/preview_api.py": "f3a136d9aa84ac3c472862c3c5f0ba65c33e06286cb0c259b45d8dab09f33eed",
+    "experimental/amd-image-test-preview/test_builder.mjs": "f8ba1fe5a6cbcad7fefb8280889e8f795434e6170c66681c27a7f60a22c94150",
+    "experimental/amd-image-test-preview/test_launcher.py": "60249da5e8c2ad2a59757c16569ec568dce9855a13b0ada4f582ec0de19b3cee",
+    "experimental/amd-image-test-preview/test_preview_api.py": "aa1774533eb47d14dc6dacc6373fe58811dda3c0b99d82088357d47f63b16855"
+  },
+  "build_receipt_sha256": "660bbfb5a84789c7eec938b99834ebc19a9ed73cf553f4512ac5bd4ae1be9803",
+  "preview_configuration_sha256": "54779867218463cbc116d501bb4709ce13d4098d04160a5b8f6a4fa71eb022b3",
+  "generated_bootstrap_sha256": "238d02de44afd26357c96ae07a0d4ae951c12a4d1a48dee034ac7c6f8aee8aa2",
+  "runtime_tree_sha256": "07c2b72da9956348eadd996cf69e4651cb8096e6527bb6a4b9e5a9d2efaf3e19",
+  "critical_file_count": 45,
+  "small_source_copies_verified": 9,
+  "executed_builder_sha256": "df7d74986418a553a4d3332d5d876ee841e48646e2e0dc8cd56bf753b3d28447",
+  "current_builder_sha256": "ed1efb4ff3eb9bd4fa98d6ce79bb37574449cd1935539d6815f0e48d72d3565f",
+  "postbuild_delta_receipt_sha256": "63ef9ae1d75194235c9b16f5d6a8f99bdc425abdabeb527d8e08f0530893f12e",
+  "builder_delta": "Current builder adds future-build probe admission assertions and a negative CPU test after completed build; app payload unchanged. Recorded API Pillow absence and CPU Python 3.12.10/Pillow 12.3.0/WebP true independently satisfy added admission.",
+  "saved_cpu_test_logs": {
+    "launcher": {
+      "sha256": "e3e549f691bd508a7572a0fee89c843d5bf6c4f8a603438dc362d7c46af3794a",
+      "result": "9 PASS; current launcher source SHA-256 matches root final verification"
+    },
+    "original_cpu": {
+      "sha256": "e832cb617470e7e233fe4c30eb35c9ca293b4a24b15e1d9d4f46fa295c168243",
+      "result": "7 PASS including original RGBA/JPEG/corrupt-byte checks"
+    },
+    "builder": {
+      "sha256": "41aa90fee4b6f6f9bda77374d556a9fdda0055ab76e0a7fe073ef36260e588f4",
+      "result": "9 PASS including final admission helper"
+    },
+    "api": {
+      "sha256": "eafd7ee49495ac3cb2749c4e1c87430edaf1e78fc018e4a59271fcf03814f8ea",
+      "result": "7 discovered: 6 PASS and expected API-runtime Pillow skip"
+    }
+  },
+  "preservation_before": {
+    "saved_private_controller_note_hashes_authenticated": true,
+    "recovered_prior_remote_digest_match": true,
+    "public_receipt_sha256": "09ea9e108af9a24f7aeb555eb9dd758f0be87b594872c50b9d3de836d1366624",
+    "protected_metadata": 100,
+    "protected_bounded_hashes": 78,
+    "remote_record_rows": 135,
+    "scope": "Authenticated saved records only; no repeated source qualification, preservation scan or remote census."
+  },
+  "review_findings": [
+    "Settings ignore stored JSON and pin writable paths to private profile. Storage, environment and GPU-disable flags run synchronously before first await.",
+    "Only health and unchanged image-test router are included in local API. Generation/model/install/update/sync/external-shell IPC is denied; extension-list registry fetch returns an empty list.",
+    "Exact existing API and D: CPU interpreter hashes/probes are checked without discovery, substitution, download or installation. API Pillow absence prevents API-local decoder substitution.",
+    "Busy 8765 refuses without terminating its owner. Newly created Electron process enters unchanged unnamed owned Job before exclusive fresh nonce acknowledgement releases main/API.",
+    "Default user launcher has no deadline/debugger; fixed smoke option supplies 180 seconds through same launcher. Process/Job caps are 6 GiB, RAM/disk floors 12/2 GiB and retained resource samples bounded at 3600.",
+    "Cleanup targets owned ChildProcess/Job only. Normal-close PASS requires zero exit and empty Job without forced cleanup."
+  ],
+  "review_scope": "Independent source, small copied-source identities and saved-evidence review only. No app, builder, test, probe, native, Job, GPU, WSL or model execution by reviewer. Full 6113-file runtime identity is inherited from saved build/launcher verification, not rehashed by reviewer.",
+  "remaining_validation": "Actual launcher/UI valid-invalid-replacement workflow, normal-close/resource evidence, final preservation and publication verification remain required."
+}

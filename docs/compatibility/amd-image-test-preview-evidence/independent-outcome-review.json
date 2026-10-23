@@ -1,0 +1,49 @@
+{
+  "schema": "modly.amd.image-test-preview-independent-outcome.v1",
+  "classification": "PASS_LOCAL_IMAGE_ELIGIBILITY_PREVIEW",
+  "source_commit": "63332ca5d415de8eaaff15fdaf193bc7d9935a72",
+  "created_utc": "2026-10-23T21:26:39.290610+00:00",
+  "private_verification_sha256": "328494e3e46fc2b2489fa97101ec07133bc4d5291647f51068a2c98e6660a37b",
+  "report_sha256": "573b18adedde360020cf3e10747c969d6a78f3f15073554f7f75279705e13d32",
+  "focused_tests_receipt_sha256": "3fc675ea4de5e5a01f3d6f486e220d65f0d754d658822b6e10dc8e104f0c9fb6",
+  "ui_smoke_receipt_sha256": "403c9136a0c86ec06a912208a3686c7dab7ec5e9da5f582898a13d3a7a6681ed",
+  "final_preservation_receipt_sha256": "ebb483056cf2337506c89f1123a0c0aa2756417e1e498a357b1efa7f58c824cc",
+  "input_fixture_hashes_match_saved_manifest": true,
+  "post_close_critical_file_hashes_match": 45,
+  "small_copied_source_hashes_match": 9,
+  "private_profile_has_no_reparse_paths": true,
+  "fixed_private_settings_unchanged": true,
+  "private_model_workspace_extension_directories_empty": true,
+  "visible_results": [
+    "RGBA PNG eligible",
+    "RGB JPEG rejected without conversion",
+    "Replacement RGBA eligible"
+  ],
+  "screenshots_and_accessibility_readbacks_independently_inspected": true,
+  "actual_image_test_HTTP_200_responses": 3,
+  "normal_close": {
+    "elapsed_seconds": 112.1400000000001,
+    "app_returncode": 0,
+    "launcher_final_returncode": 0,
+    "owned_Job_empty_before_cleanup": true,
+    "forced_Job_cleanup": false,
+    "peak_process_bytes": 112033792,
+    "peak_Job_bytes": 310435840,
+    "minimum_available_ram_bytes": 18615406592,
+    "minimum_free_disk_bytes": 139435016192
+  },
+  "API_shutdown_scope": "Exact owned child intentionally stopped; null exit code in log. No graceful ASGI shutdown claim.",
+  "port_after_close": "Exclusive 127.0.0.1:8765 bind PASS, then immediately closed; no process terminated. No PID census claimed.",
+  "preservation": {
+    "before_after_equal": true,
+    "protected_metadata": 100,
+    "bounded_hashes": 78,
+    "current_caches_historical_and_latest_prior_evidence_unchanged": true,
+    "accepted_master_scope": "Metadata and inherited saved full-hash provenance; no fresh accepted-master payload hash.",
+    "remote_scope": "Final comparator uses saved 135-head prepublication snapshot; fresh publication/remote verification remains root responsibility."
+  },
+  "first_smoke": "Preserved BLOCKED at 180 seconds after missing private Desktop; forced owned cleanup7 to0. Does not count as normal-close PASS.",
+  "report_review": "Report and exact local opening guide are source-safe and accurately limit qualification to local image eligibility. Actual API-child stop distinguished from graceful ASGI exit.",
+  "reviewer_execution": "No app, build, validator/runtime probe, test, GPU, WSL or model rerun. Standard-library read-only artifact/preservation comparison and transient localhost exclusive-port check only.",
+  "scope": "No preprocessing, DINO/model execution or AMD generation is qualified. Existing runtime full-tree identity retained from launch/build evidence; reviewer post-close checks45 critical files, not a repeated6113-file payload census."
+}

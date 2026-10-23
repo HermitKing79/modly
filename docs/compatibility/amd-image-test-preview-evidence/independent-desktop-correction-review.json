@@ -1,0 +1,35 @@
+{
+  "schema": "modly.amd.image-test-preview-desktop-correction-review.v1",
+  "classification": "GO_FOR_FOCUSED_BOUNDED_USER_LAUNCHER_UI_SMOKE",
+  "source_commit": "63332ca5d415de8eaaff15fdaf193bc7d9935a72",
+  "created_utc": "2026-10-23T21:20:32.7649787Z",
+  "prior_prelaunch_review_sha256": "b2aaab7a1d68d31b888c0bb23c81adbd7d71548dd7b0aed42e47f5ccc3647231",
+  "private_pins_sha256": "65499a18feabcc8992fc0659a50e211f64bc252aaf2165e1374c2e41ab7ba151",
+  "bootstrap_template_sha256": "a346ed53b85c0ec26fee9581279b4e55125b4de5e019ca5bf3a793ce466a195b",
+  "generated_bootstrap_sha256": "7854a3010dc7fd2f962d35489918ba25a6c6323b20c5d3a99dec388c92c6d025",
+  "preview_configuration_sha256": "61e0539e8c5fad92b3250dbe8aed6d53fe29c38d2a44659130abc68231d328cb",
+  "build_receipt_sha256": "ca5cd9602fbfcc6a96668b5bbc46cc9dbc56b3c42a19c5b3d8a464a2d840484a",
+  "runtime_tree_sha256": "245c65e116aea2d4dd8ec66a1848cde975972a84051ba12dd9ff945656cb2e1a",
+  "critical_files": 45,
+  "renderer_preload_files_preserved": 11,
+  "copied_small_sources_verified": 9,
+  "first_attempt": {
+    "active_before_cleanup": 7,
+    "status": "BLOCKED",
+    "reason": "Explicit 180-second smoke deadline reached after native picker Desktop-location failure; no validation completed",
+    "forced_owned_cleanup": true,
+    "result_sha256": "115a66a1ce4654ca2b99797333f3108d08541d1ca67d8cf026121286f2c7a76b",
+    "peak_Job_bytes": 299945984,
+    "active_after_cleanup": 0
+  },
+  "correction": "Only normalized generated-bootstrap delta is desktop: home/Desktop in existing private-path map. Existing synchronous ensureDirectory creates and verifies it inside profile before first await; app.setPath desktop points there.",
+  "source_scope": "Launcher/probe/wrapper/builder/API/helper source identities unchanged from prior review; only bootstrap map and focused regression test changed. Fresh derived output preserves first failed preview and its records.",
+  "regression": {
+    "green_log_sha256": "700a7208085df9548201eeaac9e01b32d199f743156dd0cb15ae543f91e83f50",
+    "red_log_sha256": "20bada085d1da6149aefd6172a63f2e9a610c3e5974eb622d4dc8efe3430fb4f",
+    "result": "Targeted Desktop assertion RED before correction; 10 CPU builder tests PASS after correction"
+  },
+  "saved_config_validation_sha256": "d01f6a72799ac7444cfcfd8c190d2acec69fc4f5704cc6535098f45801d5fd8d",
+  "review_scope": "Focused source, output-copy, saved-log and config review only; no reviewer app/build/test/probe/Job/native/GPU/WSL/model execution or bulk runtime rehash.",
+  "remaining_validation": "Run fixed 180-second user-launcher smoke, complete valid-invalid-replacement selections and close normally; retain this as prelaunch approval only."
+}

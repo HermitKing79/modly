@@ -1,0 +1,34 @@
+{
+  "schema": "modly.amd.image-test-preview-tests.v1",
+  "classification": "PASS",
+  "rows": {
+    "launcher": {
+      "log_sha256": "e3e549f691bd508a7572a0fee89c843d5bf6c4f8a603438dc362d7c46af3794a",
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0
+    },
+    "builder_bootstrap": {
+      "log_sha256": "700a7208085df9548201eeaac9e01b32d199f743156dd0cb15ae543f91e83f50",
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0
+    },
+    "api_qualified_cpu": {
+      "log_sha256": "e832cb617470e7e233fe4c30eb35c9ca293b4a24b15e1d9d4f46fa295c168243",
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0
+    },
+    "api_without_Pillow": {
+      "log_sha256": "eafd7ee49495ac3cb2749c4e1c87430edaf1e78fc018e4a59271fcf03814f8ea",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "desktop_red_log_sha256": "20bada085d1da6149aefd6172a63f2e9a610c3e5974eb622d4dc8efe3430fb4f",
+  "api_method": "Actual FastAPI/multipart/validator execution, threadpool scheduling inlined in unit driver; actual socket HTTP independently exercised by three application UI submissions.",
+  "launcher_additional_resume_run": "9 tests passed, 0 failures, 0 skips in 0.914 seconds; no source changes since the saved final log.",
+  "no_model_imports": true
+}
