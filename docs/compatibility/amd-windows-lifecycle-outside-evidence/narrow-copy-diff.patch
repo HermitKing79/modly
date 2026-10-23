@@ -1,0 +1,47 @@
+--- docs/compatibility/amd-fixture-timing-evidence/windows_qualification.py
++++ docs/compatibility/amd-windows-lifecycle-outside-evidence/windows_qualification.py
+@@ -18,22 +18,26 @@
+ 
+ E = Path(__file__).resolve().parent
+ ROOT = E.parents[2]
+-P = ROOT.parent / 'artifacts/amd-fixture-timing-0c031be'
++P = ROOT.parent / 'artifacts/amd-windows-lifecycle-outside-91420ee'
+ OUT = P / 'cpu-once'
+ FIXTURE = E / 'diagnostic_fixture.py'
+-BASE, BRANCH = '0c031befef0483f4ac3bed05fa35c3546166f255', 'codex/amd-fixture-readiness-timing'
++BASE, BRANCH = '91420eec2dee0b8ac61cd30a845b7fee4f89ff23', 'codex/amd-windows-lifecycle-outside'
+ PINS = ('api/services/amd_stage_process.py', 'api/services/amd_stage_bootstrap.py',
+         'api/services/amd_completed_result.py',
+         'docs/compatibility/amd-job-stage-orchestrator-evidence/cpu_stage_fixture.py',
+         'docs/compatibility/amd-retired-process-evidence/windows_qualification.py',
+-        'docs/compatibility/amd-fixture-timing-evidence/diagnostic_fixture.py',
+-        'docs/compatibility/amd-fixture-timing-evidence/diagnostic_process.py',
+-        'docs/compatibility/amd-fixture-timing-evidence/diagnostic_bootstrap.py',
+-        'docs/compatibility/amd-fixture-timing-evidence/windows_qualification.py')
++        'docs/compatibility/amd-windows-lifecycle-outside-evidence/diagnostic_fixture.py',
++        'docs/compatibility/amd-windows-lifecycle-outside-evidence/diagnostic_process.py',
++        'docs/compatibility/amd-windows-lifecycle-outside-evidence/diagnostic_bootstrap.py',
++        'docs/compatibility/amd-windows-lifecycle-outside-evidence/windows_qualification.py',
++        'docs/compatibility/amd-windows-lifecycle-outside-evidence/test_diagnostic_fixture.py',
++        'docs/compatibility/amd-windows-lifecycle-outside-evidence/test_observer_timing.py',
++        'docs/compatibility/amd-windows-lifecycle-outside-evidence/test_prelaunch_errors.py',
++        'docs/compatibility/amd-windows-lifecycle-outside-evidence/outside_command.ps1')
+ _lock = threading.Lock()
+ _PRELAUNCH_PHASE = 'not-entered'
+ # Independently selected private diagnostics, never the consumed attempt leaf.
+-ERROR_ROOT = ROOT.parent / 'artifacts/amd-evidence-writer-d784e4b/diagnostics'
++ERROR_ROOT = P / 'diagnostics'
+ 
+ def sha(path):
+     path = Path(path)
+--- docs/compatibility/amd-evidence-writer-evidence/test_prelaunch_errors.py
++++ docs/compatibility/amd-windows-lifecycle-outside-evidence/test_prelaunch_errors.py
+@@ -9,7 +9,7 @@
+ from unittest.mock import Mock, patch
+ 
+ ROOT = Path(__file__).resolve().parents[3]
+-SOURCE = ROOT / 'docs/compatibility/amd-fixture-timing-evidence/windows_qualification.py'
++SOURCE = ROOT / 'docs/compatibility/amd-windows-lifecycle-outside-evidence/windows_qualification.py'
+ spec = importlib.util.spec_from_file_location('writer_reporting_contract', SOURCE)
+ m = importlib.util.module_from_spec(spec)
+ spec.loader.exec_module(m)

@@ -1,0 +1,80 @@
+{
+  "schema": "modly.amd.lifecycle-outside-preservation.v1",
+  "phase": "before",
+  "created_utc": "2026-10-23T10:15:37.241923+00:00",
+  "mission_base": "91420eec2dee0b8ac61cd30a845b7fee4f89ff23",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "private_detail_sha256": "2a0e3f984535a3da1f41cc41a3004e2abbe4f3bd19caa41818ab0b839c6c7f76",
+  "private_controller_sha256": "fb8379974eeed36e8b6983f35acb44fdc404f206228fd5e48d33faf6701b5209",
+  "prior_public_authentication": {
+    "preservation-before.json": {
+      "working_sha256": "14a8166815c19bc2968c04e331669fa3818f99b049d04d382b82adca3437085f",
+      "git_blob_sha256": "14a8166815c19bc2968c04e331669fa3818f99b049d04d382b82adca3437085f",
+      "exact_byte_match": true
+    },
+    "preservation-after.json": {
+      "working_sha256": "6f441c4dfcc0a5fcca626c4cf2de9ad0673c668bc0c0bb58e0c4a3a43f2afdc3",
+      "git_blob_sha256": "6f441c4dfcc0a5fcca626c4cf2de9ad0673c668bc0c0bb58e0c4a3a43f2afdc3",
+      "exact_byte_match": true
+    },
+    "preservation-review.json": {
+      "working_sha256": "3074b18e86b634f94616b60ee36eb22571056cc6bcf523bcd5986a7058717c46",
+      "git_blob_sha256": "3074b18e86b634f94616b60ee36eb22571056cc6bcf523bcd5986a7058717c46",
+      "exact_byte_match": true
+    },
+    "independent-outcome-review.json": {
+      "working_sha256": "72d28a2f051970ef41fe3075ad82417e3ecbda389bd5f5f6f270ede6ccb4a6c4",
+      "git_blob_sha256": "72d28a2f051970ef41fe3075ad82417e3ecbda389bd5f5f6f270ede6ccb4a6c4",
+      "exact_byte_match": true
+    },
+    "independent-preexecution-review.json": {
+      "working_sha256": "b96f29c4f493e4c2e859297aa3345aa68130fab28d472b3cb3a2ad50b29af682",
+      "git_blob_sha256": "b96f29c4f493e4c2e859297aa3345aa68130fab28d472b3cb3a2ad50b29af682",
+      "exact_byte_match": true
+    }
+  },
+  "prior_saved_2280_closure_and_previous_narrow_pair_authenticated": true,
+  "prior_publication_receipt_sha256": "82837a48ec6140d46f1f2281827e6b3c7d70d6405cb80002716321d651af5b5b",
+  "full_2280_rehash_passes": 0,
+  "fresh_protected_metadata_count": 100,
+  "efficient_protected_hash_count": 78,
+  "efficient_protected_bytes_hashed": 8265983,
+  "original_API_python_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+  "frozen_source_sha256": {
+    "probe_source": "08769da0449f6b82a2db8e18619cf7b78147e028bab09842782366b1c157622e",
+    "test_probe_source": "0496ada4f50463ddf4e8a7d05e3e28a5f7a31d5a842b03bb6cadd68d7574343b",
+    "test_prelaunch_source": "4f723e3f4b9c39faa348bf79e33df53153fb57f39069f71bd0cb92d91218d13c",
+    "reporting_repair_source": "01cc5cc396943aa028a58b9ed32779bbb17c1cbecc1cd13f4ffb761cabc931db"
+  },
+  "original_partial_bytes": 1991,
+  "original_partial_sha256": "25ebe42f554489a23815c0e37ba09eae4dd143428481ce3344527cbf384fe6bd",
+  "original_partial_namespace_identity_mtime_size_preserved": true,
+  "original_failed_probe_records_preserved": 4,
+  "successful_outside_probe_records_authenticated": 8,
+  "successful_outside_probe_report_sha256": "48468f2003f5314e1e1e5fa2326f7ca5fe5fb925ab12c2dac4d9acab8723972b",
+  "historical_private_tree_file_counts": {
+    "timing": 23,
+    "writer": 16,
+    "outside_writer": 16
+  },
+  "historical_empty_scratch_directories_preserved": 2,
+  "historical_public_trees_preserved": 3,
+  "historical_cache_directory_count": 4,
+  "historical_cache_file_count": 20,
+  "remote_head_count": 125,
+  "all_125_previous_head_identities_preserved": true,
+  "remote_capture_sha256": "9187fb8219bba1907e00fc43796ba48da25595977b77edf50a6e01863ca83084",
+  "main_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "existing_tracked_files_changed": 0,
+  "preserved_before_after_state_equal": null,
+  "execution_accounting": {
+    "completed_before_phases": 1,
+    "completed_after_phases": 0,
+    "remote_reads_before": 1,
+    "remote_reads_after": 0,
+    "failed_remote_requests": 0,
+    "preservation_probes_Jobs_fixtures": 0
+  },
+  "limits": "Narrow preservation only. Previous closed 2280-file evidence is linked through exact committed receipts and hashed private tables, without bulk rehash. Protected100 metadata and78 small hashes, original API, four frozen sources, historical partial, four blocked-probe records and eight successful outside-probe records are checked; old public/private trees and four cache trees receive metadata/file-identity checks, including both historical empty scratch directories. No environment/profile/model/checkpoint bulk read, source edit, probe, Job, fixture, WSL, GPU, permissions change, branch operation or push. Prior BLOCKED outcomes and successful filesystem comparison keep their recorded limits.",
+  "issues": []
+}

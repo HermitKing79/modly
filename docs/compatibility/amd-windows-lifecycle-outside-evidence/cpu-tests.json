@@ -1,0 +1,92 @@
+{
+  "schema": "modly.windows-lifecycle-outside.cpu.v1",
+  "classification": "PASS_MOCKED_CPU_ONLY",
+  "source_digest_scope": "The map records the final admitted candidate. This initial 32-test run preceded final PINS/wrapper-pin reconciliation; only authorized identity assignments changed afterward. The independent pre-execution review records a separate 32-test run against the exact final bytes.",
+  "tests": 32,
+  "failures": 0,
+  "returncode": 0,
+  "test_runner_reported_elapsed_s": 0.111,
+  "interpreter": "Original API interpreter identified by admission.json",
+  "interpreter_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+  "command_arguments": [
+    "-B",
+    "-I",
+    "-S",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "source_sha256": {
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/diagnostic_fixture.py": "e02dfb798621649f97e7158a013d3c3ff07b3f8a9cb82ba1b93cde9a22416f3c",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/diagnostic_process.py": "241709cadd84bddf3a5bad335dfbd621f4bb1f5a31d0badd73edcd753a57def4",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/diagnostic_bootstrap.py": "9558c02659d4ec7d312ecb78a28917996e5f53b6fd1139095d2627a92f1f980b",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/windows_qualification.py": "741585c25995ee64ec79790d0fb6c6d77e175150a58cc7e2d35553dbf55ae029",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/test_diagnostic_fixture.py": "c8b2b75432361f9f274095ca14e23246715ed8c332734dc3c50b059711f8549d",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/test_observer_timing.py": "d979fb5f31a7fb9dcf4a689bffd42aa689b507c7eabc91b9ce3f869fcfe32c06",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/test_prelaunch_errors.py": "1c6fc2356882e0c74cf74c1f97dc2ca73047b6a44a5d05c132be7090b611f916"
+  },
+  "exact_test_source_sha256": {
+    "test_diagnostic_fixture.py": "c8b2b75432361f9f274095ca14e23246715ed8c332734dc3c50b059711f8549d",
+    "test_observer_timing.py": "d979fb5f31a7fb9dcf4a689bffd42aa689b507c7eabc91b9ce3f869fcfe32c06",
+    "test_prelaunch_errors.py": "1c6fc2356882e0c74cf74c1f97dc2ca73047b6a44a5d05c132be7090b611f916"
+  },
+  "test_methods": {
+    "test_diagnostic_fixture.py": [
+      "DiagnosticContracts.test_timeout_is_post_popen_five_seconds_and_durable_before_reraise",
+      "DiagnosticContracts.test_only_child_marker_still_times_out_with_both_observed_states",
+      "DiagnosticContracts.test_publication_seen_after_sleep_is_accepted_even_after_deadline",
+      "DiagnosticContracts.test_event_log_is_bounded_and_polling_never_writes_reports",
+      "DiagnosticContracts.test_overflow_is_counted_without_unbounded_memory_or_invented_events",
+      "DiagnosticContracts.test_missing_readiness_evidence_remains_null_rather_than_fabricated",
+      "DiagnosticContracts.test_grandchild_checkpoint_survives_forced_cleanup_after_publication",
+      "DiagnosticContracts.test_child_publication_retains_original_exclusive_fsync_link_protocol",
+      "DiagnosticContracts.test_final_summary_reports_prior_checkpoint_cost_and_current_tail_unknown",
+      "DiagnosticContracts.test_cancel_ack_requires_exact_context_nonce_and_stage",
+      "DiagnosticContracts.test_foreign_cancel_is_rejected_and_final_error_evidence_remains",
+      "DiagnosticContracts.test_sentinel_release_keeps_exact_context_validation",
+      "DiagnosticContracts.test_foreign_sentinel_release_is_rejected",
+      "DiagnosticContracts.test_sentinel_cancel_preserves_exact_nonce_protocol",
+      "DiagnosticContracts.test_sentinel_rejects_foreign_nonce_before_stop_and_ack",
+      "DiagnosticContracts.test_readiness_hardlink_failure_is_never_relabelled_as_publication",
+      "DiagnosticContracts.test_timing_persistence_error_is_not_suppressed",
+      "DiagnosticContracts.test_final_persistence_failure_preserves_original_timeout_and_reports_both"
+    ],
+    "test_observer_timing.py": [
+      "ObserverTimingTests.test_scalar_elapsed_count_total_max_and_phase",
+      "ObserverTimingTests.test_cleanup_bucket_is_not_startup",
+      "ObserverTimingTests.test_missing_samples_remain_absent",
+      "ObserverTimingTests.test_native_job_and_command_contract_unchanged",
+      "ObserverTimingTests.test_observer_record_does_not_do_io_or_enumeration",
+      "BootstrapTimingTests.test_emit_records_actual_flush_scope",
+      "BootstrapTimingTests.test_failed_emit_is_measured_and_not_suppressed",
+      "BootstrapTimingTests.test_original_control_authentication_and_native_stage_unchanged"
+    ],
+    "test_prelaunch_errors.py": [
+      "PrelaunchErrors.test_each_publication_failure_keeps_exact_operation",
+      "PrelaunchErrors.test_real_host_route_reports_failure_after_directory_reservation",
+      "PrelaunchErrors.test_diagnostic_failure_falls_back_to_full_stderr_without_replacement",
+      "PrelaunchErrors.test_absent_error_codes_remain_unknown",
+      "PrelaunchErrors.test_close_failure_cannot_replace_json_write_failure",
+      "PrelaunchErrors.test_explicit_preflight_entry_reports_original_read_error"
+    ]
+  },
+  "log_file": "cpu-tests.log",
+  "log_sha256": "932feda8e3c9f8fe0495c6d6fafaf800b4c2574cfc6e8cb738185edf7675a76a",
+  "log_bytes": 5415,
+  "execution_counts": {
+    "actual_static_preflights": 0,
+    "native_Job_instances": 0,
+    "workers": 0,
+    "native_fixtures": 0,
+    "lifecycle_pairs": 0,
+    "WSL": 0,
+    "GPU": 0
+  },
+  "limits": "Focused preserved CPU contracts only; no native lifecycle qualification. Static preflight is recorded separately.",
+  "execution_counts_scope": "Counts for the focused mocked CPU test command only; the one later static preflight is recorded separately."
+}

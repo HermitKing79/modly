@@ -1,0 +1,93 @@
+{
+  "schema": "modly.windows-lifecycle-outside.preserved-copy.v1",
+  "classification": "PASS_STATIC_COPY_SCOPE",
+  "base_commit": "91420eec2dee0b8ac61cd30a845b7fee4f89ff23",
+  "branch": "codex/amd-windows-lifecycle-outside",
+  "source": {
+    "path": "docs/compatibility/amd-fixture-timing-evidence/windows_qualification.py",
+    "sha256": "01cc5cc396943aa028a58b9ed32779bbb17c1cbecc1cd13f4ffb761cabc931db"
+  },
+  "candidate": {
+    "path": "docs/compatibility/amd-windows-lifecycle-outside-evidence/windows_qualification.py",
+    "sha256": "741585c25995ee64ec79790d0fb6c6d77e175150a58cc7e2d35553dbf55ae029"
+  },
+  "changed_top_level_assignments": [
+    [
+      "P"
+    ],
+    [
+      "BASE",
+      "BRANCH"
+    ],
+    [
+      "PINS"
+    ],
+    [
+      "ERROR_ROOT"
+    ]
+  ],
+  "all_other_AST_unchanged": true,
+  "byte_exact_copies": [
+    {
+      "source": "docs/compatibility/amd-fixture-timing-evidence/diagnostic_fixture.py",
+      "candidate": "docs/compatibility/amd-windows-lifecycle-outside-evidence/diagnostic_fixture.py",
+      "sha256": "e02dfb798621649f97e7158a013d3c3ff07b3f8a9cb82ba1b93cde9a22416f3c",
+      "byte_equal": true
+    },
+    {
+      "source": "docs/compatibility/amd-fixture-timing-evidence/diagnostic_process.py",
+      "candidate": "docs/compatibility/amd-windows-lifecycle-outside-evidence/diagnostic_process.py",
+      "sha256": "241709cadd84bddf3a5bad335dfbd621f4bb1f5a31d0badd73edcd753a57def4",
+      "byte_equal": true
+    },
+    {
+      "source": "docs/compatibility/amd-fixture-timing-evidence/diagnostic_bootstrap.py",
+      "candidate": "docs/compatibility/amd-windows-lifecycle-outside-evidence/diagnostic_bootstrap.py",
+      "sha256": "9558c02659d4ec7d312ecb78a28917996e5f53b6fd1139095d2627a92f1f980b",
+      "byte_equal": true
+    },
+    {
+      "source": "docs/compatibility/amd-fixture-timing-evidence/test_diagnostic_fixture.py",
+      "candidate": "docs/compatibility/amd-windows-lifecycle-outside-evidence/test_diagnostic_fixture.py",
+      "sha256": "c8b2b75432361f9f274095ca14e23246715ed8c332734dc3c50b059711f8549d",
+      "byte_equal": true
+    },
+    {
+      "source": "docs/compatibility/amd-fixture-timing-evidence/test_observer_timing.py",
+      "candidate": "docs/compatibility/amd-windows-lifecycle-outside-evidence/test_observer_timing.py",
+      "sha256": "d979fb5f31a7fb9dcf4a689bffd42aa689b507c7eabc91b9ce3f869fcfe32c06",
+      "byte_equal": true
+    }
+  ],
+  "prelaunch_test": {
+    "source": "docs/compatibility/amd-evidence-writer-evidence/test_prelaunch_errors.py",
+    "source_sha256": "4f723e3f4b9c39faa348bf79e33df53153fb57f39069f71bd0cb92d91218d13c",
+    "candidate": "test_prelaunch_errors.py",
+    "candidate_sha256": "1c6fc2356882e0c74cf74c1f97dc2ca73047b6a44a5d05c132be7090b611f916",
+    "only_change": "SOURCE retargeted to preserved qualification candidate"
+  },
+  "narrow_diff": {
+    "path": "narrow-copy-diff.patch",
+    "sha256": "118645f1cd5af37a1c7be0463bcb40f06b608f5e6fded6c4531966177dc75528"
+  },
+  "runtime_path_contract": {
+    "fixture": "E/diagnostic_fixture.py",
+    "runner_bootstrap": "diagnostic_process._HERE/diagnostic_bootstrap.py",
+    "worker_source": "Path(__file__).resolve()",
+    "error_root": "P/diagnostics",
+    "output": "P/cpu-once",
+    "error_root_outside_output": true
+  },
+  "limits": {
+    "fixture_readiness_ns": 5000000000,
+    "stage_timeout_seconds": 25,
+    "overall_deadline_seconds": 90,
+    "process_and_Job_bytes": 6442450944,
+    "available_RAM_floor_bytes": 12884901888,
+    "destination_free_floor_bytes": 2147483648
+  },
+  "unchanged": "Algorithms, control authentication, observer polling frequency, timing instrumentation, native permission flags, process/Job limits, and production sources are unchanged.",
+  "admission_sha256": "580e6c9a54ea521c6bb266c01d5dddb1a67cf206fe1e3dd25f229a7295f1e68b",
+  "admitted_source_count": 13,
+  "wrapper_sha256": "c8f94646f83cc98dce359e11c47549cfdbacfdf93f3dce57c57c94b5e8fc8aec"
+}
