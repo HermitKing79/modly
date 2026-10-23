@@ -1,0 +1,38 @@
+{
+  "base": "7d11b360cbd53db9ef0869daaa65f6bdf7d1fa3a",
+  "files": {
+    "docs/compatibility/amd-preview-dinov3-evidence/cpu-input-and-refusal.json": {
+      "bytes": 1595,
+      "sha256": "d13137a332ac4af11ee8bc5a1d3c04344189be39fea58ec9316c0baeef43f74a"
+    },
+    "docs/compatibility/amd-preview-dinov3-evidence/header-review-addendum.json": {
+      "bytes": 1099,
+      "sha256": "680cc09041b436edf77d3dc24f90e85a1dac34523d5d265ed307bd6ff944d92e"
+    },
+    "docs/compatibility/amd-preview-dinov3-evidence/independent-review.json": {
+      "bytes": 3207,
+      "sha256": "314bf778d312bd2502c931837a09fe44b4c81c3c05f77e8f887588f1a6972355"
+    },
+    "docs/compatibility/amd-preview-dinov3-evidence/prepare_image.py": {
+      "bytes": 4577,
+      "sha256": "cf0308420370fbd95b78f251db5b2695b426ef8ff7fa47c150b6e451aae1417f"
+    },
+    "docs/compatibility/amd-preview-dinov3-evidence/preservation.json": {
+      "bytes": 2177,
+      "sha256": "fa68fa1da7c00798b88bd33e9d3bbd44c6ce69d2337fce2b8da70ac56808f0d9"
+    },
+    "docs/compatibility/amd-preview-dinov3-evidence/source-audit.json": {
+      "bytes": 3033,
+      "sha256": "e824979ba8c5193762fb4e6383687c09a7e29590f1bf5ae750b149fed3a4056d"
+    },
+    "docs/compatibility/amd-preview-dinov3-evidence/test_admission.py": {
+      "bytes": 5186,
+      "sha256": "727184e5484383a2a8ca88243daa9095a2a314d5fd03dc8e0a4da365fcebf851"
+    },
+    "docs/compatibility/amd-preview-dinov3-conditioning.md": {
+      "bytes": 5721,
+      "sha256": "b02fbd314e5a6ea7bade7f5342f422c28a4fad1fbb5b2c0fd9dbf56c20038bb5"
+    }
+  },
+  "classification": "BLOCKED_BEFORE_NEURAL_EXECUTION"
+}

@@ -1,0 +1,52 @@
+{
+  "base": "7d11b360cbd53db9ef0869daaa65f6bdf7d1fa3a",
+  "production_sources_unchanged": {
+    "api/services/amd_stage_process.py": "0317a8b847fe75eb8ba74264dc30b46a079c06474911bd59f923040c3969ad6f",
+    "api/services/amd_stage_bootstrap.py": "2ee86de9ce5b4749c12561d87ffeaecaa35b050c25255158a99c08e0ebd414ea",
+    "api/services/amd_upstream_job.py": "8d787aee7ccb2d358bb4ecf0a8764ad793cfa238c1b5f01cc80407cce8b228c9",
+    "api/services/amd_windows_authority.py": "2aae888012627cc0f8d5a217f857190516170e2ccd388b7033019f1f1d10df3a",
+    "api/services/amd_wsl_session.py": "adb0d87fcb2c5a5d1888901c28ac93b830a6e5d2791534c15e709d6705fdc932",
+    "api/services/amd_completed_result.py": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+    "scripts/compatibility/amd_sparse_decoder_forward.py": "7d0d44e49aee42dc6154df9ae392d5df219a580dd87b214bc47d2f2331999fa8",
+    "scripts/compatibility/amd_dinov3_conditioning.py": "980f1e4576fabaab85c86eefb97b9050882e2f65096e8d63cd3e4eb4a9694e68",
+    "scripts/compatibility/amd_dinov3_local.py": "9692bd1b08b4fb0508f0a7cb826e3b635744420ec6d6a523629577e55f96a44b",
+    "scripts/compatibility/amd_dinov3_contract.py": "e6a09b4528798f399aef140f90a17b225aec66210a91ea0cf6771e80e01c11e4",
+    "scripts/compatibility/amd_blaslt_teardown.py": "ac8456c29291f5ee0bc567086b152f7013f502996179e408577f5806ca3310dd",
+    "scripts/compatibility/amd_generation_occupancy.py": "8af084f7d7c48ec7d143d4229abc4312d8deb9c624b597f3a02c9e627ded5b69",
+    "scripts/compatibility/amd_object_occupancy.py": "56776c53e5e4f58f73e01c94696f4bc616f45d4e951b797c39525f92b39be1e5",
+    "scripts/compatibility/amd_feature_checkpoint.py": "f055eef51f9675a5cf61c8c404c39a1db6a5ac2197cce21da3c44d19a4df50e7"
+  },
+  "installed_conditioning_sources_match": 7,
+  "configuration_sha256": "135ecd23e34a70b6fbed8b083fdecb319b7e3a54e3d849258bbe4ddcf1783bb5",
+  "checkpoint_metadata": {
+    "file_bytes": 1212559808,
+    "mtime_ns": 1791270820029279600,
+    "header_bytes": 41400,
+    "bytes_read": 41408,
+    "header_sha256": "3495b172735ff88c94b28a3257614f51764abfd7879b1498ec71abf855f259d3",
+    "tensor_count": 415,
+    "parameter_count": 303129600,
+    "tensor_data_bytes": 1212518400,
+    "dtypes": {
+      "F32": 415
+    }
+  },
+  "checkpoint_prior_stream_sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+  "fresh_full_checkpoint_hash": false,
+  "scope": "Bounded header/config/source read only; full checkpoint payload and actual Torch/native runtime not requalified because launch composition was blocked first.",
+  "memory_arithmetic": {
+    "legacy_available_host_bytes": 5923815424,
+    "legacy_initial_free_VRAM_bytes": 3360002048,
+    "production_live_host_floor_bytes": 12884901888,
+    "production_process_Job_caps_bytes": 6442450944,
+    "legacy_CPU_GPU_overall_seconds": [
+      120,
+      180,
+      360
+    ],
+    "production_whole_stage_max_seconds": 180,
+    "whole_nested_tree_peak_bound_qualified": false,
+    "live_GPU_measurements": null
+  },
+  "native_attempts": 0
+}

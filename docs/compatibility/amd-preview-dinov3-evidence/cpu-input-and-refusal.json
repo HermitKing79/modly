@@ -1,0 +1,37 @@
+{
+  "classification": "PASS_FRESH_CPU_IMAGE_SNAPSHOT",
+  "source_image_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+  "bytes": 642414,
+  "dimensions": [
+    1216,
+    1294
+  ],
+  "mode": "RGBA",
+  "foreground_extent": [
+    1186,
+    1240
+  ],
+  "resized_foreground_extent": [
+    937,
+    981
+  ],
+  "original_CPU_contract": "eligible",
+  "raw_pixel_sha256": "e958193cad52cb3b15efd69410c3727853df61fd35310468d1b4540284ea2fb5",
+  "snapshot_result_sha256": "0af4bcf4f3592919272ad32277b6d0125ea08b6b30853a8340893a5869025cee",
+  "input_contract_sha256": "de2ed14e6d7ed9d37eb675c4990c3f91e9f311c0804f40f18761edc1451217f4",
+  "observed_context_sha256": "abb42829888ea3c56ddb0a695d5ec852a6e946a513e1ea6945c8a21b87225d71",
+  "request_context_sha256": "38625a6c4a7ca230319beea419bf356e31b3070ef285ef1c6ee40d6cda96b157",
+  "production_handoff_qualified": false,
+  "historical_in_memory_preview_response_exported": false,
+  "production_stage_attempt_reserved": false,
+  "conditioning_output": null,
+  "first_command": "Relative output was rejected by unchanged canonical-path policy before any output reservation; corrected absolute-path CPU command succeeded; first failure preserved privately.",
+  "CPU_refusal_tests": {
+    "passed": 6,
+    "failed": 0,
+    "elapsed_seconds": 1.116,
+    "log_sha256": "488386815c9b5a8f205a3bf5b90cbcb7547c1c60ee3485b506fdc42057305ce3",
+    "scope": "Real host admission/bind guards on clearly synthetic temporary requests; native Popen/Job patched to DENY; no execution or lifecycle qualification."
+  },
+  "generation_enabled": false
+}

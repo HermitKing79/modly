@@ -1,0 +1,11 @@
+{
+  "classification": "REVIEW_COMPARISON_LIMITATION_EXPLAINED_FROM_SOURCE",
+  "original_independent_review_sha256": "314bf778d312bd2502c931837a09fe44b4c81c3c05f77e8f887588f1a6972355",
+  "failed_private_checker_sha256": "be30d280995c6ef82875a8b200714f996f0ac4bb54d1a30e805a913467ba780f",
+  "original_metadata_reader_sha256": "ca7b9f01ea09cb1820208e22f9bb5605bf8cf67159ea0dead9be7036eaf2ab96",
+  "demonstrated_domain_mismatch": "The independent checker hashes only the 41400-byte JSON header. Original amd_model_metadata.safetensors_metadata hashes the eight-byte length prefix plus that header. Comparing those digests as the same field is invalid.",
+  "scope": "Source inspection only; no checkpoint reread, test retry, weights/model/native/WSL/GPU execution. This identifies a defect in the independent comparison, not evidence of checkpoint drift. Other summary fields were not independently accepted by the failed combined assertion.",
+  "full_checkpoint_independent_qualification": false,
+  "blocked_execution_verdict_unchanged": true,
+  "historical_failed_checker_and_review_preserved": true
+}
