@@ -701,7 +701,8 @@ class OwnedStageRunner:
                         raise TimeoutError("Owned stage deadline exceeded")
                     if cancel_sent is not None and now - cancel_sent > 7:
                         raise TimeoutError("Owned stage cancellation settlement unverified")
-                    if now - last_ping >= .5:
+                    # A bound terminal ends heartbeats, not process observation.
+                    if now - last_ping >= .5 and (_bound is None or terminal is None):
                         control("PING")
                         last_ping = now
                     observe()

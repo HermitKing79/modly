@@ -1,0 +1,27 @@
+{
+  "schema": "modly.amd.windows-terminal-heartbeat.final-report-review.v1",
+  "base": "ab8de19f400d688e31aa9c013b1b987282c1ae77",
+  "verdict": "ACCEPT_REPORT_OF_SINGLE_SYNTHETIC_WINDOWS_TICKET_PASS",
+  "report_sha256": "7d9bf5502c679653321b47f57dad3ac7cb81b1fc3204f85fff840fc1c7654810",
+  "outcome_review_sha256": "ef17cda8e338d5c4afff9649fb454aff020a5261296aca83cf3a5d7c40d2b02b",
+  "public_receipt_sha256": {
+    "admission.json": "80bbe27f01205374bba9201949ee477c65732e28800b7df8d6863933628e177c",
+    "preexecution-review.json": "833a7211c0da240c64960f611f065595649b0948b91f18e18e7c8c4f5183734e",
+    "cpu-tests.json": "1c61829d10a82810fd08644aba0747ffbb8db1fabb35bb630ee018d8029bd03f",
+    "independent-cpu-tests.json": "5dd63cf52bd1aac667fd6569234fc7638ac2edbbc04ed5d11143fb100de987b6",
+    "execution-summary.json": "c20afc5918499c50869e3c971672c1481dfffae00928fdbd8b6959be094d6a58",
+    "preservation-before.json": "6278f444a2b8b4ed34fca2c4abcb84174e218f7178026aa3454697950ce7dfc2",
+    "preservation-after.json": "eaa84bfb1ce677295d1a857958175a710a70bdd9f6c243f6a93ba52410dc5317",
+    "prior-failure-authentication.json": "514e6967029865d5a8799648dd37426f4b7bdeb1a1401e06fe334855d0013971"
+  },
+  "checks": [
+    "Final report agrees with independently checked saved observations, measurements, exact-ticket acceptance, five negative probes and preservation scope.",
+    "Source-safe report contains no raw native identities, user paths or private UUIDs. No production or harness changes followed the single native attempt.",
+    "Runner receipt interval precedes final health/source/seal checks; authority and coordinator intervals are separately labelled.",
+    "Deterministic mocks prove exact race ordering; native evidence proves one successful natural invocation with private EOF, actual bootstrap exit zero and closed empty Jobs.",
+    "Preservation no-native flag scopes its checker only; the mission separately records one approved native attempt."
+  ],
+  "qualification_scope": "One synthetic 25-second Windows CPU conditioning ticket; trusted host interpreter/private IPC assumptions. No neural, complete upstream, WSL, GPU or Generate qualification.",
+  "review_execution": "Saved evidence and final text/hash review only; no tests, native execution, Job queries or retries.",
+  "findings": []
+}

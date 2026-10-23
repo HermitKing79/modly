@@ -1,0 +1,59 @@
+{
+  "schema": "modly.windows-terminal-heartbeat.execution-summary.v1",
+  "base": "ab8de19f400d688e31aa9c013b1b987282c1ae77",
+  "classification": "PASS",
+  "scope": "One explicitly synthetic Windows conditioning ticket only",
+  "metrics": {
+    "native_attempts": 1,
+    "host_elapsed_s": 11.110000000000582,
+    "wrapper_elapsed_s": 13.9522446,
+    "coordinator_elapsed_s": 7.34400000000096,
+    "runner_elapsed_s": 6.75,
+    "authority_evidence_elapsed_s": 6.812999999998283,
+    "health_records": 272,
+    "minimum_available_ram_bytes": 19225452544,
+    "minimum_free_disk_bytes": 135895773184,
+    "outer_peak_job_bytes": 41517056,
+    "outer_peak_process_bytes": 27131904,
+    "stage_peak_job_bytes": 21331968,
+    "stage_peak_process_bytes": 9748480,
+    "outer_total_processes": 9,
+    "stage_total_processes": 6,
+    "outer_final_active": 0,
+    "stage_final_active": 0,
+    "forced_cleanup": false,
+    "protocol_records": 13,
+    "received_PING_count": 9,
+    "sent_PING_count": 9
+  },
+  "negative_checks": {
+    "copied-authority": true,
+    "copied-ticket": true,
+    "worker-PASS": true,
+    "replay": true,
+    "repeated-invocation": true
+  },
+  "accepted_stages": 1,
+  "genuine_execution_qualified": false,
+  "complete_shape_job": false,
+  "WSL": "NOT RUN",
+  "fresh_AMD_generation": "NOT RUN",
+  "raw_sha256": {
+    "attempt": "59d0afda6c7506aee4d83ff009ef6968ce09413fba4d4c75737573060a87687b",
+    "outer_result": "eebb4d9b5ea7be6ea9670a9573e692555905abb15abeb6622eb4cb856be7485f",
+    "coordinator_result": "edb0b5125018149df972dbf28c3754bcde311b08e4b28a63d50caa3fb984995e",
+    "runner_receipt": "ff2328e91fbf049f98a97216ddc9c884dc1601f24a7b348eb660891ee4675489",
+    "bootstrap_protocol": "f2e369ebafc3105047785b779e27ff254e986d8007cf3c61350d1ac874c3a634",
+    "accepted_stage_receipt": "05932242dcd1c2200d523756e86fd4781e8f311bfa9e20ca59ca75de902846fc",
+    "outside_result": "b775164e7c0e4267f3fae5a216c24268acac279a7bbfe9ea0d5ff357d8f69035",
+    "outside_context": "9434723e5e6a8981d5e1c40a5159d0f343171569f80cb66dc42cda7cc19ed629"
+  },
+  "resource_policy": {
+    "process_bytes": 6442450944,
+    "job_bytes": 6442450944,
+    "ram_floor_bytes": 12884901888,
+    "disk_floor_bytes": 2147483648,
+    "stage_s": 25,
+    "outer_s": 90
+  }
+}

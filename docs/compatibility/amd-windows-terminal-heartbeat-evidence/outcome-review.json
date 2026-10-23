@@ -1,0 +1,103 @@
+{
+  "schema": "modly.amd.windows-terminal-heartbeat.outcome-review.v1",
+  "base": "ab8de19f400d688e31aa9c013b1b987282c1ae77",
+  "classification": "PASS_SINGLE_SYNTHETIC_WINDOWS_TICKET",
+  "reviewer": "independent-production-authority-audit-agent",
+  "verdicts": {
+    "terminal_heartbeat_regression": "PASS_SOURCE_AND_DETERMINISTIC_MOCKS",
+    "actual_bound_Windows_natural_settlement": "PASS_ONE_SYNTHETIC_INVOCATION",
+    "supervisor_authority_issuance": "PASS_SYNTHETIC_WINDOWS_CPU_ONLY",
+    "exact_ticket_acceptance_and_one_use": "PASS",
+    "private_EOF_and_Job_closure_gate": "PASS_RECORDED_AUTHORITY_PATH",
+    "complete_upstream_neural_integration": "NOT_QUALIFIED",
+    "WSL": "NOT_RUN",
+    "GPU_or_fresh_AMD_Generate": "NOT_RUN"
+  },
+  "metrics": {
+    "native_attempts": 1,
+    "host_elapsed_s": 11.110000000000582,
+    "wrapper_elapsed_s": 13.9522446,
+    "coordinator_elapsed_s": 7.34400000000096,
+    "runner_elapsed_s": 6.75,
+    "authority_evidence_elapsed_s": 6.812999999998283,
+    "health_records": 272,
+    "minimum_available_ram_bytes": 19225452544,
+    "minimum_free_disk_bytes": 135895773184,
+    "outer_peak_job_bytes": 41517056,
+    "outer_peak_process_bytes": 27131904,
+    "stage_peak_job_bytes": 21331968,
+    "stage_peak_process_bytes": 9748480,
+    "outer_total_processes": 9,
+    "stage_total_processes": 6,
+    "outer_final_active": 0,
+    "stage_final_active": 0,
+    "forced_cleanup": false,
+    "protocol_records": 13,
+    "received_PING_count": 9,
+    "sent_PING_count": 9
+  },
+  "negative_checks": {
+    "copied-authority": true,
+    "copied-ticket": true,
+    "worker-PASS": true,
+    "replay": true,
+    "repeated-invocation": true
+  },
+  "source_pins": {
+    "api/services/amd_stage_process.py": "4175bf4735700299dcc0e50d6fc0f603dfaad5ae3da2bba10f22d752eceadb4d",
+    "api/services/amd_stage_bootstrap.py": "2ee86de9ce5b4749c12561d87ffeaecaa35b050c25255158a99c08e0ebd414ea",
+    "api/services/amd_completed_result.py": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+    "api/services/amd_upstream_job.py": "a507dc6a3c4691cc07e67bec4ca5b11ddda27c93209a7c61e228b67b1ef534f7",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/windows_qualification.py": "741585c25995ee64ec79790d0fb6c6d77e175150a58cc7e2d35553dbf55ae029",
+    "api/services/amd_windows_authority.py": "5b708973d612b6c538a8f40c6b43a7be8c335ea690b550fedd9b93c7286dffb8",
+    "api/tests/test_amd_windows_lifecycle_authority.py": "4c170c8a7b7cfe224ae1dffd2290e9c4ff6cec7a0bd654d7ef947c76b43eb6e8",
+    "api/tests/test_amd_windows_authority.py": "a404843a8db9d627ccd4f50b6e76171f0eebc87d9d9e2dd00a84f8226031a017",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/qualification.py": "4f02e170139334f4a9c9ce3252eb714b8855feffab543246c0d2099df05fe685",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/coordinator.py": "135d70212d1431912dc376844d605d3c7a9b4e8c1147a850084c31e05ff4316c",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/fixture.py": "e9a5412ee71dc4f1a6ed1806b4b87bf0c838b94463983d3faac4ffdaa9df0810",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/test_qualification.py": "2fa956999967500c1eb8a3df89d4752b71b45e8ddd9e6b892f8f0587ee2df920",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/outside_command.ps1": "0238c8ae7faf2fa9602623b396975d2c8199154402d347b5bf8a6fd15965ce00"
+  },
+  "raw_sha256": {
+    "attempt": "59d0afda6c7506aee4d83ff009ef6968ce09413fba4d4c75737573060a87687b",
+    "outer_result": "eebb4d9b5ea7be6ea9670a9573e692555905abb15abeb6622eb4cb856be7485f",
+    "coordinator_result": "edb0b5125018149df972dbf28c3754bcde311b08e4b28a63d50caa3fb984995e",
+    "runner_receipt": "ff2328e91fbf049f98a97216ddc9c884dc1601f24a7b348eb660891ee4675489",
+    "bootstrap_protocol": "f2e369ebafc3105047785b779e27ff254e986d8007cf3c61350d1ac874c3a634",
+    "accepted_stage_receipt": "05932242dcd1c2200d523756e86fd4781e8f311bfa9e20ca59ca75de902846fc",
+    "outside_result": "b775164e7c0e4267f3fae5a216c24268acac279a7bbfe9ea0d5ff357d8f69035",
+    "outside_context": "9434723e5e6a8981d5e1c40a5159d0f343171569f80cb66dc42cda7cc19ed629"
+  },
+  "private_verification_sha256": "5dfd35c464c46f3bf28a6b074b5bed517e0aad467e2cdeacdf67265138ae0123",
+  "public_receipt_sha256": {
+    "admission.json": "80bbe27f01205374bba9201949ee477c65732e28800b7df8d6863933628e177c",
+    "preexecution-review.json": "833a7211c0da240c64960f611f065595649b0948b91f18e18e7c8c4f5183734e",
+    "cpu-tests.json": "1c61829d10a82810fd08644aba0747ffbb8db1fabb35bb630ee018d8029bd03f",
+    "independent-cpu-tests.json": "5dd63cf52bd1aac667fd6569234fc7638ac2edbbc04ed5d11143fb100de987b6",
+    "execution-summary.json": "c20afc5918499c50869e3c971672c1481dfffae00928fdbd8b6959be094d6a58",
+    "preservation-before.json": "6278f444a2b8b4ed34fca2c4abcb84174e218f7178026aa3454697950ce7dfc2",
+    "preservation-after.json": "eaa84bfb1ce677295d1a857958175a710a70bdd9f6c243f6a93ba52410dc5317",
+    "prior-failure-authentication.json": "514e6967029865d5a8799648dd37426f4b7bdeb1a1401e06fe334855d0013971"
+  },
+  "checks": [
+    "All13 frozen source pins and original interpreter/admission/review/user-context hashes match sole attempt and current files. Normal same-shell user matches earlier qualified context, admin role disabled and no RunAs.",
+    "Original runner receipt equals coordinator copy; trusted private bootstrap records child0/natural success, actual runner records bootstrap0, EOF evidence true, zero diagnostics, empty closed Job and unforced settlement.",
+    "Actual readiness has matching full original context/separate ticket nonce/current enumerated native membership/creation/image proof; exact argv,25s resource policy, predecessor request and accepted ticket context match.",
+    "Original stable single-link/file-identity/hash readers reauthenticated output, runner receipt, all fixed authority sources, original request sources and runtime inputs. Accepted receipt is WINDOWS_CPU_SUPERVISED and genuine_execution_qualified=false.",
+    "Exactly one conditioning stage accepted; copied authority/ticket, workerPASS, consumed capability and repeated invocation rejected. No second worker or complete shape sidecar produced.",
+    "Nine PINGs sent and acknowledged, all saved sent-control UTC values precede terminal timestamp; no CANCEL or protocol after terminal. Strict validator/EOF/deadline/cancellation/identity/closure guards remain pinned.",
+    "All272 health records meet unchanged floors; exact OS peaks,6/9process counts,25s/90s bounds and unforced active0/0 match summary.",
+    "Before/after private preservation states equal and public hashes match:100protected identities/78small hashes, caches/all prior evidence including oldBLOCKED and empty log,131prior heads preserved within scope."
+  ],
+  "limitations": [
+    "PASS covers one explicitly synthetic25s Windows conditioning invocation and its in-process exact ticket acceptance only; no complete upstream/shape job, neural/model/current-image semantics, WSL, GPU or Generate qualification.",
+    "Exact poll(None)/terminal-consumption/heartbeat-due ordering is demonstrated by deterministic mocks. Native evidence has no per-poll/terminal-consumption trace; it independently demonstrates successful natural completion and no sent PING after the saved bootstrap terminal timestamp.",
+    "Retained259/live native rows are prior samples, not surviving-process or measured-exit0 assertions. Child0 is trusted bootstrap wait status; actual bootstrap return0 and final Job accounting are separately recorded.",
+    "Runner receipt elapsed is sampled before final health/source/seal steps; authority evidence elapsed and coordinator elapsed are later distinct saved intervals. No extra timing precision is inferred.",
+    "Successful authority/acceptance is evidenced by the pinned native coordinator source, registered-issuance path, original accepted receipt, file pins and five negative probes; the in-memory capability cannot be reconstructed from saved JSON after process exit.",
+    "Trusted host interpreter and ordinary private IPC assumptions remain; no hostile same-user-process sandbox or independent child-token detector.",
+    "Preservation no-execution flag describes its read-only checker only; the mission separately performed the single approved native attempt.",
+    "Reviewer inspected saved files/source/hash/numeric summaries only; no tests, native fixture/Job/query or retry performed during outcome review."
+  ],
+  "findings": []
+}

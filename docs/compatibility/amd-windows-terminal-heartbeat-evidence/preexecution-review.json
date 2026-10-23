@@ -1,0 +1,50 @@
+{
+  "schema": "modly.amd.windows-terminal-heartbeat.preexecution-review.v1",
+  "base": "ab8de19f400d688e31aa9c013b1b987282c1ae77",
+  "branch": "codex/amd-windows-terminal-heartbeat",
+  "verdict": "PASS",
+  "source_pins": {
+    "api/services/amd_stage_process.py": "4175bf4735700299dcc0e50d6fc0f603dfaad5ae3da2bba10f22d752eceadb4d",
+    "api/services/amd_stage_bootstrap.py": "2ee86de9ce5b4749c12561d87ffeaecaa35b050c25255158a99c08e0ebd414ea",
+    "api/services/amd_completed_result.py": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+    "api/services/amd_upstream_job.py": "a507dc6a3c4691cc07e67bec4ca5b11ddda27c93209a7c61e228b67b1ef534f7",
+    "docs/compatibility/amd-windows-lifecycle-outside-evidence/windows_qualification.py": "741585c25995ee64ec79790d0fb6c6d77e175150a58cc7e2d35553dbf55ae029",
+    "api/services/amd_windows_authority.py": "5b708973d612b6c538a8f40c6b43a7be8c335ea690b550fedd9b93c7286dffb8",
+    "api/tests/test_amd_windows_lifecycle_authority.py": "4c170c8a7b7cfe224ae1dffd2290e9c4ff6cec7a0bd654d7ef947c76b43eb6e8",
+    "api/tests/test_amd_windows_authority.py": "a404843a8db9d627ccd4f50b6e76171f0eebc87d9d9e2dd00a84f8226031a017",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/qualification.py": "4f02e170139334f4a9c9ce3252eb714b8855feffab543246c0d2099df05fe685",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/coordinator.py": "135d70212d1431912dc376844d605d3c7a9b4e8c1147a850084c31e05ff4316c",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/fixture.py": "e9a5412ee71dc4f1a6ed1806b4b87bf0c838b94463983d3faac4ffdaa9df0810",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/test_qualification.py": "2fa956999967500c1eb8a3df89d4752b71b45e8ddd9e6b892f8f0587ee2df920",
+    "docs/compatibility/amd-windows-terminal-heartbeat-evidence/outside_command.ps1": "0238c8ae7faf2fa9602623b396975d2c8199154402d347b5bf8a6fd15965ce00"
+  },
+  "expected_context_sha256": "43f35a892fe11203b7dbddec576d632f5f6ecbb10f93192b433e3b759be896f8",
+  "admission_sha256": "80bbe27f01205374bba9201949ee477c65732e28800b7df8d6863933628e177c",
+  "independent_tests": {
+    "tests": 50,
+    "attempts": 1,
+    "result": "PASS",
+    "elapsed_s": 16.96716010000091,
+    "log_sha256": "2dea71e4792a6a07a6ce59960039b85a9f45c2b43055a32d83f21bb10519cbfe",
+    "receipt_sha256": "5dd63cf52bd1aac667fd6569234fc7638ac2edbbc04ed5d11143fb100de987b6",
+    "not_additional_distinct_tests": true
+  },
+  "coordinator_distinct_cpu_tests": 65,
+  "checks": [
+    "Production source differs from base only by one comment and bound-only heartbeat condition; restoring that exact condition gives identical complete source text.",
+    "Completion validator, private pipe/EOF/error handling, native poll/identity/Job/closure logic, cancellation, deadlines, resources and receipt/authority acceptance guards are unchanged.",
+    "Unbound condition remains identical in behavior and no WSL/bootstrap/upstream/authority/orchestrator production source was changed.",
+    "13 new actual-runner mocks reproduce terminal-before-actual-exit with heartbeat due; require real mocked exit/EOF/Job closure before sealing, and refuse stuck process, cancellation, unexpected/duplicate protocol, nonzero exit, missing EOF/ownership, forced cleanup, changed/missing source, expiry and replay.",
+    "All50 independently selected mocks passed under actual process/Job construction and model-import guards; aggregate65distinct count is separate and overlap is not added.",
+    "Coordinator, fixture and qualification tests are byte-identical to preceding candidate. Host/wrapper differ only by reviewed evidence/private paths, base and branch; wrapper user/interpreter safety and sole25s/90s attempt bounds remain intact.",
+    "Exact13 pins, original interpreter hash/canonical selection, expected qualified user-context hash and frozen admission match; no attempt directory existed during review.",
+    "Prior BLOCKED evidence and first/secondary errors remain authenticated and preserved."
+  ],
+  "findings": [],
+  "limits": [
+    "Source/mock PASS admits only the one separately approved synthetic Windows conditioning attempt; it is not a native outcome or qualification of longer profiles.",
+    "Trusted host interpreter/pinned bootstrap and ordinary private IPC/capability assumptions remain; no general hostile same-user-process sandbox claim.",
+    "No validator relaxation, automatic retry, UpstreamJob shape completion, neural/current-model semantic closure, WSL, GPU or Generate enablement.",
+    "Reviewer ran50 mocks once; no native preflight, Job, fixture worker or execution attempt. Native result requires separate saved-outcome review."
+  ]
+}

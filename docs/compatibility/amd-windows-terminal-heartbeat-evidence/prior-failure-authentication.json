@@ -1,0 +1,15 @@
+{
+  "schema": "modly.amd.windows-terminal-heartbeat.prior-failure-authentication.v1",
+  "base": "ab8de19f400d688e31aa9c013b1b987282c1ae77",
+  "classification": "PASS_PRIOR_BLOCKED_EVIDENCE_AUTHENTICATED",
+  "prior_outcome_sha256": "6d1f7803108f2885d90a3c62d32f37382271d379c9f425c074864dc060ec4af5",
+  "prior_private_verification_sha256": "23f138c924c148a5cc56a4e3d6fefc0e0b7a4f6a118338e3cd5d7d1e4fe1bd94",
+  "prior_final_review_sha256": "abf0e77e933aebc45ce2832b3b0e42331e16dcd2979d02d0759c3662855ad8ab",
+  "prior_publication_receipt_sha256": "6c0a5909b20ab8dcc7010bd581d442e50dbc6055334a4dd19d68e6658221c802",
+  "raw_evidence_hashes_checked": 27,
+  "first_failure_unchanged": true,
+  "secondary_failure_unchanged": true,
+  "prior_native_verdict": "BLOCKED",
+  "empty_untracked_bridge_log_preserved": true,
+  "no_tests_native_or_identity_queries": true
+}

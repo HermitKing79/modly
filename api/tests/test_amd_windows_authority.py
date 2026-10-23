@@ -258,6 +258,7 @@ class WindowsRunnerIntegrationTests(unittest.TestCase):
                 self.handle = 17
                 self.proc = None
                 self.phase = 'unit'
+                self.terminated = False
                 test.native_job = self
 
             def attach(self, proc):
@@ -278,12 +279,14 @@ class WindowsRunnerIntegrationTests(unittest.TestCase):
                                                   observed_utc='unit-test-only'),
                         exit_observation=dict(api='GetExitCodeProcess', succeeded=True,
                                               exit_code=259 if proc.returncode is None else 0)))
-                alive = proc.returncode is None
-                return dict(active=len(pids) if alive else 0, total_processes=len(pids),
+                alive = proc.returncode is None or (test.variant == 'post-terminal/forced-cleanup' and not self.terminated)
+                total = len(pids) + (1 if test.variant == 'post-terminal/incomplete-ownership' else 0)
+                return dict(active=len(pids) if alive else 0, total_processes=total,
                     peak_process_bytes=1024, peak_job_bytes=2048, process_identities=rows,
                     job_owner=self.job_owner, enumerated_pids=pids if alive else [])
 
             def terminate(self):
+                self.terminated = True
                 self.proc.returncode = 1
 
             def close(self):
@@ -293,11 +296,14 @@ class WindowsRunnerIntegrationTests(unittest.TestCase):
         class SimulatedInput(io.BytesIO):
             def write(self, blob):
                 value = json.loads(blob)
+                test.process.sent_controls.append((value['action'], test.process.terminal_emitted))
                 if value['action'] == 'GO':
                     test.process.go = True
                 if value['action'] == 'CANCEL':
                     test.process.returncode = 0
                     test.process.stdout.finish()
+                if value['action'] == 'PING' and not test.process.terminal_emitted:
+                    test.process.emit(event='control-received', action='PING')
                 return super().write(blob)
 
         class SimulatedProcess:
@@ -310,6 +316,9 @@ class WindowsRunnerIntegrationTests(unittest.TestCase):
                 self.go = False
                 self.polls = 0
                 self.stdin = SimulatedInput()
+                self.sent_controls = []
+                self.terminal_emitted = False
+                self.post_terminal_polls = 0
 
             def emit(self, **value):
                 row = dict(stage_id=self.spec['stage_id'], nonce=self.spec['nonce'],
@@ -320,6 +329,8 @@ class WindowsRunnerIntegrationTests(unittest.TestCase):
                 if not self.go or self.returncode is not None:
                     return self.returncode
                 self.polls += 1
+                if test.variant and test.variant.startswith('post-terminal/'):
+                    return self.post_terminal_poll()
                 if self.polls == 1:
                     if test.variant == 'forged-mirror':
                         events = [dict(event='control-received', action='GO'),
@@ -358,6 +369,45 @@ class WindowsRunnerIntegrationTests(unittest.TestCase):
                         test.clock = 126.0
                     if test.variant == 'cancel-on-exit':
                         test.fixture.cancel.set()
+                return self.returncode
+
+            def post_terminal_poll(self):
+                """Terminal pipe message and actual process exit are separate facts."""
+                variant = test.variant.split('/', 1)[1]
+                if self.polls == 1:
+                    self.emit(event='control-received', action='GO')
+                    self.emit(event='stage-started', pid=202)
+                    test.clock += .6  # Ordinary pre-terminal heartbeat is due.
+                    return None
+                if self.polls == 2:
+                    test.fixture.emit('conditioning')
+                    self.emit(event='child-exited', child_pid=202, returncode=0,
+                              forced=False, cancellation_sent=False)
+                    self.emit(event='terminal', terminal='succeeded', returncode=0,
+                              natural=True, forced=False, cooperative_cancelled=False)
+                    self.terminal_emitted = True
+                    test.clock += .6  # A heartbeat is due while poll still says None.
+                    return None
+                self.post_terminal_polls += 1
+                if variant == 'never-exits':
+                    test.clock += 2
+                    return None
+                if variant == 'cancel-before-exit' and self.post_terminal_polls == 1:
+                    test.fixture.cancel.set()
+                    return None
+                if variant == 'unexpected-event':
+                    self.emit(event='control-received', action='PING')
+                if variant == 'duplicate-terminal':
+                    self.emit(event='terminal', terminal='succeeded', returncode=0,
+                              natural=True, forced=False, cooperative_cancelled=False)
+                if variant == 'changed-source':
+                    path = test.fixture.sources['policy'].path
+                    path.write_bytes(path.read_bytes() + b'changed during terminal wait')
+                if variant == 'missing-source':
+                    test.fixture.sources['policy'].path.unlink()
+                self.returncode = 7 if variant == 'nonzero-bootstrap' else 0
+                if variant != 'missing-eof':
+                    self.stdout.finish()
                 return self.returncode
 
             def wait(self, timeout=None):
@@ -430,9 +480,109 @@ class WindowsRunnerIntegrationTests(unittest.TestCase):
             self.job.accept_windows(self.ticket, self.runner, object())
 
 
+class TerminalHeartbeatIntegrationTests(unittest.TestCase):
+    """Actual bound runner, mocked OS; terminal receipt never substitutes for exit."""
+    prepare = WindowsAuthorityTests.prepare
+    bind = WindowsAuthorityTests.bind
+    setUp = WindowsRunnerIntegrationTests.setUp
+    run_once = WindowsRunnerIntegrationTests.run_once
+
+    def refused(self, variant):
+        result, authority = self.run_once('post-terminal/' + variant)
+        self.assertIsNone(authority)
+        self.assertTrue(self.job._blocked)
+        self.assertFalse(any(action == 'PING' and after for action, after in self.process.sent_controls))
+        return result
+
+    def test_terminal_before_actual_exit_suppresses_due_ping_and_seals_only_after_exit(self):
+        result, authority = self.run_once('post-terminal/success')
+        self.assertIsNotNone(authority, result.get('error'))
+        self.assertEqual(result['terminal'], 'succeeded')
+        self.assertEqual(result['bootstrap_returncode'], 0)
+        self.assertEqual(self.process.post_terminal_polls, 1)
+        self.assertTrue(self.process.stdout.closed.is_set())
+        self.assertEqual(self.process.sent_controls, [('GO', False), ('PING', False)])
+        self.assertIs(self.process.spec['upstream_ticket_bound'], True)
+        self.assertEqual(self.process.spec['nonce'], self.ticket.nonce)
+        self.assertEqual(self.process.spec['context'], self.fixture.context.to_dict())
+        self.assertEqual(self.process.spec['memory_limit'], 6 * 1024**3)
+        self.assertEqual(self.process.spec['timeout_s'], 25)
+        self.assertEqual(result['windows']['active'], 0)
+        self.assertFalse(result['forced'])
+        pin = self.job.accept_windows(self.ticket, self.runner, authority)
+        document = json.loads(pin.path.read_bytes())
+        self.assertEqual(document['qualification'], 'WINDOWS_CPU_SUPERVISED')
+        self.assertIs(document['genuine_execution_qualified'], False)
+        self.assertEqual(document['windows_supervision']['evidence']['control_provenance'],
+                         'private-bootstrap-stdout-pipe')
+        self.assertIs(document['windows_supervision']['evidence']['protocol_eof'], True)
+        self.assertEqual(document['windows_supervision']['binding']['resource_policy'],
+                         dict(windows_process_bytes=6*1024**3, windows_job_bytes=6*1024**3,
+                              available_ram_floor_bytes=12*1024**3,
+                              free_disk_floor_bytes=2*1024**3, timeout_s=25))
+
+    def test_terminal_success_with_bootstrap_still_running_expires(self):
+        result = self.refused('never-exits')
+        self.assertIn('deadline', result['error']['message'].lower())
+
+    def test_cancellation_after_terminal_before_actual_exit_is_sticky(self):
+        self.refused('cancel-before-exit')
+        self.fixture.cancel.clear()
+        with self.assertRaises(ValueError):
+            self.job.accept_windows(self.ticket, self.runner, object())
+
+    def test_unexpected_private_event_after_terminal_is_refused(self):
+        result = self.refused('unexpected-event')
+        self.assertIn('after terminal', result['error']['message'])
+
+    def test_duplicate_private_terminal_during_exit_wait_is_refused(self):
+        result = self.refused('duplicate-terminal')
+        self.assertIn('after terminal', result['error']['message'])
+
+    def test_nonzero_bootstrap_exit_after_successful_worker_terminal_is_refused(self):
+        result = self.refused('nonzero-bootstrap')
+        self.assertEqual(result['bootstrap_returncode'], 7)
+
+    def test_actual_exit_without_private_pipe_eof_is_refused(self):
+        # Keep the pipe genuinely open, but mock join's timeout to avoid four
+        # seconds of wall time. Actual done/alive/EOF guards still execute.
+        with patch.object(threading.Thread, 'join', lambda *args, **kwargs: None):
+            result = self.refused('missing-eof')
+        self.process.stdout.finish()
+        self.assertIn('EOF', result['error']['message'])
+
+    def test_unobserved_owned_identity_after_terminal_cannot_seal(self):
+        self.refused('incomplete-ownership')
+
+    def test_forced_cleanup_after_terminal_cannot_seal(self):
+        result = self.refused('forced-cleanup')
+        self.assertTrue(result['forced'])
+
+    def test_changed_pinned_source_during_terminal_wait_cannot_seal(self):
+        self.refused('changed-source')
+
+    def test_missing_pinned_source_during_terminal_wait_cannot_seal(self):
+        self.refused('missing-source')
+
+    def test_post_terminal_wait_authority_still_expires_before_acceptance(self):
+        _, authority = self.run_once('post-terminal/success')
+        self.assertIsNotNone(authority)
+        self.clock = 126
+        with self.assertRaises(ValueError):
+            self.job.accept_windows(self.ticket, self.runner, authority)
+
+    def test_post_terminal_wait_authority_cannot_be_replayed(self):
+        _, authority = self.run_once('post-terminal/success')
+        self.assertIsNotNone(authority)
+        self.job.accept_windows(self.ticket, self.runner, authority)
+        with self.assertRaises(ValueError):
+            self.job.accept_windows(self.ticket, self.runner, authority)
+
+
 if __name__ == '__main__':
     # Imported historical TestCase is a fixture helper, never a second suite.
     suite = unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromTestCase(cls)
-                               for cls in (WindowsAuthorityTests, WindowsRunnerIntegrationTests))
+                               for cls in (WindowsAuthorityTests, WindowsRunnerIntegrationTests,
+                                           TerminalHeartbeatIntegrationTests))
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     raise SystemExit(not result.wasSuccessful())

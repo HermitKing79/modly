@@ -1,0 +1,14 @@
+test_terminal_before_actual_exit_suppresses_due_ping_and_seals_only_after_exit (tests.test_amd_windows_authority.TerminalHeartbeatIntegrationTests.test_terminal_before_actual_exit_suppresses_due_ping_and_seals_only_after_exit) ... FAIL
+
+======================================================================
+FAIL: test_terminal_before_actual_exit_suppresses_due_ping_and_seals_only_after_exit (tests.test_amd_windows_authority.TerminalHeartbeatIntegrationTests.test_terminal_before_actual_exit_suppresses_due_ping_and_seals_only_after_exit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "api\tests\test_amd_windows_authority.py", line 499, in test_terminal_before_actual_exit_suppresses_due_ping_and_seals_only_after_exit
+    self.assertIsNotNone(authority, result.get('error'))
+AssertionError: unexpectedly None : {'type': 'ValueError', 'message': 'Bound Windows completion: invalid heartbeat phase'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.316s
+
+FAILED (failures=1)
