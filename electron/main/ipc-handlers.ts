@@ -475,7 +475,7 @@ export function setupIpcHandlers(pythonBridge: PythonBridge, getWindow: WindowGe
   })
 
   // Read local file → base64 (bypasses file:// restrictions in the renderer)
-  ipcMain.handle('fs:readFileBase64', (_, filePath: string) => readLocalFileBase64(filePath))
+  ipcMain.handle('fs:readFileBase64', (_, filePath: string, maxBytes?: number) => readLocalFileBase64(filePath, undefined, maxBytes))
 
   ipcMain.handle('fs:readScreenshotDataUrl', async (_, filename: string) => {
     const filePath = app.isPackaged

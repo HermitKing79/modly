@@ -1,0 +1,30 @@
+✔ the authoritative readFileBase64 IPC delegates to the bounded reader (1.6949ms)
+✔ explicit byte cap reads a real file at the bound and preserves one-argument use (6.4599ms)
+✔ explicit cap rejects a real oversized image with its actual byte count (4.078ms)
+✔ invalid byte caps cannot open or allocate a file (0.4056ms)
+✔ capped reading stays on one descriptor and refuses growth after stat (2.9353ms)
+✔ capped reading handles short reads and closes after descriptor errors (0.404ms)
+✔ an explicit cap cannot raise the existing scene-manifest limit (2.9771ms)
+✔ preload forwards the optional cap through IPC and keeps omitted-cap callers working (3.1454ms)
+✔ capped reader refuses directories instead of allocating or reading their contents (1.7177ms)
+✔ oversized scene manifests are rejected before their bytes are read (0.2326ms)
+✔ scene manifests at the bound are read and encoded (0.2886ms)
+✔ a manifest that grows after stat is rejected before base64 transfer (0.1465ms)
+✔ preliminary alpha uses strict >204 and a three pixel foreground extent (1.5661ms)
+✔ opaque JPEG pixels cannot pass the preliminary cutout check (0.1117ms)
+✔ input byte sizes are exact without converting or re-encoding bytes (0.1935ms)
+✔ unrelated or falsely complete CPU responses are rejected (0.1766ms)
+✔ original CPU admission stays distinct from preprocessing and generation (0.6658ms)
+✔ private image validation never uploads to a remote or credentialed URL (0.2492ms)
+✔ browser decoding requires original bounded single-frame CPU metadata (0.1788ms)
+✔ shared workflow reader retains original bytes and supports an explicit preview cap (13.2517ms)
+✔ changing images cancels pending validation and ignores its late success (3.839ms)
+✔ changing images ignores a late read failure and disposal prevents state updates (0.4201ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 179.2181

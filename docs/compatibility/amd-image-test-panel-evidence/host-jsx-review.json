@@ -1,0 +1,29 @@
+{
+  "schema": "modly.amd.image-test-panel.smoke-host-jsx-review.v1",
+  "classification": "GO",
+  "scope": "ONE_PRIVATE_MODLY_UI_SMOKE",
+  "host_sha256": "dcd0363c029bddb8cbe59ec006dd06b81eaa2b4b3e3a6ae7fcd43d40eab4a263",
+  "inputs_sha256": "444b98d1d62fe70225350c2c95ca75f3b3a611e2d30994150b423fa90905e2cb",
+  "build_receipt_sha256": "f04c8ba1391482a5241cb288e4604416fbfa0c5a9f23f3851fdb30cfae920812",
+  "cpu_actual_component_check_sha256": "3521fb244c18fab038d8e274b860fa48ab8a6739287a403c398271b2ddf7ecf3",
+  "previous_review_sha256": "cc1f6d7f558489f38d077de845d4e157d8e00163cf63770b91b4187fe5ce80f3",
+  "first_preserved_before_sha256": "e98268a6d9bb218a8ca7e5ba695a2da79c70f02a24644a0f5e35ca03b4e796d8",
+  "first_preserved_after_sha256": "6b5d83f4483ff8640c903b388ab88641393b2d900a2235afbfc53599080c9648",
+  "preserved_first_files": 97,
+  "prepared_input_files": 148,
+  "findings": [],
+  "checks": [
+    "Private build delta is automatic JSX and fresh paths/receipts only; production115source+3API hash maps and four guard modules equal prior build/current files. No product source change.",
+    "Actual Sidebar and ImageTestPanel modules reproduce classic JSX ReferenceError without globalReact; automatic JSX renders expected text with real React18 server renderer. CPU component execution only, not effects/DOM/picker/API/app qualification.",
+    "All97 first-run files retain exact size/mtime/hash, including original build/input/GO and failed UI records. First run remains functionalFAIL; natural host cleanup/resourcePASS is separate.",
+    "New148prepared inputs retain exact size/mtime/hash. Fresh host differs only paths/build digest and added correction proof files. Original Job/resource/paused-main attachment/330souter/300sTTL/6GiB+12RAM/2disk gates unchanged.",
+    "Fresh ui-jsx-once absent; root resumes main only after owned attachment marker. Existing private setup/update/install/externalHTTP/destructive IPC guards and original picker/read/API remain."
+  ],
+  "caveats": [
+    "One corrected-build private ordinary UI smoke after preserved first renderer failure; not native process/lifecycle qualification or an automatic retry.",
+    "Canonical electron-vite/Tailwind build is not proved. Existing CSS and unusedOBJLoader alias limits persist; actual appearance/picker/CPU validation remain pending.",
+    "Pinned runtime inspect-brk and attachment-marker discipline required; port races must block without unrelated listener termination.",
+    "Reviewer checked saved files/source/hashes only; no tests/process/resource queries/app/WSL/GPU/model launch."
+  ],
+  "private_review_sha256": "57b96460fc62dd7d5d1c309b9b1eecdaa5efbac3c99abeffe5423bce8e191da3"
+}

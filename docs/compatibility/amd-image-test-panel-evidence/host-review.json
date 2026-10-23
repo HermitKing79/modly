@@ -1,0 +1,26 @@
+{
+  "schema": "modly.amd.image-test-panel.smoke-host-review.v1",
+  "classification": "GO",
+  "scope": "ONE_PRIVATE_MODLY_UI_SMOKE",
+  "host_sha256": "1c9adc64bdb0b13330f81a7399e72c9d0a18369e2c765aba5ec4a7e871bada32",
+  "inputs_sha256": "75cb31bd98550ebd955006c8351d9d17d11f118471049cc4fa77b70ef82a3934",
+  "build_receipt_sha256": "b7cf17e625be9d52a5a32ce168a8ceae837de6d62de9eb5bb89209d2c6bab596",
+  "product_prelaunch_review_sha256": "248215bce84df33be85555627c69f32a54ea079f29819ea8f6e4e58d0566bebf",
+  "prepared_input_files": 143,
+  "findings": [],
+  "checks": [
+    "Read complete host and original owned Job/resource helper implementation. Exact base/new branch/build/source closure,143prepared files, original helper/Job hashes, private executable/profile and exclusive ui-once gate are enforced before launch.",
+    "Launch uses loopback inspect-brk and CDP ports. Root resumes main only after host publishes successful owned Job attachment; no broad port killer or unrelated process termination.",
+    "Original Job kill-on-close/no-breakaway and6GiB process+Job caps are applied;12GiB RAM/2GiB private disk floors checked initially and every second.330second host ceiling and300second app TTL bound this one UI session.",
+    "PASS requires actual app exit0 and natural empty Job before cleanup, successful owned-child reaping, no forced cleanup, measured peaks within caps and all prepared source/runtime/profile inputs unchanged. Forced cleanup/errors remainBLOCKED; no automatic retry.",
+    "Previously reviewed private main/bootstrap preserves candidate picker/preload/API paths while setup/update/install/externalHTTP/destructive operations are guarded. No model/WSL/lifecycle qualification is authorized."
+  ],
+  "caveats": [
+    "GO covers one private ordinary application UI smoke, not native process ownership or supervisor authority qualification. Original Job helper supplies containment/accounting without per-process identity evidence.",
+    "Inspector pause/attach/resume ordering relies on the pinned runtime honoring inspect-brk and root waiting for app-running.json; do not resume before attachment marker.",
+    "Private guarded-main/direct-esbuild/installed-CSS/unusedOBJLoader alias limitations from product prelaunch review remain. Actual panel states/screenshots/CPU results still require outcome review.",
+    "Port probes close before startup and can race another listener; failure must preserve first result and stop rather than terminate another listener or retry.",
+    "Reviewer inspected source/saved hashes only: no app/process/resource query, additional tests or WSL/GPU execution."
+  ],
+  "private_review_sha256": "cc1f6d7f558489f38d077de845d4e157d8e00163cf63770b91b4187fe5ce80f3"
+}

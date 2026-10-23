@@ -1,0 +1,65 @@
+{
+  "schema": "modly.amd.image-test-panel.Git-source-representation.v1",
+  "scope": "Existing nine edited files retain the repository Git LF representation and unchanged reviewed Windows CRLF working bytes. This is index normalization only, not a source edit or another test run.",
+  "classification": "PASS_INDEX_ONLY_NORMALIZATION",
+  "private_receipt_sha256": "16068a1700df813995a7b62be7b3b38593fb1ad4e46b92ed0c31ff44e966ec43",
+  "files": {
+    "api/main.py": {
+      "working_sha256": "d331e199cb7d3b69230bb0ec0a2c54b4ae653d237cf1d63e11c81a7c9828dbb3",
+      "index_sha256": "6db547f32745206fdd2db9f0d2ca12fa75b482d6f73ab5162b0120cff6e247cb",
+      "existing_Git_LF_normalization_only": true,
+      "working_bytes_unchanged": true
+    },
+    "electron/main/bounded-file-reader.test.mjs": {
+      "working_sha256": "1eb13dd0e2a98b7239c5a20e3e2b98afb341749a4c38cc7075994389940c33bd",
+      "index_sha256": "1d7ab19dea674393c46c47f13a4df5ed4deed00d5dfe56a2951370d6a88f8842",
+      "existing_Git_LF_normalization_only": true,
+      "working_bytes_unchanged": true
+    },
+    "electron/main/bounded-file-reader.ts": {
+      "working_sha256": "5a458d66369dec061ec528af515ae8aa99fd685dbc45e1416ade3c4747e17083",
+      "index_sha256": "806435ff6e1c5a61cf69f4179af2401be77ea95b54d27d5c379b662c0aab9813",
+      "existing_Git_LF_normalization_only": true,
+      "working_bytes_unchanged": true
+    },
+    "electron/main/ipc-handlers.ts": {
+      "working_sha256": "eacfa9598c31fe987353a56991b28f4410dff54e1ef2a066bc7ae2ce53db04d3",
+      "index_sha256": "90ce3872904fae6eb09399da90a6aba4bb2c222d5cbda6153217c4e075ab44c0",
+      "existing_Git_LF_normalization_only": true,
+      "working_bytes_unchanged": true
+    },
+    "electron/preload/electron-api.ts": {
+      "working_sha256": "c3b860b0db95e89be94b275aae44747963609692c55d67d954fd321c2955e00b",
+      "index_sha256": "3706e17f6f0bca035f0c7792e9e4f403f9ffdd2641aae0a9c6533ad545a55b79",
+      "existing_Git_LF_normalization_only": true,
+      "working_bytes_unchanged": true
+    },
+    "src/areas/generate/components/WorkflowPanel.tsx": {
+      "working_sha256": "4018271d3af0245c242a30d32116338145acb55dd39ffa6479b2e2979015422c",
+      "index_sha256": "9855f385b9d6936c2526314e5fdb17a7e0c1eebb64470d489700df73ff603b80",
+      "existing_Git_LF_normalization_only": true,
+      "working_bytes_unchanged": true
+    },
+    "src/areas/workflows/nodes/ImageNode.tsx": {
+      "working_sha256": "2162c5af9c92ab0057f4a095849eb9b5bc0cd41722ef114937a43615082b0f74",
+      "index_sha256": "c3635a114338d7cd6c0307901997c20ed58951baee066a34532055e116fbfd18",
+      "existing_Git_LF_normalization_only": true,
+      "working_bytes_unchanged": true
+    },
+    "src/areas/workflows/nodes/imageUtils.ts": {
+      "working_sha256": "30ba3d416ec6bf9f5df6a88fd0e30293cf398bb88632e0c08d95636b864d7a14",
+      "index_sha256": "49226e48cac5892ca6672530ef3b84ac4addcb812de0f3ab89ccfbd906bbe010",
+      "existing_Git_LF_normalization_only": true,
+      "working_bytes_unchanged": true
+    },
+    "src/shared/types/electron.d.ts": {
+      "working_sha256": "da379887f2ce9ca5d00738aa62b9c6b035ea9e4784bfbc5734a5cdff6f7d5282",
+      "index_sha256": "d75e208d6d820ad219900438797dc37871d57847db375ce08bf726ae8cf7c91c",
+      "existing_Git_LF_normalization_only": true,
+      "working_bytes_unchanged": true
+    }
+  },
+  "other_staged_files_byte_identical_to_working": 31,
+  "build_input_pins_unchanged": true,
+  "public_manifest_entries_verified": 16
+}

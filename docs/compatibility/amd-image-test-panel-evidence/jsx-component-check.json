@@ -1,0 +1,47 @@
+{
+  "classification": "PASS_CPU_ACTUAL_COMPONENT_EXECUTION",
+  "global_React_absent": true,
+  "scope": "Real Sidebar module and Image Test panel rendered with actual React18 server renderer; no effects, DOM, picker, API or app launch",
+  "results": [
+    {
+      "entry": "src/shared/components/layout/Sidebar.tsx",
+      "jsx": "transform",
+      "source_sha256": "bc8116b1c17ad8414ea7f7217fd589485e854723ef9f68e625b128ec0b132c3e",
+      "bundle_sha256": "01fd1b55c8288c4e84936a00e890cce4a01a6db81f15292b0a1a6090c8694c9b",
+      "error": "ReferenceError: React is not defined",
+      "rendered_bytes": 0,
+      "rendered_sha256": null,
+      "expected_text_present": false
+    },
+    {
+      "entry": "src/shared/components/layout/Sidebar.tsx",
+      "jsx": "automatic",
+      "source_sha256": "bc8116b1c17ad8414ea7f7217fd589485e854723ef9f68e625b128ec0b132c3e",
+      "bundle_sha256": "fc99a278d989463fd43e643f5627663ad678cbccd2189b2d15899e73828e06a9",
+      "error": null,
+      "rendered_bytes": 2900,
+      "rendered_sha256": "635ccf1c5ec6610cf638a0137896fed29bddce57beaf1a9d653f0fdfc3668911",
+      "expected_text_present": true
+    },
+    {
+      "entry": "src/areas/generate/components/AmdImageTestPanel.tsx",
+      "jsx": "transform",
+      "source_sha256": "616b2360ed6c473d0e99be00f61ea46ac4afa470c27227e6001d64e0919bcf69",
+      "bundle_sha256": "1f12720e3f4b87299605793d9401519739ca209d2d4b9076a0810d1d871ce332",
+      "error": "ReferenceError: React is not defined",
+      "rendered_bytes": 0,
+      "rendered_sha256": null,
+      "expected_text_present": false
+    },
+    {
+      "entry": "src/areas/generate/components/AmdImageTestPanel.tsx",
+      "jsx": "automatic",
+      "source_sha256": "616b2360ed6c473d0e99be00f61ea46ac4afa470c27227e6001d64e0919bcf69",
+      "bundle_sha256": "8813c303753ad637b6f5750355c7db08f2fbdd4496394f650ce3ad48762e0487",
+      "error": null,
+      "rendered_bytes": 1078,
+      "rendered_sha256": "21e6c6232e56cdb68d8fd503a9913eab58b982e8eecf6cdbdee871255c4fc03e",
+      "expected_text_present": true
+    }
+  ]
+}

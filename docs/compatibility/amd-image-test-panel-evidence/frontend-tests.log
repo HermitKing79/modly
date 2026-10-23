@@ -1,0 +1,31 @@
+Saved focused test output; Node loader warnings and local paths omitted. No rerun by this exporter.
+✔ the authoritative readFileBase64 IPC delegates to the bounded reader (1.5588ms)
+✔ explicit byte cap reads a real file at the bound and preserves one-argument use (6.1313ms)
+✔ explicit cap rejects a real oversized image with its actual byte count (3.6171ms)
+✔ invalid byte caps cannot open or allocate a file (0.6305ms)
+✔ capped reading stays on one descriptor and refuses growth after stat (2.7413ms)
+✔ capped reading handles short reads and closes after descriptor errors (0.4497ms)
+✔ an explicit cap cannot raise the existing scene-manifest limit (3.0361ms)
+✔ preload forwards the optional cap through IPC and keeps omitted-cap callers working (2.9332ms)
+✔ capped reader refuses directories instead of allocating or reading their contents (1.8344ms)
+✔ oversized scene manifests are rejected before their bytes are read (0.2468ms)
+✔ scene manifests at the bound are read and encoded (0.1586ms)
+✔ a manifest that grows after stat is rejected before base64 transfer (0.1377ms)
+✔ preliminary alpha uses strict >204 and a three pixel foreground extent (1.558ms)
+✔ opaque JPEG pixels cannot pass the preliminary cutout check (0.1054ms)
+✔ input byte sizes are exact without converting or re-encoding bytes (0.1991ms)
+✔ unrelated or falsely complete CPU responses are rejected (0.1771ms)
+✔ original CPU admission stays distinct from preprocessing and generation (0.6337ms)
+✔ private image validation never uploads to a remote or credentialed URL (0.2229ms)
+✔ browser decoding requires original bounded single-frame CPU metadata (0.1599ms)
+✔ shared workflow reader retains original bytes and supports an explicit preview cap (13.2125ms)
+✔ changing images cancels pending validation and ignores its late success (3.8845ms)
+✔ changing images ignores a late read failure and disposal prevents state updates (0.3198ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 178.9236

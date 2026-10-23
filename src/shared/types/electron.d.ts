@@ -202,7 +202,7 @@ declare global {
         selectImage:     () => Promise<string | null>
         selectMeshFile:  () => Promise<string | null>
         saveModel:       (defaultName: string) => Promise<string | null>
-        readFileBase64:  (filePath: string) => Promise<string>
+        readFileBase64:  (filePath: string, maxBytes?: number) => Promise<string>
         selectDirectory: (defaultPath?: string) => Promise<string | null>
         savePath:        (args: { filters: { name: string; extensions: string[] }[]; defaultPath?: string }) => Promise<string | null>
         listDir:         (dirPath: string) => Promise<string[]>

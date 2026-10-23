@@ -1,0 +1,100 @@
+{
+  "schema": "modly.amd.image-test-panel.ui-result.v1",
+  "classification": "PASS_ORDINARY_PRIVATE_UI",
+  "final_independent_outcome_review": "PASS_WITH_RECORDED_SCOPE",
+  "final_preservation_review": "PASS_WITH_RECORDED_SCOPE",
+  "scope": "Existing native picker/read IPC, actual renderer and owned local API; no generation or lifecycle qualification.",
+  "host_raw_sha256": "8ebd0c3496b1b2b133dc69c889ecd47314b93e5b73ad2050b73d80c55d31d09a",
+  "stdout_raw_sha256": "7d7ee1a7895f2c29a8209b5ba0c34d7ba40b2f1e14b92e3b2add1566df1e0ac8",
+  "stderr_raw_sha256": "18f03071bbdc91bb480aee238f4ba772dbe885842b1c642b5de7f9eb287c8d79",
+  "actual_ui_input_cases": [
+    {
+      "kind": "synthetic RGBA PNG",
+      "bytes": 2274,
+      "width": 320,
+      "height": 240,
+      "foreground": [
+        211,
+        171
+      ],
+      "result": "eligible; checkerboard preview and original CPU result visible"
+    },
+    {
+      "kind": "opaque abstract Windows wallpaper JPEG; not a photograph",
+      "bytes": 833851,
+      "width": 3840,
+      "height": 2400,
+      "mode": "RGB",
+      "result": "rejected not_rgba; no original-byte conversion"
+    },
+    {
+      "kind": "synthetic alpha204 PNG",
+      "bytes": 2433,
+      "width": 320,
+      "height": 240,
+      "foreground": [
+        0,
+        0
+      ],
+      "result": "rejected foreground"
+    },
+    {
+      "kind": "synthetic oversized input",
+      "bytes": 2097153,
+      "result": "bounded authoritative reader rejected before POST"
+    },
+    {
+      "kind": "synthetic corrupt input",
+      "bytes": 18,
+      "result": "CPU decode rejection; no image mounted"
+    }
+  ],
+  "image_test_HTTP_200_count": 4,
+  "Generate_request_count": 0,
+  "selection_race_scope": "unit tests only; not an observed UI case",
+  "observer_error": "One read-only CDP expression SyntaxError; no product mutation; subsequent invalid-alpha DOM capture succeeded.",
+  "app_launches": 1,
+  "natural_app_exit": true,
+  "natural_job_empty": true,
+  "returncode": 0,
+  "elapsed_seconds": 297.875,
+  "peak_process_committed_bytes": 566210560,
+  "peak_job_committed_bytes": 927952896,
+  "prepared_inputs_unchanged": true,
+  "prepared_inputs": 148,
+  "forced_Job_cleanup": false,
+  "resource_samples": 297,
+  "initial_available_ram_bytes": 18359689216,
+  "minimum_sample_available_ram_bytes": 17088491520,
+  "minimum_sample_disk_free_bytes": 134421852160,
+  "process_and_job_memory_caps_bytes": 6442450944,
+  "required_available_RAM_bytes": 12884901888,
+  "required_disk_bytes": 2147483648,
+  "app_TTL_seconds": 300,
+  "outer_deadline_seconds": 330,
+  "API_shutdown": {
+    "mechanism": "Existing PythonBridge taskkill of only its owned API child",
+    "returncode": 1,
+    "natural_backend_shutdown": false
+  },
+  "preprocessing_complete": false,
+  "generation_qualified": false,
+  "WSL_GPU_model_execution": false,
+  "published_screenshots": [
+    "valid.jpg",
+    "valid-details.jpg"
+  ],
+  "private_images_published": false,
+  "separate_photo_CPU_check": {
+    "public_result": "local-jpeg-photo.json",
+    "not_an_app_rerun": true,
+    "not_an_additional_unittest_method": true
+  },
+  "preservation_evidence": "preservation-after.json",
+  "preservation_evidence_sha256": "f90d14d9963a873741b1974c3a70bcf11c853493615fb08ace3dcf13711fb018",
+  "screenshot_encoding": "JPEG; byte-identical to private original captures; no re-encoding",
+  "screenshot_encoding_evidence": "screenshot-encoding.json",
+  "actual_UI_evidence_scope": "Rendered DOM/text/screenshots and API request/status logs; no raw HTTP response body saved.",
+  "independent_outcome_review_evidence": "independent-outcome-review.json",
+  "independent_outcome_review_sha256": "345991916f18dac1bc7be871bfc791a02f16238bc7eff37f612a991b24c3f7f4"
+}

@@ -2,7 +2,7 @@ import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { Handle, Position, useReactFlow } from '@xyflow/react'
 import type { WFNodeData } from '@shared/types/electron.d'
 import BaseNode from './BaseNode'
-import { mimeFromPath } from './imageUtils'
+import { readLocalImage } from './imageUtils'
 
 const OUTPUT_COLOR = '#38bdf8'
 
@@ -24,8 +24,8 @@ export default function ImageNode({ id, data, selected }: { id: string; data: WF
   const browse = useCallback(async () => {
     const p = await window.electron.fs.selectImage()
     if (!p) return
-    const base64 = await window.electron.fs.readFileBase64(p)
-    const src = `data:${mimeFromPath(p)};base64,${base64}`
+    const image = await readLocalImage(p, window.electron.fs)
+    const src = image.preview
     updateNodeData(id, { params: { ...data.params, filePath: p, preview: src } })
   }, [id, data.params, updateNodeData])
 

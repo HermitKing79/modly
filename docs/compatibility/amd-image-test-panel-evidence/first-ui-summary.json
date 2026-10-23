@@ -1,0 +1,23 @@
+{
+  "schema": "modly.amd.image-test-panel.first-ui-summary.v1",
+  "functional_classification": "FAIL",
+  "functional_error": "ReferenceError: React is not defined at app.js:130317:27",
+  "cause": "Private direct-esbuild renderer selected classic JSX; original web configuration uses automatic React JSX.",
+  "host_resource_cleanup_classification": "PASS",
+  "host_raw_sha256": "4f1df2ebcede2b57430ac83fb604e7d0c7e2e807ae679f7e2f1924f086a2273e",
+  "app_launches": 1,
+  "natural_app_exit": true,
+  "natural_job_empty": true,
+  "returncode": 0,
+  "peak_process_committed_bytes": 85057536,
+  "peak_job_committed_bytes": 197836800,
+  "prepared_inputs_unchanged": true,
+  "elapsed_seconds": 139.84300000000076,
+  "forced_job_cleanup": false,
+  "historical_outputs_preserved": true,
+  "corrected_build_scope": "Fresh private output and profile; automatic JSX; unchanged production sources.",
+  "corrected_actual_UI_result": "PASS_WITH_RECORDED_SCOPE",
+  "record_scope": "Original build/first-attempt facts preserved; corrected result updated from completed ordinary UI smoke and independent outcome review.",
+  "corrected_result_evidence": "ui-result.json",
+  "independent_outcome_review_evidence": "independent-outcome-review.json"
+}

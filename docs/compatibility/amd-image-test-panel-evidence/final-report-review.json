@@ -1,0 +1,30 @@
+{
+  "schema": "modly.amd.image-test-panel.final-report-review.v1",
+  "classification": "GO_TO_PUBLISH_WITH_RECORDED_SCOPE",
+  "report_sha256": "39028c15325a0e07decbe64d8a70e6cdddd46960dbe121c0fe733e94c766a060",
+  "evidence_summary_sha256": "a07d0da0ccf46e9f3d534af12c572fbdae2f282ff480d1c58497b1f7f63ea24e",
+  "hash_manifest_sha256": "c46ff940b5fa22552de3944b8d8b355b87d9589e197d9b5618aeb109b62f84ac",
+  "manifest_entries_verified": 16,
+  "independent_outcome_review_sha256": "345991916f18dac1bc7be871bfc791a02f16238bc7eff37f612a991b24c3f7f4",
+  "preservation_after_sha256": "f90d14d9963a873741b1974c3a70bcf11c853493615fb08ace3dcf13711fb018",
+  "source_pins_still_match": true,
+  "public_screenshots": [
+    "valid.jpg",
+    "valid-details.jpg"
+  ],
+  "screenshots_byte_identical_to_private_originals": true,
+  "private_wallpaper_and_photo_images_excluded": true,
+  "local_photo_receipt_matches_saved_private_result": true,
+  "claims_verified": [
+    "First functional failure distinguished from host resource PASS; corrected actual UI result recorded.",
+    "Four endpoint status records plus UI observations; no raw-response-body claim.",
+    "Backend taskkill exit1 distinguished from natural app0/empty Job.",
+    "Pending-selection race limited to CPU tests.",
+    "Private noncanonical build, CSS and unused OBJLoader limits explicit.",
+    "Original CPU admission distinct from preprocessing/neural/generation and lifecycle qualification.",
+    "100/78/134 preservation scope and checker-only execution field accurate.",
+    "Public log versus private raw log hashes explicitly distinguished."
+  ],
+  "reviewer_scope": "Saved files, source pins, public privacy and report/manifest review only; no launch, tests or additional native query.",
+  "findings": []
+}

@@ -1,0 +1,116 @@
+{
+  "schema": "modly.amd.image-test-panel.independent-outcome-review.v1",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "scope": "Actual bounded private application image-validation smoke; original CPU input admission only.",
+  "private_verification_sha256": "215e396278a671934359d5366a992d72f97b7b3575f5132839143555a080627d",
+  "corrected_host_sha256": "8ebd0c3496b1b2b133dc69c889ecd47314b93e5b73ad2050b73d80c55d31d09a",
+  "first_host_sha256": "4f1df2ebcede2b57430ac83fb604e7d0c7e2e807ae679f7e2f1924f086a2273e",
+  "prelaunch_review_sha256": "57b96460fc62dd7d5d1c309b9b1eecdaa5efbac3c99abeffe5423bce8e191da3",
+  "preservation_after_sha256": "f90d14d9963a873741b1974c3a70bcf11c853493615fb08ace3dcf13711fb018",
+  "measurements": {
+    "elapsed_seconds": 297.875,
+    "peak_process_committed_bytes": 566210560,
+    "peak_job_committed_bytes": 927952896,
+    "resource_checks_including_initial": 298,
+    "minimum_available_ram_bytes": 17088491520,
+    "minimum_free_disk_bytes": 134421852160
+  },
+  "tests": {
+    "Pillow": {
+      "total": 15,
+      "passed": 15,
+      "skipped": 0
+    },
+    "original_API": {
+      "total": 15,
+      "passed": 7,
+      "skipped": 8
+    },
+    "focused_JavaScript": {
+      "total": 22,
+      "passed": 22,
+      "skipped": 0
+    },
+    "independent_JavaScript": {
+      "total": 22,
+      "passed": 22,
+      "skipped": 0
+    }
+  },
+  "inputs_verified": 148,
+  "first_run_files_preserved": 97,
+  "prior_authority_source_pins_unchanged": 17,
+  "first_application_functional_result": "FAIL: classic JSX ReferenceError; resource/cleanup host PASS is separate. Original evidence retained.",
+  "corrected_application_result": "PASS for displayed valid cutout admission and JPEG, alpha-204, oversize and corrupt refusals.",
+  "saved_results": {
+    "valid_RGBA": {
+      "width": 320,
+      "height": 240,
+      "bytes": 2274,
+      "foreground_extent": [
+        211,
+        171
+      ],
+      "eligible": true
+    },
+    "JPEG": {
+      "width": 3840,
+      "height": 2400,
+      "bytes": 833851,
+      "mode": "RGB",
+      "eligible": false,
+      "conversion": false
+    },
+    "invalid_alpha": {
+      "threshold": 204,
+      "foreground_extent": [
+        0,
+        0
+      ],
+      "eligible": false
+    },
+    "oversize": {
+      "bytes": 2097153,
+      "IPC_refused_before_POST": true
+    },
+    "corrupt": {
+      "bytes": 18,
+      "eligible": false,
+      "decoded_preview": false
+    }
+  },
+  "image_test_POST_200": 4,
+  "Generate_requests_observed": 0,
+  "app_returncode": 0,
+  "active_Job_processes_at_close": 0,
+  "forced_Job_cleanup": false,
+  "backend_shutdown": "Original PythonBridge stops its owned backend through taskkill; saved API exit1. No natural backend exit claim.",
+  "screenshots_visually_reviewed": 6,
+  "public_screenshots_allowed": [
+    "valid.jpg",
+    "valid-details.jpg",
+    "invalid-alpha.jpg",
+    "oversize.jpg",
+    "corrupt.jpg"
+  ],
+  "screenshot_encoding": "Saved private .png names contain JPEG/JFIF bytes; preserve originals, use .jpg for byte-identical public copies.",
+  "JPEG_screenshot": "Private only; excluded from publication.",
+  "preservation": {
+    "protected_metadata": 100,
+    "bounded_hashes": 78,
+    "prior_heads": 134,
+    "before_after_equal": true,
+    "main_unchanged": true,
+    "interpreter_master_provenance_caches_environments_and_prior_evidence_unchanged": true,
+    "checker_scope": "Preservation scanner performed no native/WSL queries; this does not describe the whole UI mission."
+  },
+  "limitations": [
+    "Private direct-esbuild build, not canonical electron-vite/Tailwind release build; pre-existing compiled CSS and guarded private main modules/unused OBJLoader alias retained.",
+    "Native-picker interactions were observed by the operator; reviewer independently inspected resulting saved screenshots/text/API access log and immutable host records.",
+    "Pending-selection race covered by focused CPU tests; no actual pending-selection native interaction claim.",
+    "Original preprocessing, DINO, GPU/WSL workers, neural generation and new lifecycle qualification NOT RUN or qualified.",
+    "Four successful endpoint access records and final UI state are saved; separate raw per-request JSON bodies are not preserved."
+  ],
+  "reviewer_scope": "Saved-file, source/hash, screenshot and preservation review only; no additional app launch, test rerun, worker or native query.",
+  "findings": []
+}

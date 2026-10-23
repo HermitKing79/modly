@@ -83,8 +83,8 @@ export function createElectronApi(ipcRenderer: IpcRendererLike, webFrame: WebFra
         ipcRenderer.invoke('fs:selectMeshFile') as Promise<string | null>,
       saveModel:         (defaultName: string): Promise<string | null> =>
         ipcRenderer.invoke('fs:saveModel', defaultName) as Promise<string | null>,
-      readFileBase64:    (filePath: string): Promise<string> =>
-        ipcRenderer.invoke('fs:readFileBase64', filePath) as Promise<string>,
+      readFileBase64:    (filePath: string, maxBytes?: number): Promise<string> =>
+        ipcRenderer.invoke('fs:readFileBase64', filePath, maxBytes) as Promise<string>,
       selectDirectory:   (defaultPath?: string): Promise<string | null> =>
         ipcRenderer.invoke('fs:selectDirectory', defaultPath) as Promise<string | null>,
       savePath:          (args: { filters: { name: string; extensions: string[] }[]; defaultPath?: string }): Promise<string | null> =>

@@ -13,15 +13,16 @@ import { useWorkflowRunStore } from '@areas/workflows/workflowRunStore'
 import { useWaitButton } from '@areas/workflows/useWaitButton'
 import { buildAllWorkflowExtensions, getWorkflowExtension } from '@areas/workflows/mockExtensions'
 import { validateWorkflowPreflight } from '@areas/workflows/preflight'
-import { mimeFromPath } from '@areas/workflows/nodes/imageUtils'
+import { readLocalImage } from '@areas/workflows/nodes/imageUtils'
 import type { WorkflowExtension } from '@areas/workflows/mockExtensions'
 import type { Workflow, WFNode, WFEdge, ParamSchema } from '@shared/types/electron.d'
 import { PICKER_LABELS, openParamPicker, resolvePickerIntent } from '@shared/utils/paramPicker'
 import { FloatInput, IntInput, PickerIcon } from '@shared/components/ui'
 import { isMissingWeightVariant, withWeightVariantAvailability } from '@shared/utils/weightVariants'
 import ChatPanel from './ChatPanel'
+import AmdImageTestPanel from './AmdImageTestPanel'
 
-type PanelMode = 'basic' | 'chat'
+type PanelMode = 'basic' | 'chat' | 'amd'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -169,9 +170,9 @@ function ImageParamRow({ nodeId, nodes, onPatch }: { nodeId: string; nodes: Flow
     const request = ++loadRequest.current
     if (!path) return
     try {
-      const base64 = await window.electron.fs.readFileBase64(path)
+      const image = await readLocalImage(path, window.electron.fs)
       if (request !== loadRequest.current) return
-      const src = `data:${mimeFromPath(path)};base64,${base64}`
+      const src = image.preview
       onPatch(nodeId, { params: { ...(data?.params ?? {}), filePath: path, preview: src } })
     } catch {
       if (request === loadRequest.current) showToast('Unable to load the selected image')
@@ -616,9 +617,10 @@ function ModeToggle({ mode, onChange }: { mode: PanelMode; onChange: (m: PanelMo
   return (
     <div className="shrink-0 px-3 pt-3 pb-2.5">
       <div className="flex bg-zinc-900 border border-zinc-800 rounded-lg p-0.5">
-        {(['basic', 'chat'] as PanelMode[]).map((m) => (
+        {(['basic', 'chat', 'amd'] as PanelMode[]).map((m) => (
           <button
             key={m}
+            aria-pressed={mode === m}
             onClick={() => onChange(m)}
             className={`flex-1 py-1.5 text-xs font-medium rounded-md transition-colors capitalize ${
               mode === m
@@ -626,7 +628,7 @@ function ModeToggle({ mode, onChange }: { mode: PanelMode; onChange: (m: PanelMo
                 : 'text-zinc-500 hover:text-zinc-300'
             }`}
           >
-            {m}
+            {m === 'amd' ? 'AMD Image Test' : m}
           </button>
         ))}
       </div>
@@ -670,7 +672,7 @@ export default function WorkflowPanel() {
       {/* Mode toggle */}
       <ModeToggle mode={mode} onChange={setMode} />
 
-      {mode === 'chat' ? (
+      {mode === 'amd' ? <AmdImageTestPanel initialPath={workflow?.nodes.find(node => node.type === 'imageNode')?.data.params.filePath as string | undefined} /> : mode === 'chat' ? (
         <>
           <div className="shrink-0 h-px bg-zinc-800" />
           <ChatPanel />

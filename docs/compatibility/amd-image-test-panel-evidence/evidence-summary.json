@@ -1,0 +1,65 @@
+{
+  "schema": "modly.amd.image-test-panel.evidence-summary.v1",
+  "base": "93d59af96c42535742214a72dbe95e329b982d72",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "original_cpu_input_contract_implemented": true,
+  "preprocessing_executed": false,
+  "generation_qualified": false,
+  "tests": {
+    "Pillow_runtime": {
+      "total": 15,
+      "passed": 15,
+      "skipped": 0
+    },
+    "original_API_runtime": {
+      "total": 15,
+      "passed": 7,
+      "skipped": 8,
+      "skip_reason": "Pillow unavailable"
+    },
+    "focused_JavaScript": {
+      "total": 22,
+      "passed": 22,
+      "skipped": 0
+    },
+    "independent_JavaScript": {
+      "total": 22,
+      "passed": 22,
+      "skipped": 0
+    }
+  },
+  "test_raw_sha256": {
+    "Pillow": "579001df6e484e24a5265eadebca899c89251b29aedee73bf79a6d1ffcc4481e",
+    "API": "6bbf76405503c7a6de9edf350b95800229ca0e3d444c2cd2f272e62c55b8d0d0",
+    "root_JavaScript": "01ec7be6fb8b4cd4f6102e01a76aafa4c9fb984f39f66c887b9efe7ba5d0e7e5",
+    "independent_JavaScript": "49e7cac7fc5737699625918d1ee3382b6a50bf165c338d6e6736060d3465b818"
+  },
+  "decoder_configuration": "Original API runtime lacks Pillow; explicit MODLY_AMD_IMAGE_TEST_PYTHON selects an existing compatible local Windows CPU runtime. No install or implicit substitution.",
+  "first_application": {
+    "functional_result": "FAIL_CLASSIC_JSX_BLANK_WINDOW",
+    "host_resource_cleanup": "PASS"
+  },
+  "corrected_CPU_component_execution": "PASS: actual Sidebar and Image Test panel; classic RED / automatic GREEN; no global React",
+  "corrected_application_result": "PASS_ORDINARY_PRIVATE_UI",
+  "final_preservation_review": "PASS_WITH_RECORDED_SCOPE",
+  "privacy": "Only synthetic-cutout screenshots are public. Original input image bytes, private wallpaper/photograph, raw host identities and absolute local runtime/profile paths are excluded.",
+  "corrected_application_evidence": "ui-result.json",
+  "final_independent_outcome_review": "PASS_WITH_RECORDED_SCOPE",
+  "separate_actual_photo_CPU_check": "Rejected original RGB/JPEG as not_rgba, bytes unchanged and no Torch import; not an app rerun or extra unittest method",
+  "selection_race_scope": "Unit tests only",
+  "API_shutdown": "Owned API child stopped by existing PythonBridge taskkill, returncode1; not natural backend shutdown",
+  "test_public_logs_sha256": {
+    "backend-pillow-tests.log": "579001df6e484e24a5265eadebca899c89251b29aedee73bf79a6d1ffcc4481e",
+    "backend-api-tests.log": "6bbf76405503c7a6de9edf350b95800229ca0e3d444c2cd2f272e62c55b8d0d0",
+    "frontend-tests.log": "24b887b1e9da1af79f9c067d4d6d6b641072c1c7b3ca728754b1657a16a7ec48",
+    "independent-node-tests.log": "49e7cac7fc5737699625918d1ee3382b6a50bf165c338d6e6736060d3465b818"
+  },
+  "test_raw_sha256_scope": "Saved private raw logs; public frontend-tests.log removes loader warnings/local paths and has a different hash.",
+  "preservation_evidence": "preservation-after.json",
+  "preservation_evidence_sha256": "f90d14d9963a873741b1974c3a70bcf11c853493615fb08ace3dcf13711fb018",
+  "public_screenshot_encoding": "JPEG, byte-identical originals, valid.jpg / valid-details.jpg",
+  "actual_UI_evidence_scope": "Rendered DOM/text/screenshots and API request/status logs; no raw HTTP response body saved.",
+  "independent_outcome_review_evidence": "independent-outcome-review.json",
+  "independent_outcome_review_sha256": "345991916f18dac1bc7be871bfc791a02f16238bc7eff37f612a991b24c3f7f4",
+  "publication_verification": "VERIFY_AFTER_PUSH; final publication receipt is private"
+}

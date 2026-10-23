@@ -13,6 +13,7 @@ from services.stdio_utf8 import ensure_utf8_stdio
 ensure_utf8_stdio()  # must run before any print/logging hits the pipe
 
 from routers import generation, model, optimize, status, settings, extensions, export, workflow_runs, agent, llm
+from routers import amd_image_test
 
 
 @asynccontextmanager
@@ -54,6 +55,7 @@ app.include_router(status.router)
 app.include_router(settings.router)
 app.include_router(model.router,      prefix="/model")
 app.include_router(generation.router, prefix="/generate")
+app.include_router(amd_image_test.router, prefix="/amd")
 app.include_router(optimize.router,    prefix="/optimize")
 app.include_router(extensions.router, prefix="/extensions")
 app.include_router(export.router,          prefix="/export")

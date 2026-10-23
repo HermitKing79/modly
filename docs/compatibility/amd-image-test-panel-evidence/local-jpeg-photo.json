@@ -1,0 +1,44 @@
+{
+  "scope": "Existing local landscape JPEG; real CPU decoder; original bytes unchanged; no app rerun",
+  "input_sha256": "0e3c9c1712f8b20d21130714d0a6659ee83821386caad5fbb2af7b930d7da512",
+  "input_bytes": 1389605,
+  "result": {
+    "schema": "modly.amd.image-test.v1",
+    "status": "invalid",
+    "eligible": false,
+    "validation": "not_run",
+    "preprocessing_complete": false,
+    "generation_qualified": false,
+    "metadata": {
+      "format": "JPEG",
+      "mode": "RGB",
+      "width": 6400,
+      "height": 4000,
+      "frames": 1,
+      "has_alpha_channel": false,
+      "transparent_pixels_present": null,
+      "foreground_bbox": null,
+      "foreground_extent": null,
+      "resized_size": null,
+      "resized_foreground_bbox": null,
+      "resized_foreground_extent": null
+    },
+    "limits": {
+      "max_bytes": 2097152,
+      "max_dimension": 4096,
+      "max_pixels": 16777216,
+      "foreground_alpha_gt": 204,
+      "min_foreground_extent": 3
+    },
+    "reasons": [
+      {
+        "code": "not_rgba",
+        "message": "The decoded image is not RGBA; no conversion was applied.",
+        "correction": "Remove the background and export a true RGBA PNG or WebP with transparency."
+      }
+    ],
+    "input_contract": null
+  },
+  "source_unchanged": true,
+  "torch_imported": false
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "modly.amd.image-test-panel.prelaunch-review.v1",
+  "base": "93d59af96c42535742214a72dbe95e329b982d72",
+  "verdict": "PASS_FOR_BOUNDED_PRIVATE_APP_SMOKE",
+  "source_pins": {
+    "api/main.py": "d331e199cb7d3b69230bb0ec0a2c54b4ae653d237cf1d63e11c81a7c9828dbb3",
+    "api/routers/amd_image_test.py": "61537fc480befa22fb21149cb40c4c22998d610d0a799bf0968edcfcffcc5922",
+    "api/services/amd_image_test.py": "f8b9c04b5a8fe1e87fd3945313bc55a2e66dd17dd750ffa1cc5fef1ca5d56d73",
+    "api/tests/test_amd_image_test.py": "54f605bf605859ed92c099584749af85f1d9a9ee11728a6c7f5e7d1104d848c9",
+    "src/areas/generate/amdImageTest.ts": "fad38c82b9a321a732c418f05f601957510749d3a71f861f9be59efeeb0d1846",
+    "src/areas/generate/amdImageTest.test.mjs": "b30307aeb3ce912b16886fbe47f6bed0265537fda80e677fc0901f3dea9cf8f9",
+    "src/areas/generate/components/AmdImageTestPanel.tsx": "616b2360ed6c473d0e99be00f61ea46ac4afa470c27227e6001d64e0919bcf69",
+    "src/areas/generate/components/WorkflowPanel.tsx": "4018271d3af0245c242a30d32116338145acb55dd39ffa6479b2e2979015422c",
+    "src/areas/workflows/nodes/ImageNode.tsx": "2162c5af9c92ab0057f4a095849eb9b5bc0cd41722ef114937a43615082b0f74",
+    "src/areas/workflows/nodes/imageUtils.ts": "30ba3d416ec6bf9f5df6a88fd0e30293cf398bb88632e0c08d95636b864d7a14",
+    "electron/main/bounded-file-reader.ts": "5a458d66369dec061ec528af515ae8aa99fd685dbc45e1416ade3c4747e17083",
+    "electron/main/bounded-file-reader.test.mjs": "1eb13dd0e2a98b7239c5a20e3e2b98afb341749a4c38cc7075994389940c33bd",
+    "electron/main/ipc-handlers.ts": "eacfa9598c31fe987353a56991b28f4410dff54e1ef2a066bc7ae2ce53db04d3",
+    "electron/preload/electron-api.ts": "c3b860b0db95e89be94b275aae44747963609692c55d67d954fd321c2955e00b",
+    "src/shared/types/electron.d.ts": "da379887f2ce9ca5d00738aa62b9c6b035ea9e4784bfbc5734a5cdff6f7d5282"
+  },
+  "prior_authority_source_pins_checked": 17,
+  "smoke_build_receipt_sha256": "b7cf17e625be9d52a5a32ce168a8ceae837de6d62de9eb5bb89209d2c6bab596",
+  "smoke_build_helper_sha256": "a22b287cdcdd254548e53dcdb16aff98839621a10f7822cf6daef96c7324585e",
+  "smoke_bootstrap_sha256": "f97f049a63f5d0128538da57670aa2ce042e4f13d7a6714d15fe638a459a5bf9",
+  "build_source_files_verified": 115,
+  "api_source_files_verified": 3,
+  "private_guard_modules": [
+    {
+      "source": "electron/main/updater.ts",
+      "original_sha256": "f93fdc0d520c60b8ada380df151642b0a766403ea6745267e1ac4386fc039d18",
+      "guarded_sha256": "a198758e12f1652cdfba33bf822a18e664cccc7121c5d3b782430adb3f81a98f",
+      "original_copy": "guarded-source/updater.original.ts",
+      "guarded_copy": "guarded-source/updater.ts"
+    },
+    {
+      "source": "electron/main/builtin-sync.ts",
+      "original_sha256": "5cdae68d14b1dd01669baf139fa4f8e7e778d72f6ce8a7cc4f3f17b6a66bf25a",
+      "guarded_sha256": "4a0404150d3542c2c7199ea927a9b1a7ed099cfc44fe6a283e4a925cfadff473",
+      "original_copy": "guarded-source/builtin-sync.original.ts",
+      "guarded_copy": "guarded-source/builtin-sync.ts"
+    },
+    {
+      "source": "electron/main/python-setup.ts",
+      "original_sha256": "e034c2cfdd495b1779662d0766351754e8d84fa66c001bf0793d88c5a0ed2556",
+      "guarded_sha256": "ba1ed367b776b68b8c1d5ad13927d709fc1f1715bb8017f907b1809142609310",
+      "original_copy": "guarded-source/python-setup.original.ts",
+      "guarded_copy": "guarded-source/python-setup.ts"
+    },
+    {
+      "source": "electron/main/python-bridge.ts",
+      "original_sha256": "379598a0c621e4a8dcc4a26a143ab2772cb2df808ed0c6e9a5e3e20b4deb993a",
+      "guarded_sha256": "674344ee6b4d4f800c8e217f260f400239d71492cd91b917962140bea149fc37",
+      "original_copy": "guarded-source/python-bridge.original.ts",
+      "guarded_copy": "guarded-source/python-bridge.ts"
+    }
+  ],
+  "independent_cpu_tests": {
+    "frontend": 10,
+    "IPC_bounded_reader": 12,
+    "total": 22,
+    "pass_count": 22,
+    "failures": 0,
+    "skipped": 0,
+    "duration_ms": 179.2181,
+    "public_log_sha256": "49e7cac7fc5737699625918d1ee3382b6a50bf165c338d6e6736060d3465b818",
+    "private_raw_log_sha256": "49e7cac7fc5737699625918d1ee3382b6a50bf165c338d6e6736060d3465b818"
+  },
+  "findings_closed": [
+    "Panel2MiB optional read limit crosses preload/IPC and bounds one file descriptor before allocation/base64 transfer, including growth detection; legacy omitted-cap and scene manifest behavior retained.",
+    "Original CPU bounded single-frame dimensions precede any Image.src/preview mount; unavailable/oversize lacks preview. Browser failure preserves original CPU result and cannot manufacture eligibility.",
+    "Loopback-only upload rejects credentialed/remote bases and fetch redirects are errors. No cloud upload or altered input pixels."
+  ],
+  "checks": [
+    "Selection revision/abort/disposal prevents stale image results. Original bytes, filename, dimensions/size, alpha transparency/strict threshold/foreground extent and corrective CPU reasons are distinct from browser-only preliminary checks.",
+    "New route calls unchanged admitted_image and marks preprocessing_complete=false/generation_qualified=false. No model/Torch/WSL/generation dispatch. Configured existing local Pillow CPU bridge is explicit, bounded10seconds/64KiBoutput/2MiBinput with one active validation and no install/discovery fallback.",
+    "Legacy workflow/node calls reuse the same reader with no optional cap by default. No authority/Generate/model code changed; all17prior authority admission pins match.",
+    "Private smoke source derives exactly four main modules for updater/builtin-sync/setup+SSL block/free-port assertion/API source selection. Actual candidate renderer, preload, image picker/read IPC and API source are retained. Existing installed dependencies are reused.",
+    "Bootstrap directs profile/session/settings/workspaces under private evidence, disables hardware GPU, blocks external renderer HTTP(S) and install/update/destructive IPC, enforces300second session and leaves original bridge owning its one API child.",
+    "Independent22focused CPU tests pass once. No app/WSL/GPU/model/lifecycle qualification execution by reviewer."
+  ],
+  "limits": [
+    "Prelaunch source/resource review only; actual app usability and CPU validation remain pending smoke evidence. No lifecycle or hostile-code sandbox qualification.",
+    "Direct esbuild smoke with installed baseline CSS and generated CSS is not canonical electron-vite/Tailwind packaging; new panel appearance must be visually inspected.",
+    "Private guarded main/bootstrap differs from installed app startup: setup/update/builtin sync/global port killer are intentionally bypassed or blocked. Existing OBJLoader alias is unused viewer plumbing and does not qualify3Dloader behavior.",
+    "API runtime lacks Pillow; explicit existing configured local CPU Python supplies image decoder where available. Unavailable runtime stays unverified and suppresses preview. Genuine preprocessing/neural/generation/Generate remain unqualified."
+  ],
+  "findings": []
+}
