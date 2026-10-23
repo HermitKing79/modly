@@ -1,0 +1,49 @@
+{
+  "initial": {
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "available_bytes": 16937582592,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 158400512
+  },
+  "after_conditioning": {
+    "allocated_bytes": 1297482240,
+    "reserved_bytes": 1371537408,
+    "peak_allocated_bytes": 1343300096,
+    "peak_reserved_bytes": 1371537408,
+    "available_bytes": 15408168960,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 1687814144
+  },
+  "after_release": {
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 1343300096,
+    "peak_reserved_bytes": 1371537408,
+    "available_bytes": 16775512064,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 320471040,
+    "model_collected": true,
+    "output_collected": true,
+    "rope_cache_entries_before": 1,
+    "rope_cache_entries_after": 0,
+    "cpu_memory": {
+      "working_set_bytes": 2350530560,
+      "private_commit_bytes": 3332595712,
+      "peak_working_set_bytes": 3002593280,
+      "peak_commit_bytes": 4793794560
+    }
+  },
+  "cpu_load_seconds": 2.780999999999949,
+  "placement_seconds": 0.42200000000002547,
+  "conditioning_seconds": 36.40700000000015,
+  "cpu_preflight": 17536045056,
+  "limitations": [
+    "No continuous Windows available-RAM or aggregate Job-memory series was collected by the original DINO supervisor.",
+    "Peak worker private commit is an actual process measurement, not total machine or aggregate Job consumption.",
+    "Torch zero allocated/reserved is not zero global device usage; no post-exit VRAM query was performed.",
+    "Original DINO host has kill-on-close Job ownership; no process/Job byte cap or allocator-fraction cap existed or was introduced."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "files": {
+    "genuine-host.txt": {
+      "bytes": 195,
+      "sha256": "9aafd87ae90e8d2522547d79a9a6bec58bbc2e9cf145f1c36505f75104b40cf0"
+    },
+    "independent_readback.py": {
+      "bytes": 22810,
+      "sha256": "497e2b2f71c1d6ab7576361429811459c312fdaa3825f9ea591aa53757f39c22"
+    },
+    "independent-readback.json": {
+      "bytes": 4512,
+      "sha256": "2b82b9fb9f8aaa3ae420fedf4ea0b668e6cafbdd9f959c24a50054f6a0e5893b"
+    },
+    "execution-context-private.json": {
+      "bytes": 1180,
+      "sha256": "a74bfc20ca83930c8544cc30e2b6ea2bb4df26a72608090008a339a5594528fa"
+    },
+    "preservation-after-private.json": {
+      "bytes": 4497518,
+      "sha256": "2e231937c243710d41b70196e86bba827f12d6b7be659dc3269f05fe2e7cf4e1"
+    }
+  },
+  "native_run_files": {
+    "committed-harness.json": {
+      "bytes": 6026,
+      "sha256": "57f4f1e297380488634706e44d336e95e019374ead7cac15edc687b84b6688d0"
+    },
+    "results.json": {
+      "bytes": 143906,
+      "sha256": "8164616d7ca6c91720a867e078a6e51a1e1015dddc4bd1b6bbfeb651f5d35ab4"
+    },
+    "trace.jsonl": {
+      "bytes": 40870,
+      "sha256": "9782155b6b76275d91a3a9912a89292d4a3ffabdd46a39536faa60ae627e6936"
+    },
+    "windows-periodic.jsonl": {
+      "bytes": 14865,
+      "sha256": "fe3bca0363b0152c79c26167b5b74addbb75697f580b40a4f55fb7916ebea994"
+    },
+    "worker.stdout.txt": {
+      "bytes": 203319,
+      "sha256": "28321d6b8f67e9e71973968d511a3e0553f2f81bb2972aebeaad9b5bdfb064eb"
+    },
+    "worker.stderr.txt": {
+      "bytes": 160,
+      "sha256": "c92e729554634806d9ce1d33ba7bd0faf81edafa091c267f12eed2092949c12d"
+    },
+    "cpu-gate.json": {
+      "bytes": 120869,
+      "sha256": "24dbb8a012822811619b0853b155d0b69af80e7b3dc34b1cc841dd801f138886"
+    },
+    "windows-before.json": {
+      "bytes": 1570,
+      "sha256": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56"
+    },
+    "windows-cpu-gate.json": {
+      "bytes": 1570,
+      "sha256": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56"
+    },
+    "windows-after-exit.json": {
+      "bytes": 1570,
+      "sha256": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56"
+    }
+  },
+  "source_safe_only": true,
+  "private_pixels_features_and_process_identities_not_published": true
+}

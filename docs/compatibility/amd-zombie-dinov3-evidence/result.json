@@ -1,0 +1,55 @@
+{
+  "classification": "PASS",
+  "source_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+  "pixel_sha256": "e958193cad52cb3b15efd69410c3727853df61fd35310468d1b4540284ea2fb5",
+  "source_size": [
+    1216,
+    1294
+  ],
+  "source_mode": "RGBA",
+  "input_png_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+  "crop_size": [
+    980,
+    980
+  ],
+  "crop_mode": "RGB",
+  "crop_pixel_sha256": "655ef5f8144975213ba5ce41e684473b9c0690f4b661561b74282c7ba949f92e",
+  "checkpoint_sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+  "config_sha256": "135ecd23e34a70b6fbed8b083fdecb319b7e3a54e3d849258bbe4ddcf1783bb5",
+  "header_sha256": "3495b172735ff88c94b28a3257614f51764abfd7879b1498ec71abf855f259d3",
+  "header_hash_domain": "8-byte length prefix plus padded JSON header",
+  "harness_commit": "93269412602a338acd9fbde41798901ddb5f707d",
+  "file_sha256": "e5659b1842509e73ec496ef90bf95fae86c93ddf5ee73fba8015822982a3cb60",
+  "payload_sha256": "da13f1a6415db96cba44aaa807c94265995afbb13ef7e69c66911ede2bc6ee0e",
+  "file_bytes": 4215800,
+  "shape": [
+    1,
+    1029,
+    1024
+  ],
+  "dtype": "F32",
+  "all_finite": true,
+  "statistics": {
+    "minimum": -29.341325759887695,
+    "maximum": 24.72732925415039,
+    "mean": -1.3377013940996108e-09,
+    "stddev": 1.0
+  },
+  "conditioning_seconds": 36.40700000000015,
+  "supervised_seconds": 80.29700000000003,
+  "peak_allocated_bytes": 1343300096,
+  "peak_reserved_bytes": 1371537408,
+  "release_allocated_bytes": 0,
+  "release_reserved_bytes": 0,
+  "workspace_clear_calls": 1,
+  "owned_job_settled_naturally": true,
+  "forced_job_cleanup": false,
+  "periodic_windows_samples": 9,
+  "production_job_integration": "NOT QUALIFIED",
+  "full_image_to_3d": "NOT RUN",
+  "scope": "standalone single DINO stage",
+  "independent_receipt_sha256": "2b82b9fb9f8aaa3ae420fedf4ea0b668e6cafbdd9f959c24a50054f6a0e5893b",
+  "independent_reader_sha256": "497e2b2f71c1d6ab7576361429811459c312fdaa3825f9ea591aa53757f39c22",
+  "independent_no_neural_imports": true,
+  "verified_committed_files": 46
+}

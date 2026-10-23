@@ -1,0 +1,33 @@
+{
+  "schema": "modly-standalone-dino-final-report-review-v1",
+  "reviewed_utc": "2026-10-23T22:45:39.9588094Z",
+  "reviewer": "independent-host-and-teardown-subagent",
+  "classification": "PASS",
+  "blockers": [],
+  "report": "docs/compatibility/amd-zombie-dinov3-standalone.md",
+  "report_sha256": "a44b3e01910befdaf61f54ceafce7fc31f29a92b44e82976ccc90f72dd2dcfb8",
+  "execution_harness_commit": "93269412602a338acd9fbde41798901ddb5f707d",
+  "outcome_review_sha256": "d1f832ef4dd79a9b265c689ccf46afa181e21780798ff7f4dd970ec3eb9bb8db",
+  "independent_readback_receipt_sha256": "2b82b9fb9f8aaa3ae420fedf4ea0b668e6cafbdd9f959c24a50054f6a0e5893b",
+  "verified_claims": [
+    "All seven requested boundary verdicts match actual execution, artifact, independent readback and lifecycle evidence.",
+    "Exact source/pixel/crop/checkpoint/config/full-header identities, artifact size/file hash/payload hash and numerical tensor contract match the real private evidence.",
+    "Reported strict-load, placement, neural and supervised timings; Torch peaks and zero release; worker CPU peaks; nine healthy Windows samples and measured gap/query bounds match actual saved records.",
+    "Exactly one load/conditioning/extractor/features pass, all 24 layers, one patch convolution, 24 attention operations and one synchronized BLAS clear are supported by genuine counters and durable trace records.",
+    "Natural empty Windows Job settlement, zero return code, no forced cleanup/timeout and observer/journal/reader completion match original host records.",
+    "20 primary and 19 independent CPU tests are correctly distinguished. Learned representative feature values, raw private images and PIDs are absent from the report and published result summary.",
+    "Torch allocator zero is distinguished from nonzero global device usage; no post-exit GPU query, aggregate Job cap, continuous host RAM minimum, production job integration or full generation qualification is claimed.",
+    "Preservation wording retains its bounded scope and distinguishes existing full-hash provenance from fresh bulk hashing."
+  ],
+  "publication_preservation": {
+    "scope": "Fresh pre-report publication snapshots only; root will repeat comparison after final report publication and retain the final commit receipt privately.",
+    "all_previous_heads_unchanged": true,
+    "receipt_sha256": "0cf16ee2e9ac0368ead108b01922d3fa6087086429f356259b6777a3aeb36925",
+    "only_new_branch": "codex/amd-zombie-dinov3-standalone",
+    "main_unchanged": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+    "previous_heads": 137,
+    "total_heads": 138,
+    "reviewer_independently_parsed_saved_remote_snapshots": true
+  },
+  "reviewer_gpu_wsl_or_worker_execution": false
+}

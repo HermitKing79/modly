@@ -1,0 +1,202 @@
+{
+  "schema": "modly-standalone-dino-outcome-review-v1",
+  "reviewer": "independent-host-and-teardown-subagent",
+  "reviewed_utc": "2026-10-23T22:43:34.9075403Z",
+  "classification": "PASS",
+  "blockers": [],
+  "execution_harness_commit": "93269412602a338acd9fbde41798901ddb5f707d",
+  "reviewed_source_sha256": {
+    "scripts/compatibility/amd_zombie_dinov3.py": "63a6814dbe66e309d6d9e9bb142d437d1b1d7a3174edf99cdb3625fbbdd8bf36",
+    "scripts/compatibility/test_amd_zombie_dinov3.py": "002db5a84eecd91b951303777eee5d49ad0f84868d7e88fa805a2b80518cf5c0"
+  },
+  "private_evidence_sha256": {
+    "run/committed-harness.json": "57f4f1e297380488634706e44d336e95e019374ead7cac15edc687b84b6688d0",
+    "run/cpu-gate.json": "24dbb8a012822811619b0853b155d0b69af80e7b3dc34b1cc841dd801f138886",
+    "run/results.json": "8164616d7ca6c91720a867e078a6e51a1e1015dddc4bd1b6bbfeb651f5d35ab4",
+    "run/worker.stdout.txt": "28321d6b8f67e9e71973968d511a3e0553f2f81bb2972aebeaad9b5bdfb064eb",
+    "run/worker.stderr.txt": "c92e729554634806d9ce1d33ba7bd0faf81edafa091c267f12eed2092949c12d",
+    "run/trace.jsonl": "9782155b6b76275d91a3a9912a89292d4a3ffabdd46a39536faa60ae627e6936",
+    "run/windows-periodic.jsonl": "fe3bca0363b0152c79c26167b5b74addbb75697f580b40a4f55fb7916ebea994",
+    "run/windows-before.json": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56",
+    "run/windows-cpu-gate.json": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56",
+    "run/windows-after-exit.json": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56",
+    "run/checkpoint-before.json": "a64c0bd87ffa7b519574a28eba121865a2a051535b755bfb41a73f4055977187",
+    "run/checkpoint-after.json": "a64c0bd87ffa7b519574a28eba121865a2a051535b755bfb41a73f4055977187",
+    "attempt-started.json": "e3e3a34f1ed9d926049653bba748f122b2f48f1974c18fbba3388fab4712f332",
+    "host-readback.json": "7ce525240909d6823028d1416715247af67c92772edccb29e7e108532a7570d7",
+    "cpu-admission.json": "972640bacf884fad6c87a940f2c97f4426088f316b2f8bd69fb41f391365457d"
+  },
+  "independent_post_exit_reader": {
+    "reader_sha256": "497e2b2f71c1d6ab7576361429811459c312fdaa3825f9ea591aa53757f39c22",
+    "status": "PASS_INDEPENDENT_POST_EXIT_READBACK",
+    "actual_reader_sha256": "497e2b2f71c1d6ab7576361429811459c312fdaa3825f9ea591aa53757f39c22",
+    "committed_harness_sha256": "57f4f1e297380488634706e44d336e95e019374ead7cac15edc687b84b6688d0",
+    "no_gpu_or_native_call": true,
+    "verified_committed_files": 46,
+    "numerical_readback": "Actual original safetensors reader plus separate safetensors.numpy load; exact finite float32 shape, raw payload/file SHA-256 and independently recomputed statistics",
+    "no_neural_imports": true,
+    "verified_installed_sources": 7,
+    "results_sha256": "8164616d7ca6c91720a867e078a6e51a1e1015dddc4bd1b6bbfeb651f5d35ab4",
+    "receipt_sha256": "2b82b9fb9f8aaa3ae420fedf4ea0b668e6cafbdd9f959c24a50054f6a0e5893b"
+  },
+  "input": {
+    "exact_byte_scratch_copy_verified": true,
+    "alpha_only": true,
+    "source_mode": "RGBA",
+    "pixel_sha256": "e958193cad52cb3b15efd69410c3727853df61fd35310468d1b4540284ea2fb5",
+    "rmbg_model": null,
+    "source_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+    "header_hash_domain": "8-byte length prefix plus padded JSON header",
+    "checkpoint_sha256": "dcb2e45127cccbf1601e5f42fef165eea275c8e5213197e8dcf3f48822718179",
+    "source_size": [
+      1216,
+      1294
+    ],
+    "crop_mode": "RGB",
+    "header_sha256": "3495b172735ff88c94b28a3257614f51764abfd7879b1498ec71abf855f259d3",
+    "crop_size": [
+      980,
+      980
+    ],
+    "config_sha256": "135ecd23e34a70b6fbed8b083fdecb319b7e3a54e3d849258bbe4ddcf1783bb5"
+  },
+  "neural": {
+    "transformer_layers_executed_once": 24,
+    "output_transfer_calls": 1,
+    "attention_backend": "sdpa",
+    "scaled_dot_product_attention_calls": 24,
+    "loaded_tensors": 415,
+    "grad_enabled": false,
+    "unexpected_keys": [],
+    "missing_keys": [],
+    "strict_checkpoint_loads": 1,
+    "feature_calls": 1,
+    "conditioning_calls": 1,
+    "patch_convolution_calls": 1,
+    "inference_tensor": true,
+    "normalization_constant_copies": {
+      "mean": 1,
+      "std": 1
+    },
+    "cpu_loading_initialized_gpu": false,
+    "extractor_calls": 1,
+    "input_transfer_calls": 1,
+    "strict_cpu_ready_gate_matches_worker": true
+  },
+  "artifact": {
+    "private_relative_path": "artifacts/amd-zombie-dinov3-b8afdd5/dino/run/scratch/conditioning.safetensors",
+    "tensor_bytes": 4214784,
+    "file_bytes": 4215800,
+    "feature_values_published": false,
+    "value_count": 1053696,
+    "statistics": {
+      "minimum": -29.341325759887695,
+      "maximum": 24.72732925415039,
+      "mean": -1.3377013940996108E-09,
+      "stddev": 1.0
+    },
+    "exclusive_fresh_write_and_post_exit_readback_verified": true,
+    "shape": [
+      1,
+      1029,
+      1024
+    ],
+    "dtype": "F32",
+    "payload_sha256": "da13f1a6415db96cba44aaa807c94265995afbb13ef7e69c66911ede2bc6ee0e",
+    "all_finite": true,
+    "file_sha256": "e5659b1842509e73ec496ef90bf95fae86c93ddf5ee73fba8015822982a3cb60"
+  },
+  "timings_seconds": {
+    "conditioning_including_gpu_synchronization": 36.40700000000015,
+    "original_cpu_deadline": 120,
+    "original_gpu_deadline": 180,
+    "original_overall_deadline": 360,
+    "strict_cpu_load": 2.780999999999949,
+    "supervised_worker": 80.29700000000003,
+    "placement_and_synchronization": 0.42200000000002547
+  },
+  "measured_memory_bytes": {
+    "cpu_peak_private_commit": 4793794560,
+    "cpu_peak_working_set": 3002593280,
+    "initial_available_device": 16937582592,
+    "release_sampled_global_device_used": 320471040,
+    "peak_torch_allocated": 1343300096,
+    "release_torch_reserved": 0,
+    "initial_reserved": 0,
+    "release_torch_allocated": 0,
+    "initial_allocated": 0,
+    "reported_device_total": 17095983104,
+    "release_available_device": 16775512064,
+    "peak_torch_reserved": 1371537408
+  },
+  "teardown_and_settlement": {
+    "rope_cache_before": 1,
+    "timed_out": false,
+    "allocation_snapshot_captured": false,
+    "model_collected": true,
+    "owned_tree_exit_verified": true,
+    "owned_job_empty_before_cleanup": 0,
+    "monitors_journals_and_readers_settled": true,
+    "allocator_history_disabled": true,
+    "forced_job_cleanup": false,
+    "workspace_clear_calls": 1,
+    "observed_python_owner_count": 0,
+    "worker_exit_verified": true,
+    "process_returncode": 0,
+    "output_collected": true,
+    "rope_cache_after": 0,
+    "observed_tensor_records": 2288,
+    "owned_job_empty_after_cleanup": 0,
+    "reviewed_workspace_binding_verified": true,
+    "forced_child_cleanup": false
+  },
+  "independent_saved_trace_audit": {
+    "strict_cpu_gate_matches_worker": true,
+    "periodic_windows_samples": 9,
+    "workspace_clear_enter_records": 1,
+    "contiguous_worker_trace_records": 87,
+    "one_durable_stdout_final_matches_saved_worker": true,
+    "layer_enter_records": 24,
+    "layer_return_records": 24,
+    "periodic_max_gap_seconds": 5.375,
+    "periodic_max_query_seconds": 1.5,
+    "total_trace_records": 108,
+    "trace_error_records": 0,
+    "all_periodic_observations_healthy": true,
+    "status": "PASS; reviewer executed saved-file-only stdlib audit with no neural imports",
+    "workspace_clear_return_records": 1,
+    "before_gate_after_exit_windows_observations_healthy": true
+  },
+  "preservation": {
+    "historical_cache_files": 20,
+    "original_host_and_teardown_sources_unchanged_from_base": true,
+    "inherited_state_equal": true,
+    "scope": "Recorded bounded preservation scope; active preview trees excluded from immutable metadata comparison; no claim of fresh accepted-master payload hashing",
+    "protected_metadata": 100,
+    "classification": "PASS_WITH_RECORDED_BOUNDED_SCOPE",
+    "original_source_diff_exit_code": 0,
+    "saved_intervening_evidence_files": 65,
+    "before_after_equal": true,
+    "accepted_master_fresh_payload_hash": false,
+    "protected_small_hashes": 78,
+    "receipt_sha256": "25b3a09435dc31ba8a39d97eaaaf4c788275564fbf7455199e11b4e6d843dfbf"
+  },
+  "required_outcomes": {
+    "fresh_conditioning_artifact_and_numerical_readback": "PASS",
+    "exact_zombie_input": "PASS",
+    "production_job_integration": "NOT QUALIFIED",
+    "windows_job_settlement_and_gpu_teardown": "PASS",
+    "genuine_dino_neural_forward": "PASS",
+    "full_image_to_3d": "NOT RUN",
+    "cpu_admission": "PASS"
+  },
+  "limitations": [
+    "One standalone compatibility pass; no production authority or Generate qualification and no occupancy, shape, texture or GLB execution.",
+    "Zero allocated/reserved Torch bytes does not mean zero global device memory; sampled global usage at release remained 320471040 bytes. No post-exit GPU query was performed.",
+    "Reported peaks are Torch allocator peaks, not a measured peak of all driver/context memory.",
+    "Legacy CPU RAM admission is an available-memory snapshot. The original Job has no aggregate memory cap; no continuous available-RAM minimum is claimed.",
+    "Worker stderr records the existing Windows allocator record_context_cpp unsupported-platform warning. Native C++ allocation context recording is unavailable; zero-release criteria, tensor-owner accounting and history shutdown passed.",
+    "Host-return trace timings are distinct from GPU completion; neural timing includes the explicit final synchronization."
+  ],
+  "reviewer_gpu_wsl_or_worker_execution": false
+}
