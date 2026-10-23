@@ -1,0 +1,158 @@
+{
+  "schema": "modly-zombie-shape-input-review-v1",
+  "reviewer": "independent-cpu-input-audit-subagent",
+  "reviewed_utc": "2026-10-23T23:47:19.265039+00:00",
+  "classification": "PASS",
+  "base_commit": "0d15dd96f31ded71564657e5890f51ed1858ad97",
+  "blockers": [],
+  "source_and_prior_neural_artifacts": "PASS",
+  "pooled_support_token_admission": "PASS",
+  "source_image_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+  "feature_file_sha256": "e5659b1842509e73ec496ef90bf95fae86c93ddf5ee73fba8015822982a3cb60",
+  "feature_payload_sha256": "da13f1a6415db96cba44aaa807c94265995afbb13ef7e69c66911ede2bc6ee0e",
+  "sparse_latent_file_sha256": "ecf57d3a0db0bec99b79712fc3626c5dd224cff03e33c60e0297500cde761930",
+  "dino_execution_commit": "93269412602a338acd9fbde41798901ddb5f707d",
+  "sparse_and_occupancy_execution_commit": "e6b6330ba2f9e51abfb74c726729e0be4ade7cac",
+  "original_saved_readers_reused": true,
+  "original_stage_receipts_preserved": true,
+  "private_historical_receipt_hashes_verified": 114,
+  "original_source_closure_files_verified": 65,
+  "stage_reviews": {
+    "sampling": {
+      "review_sha256": "b67fdf86027396fc6e2cb2cf6d77967b11ff8dfbfa5ee895e41f9d3bd6c81bf9",
+      "results_sha256": "771750352444b88441750bb712852ae11508822c9b75f786be801f658fd6ebf2",
+      "committed_harness_sha256": "4e707cc6bfa59c48caf001211054a32688bd680c1c4b43a13b40fcf840ffaab0",
+      "independent_readback_sha256": "0a17b146df89882f1df6486563b5e73bfdb40a5dd5f6606cb11686b6e750bcc4"
+    },
+    "decoder": {
+      "review_sha256": "1507411051ac4c7012c1dae26ee33bb08eaae6ab7542abfbc6299c7f559a476c",
+      "results_sha256": "d81389cff99f1c60cbff1004759876e72f2702d11ee59b0c92f830e132165152",
+      "committed_harness_sha256": "4e707cc6bfa59c48caf001211054a32688bd680c1c4b43a13b40fcf840ffaab0",
+      "independent_readback_sha256": "b128c9ab81ae354ee36aed690c07f1928857be4647d0c123648e8e80cee0e7ca"
+    }
+  },
+  "occupancy_files": {
+    "occupancy-logits.npy": {
+      "file_sha256": "46f1c152b3752dc13cdc7e02a0226c3935fe329b3559daa5484883476294b325",
+      "payload_sha256": "56aca9a9c3c25889b1395ce92bb841d33a1adb0c87c45ca824cdce6e40cbe7bd",
+      "file_bytes": 1048704,
+      "shape": [
+        1,
+        1,
+        64,
+        64,
+        64
+      ],
+      "dtype": "float32"
+    },
+    "occupancy-mask.npy": {
+      "file_sha256": "bf9c0d82ae063b3bc213edc73b8ab959c08260b77c558abfa4eb4f8bf35b1025",
+      "payload_sha256": "88cc16264344df4b4b5fc8399cc43d0eb1442ea2db7f59d47e56d74fe678727f",
+      "file_bytes": 262272,
+      "shape": [
+        64,
+        64,
+        64
+      ],
+      "dtype": "bool"
+    },
+    "occupancy-coordinates.npy": {
+      "file_sha256": "dcce90480523ea69af66515dfface9bf3a5e1417c6d3093ba56efbe06fa90b40",
+      "payload_sha256": "ba7cf7c41c7037cff3030c272c6fc9b59390fa50a57fc801d4d8767ade97aa11",
+      "file_bytes": 68384,
+      "shape": [
+        4266,
+        4
+      ],
+      "dtype": "int32"
+    }
+  },
+  "native_occupancy": {
+    "count": 4266,
+    "bounds_minimum": [
+      0,
+      25,
+      0
+    ],
+    "bounds_maximum": [
+      63,
+      38,
+      63
+    ]
+  },
+  "pooled_support": {
+    "count": 1000,
+    "dtype": "I32",
+    "shape": [
+      1000,
+      4
+    ],
+    "c_contiguous": false,
+    "f_contiguous": true,
+    "coordinate_order": [
+      "batch",
+      "D",
+      "H",
+      "W"
+    ],
+    "zero_batch": true,
+    "unique": true,
+    "lexicographic": true,
+    "bounds_minimum": [
+      0,
+      12,
+      0
+    ],
+    "bounds_maximum": [
+      31,
+      19,
+      31
+    ],
+    "coords_payload_sha256": "b871475ff86493ca9d023aa7736262a898193e3a1b6833a2b6716f427cf2a603",
+    "mask_payload_sha256": "84ccf60ab85da372c66ee0f9e9a96117b58fd2af5e33da45b91c6e1bc9c0585b",
+    "maximum_tokens": 4430,
+    "unchanged_reduce_occupancy": true,
+    "independent_floor_divide_unique_reference_equal": true,
+    "semantics": "max_pool3d((decoded > 0).float(), kernel_size=2, stride=2, padding=0) > 0.5"
+  },
+  "resource_qualification": {
+    "token_count": 1000,
+    "maximum_token_count": 4430,
+    "historical_token_count": 3743,
+    "token_ratio": 0.2671653753673524,
+    "historical_peak_allocated_bytes": 2911625728,
+    "historical_peak_reserved_bytes": 3078619136,
+    "historical_forward_seconds": 8.889999999999418,
+    "historical_results_sha256": "06fcb0f34c2989e8dcacf634ac8d1267d6b34ad51fdcf4d4805277916a86a50c",
+    "whole_peak_quadratic_estimate_bytes": 3078619136,
+    "self_attention_scores_f32_bytes": 48000000,
+    "cross_attention_scores_f32_bytes": 49392000,
+    "conservative_visible_buffers_bytes": 307424000,
+    "estimate_is_guarantee": false,
+    "basis": "whole historical reserved peak scaled by max(1,N/3743)^2; visible F32 buffer accounting; inference only",
+    "allocator_limit_bytes": 12884901888,
+    "minimum_free_vram_bytes": 13958643712,
+    "vram_reserve_bytes": 1073741824,
+    "required_ram_bytes": 11411771648,
+    "preplacement_reserve_policy": "13 GiB free before placement minus 12 GiB allocator cap; historical policy unchanged",
+    "minimum_live_free_vram_bytes": 3221225472,
+    "live_free_margin_bytes": 2147483648,
+    "opaque_workspace_reserve_bytes": 1073741824,
+    "cpu_seconds": 180,
+    "gpu_seconds": 240,
+    "overall_seconds": 480,
+    "live_memory_observer_and_allocator_guards_required": true
+  },
+  "cpu_only": true,
+  "no_neural_imports": true,
+  "weights_loaded": false,
+  "gpu_wsl_job_or_worker_execution": false,
+  "individual_array_values_published": false,
+  "limitations": [
+    "This receipt qualifies saved inputs and the original CPU token/resource estimate only; live model admission remains required.",
+    "Historical outcomes authenticate completed prior neural work; no combined historical execution receipt was fabricated.",
+    "Shape sampling, detailed geometry, texturing, mesh extraction and GLB export were not run by this reviewer."
+  ],
+  "private_full_receipt_sha256": "8452e2e830826f93f5da6ccde9bf635b12f05011c3a26940a60238e9d96b85f6",
+  "private_reader_sha256": "5731c4ba25cc7bf9a891816d3fbbc609e465b4264e1eea179bc16feac92eec2d"
+}

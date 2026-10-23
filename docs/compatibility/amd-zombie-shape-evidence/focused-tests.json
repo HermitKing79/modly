@@ -1,0 +1,22 @@
+{
+  "classification": "PASS",
+  "tests": 20,
+  "seconds": 6.26,
+  "no_neural_imports": true,
+  "stdout_sha256": "ebd8dec7fc605625e6136cbb85c6a2189f520717f6343add2002f208c71ebea2",
+  "cpu_input_route_sha256": "f87aff032d28e14b717de2259ad48ed7ba453f2adf57ba3bb4d5e48eac031d41",
+  "cpu_input_route": "PASS: real saved inputs and exact original model metadata under worker tensor-read boundary; Torch prohibited",
+  "tdd_red_captures": {
+    "focused-tests-red-workspace.txt": "1b6a846bb6902f1df1c04973921891e1aac9c3b9c92130ccc0338a1947a975c5",
+    "acceptance-tests-red.txt": "75dcb8e5bdd2201d55bac58ad65d1e6b6e1decca8adf2528b822456bba159366",
+    "acceptance-tests-signed-zero-red.txt": "910a51048d0899bfee2c2f1f6fe014575e05447b0179afc0df4dc2f8de3f679c"
+  },
+  "scope": "Only two new zombie-shape CPU test files; bounded synthetic writer fixtures and verifier negative controls. No GPU/model/Job/WSL execution.",
+  "pre_execution_findings_addressed": [
+    "Exact original checkpoint provenance dictionary",
+    "All six CPU input schema and zero-condition/batch/seqlen hashes",
+    "Strict host gate checked against trusted CPU identity even for paired worker/gate changes",
+    "Job-close errors reject acceptance",
+    "Byte-exact F32 denormalisation including signed zero"
+  ]
+}

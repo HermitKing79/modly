@@ -1,0 +1,107 @@
+{
+  "schema": "modly-zombie-shape-pre-execution-review-v1",
+  "reviewer": "independent-source-host-review-subagent",
+  "reviewed_utc": "2026-10-23T23:57:59.815940+00:00",
+  "classification": "PASS",
+  "blockers": [],
+  "candidate_source_sha256": {
+    "scripts/compatibility/amd_zombie_shape.py": "cfab80aee93a49e17a6dc150ec358a2c64cb35cc8b3cb3d1fb7f9452d540eb2e",
+    "scripts/compatibility/test_amd_zombie_shape.py": "bebd616fec245d959ccfa3066ec07d68259cd11b147b6dceff4e4cb998dd70c1",
+    "scripts/compatibility/test_amd_zombie_shape_acceptance.py": "46c9158c266586999a7c80df68bd60e4af41e37482c60986aaf82deb1d71f395"
+  },
+  "cpu_admission_summary_sha256": "ca9f2cbaf098d6d59d91e72c9400332718990f9b7490521210385fe3aebe7adb",
+  "private_cpu_admission_sha256": "b731510f9b4799f774912d21ee38d9c83342e367274c8ded4d301f0a02d57536",
+  "source_closure_files": 91,
+  "independent_cpu_tests": {
+    "methods": 20,
+    "exit_code": 0,
+    "capture_sha256": "8e232107535ab76041ad5437319152c55e8145c60a4e6f890e15a69106e27d00",
+    "no_neural_imports_enforced": true,
+    "negative_acceptance_repairs_demonstrated_red_then_green": true,
+    "initial_red_capture_sha256": "75dcb8e5bdd2201d55bac58ad65d1e6b6e1decca8adf2528b822456bba159366",
+    "signed_zero_red_capture_sha256": "910a51048d0899bfee2c2f1f6fe014575e05447b0179afc0df4dc2f8de3f679c"
+  },
+  "independent_actual_cpu_input_route": {
+    "classification": "PASS",
+    "capture_sha256": "8bb316ff68e465f84359819b3a8c967f36db9043df34ac5c2777c8f2a43ecc5e",
+    "original_worker_tensor_read_audit": true,
+    "neural_imports_prohibited": true,
+    "token_count": 1000,
+    "coordinate_minimum": [
+      0,
+      0,
+      12,
+      0
+    ],
+    "coordinate_maximum": [
+      0,
+      31,
+      19,
+      31
+    ],
+    "coords_payload_sha256": "b871475ff86493ca9d023aa7736262a898193e3a1b6833a2b6716f427cf2a603",
+    "exact_prepared_checkpoint_and_input_identity": true,
+    "immutable_historical_proof_tensor_paths": 2
+  },
+  "verified_design": {
+    "separate_completed_roots_use_unchanged_prior_readers": true,
+    "actual_original_dino_sparse_and_occupancy_receipts_reauthenticated": true,
+    "combined_historical_execution_receipt_fabricated": false,
+    "pure_runtime_constructor_preserves_real_owned_job_handshake_before_private_preparation": true,
+    "original_runtime_factory_sampler_math_and_writer_reused": true,
+    "canonical_steps_total_positive_negative_forwards": [
+      12,
+      21,
+      12,
+      9
+    ],
+    "maximum_sequences": 1,
+    "seed": 20261013,
+    "sigma_min": 1e-05,
+    "rescale_t": 3.0,
+    "guidance_strength": 7.5,
+    "guidance_rescale": 0.5,
+    "guidance_interval": [
+      0.6,
+      1.0
+    ],
+    "original_bf16_checkpoint_and_220_reversible_runtime_f32_widenings": true,
+    "strict_cpu_gate_and_trusted_checkpoint_comparison": true,
+    "cpu_gpu_overall_seconds": [
+      180,
+      240,
+      480
+    ],
+    "initial_free_device_bytes": 13958643712,
+    "allocator_limit_bytes": 12884901888,
+    "minimum_live_block_free_bytes": 3221225472,
+    "strict_cpu_ram_required_bytes": 11411771648,
+    "original_pass_classifier_and_exact_five_artifact_reader": true,
+    "exact_all_six_cpu_input_schemas_and_negative_sparse_auxiliary_payloads": true,
+    "complete_original_provenance_schema_equality": true,
+    "independent_cpu_f32_denormalization_requires_exact_bytes": true,
+    "natural_job_settlement_observers_journals_and_zero_torch_release_required": true,
+    "exclusive_attempt_marker_and_no_retry": true,
+    "no_product_preview_generate_geometry_wsl_or_downstream_dispatch": true
+  },
+  "review_findings_corrected": [
+    "Reject altered or extra checkpoint provenance fields even when worker and sidecar agree.",
+    "Validate all six original CPU input layouts and negative-conditioning/batch-map/sequence-length payload hashes.",
+    "Reject Job close errors.",
+    "Require byte-exact CPU F32 denormalization, including signed-zero bits."
+  ],
+  "limitations": [
+    "This is CPU pre-execution review, not evidence of new neural execution.",
+    "Original Windows Job supplies ownership containment; it has no aggregate or per-process RAM byte cap.",
+    "Zero Torch allocation and reservation after teardown does not imply zero driver or context bytes.",
+    "Memory projection is an admission estimate; unchanged live resource and deadline guards remain decisive."
+  ],
+  "reviewer_gpu_wsl_job_or_neural_worker_execution": false,
+  "source_safe": true,
+  "independent_prior_input_review_sha256": "496fcbe4b7116fc33d32d7ac7151c5f472ee484016b0992f170346017d59a882",
+  "independent_prior_input_review": {
+    "classification": "PASS",
+    "authenticated_private_receipt_hashes": 114,
+    "original_source_closure_files": 65
+  }
+}
