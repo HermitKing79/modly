@@ -1,0 +1,19 @@
+test_generated_mode_cannot_launch_without_neural_qualification (tests.test_amd_stage_orchestrator.OrchestratorTests.test_generated_mode_cannot_launch_without_neural_qualification) ... ok
+test_unopted_extension_is_not_discovered_or_imported_in_host (tests.test_amd_scaffold.AMDScaffoldTests.test_unopted_extension_is_not_discovered_or_imported_in_host) ... ok
+test_legacy_generator_supports_eager_and_lazy_sibling_imports (tests.test_generator_registry.GeneratorRegistryDiscoveryTests.test_legacy_generator_supports_eager_and_lazy_sibling_imports) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.706s
+
+OK
+[Registry] MODELS_DIR     = C:\Users\wattz\.modly\models
+[Registry] WORKSPACE_DIR  = C:\Users\wattz\.modly\workspace
+[Registry] EXTENSIONS_DIR = (not set)
+[Registry] WARNING: No extensions found.
+[Registry] Loaded node: legacy-imports/generate (TestGenerator)
+[Registry] WARNING: SELECTED_MODEL_ID='sf3d' is unknown. Falling back to 'legacy-imports/generate'.
+[Registry] Active model  : legacy-imports/generate
+[Registry] All models    : ['legacy-imports/generate']
+[Registry] Reloading extensions...
+[Registry] WARNING: No extensions found.
+[Registry] Reload complete.

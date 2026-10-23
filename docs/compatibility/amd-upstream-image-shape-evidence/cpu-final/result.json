@@ -1,0 +1,96 @@
+{
+  "base": "5501dfd43263a9a155bed50413264b692c171905",
+  "branch": "codex/amd-upstream-image-shape-integration",
+  "passed": true,
+  "distinct_tests": 38,
+  "runs": [
+    {
+      "name": "host-authority",
+      "modules": [
+        "tests.test_amd_upstream_job"
+      ],
+      "tests": 18,
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_seconds": 8.151748000000225,
+      "log": "host-authority.log",
+      "log_sha256": "33d118d8653acd2446ab804e503a4c5246cb3932837ac65bc5d550ddbe209512"
+    },
+    {
+      "name": "geometry-handoff",
+      "modules": [
+        "test_amd_upstream_geometry"
+      ],
+      "tests": 7,
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_seconds": 7.997894600000109,
+      "log": "geometry-handoff.log",
+      "log_sha256": "95d072f35bcc11df0aa5ffa09b147ad12ec79f61b7331b4479a1b769b5a2500b"
+    },
+    {
+      "name": "affected-current-bridge-regression",
+      "modules": [
+        "test_amd_current_geometry"
+      ],
+      "tests": 10,
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_seconds": 1.1482566000004226,
+      "log": "affected-current-bridge-regression.log",
+      "log_sha256": "43e8aa9921ba6417a5278e89b75f688cb10d7a4213771db87c89247830767a84"
+    },
+    {
+      "name": "capability-and-non-amd-registry",
+      "modules": [
+        "tests.test_amd_stage_orchestrator.OrchestratorTests.test_generated_mode_cannot_launch_without_neural_qualification",
+        "tests.test_amd_scaffold.AMDScaffoldTests.test_unopted_extension_is_not_discovered_or_imported_in_host",
+        "tests.test_generator_registry.GeneratorRegistryDiscoveryTests.test_legacy_generator_supports_eager_and_lazy_sibling_imports"
+      ],
+      "tests": 3,
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_seconds": 3.8483810000006997,
+      "log": "capability-and-non-amd-registry.log",
+      "log_sha256": "b2a6f93abd353018ec5648a12bb1f6ad0341bd96045fffb0961aa6fc5b173160"
+    }
+  ],
+  "python": "C:\\Users\\wattz\\Documents\\Modly\\dependencies\\venv\\Scripts\\python.exe",
+  "python_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+  "source_sha256": {
+    "api/services/amd_upstream_job.py": "257d99d92ebe47e64d6675957ca3520fda5c45e34f2f3171a527c8c013f28bf9",
+    "api/tests/test_amd_upstream_job.py": "e4d6be07257ceaefc06d8e40ae2ec7c30ff9dcc36c1e8061c336eee1d7d72184",
+    "scripts/compatibility/amd_generation_decode.py": "8b9d66bba9390579f2c3b1d16136baa652dd0964e52ede4f95534b03a095b228",
+    "scripts/compatibility/test_amd_upstream_geometry.py": "73341dc2fe2fafea0fb68c24175e3a4c13e731a25b86091c06fe1d9669679766",
+    "api/services/amd_stage_orchestrator.py": "3b14a2fe179d94523236b8b487e8e2a6fbb9997d9785f52a64705a73ef3eb18a",
+    "api/services/amd_stage_contract.py": "dc90e9a4f480ddfd44f72276dc2e18c4df6228dc0265234895756360ee145536",
+    "api/services/amd_completed_result.py": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+    "api/services/generator_registry.py": "2dca1963a370180f3ef9c3b24a8430b97936abaaa5f31bc2f31a72e294e7ef3c",
+    "api/routers/generation.py": "e9372b3cb19e50e70a94795c2b202ef98c6a7586312d6f9f75c24e332f634d70",
+    "scripts/compatibility/amd_generation_occupancy.py": "8af084f7d7c48ec7d143d4229abc4312d8deb9c624b597f3a02c9e627ded5b69",
+    "scripts/compatibility/amd_generation_shape.py": "4e4c8253e36815526b266c38237438bbc3a5a5d396d0072500a44792856d2233",
+    "experimental/extensions/trellis2-amd/inference_decoder/current_input.py": "1831cd4ee097bdac300d0fc16806c2bca7bc46ba234f373f1909ad99ee933d6a",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "b5897c709bb0d005476e854ebc2f1a33c874b934d9b16f0fd80de1a65ef7327d",
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "6f4831747c6973d860a55c1988af5105f4fadb53b79e50164a86ffe81f73f21a",
+    "experimental/extensions/trellis2-amd/inference_decoder/runtime.py": "ea4199df31941795b7a5a5bb58d0f180f610c6ad17e8358b16393696a30c3c2e",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_large.py": "ff1d5727518e79c578206bfbe2af3c6bc4650ad3b2942290a5676fbfc38d7121",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py": "6c69e5a1376aae9cd60b9892b2a8f335f1e6cfc61173d55bfa1332c0004bbcfc",
+    "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "f2946f511a6055e64eeb0f1319485b40100ca997de0c7ad4b7acb8e50c4fab7d",
+    "experimental/extensions/trellis2-amd/inference_decoder/decode.py": "122df9e57c756b44da3f73aeb8cae43dc2745ce78e46bbf2adc4a05b1e56cb19",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "f6e393714506adabb5e4a4493316202db509409c5e97ee887c96f38f1906b214"
+  },
+  "scope": "Synthetic CPU contracts and real byte/NPY readers; inherited neural predecessor verifiers substituted only in wiring fixture",
+  "no_gpu": true,
+  "no_wsl": true,
+  "no_neural_worker": true,
+  "no_model_loading": true,
+  "no_os_job": true,
+  "bytecode_disabled": true,
+  "measured_memory_peak": null,
+  "genuine_upstream_execution": "NOT RUN",
+  "excluded_router_attempt": {
+    "result": "INTERRUPTED_NO_VERDICT",
+    "module": "tests.test_generation_router",
+    "note": "An exploratory compatibility selection stopped making progress; its owned command was interrupted. No router retry or repair, and no router PASS is claimed."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "modly.amd.upstream-image-shape-final-report-review.v1",
+  "created_utc": "2026-10-23T13:04:56Z",
+  "classification": "PASS",
+  "report_path": "docs/compatibility/amd-upstream-image-shape.md",
+  "report_sha256": "7b739c95799d9ab8b19a5810227ebe42b7f878f3001bb4820e0511d39a30da18",
+  "findings": [],
+  "scope": "Final report consistency with already reviewed implementation and saved qualification/preservation receipts. No source edits, tests, protected asset reads or execution.",
+  "test_accounting": {
+    "final_distinct_tests": 38,
+    "final_selected_elapsed_seconds": 22.46602250000069,
+    "report_rounded_seconds": 22.47,
+    "independently_repeated_distinct_tests": 28,
+    "old_95_test_geometry_suite_rerun": false,
+    "router_selection": "INTERRUPTED_NO_VERDICT; no retry and no router PASS",
+    "additional_tests_for_this_report_review": 0
+  },
+  "verdict_consistency": {
+    "upstream_host_context_interface": "PASS, CPU only",
+    "current_geometry_handoff": "PASS, CPU only",
+    "genuine_image_to_shape_lineage_execution_readiness": "BLOCKED",
+    "genuine_neural_execution": "NOT RUN",
+    "WSL_orchestration": "NOT QUALIFIED",
+    "generated_AMD_gate": "Unchanged and blocked",
+    "current_image_GPU_entry_denials": "Unchanged",
+    "host_sidecar": "CPU_CONTRACT_ONLY; genuine_execution_qualified=false",
+    "authority_scope": "Context and actual host-selected bytes, not proof of inference or requested parameter consumption"
+  },
+  "prerequisites_disclosed": [
+    "Qualified actual owned-supervisor observation producer",
+    "Complete pinned checkpoint/configuration and original five-artifact semantic lineage closure",
+    "Actual executor/WSL integration and independent execution gate"
+  ],
+  "preservation_scope": {
+    "unchanged_complete_sources": 19,
+    "unchanged_historical_AST_functions_classes": 6,
+    "protected100_scope": "Matches separately saved preservation review",
+    "accepted_asset_hash": "Authenticated saved provenance with metadata/file identity; no fresh bulk payload rehash",
+    "previous_evidence_and_remote_heads": "Preserved within recorded before/after scope",
+    "fresh_GPU_RAM_peak_or_installed_environment_qualification": false
+  },
+  "public_evidence_scope": "Final selected green receipts/logs and final independent log remain the pass evidence. Omitted red and superseded independent bridge logs do not change the final verdict.",
+  "reviewed_receipts_sha256": {
+    "docs/compatibility/amd-upstream-image-shape-evidence/qualification.json": "245c6d57bc743928f57021820e5648d6b1a59913d97d39f8427458634d9539a5",
+    "docs/compatibility/amd-upstream-image-shape-evidence/independent-review.json": "6c1316605b4e683f6bd03f84cd2c400a1dd757b13c0936cd6ef5a56fe13639ae",
+    "docs/compatibility/amd-upstream-image-shape-evidence/source-preservation.json": "a38786824a61a5c3e6e4ca60a272a7460ed8cec0a3d68d8cddf67ccb55fd35d6",
+    "docs/compatibility/amd-upstream-image-shape-evidence/preservation-review.json": "6d7af7ba12fdb7f13de324691249084492f6ee755132013e7302425b00c8c0e5"
+  }
+}

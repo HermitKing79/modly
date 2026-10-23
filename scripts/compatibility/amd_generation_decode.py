@@ -175,15 +175,16 @@ def _current_lineage_scope():
 
 
 def prepare_current_input(*, context, image_bytes, params, shape_evidence, expected_source_job_sha256,
-                          harness_commit, run_id):
+                          harness_commit, run_id, upstream_completion=None, cancel_event=None):
     with _current_lineage_scope():
         return _prepare_current_input(context=context,image_bytes=image_bytes,params=params,
             shape_evidence=shape_evidence,expected_source_job_sha256=expected_source_job_sha256,
-            harness_commit=harness_commit,run_id=run_id)
+            harness_commit=harness_commit,run_id=run_id,upstream_completion=upstream_completion,
+            cancel_event=cancel_event)
 
 
 def _prepare_current_input(*, context, image_bytes, params, shape_evidence, expected_source_job_sha256,
-                           harness_commit, run_id):
+                           harness_commit, run_id, upstream_completion=None, cancel_event=None):
     """Read-only CPU preparation; deliberately not a Runtime/launch option.
 
     The trusted product host supplies the original request context. Existing
@@ -193,12 +194,13 @@ def _prepare_current_input(*, context, image_bytes, params, shape_evidence, expe
     this function cannot turn a claimed worker PASS into execution authority.
     """
     import numpy as np
-    from services.amd_completed_result import CompletionContext, _opened, _plain, _json
+    from services.amd_completed_result import CompletionContext, _opened, _plain, _json, _child, _check_cancel
     from amd_generation_occupancy import verify_sequence
     from amd_sparse_decoder_forward import verify_committed_files, COMMITTED_FILES
 
     context=CompletionContext.from_dict(context.to_dict())
     context.validate_request(image_bytes,params)
+    _check_cancel(cancel_event)
     if context.mode!='generated' or context.model_id!='trellis2-amd':
         raise ValueError('Current-image admission requires the original generated AMD request')
     if not re.fullmatch('[0-9a-f]{40}',harness_commit or ''):
@@ -209,6 +211,12 @@ def _prepare_current_input(*, context, image_bytes, params, shape_evidence, expe
         raise ValueError('Fresh canonical run-ID required')
     evidence=_plain(shape_evidence)
     evidence.relative_to(APPROVED_ROOT.resolve())
+    if upstream_completion is not None:
+        from services.amd_upstream_job import AuthenticatedShapeInput
+        if type(upstream_completion) is not AuthenticatedShapeInput:
+            raise ValueError('Host-authenticated upstream completion required')
+        upstream_completion.validate(context,image_bytes,params,evidence,expected_source_job_sha256,
+                                     cancel_event=cancel_event)
     bundle=shape_inputs(evidence)  # Full original lineage and released-job verification.
 
     def read_current(path, limit, expected=None):
@@ -222,7 +230,8 @@ def _prepare_current_input(*, context, image_bytes, params, shape_evidence, expe
     if bundle['source_job']!=source or bundle['source_job_sha256']!=expected_source_job_sha256:
         raise ValueError('Foreign source shape receipt')
     result=_json(read_current(source,8*1024**2,bundle['source_job_sha256']))
-    if result.get('product_context')!=context.to_dict():
+    if ((upstream_completion is None or 'product_context' in result)
+            and result.get('product_context')!=context.to_dict()):
         raise ValueError('Source shape product request/job context differs')
     config=_json(read_current(evidence/'pre-execution-admission.json',1024**2))['context']
     occupancy=_plain(config['occupancy_evidence'])
@@ -235,6 +244,24 @@ def _prepare_current_input(*, context, image_bytes, params, shape_evidence, expe
             or verified['input_contract_sha256']!=image_contract_hash
             or result['worker']['generation_inputs']['input_contract_sha256']!=image_contract_hash):
         raise ValueError('Current submitted image/shape lineage differs')
+
+    private_inputs=set()
+    if upstream_completion is not None:
+        # Replace publication of private request data only, never source-code
+        # admission. Both exact files remain host-pinned and independently read.
+        source_image=_child(ROOT,verified['input_contract']['source_path'])
+        if source_image.parent!=occupancy or not source_image.name.startswith('source-image'):
+            raise ValueError('Exact prepared source image leaf required')
+        expected={'image':(source_image,context.input_sha256),
+                  'input_contract':(occupancy/'input-contract.json',image_contract_hash)}
+        pins=upstream_completion.runtime_input_pins
+        if set(pins)!=set(expected) or any((pin.path,pin.sha256)!=expected[name] for name,pin in pins.items()):
+            raise ValueError('Host runtime input pins differ from genuine occupancy lineage')
+        if read_current(source_image,2*1024**2,context.input_sha256)!=image_bytes:
+            raise ValueError('Actual submitted image bytes differ')
+        private_inputs={path.relative_to(ROOT).as_posix() for path,_ in expected.values()}
+        if not private_inputs.issubset(set(bundle['required_files'])):
+            raise ValueError('Inherited source closure omitted current runtime inputs')
 
     policy=load_module('_amd_current_geometry_run_contract',CODE/'run_contract.py')
     arrays={}
@@ -258,6 +285,8 @@ def _prepare_current_input(*, context, image_bytes, params, shape_evidence, expe
                      [p.relative_to(ROOT).as_posix() for p in CODE.glob('*.py')]+[
                          'api/services/amd_completed_result.py','api/services/amd_stage_contract.py',
                          'scripts/compatibility/test_amd_current_geometry.py']))
+    if upstream_completion is not None:
+        names=sorted((set(names)-private_inputs) | {'api/services/amd_upstream_job.py'})
     verify_committed_files(harness_commit,names,timeout_seconds=GIT_READ_SECONDS)
     root=PurePosixPath('/home/modly')/run_id
     base=policy.parse({'schema':policy.SCHEMA,'initial_count':bundle['count'],
@@ -273,6 +302,10 @@ def _prepare_current_input(*, context, image_bytes, params, shape_evidence, expe
         initial_coords_payload_sha256=hashlib.sha256(arrays['coords.npy'].tobytes()).hexdigest())
     # Reopen the authenticated predecessor after all deterministic preparation.
     read_current(source,8*1024**2,bundle['source_job_sha256'])
+    _check_cancel(cancel_event)
+    if upstream_completion is not None:
+        upstream_completion.validate(context,image_bytes,params,evidence,expected_source_job_sha256,
+                                     cancel_event=cancel_event)
     return contract
 
 

@@ -1,0 +1,75 @@
+{
+  "schema": "modly.amd.upstream-image-shape-preservation.v1",
+  "phase": "before",
+  "created_utc": "2026-10-23T12:56:46.722900+00:00",
+  "mission_base": "5501dfd43263a9a155bed50413264b692c171905",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "private_detail_sha256": "a8486563a4c0441ef84405e39075428fa7791bdf1bd241bb5e4e283980dc1f7a",
+  "private_controller_sha256": "40b2010626bb6c72bf4ddb2822555039e25fb0f4a5d3cc7a25f403939ebb8e15",
+  "prior_public_authentication": {
+    "preservation-before.json": {
+      "working_sha256": "af9d13297da21037fd65ae8cd0e9a5b7810460aa23c77fd12a5e44a4fb8ea5f8",
+      "git_blob_sha256": "af9d13297da21037fd65ae8cd0e9a5b7810460aa23c77fd12a5e44a4fb8ea5f8",
+      "exact_byte_match": true
+    },
+    "preservation-after.json": {
+      "working_sha256": "6b8181503c2fcd9f68e88a07a16fd87e3815d8ae011caeaa80108f8af0041096",
+      "git_blob_sha256": "6b8181503c2fcd9f68e88a07a16fd87e3815d8ae011caeaa80108f8af0041096",
+      "exact_byte_match": true
+    },
+    "preservation-review.json": {
+      "working_sha256": "cbe05e1da6e274558d5a0b0d39b76d2e639e9b18bd775c54ec418dffa6233c67",
+      "git_blob_sha256": "cbe05e1da6e274558d5a0b0d39b76d2e639e9b18bd775c54ec418dffa6233c67",
+      "exact_byte_match": true
+    }
+  },
+  "prior_closed_2280_file_scope_and_last_narrow_pair_authenticated": true,
+  "prior_saved_127_head_publication_map_sha256": "4ce8ac167b522cc9ae55730cc833ce5ed52ef74b074c3bfc03e8ac9156023b02",
+  "prior_126_heads_and_only_the_prior_127th_head_authenticated": true,
+  "full_2280_rehash_passes": 0,
+  "fresh_protected_metadata_count": 100,
+  "efficient_protected_hash_count": 78,
+  "efficient_protected_bytes_hashed": 8265983,
+  "original_API_python_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+  "accepted_master_bytes": 97073940,
+  "accepted_master_saved_sha256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+  "accepted_master_fresh_metadata_and_identity_match_saved": true,
+  "accepted_master_fresh_hash_performed": false,
+  "accepted_master_hash_provenance_public_sha256": "e0082e02ecfbb85103c0a6970b58a04cb5990ad64e97dbd22e04750ea85ef293",
+  "accepted_master_hash_provenance_private_sha256": "710e334566fc73f09f84486fcf339a663aeb9aac15b122c8a7c832189d252215",
+  "historical_evidence_tree_count": 8,
+  "historical_evidence_file_counts": {
+    "legacy_private_tree": 23,
+    "previous_writer_private_tree_including_empty_scratch": 16,
+    "previous_outside_private_tree_including_empty_scratch": 16,
+    "legacy_public_tree": 21,
+    "previous_writer_public_tree": 13,
+    "previous_outside_public_tree": 7,
+    "previous_lifecycle_private_tree": 58,
+    "previous_lifecycle_public_tree": 23
+  },
+  "preceding_geometry_evidence_tree_count": 2,
+  "preceding_geometry_evidence_file_counts": {
+    "preceding_geometry_private_tree": 7,
+    "preceding_geometry_public_tree": 21
+  },
+  "historical_cache_directory_count": 4,
+  "historical_cache_file_count": 20,
+  "original_partial_bytes": 1991,
+  "original_partial_sha256": "25ebe42f554489a23815c0e37ba09eae4dd143428481ce3344527cbf384fe6bd",
+  "remote_head_count": 127,
+  "all_127_previous_head_identities_preserved": true,
+  "remote_capture_sha256": "6c144b630e331089ca926e653449bbf301f80dbcacf1f6cd40896995626445a1",
+  "main_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "preserved_before_after_state_equal": null,
+  "execution_accounting": {
+    "completed_before_phases": 1,
+    "completed_after_phases": 0,
+    "remote_reads_before": 2,
+    "remote_reads_after": 0,
+    "failed_remote_requests": 0,
+    "native_probes_Jobs_fixtures_or_lifecycle_suites": 0
+  },
+  "limits": "Protected-asset preservation only. Fresh 100 protected metadata/file identities, 78 small hashes (8,265,983 bytes), original API hash, and accepted 97,073,940-byte master metadata/file identity with authenticated saved full-hash provenance. No new master payload hash or 2.28GB payload rehash. Eight authenticated historical evidence trees, the preceding geometry evidence pair, four cache trees/20 files, and the original 1,991-byte partial remain preserved. All 127 prior remote head identities including main are unchanged. This before phase is a protection baseline after authorized upstream product edits had begun; it does not claim unchanged product source. No native probe, lifecycle suite, Job, WSL, GPU, bulk asset scan, permission change, branch change, or push is performed by this controller. Raw paths and file identities remain private.",
+  "issues": []
+}
