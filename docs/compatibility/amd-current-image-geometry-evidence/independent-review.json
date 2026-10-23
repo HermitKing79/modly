@@ -1,0 +1,191 @@
+{
+  "schema": "modly.amd.current-image-geometry-independent-review.v1",
+  "created_utc": "2026-10-23T11:17:05Z",
+  "classification": "CPU_QUALIFICATION_REVIEW_PASS",
+  "baseline_commit": "c6345043b7aa15425161fa53d99ac0f922faf12d",
+  "scope": "Independent final candidate source review and focused CPU tests only. No generation, AI weights, native execution, WSL, GPU initialization or environment changes.",
+  "unresolved_findings": [],
+  "resolved_findings": [
+    "Current bridge now requires an independently supplied completed-stage SHA256 and exact source receipt product_context; same-image foreign request/job/nonce and parameter rebinding fail closed.",
+    "The inherited occupancy verifier temporarily changes routing and environment. _current_lineage_scope restores its original attributes, preview callback, contract digest, relevant environment and sys.path on success and failure.",
+    "The bridge test NoAI import guard is now scoped and removed, avoiding unrelated shared-process test failures."
+  ],
+  "independently_repeated_distinct_tests": 78,
+  "tests": [
+    {
+      "name": "current contract and scalar admission",
+      "interpreter": "API dependency Python",
+      "flags": [
+        "-B"
+      ],
+      "modules": [
+        "test_current_input"
+      ],
+      "exit_code": 0,
+      "tests": 11,
+      "unittest_seconds": 2.516,
+      "log": "independent-core.log",
+      "log_sha256": "d22e65929508d12bd6e126722f31fe33bd55a42a7459fdef163164bed745cbb9"
+    },
+    {
+      "name": "current host bridge",
+      "interpreter": "API dependency Python",
+      "flags": [
+        "-B"
+      ],
+      "modules": [
+        "test_amd_current_geometry"
+      ],
+      "exit_code": 0,
+      "tests": 10,
+      "unittest_seconds": 0.788,
+      "log": "independent-bridge.log",
+      "log_sha256": "61ccdaa1cb74e868c1cfd3c9275e0f967c848edca42b1814cceb648c082e168a"
+    },
+    {
+      "name": "initial output and unchanged decoder arithmetic/admission regressions",
+      "interpreter": "D AMD Python",
+      "flags": [
+        "-B"
+      ],
+      "modules": [
+        "test_current_artifact",
+        "test_large_tiling",
+        "test_final_support",
+        "test_tiling_contract",
+        "test_admission_reclaim",
+        "test_decoder"
+      ],
+      "exit_code": 0,
+      "tests": 55,
+      "unittest_seconds": 8.307,
+      "note": "Includes the earlier 7-test output module plus 48 unchanged arithmetic/admission/legacy tests. Final output test count is separately repeated below.",
+      "log": "independent-output-math-initial.log",
+      "log_sha256": "02b5b412988be3a34ef5fb69509370dbe03c9d23b62a4e3972b75520dff6578b"
+    },
+    {
+      "name": "final output, stage interoperability and intermediate oversize boundary",
+      "interpreter": "D AMD Python",
+      "flags": [
+        "-B"
+      ],
+      "modules": [
+        "test_current_artifact"
+      ],
+      "exit_code": 0,
+      "tests": 9,
+      "unittest_seconds": 7.875,
+      "log": "independent-output-final.log",
+      "log_sha256": "1ee593e7bb03be4cd2593e0ae7e53886c10cd4d70d5be38ff4d85041824cbcc0"
+    }
+  ],
+  "current_envelope": {
+    "initial_rows": 4430,
+    "intermediate_rows": 1000000,
+    "final_rows": 1842968,
+    "brick_only_final_rows": 1957891,
+    "large_tiling_sites": 6,
+    "tile_rows": 32768,
+    "final_cap_chunks": 57,
+    "final_cap_last_chunk_rows": 7960
+  },
+  "unchanged_policy": {
+    "allocator_limit_bytes": 12884901888,
+    "initial_device_free_bytes": 13958643712,
+    "device_free_reserve_bytes": 2147483648,
+    "opaque_headroom_bytes": 1073741824,
+    "padding": "ceil(visible_bytes*5/4)",
+    "gpu_deadline_seconds": 240,
+    "payload_limit_bytes": 268435456
+  },
+  "admission_order": [
+    "Actual learned boolean child count is checked before either original C2S expansion; every expansion remeasures live memory.",
+    "Convolution pre-hook includes full global native map/hash before original module allocation and publishes active native state only after admission.",
+    "Final and large patches admit the full output and first tile before row_chunked_explicit allocates its full output; each later tile receives a fresh admission.",
+    "After native map creation only map/hash allowances are dropped. After full output allocation only its allowance is additionally dropped; retained buffers remain in actual measured memory."
+  ],
+  "cpu_projections": {
+    "status": "Source-derived bounds, not observed runtime peaks",
+    "final64_formula": "1532*rows + 7499*32768 before native map",
+    "fourth_C2S_formula": "64*parents + 1488*children",
+    "output_payload_formula": "44*final_rows + 32*sum(parent_rows)",
+    "reachable_maximum_parent_rows": [
+      4430,
+      35440,
+      283520,
+      1000000
+    ],
+    "reachable_maximum_payload_bytes": 123439072,
+    "loose_independent_parent_cap_payload_bytes": 177232352,
+    "plans": [
+      {
+        "name": "final64_pre_native_generic_cap",
+        "visible_bytes": 3069154208,
+        "padded_bytes": 3836442760,
+        "maximum_live_baseline_bytes": 7974717304,
+        "minimum_device_free_bytes": 5983926408
+      },
+      {
+        "name": "final64_after_native_map",
+        "visible_bytes": 2840626176,
+        "padded_bytes": 3550782720,
+        "maximum_live_baseline_bytes": 8260377344,
+        "minimum_device_free_bytes": 5698266368
+      },
+      {
+        "name": "final64_each_tile_after_full_output",
+        "visible_bytes": 2604726272,
+        "padded_bytes": 3255907840,
+        "maximum_live_baseline_bytes": 8555252224,
+        "minimum_device_free_bytes": 5403391488
+      },
+      {
+        "name": "fourth_C2S_at_1000000_parents",
+        "visible_bytes": 2806336384,
+        "padded_bytes": 3507920480,
+        "maximum_live_baseline_bytes": 8303239584,
+        "minimum_device_free_bytes": 5655404128
+      }
+    ]
+  },
+  "arithmetic_review": "Unchanged output-row tiler retains full global input indices, original weight flattening and addmm/mm equation. Existing small CPU references cover off-centre and cross-tile neighbours, uint32 missing-neighbour sentinels, bias presence/absence, nondivisible tiles, F32 tolerance and exactly representable BF16 cases. This is not arbitrary GPU bitwise equivalence.",
+  "limitations": [
+    "No fresh user image or genuine current shape input was supplied. Current bridge/output fixtures are explicitly labelled synthetic.",
+    "Trusted host completed-stage authority must supply the expected source hash and original context. Existing legacy receipts without product_context cannot enter the current bridge.",
+    "Current contracts remain rejected by executable decode main, worker and run_neural; orchestration and any new GPU run remain unqualified.",
+    "This is a single-call CPU bridge, not a concurrent orchestrator; inherited temporary routing is restored on exit.",
+    "Row caps define the measured qualification envelope, not universal hardware capacity. Earlier untiled convolutions may still stop on live memory admission inside these row caps.",
+    "Maximum-support projections are not a new measured CPU/GPU peak or completion-time promise; actual writer/readback tests use tiny synthetic tensors.",
+    "Identity policy records inherited pins; no installed AI weights, native binary or runtime source was freshly loaded or executed by this review."
+  ],
+  "unchanged_since_baseline": [
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_large.py",
+    "experimental/extensions/trellis2-amd/inference_decoder/runtime.py"
+  ],
+  "source_sha256": {
+    "experimental/extensions/trellis2-amd/inference_decoder/current_input.py": "1831cd4ee097bdac300d0fc16806c2bca7bc46ba234f373f1909ad99ee933d6a",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "b5897c709bb0d005476e854ebc2f1a33c874b934d9b16f0fd80de1a65ef7327d",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "f6e393714506adabb5e4a4493316202db509409c5e97ee887c96f38f1906b214",
+    "experimental/extensions/trellis2-amd/inference_decoder/decode.py": "122df9e57c756b44da3f73aeb8cae43dc2745ce78e46bbf2adc4a05b1e56cb19",
+    "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "f2946f511a6055e64eeb0f1319485b40100ca997de0c7ad4b7acb8e50c4fab7d",
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "6f4831747c6973d860a55c1988af5105f4fadb53b79e50164a86ffe81f73f21a",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py": "6c69e5a1376aae9cd60b9892b2a8f335f1e6cfc61173d55bfa1332c0004bbcfc",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_large.py": "ff1d5727518e79c578206bfbe2af3c6bc4650ad3b2942290a5676fbfc38d7121",
+    "experimental/extensions/trellis2-amd/inference_decoder/runtime.py": "ea4199df31941795b7a5a5bb58d0f180f610c6ad17e8358b16393696a30c3c2e",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_current_input.py": "9b194d4b3960c9df7f009bf83a46535b8e81ed326c5f9d28b24b97fdd898433a",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_current_artifact.py": "a80f5c04e6877eed55813365adae8599f0d23ca52b404008b7c04e35b8bb287d",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_large_tiling.py": "2438dbf64528902cd9faf33034fc36c98c3704ebb9bd2974765ba33e39a92f80",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_final_support.py": "9dbcc872eeba52fe77d2a3450349019dd91d730e7ef53446387ccf6ed66879a1",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_admission_reclaim.py": "05197951308051f012a969444cd76594a7fdc4305b92c549fefe178b472dd540",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_decoder.py": "51a4815d97a6f5c761a626205706e79dade125566ee1cff1b3e81174f6ef2048",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_tiling_contract.py": "b48261427ef35ab4405a3d6e1868fbff831d9784a530dd6dd3a7c9aa176a20cf",
+    "scripts/compatibility/amd_generation_decode.py": "282a6c55276245b36ea02b79d9d26ee1f1fbd39fa100cf71780734ee08a2bbed",
+    "scripts/compatibility/amd_generation_mesh.py": "baa3cd6bd0aac8365caa7b36a089beb8674d33fe39a8bbfa05dd6653b59c4365",
+    "scripts/compatibility/test_amd_current_geometry.py": "e832284caab0d67bec99a53af4d217dd184d1758919461e47c4ea35f354ac451",
+    "api/services/amd_completed_result.py": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+    "api/services/amd_stage_contract.py": "dc90e9a4f480ddfd44f72276dc2e18c4df6228dc0265234895756360ee145536",
+    "docs/compatibility/amd-wsl-neural-decoder-preparation-evidence/decoder-contract-readback.json": "77cec60d7769c8f448c5880e620bf7007568c24671450037f74819f02d02a0c3"
+  }
+}

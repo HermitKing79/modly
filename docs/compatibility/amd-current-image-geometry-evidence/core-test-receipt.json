@@ -1,0 +1,40 @@
+{
+  "classification": "CPU_QUALIFIED_TESTS",
+  "scope": "current-image contract and inherited CPU resource admission only",
+  "gpu_execution_qualified": false,
+  "python": "C:\\Users\\wattz\\Documents\\Modly\\dependencies\\venv\\Scripts\\python.exe",
+  "python_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+  "bytecode_writes_disabled": true,
+  "red": {
+    "tests": 8,
+    "failures": 8,
+    "reason": "Separate current-image contract is missing"
+  },
+  "green": {
+    "tests": 11,
+    "failures": 0,
+    "errors": 0
+  },
+  "legacy_regression": {
+    "tests": 16,
+    "failures": 0,
+    "errors": 0
+  },
+  "logs": [
+    {
+      "name": "core-red.log",
+      "bytes": 6952,
+      "sha256": "6e3dad4a3f9acbae457fcbc66f6cfe7df16142a235e7fd87f5d4e67fcb4d2c4c"
+    },
+    {
+      "name": "core-green.log",
+      "bytes": 2007,
+      "sha256": "5b823d6341d24d622e711fabf9d96f98e1c3d1ed8b855d04f331e30477a78f97"
+    },
+    {
+      "name": "core-legacy-regression.log",
+      "bytes": 2663,
+      "sha256": "4db89628dd42fd1f3112a9b99e37fe834ae4cce568eeec136b99f8a26d3a22d9"
+    }
+  ]
+}

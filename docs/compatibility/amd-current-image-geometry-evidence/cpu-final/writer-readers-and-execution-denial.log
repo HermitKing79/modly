@@ -1,0 +1,14 @@
+test_actual_cli_can_validate_but_cannot_execute_without_ai_import (test_current_artifact.CurrentArtifactTests.test_actual_cli_can_validate_but_cannot_execute_without_ai_import) ... ok
+test_both_execution_entries_deny_current_contract_before_side_effects (test_current_artifact.CurrentArtifactTests.test_both_execution_entries_deny_current_contract_before_side_effects) ... ok
+test_corrupt_chain_and_missing_tensor_are_rejected (test_current_artifact.CurrentArtifactTests.test_corrupt_chain_and_missing_tensor_are_rejected) ... ok
+test_independent_reader_rejects_consistently_hashed_nonfinite_output (test_current_artifact.CurrentArtifactTests.test_independent_reader_rejects_consistently_hashed_nonfinite_output) ... ok
+test_intermediate_oversize_rejected_before_c2s_allocation (test_current_artifact.CurrentArtifactTests.test_intermediate_oversize_rejected_before_c2s_allocation) ... ok
+test_output_is_readable_by_existing_product_stage_contract (test_current_artifact.CurrentArtifactTests.test_output_is_readable_by_existing_product_stage_contract) ... ok
+test_provenance_and_product_metadata_are_bound (test_current_artifact.CurrentArtifactTests.test_provenance_and_product_metadata_are_bound) ... ok
+test_reader_rejects_changed_initial_support_even_with_valid_foreign_chain (test_current_artifact.CurrentArtifactTests.test_reader_rejects_changed_initial_support_even_with_valid_foreign_chain) ... ok
+test_real_writer_and_both_independent_readers (test_current_artifact.CurrentArtifactTests.test_real_writer_and_both_independent_readers) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 8.562s
+
+OK

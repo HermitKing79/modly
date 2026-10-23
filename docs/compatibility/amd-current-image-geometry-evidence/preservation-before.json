@@ -1,0 +1,69 @@
+{
+  "schema": "modly.amd.current-image-geometry-preservation.v1",
+  "phase": "before",
+  "created_utc": "2026-10-23T11:06:39.985817+00:00",
+  "mission_base": "c6345043b7aa15425161fa53d99ac0f922faf12d",
+  "classification": "PASS_WITH_RECORDED_SCOPE",
+  "private_detail_sha256": "4039d6e677fb3d111456217be3629c9bb77a12149f09dee33918b3c521602234",
+  "private_controller_sha256": "9d1c54228efcb9a988abf97df2336d48a51736406ecf863aa3ec111fe6d33dc3",
+  "prior_public_authentication": {
+    "preservation-before.json": {
+      "working_sha256": "fca55a2e053168aa274620e03eb7931810ea9c05eedf1f4cf56842af25b89449",
+      "git_blob_sha256": "fca55a2e053168aa274620e03eb7931810ea9c05eedf1f4cf56842af25b89449",
+      "exact_byte_match": true
+    },
+    "preservation-after.json": {
+      "working_sha256": "15d299f2ecc52ce7b90585fba6ee30957692cb0cdf63a77a9822485399f723c5",
+      "git_blob_sha256": "15d299f2ecc52ce7b90585fba6ee30957692cb0cdf63a77a9822485399f723c5",
+      "exact_byte_match": true
+    },
+    "preservation-review.json": {
+      "working_sha256": "bf1334e9768c4bf985c28369855b14daf2a898f9d9ec36681239d3c11c2d2d83",
+      "git_blob_sha256": "bf1334e9768c4bf985c28369855b14daf2a898f9d9ec36681239d3c11c2d2d83",
+      "exact_byte_match": true
+    }
+  },
+  "prior_closed_2280_file_scope_and_last_narrow_pair_authenticated": true,
+  "prior_publication_receipt_sha256": "18f7b2ad1ea2a25ad5d3aec4ef931e02073a57e5efa4e9dc23880004b19da52e",
+  "full_2280_rehash_passes": 0,
+  "fresh_protected_metadata_count": 100,
+  "efficient_protected_hash_count": 78,
+  "efficient_protected_bytes_hashed": 8265983,
+  "original_API_python_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+  "accepted_master_bytes": 97073940,
+  "accepted_master_saved_sha256": "1970bbcc5740dc56c8c9e6e20d97e8afd3176126c57b87d886a034f876eb38ae",
+  "accepted_master_fresh_metadata_matches_saved": true,
+  "accepted_master_fresh_hash_performed": false,
+  "accepted_master_hash_provenance_public_sha256": "e0082e02ecfbb85103c0a6970b58a04cb5990ad64e97dbd22e04750ea85ef293",
+  "accepted_master_hash_provenance_private_sha256": "710e334566fc73f09f84486fcf339a663aeb9aac15b122c8a7c832189d252215",
+  "historical_evidence_tree_count": 8,
+  "historical_evidence_file_counts": {
+    "legacy_private_tree": 23,
+    "previous_writer_private_tree_including_empty_scratch": 16,
+    "previous_outside_private_tree_including_empty_scratch": 16,
+    "legacy_public_tree": 21,
+    "previous_writer_public_tree": 13,
+    "previous_outside_public_tree": 7,
+    "previous_lifecycle_private_tree": 58,
+    "previous_lifecycle_public_tree": 23
+  },
+  "historical_cache_directory_count": 4,
+  "historical_cache_file_count": 20,
+  "original_partial_bytes": 1991,
+  "original_partial_sha256": "25ebe42f554489a23815c0e37ba09eae4dd143428481ce3344527cbf384fe6bd",
+  "remote_head_count": 126,
+  "all_126_previous_head_identities_preserved": true,
+  "remote_capture_sha256": "662ee64a0cbd3abfd504a5adc422989625d8565698706b730aae073c6e27e901",
+  "main_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "preserved_before_after_state_equal": null,
+  "execution_accounting": {
+    "completed_before_phases": 1,
+    "completed_after_phases": 0,
+    "remote_reads_before": 1,
+    "remote_reads_after": 0,
+    "failed_remote_requests": 0,
+    "native_probes_Jobs_fixtures_or_lifecycle_suites": 0
+  },
+  "limits": "Protected-asset preservation only. Existing closed2280-file evidence is authenticated through exact saved receipts/private-table hashes without rehashing its2.28GB payload. Protected100 metadata/file identities and78 small hashes are fresh; the original API is hash-only. The accepted97,073,940-byte master has fresh metadata/file identity and authenticated saved full-hash provenance, with no new master payload read. Four historical public/private evidence pairs and four cache directories receive metadata/file-identity checks; the1991-byte historical partial is freshly hashed. No model/environment/profile bulk scan, historical native-evidence payload audit, application/lifecycle imports, CPU/process fixture, Job, WSL, GPU, permissions change, branch change or push. Current authorized product source edits are outside protected100 and this historical-evidence scope.",
+  "issues": []
+}

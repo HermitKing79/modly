@@ -52,10 +52,13 @@ def _read_neural(path,expected_sha256,opened,*,contract=None):
   header=json.loads(f.read(length),object_pairs_hook=_object)
  names={'features','coordinates'}|{f'subdivision_{i}_{suffix}' for i in range(4) for suffix in ('coordinates','logits')}
  if set(header)-{'__metadata__'}!=names:raise ValueError('Complete original ten tensors required')
- if contract is not None and contract.final_support_profile is not None:
+ current=contract is not None and contract.document()['schema']=='modly.amd.current-image-neural-run.v1'
+ if contract is not None and (contract.final_support_profile is not None or current):
   try:
    provenance=json.loads(header['__metadata__']['provenance'],object_pairs_hook=_object)
    policy.artifact_binding(provenance,contract)
+   if current and json.loads(header['__metadata__']['product_context'],object_pairs_hook=_object)!=contract.document()['current_input']['product_context']:
+    raise ValueError('Current artifact product context differs')
    policy.support_counts(header['features']['shape'][0],
                          [header[f'subdivision_{i}_coordinates']['shape'][0] for i in range(4)],contract)
   except (KeyError,TypeError,IndexError) as exc:raise ValueError('Bound profile artifact provenance required') from exc
@@ -97,6 +100,8 @@ def _read_neural(path,expected_sha256,opened,*,contract=None):
   if not np.array_equal(child_coords,next_coords):raise ValueError('Original C2S child coordinates/order differ')
   counts.append(children)
  policy.support_counts(n,[len(arrays[f'subdivision_{i}_coordinates']) for i in range(4)],contract)
+ if current and hashlib.sha256(arrays['subdivision_0_coordinates'].tobytes()).hexdigest()!=contract.document()['current_input']['initial_coords_payload_sha256']:
+  raise ValueError('Current initial coordinate payload/order differs')
  if path.stat().st_size!=before.st_size or path.stat().st_mtime_ns!=before.st_mtime_ns:raise ValueError('Neural artifact changed while reading')
  return arrays,counts
 

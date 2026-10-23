@@ -1,0 +1,78 @@
+{
+  "schema": "modly.amd.current-image-geometry-report-review.v1",
+  "created_utc": "2026-10-23T11:21:06Z",
+  "classification": "PASS",
+  "baseline_commit": "c6345043b7aa15425161fa53d99ac0f922faf12d",
+  "scope": "Read-only final report, source-hash and saved-receipt consistency review; no additional tests or execution.",
+  "findings": [],
+  "report_verdict_consistency": {
+    "current_input_implementation": "PASS, CPU qualified",
+    "upstream_product_context_producer": "NOT QUALIFIED",
+    "full_AMD_orchestrator": "NOT QUALIFIED",
+    "material_inference": "NOT QUALIFIED",
+    "fresh_GPU_run": "NOT RUN",
+    "inherited_identity_pins": "Expected policy identities; not newly verified installed bytes",
+    "current_contract_GPU_authority": false,
+    "generic_final_maximum_rows": 1842968,
+    "exact_brick_only_final_rows": 1957891,
+    "synthetic_fixture_limits_disclosed": true,
+    "maximum_support_projections_not_measured_peaks": true
+  },
+  "saved_test_receipt_check": {
+    "distinct_tests": 95,
+    "elapsed_seconds": 31.020749999966938,
+    "report_rounded_elapsed_seconds": 31.02,
+    "independently_repeated_distinct_tests": 78,
+    "root_receipt_source_files_rehashed": 23,
+    "root_receipt_source_mismatches": [],
+    "prior_independent_source_files_rehashed": 22,
+    "prior_independent_source_mismatches": [],
+    "root_test_logs": [
+      {
+        "name": "current-contract",
+        "hash_matches": true,
+        "expected_tests": 11,
+        "test_count_matches": true,
+        "OK": true
+      },
+      {
+        "name": "host-bridge-and-legacy",
+        "hash_matches": true,
+        "expected_tests": 27,
+        "test_count_matches": true,
+        "OK": true
+      },
+      {
+        "name": "arithmetic-and-historical-profile",
+        "hash_matches": true,
+        "expected_tests": 48,
+        "test_count_matches": true,
+        "OK": true
+      },
+      {
+        "name": "writer-readers-and-execution-denial",
+        "hash_matches": true,
+        "expected_tests": 9,
+        "test_count_matches": true,
+        "OK": true
+      }
+    ],
+    "additional_test_runs": 0
+  },
+  "preservation_statement_check": {
+    "unchanged_math_resource_product_sources": 9,
+    "unchanged_historical_AST_functions_classes": 11,
+    "protected_metadata_per_phase": 100,
+    "efficient_protected_hashes_per_phase": 78,
+    "accepted_master_hash": "Authenticated saved provenance; fresh metadata/file identity; no new payload rehash",
+    "remote_heads": "All126 prior identities preserved before publication",
+    "scope": "Report matches the separately saved preservation review; this report review did not reopen protected assets or remote refs"
+  },
+  "reviewed_file_sha256": {
+    "docs/compatibility/amd-current-image-geometry.md": "eb20ae0b8617dc6c0cd3b665e33ccef871d302b6dc72a53a234f6468eeea2c63",
+    "docs/compatibility/amd-current-image-geometry-evidence/cpu-final/result.json": "d4b5b17c6a47317438ee14100736ad8816bd6ee4112ac3f9f4ab9a8884e7cae2",
+    "docs/compatibility/amd-current-image-geometry-evidence/independent-review.json": "045c5a4c1945cae5369cd14ed3251cfa7a6bd1b640320e7be3da17491b051f77",
+    "docs/compatibility/amd-current-image-geometry-evidence/historical-source-preservation.json": "f185a8c96dd62c3f84a9e96f65fac91d1c352046d677b2878350960021b2dfd8",
+    "docs/compatibility/amd-current-image-geometry-evidence/preservation-review.json": "cbe05e1da6e274558d5a0b0d39b76d2e639e9b18bd775c54ec418dffa6233c67"
+  }
+}

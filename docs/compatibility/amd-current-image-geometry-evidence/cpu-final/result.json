@@ -1,0 +1,103 @@
+{
+  "schema": "modly.amd.current-image-cpu-tests.v1",
+  "base": "c6345043b7aa15425161fa53d99ac0f922faf12d",
+  "branch": "codex/amd-current-image-geometry-admission",
+  "passed": true,
+  "distinct_tests": 95,
+  "runs": [
+    {
+      "name": "current-contract",
+      "modules": [
+        "test_current_input"
+      ],
+      "expected_tests": 11,
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_seconds": 2.8828933000040706,
+      "python": "C:\\Users\\wattz\\Documents\\Modly\\dependencies\\venv\\Scripts\\python.exe",
+      "python_sha256": "5b9eb768cd084d4b7959bc83b1a5111a10f8aaa18e5f4f7ef4187baf85dcf2c3",
+      "log": "current-contract.log",
+      "log_sha256": "957d09ed49d4663f53fd660cfca942c936ec136282259678b6cae4d6f7160cbf"
+    },
+    {
+      "name": "host-bridge-and-legacy",
+      "modules": [
+        "test_amd_current_geometry",
+        "test_amd_generation_decode"
+      ],
+      "expected_tests": 27,
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_seconds": 6.498450099985348,
+      "python": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "python_sha256": "0b471133e110cfb53a061cad528ce8e517d7b9ac41a0a396c39ad795a487fc14",
+      "log": "host-bridge-and-legacy.log",
+      "log_sha256": "6dc118a907d3a46335cf721335c876f6befeae7ec80f571797ea95f7829e3db6"
+    },
+    {
+      "name": "arithmetic-and-historical-profile",
+      "modules": [
+        "test_decoder",
+        "test_large_tiling",
+        "test_final_support",
+        "test_tiling_contract",
+        "test_admission_reclaim"
+      ],
+      "expected_tests": 48,
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_seconds": 10.7996456999972,
+      "python": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "python_sha256": "0b471133e110cfb53a061cad528ce8e517d7b9ac41a0a396c39ad795a487fc14",
+      "log": "arithmetic-and-historical-profile.log",
+      "log_sha256": "b9d08a29c371c8e72beae65cd15493414d266d3a2c73842cb35b6b4848fcf70d"
+    },
+    {
+      "name": "writer-readers-and-execution-denial",
+      "modules": [
+        "test_current_artifact"
+      ],
+      "expected_tests": 9,
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_seconds": 10.83976089998032,
+      "python": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+      "python_sha256": "0b471133e110cfb53a061cad528ce8e517d7b9ac41a0a396c39ad795a487fc14",
+      "log": "writer-readers-and-execution-denial.log",
+      "log_sha256": "5a889c9637df6e0047f9ce0b8e9462f681a216a347a990abe9dda535310a6504"
+    }
+  ],
+  "source_sha256": {
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py": "6f4831747c6973d860a55c1988af5105f4fadb53b79e50164a86ffe81f73f21a",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_io.py": "f6e393714506adabb5e4a4493316202db509409c5e97ee887c96f38f1906b214",
+    "experimental/extensions/trellis2-amd/inference_decoder/artifact_paths.py": "73a690d8c03e7a4a6f69b07e45ccd92fa08b3d461f1e47841745c1eafa25f441",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py": "6c69e5a1376aae9cd60b9892b2a8f335f1e6cfc61173d55bfa1332c0004bbcfc",
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_large.py": "ff1d5727518e79c578206bfbe2af3c6bc4650ad3b2942290a5676fbfc38d7121",
+    "experimental/extensions/trellis2-amd/inference_decoder/current_input.py": "1831cd4ee097bdac300d0fc16806c2bca7bc46ba234f373f1909ad99ee933d6a",
+    "experimental/extensions/trellis2-amd/inference_decoder/decode.py": "122df9e57c756b44da3f73aeb8cae43dc2745ce78e46bbf2adc4a05b1e56cb19",
+    "experimental/extensions/trellis2-amd/inference_decoder/neural.py": "f2946f511a6055e64eeb0f1319485b40100ca997de0c7ad4b7acb8e50c4fab7d",
+    "experimental/extensions/trellis2-amd/inference_decoder/runtime.py": "ea4199df31941795b7a5a5bb58d0f180f610c6ad17e8358b16393696a30c3c2e",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "b5897c709bb0d005476e854ebc2f1a33c874b934d9b16f0fd80de1a65ef7327d",
+    "experimental/extensions/trellis2-amd/inference_decoder/stage_journal.py": "0deada43d569717d57c6835b11be90b55c6685efc733fa8ce07e4c1acb5476e0",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_admission_reclaim.py": "05197951308051f012a969444cd76594a7fdc4305b92c549fefe178b472dd540",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_current_artifact.py": "a80f5c04e6877eed55813365adae8599f0d23ca52b404008b7c04e35b8bb287d",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_current_input.py": "9b194d4b3960c9df7f009bf83a46535b8e81ed326c5f9d28b24b97fdd898433a",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_decoder.py": "51a4815d97a6f5c761a626205706e79dade125566ee1cff1b3e81174f6ef2048",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_final_support.py": "9dbcc872eeba52fe77d2a3450349019dd91d730e7ef53446387ccf6ed66879a1",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_large_tiling.py": "2438dbf64528902cd9faf33034fc36c98c3704ebb9bd2974765ba33e39a92f80",
+    "experimental/extensions/trellis2-amd/inference_decoder/test_tiling_contract.py": "b48261427ef35ab4405a3d6e1868fbff831d9784a530dd6dd3a7c9aa176a20cf",
+    "scripts/compatibility/amd_generation_decode.py": "282a6c55276245b36ea02b79d9d26ee1f1fbd39fa100cf71780734ee08a2bbed",
+    "scripts/compatibility/amd_generation_mesh.py": "baa3cd6bd0aac8365caa7b36a089beb8674d33fe39a8bbfa05dd6653b59c4365",
+    "scripts/compatibility/test_amd_current_geometry.py": "e832284caab0d67bec99a53af4d217dd184d1758919461e47c4ea35f354ac451",
+    "api/services/amd_stage_contract.py": "dc90e9a4f480ddfd44f72276dc2e18c4df6228dc0265234895756360ee145536",
+    "api/services/amd_stage_orchestrator.py": "3b14a2fe179d94523236b8b487e8e2a6fbb9997d9785f52a64705a73ef3eb18a"
+  },
+  "bytecode_disabled": true,
+  "torch_device": "CPU only; _lazy_init denied in arithmetic/serializer tests",
+  "GPU": false,
+  "WSL": false,
+  "model_loading": false,
+  "native_FlexGEMM": false,
+  "cpu_bridge_predecessors": "labelled synthetic receipts; inherited genuine lineage verifier remains mandatory",
+  "process_memory_peak": "not measured; no GPU memory measurement claimed"
+}

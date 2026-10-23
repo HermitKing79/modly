@@ -144,6 +144,8 @@ def verify_tunable(torch,record,phase):
 
 
 def worker(contract):
+    from run_contract import require_execution_qualified
+    require_execution_qualified(contract)  # Before claiming paths or importing AI.
     from artifact_paths import claim_directory
     from stage_journal import StageJournal
     output=claim_directory(contract,'output')
@@ -417,6 +419,8 @@ def main():
         print(json.dumps({'status':'PASS','run_contract_sha256':contract.sha256,
                           'AI_modules_imported':any(n in sys.modules for n in ('torch','triton','flex_gemm','trellis2'))}))
         return 0
+    from run_contract import require_execution_qualified
+    require_execution_qualified(contract)
     if sys.platform!='linux' or Path(str(contract.repo_root)).resolve(strict=True)!=ROOT:
         raise RuntimeError('Execution requires exact qualified guest checkout')
     return worker(contract)

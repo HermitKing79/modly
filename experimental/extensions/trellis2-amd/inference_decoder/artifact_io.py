@@ -15,6 +15,15 @@ MAX_HEADER = 128*1024
 FILENAME = 'shape-decoded.safetensors'
 
 
+def output_metadata(provenance,summary,contract=None):
+    result={'provenance':json.dumps(provenance,sort_keys=True),
+            'summary':json.dumps(summary,sort_keys=True)}
+    if contract is not None and contract.document()['schema']=='modly.amd.current-image-neural-run.v1':
+        from run_contract import _current_api
+        result['product_context']=json.dumps(_current_api().binding_document(contract)['product_context'],sort_keys=True)
+    return result
+
+
 def durable_json(path, record):
     with Path(path).open('x',encoding='utf-8') as stream:
         json.dump(record,stream,indent=2,allow_nan=False);stream.write('\n')
@@ -42,8 +51,7 @@ def verify_file(path, provenance, summary, tensor_hashes,contract=None):
         length=int.from_bytes(stream.read(8),'little')
         if not 0<length<=MAX_HEADER:raise ValueError('Unbounded output header')
         header=json.loads(stream.read(length));payload=before.st_size-8-length
-        if header.pop('__metadata__')!={'provenance':json.dumps(provenance,sort_keys=True),
-                                       'summary':json.dumps(summary,sort_keys=True)}:
+        if header.pop('__metadata__')!=output_metadata(provenance,summary,contract):
             raise ValueError('Readback metadata differs')
         if set(header)!=set(schema) or set(tensor_hashes)!=set(schema):
             raise ValueError('Readback tensor closure differs')
@@ -66,6 +74,14 @@ def verify_file(path, provenance, summary, tensor_hashes,contract=None):
     after=path.stat()
     if (before.st_size,before.st_mtime_ns)!=(after.st_size,after.st_mtime_ns):
         raise ValueError('Output changed during readback')
+    if contract is not None and contract.document()['schema']=='modly.amd.current-image-neural-run.v1':
+        # Independent CPU reader verifies finite values and all four original
+        # coordinate chains, including the current input payload identity.
+        from amd_generation_mesh import read_neural
+        arrays,_=read_neural(path,digest(path),contract=contract)
+        try: pass
+        finally:
+            for array in arrays.values(): array._mmap.close()
     return {'verified':True,'bytes':after.st_size,'sha256':digest(path),'payload_bytes':payload,
             'tensor_payload_sha256':dict(tensor_hashes),'reader':'bounded stdlib tensor header/payload reader'}
 
@@ -81,8 +97,7 @@ def write_output(tensors, torch, provenance, summary, contract):
         raise ValueError('Output run provenance differs')
     target=attest_output(contract);path=target/FILENAME
     if path.exists():raise FileExistsError(str(path))
-    save_file(tensors,str(path),metadata={'provenance':json.dumps(provenance,sort_keys=True),
-                                        'summary':json.dumps(summary,sort_keys=True)})
+    save_file(tensors,str(path),metadata=output_metadata(provenance,summary,contract))
     with path.open('r+b') as stream:os.fsync(stream.fileno())
     restored=load_file(str(path),device='cpu')
     hashes={k:hashlib.sha256(t.view(torch.uint8).numpy().tobytes()).hexdigest() for k,t in tensors.items()}

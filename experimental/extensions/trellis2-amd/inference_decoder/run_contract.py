@@ -1,9 +1,11 @@
 """Authenticated run inputs and bounded shape support; no AI imports at import time."""
 from dataclasses import dataclass
 import hashlib
+import importlib.util
 import json
 from pathlib import Path, PurePosixPath
 import re
+import sys
 from types import MappingProxyType
 
 SCHEMA = 'modly.amd.neural-run.v1'
@@ -25,6 +27,23 @@ BRICK_MEASUREMENT = 'docs/compatibility/amd-brick-row-tiling-resume-evidence/exe
 BRICK_MEASUREMENT_SHA256 = '03d66c89933a5c400c6d825173149c0fa75a8c747d4d5d7ac738ae83571a2b34'
 NATIVE_STAGE = '/home/modly/native-decoder-preparation-6dd94a85'
 MAX_CONTRACT_BYTES = 65536
+CURRENT_SCHEMA = 'modly.amd.current-image-neural-run.v1'
+
+
+def _current_api():
+    """Load the sibling policy even when a host reader loaded us by file path."""
+    name = '_modly_current_image_input'
+    module = sys.modules.get(name)
+    if module is None:
+        spec = importlib.util.spec_from_file_location(name, Path(__file__).with_name('current_input.py'))
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[name] = module
+        try:
+            spec.loader.exec_module(module)
+        except BaseException:
+            sys.modules.pop(name, None)
+            raise
+    return module
 
 
 def digest(path):
@@ -86,6 +105,8 @@ class RunContract:
 
 
 def parse(document):
+    if type(document) is dict and document.get('schema') == CURRENT_SCHEMA:
+        return _current_api().parse(document, base_api=sys.modules[__name__])
     fields = {'schema','initial_count','input_paths','input_sha256','source_job_sha256',
               'output_directory','scratch_directory','repo_root','maximum_final_rows',
               'maximum_intermediate_rows','native_stage'}
@@ -159,6 +180,8 @@ def support_counts(final_rows, parent_rows, contract=None):
 def artifact_binding(provenance, contract):
     contract=None if contract is None else parse(contract.document())
     final_limit(contract)
+    if contract is not None and contract.document().get('schema') == CURRENT_SCHEMA:
+        _current_api().artifact_binding(provenance, contract)
     if contract is not None and contract.final_support_profile is not None:
         expected={'run_contract_sha256':contract.sha256,'source_job_sha256':contract.source_job_sha256,
                   'input_file_sha256':dict(contract.input_sha256),
@@ -166,6 +189,14 @@ def artifact_binding(provenance, contract):
                   'checkpoint_sha256':BRICK_CHECKPOINT_SHA256}
         if any(provenance.get(k)!=v for k,v in expected.items()):
             raise ValueError('Qualified final-support artifact provenance differs')
+
+
+def require_execution_qualified(contract):
+    """CPU contract qualification never opens an unqualified GPU route."""
+    contract = parse(contract.document())
+    if contract.document().get('schema') == CURRENT_SCHEMA:
+        raise ValueError('Current-image geometry is CPU-qualified only; GPU execution requires separate qualification')
+    return contract
 
 
 def load(path):
@@ -210,11 +241,20 @@ def read_npy(path, expected_sha256, shape, dtype):
 
 def load_inputs(contract):
     import amd_shape_decoder_preflight as original
+    current = contract.document().get('schema') == CURRENT_SCHEMA
+    if current:
+        contract = parse(contract.document())
     features = read_npy(contract.input_paths[INPUT_NAMES[0]], contract.input_sha256[INPUT_NAMES[0]],
                         (contract.initial_count,32), 'float32')
     coords = read_npy(contract.input_paths[INPUT_NAMES[1]], contract.input_sha256[INPUT_NAMES[1]],
                       (contract.initial_count,4), 'int32')
     summary = original.validate_arrays(features, coords, count=contract.initial_count)
+    if current:
+        binding = _current_api().binding_document(contract)
+        if (summary['payload_sha256'] != binding['initial_features_payload_sha256']
+                or summary['coordinates_payload_sha256'] != binding['initial_coords_payload_sha256']):
+            raise ValueError('Current-image input payload differs from the authenticated binding')
+        summary.update(_current_api().metadata(contract))
     summary.update(run_contract_sha256=contract.sha256, source_job_sha256=contract.source_job_sha256,
                    input_paths={k:str(v) for k,v in contract.input_paths.items()},
                    input_sha256=dict(contract.input_sha256))
@@ -240,6 +280,14 @@ def validate_chain(stages, final_coords, initial_count, *, contract=None):
     import numpy as np
     if len(stages) != 4 or len(stages[0][0]) != initial_count:
         raise ValueError('Exactly four subdivisions linked to the initial run support required')
+    if contract is not None and contract.document().get('schema') == CURRENT_SCHEMA:
+        contract = parse(contract.document())
+        coords = stages[0][0]
+        if (initial_count != contract.initial_count or coords.dtype != np.int32
+                or coords.shape != (contract.initial_count, 4)
+                or hashlib.sha256(coords.tobytes()).hexdigest()
+                != contract.current_input['initial_coords_payload_sha256']):
+            raise ValueError('First subdivision differs from authenticated current-image coordinates')
     support_counts(len(final_coords),[len(c) for c,s in stages],contract)
     for i,(coords,logits) in enumerate(stages):
         if (not 0 < len(coords) <= MAX_INTERMEDIATE_ROWS or coords.dtype != np.int32

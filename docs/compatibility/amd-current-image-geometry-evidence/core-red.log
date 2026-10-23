@@ -1,0 +1,77 @@
+test_artifact_binding_rejects_cross_request_or_policy_provenance (__main__.CurrentInputTests.test_artifact_binding_rejects_cross_request_or_policy_provenance) ... FAIL
+test_chain_rejects_valid_but_different_initial_coordinate_order (__main__.CurrentInputTests.test_chain_rejects_valid_but_different_initial_coordinate_order) ... FAIL
+test_current_contract_cannot_authorize_gpu_and_legacy_stays_available (__main__.CurrentInputTests.test_current_contract_cannot_authorize_gpu_and_legacy_stays_available) ... FAIL
+test_current_input_loader_authenticates_both_actual_payloads (__main__.CurrentInputTests.test_current_input_loader_authenticates_both_actual_payloads) ... FAIL
+test_dynamic_reader_module_dispatch_does_not_need_sibling_on_path (__main__.CurrentInputTests.test_dynamic_reader_module_dispatch_does_not_need_sibling_on_path) ... FAIL
+test_nested_caller_and_returned_documents_cannot_mutate_binding (__main__.CurrentInputTests.test_nested_caller_and_returned_documents_cannot_mutate_binding) ... FAIL
+test_rejects_unbound_profile_tiling_context_and_policy_expansion (__main__.CurrentInputTests.test_rejects_unbound_profile_tiling_context_and_policy_expansion) ... FAIL
+test_separate_wrapper_dispatch_preserves_generic_bounds_and_base (__main__.CurrentInputTests.test_separate_wrapper_dispatch_preserves_generic_bounds_and_base) ... FAIL
+
+======================================================================
+FAIL: test_artifact_binding_rejects_cross_request_or_policy_provenance (__main__.CurrentInputTests.test_artifact_binding_rejects_cross_request_or_policy_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\experimental\extensions\trellis2-amd\inference_decoder\test_current_input.py", line 55, in setUp
+    self.assertTrue((HERE / 'current_input.py').is_file(), 'Separate current-image contract is missing')
+AssertionError: False is not true : Separate current-image contract is missing
+
+======================================================================
+FAIL: test_chain_rejects_valid_but_different_initial_coordinate_order (__main__.CurrentInputTests.test_chain_rejects_valid_but_different_initial_coordinate_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\experimental\extensions\trellis2-amd\inference_decoder\test_current_input.py", line 55, in setUp
+    self.assertTrue((HERE / 'current_input.py').is_file(), 'Separate current-image contract is missing')
+AssertionError: False is not true : Separate current-image contract is missing
+
+======================================================================
+FAIL: test_current_contract_cannot_authorize_gpu_and_legacy_stays_available (__main__.CurrentInputTests.test_current_contract_cannot_authorize_gpu_and_legacy_stays_available)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\experimental\extensions\trellis2-amd\inference_decoder\test_current_input.py", line 55, in setUp
+    self.assertTrue((HERE / 'current_input.py').is_file(), 'Separate current-image contract is missing')
+AssertionError: False is not true : Separate current-image contract is missing
+
+======================================================================
+FAIL: test_current_input_loader_authenticates_both_actual_payloads (__main__.CurrentInputTests.test_current_input_loader_authenticates_both_actual_payloads)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\experimental\extensions\trellis2-amd\inference_decoder\test_current_input.py", line 55, in setUp
+    self.assertTrue((HERE / 'current_input.py').is_file(), 'Separate current-image contract is missing')
+AssertionError: False is not true : Separate current-image contract is missing
+
+======================================================================
+FAIL: test_dynamic_reader_module_dispatch_does_not_need_sibling_on_path (__main__.CurrentInputTests.test_dynamic_reader_module_dispatch_does_not_need_sibling_on_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\experimental\extensions\trellis2-amd\inference_decoder\test_current_input.py", line 55, in setUp
+    self.assertTrue((HERE / 'current_input.py').is_file(), 'Separate current-image contract is missing')
+AssertionError: False is not true : Separate current-image contract is missing
+
+======================================================================
+FAIL: test_nested_caller_and_returned_documents_cannot_mutate_binding (__main__.CurrentInputTests.test_nested_caller_and_returned_documents_cannot_mutate_binding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\experimental\extensions\trellis2-amd\inference_decoder\test_current_input.py", line 55, in setUp
+    self.assertTrue((HERE / 'current_input.py').is_file(), 'Separate current-image contract is missing')
+AssertionError: False is not true : Separate current-image contract is missing
+
+======================================================================
+FAIL: test_rejects_unbound_profile_tiling_context_and_policy_expansion (__main__.CurrentInputTests.test_rejects_unbound_profile_tiling_context_and_policy_expansion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\experimental\extensions\trellis2-amd\inference_decoder\test_current_input.py", line 55, in setUp
+    self.assertTrue((HERE / 'current_input.py').is_file(), 'Separate current-image contract is missing')
+AssertionError: False is not true : Separate current-image contract is missing
+
+======================================================================
+FAIL: test_separate_wrapper_dispatch_preserves_generic_bounds_and_base (__main__.CurrentInputTests.test_separate_wrapper_dispatch_preserves_generic_bounds_and_base)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wattz\Documents\ChatGPT\modly\proof\experimental\extensions\trellis2-amd\inference_decoder\test_current_input.py", line 55, in setUp
+    self.assertTrue((HERE / 'current_input.py').is_file(), 'Separate current-image contract is missing')
+AssertionError: False is not true : Separate current-image contract is missing
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.003s
+
+FAILED (failures=8)

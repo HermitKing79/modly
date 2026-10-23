@@ -1,0 +1,57 @@
+{
+  "base": "c6345043b7aa15425161fa53d99ac0f922faf12d",
+  "unchanged_math_resource_and_product_sources": {
+    "experimental/extensions/trellis2-amd/inference_decoder/admission.py": {
+      "normalized_source_sha256": "6f4831747c6973d860a55c1988af5105f4fadb53b79e50164a86ffe81f73f21a",
+      "matches_base": true
+    },
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_final.py": {
+      "normalized_source_sha256": "6c69e5a1376aae9cd60b9892b2a8f335f1e6cfc61173d55bfa1332c0004bbcfc",
+      "matches_base": true
+    },
+    "experimental/extensions/trellis2-amd/inference_decoder/chunked_large.py": {
+      "normalized_source_sha256": "ff1d5727518e79c578206bfbe2af3c6bc4650ad3b2942290a5676fbfc38d7121",
+      "matches_base": true
+    },
+    "experimental/extensions/trellis2-amd/inference_decoder/runtime.py": {
+      "normalized_source_sha256": "ea4199df31941795b7a5a5bb58d0f180f610c6ad17e8358b16393696a30c3c2e",
+      "matches_base": true
+    },
+    "api/services/amd_stage_contract.py": {
+      "normalized_source_sha256": "dc90e9a4f480ddfd44f72276dc2e18c4df6228dc0265234895756360ee145536",
+      "matches_base": true
+    },
+    "api/services/amd_stage_orchestrator.py": {
+      "normalized_source_sha256": "3b14a2fe179d94523236b8b487e8e2a6fbb9997d9785f52a64705a73ef3eb18a",
+      "matches_base": true
+    },
+    "api/services/amd_runtime.py": {
+      "normalized_source_sha256": "16499c8c8b5ef3f133ee872bade91a4332f4195d757da662022511c5049bf756",
+      "matches_base": true
+    },
+    "scripts/compatibility/amd_generation_shape.py": {
+      "normalized_source_sha256": "4e4c8253e36815526b266c38237438bbc3a5a5d396d0072500a44792856d2233",
+      "matches_base": true
+    },
+    "scripts/compatibility/amd_generation_occupancy.py": {
+      "normalized_source_sha256": "8af084f7d7c48ec7d143d4229abc4312d8deb9c624b597f3a02c9e627ded5b69",
+      "matches_base": true
+    }
+  },
+  "unchanged_historical_host_functions_AST": {
+    "Runtime": true,
+    "shape_inputs": true,
+    "verify_shape_lineage": true,
+    "copy_files": true,
+    "guest_bootstrap": true,
+    "module_binding": true,
+    "load_module": true,
+    "guest_path": true,
+    "PendingHostReceipt": true,
+    "BaseProxy": true,
+    "validate_qualified": true
+  },
+  "all_passed": true,
+  "comparison": "UTF-8 normalized LF file comparison plus location-independent AST; protected100 exact files checked separately",
+  "no_execution": true
+}

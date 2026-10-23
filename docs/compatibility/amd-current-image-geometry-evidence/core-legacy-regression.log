@@ -1,0 +1,21 @@
+test_accepts_fresh_inputs_without_fixture_hashes (test_decoder.RunContractTests.test_accepts_fresh_inputs_without_fixture_hashes) ... ok
+test_refuses_envelope_expansion_and_unsafe_directories (test_decoder.RunContractTests.test_refuses_envelope_expansion_and_unsafe_directories) ... ok
+test_optional_host_journal_is_confined_to_fresh_stage_guest_directory (test_decoder.RunContractTests.test_optional_host_journal_is_confined_to_fresh_stage_guest_directory) ... ok
+test_npy_reader_verifies_hash_shape_and_trailing_bytes (test_decoder.RunContractTests.test_npy_reader_verifies_hash_shape_and_trailing_bytes) ... ok
+test_historical_memory_formulas_and_small_dynamic_tail (test_decoder.AdmissionTests.test_historical_memory_formulas_and_small_dynamic_tail) ... ok
+test_refuses_expanded_support_and_insufficient_live_memory (test_decoder.AdmissionTests.test_refuses_expanded_support_and_insufficient_live_memory) ... ok
+test_original_c2s_order_and_all_four_links (test_decoder.ChainTests.test_original_c2s_order_and_all_four_links) ... ok
+test_acceptance_requires_zero_release_and_current_run_identity (test_decoder.EntryTests.test_acceptance_requires_zero_release_and_current_run_identity) ... ok
+test_entry_import_and_contract_validation_do_not_import_ai (test_decoder.EntryTests.test_entry_import_and_contract_validation_do_not_import_ai) ... ok
+test_explicit_profile_roundtrip_and_historical_document_stability (test_final_support.FinalSupportTests.test_explicit_profile_roundtrip_and_historical_document_stability) ... ok
+test_profile_rejects_foreign_job_hashes_counts_and_missing_optin (test_final_support.FinalSupportTests.test_profile_rejects_foreign_job_hashes_counts_and_missing_optin) ... ok
+test_measured_final_plans_60_tiles_and_unchanged_live_admission (test_final_support.FinalSupportTests.test_measured_final_plans_60_tiles_and_unchanged_live_admission) ... ok
+test_exact_parent_child_lineage_and_artifact_identity (test_final_support.FinalSupportTests.test_exact_parent_child_lineage_and_artifact_identity) ... ok
+test_synthetic_c2s_order_finite_validation_and_default_chain (test_final_support.FinalSupportTests.test_synthetic_c2s_order_finite_validation_and_default_chain) ... ok
+test_both_fourth_c2s_admissions_record_counts_before_rejection (test_final_support.FinalSupportTests.test_both_fourth_c2s_admissions_record_counts_before_rejection) ... ok
+test_complete_profile_receipt_rejects_foreign_large_tile_support (test_final_support.FinalSupportTests.test_complete_profile_receipt_rejects_foreign_large_tile_support) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 2.322s
+
+OK

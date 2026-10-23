@@ -77,11 +77,16 @@ def output_provenance(record,contract,rows,chunks,large_records=None):
         'final_convolution':{'source_equivalent_row_chunking':True,'rows':rows,'tile_rows':32768,
             'chunks':chunks,'global_native_neighbor_map':True,'global_input_indices_preserved':True}}
     if contract.final_support_profile is not None:value['final_support_profile']=contract.final_support_profile
+    if contract.document()['schema']=='modly.amd.current-image-neural-run.v1':
+        from run_contract import _current_api
+        value.update(_current_api().metadata(contract))
     if large_records is not None:value['large_convolutions']=[dict(r) for r in large_records]
     return value
 
 
 def run_neural(model,torch,cuda,record,output,gpu_started,contract,*,journal=None):
+    from run_contract import require_execution_qualified
+    require_execution_qualified(contract)
     import amd_wsl_rocdxg_smoke as base
     journal=base.journal if journal is None else journal
     from run_contract import load_inputs

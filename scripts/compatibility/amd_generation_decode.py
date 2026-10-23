@@ -149,6 +149,133 @@ def verify_shape_lineage(evidence,result,worker,features,coords):
     return runtime.profile().committed_files
 
 
+@contextmanager
+def _current_lineage_scope():
+    """Restore the inherited proof adapter's temporary routing on every exit.
+
+    This CPU bridge is not a concurrent orchestrator or an execution service.
+    It leaves historical adapter defaults and environment settings untouched.
+    """
+    import amd_generation_occupancy as occupancy
+    original=occupancy.original
+    targets=[(occupancy,'_contract_sha'),(original.occupancy.data,'write_preview')]
+    targets += [(original,key) for key in ('EVIDENCE','CONTRACT','SOURCE','SOURCE_SHA',
+                                         'selected_image','prepare_profile','preflight')]
+    saved=[(owner,key,getattr(owner,key)) for owner,key in targets]
+    names=(occupancy.ENV_IMAGE,occupancy.ENV_EVIDENCE,occupancy.ENV_SOURCE_SHA,occupancy.ENV_CONTRACT_SHA,
+           'MODLY_OBJECT_HARNESS_COMMIT')
+    environment={name:os.environ.get(name) for name in names}; search_path=sys.path[:]
+    try: yield
+    finally:
+        for owner,key,value in saved:setattr(owner,key,value)
+        for name,value in environment.items():
+            if value is None:os.environ.pop(name,None)
+            else:os.environ[name]=value
+        sys.path[:]=search_path
+
+
+def prepare_current_input(*, context, image_bytes, params, shape_evidence, expected_source_job_sha256,
+                          harness_commit, run_id):
+    with _current_lineage_scope():
+        return _prepare_current_input(context=context,image_bytes=image_bytes,params=params,
+            shape_evidence=shape_evidence,expected_source_job_sha256=expected_source_job_sha256,
+            harness_commit=harness_commit,run_id=run_id)
+
+
+def _prepare_current_input(*, context, image_bytes, params, shape_evidence, expected_source_job_sha256,
+                           harness_commit, run_id):
+    """Read-only CPU preparation; deliberately not a Runtime/launch option.
+
+    The trusted product host supplies the original request context. Existing
+    independent shape/occupancy readers establish the predecessor lineage.
+    expected_source_job_sha256 comes from the host's completed-stage authority,
+    never request parameters or a hash read back from the untrusted worker;
+    this function cannot turn a claimed worker PASS into execution authority.
+    """
+    import numpy as np
+    from services.amd_completed_result import CompletionContext, _opened, _plain, _json
+    from amd_generation_occupancy import verify_sequence
+    from amd_sparse_decoder_forward import verify_committed_files, COMMITTED_FILES
+
+    context=CompletionContext.from_dict(context.to_dict())
+    context.validate_request(image_bytes,params)
+    if context.mode!='generated' or context.model_id!='trellis2-amd':
+        raise ValueError('Current-image admission requires the original generated AMD request')
+    if not re.fullmatch('[0-9a-f]{40}',harness_commit or ''):
+        raise ValueError('Exact published harness commit required')
+    if type(expected_source_job_sha256) is not str or not re.fullmatch('[0-9a-f]{64}',expected_source_job_sha256):
+        raise ValueError('Trusted completed shape-job SHA256 required')
+    if not re.fullmatch('run-[a-zA-Z0-9][a-zA-Z0-9._-]{0,90}',run_id or ''):
+        raise ValueError('Fresh canonical run-ID required')
+    evidence=_plain(shape_evidence)
+    evidence.relative_to(APPROVED_ROOT.resolve())
+    bundle=shape_inputs(evidence)  # Full original lineage and released-job verification.
+
+    def read_current(path, limit, expected=None):
+        with _opened(path,limit,fresh_ns=context.created_ns) as (stream,info):
+            blob=stream.read(limit+1)
+        if len(blob)>limit or expected is not None and hashlib.sha256(blob).hexdigest()!=expected:
+            raise ValueError('Current input file hash or bound differs')
+        return blob
+
+    source=evidence/'run/results.json'
+    if bundle['source_job']!=source or bundle['source_job_sha256']!=expected_source_job_sha256:
+        raise ValueError('Foreign source shape receipt')
+    result=_json(read_current(source,8*1024**2,bundle['source_job_sha256']))
+    if result.get('product_context')!=context.to_dict():
+        raise ValueError('Source shape product request/job context differs')
+    config=_json(read_current(evidence/'pre-execution-admission.json',1024**2))['context']
+    occupancy=_plain(config['occupancy_evidence'])
+    occupancy.relative_to(APPROVED_ROOT.resolve())
+    verified=verify_sequence(occupancy)
+    image_contract_blob=read_current(occupancy/'input-contract.json',65536)
+    image_contract_hash=hashlib.sha256(image_contract_blob).hexdigest()
+    if (verified['input_contract']!=_json(image_contract_blob)
+            or verified['input_contract'].get('source_sha256')!=context.input_sha256
+            or verified['input_contract_sha256']!=image_contract_hash
+            or result['worker']['generation_inputs']['input_contract_sha256']!=image_contract_hash):
+        raise ValueError('Current submitted image/shape lineage differs')
+
+    policy=load_module('_amd_current_geometry_run_contract',CODE/'run_contract.py')
+    arrays={}
+    for key,leaf,dtype,width in [('shape-latent-denormalized.npy','shape-latent-denormalized.npy','float32',32),
+                                 ('coords.npy','shape-latent-coordinates.npy','int32',4)]:
+        row=bundle['inputs'][key]; expected_path=evidence/'run/scratch'/leaf
+        if row['path']!=expected_path:
+            raise ValueError('Foreign current shape input path')
+        # A stable, single-link, fresh file read precedes the original strict
+        # NPY reader; the latter enforces dtype, header, finite and tail bounds.
+        read_current(expected_path,2*1024**2,row['sha256'])
+        arrays[key]=policy.read_npy(expected_path,row['sha256'],(bundle['count'],width),dtype)
+    from amd_shape_decoder_preflight import validate_arrays
+    validate_arrays(arrays['shape-latent-denormalized.npy'],arrays['coords.npy'],count=bundle['count'])
+    if not np.array_equal(arrays['coords.npy'],bundle['coords']):
+        raise ValueError('Current coordinate order differs from authenticated shape job')
+
+    actual=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True,timeout=GIT_READ_SECONDS).strip()
+    if actual!=harness_commit: raise ValueError('Run only the exact published current HEAD')
+    names=sorted(set(STATIC_FILES+list(COMMITTED_FILES)+list(bundle['required_files'])+
+                     [p.relative_to(ROOT).as_posix() for p in CODE.glob('*.py')]+[
+                         'api/services/amd_completed_result.py','api/services/amd_stage_contract.py',
+                         'scripts/compatibility/test_amd_current_geometry.py']))
+    verify_committed_files(harness_commit,names,timeout_seconds=GIT_READ_SECONDS)
+    root=PurePosixPath('/home/modly')/run_id
+    base=policy.parse({'schema':policy.SCHEMA,'initial_count':bundle['count'],
+        'input_paths':{k:guest_path(v['path']) for k,v in bundle['inputs'].items()},
+        'input_sha256':{k:v['sha256'] for k,v in bundle['inputs'].items()},
+        'source_job_sha256':bundle['source_job_sha256'],'output_directory':str(root/'geometry'),
+        'scratch_directory':str(root/'shape-scratch'),'repo_root':guest_path(ROOT),
+        'maximum_final_rows':policy.MAX_FINAL_ROWS,'maximum_intermediate_rows':policy.MAX_INTERMEDIATE_ROWS,
+        'native_stage':policy.NATIVE_STAGE,'large_convolution_tiling':True})
+    contract=policy._current_api().create(base,product_context=context.to_dict(),
+        image_input_contract_sha256=image_contract_hash,
+        initial_features_payload_sha256=hashlib.sha256(arrays['shape-latent-denormalized.npy'].tobytes()).hexdigest(),
+        initial_coords_payload_sha256=hashlib.sha256(arrays['coords.npy'].tobytes()).hexdigest())
+    # Reopen the authenticated predecessor after all deterministic preparation.
+    read_current(source,8*1024**2,bundle['source_job_sha256'])
+    return contract
+
+
 def copy_files(source_directory,target,limits,required,owner_uid=None):
     """Stdlib-only transfer; the guest bootstrap attests both directory boundaries."""
     import hashlib,os
