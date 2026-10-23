@@ -1,0 +1,22 @@
+test_context_nonce_cannot_be_reused_as_host_release_token (test_fixture.FixtureTests.test_context_nonce_cannot_be_reused_as_host_release_token) ... ok
+test_existing_publication_is_never_overwritten (test_fixture.FixtureTests.test_existing_publication_is_never_overwritten) ... ok
+test_failed_publication_preserves_pending_evidence_and_original_link_error (test_fixture.FixtureTests.test_failed_publication_preserves_pending_evidence_and_original_link_error) ... ok
+test_foreign_extra_malformed_controls_and_eof_fail_closed (test_fixture.FixtureTests.test_foreign_extra_malformed_controls_and_eof_fail_closed) ... ok
+test_release_refuses_foreign_context_stage_pid_and_each_host_nonce (test_fixture.FixtureTests.test_release_refuses_foreign_context_stage_pid_and_each_host_nonce) ... ok
+test_release_waits_for_publisher_staging_unlink_then_requires_single_link (test_fixture.FixtureTests.test_release_waits_for_publisher_staging_unlink_then_requires_single_link) ... ok
+test_sentinel_accepts_independent_exact_release_and_has_no_cancel_ack (test_fixture.FixtureTests.test_sentinel_accepts_independent_exact_release_and_has_no_cancel_ack) ... ok
+test_sentinel_cooperates_with_real_cancel_only_as_cancelled_cleanup (test_fixture.FixtureTests.test_sentinel_cooperates_with_real_cancel_only_as_cancelled_cleanup) ... ok
+test_target_never_accepts_sentinel_release_instead_of_cancellation (test_fixture.FixtureTests.test_target_never_accepts_sentinel_release_instead_of_cancellation) ... ok
+test_target_readiness_and_original_bootstrap_cancel_ack_are_context_bound (test_fixture.FixtureTests.test_target_readiness_and_original_bootstrap_cancel_ack_are_context_bound) ... ok
+test_cached_but_not_enumerated_rejected (test_qualification.QualificationTests.test_cached_but_not_enumerated_rejected) ... ok
+test_empty_job_is_not_enough (test_qualification.QualificationTests.test_empty_job_is_not_enough) ... ok
+test_exact_current_native_identity (test_qualification.QualificationTests.test_exact_current_native_identity) ... ok
+test_foreign_readiness_rejected (test_qualification.QualificationTests.test_foreign_readiness_rejected) ... ok
+test_identity_provenance_failure_rejected (test_qualification.QualificationTests.test_identity_provenance_failure_rejected) ... ok
+test_post_settlement_requires_a_second_native_snapshot (test_qualification.QualificationTests.test_post_settlement_requires_a_second_native_snapshot) ... ok
+test_stale_and_future_observations_rejected (test_qualification.QualificationTests.test_stale_and_future_observations_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.708s
+
+OK

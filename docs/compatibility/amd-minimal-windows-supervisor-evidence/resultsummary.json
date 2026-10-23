@@ -1,0 +1,45 @@
+{
+  "schema": "modly.amd.minimal-windows.resultsummary.v1",
+  "base": "df30cb32e87ab528d9c9961ea0953ec4798f6529",
+  "classification": "PASS_EXECUTED_WINDOWS_CPU_CONTROL_PAIR_ONLY",
+  "verdicts": {
+    "windows_production_runner_ownership": "PASS",
+    "target_cancellation_and_acknowledgement": "PASS",
+    "sentinel_independence": "PASS",
+    "sentinel_natural_successful_exit": "PASS",
+    "complete_nonrecursive_windows_cpu_control_pair": "PASS",
+    "ability_to_supply_authenticated_host_observations": "LIMITED_PASS_EXECUTED_WINDOWS_CPU_OBSERVATIONS_ONLY",
+    "upstream_job_production_integration": "NOT_YET_QUALIFIED",
+    "wsl_ownership": "NOT_RUN",
+    "genuine_gpu_inference": "NOT_RUN"
+  },
+  "metrics": {
+    "native_pairs": 1,
+    "target_elapsed_s": 0.3280000000013388,
+    "sentinel_elapsed_s": 0.4220000000004802,
+    "outer_host_elapsed_s": 0.7350000000005821,
+    "outside_host_process_elapsed_s": 0.8987219,
+    "final_active_processes": {
+      "target": 0,
+      "sentinel": 0,
+      "outer": 0
+    },
+    "saved_total_job_processes": {
+      "target": 6,
+      "sentinel": 6,
+      "outer": 15
+    },
+    "outer_peak_process_bytes": 17428480,
+    "outer_peak_job_bytes": 65417216,
+    "minimum_observed_available_ram_bytes": 18230636544,
+    "minimum_observed_free_disk_bytes": 136117997568,
+    "original_stage_deadline_s": 25,
+    "outer_deadline_s": 90,
+    "forced_cleanup": false
+  },
+  "independent_outcome_review_sha256": "c63c8fce78e1a4c18bd3e9d3356517ee7bfe73503a8737c430229c125cd55dfb",
+  "original_production_source_unchanged": true,
+  "native_pair_attempts": 1,
+  "reviewer_reran_execution": false,
+  "scope": "One nonrecursive fixture pair through actual Windows runner; no UpstreamJob production integration, WSL or inference qualification"
+}

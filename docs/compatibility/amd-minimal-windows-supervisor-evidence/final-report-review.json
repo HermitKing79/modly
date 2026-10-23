@@ -1,0 +1,33 @@
+{
+  "schema": "modly.amd.minimal-windows.final-report-review.v1",
+  "base": "df30cb32e87ab528d9c9961ea0953ec4798f6529",
+  "verdict": "PASS_EXECUTED_WINDOWS_CPU_CONTROL_PAIR_ONLY",
+  "report_sha256": "4f02d6814f2b538c99d7bbab5e1bc66d1d2e6b59d8c9b4187d7d1a6012e1cd96",
+  "reviewed_receipt_sha256": {
+    "independent-outcome-review.json": "c63c8fce78e1a4c18bd3e9d3356517ee7bfe73503a8737c430229c125cd55dfb",
+    "resultsummary.json": "0b270b8ddd8741467598d7d2ab499c9f56f3c65f76fe085bd34c8f9879279220",
+    "preexecution-review.json": "e0e6b404168a12b4a703ebdb47926562a38767edfff05dc5f5c4fafdb9e1c887",
+    "independent-cpu-tests.json": "e6ba0e23ab42c850746e736766c89c2bf96273befa3626db0068934701ad8758",
+    "independent-cpu-tests.log": "224b2507dd9c39819b94fd01d250467e1da73946ef496e4d2a83afb5a46592d0",
+    "preservation-before.json": "601396071d2ca98293c51d8371993622a0c472d04da8cd485b2c1f165ebbaf4c",
+    "preservation-after.json": "2debf21ed6ce9827f47d281ce4d6f2c2907d041c45f5bff08ebb06b98c074d87",
+    "admission.json": "8d8cc96210b14c59b1aa4814e916df82cbb6eec2cb71eedc0fe0681a7e91fcc4"
+  },
+  "checks": [
+    "Final report agrees with saved production results/protocols, exact target acknowledgement and sentinel release, and sequential sentinel survival fence.",
+    "All10 current source pins, outcome raw-evidence hashes and summary/outcome relationships match; original inner receipts equal pair copies.",
+    "Timing,36health minima, Job peak/count/accounting measurements match report; allthree Jobs empty and noforced cleanup.",
+    "Private preservation states equal exactly; public/private hashes match;129prior heads and100protected identities/78small hashes retained within scope.",
+    "Earlier missing-review static-preflight failure preserved and not counted as native attempt.",
+    "Actual username/SID, private nonces and raw process records are absent from final report.",
+    "No UpstreamJob production authority, WSL, GPU/neural or fresh-image qualification claimed."
+  ],
+  "findings": [],
+  "limits": [
+    "Saved-source/evidence/hash review only; no test/native/query/Job/WSL/GPU execution repeated.",
+    "Native PASS limited to sole synthetic nonrecursive Windows pair and recorded same-shell token/accounting limits.",
+    "Preservation no-execution flags describe preservation scans, not the overall native qualification.",
+    "A concurrent outcome-summary update caused one initial saved-hash check to stop before receipt creation; synchronized final hashes were then verified.",
+    "New GitHub publication and preservation of129prior heads require separate final verification."
+  ]
+}
