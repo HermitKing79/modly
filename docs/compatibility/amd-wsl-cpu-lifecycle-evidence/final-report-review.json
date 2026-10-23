@@ -1,0 +1,25 @@
+{
+  "schema": "modly.amd.wsl-cpu-lifecycle.final-report-review.v1",
+  "base": "8f175de809f3be304cfc92179cb42905a01b8f12",
+  "verdict": "ACCEPT_REPORT_OF_SINGLE_NONRECURSIVE_WSL_CPU_PAIR_PASS",
+  "report_sha256": "555a2ec3d908d14278a38afd739aec4e4c3a858afd7532e36ba8034519617a9b",
+  "outcome_review_sha256": "c2511a8e69436ad8f01bd51ec8e4124c1bd26f16229d8da52950bc7446aab7bd",
+  "public_receipt_sha256": {
+    "admission.json": "6174affa642ad5eb090ffca9c75b093310f61c979514a17c24db71192df5b9f3",
+    "preexecution-review.json": "d2aceba36b0c4a8e96967d2afa3c2699f66ad1f27302fa9fd3575842c18d4a7f",
+    "cpu-tests.json": "f21fda3b514166b92617a52ab7c91b5395c5dec0f4abaa13c03fa36ea7664ef9",
+    "independent-cpu-tests.json": "3b9c2a2fee159ca062eb1947920df1d26a5749b981740215eeb05a9cfe73c177",
+    "execution-summary.json": "e90b1efd6ba8e44abd7ac02948bee2a7febcfd1f3cf47261603b7f929c7402b4",
+    "preservation-before.json": "87b308cbd7159aab65faee8f7d19c1a91aba26c0116d8e0717b0e65d3e3864db",
+    "preservation-after.json": "e880c6a487f2c65d3353387b0f102199880acf5e698a0cc58ff94e1c256a8911",
+    "prior-windows-PASS-authentication.json": "58b88a76d77ef4afcd77b19a3703dd620858e876021d6f4a3173a034e15ef47a"
+  },
+  "checks": [
+    "Final report agrees with independently checked original protocol/ack/challenge/release/identity/reaping/resource/deadline observations and execution summary hashes.",
+    "Final text contains no raw SID, qualified Windows username, boot/control/challenge nonce or private UUID. Raw34file hash verification remains private; public aliases are source-safe.",
+    "No production source changed. Qualification remains exactly one nonrecursive CPU control pair; WSL UpstreamJob authority, broader descendant behavior, neural/GPU and Generate are explicitly unqualified.",
+    "Linux RSS sampling/cgroup limits, trusted-user unbound protocol/challenge assumptions, separate host/guest clocks and preservation-checker-only no-native scope are explicit."
+  ],
+  "review_execution": "Saved observations and final text/hash review only; no tests, WSL/native queries, fixture launch or retry.",
+  "findings": []
+}

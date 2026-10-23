@@ -1,0 +1,14 @@
+{
+  "schema": "modly.amd.wsl-cpu-lifecycle.prior-Windows-PASS-authentication.v1",
+  "base": "8f175de809f3be304cfc92179cb42905a01b8f12",
+  "classification": "PASS_PRESERVED_PREVIOUS_WINDOWS_SCOPE_ONLY",
+  "prior_outcome_sha256": "ef17cda8e338d5c4afff9649fb454aff020a5261296aca83cf3a5d7c40d2b02b",
+  "prior_final_review_sha256": "5a35e19d2b073c36944f93b933c64a8086abf945efe00515b5bbf7649f339c0d",
+  "prior_publication_receipt_sha256": "1dc93b6d0849f92a0e7c971fd1fb8ad29a821ca94d39e1a39b96e2e87333a9ce",
+  "prior_private_verification_sha256": "5dfd35c464c46f3bf28a6b074b5bed517e0aad467e2cdeacdf67265138ae0123",
+  "exact_source_pins_checked": 13,
+  "saved_raw_hashes_checked": 27,
+  "prior_public_receipt_hashes_checked": 8,
+  "no_WSL_or_native_execution": true,
+  "scope": "Authenticates existing single synthetic Windows ticket PASS only; confers no WSL qualification."
+}
