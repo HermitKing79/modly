@@ -1,0 +1,635 @@
+{
+  "schema": "modly.amd.fixture-startup.timeline.v1",
+  "base_commit": "474fbb4f88fae957a007ce71fc640769bd570aae",
+  "classification": "SAVED_EVIDENCE_ONLY",
+  "authentication": {
+    "raw_file_count": 27,
+    "raw_total_bytes": 52436620,
+    "raw_size_sha256_mismatch_count": 0,
+    "exact_committed_file_set": true,
+    "committed_review_sha256": "2131365713ae1f4f5fbe5086d68ea75b193fa7debdff7e5f78d9a3a3879cf87d",
+    "source_pin_count": 5,
+    "all_source_pins_match_git_base": true,
+    "all_source_pins_match_checkout": true,
+    "source_pins": [
+      {
+        "source": "api/services/amd_stage_process.py",
+        "attempt_sha256": "60815a03ad3d24bd01e8ed6b936f31b2d37a0fc38b1e099a6f44257a1dfeadf6",
+        "git_base_sha256": "60815a03ad3d24bd01e8ed6b936f31b2d37a0fc38b1e099a6f44257a1dfeadf6",
+        "checkout_sha256": "60815a03ad3d24bd01e8ed6b936f31b2d37a0fc38b1e099a6f44257a1dfeadf6",
+        "git_base_matches_attempt": true,
+        "checkout_matches_attempt": true
+      },
+      {
+        "source": "api/services/amd_stage_bootstrap.py",
+        "attempt_sha256": "590c683e36589f4c9c14a4cde2edb544536a1611d35b5ed60d3a91a23d39cb90",
+        "git_base_sha256": "590c683e36589f4c9c14a4cde2edb544536a1611d35b5ed60d3a91a23d39cb90",
+        "checkout_sha256": "590c683e36589f4c9c14a4cde2edb544536a1611d35b5ed60d3a91a23d39cb90",
+        "git_base_matches_attempt": true,
+        "checkout_matches_attempt": true
+      },
+      {
+        "source": "api/services/amd_completed_result.py",
+        "attempt_sha256": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+        "git_base_sha256": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+        "checkout_sha256": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+        "git_base_matches_attempt": true,
+        "checkout_matches_attempt": true
+      },
+      {
+        "source": "docs/compatibility/amd-job-stage-orchestrator-evidence/cpu_stage_fixture.py",
+        "attempt_sha256": "cb808b5993c859a0ed62120109550059d267b1df2c47191d53a9753535c4b3f1",
+        "git_base_sha256": "cb808b5993c859a0ed62120109550059d267b1df2c47191d53a9753535c4b3f1",
+        "checkout_sha256": "cb808b5993c859a0ed62120109550059d267b1df2c47191d53a9753535c4b3f1",
+        "git_base_matches_attempt": true,
+        "checkout_matches_attempt": true
+      },
+      {
+        "source": "docs/compatibility/amd-retired-process-evidence/windows_qualification.py",
+        "attempt_sha256": "49e9be974dec4b96b4cf24a7ddc90baedaffe83bcb11203f2051d94e1a736110",
+        "git_base_sha256": "49e9be974dec4b96b4cf24a7ddc90baedaffe83bcb11203f2051d94e1a736110",
+        "checkout_sha256": "49e9be974dec4b96b4cf24a7ddc90baedaffe83bcb11203f2051d94e1a736110",
+        "git_base_matches_attempt": true,
+        "checkout_matches_attempt": true
+      }
+    ]
+  },
+  "clock_domains": {
+    "protocol": "timestamp_ns uses bootstrap time.time_ns(), a UTC wall clock; record timestamps are before JSON emission/flush, not interpreter entry.",
+    "worker_host_trace": "utc and monotonic_s are separate sequential reads before JSON encoding, append and fsync; time between them is unmeasured.",
+    "runner_history": "utc, monotonic_s and elapsed_s are sequential reads after the native snapshot. They are sample labels, not timestamps for each identity operation.",
+    "receipt": "started_utc is after monotonic began and directory/spec construction; elapsed_s is stamped after finished_utc but before receipt JSON serialization. Adding elapsed_s to started_utc is only an estimate.",
+    "win32_creation": "creation_filetime is a Win32 process creation identity in 100 ns units since 1601, converted arithmetically to UTC. It does not timestamp Python main entry.",
+    "file_metadata": "Read-only current Windows file metadata of authenticated file contents. Metadata was not part of the old committed hash manifest. Creation/mtime describe the staged inode, not its later hardlink publication."
+  },
+  "outer_admission": {
+    "pair_admitted_utc": "2026-10-22T23:18:10.934422+00:00",
+    "pair_admitted_monotonic_s": 119782.296,
+    "worker_error_utc": "2026-10-22T23:18:25.935426+00:00",
+    "worker_error_monotonic_s": 119797.296,
+    "observed_trace_monotonic_interval_s": 15.0,
+    "observed_trace_utc_interval_s": 15.001004,
+    "deadline_source": "worker creates until=min(monotonic()+15, active_end) after starting both runner threads. The pair-admitted trace is before both thread.start() calls and its fsync; therefore it is not the exact deadline origin.",
+    "failure": "TimeoutError: Original fixtures not authenticated ready",
+    "pre_cancel_admitted": false,
+    "original_target_cancel_requested_event_present": false,
+    "cleanup_cancel_source": "The worker finally block sets both events after the admission exception."
+  },
+  "roles": {
+    "target": {
+      "receipt_started_utc": "2026-10-22T23:18:10.935951+00:00",
+      "receipt_finished_utc": "2026-10-22T23:18:29.725762+00:00",
+      "receipt_elapsed_s": 18.781999999991967,
+      "runner_finished_monotonic_s": 119801.234,
+      "runner_origin_from_history_range_s": [
+        119782.296,
+        119782.296
+      ],
+      "sampled_utc_minus_monotonic_range_s": [
+        1792591308.637312,
+        1792591308.653622
+      ],
+      "sampled_clock_offset_spread_s": 0.016309977,
+      "go_sent": {
+        "action": "GO",
+        "phase": "normal.control.GO",
+        "utc": "2026-10-22T23:18:11.768990+00:00",
+        "monotonic_s": 119783.125,
+        "flushed": true
+      },
+      "cancel_sent": {
+        "action": "CANCEL",
+        "phase": "normal.control.CANCEL",
+        "utc": "2026-10-22T23:18:25.949622+00:00",
+        "monotonic_s": 119797.296,
+        "flushed": true
+      },
+      "protocol_non_ping_events": [
+        {
+          "record_index": 0,
+          "event": "control-received",
+          "action": "GO",
+          "timestamp_ns": 1792711094339667100,
+          "utc": "2026-10-22T23:18:14.339667100Z"
+        },
+        {
+          "record_index": 1,
+          "event": "stage-started",
+          "timestamp_ns": 1792711096020379500,
+          "utc": "2026-10-22T23:18:16.020379500Z"
+        },
+        {
+          "record_index": 29,
+          "event": "control-received",
+          "action": "CANCEL",
+          "timestamp_ns": 1792711105949622700,
+          "utc": "2026-10-22T23:18:25.949622700Z"
+        },
+        {
+          "record_index": 33,
+          "event": "child-exited",
+          "timestamp_ns": 1792711107311050000,
+          "returncode": 1,
+          "cancellation_sent": true,
+          "forced": false,
+          "utc": "2026-10-22T23:18:27.311050000Z"
+        },
+        {
+          "record_index": 34,
+          "event": "ack-error",
+          "timestamp_ns": 1792711107315633600,
+          "operation": "cancel-ack.read_json",
+          "utc": "2026-10-22T23:18:27.315633600Z"
+        },
+        {
+          "record_index": 35,
+          "event": "ack-checked",
+          "timestamp_ns": 1792711107315633600,
+          "cooperative": false,
+          "utc": "2026-10-22T23:18:27.315633600Z"
+        },
+        {
+          "record_index": 36,
+          "event": "terminal",
+          "timestamp_ns": 1792711107315633600,
+          "returncode": 1,
+          "forced": false,
+          "natural": false,
+          "utc": "2026-10-22T23:18:27.315633600Z"
+        }
+      ],
+      "utc_intervals_s": {
+        "receipt_start_to_GO_received": 3.4037161,
+        "GO_sent_label_to_GO_received": 2.5706771,
+        "GO_received_to_stage_started": 1.6807124,
+        "stage_started_to_child_exited": 11.2906705,
+        "worker_error_to_cancel_received": 0.0141967,
+        "cancel_received_to_child_exited": 1.3614273
+      },
+      "context_identity_checks": {
+        "saved_descendant_launch_receipt_contexts_equal": true,
+        "all_protocol_stage_nonce_context_equal_launch": true,
+        "grandchild_launch_is_ready_writer": false,
+        "all_recorded_role_ids_resolve_to_one_creation_identity": true,
+        "all_recorded_role_ids_verified_members_of_same_job": true,
+        "stage_launch_image_equals_argv_executable": true,
+        "child_and_grandchild_writers_image_equal": true,
+        "grandchild_launch_and_writer_images_differ": true
+      },
+      "processes": [
+        {
+          "alias": "target-member-01",
+          "roles": [],
+          "image_class": "launch-executable",
+          "creation_utc": "2026-10-22T23:18:10.938404900Z",
+          "creation_after_pair_utc_s": 0.0039829,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:11.768990+00:00",
+          "first_saved_observation_monotonic_s": 119783.125,
+          "first_saved_not_alive_observation": {
+            "snapshot_utc": "2026-10-22T23:18:27.807473+00:00",
+            "snapshot_monotonic_s": 119799.156,
+            "native_observed_utc": "2026-10-22T23:18:27.807473+00:00",
+            "exit_code": 0,
+            "before_worker_error_by_monotonic_s": -1.86
+          }
+        },
+        {
+          "alias": "target-member-02",
+          "roles": [],
+          "image_class": "console-host",
+          "creation_utc": "2026-10-22T23:18:11.771027600Z",
+          "creation_after_pair_utc_s": 0.8366056,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:11.795467+00:00",
+          "first_saved_observation_monotonic_s": 119783.156
+        },
+        {
+          "alias": "target-member-03",
+          "roles": [],
+          "image_class": "other-python-image",
+          "creation_utc": "2026-10-22T23:18:13.010637700Z",
+          "creation_after_pair_utc_s": 2.0762157,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:13.012775+00:00",
+          "first_saved_observation_monotonic_s": 119784.375,
+          "first_saved_not_alive_observation": {
+            "snapshot_utc": "2026-10-22T23:18:27.332783+00:00",
+            "snapshot_monotonic_s": 119798.687,
+            "native_observed_utc": "2026-10-22T23:18:27.331778+00:00",
+            "exit_code": 0,
+            "before_worker_error_by_monotonic_s": -1.391
+          }
+        },
+        {
+          "alias": "target-member-04",
+          "roles": [
+            "stage_launch"
+          ],
+          "image_class": "launch-executable",
+          "creation_utc": "2026-10-22T23:18:14.341647400Z",
+          "creation_after_pair_utc_s": 3.4072254,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:14.369972+00:00",
+          "first_saved_observation_monotonic_s": 119785.718
+        },
+        {
+          "alias": "target-member-05",
+          "roles": [],
+          "image_class": "console-host",
+          "creation_utc": "2026-10-22T23:18:16.021971900Z",
+          "creation_after_pair_utc_s": 5.0875499,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:16.052971+00:00",
+          "first_saved_observation_monotonic_s": 119787.406
+        },
+        {
+          "alias": "target-member-06",
+          "roles": [],
+          "image_class": "other-python-image",
+          "creation_utc": "2026-10-22T23:18:17.332039500Z",
+          "creation_after_pair_utc_s": 6.3976175,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:17.352621+00:00",
+          "first_saved_observation_monotonic_s": 119788.703,
+          "first_saved_not_alive_observation": {
+            "snapshot_utc": "2026-10-22T23:18:25.523579+00:00",
+            "snapshot_monotonic_s": 119796.875,
+            "native_observed_utc": "2026-10-22T23:18:25.523579+00:00",
+            "exit_code": 1,
+            "before_worker_error_by_monotonic_s": 0.421
+          }
+        },
+        {
+          "alias": "target-member-07",
+          "roles": [],
+          "image_class": "launch-executable",
+          "creation_utc": "2026-10-22T23:18:18.730058400Z",
+          "creation_after_pair_utc_s": 7.7956364,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:18.730396+00:00",
+          "first_saved_observation_monotonic_s": 119790.078
+        },
+        {
+          "alias": "target-member-08",
+          "roles": [
+            "child_ready_writer"
+          ],
+          "image_class": "other-python-image",
+          "creation_utc": "2026-10-22T23:18:20.503813300Z",
+          "creation_after_pair_utc_s": 9.5693913,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:20.519937+00:00",
+          "first_saved_observation_monotonic_s": 119791.875
+        },
+        {
+          "alias": "target-member-09",
+          "roles": [
+            "grandchild_launch"
+          ],
+          "image_class": "launch-executable",
+          "creation_utc": "2026-10-22T23:18:22.463241800Z",
+          "creation_after_pair_utc_s": 11.5288198,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:22.468735+00:00",
+          "first_saved_observation_monotonic_s": 119793.828
+        },
+        {
+          "alias": "target-member-10",
+          "roles": [
+            "grandchild_ready_writer"
+          ],
+          "image_class": "other-python-image",
+          "creation_utc": "2026-10-22T23:18:24.323715200Z",
+          "creation_after_pair_utc_s": 13.3892932,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:24.347417+00:00",
+          "first_saved_observation_monotonic_s": 119795.703
+        }
+      ],
+      "descendant_file_metadata": {
+        "child-ready.json": {
+          "birth_utc": "2026-10-22T23:18:24.319937800Z",
+          "mtime_utc": "2026-10-22T23:18:24.319937800Z",
+          "mtime_after_pair_utc_s": 13.3855158,
+          "mtime_after_worker_error_utc_s": -1.6154882,
+          "mtime_after_stage_started_utc_s": 8.2995583,
+          "birth_equals_mtime": true,
+          "current_link_count": 1,
+          "limit": "Staging inode timestamp; write/close/fsync and os.link completion times are not recorded. The file is present now, which does not establish when the parent could see it."
+        },
+        "grandchild-ready.json": {
+          "birth_utc": "2026-10-22T23:18:26.349455600Z",
+          "mtime_utc": "2026-10-22T23:18:26.349455600Z",
+          "mtime_after_pair_utc_s": 15.4150336,
+          "mtime_after_worker_error_utc_s": 0.4140296,
+          "mtime_after_stage_started_utc_s": 10.3290761,
+          "birth_equals_mtime": true,
+          "current_link_count": 1,
+          "limit": "Staging inode timestamp; write/close/fsync and os.link completion times are not recorded. The file is present now, which does not establish when the parent could see it."
+        }
+      },
+      "fixture_failure": "TimeoutError: Fixture descendants did not start",
+      "saved_ready_file_exists": false,
+      "saved_cancel_ack_exists": false,
+      "terminal": "cancelled",
+      "returncode": 1,
+      "forced_owned_job_cleanup": true,
+      "final_job_active": 0
+    },
+    "sentinel": {
+      "receipt_started_utc": "2026-10-22T23:18:10.936499+00:00",
+      "receipt_finished_utc": "2026-10-22T23:18:28.834582+00:00",
+      "receipt_elapsed_s": 17.89100000000326,
+      "runner_finished_monotonic_s": 119800.312,
+      "runner_origin_from_history_range_s": [
+        119782.296,
+        119782.296
+      ],
+      "sampled_utc_minus_monotonic_range_s": [
+        1792591308.637352,
+        1792591308.653659
+      ],
+      "sampled_clock_offset_spread_s": 0.016307116,
+      "go_sent": {
+        "action": "GO",
+        "phase": "normal.control.GO",
+        "utc": "2026-10-22T23:18:12.601220+00:00",
+        "monotonic_s": 119783.953,
+        "flushed": true
+      },
+      "cancel_sent": {
+        "action": "CANCEL",
+        "phase": "normal.control.CANCEL",
+        "utc": "2026-10-22T23:18:25.941453+00:00",
+        "monotonic_s": 119797.296,
+        "flushed": true
+      },
+      "protocol_non_ping_events": [
+        {
+          "record_index": 0,
+          "event": "control-received",
+          "action": "GO",
+          "timestamp_ns": 1792711095219937800,
+          "utc": "2026-10-22T23:18:15.219937800Z"
+        },
+        {
+          "record_index": 1,
+          "event": "stage-started",
+          "timestamp_ns": 1792711096909997300,
+          "utc": "2026-10-22T23:18:16.909997300Z"
+        },
+        {
+          "record_index": 28,
+          "event": "control-received",
+          "action": "CANCEL",
+          "timestamp_ns": 1792711105941453900,
+          "utc": "2026-10-22T23:18:25.941453900Z"
+        },
+        {
+          "record_index": 31,
+          "event": "child-exited",
+          "timestamp_ns": 1792711107295236700,
+          "returncode": 1,
+          "cancellation_sent": true,
+          "forced": false,
+          "utc": "2026-10-22T23:18:27.295236700Z"
+        },
+        {
+          "record_index": 32,
+          "event": "ack-error",
+          "timestamp_ns": 1792711107299354200,
+          "operation": "cancel-ack.read_json",
+          "utc": "2026-10-22T23:18:27.299354200Z"
+        },
+        {
+          "record_index": 33,
+          "event": "ack-checked",
+          "timestamp_ns": 1792711107299354200,
+          "cooperative": false,
+          "utc": "2026-10-22T23:18:27.299354200Z"
+        },
+        {
+          "record_index": 34,
+          "event": "terminal",
+          "timestamp_ns": 1792711107299354200,
+          "returncode": 1,
+          "forced": false,
+          "natural": false,
+          "utc": "2026-10-22T23:18:27.299354200Z"
+        }
+      ],
+      "utc_intervals_s": {
+        "receipt_start_to_GO_received": 4.2834388,
+        "GO_sent_label_to_GO_received": 2.6187178,
+        "GO_received_to_stage_started": 1.6900595,
+        "stage_started_to_child_exited": 10.3852394,
+        "worker_error_to_cancel_received": 0.0060279,
+        "cancel_received_to_child_exited": 1.3537828
+      },
+      "context_identity_checks": {
+        "saved_descendant_launch_receipt_contexts_equal": true,
+        "all_protocol_stage_nonce_context_equal_launch": true,
+        "grandchild_launch_is_ready_writer": false,
+        "all_recorded_role_ids_resolve_to_one_creation_identity": true,
+        "all_recorded_role_ids_verified_members_of_same_job": true,
+        "stage_launch_image_equals_argv_executable": true,
+        "child_and_grandchild_writers_image_equal": true,
+        "grandchild_launch_and_writer_images_differ": true
+      },
+      "processes": [
+        {
+          "alias": "sentinel-member-01",
+          "roles": [],
+          "image_class": "launch-executable",
+          "creation_utc": "2026-10-22T23:18:10.938593900Z",
+          "creation_after_pair_utc_s": 0.0041719,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:12.601220+00:00",
+          "first_saved_observation_monotonic_s": 119783.953,
+          "first_saved_not_alive_observation": {
+            "snapshot_utc": "2026-10-22T23:18:27.766893+00:00",
+            "snapshot_monotonic_s": 119799.125,
+            "native_observed_utc": "2026-10-22T23:18:27.766893+00:00",
+            "exit_code": 0,
+            "before_worker_error_by_monotonic_s": -1.829
+          }
+        },
+        {
+          "alias": "sentinel-member-02",
+          "roles": [],
+          "image_class": "console-host",
+          "creation_utc": "2026-10-22T23:18:12.603521700Z",
+          "creation_after_pair_utc_s": 1.6690997,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:12.628164+00:00",
+          "first_saved_observation_monotonic_s": 119783.984
+        },
+        {
+          "alias": "sentinel-member-03",
+          "roles": [],
+          "image_class": "other-python-image",
+          "creation_utc": "2026-10-22T23:18:13.414390500Z",
+          "creation_after_pair_utc_s": 2.4799685,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:13.433681+00:00",
+          "first_saved_observation_monotonic_s": 119784.781,
+          "first_saved_not_alive_observation": {
+            "snapshot_utc": "2026-10-22T23:18:27.319779+00:00",
+            "snapshot_monotonic_s": 119798.671,
+            "native_observed_utc": "2026-10-22T23:18:27.319267+00:00",
+            "exit_code": 0,
+            "before_worker_error_by_monotonic_s": -1.375
+          }
+        },
+        {
+          "alias": "sentinel-member-04",
+          "roles": [
+            "stage_launch"
+          ],
+          "image_class": "launch-executable",
+          "creation_utc": "2026-10-22T23:18:15.221828200Z",
+          "creation_after_pair_utc_s": 4.2874062,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:15.237123+00:00",
+          "first_saved_observation_monotonic_s": 119786.593
+        },
+        {
+          "alias": "sentinel-member-05",
+          "roles": [],
+          "image_class": "console-host",
+          "creation_utc": "2026-10-22T23:18:16.911444200Z",
+          "creation_after_pair_utc_s": 5.9770222,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:16.942288+00:00",
+          "first_saved_observation_monotonic_s": 119788.296
+        },
+        {
+          "alias": "sentinel-member-06",
+          "roles": [],
+          "image_class": "other-python-image",
+          "creation_utc": "2026-10-22T23:18:17.748958000Z",
+          "creation_after_pair_utc_s": 6.814536,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:17.762860+00:00",
+          "first_saved_observation_monotonic_s": 119789.125,
+          "first_saved_not_alive_observation": {
+            "snapshot_utc": "2026-10-22T23:18:26.432521+00:00",
+            "snapshot_monotonic_s": 119797.781,
+            "native_observed_utc": "2026-10-22T23:18:26.432521+00:00",
+            "exit_code": 1,
+            "before_worker_error_by_monotonic_s": -0.485
+          }
+        },
+        {
+          "alias": "sentinel-member-07",
+          "roles": [],
+          "image_class": "launch-executable",
+          "creation_utc": "2026-10-22T23:18:19.657923500Z",
+          "creation_after_pair_utc_s": 8.7235015,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:19.671576+00:00",
+          "first_saved_observation_monotonic_s": 119791.031
+        },
+        {
+          "alias": "sentinel-member-08",
+          "roles": [
+            "child_ready_writer"
+          ],
+          "image_class": "other-python-image",
+          "creation_utc": "2026-10-22T23:18:21.435152200Z",
+          "creation_after_pair_utc_s": 10.5007302,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:21.461248+00:00",
+          "first_saved_observation_monotonic_s": 119792.812
+        },
+        {
+          "alias": "sentinel-member-09",
+          "roles": [
+            "grandchild_launch"
+          ],
+          "image_class": "launch-executable",
+          "creation_utc": "2026-10-22T23:18:23.425953500Z",
+          "creation_after_pair_utc_s": 12.4915315,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:23.454623+00:00",
+          "first_saved_observation_monotonic_s": 119794.812
+        },
+        {
+          "alias": "sentinel-member-10",
+          "roles": [
+            "grandchild_ready_writer"
+          ],
+          "image_class": "other-python-image",
+          "creation_utc": "2026-10-22T23:18:25.296960500Z",
+          "creation_after_pair_utc_s": 14.3625385,
+          "membership_verified": true,
+          "first_saved_observation_utc": "2026-10-22T23:18:25.324013+00:00",
+          "first_saved_observation_monotonic_s": 119796.671
+        }
+      ],
+      "descendant_file_metadata": {
+        "child-ready.json": {
+          "birth_utc": "2026-10-22T23:18:25.292923600Z",
+          "mtime_utc": "2026-10-22T23:18:25.292923600Z",
+          "mtime_after_pair_utc_s": 14.3585016,
+          "mtime_after_worker_error_utc_s": -0.6425024,
+          "mtime_after_stage_started_utc_s": 8.3829263,
+          "birth_equals_mtime": true,
+          "current_link_count": 1,
+          "limit": "Staging inode timestamp; write/close/fsync and os.link completion times are not recorded. The file is present now, which does not establish when the parent could see it."
+        },
+        "grandchild-ready.json": {
+          "birth_utc": "2026-10-22T23:18:27.355242300Z",
+          "mtime_utc": "2026-10-22T23:18:27.355242300Z",
+          "mtime_after_pair_utc_s": 16.4208203,
+          "mtime_after_worker_error_utc_s": 1.4198163,
+          "mtime_after_stage_started_utc_s": 10.445245,
+          "birth_equals_mtime": true,
+          "current_link_count": 1,
+          "limit": "Staging inode timestamp; write/close/fsync and os.link completion times are not recorded. The file is present now, which does not establish when the parent could see it."
+        }
+      },
+      "fixture_failure": "TimeoutError: Fixture descendants did not start",
+      "saved_ready_file_exists": false,
+      "saved_cancel_ack_exists": false,
+      "terminal": "cancelled",
+      "returncode": 1,
+      "forced_owned_job_cleanup": true,
+      "final_job_active": 0
+    }
+  },
+  "deadline_reasoning": {
+    "source": "cpu_stage_fixture.py:47-51",
+    "exact_control_flow": "The Windows fixture parent Popen(child) returns, then until=monotonic()+5; while not both public names exist, it raises only when monotonic()>=until. The deadline check is inside the loop, so publication before the next condition check could permit success after nominal expiry.",
+    "entry_and_deadline_origin_recorded": false,
+    "Popen_start_and_return_timestamps_recorded": false,
+    "deadline_expiry_recorded": false,
+    "readiness_publication_timestamps_recorded": false,
+    "strict_inference": "Both saved stderr files prove the parent took its descendants-not-started timeout branch. That branch sampled at least 5 monotonic seconds after its own post-Popen origin while at least one readiness name was absent at the preceding while-condition check.",
+    "not_a_strict_five_second_wall_clock_bound": "An earlier false condition check can be followed by scheduling delay before the deadline test. The receipt origin, bootstrap stage-started label, process creation FILETIME and staging-file mtime are different events and cannot substitute for the missing parent monotonic origin."
+  },
+  "publication_limits": [
+    "save() opens name.writing with exclusive create, JSON writes, flushes, fsyncs, closes, os.link(staging, final), then unlinks staging. Public visibility occurs at the hardlink step after the recorded inode birth/mtime activity.",
+    "No timing of JSON encoding, write, flush, fsync, close, link or unlink was saved. A metadata gap cannot be attributed specifically to filesystem/antivirus or process scheduling.",
+    "Grandchild-ready metadata is later than the worker admission-error UTC label for both roles. Because metadata is observed now and not authenticated capture-time metadata, this corroborates late descendant startup/publication but is not alone a clock-certified causal proof.",
+    "Process identities have authenticated image/job/creation provenance. A common image and temporal ordering do not supply a recorded parent PID tree or Python-main-entry timestamp. Launcher/runtime role assignments beyond explicit saved IDs remain inferences."
+  ],
+  "attribution": {
+    "supported": [
+      "Readiness admission expired before the requested target-cancellation interval was admitted.",
+      "Both fixtures failed on their own 5-second descendant-readiness branch.",
+      "Saved process creation and descendant staging show multi-second startup before final readiness artifacts, with separate launch IDs and writer runtime IDs.",
+      "The saved target other-python identity with exit code 1 is observed dead before worker admission failure; pairing it to the stage runtime is an inference from the launch/image/time pattern."
+    ],
+    "unresolved": [
+      "Exact parent Popen return/deadline origin and startup phase durations.",
+      "Exact hardlink publication/read visibility times and which false existence condition led to each timeout.",
+      "Whether startup delay came from OS scheduling, interpreter/launcher initialization, security scanning, filesystem sync or observer contention.",
+      "A causal allocation of lost time to dense observation or serialization; no saved counterfactual/control comparison exists."
+    ],
+    "proposed_production_change": null,
+    "new_native_attempts": 0,
+    "qualification_limits": "No target cancellation success, independent sentinel completion, WSL ownership, AMD orchestrator or GPU qualification follows from this saved-fixture startup audit."
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "schema": "modly.fixture-startup-overhead-evidence.v1",
+  "analysis": "Read saved artifacts and source only; no qualification, native/control pair, WSL or GPU was launched.",
+  "base_commit": "474fbb4f88fae957a007ce71fc640769bd570aae",
+  "source_attempt_base_commit": "060d560e00d52d4e7ffbe2a4ef190cc1ccb37007",
+  "source_artifact_directory": "artifacts/amd-retired-process-060d560/cpu-once",
+  "verified_current_source_hashes_equal_attempt_source_pins": true,
+  "source_pins": {
+    "api/services/amd_stage_process.py": "60815a03ad3d24bd01e8ed6b936f31b2d37a0fc38b1e099a6f44257a1dfeadf6",
+    "api/services/amd_stage_bootstrap.py": "590c683e36589f4c9c14a4cde2edb544536a1611d35b5ed60d3a91a23d39cb90",
+    "api/services/amd_completed_result.py": "8e69a1dfc8ee6afae379dd9618943abc2e9de0ea654b5b0157f3cf92118ddb44",
+    "docs/compatibility/amd-job-stage-orchestrator-evidence/cpu_stage_fixture.py": "cb808b5993c859a0ed62120109550059d267b1df2c47191d53a9753535c4b3f1",
+    "docs/compatibility/amd-retired-process-evidence/windows_qualification.py": "49e9be974dec4b96b4cf24a7ddc90baedaffe83bcb11203f2051d94e1a736110"
+  },
+  "raw_hash_audit": "Delegated timeline evidence owns the complete 27-file raw hash audit; this document does not duplicate it.",
+  "worker_readiness_error": {
+    "event": "primary-error",
+    "utc": "2026-10-22T23:18:25.935426+00:00",
+    "monotonic_s": 119797.296,
+    "type": "TimeoutError",
+    "message": "Original fixtures not authenticated ready"
+  },
+  "series": {
+    "target": {
+      "source_receipt": "target-receipt.json",
+      "receipt_bytes": 6718844,
+      "health_sample_count": 638,
+      "windows_history_count": 637,
+      "first_snapshot_monotonic_s": 119783.125,
+      "last_snapshot_monotonic_s": 119800.062,
+      "snapshot_span_s": 16.937000000005355,
+      "snapshot_interval_rate_per_s": 37.5509240125051,
+      "consecutive_snapshot_gaps": {
+        "count": 636,
+        "min_s": 0.0,
+        "median_s": 0.031000000002677552,
+        "mean_s": 0.026630503144662507,
+        "p95_nearest_rank_s": 0.03200000000651926,
+        "max_s": 0.046999999991385266,
+        "strictly_over_100ms_count": 0,
+        "equal_timestamp_count": 1
+      },
+      "consecutive_health_sample_gaps": {
+        "count": 637,
+        "min_s": 0.0,
+        "median_s": 0.031000000002677552,
+        "mean_s": 0.027890109890115006,
+        "p95_nearest_rank_s": 0.03200000000651926,
+        "max_s": 0.8289999999979045,
+        "strictly_over_100ms_count": 1,
+        "equal_timestamp_count": 1
+      },
+      "initial_health_to_first_snapshot_elapsed_s": 0.8289999999979045,
+      "initial_gap_scope": "Includes launch.json, Job creation, bootstrap Popen, attach/identity check and first snapshot; not an isolated observation or native-call measurement.",
+      "health_stamp_to_post_snapshot_stamp_histogram_s": {
+        "0.0": 610,
+        "0.015": 14,
+        "0.016": 13
+      },
+      "health_stamp_to_post_snapshot_stamp_scope": "Clock readings surround job.snapshot plus Python timestamp/dict work; scheduler delays and coarse saved monotonic resolution are included. Zero is not proof of zero cost.",
+      "control_messages_by_action": {
+        "GO": 1,
+        "PING": 33,
+        "CANCEL": 1
+      },
+      "enumerated_pid_count_histogram": {
+        "1": 2,
+        "2": 47,
+        "3": 52,
+        "4": 64,
+        "5": 49,
+        "6": 52,
+        "7": 102,
+        "8": 91,
+        "9": 69,
+        "10": 109
+      },
+      "all_history_native_count_lower_bound": {
+        "successful_snapshot_count": 637,
+        "live_identity_enumerations": 4099,
+        "retired_identity_enumerations": 119,
+        "source_derived_wrapped_kernel32_minimum": 27100,
+        "source_derived_total_kernel32_minimum": 47952
+      },
+      "strictly_before_worker_error_native_count_lower_bound": {
+        "successful_snapshot_count": 533,
+        "live_identity_enumerations": 3305,
+        "retired_identity_enumerations": 16,
+        "source_derived_wrapped_kernel32_minimum": 21509,
+        "source_derived_total_kernel32_minimum": 38082
+      },
+      "snapshot_equal_to_worker_error_monotonic_count": 1,
+      "max_consecutive_snapshot_gap_before_worker_error_s": 0.03200000000651926,
+      "finished_utc_label": "2026-10-22T23:18:29.725762+00:00",
+      "elapsed_s_label_before_final_receipt_write": 18.781999999991967,
+      "protocol_emission": {
+        "source_protocol_file": "target-process/cancel-target/protocol.jsonl",
+        "bytes": 23173,
+        "record_count": 37,
+        "event_counts": {
+          "control-received": 32,
+          "stage-started": 1,
+          "child-exited": 1,
+          "ack-error": 1,
+          "ack-checked": 1,
+          "terminal": 1
+        },
+        "ping_control_received_records": 30,
+        "records_stamped_before_worker_error": 29,
+        "ping_records_stamped_before_worker_error": 27,
+        "bytes_of_records_stamped_before_worker_error": 18077,
+        "limit": "timestamp_ns is captured before emit serializes/flushes its regular-file stdout. This counts records with pre-error emission labels, not write/fsync completion or physical-media timings."
+      }
+    },
+    "sentinel": {
+      "source_receipt": "sentinel-receipt.json",
+      "receipt_bytes": 5714035,
+      "health_sample_count": 573,
+      "windows_history_count": 572,
+      "first_snapshot_monotonic_s": 119783.953,
+      "last_snapshot_monotonic_s": 119799.156,
+      "snapshot_span_s": 15.203000000008615,
+      "snapshot_interval_rate_per_s": 37.558376636168944,
+      "consecutive_snapshot_gaps": {
+        "count": 571,
+        "min_s": 0.0,
+        "median_s": 0.031000000002677552,
+        "mean_s": 0.026625218914200725,
+        "p95_nearest_rank_s": 0.03200000000651926,
+        "max_s": 0.046000000002095476,
+        "strictly_over_100ms_count": 0,
+        "equal_timestamp_count": 1
+      },
+      "consecutive_health_sample_gaps": {
+        "count": 572,
+        "min_s": 0.0,
+        "median_s": 0.031000000002677552,
+        "mean_s": 0.029447552447547768,
+        "p95_nearest_rank_s": 0.03200000000651926,
+        "max_s": 1.6569999999919673,
+        "strictly_over_100ms_count": 1,
+        "equal_timestamp_count": 1
+      },
+      "initial_health_to_first_snapshot_elapsed_s": 1.6569999999919673,
+      "initial_gap_scope": "Includes launch.json, Job creation, bootstrap Popen, attach/identity check and first snapshot; not an isolated observation or native-call measurement.",
+      "health_stamp_to_post_snapshot_stamp_histogram_s": {
+        "0.0": 553,
+        "0.015": 7,
+        "0.016": 12
+      },
+      "health_stamp_to_post_snapshot_stamp_scope": "Clock readings surround job.snapshot plus Python timestamp/dict work; scheduler delays and coarse saved monotonic resolution are included. Zero is not proof of zero cost.",
+      "control_messages_by_action": {
+        "GO": 1,
+        "PING": 29,
+        "CANCEL": 1
+      },
+      "enumerated_pid_count_histogram": {
+        "1": 2,
+        "2": 31,
+        "3": 69,
+        "4": 65,
+        "5": 31,
+        "6": 72,
+        "7": 69,
+        "8": 90,
+        "9": 69,
+        "10": 74
+      },
+      "all_history_native_count_lower_bound": {
+        "successful_snapshot_count": 572,
+        "live_identity_enumerations": 3630,
+        "retired_identity_enumerations": 52,
+        "source_derived_wrapped_kernel32_minimum": 23756,
+        "source_derived_total_kernel32_minimum": 42062
+      },
+      "strictly_before_worker_error_native_count_lower_bound": {
+        "successful_snapshot_count": 502,
+        "live_identity_enumerations": 3022,
+        "retired_identity_enumerations": 0,
+        "source_derived_wrapped_kernel32_minimum": 19638,
+        "source_derived_total_kernel32_minimum": 34748
+      },
+      "snapshot_equal_to_worker_error_monotonic_count": 1,
+      "max_consecutive_snapshot_gap_before_worker_error_s": 0.046000000002095476,
+      "finished_utc_label": "2026-10-22T23:18:28.834582+00:00",
+      "elapsed_s_label_before_final_receipt_write": 17.89100000000326,
+      "protocol_emission": {
+        "source_protocol_file": "sentinel-process/independent-sentinel/protocol.jsonl",
+        "bytes": 22269,
+        "record_count": 35,
+        "event_counts": {
+          "control-received": 30,
+          "stage-started": 1,
+          "child-exited": 1,
+          "ack-error": 1,
+          "ack-checked": 1,
+          "terminal": 1
+        },
+        "ping_control_received_records": 28,
+        "records_stamped_before_worker_error": 28,
+        "ping_records_stamped_before_worker_error": 26,
+        "bytes_of_records_stamped_before_worker_error": 17731,
+        "limit": "timestamp_ns is captured before emit serializes/flushes its regular-file stdout. This counts records with pre-error emission labels, not write/fsync completion or physical-media timings."
+      }
+    }
+  },
+  "host_sampling": {
+    "count": 421,
+    "first_monotonic_s": 119782.234,
+    "last_monotonic_s": 119803.984,
+    "span_s": 21.75,
+    "consecutive_sample_gaps": {
+      "count": 420,
+      "min_s": 0.046000000002095476,
+      "median_s": 0.04700000000593718,
+      "mean_s": 0.05178571428571429,
+      "p95_nearest_rank_s": 0.0629999999946449,
+      "max_s": 0.06300000000919681,
+      "strictly_over_100ms_count": 0,
+      "equal_timestamp_count": 0
+    },
+    "scope": "Host samples include health check and outer Job snapshot followed by requested 50ms sleep; only sample-start timestamps are retained. Host native-call total is not recoverable because per-snapshot identities/history are not saved."
+  },
+  "native_count_method": {
+    "classification": "PROVED_SOURCE_DERIVED_MINIMUM_NOT_NATIVE_PROFILING",
+    "successful_snapshot_formula": "3 + 11*live_enumerated_pids + 8*authenticated_retired_enumerated_pids",
+    "wrapped_call_formula": "3 + 6*live_enumerated_pids + 5*authenticated_retired_enumerated_pids",
+    "explanation": "Three QueryInformationJobObject calls per successful snapshot. Live PID: OpenProcess 1, four wrapped identity calls plus their four diagnostic GetExitCodeProcess probes 8, final _alive probe 1, CloseHandle 1 = 11. Retired PID: OpenProcess 1, three wrapped identity calls plus their three probes 6, CloseHandle 1 = 8. A successful saved snapshot proves these code paths completed under identical pinned source.",
+    "excluded": "Job creation/attach, unsaved cleanup snapshots, host snapshots, GlobalMemoryStatusEx, shutil.disk_usage, subprocess/CRT/OS-internal calls, and any work outside these saved snapshots. No call durations are inferred.",
+    "all_saved_stage_snapshots_total": 90014,
+    "strictly_before_worker_error_total": 72830
+  },
+  "source_locations": [
+    {
+      "source": "api/services/amd_stage_process.py",
+      "lines": "129-156",
+      "fact": "_call constructs native-event dictionaries in memory; no JSON file write or fsync."
+    },
+    {
+      "source": "api/services/amd_stage_process.py",
+      "lines": "164-218,220-247",
+      "fact": "Successful snapshot executes 3 Job queries plus OpenProcess, identity authentication and CloseHandle for each enumerated PID. _alive adds unwrapped GetExitCodeProcess probes."
+    },
+    {
+      "source": "api/services/amd_stage_process.py",
+      "lines": "387-405",
+      "fact": "observe appends host-health and windows-history dictionaries in memory; no per-snapshot disk serialization."
+    },
+    {
+      "source": "api/services/amd_stage_process.py",
+      "lines": "408-416",
+      "fact": "Control JSON serializes to bootstrap stdin and flushes the pipe; it is not a snapshot disk write."
+    },
+    {
+      "source": "api/services/amd_stage_process.py",
+      "lines": "462-469",
+      "fact": "launch.json serializes once before bootstrap Popen; transport files are opened before launch."
+    },
+    {
+      "source": "api/services/amd_stage_process.py",
+      "lines": "613-615",
+      "fact": "Final receipt JSON serialization/write occurs after finished_utc and elapsed_s labels, after cleanup, before run returns; no explicit fsync."
+    },
+    {
+      "source": "api/services/amd_stage_bootstrap.py",
+      "lines": "31-33,63-67,71-74",
+      "fact": "Bootstrap JSON protocol records use print(flush=True) to stdout, which runner process.py 467-471 directs to protocol.jsonl. Startup/control records therefore are regular-file-backed serialization and writes, including periodic received PINGs; they are not per-snapshot writes and have no explicit fsync or write-duration brackets."
+    },
+    {
+      "source": "docs/compatibility/amd-job-stage-orchestrator-evidence/cpu_stage_fixture.py",
+      "lines": "13-18,31-32,39-41,49-54",
+      "fact": "Fixture grandchild-ready, child-ready and ready records each serialize into a staging file, flush, fsync, hard-link then unlink staging. These writes do occur during startup; no begin/end timing brackets isolate their cost."
+    },
+    {
+      "source": "docs/compatibility/amd-retired-process-evidence/windows_qualification.py",
+      "lines": "33-48,85-86,144-152,221,247-256",
+      "fact": "Qualification save/trace use JSON plus fsync. attempt and worker-ready are pre-pair; pair-admitted trace precedes thread.start. Host runtime-owned trace precedes GO. No periodic trace is emitted during the failed readiness wait; host samples and snapshots stay in memory."
+    },
+    {
+      "source": "docs/compatibility/amd-retired-process-evidence/windows_qualification.py",
+      "lines": "111-116,200-206,300-301",
+      "fact": "Duplicated target/sentinel receipts are saved after runner return; windows-controls/control-verdict and host-result are serialized later. They cannot account for earlier startup readiness timeout."
+    }
+  ],
+  "findings": [
+    {
+      "classification": "PROVED",
+      "claim": "Saved worker runner observations were frequent after the first snapshot; no recurring multi-second observer service gap appears in the saved histories.",
+      "limit": "This demonstrates those runner loops were serviced. It does not measure fixture child startup, worker readiness-loop scheduling, API cost or an unobserved thread."
+    },
+    {
+      "classification": "PROVED",
+      "claim": "Observer work includes repeated native queries, Python dictionary/list construction, retention of history in memory and periodic control pipe JSON; their existence is established by pinned source and saved histories.",
+      "limit": "Work volume is established; startup slowdown attributable to this work is not measured."
+    },
+    {
+      "classification": "PROVED",
+      "claim": "Startup includes once-per-stage launch serialization, bootstrap protocol emission and fixture readiness-file serialization/flush/fsync/publication.",
+      "limit": "No start/end timing brackets for these operations exist in the saved evidence, so their durations are not isolated."
+    },
+    {
+      "classification": "PROVED",
+      "claim": "Bootstrap protocol JSON serialization and regular-file writes occur during startup, including periodic PING-received records; saved pre-error-stamped records contain 27 target PINGs and 26 sentinel PINGs.",
+      "limit": "stdout is directed to protocol.jsonl and flushed. Physical-media durability, per-record duration and their contribution to startup delay are unmeasured. This is distinct from per-snapshot JSON disk serialization, which is absent."
+    },
+    {
+      "classification": "POSSIBLE",
+      "claim": "Observation work, native-call work, fixture startup disk I/O, process launch overhead and Python/OS scheduling may contribute to observed startup latency.",
+      "limit": "The run has no uninstrumented control, per-operation stopwatch, CPU profile, run-queue trace or thread-scheduling trace; no individual contribution or causal ordering is proved."
+    },
+    {
+      "classification": "NOT_SUPPORTED",
+      "claim": "Per-snapshot disk JSON serialization caused the failed startup.",
+      "reason": "Per-snapshot serialization is absent from observe/snapshot. Final large receipt writes are after cleanup and after the readiness deadline failed. In-memory history retention must not be relabeled as concurrent disk writes."
+    },
+    {
+      "classification": "NOT_SUPPORTED",
+      "claim": "The source proves Python GIL contention or quantifies Python thread scheduling delay as the root cause.",
+      "reason": "Thread identities and sparse/coarse wall/monotonic labels do not provide run-queue, lock-wait, CPU-time or thread-scheduling measurements."
+    },
+    {
+      "classification": "NOT_SUPPORTED",
+      "claim": "Subtract requested 25ms/50ms sleeps from observed timestamp gaps to obtain exact observer overhead.",
+      "reason": "Saved timestamps include sleep rounding, scheduling, other loop work and quantization. They do not bracket active CPU execution."
+    }
+  ],
+  "post_failure_final_serialization_tail": {
+    "provenance": "finished_monotonic_s supplied from saved windows-controls.json runner_states by independent timeline analysis; final receipt elapsed labels are read here.",
+    "target": {
+      "returned_runner_state_monotonic_s": 119801.234,
+      "inferred_before_receipt_write_monotonic_s": 119801.078,
+      "approximate_post_label_to_return_s": 0.15600000000267755
+    },
+    "sentinel": {
+      "returned_runner_state_monotonic_s": 119800.312,
+      "inferred_before_receipt_write_monotonic_s": 119800.187,
+      "approximate_post_label_to_return_s": 0.125
+    },
+    "limit": "These coarse post-label-to-return spans include final receipt serialization/write and scheduling/return work; they are not an isolated disk or JSON benchmark and occur after the startup deadline error."
+  },
+  "limitations": [
+    "Saved monotonic readings are visibly coarse, often recurring at 15-16ms steps. Zero timestamp deltas cannot establish zero execution cost.",
+    "Timestamp gap evidence is a service observation, not a causal performance profile.",
+    "Source line references are for the unchanged source hashes in source_pins.",
+    "No raw absolute image paths, process IDs, Job handles, nonces or completion contexts are copied into this source-safe report."
+  ]
+}

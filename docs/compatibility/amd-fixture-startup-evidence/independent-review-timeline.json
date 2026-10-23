@@ -1,0 +1,75 @@
+{
+  "schema": "modly.fixture-startup.independent-timeline-review.v1",
+  "reviewed_utc": "2026-10-23T04:23:03.856629+00:00",
+  "base_commit": "474fbb4f88fae957a007ce71fc640769bd570aae",
+  "review_scope": "Independent static review of final report timeline, event rounding and clock-domain bounds against the authenticated saved-data map and unchanged source. Overhead and focused-test receipt statements were cross-checked to their source-safe evidence; no tests were executed during this review.",
+  "reviewed_report": {
+    "source": "docs/compatibility/amd-fixture-startup.md",
+    "bytes": 8871,
+    "sha256": "4421cef2dfa393e9d635a805c25186c409ae9b0639251efb2eee19b4ef63124f"
+  },
+  "reviewed_evidence": [
+    {
+      "source": "docs/compatibility/amd-fixture-startup-evidence/timeline-evidence.json",
+      "bytes": 29575,
+      "sha256": "faefa6f266c45404ab8d96623c8252447202f7e4ef00f51f34daf05bb32d05ef"
+    },
+    {
+      "source": "docs/compatibility/amd-fixture-startup-evidence/overhead-evidence.json",
+      "bytes": 18440,
+      "sha256": "0d45dec8fac22ef077fa7527b2a29e5ec3ce4c411cb8c769e63a1436e54d8f76"
+    },
+    {
+      "source": "docs/compatibility/amd-fixture-startup-evidence/focused-tests-final.json",
+      "bytes": 720,
+      "sha256": "c0815b567bd71b8d5c3af4fc102a59c0b617272c0ab3e5aad1246655d6644802"
+    }
+  ],
+  "verdicts": {
+    "timeline_and_source_interpretation": "PASS",
+    "startup_failure_timing_cause": "UNRESOLVED",
+    "actual_descendant_startup": "PASS",
+    "causal_instrumentation_overhead": "POSSIBLE",
+    "native_lifecycle_qualification": "NOT_CLAIMED"
+  },
+  "checks": {
+    "all_report_event_UTC_labels_match_timeline_when_rounded_to_milliseconds": true,
+    "FILETIME_process_creation_not_equated_to_Python_entry": true,
+    "inner_runner_GO_send_distinguished_from_outer_host_GO": true,
+    "protocol_label_precedes_serialization_flush": true,
+    "trace_15_second_interval_not_equated_to_exact_deadline_origin": true,
+    "five_second_budget_starts_after_parent_child_Popen_return": true,
+    "existence_condition_precedes_deadline_check_and_overshoot_limit_preserved": true,
+    "staged_inode_metadata_not_equated_to_hardlink_publication": true,
+    "current_metadata_not_misrepresented_as_historically_hash_authenticated": true,
+    "launcher_and_runtime_writer_creation_identities_distinguished": true,
+    "parent_runtime_role_assignment_labeled_inference_and_no_complete_parent_tree_claimed": true,
+    "A_no_descendants_interpretation_contradicted_but_timely_readiness_unproved": true,
+    "B_late_valid_startup_consistent_but_deadline_revision_unjustified": true,
+    "C_instrumentation_cause_possible_with_no_causal_timing_proof": true,
+    "D_missing_timing_evidence_prevents_root_cause_attribution": true,
+    "historical_BLOCKED_and_forced_inner_cleanup_preserved": true,
+    "report_private_identity_context_owner_image_or_launch_path_exact_token_matches": 0
+  },
+  "corrections": {
+    "required_remaining": [],
+    "applied_before_final_hash": [
+      "Renamed table Host GO label to Runner GO-send label, before pipe write/flush, to distinguish inner-runner controls from the earlier outer-host GO event."
+    ]
+  },
+  "limits": [
+    "The 27-file raw authentication was performed once in the preceding timeline analysis and was not repeated.",
+    "No native worker, control pair, WSL, GPU, model or orchestrator was executed.",
+    "No test execution, counterfactual run, scheduling trace or per-operation duration measurement was performed during this review.",
+    "Preservation closure, remote branch publication and independent test execution belong to their separate receipts."
+  ],
+  "raw_authentication_reused": {
+    "files": 27,
+    "bytes": 52436620,
+    "size_sha256_mismatches": 0,
+    "committed_review_sha256": "2131365713ae1f4f5fbe5086d68ea75b193fa7debdff7e5f78d9a3a3879cf87d"
+  },
+  "raw_rehash_performed": false,
+  "test_execution_performed": false,
+  "new_native_attempts": 0
+}

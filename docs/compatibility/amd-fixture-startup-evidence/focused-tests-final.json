@@ -1,0 +1,11 @@
+{
+  "schema": "modly.startup-fixture-contract-tests.v1",
+  "tests": 4,
+  "returncode": 0,
+  "native_launches": 0,
+  "side_effects": "Original fixture main exercised with in-memory filesystem and mocked Popen, sleep, save; no actual child or temp-directory creation",
+  "test_source_sha256": "eb209bdef58c14d79cc78740c8a674a2d7592a287c329ad09993d0007b112001",
+  "original_fixture_sha256": "cb808b5993c859a0ed62120109550059d267b1df2c47191d53a9753535c4b3f1",
+  "log_sha256": "b9f2fa74d6f0b4de0cf3d9c3c3a205755d49b94d7c0209b466b45c023c7f1142",
+  "prior_test_harness_failure": "focused-tests.json and private initial log retained: sandbox temp cleanup permissions, not evidence about historical fixture startup"
+}
