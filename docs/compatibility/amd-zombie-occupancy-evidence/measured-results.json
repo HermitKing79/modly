@@ -1,0 +1,393 @@
+{
+  "execution_commit": "e6b6330ba2f9e51abfb74c726729e0be4ade7cac",
+  "reused_dino_execution_commit": "93269412602a338acd9fbde41798901ddb5f707d",
+  "stages": {
+    "sampling": {
+      "classification": "PASS",
+      "cpu_load_seconds": 13.515000000000327,
+      "synchronized_compute_seconds": 9.969000000000051,
+      "supervised_seconds": 39.51600000000053,
+      "before_placement": {
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0,
+        "available_bytes": 16937582592,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 158400512
+      },
+      "after_compute": {
+        "allocated_bytes": 2744312320,
+        "reserved_bytes": 3038773248,
+        "peak_allocated_bytes": 2918161408,
+        "peak_reserved_bytes": 3038773248,
+        "available_bytes": 13777502208,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 3318480896
+      },
+      "release": {
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 2918161408,
+        "peak_reserved_bytes": 3038773248,
+        "available_bytes": 16807886848,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 288096256,
+        "model_collected": true,
+        "owned_tensors_collected": true,
+        "cpu_memory": {
+          "working_set_bytes": 1237192704,
+          "private_commit_bytes": 1762181120,
+          "peak_working_set_bytes": 5680148480,
+          "peak_commit_bytes": 6803759104
+        }
+      },
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "windows_samples": 3,
+      "load_calls": 1,
+      "forward_calls": 22,
+      "workspace_clear_calls": 1,
+      "runtime": {
+        "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+        "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+        "torch": "2.13.0+rocm10.0.0",
+        "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+        "hip": "7.15.26333",
+        "cuda": null,
+        "git_version": "6596a0dea537c1c78520c73cc6678214781a9d06",
+        "dependencies": {
+          "safetensors": "0.8.0",
+          "numpy": "2.5.3"
+        }
+      },
+      "cpu_ram_admission": {
+        "available_bytes": 17512071168,
+        "required_bytes": 11411181632,
+        "admitted": true
+      },
+      "budget": {
+        "allocator_limit_bytes": 12884901888,
+        "cpu_seconds": 180,
+        "gpu_seconds": 240,
+        "overall_seconds": 480
+      },
+      "actual_result_sha256": "771750352444b88441750bb712852ae11508822c9b75f786be801f658fd6ebf2",
+      "independent_readback_receipt_sha256": "0a17b146df89882f1df6486563b5e73bfdb40a5dd5f6606cb11686b6e750bcc4",
+      "shape": [
+        1,
+        8,
+        16,
+        16,
+        16
+      ],
+      "dtype": "F32",
+      "file_bytes": 134688,
+      "file_sha256": "ecf57d3a0db0bec99b79712fc3626c5dd224cff03e33c60e0297500cde761930",
+      "payload_sha256": "95cd5d2f5ec1a6ffb3f73061ccddc5965131936eb59f9ab27c7d3f53eb484dfa",
+      "completed_steps": 12,
+      "positive_calls": 12,
+      "negative_calls": 10
+    },
+    "decoder": {
+      "classification": "PASS",
+      "cpu_load_seconds": 2.110000000000582,
+      "synchronized_compute_seconds": 27.625,
+      "supervised_seconds": 40.48400000000038,
+      "before_placement": {
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0,
+        "available_bytes": 16937582592,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 158400512
+      },
+      "after_compute": {
+        "allocated_bytes": 154015232,
+        "reserved_bytes": 1193279488,
+        "peak_allocated_bytes": 1127093760,
+        "peak_reserved_bytes": 1648361472,
+        "available_bytes": 15635972096,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 1460011008
+      },
+      "release": {
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 1127093760,
+        "peak_reserved_bytes": 1648361472,
+        "available_bytes": 16822960128,
+        "total_bytes": 17095983104,
+        "sampled_global_used_bytes": 273022976,
+        "model_collected": true,
+        "input_collected": true,
+        "output_collected": true,
+        "cpu_memory": {
+          "working_set_bytes": 1944793088,
+          "private_commit_bytes": 2278309888,
+          "peak_working_set_bytes": 2007670784,
+          "peak_commit_bytes": 2316353536
+        }
+      },
+      "job_cleanup": {
+        "owned_tree_exit_verified": true,
+        "active_before_cleanup": 0,
+        "active_after_cleanup": 0,
+        "forced_job_cleanup": false,
+        "cleanup_seconds": 0.0
+      },
+      "windows_samples": 7,
+      "load_calls": 1,
+      "forward_calls": 1,
+      "workspace_clear_calls": 1,
+      "runtime": {
+        "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+        "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+        "torch": "2.13.0+rocm10.0.0",
+        "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+        "hip": "7.15.26333",
+        "cuda": null
+      },
+      "cpu_ram_admission": {
+        "available_bytes": 18148216832,
+        "required_bytes": 4294967296,
+        "admitted": true
+      },
+      "budget": {
+        "allocator_limit_bytes": 12884901888,
+        "minimum_available_bytes": 13958643712,
+        "cpu_seconds": 120,
+        "gpu_seconds": 180,
+        "overall_seconds": 360
+      },
+      "actual_result_sha256": "d81389cff99f1c60cbff1004759876e72f2702d11ee59b0c92f830e132165152",
+      "independent_readback_receipt_sha256": "b128c9ab81ae354ee36aed690c07f1928857be4647d0c123648e8e80cee0e7ca",
+      "occupied_count": 4266,
+      "bbox": {
+        "minimum": [
+          0,
+          25,
+          0
+        ],
+        "maximum": [
+          63,
+          38,
+          63
+        ]
+      },
+      "components": {
+        "connectivity": 6,
+        "count": 1,
+        "largest_sizes": [
+          4266
+        ],
+        "total_occupied": 4266
+      },
+      "threshold": "decoded > 0",
+      "files": {
+        "occupancy-logits.npy": {
+          "file_bytes": 1048704,
+          "file_sha256": "46f1c152b3752dc13cdc7e02a0226c3935fe329b3559daa5484883476294b325",
+          "payload_sha256": "56aca9a9c3c25889b1395ce92bb841d33a1adb0c87c45ca824cdce6e40cbe7bd",
+          "shape": [
+            1,
+            1,
+            64,
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "occupancy-mask.npy": {
+          "file_bytes": 262272,
+          "file_sha256": "bf9c0d82ae063b3bc213edc73b8ab959c08260b77c558abfa4eb4f8bf35b1025",
+          "payload_sha256": "88cc16264344df4b4b5fc8399cc43d0eb1442ea2db7f59d47e56d74fe678727f",
+          "shape": [
+            64,
+            64,
+            64
+          ],
+          "dtype": "bool"
+        },
+        "occupancy-coordinates.npy": {
+          "file_bytes": 68384,
+          "file_sha256": "dcce90480523ea69af66515dfface9bf3a5e1417c6d3093ba56efbe06fa90b40",
+          "payload_sha256": "ba7cf7c41c7037cff3030c272c6fc9b59390fa50a57fc801d4d8767ade97aa11",
+          "shape": [
+            4266,
+            4
+          ],
+          "dtype": "int32"
+        }
+      }
+    }
+  },
+  "preview": {
+    "vertices": 7373,
+    "exposed_unit_quads": 7370,
+    "original": {
+      "vertices": 7373,
+      "faces": 7370,
+      "face_limit": 50000,
+      "obj_file_bytes": 237741,
+      "obj_sha256": "de45549ddf3f3aa684c596942152ba0873ce1a15013e1e39ff6cf1bc2efc940b",
+      "png_file_bytes": 27974,
+      "png_sha256": "0190f319bc71ebdb859b59910635d2dce4adcee38bdc80a6ec756ffdc4f5b4de",
+      "coordinate_order": [
+        "D",
+        "H",
+        "W"
+      ],
+      "diagnostic_only": true,
+      "cpu_only": true
+    },
+    "views": {
+      "isometric-z-up": {
+        "bytes": 27778,
+        "sha256": "0b8eb486d82174e9c95d6bd03e0b2b5813baa53fcfa19a412b27e6f2a9130ca8",
+        "dimensions": [
+          900,
+          900
+        ],
+        "camera": {
+          "screen_right": [
+            -0.7071067811865475,
+            0.7071067811865475,
+            0
+          ],
+          "screen_up": [
+            -0.4082482904638631,
+            -0.4082482904638631,
+            0.8164965809277261
+          ],
+          "toward_camera": [
+            0.5773502691896258,
+            0.5773502691896258,
+            0.5773502691896258
+          ]
+        },
+        "axis_labels": "Native 64^3 exposed voxels: isometric-z-up; x=D, y=H, z=W (up)"
+      },
+      "plus-x": {
+        "bytes": 14126,
+        "sha256": "13e0c012ec26228b50e78f35a53091dec816c34735819fa6027d18204b5e1aea",
+        "dimensions": [
+          900,
+          900
+        ],
+        "camera": {
+          "screen_right": [
+            0,
+            1,
+            0
+          ],
+          "screen_up": [
+            0,
+            0,
+            1
+          ],
+          "toward_camera": [
+            1,
+            0,
+            0
+          ]
+        },
+        "axis_labels": "Native 64^3 exposed voxels: plus-x; x=D, y=H, z=W (up)"
+      },
+      "plus-y": {
+        "bytes": 14411,
+        "sha256": "c4f848e712f30c6771f866726fd59ef52fedef5bc77657169ae43e61a79e23c3",
+        "dimensions": [
+          900,
+          900
+        ],
+        "camera": {
+          "screen_right": [
+            -1,
+            0,
+            0
+          ],
+          "screen_up": [
+            0,
+            0,
+            1
+          ],
+          "toward_camera": [
+            0,
+            1,
+            0
+          ]
+        },
+        "axis_labels": "Native 64^3 exposed voxels: plus-y; x=D, y=H, z=W (up)"
+      }
+    },
+    "diagnostics": {
+      "native_shape": [
+        64,
+        64,
+        64
+      ],
+      "coordinate_order": [
+        "D",
+        "H",
+        "W"
+      ],
+      "occupied_count": 4266,
+      "occupancy_fraction": 0.01627349853515625,
+      "components": {
+        "connectivity": 6,
+        "count": 1,
+        "largest_sizes": [
+          4266
+        ],
+        "total_occupied": 4266
+      },
+      "bounding_box": {
+        "minimum": [
+          0,
+          25,
+          0
+        ],
+        "maximum": [
+          63,
+          38,
+          63
+        ],
+        "spans": [
+          64,
+          14,
+          64
+        ]
+      },
+      "volume_boundary_counts": {
+        "D-": 8,
+        "D+": 8,
+        "H-": 0,
+        "H+": 0,
+        "W-": 126,
+        "W+": 24
+      },
+      "diagnostic_only": true,
+      "threshold_changed": false
+    },
+    "elapsed_seconds": 0.375,
+    "seconds_limit": 60,
+    "preview_process_memory_not_sampled": true
+  },
+  "limits": {
+    "no_DINO_rerun": true,
+    "no_WSL": true,
+    "no_shape_slat_material_or_GLB": true,
+    "no_Generate_enablement": true,
+    "continuous_host_available_RAM_minimum_not_measured": true,
+    "aggregate_Job_RAM_byte_cap_not_part_of_original_legacy_supervisor": true,
+    "no_post_exit_GPU_memory_query": true,
+    "private_arrays_images_process_identities_not_published": true
+  }
+}

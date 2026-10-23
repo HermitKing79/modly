@@ -1,0 +1,217 @@
+{
+  "schema": "modly.amd.zombie-occupancy-preview-review.v1",
+  "classification": "PASS_SAVED_PREVIEW_INTEGRITY",
+  "created_utc": "2026-10-23T23:26:03.179155+00:00",
+  "reviewer_sha256": "a56bd6bd7af3505162779fb1b893ba5037999347fbab0198a138a286ed797919",
+  "preview_result_sha256": "2792f23bcbc31ed37664ef6cf88405d1a1e51dfb7623c32a47a512f8d1c2ef38",
+  "decoder_occupancy_provenance_sha256": "46b450679708d02b6d38bb2bbaa72d0dbcc246f492b6f263ce7c3d098e409085",
+  "occupancy_arrays": {
+    "occupancy-logits.npy": {
+      "file_bytes": 1048704,
+      "file_sha256": "46f1c152b3752dc13cdc7e02a0226c3935fe329b3559daa5484883476294b325",
+      "payload_sha256": "56aca9a9c3c25889b1395ce92bb841d33a1adb0c87c45ca824cdce6e40cbe7bd",
+      "shape": [
+        1,
+        1,
+        64,
+        64,
+        64
+      ],
+      "dtype": "float32"
+    },
+    "occupancy-mask.npy": {
+      "file_bytes": 262272,
+      "file_sha256": "bf9c0d82ae063b3bc213edc73b8ab959c08260b77c558abfa4eb4f8bf35b1025",
+      "payload_sha256": "88cc16264344df4b4b5fc8399cc43d0eb1442ea2db7f59d47e56d74fe678727f",
+      "shape": [
+        64,
+        64,
+        64
+      ],
+      "dtype": "bool"
+    },
+    "occupancy-coordinates.npy": {
+      "file_bytes": 68384,
+      "file_sha256": "dcce90480523ea69af66515dfface9bf3a5e1417c6d3093ba56efbe06fa90b40",
+      "payload_sha256": "ba7cf7c41c7037cff3030c272c6fc9b59390fa50a57fc801d4d8767ade97aa11",
+      "shape": [
+        4266,
+        4
+      ],
+      "dtype": "int32"
+    }
+  },
+  "arrays_unchanged_since_decoder_saved_provenance": true,
+  "arrays_and_preview_files_unchanged_during_review": true,
+  "rethreshold": "decoded > 0",
+  "rethreshold_and_exact_coordinates_verified": true,
+  "occupied_voxels": 4266,
+  "components": {
+    "connectivity": 6,
+    "count": 1,
+    "largest_sizes": [
+      4266
+    ],
+    "total_occupied": 4266
+  },
+  "bounding_box": {
+    "minimum": [
+      0,
+      25,
+      0
+    ],
+    "maximum": [
+      63,
+      38,
+      63
+    ],
+    "spans": [
+      64,
+      14,
+      64
+    ]
+  },
+  "volume_boundary_counts": {
+    "D-": 8,
+    "D+": 8,
+    "H-": 0,
+    "H+": 0,
+    "W-": 126,
+    "W+": 24
+  },
+  "obj": {
+    "file_bytes": 237741,
+    "sha256": "de45549ddf3f3aa684c596942152ba0873ce1a15013e1e39ff6cf1bc2efc940b",
+    "vertices": 7373,
+    "exposed_quads": 7370,
+    "vertex_minimum": [
+      0,
+      25,
+      0
+    ],
+    "vertex_maximum": [
+      64,
+      39,
+      64
+    ],
+    "exact_original_surface_order_and_winding": true,
+    "independent_unit_quads_outward_winding_and_six_neighbor_completeness": true,
+    "coordinate_order": [
+      "D",
+      "H",
+      "W"
+    ]
+  },
+  "pngs": {
+    "voxel-preview-isometric-z-up.png": {
+      "file_bytes": 27778,
+      "sha256": "0b8eb486d82174e9c95d6bd03e0b2b5813baa53fcfa19a412b27e6f2a9130ca8",
+      "dimensions": [
+        900,
+        900
+      ],
+      "mode": "RGB",
+      "decoded_colour_count": 231,
+      "camera_metadata_present": true,
+      "camera": {
+        "screen_right": [
+          -0.7071067811865475,
+          0.7071067811865475,
+          0
+        ],
+        "screen_up": [
+          -0.4082482904638631,
+          -0.4082482904638631,
+          0.8164965809277261
+        ],
+        "toward_camera": [
+          0.5773502691896258,
+          0.5773502691896258,
+          0.5773502691896258
+        ]
+      }
+    },
+    "voxel-preview-plus-x.png": {
+      "file_bytes": 14126,
+      "sha256": "13e0c012ec26228b50e78f35a53091dec816c34735819fa6027d18204b5e1aea",
+      "dimensions": [
+        900,
+        900
+      ],
+      "mode": "RGB",
+      "decoded_colour_count": 232,
+      "camera_metadata_present": true,
+      "camera": {
+        "screen_right": [
+          0,
+          1,
+          0
+        ],
+        "screen_up": [
+          0,
+          0,
+          1
+        ],
+        "toward_camera": [
+          1,
+          0,
+          0
+        ]
+      }
+    },
+    "voxel-preview-plus-y.png": {
+      "file_bytes": 14411,
+      "sha256": "c4f848e712f30c6771f866726fd59ef52fedef5bc77657169ae43e61a79e23c3",
+      "dimensions": [
+        900,
+        900
+      ],
+      "mode": "RGB",
+      "decoded_colour_count": 231,
+      "camera_metadata_present": true,
+      "camera": {
+        "screen_right": [
+          -1,
+          0,
+          0
+        ],
+        "screen_up": [
+          0,
+          0,
+          1
+        ],
+        "toward_camera": [
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    "voxel-preview.png": {
+      "file_bytes": 27974,
+      "sha256": "0190f319bc71ebdb859b59910635d2dce4adcee38bdc80a6ec756ffdc4f5b4de",
+      "dimensions": [
+        900,
+        900
+      ],
+      "mode": "RGB",
+      "decoded_colour_count": 197,
+      "camera_metadata_present": false,
+      "camera": null
+    }
+  },
+  "original_png_note": "Original unchanged legacy projection has no embedded camera metadata. Its saved hash and900x900 pixel decode are verified. Three added views embed and verify x=D,y=H,z=W and camera bases; W is Z/up.",
+  "png_cameras_and_actual_axis_labels_verified": true,
+  "preview_reported_seconds": 0.375,
+  "total_cpu_budget_seconds": 60,
+  "original_limits_retained": {
+    "exposed_faces": 50000,
+    "obj_bytes": 12582912,
+    "png_bytes": 2097152
+  },
+  "no_render_or_preview_generation_rerun": true,
+  "no_model_native_Job_WSL_GPU_calls": true,
+  "mesh_images_arrays_private_only": true,
+  "no_shape_quality_PASS_claim": true,
+  "scope": "Saved diagnostic integrity only. Numerical occupancy/axis checks; visual judgement belongs to the main report."
+}

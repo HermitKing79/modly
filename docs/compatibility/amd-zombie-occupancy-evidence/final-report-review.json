@@ -1,0 +1,61 @@
+{
+  "schema": "modly-zombie-sparse-occupancy-final-report-review-v1",
+  "reviewer": "independent-host-and-teardown-subagent",
+  "reviewed_utc": "2026-10-23T23:32:39.9788457Z",
+  "classification": "PASS",
+  "blockers": [],
+  "report": "docs/compatibility/amd-zombie-sparse-occupancy.md",
+  "report_sha256": "d45a201dae67d45cace2e8b0f84cee5b4e7db0f7841e74cf9c546e7b1bae6600",
+  "reviewed_evidence_sha256": {
+    "cpu-admission-summary.json": "0bd194a92e18ca62ff82809208016892ba5b059a19304d4ebedae73d88ad35fd",
+    "focused-tests.json": "791e618b2e925763f84da1a231bccd3dd2a2d2219c0be124a1c35dc81aa01cdf",
+    "pre-execution-review.json": "4ec4e1b074ae34a2b753d34e8b9e2891fe28921fccaedaa3d6d8ce50ff1c0ec0",
+    "sampling-outcome-review.json": "b67fdf86027396fc6e2cb2cf6d77967b11ff8dfbfa5ee895e41f9d3bd6c81bf9",
+    "decoder-outcome-review.json": "1507411051ac4c7012c1dae26ee33bb08eaae6ab7542abfbc6299c7f559a476c",
+    "measured-results.json": "a190b0433bddb5091f4fa5e98c949d574ebc41eaf0416452057dea5c9be86b0a",
+    "preview-review.json": "df34cc553a12fd4414d6cb1df74dd48006e032c7e9bc6412443846e840669e12",
+    "preservation-after.json": "749a84786e823a9dee579a95097a5af7e32ef7b5ae7450ed6f18bba03af0c8c9",
+    "publication-preservation.json": "d9cb965d3024fa46d0439ec65c1bdf4df1abb6fbbf34a1a80d7ffbb873fd0712"
+  },
+  "execution_commit": "e6b6330ba2f9e51abfb74c726729e0be4ade7cac",
+  "historical_dino_execution_commit": "93269412602a338acd9fbde41798901ddb5f707d",
+  "verified_claims": [
+    "Historical feature/source/model provenance and the distinct new execution identity match actual saved receipts; no new DINO computation or fabricated success receipt is claimed.",
+    "One 12-step/22-forward sampler sequence preceded its independent readback/review and one decoder forward. No retries or additional neural stages are recorded.",
+    "All reported timings, Torch peaks, worker CPU peaks, RAM snapshots, initial free device bytes, zero-release measurements, original budgets and natural empty Job settlement match the actual numerical stage receipts.",
+    "Artifact file sizes/hashes, finite F32 tensor shapes, exact logits>0 mask and ordered I32 coordinates match independent raw readback.",
+    "4,266 occupied voxels, one six-connected component, bounding box [0,25,0]..[63,38,63], inclusive spans 64/14/64 and 166 unique volume-boundary voxels match independently recomputed native-mask measurements.",
+    "7,373 vertices, 7,370 original outward unit quads, original export caps, four 900x900 PNGs, camera metadata, unchanged axes and a generation time of 0.375 seconds match the saved-preview integrity review.",
+    "Torch zero is distinguished from nonzero global device usage; original Jobs have no aggregate/per-process RAM cap, continuous host RAM minima and aggregate Job peaks were not measured, and no post-exit GPU query is claimed.",
+    "Preservation retains its bounded metadata/content scope and prior full-hash provenance rather than claiming fresh bulk hashing of all large historical payloads.",
+    "Production integration remains NOT QUALIFIED; detailed mesh, shape-SLat, textures, GLB, WSL and full generation remain NOT RUN. Coarse diagnostic voxel OBJ is correctly distinguished from detailed neural reconstruction."
+  ],
+  "visual_factcheck": {
+    "existing_private_pngs_inspected_read_only": [
+      "voxel-preview-isometric-z-up.png",
+      "voxel-preview-plus-y.png",
+      "voxel-preview-plus-x.png"
+    ],
+    "rerender_or_generation_performed": false,
+    "saved_png_and_obj_hashes_match_preview_review": true,
+    "projection": "Plus-Y is front-like and Plus-X is a side profile under the explicitly labelled D/H/W basis. The source image camera is not independently calibrated.",
+    "observation": "The existing views support the report wording: a coarse T-pose humanoid with head/neck, outstretched arms, torso/hips, separated legs/feet and visible depth. Detailed zombie likeness is unproved.",
+    "limitations": "Blocky resolution, neutral diagnostic shading and boundary contact/clipping risk are presented without a numerical quality PASS, detailed likeness claim or proven clipping claim."
+  },
+  "source_safe_publication": {
+    "public_content": "Code, textual counts/bounds, aggregate measurements, provenance hashes and qualification evidence only. Artifact path references identify local private files; no image/OBJ/NPY payload is embedded.",
+    "raw_images_arrays_geometry_and_process_identities_remain_private": true,
+    "individual_learned_feature_or_latent_values_absent": true,
+    "raw_slice_profiles_absent": true
+  },
+  "publication_preservation": {
+    "current_heads": 139,
+    "scope": "Pre-report publication comparison. Final report commit/push and fresh post-push verification remain the root agent publication step.",
+    "baseline_heads": 138,
+    "only_new_branch": "codex/amd-zombie-sparse-occupancy",
+    "main": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+    "all_baseline_heads_unchanged": true,
+    "independently_parsed_saved_fresh_remote_snapshots": true
+  },
+  "reviewer_model_job_wsl_gpu_test_or_render_execution": false
+}

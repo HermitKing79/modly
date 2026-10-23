@@ -1,0 +1,103 @@
+{
+  "schema": "modly.amd.zombie-final-evidence-manifest.v1",
+  "execution_commit": "e6b6330ba2f9e51abfb74c726729e0be4ade7cac",
+  "report_sha256": "d45a201dae67d45cace2e8b0f84cee5b4e7db0f7841e74cf9c546e7b1bae6600",
+  "scope": "All current public evidence, report and five candidate source/test files; this manifest excludes itself. Private output payloads are not included.",
+  "files": [
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/candidate-source-manifest.json",
+      "bytes": 11975,
+      "sha256": "f2b65fe2fa305aa23f45ad1d848a73cb0797d63fcdc79837b3310b4237d8f1cd"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/cpu-admission-summary.json",
+      "bytes": 2223,
+      "sha256": "0bd194a92e18ca62ff82809208016892ba5b059a19304d4ebedae73d88ad35fd"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/decoder-outcome-review.json",
+      "bytes": 9490,
+      "sha256": "1507411051ac4c7012c1dae26ee33bb08eaae6ab7542abfbc6299c7f559a476c"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/final-report-review.json",
+      "bytes": 5165,
+      "sha256": "b00dc5dd5250a7b45305e63e694470f6d6751b2d8ca5401b972455b43cdb23b7"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/focused-tests.json",
+      "bytes": 1282,
+      "sha256": "791e618b2e925763f84da1a231bccd3dd2a2d2219c0be124a1c35dc81aa01cdf"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/measured-results.json",
+      "bytes": 11760,
+      "sha256": "a190b0433bddb5091f4fa5e98c949d574ebc41eaf0416452057dea5c9be86b0a"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/plan.md",
+      "bytes": 2251,
+      "sha256": "669cb7ee8a6314eedf642839c87de1de9b6b91debc7fc74f0e4bab2035b666c4"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/pre-execution-review.json",
+      "bytes": 7766,
+      "sha256": "4ec4e1b074ae34a2b753d34e8b9e2891fe28921fccaedaa3d6d8ce50ff1c0ec0"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/preservation-after.json",
+      "bytes": 2804,
+      "sha256": "749a84786e823a9dee579a95097a5af7e32ef7b5ae7450ed6f18bba03af0c8c9"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/preservation-before.json",
+      "bytes": 2843,
+      "sha256": "f80df5e15fa210b59c68faf05fae811edbad0463fd67a8d93f08297b51b052af"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/preview-review.json",
+      "bytes": 5545,
+      "sha256": "df34cc553a12fd4414d6cb1df74dd48006e032c7e9bc6412443846e840669e12"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/publication-preservation.json",
+      "bytes": 780,
+      "sha256": "d9cb965d3024fa46d0439ec65c1bdf4df1abb6fbbf34a1a80d7ffbb873fd0712"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-occupancy-evidence/sampling-outcome-review.json",
+      "bytes": 7660,
+      "sha256": "b67fdf86027396fc6e2cb2cf6d77967b11ff8dfbfa5ee895e41f9d3bd6c81bf9"
+    },
+    {
+      "path": "docs/compatibility/amd-zombie-sparse-occupancy.md",
+      "bytes": 11147,
+      "sha256": "d45a201dae67d45cace2e8b0f84cee5b4e7db0f7841e74cf9c546e7b1bae6600"
+    },
+    {
+      "path": "scripts/compatibility/amd_zombie_occupancy.py",
+      "bytes": 23153,
+      "sha256": "669fb7a725a03823767a07acff3e8a0e78fa18b5a92fd913c731f46ba48d3628"
+    },
+    {
+      "path": "scripts/compatibility/amd_zombie_voxel_preview.py",
+      "bytes": 7134,
+      "sha256": "266de0498c00917fffdc0c1a356d7a848e08186f6bb8891cb3b23c2cb91ab62a"
+    },
+    {
+      "path": "scripts/compatibility/test_amd_zombie_occupancy.py",
+      "bytes": 15449,
+      "sha256": "5d1f7638ab9746b8ee021ae2e1b2172fbcbee2155bb36ffcb7caedba9271d39e"
+    },
+    {
+      "path": "scripts/compatibility/test_amd_zombie_occupancy_acceptance.py",
+      "bytes": 9579,
+      "sha256": "2338e8e99940740fb3826b5649f63aed8f932312f27d7dcbe26c04bfd94a2d8b"
+    },
+    {
+      "path": "scripts/compatibility/test_amd_zombie_voxel_preview.py",
+      "bytes": 7892,
+      "sha256": "8b1729491d89e86f59b0bfdaef7f403f0ea066b7ace5415e9e51ea8263b9c343"
+    }
+  ]
+}

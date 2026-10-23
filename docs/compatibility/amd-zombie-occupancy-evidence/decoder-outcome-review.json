@@ -1,0 +1,218 @@
+{
+  "schema": "modly-zombie-decoder-outcome-review-v1",
+  "reviewer": "independent-host-and-teardown-subagent",
+  "reviewed_utc": "2026-10-23T23:25:28.6873156Z",
+  "classification": "PASS",
+  "blockers": [],
+  "execution_harness_commit": "e6b6330ba2f9e51abfb74c726729e0be4ade7cac",
+  "historical_dino_execution_commit": "93269412602a338acd9fbde41798901ddb5f707d",
+  "private_run_evidence_sha256": {
+    "results.json": "d81389cff99f1c60cbff1004759876e72f2702d11ee59b0c92f830e132165152",
+    "committed-harness.json": "4e707cc6bfa59c48caf001211054a32688bd680c1c4b43a13b40fcf840ffaab0",
+    "checkpoint-before.json": "e3461358477f00ab483c1bfffbc06edf061b9170ca98f03a6ff56287717bc886",
+    "checkpoint-after.json": "e3461358477f00ab483c1bfffbc06edf061b9170ca98f03a6ff56287717bc886",
+    "cpu-gate.json": "a569f62a616b9256bcdcbb69185cd28b2c1998ec890db1a80ed49fa63ee590a3",
+    "worker.stdout.txt": "f93bdea073397259b763c86c3847b8f21e36737ac0aa255418d411c69515765e",
+    "worker.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "trace.jsonl": "ac183227e1268d7bc98a1d1cd74c9e862f20f76d7686fd050ed132e1ebfcf566",
+    "windows-periodic.jsonl": "36372dbdcad74696df507a5a22334ceb761155c17755144242a4f9b68157f28a",
+    "windows-before.json": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56",
+    "windows-cpu-gate.json": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56",
+    "windows-after-exit.json": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56"
+  },
+  "exclusive_attempt_marker_sha256": "be925302d1c79cffdc3660e68559062a15c56fa6b88a506bd50967c8b7bae224",
+  "separate_adapter_post_exit_receipt_sha256": "b128c9ab81ae354ee36aed690c07f1928857be4647d0c123648e8e80cee0e7ca",
+  "reviewer_independent_readback": {
+    "no_gpu_or_native_call": true,
+    "exit_code": 0,
+    "verified_current_source_dependencies": 65,
+    "original_latent_and_occupancy_readers_plus_separate_raw_numpy_reopen": true,
+    "receipt_sha256": "ca410e36d4134e26a6f96df1483677cf48892dec1fb27df909c12c38a01228fc",
+    "no_neural_imports": true,
+    "published_source_proof_reused_from_independent_sampler_review": true,
+    "reader_sha256": "4aac814d98d9db6bf1c221e148768d75d0083938b738e563e5c53227afbabb55",
+    "installed_decoder_support_and_reviewed_binding_hashes_verified": true,
+    "actual_full_decoder_checkpoint_rehashed": true
+  },
+  "lineage": {
+    "decoder_checkpoint_sha256": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a",
+    "historical_source_image_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+    "historical_feature_file_sha256": "e5659b1842509e73ec496ef90bf95fae86c93ddf5ee73fba8015822982a3cb60",
+    "decoder_config_sha256": "646781293f1cda74720de85d1cef50a957fb4aebd9a4bd014e454e32f2330ac5",
+    "input_sampler_execution_commit": "e6b6330ba2f9e51abfb74c726729e0be4ade7cac",
+    "original_model_source_and_header_identity_equal_trusted_cpu_admission": true,
+    "checkpoint_precision": "Original mixed F32/F16 decoder checkpoint and use_fp16 configuration retained",
+    "input_fresh_latent_file_sha256": "ecf57d3a0db0bec99b79712fc3626c5dd224cff03e33c60e0297500cde761930",
+    "historical_dino_execution_commit": "93269412602a338acd9fbde41798901ddb5f707d"
+  },
+  "artifacts": {
+    "coordinate_contract": "I32[N,4], exactly zero batch column then lexicographically ordered np.argwhere(mask) D/H/W",
+    "individual_logits_mask_or_coordinate_values_published": false,
+    "private_relative_directory": "artifacts/amd-zombie-occupancy-c570c2e/decoder/run/scratch",
+    "mask_contract": "bool[64,64,64], exactly logits[0,0] > 0",
+    "files": {
+      "occupancy-logits.npy": {
+        "file_bytes": 1048704,
+        "file_sha256": "46f1c152b3752dc13cdc7e02a0226c3935fe329b3559daa5484883476294b325",
+        "payload_sha256": "56aca9a9c3c25889b1395ce92bb841d33a1adb0c87c45ca824cdce6e40cbe7bd",
+        "shape": [
+          1,
+          1,
+          64,
+          64,
+          64
+        ],
+        "dtype": "float32"
+      },
+      "occupancy-mask.npy": {
+        "file_bytes": 262272,
+        "file_sha256": "bf9c0d82ae063b3bc213edc73b8ab959c08260b77c558abfa4eb4f8bf35b1025",
+        "payload_sha256": "88cc16264344df4b4b5fc8399cc43d0eb1442ea2db7f59d47e56d74fe678727f",
+        "shape": [
+          64,
+          64,
+          64
+        ],
+        "dtype": "bool"
+      },
+      "occupancy-coordinates.npy": {
+        "file_bytes": 68384,
+        "file_sha256": "dcce90480523ea69af66515dfface9bf3a5e1417c6d3093ba56efbe06fa90b40",
+        "payload_sha256": "ba7cf7c41c7037cff3030c272c6fc9b59390fa50a57fc801d4d8767ade97aa11",
+        "shape": [
+          4266,
+          4
+        ],
+        "dtype": "int32"
+      }
+    },
+    "raw_threshold_and_order_verified": true,
+    "fresh_after_exclusive_attempt_marker": true,
+    "logits_contract": "finite F32[1,1,64,64,64]"
+  },
+  "observed_native_occupancy": {
+    "boundary_face_counts": {
+      "D-": 8,
+      "D+": 8,
+      "H-": 0,
+      "H+": 0,
+      "W-": 126,
+      "W+": 24
+    },
+    "components": {
+      "connectivity": 6,
+      "count": 1,
+      "largest_sizes": [
+        4266
+      ],
+      "total_occupied": 4266
+    },
+    "occupied_count": 4266,
+    "shape_likeness": "Not assessed by this numerical reader; inspect the faithful local CPU previews separately.",
+    "unique_voxels_contacting_volume_boundary": 166,
+    "original_degenerate_flag": false,
+    "empty": false,
+    "bounding_box": {
+      "minimum": [
+        0,
+        25,
+        0
+      ],
+      "maximum": [
+        63,
+        38,
+        63
+      ]
+    },
+    "inclusive_spans_D_H_W": [
+      64,
+      14,
+      64
+    ],
+    "occupancy_fraction": 0.01627349853515625
+  },
+  "invocation": {
+    "original_output_shape_precision_finiteness_and_inference_contract_verified": true,
+    "strict_checkpoint_loads": 1,
+    "strict_cpu_ready_gate_verified": true,
+    "output_transfers": 1,
+    "input_transfers": 1,
+    "workspace_clear_calls": 1,
+    "decoder_forwards": 1,
+    "root_decoder_calls": 1
+  },
+  "actual_resources": {
+    "supervised_seconds": 40.48400000000038,
+    "release_torch_allocated_bytes": 0,
+    "initial_available_device_bytes": 16937582592,
+    "initial_free_device_floor_bytes": 13958643712,
+    "synchronized_decoder_forward_seconds": 27.625,
+    "peak_torch_allocated_bytes": 1127093760,
+    "peak_torch_reserved_bytes": 1648361472,
+    "ram_before_load": {
+      "available_bytes": 18148216832,
+      "required_bytes": 4294967296,
+      "admitted": true
+    },
+    "worker_peak_working_set_bytes": 2007670784,
+    "release_sampled_global_used_bytes": 273022976,
+    "deadlines_seconds": {
+      "cpu": 120,
+      "forward_release": 180,
+      "overall": 360
+    },
+    "worker_peak_private_commit_bytes": 2316353536,
+    "allocator_ceiling_bytes": 12884901888,
+    "placement_seconds": 0.10899999999946886,
+    "release_torch_reserved_bytes": 0,
+    "cpu_load_seconds": 2.110000000000582
+  },
+  "actual_lifecycle": {
+    "forced_child_cleanup": false,
+    "input_collected": true,
+    "owned_tree_exit_verified": true,
+    "active_owned_job_after_cleanup": 0,
+    "worker_exit_verified": true,
+    "active_owned_job_before_cleanup": 0,
+    "job_attached_before_preparation": true,
+    "forced_job_cleanup": false,
+    "timed_out": false,
+    "process_returncode": 0,
+    "output_collected": true,
+    "all_observers_journals_and_readers_settled": true,
+    "model_collected": true
+  },
+  "independent_saved_trace_checks": {
+    "real_cpu_ready_gate_and_single_stdout_final_match": true,
+    "maximum_windows_query_seconds": 1.0470000000004802,
+    "contiguous_worker_trace_records": 87,
+    "maximum_periodic_gap_seconds": 5.219000000000051,
+    "workspace_clear_returns": 1,
+    "periodic_windows_samples": 7,
+    "all_periodic_windows_samples_healthy": true,
+    "worker_stderr_bytes": 0,
+    "workspace_clear_entries": 1,
+    "root_decoder_returns": 1,
+    "before_gate_after_exit_windows_observations_healthy": true,
+    "trace_error_records": 0,
+    "root_decoder_entries": 1
+  },
+  "experiment_stage_boundary": {
+    "new_occupancy_decoder_forwards": 1,
+    "additional_neural_stage_invocations_recorded": 0,
+    "permitted_remaining_work": "Bounded CPU-only rendering/inspection and evidence publication; no further neural invocation.",
+    "model_forwards_within_sampler": 22,
+    "new_sampler_sequences": 1,
+    "new_dino_runs": 0,
+    "detailed_mesh_textures_full_generation": "NOT RUN",
+    "neural_work_complete_at_authorized_stop_boundary": true,
+    "production_job_integration": "NOT QUALIFIED"
+  },
+  "limitations": [
+    "Numerical occupancy success is distinct from zombie likeness; this review makes no quality claim.",
+    "Torch zero allocation/reservation is distinct from all driver/context memory; sampled global usage at release remained 273022976 bytes. No post-exit GPU query was performed.",
+    "CPU RAM admission and worker process peaks do not establish a continuous host RAM floor or aggregate Job-memory peak.",
+    "Original volumes, array values, user images and rendered previews remain private; only textual counts, aggregate bounds, hashes and qualification evidence are published."
+  ],
+  "reviewer_gpu_wsl_job_or_neural_worker_execution": false
+}

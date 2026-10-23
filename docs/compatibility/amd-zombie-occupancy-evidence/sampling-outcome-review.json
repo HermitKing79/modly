@@ -1,0 +1,161 @@
+{
+  "schema": "modly-zombie-sampling-outcome-review-v1",
+  "reviewer": "independent-host-and-teardown-subagent",
+  "reviewed_utc": "2026-10-23T23:20:11.0247683Z",
+  "classification": "PASS",
+  "blockers": [],
+  "execution_harness_commit": "e6b6330ba2f9e51abfb74c726729e0be4ade7cac",
+  "historical_dino_execution_commit": "93269412602a338acd9fbde41798901ddb5f707d",
+  "private_run_evidence_sha256": {
+    "results.json": "771750352444b88441750bb712852ae11508822c9b75f786be801f658fd6ebf2",
+    "committed-harness.json": "4e707cc6bfa59c48caf001211054a32688bd680c1c4b43a13b40fcf840ffaab0",
+    "checkpoint-before.json": "8b81d353c957658b2ef557fc02fd3d89494a0a3f4db29a8bebc40fdce3c722d1",
+    "checkpoint-after.json": "8b81d353c957658b2ef557fc02fd3d89494a0a3f4db29a8bebc40fdce3c722d1",
+    "cpu-gate.json": "5c528249c01d592b10d8915ea3973ba520d222a694c6445768a2ce6fb4913e94",
+    "worker.stdout.txt": "0bb605142c7a7aaac2d917ae66a14e3b1f1ea152a3c8c78ab7a810e914d3a6c3",
+    "worker.stderr.txt": "ae9eeea57fb15b647b323dd8538ff15c7d9b1c68ae9cca7bb7d6ecd65910d715",
+    "trace.jsonl": "cbe0153c9933943cccefc95951341767d758921e736df2c5c57dad84bd546c0f",
+    "windows-periodic.jsonl": "bb65f4ca3447d1430f4b18e02ab753c2024e0dbc860518fbe54a7eec98f67dff",
+    "windows-before.json": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56",
+    "windows-cpu-gate.json": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56",
+    "windows-after-exit.json": "1adcec72cb780e1b19ff14baf2f56abbe7861598e5da8613a016c783aa2d4c56"
+  },
+  "exclusive_attempt_marker_sha256": "7ea34708a2e6f0138da5e5549665db4a78c74dfe4fc8934b82c28517270b1cd5",
+  "separate_adapter_post_exit_receipt_sha256": "0a17b146df89882f1df6486563b5e73bfdb40a5dd5f6606cb11686b6e750bcc4",
+  "reviewer_independent_readback": {
+    "exit_code": 0,
+    "no_gpu_or_native_call": true,
+    "no_neural_imports": true,
+    "receipt_sha256": "d20f3302716999d84bab65b4d9e7b29a37b37225635f44feda974a3b029a1897",
+    "original_latent_reader_and_separate_raw_numpy_reopen": true,
+    "installed_model_sampler_and_reviewed_binding_hashes_verified": true,
+    "verified_published_source_dependencies": 65,
+    "reader_sha256": "6834cb2ef2ebcd44e888345ad0fa9d57d7eb63cae1b72d3a8a3dd3043e179db3",
+    "actual_full_sampler_checkpoint_rehashed": true
+  },
+  "latent": {
+    "shape": [
+      1,
+      8,
+      16,
+      16,
+      16
+    ],
+    "dtype": "F32",
+    "tensor_bytes": 131072,
+    "statistics": {
+      "minimum": -3.876758575439453,
+      "maximum": 3.3578267097473145,
+      "mean": -0.0017838790081441402,
+      "stddev": 0.3358099162578583
+    },
+    "fresh_after_exclusive_attempt_marker": true,
+    "private_relative_path": "artifacts/amd-zombie-occupancy-c570c2e/sampling/run/scratch/sparse-structure-latent.safetensors",
+    "payload_sha256": "95cd5d2f5ec1a6ffb3f73061ccddc5965131936eb59f9ab27c7d3f53eb484dfa",
+    "all_finite": true,
+    "individual_latent_values_published": false,
+    "complete_original_feature_and_model_provenance_reauthenticated": true,
+    "file_bytes": 134688,
+    "file_sha256": "ecf57d3a0db0bec99b79712fc3626c5dd224cff03e33c60e0297500cde761930"
+  },
+  "invocation": {
+    "noise_sha256": "f76e94b25a4798a5da0e9de56667b5dda38e75bf12ccbc373521fbcd7af1a7b3",
+    "seed": 20261013,
+    "negative_forwards": 10,
+    "workspace_clear_calls": 1,
+    "euler_steps": 12,
+    "reversible_bf16_to_f32_widenings": 220,
+    "sequences": 1,
+    "completed_model_forwards": 22,
+    "started_model_forwards": 22,
+    "original_sampler_parameters_retained": true,
+    "positive_forwards": 12,
+    "strict_checkpoint_loads": 1,
+    "selected_module_counters": 91,
+    "transfers": {
+      "x": 1,
+      "t": 22,
+      "cond": 1,
+      "output": 1,
+      "frequency": 22,
+      "neg_cond": 1
+    }
+  },
+  "model": {
+    "checkpoint_sha256": "ca01377c485bec418076d38ee80166d32dc776d744f2553b835cba1e97a7abf6",
+    "source_and_header_identity_equal_trusted_cpu_admission": true,
+    "config_sha256": "6cdfb636854f60ffcadd8c49244169cd449f34c5ccdb55b5ff7c04678f9c399e",
+    "historical_feature_file_sha256": "e5659b1842509e73ec496ef90bf95fae86c93ddf5ee73fba8015822982a3cb60",
+    "storage_precision": "640 BF16 entries; original 220 source-faithful reversible runtime F32 widenings and procedural RoPE retained",
+    "historical_source_image_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e"
+  },
+  "actual_resources": {
+    "placement_seconds": 0.7030000000004293,
+    "supervised_seconds": 39.51600000000053,
+    "initial_free_device_floor_bytes": 13958643712,
+    "synchronized_sampling_seconds": 9.969000000000051,
+    "release_torch_allocated_bytes": 0,
+    "release_torch_reserved_bytes": 0,
+    "peak_torch_allocated_bytes": 2918161408,
+    "cpu_load_seconds": 13.515000000000327,
+    "ram_before_strict_load": {
+      "available_bytes": 17512071168,
+      "required_bytes": 11411181632,
+      "admitted": true
+    },
+    "deadlines_seconds": {
+      "cpu": 180,
+      "forward_release": 240,
+      "overall": 480
+    },
+    "peak_torch_reserved_bytes": 3038773248,
+    "release_sampled_global_used_bytes": 288096256,
+    "initial_available_device_bytes": 16937582592,
+    "worker_peak_working_set_bytes": 5680148480,
+    "allocator_ceiling_bytes": 12884901888,
+    "worker_peak_private_commit_bytes": 6803759104
+  },
+  "actual_lifecycle": {
+    "model_collected": true,
+    "all_observers_journals_and_readers_settled": true,
+    "timed_out": false,
+    "process_returncode": 0,
+    "forced_job_cleanup": false,
+    "owned_tensors_collected": true,
+    "forced_child_cleanup": false,
+    "active_owned_job_after_cleanup": 0,
+    "job_attached_before_preparation": true,
+    "active_owned_job_before_cleanup": 0,
+    "owned_tree_exit_verified": true,
+    "worker_exit_verified": true
+  },
+  "independent_saved_trace_checks": {
+    "workspace_clear_entries": 1,
+    "root_forward_entries": 22,
+    "euler_step_entries": 12,
+    "all_periodic_windows_samples_healthy": true,
+    "maximum_periodic_gap_seconds": 5.016000000000531,
+    "synchronized_step_completion_records": 12,
+    "real_cpu_ready_gate_and_single_stdout_final_match": true,
+    "trace_error_records": 0,
+    "root_forward_returns": 22,
+    "worker_stderr": "Bounded sampler progress text only; no recorded native exception or error",
+    "periodic_windows_samples": 3,
+    "maximum_windows_query_seconds": 1.0160000000005311,
+    "before_gate_after_exit_windows_observations_healthy": true,
+    "contiguous_worker_trace_records": 90,
+    "workspace_clear_returns": 1
+  },
+  "decoder_condition": {
+    "decoder_attempt_present_at_review": false,
+    "sampler_numerical_artifact_provenance_monitoring_and_natural_settlement_passed": true,
+    "separate_post_exit_actual_latent_reopen_passed": true,
+    "remaining_authorized_scope": "At most one conditional original occupancy decoder forward; all unchanged decoder admission, monitoring, natural settlement and tensor readback gates still apply."
+  },
+  "limitations": [
+    "Sampler PASS does not establish occupancy, shape quality, detailed mesh, texture, production integration or full generation.",
+    "Torch zero allocation/reservation is distinct from all driver/context memory; sampled global usage at release remained288096256 bytes. No post-exit GPU query was performed.",
+    "Peak values are Torch allocator and worker process measurements, not aggregate Job memory or continuously available host RAM."
+  ],
+  "reviewer_gpu_wsl_job_or_neural_worker_execution": false
+}
