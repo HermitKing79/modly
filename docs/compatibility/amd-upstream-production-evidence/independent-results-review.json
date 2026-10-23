@@ -1,0 +1,82 @@
+{
+  "schema": "modly.amd.upstream-production.independent-results-review.v1",
+  "base_commit": "411055a6218d64de187e74b3587822fb5d2b2883",
+  "reviewer": "independent-semantics-and-saved-results-audit-agent",
+  "classification": "SAVED_CPU_DIAGNOSTICS_AND_HISTORICAL_READBACK_REVIEW_PASS_WITH_EXPLICIT_LIMITS",
+  "production_authority": "BLOCKED",
+  "production_five_artifact_fresh_semantic_closure": "BLOCKED",
+  "historical_only_readback": "PASS",
+  "tests_or_historical_readback_rerun_by_reviewer": false,
+  "model_GPU_WSL_native_or_owned_worker_executed_by_reviewer": false,
+  "source_sha256": {
+    "docs/compatibility/amd-upstream-production-evidence/plan.md": "f9d17b56514dec730df2f9fbb252a80835ae594c92cb8e71cd140a5f4fe9c1df",
+    "docs/compatibility/amd-upstream-production-evidence/cpu_checks.py": "4aa5e861ac83668676989304dfb6abc9db14387b00cdbb21ea1a71b230d0879a",
+    "docs/compatibility/amd-upstream-production-evidence/historical_readback.py": "c6555b31706393b9edb7ca0b3e207749841da4f6c3a282763a7ff5845f314039",
+    "api/services/amd_stage_process.py": "60815a03ad3d24bd01e8ed6b936f31b2d37a0fc38b1e099a6f44257a1dfeadf6",
+    "api/services/amd_stage_bootstrap.py": "590c683e36589f4c9c14a4cde2edb544536a1611d35b5ed60d3a91a23d39cb90",
+    "api/services/amd_stage_orchestrator.py": "3b14a2fe179d94523236b8b487e8e2a6fbb9997d9785f52a64705a73ef3eb18a",
+    "api/services/amd_stage_contract.py": "dc90e9a4f480ddfd44f72276dc2e18c4df6228dc0265234895756360ee145536",
+    "api/services/amd_upstream_job.py": "257d99d92ebe47e64d6675957ca3520fda5c45e34f2f3171a527c8c013f28bf9",
+    "api/tests/test_amd_upstream_job.py": "e4d6be07257ceaefc06d8e40ae2ec7c30ff9dcc36c1e8061c336eee1d7d72184",
+    "scripts/compatibility/test_amd_shape_sampling_result.py": "4c9350e4f71c4d1ae9c72fa5ee1fb2b571f9109de8917b348fc5dc7863b45a6b",
+    "scripts/compatibility/amd_shape_sampling_contract.py": "fb95e591ed1b192a8de304c31e0c69e4fdff807dd0820da54ed442c8f95b957f",
+    "scripts/compatibility/amd_shape_sampling_artifact.py": "f73060f92858a4a79ab452fa33c0e4989b008597ce4455aab48724c42898bad6",
+    "scripts/compatibility/amd_shape_slat_contract.py": "687ace68358c424c2c07b74d7094bd7f3ccb268eec25eb6b6c2bc7a5ba80881e",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "b5897c709bb0d005476e854ebc2f1a33c874b934d9b16f0fd80de1a65ef7327d",
+    "scripts/compatibility/amd_generation_shape.py": "4e4c8253e36815526b266c38237438bbc3a5a5d396d0072500a44792856d2233",
+    "scripts/compatibility/amd_shape_sampling_control.py": "5db8909ba4731b2601a061757439c18d611f35a2cec52bafb1b1f8c7c695b9e6",
+    "scripts/compatibility/amd_shape_slat_forward.py": "01f917e99dd5bd2aba17c9423c68fc4faacb1cd173cbc4eebe281828d89194ec",
+    "scripts/compatibility/amd_decoder_contract.py": "20d9def94b5965131346f25383a72cb0d8ddc4435a2d2f8c7ebec5d2eff9279a"
+  },
+  "reviewed_output_sha256": {
+    "source-review.json": "30487b5758cc767d70c2208b16bd12b063cbe9bc212863ba9020afb32babdca5",
+    "cpu-result.json": "a88ebd09b22649cf78d75b88f2e93b26f9514a1bc0066151157313fd7f984fe8",
+    "cpu-tests.log": "a3280fc01a1576a3c5efd3e8a7fc30bc7bbf46d1c6e163f483fed7993c740201",
+    "historical-readback.json": "f5806f6a7a15ba850688fc21915ee5dae74d51e60c2418539b6bd634dcc91a0d"
+  },
+  "private_controller_and_raw_output_sha256": {
+    "run_cpu.py": "bffe6d1e9588c7c9726c6903d40e3b5fd8fcb87618be4327cec17785fa48e3d1",
+    "finish_cpu.py": "16a74c9702874cb443d121f87f7c1cdcbee5dccc1a69d77f184026aec9b626a0",
+    "boundary-tests.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "boundary-tests.stderr": "a3280fc01a1576a3c5efd3e8a7fc30bc7bbf46d1c6e163f483fed7993c740201",
+    "historical-readback.stdout": "b1c78866c827f516337872d45335fb076a2d4c3623993e9a4395c8fb8d3f113b",
+    "historical-readback.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "checks": [
+    "Every source hash in source-review.json matches actual current source; cpu-result retains the same source map.",
+    "Saved cpu-tests.log equals original private boundary-tests.stderr by SHA256; it contains six named ok results, Ran 6 tests in 0.734s and final OK.",
+    "Original run_cpu.py checks child returncode before the LF-only assertion. Its saved raw CRLF six-OK log explains the reporting failure; finish_cpu.py recovers those bytes and launches only the not-yet-run historical reader.",
+    "cpu-result source-review hash and original host source hash match; all saved historical stdout/stderr hashes match private raw output.",
+    "Published historical-readback.json equals parsed private historical stdout.",
+    "All five actual archived artifact SHA256 values match the published historical receipt. These are small archived files; no private checkpoint was hashed.",
+    "Original archived run/results.json and source-contract.json match exact base Git blobs, checked using git hash-object --no-filters versus base blob identity.",
+    "Original provenance checkpoint, input, raw-output, sampler-source and normalization objects match archived worker/source-contract data; canonical seed, sigma and sampler constants match original source.",
+    "Static inspection confirms historical_readback.py uses original strict NPY header/finite/tail/stability reader, original coordinate and latent validators, original F32 denormalization and exact original provenance reconstruction, after original release/sampler receipt checks.",
+    "Static inspection confirms six focused tests select only EvidenceBoundaryTests; real runner receives pre-cancellation and Popen/Job are patched and asserted unused; generated orchestration remains blocked.",
+    "No api, scripts or experimental source differences from base were reported by git diff --name-only over those source roots."
+  ],
+  "execution_record": {
+    "focused_tests": 6,
+    "test_attempts": 1,
+    "test_reported_seconds": 0.734,
+    "historical_attempts": 1,
+    "historical_returncode": 0,
+    "historical_reported_seconds": 3.744885300000533,
+    "historical_reported_natural": true,
+    "historical_rows": 3743,
+    "historical_artifact_count": 5,
+    "original_archived_neural_verdict": "PASS",
+    "first_controller_reporting_failure_preserved": true,
+    "precise_test_phase_RAM_not_preserved": true
+  },
+  "limits": [
+    "Reviewer inspected sources, saved outputs and small-file hashes only; no numeric reader, tests, model, WSL, GPU, native stage, OS Job or neural worker was rerun. Normal PowerShell/.NET file hashing and read-only Git queries were used.",
+    "Six focused CPU tests establish stated boundaries only; synthetic observations remain CPU_CONTRACT_ONLY and do not establish production execution authority.",
+    "Historical reader authenticates archived 3743-row bytes and recorded relations. It does not verify current installed checkpoint or configuration bytes, current neural behavior, a fresh requested job or a production supervisor authority.",
+    "Saved noise matches recorded input hash; Torch RNG output was not independently reproduced.",
+    "The initial host failed after successful test child exit because its LF-only OK matcher rejected CRLF. Recovery did not rerun those tests; exact test-phase RAM samples were lost, as cpu-result explicitly states.",
+    "Historical runtime/health values are preserved host-report measurements, not independently remeasured here; process peak RAM was not measured.",
+    "Original archived neural PASS remains historical. Fresh five-artifact model/config/algorithm/precision/input/sampler semantic production closure remains BLOCKED."
+  ],
+  "findings": []
+}

@@ -1,0 +1,64 @@
+{
+  "classification": "HISTORICAL_ONLY_READBACK_PASS",
+  "rows": 3743,
+  "artifacts": {
+    "shape-latent-raw.npy": {
+      "sha256": "03fd8208614fcf20c37e40e59c9eb48972c3c7a3ee18a31bab1b0537e86ab2a1",
+      "payload_sha256": "d198ee94d981020df69b0af6e6bd8c1c8c4946007e2df78afa2914f786297cad",
+      "bytes": 479232,
+      "shape": [
+        3743,
+        32
+      ],
+      "dtype": "float32"
+    },
+    "shape-latent-denormalized.npy": {
+      "sha256": "90eaf72030f303b209a4d02ae9adc7d4ecd39662344f35f0adc8120bc1e871b9",
+      "payload_sha256": "2e2046fb700c974d9bed7fcf02f00e6f0dfdfc123f9d2e5143c8ae5ef44a67ea",
+      "bytes": 479232,
+      "shape": [
+        3743,
+        32
+      ],
+      "dtype": "float32"
+    },
+    "shape-latent-coordinates.npy": {
+      "sha256": "949a9e6a2548abcad66354384502c06834d4d56ea3f2fa86b619c25926379ed4",
+      "payload_sha256": "860095760acc7914d0378cadfa49ba4c6a368d5a65662061b8e1c4c792f0d7a5",
+      "bytes": 60016,
+      "shape": [
+        3743,
+        4
+      ],
+      "dtype": "int32"
+    },
+    "shape-initial-noise.npy": {
+      "sha256": "6ba908a9c41e74fc6201e46ac428b4603dddf24bd4ea38d7ab9774ae422235d0",
+      "payload_sha256": "b5fa87e715f728aabcd218a109f492f59c51999039581a20b640c860e77a9c7b",
+      "bytes": 479232,
+      "shape": [
+        3743,
+        32
+      ],
+      "dtype": "float32"
+    },
+    "shape-latent-provenance.json": {
+      "sha256": "4834412e700434f5645cd919dd0d75e9209b6b5d67cc7cb765e98b76890f9a81",
+      "bytes": 14918
+    }
+  },
+  "published_result_sha256": "06fcb0f34c2989e8dcacf634ac8d1267d6b34ad51fdcf4d4805277916a86a50c",
+  "published_source_contract_sha256": "384508f9aae5e68b4504b32f4a02665fb390cc045d978d848b211d055a9ca7df",
+  "all_four_payloads_finite": true,
+  "original_coordinate_validation": true,
+  "canonical_F32_denormalization_exact": true,
+  "original_provenance_reconstruction_exact": true,
+  "sampler_forwards": 21,
+  "sampler_steps": 12,
+  "noise_matches_saved_input_hash": true,
+  "noise_rng_independently_reproduced": false,
+  "current_checkpoint_bytes_verified": false,
+  "fresh_product_job": false,
+  "supervisor_authority_established": false,
+  "original_historical_verdict": "PASS"
+}

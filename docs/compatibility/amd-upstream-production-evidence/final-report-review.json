@@ -1,0 +1,77 @@
+{
+  "schema": "modly.amd.upstream-production.final-report-review.v1",
+  "base_commit": "411055a6218d64de187e74b3587822fb5d2b2883",
+  "classification": "PASS_WITH_RECORDED_LIMITS",
+  "reviewer": "independent-production-authority-audit-agent",
+  "report_sha256": "679e3bdc02816a1ff1e1a53e1b01dc8c6ca8ca00629448a817987bd46ea556b1",
+  "receipt_sha256": {
+    "cpu-result.json": "a88ebd09b22649cf78d75b88f2e93b26f9514a1bc0066151157313fd7f984fe8",
+    "cpu-tests.log": "a3280fc01a1576a3c5efd3e8a7fc30bc7bbf46d1c6e163f483fed7993c740201",
+    "cpu_checks.py": "4aa5e861ac83668676989304dfb6abc9db14387b00cdbb21ea1a71b230d0879a",
+    "historical-readback.json": "f5806f6a7a15ba850688fc21915ee5dae74d51e60c2418539b6bd634dcc91a0d",
+    "historical_readback.py": "c6555b31706393b9edb7ca0b3e207749841da4f6c3a282763a7ff5845f314039",
+    "independent-results-review.json": "3822a6dde430c9f9f157c439e1995dfee9285ea5e7d0e4b590f8f5d44a393e2d",
+    "plan.md": "f9d17b56514dec730df2f9fbb252a80835ae594c92cb8e71cd140a5f4fe9c1df",
+    "preservation-after.json": "4c536ee386a5f2fc22e3bb78dd5ee68447d9037e29dbaf65923e46272469ff75",
+    "preservation-before.json": "a9c35e28ae3f194400b2394dd28eb4cac79a92cc5f7a0f87ed93f6792ae34f00",
+    "source-review.json": "30487b5758cc767d70c2208b16bd12b063cbe9bc212863ba9020afb32babdca5"
+  },
+  "preservation_consistency": {
+    "private_before_after_state_equal": true,
+    "public_private_receipt_hashes_match": true,
+    "controller_hash_matches": true,
+    "stat_representation_hash_matches": true,
+    "protected_metadata_records": 100,
+    "protected_small_hashes": 78,
+    "protected_bytes_hashed": 8265983,
+    "prior_closed_scope_reconciles_after_device_low32_canonicalization": true,
+    "stat_representation_rows": 100,
+    "all_saved_low32_devices_match_saved_native_volume_serials": true,
+    "all_recorded_file_ids_sizes_mtimes_unchanged": true,
+    "remote_heads": 128,
+    "all_saved_prior_remote_refs_equal": true,
+    "accepted_master_fresh_payload_hash": false,
+    "no_asset_scan_or_new_native_query": true
+  },
+  "saved_cpu_evidence": {
+    "six_test_OK_log_authenticated": true,
+    "original_host_zero_exit_inference_consistent_with_source": true,
+    "CRLF_reporting_failure_preserved": true,
+    "historical_stdout_json_and_raw_hashes_match": true,
+    "historical_five_file_bytes": 1512630,
+    "source_pins_current_match": true,
+    "base_source_contents_equal_after_only_CRLF_LF_normalization": [
+      "api/services/amd_stage_process.py",
+      "api/services/amd_stage_bootstrap.py",
+      "api/services/amd_stage_orchestrator.py",
+      "api/services/amd_stage_contract.py",
+      "api/services/amd_upstream_job.py",
+      "api/tests/test_amd_upstream_job.py",
+      "scripts/compatibility/test_amd_shape_sampling_result.py",
+      "scripts/compatibility/amd_shape_sampling_contract.py",
+      "scripts/compatibility/amd_shape_sampling_artifact.py",
+      "scripts/compatibility/amd_shape_slat_contract.py",
+      "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py",
+      "scripts/compatibility/amd_generation_shape.py",
+      "scripts/compatibility/amd_shape_sampling_control.py",
+      "scripts/compatibility/amd_shape_slat_forward.py",
+      "scripts/compatibility/amd_decoder_contract.py"
+    ],
+    "checkout_newline_only_differences": [
+      "scripts/compatibility/test_amd_shape_sampling_result.py"
+    ],
+    "independent_results_review_hashes_rechecked": true,
+    "tests_or_readback_rerun": false
+  },
+  "production_observation": "BLOCKED",
+  "current_model_semantic_closure": "BLOCKED",
+  "findings": [],
+  "limits": [
+    "Review authenticates saved evidence and scoped source files; it does not rerun tests, NPY readback, old payload scans, volume queries or lifecycle qualification.",
+    "Native volume identity is checked for consistency against its saved query record, not independently requeried in this review.",
+    "Historical readback remains historical-only; current installed checkpoint/configuration and fresh neural execution remain unqualified.",
+    "Test-phase exact RAM values were not preserved; saved historical health minima do not establish the lost test-phase values.",
+    "128 prior remote identities are closed over saved before/after listings; publication requires separate verification of the new head.",
+    "Initial final-review Git-blob raw comparison stopped on checkout CRLF versus Git LF; a subsequent source-only comparison verified all 15 base source contents equal after only CRLF/LF normalization. Exact current source byte hashes remain pinned separately."
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema": "modly.amd.upstream-production.source-review.v1",
+  "base_commit": "411055a6218d64de187e74b3587822fb5d2b2883",
+  "reviewer": "independent-production-authority-audit-agent",
+  "classification": "STATIC_DIAGNOSTIC_SOURCE_REVIEW_PASS_WITH_EXPLICIT_LIMITS",
+  "tests_executed": false,
+  "native_jobs_workers_wsl_gpu_models_executed": false,
+  "production_authority": "BLOCKED",
+  "current_model_semantic_closure": "BLOCKED",
+  "source_sha256": {
+    "docs/compatibility/amd-upstream-production-evidence/plan.md": "f9d17b56514dec730df2f9fbb252a80835ae594c92cb8e71cd140a5f4fe9c1df",
+    "docs/compatibility/amd-upstream-production-evidence/cpu_checks.py": "4aa5e861ac83668676989304dfb6abc9db14387b00cdbb21ea1a71b230d0879a",
+    "docs/compatibility/amd-upstream-production-evidence/historical_readback.py": "c6555b31706393b9edb7ca0b3e207749841da4f6c3a282763a7ff5845f314039",
+    "api/services/amd_stage_process.py": "60815a03ad3d24bd01e8ed6b936f31b2d37a0fc38b1e099a6f44257a1dfeadf6",
+    "api/services/amd_stage_bootstrap.py": "590c683e36589f4c9c14a4cde2edb544536a1611d35b5ed60d3a91a23d39cb90",
+    "api/services/amd_stage_orchestrator.py": "3b14a2fe179d94523236b8b487e8e2a6fbb9997d9785f52a64705a73ef3eb18a",
+    "api/services/amd_stage_contract.py": "dc90e9a4f480ddfd44f72276dc2e18c4df6228dc0265234895756360ee145536",
+    "api/services/amd_upstream_job.py": "257d99d92ebe47e64d6675957ca3520fda5c45e34f2f3171a527c8c013f28bf9",
+    "api/tests/test_amd_upstream_job.py": "e4d6be07257ceaefc06d8e40ae2ec7c30ff9dcc36c1e8061c336eee1d7d72184",
+    "scripts/compatibility/test_amd_shape_sampling_result.py": "4c9350e4f71c4d1ae9c72fa5ee1fb2b571f9109de8917b348fc5dc7863b45a6b",
+    "scripts/compatibility/amd_shape_sampling_contract.py": "fb95e591ed1b192a8de304c31e0c69e4fdff807dd0820da54ed442c8f95b957f",
+    "scripts/compatibility/amd_shape_sampling_artifact.py": "f73060f92858a4a79ab452fa33c0e4989b008597ce4455aab48724c42898bad6",
+    "scripts/compatibility/amd_shape_slat_contract.py": "687ace68358c424c2c07b74d7094bd7f3ccb268eec25eb6b6c2bc7a5ba80881e",
+    "experimental/extensions/trellis2-amd/inference_decoder/run_contract.py": "b5897c709bb0d005476e854ebc2f1a33c874b934d9b16f0fd80de1a65ef7327d",
+    "scripts/compatibility/amd_generation_shape.py": "4e4c8253e36815526b266c38237438bbc3a5a5d396d0072500a44792856d2233",
+    "scripts/compatibility/amd_shape_sampling_control.py": "5db8909ba4731b2601a061757439c18d611f35a2cec52bafb1b1f8c7c695b9e6",
+    "scripts/compatibility/amd_shape_slat_forward.py": "01f917e99dd5bd2aba17c9423c68fc4faacb1cd173cbc4eebe281828d89194ec",
+    "scripts/compatibility/amd_decoder_contract.py": "20d9def94b5965131346f25383a72cb0d8ddc4435a2d2f8c7ebec5d2eff9279a"
+  },
+  "reviewed_diagnostic_checks": [
+    "Six diagnostic tests are selected explicitly; imported historical TestCase classes are fixture helpers only.",
+    "The real runner is invoked solely with cancellation already set; Popen and _OwnedJob are patched to raise and asserted unused.",
+    "Constructed observations remain labelled CPU_CONTRACT_ONLY and genuine_execution_qualified=false.",
+    "The generated orchestrator route must raise StageBlocked before dispatch.",
+    "Manifest classifier counterexamples establish absent byte/model/provenance checks without redefining historical neural verdicts.",
+    "Historical readback pins results and source-contract JSON bytes to the exact base Git commit, checks exact five-artifact closure, then invokes original strict NPY and coordinate/numeric readers.",
+    "Historical readback independently recomputes payload digests, exact original F32 denormalization and original provenance construction.",
+    "Historical result explicitly denies current checkpoint verification, fresh product job, supervisor authority and independent noise RNG reproduction.",
+    "Final historical reader installs NoAI import guard before dynamic imports and calls the unchanged original require_released(result, shape) receipt validator before the sampler classifier.",
+    "Reviewed require_released checks archived PASS, healthy observer, checkpoint-unchanged label, successful non-timeout exit, all required shutdown/reader/attachment flags, absent observer/cleanup errors, natural owned-tree cleanup and original tensor release contract; it is pure receipt inspection and calls no supervisor launch."
+  ],
+  "limits": [
+    "Static review does not substitute for running the six tests or the historical readback.",
+    "Actual supervisor returns mutable dictionaries and public HostStageObservation remains trusted-host input, without a qualified production capability issuer.",
+    "Accepted Windows lifecycle evidence remains BLOCKED; WSL broker non-adversarial and source/mock limits remain unchanged.",
+    "Historical archive equality and reconstructed provenance authenticate saved bytes and consistency, not present installed checkpoint/config bytes or fresh requested neural execution.",
+    "NoAI guard rejects torch/triton/trellis2/flex_gemm/transformers imports; normal NumPy CPU binary extensions and git-show child process are intentional for historical readback. No owned worker or OS Job is launched."
+  ],
+  "findings": []
+}
