@@ -1,0 +1,112 @@
+{
+  "classification": "NO-GO: INSUFFICIENT_HEADROOM",
+  "samples": [
+    {
+      "timestamp_utc": "2026-10-24T09:31:29.043321+00:00",
+      "available_physical_bytes": 20732739584,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 39,
+      "required_available_bytes": 23622320128,
+      "target_met": false
+    },
+    {
+      "timestamp_utc": "2026-10-24T09:31:33.043844+00:00",
+      "available_physical_bytes": 20708589568,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 39,
+      "required_available_bytes": 23622320128,
+      "target_met": false
+    },
+    {
+      "timestamp_utc": "2026-10-24T09:31:37.044398+00:00",
+      "available_physical_bytes": 20710785024,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 39,
+      "required_available_bytes": 23622320128,
+      "target_met": false
+    }
+  ],
+  "minimum_available_bytes": 20708589568,
+  "maximum_available_bytes": 20732739584,
+  "available_span_bytes": 24150016,
+  "all_three_meet_22GiB": false,
+  "sample_interval_seconds": 4,
+  "previous_observed_decline_bytes": 6700421120,
+  "previous_decline_is_not_a_guarantee": true,
+  "process_memory_note": "Working sets may share pages; private commit is not resident physical RAM. Do not sum as exclusive physical consumption.",
+  "source_sha256": "8c6c3a73bb1e58691105f99dd27353ec8fa650e17f0a1045a5b9e45bb86a1e78",
+  "administrator_role_enabled": false,
+  "WSL_launched": false,
+  "model_loaded": false,
+  "neural_attempt_reserved": false,
+  "neural_forwards": 0,
+  "processes_terminated": false,
+  "settings_changed": false,
+  "qualified_source_commit": "740edf52eeac436732556e10add51216150f6d1c",
+  "qualified_source_path": "docs/compatibility/amd-zombie-ram-headroom-evidence/memory_readiness.py",
+  "only_per_run_binding_changed": "PRIVATE evidence directory; no measurement or decoder code changed",
+  "actual_checkout_commit": "740edf52eeac436732556e10add51216150f6d1c",
+  "approved_decoder_base": "35b3c70de7aa61c514a4e0410af246bab880ba9d",
+  "individual_process_working_sets_without_PIDs": [
+    {
+      "name": "codex.exe",
+      "working_set_bytes": 756699136,
+      "private_commit_bytes": 749096960
+    },
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 707051520,
+      "private_commit_bytes": 805752832
+    },
+    {
+      "name": "MemCompression",
+      "working_set_bytes": 640958464,
+      "private_commit_bytes": 2588672
+    },
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 401174528,
+      "private_commit_bytes": 418492416
+    },
+    {
+      "name": "MsMpEng.exe",
+      "working_set_bytes": 362328064,
+      "private_commit_bytes": 414720000
+    },
+    {
+      "name": "explorer.exe",
+      "working_set_bytes": 332034048,
+      "private_commit_bytes": 539594752
+    },
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 318169088,
+      "private_commit_bytes": 339513344
+    },
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 257024000,
+      "private_commit_bytes": 247726080
+    },
+    {
+      "name": "dwm.exe",
+      "working_set_bytes": 219537408,
+      "private_commit_bytes": 608088064
+    },
+    {
+      "name": "SteelSeriesGGEZ.exe",
+      "working_set_bytes": 181518336,
+      "private_commit_bytes": 70688768
+    }
+  ],
+  "private_evidence_sha256": {
+    "memory-readiness-private.json": "c59ad031de46c54ff78072cde6b0d42e7986c44cfc03b3c2bd3e0effd08acf81",
+    "memory-readiness.stdout.txt": "1b9529fa7dd6e1c320bf31448291b93028d28816d96e8df062b26a3921e6bc0e",
+    "memory-readiness.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "available_GiB": [
+    19.308868408203125,
+    19.286376953125,
+    19.288421630859375
+  ]
+}

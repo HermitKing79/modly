@@ -1,0 +1,65 @@
+{
+  "schema": "modly-zombie-ram-recheck-preservation-lineage-review-v1",
+  "classification": "PASS",
+  "private_audit_sha256": "9d90caddbb4edf16d3b284d0efe7b56199bdb6e3ce27bcd0e9e274aed3ba7c5d",
+  "preservation": {
+    "original_collector_calls": 1,
+    "latest_prior_baseline_state_equal": true,
+    "prior_baseline_sha256": "d61a37bd7e3501c3cecb336f0015ec23f76ecd3695df80a888a510d27d9bc07e",
+    "protected_identities": 100,
+    "bounded_hashes": 78
+  },
+  "prior_NO_GO_report_and_measurement_receipts_unchanged": true,
+  "retained_lineage": {
+    "fresh_original_failed_file_hashes": 9,
+    "consumed_native_marker_unchanged": true,
+    "fresh_saved_shape_file_hashes": 5,
+    "prior_full_qualification_reused": true,
+    "qualification_review_sha256": "fb26bfc1ac70d3e4f3ab2762744a86abc53af08aa4f0f9a3dc1b06c8e2e97ebf",
+    "strict_reader_or_source_graph_repeated": false,
+    "checkpoint": "PREVIOUSLY VERIFIED; FRESH ADMISSION NOT RUN"
+  },
+  "memory_readiness": {
+    "independent_classification": "NO-GO: INSUFFICIENT_HEADROOM",
+    "samples": [
+      {
+        "timestamp_utc": "2026-10-24T09:31:29.043321+00:00",
+        "available_physical_bytes": 20732739584,
+        "total_physical_bytes": 34270023680,
+        "memory_load_percent": 39,
+        "required_available_bytes": 23622320128,
+        "target_met": false
+      },
+      {
+        "timestamp_utc": "2026-10-24T09:31:33.043844+00:00",
+        "available_physical_bytes": 20708589568,
+        "total_physical_bytes": 34270023680,
+        "memory_load_percent": 39,
+        "required_available_bytes": 23622320128,
+        "target_met": false
+      },
+      {
+        "timestamp_utc": "2026-10-24T09:31:37.044398+00:00",
+        "available_physical_bytes": 20710785024,
+        "total_physical_bytes": 34270023680,
+        "memory_load_percent": 39,
+        "required_available_bytes": 23622320128,
+        "target_met": false
+      }
+    ],
+    "correct_available_physical_field": true,
+    "reader_source_sha256": "8c6c3a73bb1e58691105f99dd27353ec8fa650e17f0a1045a5b9e45bb86a1e78",
+    "source_stdout_and_private_receipt_hashes_verified": true,
+    "spacing_seconds": [
+      4.000523,
+      4.000554
+    ],
+    "span_bytes": 24150016,
+    "all_three_below_22GiB": true,
+    "extra_probe_run": false
+  },
+  "new_neural_attempt": "NOT RESERVED",
+  "reviewer_execution": "Original API Python -B; read-only Windows receipts, bounded hashes, one inherited preservation collect; no WSL, Job, model, checkpoint stream, neural or mesh execution.",
+  "original_sources_evidence_and_failed_marker_modified": false,
+  "source_safe": true
+}
