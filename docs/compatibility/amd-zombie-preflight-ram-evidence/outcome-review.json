@@ -1,0 +1,47 @@
+{
+ "schema": "modly-zombie-preflight-RAM-outcome-review-v1",
+ "reviewer": "independent-host-runtime-outcome-review-subagent",
+ "reviewed_utc": "2026-10-24T11:06:20.129532+00:00",
+ "report_consistency": "PASS",
+ "findings": [],
+ "attribution": "UNRESOLVED",
+ "diagnostic_admission": "BLOCKED: INADEQUATE BASELINE",
+ "instrumented_preflight": "NOT RUN",
+ "source_safe_report_sha256": "ad386437e4f2df69da3c76dd0dfae84c1deefb376dcbecc56fad78f85a8edac3",
+ "reviewed_evidence_sha256": {
+  "baseline.json": "b18f7de06b12f8d113932638cc0dfc817227665017077700285dcb94bf74b38f",
+  "prior-evidence-analysis.json": "1283c55db190f12630c14f9e5729b5bfe5ce1b1ec279582840738bd8d43eee81",
+  "preservation-before.json": "4437fab30f4f8318f8a7e5ca25657243c37ed864b99f83faf3c3ca92f0a0fb6b",
+  "remote-preservation.json": "4d6bd4817ce4166f6a344a9cf10fd39b51ab43a2cf855cc76e0bcbcc7f4f1cb0"
+ },
+ "independently_checked": {
+  "raw_reader_samples_equal_public_baseline": true,
+  "current_available_bytes": [
+   20933840896,
+   20930056192,
+   20937019392
+  ],
+  "minimum_available_GiB": 19.492633819580078,
+  "report_rounded_minimum_GiB": 19.493,
+  "mandatory22GiB_and_preferred24GiB_both_unmet": true,
+  "preferred24GiB_not_substituted_for_safety_gate": true,
+  "raw_receipt_and_three_current_source_hashes_match": true,
+  "historical_unobserved_gap_seconds": 711.387061,
+  "historical_loss_before_first_host_row_bytes": 1772728320,
+  "historical_first_to_final_available_increase_bytes": 58392576,
+  "historical_final_shortfall_bytes": 1536745472,
+  "constructor_lineage_authentication_precedes_first_old_host_row": true,
+  "checkpoint_hash_streaming_not_whole_checkpoint_read_bytes": true,
+  "source_findings_not_presented_as_measured_attribution": true,
+  "screenshot_displayed_MB_total": 2182.6,
+  "screenshot_interpretation": "One cross-sectional labelled application footprint; no time-series growth, exclusive physical ownership, guaranteed recovery or earlier-decline causality is established.",
+  "preservation_scope": "One bounded before collection agrees with latest prior baseline:100 identities/78 bounded hashes; no new full checkpoint or broad lineage execution.",
+  "remote_prepublication": "144 prior heads identical; main unchanged; new branch absent. Postpublication verification remains a parent publication check."
+ },
+ "neural_attempt_reserved": false,
+ "WSL_Job_model_GPU_or_neural_execution": false,
+ "new_measurement_or_full_preflight_by_reviewer": false,
+ "old_data_modified": false,
+ "review_scope": "Read-only saved-data/source consistency and arithmetic; no new RAM assessment, diagnostic execution, environment changes or causal experiment.",
+ "source_safe": true
+}

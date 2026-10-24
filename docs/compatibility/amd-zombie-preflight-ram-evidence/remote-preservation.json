@@ -1,0 +1,14 @@
+{
+  "schema": "modly-zombie-ram-remote-preservation-v1",
+  "phase": "prepublication",
+  "prior_remote_heads": 144,
+  "all_existing_heads_unchanged": true,
+  "main_sha256_git_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "approved_starting_commit_still_published": true,
+  "new_diagnostic_branch_not_preexisting": true,
+  "snapshot_sha256": {
+    "remote-before.txt": "6f32f025917f36247eb81c3cc7e89eef36f691013ca7dce5e49f818bb37d7e26",
+    "remote-prepublication.txt": "6f32f025917f36247eb81c3cc7e89eef36f691013ca7dce5e49f818bb37d7e26"
+  },
+  "postpublication_verification": "Required after push; retained in private publication receipt and reported in final response."
+}

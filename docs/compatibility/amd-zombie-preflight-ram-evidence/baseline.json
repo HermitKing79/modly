@@ -1,0 +1,72 @@
+{
+  "schema": "modly-zombie-preflight-ram-baseline-v1",
+  "attribution": "UNRESOLVED",
+  "diagnostic_admission": "BLOCKED: INADEQUATE BASELINE",
+  "instrumented_preflight": "NOT RUN",
+  "starting_commit": "3f7af197c25349af95bc97fe70dd99c509b22b8a",
+  "measurement": "GlobalMemoryStatusEx.ullAvailPhys",
+  "execution_context": "Supported outside-sandbox execution, original Python, same normal Windows user; administrator role disabled.",
+  "unchanged_prelaunch_requirement_bytes": 23622320128,
+  "preferred_operational_headroom_bytes": 25769803776,
+  "preferred_is_not_a_replacement_safety_gate": true,
+  "samples": [
+    {
+      "timestamp_utc": "2026-10-24T10:56:53.908728+00:00",
+      "available_physical_bytes": 20933840896,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 38,
+      "required_available_bytes": 23622320128,
+      "target_met": false
+    },
+    {
+      "timestamp_utc": "2026-10-24T10:56:57.909847+00:00",
+      "available_physical_bytes": 20930056192,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 38,
+      "required_available_bytes": 23622320128,
+      "target_met": false
+    },
+    {
+      "timestamp_utc": "2026-10-24T10:57:01.910257+00:00",
+      "available_physical_bytes": 20937019392,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 38,
+      "required_available_bytes": 23622320128,
+      "target_met": false
+    }
+  ],
+  "minimum_available_bytes": 20930056192,
+  "maximum_available_bytes": 20937019392,
+  "span_bytes": 6963200,
+  "minimum_available_GiB": 19.492633819580078,
+  "raw_reader_classification": "NO-GO: INSUFFICIENT_HEADROOM",
+  "raw_receipts_sha256": {
+    "memory-readiness-private.json": "68aa8ba3de5540698bdd3b856cdc33701fdd95ffa490509232b2e0cb212f4c02",
+    "baseline.stdout.txt": "ed0742ae7646ea625d55d4d74a008dbdcd82f767c445ff0c57ad0a0b1f002fb2",
+    "baseline.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "measurement_source_sha256": "8c6c3a73bb1e58691105f99dd27353ec8fa650e17f0a1045a5b9e45bb86a1e78",
+  "original_preflight_verification_semantics_modified": false,
+  "screenshot_observation": {
+    "sha256": "4a1cd0e3ea3f979b4a86bbcf836aebe3c727eb92afde62abf96ce59fbb4071c7",
+    "source": "User-supplied Task Manager screenshot; capture time not independently established. Image remains private.",
+    "ChatGPT_Codex_group_displayed_MB": 1720.7,
+    "separate_codex_displayed_MB": 461.9,
+    "combined_displayed_MB": 2182.6,
+    "interpretation": "Substantial current application footprint. Displayed process memory is not a time series or exclusive physical-memory accounting; it does not attribute the earlier decline."
+  },
+  "process_snapshot_note": "Working sets may share pages; private commit is not resident physical RAM. Do not sum as exclusive physical consumption.",
+  "not_measured": [
+    "Instrumented preflight process peak working set/private commit",
+    "Phase-by-phase physical RAM",
+    "Concurrent process deltas",
+    "Post-preflight recovery"
+  ],
+  "neural_attempt_reserved": false,
+  "neural_forwards": 0,
+  "WSL_launched": false,
+  "model_loaded": false,
+  "processes_terminated": false,
+  "settings_changed": false,
+  "source_safe": true
+}

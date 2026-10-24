@@ -1,0 +1,70 @@
+{
+  "schema": "modly-zombie-preflight-ram-preservation-v1",
+  "phase": "before",
+  "classification": "PASS_WITH_RECORDED_BOUNDED_SCOPE",
+  "private_receipt_sha256": "c513800127f8ae03abd86d709889825f2ca9f752d9bcc0e5a52b9f413c066fde",
+  "controller_sha256": "9e000d98c4324faae3e62f8bb1fa894773ea0c5da972d95e35e155995f3aa926",
+  "original_collector_calls_this_phase": 1,
+  "latest_prior_AFTER_sha256": "3bee231907a04b60603a1dde8e9920f9eb0c1e1412f52447416096f090c08b2b",
+  "latest_prior_state_equal": true,
+  "before_after_equal": null,
+  "protected_identities": 100,
+  "bounded_hashes": 78,
+  "original_failed_files": 9,
+  "original_saved_shape_inputs": 5,
+  "retained_original_metadata_and_hashes_equal": true,
+  "prior_NO_GO_records_unchanged": true,
+  "latest_prelaunch_gate_and_measurement_private_files": 25,
+  "latest_prelaunch_public_files": 11,
+  "latest_prelaunch_rejection_preserved": {
+    "available_bytes": 22085574656,
+    "required_bytes": 23622320128,
+    "marker_reserved": false
+  },
+  "current_baseline": {
+    "classification": "NO-GO: INSUFFICIENT_HEADROOM",
+    "samples": [
+      {
+        "timestamp_utc": "2026-10-24T10:56:53.908728+00:00",
+        "available_physical_bytes": 20933840896,
+        "total_physical_bytes": 34270023680,
+        "memory_load_percent": 38,
+        "required_available_bytes": 23622320128,
+        "target_met": false
+      },
+      {
+        "timestamp_utc": "2026-10-24T10:56:57.909847+00:00",
+        "available_physical_bytes": 20930056192,
+        "total_physical_bytes": 34270023680,
+        "memory_load_percent": 38,
+        "required_available_bytes": 23622320128,
+        "target_met": false
+      },
+      {
+        "timestamp_utc": "2026-10-24T10:57:01.910257+00:00",
+        "available_physical_bytes": 20937019392,
+        "total_physical_bytes": 34270023680,
+        "memory_load_percent": 38,
+        "required_available_bytes": 23622320128,
+        "target_met": false
+      }
+    ],
+    "spacing_seconds": [
+      4.001119,
+      4.00041
+    ],
+    "correct_available_physical_field": true,
+    "source_stdout_hashes_verified": true,
+    "operational24GiB_met": false,
+    "operational24GiB_bytes": 25769803776,
+    "extra_probe_run": false
+  },
+  "prior_full_lineage_qualification_reused": true,
+  "full_shape_or_source_graph_audit_repeated": false,
+  "current_diagnostic_CPU_preflight": "NOT ADMITTED BY BASELINE",
+  "fresh_checkpoint_admission": "NOT RUN",
+  "reviewer_execution": "Original API Python -B, Windows receipt/hash/metadata reads and one inherited preservation collector; no WSL, Job, neural, model, checkpoint stream, diagnostic preflight, mesh or render execution.",
+  "remote_scope": "Inherited collector authenticates its historical saved140-head input only; parent owns current fresh remote comparison.",
+  "current_task_code_outputs_and_new_attempt_paths_excluded": true,
+  "source_safe": true
+}

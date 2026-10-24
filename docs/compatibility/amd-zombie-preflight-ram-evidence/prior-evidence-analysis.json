@@ -1,0 +1,64 @@
+{
+ "schema": "modly-zombie-prior-preflight-RAM-analysis-v1",
+ "reviewer": "independent-host-runtime-static-review-subagent",
+ "reviewed_utc": "2026-10-24T11:04:01.080816+00:00",
+ "classification": "UNRESOLVED_BASELINE_NO_GO",
+ "prior_evidence_authentication": "PASS: actual initial receipt, final-gate receipt, stdout/stderr and published summary agree byte hashes and measurements.",
+ "prior_candidate_commit": "85ee9c6d5d2bcf7cf05ab749b6dd03f11faf7810",
+ "prior_private_receipt_sha256": {
+  "memory-readiness-private.json": "11199167da3bedfe2e43d10f2f3aeee6d413ee89e92f33e50913ded61ecde7de",
+  "final-pre-marker-admission.json": "ee0495268a1d5fe2ed9041f20a1e79db9f4ebb18d79e1348f304b4022e2ce3d0",
+  "neural-launch.stdout.txt": "b2a2df2d261118b2e355a01cdcbb7ec3994d563e25fa808fe185f94dc59ab8fe",
+  "neural-launch.stderr.txt": "7253da570940a67f1de13a056a13968047a89ec0a665aee13743359a8dd5434b"
+ },
+ "prior_timeline": {
+  "initial_available_bytes": [
+   23797481472,
+   23797092352,
+   23799910400
+  ],
+  "last_initial_time": "2026-10-24T10:20:46.998316+00:00",
+  "first_host_time": "2026-10-24T10:32:38.385377+00:00",
+  "first_host_available_bytes": 22027182080,
+  "unobserved_gap_seconds": 711.387061,
+  "last_initial_to_first_host_decline_bytes": 1772728320,
+  "final_host_time": "2026-10-24T10:33:51.503470+00:00",
+  "final_available_bytes": 22085574656,
+  "first_host_to_final_available_change_bytes": 58392576,
+  "final22GiB_shortfall_bytes": 1536745472
+ },
+ "critical_order": [
+  "Python startup and transitive adapter/shape imports precede all old host RAM rows; amd_shape_sampling_contract imports NumPy at module scope.",
+  "resume.make_runtime -> zombie.make_runtime -> historical.Runtime.__init__ executes full source_inputs -> shape.verify_saved before first host_admission. Nested input_bundle validates saved DINO/image/occupancy lineage more than once.",
+  "Runtime.preflight records first host RAM, repeats source_inputs, verifies committed/control sources, streams the decoder checkpoint and verifies metadata-only component. Then supervisor admission and final22GiB hook run."
+ ],
+ "allocating_read_candidates": [
+  "Feature verifier: bounded~4.2MB container plus safetensors NumPy and tobytes copies; PNG RGBA~6.3MB plus original preprocessing; occupancy~1MB plus NumPy/BytesIO/argwhere/component-set temporaries; bounded JSON receipt objects. Imports can add CPU-library residency.",
+  "Git verifier captures one blob and read_bytes/newline-comparison buffers per file. Original91-file shape closure totals12,523,955B; largest known file4,215,800B. Shape loader read_bytes covers small Python sources.",
+  "DINO digest streams1MiB blocks; host/run-contract digests use file_digest. Decoder checkpoint948,490,494B is streamed after first row; metadata readers read bounded headers. No whole-checkpoint read_bytes identified in this CPU route."
+ ],
+ "causal_conclusion": "UNRESOLVED. First-to-final recorded available RAM increases58,392,576B. The earlier1,772,728,320B loss occurred across an~711s gap before the first row. Old records cannot distinguish external changes, imports/constructor work, cache or Defender activity; they do not establish hashing as the cause.",
+ "current_baseline": {
+  "classification": "NO-GO: INSUFFICIENT_HEADROOM",
+  "available_bytes": [
+   20933840896,
+   20930056192,
+   20937019392
+  ],
+  "mandatory22GiB_bytes": 23622320128,
+  "preferred24GiB_bytes": 25769803776,
+  "all_below_both_targets": true,
+  "private_receipt_sha256": "68aa8ba3de5540698bdd3b856cdc33701fdd95ffa490509232b2e0cb212f4c02",
+  "instrumented_preflight_run": false
+ },
+ "screenshot_scope": "User screenshot labels ChatGPT/Codex group1,720.7MB and separate codex461.9MB (~2.2GB labelled footprint). This is one cross-sectional view, not evidence of growth or causality. Shared working sets cannot be summed as exclusive physical ownership or equated with private commit.",
+ "future_minimum_phase_hooks": "Only after separately admitted baseline: before any repoimport; after imports; make_runtime; source_inputs call#1 constructor/#2 preflight and nested lineage; Git verification; checkpoint streaming; component metadata/source check; return. Record Windowsavailable RAM and processworking-set/privatecommit/peaks/read-I/O over time. No GC/cache clear/working-set trim or changed validators during measurement.",
+ "reviewed_source_sha256": {
+  "scripts/compatibility/amd_zombie_decode_resume.py": "40768b9837b6c98780c4b3c436bb90bbd5a3854442730db5b21af1198c8544ee",
+  "scripts/compatibility/amd_zombie_decode.py": "02ff9a1cda8eef7f31844d7f23864c2dcd83dae083fd831007e269b6459acaad",
+  "scripts/compatibility/amd_generation_decode.py": "8b9d66bba9390579f2c3b1d16136baa652dd0964e52ede4f95534b03a095b228"
+ },
+ "reviewer_preflight_RAM_probe_WSL_Job_model_GPU_execution": false,
+ "historical_data_modified": false,
+ "source_safe": true
+}
