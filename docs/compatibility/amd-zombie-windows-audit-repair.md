@@ -25,6 +25,8 @@ The focused Windows suite covers five successful read variants and twenty-three 
 
 The failed diagnostic's nine private evidence files are snapshotted before repair and checked again afterward by size, modification time, file identity and content hash. Raw memory/process evidence remains local. The inherited 100 protected identities, 78 bounded hashes and 88 retained zombie records are checked separately. Existing environment files and historical branches are preserved. See the accompanying repair verification/review receipt for final results; no live preparation success or memory attribution is claimed.
 
+Final independent review of code commit `85c236241f07f009b5483fd6f77f58b261077196` found no remaining Critical, Important or Minor findings and independently reran both Python suites successfully. Author verification additionally passed the 14 PowerShell scenarios, both dry-runs, all 256 original source hashes, unchanged launcher hash and unchanged unrelated preparation/safety/timeout AST nodes. Preservation matched all protected/retained records and all nine failed-run files. The [source-safe verification and review receipt](amd-zombie-windows-audit-repair-verification.json) records the scope; raw private receipts stay local.
+
 ## User execution after closing desktop applications
 
 Close Codex Desktop, ChatGPT Desktop and browsers. In a normal, non-administrator PowerShell terminal:
