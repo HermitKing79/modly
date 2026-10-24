@@ -71,12 +71,32 @@ def validate_write(path, evidence):
             raise DiagnosticStop('Redirected evidence path denied: ' + str(parent))
 
 
-def validate_spawn(executable, args, cwd, root):
-    if (not isinstance(args, (tuple, list)) or not args
-            or Path(str(executable)).name.lower() not in ('git', 'git.exe')
-            or Path(str(args[0])).name.lower() not in ('git', 'git.exe')
+def validate_spawn(executable, args, cwd, root, *, git=None):
+    git = Path(git or shutil.which('git') or '').resolve()
+    if os.name == 'nt' and isinstance(args, str):
+        # Windows audits Popen *after* list2cmdline, often with executable=None.
+        # Recognise only canonical spellings of the authorised argv; never parse
+        # an arbitrary command line, shell quoting, options or operators.
+        from subprocess import list2cmdline
+        for program in ('git', 'git.exe', str(git)):
+            prefix = list2cmdline([program]) + ' '
+            if args.startswith(prefix):
+                tail = args[len(prefix):]
+                if tail == 'rev-parse HEAD':
+                    args = [program, 'rev-parse', 'HEAD']
+                else:
+                    match = re.fullmatch(r'show ([0-9a-f]{40}:[A-Za-z0-9_./-]+)', tail)
+                    if match:
+                        args = [program, 'show', match[1]]
+                break
+    if (not isinstance(args, (tuple, list)) or not args or not all(isinstance(a, str) for a in args)
+            or Path(args[0]).name.lower() not in ('git', 'git.exe')
             or Path(cwd or os.getcwd()).resolve() != root.resolve()):
         raise DiagnosticStop('Only bounded read-only Git subprocesses are permitted')
+    effective = args[0] if executable is None and os.name == 'nt' else executable
+    for program in (args[0], effective):
+        if not isinstance(program, str) or Path(shutil.which(program) or program).resolve() != git:
+            raise DiagnosticStop('Foreign Git executable denied')
     if list(args[1:]) == ['rev-parse', 'HEAD']:
         return
     if len(args) == 3 and args[1] == 'show' and re.fullmatch(r'[0-9a-f]{40}:[A-Za-z0-9_./-]+', args[2]):
@@ -109,9 +129,7 @@ def install_guards(evidence, root, check_memory):
         if event == 'import' and forbidden_import(str(args[0])):
             raise DiagnosticStop('Neural import denied: ' + str(args[0]))
         if event == 'subprocess.Popen':
-            validate_spawn(args[0], args[1], args[2], root)
-            if Path(shutil.which(str(args[0])) or str(args[0])).resolve() != git:
-                raise DiagnosticStop('Foreign Git executable denied')
+            validate_spawn(args[0], args[1], args[2], root, git=git)
             check_memory()
         if event.startswith('socket.') or event in ('os.system', 'os.startfile', 'os.exec', 'os.posix_spawn'):
             raise DiagnosticStop('External action denied: ' + event)

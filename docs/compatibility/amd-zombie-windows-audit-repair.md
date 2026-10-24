@@ -1,0 +1,36 @@
+# Windows subprocess audit repair for the standalone RAM diagnostic
+
+Repair base: `1553e73a7bf27ff2de0f331861595e02b0b9a30e`.
+Branch: `codex/amd-zombie-windows-audit-repair`.
+
+## Confirmed cause
+
+The live failure occurred after original-source authentication, before project CPU preparation. A harmless Windows Git-read probe reproduced the exact guard rejection. CPython 3.12.10's Windows `subprocess._execute_child` formats argv with `list2cmdline()` before emitting the `subprocess.Popen` audit event. For `check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, timeout=15)`, the actual event contains `executable=None` and `args='git rev-parse HEAD'`. The old validator required a list/tuple and a named executable; either assumption rejected this legitimate read. The old tests exercised blocked commands, not a successful Git read through the real Windows audit path.
+
+The new Windows regression tests first failed against the original implementation: all five legitimate variants were rejected. The fixed tests execute actual harmless `git rev-parse HEAD` / `git show <commit>:README.md` reads through the installed audit hook. They confirm the actual string payload, the implicit `None` executable, and returned commit/source content. They do not run the diagnostic, query RAM, import project/model modules or stream checkpoints.
+
+## Minimal policy repair
+
+Only the subprocess validator and its audit-hook call change. On Windows, the validator recognises canonical command strings for `git`, `git.exe`, or the pinned absolute Git path. The permitted tails remain exactly `rev-parse HEAD` or `show <40 lowercase hex characters>:<previously permitted relative path>`. Absolute executable quoting comes from `subprocess.list2cmdline`; arbitrary command lines are never tokenised or interpreted. Extra whitespace, quote variants, options, operators, newlines and traversal remain rejected.
+
+An implicit executable is accepted only on Windows and only after that narrow command match. Both argv[0] and the effective executable must resolve to the Git identity pinned when the guard was installed. Exact checkout working-directory validation is retained. The audit hook stays installed, and the existing memory callback still runs immediately before every allowed subprocess. Shell wrappers, WSL, foreign executables and Git mutations remain denied.
+
+All preparation phases, neural import/call/write restrictions and Git timeouts are unchanged. The PowerShell launcher is unchanged. The established three-reading 22 GiB admission, final 22 GiB pre-neural guard, preferred-only 24 GiB headroom, original 12 GiB live floor, disk floors and deadlines remain intact.
+
+## Verification and preservation
+
+The focused Windows suite covers five successful read variants and sixteen denied audit events, including mutation, argument/raw-string injection, shell execution, foreign executable/argv[0], incorrect cwd, WSL, traversal and noncanonical strings. Negative tests retain CPython's actual event formatting while mocking only the final Windows CreateProcess boundary, so forbidden commands cannot execute even if validation regresses. The previous 15 synthetic child tests and 14 PowerShell scenarios are also retained. Launcher and child dry-runs are safe; the real diagnostic remains unexecuted.
+
+The failed diagnostic's nine private evidence files are snapshotted before repair and checked again afterward by size, modification time, file identity and content hash. Raw memory/process evidence remains local. The inherited 100 protected identities, 78 bounded hashes and 88 retained zombie records are checked separately. Existing environment files and historical branches are preserved. See the accompanying repair verification/review receipt for final results; no live preparation success or memory attribution is claimed.
+
+## User execution after closing desktop applications
+
+Close Codex Desktop, ChatGPT Desktop and browsers. In a normal, non-administrator PowerShell terminal:
+
+```powershell
+$repo = 'C:\Users\wattz\Documents\ChatGPT\modly\proof'
+$repair = (git -C $repo rev-parse codex/amd-zombie-windows-audit-repair).Trim()
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$repo\scripts\compatibility\Invoke-ZombieRamDiagnostic.ps1" -Run -ExpectedCommit $repair
+```
+
+The launcher requires the checkout to match the published repair, performs fresh admission, and creates a unique local evidence directory. The failed run is never reused or overwritten. A successful Git audit regression test is not a completed CPU diagnostic or neural admission. No neural execution follows automatically.
