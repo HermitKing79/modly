@@ -8,8 +8,8 @@ import subprocess
 import sys
 from unittest import mock
 
-SCRATCH = Path(__file__).resolve().parents[3] / 'artifacts/amd-zombie-standalone-preparation-20261024-v1/test-scratch'
-SCRATCH.mkdir(exist_ok=True)
+SCRATCH = Path(__file__).resolve().parents[3] / 'artifacts/amd-zombie-standalone-mocked-tests'
+SCRATCH.mkdir(parents=True, exist_ok=True)
 tempfile.tempdir = str(SCRATCH)
 
 SCRIPT = Path(__file__).with_name('amd_zombie_ram_diagnostic.py')
@@ -157,7 +157,7 @@ class Sequence(unittest.TestCase):
         self.assertIn("if (-not $Run)", source)
         self.assertIn("'-B -I -S", source)
         self.assertIn('KILL_ON_JOB_CLOSE', source)
-        self.assertIn("Check-Resources $boundary", source)
+        self.assertIn("Confirm-PhaseBoundary $stage", source)
         self.assertNotIn('amd_zombie_decode.py', source)
         self.assertNotIn('wsl.exe', source.lower())
 

@@ -3,7 +3,7 @@
 Implementation based on verified checkout `28f4f0163833d59d861404719e6b2cb042083f9e`.
 **The real diagnostic was not executed during implementation. No neural attempt is authorised.**
 
-The user reports 24.240, 24.239 and 24.241 GiB available after closing Codex, Brave and unnecessary applications. These user-supplied observations support application overhead contributing to insufficient headroom. They do not identify each application's exclusive contribution, measure the historical preparation process, or replace fresh admission.
+The user reports increased available physical RAM after closing Codex, Brave and unnecessary applications. These observations support application overhead contributing to insufficient headroom. The raw readings remain private. They do not identify each application's exclusive contribution, measure the historical preparation process, or replace fresh admission.
 
 ## Run after closing desktop applications
 
@@ -58,7 +58,9 @@ No additional RAM threshold has been derived or introduced. Assess any future op
 
 ## Authoring verification and preservation
 
-Only dry-runs, PowerShell parsing/C# declaration compilation and synthetic tests were executed. The tests exercise exact-22-GiB admission, low first/second readings, phase failures and recovery races, missing observer permits, in-stream aborts, pure checkpoint-function extraction, permitted CPU stage ordering and actual import/call/process/write/network guard rejection against mocked OS boundaries. No real project preparation, checkpoint verification, model import, WSL call or neural reservation occurred.
+Only dry-runs, PowerShell parsing/C# declaration compilation and synthetic tests were executed: 15 Python tests and 14 PowerShell scenarios. The tests exercise exact-22-GiB admission, low first/second readings, phase failures and recovery races, missing observer permits, in-stream aborts, pure checkpoint-function extraction, permitted CPU stage ordering and actual import/call/process/write/network guard rejection against mocked OS boundaries. Launcher tests also cover phase-permit order, disk/deadline failure, owned cleanup, unsafe receipts, bounded Git timeout and incomplete settlement. No real project preparation, checkpoint verification, model import, WSL call or neural reservation occurred.
+
+Independent review of implementation commit `3741629` found two Important launcher defects: initial Git reads were unbounded and outside the evidence block; failed recovery/stderr settlement could retain a successful outcome. The follow-up fix puts the read-only Git operations under a 15-second process bound and owned containment inside the evidence block, and makes settlement errors force a non-success outcome. Synthetic regression cases exercise both fixes. Native Job behavior and actual CPU preparation remain deliberately unexecuted and cannot be claimed as live-validated.
 
 All existing tracked files remain unchanged; only new files are added on `codex/amd-zombie-standalone-ram-diagnostic`. The preservation check compares all 100 protected identities and 78 inherited bounded hashes, nine original failed-run files, five saved shape artifacts and 74 other retained records against authenticated historical receipts, before and after authoring. The already documented Windows volume-ID representation mapping is used solely for identity comparison; sizes, file IDs, timestamps and hashes must still match. This is not a fresh full hash of large protected checkpoints, models or the accepted master.
 

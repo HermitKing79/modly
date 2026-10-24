@@ -22,6 +22,80 @@ function Get-Admission {
     return @{passed=$true; readings=$rows}
 }
 
+function Confirm-PhaseBoundary {
+    param([string]$Stage,[scriptblock]$Observe,[scriptblock]$Check,[scriptblock]$Snapshot,[scriptblock]$Continue)
+    $row=& $Observe $Stage
+    & $Check $row
+    & $Snapshot $Stage
+    & $Continue
+}
+function Confirm-ResourceValues {
+    param([long]$Available,[double]$Elapsed,[long]$DFree,[long]$EvidenceFree,[string]$Stage)
+    if($Available -lt $script:Floor) {throw ('Below 22 GiB at '+$Stage+': '+$Available+' bytes')}
+    if($Elapsed -gt 480) {throw 'Original 480-second host deadline reached'}
+    if($DFree -lt 50GB) {throw 'Original 50 GiB D: floor failed'}
+    if($EvidenceFree -lt 2GB) {throw 'Original 2 GiB evidence-volume floor failed'}
+}
+function Stop-OwnedDiagnostic {
+    param($Process,[IntPtr]$Job,[scriptblock]$CloseJob)
+    if($Job -ne [IntPtr]::Zero) { & $CloseJob $Job }
+    if(-not $Process.WaitForExit(5000)) {
+        $Process.Kill()
+        if(-not $Process.WaitForExit(5000)) {throw 'Owned diagnostic did not settle after forced cleanup'}
+    }
+}
+function Confirm-ChildReceipt {
+    param([int]$ExitCode,$Receipt)
+    if($ExitCode -ne 0 -or $null -eq $Receipt -or $Receipt.classification -ne 'CPU_PREPARATION_COMPLETE' -or
+        @($Receipt.forbidden_modules_present).Count -ne 0 -or $Receipt.WSL_launched -ne $false -or
+        $Receipt.weights_loaded -ne $false -or $Receipt.neural_attempt_reserved -ne $false -or $Receipt.neural_forwards -ne 0) {
+        throw 'Complete CPU-only child receipt missing or invalid'
+    }
+}
+function Read-BoundedGitResult {
+    param($Process)
+    $output=$Process.StandardOutput.ReadToEndAsync()
+    $errorOutput=$Process.StandardError.ReadToEndAsync()
+    if(-not $Process.WaitForExit(15000)) {throw 'Read-only Git exceeded its original 15-second bound'}
+    if(-not $output.Wait(5000) -or -not $errorOutput.Wait(5000)) {throw 'Read-only Git pipes did not settle'}
+    if($Process.ExitCode -ne 0) {throw ('Read-only Git failed: '+$errorOutput.GetAwaiter().GetResult())}
+    return $output.GetAwaiter().GetResult()
+}
+function Invoke-BoundedGit {
+    param([string[]]$ReadArguments)
+    if(-not (($ReadArguments.Count -eq 2 -and $ReadArguments[0] -eq 'rev-parse' -and $ReadArguments[1] -eq 'HEAD') -or
+        ($ReadArguments.Count -eq 2 -and $ReadArguments[0] -eq 'show' -and $ReadArguments[1] -match '^[0-9a-f]{40}:[A-Za-z0-9_./-]+$'))) {
+        throw 'Unapproved launcher Git command'
+    }
+    $info=New-Object Diagnostics.ProcessStartInfo
+    $info.FileName=(Get-Command git.exe -CommandType Application | Select-Object -First 1).Source
+    $all=@('--no-pager','-C',$repo)+$ReadArguments
+    $info.Arguments=($all|ForEach-Object {'"'+$_+'"'}) -join ' '
+    $info.UseShellExecute=$false;$info.CreateNoWindow=$true
+    $info.RedirectStandardOutput=$true;$info.RedirectStandardError=$true
+    $process=New-Object Diagnostics.Process; $process.StartInfo=$info
+    $owned=[ZombieRamNative]::OwnedJob()
+    $started=$false
+    try {
+        if(-not $process.Start()){throw 'Read-only Git did not start'}
+        $started=$true
+        if(-not [ZombieRamNative]::AssignProcessToJobObject($owned,$process.Handle)){throw 'Read-only Git containment failed'}
+        return Read-BoundedGitResult $process
+    } finally {
+        [void][ZombieRamNative]::CloseHandle($owned)
+        if($started -and -not $process.HasExited) {if(-not $process.WaitForExit(5000)){$process.Kill()}}
+        $process.Dispose()
+    }
+}
+function Resolve-SettlementOutcome {
+    param([string]$Outcome,$Failure,[object[]]$Errors)
+    if($Errors.Count -gt 0) {
+        if($null -eq $Failure){$Failure='Required settlement/recovery evidence incomplete'}
+        return @{outcome='INCOMPLETE_SETTLEMENT';failure=$Failure}
+    }
+    return @{outcome=$Outcome;failure=$Failure}
+}
+
 if ($SelfTest) {
     if ($Run) { throw 'SelfTest cannot execute the real diagnostic' }
     $script:reads=0; $script:sleeps=0
@@ -33,7 +107,52 @@ if ($SelfTest) {
     $script:reads=0
     $middle=Get-Admission { $script:reads++; @{available_bytes=$(if($script:reads -eq 2){23622320127}else{25769803776})} } {} {param($row)}
     if ($middle.passed -or $script:reads -ne 2) { throw 'Second-reading rejection test failed' }
-    Write-Output 'PASS: 3 synthetic admission scenarios; no RAM query, child, WSL or model execution.'
+    $script:order=@()
+    Confirm-PhaseBoundary 'imports/before' {param($stage) $script:order+='observe'; @{available_bytes=23622320128}} {
+        param($row) $script:order+='check'; Confirm-ResourceValues $row.available_bytes 1 50GB 2GB 'imports/before'
+    } {param($stage) $script:order+='snapshot'} {$script:order+='continue'}
+    if(($script:order -join ',') -ne 'observe,check,snapshot,continue'){throw 'Phase permit ordering failed'}
+    $script:continued=$false; $rejected=$false
+    try {
+        Confirm-PhaseBoundary 'checkpoint/before' {param($stage) @{available_bytes=23622320127}} {
+            param($row) Confirm-ResourceValues $row.available_bytes 1 50GB 2GB 'checkpoint/before'
+        } {param($stage)} {$script:continued=$true}
+    } catch {$rejected=$true}
+    if(-not $rejected -or $script:continued){throw 'Low RAM permitted another phase'}
+    foreach($resource in @(@(23622320128,481,50GB,2GB),@(23622320128,1,(50GB-1),2GB),@(23622320128,1,50GB,(2GB-1)))) {
+        $rejected=$false
+        try {Confirm-ResourceValues $resource[0] $resource[1] $resource[2] $resource[3] 'synthetic'} catch {$rejected=$true}
+        if(-not $rejected){throw 'Resource failure admitted'}
+    }
+    $fake=New-Object PSObject -Property @{killed=$false;waits=0}
+    $fake|Add-Member ScriptMethod WaitForExit {param($ms) $this.waits++; return $this.waits -gt 1}
+    $fake|Add-Member ScriptMethod Kill {$this.killed=$true}
+    $script:closed=@()
+    Stop-OwnedDiagnostic $fake ([IntPtr]123) {param($job) $script:closed+=$job.ToInt64()}
+    if(-not $fake.killed -or $fake.waits -ne 2 -or $script:closed.Count -ne 1 -or $script:closed[0] -ne 123){throw 'Owned cleanup test failed'}
+    $receipt=[pscustomobject]@{classification='CPU_PREPARATION_COMPLETE';forbidden_modules_present=@();WSL_launched=$false;
+        weights_loaded=$false;neural_attempt_reserved=$false;neural_forwards=0}
+    Confirm-ChildReceipt 0 $receipt
+    $receipt.weights_loaded=$true; $rejected=$false
+    try {Confirm-ChildReceipt 0 $receipt} catch {$rejected=$true}
+    if(-not $rejected){throw 'Unsafe completion receipt admitted'}
+    $script:waitMilliseconds=0
+    $task=New-Object PSObject
+    $task|Add-Member ScriptMethod Wait {param($ms) return $true}
+    $task|Add-Member ScriptMethod GetAwaiter {return $this}
+    $task|Add-Member ScriptMethod GetResult {return 'synthetic Git output'}
+    $reader=New-Object PSObject -Property @{task=$task}
+    $reader|Add-Member ScriptMethod ReadToEndAsync {return $this.task}
+    $fakeGit=New-Object PSObject -Property @{StandardOutput=$reader;StandardError=$reader;ExitCode=0;success=$false}
+    $fakeGit|Add-Member ScriptMethod WaitForExit {param($ms) $script:waitMilliseconds=$ms; return $this.success}
+    $rejected=$false
+    try {Read-BoundedGitResult $fakeGit} catch {$rejected=$true}
+    if(-not $rejected -or $script:waitMilliseconds -ne 15000){throw 'Git timeout regression failed'}
+    $fakeGit.success=$true
+    if((Read-BoundedGitResult $fakeGit) -ne 'synthetic Git output'){throw 'Bounded Git output regression failed'}
+    $settled=Resolve-SettlementOutcome 'CPU_PREPARATION_COMPLETE' $null @('synthetic recovery failure')
+    if($settled.outcome -eq 'CPU_PREPARATION_COMPLETE' -or $null -eq $settled.failure){throw 'Settlement failure incorrectly reported success'}
+    Write-Output 'PASS: 14 synthetic admission/permit/resource/owned-cleanup/receipt/Git-timeout/settlement scenarios; no RAM query, child, WSL or model execution.'
     exit 0
 }
 if (-not $Run) {
@@ -145,20 +264,13 @@ function Observe {
 }
 function Check-Resources {
     param($Row)
-    if($Row.available_bytes -lt $script:Floor) { throw ('Below 22 GiB at '+$Row.stage+': '+$Row.available_bytes+' bytes') }
-    if($clock.Elapsed.TotalSeconds -gt 480) { throw 'Original 480-second host deadline reached' }
-    if((New-Object IO.DriveInfo('D:\')).AvailableFreeSpace -lt 50GB) { throw 'Original 50 GiB D: floor failed' }
-    if((New-Object IO.DriveInfo([IO.Path]::GetPathRoot($evidence))).AvailableFreeSpace -lt 2GB) { throw 'Original 2 GiB evidence-volume floor failed' }
+    Confirm-ResourceValues $Row.available_bytes $clock.Elapsed.TotalSeconds (New-Object IO.DriveInfo('D:\')).AvailableFreeSpace (New-Object IO.DriveInfo([IO.Path]::GetPathRoot($evidence))).AvailableFreeSpace $Row.stage
 }
 
 $identity=New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
 if($identity.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) { throw 'Run as the normal Windows user, without elevation' }
 if(-not [IO.File]::Exists($python) -or -not [IO.File]::Exists($worker)) { throw 'Original Python or standalone worker missing' }
 if($ExpectedCommit -notmatch '^[0-9a-f]{40}$') {throw '-Run requires the exact published -ExpectedCommit from the handoff'}
-$head=(& git -C $repo rev-parse HEAD).Trim()
-if($LASTEXITCODE -ne 0 -or $head -ne $ExpectedCommit) {throw 'Checkout differs from the exact published implementation'}
-& git -C $repo diff --quiet $ExpectedCommit -- .
-if($LASTEXITCODE -ne 0) {throw 'Tracked source differs from the published implementation'}
 $token=[Guid]::NewGuid().ToString('N')
 $evidence=Join-Path ([IO.Path]::GetFullPath((Join-Path $repo '..\artifacts'))) ('amd-zombie-standalone-ram-'+[DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfffZ')+'-'+$token)
 foreach($parent in @($repo,(Split-Path $repo), (Split-Path $evidence))) {
@@ -177,6 +289,14 @@ $stage='admission'; $outcome='FAILED'; $failure=$null; $forced=$false; $childExi
 $exitObservation=$null; $recovery=@(); $baseline=$null; $stderrTask=$null; $childStarted=$false
 $settlementErrors=@()
 try {
+    $stage='implementation-verification'
+    $head=Invoke-BoundedGit @('rev-parse','HEAD')
+    if($head.Trim() -ne $ExpectedCommit) {throw 'Checkout differs from the exact published implementation'}
+    foreach($relative in @('scripts/compatibility/Invoke-ZombieRamDiagnostic.ps1','scripts/compatibility/amd_zombie_ram_diagnostic.py','scripts/compatibility/amd_zombie_ram_sources.json')) {
+        $committed=Invoke-BoundedGit @('show',($ExpectedCommit+':'+$relative))
+        $working=[IO.File]::ReadAllText((Join-Path $repo $relative))
+        if($committed.Replace("`r`n","`n") -cne $working.Replace("`r`n","`n")) {throw ('Diagnostic implementation differs from published source: '+$relative)}
+    }
     $admission=Get-Admission {Read-PhysicalMemory} {Start-Sleep -Seconds 4} {param($row)
         $script:minimum=[Math]::Min($script:minimum,$row.available_bytes)
         $telemetry.WriteLine((@{kind='admission';stage='before-python';sample=$row}|ConvertTo-Json -Depth 4 -Compress))
@@ -213,9 +333,9 @@ try {
                     $event=$line.Substring(16)|ConvertFrom-Json
                     if($event.edge -notin @('before','after') -or [string]::IsNullOrWhiteSpace($event.phase)) {throw 'Invalid phase protocol'}
                     $stage=$event.phase+'/'+$event.edge
-                    $boundary=Observe $stage 'boundary'; Check-Resources $boundary
-                    Process-Snapshot $stage
-                    if(-not $child.HasExited) { $child.StandardInput.WriteLine('CONTINUE'); $child.StandardInput.Flush() }
+                    Confirm-PhaseBoundary $stage {param($name) Observe $name 'boundary'} {param($row) Check-Resources $row} {
+                        param($name) Process-Snapshot $name
+                    } {if(-not $child.HasExited) { $child.StandardInput.WriteLine('CONTINUE'); $child.StandardInput.Flush() }}
                 }
                 $lineTask=$child.StandardOutput.ReadLineAsync()
             }
@@ -226,14 +346,15 @@ try {
     $exitObservation=Observe 'child-exit' 'exit'
     if($childExit -ne 0) { throw ('CPU diagnostic child failed with exit code '+$childExit) }
     $childResult=Get-Content -LiteralPath (Join-Path $evidence 'child-result.json') -Raw | ConvertFrom-Json
-    if($childResult.classification -ne 'CPU_PREPARATION_COMPLETE' -or $childResult.forbidden_modules_present.Count -ne 0) {throw 'Complete CPU-only child receipt missing'}
+    Confirm-ChildReceipt $childExit $childResult
     $outcome='CPU_PREPARATION_COMPLETE'
 } catch {
     $failure=$_.Exception.Message
     if($null -ne $child -and $childStarted -and -not $child.HasExited) {
         $forced=$true
-        if($job -ne [IntPtr]::Zero) { [void][ZombieRamNative]::CloseHandle($job); $job=[IntPtr]::Zero }
-        if(-not $child.WaitForExit(5000)) { $child.Kill(); [void]$child.WaitForExit(5000) }
+        $ownedToClose=$job
+        $job=[IntPtr]::Zero
+        Stop-OwnedDiagnostic $child $ownedToClose {param($ownedJob) [void][ZombieRamNative]::CloseHandle($ownedJob)}
     }
     if($childStarted -and $child.HasExited) { $childExit=$child.ExitCode; $exitObservation=Observe 'child-exit-after-rejection' 'exit' }
 } finally {
@@ -246,15 +367,19 @@ try {
         try { Process-Snapshot 'post-exit-recovery' } catch { $settlementErrors+=$_.Exception.Message }
     }
     if($null -ne $stderrTask) {
-        if($stderrTask.Wait(5000)) { Write-NewJson (Join-Path $evidence 'child.stderr.json') @{text=$stderrTask.GetAwaiter().GetResult()} }
-        else { $settlementErrors+='stderr did not settle within 5 seconds' }
+        try {
+            if($stderrTask.Wait(5000)) { Write-NewJson (Join-Path $evidence 'child.stderr.json') @{text=$stderrTask.GetAwaiter().GetResult()} }
+            else { $settlementErrors+='stderr did not settle within 5 seconds' }
+        } catch {$settlementErrors+=$_.Exception.Message}
     }
+    $settlement=Resolve-SettlementOutcome $outcome $failure $settlementErrors
+    $outcome=$settlement.outcome; $failure=$settlement.failure
     $recovered=$null
     if($recovery.Count -gt 0 -and $null -ne $exitObservation) { $recovered=$recovery[-1].available_bytes-$exitObservation.available_bytes }
     Write-NewJson (Join-Path $evidence 'summary.json') @{classification=$outcome;failure=$failure;failed_or_last_stage=$stage;
         implementation_commit=$ExpectedCommit;settlement_errors=$settlementErrors;
         timestamp_utc=[DateTimeOffset]::UtcNow.ToString('o');child_started=$childStarted;child_exit_code=$childExit;
-        forced_owned_diagnostic_cleanup=$forced;minimum_observed_available_bytes=$script:minimum;
+        forced_owned_diagnostic_cleanup=$forced;minimum_observed_available_bytes=$(if($script:minimum -eq [long]::MaxValue){$null}else{$script:minimum});
         sampled_child_peak_working_set_bytes=$script:peakWS;sampled_child_peak_private_commit_bytes=$script:peakPrivate;
         baseline=$baseline;exit_observation=$exitObservation;post_exit_available_change_bytes=$recovered;
         neural_attempt_reserved=$false;WSL_launched=$false;weights_loaded=$false;neural_forwards=0;
