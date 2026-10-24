@@ -9,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
 from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -57,12 +58,20 @@ class WindowsAudit(unittest.TestCase):
     def test_mutation_injection_shell_foreign_executable_and_cwd_are_rejected(self):
         for case in ('mutation', 'injection-list', 'injection-string', 'quote-variant', 'extra-option',
                      'newline', 'wsl', 'foreign-executable', 'foreign-git', 'foreign-argv0', 'wrong-cwd', 'shell',
-                     'shell-with-git', 'traversal', 'double-space', 'leading-space'):
+                     'shell-with-git', 'traversal', 'double-space', 'leading-space',
+                     'shadow-application', 'shadow-system', 'shadow-legacy-system', 'shadow-windows',
+                     'shadow-current', 'path-query-failure', 'relative-explicit'):
             with self.subTest(case=case):
                 result = self.probe(case)
                 self.assertEqual(result['status'], 'blocked', result)
                 self.assertEqual(result['events'][0]['args_type'], 'str', result)
                 self.assertEqual(result['memory_checks'], 0, result)
+
+    def test_non_exe_git_pin_is_rejected_before_launch(self):
+        result = self.probe('non-exe-pin')
+        self.assertEqual(result['status'], 'blocked', result)
+        self.assertEqual(result['memory_checks'], 0)
+        self.assertEqual(result['events'], [])
 
 
 def probe(name):
@@ -87,6 +96,7 @@ def probe(name):
     elif name == 'foreign-argv0':
         kwargs['executable'] = git
         command[0] = str(evidence/'git.exe')
+    elif name == 'relative-explicit': kwargs['executable'] = 'git.exe'
     elif name == 'wrong-cwd': kwargs['cwd'] = str(evidence)
     elif name == 'shell': kwargs['shell'] = True
     elif name == 'shell-with-git': kwargs.update(shell=True, executable=git)
@@ -101,9 +111,32 @@ def probe(name):
                                correct_cwd=Path(args[2] or os.getcwd()).resolve() == ROOT))
     def check_memory(): checks.append('synthetic-no-RAM-query')
     sys.addaudithook(capture)
-    diagnostic.install_guards(evidence, ROOT, check_memory)
     result = dict(status='unexpected', events=events)
     try:
+        if name in ('shadow-application', 'shadow-system', 'shadow-legacy-system', 'shadow-windows', 'path-query-failure'):
+            # Simulate only the native lookup location; never write into the
+            # actual Python/system installation or launch the shadow executable.
+            target = {'shadow-system': evidence/'system', 'shadow-legacy-system': evidence/'windows/System',
+                      'shadow-windows': evidence/'windows'}.get(name, evidence/'application')
+            target.mkdir(parents=True)
+            (target/'git.exe').write_bytes(b'not an executable')
+            def module_path(handle, buffer, length):
+                if name == 'path-query-failure': return 0
+                buffer.value = str(evidence/'application/python.exe'); return len(buffer.value)
+            def system_path(buffer, length):
+                buffer.value = str(evidence/'system'); return len(buffer.value)
+            def windows_path(buffer, length):
+                buffer.value = str(evidence/'windows'); return len(buffer.value)
+            kernel = SimpleNamespace(GetModuleFileNameW=module_path, GetSystemDirectoryW=system_path,
+                                     GetWindowsDirectoryW=windows_path)
+            mock.patch.object(diagnostic.ctypes, 'WinDLL', return_value=kernel).start()
+        elif name == 'non-exe-pin':
+            (evidence/'git.cmd').write_bytes(b'not an executable')
+            mock.patch.object(diagnostic.shutil, 'which', return_value=str(evidence/'git.cmd')).start()
+        elif name == 'shadow-current':
+            (evidence/'git.exe').write_bytes(b'not an executable')
+        diagnostic.install_guards(evidence, ROOT, check_memory)
+        if name == 'shadow-current': os.chdir(evidence)
         # Negative probes retain all actual CPython audit formatting, but a
         # mocked final OS boundary makes mutations/WSL impossible even on failure.
         if allowed:

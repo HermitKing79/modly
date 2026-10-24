@@ -71,9 +71,35 @@ def validate_write(path, evidence):
             raise DiagnosticStop('Redirected evidence path denied: ' + str(parent))
 
 
+def windows_implicit_git_identity(git):
+    """Reject pre-PATH shadows of the pinned .exe; do not emulate a shell search."""
+    kernel = ctypes.WinDLL('kernel32', use_last_error=True)
+    buffer = ctypes.create_unicode_buffer(32768)
+    def query(function, *args):
+        function.restype = ctypes.c_uint32
+        count = function(*args, buffer, len(buffer))
+        if not 0 < count < len(buffer):
+            raise DiagnosticStop('Windows executable search directory query failed')
+        return Path(buffer.value)
+    kernel.GetModuleFileNameW.argtypes = [ctypes.c_void_p, ctypes.c_wchar_p, ctypes.c_uint32]
+    kernel.GetSystemDirectoryW.argtypes = kernel.GetWindowsDirectoryW.argtypes = [ctypes.c_wchar_p, ctypes.c_uint32]
+    application = query(kernel.GetModuleFileNameW, None).parent
+    system = query(kernel.GetSystemDirectoryW)
+    windows = query(kernel.GetWindowsDirectoryW)
+    # Conservatively reject *any* foreign candidate in the documented pre-PATH
+    # search directories, even if an earlier directory already contains our pin.
+    for directory in (application, Path.cwd(), system, windows/'System', windows):
+        candidate = directory/'git.exe'
+        if candidate.exists() and candidate.resolve() != git:
+            raise DiagnosticStop('Foreign implicit Windows Git executable denied')
+    if Path(shutil.which('git.exe') or '').resolve() != git:
+        raise DiagnosticStop('Windows PATH Git executable differs from pin')
+
+
 def validate_spawn(executable, args, cwd, root, *, git=None):
-    git = Path(git or shutil.which('git') or '').resolve()
-    if os.name == 'nt' and isinstance(args, str):
+    git = Path(git or shutil.which('git.exe' if os.name == 'nt' else 'git') or '').resolve()
+    windows_command = os.name == 'nt' and isinstance(args, str)
+    if windows_command:
         # Windows audits Popen *after* list2cmdline, often with executable=None.
         # Recognise only canonical spellings of the authorised argv; never parse
         # an arbitrary command line, shell quoting, options or operators.
@@ -94,9 +120,14 @@ def validate_spawn(executable, args, cwd, root, *, git=None):
             or Path(cwd or os.getcwd()).resolve() != root.resolve()):
         raise DiagnosticStop('Only bounded read-only Git subprocesses are permitted')
     effective = args[0] if executable is None and os.name == 'nt' else executable
+    if windows_command and executable is not None and not Path(executable).is_absolute():
+        raise DiagnosticStop('Windows explicit executable must be the absolute Git pin')
     for program in (args[0], effective):
-        if not isinstance(program, str) or Path(shutil.which(program) or program).resolve() != git:
+        lookup = 'git.exe' if os.name == 'nt' and program in ('git', 'git.exe') else program
+        if not isinstance(program, str) or Path(shutil.which(lookup) or program).resolve() != git:
             raise DiagnosticStop('Foreign Git executable denied')
+    if windows_command and executable is None and args[0] in ('git', 'git.exe'):
+        windows_implicit_git_identity(git)
     if list(args[1:]) == ['rev-parse', 'HEAD']:
         return
     if len(args) == 3 and args[1] == 'show' and re.fullmatch(r'[0-9a-f]{40}:[A-Za-z0-9_./-]+', args[2]):
@@ -117,6 +148,12 @@ def install_guards(evidence, root, check_memory):
     """Defence in depth around the pinned, unchanged CPU readers; no sandbox claim."""
     if any(forbidden_import(name) for name in sys.modules):
         raise DiagnosticStop('Worker must start without neural modules')
+    resolved_git = shutil.which('git.exe' if os.name == 'nt' else 'git')
+    if not resolved_git:
+        raise DiagnosticStop('Pinned Git executable unavailable')
+    git = Path(resolved_git).resolve(strict=True)
+    if not git.is_file() or os.name == 'nt' and git.name.lower() != 'git.exe':
+        raise DiagnosticStop('Windows Git pin must be a real Git .exe')
     original_import = builtins.__import__
     def guarded_import(name, *args, **kwargs):
         if forbidden_import(name):
@@ -124,7 +161,6 @@ def install_guards(evidence, root, check_memory):
         return original_import(name, *args, **kwargs)
     builtins.__import__ = guarded_import
     sys.meta_path.insert(0, NeuralBlocker())
-    git = Path(shutil.which('git') or '').resolve()
     def audit(event, args):
         if event == 'import' and forbidden_import(str(args[0])):
             raise DiagnosticStop('Neural import denied: ' + str(args[0]))
