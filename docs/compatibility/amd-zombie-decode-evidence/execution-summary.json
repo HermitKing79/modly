@@ -1,0 +1,96 @@
+{
+  "schema": "modly-zombie-decode-host-evidence-summary-v1",
+  "classification": "BLOCKED",
+  "execution_commit": "8dc51cc654b89ef4ab6a3e4877d603cb063aaf18",
+  "raw_adapter_classification": "FAIL",
+  "raw_supervisor_classification": "UNKNOWN",
+  "first_stop": {
+    "stage": "CPU preparation, before GPU placement and parent forward",
+    "error_type": "RuntimeError",
+    "exact_error": "Host RAM/disk admission failed: {\"timestamp_utc\": \"2026-10-24T01:10:08.384023+00:00\", \"stage\": \"supervised-live\", \"available_ram_bytes\": 12765356032, \"D_free_bytes\": 74074488832, \"required_ram_bytes\": 12884901888, \"required_D_free_bytes\": 53687091200, \"admitted\": false}",
+    "measurement": {
+      "timestamp_utc": "2026-10-24T01:10:08.384023+00:00",
+      "stage": "supervised-live",
+      "available_ram_bytes": 12765356032,
+      "D_free_bytes": 74074488832,
+      "required_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200,
+      "admitted": false
+    },
+    "last_durable_guest_phase": {
+      "phase": "native-qualified-CPU-preparation-entry",
+      "utc": "2026-10-24T01:10:00.792769+00:00",
+      "monotonic_seconds": 19.515743554,
+      "memory": {
+        "allocated": 0,
+        "reserved": 0
+      }
+    }
+  },
+  "lineage": "PASS",
+  "cpu_input_checkpoint_route_admission": "PASS",
+  "neural_forward": "BLOCKED",
+  "ten_tensor_artifact": "NOT RUN",
+  "natural_settlement": "BLOCKED_FORCED_CONTAINMENT",
+  "conditional_cpu_mesh": "NOT RUN",
+  "visual_quality": "NOT ASSESSED",
+  "materials_glb_generate": "NOT RUN",
+  "initial_rows": 1000,
+  "learned_subdivision_counts": null,
+  "completed_convolutions": 0,
+  "completed_c2s": 0,
+  "completed_parent_forwards": 0,
+  "no_recorded_parent_forward_or_GPU_stage": true,
+  "output_artifact": null,
+  "host_pre_marker_available_ram_bytes": 19465777152,
+  "observed_host_ram_decline_to_rejection_bytes": 6700421120,
+  "minimum_actual_logged_available_ram_bytes": 12765356032,
+  "raw_supervisor_minimum_field_excludes_raised_sample": 13450731520,
+  "resource_samples": 29,
+  "initial_GPU_identity_and_memory": {
+    "name": "AMD Radeon RX 9070 XT",
+    "architecture": "gfx1201",
+    "count": 1,
+    "total_bytes": 16977985536,
+    "free_bytes": 15004422144,
+    "property_total_bytes": 16977985536
+  },
+  "peak_torch_allocated_bytes": null,
+  "peak_torch_reserved_bytes": null,
+  "last_measured_torch_memory": {
+    "allocated": 0,
+    "reserved": 0
+  },
+  "last_memory_measurement_is_not_post_cleanup": true,
+  "gpu_forward_seconds": null,
+  "supervised_seconds": 35.625,
+  "observer_healthy": true,
+  "cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 4,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": true,
+    "cleanup_seconds": 0.0
+  },
+  "named_distro_termination_returncode": 0,
+  "post_cleanup_torch_zero_measured": false,
+  "worker_returncode": 1,
+  "limitations": [
+    "No completed guest results receipt or decoded tensor artifact was transferred after forced containment.",
+    "No post-cleanup Torch measurement or actual allocator peak is available; entry 0/0 is not a teardown claim.",
+    "Raw historical classifications are retained unchanged; this report classifies the measured pre-forward resource gate as BLOCKED."
+  ],
+  "private_execution_evidence_sha256": {
+    "decode-attempt-started.json": "e71db8a205d360e68dba43af1d6ebc3a7a11515f4ff038b25aed311885701342",
+    "final-result.json": "07cc1b7097e183bbd4427b54cfe4ab51e32f6e2a954fc10d274f9936b73aedd1",
+    "resource-admission.jsonl": "5e0e83260a08a5455c16b15a8069a824989b1a822ee8511ae6e7ce07cff6c880",
+    "run/guest/phases.jsonl": "ef781c4c2e8409adc412d8e412a70ab14a3e3537b95006d0c2300772ef2d048f",
+    "run/phases.jsonl": "e0120222abee4eb06a3fab3aec1457f13f2d0ae01eedffdf365d5d5849a943db",
+    "run/results.json": "272f5572a9ee20e64e77f52dd9b755716f71b17a50f697d73c31246a7cf08920",
+    "run/worker.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run/worker.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run-contract.json": "bdd20f3466e77bf7045f857b1a5dd9a80c63e4d790c14aec227bfe7592c1ce2a"
+  },
+  "private_launch_stdout_sha256": "99514b17e7299b8c27c1ad1b46fc846ebf2e8a58dea40734114641232ca90662",
+  "private_launch_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,97 @@
+{
+ "schema": "modly-zombie-decode-outcome-review-v1",
+ "reviewer": "independent-host-runtime-outcome-review-subagent",
+ "reviewed_utc": "2026-10-24T01:12:40.180765+00:00",
+ "classification": "BLOCKED_BEFORE_NEURAL_FORWARD",
+ "blockers": [
+  "Original live Windows available-RAM floor rejected during CPU preparation; one native attempt is consumed and no retry is permitted."
+ ],
+ "execution_candidate_commit": "8dc51cc654b89ef4ab6a3e4877d603cb063aaf18",
+ "executed_code_same_as_candidate": true,
+ "run_contract_sha256": "2b60f147a945feb4845c2cc45a88bd7beef18e8cdc52750deb4a761daea91e4f",
+ "source_job_sha256": "913ad907c55f1f510cce00d1d7573d518883190628d040506a6bd78578dd54bf",
+ "verdicts": {
+  "complete_genuine_zombie_lineage": "PASS",
+  "decoder_CPU_admission": "PASS",
+  "genuine_WSL_neural_geometry_forward": "BLOCKED",
+  "complete_ten_tensor_artifact": "NOT RUN",
+  "natural_settlement_and_verified_GPU_teardown": "BLOCKED",
+  "conditional_CPU_mesh": "NOT RUN",
+  "visual_quality": "NOT OBSERVED",
+  "materials_GLB_Generate": "NOT RUN"
+ },
+ "raw_classifications_preserved": {
+  "supervisor": "UNKNOWN",
+  "host_adapter": "FAIL",
+  "worker_receipt": "MISSING; no completed worker acceptance"
+ },
+ "first_native_attempt_admission_stop": {
+  "time_utc": "2026-10-24T01:10:08.384023+00:00",
+  "available_RAM_bytes": 12765356032,
+  "required_RAM_bytes": 12884901888,
+  "shortfall_bytes": 119545856,
+  "D_free_bytes": 74074488832,
+  "D_required_bytes": 53687091200,
+  "D_gate_passed": true,
+  "resource_samples": 29,
+  "ledger_minimum_RAM_bytes": 12765356032,
+  "raw_minimum_field_bytes": 13450731520,
+  "minimum_field_note": "Historical tick updates minimum only after host_admission returns; the raising failed sample is present in the durable ledger and is the actual sampled minimum."
+ },
+ "actual_progress": {
+  "owned_Job_attached_before_GO": true,
+  "TunableOp_flags_all_false": true,
+  "GPU": {
+   "name": "AMD Radeon RX 9070 XT",
+   "architecture": "gfx1201",
+   "count": 1,
+   "total_bytes": 16977985536,
+   "free_bytes": 15004422144,
+   "property_total_bytes": 16977985536
+  },
+  "native_import_reached_qualified_CPU_entry": true,
+  "last_guest_phase": "native-qualified-CPU-preparation-entry",
+  "last_recorded_Torch_bytes_before_CPU_preparation": {
+   "allocated": 0,
+   "reserved": 0
+  },
+  "GPU_stage_entered": false,
+  "neural_forward_entered": false,
+  "convolutions_or_C2S_completed": false,
+  "learned_subdivision_support": "UNKNOWN; no forward",
+  "strict_CPU_load_completion": "NOT ESTABLISHED",
+  "decoded_output_or_mesh_created": false,
+  "peak_VRAM_bytes": null,
+  "post_cleanup_Torch_allocated_reserved_bytes": null,
+  "elapsed_supervisor_seconds": 35.625
+ },
+ "containment": {
+  "observer_healthy": true,
+  "healthy_saved_observations": 8,
+  "worker_returncode": 1,
+  "windows_job_cleanup": {
+   "owned_tree_exit_verified": true,
+   "active_before_cleanup": 4,
+   "active_after_cleanup": 0,
+   "forced_job_cleanup": true,
+   "cleanup_seconds": 0.0
+  },
+  "named_distro_termination_returncode": 0,
+  "natural_settlement": false,
+  "zero_Torch_teardown_verified": false
+ },
+ "private_run_evidence_sha256": {
+  "decode-attempt-started.json": "e71db8a205d360e68dba43af1d6ebc3a7a11515f4ff038b25aed311885701342",
+  "final-result.json": "07cc1b7097e183bbd4427b54cfe4ab51e32f6e2a954fc10d274f9936b73aedd1",
+  "resource-admission.jsonl": "5e0e83260a08a5455c16b15a8069a824989b1a822ee8511ae6e7ce07cff6c880",
+  "run/guest/phases.jsonl": "ef781c4c2e8409adc412d8e412a70ab14a3e3537b95006d0c2300772ef2d048f",
+  "run/phases.jsonl": "e0120222abee4eb06a3fab3aec1457f13f2d0ae01eedffdf365d5d5849a943db",
+  "run/results.json": "272f5572a9ee20e64e77f52dd9b755716f71b17a50f697d73c31246a7cf08920",
+  "run/worker.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "run/worker.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "run-contract.json": "bdd20f3466e77bf7045f857b1a5dd9a80c63e4d790c14aec227bfe7592c1ce2a"
+ },
+ "limits": "CPU admission and the prior read-only probe PASS remain valid preparation results. This actual attempt was stopped before decoder forward by the unchanged live resource gate. The pre-CPU 0/0 snapshot is not post-cleanup or peak evidence. No worker receipt or tensor artifact is accepted. Natural settlement and GPU release cannot PASS after forced cleanup and absent final measurements. No inference retry or mesh extraction is admitted.",
+ "reviewer_WSL_native_model_Job_GPU_execution": false,
+ "source_safe": true
+}
