@@ -1,0 +1,60 @@
+{
+  "private_cpu_admission_sha256": "8c19ba315ef99fef5b37a99f49fc1fe2057935db9079188baed4790989208563",
+  "input_summary": {
+    "tokens": 1000,
+    "features_shape": [
+      1000,
+      32
+    ],
+    "coordinates_shape": [
+      1000,
+      4
+    ],
+    "coordinate_order": "batch,D,H,W; preserved row order",
+    "bounds": [
+      [
+        0,
+        12,
+        0
+      ],
+      [
+        31,
+        19,
+        31
+      ]
+    ],
+    "payload_sha256": "edf8b2c33ead863a62ee4f53ed4903d62a811af3986b23a2369897b0d4060a6b",
+    "coordinates_payload_sha256": "b871475ff86493ca9d023aa7736262a898193e3a1b6833a2b6716f427cf2a603",
+    "minimum": -22.58900260925293,
+    "maximum": 22.29201889038086,
+    "mean": 0.10053630874422378,
+    "standard_deviation": 5.664339940038088,
+    "finite": true
+  },
+  "source_job_sha256": "913ad907c55f1f510cce00d1d7573d518883190628d040506a6bd78578dd54bf",
+  "source_image_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+  "shape_execution_commit": "35a5b825e3e9128326897a2ce35c87b237fdfa8b",
+  "checkpoint_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+  "initial_rows": 1000,
+  "maximum_final_rows": 1842968,
+  "maximum_intermediate_rows": 1000000,
+  "maximum_tile_rows": 32768,
+  "final_support_profile": null,
+  "large_convolution_tiling": true,
+  "host_admission": {
+    "timestamp_utc": "2026-10-24T00:58:10.942701+00:00",
+    "stage": "pre-marker",
+    "available_ram_bytes": 19354300416,
+    "D_free_bytes": 74074488832,
+    "required_ram_bytes": 12884901888,
+    "required_D_free_bytes": 53687091200,
+    "admitted": true
+  },
+  "destination_admission": {
+    "destination_free_bytes": 133588738048,
+    "required_destination_free_bytes": 2147483648
+  },
+  "no_neural_import": true,
+  "weights_loaded": false,
+  "production_marker_reserved": false
+}

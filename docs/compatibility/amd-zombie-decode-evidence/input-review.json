@@ -1,0 +1,184 @@
+{
+  "schema": "modly-zombie-decode-input-review-v1",
+  "reviewer": "independent-cpu-input-audit-subagent",
+  "classification": "PASS",
+  "blockers": [],
+  "reviewed_utc": "2026-10-24T00:49:36.465424+00:00",
+  "base_commit": "0468f86a13271e401e02e5376dd10377e294c3b6",
+  "complete_genuine_zombie_lineage": "PASS",
+  "source_image_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+  "source_pixel_sha256": "e958193cad52cb3b15efd69410c3727853df61fd35310468d1b4540284ea2fb5",
+  "dino_execution_commit": "93269412602a338acd9fbde41798901ddb5f707d",
+  "sparse_and_occupancy_execution_commit": "e6b6330ba2f9e51abfb74c726729e0be4ade7cac",
+  "shape_slat_execution_commit": "35a5b825e3e9128326897a2ce35c87b237fdfa8b",
+  "original_unchanged_verify_saved_reused": true,
+  "original_five_artifacts": {
+    "shape-initial-noise.npy": {
+      "file_bytes": 128128,
+      "sha256": "bcc80a25b7f1e2fe713499edcf056df956d77da0f4425d8c97b2eee80ebe2147",
+      "shape": [
+        1000,
+        32
+      ],
+      "dtype": "float32",
+      "fortran_header": false,
+      "c_contiguous": true,
+      "f_contiguous": false,
+      "canonical_payload_sha256": "493775467c0beab6c72aac9955f7f537ea013571df83d15b422f98488f2f9c6c",
+      "finite": true
+    },
+    "shape-latent-coordinates.npy": {
+      "file_bytes": 16128,
+      "sha256": "c432b04ec70c6200fadf8f5f62ce995514e24bf4194b154ac30a76148a7bb4a2",
+      "shape": [
+        1000,
+        4
+      ],
+      "dtype": "int32",
+      "fortran_header": false,
+      "c_contiguous": true,
+      "f_contiguous": false,
+      "canonical_payload_sha256": "b871475ff86493ca9d023aa7736262a898193e3a1b6833a2b6716f427cf2a603",
+      "finite": true
+    },
+    "shape-latent-denormalized.npy": {
+      "file_bytes": 128128,
+      "sha256": "18778e295e7d9405ca2e80b8fde64dacc790696c361f6418436d2e498149b2b3",
+      "shape": [
+        1000,
+        32
+      ],
+      "dtype": "float32",
+      "fortran_header": false,
+      "c_contiguous": true,
+      "f_contiguous": false,
+      "canonical_payload_sha256": "edf8b2c33ead863a62ee4f53ed4903d62a811af3986b23a2369897b0d4060a6b",
+      "finite": true
+    },
+    "shape-latent-provenance.json": {
+      "file_bytes": 18748,
+      "sha256": "1484e9efdd60cee9b86f3d8bf07eac6a1bce318c5960fb5f00cac435580a5ab4"
+    },
+    "shape-latent-raw.npy": {
+      "file_bytes": 128128,
+      "sha256": "dc67484797a60e3e1c4ff1941bb5c29977707d2c0444d0c63c0df43087a91405",
+      "shape": [
+        1000,
+        32
+      ],
+      "dtype": "float32",
+      "fortran_header": false,
+      "c_contiguous": true,
+      "f_contiguous": false,
+      "canonical_payload_sha256": "62feb33ea011a4213f4cf525aef5534565098d30b393ef2f5042776add62295d",
+      "finite": true
+    }
+  },
+  "original_shape_results_sha256": "913ad907c55f1f510cce00d1d7573d518883190628d040506a6bd78578dd54bf",
+  "original_shape_outcome_review_sha256": "73f1bde5019eb1e6d2482cc45b01c4b055a9ea90bde98eaa3263f1a0df1b1835",
+  "original_shape_independent_readback_sha256": "7a6981c09095fece8369e2ce6007b8d03d3c76db8884e0685a5fc21c6db0574d",
+  "original_shape_attempt_marker_sha256": "0ab9bc8b18b67c5bf96bad11aaf613a8abc649fce4d4825448d24a7092083eec",
+  "original_receipt_hashes_verified": 61,
+  "distinct_original_neural_execution_commits": 3,
+  "original_source_closures": {
+    "dino": {
+      "commit": "93269412602a338acd9fbde41798901ddb5f707d",
+      "manifest_sha256": "57f4f1e297380488634706e44d336e95e019374ead7cac15edc687b84b6688d0",
+      "verified_file_count": 46,
+      "git_blob_line_ending_only_equivalence_files": [
+        "scripts/compatibility/amd_model_metadata.py",
+        "api/services/amd_offline_guard.py",
+        "api/services/amd_observer.py"
+      ]
+    },
+    "sparse_sampling": {
+      "commit": "e6b6330ba2f9e51abfb74c726729e0be4ade7cac",
+      "manifest_sha256": "4e707cc6bfa59c48caf001211054a32688bd680c1c4b43a13b40fcf840ffaab0",
+      "verified_file_count": 65,
+      "git_blob_line_ending_only_equivalence_files": [
+        "scripts/compatibility/amd_model_metadata.py",
+        "api/services/amd_offline_guard.py",
+        "api/services/amd_observer.py"
+      ]
+    },
+    "occupancy": {
+      "commit": "e6b6330ba2f9e51abfb74c726729e0be4ade7cac",
+      "manifest_sha256": "4e707cc6bfa59c48caf001211054a32688bd680c1c4b43a13b40fcf840ffaab0",
+      "verified_file_count": 65,
+      "git_blob_line_ending_only_equivalence_files": [
+        "scripts/compatibility/amd_model_metadata.py",
+        "api/services/amd_offline_guard.py",
+        "api/services/amd_observer.py"
+      ]
+    },
+    "shape_slat": {
+      "commit": "35a5b825e3e9128326897a2ce35c87b237fdfa8b",
+      "manifest_sha256": "032185013e06dd93675d5168ab3baa60538241e0e76773289819cda379ad9dd3",
+      "verified_file_count": 91,
+      "git_blob_line_ending_only_equivalence_files": [
+        "api/services/amd_observer.py",
+        "api/services/amd_offline_guard.py",
+        "scripts/compatibility/amd_model_metadata.py"
+      ]
+    }
+  },
+  "source_verification_method": "Read-only git cat-file batch against each actual execution commit; current exact bytes match original committed-harness hashes; listed text paths differ from Git blobs only by CRLF/LF representation",
+  "exact_cpu_f32_denormalization": true,
+  "token_count": 1000,
+  "canonical_coordinate_order": "batch,D,H,W; original lexicographic row order",
+  "independent_occupancy_floor_divide_unique_equal": true,
+  "coordinate_layout_copy": {
+    "original_fortran_header": false,
+    "original_c_contiguous": true,
+    "original_f_contiguous": false,
+    "original_file_sha256": "c432b04ec70c6200fadf8f5f62ce995514e24bf4194b154ac30a76148a7bb4a2",
+    "original_decoder_read_accepts": true,
+    "reconstructed_pooled_c_contiguous": false,
+    "reconstructed_pooled_f_contiguous": true,
+    "in_memory_c_order_copy_file_sha256": "c432b04ec70c6200fadf8f5f62ce995514e24bf4194b154ac30a76148a7bb4a2",
+    "in_memory_copy_file_bytes": 16128,
+    "in_memory_copy_c_contiguous": true,
+    "in_memory_copy_f_contiguous": false,
+    "exact_array_values_equal": true,
+    "same_shape_dtype_and_canonical_row_payload": true,
+    "no_row_reordering": true,
+    "canonical_payload_sha256": "b871475ff86493ca9d023aa7736262a898193e3a1b6833a2b6716f427cf2a603",
+    "original_preserved": true,
+    "original_contract_c_order_header_and_c_contiguous_required": true,
+    "unchanged_original_decoder_reader_accepts_original": true,
+    "no_replacement_file_written": true
+  },
+  "feature_file_sha256": "e5659b1842509e73ec496ef90bf95fae86c93ddf5ee73fba8015822982a3cb60",
+  "sparse_latent_file_sha256": "ecf57d3a0db0bec99b79712fc3626c5dd224cff03e33c60e0297500cde761930",
+  "checkpoint": {
+    "name": "shape_dec_next_dc_f16c32_fp16",
+    "sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "file_bytes": 948490494,
+    "header_sha256": "80dc6403ca284a2361109cde3190bc1b5ea5d30936e8f80625cbbc0827062c83",
+    "header_bytes": 27560,
+    "tensor_count": 292,
+    "parameter_count": 474231463,
+    "tensor_data_bytes": 948462926,
+    "dtypes": {
+      "F16": 292
+    },
+    "config_sha256": "5f1b856dffce79466fb18f5f0eefc08f08c673b24b3c05b20359c0b6d318a209",
+    "original_audited_header_config_and_fdg_source_equal": true,
+    "full_file_stream_hash_verified": true,
+    "weights_loaded": false
+  },
+  "private_receipt_sha256": "300c7c21a0fd7b954ab4872caced35773dcdef78f2883f5676946f9ca1cc73bb",
+  "private_reader_sha256": "abbde467eb0f50557bcde99b04ce5a0fef3205e7cb1186f4d30079dcedd5b055",
+  "cpu_only": true,
+  "no_neural_imports": true,
+  "weights_loaded": false,
+  "gpu_wsl_job_or_worker_execution": false,
+  "original_artifacts_modified": false,
+  "individual_array_values_published": false,
+  "source_safe": true,
+  "limitations": [
+    "This audit qualifies genuine saved inputs and checkpoint bytes; live GPU admission and containment remain required.",
+    "The genuine saved coordinate NPY already has a C-order header and is admitted unchanged; only reconstructed pooled support uses F layout. Its in-memory C layout copy exactly reproduces the original saved NPY.",
+    "Each historical stage retains its original separate execution receipt and execution identity."
+  ]
+}

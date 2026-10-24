@@ -1,0 +1,28 @@
+{
+  "classification": "PASS",
+  "focused_tests": 12,
+  "elapsed_seconds": 18.814,
+  "log_sha256": "f82e4fab2d75d3f35e53c6f22ef2363e8258b039931b84af8585219e1ba823fe",
+  "cpu_only": true,
+  "neural_imports": false,
+  "first_red_missing_adapter_log_sha256": "9748add94fcb1eae44a21aec99c4f9b519514c4fcfc9dec18ce2fd63f944dc8a",
+  "probe_path_regression_red_sha256": "4d568f21a1bec916914aeaa006a886d46841c0e4571f4e8e4d72dc2d60dab9e7",
+  "first_cpu_probe": {
+    "classification": "BLOCKED",
+    "cause": "Probe implementation error: invalid escaped regular expression; before original input reader/AI imports",
+    "source_sha256": "64e030b1a78c0d3e74ce3a52dff90c4fede4b66f82b208704e6de4ef3882ba92",
+    "host_receipt_sha256": "e66490d3f56d35ac5537f9bfcf8c6c034be93c3fe3710fac21f5e41e74ecd8ad",
+    "stderr_sha256": "23f63a8410740b499eab4f6b70937b6d1f977ed483a27341a642bff3d6eb9af3",
+    "neural_forwards": 0
+  },
+  "qualified_cpu_probe": {
+    "classification": "PASS_CPU_ONLY",
+    "host_receipt_sha256": "29b54c574abe7792d045866464edcbcef90d8e45b61b17b9c7999b365c88eac2",
+    "stdout_sha256": "4e5a4b88eb50854481f40e3731b9104a34dba5fec8ee56a34810d99eaf588294",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "probe_sha256": "04e90ae00eae71af511ae50de8f034590f65569367af9a635c7f8298c8e87a2e",
+    "neural_forwards": 0
+  },
+  "original_decoder_sources_modified": false,
+  "production_marker_reserved": false
+}
