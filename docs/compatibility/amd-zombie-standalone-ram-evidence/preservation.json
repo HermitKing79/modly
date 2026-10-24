@@ -1,0 +1,22 @@
+{
+  "schema": "modly-zombie-standalone-preservation-v1",
+  "base_commit": "28f4f0163833d59d861404719e6b2cb042083f9e",
+  "protected_identities_compared": 100,
+  "inherited_bounded_hashes_compared": 78,
+  "additional_retained_records_compared": 88,
+  "original_failed_run_records": 9,
+  "saved_original_shape_artifacts": 5,
+  "before_equals_authenticated_prior_receipts": true,
+  "after_equals_before": true,
+  "before_private_receipt_sha256": "4c9b09d33808b781a68d3529e5b15200481e5462c2fef827ccd6416ea89b735f",
+  "after_private_receipt_sha256": "4c9b09d33808b781a68d3529e5b15200481e5462c2fef827ccd6416ea89b735f",
+  "historical_local_refs_compared": 152,
+  "all_preexisting_local_refs_unchanged": true,
+  "original_tracked_files_changed": 0,
+  "original_python_sources_matched": 256,
+  "identity_comparison": "Only the two previously documented Windows volume-ID representations are canonicalised. File IDs, sizes, timestamps and inherited hashes must still match; unknown volume representations reject.",
+  "scope": "100 inherited protected identities/78 bounded hashes plus retained no-go, failed-run, saved-shape and final prelaunch evidence. No fresh bulk checkpoint/master hashing or whole-environment rescan.",
+  "private_preservation_detail_and_memory_evidence_published": false,
+  "real_diagnostic_WSL_model_neural_execution": false,
+  "source_safe": true
+}

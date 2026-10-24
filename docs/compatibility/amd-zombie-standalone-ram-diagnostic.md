@@ -65,3 +65,8 @@ Independent review of implementation commit `3741629` found two Important launch
 All existing tracked files remain unchanged; only new files are added on `codex/amd-zombie-standalone-ram-diagnostic`. The preservation check compares all 100 protected identities and 78 inherited bounded hashes, nine original failed-run files, five saved shape artifacts and 74 other retained records against authenticated historical receipts, before and after authoring. The already documented Windows volume-ID representation mapping is used solely for identity comparison; sizes, file IDs, timestamps and hashes must still match. This is not a fresh full hash of large protected checkpoints, models or the accepted master.
 
 Source-safe verification, preservation and independent review receipts accompany this report. Raw memory/process evidence and private preservation details are not published. Existing local and remote branch heads must remain unchanged when the one new branch is published.
+
+- [Synthetic verification](amd-zombie-standalone-ram-evidence/verification.json)
+- [Independent review and regression fixes](amd-zombie-standalone-ram-evidence/review.json)
+- [Bounded preservation](amd-zombie-standalone-ram-evidence/preservation.json)
+- [Remote branch preservation before publication](amd-zombie-standalone-ram-evidence/remote-preservation.json)

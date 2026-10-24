@@ -1,0 +1,24 @@
+{
+  "schema": "modly-zombie-standalone-verification-v1",
+  "tested_implementation_commit": "4f729f8487208df10aacb8f05d58230e2b7657e4",
+  "python_tests": 15,
+  "launcher_synthetic_scenarios": 14,
+  "Windows_PowerShell_5_dry_run": "PASS",
+  "python_child_dry_run": "PASS",
+  "powershell_parse": "PASS",
+  "CSharp_declarations_compile": "PASS_NO_NATIVE_API_INVOCATION",
+  "base_sources_matched": 256,
+  "existing_tracked_files_unchanged": true,
+  "historical_local_refs_unchanged": 152,
+  "source_sha256": {
+    "scripts/compatibility/Invoke-ZombieRamDiagnostic.ps1": "35be7e6ed67f75118894e408884adf31c34b1fac284edf1c50997d62c8d3d6ac",
+    "scripts/compatibility/amd_zombie_ram_diagnostic.py": "130eba0220182463fe53806bdb14d4ac90402793e502ac1387f31346c3b09114",
+    "scripts/compatibility/amd_zombie_ram_sources.json": "47bffc7e4fd317550360be87889d5a30c6252a315257a80572c980a2b360f108",
+    "scripts/compatibility/test_amd_zombie_ram_diagnostic.py": "e4ade03472af1ef209c2b4d2c57610604b6486a89e77be317e87725305381475"
+  },
+  "actual_RAM_readings_collected": false,
+  "real_diagnostic_executed": false,
+  "project_preparation_executed": false,
+  "WSL_model_weights_neural_marker_inference_execution": false,
+  "test_scope": "Synthetic and dry-run only. Actual native Job containment, real preparation, RAM peaks and post-exit recovery remain unexecuted."
+}

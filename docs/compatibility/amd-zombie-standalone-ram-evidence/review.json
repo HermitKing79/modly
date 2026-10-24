@@ -1,0 +1,35 @@
+{
+  "schema": "modly-zombie-standalone-independent-review-v1",
+  "reviewer": "independent standalone_review subagent",
+  "reviewed_commit": "3741629edb4f7dda69dc57af7b173cd448e2d87b",
+  "reviewed_base": "28f4f0163833d59d861404719e6b2cb042083f9e",
+  "review_verdict_at_reviewed_commit": "CHANGES_REQUIRED",
+  "critical_findings": 0,
+  "important_findings": 2,
+  "fix_commit": "4f729f8487208df10aacb8f05d58230e2b7657e4",
+  "findings": [
+    {
+      "issue": "Initial synchronous Git reads were unbounded and preceded evidence capture",
+      "severity": "Important",
+      "resolution": "Read-only Git commands moved inside evidence try block; exact command allowlist, owned Job, 15000 ms wait and bounded pipe settlement",
+      "verification": "Synthetic stalled Git process must reject at 15000 ms; synthetic successful output must be retained"
+    },
+    {
+      "issue": "Failed recovery/stderr settlement could leave successful classification and exit zero",
+      "severity": "Important",
+      "resolution": "Settlement errors force INCOMPLETE_SETTLEMENT; stderr wait/result exceptions are caught before summary emission",
+      "verification": "Injected old success-retaining behavior failed the regression; corrected Resolve-SettlementOutcome passed the complete 14-scenario launcher SelfTest"
+    }
+  ],
+  "reviewer_static_conclusion": "No concrete neural, WSL, marker or weights-loading execution found in the selected CPU preparation call graph",
+  "reviewer_synthetic_verification": "15 Python tests; initial admission SelfTest and default PowerShell dry-run passed",
+  "post_review_fix_verification": "Author-run focused regression cases and full final synthetic suite; no independent rereview of fix commit",
+  "declined_to_judge": [
+    "Actual RAM consumption, sufficient headroom, real checkpoint streaming and successful preparation",
+    "Real Windows Job containment and forced termination behavior",
+    "Private preservation receipts and remote publication status",
+    "Launcher changes after the reviewed commit"
+  ],
+  "real_diagnostic_executed": false,
+  "source_safe": true
+}
