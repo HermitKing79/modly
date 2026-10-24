@@ -1,0 +1,80 @@
+{
+ "schema": "modly-zombie-ram-resume-outcome-review-v1",
+ "reviewer": "independent-host-runtime-outcome-review-subagent",
+ "reviewed_utc": "2026-10-24T10:36:53.717890+00:00",
+ "classification": "NO-GO: INSUFFICIENT_HEADROOM",
+ "execution_candidate_commit": "85ee9c6d5d2bcf7cf05ab749b6dd03f11faf7810",
+ "candidate_adapter_tests_old_provider_host_engine_unchanged": true,
+ "run_contract_sha256": "18848941c581799c769ef42de2a365445fd2e0858ab345b0bf71b421e993fea6",
+ "actual_stop": {
+  "stage": "immediately-before-exclusive-neural-marker",
+  "time_utc": "2026-10-24T10:33:51.503470+00:00",
+  "available_RAM_bytes": 22085574656,
+  "required_prelaunch_RAM_bytes": 23622320128,
+  "shortfall_bytes": 1536745472,
+  "original12GiB_host_RAM_gate_passed": true,
+  "D_free_bytes": 74074488832,
+  "original50GiB_D_gate_passed": true,
+  "raw_classification_preserved": true
+ },
+ "actual_sequence": "The unchanged source/checkpoint/committed-file preflight returned. The final reserve hook reauthenticated the three-reading receipt, obtained the original host admission, wrote the exclusive NO-GO record and raised before original reserve_attempt. The supervisor creates its OwnedJob/WSL client only after that reservation; those stages were not reached.",
+ "initial_three_readings_remain_historical_READY": true,
+ "fresh_EVIDENCE_directory_absent": true,
+ "neural_marker_reserved": false,
+ "new_native_or_neural_attempt_consumed": false,
+ "WSL_launched": false,
+ "new_neural_forwards": 0,
+ "GPU_initialized_or_model_loaded_by_this_run": false,
+ "complete_neural_artifact": null,
+ "learned_subdivision_support": null,
+ "peak_VRAM_or_post_GPU_Torch_measurement": null,
+ "verdicts": {
+  "complete_original_zombie_lineage": "PASS: reused original authentication",
+  "decoder_CPU_source_checkpoint_routing_preflight": "PASS",
+  "requested_final22GiB_prelaunch_gate": "BLOCKED",
+  "genuine_WSL_neural_forward": "NOT RUN",
+  "complete_ten_tensor_artifact": "NOT RUN",
+  "natural_settlement_and_GPU_teardown": "NOT RUN",
+  "conditional_CPU_mesh": "NOT RUN",
+  "visual_quality": "NOT ASSESSED",
+  "materials_GLB_Generate": "NOT RUN"
+ },
+ "raw_resource_admissions_before_marker": [
+  {
+   "timestamp_utc": "2026-10-24T10:32:38.385377+00:00",
+   "stage": "pre-marker",
+   "available_ram_bytes": 22027182080,
+   "D_free_bytes": 74074488832,
+   "required_ram_bytes": 12884901888,
+   "required_D_free_bytes": 53687091200,
+   "admitted": true
+  },
+  {
+   "timestamp_utc": "2026-10-24T10:33:51.501959+00:00",
+   "stage": "pre-marker",
+   "available_ram_bytes": 22085271552,
+   "D_free_bytes": 74074488832,
+   "required_ram_bytes": 12884901888,
+   "required_D_free_bytes": 53687091200,
+   "admitted": true
+  },
+  {
+   "timestamp_utc": "2026-10-24T10:33:51.503470+00:00",
+   "stage": "pre-marker",
+   "available_ram_bytes": 22085574656,
+   "D_free_bytes": 74074488832,
+   "required_ram_bytes": 12884901888,
+   "required_D_free_bytes": 53687091200,
+   "admitted": true
+  }
+ ],
+ "private_evidence_sha256": {
+  "final-pre-marker-admission.json": "ee0495268a1d5fe2ed9041f20a1e79db9f4ebb18d79e1348f304b4022e2ce3d0",
+  "neural-launch.stdout.txt": "b2a2df2d261118b2e355a01cdcbb7ec3994d563e25fa808fe185f94dc59ab8fe",
+  "neural-launch.stderr.txt": "7253da570940a67f1de13a056a13968047a89ec0a665aee13743359a8dd5434b",
+  "memory-readiness-private.json": "11199167da3bedfe2e43d10f2f3aeee6d413ee89e92f33e50913ded61ecde7de"
+ },
+ "review_limits": "Earlier READY samples and the original12GiB floor do not override the required final22GiB check. No completion, learned-support, peak-VRAM, natural GPU teardown or zero post-cleanup Torch claim is made. The new stage never existed and no native retry occurred. Stop here; no additional RAM assessment or launch was performed by this reviewer.",
+ "reviewer_WSL_native_model_Job_GPU_execution": false,
+ "source_safe": true
+}

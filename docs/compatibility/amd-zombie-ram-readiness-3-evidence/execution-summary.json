@@ -1,0 +1,76 @@
+{
+  "classification": "NO-GO: INSUFFICIENT_HEADROOM",
+  "execution_candidate_commit": "85ee9c6d5d2bcf7cf05ab749b6dd03f11faf7810",
+  "initial_readiness": "THREE_READINGS_PASS",
+  "original_source_checkpoint_preflight": "PASS; completed before reservation hook",
+  "final_pre_marker_admission": {
+    "classification": "NO-GO: INSUFFICIENT_HEADROOM",
+    "stage": "immediately-before-exclusive-neural-marker",
+    "host_resource": {
+      "timestamp_utc": "2026-10-24T10:33:51.503470+00:00",
+      "stage": "pre-marker",
+      "available_ram_bytes": 22085574656,
+      "D_free_bytes": 74074488832,
+      "required_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200,
+      "admitted": true
+    },
+    "required_prelaunch_ram_bytes": 23622320128,
+    "harness_commit": "85ee9c6d5d2bcf7cf05ab749b6dd03f11faf7810",
+    "run_contract_sha256": "18848941c581799c769ef42de2a365445fd2e0858ab345b0bf71b421e993fea6",
+    "neural_marker_reserved": false
+  },
+  "preflight_host_samples": [
+    {
+      "timestamp_utc": "2026-10-24T10:32:38.385377+00:00",
+      "stage": "pre-marker",
+      "available_ram_bytes": 22027182080,
+      "D_free_bytes": 74074488832,
+      "required_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200,
+      "admitted": true
+    },
+    {
+      "timestamp_utc": "2026-10-24T10:33:51.501959+00:00",
+      "stage": "pre-marker",
+      "available_ram_bytes": 22085271552,
+      "D_free_bytes": 74074488832,
+      "required_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200,
+      "admitted": true
+    },
+    {
+      "timestamp_utc": "2026-10-24T10:33:51.503470+00:00",
+      "stage": "pre-marker",
+      "available_ram_bytes": 22085574656,
+      "D_free_bytes": 74074488832,
+      "required_ram_bytes": 12884901888,
+      "required_D_free_bytes": 53687091200,
+      "admitted": true
+    }
+  ],
+  "minimum_measured_preflight_available_bytes": 22027182080,
+  "shortfall_bytes": 1536745472,
+  "runtime_minimum_available_bytes": null,
+  "native_neural_attempt_performed": false,
+  "new_marker_reserved": false,
+  "WSL_Job_or_model_launched": false,
+  "convolutions": 0,
+  "C2S": 0,
+  "learned_subdivision_populations": null,
+  "peak_VRAM": null,
+  "post_cleanup_Torch_bytes": null,
+  "natural_or_forced_worker_settlement": "NOT APPLICABLE: no worker launched",
+  "ten_tensor_artifact_readback": "NOT RUN",
+  "conditional_CPU_mesh": "NOT RUN",
+  "overall_generation": "NOT QUALIFIED",
+  "no_retry": true,
+  "private_evidence_sha256": {
+    "final-pre-marker-admission.json": "ee0495268a1d5fe2ed9041f20a1e79db9f4ebb18d79e1348f304b4022e2ce3d0",
+    "neural-launch.stdout.txt": "b2a2df2d261118b2e355a01cdcbb7ec3994d563e25fa808fe185f94dc59ab8fe",
+    "neural-launch.stderr.txt": "7253da570940a67f1de13a056a13968047a89ec0a665aee13743359a8dd5434b",
+    "memory-consumers-after-rejection-private.json": "c3331e17e0a3334c473320438368da0e4436cd00028e0e21c21b132921e90da3",
+    "memory-consumers-user-context-private.json": "50eb355be13ac851f5d1856e490e90761537dc5f6ee2917285f63fc29dac1912"
+  },
+  "limitation": "The cause of the RAM decline is not established; post-rejection process snapshots do not measure preflight process peaks or exclusive physical ownership."
+}

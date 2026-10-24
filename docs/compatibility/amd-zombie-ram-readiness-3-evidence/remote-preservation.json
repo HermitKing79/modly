@@ -1,0 +1,14 @@
+{
+  "classification": "PASS",
+  "previous_remote_heads": 143,
+  "all_previous_heads_unchanged": true,
+  "total_observed_heads": 144,
+  "new_branch": "codex/amd-zombie-ram-readiness-3",
+  "candidate_commit": "85ee9c6d5d2bcf7cf05ab749b6dd03f11faf7810",
+  "main_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "scope": "After pre-marker rejection, before final report commit",
+  "capture_sha256": {
+    "remote-before.txt": "5e6104ef6c9e04269b8545f0209418a0da6968d0d69df0a9682c96dc4314c18d",
+    "remote-after-rejection.txt": "e2a5445b35185c17d88abe701e76a7de9d2db990a44065b09a8e82b7f7a56636"
+  }
+}

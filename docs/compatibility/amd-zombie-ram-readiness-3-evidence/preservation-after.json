@@ -1,0 +1,63 @@
+{
+  "schema": "modly-zombie-ram-readiness-preservation-v1",
+  "phase": "after",
+  "classification": "PASS_WITH_RECORDED_BOUNDED_SCOPE",
+  "private_receipt_sha256": "3bee231907a04b60603a1dde8e9920f9eb0c1e1412f52447416096f090c08b2b",
+  "controller_sha256": "9b96d34433d1a276bcb2bf18b6d16ec835f84c53909329bb85a539b5fe1d2e10",
+  "original_collector_calls_this_phase": 1,
+  "latest_prior_baseline_sha256": "9d90caddbb4edf16d3b284d0efe7b56199bdb6e3ce27bcd0e9e274aed3ba7c5d",
+  "latest_prior_baseline_state_equal": true,
+  "before_after_equal": true,
+  "protected_identities": 100,
+  "bounded_hashes": 78,
+  "original_failed_files_verified": 9,
+  "original_consumed_marker_unchanged": true,
+  "original_five_saved_shape_inputs_hashes_and_metadata_retained": true,
+  "original_guest_source_matches_consumed_marker": true,
+  "prior_NO_GO_private_and_public_records_preserved": true,
+  "prior_full_input_lineage_qualification_reused": true,
+  "full_shape_verifier_source_graph_DINO_occupancy_audits_repeated": false,
+  "checkpoint": "PREVIOUSLY VERIFIED; NO FRESH FULL STREAM BY REVIEWER",
+  "readiness": {
+    "classification": "READY_FOR_FURTHER_ADMISSION",
+    "samples": [
+      {
+        "timestamp_utc": "2026-10-24T10:20:38.997600+00:00",
+        "available_physical_bytes": 23797481472,
+        "total_physical_bytes": 34270023680,
+        "memory_load_percent": 30,
+        "required_available_bytes": 23622320128,
+        "target_met": true
+      },
+      {
+        "timestamp_utc": "2026-10-24T10:20:42.998216+00:00",
+        "available_physical_bytes": 23797092352,
+        "total_physical_bytes": 34270023680,
+        "memory_load_percent": 30,
+        "required_available_bytes": 23622320128,
+        "target_met": true
+      },
+      {
+        "timestamp_utc": "2026-10-24T10:20:46.998316+00:00",
+        "available_physical_bytes": 23799910400,
+        "total_physical_bytes": 34270023680,
+        "memory_load_percent": 30,
+        "required_available_bytes": 23622320128,
+        "target_met": true
+      }
+    ],
+    "correct_available_physical_field": true,
+    "source_sha256": "8c6c3a73bb1e58691105f99dd27353ec8fa650e17f0a1045a5b9e45bb86a1e78",
+    "stdout_and_receipt_verified": true,
+    "spacing_seconds": [
+      4.000616,
+      4.0001
+    ],
+    "span_bytes": 2818048,
+    "extra_probe_run": false
+  },
+  "native_execution_qualified_by_readiness": false,
+  "limits": "Historical preserved140-head remote baseline belongs to the inherited collector; parent owns current remote checks. Readiness alone does not qualify NN. New task code, outputs and attempt path are excluded from immutable prior evidence.",
+  "reviewer_execution": "Original API Python -B; read-only Windows receipts, bounded file hashes and one existing preservation collector. No WSL, Job, neural/model/checkpoint stream, mesh or render execution.",
+  "source_safe": true
+}

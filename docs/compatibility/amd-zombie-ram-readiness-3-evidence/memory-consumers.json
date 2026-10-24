@@ -1,0 +1,35 @@
+{
+  "timestamp_utc": "2026-10-24T10:36:15.915792+00:00",
+  "phase": "after-final-prelaunch-rejection",
+  "processes": [
+    {
+      "name": "pwsh.exe",
+      "working_set_bytes": 89374720,
+      "private_commit_bytes": 31584256
+    },
+    {
+      "name": "python.exe",
+      "working_set_bytes": 18849792,
+      "private_commit_bytes": 10407936
+    },
+    {
+      "name": "conhost.exe",
+      "working_set_bytes": 7561216,
+      "private_commit_bytes": 1273856
+    },
+    {
+      "name": "python.exe",
+      "working_set_bytes": 4354048,
+      "private_commit_bytes": 839680
+    },
+    {
+      "name": "System Idle Process",
+      "working_set_bytes": 8192,
+      "private_commit_bytes": 61440
+    }
+  ],
+  "note": "Retained initial restricted-view snapshot. It cannot identify the largest host consumers or attribute RAM decline. See memory-consumers-user-context.json for the separate normal-user read-only observation.",
+  "processes_modified": false,
+  "new_RAM_admission_probe": false,
+  "execution_context": "Codex default sandbox; restricted process visibility, not a full host inventory"
+}

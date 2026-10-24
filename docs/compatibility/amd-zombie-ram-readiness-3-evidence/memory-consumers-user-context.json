@@ -1,0 +1,71 @@
+{
+  "timestamp_utc": "2026-10-24T10:37:04.145116+00:00",
+  "phase": "after-final-prelaunch-rejection",
+  "execution_context": "approved outside-sandbox normal Windows user; administrator role disabled",
+  "observed_process_count": 327,
+  "processes": [
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 747610112,
+      "private_commit_bytes": 681943040
+    },
+    {
+      "name": "MsMpEng.exe",
+      "working_set_bytes": 536727552,
+      "private_commit_bytes": 533663744
+    },
+    {
+      "name": "codex.exe",
+      "working_set_bytes": 474107904,
+      "private_commit_bytes": 407629824
+    },
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 468398080,
+      "private_commit_bytes": 390565888
+    },
+    {
+      "name": "explorer.exe",
+      "working_set_bytes": 391901184,
+      "private_commit_bytes": 386547712
+    },
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 377008128,
+      "private_commit_bytes": 318963712
+    },
+    {
+      "name": "MemCompression",
+      "working_set_bytes": 281161728,
+      "private_commit_bytes": 696320
+    },
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 271237120,
+      "private_commit_bytes": 205914112
+    },
+    {
+      "name": "TextInputHost.exe",
+      "working_set_bytes": 205471744,
+      "private_commit_bytes": 134193152
+    },
+    {
+      "name": "PhoneExperienceHost.exe",
+      "working_set_bytes": 187613184,
+      "private_commit_bytes": 76472320
+    },
+    {
+      "name": "SteelSeriesGGEZ.exe",
+      "working_set_bytes": 186605568,
+      "private_commit_bytes": 63418368
+    },
+    {
+      "name": "StartMenuExperienceHost.exe",
+      "working_set_bytes": 180002816,
+      "private_commit_bytes": 101318656
+    }
+  ],
+  "note": "Working sets may share pages; private commit is not resident physical RAM. Post-exit snapshot cannot attribute the earlier decline.",
+  "processes_modified": false,
+  "new_RAM_admission_probe": false
+}
