@@ -1,0 +1,90 @@
+{
+  "schema": "modly-zombie-ram-headroom-preservation-lineage-review-v1",
+  "classification": "PASS",
+  "reviewer": "independent-read-only-preservation-lineage-review",
+  "private_audit_sha256": "8a1ae361c810b082af6b07778d3507eb34c78bd7e9982d935de6268f709acda1",
+  "preservation": {
+    "classification": "PASS_WITH_RECORDED_BOUNDED_SCOPE",
+    "original_collector_calls": 1,
+    "immediate_prior_AFTER_state_equal": true,
+    "protected_identities": 100,
+    "bounded_hashes": 78,
+    "private_receipt_sha256": "d61a37bd7e3501c3cecb336f0015ec23f76ecd3695df80a888a510d27d9bc07e",
+    "all_prior_control_public_raw_files_unchanged": true
+  },
+  "original_failed_attempt": {
+    "candidate": "8dc51cc654b89ef4ab6a3e4877d603cb063aaf18",
+    "raw_files_verified": 9,
+    "resource_samples": 29,
+    "actual_minimum_available_bytes": 12765356032,
+    "required_bytes": 12884901888,
+    "last_phase": "native-qualified-CPU-preparation-entry",
+    "raw_supervisor": "UNKNOWN",
+    "raw_adapter": "FAIL",
+    "original_marker_retained": true,
+    "forced_Job_processes": [
+      4,
+      0
+    ],
+    "distro_termination_returncode": 0,
+    "final_worker_receipt_and_tensor_artifact": "ABSENT",
+    "post_cleanup_GPU_release": "NOT MEASURED"
+  },
+  "saved_zombie_lineage": {
+    "classification": "PASS",
+    "original_five_artifacts_verified": true,
+    "original_strict_NPY_reader_reused": true,
+    "tokens": 1000,
+    "exact_F32_denormalization": true,
+    "source_closure_file_counts": {
+      "DINO": 46,
+      "sampling": 65,
+      "occupancy": 65,
+      "shape": 91
+    },
+    "source_image_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+    "source_pixels_sha256": "e958193cad52cb3b15efd69410c3727853df61fd35310468d1b4540284ea2fb5",
+    "unchanged_decoder_source_files": 27,
+    "original_guest_source_matches_marker": true
+  },
+  "checkpoint": {
+    "sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "verification": "PREVIOUSLY VERIFIED",
+    "fresh_full_stream": false,
+    "weights_loaded": false
+  },
+  "memory_readiness": {
+    "independent_classification": "NO-GO: INSUFFICIENT_HEADROOM",
+    "MEMORYSTATUSEX_available_physical_field_correct": true,
+    "source_and_stdout_verified": true,
+    "sample_timestamps": [
+      "2026-10-24T01:44:02.892561+00:00",
+      "2026-10-24T01:44:06.892770+00:00",
+      "2026-10-24T01:44:10.892924+00:00"
+    ],
+    "available_bytes": [
+      19937619968,
+      19815133184,
+      19926953984
+    ],
+    "required_available_bytes": 23622320128,
+    "spacing_seconds": [
+      4.000209,
+      4.000154
+    ],
+    "span_bytes": 122486784,
+    "all_three_below_target": true,
+    "extra_probe_run": false
+  },
+  "reviewer_execution": {
+    "Windows_CPU_reads_only": true,
+    "WSL": false,
+    "NN": false,
+    "Job": false,
+    "GPU": false,
+    "model_or_checkpoint_stream": false,
+    "original_sources_modified": false
+  },
+  "current_task_neural_attempt": "NOT RESERVED; RAM HEADROOM NO-GO",
+  "source_safe": true
+}

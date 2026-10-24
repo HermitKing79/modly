@@ -1,0 +1,118 @@
+{
+  "classification": "NO-GO: INSUFFICIENT_HEADROOM",
+  "samples": [
+    {
+      "timestamp_utc": "2026-10-24T01:44:02.892561+00:00",
+      "available_physical_bytes": 19937619968,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 41,
+      "required_available_bytes": 23622320128,
+      "target_met": false
+    },
+    {
+      "timestamp_utc": "2026-10-24T01:44:06.892770+00:00",
+      "available_physical_bytes": 19815133184,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 42,
+      "required_available_bytes": 23622320128,
+      "target_met": false
+    },
+    {
+      "timestamp_utc": "2026-10-24T01:44:10.892924+00:00",
+      "available_physical_bytes": 19926953984,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 41,
+      "required_available_bytes": 23622320128,
+      "target_met": false
+    }
+  ],
+  "minimum_available_bytes": 19815133184,
+  "maximum_available_bytes": 19937619968,
+  "available_span_bytes": 122486784,
+  "all_three_meet_22GiB": false,
+  "sample_interval_seconds": 4,
+  "previous_observed_decline_bytes": 6700421120,
+  "previous_decline_is_not_a_guarantee": true,
+  "process_memory_note": "Working sets may share pages; private commit is not resident physical RAM. Do not sum as exclusive physical consumption.",
+  "source_sha256": "8c6c3a73bb1e58691105f99dd27353ec8fa650e17f0a1045a5b9e45bb86a1e78",
+  "administrator_role_enabled": false,
+  "WSL_launched": false,
+  "model_loaded": false,
+  "neural_attempt_reserved": false,
+  "neural_forwards": 0,
+  "processes_terminated": false,
+  "settings_changed": false,
+  "individual_process_working_sets_without_identities": [
+    {
+      "name": "MemCompression",
+      "working_set_bytes": 822734848,
+      "private_commit_bytes": 2740224
+    },
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 756695040,
+      "private_commit_bytes": 854458368
+    },
+    {
+      "name": "codex.exe",
+      "working_set_bytes": 740798464,
+      "private_commit_bytes": 737812480
+    },
+    {
+      "name": "brave.exe",
+      "working_set_bytes": 645816320,
+      "private_commit_bytes": 657518592
+    },
+    {
+      "name": "MsMpEng.exe",
+      "working_set_bytes": 410112000,
+      "private_commit_bytes": 542445568
+    },
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 374947840,
+      "private_commit_bytes": 398114816
+    },
+    {
+      "name": "brave.exe",
+      "working_set_bytes": 302211072,
+      "private_commit_bytes": 199340032
+    },
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 297861120,
+      "private_commit_bytes": 319602688
+    },
+    {
+      "name": "explorer.exe",
+      "working_set_bytes": 297103360,
+      "private_commit_bytes": 535027712
+    },
+    {
+      "name": "ChatGPT.exe",
+      "working_set_bytes": 233631744,
+      "private_commit_bytes": 226213888
+    },
+    {
+      "name": "brave.exe",
+      "working_set_bytes": 228659200,
+      "private_commit_bytes": 740913152
+    },
+    {
+      "name": "dwm.exe",
+      "working_set_bytes": 219193344,
+      "private_commit_bytes": 608145408
+    }
+  ],
+  "private_evidence_sha256": {
+    "memory-readiness-private.json": "b497578e027f679b159d46223879d6db6cb8f5a8f91b6a4491d73841af03f963",
+    "memory-readiness.stdout.txt": "4d5a93f07b80808ec30b0eeab8af4abe7e061fc5f206e90086f6f59d45d8eb35",
+    "memory-readiness.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "available_GiB": [
+    18.568355560302734,
+    18.454280853271484,
+    18.558422088623047
+  ],
+  "new_attempt_path_preparation": "NOT RUN: prelaunch headroom rejected before decoder preparation"
+}

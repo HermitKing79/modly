@@ -1,0 +1,13 @@
+{
+  "classification": "PASS",
+  "baseline_remote_heads": 141,
+  "observed_remote_heads": 141,
+  "all_previous_heads_unchanged": true,
+  "main_commit": "f11a4d2bd9fe994b9d30f76a36cb6c18ac8733ea",
+  "new_isolated_branch": "codex/amd-zombie-ram-headroom",
+  "scope": "After read-only headroom assessment, before new branch publication",
+  "capture_sha256": {
+    "remote-before.txt": "db327caa2905ca7700c0addfe552e521ec588f7bf734170b020236158ec30a4c",
+    "remote-after-assessment.txt": "db327caa2905ca7700c0addfe552e521ec588f7bf734170b020236158ec30a4c"
+  }
+}
