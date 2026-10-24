@@ -1,0 +1,15 @@
+{
+  "classification": "PASS",
+  "focused_tests": 8,
+  "elapsed_seconds": 4.174,
+  "final_test_log_sha256": "f6d21c60b421e4ceabfe5ad64b0b7a327df176259701a08c518071ecfc055548",
+  "red_missing_adapter_log_sha256": "8525bf9705c754b25487e7197ccde0bd1c23f37cfefb02d7b46aa9bef67d0a36",
+  "initial_CPU_negative_source_mutation_failure_preserved_sha256": "062d32f441b70dac9faf1211feccda22abd1fb8d3491ff51c6af0215670fbf7c",
+  "scope": "Fresh path/commit binding and22GiB final pre-marker guard only; no repeated model/math/WSL qualification",
+  "source_sha256": {
+    "scripts/compatibility/amd_zombie_decode_resume.py": "40768b9837b6c98780c4b3c436bb90bbd5a3854442730db5b21af1198c8544ee",
+    "scripts/compatibility/test_amd_zombie_decode_resume.py": "ac5abaa0e5d20c56bd301462d424cdfc5399c84847a1bf0765243c7231336370"
+  },
+  "no_WSL_model_Job_GPU_or_neural_execution": true,
+  "original_decoder_source_modified": false
+}

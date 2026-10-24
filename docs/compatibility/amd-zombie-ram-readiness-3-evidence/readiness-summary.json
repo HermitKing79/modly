@@ -1,0 +1,41 @@
+{
+  "classification": "READY_FOR_FURTHER_ADMISSION",
+  "samples": [
+    {
+      "timestamp_utc": "2026-10-24T10:20:38.997600+00:00",
+      "available_physical_bytes": 23797481472,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 30,
+      "required_available_bytes": 23622320128,
+      "target_met": true
+    },
+    {
+      "timestamp_utc": "2026-10-24T10:20:42.998216+00:00",
+      "available_physical_bytes": 23797092352,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 30,
+      "required_available_bytes": 23622320128,
+      "target_met": true
+    },
+    {
+      "timestamp_utc": "2026-10-24T10:20:46.998316+00:00",
+      "available_physical_bytes": 23799910400,
+      "total_physical_bytes": 34270023680,
+      "memory_load_percent": 30,
+      "required_available_bytes": 23622320128,
+      "target_met": true
+    }
+  ],
+  "required_available_bytes": 23622320128,
+  "minimum_available_bytes": 23797092352,
+  "maximum_available_bytes": 23799910400,
+  "available_span_bytes": 2818048,
+  "private_memory_receipt_sha256": "11199167da3bedfe2e43d10f2f3aeee6d413ee89e92f33e50913ded61ecde7de",
+  "source_sha256": "8c6c3a73bb1e58691105f99dd27353ec8fa650e17f0a1045a5b9e45bb86a1e78",
+  "qualified_reader": "docs/compatibility/amd-zombie-ram-headroom-evidence/memory_readiness.py",
+  "previous_observed_decline_bytes": 6700421120,
+  "previous_decline_is_not_a_guarantee": true,
+  "neural_attempt_reserved": false,
+  "WSL_launched": false,
+  "model_loaded": false
+}

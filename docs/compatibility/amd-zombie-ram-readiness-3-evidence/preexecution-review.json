@@ -1,0 +1,73 @@
+{
+ "schema": "modly-zombie-ram-resume-preexecution-review-v1",
+ "reviewer": "independent-host-runtime-source-review-subagent",
+ "reviewed_utc": "2026-10-24T10:30:06.537658+00:00",
+ "classification": "PASS_CONDITIONAL_SINGLE_NEURAL_ATTEMPT",
+ "blockers": [],
+ "reviewed_source_sha256": {
+  "scripts/compatibility/amd_zombie_decode_resume.py": "40768b9837b6c98780c4b3c436bb90bbd5a3854442730db5b21af1198c8544ee",
+  "scripts/compatibility/test_amd_zombie_decode_resume.py": "ac5abaa0e5d20c56bd301462d424cdfc5399c84847a1bf0765243c7231336370",
+  "docs/compatibility/amd-zombie-ram-readiness-3-evidence/readiness-summary.json": "ce0187cfe860f0090d613d6c90601e3fa9873aa0a9dc4678d17ad5b6177b91aa",
+  "docs/compatibility/amd-zombie-ram-readiness-3-evidence/plan.md": "70b75ef778daa1d876e71f134ad61f43643f0c3fd2c6ae47678e219d439949cf"
+ },
+ "original_adapter_provider_host_engine_and_helpers_unchanged_from": "91b74553905bd08a82e867f3c4d4f5c40bd2d7b9",
+ "source_review": "Private clone changes only fresh evidence route/run-ID and reuses exact original zombie source_inputs. New source/test/readiness/qualified-memory-reader paths join only the private host committed closure. Original model/precision/native/decoder/current-image policy remain unchanged. No old consumed paths are reused.",
+ "readiness": {
+  "classification": "READY_FOR_FURTHER_ADMISSION",
+  "available_physical_samples_bytes": [
+   23797481472,
+   23797092352,
+   23799910400
+  ],
+  "required_bytes": 23622320128,
+  "span_bytes": 2818048,
+  "private_receipt_sha256": "11199167da3bedfe2e43d10f2f3aeee6d413ee89e92f33e50913ded61ecde7de",
+  "qualified_reader_sha256": "8c6c3a73bb1e58691105f99dd27353ec8fa650e17f0a1045a5b9e45bb86a1e78",
+  "normal_user_read_only_no_WSL_or_model": true,
+  "not_a_completion_guarantee": true
+ },
+ "final_reservation_hook": "Exact fresh run output is checked before reads. Original three-reading receipt/source are reauthenticated, then unchanged host_admission supplies a fresh measurement. One exclusive private final-pre-marker receipt records the22GiB decision before the original reserve_attempt is called. Below22GiB or repeated record creation cannot reserve the neural marker.",
+ "focused_tests": {
+  "passed": 8,
+  "seconds": 4.246,
+  "saved_log_sha256": "7bea1301ac098c95c0cd33c633b32b2d114d8af8c320b413f5270101c6793582",
+  "coverage": "Actual original input authentication; clone/global isolation; fresh paths and source identities; generic caps; original named WSL command, GO transport and60/120/240/480 deadlines; pinned readiness and mutated claim/hash/row/source/neural-semantic denials; wrong-output denial; final22GiB rejection; exclusive single original-reservation call after passing gate."
+ },
+ "unchanged_native_contract": {
+  "initial_rows": 1000,
+  "maximum_intermediate_rows": 1000000,
+  "maximum_final_rows": 1842968,
+  "maximum_tile_rows": 32768,
+  "large_tiling": true,
+  "brick_profile": null,
+  "convolutions": 40,
+  "learned_subdivisions": 4,
+  "C2S_calls": 8,
+  "native_global_maps": 5,
+  "initial_free_VRAM_GiB": 13,
+  "allocator_GiB": 12,
+  "reserve_GiB": 2,
+  "opaque_GiB": 1,
+  "padding": 1.25,
+  "live_host_RAM_GiB": 12,
+  "D_free_GiB": 50,
+  "native_CPU_GPU_host_seconds": [
+   60,
+   120,
+   240,
+   480
+  ],
+  "guest_timeout_seconds": 450,
+  "synthetic_CPU_RLIMIT_AS_used": false
+ },
+ "conditions_before_single_attempt": [
+  "Publish exact candidate and require current HEAD/full committed closure plus full checkpoint/source preflight via original runtime.",
+  "Pass fresh destination gate and the exclusive final22GiB pre-marker measurement; preserve one marker and one forward maximum.",
+  "Use unchanged owned supervisor, health observations, GO+EOF, native/GPU/support/memory gates, deadlines and cleanup; stop at first actual rejection."
+ ],
+ "CPU_WSL_probe_repeated": false,
+ "new_neural_attempt_launched_at_review": false,
+ "reviewer_WSL_native_model_Job_GPU_execution": false,
+ "limits": "Readiness observations do not predict learned support or establish completion. Full neural acceptance requires all operations, ten-tensor independent readback and natural teardown with measured zero Torch bytes. Any CPU mesh remains separately conditional on complete neural PASS.",
+ "source_safe": true
+}
