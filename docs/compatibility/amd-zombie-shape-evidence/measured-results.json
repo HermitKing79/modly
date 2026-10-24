@@ -1,0 +1,135 @@
+{
+  "classification": "PASS",
+  "execution_commit": "35a5b825e3e9128326897a2ce35c87b237fdfa8b",
+  "original_dino_execution_commit": "93269412602a338acd9fbde41798901ddb5f707d",
+  "original_sparse_occupancy_execution_commit": "e6b6330ba2f9e51abfb74c726729e0be4ade7cac",
+  "token_count": 1000,
+  "output_shape": [
+    1000,
+    32
+  ],
+  "all_finite": true,
+  "coords_payload_sha256": "b871475ff86493ca9d023aa7736262a898193e3a1b6833a2b6716f427cf2a603",
+  "cpu_load_seconds": 14.156000000000859,
+  "synchronized_sampling_seconds": 9.078000000001339,
+  "supervised_worker_seconds": 34.09300000000076,
+  "initial_vram": {
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "available_bytes": 16937582592,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 158400512
+  },
+  "after_forward_vram": {
+    "allocated_bytes": 2742970880,
+    "reserved_bytes": 2808086528,
+    "peak_allocated_bytes": 2787808256,
+    "peak_reserved_bytes": 2808086528,
+    "available_bytes": 13985710080,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 3110273024
+  },
+  "release": {
+    "allocated_bytes": 0,
+    "reserved_bytes": 0,
+    "peak_allocated_bytes": 2787808256,
+    "peak_reserved_bytes": 2808086528,
+    "available_bytes": 16785408000,
+    "total_bytes": 17095983104,
+    "sampled_global_used_bytes": 310575104,
+    "model_collected": true,
+    "owned_tensors_collected": true,
+    "cpu_memory": {
+      "working_set_bytes": 1531682816,
+      "private_commit_bytes": 2138406912,
+      "peak_working_set_bytes": 5677793280,
+      "peak_commit_bytes": 6809354240
+    }
+  },
+  "ram_before_strict_load": {
+    "available_bytes": 16562831360,
+    "required_bytes": 11411771648,
+    "admitted": true
+  },
+  "budget": {
+    "allocator_limit_bytes": 12884901888,
+    "cpu_seconds": 180,
+    "gpu_seconds": 240,
+    "overall_seconds": 480,
+    "required_ram_bytes": 11411771648
+  },
+  "runtime": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "executable": "D:\\AI\\Trellis2AMD\\venv\\Scripts\\python.exe",
+    "torch": "2.13.0+rocm10.0.0",
+    "torch_path": "D:\\AI\\Trellis2AMD\\venv\\Lib\\site-packages\\torch\\__init__.py",
+    "hip": "7.15.26333",
+    "cuda": null,
+    "git_version": "6596a0dea537c1c78520c73cc6678214781a9d06",
+    "dependencies": {
+      "numpy": "2.5.3",
+      "safetensors": "0.8.0"
+    }
+  },
+  "gpu": {
+    "name": "AMD Radeon RX 9070 XT",
+    "architecture": "gfx1201",
+    "total_bytes": 17095983104
+  },
+  "load_calls": 1,
+  "forward_calls": 21,
+  "workspace_clear_calls": 1,
+  "sampling": {
+    "sequences": 1,
+    "steps": 12,
+    "started": 21,
+    "completed": 21,
+    "positive_calls": 12,
+    "negative_calls": 9,
+    "minimum_observed_free_vram_bytes": 13985710080,
+    "minimum_required_free_vram_bytes": 3221225472
+  },
+  "job_cleanup": {
+    "owned_tree_exit_verified": true,
+    "active_before_cleanup": 0,
+    "active_after_cleanup": 0,
+    "forced_job_cleanup": false,
+    "cleanup_seconds": 0.0
+  },
+  "observer_healthy": true,
+  "windows_periodic_samples": 3,
+  "checkpoint_unchanged": true,
+  "actual_results_sha256": "913ad907c55f1f510cce00d1d7573d518883190628d040506a6bd78578dd54bf",
+  "independent_readback_sha256": "7a6981c09095fece8369e2ce6007b8d03d3c76db8884e0685a5fc21c6db0574d",
+  "files": {
+    "shape-initial-noise.npy": {
+      "file_bytes": 128128,
+      "sha256": "bcc80a25b7f1e2fe713499edcf056df956d77da0f4425d8c97b2eee80ebe2147"
+    },
+    "shape-latent-coordinates.npy": {
+      "file_bytes": 16128,
+      "sha256": "c432b04ec70c6200fadf8f5f62ce995514e24bf4194b154ac30a76148a7bb4a2"
+    },
+    "shape-latent-denormalized.npy": {
+      "file_bytes": 128128,
+      "sha256": "18778e295e7d9405ca2e80b8fde64dacc790696c361f6418436d2e498149b2b3"
+    },
+    "shape-latent-provenance.json": {
+      "file_bytes": 18748,
+      "sha256": "1484e9efdd60cee9b86f3d8bf07eac6a1bce318c5960fb5f00cac435580a5ab4"
+    },
+    "shape-latent-raw.npy": {
+      "file_bytes": 128128,
+      "sha256": "dc67484797a60e3e1c4ff1941bb5c29977707d2c0444d0c63c0df43087a91405"
+    }
+  },
+  "exact_cpu_f32_denormalization": true,
+  "limitations": [
+    "Original standalone Jobs do not impose aggregate/process RAM byte caps.",
+    "Whole-host minimum RAM and aggregate Job peak RAM were not continuously measured.",
+    "Zero owned Torch allocation/reservation is distinct from driver/context usage; no extra post-exit GPU query.",
+    "All tensors, image and raw process records remain private; no downstream stage ran."
+  ]
+}

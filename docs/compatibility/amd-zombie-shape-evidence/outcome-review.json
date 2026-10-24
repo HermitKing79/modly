@@ -1,0 +1,126 @@
+{
+  "schema": "modly-zombie-shape-outcome-review-v1",
+  "reviewer": "independent-source-host-review-subagent",
+  "reviewed_utc": "2026-10-24T00:03:37.436304+00:00",
+  "classification": "PASS",
+  "blockers": [],
+  "execution_harness_commit": "35a5b825e3e9128326897a2ce35c87b237fdfa8b",
+  "reviewer_script_sha256": "4837c9aab76c0a67002492c1d08172feb0d628221e37e0788474e2bc8d78e31b",
+  "private_run_evidence_sha256": {
+    "results.json": "913ad907c55f1f510cce00d1d7573d518883190628d040506a6bd78578dd54bf",
+    "committed-harness.json": "032185013e06dd93675d5168ab3baa60538241e0e76773289819cda379ad9dd3",
+    "checkpoint-before.json": "117d5d82462c6d2cb23fcd6a8529322b80d2a82f30cd1cc4389b6e378b88be47",
+    "checkpoint-after.json": "117d5d82462c6d2cb23fcd6a8529322b80d2a82f30cd1cc4389b6e378b88be47",
+    "cpu-gate.json": "33567266d6cd7bf44008bcec4e375d074ba63841a08e5233e1413c16fbdfc812",
+    "worker.stdout.txt": "105c507d13c1f2d1198fd34456fc5f85840da9bbd20cb3c4c067e87b88f8ef81",
+    "worker.stderr.txt": "60138153c6df5bb67810c638b435e8b85bba776582982e49dd4f8170e87d2a82",
+    "trace.jsonl": "3be580daf31701caa9ba898c3b4fb3441a2b755335986e6092a123769ca11c43",
+    "windows-periodic.jsonl": "4f038943f2ebc99eab6fea843512f10f6788a26c475235bdc5d8dfd5a7e299f4",
+    "windows-before.json": "bad30042e3e54866e9a8b473e6cf601dd2f7ba79b3c14d15499ca701553787c8",
+    "windows-cpu-gate.json": "bad30042e3e54866e9a8b473e6cf601dd2f7ba79b3c14d15499ca701553787c8",
+    "windows-after-exit.json": "bad30042e3e54866e9a8b473e6cf601dd2f7ba79b3c14d15499ca701553787c8"
+  },
+  "exclusive_attempt_marker_sha256": "0ab9bc8b18b67c5bf96bad11aaf613a8abc649fce4d4825448d24a7092083eec",
+  "source_closure_files_verified_against_actual_commit": 91,
+  "source_verification_method": "One read-only git cat-file batch for every source blob plus committed source manifest; actual bytes and committed-harness digests compared independently",
+  "candidate_source_manifest_sha256": "f423d3320dd6e2250ee005a65ac17db87dfc6825271bd9dee2945580bac95b85",
+  "current_full_shape_checkpoint_sha256": "ec5e0917ef9b7e25ad51dffc7d19687a42019871f94239f2fa7f86264c55b70f",
+  "authentic_prior_roots_and_original_pooled_support_reopened": true,
+  "token_count": 1000,
+  "coordinate_minimum": [
+    0,
+    0,
+    12,
+    0
+  ],
+  "coordinate_maximum": [
+    0,
+    31,
+    19,
+    31
+  ],
+  "artifacts": {
+    "shape-latent-raw.npy": {
+      "file_bytes": 128128,
+      "sha256": "dc67484797a60e3e1c4ff1941bb5c29977707d2c0444d0c63c0df43087a91405"
+    },
+    "shape-latent-denormalized.npy": {
+      "file_bytes": 128128,
+      "sha256": "18778e295e7d9405ca2e80b8fde64dacc790696c361f6418436d2e498149b2b3"
+    },
+    "shape-latent-coordinates.npy": {
+      "file_bytes": 16128,
+      "sha256": "c432b04ec70c6200fadf8f5f62ce995514e24bf4194b154ac30a76148a7bb4a2"
+    },
+    "shape-initial-noise.npy": {
+      "file_bytes": 128128,
+      "sha256": "bcc80a25b7f1e2fe713499edcf056df956d77da0f4425d8c97b2eee80ebe2147"
+    },
+    "shape-latent-provenance.json": {
+      "file_bytes": 18748,
+      "sha256": "1484e9efdd60cee9b86f3d8bf07eac6a1bce318c5960fb5f00cac435580a5ab4"
+    }
+  },
+  "complete_original_artifact_provenance_validated": true,
+  "exact_cpu_f32_denormalization": true,
+  "coordinate_identity": true,
+  "initial_noise_payload_identity": true,
+  "actual_counts": {
+    "sequences": 1,
+    "euler_steps": 12,
+    "model_forwards": 21,
+    "positive": 12,
+    "negative": 9,
+    "durable_root_entries": 21,
+    "durable_root_returns": 21,
+    "workspace_clears": 1
+  },
+  "monitoring": {
+    "contiguous_worker_trace_records": 88,
+    "periodic_samples": 3,
+    "maximum_periodic_gap_seconds": 5.04700000000048,
+    "maximum_query_seconds": 0.5160000000014406,
+    "all_saved_windows_captures_healthy": true,
+    "stdout_gate_and_final_match_saved_records": true,
+    "diagnostic_errors": 0,
+    "worker_stderr_bytes": 978
+  },
+  "actual_resources": {
+    "cpu_load_seconds": 14.156000000000859,
+    "placement_seconds": 0.6880000000001019,
+    "synchronized_sampling_seconds": 9.078000000001339,
+    "supervised_seconds": 34.09300000000076,
+    "peak_torch_allocated_bytes": 2787808256,
+    "peak_torch_reserved_bytes": 2808086528,
+    "initial_free_device_bytes": 16937582592,
+    "minimum_live_block_free_bytes": 13985710080,
+    "release_torch_allocated_bytes": 0,
+    "release_torch_reserved_bytes": 0,
+    "release_sampled_global_used_bytes": 310575104,
+    "worker_peak_working_set_bytes": 5677793280,
+    "worker_peak_private_commit_bytes": 6809354240
+  },
+  "actual_lifecycle": {
+    "natural_job_settlement": true,
+    "active_job_before_cleanup": 0,
+    "active_job_after_cleanup": 0,
+    "all_observers_journals_readers_settled": true,
+    "worker_returncode": 0,
+    "forced_cleanup": false,
+    "model_and_owned_tensors_collected": true,
+    "torch_allocated_reserved_bytes": [
+      0,
+      0
+    ]
+  },
+  "adapter_readback_results_sha256": "913ad907c55f1f510cce00d1d7573d518883190628d040506a6bd78578dd54bf",
+  "reviewer_gpu_wsl_job_or_neural_worker_execution": false,
+  "no_neural_imports": true,
+  "detailed_geometry_textures_mesh_glb_full_generation": "NOT RUN",
+  "limitations": [
+    "Zero Torch bytes does not imply zero driver or context bytes; no additional post-exit GPU query was performed.",
+    "Original Job contains the owned tree without aggregate or per-process RAM byte caps; continuous whole-host RAM minima were not measured.",
+    "Shape-SLat numerical success does not establish decoded geometry or visual quality."
+  ],
+  "source_safe": true
+}
