@@ -1,0 +1,81 @@
+{
+  "schema": "modly.amd.zombie-c-handoff-verification.v1",
+  "classification": "GO_FOR_ONE_GUARDED_USER_LAUNCH_SUBJECT_TO_LIVE_ADMISSION",
+  "base_commit": "ae43bacf0b61f282382f96160fa18ed1cc957cb8",
+  "independently_reviewed_code_commit": "756453855c2b9f591e9296a85deeb8d4a0947af2",
+  "reference": {
+    "raw_PNG_sha256": "60862722c989772ad973870890601a6a95ed9a5cd5a9150a378e989db35ad437",
+    "input_contract_sha256": "6915367c8d0f47a790e6239855eafaf181b16febf6c1aaaf303d80e2387461ab",
+    "effective_512_pixel_sha256": "2ee336402eb84a3405b135515c69d255380369fcc8c9b7572948f5c2f5b0b989",
+    "genuine_transparency": true,
+    "visible_edge_artifacts_after_qualified_preprocessing": false,
+    "RGB_or_alpha_edited": false,
+    "useful_visible_finger_gap_information": true,
+    "selected_finger_gap_samples_pixels": [3, 6],
+    "perfectly_isolated_finger_position_ablation": false,
+    "generated_geometry_quality_proven": false
+  },
+  "independent_review": {
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "exact_critical_publication_and_private_inputs_verified": true,
+    "fresh_destinations_verified": true,
+    "original_mesh_and_view_files_verified": 13,
+    "frozen_camera_angles_verified": 8,
+    "scope": "Source/routing/safety readiness only; future geometry quality and actual Blender execution unproven"
+  },
+  "verification": {
+    "new_mocked_and_native_startup_tests_passed": 44,
+    "selected_inherited_policy_tests_passed": 42,
+    "runtime_tests_total_passed": 86,
+    "initial_inherited_shape_full_selection": "One CPU sampler fixture failed on missing easydict in general test Python; no weights or generation. Two framework-import fixtures excluded from final policy-only run; original failure evidence retained and environment unchanged.",
+    "real_CPU_adapter_wiring_passed_with_neural_and_model_file_access_denied": true,
+    "actual_published_DINO_profile_file_hashes_verified": 50,
+    "default_PowerShell_and_isolated_Python_dry_runs_passed": true,
+    "neural_or_WSL_execution_for_verification": false,
+    "private_preparation_seal_files": 39,
+    "private_preparation_seal_sha256": "9734a8f23652f0eac4b91a2638179ff6d462ed80a80084a590b7fc32d7dd93db"
+  },
+  "preservation": {
+    "original_asset_files_byte_and_identity_equal": 625,
+    "protected_identities_unchanged": 100,
+    "bounded_protected_hashes_unchanged": 78,
+    "retained_historical_records_unchanged": 88,
+    "prior_local_refs_unchanged_at_review": 163,
+    "original_generation_and_decoder_files_changed": false,
+    "new_Downloads_PNG_unchanged": true,
+    "private_reference_or_generated_assets_in_publication": false
+  },
+  "future_launch": {
+    "DINO_forwards": 1,
+    "occupancy_sampling_forwards": 22,
+    "occupancy_decoder_forwards": 1,
+    "shape_sampling_forwards": 21,
+    "geometry_decoder_forwards": 1,
+    "fresh_C_conditioning_occupancy_and_shape_required": true,
+    "original_seed_and_sampler_settings_unchanged": true,
+    "RAM_admission_GiB": 22,
+    "RAM_readings": 3,
+    "RAM_spacing_seconds": 4,
+    "final_pre_marker_RAM_GiB": 22,
+    "preferred_only_headroom_GiB": 24,
+    "original_live_host_floor_GiB": 12,
+    "all_original_VRAM_disk_deadline_row_tile_and_cleanup_guards_retained": true,
+    "support_extension_or_automatic_retries": false,
+    "CPU_comparison_after_successful_decode": true,
+    "camera_matched_pairs": 8,
+    "visual_criteria": ["finger separation", "toe definition", "unintended holes", "intended wound preservation", "surface defects"],
+    "automatic_visual_quality_verdict": false
+  },
+  "current_state": {
+    "live_neural_admission_measured": false,
+    "neural_attempt_reserved": false,
+    "model_weights_loaded": false,
+    "real_neural_inference": false,
+    "WSL_launched": false,
+    "C_mesh_extracted_or_rendered": false,
+    "repair_smoothing_remeshing_or_texturing": false
+  },
+  "publication_scope": "New source, tests and text/JSON only; final remote/ref verification retained locally"
+}

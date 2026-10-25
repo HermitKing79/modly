@@ -9,6 +9,6 @@ Approach: reuse the qualified occupancy/shape/decoder supervisors and CPU conver
 - [x] Write failing mocked launcher tests, implement default-dry-run standalone launcher and narrowly scoped fresh-input adapters. Keep old files unchanged.
 - [x] Preserve 22 GiB three readings four seconds apart and immediate pre-marker gates; 24 GiB preference only; original 12 GiB live floor, all GPU/disk/row/tile/deadline/ownership/cleanup guards. No retries.
 - [x] Prepare owned bounded CPU extraction and paired eight-angle comparison after the future successful decode, without repairs/modifiers/smoothing/textures.
-- [ ] Run safe tests/dry runs only, independently review final code and source evidence, verify preservation and publish safe code/text. Provide exact command and stop.
+- [x] Run safe tests/dry runs only, independently review final code and source evidence, verify preservation and publish safe code/text. Provide exact command and stop.
 
 Review focus: new-image identity and source lineage, no reuse of baseline features/occupancy, no private assets in Git, canonical local routes, default cannot dispatch, final gates before each marker, failed stage prevents every later stage, original support caps remain decisive, and visual quality remains unassessed until the user-run output exists.
