@@ -1,9 +1,16 @@
 """CPU-only policy and topology fixtures for saved zombie inspection."""
 import copy
+import builtins
+import io
 import importlib.util
 from pathlib import Path
+import runpy
+import subprocess
 import sys
+import tempfile
+from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 sys.path[:0]=[str(Path(__file__).parent),'D:/AI/Trellis2AMD/venv/Lib/site-packages']
 PATH=Path(__file__).with_name('amd_zombie_cpu_mesh.py')
@@ -51,6 +58,45 @@ class Policies(unittest.TestCase):
         self.assertEqual(result['surface_components'],1)
         self.assertEqual(result['unused_vertices'],1)
         self.assertEqual(result['largest_component_vertices'],3)
+
+    def test_renderer_rejects_missing_GO_before_importing_Blender_or_numpy(self):
+        original=builtins.__import__
+        def guarded(name,*args,**kwargs):
+            if name.split('.')[0] in {'bpy','mathutils','numpy'}:raise AssertionError('Render imports occurred before GO')
+            return original(name,*args,**kwargs)
+        with patch.object(sys,'stdin',SimpleNamespace(buffer=io.BytesIO(b'NO\n'))),patch.object(builtins,'__import__',side_effect=guarded):
+            with self.assertRaisesRegex(RuntimeError,'GO'):
+                runpy.run_path(str(PATH.with_name('amd_zombie_mesh_render.py')),run_name='__main__')
+
+    def test_unattached_renderer_is_terminated_reaped_and_failure_receipt_survives_cleanup_error(self):
+        import amd_forward_owned_job
+        for finish_fails in (False,True):
+            with self.subTest(finish_fails=finish_fails):
+                base=Path(tempfile.mkdtemp(prefix='cleanup-fixture-',dir=subject.BASE))
+                class Child:
+                    def __init__(self):self.stdin=io.BytesIO();self.stopped=False;self.reaped=False
+                    def poll(self):return -1 if self.stopped else None
+                    def terminate(self):self.stopped=True
+                    def kill(self):self.stopped=True
+                    def wait(self,timeout):
+                        if not self.stopped:raise subprocess.TimeoutExpired('fake renderer',timeout)
+                        self.reaped=True;return -1
+                class Job:
+                    handle=1
+                    api=SimpleNamespace(SetInformationJobObject=lambda *args:True,QueryInformationJobObject=lambda *args:True)
+                    def attach(self,child):raise OSError('synthetic attachment failure')
+                    def finish(self):
+                        if finish_fails:raise OSError('synthetic job cleanup failure')
+                        return dict(forced_job_cleanup=False,owned_tree_exit_verified=True)
+                child=Child()
+                with patch.object(subject,'BASE',base),patch.object(subject,'resource',return_value=subject.admission(12884901888,2147483648)),\
+                     patch.object(subject.subprocess,'Popen',return_value=child),patch.object(amd_forward_owned_job,'OwnedJob',return_value=Job()):
+                    code=subject.supervise('render')
+                self.assertEqual(code,1)
+                self.assertTrue(child.stopped);self.assertTrue(child.reaped)
+                receipt=subject.read(base/'render-run/host-result.json')
+                self.assertEqual(receipt['classification'],'FAIL')
+                self.assertIn('attachment failure',receipt['error'])
 
 
 if __name__=='__main__':unittest.main()

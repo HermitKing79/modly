@@ -1,4 +1,8 @@
 """Nine local views of the authenticated PLY using Blender Cycles CPU only."""
+import sys
+if sys.stdin.buffer.read(4)!=b'GO\n':
+    raise RuntimeError('Exact owned GO plus EOF required before render imports')
+
 import array
 import hashlib
 import itertools

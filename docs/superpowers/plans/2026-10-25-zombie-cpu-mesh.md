@@ -21,13 +21,17 @@
 
 ## Tasks
 
-- [ ] Snapshot protected state, branch tips, successful neural tree and private control records.
-- [ ] Write focused failing tests for closure validation, admission and components; implement CPU owner/authentication/analysis.
-- [ ] Run existing reader/converter tests and harmless owned-process policy fixture.
-- [ ] Execute one bounded extraction and one separate readback/topology analysis; stop on failure without changing safeguards.
-- [ ] Render eight views and silhouette under the existing CPU limits; inspect source image and actual results.
-- [ ] Verify preservation, independently review final code/outcome and publish only code/textual evidence on the new branch.
+- [x] Snapshot protected state, branch tips, successful neural tree and private control records.
+- [x] Write focused failing tests for closure validation, admission and components; implement CPU owner/authentication/analysis.
+- [x] Run existing reader/converter tests and harmless owned-process policy fixture.
+- [x] Execute one bounded extraction and one separate readback/topology analysis; stop on failure without changing safeguards.
+- [x] Render eight views and silhouette under the existing CPU limits; inspect source image and actual results.
+- [x] Verify preservation, independently review code/outcome and publish only code/textual evidence on the new branch.
 
 Ruling: retain the path-bound checkout and create `codex/amd-zombie-cpu-mesh-inspection`, leaving the neural execution branch unchanged. User authorised this concrete extraction; no further design approval round is needed.
 
 Ruling: use the already qualified CPU extraction limits, not the separate 22 GiB pre-neural requirement. No neural stage is being launched.
+
+Final: fixed Important renderer attachment-failure cleanup finding — negative render-GO and mocked unattached-process/cleanup-failure tests RED→GREEN; final focused suite 20/20. Successful assets/evidence retained unchanged, with no extraction/render repeat. Independent outcome/code review is bound to ca68dc1; the cleanup follow-up is author-verified. No other actionable findings were reported.
+
+Metadata clarification: preserve first analysis file and append a hash-bound correction for an inherited false components flag. Actual component counts were already computed; no geometry or measurement was silently changed.

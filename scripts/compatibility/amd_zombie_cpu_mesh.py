@@ -276,7 +276,7 @@ def supervise(stage):
         with (ev/'stdout.txt').open('xb') as out,(ev/'stderr.txt').open('xb') as err:
             child=subprocess.Popen(command,stdin=subprocess.PIPE,stdout=out,stderr=err,env=env)
             job.attach(child);record['owned_job_attached']=True
-            if stage!='render':child.stdin.write(b'GO\n')
+            child.stdin.write(b'GO\n')
             child.stdin.close()
             while child.poll() is None:
                 elapsed=time.monotonic()-began
@@ -293,11 +293,33 @@ def supervise(stage):
         if job.api.QueryInformationJobObject(job.handle,9,ctypes.byref(peak),ctypes.sizeof(peak),None):
             record['peak_process_committed_bytes']=peak.PeakProcessMemory;record['peak_job_committed_bytes']=peak.PeakJobMemory
         else:record['measurement_error']='Job peak query failed'
-        if child is not None and not child.stdin.closed:child.stdin.close()
-        record['job_cleanup']=job.finish()
-        if child is not None:child.wait(timeout=5)
+        cleanup_errors=[]
+        try:
+            if child is not None and not child.stdin.closed:child.stdin.close()
+        except BaseException as exc:cleanup_errors.append('stdin: '+str(exc))
+        # An attachment failure leaves the process outside the Job. Never rely
+        # on an empty Job to settle that exact owned Popen handle.
+        if child is not None and not record.get('owned_job_attached'):
+            try:
+                if child.poll() is None:
+                    child.terminate();record['unattached_owned_child_terminated']=True
+            except BaseException as exc:cleanup_errors.append('owned terminate: '+str(exc))
+        try:record['job_cleanup']=job.finish()
+        except BaseException as exc:cleanup_errors.append('Job: '+str(exc))
+        if child is not None:
+            try:child.wait(timeout=5);record['worker_exit_verified']=True
+            except BaseException as exc:
+                cleanup_errors.append('owned wait: '+str(exc))
+                try:
+                    if child.poll() is None:child.kill()
+                    child.wait(timeout=5);record['worker_exit_verified']=True
+                except BaseException as final:cleanup_errors.append('owned kill/reap: '+str(final))
+        record['cleanup_errors']=cleanup_errors
         record['elapsed_seconds']=time.monotonic()-began
-        record['classification']='PASS' if record.get('worker_returncode')==0 and not record.get('error') and not record.get('measurement_error') and not record['job_cleanup']['forced_job_cleanup'] else 'FAIL'
+        cleanup=record.get('job_cleanup',{})
+        record['classification']='PASS' if (record.get('worker_returncode')==0 and record.get('worker_exit_verified') is True
+            and not record.get('error') and not record.get('measurement_error') and not cleanup_errors
+            and cleanup.get('owned_tree_exit_verified') is True and cleanup.get('forced_job_cleanup') is False) else 'FAIL'
         save(ev/'host-result.json',record)
     print(json.dumps({k:v for k,v in record.items() if k!='samples'}),flush=True)
     return 0 if record['classification']=='PASS' else 1
