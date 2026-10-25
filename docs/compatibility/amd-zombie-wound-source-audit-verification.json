@@ -1,0 +1,89 @@
+{
+  "classification": "NO_GO_RELIABLE_COMPLETE_WOUND_SHEET_SEPARATION",
+  "base_commit": "9d76ef59cadc10160e0a468d930a81286ce73e4e",
+  "baseline_PLY_sha256": "377a15dc4b5a27936f7e62b311dd03e8337685344b0f8204b8f831252176b1a5",
+  "original_geometry_unchanged": true,
+  "replacement_geometry_created": false,
+  "samples": {
+    "legacy_depth": 988,
+    "source_intersections_recovered": 988,
+    "full_first_hit_equivalent": 988,
+    "nearer_occluders": 0,
+    "legacy_samples_inside_visual_wound": 51,
+    "legacy_samples_outside_visual_wound": 937,
+    "visual_wound_rays": 1884,
+    "near_front_crop_hits": 977,
+    "farther_source_hits": 896,
+    "no_full_source_hits": 11
+  },
+  "roles": {
+    "0": 18619,
+    "1": 329,
+    "2": 36,
+    "3": 173
+  },
+  "role_3_means_probable_internal_surface_not_verified_cavity_wall": true,
+  "layer_rays": 49152,
+  "layer_cap": 16,
+  "truncated_rays": 0,
+  "epsilon": 9.5367431640625e-07,
+  "independent_exact_deep_ray_disagreements": 0,
+  "rejected_preliminary_depth_only_GO": true,
+  "rejected_path_faces_inside_visual_wound": 0,
+  "final_semantic_validation_sha256": "8e6b0a9660348fd860cd85a6d50f9c56de88604042949f76fbafd06e6a0fda2a",
+  "authoritative_visual_manifest_sha256": "1657080bb67143e27e3b986aa5d5b6f0172122ee59506e2969dfdb9df08cb803",
+  "all_543_prior_asset_files_unchanged": true,
+  "protected_identities_unchanged": 100,
+  "original_source_hashes_unchanged": 256,
+  "old_local_refs_unchanged": 160,
+  "focused_tests_passed": 55,
+  "minimum_available_RAM_bytes": 19699974144,
+  "peak_process_commit_bytes": 625831936,
+  "stages": [
+    {
+      "stage": "authenticate-run",
+      "seconds": 3.062000000001717,
+      "peak_commit_bytes": 52084736
+    },
+    {
+      "stage": "owned-rays/render-run",
+      "seconds": 5.5,
+      "peak_commit_bytes": 575565824
+    },
+    {
+      "stage": "analyse-run",
+      "seconds": 3.2180000000007567,
+      "peak_commit_bytes": 229777408
+    },
+    {
+      "stage": "owned-render/render-run",
+      "seconds": 14.0,
+      "peak_commit_bytes": 625831936
+    },
+    {
+      "stage": "features-run",
+      "seconds": 2.672000000002299,
+      "peak_commit_bytes": 185212928
+    },
+    {
+      "stage": "compose-run",
+      "seconds": 2.1719999999986612,
+      "peak_commit_bytes": 58667008
+    },
+    {
+      "stage": "landmarks-run",
+      "seconds": 1.4369999999980791,
+      "peak_commit_bytes": 21704704
+    },
+    {
+      "stage": "semantic-run",
+      "seconds": 3.9219999999986612,
+      "peak_commit_bytes": 231591936
+    }
+  ],
+  "geometry_repair_or_remesh_or_winding_experiment_executed": false,
+  "neural_or_WSL_executed": false,
+  "UV_baking_texturing_or_reconstruction_followup_executed": false,
+  "next_direction": "Improve upstream geometric coherence and explicit rim/cavity-wall definition; no follow-up authorized or started",
+  "review": "pending"
+}
