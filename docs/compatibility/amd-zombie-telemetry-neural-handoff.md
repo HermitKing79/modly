@@ -26,6 +26,19 @@ An actual Windows regression launches the same qualified venv executable, holds 
 
 Private commit is committed virtual memory, not equivalent physical residency. The 493.7 MiB import commit increase does not establish a 493.7 MiB physical RAM loss. Recorded host availability decreased by at most 103.7 MiB from the pre-Python baseline. Observer overhead, other host activity and filesystem cache also contribute. The host's 12-second post-exit available-RAM change was -4,321,280 bytes; this does not show exclusive recovery attributable to the child. The measurements do not reproduce the historical multi-GiB decline or justify an extra mandatory margin. **24 GiB remains preferred only.**
 
+Phase deltas below are after minus before, in bytes. They establish timing and process counter changes, not exclusive physical attribution. Nested source-lineage phases are included in construction and are not added again. The minimum external sample was labelled `constructor-source-lineage/before` while that preparation interval was active.
+
+| Phase | Host available change | Interpreter working-set change | Interpreter commit change |
+| --- | ---: | ---: | ---: |
+| Imports | -13,594,624 | +15,855,616 | +517,705,728 |
+| CPU construction subset | -18,624,512 | +15,220,736 | +13,795,328 |
+| Repeated lineage validation | -13,950,976 | +1,843,200 | +2,281,472 |
+| Source verification | -11,825,152 | +81,920 | -450,560 |
+| Checkpoint streaming | -2,256,896 | -942,080 | -1,404,928 |
+| Metadata checks | -1,343,488 | +167,936 | +135,168 |
+
+The diagnostic excludes generation Runtime/guest-module construction. Its CPU construction subset is not a full live decoder startup measurement. The original runtime performs those necessary steps only during the independent launch.
+
 ## Decoder readiness and retained policies
 
 Successful guarded CPU completion authenticated the original sources, both saved-input lineage checks, configuration/header metadata and full opaque checkpoint stream. The unchanged decoder checkpoint contract requires 948,490,494 bytes and SHA-256 `e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581`. The saved zombie source is the independently reviewed 1,000-row Shape-SLat result at `35a5b825e3e9128326897a2ce35c87b237fdfa8b`, bound to source job `913ad907c55f1f510cce00d1d7573d518883190628d040506a6bd78578dd54bf`. Coordinates and latent hashes remain enforced by the original reader. No new full checkpoint stream or full lineage replay was needed during this repair.
@@ -47,4 +60,8 @@ Close Codex Desktop, ChatGPT Desktop and browsers. Use a normal, non-administrat
 
 New private admission/final-gate records are exclusively created in `artifacts/amd-zombie-neural-handoff-d77c7ef-v1`. Decoder evidence uses `docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/zombie-standalone-d77c7ef/decode`; the guest run is `/home/modly/run-zombie-standalone-d77c7ef-v1`. Existing or consumed destinations stop the handoff. Keep generated private evidence local. Preserve the console output on a rejection and stop for review; do not retry automatically.
 
-Verification and final publication receipts are linked from the companion JSON report. Raw process inventories and diagnostic evidence are not published.
+Verification: 30 Python tests (15 existing diagnostic, five Windows audit groups, ten new handoff tests), 14 synthetic launcher scenarios, default dry runs and the actual native allocation test passed. The final independent code review found no newly introduced defects. All 256 original sources, 100 protected identities/78 bounded hashes, 88 retained records and all 18 files in the failed/completed diagnostic trees matched the retained baselines. No real handoff directory or new marker exists.
+
+The independent review records one inherited limitation: the CPU diagnostic starts its redirector before attaching its Job. A child created in that interval can fail the new membership check; the successful allocation regression does not prove that the existing launch/attach race is eliminated. This patch does not change that launch mechanism or the neural supervisor's existing containment.
+
+See [source-safe verification](amd-zombie-telemetry-neural-handoff-verification.json). Raw process inventories and diagnostic evidence are not published.

@@ -1,0 +1,82 @@
+{
+  "schema": "modly.zombie.telemetry-handoff-review.v1",
+  "base_commit": "d77c7ef199b961e49afc63f8041efa02a164738c",
+  "independently_reviewed_code_commit": "79d765fdb914c475fb2015c99de52e4c1b6a507f",
+  "decision": "GO_FOR_ONE_USER_CONTROLLED_GUARDED_LAUNCH",
+  "live_neural_admission": "NOT_PERFORMED; fresh standalone host and guest/GPU checks remain mandatory",
+  "monitoring": {
+    "proven_defect": "Observer measured the Windows venv redirector instead of its interpreter child",
+    "numeric_historical_observer_samples": 177,
+    "historical_measurement_errors": 0,
+    "historical_maximum_sample_gap_seconds": 0.238775,
+    "independent_snapshot_matches_import_self_counters": true,
+    "summary_peak_math_correct_for_wrong_process": true,
+    "new_binding": "Retained interpreter Process handle; exact owned Job, start ordering and native image validated",
+    "launcher_and_interpreter_reported_separately": true,
+    "actual_Windows_allocation_regression": "PASS; 64 MiB held allocation; old implementation failed",
+    "author_final_test_private_commit_difference_bytes": 0,
+    "author_final_test_working_set_difference_bytes": 16384,
+    "independent_test_private_commit_difference_bytes": 0,
+    "independent_test_working_set_difference_bytes": 20480,
+    "foreign_PID_and_wrong_image_rejected": true
+  },
+  "completed_CPU_run": {
+    "classification": "CPU_PREPARATION_COMPLETE",
+    "minimum_available_bytes": 25494872064,
+    "margin_above_22GiB_bytes": 1872551936,
+    "host_baseline_to_minimum_change_bytes": -108765184,
+    "imports_working_set_delta_bytes": 15855616,
+    "imports_private_commit_delta_bytes": 517705728,
+    "interpreter_OS_peak_working_set_bytes": 106168320,
+    "exclusive_physical_causality_established": false,
+    "additional_mandatory_headroom_justified": false,
+    "full_generation_Runtime_startup_measured": false
+  },
+  "verification": {
+    "diagnostic_synthetic_tests": 15,
+    "actual_Windows_audit_test_groups": 5,
+    "handoff_synthetic_tests": 10,
+    "PowerShell_synthetic_scenarios": 14,
+    "native_observer_test": "PASS",
+    "dry_runs": "PASS",
+    "independent_review": "No newly introduced Critical, Important or Minor defects",
+    "inherited_limitation": "Diagnostic redirector start precedes Job attachment; this patch does not eliminate that existing race",
+    "full_project_suite": "Not run: only authorised CPU-safe focused tests; no model imports or full preparation"
+  },
+  "preservation": {
+    "original_source_hashes_unchanged": 256,
+    "protected_identities_unchanged": 100,
+    "bounded_protected_hashes_unchanged": 78,
+    "retained_records_unchanged": 88,
+    "failed_and_completed_diagnostic_files_unchanged": 18,
+    "prior_local_refs_unchanged": 154,
+    "prior_remote_heads_recorded": 147,
+    "private_protected_before_after_receipt_sha256": "4c9b09d33808b781a68d3529e5b15200481e5462c2fef827ccd6416ea89b735f",
+    "raw_memory_evidence_published": false
+  },
+  "execution_in_this_task": {
+    "real_diagnostic": false,
+    "full_CPU_preparation": false,
+    "generation_Runtime_construction": false,
+    "WSL_command": false,
+    "model_weights_loaded": false,
+    "neural_attempt_reserved": false,
+    "neural_forwards": 0
+  },
+  "unchanged_policy": {
+    "initial_available_bytes": 23622320128,
+    "initial_samples": 3,
+    "sample_spacing_seconds": 4,
+    "final_pre_marker_available_bytes": 23622320128,
+    "preferred_only_bytes": 25769803776,
+    "live_host_floor_bytes": 12884901888,
+    "maximum_forwards": 1,
+    "host_D_floor_GiB": 50,
+    "host_output_floor_GiB": 2,
+    "guest_disk_floor_GiB": 5,
+    "free_VRAM_admission_GiB": 13,
+    "GPU_allocation_cap_GiB": 12,
+    "native_CPU_GPU_host_deadline_seconds": [60, 120, 240, 480],
+    "owned_supervisor_cleanup": "Unchanged"
+  }
+}

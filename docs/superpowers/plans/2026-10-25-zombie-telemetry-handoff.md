@@ -27,12 +27,14 @@
 
 ## Tasks
 
-- [ ] Snapshot protected state, refs and both real diagnostic trees; inspect recorded telemetry and source.
-- [ ] Add a failing actual-Windows allocation regression, then minimally repair interpreter binding and verify native memory agreement.
-- [ ] Add mocked handoff tests before implementation: fresh admission, final gate, exclusive output, routing and no-work dry run.
-- [ ] Implement standalone handoff, retaining original supervisor and decoder; no execution in this session.
-- [ ] Run focused tests, dry runs, preservation checks and independent review. Publish the isolated branch and exact commit.
+- [x] Snapshot protected state, refs and both real diagnostic trees; inspect recorded telemetry and source.
+- [x] Add a failing actual-Windows allocation regression, then minimally repair interpreter binding and verify native memory agreement.
+- [x] Add mocked handoff tests before implementation: fresh admission, final gate, exclusive output, routing and no-work dry run.
+- [x] Implement standalone handoff, retaining original supervisor and decoder; no execution in this session.
+- [x] Run focused tests, dry runs, preservation checks and independent review. Publish the isolated branch and exact commit.
 
 Ruling: use a new branch in the existing checkout, retaining the established absolute-path environment and every old branch. The user requested branch isolation; duplicating this path-bound checkout would not improve the intended handoff.
 
 Ruling: execute the explicit user specification inline without another design approval round. This task already authorises the minimal fix and standalone handoff.
+
+Final review: no newly introduced Critical/Important/Minor findings. The inherited diagnostic start/attach race is documented without changing the original launch/cleanup mechanism. All focused checks passed; full project tests were not run because that would exceed the permitted CPU-only test scope and could import model modules.
