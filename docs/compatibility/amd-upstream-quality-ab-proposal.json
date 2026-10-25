@@ -1,0 +1,72 @@
+{
+  "schema": "modly.amd.upstream-quality-proposal.v1",
+  "status": "PROPOSED_ONLY_STOP_FOR_REVIEW",
+  "implementation_authorized": false,
+  "inference_authorized": false,
+  "attempt_reserved": false,
+  "asset": "existing_verified_non_zombie_turret",
+  "A": {
+    "reuse_existing_only": true,
+    "shape_guidance_strength": 7.5,
+    "neural_output_sha256": "dc4667495ac4f8fd1457adca99563d83ee27c71fce0da2a6eb6698a8a1bd6e22",
+    "PLY_sha256": "89549a36c6acc6f884174a2097ad7e346980d565c999117ea29f89cda9baad1a",
+    "vertices": 1842968,
+    "triangles": 4012360
+  },
+  "B": {
+    "only_parameter_change": {"shape_slat_sampler.guidance_strength": {"from": 7.5, "to": 5.0}},
+    "shape_sequences": 1,
+    "shape_model_forwards": 21,
+    "shape_positive_forwards": 12,
+    "shape_negative_forwards": 9,
+    "geometry_decoder_forwards": 1,
+    "DINO_reruns": 0,
+    "occupancy_reruns": 0,
+    "automatic_retries": 0
+  },
+  "frozen": {
+    "seed": 20261013,
+    "resolution": 512,
+    "shape_tokens": 3743,
+    "conditioning_shape": [1, 1029, 1024],
+    "conditioning_file_sha256": "78a0b54210568624639c8cacb7a803d83d4b838b782ea54e7aceab749d47e17a",
+    "initial_noise_NPY_sha256": "6ba908a9c41e74fc6201e46ac428b4603dddf24bd4ea38d7ab9774ae422235d0",
+    "coordinate_NPY_sha256": "949a9e6a2548abcad66354384502c06834d4d56ea3f2fa86b619c25926379ed4",
+    "A_denormalized_shape_NPY_sha256": "90eaf72030f303b209a4d02ae9adc7d4ecd39662344f35f0adc8120bc1e871b9",
+    "shape_checkpoint_sha256": "ec5e0917ef9b7e25ad51dffc7d19687a42019871f94239f2fa7f86264c55b70f",
+    "decoder_checkpoint_sha256": "e3b718d3e43e4f8780e9a24ac6fff231811a67e3b058e336e10fe654c911d581",
+    "sampler": "FlowEulerGuidanceIntervalSampler",
+    "steps": 12,
+    "rescale_t": 3.0,
+    "guidance_rescale": 0.5,
+    "guidance_interval": [0.6, 1.0],
+    "dino_lock": 0.0,
+    "sigma_min": 0.00001,
+    "decoder_precision_tiling_and_converter": "unchanged approved versions"
+  },
+  "prerequisite": "Separate authorization, versioned sampler profile/control and CPU mocked review are required; existing 7.5-pinned controls remain unchanged and reject B now",
+  "historical_A_comparability": "Require matching archived runtime/source/precision fingerprints, original Windows shape backend and approved decoder backend; otherwise stop for fresh paired-trial approval. No automatic A rerun; no replicated causal/generalization claim.",
+  "preserved_bounds": {
+    "admission_available_RAM_GiB": 22,
+    "admission_readings": 3,
+    "reading_interval_seconds": 4,
+    "immediately_before_reservation_available_RAM_GiB": 22,
+    "preferred_headroom_GiB_not_mandatory": 24,
+    "live_host_floor_GiB": 12,
+    "maximum_initial_rows": 4430,
+    "maximum_intermediate_rows": 1000000,
+    "maximum_final_rows": 1842968,
+    "all_other_resource_and_owned_process_guards": "unchanged",
+    "brick_profile_reuse": false,
+    "cap_increase_or_deadline_extension": false
+  },
+  "evaluation": {
+    "comparison": "Untextured raw meshes, same normalized frame, eight fixed cameras and culling; no repair or postprocessing",
+    "freeze_before_B": "Reference-visible turret parts and intended solid/open regions, without viewing B",
+    "pass": "Noticeable geometric improvement without lost parts, worse silhouette, invented closures or resource violations",
+    "metrics": ["visible feature and opening fidelity", "missing/fused parts", "boundary and incidence counts", "components/fragments", "triangle count", "RAM/VRAM/time"],
+    "fail": "No clear quality win, loss masked by lower counters, any admission/support/resource failure, or incomplete owned cleanup",
+    "generalization": "One prop pilot does not qualify anatomy or all asset classes",
+    "after_result": "Stop; no automatic additional experiment"
+  }
+}
