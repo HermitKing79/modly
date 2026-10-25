@@ -100,5 +100,16 @@
   ],
   "additional_regional_mesh_modified": false,
   "neural_or_WSL_executed": false,
-  "review": "pending"
+  "review": {
+    "classification": "PASS_INDEPENDENT_READ_ONLY_REVIEW",
+    "reviewed_commit": "f6dbf04c2115eecb469da9fd3190d2ccaec58507",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "declined_judgments": 0,
+    "independent_focused_tests_passed": 33,
+    "separate_SciPy_max_flow_certificates": [325, 541],
+    "all_151_old_remote_heads_preserved_before_publication": true,
+    "final_commit_changes_only_review_and_report_text": true
+  }
 }
