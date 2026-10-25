@@ -249,7 +249,7 @@ def analyse():
         prior.save_npy(BASE/'skin-connectivity-hop-distance.npy',np.array(distance,np.int32));prior.save_npy(BASE/'unbranched-skin-connectivity-hop-distance.npy',np.array(clean_distance,np.int32))
         void=roi&(old_face<0);fullhit=layers[front,:,:,0]>=0
         fullpoints=origins[front]+directions[front]*depths[front,:,:,0,None]
-        summary=dict(classification='READ_ONLY_SOURCE_GEOMETRY_AUDIT_COMPLETE',baseline_PLY_sha256=BASELINE_SHA,
+        summary=dict(classification='READ_ONLY_SOURCE_GEOMETRY_AUDIT_COMPLETE',requires_visual_semantic_validation=True,baseline_PLY_sha256=BASELINE_SHA,
             saved_deep_samples=988,saved_deep_sample_triangle_intersections_found=source_found,full_first_hit_depth_equivalent=first_equivalent,
             nearer_full_source_occluders=nearer,deep_rays_with_multiple_depth_groups=multi,shared_depth_tie_events=tie_events,
             deep_rays_with_BVH_vs_exact_group_disagreement=layer_mismatches,

@@ -85,5 +85,22 @@
   "neural_or_WSL_executed": false,
   "UV_baking_texturing_or_reconstruction_followup_executed": false,
   "next_direction": "Improve upstream geometric coherence and explicit rim/cavity-wall definition; no follow-up authorized or started",
-  "review": "pending"
+  "private_case_inventory_sha256": "ea2b692910165b1b4b30fa5190980f9ff57079647b3e532654726ecbbb58bc23",
+  "review": {
+    "classification": "PASS_INDEPENDENT_READ_ONLY_REVIEW",
+    "reviewed_commit": "8f4cf99044c1454cbbe55800bec52c9659c28ee7",
+    "critical": 0,
+    "important": 0,
+    "minor_metadata_warning_fixed": 1,
+    "open_findings": 0,
+    "focused_tests_passed_independently": 55,
+    "sealed_case_files_verified": 75,
+    "old_remote_heads_preserved_before_publication": 153,
+    "post_review_change": "Only requires_visual_semantic_validation=True metadata flag plus review/report text; measurement logic unchanged",
+    "scope_limits": [
+      "No ground truth for intended anatomy or deliberate openings",
+      "No complete segmentation, manual feasibility or all-methods impossibility claim",
+      "No additional processing, generation or stress experiment"
+    ]
+  }
 }
