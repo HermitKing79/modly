@@ -1,0 +1,72 @@
+{
+  "schema": "modly.amd.zombie-c-render-recovery-verification.v1",
+  "decision": "GO_ONE_STANDALONE_CPU_RENDER_RECOVERY_SUBJECT_TO_LIVE_ADMISSION",
+  "baseline_commit": "4ab4616c4019705d5f53802b053156ef65cae150",
+  "independently_reviewed_code_commit": "767b55e50773ab697c475e646f3a7fd11c017e56",
+  "independent_review": {
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "read_only_actual_input_check": "PASS",
+    "previous_files": 14,
+    "decoded_inputs": 16,
+    "immutable_original_files": 13,
+    "recovery_root_absent": true,
+    "not_yet_judged": ["actual Cycles completion within 180 seconds", "rendered appearance", "comparative quality"]
+  },
+  "tests": {
+    "zombie_C_tests_including_real_embedded_import_probe": 64,
+    "inherited_CPU_policy_tests": 7,
+    "total_passed": 71,
+    "bytecode_regression_observed_RED_then_GREEN": true,
+    "empty_log_snapshot_regression_observed_RED_then_GREEN": true,
+    "standalone_PowerShell_default": "PASS_NO_CHILD",
+    "isolated_qualified_Python_default": "PASS_NO_WORK",
+    "actual_publication_and_private_input_guard": "PASS"
+  },
+  "embedded_probe": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "ignore_environment": 1,
+    "initial_dont_write_bytecode": false,
+    "original_numpy_cache_mkdir_attempt_reproduced_and_denied": true,
+    "fixed_dont_write_bytecode": true,
+    "fixed_numpy_import": "PASS",
+    "fixed_bootstrap_write_attempts": 0,
+    "deliberate_installation_file_and_directory_creation": "DENIED",
+    "audit_policy_changed": false,
+    "scene_or_geometry_code_executed": false
+  },
+  "actual_read_only_authentication": {
+    "classification": "PASS_EXISTING_GEOMETRY_READBACK",
+    "ten_tensors_and_complete_lineage_verified": true,
+    "vertices": 325074,
+    "triangles": 665232,
+    "zero_area_triangles": 0,
+    "PLY_NPY_position_and_index_payloads_bit_exact": true,
+    "neural_sha256": "7cff6a60c2c51e118f7d7994fce7644b4a91a3f735f79b4622d4412517d9e507",
+    "PLY_sha256": "a2d015fbcd54f6b1232674c0fef239040501629460ab177dcf826f4b34d3809d",
+    "elapsed_seconds": 7.234,
+    "peak_process_commit_bytes": 49950720,
+    "natural_owned_exit": true,
+    "extraction_or_geometry_modification": false
+  },
+  "preservation": {
+    "historical_files_unchanged": 1855,
+    "protected_identities_unchanged": 100,
+    "retained_prior_records_unchanged": 88,
+    "existing_local_refs_unchanged": 164,
+    "original_untracked_state_unchanged": true,
+    "private_assets_and_telemetry_published": false
+  },
+  "unchanged_CPU_limits": {
+    "process_commit_bytes": 6442450944,
+    "available_host_RAM_floor_bytes": 12884901888,
+    "free_disk_floor_bytes": 2147483648,
+    "per_stage_deadline_seconds": 180,
+    "render_threads": 4,
+    "original_owned_job_GO_EOF_and_cleanup": true
+  },
+  "real_recovery_executed_during_preparation": false,
+  "neural_WSL_generation_or_extraction_executed": false,
+  "geometry_quality_status": "UNASSESSED_REQUIRES_HUMAN_VISUAL_REVIEW"
+}

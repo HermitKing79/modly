@@ -36,8 +36,8 @@ Interfaces: optional explicit mesh base for validation/review; fixed recovery la
 
 ## Task 3: Review and publish
 
-- [ ] Obtain independent review of the whole patch and safeguards; address material findings with focused regressions.
-- [ ] Verify preservation, source-only diff and branch heads. Publish new isolated branch and textual findings; verify remote commit.
+- [x] Obtain independent review of the whole patch and safeguards; address material findings with focused regressions.
+- [x] Verify preservation, source-only diff and branch heads. Publish new isolated branch and textual findings; verify remote commit.
 - [ ] Deliver exact commit, one standalone command, output paths and remaining visual-review limitation. Stop.
 
 ## Review focus
