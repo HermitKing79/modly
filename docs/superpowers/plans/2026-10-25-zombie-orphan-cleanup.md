@@ -19,11 +19,13 @@
 
 ## Tasks
 
-- [ ] Preserve assets, source hashes and all previous refs; write focused failing fixtures.
-- [ ] Implement generic compaction and fail-closed verification; execute one owned cleanup stage.
-- [ ] Independently reopen/verify all triangle bytes, indices, bounds, component labels and defect-edge identities.
-- [ ] Render original/variant silhouettes with identical eight cameras; require exact pixel/mask agreement.
-- [ ] Select one local source-quad candidate and analyze incidence, full face fans and fixed-neighbor winding predictions; render diagnostic context only.
-- [ ] Obtain independent review, verify preservation and publish only source-safe code/text on an isolated branch.
+- [x] Preserve assets, source hashes and all previous refs; write focused failing fixtures.
+- [x] Implement generic compaction and fail-closed verification; execute one owned cleanup stage.
+- [x] Independently reopen/verify all triangle bytes, indices, bounds, component labels and defect-edge identities.
+- [x] Render original/variant silhouettes with identical eight cameras; require exact pixel/mask agreement.
+- [x] Select one local source-quad candidate and analyze incidence, full face fans and fixed-neighbor winding predictions; render diagnostic context only.
+- [x] Obtain independent review, verify preservation and publish only source-safe code/text on an isolated branch.
 
 Ruling: the user has approved Phase A specifically. Execute it without another approval round; keep Phase B strictly analysis-only. Retain the path-bound checkout and create a fresh branch/output root.
+
+Final: 19 focused tests pass. All seven bounded stages passed naturally; all eight silhouette pairs match exactly. Independent review at de694b7 confirmed the approved compaction and symbolic local prediction, with no actionable findings. Original asset/protected/ref snapshots match. No structural prototype was applied.
