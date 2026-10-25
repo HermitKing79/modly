@@ -1,0 +1,104 @@
+{
+  "classification": "PASS_EXACT_PROTOTYPE_NO_GO_LARGER_WINDING_ONLY",
+  "base_commit": "6dd749040f1c290633546af285884cc08e176b56",
+  "baseline_PLY_sha256": "377a15dc4b5a27936f7e62b311dd03e8337685344b0f8204b8f831252176b1a5",
+  "variant_PLY_sha256": "e3e954f9cac60595759ab06333cf033f8149a86215e5d1318dc3080d66d4d489",
+  "counts": {
+    "vertices": 325807,
+    "triangles": 673604,
+    "components": 10,
+    "boundary_edges": 19512,
+    "nonmanifold_edges": 31449,
+    "winding_conflicts": 147480
+  },
+  "exact_changed_face_rows": [
+    334008,
+    334009
+  ],
+  "new_conflicts": 0,
+  "eight_silhouette_pairs_identical": true,
+  "verified_render_frames": 24,
+  "regional_summary": {
+    "selected_faces": 1563,
+    "selected_vertices": 899,
+    "two_face_internal_constraints": 2212,
+    "two_face_crossing_constraints": 223,
+    "adjacency_components": 6,
+    "internally_contradictory_components": 0,
+    "fixed_boundary_incompatible_components": 3,
+    "touched_boundary_edges": 20,
+    "touched_nonmanifold_edges": 8
+  },
+  "partial_orientation_bound": {
+    "conflicts_removed": 220,
+    "residual": 325,
+    "new_conflicts": 0,
+    "symbolic_flips": 130,
+    "front_to_back": 128,
+    "back_to_front": 2,
+    "max_flow_equals_cut": true
+  },
+  "presentation_preserving_bound": {
+    "conflicts_removed": 4,
+    "residual": 541,
+    "new_conflicts": 0,
+    "max_flow_equals_cut": true
+  },
+  "prior_asset_files_unchanged": 257,
+  "protected_identity_state_equal": true,
+  "old_local_refs_unchanged": 158,
+  "original_source_hashes_unchanged": 256,
+  "tests_passed": 33,
+  "minimum_available_RAM_bytes": 20570550272,
+  "peak_process_commit_bytes": 1394442240,
+  "stages": [
+    {
+      "stage": "edit-run",
+      "elapsed_seconds": 1.375,
+      "peak_commit_bytes": 90828800
+    },
+    {
+      "stage": "verify-run",
+      "elapsed_seconds": 4.890999999999622,
+      "peak_commit_bytes": 220897280
+    },
+    {
+      "stage": "render-silhouettes/render-run",
+      "elapsed_seconds": 9.59400000000096,
+      "peak_commit_bytes": 686706688
+    },
+    {
+      "stage": "silhouette-check-run",
+      "elapsed_seconds": 0.9690000000009604,
+      "peak_commit_bytes": 35069952
+    },
+    {
+      "stage": "regional-run",
+      "elapsed_seconds": 2.0,
+      "peak_commit_bytes": 211435520
+    },
+    {
+      "stage": "render-local-render/render-run",
+      "elapsed_seconds": 23.53099999999904,
+      "peak_commit_bytes": 1394442240
+    },
+    {
+      "stage": "compose-run",
+      "elapsed_seconds": 1.1720000000004802,
+      "peak_commit_bytes": 59314176
+    },
+    {
+      "stage": "feasibility-run",
+      "elapsed_seconds": 2.188000000000102,
+      "peak_commit_bytes": 183574528
+    },
+    {
+      "stage": "visibility-bound-run",
+      "elapsed_seconds": 0.9529999999995198,
+      "peak_commit_bytes": 59953152
+    }
+  ],
+  "additional_regional_mesh_modified": false,
+  "neural_or_WSL_executed": false,
+  "review": "pending"
+}
