@@ -1,0 +1,69 @@
+{
+  "schema": "modly.amd.zombie-d-generation-handoff-verification.v1",
+  "decision": "GO_ONE_USER_RUN_PIPELINE_SUBJECT_TO_FRESH_LIVE_ADMISSION",
+  "base_commit": "c801fb1ac81d1565fd040aea572054c8e12fac70",
+  "reviewed_candidate_commit": "54cc330867675d5b375fb7bd230d0279b3d3d44f",
+  "independent_review": {
+    "critical": 0,
+    "important_found": 1,
+    "important_fixed": 1,
+    "minor": 0,
+    "finding": "Primary A/D HTML captions and heading retained C labels",
+    "fix": "D labels corrected; synthetic primary review assembly regression observed RED then GREEN; case-specific error messages corrected",
+    "policy_or_geometry_changed_by_review_fix": false,
+    "D_and_C_pinned_files_independently_verified": 17,
+    "prepared_occupancy_files": 2,
+    "future_outputs_absent": true,
+    "not_yet_judged": ["future live resource admission", "actual GPU support counts and geometry quality", "actual stage deadline completion", "A/C/D quality winner"]
+  },
+  "tests": {
+    "D_policy_and_synthetic_comparison_tests_passed": 54,
+    "unchanged_C_tests_passed": 63,
+    "unchanged_CPU_policy_tests_passed": 7,
+    "total_passed": 124,
+    "optional_C_Blender_probe_skipped": 1,
+    "separate_actual_D_Blender_import_prefix": "PASS_NO_GEOMETRY_OR_SCENE_EXECUTION",
+    "D_Blender_bootstrap_write_attempts": 0,
+    "D_Blender_deliberate_installation_writes": "DENIED",
+    "PowerShell_default": "PASS_NO_CHILD",
+    "qualified_isolated_Python_default": "PASS_NO_WORK",
+    "actual_CPU_selected_image_and_profile_wiring": "PASS_NO_MODELS_OR_WORKERS",
+    "original_published_file_verifier": "PASS",
+    "actual_profile_file_hash_count": 52
+  },
+  "source": {
+    "sha256": "9ac0364f409077cd3fdeb853a1baed3b851c56f4fdc539c9fde73e0e3ab79db9",
+    "bytes": 642361,
+    "input_contract_sha256": "1bd85638188a2d4b95b5926d51f95efc33686b4052890d207103a006af5c2092",
+    "conditioning_512_pixel_sha256": "4738b7f1f3f28a3ad1747e5739ab4b6bae9b51ea78c6ff022df578415e3f4e22",
+    "original_qualified_CPU_method_recomputed": true,
+    "published_D_qualification_and_A_body_preservation_verified": true,
+    "old_A_or_C_neural_inputs_reused": false
+  },
+  "unchanged_protections": {
+    "admission_available_RAM_bytes": 23622320128,
+    "admission_readings": 3,
+    "spacing_seconds": 4,
+    "final_pre_marker_RAM_bytes": 23622320128,
+    "preferred_only_RAM_bytes": 25769803776,
+    "live_host_RAM_floor_bytes": 12884901888,
+    "GPU_disk_deadline_attempt_and_owned_cleanup_guards": true,
+    "automatic_retries": 0,
+    "model_settings_or_decoder_modified": false
+  },
+  "future_generation": ["fresh D conditioning", "fresh D occupancy sampling and decode", "fresh D shape sampling", "one approved geometry decode", "raw CPU mesh extraction", "eight matched D CPU views"],
+  "baseline_handling": "A and completed C PNGs copied byte-for-byte; no baseline generation, extraction or rendering",
+  "preservation": {
+    "historical_private_files_verified_unchanged": 1929,
+    "protected_identities_unchanged": 100,
+    "retained_records_unchanged": 88,
+    "all_preexisting_branch_heads_preserved": true,
+    "old_tracked_files_modified": false,
+    "private_images_meshes_tensors_or_raw_memory_logs_published": false
+  },
+  "neural_attempt_reserved_during_preparation": false,
+  "WSL_launched_during_preparation": false,
+  "model_imports_or_weight_loading_during_preparation": false,
+  "real_neural_or_D_geometry_stage_executed_during_preparation": false,
+  "visual_quality_status": "UNASSESSED_REQUIRES_HUMAN_VISUAL_REVIEW"
+}

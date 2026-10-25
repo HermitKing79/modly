@@ -334,7 +334,7 @@ def validate_lineage(contract, shape, admission, input_contract, input_sha, feat
              and feature_metadata['input_pixel_sha256'] == input_contract['pixel_sha256']
              and feature_metadata['input_png_sha256'] == input_contract['input_png_sha256']
              and feature_metadata['harness_commit'] == commit
-             and feature_metadata['output_sha256'] == lineage['feature_payload_sha256'], 'C source image or feature provenance differs')
+             and feature_metadata['output_sha256'] == lineage['feature_payload_sha256'], 'D source image or feature provenance differs')
     except (KeyError, TypeError) as exc:
         raise ValueError('Incomplete D image lineage') from exc
 
@@ -384,20 +384,20 @@ def receipt_inputs(commit):
     need(contract_sha == binding['run_contract_sha256'] and contract == read(SOURCE.parent / 'run-contract.json', 65536)
          and sidecar['run_contract'] == contract, 'Original host/guest D contract differs')
     shape_path = SHAPE / 'run/results.json'; shape = read(shape_path)
-    need(digest(shape_path) == contract['source_job_sha256'] == binding['source_job_sha256'], 'C source shape job changed')
+    need(digest(shape_path) == contract['source_job_sha256'] == binding['source_job_sha256'], 'D source shape job changed')
     need(digest(OCCUPANCY / 'source-image.png') == IMAGE_SHA, 'Raw D image changed')
     input_path = OCCUPANCY / 'input-contract.json'; input_sha = digest(input_path); input_contract = read(input_path, 65536)
     validate_reference(read(REFERENCE, 65536), input_contract, input_sha)
     feature = OCCUPANCY / 'dino/run/scratch/conditioning.safetensors'
     admission_path = SHAPE / 'pre-execution-admission.json'
     validate_lineage(contract, shape, read(admission_path), input_contract, input_sha, feature_header(feature), commit)
-    need(digest(feature) == shape['worker']['generation_inputs']['feature_file_sha256'], 'C conditioning file changed')
+    need(digest(feature) == shape['worker']['generation_inputs']['feature_file_sha256'], 'D conditioning file changed')
     need(sidecar['provenance']['input_file_sha256'] == contract['input_sha256'], 'Decode input file binding differs')
     for name, leaf in (('coords.npy', 'shape-latent-coordinates.npy'), ('shape-latent-denormalized.npy', 'shape-latent-denormalized.npy')):
         path = plain(SHAPE / 'run/scratch' / leaf)
         guest_path = '/mnt/' + str(path)[0].lower() + '/' + str(path)[3:].replace('\\', '/')
         need(contract['input_paths'][name] == guest_path and digest(path) == contract['input_sha256'][name]
-             and path.stat().st_size <= 2 * 1024**2, 'C decode input path/hash differs')
+             and path.stat().st_size <= 2 * 1024**2, 'D decode input path/hash differs')
         files.append(path)
     binding.update(source_image_sha256=IMAGE_SHA, input_contract_sha256=input_sha,
                    feature_file_sha256=digest(feature), checkpoint_sha256=CHECKPOINT_SHA)
@@ -543,12 +543,12 @@ def review(mesh_base=None):
         pairs.append(dict(azimuth_degrees=i * 45, original='original/' + old['name'], candidate='candidate-D/' + new['name'],
                           original_sha256=old['sha256'], candidate_sha256=new['sha256']))
         sections.append(f'<h2>Azimuth {i * 45} degrees</h2><div class="pair"><figure><figcaption>Original</figcaption><a href="original/{old["name"]}"><img src="original/{old["name"]}" width="768" height="768"></a></figure>'
-                        f'<figure><figcaption>Candidate C</figcaption><a href="candidate-D/{new["name"]}"><img src="candidate-D/{new["name"]}" width="768" height="768"></a></figure></div>')
+                        f'<figure><figcaption>Candidate D</figcaption><a href="candidate-D/{new["name"]}"><img src="candidate-D/{new["name"]}" width="768" height="768"></a></figure></div>')
     sheet_path = output / 'paired-eight-view-contact-sheet.png'
     with sheet_path.open('xb') as stream:
         sheet.save(stream, format='PNG')
     quality = quality_review(original_mesh, candidate_mesh)
-    page = '<!doctype html><html lang="en"><meta charset="utf-8"><title>Original / Zombie D mesh comparison</title><style>body{background:#20242b;color:#fff;font:16px system-ui;margin:24px}.pair{display:flex;gap:16px;overflow:auto}figure{margin:0}img{max-width:none}li{margin:10px 0}a{color:#8ecbff}</style><h1>Original / candidate C</h1><p><strong>UNASSESSED: human visual review required.</strong> Cameras, scale, lighting and flat shading match the original. Click an image for its unchanged 768px PNG; use browser zoom to inspect visible digits and surfaces.</p><ul>'
+    page = '<!doctype html><html lang="en"><meta charset="utf-8"><title>Original / Zombie D mesh comparison</title><style>body{background:#20242b;color:#fff;font:16px system-ui;margin:24px}.pair{display:flex;gap:16px;overflow:auto}figure{margin:0}img{max-width:none}li{margin:10px 0}a{color:#8ecbff}</style><h1>Original / candidate D</h1><p><strong>UNASSESSED: human visual review required.</strong> Cameras, scale, lighting and flat shading match the original. Click an image for its unchanged 768px PNG; use browser zoom to inspect visible digits and surfaces.</p><ul>'
     page += ''.join('<li>' + row['instruction'] + '</li>' for row in quality['criteria'])
     page += '</ul><p>' + quality['limitation'] + '</p>' + ''.join(sections) + '</html>'
     with (output / 'paired-review.html').open('x', encoding='utf-8') as stream:
@@ -570,7 +570,7 @@ def worker(stage):
     inputs = read(BASE / 'comparison-inputs.json'); verify_snapshot(inputs['immutable_original']); verify_snapshot(inputs['decoded_inputs'])
     if stage == 'extract':
         contract, binding = authenticate(inputs['harness_commit'])
-        need(all(binding[key] == value for key, value in inputs['decode_binding'].items()), 'C input binding changed after reservation')
+        need(all(binding[key] == value for key, value in inputs['decode_binding'].items()), 'D input binding changed after reservation')
         save(BASE / 'authentication-extract.json', binding)
         import amd_generation_mesh as mesh
         result = mesh.extract(SOURCE, binding['source_sha256'], BASE / 'mesh', contract=contract)

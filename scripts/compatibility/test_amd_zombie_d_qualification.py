@@ -115,4 +115,31 @@ class SecondaryC(unittest.TestCase):
         self.assertIn('black speckles',(out/'three-way-review.html').read_text())
         with self.assertRaises(FileExistsError),patch.object(p,'BASE',base):p.secondary_review()
 
+    def test_primary_review_page_identifies_new_geometry_as_D_not_C(self):
+        from PIL import Image
+        p=self.p;parent=HERE.parents[2]/'artifacts/amd-zombie-d-policy-tests';parent.mkdir(exist_ok=True)
+        base=Path(tempfile.mkdtemp(dir=parent))/'D';(base/'previews').mkdir(parents=True);(base/'mesh').mkdir()
+        original=p.read(p.ORIGINAL/'previews/render-metadata.json')
+        candidate=copy.deepcopy(original);candidate.update(original_PLY_sha256=p.ORIGINAL_SHA,matched_original_cameras=True)
+        artifacts={}
+        for name in ('mesh.ply','vertices.npy','faces.npy'):
+            path=base/'mesh'/name;path.write_bytes(b'synthetic receipt-only '+name.encode())
+            artifacts[name]=dict(bytes=path.stat().st_size,sha256=p.digest(path))
+        candidate['source_PLY_sha256']=artifacts['mesh.ply']['sha256']
+        for i,row in enumerate(candidate['views']):
+            path=base/'previews'/row['name'];Image.new('RGB',(768,768),(i,30,50)).save(path);row['sha256']=p.digest(path)
+        binding=dict(source_sha256='f'*64,rows=candidate['vertices'],learned_subdivisions=[2,3,4,candidate['vertices']])
+        mesh=dict(input_sha256='f'*64,vertices=candidate['vertices'],triangles=candidate['triangles'],
+                  learned_subdivisions=binding['learned_subdivisions'],PLY_readback_exact=True,zero_area_triangles=0,
+                  topology_repair=False,material_decoded=False,native_extraction=False,artifacts=artifacts)
+        p.save(base/'mesh/mesh.json',mesh);p.save(base/'previews/render-metadata.json',candidate)
+        p.save(base/'comparison-inputs.json',dict(immutable_original={},decoded_inputs={},decode_binding=binding))
+        for stage in ('extract','render'):
+            (base/(stage+'-run')).mkdir();p.save(base/(stage+'-run/host-result.json'),dict(classification='PASS'))
+        with patch.object(p,'BASE',base):p.review()
+        page=(base/'review/paired-review.html').read_text()
+        self.assertIn('<figcaption>Candidate D</figcaption>',page)
+        self.assertIn('<h1>Original / candidate D</h1>',page)
+        self.assertNotIn('Candidate C',page);self.assertNotIn('candidate C',page)
+
 if __name__=='__main__':unittest.main()

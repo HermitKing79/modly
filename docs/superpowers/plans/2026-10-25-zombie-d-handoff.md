@@ -20,24 +20,24 @@
 
 ## Task 1 — Authenticate D and create its CPU-only prepared input
 
-- [ ] Snapshot preservation and old refs; create an isolated branch in the existing absolute-path checkout.
-- [ ] Recompute D's qualified crop/raster from the authenticated existing PNG using the pinned original CPU method; verify A/body preservation receipts and saved 512 images.
-- [ ] Prepare a new private occupancy leaf with only an exact D source copy and CPU input contract. No attempt markers or neural inputs.
-- [ ] Authenticate existing A and C cameras/views. Pin qualification and secondary C evidence in the new public reference contract/plan.
+- [x] Snapshot preservation and old refs; create an isolated branch in the existing absolute-path checkout.
+- [x] Recompute D's qualified crop/raster from the authenticated existing PNG using the pinned original CPU method; verify A/body preservation receipts and saved 512 images.
+- [x] Prepare a new private occupancy leaf with only an exact D source copy and CPU input contract. No attempt markers or neural inputs.
+- [x] Authenticate existing A and C cameras/views. Pin qualification and secondary C evidence in the new public reference contract/plan.
 
 ## Task 2 — Case routing and tests
 
-- [ ] Adapt the existing mocked C safety tests to D; run RED before new implementation.
-- [ ] Add D case copies and a default-no-work PowerShell launcher. Keep every inherited resource/ownership algorithm unchanged; add strict qualification evidence authentication.
-- [ ] Require D-only source/permit/guest paths. Reject A/C sources, stale outputs, wrong commits and changed preparation evidence.
-- [ ] Retain the Blender bytecode fix and reject recovery/foreign modes in the new D renderer. No recovery path is needed for the first run.
-- [ ] Keep A/D eight native pairs/contact sheet/page; append a separately authenticated A/C/D sheet/page using C PNG copies only. Preserve five visual criteria with explicit black-speckle/opening and overall body-fidelity instructions.
-- [ ] Verify all inherited and D-focused mocked policy tests, actual isolated default/negative startup, real read-only CPU selected-image/profile wiring, and one harmless embedded NumPy import probe. Do not dispatch any real stage.
+- [x] Adapt the existing mocked C safety tests to D; run RED before new implementation.
+- [x] Add D case copies and a default-no-work PowerShell launcher. Keep every inherited resource/ownership algorithm unchanged; add strict qualification evidence authentication.
+- [x] Require D-only source/permit/guest paths. Reject A/C sources, stale outputs, wrong commits and changed preparation evidence.
+- [x] Retain the Blender bytecode fix and reject recovery/foreign modes in the new D renderer. No recovery path is needed for the first run.
+- [x] Keep A/D eight native pairs/contact sheet/page; append a separately authenticated A/C/D sheet/page using C PNG copies only. Preserve five visual criteria with explicit black-speckle/opening and overall body-fidelity instructions.
+- [x] Verify all inherited and D-focused mocked policy tests, actual isolated default/negative startup, real read-only CPU selected-image/profile wiring, and one harmless embedded NumPy import probe. Do not dispatch any real stage.
 
 ## Task 3 — Review and publish
 
-- [ ] Commit a candidate and obtain independent whole-branch review, including normalized differences from C.
-- [ ] Verify exact publication guards, original/private identities, source-only diff and all old local/remote heads. Publish only the isolated branch.
+- [x] Commit a candidate and obtain independent whole-branch review, including normalized differences from C.
+- [x] Verify exact publication guards, original/private identities, source-only diff and all old local/remote heads. Publish only the isolated branch.
 - [ ] Deliver exact verified commit, one standalone PowerShell command, new output descriptions and unchanged baselines. Stop before execution.
 
 ## Review focus

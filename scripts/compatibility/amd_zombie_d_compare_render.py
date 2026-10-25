@@ -48,7 +48,7 @@ need(read(MESH_BASE / 'extract-run/host-result.json')['classification'] == 'PASS
 metadata = read(MESH_BASE / 'mesh/mesh.json'); policy.validate_mesh(metadata, inputs['decode_binding'], MESH_BASE)
 need(read(MESH_BASE / 'raw-mesh-preservation.json')['geometry_smoothed'] is False, 'Unsmoothed raw mesh required')
 before = MESH.stat(); source_sha = digest(MESH)
-need(source_sha == metadata['artifacts']['mesh.ply']['sha256'], 'C mesh binding differs')
+need(source_sha == metadata['artifacts']['mesh.ply']['sha256'], 'D mesh binding differs')
 policy.reserve(OUTPUT)
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
