@@ -1,0 +1,99 @@
+{
+  "schema": "modly.amd.zombie-d-reference.v1",
+  "source_sha256": "9ac0364f409077cd3fdeb853a1baed3b851c56f4fdc539c9fde73e0e3ab79db9",
+  "source_bytes": 642361,
+  "source_pixel_sha256": "db9170d4fb22771427ecccb6430d6690b232cb4c02c0e56ba277978787cce392",
+  "source_size": [
+    1216,
+    1294
+  ],
+  "source_path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/zombie-d-9ac0364f-v1/occupancy/source-image.png",
+  "input_contract_path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/zombie-d-9ac0364f-v1/occupancy/input-contract.json",
+  "input_contract_sha256": "1bd85638188a2d4b95b5926d51f95efc33686b4052890d207103a006af5c2092",
+  "encoded_worker_input_png_sha256": "9ac0364f409077cd3fdeb853a1baed3b851c56f4fdc539c9fde73e0e3ab79db9",
+  "crop_pixel_sha256": "00cbe7f07bf7a4c13df269a6da227c32b1bdbb3cc30d2168b66ba9c1d4f6d5b4",
+  "conditioning_512_pixel_sha256": "4738b7f1f3f28a3ad1747e5739ab4b6bae9b51ea78c6ff022df578415e3f4e22",
+  "pipeline_source_sha256": "faade40274e44823e72e1659b8ced96f8815ac9e08b3abb89271077c4394982b",
+  "resolution": 512,
+  "qualification_authority_path": "docs/compatibility/amd-zombie-d-reference-authority.json",
+  "qualification_authority_sha256": "d77aa1ca5da19f45958befc2162c11eb099b2531ee8c39796e3a8e62dda52747",
+  "qualification_evidence": {
+    "artifacts/amd-zombie-d-reference-20261025-v1/zombie-d-reference.png": {
+      "bytes": 642361,
+      "sha256": "9ac0364f409077cd3fdeb853a1baed3b851c56f4fdc539c9fde73e0e3ab79db9"
+    },
+    "artifacts/amd-zombie-d-reference-20261025-v1/A-conditioning-512.png": {
+      "bytes": 107592,
+      "sha256": "8db647a60e7badc385b9cf091b4ebd5b219f2e0a65706aef975ded78631a2546"
+    },
+    "artifacts/amd-zombie-d-reference-20261025-v1/D-conditioning-512.png": {
+      "bytes": 111351,
+      "sha256": "3e065ee23fa34de3fd4d0b96b7d86b79f886b622406f9eac72132b6d0f63667f"
+    },
+    "artifacts/amd-zombie-d-reference-20261025-v1/preparation.json": {
+      "bytes": 5539,
+      "sha256": "f1f114fd44d678f63b91a3b9a1304f46d6771cc92784915e589f84271e7425c1"
+    },
+    "artifacts/amd-zombie-d-reference-20261025-v1/verification.json": {
+      "bytes": 15766,
+      "sha256": "44da492d38d57041755484c5c5d238ac9acd5d61be85d125a0e14cc21df8fe54"
+    },
+    "artifacts/amd-zombie-d-reference-20261025-v1/visual-review.json": {
+      "bytes": 1500,
+      "sha256": "b122b87dd237dd6968526ddb5ce33b0145107d14c8742d3d47feb8f385b78e54"
+    }
+  },
+  "secondary_C": {
+    "metadata_path": "artifacts/amd-zombie-c-render-recovery-60862722-v1/previews/render-metadata.json",
+    "PLY_sha256": "a2d015fbcd54f6b1232674c0fef239040501629460ab177dcf826f4b34d3809d",
+    "files": {
+      "artifacts/amd-zombie-c-render-recovery-60862722-v1/previews/render-metadata.json": {
+        "bytes": 4299,
+        "sha256": "5c65dfd7fc66351e3075b1fc009de4d228cae181e66ef9be5b0e5253e439bc52"
+      },
+      "artifacts/amd-zombie-c-render-recovery-60862722-v1/recovery-final.json": {
+        "bytes": 753,
+        "sha256": "fd6e7b89dc446d696c575739f9b5a0fd0929fc969653ccbc9d51ee130c560745"
+      },
+      "artifacts/amd-zombie-c-render-recovery-60862722-v1/authentication-recovery.json": {
+        "bytes": 2134,
+        "sha256": "227a46ccceba7abd1b82b397dae071de2f170e9f86147f5b57bb92bff2441ea1"
+      },
+      "artifacts/amd-zombie-c-render-recovery-60862722-v1/previews/view-000.png": {
+        "bytes": 563106,
+        "sha256": "3a7a54519dbd8a6656c944125e0dee8e78d7368c13417bd347aaf0000a218090"
+      },
+      "artifacts/amd-zombie-c-render-recovery-60862722-v1/previews/view-045.png": {
+        "bytes": 559353,
+        "sha256": "0edb461596b583e64c11d8128a178ae2ce08aa953c5722887129ce18b0944fc5"
+      },
+      "artifacts/amd-zombie-c-render-recovery-60862722-v1/previews/view-090.png": {
+        "bytes": 534192,
+        "sha256": "c35784e279c99ba9c1c5f1257b1907d3d8c37d8475cdbcbc46ca409ee5ef621f"
+      },
+      "artifacts/amd-zombie-c-render-recovery-60862722-v1/previews/view-135.png": {
+        "bytes": 565033,
+        "sha256": "b760729067da03464b0b918f2f062d9959054b10d057ae3c9f096f1c7fbe7188"
+      },
+      "artifacts/amd-zombie-c-render-recovery-60862722-v1/previews/view-180.png": {
+        "bytes": 568342,
+        "sha256": "db53ba71d34e1fda7b97fdb982fd1243b14e74f00bd931a3e042d4cf86148a5b"
+      },
+      "artifacts/amd-zombie-c-render-recovery-60862722-v1/previews/view-225.png": {
+        "bytes": 547929,
+        "sha256": "393b553ca2005d57ac5baf1621705770e81f3738129a669ee54cfde17606416b"
+      },
+      "artifacts/amd-zombie-c-render-recovery-60862722-v1/previews/view-270.png": {
+        "bytes": 506623,
+        "sha256": "ae5c64edd451dc66578d47d82977c02cd73009c1ecd45a95695a7b990efaf0ef"
+      },
+      "artifacts/amd-zombie-c-render-recovery-60862722-v1/previews/view-315.png": {
+        "bytes": 544529,
+        "sha256": "e404acd526ee90c710181cfd0b0fbf04206ca51305c3333048e0714b01b0aa4b"
+      }
+    }
+  },
+  "preprocessing": "Original qualified alpha-only method; accepted D hand composite from c801fb1",
+  "generation_settings": "Unchanged qualified Zombie C 512 settings; fresh D lineage",
+  "private_assets_published": false
+}
