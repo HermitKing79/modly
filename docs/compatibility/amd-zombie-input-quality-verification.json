@@ -1,0 +1,57 @@
+{
+  "schema": "modly.amd.zombie-input-quality.v1",
+  "classification": "NO_GO_FOR_TONAL_INPUT_GENERATION_AB",
+  "base_commit": "de1cd7848976a34a918c9edc28473a0b34ea7c1c",
+  "independently_reviewed_report_commit": "23428a8bd1a5ae3502bfc7ba1cc6b345fdebec24",
+  "source_sha256": "db1fbb6bd27717f4b6a0298d64ff1ddff17e80027d782bf5dbfbc959d70fa06e",
+  "original_crop_pixel_sha256": "655ef5f8144975213ba5ce41e684473b9c0690f4b661561b74282c7ba949f92e",
+  "reconstructed_original_512_pixel_sha256": "f5607215b0c21f8fc487bb321be5732b7c47e357a4b66ee48843948e8250b29c",
+  "candidate": {
+    "operation": "One pointwise RGB gamma 0.85 LUT, original alpha unchanged",
+    "source_alpha_changed_pixels": 0,
+    "conditioning_silhouette_changed_pixels": 0,
+    "conditioning_silhouette_IoU": 1.0,
+    "new_anatomical_information": false,
+    "practical_visibility_improvement_demonstrated": false,
+    "neural_response_tested": false,
+    "input_only_neural_AB_proposed": false
+  },
+  "independent_review": {
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "sealed_local_files_verified": 25,
+    "local_seal_sha256": "d48057f58492a1ff6403d2d69a6dc4ecb1c6f192b0f0656800cfe660967a147a",
+    "raster_reconstruction_LUT_mask_gaps_framing_and_tonal_metrics_reproduced": true,
+    "final_comparison_sheets_visually_checked": true,
+    "scope": "NO-GO applies to this source and tonal candidate; other source improvements not ruled out"
+  },
+  "preservation": {
+    "prior_asset_files_byte_and_identity_equal": 625,
+    "protected_identities_unchanged": 100,
+    "bounded_protected_hashes_unchanged": 78,
+    "retained_historical_records_unchanged": 88,
+    "prior_local_refs_unchanged_at_review": 162,
+    "original_source_copies_and_saved_conditioning_authenticated": true,
+    "all_generation_code_settings_and_safety_gates_unchanged": true
+  },
+  "bounds": {
+    "CPU_stage_deadline_seconds": 180,
+    "CPU_process_private_commit_cap_GiB": 6,
+    "CPU_live_host_floor_GiB": 12,
+    "output_disk_floor_GiB": 2,
+    "neural_admission_test_performed": false,
+    "original_22_GiB_three_reading_and_final_guards_unchanged": true,
+    "24_GiB_preference_not_mandatory": true
+  },
+  "forbidden_work_performed": {
+    "neural_import_or_model_load_or_inference": false,
+    "WSL_launch_or_attempt_reservation": false,
+    "guidance_sampler_checkpoint_or_decoder_changes": false,
+    "geometry_or_original_image_modification": false,
+    "dependencies_or_environment_changes": false,
+    "private_asset_or_image_publication": false
+  },
+  "next_action": "Obtain faithful source information showing digit separation and wound rim/sidewall depth at effective framing; stop for review. No neural A/B automatically follows.",
+  "publication_scope": "Three new Markdown/JSON documents only; reference, candidate, scripts and visual evidence remain local"
+}

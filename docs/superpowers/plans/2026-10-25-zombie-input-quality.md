@@ -6,4 +6,4 @@ Approved scope: one CPU-only raster preparation experiment. Authenticate the ori
 - [x] Create one conservative RGB-only shadow-lift candidate using existing Pillow/NumPy, preserving alpha/positions.
 - [x] Measure mask/gaps/tonal differences and visually inspect matched 512 and enlarged sheets; correct presentation layout without another candidate.
 - [x] Reject the candidate for generation: brighter shadows provide no meaningful new anatomical or cavity evidence.
-- [ ] Independently review visual/measurement claims, verify preservation, and publish safe text only. Stop before neural A/B.
+- [x] Independently review visual/measurement claims, verify preservation, and publish safe text only. Stop before neural A/B.
