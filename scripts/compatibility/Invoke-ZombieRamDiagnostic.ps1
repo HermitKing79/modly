@@ -179,6 +179,7 @@ public static class ZombieRamNative {
  public static extern bool GlobalMemoryStatusEx([In,Out] Memory m);
  [DllImport("kernel32.dll")] public static extern IntPtr CreateJobObject(IntPtr a,string name);
  [DllImport("kernel32.dll",SetLastError=true)] public static extern bool AssignProcessToJobObject(IntPtr job,IntPtr process);
+ [DllImport("kernel32.dll",SetLastError=true)] public static extern bool IsProcessInJob(IntPtr process,IntPtr job,out bool member);
  [DllImport("kernel32.dll",SetLastError=true)] public static extern bool SetInformationJobObject(IntPtr job,int type,IntPtr info,uint length);
  [DllImport("kernel32.dll")] public static extern bool CloseHandle(IntPtr handle);
  [StructLayout(LayoutKind.Sequential)] public struct Basic {
@@ -227,9 +228,23 @@ function Process-Memory {
     if ($null -eq $Process) { return $null }
     try {
         $Process.Refresh()
-        return @{pid=$Process.Id;working_set_bytes=$Process.WorkingSet64;
+        if($Process.HasExited){return @{pid=$Process.Id;measurement_status='exited'}}
+        return @{pid=$Process.Id;process_name=$Process.ProcessName;start_utc=$Process.StartTime.ToUniversalTime().ToString('o');working_set_bytes=$Process.WorkingSet64;
             private_commit_bytes=$Process.PrivateMemorySize64;os_peak_working_set_bytes=$Process.PeakWorkingSet64}
     } catch { return @{pid=$Process.Id;measurement_error=$_.Exception.Message} }
+}
+function Resolve-WorkerProcess {
+    param($Identity,[IntPtr]$Job,$Launcher)
+    if($Job -eq [IntPtr]::Zero -or $Identity.pid -isnot [int] -or $Identity.pid -le 0 -or
+        -not [IO.Path]::IsPathRooted($Identity.image)){throw 'Invalid interpreter identity'}
+    $process=[Diagnostics.Process]::GetProcessById($Identity.pid)
+    try {
+        $member=$false
+        if(-not [ZombieRamNative]::IsProcessInJob($process.Handle,$Job,[ref]$member) -or -not $member){throw 'Interpreter is outside owned diagnostic Job'}
+        if($process.StartTime.ToUniversalTime() -lt $Launcher.StartTime.ToUniversalTime() -or
+            $process.MainModule.FileName -ine [IO.Path]::GetFullPath($Identity.image)){throw 'Interpreter start/image identity differs'}
+        return $process
+    } catch {$process.Dispose();throw}
 }
 function Process-Snapshot {
     param([string]$Stage)
@@ -248,7 +263,10 @@ function Observe {
     param([string]$Stage,[string]$Kind='periodic')
     $m=Read-PhysicalMemory
     $row=@{timestamp_utc=$m.timestamp_utc;elapsed_seconds=$clock.Elapsed.TotalSeconds;stage=$Stage;kind=$Kind;
-        available_bytes=$m.available_bytes;observer=(Process-Memory $observer);child=(Process-Memory $child)}
+        available_bytes=$m.available_bytes;observer=(Process-Memory $observer);child=(Process-Memory $interpreter);
+        launcher=(Process-Memory $child)}
+    if($null -ne $interpreter -and -not $interpreter.HasExited -and
+        ($null -eq $row.child.working_set_bytes -or $null -eq $row.child.private_commit_bytes)) {throw 'Live interpreter memory measurement failed'}
     if($null -ne $script:previousObservation) {
         $row.available_change_since_previous_bytes=$row.available_bytes-$script:previousObservation.available_bytes
     }
@@ -281,7 +299,7 @@ Write-Host ('Private evidence: '+$evidence)
 $telemetry=New-Journal (Join-Path $evidence 'observer.jsonl')
 $processJournal=New-Journal (Join-Path $evidence 'processes-private.jsonl')
 $stdout=New-Journal (Join-Path $evidence 'child.stdout.txt')
-$observer=[Diagnostics.Process]::GetCurrentProcess(); $child=$null; $job=[IntPtr]::Zero
+$observer=[Diagnostics.Process]::GetCurrentProcess(); $child=$null; $interpreter=$null; $job=[IntPtr]::Zero
 $clock=[Diagnostics.Stopwatch]::StartNew(); $script:minimum=[long]::MaxValue
 $script:previousObservation=$null
 $script:peakWS=[long]0; $script:peakPrivate=[long]0
@@ -329,7 +347,12 @@ try {
             if($null -eq $line) { $eof=$true } else {
                 if($line.Length -gt 65536) {throw 'Oversized worker protocol line'}
                 $stdout.WriteLine($line)
+                if($line.StartsWith('MODLY_RAM_IDENTITY=')) {
+                    if($null -ne $interpreter){throw 'Duplicate interpreter identity'}
+                    $interpreter=Resolve-WorkerProcess ($line.Substring(19)|ConvertFrom-Json) $job $child
+                }
                 if($line.StartsWith('MODLY_RAM_PHASE=')) {
+                    if($null -eq $interpreter){throw 'Phase received without owned interpreter identity'}
                     $event=$line.Substring(16)|ConvertFrom-Json
                     if($event.edge -notin @('before','after') -or [string]::IsNullOrWhiteSpace($event.phase)) {throw 'Invalid phase protocol'}
                     $stage=$event.phase+'/'+$event.edge
@@ -347,6 +370,7 @@ try {
     if($childExit -ne 0) { throw ('CPU diagnostic child failed with exit code '+$childExit) }
     $childResult=Get-Content -LiteralPath (Join-Path $evidence 'child-result.json') -Raw | ConvertFrom-Json
     Confirm-ChildReceipt $childExit $childResult
+    if($null -eq $interpreter){throw 'Complete interpreter identity missing'}
     $outcome='CPU_PREPARATION_COMPLETE'
 } catch {
     $failure=$_.Exception.Message
@@ -381,6 +405,7 @@ try {
         timestamp_utc=[DateTimeOffset]::UtcNow.ToString('o');child_started=$childStarted;child_exit_code=$childExit;
         forced_owned_diagnostic_cleanup=$forced;minimum_observed_available_bytes=$(if($script:minimum -eq [long]::MaxValue){$null}else{$script:minimum});
         sampled_child_peak_working_set_bytes=$script:peakWS;sampled_child_peak_private_commit_bytes=$script:peakPrivate;
+        launcher_pid=$(if($childStarted){$child.Id}else{$null});interpreter_pid=$(if($null -ne $interpreter){$interpreter.Id}else{$null});
         baseline=$baseline;exit_observation=$exitObservation;post_exit_available_change_bytes=$recovered;
         neural_attempt_reserved=$false;WSL_launched=$false;weights_loaded=$false;neural_forwards=0;
         interpretation='Compare observer/child phase deltas and concurrent process snapshots. Shared working sets, private commit, filesystem cache and inaccessible processes prevent exclusive physical attribution. Sampled peaks can miss transients. CPU completion is not neural admission.'}
@@ -404,6 +429,7 @@ try {
     $reportStream.Dispose()
     $telemetry.Dispose();$processJournal.Dispose();$stdout.Dispose();$observer.Dispose()
     if($null -ne $child) { $child.Dispose() }
+    if($null -ne $interpreter) { $interpreter.Dispose() }
 }
 Write-Host ('Outcome: '+$outcome+'; evidence: '+$evidence)
 if($outcome -ne 'CPU_PREPARATION_COMPLETE') { Write-Host $failure; exit 2 }

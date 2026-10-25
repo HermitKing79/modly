@@ -407,6 +407,9 @@ def run_child(evidence, token):
         # -S prevents sitecustomize/.pth execution before the guards. Add only the
         # original installed CPU dependencies, without processing startup hooks.
         sys.path.append('D:/AI/Trellis2AMD/venv/Lib/site-packages')
+        # Windows venv python.exe is a redirector; the owned interpreter has a
+        # different PID. Bind external telemetry before the first phase permit.
+        print('MODLY_RAM_IDENTITY=' + json.dumps(dict(pid=os.getpid(), image=sys._base_executable)), flush=True)
         phases.run('before-project-imports', lambda: None)
         phases.run('original-source-authentication', lambda: authenticate_base(phases))
         import subprocess
