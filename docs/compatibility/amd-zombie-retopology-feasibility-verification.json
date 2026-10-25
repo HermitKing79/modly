@@ -1,0 +1,350 @@
+{
+  "classification": "NO_GO_LARGER_REGION_FEATURE_LOSS",
+  "base_commit": "983f5115bd1529571bc062b14974f1e3f3ccb985",
+  "input_reference": "approved_orphan_cleaned_original_winding",
+  "input_PLY_sha256": "377a15dc4b5a27936f7e62b311dd03e8337685344b0f8204b8f831252176b1a5",
+  "methods_tested": [
+    "native_voxel",
+    "single_first_hit_surface_chart"
+  ],
+  "configurations_per_method_per_region": 1,
+  "geometry": {
+    "posterior": {
+      "reference": {
+        "classification": "MEASURED",
+        "vertices": 2266,
+        "triangles": 4330,
+        "components": 1,
+        "boundary_edges": 240,
+        "nonmanifold_edges": 34,
+        "winding_conflicts": 1429,
+        "nonmanifold_vertex_links": 37,
+        "zero_area_triangles": 0,
+        "surface_area": 0.005808058342307715,
+        "PLY_sha256": "6f2f3e68984a0f289c194cbaa1bc08953c2dcd7a3f907bbad9149bacd300c8db"
+      },
+      "voxel": {
+        "classification": "MEASURED",
+        "vertices": 8,
+        "triangles": 12,
+        "components": 1,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_conflicts": 0,
+        "nonmanifold_vertex_links": 0,
+        "zero_area_triangles": 0,
+        "surface_area": 1.5472864378640594e-09,
+        "PLY_sha256": "abddd479900b7fdeceb173ed10f2a63492991b962e5e2c28fef5a0de073c6d60"
+      },
+      "chart": {
+        "classification": "MEASURED",
+        "vertices": 378,
+        "triangles": 650,
+        "components": 1,
+        "boundary_edges": 112,
+        "nonmanifold_edges": 0,
+        "winding_conflicts": 0,
+        "nonmanifold_vertex_links": 0,
+        "zero_area_triangles": 0,
+        "surface_area": 0.00465171541609583,
+        "PLY_sha256": "b04ec042a2f7c22d8610875387c5db3cae9bef3b6caa54afc95b8c67ae5820a5"
+      }
+    },
+    "chest-wound": {
+      "reference": {
+        "classification": "MEASURED",
+        "vertices": 9743,
+        "triangles": 19157,
+        "components": 3,
+        "boundary_edges": 1362,
+        "nonmanifold_edges": 746,
+        "winding_conflicts": 6571,
+        "nonmanifold_vertex_links": 841,
+        "zero_area_triangles": 0,
+        "surface_area": 0.02579668148287085,
+        "PLY_sha256": "1d00169a2c59fa498a045cc62cfb1aa40ddb09b46c30790fbe419ea09ef21442"
+      },
+      "voxel": {
+        "classification": "MEASURED",
+        "vertices": 430,
+        "triangles": 796,
+        "components": 16,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "winding_conflicts": 0,
+        "nonmanifold_vertex_links": 0,
+        "zero_area_triangles": 0,
+        "surface_area": 0.0021957780701547976,
+        "PLY_sha256": "b91f520cdb9a57ac75a3691954167f42c3b97f7997a1a213631aac42d39e8fc1"
+      },
+      "chart": {
+        "classification": "MEASURED",
+        "vertices": 823,
+        "triangles": 1280,
+        "components": 4,
+        "boundary_edges": 374,
+        "nonmanifold_edges": 0,
+        "winding_conflicts": 0,
+        "nonmanifold_vertex_links": 0,
+        "zero_area_triangles": 0,
+        "surface_area": 0.011675048669112429,
+        "PLY_sha256": "fb430fea15a7ac11f990a4a8310f22c2b4b0c446a3488488f37a9cd914113225"
+      }
+    }
+  },
+  "frontal_view_measurements": {
+    "posterior": {
+      "reference": {
+        "reference_hit_pixels": 5670,
+        "candidate_hit_pixels": 5670,
+        "shared_hit_pixels": 5670,
+        "reference_hit_pixels_lost": 0,
+        "new_hit_pixels_where_reference_void": 0,
+        "hit_mask_intersection_over_union": 1.0,
+        "camera_facing_first_hits": 1329,
+        "backfacing_first_hits": 4341,
+        "absolute_depth_difference": {
+          "samples": 5670,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        }
+      },
+      "voxel": {
+        "reference_hit_pixels": 5670,
+        "candidate_hit_pixels": 0,
+        "shared_hit_pixels": 0,
+        "reference_hit_pixels_lost": 5670,
+        "new_hit_pixels_where_reference_void": 0,
+        "hit_mask_intersection_over_union": 0.0,
+        "camera_facing_first_hits": 0,
+        "backfacing_first_hits": 0,
+        "absolute_depth_difference": {
+          "samples": 0
+        }
+      },
+      "chart": {
+        "reference_hit_pixels": 5670,
+        "candidate_hit_pixels": 4579,
+        "shared_hit_pixels": 4579,
+        "reference_hit_pixels_lost": 1091,
+        "new_hit_pixels_where_reference_void": 0,
+        "hit_mask_intersection_over_union": 0.8075837742504409,
+        "camera_facing_first_hits": 4579,
+        "backfacing_first_hits": 0,
+        "absolute_depth_difference": {
+          "samples": 4579,
+          "median": 1.0728836059570312e-05,
+          "p95": 0.0002919077873229976,
+          "maximum": 0.0011105537414550781
+        }
+      }
+    },
+    "chest-wound": {
+      "reference": {
+        "reference_hit_pixels": 6341,
+        "candidate_hit_pixels": 6341,
+        "shared_hit_pixels": 6341,
+        "reference_hit_pixels_lost": 0,
+        "new_hit_pixels_where_reference_void": 0,
+        "hit_mask_intersection_over_union": 1.0,
+        "camera_facing_first_hits": 4211,
+        "backfacing_first_hits": 2130,
+        "absolute_depth_difference": {
+          "samples": 6341,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        "wound_depth_witness": {
+          "ROI_world_x": [
+            0.03,
+            0.1
+          ],
+          "ROI_world_z": [
+            0.15,
+            0.23
+          ],
+          "skin_depth_reference_y": -0.043683528900146484,
+          "deep_y_threshold": -0.03636119729548755,
+          "reference_deep_hit_pixels": 988,
+          "deep_hit_pixels_retained": 988,
+          "reference_void_pixels": 626,
+          "reference_void_pixels_filled": 0,
+          "reference_deep_hit_pixels_lost": 0,
+          "reference_deep_hit_pixels_shallowed": 0,
+          "limitation": "Geometric depth/void witness inside a visually chosen wound ROI, not a semantic wound mask or hidden-cavity proof"
+        }
+      },
+      "voxel": {
+        "reference_hit_pixels": 6341,
+        "candidate_hit_pixels": 409,
+        "shared_hit_pixels": 401,
+        "reference_hit_pixels_lost": 5940,
+        "new_hit_pixels_where_reference_void": 8,
+        "hit_mask_intersection_over_union": 0.06315955268546228,
+        "camera_facing_first_hits": 409,
+        "backfacing_first_hits": 0,
+        "absolute_depth_difference": {
+          "samples": 401,
+          "median": 0.0010017156600952148,
+          "p95": 0.004537463188171387,
+          "maximum": 0.011723637580871582
+        },
+        "wound_depth_witness": {
+          "ROI_world_x": [
+            0.03,
+            0.1
+          ],
+          "ROI_world_z": [
+            0.15,
+            0.23
+          ],
+          "skin_depth_reference_y": -0.043683528900146484,
+          "deep_y_threshold": -0.03636119729548755,
+          "reference_deep_hit_pixels": 988,
+          "deep_hit_pixels_retained": 3,
+          "reference_void_pixels": 626,
+          "reference_void_pixels_filled": 6,
+          "reference_deep_hit_pixels_lost": 961,
+          "reference_deep_hit_pixels_shallowed": 24,
+          "limitation": "Geometric depth/void witness inside a visually chosen wound ROI, not a semantic wound mask or hidden-cavity proof"
+        }
+      },
+      "chart": {
+        "reference_hit_pixels": 6341,
+        "candidate_hit_pixels": 4465,
+        "shared_hit_pixels": 4461,
+        "reference_hit_pixels_lost": 1880,
+        "new_hit_pixels_where_reference_void": 4,
+        "hit_mask_intersection_over_union": 0.7030732860520095,
+        "camera_facing_first_hits": 4465,
+        "backfacing_first_hits": 0,
+        "absolute_depth_difference": {
+          "samples": 4461,
+          "median": 4.279613494873047e-05,
+          "p95": 0.001074671745300293,
+          "maximum": 0.006502389907836914
+        },
+        "wound_depth_witness": {
+          "ROI_world_x": [
+            0.03,
+            0.1
+          ],
+          "ROI_world_z": [
+            0.15,
+            0.23
+          ],
+          "skin_depth_reference_y": -0.043683528900146484,
+          "deep_y_threshold": -0.03636119729548755,
+          "reference_deep_hit_pixels": 988,
+          "deep_hit_pixels_retained": 554,
+          "reference_void_pixels": 626,
+          "reference_void_pixels_filled": 3,
+          "reference_deep_hit_pixels_lost": 416,
+          "reference_deep_hit_pixels_shallowed": 18,
+          "limitation": "Geometric depth/void witness inside a visually chosen wound ROI, not a semantic wound mask or hidden-cavity proof"
+        }
+      }
+    }
+  },
+  "sampled_core_coverage": {
+    "posterior": {
+      "reference": {
+        "reference_core_hit_pixels": 3755,
+        "reference_core_hits_retained": 3755,
+        "reference_core_hits_lost": 0,
+        "new_core_hit_pixels_where_reference_void": 0
+      },
+      "voxel": {
+        "reference_core_hit_pixels": 3755,
+        "reference_core_hits_retained": 0,
+        "reference_core_hits_lost": 3755,
+        "new_core_hit_pixels_where_reference_void": 0
+      },
+      "chart": {
+        "reference_core_hit_pixels": 3755,
+        "reference_core_hits_retained": 3591,
+        "reference_core_hits_lost": 164,
+        "new_core_hit_pixels_where_reference_void": 0
+      }
+    },
+    "chest-wound": {
+      "reference": {
+        "reference_core_hit_pixels": 5061,
+        "reference_core_hits_retained": 5061,
+        "reference_core_hits_lost": 0,
+        "new_core_hit_pixels_where_reference_void": 0
+      },
+      "voxel": {
+        "reference_core_hit_pixels": 5061,
+        "reference_core_hits_retained": 400,
+        "reference_core_hits_lost": 4661,
+        "new_core_hit_pixels_where_reference_void": 8
+      },
+      "chart": {
+        "reference_core_hit_pixels": 5061,
+        "reference_core_hits_retained": 3792,
+        "reference_core_hits_lost": 1269,
+        "new_core_hit_pixels_where_reference_void": 4
+      }
+    }
+  },
+  "original_assets_unchanged": 347,
+  "protected_identities_unchanged": 100,
+  "old_local_refs_unchanged": 159,
+  "original_source_hashes_unchanged": 256,
+  "focused_tests_passed": 44,
+  "frames_verified": 54,
+  "minimum_available_RAM_bytes": 20283047936,
+  "peak_process_commit_bytes": 470925312,
+  "stages": [
+    {
+      "stage": "owned-capabilities/render-run",
+      "classification": "PASS",
+      "seconds": 4.108999999998559,
+      "peak_commit_bytes": 290447360
+    },
+    {
+      "stage": "prepare-run",
+      "classification": "PASS",
+      "seconds": 4.109000000000378,
+      "peak_commit_bytes": 184643584
+    },
+    {
+      "stage": "owned-build/render-run",
+      "classification": "PASS",
+      "seconds": 4.5,
+      "peak_commit_bytes": 302157824
+    },
+    {
+      "stage": "verify-run",
+      "classification": "PASS",
+      "seconds": 1.8439999999991414,
+      "peak_commit_bytes": 31248384
+    },
+    {
+      "stage": "owned-render/render-run",
+      "classification": "PASS",
+      "seconds": 16.54700000000048,
+      "peak_commit_bytes": 470925312
+    },
+    {
+      "stage": "compose-run",
+      "classification": "FAIL",
+      "seconds": 1.8439999999991414,
+      "peak_commit_bytes": 35348480
+    },
+    {
+      "stage": "owned-compose/compose-run",
+      "classification": "PASS",
+      "seconds": 2.2340000000003783,
+      "peak_commit_bytes": 39337984
+    }
+  ],
+  "retained_failed_presentation_verification": "F32/F64 quantile mismatch; corrected with regression; no tolerance relaxation or geometry/render retry",
+  "full_character_rebuilt": false,
+  "neural_or_WSL_executed": false,
+  "UV_baking_texturing_or_production_integration": false,
+  "review": "pending"
+}
