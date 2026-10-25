@@ -1,0 +1,63 @@
+{
+  "schema": "modly.amd.zombie-c-render-recovery.v1",
+  "source_commit": "4ab4616c4019705d5f53802b053156ef65cae150",
+  "blender_executable_sha256": "284f4041f98e113f3dc10654a7193ffaaa9bfdfec8b87fa116620a48b5f6d4cb",
+  "previous_files": {
+    "authentication-extract.json": {
+      "bytes": 1870,
+      "sha256": "6698b35ad8895ceee82116ea7440f79f876c71833c8bdcbe05b00e785feab26b"
+    },
+    "comparison-final.json": {
+      "bytes": 486,
+      "sha256": "927bda0c8d89779d1b47efd4dbe5e23bf7459bb070e91b8492273b1746535241"
+    },
+    "comparison-inputs.json": {
+      "bytes": 14340,
+      "sha256": "7e8aa65f63a386cceadde416222043c78ed371252446f01e886ec8fcaa882938"
+    },
+    "extract-run/host-result.json": {
+      "bytes": 2050,
+      "sha256": "5b1d211688658f2501e6a4c3c6bb17370f54fcbc0c132c73fb7f6382e97d1222"
+    },
+    "extract-run/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "extract-run/stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mesh/faces.npy": {
+      "bytes": 7982912,
+      "sha256": "12be279e5cda89356fa9a3e6ea1c4846c27d0ea1bcd5ba03efdd7d8771cdd8e6"
+    },
+    "mesh/mesh.json": {
+      "bytes": 1336,
+      "sha256": "dd3d54948b902bb4111ae45b3485f57f9f15bdd13ef4918a23bc62add6974d2f"
+    },
+    "mesh/mesh.ply": {
+      "bytes": 12549132,
+      "sha256": "a2d015fbcd54f6b1232674c0fef239040501629460ab177dcf826f4b34d3809d"
+    },
+    "mesh/vertices.npy": {
+      "bytes": 3901016,
+      "sha256": "265af5002b6db12d91363edc5aeb54aada96f1ec87e962e43b34f920c51802d9"
+    },
+    "raw-mesh-preservation.json": {
+      "bytes": 321,
+      "sha256": "4610f93bdcd9bb8a17e4cad181660afad8dbc917ec8cafd99e2ebb23fb1ef5cf"
+    },
+    "render-run/host-result.json": {
+      "bytes": 6792,
+      "sha256": "0ba4acf738356ecea753893a530dec85586ac18f0e0fffa4f74febd5aff24713"
+    },
+    "render-run/stderr.txt": {
+      "bytes": 1481,
+      "sha256": "f9c832affe7849f47a71c1bd4e42152fa77a44e3d35dade80f7bffd8a00f5c5e"
+    },
+    "render-run/stdout.txt": {
+      "bytes": 78,
+      "sha256": "1f402465ae2b6d65383dd4f4ccbd4d569b57cdb03f1c6fdb3f684089b7df099c"
+    }
+  }
+}

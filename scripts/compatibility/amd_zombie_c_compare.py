@@ -98,11 +98,11 @@ def sha(value):
     return value
 
 
-def snapshot(paths):
+def snapshot(paths, *, allow_empty=False):
     rows = {}
     for path in paths:
         path = plain(path); before = path.stat()
-        need(path.is_file() and 0 < before.st_size <= 256 * 1024**2, 'Bounded immutable file required')
+        need(path.is_file() and (0 if allow_empty else 1) <= before.st_size <= 256 * 1024**2, 'Bounded immutable file required')
         rows[str(path)] = dict(bytes=before.st_size, mtime_ns=before.st_mtime_ns, sha256=digest(path))
         need(path.stat().st_mtime_ns == before.st_mtime_ns, 'Input changed during snapshot')
     return rows
@@ -378,7 +378,7 @@ def audit_policy(base):
     return audit
 
 
-def validate_mesh(metadata, binding):
+def validate_mesh(metadata, binding, mesh_base=None):
     need(metadata['input_sha256'] == binding['source_sha256'] and metadata['vertices'] == binding['rows']
          and metadata['learned_subdivisions'] == binding['learned_subdivisions'] and metadata['triangles'] > 0
          and metadata['PLY_readback_exact'] is True and metadata['zero_area_triangles'] == 0
@@ -386,7 +386,7 @@ def validate_mesh(metadata, binding):
          and metadata['native_extraction'] is False, 'Untouched raw C mesh binding differs')
     need(set(metadata['artifacts']) == {'mesh.ply', 'vertices.npy', 'faces.npy'}, 'Exact raw mesh artifact closure required')
     for name, row in metadata['artifacts'].items():
-        path = plain(BASE / 'mesh' / name)
+        path = plain((BASE if mesh_base is None else mesh_base) / 'mesh' / name)
         need(path.stat().st_size == row['bytes'] and digest(path) == row['sha256'], 'Raw C mesh artifact changed')
 
 
@@ -438,14 +438,15 @@ def quality_review(original_mesh, candidate_mesh):
                 limitation='Eight matched 768px views may leave digits hidden or too small. Mark unassessable and do not infer quality from counts.')
 
 
-def review():
+def review(mesh_base=None):
     from PIL import Image, ImageDraw
+    mesh_base = BASE if mesh_base is None else mesh_base
     inputs = read(BASE / 'comparison-inputs.json'); verify_snapshot(inputs['immutable_original']); verify_snapshot(inputs['decoded_inputs'])
     original = read(ORIGINAL / 'previews/render-metadata.json'); original_mesh = read(ORIGINAL / 'mesh/mesh.json')
-    candidate = read(BASE / 'previews/render-metadata.json'); candidate_mesh = read(BASE / 'mesh/mesh.json')
-    validate_mesh(candidate_mesh, inputs['decode_binding'])
+    candidate = read(BASE / 'previews/render-metadata.json'); candidate_mesh = read(mesh_base / 'mesh/mesh.json')
+    validate_mesh(candidate_mesh, inputs['decode_binding'], mesh_base)
     validate_render_metadata(original, candidate, candidate_mesh['artifacts']['mesh.ply']['sha256'])
-    need(read(BASE / 'extract-run/host-result.json')['classification'] == read(BASE / 'render-run/host-result.json')['classification'] == 'PASS',
+    need(read(mesh_base / 'extract-run/host-result.json')['classification'] == read(BASE / 'render-run/host-result.json')['classification'] == 'PASS',
          'Natural owned extraction/render PASS required before review')
     output = BASE / 'review'; reserve(output); reserve(output / 'original'); reserve(output / 'candidate-C')
     sheet = Image.new('RGB', (768, 8 * 412), '#30353d'); draw = ImageDraw.Draw(sheet)

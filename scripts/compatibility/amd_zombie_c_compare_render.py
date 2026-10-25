@@ -1,5 +1,7 @@
 """Eight untouched C previews using the immutable original cameras and CPU only."""
 import sys
+# Blender's embedded interpreter ignores PYTHONDONTWRITEBYTECODE by default.
+sys.dont_write_bytecode = True
 if sys.stdin.buffer.read(4) != b'GO\n':
     raise RuntimeError('Exact owned GO plus EOF required before render imports')
 
@@ -9,6 +11,12 @@ from pathlib import Path
 _path = Path(__file__).with_name('amd_zombie_c_compare.py')
 _spec = importlib.util.spec_from_file_location('_zombie_c_render_policy', _path)
 policy = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(policy)
+MESH_BASE = policy.BASE
+recovery = None
+if '--' in sys.argv:
+    policy.need(sys.argv[sys.argv.index('--') + 1:] == ['--render-recovery'], 'Unknown render mode')
+    recovery = policy.load('_zombie_c_render_recovery', Path(__file__).with_name('amd_zombie_c_render_recovery.py'))
+    MESH_BASE = recovery.render_context(policy)
 sys.addaudithook(policy.audit_policy(policy.BASE))
 
 import array
@@ -20,7 +28,7 @@ from mathutils import Matrix, Vector
 import numpy as np
 
 BASE = policy.BASE
-MESH = BASE / 'mesh/mesh.ply'
+MESH = MESH_BASE / 'mesh/mesh.ply'
 OUTPUT = BASE / 'previews'
 need = policy.need
 digest = policy.digest
@@ -40,9 +48,9 @@ policy.verify_snapshot(inputs['immutable_original']); policy.verify_snapshot(inp
 policy.verify_snapshot(inputs['published_CPU_sources'])
 original, original_mesh, camera_spec, _ = policy.original_inputs()
 need(camera_spec == inputs['camera'], 'Frozen original camera target or light scale changed')
-need(read(BASE / 'extract-run/host-result.json')['classification'] == 'PASS', 'Owned extraction PASS required')
-metadata = read(BASE / 'mesh/mesh.json'); policy.validate_mesh(metadata, inputs['decode_binding'])
-need(read(BASE / 'raw-mesh-preservation.json')['geometry_smoothed'] is False, 'Unsmoothed raw mesh required')
+need(read(MESH_BASE / 'extract-run/host-result.json')['classification'] == 'PASS', 'Owned extraction PASS required')
+metadata = read(MESH_BASE / 'mesh/mesh.json'); policy.validate_mesh(metadata, inputs['decode_binding'], MESH_BASE)
+need(read(MESH_BASE / 'raw-mesh-preservation.json')['geometry_smoothed'] is False, 'Unsmoothed raw mesh required')
 before = MESH.stat(); source_sha = digest(MESH)
 need(source_sha == metadata['artifacts']['mesh.ply']['sha256'], 'C mesh binding differs')
 policy.reserve(OUTPUT)
@@ -75,8 +83,8 @@ expected = (metadata['vertices'], metadata['triangles'])
 need((len(mesh.vertices), len(mesh.polygons)) == expected and len(mesh.loops) == 3 * expected[1], 'Imported C topology differs')
 coordinates = array.array('f', [0]) * (3 * expected[0]); mesh.vertices.foreach_get('co', coordinates)
 indices = array.array('i', [0]) * (3 * expected[1]); mesh.loops.foreach_get('vertex_index', indices)
-v = np.load(BASE / 'mesh/vertices.npy', mmap_mode='r', allow_pickle=False)
-f = np.load(BASE / 'mesh/faces.npy', mmap_mode='r', allow_pickle=False)
+v = np.load(MESH_BASE / 'mesh/vertices.npy', mmap_mode='r', allow_pickle=False)
+f = np.load(MESH_BASE / 'mesh/faces.npy', mmap_mode='r', allow_pickle=False)
 try:
     need(hashlib.sha256(coordinates.tobytes()).hexdigest() == hashlib.sha256(v.tobytes()).hexdigest()
          and hashlib.sha256(indices.tobytes()).hexdigest() == hashlib.sha256(f.tobytes()).hexdigest(), 'Imported C vertex/face payload differs')
@@ -132,6 +140,8 @@ need(digest(MESH) == source_sha and (MESH.stat().st_size, MESH.stat().st_mtime_n
      'Rendering changed the raw C mesh')
 policy.verify_snapshot(inputs['immutable_original']); policy.verify_snapshot(inputs['decoded_inputs'])
 policy.verify_snapshot(inputs['published_CPU_sources'])
+if recovery is not None:
+    recovery.verify_worker_inputs()
 result = dict(classification='PASS_CPU_PREVIEWS', source_PLY_sha256=source_sha, original_PLY_sha256=policy.ORIGINAL_SHA,
               vertices=expected[0], triangles=expected[1], imported_vertex_and_face_payloads_exact=True,
               geometry_unchanged=True, modifiers=[], smooth_shading=False, engine='CYCLES', device='CPU', samples=8,
