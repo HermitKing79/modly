@@ -1,0 +1,160 @@
+{
+  "classification": "PASS_BOUNDED_CPU_FEASIBILITY_NO_GO",
+  "independent_review": {
+    "classification": "APPROVED_FIVE_NEW_SOURCE_TEST_TEXT_FILES_ONLY",
+    "critical_findings": 0,
+    "important_findings": 0,
+    "minor_findings_requiring_changes": 0,
+    "scope": "Read-only algorithm, source manifest, image-hash, preservation-metadata and stage-receipt review; no worker reruns or exhaustive future fitting claim."
+  },
+  "base_commit": "bc7160c7439a5d0ea9653e166620b6d535c498ce",
+  "decision": "NO_GO_CLEAN_COPY_ONLY_WRIST_REPLACEMENT",
+  "source_PLY_sha256": {
+    "A": "5301f7dc3e22abf6bfd7c1253a4d6253935ad3054658e2eddbb6ac024e6fc12c",
+    "D": "2f8a1f9057c88f588b171c66f75af88b98fa47f1cea7494d6ee55517ce9e8205"
+  },
+  "source_vertex_and_face_payloads_preserved": true,
+  "hybrid_created": false,
+  "actual_new_seam_edges": 0,
+  "paired_stations": 16,
+  "clean_paired_sections": 1,
+  "matched_images": 16,
+  "local_sheets": {
+    "body-front-back.png": "062e4e1f4e0106632dfa38f34256082f2d64f68ccb95471d52ce8fcf8ff164ef",
+    "hand-minus.png": "7e21da46f742a532e0c2ba21370cb82506f3cff73e25ec2077f9142803775403",
+    "hand-plus.png": "e3ead40f4043b517bdf1b856834f4687bb58125a1a398a383f775527255a38ba"
+  },
+  "global_topology": {
+    "A": {
+      "vertices": 326232,
+      "triangles": 673604,
+      "boundary_edges": 19512,
+      "nonmanifold_edges": 31449,
+      "two_face_winding_conflicts": 147484
+    },
+    "D": {
+      "vertices": 356876,
+      "triangles": 777400,
+      "boundary_edges": 29697,
+      "nonmanifold_edges": 65918,
+      "two_face_winding_conflicts": 157374
+    }
+  },
+  "hypothetical_cut_seams": {
+    "A": {
+      "-1": {
+        "retained_body": {
+          "new_edges": 83,
+          "vertices": 84,
+          "degree_one": 2,
+          "branch_vertices": 0,
+          "all_degree_two": false
+        },
+        "donor_hand": {
+          "new_edges": 82,
+          "vertices": 84,
+          "degree_one": 4,
+          "branch_vertices": 0,
+          "all_degree_two": false
+        },
+        "inherited_donor_boundary_edges": 452,
+        "direct_dictionary_incidence": true
+      },
+      "1": {
+        "retained_body": {
+          "new_edges": 81,
+          "vertices": 82,
+          "degree_one": 5,
+          "branch_vertices": 3,
+          "all_degree_two": false
+        },
+        "donor_hand": {
+          "new_edges": 81,
+          "vertices": 82,
+          "degree_one": 5,
+          "branch_vertices": 3,
+          "all_degree_two": false
+        },
+        "inherited_donor_boundary_edges": 533,
+        "direct_dictionary_incidence": true
+      }
+    },
+    "D": {
+      "-1": {
+        "retained_body": {
+          "new_edges": 63,
+          "vertices": 63,
+          "degree_one": 1,
+          "branch_vertices": 1,
+          "all_degree_two": false
+        },
+        "donor_hand": {
+          "new_edges": 63,
+          "vertices": 63,
+          "degree_one": 1,
+          "branch_vertices": 1,
+          "all_degree_two": false
+        },
+        "inherited_donor_boundary_edges": 418,
+        "direct_dictionary_incidence": true
+      },
+      "1": {
+        "retained_body": {
+          "new_edges": 59,
+          "vertices": 61,
+          "degree_one": 4,
+          "branch_vertices": 0,
+          "all_degree_two": false
+        },
+        "donor_hand": {
+          "new_edges": 57,
+          "vertices": 61,
+          "degree_one": 8,
+          "branch_vertices": 0,
+          "all_degree_two": false
+        },
+        "inherited_donor_boundary_edges": 418,
+        "direct_dictionary_incidence": true
+      }
+    }
+  },
+  "stages": [
+    {
+      "stage": "analyze",
+      "seconds": 7.795999999999822,
+      "peak_process_committed_bytes": 228155392,
+      "minimum_available_RAM_bytes": 21346906112,
+      "natural_owned_exit": true
+    },
+    {
+      "stage": "render",
+      "seconds": 25.21900000000005,
+      "peak_process_committed_bytes": 840998912,
+      "minimum_available_RAM_bytes": 20335935488,
+      "natural_owned_exit": true
+    },
+    {
+      "stage": "compose",
+      "seconds": 1.4529999999999745,
+      "peak_process_committed_bytes": 65732608,
+      "minimum_available_RAM_bytes": 21334032384,
+      "natural_owned_exit": true
+    }
+  ],
+  "focused_tests_passed": 5,
+  "inherited_CPU_tests_passed": 7,
+  "preservation": {
+    "classification": "PASS_PRESERVATION",
+    "private_files_unchanged": 3154,
+    "protected_identities_unchanged": 100,
+    "retained_records_unchanged": 88,
+    "prior_local_refs_unchanged": 168,
+    "all_original_assets_unchanged": true
+  },
+  "no_neural_WSL_models_dependencies_repairs_or_geometry_exports": true,
+  "source_files": {
+    "amd_zombie_ad_wrist.py": "fc0a775772354bd9ff1c4d1b474a27d26e9adf562c0fd6b4929b78aca8d8e0f9",
+    "amd_zombie_ad_wrist_render.py": "04787b0832c8264706a7a0d6977e2801ffd5bde30a40ca3ee1168d890c926b28",
+    "test_amd_zombie_ad_wrist.py": "bb6ad8d2b6561459591ae41bac2c4872b056bf4560966324de305f3444e93594"
+  }
+}
