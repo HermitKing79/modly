@@ -1,0 +1,40 @@
+{
+  "schema": "modly.amd.zombie-c-comparison-preparation.v1",
+  "status": "PREPARED_NOT_EXECUTED",
+  "goal": "After one independently verified C decode, extract its untouched CPU mesh and prepare eight camera-matched original/C pairs for human visual review.",
+  "files": {
+    "scripts/compatibility/amd_zombie_c_compare.py": "Default-dry-run entrypoint, dynamic provenance checks, scoped original CPU owner routing, paired review outputs.",
+    "scripts/compatibility/amd_zombie_c_compare_render.py": "GO/EOF-gated Blender CPU renderer using frozen original cameras and lighting, flat geometry with no modifiers.",
+    "scripts/compatibility/test_amd_zombie_c_compare.py": "Synthetic provenance, row envelope, immutable original, ownership routing, audit and human-review tests."
+  },
+  "interface": "run(commit) -> exit code; CLI defaults to no-work dry run, execution requires --run --harness-commit <40 hex>.",
+  "stages": [
+    "Validate published CPU source and successful C decode receipts, full ten-tensor hash closure, dynamic learned support <=1842968, input contract and C image lineage.",
+    "Verify immutable original PLY, mesh metadata and original eight view hashes; reserve absent private destination once.",
+    "Reuse the original owned CPU supervisor for a scoped extract worker; original amd_generation_mesh.py performs raw dual-grid extraction and exact PLY readback.",
+    "Render exactly eight CPU views with original camera locations, orthographic scales, target and lighting; no geometry changes or texture decoding.",
+    "Verify paired source/view hashes, create labeled contact sheet and full-size paired review page, and preserve explicit unassessed human visual rubric."
+  ],
+  "bounds": {
+    "process_commit_bytes": 6442450944,
+    "host_available_RAM_floor_bytes": 12884901888,
+    "output_volume_free_disk_floor_bytes": 2147483648,
+    "stage_deadline_seconds": 180,
+    "render_CPU_threads": 4,
+    "per_view_pixels": [768, 768],
+    "retries": 0
+  },
+  "review_focus": [
+    "Dynamic support cannot be replaced with historical zombie counts or a larger support profile.",
+    "PASS without independent ten tensors, natural owned settlement or exact current image lineage must stop before extraction.",
+    "Original and C cameras must match exactly, including location and orthographic scale; no per-mesh recentering or automatic fitting.",
+    "Original files remain immutable; all new outputs and temporary assets stay in the exclusive private directory.",
+    "Five separate visual criteria: fingers, toes, unintended holes, intended wound preservation and surface defects. Geometry counts and missing-neighbour counts are secondary evidence; never reward filling intended wounds."
+  ],
+  "visual_status": "UNASSESSED_REQUIRES_HUMAN_VISUAL_REVIEW",
+  "limitations": [
+    "No model loading, inference, WSL, real new mesh extraction or rendering is authorized for the preparation session.",
+    "CPU Cycles renders are an external runtime boundary; fixture verification does not claim a future real render has passed.",
+    "Matched full-body views can leave digits occluded or too small; human reviewers must mark those criteria unassessable instead of guessing."
+  ]
+}
