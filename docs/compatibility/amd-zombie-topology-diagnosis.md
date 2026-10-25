@@ -32,7 +32,7 @@ The following mutually exclusive geometric viewing bins locate the distribution.
 | Abdomen, remaining z ≥ −.035 | 2,839 | 6,857 |
 | Shorts/hips, remaining z ≥ −.19 | 3,389 | 9,673 |
 | Legs, remaining z ≥ −.45 | 1,770 | 1,245 |
-| Feet, remaining vertices below −.45 | 1,284 | 1,562 |
+| Feet, remaining edge midpoints below −.45 | 1,284 | 1,562 |
 
 ## Wounds, clothing and uncertain intent
 
@@ -111,5 +111,7 @@ Every stage retained the original CPU precedent: 6 GiB process commitment cap, 1
 | Labelled sheets | 1.860 | 42,336,256 |
 
 All six workers exited 0; Jobs were empty with verified natural settlement and no cleanup errors. The lowest sampled available RAM was 21,680,242,688 bytes, above the retained CPU floor. Nine focused tests cover independent incidence, source quads, component labels, spatial bins, low-resource rejection and the renderer pre-import gate. Original numerical/converter/owner sources and original assets were preserved; the private asset inventory covers 89 files in addition to the inherited 100 protected identities/78 bounded hashes and 88 retained records.
+
+Independent review found no Critical or Important issues. It independently checked all 46 image hashes, original PLY hash, matched cameras, six owned-stage receipts, preservation inventories and the proposed orphan cleanup scope. Its single wording correction (bins classify edge midpoints) is incorporated. Final verification also checked all 50,961 CSV rows, ten inspection sheets, 256 original source hashes and 156 prior local refs. See [source-safe verification](amd-zombie-topology-diagnosis-verification.json).
 
 Private evidence root: `C:\Users\wattz\Documents\ChatGPT\modly\artifacts\amd-zombie-topology-diagnosis-20261025-v1`. All original meshes, tensors, images and environments remain in place. Only safe code and textual reports are published.
