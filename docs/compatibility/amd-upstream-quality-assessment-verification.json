@@ -1,0 +1,51 @@
+{
+  "schema": "modly.amd.upstream-quality-assessment-verification.v1",
+  "classification": "PASS_SOURCE_ASSESSMENT_AND_INDEPENDENT_REVIEW",
+  "base_commit": "6bd0f0c9b9a5e749c6744dba80814ec9f8edeeda",
+  "independently_reviewed_assessment_commit": "8df4fede182da6f1bcfd2cec24c8643245a0b547",
+  "independent_review": {
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "source_and_configuration_hashes_independently_rechecked": 22,
+    "assessment": "Ready for safe text publication; no implementation or inference authorized"
+  },
+  "verification": {
+    "method": "Read source/configuration/archived receipts as data; stdlib AST, JSON, bounded hashing and read-only Git checks",
+    "source_and_configuration_files_unchanged": 22,
+    "saved_conditioning_noise_and_coordinate_hashes_verified": true,
+    "saved_A_provenance_and_neural_mesh_identity_records_match": true,
+    "original_asset_files_byte_and_identity_equal": 625,
+    "protected_identities_unchanged": 100,
+    "bounded_protected_hashes_unchanged": 78,
+    "retained_historical_records_unchanged": 88,
+    "prior_local_refs_unchanged_at_review": 161,
+    "prior_remote_heads_snapshotted": 154,
+    "existing_tracked_files_unchanged": true,
+    "runtime_tests_run": false,
+    "no_runtime_test_needed": "Documentation-only assessment; project/model runtime imports are prohibited"
+  },
+  "proposal": {
+    "ranked_improvements": 2,
+    "single_proposed_parameter_change": "Shape-SLat guidance_strength 7.5 to 5.0",
+    "existing_non_zombie_A_reused_only_if_runtime_fingerprints_match": true,
+    "B_shape_forwards_if_separately_authorized": 21,
+    "B_decoder_forwards_if_separately_authorized": 1,
+    "existing_controls_still_reject_B": true,
+    "resource_and_support_limits_unchanged": true,
+    "quality_improvement_claimed": false,
+    "measured_B_memory_or_quality_claimed": false,
+    "status": "STOP_FOR_REVIEW_BEFORE_IMPLEMENTATION_OR_INFERENCE"
+  },
+  "forbidden_work_performed": {
+    "project_or_model_module_imports": false,
+    "model_weight_payload_reads_or_loads": false,
+    "neural_attempt_reservation_or_inference": false,
+    "WSL_launch": false,
+    "zombie_or_repair_experiments": false,
+    "decoder_or_pipeline_implementation_changes": false,
+    "environment_or_dependency_changes": false,
+    "asset_or_image_publication": false
+  },
+  "publication_scope": "Four new Markdown/JSON documents only; final remote/ref verification receipt retained locally after publication"
+}
