@@ -1,0 +1,44 @@
+{
+  "classification": "PREPARED_FOR_ONE_USER_RUN_LIVE_FEASIBILITY_UNTESTED",
+  "base_commit": "4bfbd25afb69a535e5338081117018969ff808b8",
+  "branch": "codex/amd-pixal3d-standalone-hip-proof-v2",
+  "focused_tests_passed": 57,
+  "new_v2_tests": 27,
+  "existing_standalone_tests": 25,
+  "original_admission_tests": 5,
+  "child_network_live_RAM_hooks_blocked": true,
+  "Torch_imported": false,
+  "PowerShell_no_execution_dry_run": "PASS",
+  "independent_review": "NO_REMAINING_BLOCKERS",
+  "cache_verification": {
+    "status": "PASS",
+    "files": 16,
+    "bytes": 2032962149,
+    "archive_copies": 0,
+    "downloads": 0
+  },
+  "live_results": {
+    "Windows_admission": "NOT_RUN",
+    "WSL_startup_memory_feasibility": "NOT_RUN",
+    "isolated_provisioning": "NOT_RUN",
+    "actual_HIP_operators": "NOT_RUN"
+  },
+  "WSL_launches": 0,
+  "live_RAM_admission_readings": 0,
+  "packages_installed": 0,
+  "GPU_operations": 0,
+  "neural_attempts": 0,
+  "preservation": {
+    "historical_files_verified": 3346,
+    "protected_identities": 100,
+    "retained_records": 88,
+    "failed_attempt_files_unchanged": 26,
+    "cache_files_unchanged": 16,
+    "old_local_refs_unchanged": 174,
+    "original_tracked_files_unchanged": true,
+    "original_operator_code_unchanged_except_two_v2_imports": true,
+    "Windows_v2_root_absent": true,
+    "guest_v2_root_deliberately_not_queried": true
+  },
+  "private_evidence": "amd-pixal3d-standalone-preparation-20261026-v2"
+}
