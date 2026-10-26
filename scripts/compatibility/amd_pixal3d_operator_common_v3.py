@@ -1,5 +1,5 @@
 """Proposed operator-only admission; original neural contract remains unchanged."""
-import base64,csv,hashlib,io,json,os,re,sys,time,zipfile
+import hashlib,json,os,re,sys,time,zipfile
 from pathlib import Path
 import amd_pixal3d_proof_common_v2 as v2
 from amd_pixal3d_proof_common_v2 import ROOT,GIB,OPERATORS,now,digest,plain,inside,save,journal,require_resources,verify,CacheReadLease
@@ -13,7 +13,7 @@ def lock():
     value=dict(base,**proposed);p=value['operator_policy']
     ready=base['guards']['live_host_RAM_floor_bytes']+base['guards']['CPU_postprocess']['commit_bytes']
     if p['ready_bytes']!=ready or p['observed_startup_decline_bytes']!=2360119296 or p['prelaunch_bytes']!=ready+2360119296:raise ValueError('Measured budget derivation changed')
-    if value['guest_root']!='/home/modly/pixal3d-native-proof-v2' or value['temporary_guest_root']!='/home/modly/pixal3d-operator-proof-v3' or value['windows_root']!='D:/AI/Modly-Pixal3D-Operators-v3':raise ValueError('Exact operator-only roots required')
+    if value['guest_root']!='/home/modly/pixal3d-native-proof-v2' or value['temporary_guest_root']!='/home/modly/pixal3d-operator-proof-v3-payload-auth' or value['windows_root']!='D:/AI/Modly-Pixal3D-Operators-v3-payload-auth':raise ValueError('Exact operator-only roots required')
     return value
 
 def require_profile(row,floor):
@@ -42,41 +42,8 @@ def validate_v2_evidence(cfg):
     if child['baseline_critical_files_after']['lib/python3.12/site-packages/torch/version.py']!=cfg['runtime']['torch_version_file_sha256']:raise RuntimeError('Qualified runtime identity differs')
     return dict(status='PASS',packages=len(actual),pip_install_completed=True,natural_cleanup=True,operator_execution='NOT_RUN')
 
-def installed_path(name,env,site):
-    if not name or '\\' in name or name.startswith('/') or '..' in name.split('/'):raise ValueError('Unsafe wheel record')
-    parts=name.split('/')
-    if len(parts)>2 and parts[0].endswith('.data'):
-        if parts[1] in ('purelib','platlib'):path=site.joinpath(*parts[2:])
-        elif parts[1]=='data':path=env.joinpath(*parts[2:])
-        else:raise ValueError('Unsupported wheel spread category; no guessing')
-    else:path=site/name
-    path=plain(path);path.relative_to(plain(env));return path
+from amd_pixal3d_wheel_payload import installed_path,verify_installed_wheel,wheel_manifest,verify_manifest
 
-def verify_installed_wheel(archive,env,site,progress=None,trusted_paths=None):
-    files=0;total=0;hint_errors=[]
-    with zipfile.ZipFile(archive) as z:
-        records=[name for name in z.namelist() if name.endswith('.dist-info/RECORD')]
-        if len(records)!=1:raise RuntimeError('One trusted wheel RECORD required')
-        for name,encoded,size in csv.reader(io.StringIO(z.read(records[0]).decode('utf-8'))):
-            path=installed_path(name,env,site)
-            if trusted_paths is not None and path.is_relative_to(site):trusted_paths.add(path.relative_to(site).as_posix())
-            if name==records[0] and not encoded:continue # pip rewrites this inventory; module bytes still authenticated below.
-            if not encoded.startswith('sha256=') or not size.isdecimal():raise RuntimeError('Complete SHA256 wheel inventory required')
-            if path.stat().st_size!=int(size):raise RuntimeError('Installed file size differs: '+name)
-            sha=hashlib.sha256()
-            with path.open('rb') as stream:
-                while block:=stream.read(1024**2):
-                    sha.update(block)
-                    if progress:progress()
-                # Read-only per-file cache hint; never fsync, rewrite or globally clear caches.
-                if hasattr(os,'posix_fadvise'):
-                    try:os.posix_fadvise(stream.fileno(),0,0,os.POSIX_FADV_DONTNEED)
-                    except OSError as exc:hint_errors.append(dict(file=name,error=str(exc)))
-            actual=base64.urlsafe_b64encode(sha.digest()).rstrip(b'=').decode()
-            if actual!=encoded[7:]:raise RuntimeError('Installed file hash differs: '+name)
-            files+=1;total+=int(size)
-            if progress:progress()
-    return dict(files_verified=files,bytes_verified=total,read_only_cache_hint_errors=hint_errors,physical_recovery_guaranteed=False)
 
 def verify_import_inventory(site,trusted_paths,dist_infos):
     bootstrap=0;generated={'INSTALLER','REQUESTED','direct_url.json','RECORD'}
@@ -111,7 +78,7 @@ def environment_snapshot(root):
         elif path.is_file():rows[name]=dict(bytes=s.st_size,mtime_ns=s.st_mtime_ns,file_id=s.st_ino,mode=s.st_mode)
     return rows
 
-def authenticate_environment(cfg,progress=None):
+def authenticate_environment(cfg,progress=None,archive_report=None):
     if os.name!='posix' or sys.version.split()[0]!=cfg['runtime']['python'] or sys.prefix!='/usr':raise RuntimeError('Qualified Linux system Python required')
     validate_v2_evidence(cfg);root=plain(cfg['guest_root']);env=plain(root/'.venv');site=env/'lib/python3.12/site-packages'
     configuration=validate_venv_config((env/'pyvenv.cfg').read_text(),cfg['runtime']['python'])
@@ -119,12 +86,19 @@ def authenticate_environment(cfg,progress=None):
     report=json.loads((root/'pip-report.json').read_text());expected={p['name'].lower().replace('_','-'):p for p in cfg['packages']}
     actual={p['metadata']['name'].lower().replace('_','-'):p for p in report['install']}
     if set(actual)!=set(expected):raise RuntimeError('Installed pip-report closure changed')
-    installed=[];trusted_paths=set();cache=Path('/mnt/d/AI/Modly-Pixal3D-Proof-v1/downloads')
+    installed=[];manifests=[];claims={};trusted_paths=set();cache=Path('/mnt/d/AI/Modly-Pixal3D-Proof-v1/downloads')
     for name,p in expected.items():
         record=actual[name]
         if record['metadata']['version']!=p['version'] or record['download_info']['archive_info']['hashes']['sha256']!=p['sha256']:raise RuntimeError('Installed report identity differs')
-        archive=inside(cache,p['filename']);verify(archive,p)
-        installed.append(dict(package=name,**verify_installed_wheel(archive,env,site,progress,trusted_paths)))
+        archive=inside(cache,p['filename'])
+        manifests.append((name,wheel_manifest(archive,p,env,site,progress,claims)))
+        manifest=manifests[-1][1]
+        if archive_report:archive_report(dict(package=name,archive=manifest['archive'],archive_identity=manifest['archive_identity'],
+            files=len(manifest['files']),expanded_bytes=manifest['expanded_bytes'],top_level_RECORD=manifest['record'],
+            RECORD_identity=manifest['files'][manifest['record']],RECORD_discrepancies=manifest['RECORD_discrepancies']))
+    if sum(m['expanded_bytes'] for _,m in manifests)>20*GIB:raise RuntimeError('Original isolated growth budget exceeded')
+    for name,manifest in manifests:
+        installed.append(dict(package=name,**verify_manifest(manifest,env,site,progress,trusted_paths)))
     dist_infos={n.split('/')[0] for n in trusted_paths if n.split('/')[0].endswith('.dist-info')}
     inventory=verify_import_inventory(site,trusted_paths,dist_infos)
     for row in cfg['sources']:verify(inside(root/'ComfyUI',row['path']),row)

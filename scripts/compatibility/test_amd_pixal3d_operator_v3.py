@@ -31,24 +31,25 @@ class Policy(unittest.TestCase):
 class Authentication(unittest.TestCase):
     def fixture(self,base):
         env=base/'venv';site=env/'lib/python3.12/site-packages';site.mkdir(parents=True);(env/'share/man').mkdir(parents=True)
-        source=b'qualified tiny module\n';(site/'tiny.py').write_bytes(source)
+        source=b'qualified tiny module\n';(site/'tiny.py').write_bytes(source);(site/'tiny-1.dist-info').mkdir();(site/'tiny-1.dist-info/RECORD').write_text('pip rewritten metadata')
         data=b'manpage';(env/'share/man/tiny.1').write_bytes(data)
         sha=lambda b:base64.urlsafe_b64encode(hashlib.sha256(b).digest()).rstrip(b'=').decode()
         record='tiny.py,sha256='+sha(source)+','+str(len(source))+'\ntiny-1.data/data/share/man/tiny.1,sha256='+sha(data)+','+str(len(data))+'\ntiny-1.dist-info/RECORD,,\n'
-        archive=base/'tiny.whl'
-        with zipfile.ZipFile(archive,'w') as z:z.writestr('tiny-1.dist-info/RECORD',record)
+        archive=base/'tiny-1-py3-none-any.whl'
+        with zipfile.ZipFile(archive,'w') as z:
+            z.writestr('tiny.py',source);z.writestr('tiny-1.data/data/share/man/tiny.1',data);z.writestr('tiny-1.dist-info/RECORD',record)
         return env,site,archive
     def test_trusted_wheel_manifest_authenticates_installed_bytes_without_writes(self):
         with tempfile.TemporaryDirectory(dir=TMP) as d:
             env,site,z=self.fixture(Path(d));before=c.environment_snapshot(env)
-            self.assertEqual(c.verify_installed_wheel(z,env,site)['files_verified'],2)
+            self.assertEqual(c.verify_installed_wheel(z,env,site,expected=dict(bytes=z.stat().st_size,sha256=c.digest(z)))['files_verified'],2)
             self.assertEqual(c.environment_snapshot(env),before)
     def test_changed_missing_or_escaping_installed_files_are_rejected(self):
         with tempfile.TemporaryDirectory(dir=TMP) as d:
             env,site,z=self.fixture(Path(d));(site/'tiny.py').write_bytes(b'changed')
-            with self.assertRaises(RuntimeError):c.verify_installed_wheel(z,env,site)
+            with self.assertRaises(RuntimeError):c.verify_installed_wheel(z,env,site,expected=dict(bytes=z.stat().st_size,sha256=c.digest(z)))
             (site/'tiny.py').unlink()
-            with self.assertRaises(FileNotFoundError):c.verify_installed_wheel(z,env,site)
+            with self.assertRaises(FileNotFoundError):c.verify_installed_wheel(z,env,site,expected=dict(bytes=z.stat().st_size,sha256=c.digest(z)))
             for name in ('../../../../outside','/absolute','a\\b'):
                 with self.assertRaises(ValueError):c.installed_path(name,env,site)
     def test_provisioning_receipt_must_include_all_exact_packages_and_natural_cleanup(self):

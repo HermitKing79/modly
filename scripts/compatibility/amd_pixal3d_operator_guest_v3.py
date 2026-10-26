@@ -39,7 +39,8 @@ def controller(case,token):
         if temporary.exists():raise FileExistsError('Exclusive v3 temporary path already used; no retry')
         before=c.environment_snapshot(root);c.save(leaf/'environment-before.json',before)
         try:
-            auth=c.authenticate_environment(cfg,lambda:resources('read-only-authentication'))
+            auth=c.authenticate_environment(cfg,lambda:resources('read-only-authentication'),
+                lambda row:c.journal(leaf/'wheel-payload-authentication.jsonl','authenticated-archive',**row))
             c.save(leaf/'environment-authentication.json',auth)
         except BaseException as exc:
             c.save(leaf/'environment-authentication.json',dict(status='FAIL',error=type(exc).__name__+': '+str(exc)));raise
