@@ -1,0 +1,177 @@
+{
+  "base_commit": "9cbc5709753170f108d08e036750ebc99d3762a2",
+  "native_CPU_UV_unwrapping": "FAIL_NOT_EXECUTABLE_WITH_INSPECTED_INSTALLED_ABIS",
+  "native_CPU_baking": "FAIL_ABI_BLOCKED_AND_FORWARD_ARGUMENT_DEFECT",
+  "native_operators_executed": false,
+  "native_CPU_implementations_present": true,
+  "native_build_or_install_attempted": false,
+  "native_binary_ABI": "cp310 / python310.dll",
+  "inspected_runtime_ABIs": [
+    "Modly app 3.11.9",
+    "Modly TRELLIS extension 3.11.9",
+    "Modly Hunyuan extension 3.11.9",
+    "proof runtime 3.12.10"
+  ],
+  "Blender_version": "5.2.1 LTS",
+  "Blender_Cycles_device": "CPU",
+  "Blender_tiny_CPU_UV_bake_export_reimport": "PASS",
+  "Zombie_D_UV_validity": "PASS_FINITE_NONDEGENERATE_POOR_ATLAS_UTILISATION",
+  "Zombie_D_diagnostic_texture": "FAIL_COLOUR_ACCURACY",
+  "Zombie_D_GLB_container_and_geometry_readback": "PASS",
+  "Zombie_D_original_SHA256": "2f8a1f9057c88f588b171c66f75af88b98fa47f1cea7494d6ee55517ce9e8205",
+  "Zombie_D_source_vertices": 356876,
+  "Zombie_D_source_and_export_triangles": 777400,
+  "Zombie_D_export_vertices": 2327505,
+  "Zombie_D_export_GLBSHA256": "a54ee89bfda48e13be462ea07e517a98efe23795196a88960342fb30e3ca9316",
+  "Zombie_D_has_original_colour_data": false,
+  "diagnostic_colours_only": true,
+  "Zombie_D_max_linear_colour_error": 0.9951595067977905,
+  "fixed_colour_error_tolerance": 0.002,
+  "Zombie_D_UV_area_sum": 0.012513846907019083,
+  "Zombie_D_sub_texel_triangles": 777400,
+  "Zombie_D_mean_texel_area_per_triangle": 0.06751592248198839,
+  "small_coverage_clarification": {
+    "classification": "CORRECTED_COVERAGE_INTERPRETATION_NO_REEXECUTION",
+    "reason": "Cycles image alpha remained opaque outside the UV islands. Use independently rasterized UV interior coverage, not alpha, as coverage.",
+    "original_records_preserved": true,
+    "native_or_Blender_operation_repeated": false,
+    "results": [
+      {
+        "name": "plane",
+        "strict_interior_covered_texels": 16256,
+        "strict_interior_coverage_fraction": 0.9921875,
+        "continuous_UV_sum_area": 1.0,
+        "opaque_alpha_is_not_coverage": true
+      },
+      {
+        "name": "cube",
+        "strict_interior_covered_texels": 10795,
+        "strict_interior_coverage_fraction": 0.65887451171875,
+        "continuous_UV_sum_area": 0.664892270441991,
+        "opaque_alpha_is_not_coverage": true
+      }
+    ]
+  },
+  "small_colour_errors": {
+    "plane": 1.5616416931152344e-05,
+    "cube": 4.713237285614014e-05
+  },
+  "GLB_checks": [
+    "Independent binary/accessor/PNG parser",
+    "Actual Blender glTF reimport",
+    "Exact oriented triangle coordinate multiset",
+    "Finite UVs",
+    "Opaque material/embedded RGB pixel identity"
+  ],
+  "preview_stage": "FAIL_NUMPY_FLOAT32_JSON_SERIALIZATION_AFTER_12_IMAGES_SAVED",
+  "preview_closeout": "PASS_LABELLED_EXISTING_IMAGES_NO_RERENDER",
+  "preview_metadata_fix": "Unit-tested only; no Blender retry",
+  "CPU_limits": {
+    "process_private_commit_bytes": 6442450944,
+    "deadline_seconds_per_stage": 180,
+    "host_available_RAM_floor_bytes": 12884901888,
+    "disk_floor_bytes": 2147483648,
+    "render_threads": 4
+  },
+  "stages": [
+    {
+      "stage": "preview",
+      "classification": "FAIL",
+      "elapsed_seconds": 27.719,
+      "peak_process_private_commit_bytes": 1462755328,
+      "measured_minimum_host_available_RAM_bytes": 18901487616,
+      "natural_exit": true,
+      "owned_tree_exit_verified": true
+    },
+    {
+      "stage": "preview-closeout",
+      "classification": "PASS",
+      "elapsed_seconds": 0.531,
+      "peak_process_private_commit_bytes": 24457216,
+      "measured_minimum_host_available_RAM_bytes": 20217778176,
+      "natural_exit": true,
+      "owned_tree_exit_verified": true
+    },
+    {
+      "stage": "readback-only",
+      "classification": "PASS",
+      "elapsed_seconds": 1.61,
+      "peak_process_private_commit_bytes": 270397440,
+      "measured_minimum_host_available_RAM_bytes": 19419607040,
+      "natural_exit": true,
+      "owned_tree_exit_verified": true
+    },
+    {
+      "stage": "small-verify",
+      "classification": "PASS",
+      "elapsed_seconds": 0.562,
+      "peak_process_private_commit_bytes": 25726976,
+      "measured_minimum_host_available_RAM_bytes": 19289821184,
+      "natural_exit": true,
+      "owned_tree_exit_verified": true
+    },
+    {
+      "stage": "synthetic",
+      "classification": "PASS",
+      "elapsed_seconds": 6.563,
+      "peak_process_private_commit_bytes": 503091200,
+      "measured_minimum_host_available_RAM_bytes": 19100573696,
+      "natural_exit": true,
+      "owned_tree_exit_verified": true
+    },
+    {
+      "stage": "zombie-bake",
+      "classification": "PASS",
+      "elapsed_seconds": 15.718,
+      "peak_process_private_commit_bytes": 2505277440,
+      "measured_minimum_host_available_RAM_bytes": 17872216064,
+      "natural_exit": true,
+      "owned_tree_exit_verified": true
+    },
+    {
+      "stage": "zombie-uv",
+      "classification": "PASS",
+      "elapsed_seconds": 7.797,
+      "peak_process_private_commit_bytes": 1178005504,
+      "measured_minimum_host_available_RAM_bytes": 18638307328,
+      "natural_exit": true,
+      "owned_tree_exit_verified": true
+    },
+    {
+      "stage": "zombie-verify",
+      "classification": "FAIL",
+      "elapsed_seconds": 6.578,
+      "peak_process_private_commit_bytes": 314540032,
+      "measured_minimum_host_available_RAM_bytes": 19696648192,
+      "natural_exit": true,
+      "owned_tree_exit_verified": true
+    }
+  ],
+  "measured_peak_process_private_commit_bytes": 2505277440,
+  "total_owned_stage_elapsed_seconds": 67.078,
+  "measured_minimum_host_available_RAM_bytes": 17872216064,
+  "no_neural_or_WSL_or_GPU_kernels": true,
+  "no_dependencies_installed": true,
+  "no_geometry_repairs": true,
+  "no_workload_retries_or_limit_escalation": true,
+  "neural_22_GiB_admission_unchanged": true,
+  "GO_NO_GO": "NO_GO_NATIVE_OR_FULL_ZOMBIE_TEXTURE_INTEGRATION",
+  "exported_per_corner_UV_association_independently_compared": false,
+  "focused_unit_tests_passed": 8,
+  "no_argument_dry_run_exit_code": 0,
+  "independent_review": {
+    "classification": "APPROVE_PROOF_ONLY_NO_GO_REPORT",
+    "critical_or_important_findings": 0,
+    "nonblocking_UV_mapping_scope_clarification_incorporated": true,
+    "reviewer_ran_workloads": false
+  },
+  "preservation": {
+    "classification": "PASS",
+    "historical_files_SHA256_and_metadata_unchanged": 3255,
+    "inherited_protected_identity_and_record_checks": 188,
+    "refs_unchanged_before_commit": 172,
+    "original_tracked_files_changed": [],
+    "original_assets_overwritten": false,
+    "environments_modified": false
+  }
+}
