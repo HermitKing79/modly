@@ -1,0 +1,62 @@
+{
+  "classification": "NO_GO_ADMISSION_STOP",
+  "independent_review": {
+    "classification": "APPROVED_FOUR_NEW_SOURCE_TEST_TEXT_FILES",
+    "critical_findings": 0,
+    "important_findings": 0,
+    "minor_findings": 0,
+    "native_execution_or_whole_installation_verification_claimed": false
+  },
+  "base_commit": "d9191fda03aa9e79da4da2ee42db1c7ca71c9906",
+  "timestamp_utc": "2026-10-26T00:14:37.287760+00:00",
+  "available_RAM_GiB": 18.031502,
+  "mandatory_available_RAM_GiB": 22,
+  "preferred_RAM_GiB": 24,
+  "preferred_is_mandatory": false,
+  "completed_readings": 1,
+  "required_passing_readings": 3,
+  "spacing_seconds": 4,
+  "immediate_original_gate_abort": true,
+  "native_operation_results": {
+    "gfx1201_device": "NOT_RUN_BLOCKED_BY_WINDOWS_ADMISSION",
+    "HIP_extension_load": "NOT_RUN_BLOCKED_BY_WINDOWS_ADMISSION",
+    "HIP_INT8_ConvRot_dispatch": "NOT_RUN_BLOCKED_BY_WINDOWS_ADMISSION",
+    "INT8_ConvRot_accuracy": "NOT_RUN_BLOCKED_BY_WINDOWS_ADMISSION",
+    "PyTorch_attention": "NOT_RUN_BLOCKED_BY_WINDOWS_ADMISSION",
+    "NAF": "NOT_RUN_BLOCKED_BY_WINDOWS_ADMISSION",
+    "native_sparse_convolution": "NOT_RUN_BLOCKED_BY_WINDOWS_ADMISSION",
+    "native_geometry_conversion": "NOT_RUN_BLOCKED_BY_WINDOWS_ADMISSION",
+    "actual_GPU_execution": "NOT_RUN_BLOCKED_BY_WINDOWS_ADMISSION",
+    "GPU_allocation_release": "NOT_RUN_BLOCKED_BY_WINDOWS_ADMISSION",
+    "native_worker_cleanup": "NOT_RUN_BLOCKED_BY_WINDOWS_ADMISSION"
+  },
+  "measured_native_RAM_VRAM_and_time": null,
+  "compatibility_verdict": "UNTESTED",
+  "prepare_generation_attempt": "NO_GO",
+  "automatic_retry": false,
+  "WSL_launched": false,
+  "environment_created": false,
+  "runtime_or_model_downloaded": false,
+  "neural_attempt_reserved": false,
+  "kernel_build_or_fallback": false,
+  "source_gate_sha256": "82e061fb6fb625389c9b60e08255d160b281f131954594a6086a48154cd3e767",
+  "source_reader_sha256": "4ca6d8b99eef252296d80e8c4ede944f0a2459d6542c6fbec31bf100b042e8f9",
+  "focused_mock_tests_passed": 5,
+  "default_recorder_dry_run_verified": true,
+  "preservation": {
+    "classification": "PASS_READONLY_PRESERVATION_CLOSEOUT",
+    "historical_private_files_rehashed": 3197,
+    "protected_identities_unchanged": 100,
+    "retained_records_unchanged": 88,
+    "protected_and_retained_rows_verified": 188,
+    "original_tracked_sources_unchanged": true,
+    "windows_isolated_environment_path_absent": true,
+    "WSL_guest_paths_not_queried": true,
+    "whole_installation_new_recursive_hash_not_claimed": true
+  },
+  "private_evidence_directory": "amd-pixal3d-hip-proof-20261026-v1",
+  "new_source_sha256": {
+    "amd_pixal3d_hip_admission.py": "bf8da84781aebf02cd4ecae2e63a2aad9ab6b3fe99d6c01b395b27bd5bbd70a9",
+    "test_amd_pixal3d_hip_admission.py": "e6cda7088411abf407ab901a9884520d2b439e853d9e18615314841866326803"
+  }
+}
