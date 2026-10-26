@@ -1,0 +1,42 @@
+{
+  "classification": "PROPOSED_HANDOFF_PENDING_SEPARATE_AUTHORISATION",
+  "base_commit": "681fcc962d4ca904291cc3b7bfbdf28757350ba6",
+  "branch": "codex/amd-pixal3d-operator-policy-v3",
+  "focused_tests_passed": 79,
+  "new_v3_tests": 22,
+  "independent_review": "NO_REMAINING_SUBSTANTIVE_BLOCKERS",
+  "child_network_live_RAM_hooks_blocked": true,
+  "Torch_imported": false,
+  "PowerShell_no_execution_dry_run": "PASS",
+  "policy": {
+    "ready_bytes": 19327352832,
+    "observed_startup_decline_bytes": 2360119296,
+    "prelaunch_bytes": 21687472128,
+    "derivation": "ready = existing12GiB host live floor + existing6GiB sampled RSS budget; prelaunch adds observed v2 cold-start host decline",
+    "guarantee": "No measured operator peak, hard VM envelope or worst-case startup bound is claimed; requires separate user approval",
+    "readings": 3,
+    "spacing_seconds": 4,
+    "neural_admission_unchanged_bytes": 23622320128,
+    "live_host_floor_unchanged_bytes": 12884901888
+  },
+  "live_execution_authorized": false,
+  "live_RAM_readings": 0,
+  "WSL_launches": 0,
+  "packages_installed": 0,
+  "GPU_operations": 0,
+  "neural_attempts": 0,
+  "model_free_operator_fit": "UNMEASURED",
+  "neural_22GiB_requirement_unchanged": true,
+  "preservation": {
+    "historical_files": 3346,
+    "protected_identities": 100,
+    "retained_records": 88,
+    "v1_failed_files": 26,
+    "v2_completed_attempt_files": 28,
+    "cache_files": 16,
+    "old_local_refs": 175,
+    "original_tracked_files_unchanged": true,
+    "original_numeric_operator_checks_unchanged": true,
+    "guest_environment_not_queried_or_modified": true
+  }
+}

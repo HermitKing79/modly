@@ -1,0 +1,43 @@
+{
+  "schema": "modly.pixal3d.operator-only.proposed.v3",
+  "v2_contract_canonical_sha256": "53e182f1edb3d5d39cdb690c74eff4fe08007892d277d46d42e7f07fca5ca2cd",
+  "guest_root": "/home/modly/pixal3d-native-proof-v2",
+  "temporary_guest_root": "/home/modly/pixal3d-operator-proof-v3",
+  "windows_root": "D:/AI/Modly-Pixal3D-Operators-v3",
+  "v2_evidence_case": "amd-pixal3d-standalone-v2-20261026T185014Z-8bad81fb19a146eeb36505e309f15fa3",
+  "evidence_files": {
+    "summary.json": {
+      "bytes": 2086,
+      "sha256": "d1de3abfac6e3d25848ff82c51f8ab68c2d73a1a0b0345fa0083f1ef5033bef5"
+    },
+    "provision/host-result.json": {
+      "bytes": 1504,
+      "sha256": "ff55be8445d1c80689c059b6954163b8dd012774502b8b96498c3f591b8787f7"
+    },
+    "provision/child-result.json": {
+      "bytes": 11992,
+      "sha256": "e1f6a2157bf08867019ce2176c2ab3ba25096d1d69c93b031a39a63269747e1b"
+    },
+    "HIP-wheel.json": {
+      "bytes": 281,
+      "sha256": "4dcb41d85a35169f6bde4e658740f94a937bacb75de7d84fd3165b072949e22f"
+    },
+    "provision/cleanup.json": {
+      "bytes": 122,
+      "sha256": "00757c53d5dec812dc223dcf1ac7e5a34103a9ed812d0e66f7defa8d30686159"
+    }
+  },
+  "execution_authorized_in_chat": false,
+  "generation_authorized": false,
+  "operator_policy": {
+    "ready_bytes": 19327352832,
+    "observed_startup_decline_bytes": 2360119296,
+    "prelaunch_bytes": 21687472128,
+    "derivation": "ready = existing12GiB host live floor + existing6GiB sampled RSS budget; prelaunch adds observed v2 cold-start host decline",
+    "guarantee": "No measured operator peak, hard VM envelope or worst-case startup bound is claimed; requires separate user approval",
+    "readings": 3,
+    "spacing_seconds": 4,
+    "neural_admission_unchanged_bytes": 23622320128,
+    "live_host_floor_unchanged_bytes": 12884901888
+  }
+}

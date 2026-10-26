@@ -1,0 +1,140 @@
+"""Proposed operator-only admission; original neural contract remains unchanged."""
+import base64,csv,hashlib,io,json,os,re,sys,time,zipfile
+from pathlib import Path
+import amd_pixal3d_proof_common_v2 as v2
+from amd_pixal3d_proof_common_v2 import ROOT,GIB,OPERATORS,now,digest,plain,inside,save,journal,require_resources,verify,CacheReadLease
+CONTRACT=ROOT/'docs/compatibility/amd-pixal3d-operator-v3-contract.json'
+
+def lock():
+    proposed=json.loads(CONTRACT.read_text());base=v2.lock()
+    if proposed['schema']!='modly.pixal3d.operator-only.proposed.v3':raise ValueError('Unknown operator profile')
+    if hashlib.sha256(v2.CONTRACT.read_text().encode()).hexdigest()!=proposed['v2_contract_canonical_sha256']:raise ValueError('V2 contract changed')
+    if proposed['execution_authorized_in_chat'] or proposed['generation_authorized']:raise ValueError('Preparation-only proposal required')
+    value=dict(base,**proposed);p=value['operator_policy']
+    ready=base['guards']['live_host_RAM_floor_bytes']+base['guards']['CPU_postprocess']['commit_bytes']
+    if p['ready_bytes']!=ready or p['observed_startup_decline_bytes']!=2360119296 or p['prelaunch_bytes']!=ready+2360119296:raise ValueError('Measured budget derivation changed')
+    if value['guest_root']!='/home/modly/pixal3d-native-proof-v2' or value['temporary_guest_root']!='/home/modly/pixal3d-operator-proof-v3' or value['windows_root']!='D:/AI/Modly-Pixal3D-Operators-v3':raise ValueError('Exact operator-only roots required')
+    return value
+
+def require_profile(row,floor):
+    if type(row.get('available_bytes')) is not int or row['available_bytes']<floor:raise RuntimeError('Proposed model-free RAM admission failed: '+str(floor)+' bytes required')
+
+def admit_operator(read,sleep,record,execute):
+    floor=lock()['operator_policy']['prelaunch_bytes']
+    for index in range(3):
+        row=dict(read(),timestamp_utc=now());record(row);require_profile(row,floor)
+        if index<2:sleep(4)
+    row=dict(read(),timestamp_utc=now(),stage='final-before-operator-controller');record(row);require_profile(row,floor)
+    return execute()
+
+def evidence_document(cfg,name):
+    row=cfg['evidence_files'][name];path=inside(ROOT.parent/'artifacts'/cfg['v2_evidence_case'],name)
+    verify(path,row);return json.loads(path.read_text())
+
+def validate_v2_evidence(cfg):
+    summary=evidence_document(cfg,'summary.json');host=evidence_document(cfg,'provision/host-result.json');child=evidence_document(cfg,'provision/child-result.json')
+    if summary.get('commit')!='681fcc962d4ca904291cc3b7bfbdf28757350ba6' or summary.get('stages',{}).get('provisioning',{}).get('status')!='PASS':raise RuntimeError('Successful v2 provisioning required')
+    if host.get('classification')!='PASS' or not host.get('GO_sent') or host.get('exit_code')!=0 or not host.get('guest_cleanup',{}).get('natural_exit') or host.get('Windows_job_cleanup',{}).get('forced_job_cleanup') is not False:raise RuntimeError('V2 provisioning/cleanup receipt failed')
+    expected={p['name'].lower().replace('_','-'):p['version'] for p in cfg['packages']}
+    actual={k.lower().replace('_','-'):v for k,v in child.get('runtime_packages',{}).items()}
+    if child.get('classification')!='PASS' or actual!=expected or child.get('share_site_packages') is not False or child.get('isolated_prefix')!=cfg['guest_root']+'/.venv':raise RuntimeError('V2 dependency closure differs')
+    if child.get('cache_before')!=child.get('cache_after') or child.get('baseline_critical_files_before')!=child.get('baseline_critical_files_after'):raise RuntimeError('V2 preservation failed')
+    if child['baseline_critical_files_after']['lib/python3.12/site-packages/torch/version.py']!=cfg['runtime']['torch_version_file_sha256']:raise RuntimeError('Qualified runtime identity differs')
+    return dict(status='PASS',packages=len(actual),pip_install_completed=True,natural_cleanup=True,operator_execution='NOT_RUN')
+
+def installed_path(name,env,site):
+    if not name or '\\' in name or name.startswith('/') or '..' in name.split('/'):raise ValueError('Unsafe wheel record')
+    parts=name.split('/')
+    if len(parts)>2 and parts[0].endswith('.data'):
+        if parts[1] in ('purelib','platlib'):path=site.joinpath(*parts[2:])
+        elif parts[1]=='data':path=env.joinpath(*parts[2:])
+        else:raise ValueError('Unsupported wheel spread category; no guessing')
+    else:path=site/name
+    path=plain(path);path.relative_to(plain(env));return path
+
+def verify_installed_wheel(archive,env,site,progress=None,trusted_paths=None):
+    files=0;total=0;hint_errors=[]
+    with zipfile.ZipFile(archive) as z:
+        records=[name for name in z.namelist() if name.endswith('.dist-info/RECORD')]
+        if len(records)!=1:raise RuntimeError('One trusted wheel RECORD required')
+        for name,encoded,size in csv.reader(io.StringIO(z.read(records[0]).decode('utf-8'))):
+            path=installed_path(name,env,site)
+            if trusted_paths is not None and path.is_relative_to(site):trusted_paths.add(path.relative_to(site).as_posix())
+            if name==records[0] and not encoded:continue # pip rewrites this inventory; module bytes still authenticated below.
+            if not encoded.startswith('sha256=') or not size.isdecimal():raise RuntimeError('Complete SHA256 wheel inventory required')
+            if path.stat().st_size!=int(size):raise RuntimeError('Installed file size differs: '+name)
+            sha=hashlib.sha256()
+            with path.open('rb') as stream:
+                while block:=stream.read(1024**2):
+                    sha.update(block)
+                    if progress:progress()
+                # Read-only per-file cache hint; never fsync, rewrite or globally clear caches.
+                if hasattr(os,'posix_fadvise'):
+                    try:os.posix_fadvise(stream.fileno(),0,0,os.POSIX_FADV_DONTNEED)
+                    except OSError as exc:hint_errors.append(dict(file=name,error=str(exc)))
+            actual=base64.urlsafe_b64encode(sha.digest()).rstrip(b'=').decode()
+            if actual!=encoded[7:]:raise RuntimeError('Installed file hash differs: '+name)
+            files+=1;total+=int(size)
+            if progress:progress()
+    return dict(files_verified=files,bytes_verified=total,read_only_cache_hint_errors=hint_errors,physical_recovery_guaranteed=False)
+
+def verify_import_inventory(site,trusted_paths,dist_infos):
+    bootstrap=0;generated={'INSTALLER','REQUESTED','direct_url.json','RECORD'}
+    for path in site.rglob('*'):
+        if path.is_symlink() or getattr(path,'is_junction',lambda:False)():raise RuntimeError('Unapproved installed link/alias: '+str(path.relative_to(site)))
+        if not path.is_file():continue
+        name=path.relative_to(site).as_posix();parts=name.split('/')
+        if name in trusted_paths:continue
+        if len(parts)==2 and parts[0] in dist_infos and parts[1] in generated:continue
+        if parts[0]=='pip' or re.fullmatch(r'pip-[0-9][A-Za-z0-9.!+_-]*\.dist-info',parts[0]):
+            bootstrap+=1;continue # existing ensurepip bootstrap; operator audit prohibits importing pip.
+        raise RuntimeError('Unapproved installed/importable file: '+name)
+    return dict(unknown_files=0,bootstrap_files_excluded_from_operator_imports=bootstrap)
+
+def validate_venv_config(text,version):
+    values={}
+    for line in text.splitlines():
+        if not line.strip():continue
+        key,separator,value=line.partition('=');key=key.strip().lower();value=value.strip()
+        if not separator or key in values:raise RuntimeError('Ambiguous venv configuration')
+        values[key]=value
+    expected={'home':'/usr/bin','include-system-site-packages':'false','version':version,'executable':'/usr/bin/python'+'.'.join(version.split('.')[:2])}
+    if any(values.get(k)!=v for k,v in expected.items()) or set(values)-set(expected)-{'command'}:raise RuntimeError('Qualified isolated venv configuration differs')
+    return dict(system_site_packages=False,home=values['home'],version=version,executable=values['executable'])
+
+def environment_snapshot(root):
+    root=plain(root);rows={}
+    for path in root.rglob('*'):
+        s=path.lstat();name=path.relative_to(root).as_posix()
+        if path.is_symlink():
+            path.resolve().relative_to(root);rows[name]=dict(link=os.readlink(path),mtime_ns=s.st_mtime_ns,file_id=s.st_ino)
+        elif path.is_file():rows[name]=dict(bytes=s.st_size,mtime_ns=s.st_mtime_ns,file_id=s.st_ino,mode=s.st_mode)
+    return rows
+
+def authenticate_environment(cfg,progress=None):
+    if os.name!='posix' or sys.version.split()[0]!=cfg['runtime']['python'] or sys.prefix!='/usr':raise RuntimeError('Qualified Linux system Python required')
+    validate_v2_evidence(cfg);root=plain(cfg['guest_root']);env=plain(root/'.venv');site=env/'lib/python3.12/site-packages'
+    configuration=validate_venv_config((env/'pyvenv.cfg').read_text(),cfg['runtime']['python'])
+    if plain(env/'bin/python').read_bytes()!=Path('/usr/bin/python3').read_bytes():raise RuntimeError('Qualified copied interpreter differs')
+    report=json.loads((root/'pip-report.json').read_text());expected={p['name'].lower().replace('_','-'):p for p in cfg['packages']}
+    actual={p['metadata']['name'].lower().replace('_','-'):p for p in report['install']}
+    if set(actual)!=set(expected):raise RuntimeError('Installed pip-report closure changed')
+    installed=[];trusted_paths=set();cache=Path('/mnt/d/AI/Modly-Pixal3D-Proof-v1/downloads')
+    for name,p in expected.items():
+        record=actual[name]
+        if record['metadata']['version']!=p['version'] or record['download_info']['archive_info']['hashes']['sha256']!=p['sha256']:raise RuntimeError('Installed report identity differs')
+        archive=inside(cache,p['filename']);verify(archive,p)
+        installed.append(dict(package=name,**verify_installed_wheel(archive,env,site,progress,trusted_paths)))
+    dist_infos={n.split('/')[0] for n in trusted_paths if n.split('/')[0].endswith('.dist-info')}
+    inventory=verify_import_inventory(site,trusted_paths,dist_infos)
+    for row in cfg['sources']:verify(inside(root/'ComfyUI',row['path']),row)
+    # No arbitrary .pth/startup module/bytecode may execute from outside trusted wheel inventories.
+    allowed_pth=set()
+    for p in cfg['packages']:
+        with zipfile.ZipFile(cache/p['filename']) as z:allowed_pth.update(n for n in z.namelist() if n.endswith('.pth'))
+    if {p.relative_to(site).as_posix() for p in site.glob('*.pth')}!=allowed_pth:raise RuntimeError('Unapproved Python startup path hook')
+    for name in ('sitecustomize.py','usercustomize.py'):
+        if (site/name).exists():raise RuntimeError('Unapproved Python startup module')
+    if any(p for p in site.rglob('*.pyc') if 'pip' not in p.relative_to(site).parts):raise RuntimeError('Unauthenticated runtime bytecode; no removal or repair')
+    return dict(status='PASS',packages=installed,files_verified=sum(r['files_verified'] for r in installed),bytes_verified=sum(r['bytes_verified'] for r in installed),
+                env=str(env),writes=0,provisioning=False,downloads=False,import_inventory=inventory,configuration=configuration)
