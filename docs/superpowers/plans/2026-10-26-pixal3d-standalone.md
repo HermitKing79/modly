@@ -1,0 +1,15 @@
+# Standalone Pixal3D model-free HIP proof plan
+
+Goal: prepare one deliberate Windows PowerShell invocation after Codex closes, using the previously approved contract and exact saved runtime identities. No live admission, WSL, installation, download or GPU work during implementation.
+
+Architecture: PowerShell no-work default -> stdlib Windows supervisor -> owned guest controller -> isolated provisioning and one synthetic operator worker. Preserve the existing contract unchanged; add a model-free execution manifest. Use existing GlobalMemoryStatusEx reader and three-reading/final gates, Windows Job containment and Linux nonce-bound process-group cleanup. Never terminate the distro. No full ComfyUI application or model imports; execute exact hash-verified native source functions for NAF/sparse/conversion and genuine installed Kitchen HIP operators.
+
+1. Add failing mocked tests for immediate/later/final admission failure, timing, one-shot stages, payload allowlisting, path/executable isolation and default no-work entry points.
+2. Materialize a lock from the saved approved Torch dependency manifest, approved NumPy wheel, Kitchen0.2.40 metadata and pinned ComfyUI operator hashes. No dependency re-resolution. New runtime only; no shared site-packages or existing-environment modification.
+3. Implement host with three22GiB readings four seconds apart, final22 before provisioning and GPU GO,12GiB live floor,C-artifact2GiB,D50GiB floor, bounded source/wheel download/verification and exclusive outputs. Retain original8GiB download/20GiB growth bounds; calculate exact expansion before installing.
+4. Implement guest controller with ready/GO boundary, exclusive approved root, 180-second provisioning and360-second model-free operator overall bounds, 6GiB resident-process-tree watchdog,2GiB guest disk floor, owned-group cleanup and result receipts. No compilation, resolver, source distribution or automatic retry.
+5. Implement genuine gfx1201 HIP INT8/ConvRot calls with backend/native-call witnesses and forbidden eager/CUDA/Triton fallback; GPU PyTorch SDPA math/NAF/sparse/conversion against independent CPU fixtures. Preserve13GiB initial/3GiB live free VRAM,12GiB allocator cap and GPU-release deadlines. Record actual Linux RSS, GPU peaks/release, natural exit and host post-exit RAM.
+6. Exercise only mocks, synthetic CPU reference tests, AST/source extraction and no-execution PowerShell/Python dry runs here. Test stop/cleanup logging and no hidden live path. Have final code independently reviewed.
+7. Verify historical file identities/refs, publish only reviewed source/tests/text to the new branch, verify the GitHub head and give the exact non-admin command. No model weights, generation, remeshing or UV work.
+
+Review focus: interrupted downloads and wrong hashes; absent HIP payload; guest path reuse/symlinks; stale/reused process IDs or foreign-group members; final22GiB failure after WSL/provisioning; fallback masked by output device; numerical failure/nonfinite results; forced or unverified cleanup must never yield PASS.

@@ -1,0 +1,44 @@
+{
+  "classification": "PREPARED_FOR_ONE_USER_RUN_NOT_HIP_QUALIFIED",
+  "independent_review": {
+    "classification": "APPROVED_PREPARED_RUNNER_NO_BLOCKING_FINDINGS",
+    "critical_or_important_findings_outstanding": 0,
+    "independent_mock_CPU_tests_passed": 30,
+    "child_launches_and_network_blocked_during_independent_tests": true,
+    "live_admission_WSL_provision_HIP_executed": false
+  },
+  "base_commit": "25a9a6797339b298c4113d3f6223246ff0cc4b2d",
+  "standalone_new_tests_passed": 25,
+  "original_admission_tests_passed": 5,
+  "total_focused_tests": 30,
+  "tests_blocked_child_processes_and_network": true,
+  "torch_imported_during_tests": false,
+  "PowerShell_no_execution_dry_run_passed": true,
+  "live_RAM_admission_readings": 0,
+  "WSL_launches": 0,
+  "runtime_or_model_payload_downloaded": false,
+  "environments_created": false,
+  "GPU_or_HIP_operations": 0,
+  "neural_attempts": 0,
+  "geometry_or_UV_operations": 0,
+  "actual_HIP_compatibility": "UNTESTED",
+  "installed_payload_or_generation_automatic_continuation": false,
+  "preservation": {
+    "classification": "PASS",
+    "historical_files_hashes_and_metadata_unchanged": 3346,
+    "protected_identities_unchanged": 100,
+    "retained_records_unchanged": 88,
+    "original_D_and_AutoRemesher_raw_identity_unchanged": true,
+    "tracked_original_files_modified": false,
+    "Windows_isolation_root_absent": true,
+    "guest_paths_deliberately_not_queried": true,
+    "whole_guest_installation_rehashed": false,
+    "refs_before_publication": 174
+  },
+  "current_guard_bytes": {
+    "admission": 23622320128,
+    "preferred_only": 25769803776,
+    "live_host": 12884901888
+  },
+  "private_preparation_case": "amd-pixal3d-standalone-preparation-20261026-v1"
+}
