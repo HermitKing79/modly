@@ -1,0 +1,342 @@
+{
+  "schema": "modly.pixal3d.native.single-image.proposed-proof.v1",
+  "decision": "GO_FOR_ONE_ISOLATED_COMPATIBILITY_PROOF",
+  "execution_ready": false,
+  "execution_authorized": false,
+  "preparation_scope": "Source and metadata inspection plus non-executable test design only; no environment or neural execution.",
+  "primary_engine": "Existing qualified TRELLIS.2 remains primary and immutable.",
+  "software": {
+    "comfyui_commit": "fe298e4e20f1ff26d30e8639267bbd0b57811390",
+    "comfyui_version": "0.42.0",
+    "comfy_kitchen": "0.2.40",
+    "comfy_kitchen_commit": "f8b7e97a1418d2e529bd5405fbf86312be198ae6",
+    "template_commit": "67984637eefcd4825dcf5c134e39034785be1682",
+    "template": "templates/3d_pixal3d_trellis2_image_to_model.json",
+    "prospective_wsl_python": "3.12.3",
+    "prospective_torch": "2.9.1+rocm7.2.1.gitff65f5bc",
+    "runtime_status": "Saved qualified WSL baseline only; new native core/backend compatibility not executed.",
+    "dependency_lock_status": "PENDING_ISOLATED_SETUP_AND_REVIEW; never permit unpinned Torch replacement",
+    "kitchen_wheel": {
+      "filename": "comfy_kitchen-0.2.40-cp312-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "bytes": 67811219,
+      "sha256": "eb726664c772189e6ece742876487f1349965808b854742790e9001dbb7c0f9d",
+      "HIP_payload_and_runtime_availability": "Must be verified in isolated environment; wheel filename alone is insufficient"
+    }
+  },
+  "isolation": {
+    "windows_metadata_root": "D:/AI/Modly-Pixal3D-Proof-v1",
+    "wsl_root": "/home/modly/pixal3d-native-proof-v1",
+    "wsl_venv": "/home/modly/pixal3d-native-proof-v1/.venv",
+    "wsl_comfy": "/home/modly/pixal3d-native-proof-v1/ComfyUI",
+    "wsl_models": "/home/modly/pixal3d-native-proof-v1/models",
+    "evidence_root": "C:/Users/wattz/Documents/ChatGPT/modly/artifacts/amd-pixal3d-single-d-9ac0364f-v1",
+    "created": false,
+    "require_exclusive_new_paths": true,
+    "share_site_packages": false,
+    "custom_nodes": false,
+    "manager_and_auto_downloads": false,
+    "original_environment_write_access": false
+  },
+  "input": {
+    "source_sha256": "9ac0364f409077cd3fdeb853a1baed3b851c56f4fdc539c9fde73e0e3ab79db9",
+    "source_bytes": 642361,
+    "source_label": "Authenticated Zombie D RGBA",
+    "comparison_PLY_sha256": "2f8a1f9057c88f588b171c66f75af88b98fa47f1cea7494d6ee55517ce9e8205",
+    "fresh_native_conditioning": true,
+    "reuse_TRELLIS_conditioning_or_occupancy": false,
+    "preprocessing": "Explicit foreground alpha from inverse Comfy LoadImage MASK; native ImageCropToMask 1024x1024 pad1.1 grow0 black; save actual 512 DINO raster."
+  },
+  "model_allowlist": [
+    {
+      "repository": "Comfy-Org/Pixal3D",
+      "revision": "f37641be376725d324c56626007cc477f1249a69",
+      "path": "diffusion_models/pixal3d_int8_convrot.safetensors",
+      "bytes": 5584555824,
+      "sha256": "4621eac3b715484f79303c7152af641fe0b2b14f4d0e3d394fd6922d00f955ec"
+    },
+    {
+      "repository": "Comfy-Org/Pixal3D",
+      "revision": "f37641be376725d324c56626007cc477f1249a69",
+      "path": "clip_vision/dino_v3_L_naf_fp32.safetensors",
+      "bytes": 1215214176,
+      "sha256": "4ad2ec4e0879a5b5b04cd97325cc37da954a7b6edca5170b86510f17f2b2290f"
+    },
+    {
+      "repository": "Comfy-Org/Pixal3D",
+      "revision": "f37641be376725d324c56626007cc477f1249a69",
+      "path": "vae/trellis_2_shape_vae_bf16.safetensors",
+      "bytes": 1095844024,
+      "sha256": "de0cb4949a76c59ee5c091a995a69bcc8c51d5aeda939f0c641a50d2a72341f4"
+    },
+    {
+      "repository": "Comfy-Org/MoGe",
+      "revision": "1484985258ba7ef45c314144fcf0e90924ffbf44",
+      "path": "geometry_estimation/moge_2_vitl_normal_fp16.safetensors",
+      "bytes": 661859924,
+      "sha256": "cb1a692d03235671e959e81360d7b4d9f44aefadb1f852d6ca6aa17799d5e31f"
+    }
+  ],
+  "total_model_file_bytes": 8557473948,
+  "model_downloads_during_preparation": 0,
+  "cheapest_first_step": {
+    "action": "Separately approve isolated environment provisioning and exactly one bounded model-free HIP/operator proof before model downloads.",
+    "stages": [
+      "Validate exact source/wheel/runtime identities and single visible gfx1201 device.",
+      "Require genuine HIP WMMA backend with int8_linear/ConvRot; CUDA and global Triton stay disabled.",
+      "Synthetic ConvRot INT8 finite-output/reference check, PyTorch SDPA/NAF neighborhood attention, and tiny native sparse-convolution/dual-grid checks.",
+      "Natural owned exit, memory recovery and evidence; any failure stops. No kernel port/build or automatic retry."
+    ],
+    "neural_weights_required": false,
+    "generation_attempt_consumed": false,
+    "execution_during_preparation": false
+  },
+  "single_generation_plan": [
+    {
+      "stage": "MoGe camera estimation and native DINO/NAF conditioning",
+      "model": "Single-image Pixal3D only",
+      "images": 1
+    },
+    {
+      "stage": "Structure sampler",
+      "template_node": 3,
+      "seed": 56,
+      "steps": 12,
+      "cfg": 7.5,
+      "sampler": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "wrappers": {
+        "CFGOverride": [
+          1,
+          0.667,
+          1
+        ],
+        "RescaleCFG": 0.7,
+        "ModelSamplingSD3_shift": 5
+      }
+    },
+    {
+      "stage": "Structure decode",
+      "node": "VaeDecodeStructureTrellis2",
+      "resolution": 32
+    },
+    {
+      "stage": "First shape stage",
+      "node": "Trellis2ShapeStage",
+      "coord_resolution": 32,
+      "shape_target_resolution": 512
+    },
+    {
+      "stage": "Shape sampler",
+      "template_node": 18,
+      "seed": 42,
+      "steps": 20,
+      "cfg": 7.5,
+      "sampler": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "wrappers": {
+        "CFGOverride": [
+          1,
+          0.769,
+          1
+        ],
+        "RescaleCFG": 0.5
+      }
+    },
+    {
+      "stage": "Raw shape decode",
+      "node": "VaeDecodeShapeTrellis",
+      "samples_from_template_node": 18,
+      "target_resolution": 512,
+      "disabled_template_nodes": [
+        94,
+        23
+      ],
+      "note": "Decode first shape output directly; no HR upsample/cascade."
+    },
+    {
+      "stage": "Capture raw geometry",
+      "outputs": [
+        "raw.glb",
+        "vertices.npy",
+        "faces.npy",
+        "mesh.ply",
+        "provenance.json"
+      ],
+      "identity": "Capture decoded vertex/index buffers before any mesh processing; exact GLB/NPY/PLY readback and hashes required."
+    },
+    {
+      "stage": "CPU geometry analysis and eight-view D comparison",
+      "baseline": "Original D mesh only",
+      "axis_conversion": "Document native Y-up versus Modly Z-up on presentation copies only; no fitting/deformation of raw geometry."
+    }
+  ],
+  "excluded": [
+    "multi-view",
+    "texture sampling",
+    "texture VAE",
+    "BiRefNet because D already has alpha",
+    "TRELLIS model switch",
+    "upsampling/cascade",
+    "automatic remeshing",
+    "hole filling",
+    "decimation",
+    "normal smoothing",
+    "UV/baking",
+    "kernel porting"
+  ],
+  "resource_guards": {
+    "admission_RAM_bytes": 23622320128,
+    "admission_readings": 3,
+    "spacing_seconds": 4,
+    "preferred_RAM_bytes": 25769803776,
+    "preferred_is_mandatory": false,
+    "final_pre_reservation_RAM_bytes": 23622320128,
+    "live_host_RAM_floor_bytes": 12884901888,
+    "initial_free_VRAM_bytes": 13958643712,
+    "torch_allocator_cap_bytes": 12884901888,
+    "live_shape_free_VRAM_bytes": 3221225472,
+    "artifact_disk_floor_bytes": 2147483648,
+    "other_disk_gates": "Preserve original D/guest profile floors; verify actual isolated volumes and provisioning sizes.",
+    "initial_support_rows_max": 4430,
+    "intermediate_rows_max": 1000000,
+    "final_rows_max": 1842968,
+    "conditioning_deadlines_seconds": {
+      "cpu": 120,
+      "gpu_release": 180,
+      "overall": 360
+    },
+    "structure_sampling_deadlines_seconds": {
+      "cpu": 180,
+      "gpu_release": 240,
+      "overall": 480
+    },
+    "structure_decode_deadlines_seconds": {
+      "cpu": 120,
+      "gpu_release": 180,
+      "overall": 360
+    },
+    "shape_and_geometry_decode_deadlines_seconds": {
+      "cpu": 180,
+      "gpu_release": 240,
+      "overall": 480
+    },
+    "CPU_postprocess": {
+      "commit_bytes": 6442450944,
+      "stage_seconds": 180,
+      "render_threads": 4
+    },
+    "one_generation_attempt": true,
+    "automatic_retry": false,
+    "cleanup": "Existing Windows Job/owned guest process-group discipline; never terminate unrelated applications or a shared distro.",
+    "implementation_status": "Contract only. New standalone supervisor must be implemented/tested against isolated native runtime before generation is admitted."
+  },
+  "evidence_backed_memory": {
+    "weight_file_bytes_not_runtime_peak": true,
+    "NAF_retained_maps_FP16_bytes": 3221225472,
+    "NAF_retained_maps_FP32_bytes": 6442450944,
+    "NAF_chunk_budget_bytes": 536870912,
+    "sparse_conv_gather_budget_bytes": [
+      268435456,
+      536870912
+    ],
+    "native_shape_decoder_BF16_planner_bytes": 2770075648,
+    "measured_Pixal_peak_RAM_or_VRAM": null,
+    "guaranteed_16GB_fit": false
+  },
+  "acceptance": [
+    "One finite-output single-image 512 raw mesh within unchanged guards and natural owned cleanup.",
+    "Report raw topology, hands, toes, wounds, dark artifacts and body fidelity against D at matched cameras.",
+    "Distinguish engine/INT8/preprocessing/resolution changes; this is not a model-only quality attribution.",
+    "Any missing HIP path, NaN, memory/disk/time/support-limit failure means stop, preserve evidence, no retry.",
+    "Do not call the result game-ready or extend to multi-view based on successful execution alone."
+  ],
+  "inspected_source_files": [
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy/ldm/trellis2/flexgemm.py",
+      "sha256": "457e6a06149ca440fb56cd29f1194a6d4ba1ede92991d7e438836a631525811b",
+      "bytes": 8141
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy/ldm/trellis2/model.py",
+      "sha256": "64f5dd3c1854d2d70902eb59c49f2b6e61f3a18bba94989bac26e233ed1cc455",
+      "bytes": 52948
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy/ldm/trellis2/vae.py",
+      "sha256": "77d55274133aeb103a97979bb89e16b90f87ecf4018b8a8c0e89c87f45555124",
+      "bytes": 43939
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy/ops.py",
+      "sha256": "fa87356b1dd5aa8ecc5b1e71d5bcd43f5cd7e9eba4a469f72e4f099b00e6cb39",
+      "bytes": 91713
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy/quant_ops.py",
+      "sha256": "37f0054dfbd8430524ac2c73dafd25b8ad4eabc490a2b7490eeebde8dffbc749",
+      "bytes": 10149
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy_extras/nodes_images.py",
+      "sha256": "897ba3b46ace2c0083e85241c30e41af0c141e63b81449743192d5e29101a233",
+      "bytes": 99608
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy_extras/nodes_mesh_postprocess.py",
+      "sha256": "3b7083984c974d9bc5d14e026a37d0eee0a4063b61a7df20ae15bdd68015a141",
+      "bytes": 152322
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy_extras/nodes_moge.py",
+      "sha256": "dcc0d9219d5780bb5d8ffca283210dd49528ea92f9cb79542c19b7376000b760",
+      "bytes": 22744
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy_extras/nodes_trellis2.py",
+      "sha256": "5d99f8fd2d1a1cc252b860d941717fc4e53cfbc48b623730c9fdd9139dd7f98c",
+      "bytes": 41478
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfyui_version.py",
+      "sha256": "2266defc1ccab816dd9b93c1b4c00dc86198c41804ce5de0c84bd956d9b4f74f",
+      "bytes": 128
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/requirements.txt",
+      "sha256": "e7a2166150f7624311e71d8d2115b3a079c9b79a4702b59a186f76587ccaa121",
+      "bytes": 528
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy/image_encoders/naf.py",
+      "sha256": "f79f2f102d81c6d4481bf01a1eab0ca9348909b0aee6dab45e6b176f185c7470",
+      "bytes": 10125
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy/clip_vision.py",
+      "sha256": "eef235da110e0bfe33379d0639aa629c2d398f934ba9bf662a02738e06e8aba6",
+      "bytes": 9036
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy_extras/nodes_save_3d.py",
+      "sha256": "7fa90b74bc140ae811220374f34a3bda0abb9af395809850b5069163a22f8b87",
+      "bytes": 46030
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/comfy-kitchen/f8b7e97a1418d2e529bd5405fbf86312be198ae6/pyproject.toml",
+      "sha256": "2590fdf65b24710d2dbc065e4e5bba42fe0475629ee3b298941444edd3ef943b",
+      "bytes": 3189
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/comfy-kitchen/f8b7e97a1418d2e529bd5405fbf86312be198ae6/README.md",
+      "sha256": "9ac218f323dd03da520838ec7cf1de00f93c94c8a903e6ad463f0e100bdf171f",
+      "bytes": 18429
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fe298e4e20f1ff26d30e8639267bbd0b57811390/comfy/model_management.py",
+      "sha256": "41e89e3fc871ae19981cf87eb25d354e1fcd4164d720af8369aacda5c54d0358",
+      "bytes": 75166
+    }
+  ]
+}

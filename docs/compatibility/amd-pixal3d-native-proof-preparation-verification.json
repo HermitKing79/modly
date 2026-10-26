@@ -1,0 +1,28 @@
+{
+  "classification": "PASS_SOURCE_ONLY_PREPARATION",
+  "independent_review": {
+    "classification": "APPROVED_THREE_SOURCE_ONLY_TEXT_FILES",
+    "critical_findings": 0,
+    "important_findings": 0,
+    "minor_findings": 0,
+    "runtime_compatibility_and_generation_guard_implementation_verified": false
+  },
+  "decision": "GO_FOR_ONE_ISOLATED_COMPATIBILITY_PROOF",
+  "execution_ready": false,
+  "total_model_file_bytes": 8557473948,
+  "public_source_metadata_records_verified": 57,
+  "exact_native_sampler_settings_verified": true,
+  "guards_unchanged": true,
+  "raw_geometry_only_plan": true,
+  "no_model_packages_weights_or_WSL_loaded_or_created": true,
+  "preservation": {
+    "classification": "PASS_PRESERVATION",
+    "private_files_unchanged": 3197,
+    "protected_identities_unchanged": 100,
+    "retained_records_unchanged": 88,
+    "prior_local_refs_unchanged": 169,
+    "all_original_assets_unchanged": true
+  },
+  "plan_sha256": "5b398e06d96a600524e85837616e44c90af008f55203d2ada89462a70380c4ee",
+  "private_evidence_directory": "amd-pixal3d-native-assessment-20261025-v1"
+}
