@@ -34,6 +34,10 @@ class ProcFS:
         except OSError as exc:raise OwnershipError('Kernel pidfd support unavailable') from exc
         try:
             if self.dead(fd):raise OwnershipError('Self pidfd unexpectedly terminal')
+            # Signal zero tests the actual kernel API and permission without
+            # delivering a signal. A Python symbol alone proves neither.
+            try:signal.pidfd_send_signal(fd,0,None,0)
+            except OSError as exc:raise OwnershipError('Kernel pidfd zero-signal prerequisite unavailable') from exc
         finally:os.close(fd)
     def pidfd(self,pid):return os.pidfd_open(pid,0)
     def dead(self,fd):

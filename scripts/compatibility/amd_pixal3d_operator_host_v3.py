@@ -8,7 +8,7 @@ import amd_pixal3d_memory_v2 as telemetry
 from amd_pixal3d_standalone_v2 import desktop_absent,allocated_size,linux_path,accept_operators
 
 FILES=['scripts/compatibility/'+n for n in ('Invoke-Pixal3DOperatorsV3.ps1','amd_pixal3d_operator_host_v3.py','amd_pixal3d_operator_guest_v3.py',
-    'amd_pixal3d_operator_ops_v3.py','amd_pixal3d_operator_common_v3.py','test_amd_pixal3d_operator_v3.py','amd_pixal3d_wheel_payload.py','test_amd_pixal3d_wheel_payload.py','amd_pixal3d_kitchen_overlay.py','test_amd_pixal3d_kitchen_overlay.py','amd_pixal3d_operator_audit_v3.py','amd_pixal3d_owned_proc_v3.py','test_amd_pixal3d_owned_proc_v3.py','test_amd_pixal3d_operator_audit_v3.py','amd_pixal3d_standalone_v2.py',
+    'amd_pixal3d_operator_ops_v3.py','amd_pixal3d_operator_common_v3.py','test_amd_pixal3d_operator_v3.py','amd_pixal3d_wheel_payload.py','test_amd_pixal3d_wheel_payload.py','amd_pixal3d_kitchen_overlay.py','test_amd_pixal3d_kitchen_overlay.py','amd_pixal3d_operator_audit_v3.py','amd_pixal3d_audit_rules_v3.py','amd_pixal3d_owned_proc_v3.py','test_amd_pixal3d_owned_proc_v3.py','test_amd_pixal3d_operator_audit_v3.py','amd_pixal3d_standalone_v2.py',
     'amd_pixal3d_guest_v2.py','amd_pixal3d_memory_v2.py','amd_pixal3d_proof_common_v2.py','amd_pixal3d_proof_common.py','amd_zombie_d_handoff.py','amd_zombie_ram_diagnostic.py','amd_forward_owned_job.py')]+[
     'docs/compatibility/amd-pixal3d-operator-v3-contract.json','docs/compatibility/amd-pixal3d-standalone-hip-v2-contract.json',
     'docs/compatibility/amd-pixal3d-standalone-hip-contract.json','docs/compatibility/amd-pixal3d-native-single-image-proof-contract.json']
@@ -59,8 +59,11 @@ class Runner:
     def final_gate(self,stage):
         row=self.live();c.journal(self.case/'phases.jsonl','operator-only-final-admission',stage=stage,**row)
         c.require_profile(row,self.cfg['operator_policy']['ready_bytes']);return row
+    def command(self,stage,cleanup=False):return wsl_command(stage,linux_path(self.case),self.token,cleanup=cleanup)
+    def accept_result(self,stage,result,cleanup):
+        if stage=='operators':accept_operators(result,cleanup)
     def cleanup_guest(self,stage):
-        command=wsl_command(stage,linux_path(self.case),self.token,cleanup=True)
+        command=self.command(stage,cleanup=True)
         with (self.case/stage/'cleanup-stdout.txt').open('xb') as out,(self.case/stage/'cleanup-stderr.txt').open('xb') as err:
             completed=subprocess.run(command,stdin=subprocess.DEVNULL,stdout=out,stderr=err,timeout=self.cfg['cleanup_seconds'],creationflags=0x08000000)
         if completed.returncode:raise RuntimeError('Owned guest cleanup verification failed')
@@ -69,7 +72,7 @@ class Runner:
         from amd_forward_owned_job import OwnedJob,ExtendedLimits
         leaf=self.case/stage
         if leaf.exists():raise FileExistsError('Stage evidence already exists; no retry')
-        leaf.mkdir(exist_ok=False);command=wsl_command(stage,linux_path(self.case),self.token)
+        leaf.mkdir(exist_ok=False);command=self.command(stage)
         job=OwnedJob();limits=ExtendedLimits();limits.Basic.Flags=0x2100;limits.ProcessMemory=6*c.GIB
         if not job.api.SetInformationJobObject(job.handle,9,ctypes.byref(limits),ctypes.sizeof(limits)):
             job.close();raise ctypes.WinError()
@@ -142,7 +145,7 @@ class Runner:
                 or receipt.get('Windows_job_cleanup',{}).get('forced_job_cleanup') is not False):receipt['classification']='FAIL'
             c.save(leaf/'host-result.json',receipt)
         if receipt['classification']!='PASS':raise RuntimeError(stage+': '+str(receipt.get('error','cleanup failed')))
-        if stage=='operators':accept_operators(result,receipt['guest_cleanup'])
+        self.accept_result(stage,result,receipt['guest_cleanup'])
 
 def run(commit,approved=False):
     if not approved:raise RuntimeError('Separate user approval of operator-only profile required; no execution')

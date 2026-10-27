@@ -19,7 +19,7 @@ def argument(value):
     return dict(unserialized_type=type(value).__name__)
 
 def descriptor_observations(event,args):
-    indices={'os.remove':(1,),'os.rmdir':(1,),'os.rename':(2,3),'os.link':(2,3),'os.symlink':(2,),'os.truncate':(0,)}.get(event,())
+    indices={'os.remove':(1,),'os.rmdir':(1,),'os.rename':(2,3),'os.link':(2,3),'os.symlink':(2,),'os.truncate':(0,),'os.mkdir':(2,)}.get(event,())
     rows=[]
     for index in indices:
         if index>=len(args) or type(args[index]) is not int or args[index]<0:continue
@@ -28,6 +28,34 @@ def descriptor_observations(event,args):
             before=os.fstat(fd);row['target']=os.readlink('/proc/self/fd/'+str(fd)) if os.name=='posix' else None
             after=os.fstat(fd);row.update(device=before.st_dev,inode=before.st_ino,mode=before.st_mode,
                 identity_stable=(before.st_dev,before.st_ino)==(after.st_dev,after.st_ino))
+        except OSError as exc:row['unavailable']=str(exc)
+        rows.append(row)
+    return rows
+
+def path_observations(event,args,cwd,descriptors):
+    pairs={'os.remove':((0,1),),'os.rmdir':((0,1),),'os.rename':((0,2),(1,3)),
+        'os.link':((0,2),(1,3)),'os.symlink':((1,2),),'os.truncate':((0,None),),
+        'os.mkdir':((0,2),),'open':((0,None),)}.get(event,())
+    rows=[]
+    for index,dir_index in pairs:
+        if index>=len(args) or not isinstance(args[index],(str,bytes,Path)):continue
+        raw=os.fsdecode(args[index]);row=dict(argument_index=index,raw=argument(raw),observation_only=True)
+        base=cwd
+        if dir_index is not None and dir_index<len(args) and type(args[dir_index]) is int and args[dir_index]>=0:
+            descriptor=next((d for d in descriptors if d['argument_index']==dir_index),{})
+            base=descriptor.get('target') if descriptor.get('identity_stable') else None
+        if not os.path.isabs(raw) and base is None:row['unavailable']='relative target base unavailable';rows.append(row);continue
+        candidate=raw if os.path.isabs(raw) else os.path.join(base,raw)
+        row['candidate']=candidate
+        row['resolution_is_unpinned']=True
+        if event=='open' and not os.path.isabs(raw):row['base_caveat']='open audit event does not expose dir_fd; cwd interpretation only'
+        try:
+            row['resolved']=os.path.realpath(candidate);before=os.lstat(candidate);after=os.lstat(candidate)
+            row.update(device=before.st_dev,inode=before.st_ino,mode=before.st_mode,nlink=before.st_nlink,
+                identity_role='candidate_directory_entry_lstat',entry_identity_stable=(before.st_dev,before.st_ino,before.st_mode)==(after.st_dev,after.st_ino,after.st_mode))
+            try:
+                target=os.stat(row['resolved']);row['resolved_target_observation']=dict(device=target.st_dev,inode=target.st_ino,mode=target.st_mode)
+            except OSError as exc:row['resolved_target_unavailable']=str(exc)
         except OSError as exc:row['unavailable']=str(exc)
         rows.append(row)
     return rows
@@ -41,9 +69,13 @@ class AuditLog:
     def _record(self,event,args):
         if self.fd is None:raise RuntimeError('Audit logger closed; mutation still denied')
         if self.records>=32:raise RuntimeError('Audit evidence record bound reached; mutation still denied')
+        try:cwd=os.getcwd();cwd_error=None
+        except OSError as exc:cwd=None;cwd_error=str(exc)
+        descriptors=descriptor_observations(event,args)
         row=dict(utc=datetime.now(timezone.utc).isoformat(),monotonic=time.monotonic(),pid=os.getpid(),thread=threading.get_ident(),phase=self.phase,
-            event=event,arguments=[argument(v) for v in args],cwd=os.getcwd(),descriptors=descriptor_observations(event,args),
+            event=event,arguments=[argument(v) for v in args],cwd=cwd,descriptors=descriptors,targets=path_observations(event,args,cwd,descriptors),
             caller_frames=frames(sys._getframe(1)),operation_allowed=False)
+        if cwd_error:row['cwd_unavailable']=cwd_error
         data=(json.dumps(row,ensure_ascii=True,allow_nan=False)+'\n').encode('utf-8')
         if len(data)>65536:raise RuntimeError('Audit evidence byte bound reached; mutation still denied')
         view=memoryview(data)

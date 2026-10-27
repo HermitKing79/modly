@@ -1,0 +1,76 @@
+{
+  "schema": "modly.pixal3d.kitchen-import-forensics.offline-verification.v1",
+  "base_commit": "05e78c3a4d33579f3b2ce275156306682300504d",
+  "historical_denied_event": "UNPROVEN",
+  "leading_hypothesis": "stdlib tempfile directory-probe unlink in an import dependency; conditional on module and tempfile cache state",
+  "authenticated_source_archives": {
+    "comfy_kitchen_0_2_40": {
+      "bytes": 67811219,
+      "sha256": "eb726664c772189e6ece742876487f1349965808b854742790e9001dbb7c0f9d",
+      "python_files_inspected": 50,
+      "direct_tempfile_creation_or_os_shutil_deletion_calls": 0
+    },
+    "torch_qualified_rocm": {
+      "bytes": 1650644034,
+      "sha256": "fb45ace0a27e9f0d0e3c4c6efd8932162743f8376f2aa4752a4d31ef5a1bd3d7"
+    }
+  },
+  "offline_tests": {
+    "cases": 155,
+    "passed": 154,
+    "failed": 0,
+    "errors": 0,
+    "optional_unchanged_full_archive_audit_skipped": 1,
+    "new_cases": 17,
+    "python_flags": ["-B", "-I", "-S"],
+    "blocked_actions": ["subprocess.Popen", "socket.connect", "urlopen", "live Windows memory admission"],
+    "native_runtime_modules_imported": false,
+    "stdlib_only_child_controls": {
+      "exact_authenticated_cache_definition_cold_tempdir": {"exit_code": 23, "denied_event": "os.remove", "continued_after_denial": false},
+      "exact_authenticated_cache_definition_cached_tempdir": {"exit_code": 0},
+      "atexit_unraisable_error": {"exit_code": 24}
+    },
+    "powershell_and_python_no_execution_dry_runs": "PASS"
+  },
+  "preservation": {
+    "shared_audit_policy_AST_unchanged": true,
+    "historical_file_hashes_checked": 3346,
+    "protected_identities": 100,
+    "retained_records": 88,
+    "cached_wheel_metadata_checked": 13,
+    "existing_local_refs_unchanged": 180
+  },
+  "execution": {
+    "operator_execution_hold": true,
+    "capture_approval_pending": true,
+    "WSL_launches": 0,
+    "live_admission_readings": 0,
+    "GPU_or_native_runtime_execution": false,
+    "downloads": 0,
+    "installations": 0,
+    "environment_changes": 0
+  },
+  "capture_limits_unchanged": {
+    "Windows_three_and_final_prelaunch_available_bytes": 21687472128,
+    "Windows_startup_and_before_GO_available_bytes": 19327352832,
+    "Windows_live_available_bytes": 12884901888,
+    "neural_admission_available_bytes": 23622320128,
+    "sampled_guest_process_tree_RSS_ceiling_bytes": 6442450944,
+    "Windows_client_commit_ceiling_bytes": 6442450944,
+    "initial_free_VRAM_bytes": 13958643712,
+    "live_and_observer_free_VRAM_bytes": 3221225472,
+    "Torch_allocator_cap_bytes": 12884901888,
+    "CPU_and_authentication_seconds": 120,
+    "GPU_phase_seconds": 180,
+    "overall_stage_seconds": 360
+  },
+  "remaining_unqualified": [
+    "historical event, target and caller",
+    "native RPC availability and imported-module state at historical failure",
+    "target Linux kernel pidfd prerequisites; runtime preflight required before GO",
+    "actual import native side effects and GPU release after self-exit",
+    "target evidence filesystem flush behavior",
+    "opaque native syscalls outside Python audit coverage"
+  ],
+  "next": "Separate approval of import-only capture; stop for review afterward regardless of outcome. Operators and neural generation remain NO-GO."
+}

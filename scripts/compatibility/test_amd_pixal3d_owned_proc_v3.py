@@ -85,10 +85,18 @@ class ProcTests(unittest.TestCase):
 
     def test_pidfd_preflight_checks_kernel_availability_and_closes_probe(self):
         fs=p.ProcFS()
-        with patch.object(p.os,'pidfd_open',return_value=88,create=True) as opened,patch.object(p.signal,'pidfd_send_signal',create=True),patch.object(fs,'dead',return_value=False),patch.object(p.os,'close') as close:
-            fs.require_pidfds();self.assertEqual(opened.call_args.args,(p.os.getpid(),0));close.assert_called_once_with(88)
+        with patch.object(p.os,'pidfd_open',return_value=88,create=True) as opened,patch.object(p.signal,'pidfd_send_signal',create=True) as probe,patch.object(fs,'dead',return_value=False),patch.object(p.os,'close') as close:
+            fs.require_pidfds();self.assertEqual(opened.call_args.args,(p.os.getpid(),0));probe.assert_called_once_with(88,0,None,0);close.assert_called_once_with(88)
         with patch.object(p.os,'pidfd_open',side_effect=PermissionError('kernel refusal'),create=True),patch.object(p.signal,'pidfd_send_signal',create=True):
             with self.assertRaises(p.OwnershipError):fs.require_pidfds()
+
+    def test_pidfd_zero_signal_kernel_or_permission_failure_stops_and_closes_probe(self):
+        import errno
+        fs=p.ProcFS()
+        for code in (errno.ENOSYS,errno.EINVAL,errno.EPERM):
+            with self.subTest(errno=code),patch.object(p.os,'pidfd_open',return_value=88,create=True),patch.object(p.signal,'pidfd_send_signal',side_effect=OSError(code,'zero-signal kernel probe denied'),create=True),patch.object(fs,'dead',return_value=False),patch.object(p.os,'close') as close:
+                with self.assertRaises(p.OwnershipError):fs.require_pidfds()
+                close.assert_called_once_with(88)
 
     def test_live_permission_failure_during_signal_recheck_is_not_ignored(self):
         fs=FakeFS();original=fs.read;counts=[]
