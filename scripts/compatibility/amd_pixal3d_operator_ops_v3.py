@@ -85,6 +85,7 @@ def run(case,token):
         return assert_values(actual.detach().float().cpu().flatten().tolist(),expected,atol,rtol)
     try:
         phase('imports','CPU')
+        result['dependency_overlay']=c.overlay.activate()
         import importlib.metadata
         import torch
         from torch.nn import functional as F
@@ -239,6 +240,8 @@ def run(case,token):
                 result['memory_release']=dict(allocated=torch.cuda.memory_allocated(),reserved=torch.cuda.memory_reserved());result['post_release_free_VRAM_bytes']=torch.cuda.mem_get_info()[0]
                 if result['memory_release']!=dict(allocated=0,reserved=0):raise RuntimeError('Owned Torch allocation release incomplete')
                 if result['post_release_free_VRAM_bytes']<cfg['guards']['live_shape_free_VRAM_bytes']:raise RuntimeError('Original live free-VRAM floor failed at release')
+            if 'dependency_overlay' in result:
+                result['dependency_overlay']['exit_module_origins']=c.overlay.verify_loaded()
             if baseline()!=before:raise RuntimeError('Original runtime critical files changed')
         except BaseException as exc:result.update(classification='FAIL',cleanup_error=str(exc))
         c.save(leaf/'child-result.json',result)

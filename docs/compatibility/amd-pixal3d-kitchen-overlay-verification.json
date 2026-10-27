@@ -1,0 +1,64 @@
+{
+  "schema": "modly.pixal3d.kitchen.runtime-overlay.v1",
+  "base_commit": "feec959c08e6caf81a62291049eee60e461ba9e1",
+  "root_cause": "Undeclared mandatory packaging.version import in authenticated Kitchen 0.2.40",
+  "source_file_SHA256": {
+    "comfy_kitchen/scaled_mm_v2.py": "05d79ac082a51fb6624f94f878dfa8a1499f678b9b81274e54ce812cecde1262",
+    "comfy_kitchen/backends/eager/quantization.py": "4412eb5bbd12cb2c9a09c5c9e076e744e16bf39632fe624e4df739b84681ef12",
+    "comfy_kitchen/tensor/base.py": "48cacf3a869f52c517ede27aa69f222ad23e54847d0d9007e1ce6ae9960a5332",
+    "comfy_kitchen-0.2.40.dist-info/METADATA": "d31268fcbfd2c7e6dc7ad5aee35519549c1a7e07e53ec83cb3c007e5f185a51f"
+  },
+  "required_additional_dependencies": [
+    {
+      "name": "packaging",
+      "version": "25.0",
+      "filename": "packaging-25.0-py3-none-any.whl",
+      "bytes": 66469,
+      "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484",
+      "path": "docs/compatibility/amd-wsl-packaging-decoder-loading-evidence/packaging-25.0-py3-none-any.whl",
+      "source": "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl"
+    }
+  ],
+  "overlay": {
+    "status": "PASS",
+    "name": "packaging",
+    "version": "25.0",
+    "archive_sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484",
+    "bytes": 66469,
+    "payload_files": 23,
+    "expanded_bytes": 238344,
+    "installations": 0,
+    "extraction": false,
+    "downloads": false
+  },
+  "offline_python_sources": 66,
+  "required_external_roots": [
+    "packaging",
+    "torch"
+  ],
+  "optional_backend_or_platform_roots": [
+    "_manylinux",
+    "nvidia",
+    "torch_npu",
+    "triton"
+  ],
+  "offline_tests": {
+    "guard_suite_cases": 106,
+    "guard_suite_passed": 105,
+    "optional_cache_skipped": 1,
+    "explicit_cache_cases_passed": 18,
+    "distinct_passed": 106
+  },
+  "independent_review": true,
+  "full_Linux_import_and_HIP": "PENDING",
+  "WSL_launches": 0,
+  "GPU_operations": 0,
+  "downloads": 0,
+  "installations": 0,
+  "V2_writes": 0,
+  "original_runtime_packages": 13,
+  "neural_admission_bytes": 23622320128,
+  "operator_prelaunch_bytes": 21687472128,
+  "operator_ready_bytes": 19327352832,
+  "live_host_floor_bytes": 12884901888
+}

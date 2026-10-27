@@ -8,7 +8,7 @@ import amd_pixal3d_memory_v2 as telemetry
 from amd_pixal3d_standalone_v2 import desktop_absent,allocated_size,linux_path,accept_operators
 
 FILES=['scripts/compatibility/'+n for n in ('Invoke-Pixal3DOperatorsV3.ps1','amd_pixal3d_operator_host_v3.py','amd_pixal3d_operator_guest_v3.py',
-    'amd_pixal3d_operator_ops_v3.py','amd_pixal3d_operator_common_v3.py','test_amd_pixal3d_operator_v3.py','amd_pixal3d_wheel_payload.py','test_amd_pixal3d_wheel_payload.py','amd_pixal3d_standalone_v2.py',
+    'amd_pixal3d_operator_ops_v3.py','amd_pixal3d_operator_common_v3.py','test_amd_pixal3d_operator_v3.py','amd_pixal3d_wheel_payload.py','test_amd_pixal3d_wheel_payload.py','amd_pixal3d_kitchen_overlay.py','test_amd_pixal3d_kitchen_overlay.py','amd_pixal3d_standalone_v2.py',
     'amd_pixal3d_guest_v2.py','amd_pixal3d_memory_v2.py','amd_pixal3d_proof_common_v2.py','amd_pixal3d_proof_common.py','amd_zombie_d_handoff.py','amd_zombie_ram_diagnostic.py','amd_forward_owned_job.py')]+[
     'docs/compatibility/amd-pixal3d-operator-v3-contract.json','docs/compatibility/amd-pixal3d-standalone-hip-v2-contract.json',
     'docs/compatibility/amd-pixal3d-standalone-hip-contract.json','docs/compatibility/amd-pixal3d-native-single-image-proof-contract.json']
@@ -146,7 +146,7 @@ class Runner:
 
 def run(commit,approved=False):
     if not approved:raise RuntimeError('Separate user approval of operator-only profile required; no execution')
-    cfg=c.lock();token=uuid.uuid4().hex;case=c.plain(c.ROOT.parent/'artifacts')/('amd-pixal3d-operators-v3-payload-auth-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+token)
+    cfg=c.lock();token=uuid.uuid4().hex;case=c.plain(c.ROOT.parent/'artifacts')/('amd-pixal3d-operators-v3-kitchen-overlay-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+token)
     windows=c.plain(cfg['windows_root'])
     if case.exists() or windows.exists():raise FileExistsError('Exclusive v3 paths already used; no retry')
     case.mkdir(exist_ok=False);runner=None;lease=None
@@ -158,13 +158,16 @@ def run(commit,approved=False):
         verify_publication(commit);desktop_absent()
         if c.digest(sys.executable)!=cfg['windows_python_sha256']:raise ValueError('Qualified Windows Python differs')
         sys.addaudithook(c.v2.cache_policy(c.plain(cfg['cache_root'])))
+        sys.addaudithook(c.v2.cache_policy(c.overlay.archive_path()))
         runner=Runner(case,token,cfg)
         def admitted():
             summary['stages']['operator_profile_admission']=dict(status='PASS')
             windows.mkdir(exist_ok=False);c.save(windows/'owner.json',dict(token=token,case=str(case),profile='PROPOSED_OPERATOR_V3_EXPLICITLY_ACCEPTED'))
             c.save(case/'payload.json',dict(hip_payload=c.evidence_document(cfg,'HIP-wheel.json'),reused_v2_environment=cfg['guest_root'],provisioning=False,downloads=False))
         c.admit_operator(runner.memory,time.sleep,lambda row:c.journal(case/'admission.jsonl','operator-profile',**row),admitted)
-        lease=c.CacheReadLease(cfg);lease.__enter__();runner.invoke('operators')
+        lease=c.CacheReadLease(cfg);lease.__enter__()
+        c.save(case/'dependency-overlay.json',c.overlay.hold_read_only(lease))
+        runner.invoke('operators')
         result=json.loads((case/'operators/result.json').read_text());accept_operators(result,result['guest_cleanup'] if 'guest_cleanup' in result else json.loads((case/'operators/cleanup.json').read_text()))
         summary['classification']='PASS_MODEL_FREE_HIP';summary['next']='STOP_FOR_REVIEW_NO_GENERATION'
     except BaseException as exc:
@@ -183,7 +186,7 @@ def run(commit,approved=False):
             if result.exists():
                 if result.stat().st_size>8*1024**2:raise ValueError('Bounded result required')
                 row=json.loads(result.read_text());summary['operators']=row.get('operators',summary['operators'])
-                for key in ('memory_peak','memory_release','Linux_worker_peak_RSS_bytes','seconds','error','cleanup_error','read_only_environment_preserved'):
+                for key in ('memory_peak','memory_release','Linux_worker_peak_RSS_bytes','seconds','error','cleanup_error','read_only_environment_preserved','dependency_overlay'):
                     if key in row:summary['operator_'+key]=row[key]
             if runner and summary['stages']['operator_profile_admission']['status']=='PASS':summary['post_exit_host_memory']=runner.observe('final-post-exit','closeout')
         except BaseException as exc:summary.update(classification='FAIL',evidence_or_closeout_error=str(exc))

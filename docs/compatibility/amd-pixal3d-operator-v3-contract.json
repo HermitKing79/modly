@@ -2,8 +2,8 @@
   "schema": "modly.pixal3d.operator-only.proposed.v3",
   "v2_contract_canonical_sha256": "53e182f1edb3d5d39cdb690c74eff4fe08007892d277d46d42e7f07fca5ca2cd",
   "guest_root": "/home/modly/pixal3d-native-proof-v2",
-  "temporary_guest_root": "/home/modly/pixal3d-operator-proof-v3-payload-auth",
-  "windows_root": "D:/AI/Modly-Pixal3D-Operators-v3-payload-auth",
+  "temporary_guest_root": "/home/modly/pixal3d-operator-proof-v3-kitchen-overlay",
+  "windows_root": "D:/AI/Modly-Pixal3D-Operators-v3-kitchen-overlay",
   "v2_evidence_case": "amd-pixal3d-standalone-v2-20261026T185014Z-8bad81fb19a146eeb36505e309f15fa3",
   "evidence_files": {
     "summary.json": {
@@ -39,5 +39,14 @@
     "spacing_seconds": 4,
     "neural_admission_unchanged_bytes": 23622320128,
     "live_host_floor_unchanged_bytes": 12884901888
+  },
+  "runtime_overlay": {
+    "name": "packaging",
+    "version": "25.0",
+    "filename": "packaging-25.0-py3-none-any.whl",
+    "bytes": 66469,
+    "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484",
+    "path": "docs/compatibility/amd-wsl-packaging-decoder-loading-evidence/packaging-25.0-py3-none-any.whl",
+    "source": "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl"
   }
 }

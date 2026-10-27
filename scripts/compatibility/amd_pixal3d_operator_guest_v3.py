@@ -24,6 +24,7 @@ def controller(case,token):
     owner=dict(pid=own['pid'],pgid=own['pgid'],start_ticks=own['start_ticks'],token=token,stage='operators')
     c.save(leaf/'ownership.json',owner)
     sys.addaudithook(c.v2.cache_policy(root))
+    sys.addaudithook(c.v2.cache_policy(c.overlay.archive_path()))
     sys.addaudithook(c.v2.cache_policy(Path('/mnt/d/AI/Modly-Pixal3D-Proof-v1')))
     record=dict(classification='FAIL',stage='operators',child_started=False);before=None;child=None;began=time.monotonic();peak=0;last=0
     def resources(phase):
@@ -80,6 +81,7 @@ def controller(case,token):
             record['read_only_environment_preserved']=before is not None and before==after
             record['environment_snapshot_sha256']=dict(before=snapshot_digest(before),after=snapshot_digest(after))
             if before is None or before!=after:raise RuntimeError('Existing environment identity changed; no restoration/repair attempted')
+            record['dependency_overlay_after']=c.overlay.authenticate(lambda:resources('operators'))
             record['linux_memory_at_controller_exit']=dict(utc=c.now(),**linux_memory())
         except BaseException as exc:record.update(classification='FAIL',environment_or_exit_error=str(exc))
         members=[r for r in process_rows(owner['pgid']) if r['pid']!=os.getpid()]

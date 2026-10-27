@@ -2,6 +2,7 @@
 import hashlib,json,os,re,sys,time,zipfile
 from pathlib import Path
 import amd_pixal3d_proof_common_v2 as v2
+import amd_pixal3d_kitchen_overlay as overlay
 from amd_pixal3d_proof_common_v2 import ROOT,GIB,OPERATORS,now,digest,plain,inside,save,journal,require_resources,verify,CacheReadLease
 CONTRACT=ROOT/'docs/compatibility/amd-pixal3d-operator-v3-contract.json'
 
@@ -10,10 +11,11 @@ def lock():
     if proposed['schema']!='modly.pixal3d.operator-only.proposed.v3':raise ValueError('Unknown operator profile')
     if hashlib.sha256(v2.CONTRACT.read_text().encode()).hexdigest()!=proposed['v2_contract_canonical_sha256']:raise ValueError('V2 contract changed')
     if proposed['execution_authorized_in_chat'] or proposed['generation_authorized']:raise ValueError('Preparation-only proposal required')
+    if proposed.get('runtime_overlay')!=overlay.PIN:raise ValueError('Exact authenticated packaging overlay required')
     value=dict(base,**proposed);p=value['operator_policy']
     ready=base['guards']['live_host_RAM_floor_bytes']+base['guards']['CPU_postprocess']['commit_bytes']
     if p['ready_bytes']!=ready or p['observed_startup_decline_bytes']!=2360119296 or p['prelaunch_bytes']!=ready+2360119296:raise ValueError('Measured budget derivation changed')
-    if value['guest_root']!='/home/modly/pixal3d-native-proof-v2' or value['temporary_guest_root']!='/home/modly/pixal3d-operator-proof-v3-payload-auth' or value['windows_root']!='D:/AI/Modly-Pixal3D-Operators-v3-payload-auth':raise ValueError('Exact operator-only roots required')
+    if value['guest_root']!='/home/modly/pixal3d-native-proof-v2' or value['temporary_guest_root']!='/home/modly/pixal3d-operator-proof-v3-kitchen-overlay' or value['windows_root']!='D:/AI/Modly-Pixal3D-Operators-v3-kitchen-overlay':raise ValueError('Exact operator-only roots required')
     return value
 
 def require_profile(row,floor):
@@ -111,4 +113,4 @@ def authenticate_environment(cfg,progress=None,archive_report=None):
         if (site/name).exists():raise RuntimeError('Unapproved Python startup module')
     if any(p for p in site.rglob('*.pyc') if 'pip' not in p.relative_to(site).parts):raise RuntimeError('Unauthenticated runtime bytecode; no removal or repair')
     return dict(status='PASS',packages=installed,files_verified=sum(r['files_verified'] for r in installed),bytes_verified=sum(r['bytes_verified'] for r in installed),
-                env=str(env),writes=0,provisioning=False,downloads=False,import_inventory=inventory,configuration=configuration)
+                env=str(env),writes=0,provisioning=False,downloads=False,import_inventory=inventory,configuration=configuration,dependency_overlay=overlay.authenticate(progress))
