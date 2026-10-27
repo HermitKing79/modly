@@ -3,7 +3,8 @@ import argparse,hashlib,json,os,signal,subprocess,sys,time
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).parent))
 import amd_pixal3d_operator_common_v3 as c
-from amd_pixal3d_guest_v2 import owned_members,process_rows,baseline,child_environment,capture_child
+from amd_pixal3d_guest_v2 import baseline,child_environment
+from amd_pixal3d_owned_proc_v3 import owned_members,process_rows,signal_verified,ProcFS
 from amd_pixal3d_memory_v2 import linux_memory
 
 def validate_case(case,token):
@@ -15,12 +16,45 @@ def validate_case(case,token):
 
 def snapshot_digest(value):return hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 
+def harvest_worker(record,leaf):
+    path=leaf/'child-result.json'
+    if not path.exists():return None
+    if path.stat().st_size>8*1024**2:raise RuntimeError('Bounded child result required')
+    data=json.loads(path.read_text())
+    if data.get('classification') not in ('PASS','FAIL'):raise RuntimeError('Invalid child classification')
+    record['worker_result']=data
+    for key in ('operators','dependency_overlay','worker_failure','audit_denial_records','memory_peak','memory_release','Linux_worker_peak_RSS_bytes'):
+        if key in data:record[key]=data[key]
+    if 'error' in data:record['worker_error']=data['error']
+    if data['classification']!='PASS':record['classification']='FAIL'
+    return data
+
+def reap_child(record,child):
+    if child is None:return
+    try:
+        if child.poll() is None:
+            record['child_forced_cleanup']=True;record['classification']='FAIL'
+            child.terminate()
+            try:child.wait(timeout=5)
+            except subprocess.TimeoutExpired:child.kill();child.wait(timeout=5)
+        else:child.wait(timeout=5)
+        record['child_reaped']=True;record['child_exit_code']=child.returncode
+    except BaseException as exc:record.update(classification='FAIL',child_cleanup_error=str(exc),child_exit_unverified=True)
+    try:
+        if child.stdin and not child.stdin.closed:child.stdin.close()
+    except BaseException as exc:record.update(classification='FAIL',child_stdin_close_error=str(exc))
+
 def controller(case,token):
-    case=validate_case(case,token);cfg=c.lock();leaf=c.plain(case/'operators');root=c.plain(cfg['guest_root']);temporary=c.plain(cfg['temporary_guest_root'])
+    case=validate_case(case,token);cfg=c.lock()
+    if cfg['operator_execution_hold']:raise RuntimeError('NO_GO: operator execution held pending identified audit event/path')
+    leaf=c.plain(case/'operators');root=c.plain(cfg['guest_root']);temporary=c.plain(cfg['temporary_guest_root'])
     if os.environ.get('MODLY_PIXAL_PROOF_TOKEN')!=token:raise RuntimeError('Exec-time nonce required')
     if os.getpgrp()!=os.getpid():os.setsid()
     if os.getpgrp()!=os.getpid():raise RuntimeError('Own group required')
-    own=next(r for r in process_rows(os.getpgrp()) if r['pid']==os.getpid())
+    ProcFS().require_pidfds()
+    def observe_proc(row):c.journal(leaf/'ownership-observations.jsonl','proc-check',**row)
+    own=next(r for r in process_rows(os.getpgrp(),report=observe_proc) if r['pid']==os.getpid())
+    if own['token']!=token:raise RuntimeError('Controller nonce unreadable or mismatched')
     owner=dict(pid=own['pid'],pgid=own['pgid'],start_ticks=own['start_ticks'],token=token,stage='operators')
     c.save(leaf/'ownership.json',owner)
     sys.addaudithook(c.v2.cache_policy(root))
@@ -30,7 +64,7 @@ def controller(case,token):
     def resources(phase):
         nonlocal peak,last
         if time.monotonic()-last<.25:return
-        last=time.monotonic();rows=process_rows(owner['pgid']);owned_members(owner,rows);resident=sum(r['RSS_bytes'] for r in rows);peak=max(peak,resident)
+        last=time.monotonic();rows=process_rows(owner['pgid'],report=observe_proc);owned_members(owner,rows);resident=sum(r['RSS_bytes'] for r in rows);peak=max(peak,resident)
         free=__import__('shutil').disk_usage('/home/modly').free
         c.journal(leaf/'resources.jsonl',phase,RSS_bytes=resident,members=rows,guest_free_disk_bytes=free)
         if resident>6*c.GIB or free<cfg['guest_disk_floor_bytes']:raise RuntimeError('Original RSS/guest disk stop failed')
@@ -65,17 +99,14 @@ def controller(case,token):
                     phase=json.loads(complete[-1]);allowed=120 if phase['kind']=='CPU' else 180
                     if time.monotonic()-phase['monotonic_start']>allowed:raise TimeoutError('Original CPU/GPU phase deadline')
             time.sleep(.25)
-        record['child_exit_code']=child.returncode;data=capture_child(record,leaf)
+        record['child_exit_code']=child.returncode;data=harvest_worker(record,leaf)
         if child.returncode or not data or data['classification']!='PASS':raise RuntimeError('Operator child failed; no retry')
         record['classification']='PASS'
     except BaseException as exc:record['error']=type(exc).__name__+': '+str(exc)
     finally:
-        if child and child.poll() is None:
-            child.terminate()
-            try:child.wait(timeout=5)
-            except subprocess.TimeoutExpired:child.kill();child.wait(timeout=5)
-            record['child_forced_cleanup']=True;record['classification']='FAIL'
-        if child and child.stdin and not child.stdin.closed:child.stdin.close()
+        reap_child(record,child)
+        try:harvest_worker(record,leaf)
+        except BaseException as exc:record.update(classification='FAIL',worker_evidence_error=str(exc))
         try:
             after=c.environment_snapshot(root);c.save(leaf/'environment-after.json',after)
             record['read_only_environment_preserved']=before is not None and before==after
@@ -84,10 +115,13 @@ def controller(case,token):
             record['dependency_overlay_after']=c.overlay.authenticate(lambda:resources('operators'))
             record['linux_memory_at_controller_exit']=dict(utc=c.now(),**linux_memory())
         except BaseException as exc:record.update(classification='FAIL',environment_or_exit_error=str(exc))
-        members=[r for r in process_rows(owner['pgid']) if r['pid']!=os.getpid()]
-        if members:record.update(classification='FAIL',remaining_members=members)
+        try:
+            rows=process_rows(owner['pgid'],report=observe_proc);owned_members(owner,rows)
+            members=[r for r in rows if r['pid']!=os.getpid()]
+            if members:record.update(classification='FAIL',remaining_members=members)
+        except BaseException as exc:record.update(classification='FAIL',ownership_exit_error=str(exc))
         record.update(seconds=time.monotonic()-began,max_sampled_Linux_process_tree_RSS_bytes=peak,RSS_polling_interval_seconds=.25,
-            natural_child_exit=not record.get('child_forced_cleanup',False),provisioning=False,downloads=False)
+            natural_child_exit=(child is None or record.get('child_reaped',False)) and not record.get('child_forced_cleanup',False),provisioning=False,downloads=False)
         c.save(leaf/'result.json',record)
     return 0 if record['classification']=='PASS' else 2
 
@@ -96,11 +130,11 @@ def cleanup(case,token):
     if owner['token']!=token or owner['stage']!='operators' or owner['pid']!=owner['pgid']:raise RuntimeError('Foreign ownership receipt')
     members=process_rows(owner['pgid']);owned_members(owner,members);forced=bool(members)
     if members:
-        os.killpg(owner['pgid'],signal.SIGTERM);began=time.monotonic()
+        signal_verified(owner,signal.SIGTERM);began=time.monotonic()
         while process_rows(owner['pgid']) and time.monotonic()-began<5:time.sleep(.05)
         members=process_rows(owner['pgid']);owned_members(owner,members)
         if members:
-            os.killpg(owner['pgid'],signal.SIGKILL);began=time.monotonic()
+            signal_verified(owner,signal.SIGKILL);began=time.monotonic()
             while process_rows(owner['pgid']) and time.monotonic()-began<5:time.sleep(.05)
     if process_rows(owner['pgid']):raise RuntimeError('Owned group exit unverified; no distro termination')
     c.save(leaf/'cleanup.json',dict(group_empty=True,natural_exit=not forced,forced_owned_group_cleanup=forced,no_distro_termination=True))

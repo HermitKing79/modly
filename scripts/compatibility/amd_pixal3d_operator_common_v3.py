@@ -12,6 +12,7 @@ def lock():
     if hashlib.sha256(v2.CONTRACT.read_text().encode()).hexdigest()!=proposed['v2_contract_canonical_sha256']:raise ValueError('V2 contract changed')
     if proposed['execution_authorized_in_chat'] or proposed['generation_authorized']:raise ValueError('Preparation-only proposal required')
     if proposed.get('runtime_overlay')!=overlay.PIN:raise ValueError('Exact authenticated packaging overlay required')
+    if proposed.get('operator_execution_hold') is not True:raise ValueError('Unproven audit trigger requires execution hold')
     value=dict(base,**proposed);p=value['operator_policy']
     ready=base['guards']['live_host_RAM_floor_bytes']+base['guards']['CPU_postprocess']['commit_bytes']
     if p['ready_bytes']!=ready or p['observed_startup_decline_bytes']!=2360119296 or p['prelaunch_bytes']!=ready+2360119296:raise ValueError('Measured budget derivation changed')

@@ -1,0 +1,48 @@
+{
+  "schema": "modly.pixal3d.audit-ownership.investigation.v1",
+  "base_commit": "bc9fa22763b44e5dc104085e0c47c81ff4c1bc4b",
+  "decision": "NO_GO_OPERATOR_RETRY",
+  "historical_audit_event": "UNKNOWN",
+  "historical_audit_path": "UNKNOWN",
+  "historical_audit_caller": "UNKNOWN",
+  "historical_permission_mechanism": "UNKNOWN",
+  "mutation_exceptions_added": 0,
+  "operator_execution_hold": true,
+  "offline_suite": {
+    "cases": 138,
+    "passed": 137,
+    "skipped_unchanged_archive_audit": 1
+  },
+  "new_targeted_cases": 32,
+  "real_CPU_control": {
+    "classification": "CPU_CONTROL_DENIAL_CAPTURED",
+    "event": "os.remove",
+    "operation_allowed": false,
+    "caller": "_get_default_tempdir",
+    "historical_trigger_proven": false,
+    "GPU_operations": 0
+  },
+  "live_Linux_proc_or_signals_tested": false,
+  "pidfd_target_kernel_qualification": "NOT_RUN",
+  "preservation": {
+    "historical_file_hashes": 3346,
+    "protected_identities": 100,
+    "retained_records": 88,
+    "cached_wheel_metadata": 13,
+    "old_refs_unchanged": 179,
+    "audit_evidence_files": 27,
+    "WSL_launches_in_session": 0,
+    "environment_writes": 0
+  },
+  "original_failed_case_files": 27,
+  "WSL_launches": 0,
+  "GPU_operations": 0,
+  "live_admission_readings": 0,
+  "downloads": 0,
+  "environment_writes": 0,
+  "neural_admission_bytes": 23622320128,
+  "live_host_floor_bytes": 12884901888,
+  "operator_prelaunch_bytes": 21687472128,
+  "operator_ready_bytes": 19327352832,
+  "new_operator_handoff": false
+}

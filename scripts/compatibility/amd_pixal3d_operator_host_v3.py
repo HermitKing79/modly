@@ -8,7 +8,7 @@ import amd_pixal3d_memory_v2 as telemetry
 from amd_pixal3d_standalone_v2 import desktop_absent,allocated_size,linux_path,accept_operators
 
 FILES=['scripts/compatibility/'+n for n in ('Invoke-Pixal3DOperatorsV3.ps1','amd_pixal3d_operator_host_v3.py','amd_pixal3d_operator_guest_v3.py',
-    'amd_pixal3d_operator_ops_v3.py','amd_pixal3d_operator_common_v3.py','test_amd_pixal3d_operator_v3.py','amd_pixal3d_wheel_payload.py','test_amd_pixal3d_wheel_payload.py','amd_pixal3d_kitchen_overlay.py','test_amd_pixal3d_kitchen_overlay.py','amd_pixal3d_standalone_v2.py',
+    'amd_pixal3d_operator_ops_v3.py','amd_pixal3d_operator_common_v3.py','test_amd_pixal3d_operator_v3.py','amd_pixal3d_wheel_payload.py','test_amd_pixal3d_wheel_payload.py','amd_pixal3d_kitchen_overlay.py','test_amd_pixal3d_kitchen_overlay.py','amd_pixal3d_operator_audit_v3.py','amd_pixal3d_owned_proc_v3.py','test_amd_pixal3d_owned_proc_v3.py','test_amd_pixal3d_operator_audit_v3.py','amd_pixal3d_standalone_v2.py',
     'amd_pixal3d_guest_v2.py','amd_pixal3d_memory_v2.py','amd_pixal3d_proof_common_v2.py','amd_pixal3d_proof_common.py','amd_zombie_d_handoff.py','amd_zombie_ram_diagnostic.py','amd_forward_owned_job.py')]+[
     'docs/compatibility/amd-pixal3d-operator-v3-contract.json','docs/compatibility/amd-pixal3d-standalone-hip-v2-contract.json',
     'docs/compatibility/amd-pixal3d-standalone-hip-contract.json','docs/compatibility/amd-pixal3d-native-single-image-proof-contract.json']
@@ -146,7 +146,9 @@ class Runner:
 
 def run(commit,approved=False):
     if not approved:raise RuntimeError('Separate user approval of operator-only profile required; no execution')
-    cfg=c.lock();token=uuid.uuid4().hex;case=c.plain(c.ROOT.parent/'artifacts')/('amd-pixal3d-operators-v3-kitchen-overlay-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+token)
+    cfg=c.lock()
+    if cfg['operator_execution_hold']:raise RuntimeError('NO_GO: audit event/path unproven; no operator retry or execution handoff')
+    token=uuid.uuid4().hex;case=c.plain(c.ROOT.parent/'artifacts')/('amd-pixal3d-operators-v3-kitchen-overlay-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+token)
     windows=c.plain(cfg['windows_root'])
     if case.exists() or windows.exists():raise FileExistsError('Exclusive v3 paths already used; no retry')
     case.mkdir(exist_ok=False);runner=None;lease=None
@@ -186,7 +188,7 @@ def run(commit,approved=False):
             if result.exists():
                 if result.stat().st_size>8*1024**2:raise ValueError('Bounded result required')
                 row=json.loads(result.read_text());summary['operators']=row.get('operators',summary['operators'])
-                for key in ('memory_peak','memory_release','Linux_worker_peak_RSS_bytes','seconds','error','cleanup_error','read_only_environment_preserved','dependency_overlay'):
+                for key in ('memory_peak','memory_release','Linux_worker_peak_RSS_bytes','seconds','error','cleanup_error','read_only_environment_preserved','dependency_overlay','worker_error','worker_failure','audit_denial_records'):
                     if key in row:summary['operator_'+key]=row[key]
             if runner and summary['stages']['operator_profile_admission']['status']=='PASS':summary['post_exit_host_memory']=runner.observe('final-post-exit','closeout')
         except BaseException as exc:summary.update(classification='FAIL',evidence_or_closeout_error=str(exc))
@@ -204,7 +206,7 @@ def run(commit,approved=False):
 
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--run',action='store_true');parser.add_argument('--commit');parser.add_argument('--approve-operator-profile-v3',action='store_true');args=parser.parse_args(argv)
-    if not args.run:print('DRY_RUN: proposed v3 awaiting separate approval; no admission, WSL, environment changes or GPU');return 0
+    if not args.run:print('DRY_RUN: NO_GO; audit trigger unproven, execution held; no admission, WSL or GPU');return 0
     if not args.approve_operator_profile_v3 or not args.commit:parser.error('Separate --approve-operator-profile-v3 and exact --commit required')
     return run(args.commit,approved=True)
 

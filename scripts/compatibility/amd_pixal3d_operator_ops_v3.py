@@ -5,6 +5,7 @@ from types import SimpleNamespace
 from typing import Optional,Tuple,Union
 sys.path.insert(0,str(Path(__file__).parent))
 import amd_pixal3d_operator_common_v3 as c
+from amd_pixal3d_operator_audit_v3 import AuditLog,exception_evidence
 
 def extract(path,names,namespace):
     tree=ast.parse(Path(path).read_text(encoding='utf-8'))
@@ -49,7 +50,15 @@ def quantize(rows):
 
 def rotate(rows,h):return [[sum(value*column for value,column in zip(row,col)) for col in zip(*h)] for row in rows]
 
-def policy(root,case):
+def policy(root,case,denied=None):
+    def reject(message,event,args):
+        if denied:denied(event,args)
+        raise RuntimeError(message)
+    def canonical(value,event,args):
+        try:return c.plain(value)
+        except (ValueError,OSError):
+            if denied:denied(event,args)
+            raise
     def audit(event,args):
         if event in ('subprocess.Popen','os.system','os.posix_spawn','os.fork','socket.connect','socket.bind'):raise RuntimeError('No compile, subprocess or network in operator worker')
         if event=='import':
@@ -61,25 +70,29 @@ def policy(root,case):
         if event=='open' and isinstance(args[0],(str,bytes,os.PathLike)):
             path=Path(os.fsdecode(args[0]));writing=any(v in str(args[1] or '') for v in 'wax+') or bool(args[2]&(os.O_WRONLY|os.O_RDWR|os.O_CREAT|os.O_TRUNC|os.O_APPEND))
             if writing:
-                path=c.plain(path)
-                if not (path.is_relative_to(root) or path.is_relative_to(case)):raise RuntimeError('Operator write outside isolated roots')
+                path=canonical(path,event,args)
+                if not (path.is_relative_to(root) or path.is_relative_to(case)):reject('Operator write outside isolated roots',event,args)
             elif path.suffix.lower() in ('.safetensors','.pt','.pth','.ckpt'):raise RuntimeError('No weights/checkpoints in model-free proof')
         if event=='os.mkdir':
-            path=c.plain(args[0])
-            if not(path.is_relative_to(root) or path.is_relative_to(case)):raise RuntimeError('Foreign directory creation')
-        if event in ('os.remove','os.rename','os.rmdir','os.link','os.symlink','os.truncate'):raise RuntimeError('Destructive mutation forbidden in operator proof')
+            path=canonical(args[0],event,args)
+            if not(path.is_relative_to(root) or path.is_relative_to(case)):reject('Foreign directory creation',event,args)
+        if event in ('os.remove','os.rename','os.rmdir','os.link','os.symlink','os.truncate'):reject('Destructive mutation forbidden in operator proof',event,args)
     return audit
 
 def run(case,token):
     from amd_pixal3d_operator_guest_v3 import validate_case,baseline
-    case=validate_case(case,token);cfg=c.lock();root=c.plain(cfg['guest_root']);leaf=case/'operators'
+    case=validate_case(case,token);cfg=c.lock()
+    if cfg['operator_execution_hold']:raise RuntimeError('NO_GO: audit trigger unproven; operator execution held')
+    root=c.plain(cfg['guest_root']);leaf=case/'operators'
     if sys.stdin.buffer.read(4)!=b'GO\n' or os.environ.get('MODLY_PIXAL_PROOF_TOKEN')!=token:raise RuntimeError('Owned GO/exec nonce required before imports')
     if Path(sys.prefix)!=root/'.venv' or sys.version.split()[0]!=cfg['runtime']['python']:raise RuntimeError('Only the isolated qualified Python prefix')
-    sys.addaudithook(policy(c.plain(cfg['temporary_guest_root']),case))
+    audit_log=AuditLog(leaf/'audit-denials.jsonl')
+    sys.addaudithook(policy(c.plain(cfg['temporary_guest_root']),case,audit_log))
     result=dict(classification='FAIL',operators={name:dict(status='NOT_RUN') for name in c.OPERATORS},no_weights_or_models=True)
     result['worker_identity']=dict(pid=os.getpid(),prefix=sys.prefix,python=sys.executable)
     before=baseline();torch=None;current='gfx1201'
-    def phase(name,kind):c.journal(leaf/'operator-phases.jsonl',name,kind=kind,monotonic_start=time.monotonic())
+    def phase(name,kind):
+        audit_log.phase=name;c.journal(leaf/'operator-phases.jsonl',name,kind=kind,monotonic_start=time.monotonic())
     def tensor_check(actual,expected,atol,rtol):
         if actual.device.type!='cuda':raise RuntimeError('GPU output unexpectedly fell back to CPU')
         return assert_values(actual.detach().float().cpu().flatten().tolist(),expected,atol,rtol)
@@ -227,7 +240,7 @@ def run(case,token):
         for name,function in [('HIP_INT8',lambda:linear(False)),('HIP_ConvRot',lambda:linear(True)),('PyTorch_SDPA',sdpa),('NAF',naf_probe),('native_sparse',sparse_probe),('native_conversion',convert_probe)]:timed(name,function)
         result['classification']='PASS'
     except BaseException as exc:
-        result['error']=type(exc).__name__+': '+str(exc)
+        result['error']=type(exc).__name__+': '+str(exc);result['worker_failure']=exception_evidence(exc)
         if current is not None:result['operators'][current]=dict(status='FAIL',error=result['error'])
     finally:
         import resource
@@ -244,7 +257,9 @@ def run(case,token):
                 result['dependency_overlay']['exit_module_origins']=c.overlay.verify_loaded()
             if baseline()!=before:raise RuntimeError('Original runtime critical files changed')
         except BaseException as exc:result.update(classification='FAIL',cleanup_error=str(exc))
-        c.save(leaf/'child-result.json',result)
+        result['audit_denial_records']=audit_log.records
+        try:c.save(leaf/'child-result.json',result)
+        finally:audit_log.close()
     return 0 if result['classification']=='PASS' else 2
 
 def main(argv=None):

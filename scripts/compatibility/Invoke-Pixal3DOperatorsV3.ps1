@@ -3,7 +3,8 @@
 param([switch]$Run,[switch]$ApproveOperatorProfileV3,[string]$ExpectedCommit)
 $ErrorActionPreference='Stop'
 Set-StrictMode -Version Latest
-if(-not $Run){Write-Output 'DRY_RUN: operator-only v3 pending separate user approval. No RAM admission, WSL, install, download, model or GPU work.';exit 0}
+if(-not $Run){Write-Output 'DRY_RUN: NO_GO; unproven audit trigger, operator execution held. No RAM admission, WSL, install, download, model or GPU work.';exit 0}
+throw 'NO_GO: audit event/path remains unproven; no new operator execution handoff'
 if(-not $ApproveOperatorProfileV3){throw 'Separate approval required for proposed operator-only RAM profile; no execution'}
 if($ExpectedCommit -notmatch '^[0-9a-f]{40}$'){throw 'Exact published ExpectedCommit required'}
 $python='C:\Users\wattz\AppData\Local\Programs\Python\Python312\python.exe'
