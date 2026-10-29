@@ -120,6 +120,41 @@ class Streaming(unittest.TestCase):
 
 @unittest.skipIf(backup is None, 'Implementation missing')
 class Guards(unittest.TestCase):
+    def test_exact_owner_validator_available(self):
+        self.assertTrue(callable(getattr(backup,'verify_owner',None)), 'Exact owner validator missing')
+
+    def test_owner_pid_parent_token_and_schema_spoofing_rejected(self):
+        payload={'token':'a'*32};owner={'pid':1234,'parent':5678,'token':'a'*32}
+        backup.verify_owner(payload,owner,1234,5678)
+        bad=[dict(owner,pid=2222),dict(owner,parent=2222),dict(owner,token='b'*32),
+             dict(owner,pid='1234'),dict(owner,extra=True),{}]
+        for candidate in bad:
+            with self.assertRaisesRegex(RuntimeError,'Exact owner identity/GO'):backup.verify_owner(payload,candidate,1234,5678)
+        for token in ('b'*32,'short','A'*32,None,1234):
+            with self.assertRaisesRegex(RuntimeError,'Exact owner identity/GO'):backup.verify_owner({'token':token},owner,1234,5678)
+        with self.assertRaisesRegex(RuntimeError,'Exact owner identity/GO'):backup.verify_owner(payload,owner,2222,1234)
+
+    def test_worker_executable_is_authenticated_not_venv_redirector(self):
+        self.assertNotEqual(backup.worker_command()[0],str(backup.PYTHON))
+        self.assertEqual(backup.worker_command()[0],str(backup.WORKER_PYTHON))
+        with patch.object(backup,'digest',return_value='0'*64):
+            with self.assertRaisesRegex(RuntimeError,'worker executable'):backup.authenticate_worker_python()
+
+    def test_correct_hash_does_not_admit_wrong_base_path(self):
+        with tempfile.TemporaryDirectory(dir=TEMP) as d:
+            wrong=Path(d)/'wrong-base.exe';wrong.write_bytes(b'fixture')
+            with patch.object(sys,'_base_executable',str(wrong)),patch.object(backup,'digest',return_value=backup.WORKER_PYTHON_SHA):
+                with self.assertRaisesRegex(RuntimeError,'worker executable'):backup.authenticate_worker_python()
+
+    def test_old_venv_or_foreign_worker_command_rejected_before_spawn(self):
+        controller=backup.Controller()
+        original=backup.worker_command()
+        for executable in (str(backup.PYTHON),'C:/Windows/System32/wsl.exe','C:/foreign.exe'):
+            cmd=[executable,*original[1:]]
+            with patch.object(backup.subprocess,'Popen',side_effect=AssertionError('must not spawn')):
+                with self.assertRaisesRegex(RuntimeError,'Unapproved controller child'):
+                    controller.child(cmd,'forbidden',1,dict(token='a'*32))
+
     def test_helper_inventory_contains_partition_identity_and_owner_gate(self):
         helper=backup.HELPER.read_text()
         self.assertIn('Select-Object DiskNumber,PartitionNumber,DriveLetter,Offset,Size',helper)
@@ -139,7 +174,7 @@ class Guards(unittest.TestCase):
             def add(path):
                 if path==case:raise OSError('injected setup failure')
             pins.add.side_effect=add
-            with patch.object(backup,'CASE',case),patch.object(backup,'BACKUP',dest),patch.object(backup,'DESTINATION',dest/'ext4.vhdx'),patch.object(backup,'Pins',return_value=pins),patch.object(backup,'published'),patch.object(backup,'digest',return_value=backup.PYTHON_SHA),patch.object(backup,'authority',return_value={}):
+            with patch.object(backup,'CASE',case),patch.object(backup,'BACKUP',dest),patch.object(backup,'DESTINATION',dest/'ext4.vhdx'),patch.object(backup,'Pins',return_value=pins),patch.object(backup,'published'),patch.object(backup,'authenticate_worker_python'),patch.object(backup,'digest',return_value=backup.PYTHON_SHA),patch.object(backup,'authority',return_value={}):
                 self.assertEqual(backup.run('a'*40),1)
             self.assertEqual(json.loads((case/'final-result.json').read_text())['classification'],'FAIL')
             pins.close.assert_called_once()
@@ -321,6 +356,40 @@ class WindowsHandles(unittest.TestCase):
 
 @unittest.skipIf(backup is None or os.name != 'nt', 'Windows native fixture')
 class OwnedCleanup(unittest.TestCase):
+    def identity_stage(self, executable, expected_pass):
+        with tempfile.TemporaryDirectory(dir=TEMP) as d:
+            case=Path(d);(case/'tmp').mkdir();probe=case/'identity.py'
+            probe.write_text('import sys,os,json\nfrom pathlib import Path\nsys.path.insert(0,'+repr(str(Path(__file__).parent))+')\nimport amd_wsl_cold_backup as b\npayload=json.loads(sys.stdin.buffer.read(4097))\nowner=json.loads((Path('+repr(str(case))+')/"worker-owner.json").read_text())\nprint(json.dumps(dict(pid=os.getpid(),parent=os.getppid(),token=payload["token"])),flush=True)\nb.verify_owner(payload,owner,os.getpid(),os.getppid())\n')
+            cmd=[str(executable),'-B','-I','-S',str(probe)]
+            controller=backup.Controller()
+            with patch.object(backup,'CASE',case),patch.object(backup,'worker_command',return_value=cmd),patch.object(controller,'health'):
+                if expected_pass:
+                    observed=json.loads(controller.child(cmd,'identity',15,dict(token='a'*32,commit='b'*40)))
+                else:
+                    with self.assertRaisesRegex(RuntimeError,'Owned stage failed'):
+                        controller.child(cmd,'identity',15,dict(token='a'*32,commit='b'*40))
+                    observed=json.loads((case/'identity-stdout.txt').read_text())
+                owner=json.loads((case/'worker-owner.json').read_text())
+                self.assertEqual(observed['token'],owner['token'])
+                if expected_pass:
+                    self.assertEqual(observed,owner)
+                else:
+                    self.assertNotEqual(observed['pid'],owner['pid'])
+                    self.assertEqual(observed['parent'],owner['pid'])
+                    self.assertNotEqual(observed['parent'],owner['parent'])
+                    self.assertIn('Exact owner identity/GO',(case/'identity-stderr.txt').read_text())
+                row=json.loads((case/'identity-process.json').read_text())
+                self.assertTrue(row['job_attached'])
+                self.assertTrue(row['cleanup']['owned_tree_exit_verified'])
+                self.assertFalse(row['cleanup']['forced_job_cleanup'])
+
+    def test_qualified_venv_reproduces_two_field_identity_mismatch(self):
+        self.identity_stage(backup.PYTHON,False)
+
+    def test_authenticated_direct_worker_passes_actual_controller_handshake(self):
+        self.assertEqual(backup.worker_command()[0],str(backup.WORKER_PYTHON))
+        self.identity_stage(backup.WORKER_PYTHON,True)
+
     def stage(self, body, timeout, attach_failure=False):
         import subprocess
         with tempfile.TemporaryDirectory(dir=TEMP) as d:

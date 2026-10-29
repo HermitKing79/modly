@@ -24,13 +24,18 @@ from amd_zombie_ram_diagnostic import windows_memory
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = Path('D:/AI/Modly-WSL/Ubuntu24.04/ext4.vhdx')
-BACKUP = Path('E:/Modly-Cold-Backup-closed-solid-v1')
+BACKUP = Path('E:/Modly-Cold-Backup-closed-solid-v2')
 DESTINATION = BACKUP / 'ext4.vhdx'
-CASE = ROOT.parent / 'artifacts/amd-wsl-cold-backup-v1'
+CASE = ROOT.parent / 'artifacts/amd-wsl-cold-backup-v2'
 AUTHORITY = ROOT.parent / 'artifacts/amd-wsl-cold-backup-preparation-20261029-v1/authority.json'
 AUTHORITY_SHA = '7abb2681a30cf9bd758256b07faf10759e99719e14eb751b11cdcf64b7b82bc9'
 PYTHON = Path('D:/AI/Trellis2AMD/venv/Scripts/python.exe')
 PYTHON_SHA = '0b471133e110cfb53a061cad528ce8e517d7b9ac41a0a396c39ad795a487fc14'
+# The Windows venv executable redirects to a child. This stdlib-only -B -I -S
+# worker uses the exact same authenticated base interpreter directly so the
+# existing exact PID/parent contract remains true; no descendant exception.
+WORKER_PYTHON = Path('C:/Users/wattz/AppData/Local/Programs/Python/Python312/python.exe')
+WORKER_PYTHON_SHA = '4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a'
 PS = Path('C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe')
 HELPER = Path(__file__).with_name('amd_wsl_cold_backup_inspect.ps1')
 GIB = 1024**3
@@ -297,6 +302,26 @@ def published(commit):
             raise RuntimeError('Published backup source differs: ' + name)
 
 
+def worker_command():
+    return [str(WORKER_PYTHON), '-B', '-I', '-S', str(Path(__file__).resolve()), '--worker']
+
+
+def authenticate_worker_python():
+    if (os.path.normcase(str(plain(WORKER_PYTHON))) != os.path.normcase(str(plain(sys._base_executable)))
+            or digest(WORKER_PYTHON) != WORKER_PYTHON_SHA):
+        raise RuntimeError('Authenticated base worker executable differs')
+
+
+def verify_owner(payload, owner, pid, parent):
+    token = payload.get('token')
+    expected = dict(pid=pid, parent=parent, token=token)
+    if not isinstance(token, str) or not re.fullmatch('[a-f0-9]{32}', token) or owner != expected:
+        recorded = owner if isinstance(owner, dict) else {}
+        raise RuntimeError('Exact owner identity/GO required: '+json.dumps(dict(
+            recorded_pid=recorded.get('pid'), recorded_parent=recorded.get('parent'),
+            actual_pid=pid, actual_parent=parent, token_matches=recorded.get('token') == token)))
+
+
 class Controller:
     def __init__(self): self.start = time.monotonic(); self.last = 0; self.min_available = None
     def health(self, log=True):
@@ -316,8 +341,11 @@ class Controller:
     def child(self, cmd, prefix, timeout, payload=None):
         """Fixed helper or this worker; Job includes all owned descendants."""
         allowed = (cmd == helper_command('inventory') or
-                   cmd == [str(PYTHON), '-B', '-I', '-S', str(Path(__file__).resolve()), '--worker'])
+                   cmd == worker_command())
         if not allowed: raise RuntimeError('Unapproved controller child')
+        if payload is not None:
+            if cmd != worker_command(): raise RuntimeError('Worker handshake requires exact worker command')
+            authenticate_worker_python()
         job = OwnedJob(); child = None; attached = False; began = time.monotonic(); result = {}
         env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1', TEMP=str(CASE/'tmp'), TMP=str(CASE/'tmp'),
                    PSModuleAnalysisCachePath='NUL')
@@ -373,8 +401,7 @@ def worker():
     line = sys.stdin.buffer.read(4097)
     if len(line) > 4096: raise RuntimeError('Bounded owner handshake required')
     payload = json.loads(line); owner = json.loads((CASE/'worker-owner.json').read_text())
-    if (not re.fullmatch('[a-f0-9]{32}', payload.get('token', '')) or owner != dict(pid=os.getpid(), parent=os.getppid(), token=payload['token'])):
-        raise RuntimeError('Exact owner identity/GO required')
+    verify_owner(payload, owner, os.getpid(), os.getppid())
     a = authority(); pins = Pins(); source_before = None; result = dict(classification='FAIL', utc=utc())
     e_serial = next(x['VolumeSerialNumber'] for x in a['logical'] if x['DeviceID'] == 'E:')
     started = time.monotonic(); last = {}; destination_identity = None
@@ -451,6 +478,7 @@ def worker():
 def run(commit):
     published(commit)
     if digest(PYTHON) != PYTHON_SHA: raise RuntimeError('Qualified interpreter differs')
+    authenticate_worker_python()
     a = authority()
     # No evidence or destination reuse, fallback, resume, or retry.
     for p in (CASE, BACKUP):
@@ -471,7 +499,7 @@ def run(commit):
         save(CASE/'contract.json', dict(token=token, commit=commit, authority_sha256=AUTHORITY_SHA,
                                        process_limit_bytes=CAP, wall_seconds=DEADLINE, buffer_bytes=BUFFER,
                                        live_host_floor_bytes=LIVE, neural_gates_changed=False))
-        controller.child([str(PYTHON), '-B', '-I', '-S', str(Path(__file__).resolve()), '--worker'],
+        controller.child(worker_command(),
                          'backup-worker', DEADLINE, dict(token=token, commit=commit))
         worker_row = json.loads((CASE/'worker-result.json').read_text())
         if worker_row['classification'] != 'PASS' or worker_row.get('handles_closed') is not True:
