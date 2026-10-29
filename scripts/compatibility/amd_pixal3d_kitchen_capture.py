@@ -175,12 +175,13 @@ def controller(case,token):
     c.save(leaf/'ownership.json',owner)
     for path in (Path(cfg['guest_root']),Path('/mnt/d/AI/Modly-Pixal3D-Proof-v1'),c.overlay.archive_path()):sys.addaudithook(c.v2.cache_policy(c.plain(path)))
     record=dict(classification='FAIL',purpose=PURPOSE,numerical_checks=False,models_loaded=False,operator_execution_hold=True)
-    start=time.monotonic();last=0;peak=0;child=None;before=None
+    start=time.monotonic();last=0;peak=0;child=None;before=None;auth_progress=None
     def resources(auth=False):
         nonlocal last,peak
         if time.monotonic()-last<.25:return
         last=time.monotonic();rows=process_rows(owner['pgid'],report=observation);owned_members(owner,rows);rss=sum(r['RSS_bytes'] for r in rows);peak=max(peak,rss)
-        disk=__import__('shutil').disk_usage('/home/modly').free;c.journal(leaf/'resources.jsonl','capture',RSS_bytes=rss,members=rows,guest_free_disk_bytes=disk)
+        context=dict(authentication_progress=auth_progress.snapshot()) if auth and auth_progress is not None else {}
+        disk=__import__('shutil').disk_usage('/home/modly').free;c.journal(leaf/'resources.jsonl','capture',RSS_bytes=rss,members=rows,guest_free_disk_bytes=disk,**context)
         if rss>6*c.GIB or disk<cfg['guest_disk_floor_bytes']:raise RuntimeError('Existing process/disk floor failed')
         if time.monotonic()-start>(120 if auth else cfg['operator_seconds']):raise TimeoutError('Existing authentication/overall deadline')
     def launch(mode):
@@ -201,7 +202,8 @@ def controller(case,token):
     try:
         if temporary.exists():raise FileExistsError('Exclusive capture scratch already used; no retry')
         before=c.environment_snapshot(cfg['guest_root']);c.save(leaf/'environment-before.json',before)
-        auth=c.authenticate_environment(cfg,lambda:resources(True),lambda row:c.journal(leaf/'archive-authentication.jsonl','archive',**row));c.save(leaf/'environment-authentication.json',auth)
+        auth_progress=c.AuthenticationProgress(lambda:resources(True))
+        auth=c.authenticate_environment(cfg,auth_progress,lambda row:c.journal(leaf/'archive-authentication.jsonl','archive',**row));c.save(leaf/'environment-authentication.json',auth)
         c.save(leaf/'ready.json',dict(owner=owner,purpose=PURPOSE,pidfd_kernel_preflight=True,environment_authenticated=True))
         if sys.stdin.buffer.read(4)!=b'GO\n':raise RuntimeError('No host GO/EOF')
         temporary.mkdir(mode=0o700,exist_ok=False)
@@ -219,8 +221,11 @@ def controller(case,token):
         c.journal(leaf/'capture-phases.jsonl','query-only-release-observer',kind='CPU',monotonic_start=time.monotonic())
         if launch('--release-observer')!=0:raise RuntimeError('Query-only release observation failed')
         record['release_observer']=json.loads((leaf/'release-observer.json').read_text());record['classification']='PASS'
-    except BaseException as exc:record.update(classification='FAIL',error=type(exc).__name__+': '+str(exc),controller_failure=exception_evidence(exc))
+    except BaseException as exc:
+        if auth_progress is not None:auth_progress.finish('failed')
+        record.update(classification='FAIL',error=type(exc).__name__+': '+str(exc),controller_failure=exception_evidence(exc))
     finally:
+        if auth_progress is not None:record['authentication_progress']=auth_progress.snapshot()
         reap_child(record,child)
         try:
             denial=denial_record(leaf)

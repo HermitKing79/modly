@@ -45,7 +45,7 @@ def validate_v2_evidence(cfg):
     if child['baseline_critical_files_after']['lib/python3.12/site-packages/torch/version.py']!=cfg['runtime']['torch_version_file_sha256']:raise RuntimeError('Qualified runtime identity differs')
     return dict(status='PASS',packages=len(actual),pip_install_completed=True,natural_cleanup=True,operator_execution='NOT_RUN')
 
-from amd_pixal3d_wheel_payload import installed_path,verify_installed_wheel,wheel_manifest,verify_manifest
+from amd_pixal3d_wheel_payload import installed_path,verify_installed_wheel,wheel_manifest,verify_manifest,AuthenticationProgress
 
 
 def verify_import_inventory(site,trusted_paths,dist_infos):
@@ -82,36 +82,56 @@ def environment_snapshot(root):
     return rows
 
 def authenticate_environment(cfg,progress=None,archive_report=None):
+    progress=progress if isinstance(progress,AuthenticationProgress) else AuthenticationProgress(progress)
+    progress.enter('preflight',None,None,'runtime-identity')
     if os.name!='posix' or sys.version.split()[0]!=cfg['runtime']['python'] or sys.prefix!='/usr':raise RuntimeError('Qualified Linux system Python required')
+    progress.checkpoint='validate-v2-receipts-and-roots'
     validate_v2_evidence(cfg);root=plain(cfg['guest_root']);env=plain(root/'.venv');site=env/'lib/python3.12/site-packages'
+    progress.enter('preflight',None,'pyvenv.cfg','validate-venv-config')
     configuration=validate_venv_config((env/'pyvenv.cfg').read_text(),cfg['runtime']['python'])
+    progress.enter('preflight',None,'bin/python','compare-copied-interpreter')
     if plain(env/'bin/python').read_bytes()!=Path('/usr/bin/python3').read_bytes():raise RuntimeError('Qualified copied interpreter differs')
+    progress.enter('preflight',None,'pip-report.json','validate-pip-report')
     report=json.loads((root/'pip-report.json').read_text());expected={p['name'].lower().replace('_','-'):p for p in cfg['packages']}
     actual={p['metadata']['name'].lower().replace('_','-'):p for p in report['install']}
     if set(actual)!=set(expected):raise RuntimeError('Installed pip-report closure changed')
     installed=[];manifests=[];claims={};trusted_paths=set();cache=Path('/mnt/d/AI/Modly-Pixal3D-Proof-v1/downloads')
     for name,p in expected.items():
+        progress.enter('archive-manifests','archive',p['filename'],'validate-pip-package-record',package=name)
         record=actual[name]
         if record['metadata']['version']!=p['version'] or record['download_info']['archive_info']['hashes']['sha256']!=p['sha256']:raise RuntimeError('Installed report identity differs')
+        progress.checkpoint='locate-pinned-archive'
         archive=inside(cache,p['filename'])
         manifests.append((name,wheel_manifest(archive,p,env,site,progress,claims)))
         manifest=manifests[-1][1]
+        progress.checkpoint='report-archive-manifest'
         if archive_report:archive_report(dict(package=name,archive=manifest['archive'],archive_identity=manifest['archive_identity'],
             files=len(manifest['files']),expanded_bytes=manifest['expanded_bytes'],top_level_RECORD=manifest['record'],
             RECORD_identity=manifest['files'][manifest['record']],RECORD_discrepancies=manifest['RECORD_discrepancies']))
+    progress.package=None;progress.enter('archive-manifests',None,None,'aggregate-expanded-payload-budget')
     if sum(m['expanded_bytes'] for _,m in manifests)>20*GIB:raise RuntimeError('Original isolated growth budget exceeded')
     for name,manifest in manifests:
+        progress.enter('installed-files','installed',None,'installed-package-start',package=name)
         installed.append(dict(package=name,**verify_manifest(manifest,env,site,progress,trusted_paths)))
+    progress.package=None;progress.enter('inventory',None,None,'installed-import-inventory')
     dist_infos={n.split('/')[0] for n in trusted_paths if n.split('/')[0].endswith('.dist-info')}
     inventory=verify_import_inventory(site,trusted_paths,dist_infos)
-    for row in cfg['sources']:verify(inside(root/'ComfyUI',row['path']),row)
+    for row in cfg['sources']:
+        progress.enter('source-integrity',None,row['path'],'source-sha256');verify(inside(root/'ComfyUI',row['path']),row)
     # No arbitrary .pth/startup module/bytecode may execute from outside trusted wheel inventories.
+    progress.enter('startup-checks',None,'*.pth','startup-path-inventory')
     allowed_pth=set()
     for p in cfg['packages']:
+        progress.enter('startup-checks',None,p['filename'],'enumerate-approved-startup-paths',package=p['name'])
         with zipfile.ZipFile(cache/p['filename']) as z:allowed_pth.update(n for n in z.namelist() if n.endswith('.pth'))
+    progress.package=None;progress.enter('startup-checks',None,'*.pth','compare-startup-path-set')
     if {p.relative_to(site).as_posix() for p in site.glob('*.pth')}!=allowed_pth:raise RuntimeError('Unapproved Python startup path hook')
     for name in ('sitecustomize.py','usercustomize.py'):
+        progress.enter('startup-checks',None,name,'forbidden-startup-module')
         if (site/name).exists():raise RuntimeError('Unapproved Python startup module')
+    progress.enter('startup-checks',None,'*.pyc','runtime-bytecode-inventory')
     if any(p for p in site.rglob('*.pyc') if 'pip' not in p.relative_to(site).parts):raise RuntimeError('Unauthenticated runtime bytecode; no removal or repair')
+    progress.enter('overlay','archive',overlay.PIN['filename'],'overlay-authentication',package='packaging')
+    dependency_overlay=overlay.authenticate(progress);progress.checkpoint='authentication-complete';progress.finish('complete')
     return dict(status='PASS',packages=installed,files_verified=sum(r['files_verified'] for r in installed),bytes_verified=sum(r['bytes_verified'] for r in installed),
-                env=str(env),writes=0,provisioning=False,downloads=False,import_inventory=inventory,configuration=configuration,dependency_overlay=overlay.authenticate(progress))
+                env=str(env),writes=0,provisioning=False,downloads=False,import_inventory=inventory,configuration=configuration,dependency_overlay=dependency_overlay,authentication_progress=progress.snapshot())

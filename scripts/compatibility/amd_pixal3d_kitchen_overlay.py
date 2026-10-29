@@ -2,7 +2,7 @@
 import ast,email,hashlib,importlib,io,os,sys,zipfile
 from pathlib import Path
 from amd_pixal3d_proof_common import ROOT,plain
-from amd_pixal3d_wheel_payload import wheel_manifest,readonly
+from amd_pixal3d_wheel_payload import wheel_manifest,readonly,AuthenticationProgress
 
 PIN=dict(name='packaging',version='25.0',filename='packaging-25.0-py3-none-any.whl',bytes=66469,
     sha256='29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484',
@@ -12,17 +12,27 @@ PIN=dict(name='packaging',version='25.0',filename='packaging-25.0-py3-none-any.w
 def archive_path():return plain(ROOT/PIN['path'])
 
 def authenticate(progress=None):
-    path=archive_path();manifest=wheel_manifest(path,PIN,path.parent,path.parent,progress)
+    state=progress if isinstance(progress,AuthenticationProgress) else None;path=archive_path()
+    if state:state.enter('overlay','archive',path.name,'overlay-archive-authentication',package='packaging')
+    manifest=wheel_manifest(path,PIN,path.parent,path.parent,progress)
+    if state:state.enter('overlay',None,manifest['record'],'compare-overlay-RECORD')
     if manifest['RECORD_discrepancies']:raise RuntimeError('Overlay RECORD/payload disagreement')
+    if state:state.checkpoint='validate-overlay-payload-allowlist'
     if any(not(n.startswith('packaging/') or n.startswith('packaging-25.0.dist-info/')) or n.endswith(('.so','.pyd','.dll','.pth','.pyc')) for n in manifest['files']):
         raise RuntimeError('Only the exact pure-Python packaging overlay is allowed')
     # Metadata parsing uses an independently authenticated bounded byte snapshot,
     # never a second unverified ZIP handle after the payload pass.
+    if state:state.enter('overlay',None,path.name,'read-overlay-metadata-snapshot')
     with readonly(path) as stream:data=stream.read(PIN['bytes']+1)
+    if state:state.checkpoint='compare-overlay-metadata-snapshot'
     if len(data)!=PIN['bytes'] or hashlib.sha256(data).hexdigest()!=PIN['sha256']:raise RuntimeError('Overlay metadata snapshot differs')
+    if state:state.checkpoint='open-overlay-metadata-snapshot'
     with zipfile.ZipFile(io.BytesIO(data)) as archive:
+        if state:state.enter('overlay',None,'packaging-25.0.dist-info/METADATA','parse-overlay-METADATA')
         meta=email.message_from_bytes(archive.read('packaging-25.0.dist-info/METADATA'))
+        if state:state.enter('overlay',None,'packaging-25.0.dist-info/WHEEL','parse-overlay-WHEEL')
         wheel=email.message_from_bytes(archive.read('packaging-25.0.dist-info/WHEEL'))
+    if state:state.enter('overlay',None,'packaging-25.0.dist-info/{METADATA,WHEEL}','validate-overlay-runtime-metadata')
     if meta['Name']!='packaging' or meta['Version']!='25.0' or meta.get_all('Requires-Dist',[]) or wheel['Root-Is-Purelib']!='true' or wheel.get_all('Tag')!=['py3-none-any']:
         raise RuntimeError('Unexpected overlay dependency/platform metadata')
     return dict(status='PASS',name='packaging',version='25.0',archive=str(path),archive_sha256=PIN['sha256'],

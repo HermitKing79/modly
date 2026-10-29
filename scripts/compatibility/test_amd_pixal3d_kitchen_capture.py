@@ -1,5 +1,5 @@
 """Offline forensic routing/evidence tests. No Torch, WSL or GPU import."""
-import ast,atexit,getpass,hashlib,json,os,re,sys,tempfile,unittest,zipfile
+import ast,atexit,getpass,hashlib,json,os,re,shutil,sys,tempfile,unittest,zipfile
 from types import SimpleNamespace
 from pathlib import Path
 from unittest.mock import patch
@@ -129,13 +129,15 @@ class Routing(unittest.TestCase):
         with self.assertRaises(RuntimeError):cap.accept_capture(bad,cleanup)
 
 class Controller(unittest.TestCase):
-    def exercise(self,capture_exit=23,observer_exit=0,pidfd_failure=False):
+    def exercise(self,capture_exit=23,observer_exit=0,pidfd_failure=False,auth_failure=False,auth_samples=False):
         import io
         with tempfile.TemporaryDirectory(dir=TMP) as d:
             root=Path(d);leaf=root/'capture';leaf.mkdir();cfg=cap.config();cfg['guest_root']=str(root/'v2');cfg['temporary_guest_root']=str(root/'scratch')
-            cfg['runtime']=dict(cfg['runtime'],python=sys.version.split()[0]);token='a'*32;events=[];children=[]
+            cfg['runtime']=dict(cfg['runtime'],python=sys.version.split()[0]);token='a'*32;events=[];children=[];scans=[];clock=[10.0]
             owner=dict(pid=303,pgid=303,start_ticks=1,token=token,RSS_bytes=1024,state='S')
-            def rows(*args,**kwargs):return [owner]+[dict(pid=child.pid,pgid=303,start_ticks=child.pid,token=token,RSS_bytes=1024,state='S') for child in children if not child.stdin.closed]
+            def rows(*args,**kwargs):
+                scans.append(1)
+                return [owner]+[dict(pid=child.pid,pgid=303,start_ticks=child.pid,token=token,RSS_bytes=1024,state='S') for child in children if not child.stdin.closed]
             class Pipe:
                 closed=False
                 def write(self,data):
@@ -158,14 +160,26 @@ class Controller(unittest.TestCase):
             def kernel():
                 events.append('pidfd-preflight')
                 if pidfd_failure:raise RuntimeError('kernel unavailable')
-            def auth(*args,**kwargs):events.append('authenticated');return dict(status='PASS')
+            def auth(*args,**kwargs):
+                events.append('authenticated')
+                if auth_samples:
+                    state=args[1];state.enter('installed-files','installed','torch/lib/example.so','installed-sha256',package='torch')
+                    for when,count in [(10,17),(10.1,18),(10.25,19),(130.25,20)]:
+                        clock[0]=when;state.file_bytes_hashed=count;state()
+                if auth_failure:
+                    args[1].enter('installed-files','installed','torch/lib/example.so','installed-sha256',package='torch')
+                    args[1].file_bytes_hashed=17
+                    raise TimeoutError('Existing120-second authentication deadline')
+                return dict(status='PASS')
             proxy_os=SimpleNamespace(name='posix',getpid=lambda:303,getpgrp=lambda:303,environ={'MODLY_PIXAL_PROOF_TOKEN':token})
             proxy_sys=SimpleNamespace(prefix='/usr',version=sys.version,stdin=SimpleNamespace(buffer=io.BytesIO(b'GO\n')),addaudithook=lambda _:None)
-            with patch.object(cap,'validate_case',return_value=root),patch.object(cap,'config',return_value=cfg),patch.object(cap,'os',proxy_os),patch.object(cap,'sys',proxy_sys),patch.object(cap.ProcFS,'require_pidfds',side_effect=kernel),patch.object(cap,'process_rows',side_effect=rows),patch.object(cap.c,'environment_snapshot',return_value={'immutable':'same'}),patch.object(cap.c,'authenticate_environment',side_effect=auth),patch.object(cap.c.overlay,'authenticate',return_value=dict(status='PASS')),patch.object(cap.subprocess,'Popen',side_effect=spawn):
+            timing=SimpleNamespace(monotonic=lambda:clock[0]) if auth_samples else cap.time
+            with patch.object(shutil,'disk_usage',return_value=SimpleNamespace(free=cfg['guest_disk_floor_bytes'])),patch.object(cap,'time',timing),patch.object(cap,'validate_case',return_value=root),patch.object(cap,'config',return_value=cfg),patch.object(cap,'os',proxy_os),patch.object(cap,'sys',proxy_sys),patch.object(cap.ProcFS,'require_pidfds',side_effect=kernel),patch.object(cap,'process_rows',side_effect=rows),patch.object(cap.c,'environment_snapshot',return_value={'immutable':'same'}),patch.object(cap.c,'authenticate_environment',side_effect=auth),patch.object(cap.c.overlay,'authenticate',return_value=dict(status='PASS')),patch.object(cap.subprocess,'Popen',side_effect=spawn):
                 if pidfd_failure:
                     with self.assertRaises(RuntimeError):cap.controller(root,token)
                     return events,None
                 cap.controller(root,token)
+            resource_file=leaf/'resources.jsonl';self.resource_rows=[json.loads(line) for line in resource_file.read_text().splitlines()] if resource_file.exists() else [];self.scans=len(scans)
             return events,json.loads((leaf/'result.json').read_text())
 
     def test_one_capture_then_one_query_only_observer_and_no_operator_route(self):
@@ -173,6 +187,21 @@ class Controller(unittest.TestCase):
         self.assertEqual(events,['pidfd-preflight','authenticated','--capture-worker','--release-observer'])
         self.assertEqual(result['classification'],'PASS');self.assertEqual(result['capture_status'],'FIRST_DENIAL_CAPTURED')
         cap.accept_capture(result,dict(natural_exit=True,group_empty=True))
+
+    def test_authentication_timeout_keeps_checkpoint_and_never_starts_worker(self):
+        events,result=self.exercise(auth_failure=True)
+        self.assertEqual(events,['pidfd-preflight','authenticated']);self.assertEqual(result['classification'],'FAIL')
+        self.assertIn('authentication_progress',result)
+        row=result['authentication_progress'];self.assertEqual(row['status'],'failed');self.assertEqual(row['file'],'torch/lib/example.so')
+        self.assertEqual(row['package'],'torch');self.assertEqual(row['file_bytes_hashed'],17);self.assertEqual(row['checkpoint'],'installed-sha256')
+
+    def test_auth_samples_use_the_existing_throttle_scans_and_120_second_deadline(self):
+        events,result=self.exercise(auth_samples=True)
+        self.assertEqual(events,['pidfd-preflight','authenticated']);self.assertEqual(result['classification'],'FAIL');self.assertIn('authentication/overall deadline',result['error'])
+        self.assertEqual(result['seconds'],120.25);self.assertEqual(self.scans,5)
+        self.assertEqual([row['authentication_progress']['file_bytes_hashed'] for row in self.resource_rows],[17,19,20])
+        self.assertTrue(all(row['authentication_progress']['file']=='torch/lib/example.so' for row in self.resource_rows))
+        self.assertEqual(result['authentication_progress']['status'],'failed')
 
     def test_failed_stop_or_failed_release_cannot_qualify_or_retry(self):
         events,result=self.exercise(capture_exit=0)
