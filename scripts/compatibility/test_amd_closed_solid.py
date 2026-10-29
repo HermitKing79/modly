@@ -49,7 +49,9 @@ class GroundTruth(unittest.TestCase):
         def function(path,name):return ast.dump(next(n for n in ast.parse(path.read_text()).body if isinstance(n,ast.FunctionDef) and n.name==name),include_attributes=False)
         for file,names in [('amd_closed_solid_benchmark.py',['geometry','small_topology']),('amd_closed_solid_cpu.py',['owned','qualify'])]:
             for name in names:self.assertEqual(function(Path(__file__).with_name(file),name),function(b.PREP/'executed-source'/file,name))
-        self.assertEqual(b.digest(Path(__file__).with_name('amd_closed_solid_render.py')),b.digest(b.PREP/'executed-source/amd_closed_solid_render.py'))
+        # Git may materialise CRLF on Windows; preserve exact archived bytes,
+        # while comparing published Python source with universal newlines.
+        self.assertEqual(Path(__file__).with_name('amd_closed_solid_render.py').read_text(),(b.PREP/'executed-source/amd_closed_solid_render.py').read_text())
 
 class Handoff(unittest.TestCase):
     def subject(self):
