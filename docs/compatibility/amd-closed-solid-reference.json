@@ -1,0 +1,95 @@
+{
+  "schema": "modly.amd.closed-solid-reference.v1",
+  "source_path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/closed-solid-box-v1/occupancy/source-image.png",
+  "input_contract_path": "docs/compatibility/amd-repeatable-generation-v1-evidence/new-image/closed-solid-box-v1/occupancy/input-contract.json",
+  "source_sha256": "fddf6f7de10a548271c3d80b2b813e3be1191f1636ae5f51e08d548c07117c8a",
+  "source_bytes": 479201,
+  "input_contract_sha256": "c5eee9373aeb8be783184bf3cf47b29fc48b50780bf4602c8640d1eeabb16edc",
+  "source_pixel_sha256": "66505eec3ae28c5a0ffdab25f5f72547c755f65e79317e57d60decc83e262403",
+  "encoded_worker_input_png_sha256": "d9323610e3ecebec54da0cfaaf861a6cbd225dbc67010a8a2a1e7054aef5fa9f",
+  "dimensions": [
+    1.0,
+    0.65,
+    0.8
+  ],
+  "chamfer": 0.04,
+  "seed": 20261013,
+  "resolution": 512,
+  "candidate_count": 1,
+  "reference_views": 1,
+  "intended_geometry": "one connected closed convex chamfered rectangular box; no openings or separate parts",
+  "conditioning_512_pixel_sha256": "b1e56471f02403045a7bfe6908cf24f1e385279bbcacf259247f7588d07631b3",
+  "crop_rectangle": [
+    148,
+    148,
+    876,
+    876
+  ],
+  "files": {
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/source/mesh.ply": {
+      "bytes": 1080,
+      "sha256": "871b4112924d97ff9049f45d1496bc840c95cb538a3c8086e3245d8c677a3f05"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/source/vertices.npy": {
+      "bytes": 416,
+      "sha256": "71d0d94485c9b32fb11ea4e4f696c3fba52fcec6b46f533e502899c0e4725112"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/source/faces.npy": {
+      "bytes": 656,
+      "sha256": "d48eff96732598e60f519b4d090e1addbdb56340d49b71f0bfef5e98993bdf35"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/reference.png": {
+      "bytes": 479201,
+      "sha256": "fddf6f7de10a548271c3d80b2b813e3be1191f1636ae5f51e08d548c07117c8a"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/conditioning-512.png": {
+      "bytes": 96181,
+      "sha256": "cd6a3daa0aa5e053c71bde96db2ec2541817fa76dcd7e01110c9fa9e2c7e12dd"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/silhouette-512.png": {
+      "bytes": 7688,
+      "sha256": "cde325be4f7e945f62e45d3059d7c720f5aec1ff542b41a6ce2d374e71ff01a2"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/render.json": {
+      "bytes": 1730,
+      "sha256": "004e0612736709b3db8497d79c445e09ccd081e4728eb2fa8a85a7d524628f02"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/qualification.json": {
+      "bytes": 1512,
+      "sha256": "f853d37d706760ca5b99e8a2e9f6b0909282c90c0fe7509435a1dd832dbf2c6f"
+    }
+  },
+  "neural_execution_hold": true,
+  "automatic_retries": 0,
+  "ground_truth_may_replace_neural_output": false,
+  "preparation_evidence": {
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/render-run/host-result.json": {
+      "bytes": 15027,
+      "sha256": "1e07d392f4cb9dcc7e26f51e1a23d6258f9b3f5ae654d72a1a51dd8a2fe43cca"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/qualify-run/host-result.json": {
+      "bytes": 2051,
+      "sha256": "0b050c8d98cd50ce51adb635f286330f5dac64de12a587a4ec5955032a5a1cd1"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/sources-before.json": {
+      "bytes": 3074,
+      "sha256": "6b7ecbf04ec555fd55a1a3c8e99e1ffbdab98ea396f6c2c7c0dac982b162deb4"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/sources-after.json": {
+      "bytes": 43,
+      "sha256": "48523ee05ed251172b842fc6d66f533a77d8b4387c1affa951c8561151af4177"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/executed-source/amd_closed_solid_benchmark.py": {
+      "bytes": 4911,
+      "sha256": "68f0f90fcb5510116b0b7fcea530d5f0e2ad00ee1c58925afcce1a4f6eccc675"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/executed-source/amd_closed_solid_cpu.py": {
+      "bytes": 9900,
+      "sha256": "5ef7a3565efe14c939952005950374faf9a69b80cb49d1e0c222255cb4a3e6b6"
+    },
+    "artifacts/amd-closed-solid-benchmark-20261029-v1/executed-source/amd_closed_solid_render.py": {
+      "bytes": 5661,
+      "sha256": "6b922a8bd61737ff6b138d9a1dfc443efa2919bf22076297d4ba84de5bb8f4b1"
+    }
+  }
+}
