@@ -79,6 +79,47 @@ class Geometry(unittest.TestCase):
 
 @unittest.skipIf(h is None,'Implementation missing')
 class Host(unittest.TestCase):
+    def test_v2_uses_fresh_fixed_exclusive_path(self):
+        self.assertEqual(h.CASE,h.b.ROOT.parent/'artifacts/amd-wsl-post-resize-capacity-v2')
+    def test_post_v1_pin_retains_all_non_timestamp_identity(self):
+        old=dict(identity=dict(file_id=1,size=100,volume_serial='C',links=1,mtime_ns=10,final_path='fixed',attributes=32),metadata=dict(virtual_capacity_bytes=64*1024**3,table_hash='fixed'))
+        fresh=json.loads(json.dumps(old));fresh['identity']['mtime_ns']=20
+        self.assertEqual(h.post_v1_source(old,fresh),fresh)
+        for section,key,value in [('identity','file_id',2),('identity','size',101),('identity','links',2),('identity','volume_serial','other'),('identity','final_path','redirected'),('identity','attributes',0),('identity','mtime_ns',9),('metadata','table_hash','changed')]:
+            bad=json.loads(json.dumps(fresh));bad[section][key]=value
+            with self.assertRaises(ValueError):h.post_v1_source(old,bad)
+    def test_consumed_case_stops_before_admission_or_dispatch(self):
+        with tempfile.TemporaryDirectory(dir=h.b.ROOT.parent/'artifacts') as d:
+            root=Path(d);case=root/'used';case.mkdir();marker=case/'original.txt';marker.write_bytes(b'preserve')
+            auth=root/'auth.json';auth.write_text('{}')
+            with patch.object(h,'CASE',case),patch.object(h,'AUTH',auth),patch.object(h,'publication'),patch.object(h,'authenticate',return_value=({},{})),patch.object(h.b,'authority',return_value={}),patch.object(h.b,'authenticate_worker_python'),patch.object(h.o,'no_inherited_job'),patch.object(h.b,'digest',return_value=h.AUTH_SHA),patch.object(h.o,'Observer',side_effect=AssertionError('no admission')),patch.object(h.o,'capacity_query',side_effect=AssertionError('no WSL')),patch.object(h.b,'Pins',side_effect=AssertionError('no new handles')):
+                with self.assertRaisesRegex(ValueError,'Consumed evidence path'):h.run('a'*40)
+            self.assertEqual(marker.read_bytes(),b'preserve');self.assertEqual(len(list(case.iterdir())),1)
+    def test_v1_authority_rejects_changed_missing_extra_evidence(self):
+        import hashlib
+        with tempfile.TemporaryDirectory(dir=h.b.ROOT.parent/'artifacts') as d:
+            root=Path(d);prior=root/'resize';prior.mkdir();failed=root/'v1';failed.mkdir()
+            original=failed/'original.txt';original.write_bytes(b'keep')
+            tmp=failed/'tmp';tmp.mkdir();tmp_identity=dict(file_id=tmp.stat().st_ino,mtime_ns=tmp.stat().st_mtime_ns)
+            old=dict(identity=dict(file_id=1,size=100,mtime_ns=10),metadata=dict(virtual_capacity_bytes=64*1024**3))
+            fresh=json.loads(json.dumps(old));fresh['identity']['mtime_ns']=20
+            (prior/'final-result.json').write_text(json.dumps(dict(commit='d0779b83f0c3ef50ea7aeb4ea64aa8f8a81af811',native_settled=True)))
+            (prior/'settled-container-state.json').write_text(json.dumps(old));(prior/'cold-identities.json').write_text('{}')
+            (prior/'events.jsonl').write_text(json.dumps(dict(event='NATIVE_SETTLED',returncode=0))+'\n')
+            a=dict(predecessor_commit='28ba485e2756ef00de8fc1d7515bd6ef12252703',previous_authority_sha256='aeaadd28a745d449b4b6541f8cd8ba350207dd696543b73f3939e8bab1224ed1',v1_failure_receipts={'original.txt':hashlib.sha256(b'keep').hexdigest()},resize_receipts={},backup_receipts={},native_binaries={},source_after_v1=fresh)
+            a['v1_empty_directories']={'tmp':tmp_identity}
+            digest=h.b.digest
+            def checked(p):return a['previous_authority_sha256'] if p==h.OLD_AUTH else digest(p)
+            with patch.object(h,'PRIOR',prior),patch.object(h,'FAILED_CASE',failed),patch.object(h.b,'digest',side_effect=checked):
+                self.assertEqual(h.authenticate(a)[0],fresh)
+                original.write_bytes(b'changed')
+                with self.assertRaisesRegex(ValueError,'Historical evidence differs'):h.authenticate(a)
+                original.unlink()
+                with self.assertRaisesRegex(ValueError,'Complete v1 evidence set'):h.authenticate(a)
+                original.write_bytes(b'keep');(failed/'extra.txt').write_bytes(b'extra')
+                with self.assertRaisesRegex(ValueError,'Complete v1 evidence set'):h.authenticate(a)
+                (failed/'extra.txt').unlink();(tmp/'unexpected.txt').write_bytes(b'new')
+                with self.assertRaisesRegex(ValueError,'Preserved v1 empty directory'):h.authenticate(a)
     def test_full_run_is_capacity_only_and_stops_on_guards(self):
         row=Geometry().row()
         for failure in ('none','admission','query','backup-close','report'):

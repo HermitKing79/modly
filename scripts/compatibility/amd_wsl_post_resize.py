@@ -6,15 +6,30 @@ sys.path.insert(0,str(Path(__file__).parent))
 import amd_wsl_resize_operator as o
 import amd_wsl_post_resize_geometry as g
 b=o.b;r=o.r
-CASE=b.ROOT.parent/'artifacts/amd-wsl-post-resize-capacity-v1'
+CASE=b.ROOT.parent/'artifacts/amd-wsl-post-resize-capacity-v2'
+FAILED_CASE=b.ROOT.parent/'artifacts/amd-wsl-post-resize-capacity-v1'
 PRIOR=b.ROOT.parent/'artifacts/amd-wsl-resize-64g-v1'
-AUTH=b.ROOT.parent/'artifacts/amd-wsl-post-resize-preparation-20261030-v1/authority.json'
-AUTH_SHA='aeaadd28a745d449b4b6541f8cd8ba350207dd696543b73f3939e8bab1224ed1'
+OLD_AUTH=b.ROOT.parent/'artifacts/amd-wsl-post-resize-preparation-20261030-v1/authority.json'
+AUTH=b.ROOT.parent/'artifacts/amd-wsl-post-resize-v2-preparation-20261030-v1/authority.json'
+AUTH_SHA='7a4c00ba7b6cf4a2fa862121875d003d1ce62841f76d15395d2d9a355179b068'
 GUEST=Path(__file__).with_name('amd_wsl_post_resize_capacity.py')
 FILES=['scripts/compatibility/'+x for x in ('amd_wsl_post_resize.py','amd_wsl_post_resize_geometry.py','amd_wsl_post_resize_capacity.py','Invoke-ModlyPostResizeCapacity.ps1')]
 
+def post_v1_source(previous,fresh):
+    r.require(fresh['metadata']==previous['metadata'],'Post-v1 container metadata changed')
+    identity=lambda row:{k:v for k,v in row['identity'].items() if k!='mtime_ns'}
+    r.require(identity(fresh)==identity(previous),'Post-v1 non-timestamp source identity changed')
+    r.require(type(fresh['identity']['mtime_ns']) is int and fresh['identity']['mtime_ns']>=previous['identity']['mtime_ns'],'Post-v1 timestamp invalid')
+    return fresh
+
 def authenticate(a):
-    for parent,key in ((PRIOR,'resize_receipts'),(o.ACCEPTED,'backup_receipts')):
+    r.require(a['predecessor_commit']=='28ba485e2756ef00de8fc1d7515bd6ef12252703' and
+              b.digest(OLD_AUTH)==a['previous_authority_sha256']=='aeaadd28a745d449b4b6541f8cd8ba350207dd696543b73f3939e8bab1224ed1','Previous authority differs')
+    r.require({p.name for p in FAILED_CASE.iterdir()}==set(a['v1_failure_receipts'])|set(a['v1_empty_directories']),'Complete v1 evidence set differs')
+    for name,expected in a['v1_empty_directories'].items():
+        path=b.plain(FAILED_CASE/name);s=path.stat()
+        r.require(path.is_dir() and not any(path.iterdir()) and dict(file_id=s.st_ino,mtime_ns=s.st_mtime_ns)==expected,'Preserved v1 empty directory differs')
+    for parent,key in ((PRIOR,'resize_receipts'),(o.ACCEPTED,'backup_receipts'),(FAILED_CASE,'v1_failure_receipts')):
         for name,sha in a[key].items():r.require(b.digest(parent/name)==sha,'Historical evidence differs: '+name)
     for name,sha in a['native_binaries'].items():r.require(b.digest(Path(name))==sha,'Native binary differs')
     load=lambda name:json.loads((PRIOR/name).read_text())
@@ -23,7 +38,7 @@ def authenticate(a):
     native=[x for x in events if x['event']=='NATIVE_SETTLED']
     r.require(final['commit']=='d0779b83f0c3ef50ea7aeb4ea64aa8f8a81af811' and final['native_settled'] is True and len(native)==1 and native[0]['returncode']==0,'Natural resize completion unverified')
     r.require(settled['metadata']['virtual_capacity_bytes']==r.TARGET_BYTES,'Saved container capacity differs')
-    return settled,load('cold-identities.json')
+    return post_v1_source(settled,a['source_after_v1']),load('cold-identities.json')
 
 def publication(commit):
     o.publication(commit)
