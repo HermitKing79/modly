@@ -1,0 +1,15 @@
+{
+ "parent":"89bbbe7b6f050c8ef6efa9088a598f0a5d7557d9",
+ "hypothesis":"The measured projection compression is avoided by angle-based flattening of the near-planar geometric crease patches, then uniform island scaling and packing. Actual density must still pass; ABF supplies no area guarantee.",
+ "seam_rule":"Original adjacent oriented face normals differ by more than20 degrees",
+ "seam_plan_sha256":"a1458adfac1f32ad5c4fa3be8ac220bc195e87ab6d832a0e500f529a1f6136f8",
+ "required_charts":26,"required_seams":280,"partition":"exact planned face sets; one genuine singleton; no extra fragmentation",
+ "unwrap":{"method":"ANGLE_BASED","fill_holes":false,"correct_aspect":true,"use_subsurf_data":false,"use_original_bounds":false,"margin_method":"FRACTION","margin":0.01},
+ "normalization":{"scale_uv":false,"shear":false},
+ "packing":{"rotate":true,"rotate_method":"ANY","scale":true,"merge_overlap":false,"margin_method":"FRACTION","margin":0.01,"pin":false,"shape_method":"CONCAVE","udim_source":"CLOSEST_UDIM"},
+ "maximum_area_density_ratio":1.1,
+ "maximum_triangle_directional_stretch_ratio":1.1,
+ "directional_gate_scope":"Additional predeclared UV-only suitability check: reject more than10 percent anisotropy between principal per-triangle UV scales, including area-preserving stretches; no change to Phase11 or geometry gates",
+ "topology":"Every chart remains a disk, consistent UV orientation; no coincident distinct topological UV vertex fans, no positive-area overlap, finite in-bounds nonzero UV triangles",
+ "attempts":1,"retry":false,"appearance":"USER_APPEARANCE_APPROVAL_PENDING","normal_bake":"SKIPPED","additional_appearance_rendering":false
+}
