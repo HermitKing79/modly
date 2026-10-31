@@ -1,0 +1,13 @@
+{
+  "schema": "modly.lower-detail-static-prop.v1",
+  "scope": "Saved Alpha Wrapping chamfered-box candidate only; non-deforming static prop",
+  "research_contract": "Phase11 permanently NO-GO; unchanged",
+  "accepted_tradeoff": {"source_faces":524,"source_area_percent":0.0024493137,"meaning":"Documented coherent microfacet loss; not a general small-feature exemption"},
+  "retained_gates": ["1000 triangles maximum","closed oriented edge and vertex manifold","one component","complete self-intersection check","original bidirectional distance thresholds","complete 0.002D source support","eight frozen silhouette gates","export readback"],
+  "appearance_approval": "USER_INSPECTION_PENDING at intended viewing distance and material",
+  "normal_bake": "SKIPPED_UNQUALIFIED_SOURCE_WINDING_AND_RAY_PROVENANCE",
+  "uv_checks": {"continuous_positive_area_overlap_pairs":0,"zero_area_triangles":0,"bounds":[0,1],"maximum_area_density_ratio":1.1},
+  "serialization": {"coordinate_format":"glTF Float32","maximum_conversion_error_over_D":1e-7,"oriented_triangle_and_corner_correspondence":"exact Float32; seam duplicates explicitly counted","normal_dot_minimum":0.99999},
+  "runtime": {"CPU_only":true,"cores":4,"process_and_job_bytes":6442450944,"per_stage_seconds":180,"host_available_bytes_floor":12884901888,"disk_available_bytes_floor":2147483648,"retries":0},
+  "not_qualified": ["finished AI texture output","S&box import until actually tested","other asset classes","deformation","CGAL binary product distribution"]
+}
